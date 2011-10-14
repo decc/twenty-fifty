@@ -1,0 +1,2297 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>Class: Hash</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>/Users/tamc/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/core_ext/array/extract_options.rb
+    <li>/Users/tamc/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/core_ext/hash/conversions.rb
+    <li>/Users/tamc/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/core_ext/hash/deep_dup.rb
+    <li>/Users/tamc/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/core_ext/hash/deep_merge.rb
+    <li>/Users/tamc/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/core_ext/hash/diff.rb
+    <li>/Users/tamc/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/core_ext/hash/except.rb
+    <li>/Users/tamc/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/core_ext/hash/indifferent_access.rb
+    <li>/Users/tamc/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/core_ext/hash/keys.rb
+    <li>/Users/tamc/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/core_ext/hash/reverse_merge.rb
+    <li>/Users/tamc/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/core_ext/hash/slice.rb
+    <li>/Users/tamc/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/core_ext/object/blank.rb
+    <li>/Users/tamc/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/core_ext/object/to_param.rb
+    <li>/Users/tamc/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/core_ext/object/to_query.rb
+    <li>/Users/tamc/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/json/encoding.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="Object.html">Object</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-from_xml">::from_xml</a>
+    
+    <li><a href="#method-i-assert_valid_keys">#assert_valid_keys</a>
+    
+    <li><a href="#method-i-deep_dup">#deep_dup</a>
+    
+    <li><a href="#method-i-deep_merge">#deep_merge</a>
+    
+    <li><a href="#method-i-deep_merge-21">#deep_merge!</a>
+    
+    <li><a href="#method-i-diff">#diff</a>
+    
+    <li><a href="#method-i-encode_json">#encode_json</a>
+    
+    <li><a href="#method-i-except">#except</a>
+    
+    <li><a href="#method-i-except-21">#except!</a>
+    
+    <li><a href="#method-i-extract-21">#extract!</a>
+    
+    <li><a href="#method-i-extractable_options-3F">#extractable_options?</a>
+    
+    <li><a href="#method-i-nested_under_indifferent_access">#nested_under_indifferent_access</a>
+    
+    <li><a href="#method-i-reverse_merge">#reverse_merge</a>
+    
+    <li><a href="#method-i-reverse_merge-21">#reverse_merge!</a>
+    
+    <li><a href="#method-i-reverse_update">#reverse_update</a>
+    
+    <li><a href="#method-i-slice">#slice</a>
+    
+    <li><a href="#method-i-slice-21">#slice!</a>
+    
+    <li><a href="#method-i-stringify_keys">#stringify_keys</a>
+    
+    <li><a href="#method-i-stringify_keys-21">#stringify_keys!</a>
+    
+    <li><a href="#method-i-symbolize_keys">#symbolize_keys</a>
+    
+    <li><a href="#method-i-symbolize_keys-21">#symbolize_keys!</a>
+    
+    <li><a href="#method-i-to_options">#to_options</a>
+    
+    <li><a href="#method-i-to_options-21">#to_options!</a>
+    
+    <li><a href="#method-i-to_param">#to_param</a>
+    
+    <li><a href="#method-i-to_query">#to_query</a>
+    
+    <li><a href="#method-i-to_xml">#to_xml</a>
+    
+    <li><a href="#method-i-with_indifferent_access">#with_indifferent_access</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href=".//Users/tamc/_rvm/gems/ruby-1_9_2-p290/gems/actionmailer-3_1_1/CHANGELOG.html">CHANGELOG</a>
+  
+    <li class="file"><a href=".//Users/tamc/_rvm/gems/ruby-1_9_2-p290/gems/actionmailer-3_1_1/MIT-LICENSE.html">MIT-LICENSE</a>
+  
+    <li class="file"><a href=".//Users/tamc/_rvm/gems/ruby-1_9_2-p290/gems/actionmailer-3_1_1/README_rdoc.html">README</a>
+  
+    <li class="file"><a href=".//Users/tamc/_rvm/gems/ruby-1_9_2-p290/gems/actionpack-3_1_1/CHANGELOG.html">CHANGELOG</a>
+  
+    <li class="file"><a href=".//Users/tamc/_rvm/gems/ruby-1_9_2-p290/gems/actionpack-3_1_1/MIT-LICENSE.html">MIT-LICENSE</a>
+  
+    <li class="file"><a href=".//Users/tamc/_rvm/gems/ruby-1_9_2-p290/gems/actionpack-3_1_1/README_rdoc.html">README</a>
+  
+    <li class="file"><a href=".//Users/tamc/_rvm/gems/ruby-1_9_2-p290/gems/activemodel-3_1_1/CHANGELOG.html">CHANGELOG</a>
+  
+    <li class="file"><a href=".//Users/tamc/_rvm/gems/ruby-1_9_2-p290/gems/activemodel-3_1_1/MIT-LICENSE.html">MIT-LICENSE</a>
+  
+    <li class="file"><a href=".//Users/tamc/_rvm/gems/ruby-1_9_2-p290/gems/activemodel-3_1_1/README_rdoc.html">README</a>
+  
+    <li class="file"><a href=".//Users/tamc/_rvm/gems/ruby-1_9_2-p290/gems/activerecord-3_1_1/CHANGELOG.html">CHANGELOG</a>
+  
+    <li class="file"><a href=".//Users/tamc/_rvm/gems/ruby-1_9_2-p290/gems/activerecord-3_1_1/README_rdoc.html">README</a>
+  
+    <li class="file"><a href=".//Users/tamc/_rvm/gems/ruby-1_9_2-p290/gems/activeresource-3_1_1/CHANGELOG.html">CHANGELOG</a>
+  
+    <li class="file"><a href=".//Users/tamc/_rvm/gems/ruby-1_9_2-p290/gems/activeresource-3_1_1/README_rdoc.html">README</a>
+  
+    <li class="file"><a href=".//Users/tamc/_rvm/gems/ruby-1_9_2-p290/gems/activesupport-3_1_1/CHANGELOG.html">CHANGELOG</a>
+  
+    <li class="file"><a href=".//Users/tamc/_rvm/gems/ruby-1_9_2-p290/gems/activesupport-3_1_1/README_rdoc.html">README</a>
+  
+    <li class="file"><a href=".//Users/tamc/_rvm/gems/ruby-1_9_2-p290/gems/railties-3_1_1/CHANGELOG.html">CHANGELOG</a>
+  
+    <li class="file"><a href=".//Users/tamc/_rvm/gems/ruby-1_9_2-p290/gems/railties-3_1_1/README_rdoc.html">README</a>
+  
+    <li class="file"><a href="./README.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./ActiveRecord.html">ActiveRecord</a>
+  
+    <li><a href="./ActiveRecord/ActiveRecordError.html">ActiveRecord::ActiveRecordError</a>
+  
+    <li><a href="./ActiveRecord/AdapterNotFound.html">ActiveRecord::AdapterNotFound</a>
+  
+    <li><a href="./ActiveRecord/AdapterNotSpecified.html">ActiveRecord::AdapterNotSpecified</a>
+  
+    <li><a href="./ActiveRecord/Aggregations.html">ActiveRecord::Aggregations</a>
+  
+    <li><a href="./ActiveRecord/Aggregations/ClassMethods.html">ActiveRecord::Aggregations::ClassMethods</a>
+  
+    <li><a href="./ActiveRecord/AssociationTypeMismatch.html">ActiveRecord::AssociationTypeMismatch</a>
+  
+    <li><a href="./ActiveRecord/Associations.html">ActiveRecord::Associations</a>
+  
+    <li><a href="./ActiveRecord/Associations/ClassMethods.html">ActiveRecord::Associations::ClassMethods</a>
+  
+    <li><a href="./ActiveRecord/AttributeAssignmentError.html">ActiveRecord::AttributeAssignmentError</a>
+  
+    <li><a href="./ActiveRecord/AttributeMethods.html">ActiveRecord::AttributeMethods</a>
+  
+    <li><a href="./ActiveRecord/AttributeMethods/BeforeTypeCast.html">ActiveRecord::AttributeMethods::BeforeTypeCast</a>
+  
+    <li><a href="./ActiveRecord/AttributeMethods/ClassMethods.html">ActiveRecord::AttributeMethods::ClassMethods</a>
+  
+    <li><a href="./ActiveRecord/AttributeMethods/Dirty.html">ActiveRecord::AttributeMethods::Dirty</a>
+  
+    <li><a href="./ActiveRecord/AttributeMethods/PrimaryKey.html">ActiveRecord::AttributeMethods::PrimaryKey</a>
+  
+    <li><a href="./ActiveRecord/AttributeMethods/PrimaryKey/ClassMethods.html">ActiveRecord::AttributeMethods::PrimaryKey::ClassMethods</a>
+  
+    <li><a href="./ActiveRecord/AttributeMethods/Query.html">ActiveRecord::AttributeMethods::Query</a>
+  
+    <li><a href="./ActiveRecord/AttributeMethods/Read.html">ActiveRecord::AttributeMethods::Read</a>
+  
+    <li><a href="./ActiveRecord/AttributeMethods/Read/ClassMethods.html">ActiveRecord::AttributeMethods::Read::ClassMethods</a>
+  
+    <li><a href="./ActiveRecord/AttributeMethods/TimeZoneConversion.html">ActiveRecord::AttributeMethods::TimeZoneConversion</a>
+  
+    <li><a href="./ActiveRecord/AttributeMethods/TimeZoneConversion/ClassMethods.html">ActiveRecord::AttributeMethods::TimeZoneConversion::ClassMethods</a>
+  
+    <li><a href="./ActiveRecord/AttributeMethods/Write.html">ActiveRecord::AttributeMethods::Write</a>
+  
+    <li><a href="./ActiveRecord/AttributeMethods/Write/ClassMethods.html">ActiveRecord::AttributeMethods::Write::ClassMethods</a>
+  
+    <li><a href="./ActiveRecord/AutosaveAssociation.html">ActiveRecord::AutosaveAssociation</a>
+  
+    <li><a href="./ActiveRecord/AutosaveAssociation/ClassMethods.html">ActiveRecord::AutosaveAssociation::ClassMethods</a>
+  
+    <li><a href="./ActiveRecord/Base.html">ActiveRecord::Base</a>
+  
+    <li><a href="./ActiveRecord/Batches.html">ActiveRecord::Batches</a>
+  
+    <li><a href="./ActiveRecord/Calculations.html">ActiveRecord::Calculations</a>
+  
+    <li><a href="./ActiveRecord/Callbacks.html">ActiveRecord::Callbacks</a>
+  
+    <li><a href="./ActiveRecord/ConfigurationError.html">ActiveRecord::ConfigurationError</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/AbstractAdapter.html">ActiveRecord::ConnectionAdapters::AbstractAdapter</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/ConnectionHandler.html">ActiveRecord::ConnectionAdapters::ConnectionHandler</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/ConnectionManagement.html">ActiveRecord::ConnectionAdapters::ConnectionManagement</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/ConnectionPool.html">ActiveRecord::ConnectionAdapters::ConnectionPool</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/DatabaseLimits.html">ActiveRecord::ConnectionAdapters::DatabaseLimits</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/DatabaseStatements.html">ActiveRecord::ConnectionAdapters::DatabaseStatements</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/Mysql2Adapter.html">ActiveRecord::ConnectionAdapters::Mysql2Adapter</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/Mysql2Column.html">ActiveRecord::ConnectionAdapters::Mysql2Column</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/MysqlAdapter.html">ActiveRecord::ConnectionAdapters::MysqlAdapter</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/MysqlAdapter/StatementPool.html">ActiveRecord::ConnectionAdapters::MysqlAdapter::StatementPool</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/StatementPool.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::StatementPool</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/PostgreSQLAdapter/TableDefinition.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::TableDefinition</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/PostgreSQLColumn.html">ActiveRecord::ConnectionAdapters::PostgreSQLColumn</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/QueryCache.html">ActiveRecord::ConnectionAdapters::QueryCache</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/Quoting.html">ActiveRecord::ConnectionAdapters::Quoting</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLiteAdapter.html">ActiveRecord::ConnectionAdapters::SQLiteAdapter</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLiteAdapter/StatementPool.html">ActiveRecord::ConnectionAdapters::SQLiteAdapter::StatementPool</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SQLiteAdapter/Version.html">ActiveRecord::ConnectionAdapters::SQLiteAdapter::Version</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/SchemaStatements.html">ActiveRecord::ConnectionAdapters::SchemaStatements</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/StatementPool.html">ActiveRecord::ConnectionAdapters::StatementPool</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/Table.html">ActiveRecord::ConnectionAdapters::Table</a>
+  
+    <li><a href="./ActiveRecord/ConnectionAdapters/TableDefinition.html">ActiveRecord::ConnectionAdapters::TableDefinition</a>
+  
+    <li><a href="./ActiveRecord/ConnectionNotEstablished.html">ActiveRecord::ConnectionNotEstablished</a>
+  
+    <li><a href="./ActiveRecord/ConnectionTimeoutError.html">ActiveRecord::ConnectionTimeoutError</a>
+  
+    <li><a href="./ActiveRecord/CounterCache.html">ActiveRecord::CounterCache</a>
+  
+    <li><a href="./ActiveRecord/DangerousAttributeError.html">ActiveRecord::DangerousAttributeError</a>
+  
+    <li><a href="./ActiveRecord/DynamicFinderMatch.html">ActiveRecord::DynamicFinderMatch</a>
+  
+    <li><a href="./ActiveRecord/DynamicScopeMatch.html">ActiveRecord::DynamicScopeMatch</a>
+  
+    <li><a href="./ActiveRecord/FinderMethods.html">ActiveRecord::FinderMethods</a>
+  
+    <li><a href="./ActiveRecord/Fixtures.html">ActiveRecord::Fixtures</a>
+  
+    <li><a href="./ActiveRecord/HasManyThroughNestedAssociationsAreReadonly.html">ActiveRecord::HasManyThroughNestedAssociationsAreReadonly</a>
+  
+    <li><a href="./ActiveRecord/IdentityMap.html">ActiveRecord::IdentityMap</a>
+  
+    <li><a href="./ActiveRecord/IdentityMap/Middleware.html">ActiveRecord::IdentityMap::Middleware</a>
+  
+    <li><a href="./ActiveRecord/InvalidForeignKey.html">ActiveRecord::InvalidForeignKey</a>
+  
+    <li><a href="./ActiveRecord/IrreversibleMigration.html">ActiveRecord::IrreversibleMigration</a>
+  
+    <li><a href="./ActiveRecord/Locking.html">ActiveRecord::Locking</a>
+  
+    <li><a href="./ActiveRecord/Locking/Optimistic.html">ActiveRecord::Locking::Optimistic</a>
+  
+    <li><a href="./ActiveRecord/Locking/Optimistic/ClassMethods.html">ActiveRecord::Locking::Optimistic::ClassMethods</a>
+  
+    <li><a href="./ActiveRecord/Locking/Pessimistic.html">ActiveRecord::Locking::Pessimistic</a>
+  
+    <li><a href="./ActiveRecord/LogSubscriber.html">ActiveRecord::LogSubscriber</a>
+  
+    <li><a href="./ActiveRecord/Migration.html">ActiveRecord::Migration</a>
+  
+    <li><a href="./ActiveRecord/Migration/CommandRecorder.html">ActiveRecord::Migration::CommandRecorder</a>
+  
+    <li><a href="./ActiveRecord/MigrationProxy.html">ActiveRecord::MigrationProxy</a>
+  
+    <li><a href="./ActiveRecord/MultiparameterAssignmentErrors.html">ActiveRecord::MultiparameterAssignmentErrors</a>
+  
+    <li><a href="./ActiveRecord/NamedScope.html">ActiveRecord::NamedScope</a>
+  
+    <li><a href="./ActiveRecord/NamedScope/ClassMethods.html">ActiveRecord::NamedScope::ClassMethods</a>
+  
+    <li><a href="./ActiveRecord/NestedAttributes.html">ActiveRecord::NestedAttributes</a>
+  
+    <li><a href="./ActiveRecord/NestedAttributes/ClassMethods.html">ActiveRecord::NestedAttributes::ClassMethods</a>
+  
+    <li><a href="./ActiveRecord/NestedAttributes/TooManyRecords.html">ActiveRecord::NestedAttributes::TooManyRecords</a>
+  
+    <li><a href="./ActiveRecord/Observer.html">ActiveRecord::Observer</a>
+  
+    <li><a href="./ActiveRecord/Persistence.html">ActiveRecord::Persistence</a>
+  
+    <li><a href="./ActiveRecord/PreparedStatementInvalid.html">ActiveRecord::PreparedStatementInvalid</a>
+  
+    <li><a href="./ActiveRecord/QueryCache.html">ActiveRecord::QueryCache</a>
+  
+    <li><a href="./ActiveRecord/QueryCache/ClassMethods.html">ActiveRecord::QueryCache::ClassMethods</a>
+  
+    <li><a href="./ActiveRecord/QueryMethods.html">ActiveRecord::QueryMethods</a>
+  
+    <li><a href="./ActiveRecord/Railtie.html">ActiveRecord::Railtie</a>
+  
+    <li><a href="./ActiveRecord/Railties.html">ActiveRecord::Railties</a>
+  
+    <li><a href="./ActiveRecord/Railties/ControllerRuntime.html">ActiveRecord::Railties::ControllerRuntime</a>
+  
+    <li><a href="./ActiveRecord/Railties/ControllerRuntime/ClassMethods.html">ActiveRecord::Railties::ControllerRuntime::ClassMethods</a>
+  
+    <li><a href="./ActiveRecord/ReadOnlyRecord.html">ActiveRecord::ReadOnlyRecord</a>
+  
+    <li><a href="./ActiveRecord/RecordInvalid.html">ActiveRecord::RecordInvalid</a>
+  
+    <li><a href="./ActiveRecord/RecordNotFound.html">ActiveRecord::RecordNotFound</a>
+  
+    <li><a href="./ActiveRecord/RecordNotSaved.html">ActiveRecord::RecordNotSaved</a>
+  
+    <li><a href="./ActiveRecord/RecordNotUnique.html">ActiveRecord::RecordNotUnique</a>
+  
+    <li><a href="./ActiveRecord/Reflection.html">ActiveRecord::Reflection</a>
+  
+    <li><a href="./ActiveRecord/Reflection/ClassMethods.html">ActiveRecord::Reflection::ClassMethods</a>
+  
+    <li><a href="./ActiveRecord/Reflection/MacroReflection.html">ActiveRecord::Reflection::MacroReflection</a>
+  
+    <li><a href="./ActiveRecord/Relation.html">ActiveRecord::Relation</a>
+  
+    <li><a href="./ActiveRecord/Result.html">ActiveRecord::Result</a>
+  
+    <li><a href="./ActiveRecord/Rollback.html">ActiveRecord::Rollback</a>
+  
+    <li><a href="./ActiveRecord/Schema.html">ActiveRecord::Schema</a>
+  
+    <li><a href="./ActiveRecord/Serialization.html">ActiveRecord::Serialization</a>
+  
+    <li><a href="./ActiveRecord/SerializationTypeMismatch.html">ActiveRecord::SerializationTypeMismatch</a>
+  
+    <li><a href="./ActiveRecord/SessionStore.html">ActiveRecord::SessionStore</a>
+  
+    <li><a href="./ActiveRecord/SessionStore/Session.html">ActiveRecord::SessionStore::Session</a>
+  
+    <li><a href="./ActiveRecord/SessionStore/SqlBypass.html">ActiveRecord::SessionStore::SqlBypass</a>
+  
+    <li><a href="./ActiveRecord/SpawnMethods.html">ActiveRecord::SpawnMethods</a>
+  
+    <li><a href="./ActiveRecord/StaleObjectError.html">ActiveRecord::StaleObjectError</a>
+  
+    <li><a href="./ActiveRecord/StatementInvalid.html">ActiveRecord::StatementInvalid</a>
+  
+    <li><a href="./ActiveRecord/TestFixtures.html">ActiveRecord::TestFixtures</a>
+  
+    <li><a href="./ActiveRecord/TestFixtures/ClassMethods.html">ActiveRecord::TestFixtures::ClassMethods</a>
+  
+    <li><a href="./ActiveRecord/ThrowResult.html">ActiveRecord::ThrowResult</a>
+  
+    <li><a href="./ActiveRecord/Timestamp.html">ActiveRecord::Timestamp</a>
+  
+    <li><a href="./ActiveRecord/Transactions.html">ActiveRecord::Transactions</a>
+  
+    <li><a href="./ActiveRecord/Transactions/ClassMethods.html">ActiveRecord::Transactions::ClassMethods</a>
+  
+    <li><a href="./ActiveRecord/UnknownAttributeError.html">ActiveRecord::UnknownAttributeError</a>
+  
+    <li><a href="./ActiveRecord/UnknownPrimaryKey.html">ActiveRecord::UnknownPrimaryKey</a>
+  
+    <li><a href="./ActiveRecord/Validations.html">ActiveRecord::Validations</a>
+  
+    <li><a href="./ActiveRecord/Validations/AssociatedValidator.html">ActiveRecord::Validations::AssociatedValidator</a>
+  
+    <li><a href="./ActiveRecord/Validations/ClassMethods.html">ActiveRecord::Validations::ClassMethods</a>
+  
+    <li><a href="./ActiveRecord/Validations/UniquenessValidator.html">ActiveRecord::Validations::UniquenessValidator</a>
+  
+    <li><a href="./ActiveRecord/WrappedDatabaseException.html">ActiveRecord::WrappedDatabaseException</a>
+  
+    <li><a href="./ActiveSupport.html">ActiveSupport</a>
+  
+    <li><a href="./ActiveSupport/Autoload.html">ActiveSupport::Autoload</a>
+  
+    <li><a href="./ActiveSupport/BacktraceCleaner.html">ActiveSupport::BacktraceCleaner</a>
+  
+    <li><a href="./ActiveSupport/Base64.html">ActiveSupport::Base64</a>
+  
+    <li><a href="./ActiveSupport/BasicObject.html">ActiveSupport::BasicObject</a>
+  
+    <li><a href="./ActiveSupport/Benchmarkable.html">ActiveSupport::Benchmarkable</a>
+  
+    <li><a href="./ActiveSupport/BufferedLogger.html">ActiveSupport::BufferedLogger</a>
+  
+    <li><a href="./ActiveSupport/BufferedLogger/Severity.html">ActiveSupport::BufferedLogger::Severity</a>
+  
+    <li><a href="./ActiveSupport/Cache.html">ActiveSupport::Cache</a>
+  
+    <li><a href="./ActiveSupport/Cache/CompressedMemCacheStore.html">ActiveSupport::Cache::CompressedMemCacheStore</a>
+  
+    <li><a href="./ActiveSupport/Cache/Entry.html">ActiveSupport::Cache::Entry</a>
+  
+    <li><a href="./ActiveSupport/Cache/FileStore.html">ActiveSupport::Cache::FileStore</a>
+  
+    <li><a href="./ActiveSupport/Cache/MemCacheStore.html">ActiveSupport::Cache::MemCacheStore</a>
+  
+    <li><a href="./ActiveSupport/Cache/MemoryStore.html">ActiveSupport::Cache::MemoryStore</a>
+  
+    <li><a href="./ActiveSupport/Cache/Store.html">ActiveSupport::Cache::Store</a>
+  
+    <li><a href="./ActiveSupport/Cache/Strategy.html">ActiveSupport::Cache::Strategy</a>
+  
+    <li><a href="./ActiveSupport/Cache/Strategy/LocalCache.html">ActiveSupport::Cache::Strategy::LocalCache</a>
+  
+    <li><a href="./ActiveSupport/Cache/Strategy/LocalCache/LocalStore.html">ActiveSupport::Cache::Strategy::LocalCache::LocalStore</a>
+  
+    <li><a href="./ActiveSupport/Cache/SynchronizedMemoryStore.html">ActiveSupport::Cache::SynchronizedMemoryStore</a>
+  
+    <li><a href="./ActiveSupport/Callbacks.html">ActiveSupport::Callbacks</a>
+  
+    <li><a href="./ActiveSupport/Callbacks/ClassMethods.html">ActiveSupport::Callbacks::ClassMethods</a>
+  
+    <li><a href="./ActiveSupport/Concern.html">ActiveSupport::Concern</a>
+  
+    <li><a href="./ActiveSupport/Configurable.html">ActiveSupport::Configurable</a>
+  
+    <li><a href="./ActiveSupport/Configurable/ClassMethods.html">ActiveSupport::Configurable::ClassMethods</a>
+  
+    <li><a href="./ActiveSupport/Configurable/Configuration.html">ActiveSupport::Configurable::Configuration</a>
+  
+    <li><a href="./ActiveSupport/Dependencies.html">ActiveSupport::Dependencies</a>
+  
+    <li><a href="./ActiveSupport/Dependencies/ClassCache.html">ActiveSupport::Dependencies::ClassCache</a>
+  
+    <li><a href="./ActiveSupport/Dependencies/WatchStack.html">ActiveSupport::Dependencies::WatchStack</a>
+  
+    <li><a href="./ActiveSupport/Deprecation.html">ActiveSupport::Deprecation</a>
+  
+    <li><a href="./ActiveSupport/DescendantsTracker.html">ActiveSupport::DescendantsTracker</a>
+  
+    <li><a href="./ActiveSupport/Duration.html">ActiveSupport::Duration</a>
+  
+    <li><a href="./ActiveSupport/FileUpdateChecker.html">ActiveSupport::FileUpdateChecker</a>
+  
+    <li><a href="./ActiveSupport/FileWatcher.html">ActiveSupport::FileWatcher</a>
+  
+    <li><a href="./ActiveSupport/FileWatcher/Backend.html">ActiveSupport::FileWatcher::Backend</a>
+  
+    <li><a href="./ActiveSupport/Gzip.html">ActiveSupport::Gzip</a>
+  
+    <li><a href="./ActiveSupport/Gzip/Stream.html">ActiveSupport::Gzip::Stream</a>
+  
+    <li><a href="./ActiveSupport/HashWithIndifferentAccess.html">ActiveSupport::HashWithIndifferentAccess</a>
+  
+    <li><a href="./ActiveSupport/HashWithIndifferentAccess.html">ActiveSupport::HashWithIndifferentAccess</a>
+  
+    <li><a href="./ActiveSupport/Inflector.html">ActiveSupport::Inflector</a>
+  
+    <li><a href="./ActiveSupport/Inflector/Inflections.html">ActiveSupport::Inflector::Inflections</a>
+  
+    <li><a href="./ActiveSupport/InheritableOptions.html">ActiveSupport::InheritableOptions</a>
+  
+    <li><a href="./ActiveSupport/JSON.html">ActiveSupport::JSON</a>
+  
+    <li><a href="./ActiveSupport/JSON/Encoding.html">ActiveSupport::JSON::Encoding</a>
+  
+    <li><a href="./ActiveSupport/JSON/Encoding/CircularReferenceError.html">ActiveSupport::JSON::Encoding::CircularReferenceError</a>
+  
+    <li><a href="./ActiveSupport/JSON/Encoding/Encoder.html">ActiveSupport::JSON::Encoding::Encoder</a>
+  
+    <li><a href="./ActiveSupport/JSON/Variable.html">ActiveSupport::JSON::Variable</a>
+  
+    <li><a href="./ActiveSupport/LogSubscriber.html">ActiveSupport::LogSubscriber</a>
+  
+    <li><a href="./ActiveSupport/LogSubscriber/TestHelper.html">ActiveSupport::LogSubscriber::TestHelper</a>
+  
+    <li><a href="./ActiveSupport/LogSubscriber/TestHelper/MockLogger.html">ActiveSupport::LogSubscriber::TestHelper::MockLogger</a>
+  
+    <li><a href="./ActiveSupport/Memoizable.html">ActiveSupport::Memoizable</a>
+  
+    <li><a href="./ActiveSupport/Memoizable/InstanceMethods.html">ActiveSupport::Memoizable::InstanceMethods</a>
+  
+    <li><a href="./ActiveSupport/MessageEncryptor.html">ActiveSupport::MessageEncryptor</a>
+  
+    <li><a href="./ActiveSupport/MessageEncryptor/InvalidMessage.html">ActiveSupport::MessageEncryptor::InvalidMessage</a>
+  
+    <li><a href="./ActiveSupport/MessageVerifier.html">ActiveSupport::MessageVerifier</a>
+  
+    <li><a href="./ActiveSupport/MessageVerifier/InvalidSignature.html">ActiveSupport::MessageVerifier::InvalidSignature</a>
+  
+    <li><a href="./ActiveSupport/Multibyte.html">ActiveSupport::Multibyte</a>
+  
+    <li><a href="./ActiveSupport/Multibyte/Chars.html">ActiveSupport::Multibyte::Chars</a>
+  
+    <li><a href="./ActiveSupport/Multibyte/EncodingError.html">ActiveSupport::Multibyte::EncodingError</a>
+  
+    <li><a href="./ActiveSupport/Multibyte/Unicode.html">ActiveSupport::Multibyte::Unicode</a>
+  
+    <li><a href="./ActiveSupport/Multibyte/Unicode/Codepoint.html">ActiveSupport::Multibyte::Unicode::Codepoint</a>
+  
+    <li><a href="./ActiveSupport/Multibyte/Unicode/UnicodeDatabase.html">ActiveSupport::Multibyte::Unicode::UnicodeDatabase</a>
+  
+    <li><a href="./ActiveSupport/Notifications.html">ActiveSupport::Notifications</a>
+  
+    <li><a href="./ActiveSupport/Notifications/Event.html">ActiveSupport::Notifications::Event</a>
+  
+    <li><a href="./ActiveSupport/Notifications/Fanout.html">ActiveSupport::Notifications::Fanout</a>
+  
+    <li><a href="./ActiveSupport/Notifications/Instrumenter.html">ActiveSupport::Notifications::Instrumenter</a>
+  
+    <li><a href="./ActiveSupport/OrderedOptions.html">ActiveSupport::OrderedOptions</a>
+  
+    <li><a href="./ActiveSupport/Railtie.html">ActiveSupport::Railtie</a>
+  
+    <li><a href="./ActiveSupport/Rescuable.html">ActiveSupport::Rescuable</a>
+  
+    <li><a href="./ActiveSupport/Rescuable/ClassMethods.html">ActiveSupport::Rescuable::ClassMethods</a>
+  
+    <li><a href="./ActiveSupport/SafeBuffer.html">ActiveSupport::SafeBuffer</a>
+  
+    <li><a href="./ActiveSupport/SafeBuffer/SafeConcatError.html">ActiveSupport::SafeBuffer::SafeConcatError</a>
+  
+    <li><a href="./ActiveSupport/StringInquirer.html">ActiveSupport::StringInquirer</a>
+  
+    <li><a href="./ActiveSupport/TestCase.html">ActiveSupport::TestCase</a>
+  
+    <li><a href="./ActiveSupport/Testing.html">ActiveSupport::Testing</a>
+  
+    <li><a href="./ActiveSupport/Testing/Assertions.html">ActiveSupport::Testing::Assertions</a>
+  
+    <li><a href="./ActiveSupport/Testing/Declarative.html">ActiveSupport::Testing::Declarative</a>
+  
+    <li><a href="./ActiveSupport/Testing/Isolation.html">ActiveSupport::Testing::Isolation</a>
+  
+    <li><a href="./ActiveSupport/Testing/Isolation/Forking.html">ActiveSupport::Testing::Isolation::Forking</a>
+  
+    <li><a href="./ActiveSupport/Testing/Isolation/MiniTest.html">ActiveSupport::Testing::Isolation::MiniTest</a>
+  
+    <li><a href="./ActiveSupport/Testing/Isolation/Subprocess.html">ActiveSupport::Testing::Isolation::Subprocess</a>
+  
+    <li><a href="./ActiveSupport/Testing/Isolation/TestUnit.html">ActiveSupport::Testing::Isolation::TestUnit</a>
+  
+    <li><a href="./ActiveSupport/Testing/Pending.html">ActiveSupport::Testing::Pending</a>
+  
+    <li><a href="./ActiveSupport/Testing/Performance.html">ActiveSupport::Testing::Performance</a>
+  
+    <li><a href="./ActiveSupport/Testing/Performance/Benchmarker.html">ActiveSupport::Testing::Performance::Benchmarker</a>
+  
+    <li><a href="./ActiveSupport/Testing/Performance/ForClassicTestUnit.html">ActiveSupport::Testing::Performance::ForClassicTestUnit</a>
+  
+    <li><a href="./ActiveSupport/Testing/Performance/ForMiniTest.html">ActiveSupport::Testing::Performance::ForMiniTest</a>
+  
+    <li><a href="./ActiveSupport/Testing/Performance/Metrics.html">ActiveSupport::Testing::Performance::Metrics</a>
+  
+    <li><a href="./ActiveSupport/Testing/Performance/Metrics/Amount.html">ActiveSupport::Testing::Performance::Metrics::Amount</a>
+  
+    <li><a href="./ActiveSupport/Testing/Performance/Metrics/Base.html">ActiveSupport::Testing::Performance::Metrics::Base</a>
+  
+    <li><a href="./ActiveSupport/Testing/Performance/Metrics/CpuTime.html">ActiveSupport::Testing::Performance::Metrics::CpuTime</a>
+  
+    <li><a href="./ActiveSupport/Testing/Performance/Metrics/DigitalInformationUnit.html">ActiveSupport::Testing::Performance::Metrics::DigitalInformationUnit</a>
+  
+    <li><a href="./ActiveSupport/Testing/Performance/Metrics/GcRuns.html">ActiveSupport::Testing::Performance::Metrics::GcRuns</a>
+  
+    <li><a href="./ActiveSupport/Testing/Performance/Metrics/GcTime.html">ActiveSupport::Testing::Performance::Metrics::GcTime</a>
+  
+    <li><a href="./ActiveSupport/Testing/Performance/Metrics/Memory.html">ActiveSupport::Testing::Performance::Metrics::Memory</a>
+  
+    <li><a href="./ActiveSupport/Testing/Performance/Metrics/Objects.html">ActiveSupport::Testing::Performance::Metrics::Objects</a>
+  
+    <li><a href="./ActiveSupport/Testing/Performance/Metrics/ProcessTime.html">ActiveSupport::Testing::Performance::Metrics::ProcessTime</a>
+  
+    <li><a href="./ActiveSupport/Testing/Performance/Metrics/Time.html">ActiveSupport::Testing::Performance::Metrics::Time</a>
+  
+    <li><a href="./ActiveSupport/Testing/Performance/Metrics/UserTime.html">ActiveSupport::Testing::Performance::Metrics::UserTime</a>
+  
+    <li><a href="./ActiveSupport/Testing/Performance/Metrics/WallTime.html">ActiveSupport::Testing::Performance::Metrics::WallTime</a>
+  
+    <li><a href="./ActiveSupport/Testing/Performance/Performer.html">ActiveSupport::Testing::Performance::Performer</a>
+  
+    <li><a href="./ActiveSupport/Testing/Performance/Profiler.html">ActiveSupport::Testing::Performance::Profiler</a>
+  
+    <li><a href="./ActiveSupport/Testing/ProxyTestResult.html">ActiveSupport::Testing::ProxyTestResult</a>
+  
+    <li><a href="./ActiveSupport/Testing/RemoteError.html">ActiveSupport::Testing::RemoteError</a>
+  
+    <li><a href="./ActiveSupport/Testing/SetupAndTeardown.html">ActiveSupport::Testing::SetupAndTeardown</a>
+  
+    <li><a href="./ActiveSupport/Testing/SetupAndTeardown/ClassMethods.html">ActiveSupport::Testing::SetupAndTeardown::ClassMethods</a>
+  
+    <li><a href="./ActiveSupport/Testing/SetupAndTeardown/ForClassicTestUnit.html">ActiveSupport::Testing::SetupAndTeardown::ForClassicTestUnit</a>
+  
+    <li><a href="./ActiveSupport/Testing/SetupAndTeardown/ForMiniTest.html">ActiveSupport::Testing::SetupAndTeardown::ForMiniTest</a>
+  
+    <li><a href="./ActiveSupport/TimeWithZone.html">ActiveSupport::TimeWithZone</a>
+  
+    <li><a href="./ActiveSupport/TimeZone.html">ActiveSupport::TimeZone</a>
+  
+    <li><a href="./ActiveSupport/XmlMini.html">ActiveSupport::XmlMini</a>
+  
+    <li><a href="./ActiveSupport/XmlMini_LibXMLSAX.html">ActiveSupport::XmlMini_LibXMLSAX</a>
+  
+    <li><a href="./ActiveSupport/XmlMini_LibXMLSAX/HashBuilder.html">ActiveSupport::XmlMini_LibXMLSAX::HashBuilder</a>
+  
+    <li><a href="./ActiveSupport/XmlMini_NokogiriSAX.html">ActiveSupport::XmlMini_NokogiriSAX</a>
+  
+    <li><a href="./ActiveSupport/XmlMini_NokogiriSAX/HashBuilder.html">ActiveSupport::XmlMini_NokogiriSAX::HashBuilder</a>
+  
+    <li><a href="./ActionController.html">ActionController</a>
+  
+    <li><a href="./ActionController/Base.html">ActionController::Base</a>
+  
+    <li><a href="./ActionController/Caching.html">ActionController::Caching</a>
+  
+    <li><a href="./ActionController/Caching/Actions.html">ActionController::Caching::Actions</a>
+  
+    <li><a href="./ActionController/Caching/Actions/ActionCachePath.html">ActionController::Caching::Actions::ActionCachePath</a>
+  
+    <li><a href="./ActionController/Caching/Actions/ClassMethods.html">ActionController::Caching::Actions::ClassMethods</a>
+  
+    <li><a href="./ActionController/Caching/ConfigMethods.html">ActionController::Caching::ConfigMethods</a>
+  
+    <li><a href="./ActionController/Caching/Fragments.html">ActionController::Caching::Fragments</a>
+  
+    <li><a href="./ActionController/Caching/Pages.html">ActionController::Caching::Pages</a>
+  
+    <li><a href="./ActionController/Caching/Pages/ClassMethods.html">ActionController::Caching::Pages::ClassMethods</a>
+  
+    <li><a href="./ActionController/Caching/Sweeping.html">ActionController::Caching::Sweeping</a>
+  
+    <li><a href="./ActionController/Compatibility.html">ActionController::Compatibility</a>
+  
+    <li><a href="./ActionController/ConditionalGet.html">ActionController::ConditionalGet</a>
+  
+    <li><a href="./ActionController/Cookies.html">ActionController::Cookies</a>
+  
+    <li><a href="./ActionController/DataStreaming.html">ActionController::DataStreaming</a>
+  
+    <li><a href="./ActionController/Flash.html">ActionController::Flash</a>
+  
+    <li><a href="./ActionController/ForceSSL.html">ActionController::ForceSSL</a>
+  
+    <li><a href="./ActionController/ForceSSL/ClassMethods.html">ActionController::ForceSSL::ClassMethods</a>
+  
+    <li><a href="./ActionController/Head.html">ActionController::Head</a>
+  
+    <li><a href="./ActionController/Helpers.html">ActionController::Helpers</a>
+  
+    <li><a href="./ActionController/Helpers/ClassMethods.html">ActionController::Helpers::ClassMethods</a>
+  
+    <li><a href="./ActionController/HideActions.html">ActionController::HideActions</a>
+  
+    <li><a href="./ActionController/HideActions/ClassMethods.html">ActionController::HideActions::ClassMethods</a>
+  
+    <li><a href="./ActionController/HttpAuthentication.html">ActionController::HttpAuthentication</a>
+  
+    <li><a href="./ActionController/HttpAuthentication/Basic.html">ActionController::HttpAuthentication::Basic</a>
+  
+    <li><a href="./ActionController/HttpAuthentication/Basic/ControllerMethods.html">ActionController::HttpAuthentication::Basic::ControllerMethods</a>
+  
+    <li><a href="./ActionController/HttpAuthentication/Basic/ControllerMethods/ClassMethods.html">ActionController::HttpAuthentication::Basic::ControllerMethods::ClassMethods</a>
+  
+    <li><a href="./ActionController/HttpAuthentication/Digest.html">ActionController::HttpAuthentication::Digest</a>
+  
+    <li><a href="./ActionController/HttpAuthentication/Digest/ControllerMethods.html">ActionController::HttpAuthentication::Digest::ControllerMethods</a>
+  
+    <li><a href="./ActionController/HttpAuthentication/Token.html">ActionController::HttpAuthentication::Token</a>
+  
+    <li><a href="./ActionController/HttpAuthentication/Token/ControllerMethods.html">ActionController::HttpAuthentication::Token::ControllerMethods</a>
+  
+    <li><a href="./ActionController/ImplicitRender.html">ActionController::ImplicitRender</a>
+  
+    <li><a href="./ActionController/Instrumentation.html">ActionController::Instrumentation</a>
+  
+    <li><a href="./ActionController/Instrumentation/ClassMethods.html">ActionController::Instrumentation::ClassMethods</a>
+  
+    <li><a href="./ActionController/LogSubscriber.html">ActionController::LogSubscriber</a>
+  
+    <li><a href="./ActionController/Metal.html">ActionController::Metal</a>
+  
+    <li><a href="./ActionController/Middleware.html">ActionController::Middleware</a>
+  
+    <li><a href="./ActionController/Middleware/ActionMiddleware.html">ActionController::Middleware::ActionMiddleware</a>
+  
+    <li><a href="./ActionController/MimeResponds.html">ActionController::MimeResponds</a>
+  
+    <li><a href="./ActionController/MimeResponds/ClassMethods.html">ActionController::MimeResponds::ClassMethods</a>
+  
+    <li><a href="./ActionController/ParamsWrapper.html">ActionController::ParamsWrapper</a>
+  
+    <li><a href="./ActionController/ParamsWrapper/ClassMethods.html">ActionController::ParamsWrapper::ClassMethods</a>
+  
+    <li><a href="./ActionController/RackDelegation.html">ActionController::RackDelegation</a>
+  
+    <li><a href="./ActionController/Railtie.html">ActionController::Railtie</a>
+  
+    <li><a href="./ActionController/Railties.html">ActionController::Railties</a>
+  
+    <li><a href="./ActionController/Railties/Paths.html">ActionController::Railties::Paths</a>
+  
+    <li><a href="./ActionController/RecordIdentifier.html">ActionController::RecordIdentifier</a>
+  
+    <li><a href="./ActionController/Redirecting.html">ActionController::Redirecting</a>
+  
+    <li><a href="./ActionController/Renderers.html">ActionController::Renderers</a>
+  
+    <li><a href="./ActionController/Renderers/All.html">ActionController::Renderers::All</a>
+  
+    <li><a href="./ActionController/Renderers/ClassMethods.html">ActionController::Renderers::ClassMethods</a>
+  
+    <li><a href="./ActionController/Rendering.html">ActionController::Rendering</a>
+  
+    <li><a href="./ActionController/RequestForgeryProtection.html">ActionController::RequestForgeryProtection</a>
+  
+    <li><a href="./ActionController/RequestForgeryProtection/ClassMethods.html">ActionController::RequestForgeryProtection::ClassMethods</a>
+  
+    <li><a href="./ActionController/Rescue.html">ActionController::Rescue</a>
+  
+    <li><a href="./ActionController/Responder.html">ActionController::Responder</a>
+  
+    <li><a href="./ActionController/SessionManagement.html">ActionController::SessionManagement</a>
+  
+    <li><a href="./ActionController/SessionManagement/ClassMethods.html">ActionController::SessionManagement::ClassMethods</a>
+  
+    <li><a href="./ActionController/Streaming.html">ActionController::Streaming</a>
+  
+    <li><a href="./ActionController/Streaming/ClassMethods.html">ActionController::Streaming::ClassMethods</a>
+  
+    <li><a href="./ActionController/TemplateAssertions.html">ActionController::TemplateAssertions</a>
+  
+    <li><a href="./ActionController/TestCase.html">ActionController::TestCase</a>
+  
+    <li><a href="./ActionController/TestCase/Behavior.html">ActionController::TestCase::Behavior</a>
+  
+    <li><a href="./ActionController/TestCase/Behavior/ClassMethods.html">ActionController::TestCase::Behavior::ClassMethods</a>
+  
+    <li><a href="./ActionController/TestCase/RaiseActionExceptions.html">ActionController::TestCase::RaiseActionExceptions</a>
+  
+    <li><a href="./ActionController/TestResponse.html">ActionController::TestResponse</a>
+  
+    <li><a href="./ActionController/Testing.html">ActionController::Testing</a>
+  
+    <li><a href="./ActionController/Testing/ClassMethods.html">ActionController::Testing::ClassMethods</a>
+  
+    <li><a href="./ActionController/UrlFor.html">ActionController::UrlFor</a>
+  
+    <li><a href="./ActionView.html">ActionView</a>
+  
+    <li><a href="./ActionView/Base.html">ActionView::Base</a>
+  
+    <li><a href="./ActionView/Context.html">ActionView::Context</a>
+  
+    <li><a href="./ActionView/FileSystemResolver.html">ActionView::FileSystemResolver</a>
+  
+    <li><a href="./ActionView/FixtureResolver.html">ActionView::FixtureResolver</a>
+  
+    <li><a href="./ActionView/Helpers.html">ActionView::Helpers</a>
+  
+    <li><a href="./ActionView/Helpers/ActiveModelHelper.html">ActionView::Helpers::ActiveModelHelper</a>
+  
+    <li><a href="./ActionView/Helpers/ActiveModelInstanceTag.html">ActionView::Helpers::ActiveModelInstanceTag</a>
+  
+    <li><a href="./ActionView/AssetPaths.html">ActionView::Helpers::AssetPaths</a>
+  
+    <li><a href="./ActionView/Helpers/AssetTagHelper.html">ActionView::Helpers::AssetTagHelper</a>
+  
+    <li><a href="./ActionView/Helpers/AssetTagHelper/AssetIncludeTag.html">ActionView::Helpers::AssetTagHelper::AssetIncludeTag</a>
+  
+    <li><a href="./ActionView/Helpers/AssetTagHelper/JavascriptIncludeTag.html">ActionView::Helpers::AssetTagHelper::JavascriptIncludeTag</a>
+  
+    <li><a href="./ActionView/Helpers/AssetTagHelper/JavascriptTagHelpers.html">ActionView::Helpers::AssetTagHelper::JavascriptTagHelpers</a>
+  
+    <li><a href="./ActionView/Helpers/AssetTagHelper/JavascriptTagHelpers/ClassMethods.html">ActionView::Helpers::AssetTagHelper::JavascriptTagHelpers::ClassMethods</a>
+  
+    <li><a href="./ActionView/Helpers/AssetTagHelper/StylesheetIncludeTag.html">ActionView::Helpers::AssetTagHelper::StylesheetIncludeTag</a>
+  
+    <li><a href="./ActionView/Helpers/AssetTagHelper/StylesheetTagHelpers.html">ActionView::Helpers::AssetTagHelper::StylesheetTagHelpers</a>
+  
+    <li><a href="./ActionView/Helpers/AssetTagHelper/StylesheetTagHelpers/ClassMethods.html">ActionView::Helpers::AssetTagHelper::StylesheetTagHelpers::ClassMethods</a>
+  
+    <li><a href="./ActionView/Helpers/AtomFeedHelper.html">ActionView::Helpers::AtomFeedHelper</a>
+  
+    <li><a href="./ActionView/Helpers/AtomFeedHelper/AtomBuilder.html">ActionView::Helpers::AtomFeedHelper::AtomBuilder</a>
+  
+    <li><a href="./ActionView/Helpers/AtomFeedHelper/AtomFeedBuilder.html">ActionView::Helpers::AtomFeedHelper::AtomFeedBuilder</a>
+  
+    <li><a href="./ActionView/Helpers/CacheHelper.html">ActionView::Helpers::CacheHelper</a>
+  
+    <li><a href="./ActionView/Helpers/CaptureHelper.html">ActionView::Helpers::CaptureHelper</a>
+  
+    <li><a href="./ActionView/Helpers/CsrfHelper.html">ActionView::Helpers::CsrfHelper</a>
+  
+    <li><a href="./ActionView/Helpers/DateHelper.html">ActionView::Helpers::DateHelper</a>
+  
+    <li><a href="./ActionView/Helpers/DebugHelper.html">ActionView::Helpers::DebugHelper</a>
+  
+    <li><a href="./ActionView/Helpers/FormBuilder.html">ActionView::Helpers::FormBuilder</a>
+  
+    <li><a href="./ActionView/Helpers/FormHelper.html">ActionView::Helpers::FormHelper</a>
+  
+    <li><a href="./ActionView/Helpers/FormOptionsHelper.html">ActionView::Helpers::FormOptionsHelper</a>
+  
+    <li><a href="./ActionView/Helpers/FormTagHelper.html">ActionView::Helpers::FormTagHelper</a>
+  
+    <li><a href="./ActionView/Helpers/InstanceTag.html">ActionView::Helpers::InstanceTag</a>
+  
+    <li><a href="./ActionView/Helpers/JavaScriptHelper.html">ActionView::Helpers::JavaScriptHelper</a>
+  
+    <li><a href="./ActionView/Helpers/NumberHelper.html">ActionView::Helpers::NumberHelper</a>
+  
+    <li><a href="./ActionView/Helpers/NumberHelper/InvalidNumberError.html">ActionView::Helpers::NumberHelper::InvalidNumberError</a>
+  
+    <li><a href="./ActionView/Helpers/OutputSafetyHelper.html">ActionView::Helpers::OutputSafetyHelper</a>
+  
+    <li><a href="./ActionView/Helpers/RecordTagHelper.html">ActionView::Helpers::RecordTagHelper</a>
+  
+    <li><a href="./ActionView/Helpers/RenderingHelper.html">ActionView::Helpers::RenderingHelper</a>
+  
+    <li><a href="./ActionView/Helpers/SanitizeHelper.html">ActionView::Helpers::SanitizeHelper</a>
+  
+    <li><a href="./ActionView/Helpers/TagHelper.html">ActionView::Helpers::TagHelper</a>
+  
+    <li><a href="./ActionView/Helpers/TextHelper.html">ActionView::Helpers::TextHelper</a>
+  
+    <li><a href="./ActionView/Helpers/TranslationHelper.html">ActionView::Helpers::TranslationHelper</a>
+  
+    <li><a href="./ActionView/Helpers/UrlHelper.html">ActionView::Helpers::UrlHelper</a>
+  
+    <li><a href="./ActionView/LogSubscriber.html">ActionView::LogSubscriber</a>
+  
+    <li><a href="./ActionView/LookupContext.html">ActionView::LookupContext</a>
+  
+    <li><a href="./ActionView/LookupContext/Details.html">ActionView::LookupContext::Details</a>
+  
+    <li><a href="./ActionView/LookupContext/ViewPaths.html">ActionView::LookupContext::ViewPaths</a>
+  
+    <li><a href="./ActionView/NullResolver.html">ActionView::NullResolver</a>
+  
+    <li><a href="./ActionView/Railtie.html">ActionView::Railtie</a>
+  
+    <li><a href="./ActionView/Renderer.html">ActionView::Renderer</a>
+  
+    <li><a href="./ActionView/Resolver.html">ActionView::Resolver</a>
+  
+    <li><a href="./ActionView/Resolver/Path.html">ActionView::Resolver::Path</a>
+  
+    <li><a href="./ActionView/Template.html">ActionView::Template</a>
+  
+    <li><a href="./ActionView/Template/ActionView.html">ActionView::Template::ActionView</a>
+  
+    <li><a href="./ActionView/Template/ActionView/Template.html">ActionView::Template::ActionView::Template</a>
+  
+    <li><a href="./ActionView/Template/ActionView/Template/Template.html">ActionView::Template::ActionView::Template::Template</a>
+  
+    <li><a href="./ActionView/Template/ActionView/Template/Template/Handler.html">ActionView::Template::ActionView::Template::Template::Handler</a>
+  
+    <li><a href="./ActionView/Template/Handlers.html">ActionView::Template::Handlers</a>
+  
+    <li><a href="./ActionView/Template/Handlers/Builder.html">ActionView::Template::Handlers::Builder</a>
+  
+    <li><a href="./ActionView/Template/Handlers/Compilable.html">ActionView::Template::Handlers::Compilable</a>
+  
+    <li><a href="./ActionView/Template/Handlers/Compilable/ClassMethods.html">ActionView::Template::Handlers::Compilable::ClassMethods</a>
+  
+    <li><a href="./ActionView/Template/Handlers/ERB.html">ActionView::Template::Handlers::ERB</a>
+  
+    <li><a href="./ActionView/Template/Handlers/Erubis.html">ActionView::Template::Handlers::Erubis</a>
+  
+    <li><a href="./ActionView/TestCase.html">ActionView::TestCase</a>
+  
+    <li><a href="./ActionView/TestCase/Behavior.html">ActionView::TestCase::Behavior</a>
+  
+    <li><a href="./ActionView/TestCase/Behavior/ClassMethods.html">ActionView::TestCase::Behavior::ClassMethods</a>
+  
+    <li><a href="./ActionView/TestCase/Behavior/Locals.html">ActionView::TestCase::Behavior::Locals</a>
+  
+    <li><a href="./ActionView/TestCase/TestController.html">ActionView::TestCase::TestController</a>
+  
+    <li><a href="./ActiveModel.html">ActiveModel</a>
+  
+    <li><a href="./ActiveModel/AttributeMethods.html">ActiveModel::AttributeMethods</a>
+  
+    <li><a href="./ActiveModel/AttributeMethods/ClassMethods.html">ActiveModel::AttributeMethods::ClassMethods</a>
+  
+    <li><a href="./ActiveModel/AttributeMethods/ClassMethods/AttributeMethodMatcher.html">ActiveModel::AttributeMethods::ClassMethods::AttributeMethodMatcher</a>
+  
+    <li><a href="./ActiveModel/BlockValidator.html">ActiveModel::BlockValidator</a>
+  
+    <li><a href="./ActiveModel/Callbacks.html">ActiveModel::Callbacks</a>
+  
+    <li><a href="./ActiveModel/Conversion.html">ActiveModel::Conversion</a>
+  
+    <li><a href="./ActiveModel/Dirty.html">ActiveModel::Dirty</a>
+  
+    <li><a href="./ActiveModel/EachValidator.html">ActiveModel::EachValidator</a>
+  
+    <li><a href="./ActiveModel/Errors.html">ActiveModel::Errors</a>
+  
+    <li><a href="./ActiveModel/Lint.html">ActiveModel::Lint</a>
+  
+    <li><a href="./ActiveModel/Lint/Tests.html">ActiveModel::Lint::Tests</a>
+  
+    <li><a href="./ActiveModel/MassAssignmentSecurity.html">ActiveModel::MassAssignmentSecurity</a>
+  
+    <li><a href="./ActiveModel/MassAssignmentSecurity/BlackList.html">ActiveModel::MassAssignmentSecurity::BlackList</a>
+  
+    <li><a href="./ActiveModel/MassAssignmentSecurity/ClassMethods.html">ActiveModel::MassAssignmentSecurity::ClassMethods</a>
+  
+    <li><a href="./ActiveModel/MassAssignmentSecurity/PermissionSet.html">ActiveModel::MassAssignmentSecurity::PermissionSet</a>
+  
+    <li><a href="./ActiveModel/MassAssignmentSecurity/Sanitizer.html">ActiveModel::MassAssignmentSecurity::Sanitizer</a>
+  
+    <li><a href="./ActiveModel/MassAssignmentSecurity/WhiteList.html">ActiveModel::MassAssignmentSecurity::WhiteList</a>
+  
+    <li><a href="./ActiveModel/MissingAttributeError.html">ActiveModel::MissingAttributeError</a>
+  
+    <li><a href="./ActiveModel/Name.html">ActiveModel::Name</a>
+  
+    <li><a href="./ActiveModel/Naming.html">ActiveModel::Naming</a>
+  
+    <li><a href="./ActiveModel/Observer.html">ActiveModel::Observer</a>
+  
+    <li><a href="./ActiveModel/ObserverArray.html">ActiveModel::ObserverArray</a>
+  
+    <li><a href="./ActiveModel/Observing.html">ActiveModel::Observing</a>
+  
+    <li><a href="./ActiveModel/Observing/ClassMethods.html">ActiveModel::Observing::ClassMethods</a>
+  
+    <li><a href="./ActiveModel/SecurePassword.html">ActiveModel::SecurePassword</a>
+  
+    <li><a href="./ActiveModel/SecurePassword/ClassMethods.html">ActiveModel::SecurePassword::ClassMethods</a>
+  
+    <li><a href="./ActiveModel/SecurePassword/InstanceMethodsOnActivation.html">ActiveModel::SecurePassword::InstanceMethodsOnActivation</a>
+  
+    <li><a href="./ActiveModel/Serialization.html">ActiveModel::Serialization</a>
+  
+    <li><a href="./ActiveModel/Serializers.html">ActiveModel::Serializers</a>
+  
+    <li><a href="./ActiveModel/Serializers/JSON.html">ActiveModel::Serializers::JSON</a>
+  
+    <li><a href="./ActiveModel/Serializers/Xml.html">ActiveModel::Serializers::Xml</a>
+  
+    <li><a href="./ActiveModel/Translation.html">ActiveModel::Translation</a>
+  
+    <li><a href="./ActiveModel/Validations.html">ActiveModel::Validations</a>
+  
+    <li><a href="./ActiveModel/Validations/AcceptanceValidator.html">ActiveModel::Validations::AcceptanceValidator</a>
+  
+    <li><a href="./ActiveModel/Validations/Callbacks.html">ActiveModel::Validations::Callbacks</a>
+  
+    <li><a href="./ActiveModel/Validations/Callbacks/ClassMethods.html">ActiveModel::Validations::Callbacks::ClassMethods</a>
+  
+    <li><a href="./ActiveModel/Validations/ClassMethods.html">ActiveModel::Validations::ClassMethods</a>
+  
+    <li><a href="./ActiveModel/Validations/ConfirmationValidator.html">ActiveModel::Validations::ConfirmationValidator</a>
+  
+    <li><a href="./ActiveModel/Validations/ExclusionValidator.html">ActiveModel::Validations::ExclusionValidator</a>
+  
+    <li><a href="./ActiveModel/Validations/FormatValidator.html">ActiveModel::Validations::FormatValidator</a>
+  
+    <li><a href="./ActiveModel/Validations/HelperMethods.html">ActiveModel::Validations::HelperMethods</a>
+  
+    <li><a href="./ActiveModel/Validations/InclusionValidator.html">ActiveModel::Validations::InclusionValidator</a>
+  
+    <li><a href="./ActiveModel/Validations/LengthValidator.html">ActiveModel::Validations::LengthValidator</a>
+  
+    <li><a href="./ActiveModel/Validations/NumericalityValidator.html">ActiveModel::Validations::NumericalityValidator</a>
+  
+    <li><a href="./ActiveModel/Validations/PresenceValidator.html">ActiveModel::Validations::PresenceValidator</a>
+  
+    <li><a href="./ActiveModel/Validations/WithValidator.html">ActiveModel::Validations::WithValidator</a>
+  
+    <li><a href="./ActiveModel/Validator.html">ActiveModel::Validator</a>
+  
+    <li><a href="./ActiveResource.html">ActiveResource</a>
+  
+    <li><a href="./ActiveResource/BadRequest.html">ActiveResource::BadRequest</a>
+  
+    <li><a href="./ActiveResource/Base.html">ActiveResource::Base</a>
+  
+    <li><a href="./ActiveResource/ClientError.html">ActiveResource::ClientError</a>
+  
+    <li><a href="./ActiveResource/Connection.html">ActiveResource::Connection</a>
+  
+    <li><a href="./ActiveResource/CustomMethods.html">ActiveResource::CustomMethods</a>
+  
+    <li><a href="./ActiveResource/CustomMethods/ClassMethods.html">ActiveResource::CustomMethods::ClassMethods</a>
+  
+    <li><a href="./ActiveResource/CustomMethods/InstanceMethods.html">ActiveResource::CustomMethods::InstanceMethods</a>
+  
+    <li><a href="./ActiveResource/Errors.html">ActiveResource::Errors</a>
+  
+    <li><a href="./ActiveResource/ForbiddenAccess.html">ActiveResource::ForbiddenAccess</a>
+  
+    <li><a href="./ActiveResource/Formats.html">ActiveResource::Formats</a>
+  
+    <li><a href="./ActiveResource/Formats/JsonFormat.html">ActiveResource::Formats::JsonFormat</a>
+  
+    <li><a href="./ActiveResource/Formats/XmlFormat.html">ActiveResource::Formats::XmlFormat</a>
+  
+    <li><a href="./ActiveResource/HttpMock.html">ActiveResource::HttpMock</a>
+  
+    <li><a href="./ActiveResource/InvalidRequestError.html">ActiveResource::InvalidRequestError</a>
+  
+    <li><a href="./ActiveResource/LogSubscriber.html">ActiveResource::LogSubscriber</a>
+  
+    <li><a href="./ActiveResource/MissingPrefixParam.html">ActiveResource::MissingPrefixParam</a>
+  
+    <li><a href="./ActiveResource/Observing.html">ActiveResource::Observing</a>
+  
+    <li><a href="./ActiveResource/Railtie.html">ActiveResource::Railtie</a>
+  
+    <li><a href="./ActiveResource/Request.html">ActiveResource::Request</a>
+  
+    <li><a href="./ActiveResource/ResourceConflict.html">ActiveResource::ResourceConflict</a>
+  
+    <li><a href="./ActiveResource/ResourceGone.html">ActiveResource::ResourceGone</a>
+  
+    <li><a href="./ActiveResource/ResourceNotFound.html">ActiveResource::ResourceNotFound</a>
+  
+    <li><a href="./ActiveResource/Response.html">ActiveResource::Response</a>
+  
+    <li><a href="./ActiveResource/SSLError.html">ActiveResource::SSLError</a>
+  
+    <li><a href="./ActiveResource/ServerError.html">ActiveResource::ServerError</a>
+  
+    <li><a href="./ActiveResource/TimeoutError.html">ActiveResource::TimeoutError</a>
+  
+    <li><a href="./ActiveResource/UnauthorizedAccess.html">ActiveResource::UnauthorizedAccess</a>
+  
+    <li><a href="./ActiveResource/Validations.html">ActiveResource::Validations</a>
+  
+    <li><a href="./HTML.html">HTML</a>
+  
+    <li><a href="./HTML/FullSanitizer.html">HTML::FullSanitizer</a>
+  
+    <li><a href="./HTML/LinkSanitizer.html">HTML::LinkSanitizer</a>
+  
+    <li><a href="./HTML/Sanitizer.html">HTML::Sanitizer</a>
+  
+    <li><a href="./HTML/Selector.html">HTML::Selector</a>
+  
+    <li><a href="./HTML/Tag.html">HTML::Tag</a>
+  
+    <li><a href="./HTML/WhiteListSanitizer.html">HTML::WhiteListSanitizer</a>
+  
+    <li><a href="./Mysql.html">Mysql</a>
+  
+    <li><a href="./Mysql/Result.html">Mysql::Result</a>
+  
+    <li><a href="./Mysql/Stmt.html">Mysql::Stmt</a>
+  
+    <li><a href="./Mysql/Time.html">Mysql::Time</a>
+  
+    <li><a href="./Test.html">Test</a>
+  
+    <li><a href="./Test/Unit.html">Test::Unit</a>
+  
+    <li><a href="./Test/Unit/Collector.html">Test::Unit::Collector</a>
+  
+    <li><a href="./Test/Unit/Collector/ObjectSpace.html">Test::Unit::Collector::ObjectSpace</a>
+  
+    <li><a href="./I18n.html">I18n</a>
+  
+    <li><a href="./I18n/ExceptionHandler.html">I18n::ExceptionHandler</a>
+  
+    <li><a href="./I18n/Railtie.html">I18n::Railtie</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./ActiveSupport/HashWithIndifferentAccess.html">Object::HashWithIndifferentAccess</a>
+  
+    <li><a href="./LoadError.html">Object::MissingSourceFile</a>
+  
+    <li><a href="./ActionMailer.html">ActionMailer</a>
+  
+    <li><a href="./ActionMailer/Base.html">ActionMailer::Base</a>
+  
+    <li><a href="./ArJdbcMySQL.html">ArJdbcMySQL</a>
+  
+    <li><a href="./ArJdbcMySQL/Error.html">ArJdbcMySQL::Error</a>
+  
+    <li><a href="./ERB.html">ERB</a>
+  
+    <li><a href="./ERB/Util.html">ERB::Util</a>
+  
+    <li><a href="./LoadError.html">LoadError</a>
+  
+    <li><a href="./LoadError.html">LoadError</a>
+  
+    <li><a href="./Logger.html">Logger</a>
+  
+    <li><a href="./Logger/SimpleFormatter.html">Logger::SimpleFormatter</a>
+  
+    <li><a href="./Array.html">Array</a>
+  
+    <li><a href="./Benchmark.html">Benchmark</a>
+  
+    <li><a href="./BigDecimal.html">BigDecimal</a>
+  
+    <li><a href="./Class.html">Class</a>
+  
+    <li><a href="./Date.html">Date</a>
+  
+    <li><a href="./DateTime.html">DateTime</a>
+  
+    <li><a href="./Enumerable.html">Enumerable</a>
+  
+    <li><a href="./FalseClass.html">FalseClass</a>
+  
+    <li><a href="./File.html">File</a>
+  
+    <li><a href="./FixturesFileNotFound.html">FixturesFileNotFound</a>
+  
+    <li><a href="./Float.html">Float</a>
+  
+    <li><a href="./Hash.html">Hash</a>
+  
+    <li><a href="./Integer.html">Integer</a>
+  
+    <li><a href="./Kernel.html">Kernel</a>
+  
+    <li><a href="./Module.html">Module</a>
+  
+    <li><a href="./NameError.html">NameError</a>
+  
+    <li><a href="./NilClass.html">NilClass</a>
+  
+    <li><a href="./Numeric.html">Numeric</a>
+  
+    <li><a href="./Process.html">Process</a>
+  
+    <li><a href="./Rails.html">Rails</a>
+  
+    <li><a href="./Range.html">Range</a>
+  
+    <li><a href="./Regexp.html">Regexp</a>
+  
+    <li><a href="./String.html">String</a>
+  
+    <li><a href="./Struct.html">Struct</a>
+  
+    <li><a href="./Symbol.html">Symbol</a>
+  
+    <li><a href="./Time.html">Time</a>
+  
+    <li><a href="./TrueClass.html">TrueClass</a>
+  
+    <li><a href="./URI.html">URI</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Hash</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-from_xml" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">from_xml</span><span
+            class="method-args">(xml)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="from_xml-source">
+            <pre><span class="ruby-comment"># File /Users/tamc/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/core_ext/hash/conversions.rb, line 89</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">from_xml</span>(<span class="ruby-identifier">xml</span>)
+  <span class="ruby-identifier">typecast_xml_value</span>(<span class="ruby-identifier">unrename_keys</span>(<span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">XmlMini</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">xml</span>)))
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- from_xml-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- from_xml-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-assert_valid_keys" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">assert_valid_keys</span><span
+            class="method-args">(*valid_keys)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Validate all keys in a hash match *valid keys, raising ArgumentError on a
+mismatch. Note that keys are NOT treated indifferently, meaning if you use
+strings for keys but assert symbols as keys, this will fail.</p>
+
+<h4 id="method-i-assert_valid_keys-label-Examples">Examples</h4>
+
+<pre class="ruby">{ :<span class="ruby-identifier">name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Rob&quot;</span>, :<span class="ruby-identifier">years</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;28&quot;</span> }.<span class="ruby-identifier">assert_valid_keys</span>(:<span class="ruby-identifier">name</span>, :<span class="ruby-identifier">age</span>) <span class="ruby-comment"># =&gt; raises &quot;ArgumentError: Unknown key: years&quot;</span>
+{ :<span class="ruby-identifier">name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Rob&quot;</span>, :<span class="ruby-identifier">age</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;28&quot;</span> }.<span class="ruby-identifier">assert_valid_keys</span>(<span class="ruby-string">&quot;name&quot;</span>, <span class="ruby-string">&quot;age&quot;</span>) <span class="ruby-comment"># =&gt; raises &quot;ArgumentError: Unknown key: name&quot;</span>
+{ :<span class="ruby-identifier">name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Rob&quot;</span>, :<span class="ruby-identifier">age</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;28&quot;</span> }.<span class="ruby-identifier">assert_valid_keys</span>(:<span class="ruby-identifier">name</span>, :<span class="ruby-identifier">age</span>) <span class="ruby-comment"># =&gt; passes, raises nothing</span>
+</pre>
+          
+
+          
+          <div class="method-source-code" id="assert_valid_keys-source">
+            <pre><span class="ruby-comment"># File /Users/tamc/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/core_ext/hash/keys.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">assert_valid_keys</span>(*<span class="ruby-identifier">valid_keys</span>)
+  <span class="ruby-identifier">valid_keys</span>.<span class="ruby-identifier">flatten!</span>
+  <span class="ruby-identifier">each_key</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">raise</span>(<span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;Unknown key: #{k}&quot;</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">valid_keys</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">k</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- assert_valid_keys-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- assert_valid_keys-method -->
+
+    
+      <div id="method-i-deep_dup" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">deep_dup</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a deep copy of hash.</p>
+          
+
+          
+          <div class="method-source-code" id="deep_dup-source">
+            <pre><span class="ruby-comment"># File /Users/tamc/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/core_ext/hash/deep_dup.rb, line 3</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">deep_dup</span>
+  <span class="ruby-identifier">duplicate</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">dup</span>
+  <span class="ruby-identifier">duplicate</span>.<span class="ruby-identifier">each_pair</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">tv</span> = <span class="ruby-identifier">duplicate</span>[<span class="ruby-identifier">k</span>]
+    <span class="ruby-identifier">duplicate</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-identifier">tv</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">tv</span>.<span class="ruby-identifier">deep_dup</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">v</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">duplicate</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- deep_dup-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- deep_dup-method -->
+
+    
+      <div id="method-i-deep_merge" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">deep_merge</span><span
+            class="method-args">(other_hash)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a new hash with <code>self</code> and <code>other_hash</code>
+merged recursively.</p>
+          
+
+          
+          <div class="method-source-code" id="deep_merge-source">
+            <pre><span class="ruby-comment"># File /Users/tamc/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/core_ext/hash/deep_merge.rb, line 3</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">deep_merge</span>(<span class="ruby-identifier">other_hash</span>)
+  <span class="ruby-identifier">dup</span>.<span class="ruby-identifier">deep_merge!</span>(<span class="ruby-identifier">other_hash</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- deep_merge-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- deep_merge-method -->
+
+    
+      <div id="method-i-deep_merge-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">deep_merge!</span><span
+            class="method-args">(other_hash)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a new hash with <code>self</code> and <code>other_hash</code>
+merged recursively. Modifies the receiver in place.</p>
+          
+
+          
+          <div class="method-source-code" id="deep_merge-21-source">
+            <pre><span class="ruby-comment"># File /Users/tamc/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/core_ext/hash/deep_merge.rb, line 9</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">deep_merge!</span>(<span class="ruby-identifier">other_hash</span>)
+  <span class="ruby-identifier">other_hash</span>.<span class="ruby-identifier">each_pair</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">tv</span> = <span class="ruby-keyword">self</span>[<span class="ruby-identifier">k</span>]
+    <span class="ruby-keyword">self</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-identifier">tv</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">tv</span>.<span class="ruby-identifier">deep_merge</span>(<span class="ruby-identifier">v</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">v</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- deep_merge-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- deep_merge-21-method -->
+
+    
+      <div id="method-i-diff" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">diff</span><span
+            class="method-args">(h2)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a hash that represents the difference between two hashes.</p>
+
+<p>Examples:</p>
+
+<pre class="ruby">{<span class="ruby-value">1</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">2</span>}.<span class="ruby-identifier">diff</span>(<span class="ruby-value">1</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">2</span>)         <span class="ruby-comment"># =&gt; {}</span>
+{<span class="ruby-value">1</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">2</span>}.<span class="ruby-identifier">diff</span>(<span class="ruby-value">1</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">3</span>)         <span class="ruby-comment"># =&gt; {1 =&gt; 2}</span>
+{}.<span class="ruby-identifier">diff</span>(<span class="ruby-value">1</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">2</span>)               <span class="ruby-comment"># =&gt; {1 =&gt; 2}</span>
+{<span class="ruby-value">1</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">2</span>, <span class="ruby-value">3</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">4</span>}.<span class="ruby-identifier">diff</span>(<span class="ruby-value">1</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">2</span>) <span class="ruby-comment"># =&gt; {3 =&gt; 4}</span>
+</pre>
+          
+
+          
+          <div class="method-source-code" id="diff-source">
+            <pre><span class="ruby-comment"># File /Users/tamc/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/core_ext/hash/diff.rb, line 10</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">diff</span>(<span class="ruby-identifier">h2</span>)
+  <span class="ruby-identifier">dup</span>.<span class="ruby-identifier">delete_if</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">h2</span>[<span class="ruby-identifier">k</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">v</span> }.<span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">h2</span>.<span class="ruby-identifier">dup</span>.<span class="ruby-identifier">delete_if</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">k</span>) })
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- diff-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- diff-method -->
+
+    
+      <div id="method-i-encode_json" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">encode_json</span><span
+            class="method-args">(encoder)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="encode_json-source">
+            <pre><span class="ruby-comment"># File /Users/tamc/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/json/encoding.rb, line 248</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">encode_json</span>(<span class="ruby-identifier">encoder</span>)
+  <span class="ruby-comment"># values are encoded with use_options = false, because we don't want hash representations from ActiveModel to be</span>
+  <span class="ruby-comment"># processed once again with as_json with options, as this could cause unexpected results (i.e. missing fields);</span>
+
+  <span class="ruby-comment"># on the other hand, we need to run as_json on the elements, because the model representation may contain fields</span>
+  <span class="ruby-comment"># like Time/Date in their original (not jsonified) form, etc.</span>
+
+  <span class="ruby-node">&quot;{#{map { |k,v| &quot;#{encoder.encode(k.to_s)}:#{encoder.encode(v, false)}&quot; } * ','}}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- encode_json-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- encode_json-method -->
+
+    
+      <div id="method-i-except" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">except</span><span
+            class="method-args">(*keys)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return a hash that includes everything but the given keys. This is useful
+for limiting a set of parameters to everything but a few known toggles:</p>
+
+<pre>@person.update_attributes(params[:person].except(:admin))</pre>
+
+<p>If the receiver responds to <code>convert_key</code>, the method is called
+on each of the arguments. This allows <code>except</code> to play nice with
+hashes with indifferent access for instance:</p>
+
+<pre class="ruby">{:<span class="ruby-identifier">a</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>}.<span class="ruby-identifier">with_indifferent_access</span>.<span class="ruby-identifier">except</span>(:<span class="ruby-identifier">a</span>)  <span class="ruby-comment"># =&gt; {}</span>
+{:<span class="ruby-identifier">a</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>}.<span class="ruby-identifier">with_indifferent_access</span>.<span class="ruby-identifier">except</span>(<span class="ruby-string">&quot;a&quot;</span>) <span class="ruby-comment"># =&gt; {}</span>
+</pre>
+          
+
+          
+          <div class="method-source-code" id="except-source">
+            <pre><span class="ruby-comment"># File /Users/tamc/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/core_ext/hash/except.rb, line 14</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">except</span>(*<span class="ruby-identifier">keys</span>)
+  <span class="ruby-identifier">dup</span>.<span class="ruby-identifier">except!</span>(*<span class="ruby-identifier">keys</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- except-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- except-method -->
+
+    
+      <div id="method-i-except-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">except!</span><span
+            class="method-args">(*keys)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Replaces the hash without the given keys.</p>
+          
+
+          
+          <div class="method-source-code" id="except-21-source">
+            <pre><span class="ruby-comment"># File /Users/tamc/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/core_ext/hash/except.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">except!</span>(*<span class="ruby-identifier">keys</span>)
+  <span class="ruby-identifier">keys</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span> <span class="ruby-identifier">delete</span>(<span class="ruby-identifier">key</span>) }
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- except-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- except-21-method -->
+
+    
+      <div id="method-i-extract-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">extract!</span><span
+            class="method-args">(*keys)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Removes and returns the key/value pairs matching the given keys.</p>
+
+<pre class="ruby">{:<span class="ruby-identifier">a</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>, :<span class="ruby-identifier">b</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">2</span>, :<span class="ruby-identifier">c</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">3</span>, :<span class="ruby-identifier">d</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">4</span>}.<span class="ruby-identifier">extract!</span>(:<span class="ruby-identifier">a</span>, :<span class="ruby-identifier">b</span>) <span class="ruby-comment"># =&gt; {:a =&gt; 1, :b =&gt; 2}</span>
+</pre>
+          
+
+          
+          <div class="method-source-code" id="extract-21-source">
+            <pre><span class="ruby-comment"># File /Users/tamc/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/core_ext/hash/slice.rb, line 35</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">extract!</span>(*<span class="ruby-identifier">keys</span>)
+  <span class="ruby-identifier">result</span> = {}
+  <span class="ruby-identifier">keys</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span> <span class="ruby-identifier">result</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-identifier">delete</span>(<span class="ruby-identifier">key</span>) }
+  <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- extract-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- extract-21-method -->
+
+    
+      <div id="method-i-extractable_options-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">extractable_options?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>By default, only instances of <a href="Hash.html">Hash</a> itself are
+extractable. Subclasses of <a href="Hash.html">Hash</a> may implement this
+method and return true to declare themselves as extractable. If a <a
+href="Hash.html">Hash</a> is extractable, <a
+href="Array.html#method-i-extract_options-21">Array#extract_options!</a>
+pops it from the <a href="Array.html">Array</a> when it is the last element
+of the <a href="Array.html">Array</a>.</p>
+          
+
+          
+          <div class="method-source-code" id="extractable_options-3F-source">
+            <pre><span class="ruby-comment"># File /Users/tamc/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/core_ext/array/extract_options.rb, line 7</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">extractable_options?</span>
+  <span class="ruby-identifier">instance_of?</span>(<span class="ruby-constant">Hash</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- extractable_options-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- extractable_options-3F-method -->
+
+    
+      <div id="method-i-nested_under_indifferent_access" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">nested_under_indifferent_access</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Called when object is nested under an object that receives <a
+href="Hash.html#method-i-with_indifferent_access">#with_indifferent_access</a>.
+This method will be called on the current object by the enclosing object
+and is aliased to <a
+href="Hash.html#method-i-with_indifferent_access">#with_indifferent_access</a>
+by default. Subclasses of <a href="Hash.html">Hash</a> may overwrite this
+method to return <code>self</code> if converting to an
++ActiveSupport::HashWithIndifferentAccess+ would not be desirable.</p>
+
+<pre class="ruby"><span class="ruby-identifier">b</span> = {:<span class="ruby-identifier">b</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>}
+{:<span class="ruby-identifier">a</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">b</span>}.<span class="ruby-identifier">with_indifferent_access</span>[<span class="ruby-string">&quot;a&quot;</span>] <span class="ruby-comment"># calls b.nested_under_indifferent_access</span>
+</pre>
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Hash.html#method-i-with_indifferent_access">with_indifferent_access</a>
+        </div>
+        
+      </div><!-- nested_under_indifferent_access-method -->
+
+    
+      <div id="method-i-reverse_merge" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">reverse_merge</span><span
+            class="method-args">(other_hash)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Merges the caller into <code>other_hash</code>. For example,</p>
+
+<pre class="ruby"><span class="ruby-identifier">options</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">reverse_merge</span>(:<span class="ruby-identifier">size</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">25</span>, :<span class="ruby-identifier">velocity</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">10</span>)
+</pre>
+
+<p>is equivalent to</p>
+
+<pre class="ruby"><span class="ruby-identifier">options</span> = {:<span class="ruby-identifier">size</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">25</span>, :<span class="ruby-identifier">velocity</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">10</span>}.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">options</span>)
+</pre>
+
+<p>This is particularly useful for initializing an options hash with default
+values.</p>
+          
+
+          
+          <div class="method-source-code" id="reverse_merge-source">
+            <pre><span class="ruby-comment"># File /Users/tamc/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/core_ext/hash/reverse_merge.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">reverse_merge</span>(<span class="ruby-identifier">other_hash</span>)
+  <span class="ruby-identifier">other_hash</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-keyword">self</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- reverse_merge-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- reverse_merge-method -->
+
+    
+      <div id="method-i-reverse_merge-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">reverse_merge!</span><span
+            class="method-args">(other_hash)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Destructive <code>reverse_merge</code>.</p>
+          
+
+          
+          <div class="method-source-code" id="reverse_merge-21-source">
+            <pre><span class="ruby-comment"># File /Users/tamc/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/core_ext/hash/reverse_merge.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">reverse_merge!</span>(<span class="ruby-identifier">other_hash</span>)
+  <span class="ruby-comment"># right wins if there is no left</span>
+  <span class="ruby-identifier">merge!</span>( <span class="ruby-identifier">other_hash</span> ){<span class="ruby-operator">|</span><span class="ruby-identifier">key</span>,<span class="ruby-identifier">left</span>,<span class="ruby-identifier">right</span><span class="ruby-operator">|</span> <span class="ruby-identifier">left</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- reverse_merge-21-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Hash.html#method-i-reverse_update">reverse_update</a>
+        </div>
+        
+
+        
+      </div><!-- reverse_merge-21-method -->
+
+    
+      <div id="method-i-reverse_update" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">reverse_update</span><span
+            class="method-args">(other_hash)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Hash.html#method-i-reverse_merge-21">reverse_merge!</a>
+        </div>
+        
+      </div><!-- reverse_update-method -->
+
+    
+      <div id="method-i-slice" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">slice</span><span
+            class="method-args">(*keys)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Slice a hash to include only the given keys. This is useful for limiting an
+options hash to valid keys before passing to a method:</p>
+
+<pre class="ruby"><span class="ruby-keyword">def</span> <span class="ruby-identifier">search</span>(<span class="ruby-identifier">criteria</span> = {})
+  <span class="ruby-identifier">assert_valid_keys</span>(:<span class="ruby-identifier">mass</span>, :<span class="ruby-identifier">velocity</span>, :<span class="ruby-identifier">time</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">search</span>(<span class="ruby-identifier">options</span>.<span class="ruby-identifier">slice</span>(:<span class="ruby-identifier">mass</span>, :<span class="ruby-identifier">velocity</span>, :<span class="ruby-identifier">time</span>))
+</pre>
+
+<p>If you have an array of keys you want to limit to, you should splat them:</p>
+
+<pre>valid_keys = [:mass, :velocity, :time]
+search(options.slice(*valid_keys))</pre>
+          
+
+          
+          <div class="method-source-code" id="slice-source">
+            <pre><span class="ruby-comment"># File /Users/tamc/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/core_ext/hash/slice.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">slice</span>(*<span class="ruby-identifier">keys</span>)
+  <span class="ruby-identifier">keys</span> = <span class="ruby-identifier">keys</span>.<span class="ruby-identifier">map!</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span> <span class="ruby-identifier">convert_key</span>(<span class="ruby-identifier">key</span>) } <span class="ruby-keyword">if</span> <span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:convert_key</span>)
+  <span class="ruby-identifier">hash</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">keys</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span> <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-keyword">self</span>[<span class="ruby-identifier">k</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">k</span>) }
+  <span class="ruby-identifier">hash</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- slice-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- slice-method -->
+
+    
+      <div id="method-i-slice-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">slice!</span><span
+            class="method-args">(*keys)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Replaces the hash with only the given keys. Returns a hash contained the
+removed key/value pairs</p>
+
+<pre class="ruby">{:<span class="ruby-identifier">a</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>, :<span class="ruby-identifier">b</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">2</span>, :<span class="ruby-identifier">c</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">3</span>, :<span class="ruby-identifier">d</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">4</span>}.<span class="ruby-identifier">slice!</span>(:<span class="ruby-identifier">a</span>, :<span class="ruby-identifier">b</span>) <span class="ruby-comment"># =&gt; {:c =&gt; 3, :d =&gt; 4}</span>
+</pre>
+          
+
+          
+          <div class="method-source-code" id="slice-21-source">
+            <pre><span class="ruby-comment"># File /Users/tamc/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/core_ext/hash/slice.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">slice!</span>(*<span class="ruby-identifier">keys</span>)
+  <span class="ruby-identifier">keys</span> = <span class="ruby-identifier">keys</span>.<span class="ruby-identifier">map!</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span> <span class="ruby-identifier">convert_key</span>(<span class="ruby-identifier">key</span>) } <span class="ruby-keyword">if</span> <span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:convert_key</span>)
+  <span class="ruby-identifier">omit</span> = <span class="ruby-identifier">slice</span>(*<span class="ruby-keyword">self</span>.<span class="ruby-identifier">keys</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">keys</span>)
+  <span class="ruby-identifier">hash</span> = <span class="ruby-identifier">slice</span>(*<span class="ruby-identifier">keys</span>)
+  <span class="ruby-identifier">replace</span>(<span class="ruby-identifier">hash</span>)
+  <span class="ruby-identifier">omit</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- slice-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- slice-21-method -->
+
+    
+      <div id="method-i-stringify_keys" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">stringify_keys</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return a new hash with all keys converted to strings.</p>
+          
+
+          
+          <div class="method-source-code" id="stringify_keys-source">
+            <pre><span class="ruby-comment"># File /Users/tamc/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/core_ext/hash/keys.rb, line 3</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">stringify_keys</span>
+  <span class="ruby-identifier">dup</span>.<span class="ruby-identifier">stringify_keys!</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- stringify_keys-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- stringify_keys-method -->
+
+    
+      <div id="method-i-stringify_keys-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">stringify_keys!</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Destructively convert all keys to strings.</p>
+          
+
+          
+          <div class="method-source-code" id="stringify_keys-21-source">
+            <pre><span class="ruby-comment"># File /Users/tamc/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/core_ext/hash/keys.rb, line 8</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">stringify_keys!</span>
+  <span class="ruby-identifier">keys</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">self</span>[<span class="ruby-identifier">key</span>.<span class="ruby-identifier">to_s</span>] = <span class="ruby-identifier">delete</span>(<span class="ruby-identifier">key</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- stringify_keys-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- stringify_keys-21-method -->
+
+    
+      <div id="method-i-symbolize_keys" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">symbolize_keys</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return a new hash with all keys converted to symbols, as long as they
+respond to <code>to_sym</code>.</p>
+          
+
+          
+          <div class="method-source-code" id="symbolize_keys-source">
+            <pre><span class="ruby-comment"># File /Users/tamc/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/core_ext/hash/keys.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">symbolize_keys</span>
+  <span class="ruby-identifier">dup</span>.<span class="ruby-identifier">symbolize_keys!</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- symbolize_keys-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Hash.html#method-i-to_options">to_options</a>
+        </div>
+        
+
+        
+      </div><!-- symbolize_keys-method -->
+
+    
+      <div id="method-i-symbolize_keys-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">symbolize_keys!</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Destructively convert all keys to symbols, as long as they respond to
+<code>to_sym</code>.</p>
+          
+
+          
+          <div class="method-source-code" id="symbolize_keys-21-source">
+            <pre><span class="ruby-comment"># File /Users/tamc/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/core_ext/hash/keys.rb, line 23</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">symbolize_keys!</span>
+  <span class="ruby-identifier">keys</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">self</span>[(<span class="ruby-identifier">key</span>.<span class="ruby-identifier">to_sym</span> <span class="ruby-keyword">rescue</span> <span class="ruby-identifier">key</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">key</span>] = <span class="ruby-identifier">delete</span>(<span class="ruby-identifier">key</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- symbolize_keys-21-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Hash.html#method-i-to_options-21">to_options!</a>
+        </div>
+        
+
+        
+      </div><!-- symbolize_keys-21-method -->
+
+    
+      <div id="method-i-to_options" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">to_options</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Hash.html#method-i-symbolize_keys">symbolize_keys</a>
+        </div>
+        
+      </div><!-- to_options-method -->
+
+    
+      <div id="method-i-to_options-21" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">to_options!</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Hash.html#method-i-symbolize_keys-21">symbolize_keys!</a>
+        </div>
+        
+      </div><!-- to_options-21-method -->
+
+    
+      <div id="method-i-to_param" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_param</span><span
+            class="method-args">(namespace = nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a string representation of the receiver suitable for use as a URL
+query string:</p>
+
+<pre class="ruby">{:<span class="ruby-identifier">name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'David'</span>, :<span class="ruby-identifier">nationality</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'Danish'</span>}.<span class="ruby-identifier">to_param</span>
+<span class="ruby-comment"># =&gt; &quot;name=David&amp;nationality=Danish&quot;</span>
+</pre>
+
+<p>An optional namespace can be passed to enclose the param names:</p>
+
+<pre class="ruby">{:<span class="ruby-identifier">name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'David'</span>, :<span class="ruby-identifier">nationality</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'Danish'</span>}.<span class="ruby-identifier">to_param</span>(<span class="ruby-string">'user'</span>)
+<span class="ruby-comment"># =&gt; &quot;user[name]=David&amp;user[nationality]=Danish&quot;</span>
+</pre>
+
+<p>The string pairs “key=value” that conform the query string are sorted
+lexicographically in ascending order.</p>
+
+<p>This method is also aliased as <code>to_query</code>.</p>
+          
+
+          
+          <div class="method-source-code" id="to_param-source">
+            <pre><span class="ruby-comment"># File /Users/tamc/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/core_ext/object/to_param.rb, line 50</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_param</span>(<span class="ruby-identifier">namespace</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">collect</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_query</span>(<span class="ruby-identifier">namespace</span> <span class="ruby-operator">?</span> <span class="ruby-node">&quot;#{namespace}[#{key}]&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">key</span>)
+  <span class="ruby-keyword">end</span>.<span class="ruby-identifier">sort</span> * <span class="ruby-string">'&amp;'</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- to_param-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Hash.html#method-i-to_query">to_query</a>
+        </div>
+        
+
+        
+      </div><!-- to_param-method -->
+
+    
+      <div id="method-i-to_query" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">to_query</span><span
+            class="method-args">(namespace = nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Hash.html#method-i-to_param">to_param</a>
+        </div>
+        
+      </div><!-- to_query-method -->
+
+    
+      <div id="method-i-to_xml" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_xml</span><span
+            class="method-args">(options = {}) { |builder| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a string containing an XML representation of its receiver:</p>
+
+<pre class="ruby">{<span class="ruby-string">&quot;foo&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>, <span class="ruby-string">&quot;bar&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">2</span>}.<span class="ruby-identifier">to_xml</span>
+<span class="ruby-comment"># =&gt;</span>
+<span class="ruby-comment"># &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="ruby-comment"># &lt;hash&gt;</span>
+<span class="ruby-comment">#   &lt;foo type=&quot;integer&quot;&gt;1&lt;/foo&gt;</span>
+<span class="ruby-comment">#   &lt;bar type=&quot;integer&quot;&gt;2&lt;/bar&gt;</span>
+<span class="ruby-comment"># &lt;/hash&gt;</span>
+</pre>
+
+<p>To do so, the method loops over the pairs and builds nodes that depend on
+the <em>values</em>. Given a pair <code>key</code>, <code>value</code>:</p>
+<ul><li>
+<p>If <code>value</code> is a hash there’s a recursive call with
+<code>key</code> as <code>:root</code>.</p>
+</li><li>
+<p>If <code>value</code> is an array there’s a recursive call with
+<code>key</code> as <code>:root</code>, and <code>key</code> singularized
+as <code>:children</code>.</p>
+</li><li>
+<p>If <code>value</code> is a callable object it must expect one or two
+arguments. Depending on the arity, the callable is invoked with the
+<code>options</code> hash as first argument with <code>key</code> as
+<code>:root</code>, and <code>key</code> singularized as second argument.
+The  callable can add nodes by using <code>options[:builder]</code>.</p>
+
+<pre class="ruby"><span class="ruby-string">&quot;foo&quot;</span>.<span class="ruby-identifier">to_xml</span>(<span class="ruby-identifier">lambda</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">options</span>, <span class="ruby-identifier">key</span><span class="ruby-operator">|</span> <span class="ruby-identifier">options</span>[:<span class="ruby-identifier">builder</span>].<span class="ruby-identifier">b</span>(<span class="ruby-identifier">key</span>) })
+<span class="ruby-comment"># =&gt; &quot;&lt;b&gt;foo&lt;/b&gt;&quot;</span>
+</pre>
+</li><li>
+<p>If <code>value</code> responds to <code>to_xml</code> the method is invoked
+with <code>key</code> as <code>:root</code>.</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">Foo</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">to_xml</span>(<span class="ruby-identifier">options</span>)
+    <span class="ruby-identifier">options</span>[:<span class="ruby-identifier">builder</span>].<span class="ruby-identifier">bar</span> <span class="ruby-string">&quot;fooing!&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+{:<span class="ruby-identifier">foo</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Foo</span>.<span class="ruby-identifier">new</span>}.<span class="ruby-identifier">to_xml</span>(:<span class="ruby-identifier">skip_instruct</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>)
+<span class="ruby-comment"># =&gt; &quot;&lt;hash&gt;&lt;bar&gt;fooing!&lt;/bar&gt;&lt;/hash&gt;&quot;</span>
+</pre>
+</li><li>
+<p>Otherwise, a node with <code>key</code> as tag is created with a string
+representation of <code>value</code> as text node. If <code>value</code> is
+<code>nil</code> an attribute “nil” set to “true” is added. Unless the
+option <code>:skip_types</code> exists and is true, an attribute “type” is
+added as well according to the following mapping:</p>
+
+<pre class="ruby"><span class="ruby-constant">XML_TYPE_NAMES</span> = {
+  <span class="ruby-string">&quot;Symbol&quot;</span>     =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;symbol&quot;</span>,
+  <span class="ruby-string">&quot;Fixnum&quot;</span>     =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;integer&quot;</span>,
+  <span class="ruby-string">&quot;Bignum&quot;</span>     =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;integer&quot;</span>,
+  <span class="ruby-string">&quot;BigDecimal&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;decimal&quot;</span>,
+  <span class="ruby-string">&quot;Float&quot;</span>      =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;float&quot;</span>,
+  <span class="ruby-string">&quot;TrueClass&quot;</span>  =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;boolean&quot;</span>,
+  <span class="ruby-string">&quot;FalseClass&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;boolean&quot;</span>,
+  <span class="ruby-string">&quot;Date&quot;</span>       =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;date&quot;</span>,
+  <span class="ruby-string">&quot;DateTime&quot;</span>   =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;datetime&quot;</span>,
+  <span class="ruby-string">&quot;Time&quot;</span>       =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;datetime&quot;</span>
+}
+</pre>
+</li></ul>
+
+<p>By default the root node is “hash”, but that’s configurable via the
+<code>:root</code> option.</p>
+
+<p>The default XML builder is a fresh instance of
+<code>Builder::XmlMarkup</code>. You can configure your own builder with
+the <code>:builder</code> option. The method also accepts options like
+<code>:dasherize</code> and friends, they are forwarded to the builder.</p>
+          
+
+          
+          <div class="method-source-code" id="to_xml-source">
+            <pre><span class="ruby-comment"># File /Users/tamc/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/core_ext/hash/conversions.rb, line 69</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_xml</span>(<span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">require</span> <span class="ruby-string">'active_support/builder'</span> <span class="ruby-keyword">unless</span> <span class="ruby-keyword">defined?</span>(<span class="ruby-constant">Builder</span>)
+
+  <span class="ruby-identifier">options</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">dup</span>
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:indent</span>]  <span class="ruby-operator">||=</span> <span class="ruby-value">2</span>
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:root</span>]    <span class="ruby-operator">||=</span> <span class="ruby-string">&quot;hash&quot;</span>
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:builder</span>] <span class="ruby-operator">||=</span> <span class="ruby-constant">Builder</span><span class="ruby-operator">::</span><span class="ruby-constant">XmlMarkup</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:indent</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:indent</span>])
+
+  <span class="ruby-identifier">builder</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:builder</span>]
+  <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">instruct!</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-value">:skip_instruct</span>)
+
+  <span class="ruby-identifier">root</span> = <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">XmlMini</span>.<span class="ruby-identifier">rename_key</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:root</span>].<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">options</span>)
+
+  <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">__send__</span>(<span class="ruby-value">:method_missing</span>, <span class="ruby-identifier">root</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span> <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">XmlMini</span>.<span class="ruby-identifier">to_tag</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span>, <span class="ruby-identifier">options</span>) }
+    <span class="ruby-keyword">yield</span> <span class="ruby-identifier">builder</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- to_xml-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_xml-method -->
+
+    
+      <div id="method-i-with_indifferent_access" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">with_indifferent_access</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns an +ActiveSupport::HashWithIndifferentAccess+ out of its receiver:</p>
+
+<pre class="ruby">{:<span class="ruby-identifier">a</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>}.<span class="ruby-identifier">with_indifferent_access</span>[<span class="ruby-string">&quot;a&quot;</span>] <span class="ruby-comment"># =&gt; 1</span>
+</pre>
+          
+
+          
+          <div class="method-source-code" id="with_indifferent_access-source">
+            <pre><span class="ruby-comment"># File /Users/tamc/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/core_ext/hash/indifferent_access.rb, line 9</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">with_indifferent_access</span>
+  <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">HashWithIndifferentAccess</span>.<span class="ruby-identifier">new_from_hash_copying_default</span>(<span class="ruby-keyword">self</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- with_indifferent_access-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Hash.html#method-i-nested_under_indifferent_access">nested_under_indifferent_access</a>
+        </div>
+        
+
+        
+      </div><!-- with_indifferent_access-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.10.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+
