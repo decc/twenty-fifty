@@ -1,0 +1,26 @@
+GETTING THE LATEST SOURCE CODE
+
+The source code for this project is at:
+http://github.com/tamc/twenty-fifty
+
+UPDATING THE UNDERLYING EXCEL MODEL
+The calculating engine of this tool is contained in lib/sheets. The files in this directory are ruby versions of a Microsoft Excel 2007 model, which is contained in this directory as 2050Model.xlsx.
+
+If you update the 2050Model.xlsx excel model, then you need to recreate the ruby version of that model. You also need to DELETE ALL THE DATA in the application's database.
+ 
+You can update the model by:
+1. Ensuring your 2050Model.xlsx is saved in the lib/ directory
+2. rake dev:update_ruby_from_excel 
+3. Checking that lib/excel_model.rb still refers to the correct cells in the sheet (note, for instance, that re-saving the excel model will sometimes result in the sheet order in the underlying file to be changed)
+
+REPORTING A BUG
+
+Please report bugs using the tool at:
+http://github.com/tamc/twenty-fifty/issues
+
+SENDING A PATCH
+
+Please fork the project and then push changes using the methodology described here:
+http://help.github.com/forking/
+
+
