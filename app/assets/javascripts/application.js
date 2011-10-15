@@ -6,4 +6,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require highcharts
+//= require highcharts.setOptions
 //= require_tree .

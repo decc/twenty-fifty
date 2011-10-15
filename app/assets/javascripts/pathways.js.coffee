@@ -2,9 +2,10 @@ execute = null
 controller = null
 choices = null
 action = null
+emissions_chart = null
 
 setup = (e) ->
-  execute = e  
+  execute = new e  
   setVariablesFromURL()
   load()
   
@@ -30,15 +31,47 @@ load = () ->
     $.getJSON("/pathways/#{code()}/data", (data) ->
       if data?
         clearInterval(pathwayPollingTimer)
-        execute(data)
+        execute.update(data)
     )
   pathwayPollingTimer = setInterval(tryToFetchData,3000)
   tryToFetchData()
-
-helloworld = (pathway) ->
-  $('#results').html(JSON.stringify(pathway))
   
+window.onpopstate = (event) ->
+  if event.state
+    choices = event.state
+    load()
+
+class Helloworld
+
+  constructor: () ->
+    $(document).ready(@createEmissionsChart)
+    
+  update: (@pathway) ->
+    $('#results').html(JSON.stringify(pathway))
+    @updateEmissionsChart()
+    
+  updateEmissionsChart: () ->
+    @createEmissionsChart() unless @emissions_chart?
+    i = 0
+    for own name, data of @pathway['ghg']
+      if @emissions_chart.series[i]?
+        @emissions_chart.series[i].setData(data,false)
+      else
+        @emissions_chart.addSeries({name:name,data:data},false)
+      i++
+    @emissions_chart.redraw()
+    
+  createEmissionsChart: () ->
+    @emissions_chart = new Highcharts.Chart({
+      chart: { renderTo: 'emissions_chart' }, 
+      title: { text: 'UK greenhouse gas emissions' },
+      subtitle: { text: "MtCO<sub>2</sub>e/yr"},   
+      yAxis: { title: null, min: -500, max: 1000 },
+      series: []
+    });    
+  
+
 window.twentyfifty = 
   setup: setup
   go: go
-  helloworld: helloworld
+  Helloworld: Helloworld
