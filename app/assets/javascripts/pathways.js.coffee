@@ -27,11 +27,14 @@ go = (index,level) ->
   load()
 
 load = () ->
+  $('#calculating').show()
   tryToFetchData = () ->
     $.getJSON("/pathways/#{code()}/data", (data) ->
       if data?
-        clearInterval(pathwayPollingTimer)
-        execute.update(data)
+        if data['_id'] == code()
+          clearInterval(pathwayPollingTimer)
+          execute.update(data)
+          $('#calculating').hide()
     )
   pathwayPollingTimer = setInterval(tryToFetchData,3000)
   tryToFetchData()
