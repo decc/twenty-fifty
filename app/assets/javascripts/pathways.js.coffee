@@ -55,8 +55,11 @@ class Helloworld
     
   updateEmissionsChart: () ->
     @createEmissionsChart() unless @emissions_chart?
+    titles = ['International Aviation and Shipping','Industrial Processes','Solvent and Other Product Use','Agriculture','Land-Use, Land-Use Change and Forestry','Waste','Other','Fuel Combustion','Bioenergy Credit','Carbon Capture']
     i = 0
-    for own name, data of @pathway['ghg']
+    for name in titles
+      console.log name
+      data = @pathway['ghg'][name]
       if @emissions_chart.series[i]?
         @emissions_chart.series[i].setData(data,false)
       else
