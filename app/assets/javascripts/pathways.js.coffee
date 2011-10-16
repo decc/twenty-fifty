@@ -50,7 +50,7 @@ class Helloworld
     $(document).ready(@createEmissionsChart)
     
   update: (@pathway) ->
-    $('#results').html(JSON.stringify(pathway))
+    #$('#results').html(JSON.stringify(pathway))
     @updateEmissionsChart()
     
   updateEmissionsChart: () ->
@@ -58,7 +58,6 @@ class Helloworld
     titles = ['International Aviation and Shipping','Industrial Processes','Solvent and Other Product Use','Agriculture','Land-Use, Land-Use Change and Forestry','Waste','Other','Fuel Combustion','Bioenergy Credit','Carbon Capture']
     i = 0
     for name in titles
-      console.log name
       data = @pathway['ghg'][name]
       if @emissions_chart.series[i]?
         @emissions_chart.series[i].setData(data,false)

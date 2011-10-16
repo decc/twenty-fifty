@@ -1,0 +1,17 @@
+#classic
+  #demand
+    %table
+      - structure.demand_choices.each do |choice|
+        = classic_table_row_for_choice choice
+  #supply
+    %table
+      - structure.supply_choices.each do |choice|
+        = classic_table_row_for_choice choice
+  #other
+    %table
+      = classic_table_row_for_choice structure.geosequestration_choice
+
+    %table
+      = classic_table_row_for_choice structure.balancing_choice
+      
+    
