@@ -7,6 +7,7 @@ emissions_chart = null
 setup = (e) ->
   execute = new e  
   setVariablesFromURL()
+  $(document).ready(() -> execute.updateControls(choices))
   load()
   
 setVariablesFromURL = () ->
@@ -23,6 +24,7 @@ url = () ->
 
 go = (index,level) ->
   choices[index] = level
+  execute.updateControls(choices)
   history.pushState(choices,code(),url()) if history['pushState']?
   load()
 
@@ -33,7 +35,7 @@ load = () ->
       if data?
         if data['_id'] == code()
           clearInterval(pathwayPollingTimer)
-          execute.update(data)
+          execute.updateResults(data)
           $('#calculating').hide()
     )
   pathwayPollingTimer = setInterval(tryToFetchData,3000)
@@ -49,7 +51,15 @@ class Helloworld
   constructor: () ->
     $(document).ready(@createEmissionsChart)
     
-  update: (@pathway) ->
+  updateControls: (@choices) ->
+    controls = $('#classic_controls')
+    controls.find('.selected, .level1, .level2, .level3, .level4').removeClass('selected level1 level2 level3 level4')
+    for choice, i in @choices
+      controls.find("#c#{i}l#{choice}").addClass('selected')
+      for c in [1..(parseInt(choice)])
+        controls.find("#c#{i}l#{c}").addClass("level#{choice}")
+    
+  updateResults: (@pathway) ->
     #$('#results').html(JSON.stringify(pathway))
     @updateEmissionsChart()
     

@@ -11,7 +11,7 @@ div#calculating {
   padding: 5px;
 }
 
-#classic {
+#classic_controls {
   #demand, #supply, #other {
     padding: 0;
     border: 0;
@@ -32,6 +32,25 @@ div#calculating {
        color: black;
        text-decoration: none;
        border: solid #ccc 1px;
+      }
+    }
+    tr.incremental {
+      a.level1 {
+        background-color: #0F0;
+      }
+      a.level2 {
+        background-color: #FFF63C;
+      }
+      a.level3 {
+        background-color: #F1932B;
+      }
+      a.level4 {
+        background-color: #E5251D;
+      }      
+    }
+    tr.alternative {
+      a.selected {
+       background-color: #aaa;  
       }
     }
   }

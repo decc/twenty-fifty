@@ -8,8 +8,8 @@ module PathwaysHelper
     row = ["<td class='name'>#{choice.name}</td>"]
     p choice.levels
     choice.levels.each.with_index do |level,i|
-      row << "<td class='choice' id='c#{choice.number}l#{i+1}'>#{link_to_function(level,"twentyfifty.go(#{choice.number},#{i+1})")}"
+      row << "<td class='choice'>#{link_to_function(level,"twentyfifty.go(#{choice.number},#{i+1})",:id => "c#{choice.number}l#{i+1}")}"
     end
-    raw "<tr>#{row.join('')}</tr>"
+    raw "<tr class='#{choice.incremental_or_alternative}'>#{row.join('')}</tr>"
   end
 end
