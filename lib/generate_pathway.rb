@@ -2,20 +2,18 @@ require_relative 'spreadsheet'
 
 class GeneratePathway
   
-  attr_accessor :excel
+  attr_accessor :excel, :pathway
   
   def initialize
     @excel = Spreadsheet.new
   end
   
-  def pathway(code)
-    p = { _id: code, choices: set_choices(code) }
-    ghg = {}
-    [191, 190, 182, 183, 184, 185, 186, 187, 189, 188].each do |row|
-      ghg[label(intermediate_output_sheet,row)] = annual_data(intermediate_output_sheet,row)
-    end
-    p[:ghg] = ghg
-    p
+  def calculate_pathway(code)
+    @pathway = { _id: code, choices: set_choices(code) }
+    table :ghg, 182, 192
+    table :final_energy_demand, 13, 18
+    table :primary_energy_supply, 278, 291
+    pathway
   end
   
   def set_choices(code)
@@ -27,8 +25,16 @@ class GeneratePathway
     choices
   end
   
+  def table(name,start_row,end_row)
+    t = {}
+    (start_row..end_row).each do |row|
+      t[label(intermediate_output_sheet,row)] = annual_data(intermediate_output_sheet,row)
+    end
+    pathway[name] = t
+  end
+  
   def label(sheet,row)
-    sheet.send("d#{row}")
+    sheet.send("d#{row}").to_s
   end
   
   def annual_data(sheet,row)
@@ -94,7 +100,7 @@ if __FILE__ == $0
       queue.save(next_pathway)
       puts "Calculating #{next_pathway.inspect}"
       begin
-        pathway = GeneratePathway.new.pathway(next_pathway['_id'])
+        pathway = GeneratePathway.new.calculate_pathway(next_pathway['_id'])
         puts "Calculated #{pathway.inspect}"
         results.save(pathway)
         queue.remove(_id: next_pathway['_id'])
