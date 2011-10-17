@@ -1,3 +1,5 @@
+window.twentyfifty = {};
+
 execute = null
 controller = null
 choices = null
@@ -46,47 +48,5 @@ window.onpopstate = (event) ->
     choices = event.state
     load()
 
-class Helloworld
-
-  constructor: () ->
-    $(document).ready(@createEmissionsChart)
-    
-  updateControls: (@choices) ->
-    controls = $('#classic_controls')
-    controls.find('.selected, .level1, .level2, .level3, .level4').removeClass('selected level1 level2 level3 level4')
-    for choice, i in @choices
-      controls.find("#c#{i}l#{choice}").addClass('selected')
-      for c in [1..(parseInt(choice)])
-        controls.find("#c#{i}l#{c}").addClass("level#{choice}")
-    
-  updateResults: (@pathway) ->
-    #$('#results').html(JSON.stringify(pathway))
-    @updateEmissionsChart()
-    
-  updateEmissionsChart: () ->
-    @createEmissionsChart() unless @emissions_chart?
-    titles = ['International Aviation and Shipping','Industrial Processes','Solvent and Other Product Use','Agriculture','Land-Use, Land-Use Change and Forestry','Waste','Other','Fuel Combustion','Bioenergy Credit','Carbon Capture']
-    i = 0
-    for name in titles
-      data = @pathway['ghg'][name]
-      if @emissions_chart.series[i]?
-        @emissions_chart.series[i].setData(data,false)
-      else
-        @emissions_chart.addSeries({name:name,data:data},false)
-      i++
-    @emissions_chart.redraw()
-    
-  createEmissionsChart: () ->
-    @emissions_chart = new Highcharts.Chart({
-      chart: { renderTo: 'emissions_chart' }, 
-      title: { text: 'UK greenhouse gas emissions' },
-      subtitle: { text: "MtCO<sub>2</sub>e/yr"},   
-      yAxis: { title: null, min: -500, max: 1000 },
-      series: []
-    });    
-  
-
-window.twentyfifty = 
-  setup: setup
-  go: go
-  Helloworld: Helloworld
+window.twentyfifty['setup'] = setup
+window.twentyfifty['go'] = go

@@ -9,3 +9,4 @@
 //= require highcharts
 //= require highcharts.setOptions
 //= require_tree .
+

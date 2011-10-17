@@ -9,9 +9,23 @@ div#calculating {
   border-bottom: solid black 1px;
   background-color: yellow;
   padding: 5px;
+  z-index: 1;
+}
+
+.chart {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  margin-left: 2.5%;
+  width: 30%;
+  height: 300px;
+  margin-bottom: 15px;
+  float: left;    
 }
 
 #classic_controls {
+  font-size: 0.72em;
+  
   #demand, #supply, #other {
     padding: 0;
     border: 0;
@@ -54,5 +68,4 @@ div#calculating {
       }
     }
   }
-    
 }
