@@ -7,7 +7,8 @@ Highcharts.setOptions({
     spacingTop: 5,
     spacingBottom: 10,
     spacingLeft: 3,
-    spacingRight: 13
+    spacingRight: 13,
+    style:  { fontFamily: 'Times' }
   },
   title: { margin: 5 },
   credits: { enabled: false },

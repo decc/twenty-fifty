@@ -26,19 +26,27 @@ url = () ->
 
 go = (index,level) ->
   choices[index] = level
-  execute.updateControls(choices)
-  history.pushState(choices,code(),url()) if history['pushState']?
   load()
+  
+switchView = (new_action) ->
+  action = new_action
+  window.location = "/pathways/#{code()}/#{action}"
+  
+switchPathway = (new_code) ->
+  choices = (parseInt(choice) for choice in new_code.split(''))
+  load()  
 
 load = () ->
-  $('#calculating').show()
+  execute.updateControls(choices)
+  history.pushState(choices,code(),url()) if history['pushState']?
+  $('#calculating, #message').toggle()
   tryToFetchData = () ->
     $.getJSON("/pathways/#{code()}/data", (data) ->
       if data?
         if data['_id'] == code()
           clearInterval(pathwayPollingTimer)
           execute.updateResults(data)
-          $('#calculating').hide()
+          $('#calculating, #message').toggle()
     )
   pathwayPollingTimer = setInterval(tryToFetchData,3000)
   tryToFetchData()
@@ -50,3 +58,5 @@ window.onpopstate = (event) ->
 
 window.twentyfifty['setup'] = setup
 window.twentyfifty['go'] = go
+window.twentyfifty['switchView'] = switchView
+window.twentyfifty['switchPathway'] = switchPathway

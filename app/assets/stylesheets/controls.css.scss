@@ -1,0 +1,46 @@
+#classic_controls {
+  font-size: 0.72em;
+  
+  #demand, #supply, #other {
+    padding: 0;
+    border: 0;
+    margin: 0;
+    margin-left: 2.5%;
+    width: 30%;
+    float: left;
+  }
+  
+  table {
+    width: 100%;
+    td.choice {
+      width: 20px;
+      a {
+       display: block;
+       width: 100%;
+       text-align: center;
+       color: black;
+       text-decoration: none;
+       border: solid #ccc 1px;
+      }
+    }
+    tr.incremental {
+      a.level1 {
+        background-color: #0F0;
+      }
+      a.level2 {
+        background-color: #FFF63C;
+      }
+      a.level3 {
+        background-color: #F1932B;
+      }
+      a.level4 {
+        background-color: #E5251D;
+      }      
+    }
+    tr.alternative {
+      a.selected {
+       background-color: #aaa;  
+      }
+    }
+  }
+}
