@@ -2,6 +2,7 @@ window.twentyfifty = {};
 
 execute = null
 controller = null
+old_choices = []
 choices = null
 action = null
 emissions_chart = null
@@ -9,7 +10,7 @@ emissions_chart = null
 setup = (e) ->
   execute = new e  
   setVariablesFromURL()
-  $(document).ready(() -> execute.updateControls(choices))
+  $(document).ready(() -> execute.updateControls(old_choices,choices))
   load()
   
 setVariablesFromURL = () ->
@@ -25,6 +26,7 @@ url = () ->
   "/#{controller}/#{code()}/#{action}"
 
 go = (index,level) ->
+  old_choices = choices.slice(0)
   choices[index] = level
   load()
   
@@ -33,11 +35,13 @@ switchView = (new_action) ->
   window.location = "/pathways/#{code()}/#{action}"
   
 switchPathway = (new_code) ->
+  old_choices = choices.slice(0)
   choices = (parseInt(choice) for choice in new_code.split(''))
   load()  
 
 load = () ->
-  execute.updateControls(choices)
+  return if choices.join('') == old_choices.join('')
+  execute.updateControls(old_choices,choices)
   history.pushState(choices,code(),url()) if history['pushState']?
   $('#calculating, #message').toggle()
   tryToFetchData = () ->

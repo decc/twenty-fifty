@@ -3,13 +3,17 @@ class PrimaryEnergy
   constructor: () ->
     $(document).ready(@createEmissionsChart)
     
-  updateControls: (@choices) ->
+  updateControls: (old_choices,@choices) ->
     controls = $('#classic_controls')
-    controls.find('.selected, .level1, .level2, .level3, .level4').removeClass('selected level1 level2 level3 level4')
+    # controls.find('.selected, .level1, .level2, .level3, .level4').removeClass('selected level1 level2 level3 level4')
     for choice, i in @choices
-      controls.find("#c#{i}l#{choice}").addClass('selected')
-      for c in [1..(parseInt(choice)])
-        controls.find("#c#{i}l#{c}").addClass("level#{choice}")
+      unless choice == old_choices[i]
+        row = controls.find("tr#r#{i}")
+        console.log ".selected .level#{old_choices[i]}"
+        row.find(".selected, .level#{old_choices[i]}").removeClass("selected level#{old_choices[i]}")
+        row.find("#c#{i}l#{choice}").addClass('selected')
+        for c in [1..(parseInt(choice)])
+          controls.find("#c#{i}l#{c}").addClass("level#{choice}")
     
   updateResults: (@pathway) ->
     #$('#results').html(JSON.stringify(pathway))
