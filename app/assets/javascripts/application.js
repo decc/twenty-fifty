@@ -4,10 +4,22 @@
 // It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
 // the compiled file.
 //
+
+// First the support libs
 //= require jquery
 //= require jquery_ujs
 //= require highcharts
 //= require highcharts.setOptions
 //= require jquery.tools.min
-//= require_tree .
+//= require shims
+//= require d3.min
+//= require raphael.min
+
+// Now the common methods
+//= require pathways
+
+// Now the individual views
+//= require primary_energy
+//= require costsincontext
+
 

@@ -15,7 +15,7 @@ setup = (e) ->
   load()
 
 documentReadySetup = () ->
-  execute.updateControls(old_choices,choices)
+  updateControls(old_choices,choices)
   $("a[title]").tooltip({delay: 0, position: 'top left', offset:[3,3],tip:'#tooltip'});
 
 setVariablesFromURL = () ->
@@ -46,7 +46,7 @@ switchPathway = (new_code) ->
 
 load = () ->
   return if choices.join('') == old_choices.join('')
-  execute.updateControls(old_choices,choices)
+  updateControls(old_choices,choices)
   history.pushState(choices,code(),url()) if history['pushState']?
   if cache[code()]?
     execute.updateResults(cache[code()])
@@ -72,6 +72,12 @@ preLoad = (index,level) ->
         cache[preload_code] = data
     )
 
+loadFromCacheOrRemote = (code_to_load,callback) ->
+  if cache[code_to_load]?
+    callback(cache[code()])
+  else
+    loadRemote(code_to_load,callback)
+
 loadRemote = (code_to_load,callback) ->
   tryToFetchData = () ->
     $.getJSON("/pathways/#{code_to_load}/data", (data) ->
@@ -89,8 +95,36 @@ window.onpopstate = (event) ->
     choices = event.state
     load()
 
+updateControls = (old_choices,@choices) ->
+  controls = $('#classic_controls')
+  for choice, i in @choices
+    unless choice == old_choices[i]
+      row = controls.find("tr#r#{i}")
+      row.find(".selected, .level#{old_choices[i]}").removeClass("selected level#{old_choices[i]}")
+      row.find("#c#{i}l#{choice}").addClass('selected')
+      for c in [1..(parseInt(choice)])
+        controls.find("#c#{i}l#{c}").addClass("level#{choice}")
+
+pathway_names =
+  "1011111111111111011111100111111011110110110111011011": "All at Level 1",
+  "1011111111111111011111100444444044440420330444042011": "Maximum demand"
+  "4044444444444444044344400111111011110110110111011011": "Maximum supply"
+  "1011343331444311024311100442444034330420230443042014": "Friends of the Earth"
+  "1022313331233213023312200442443034330410230444041023": "Campaign for Protection of Rural England"
+  "2023322221221211032214200332344034440420230344032012": "Prof Nick Jenkins"
+  "2022214441134111034332100342244042340420320334042014": "Mark Brinkley"
+  "2022211111121221033322200342324023410220220344032012": "National Grid"
+  "2023222221221311032312200232314013430220230243032013": "Energy Technologies Institute"
+  "2022222221323212034311100342424024430320220443042021": "Atkins"
+  "3022312222131111022322100342443014440220220244012043": "Mark Lynas"
+
+pathwayName = (pathway_code,default_name = null) ->
+  pathway_names[pathway_code] || default_name
+  
 window.twentyfifty['setup'] = setup
 window.twentyfifty['go'] = go
 window.twentyfifty['preLoad'] = preLoad
+window.twentyfifty['loadFromCacheOrRemote'] = loadFromCacheOrRemote
 window.twentyfifty['switchView'] = switchView
 window.twentyfifty['switchPathway'] = switchPathway
+window.twentyfifty['pathwayName'] = pathwayName

@@ -13,6 +13,7 @@ class GeneratePathway
     table :ghg, 182, 192
     table :final_energy_demand, 13, 18
     table :primary_energy_supply, 278, 291
+    cost_components_table
     pathway
   end
   
@@ -39,6 +40,22 @@ class GeneratePathway
   
   def annual_data(sheet,row)
     sheet.a("I#{row}","Q#{row}").to_grid.flatten
+  end
+
+  def cost_components_table
+    t = {}
+    # Each row has [name,low,range,high,finance_low,finance_range,finance_high]
+    names = %w{low range high finance_low finance_range finance_high}
+    cost_sheet.a('b6','h59').to_grid.each do |row|
+      name = row.shift
+      next if name == 0.0
+      r = {}
+      names.each_with_index do |name,i|
+        r[name] = row[i]
+      end
+      t[name] = r
+    end
+    pathway['cost_components'] = t
   end
   
   def control_sheet
