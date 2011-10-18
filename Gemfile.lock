@@ -128,9 +128,6 @@ GEM
       hike (~> 1.2)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
-    sqlite3 (1.3.4)
-    sqlite3-ruby (1.3.3)
-      sqlite3 (>= 1.3.3)
     term-ansicolor (1.0.7)
     thor (0.14.6)
     tilt (1.3.3)
@@ -157,5 +154,4 @@ DEPENDENCIES
   rspec
   rubyfromexcel (= 0.0.13)
   sass-rails (~> 3.1.4)
-  sqlite3-ruby
   uglifier (>= 1.0.3)
