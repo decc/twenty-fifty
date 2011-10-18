@@ -102,7 +102,8 @@ if __FILE__ == $0
       puts "Calculating #{next_pathway.inspect}"
       begin
         pathway = GeneratePathway.new.calculate_pathway(next_pathway['_id'])
-        puts "Calculated #{pathway._id}"
+        pathway[:calculated_at] = Time.now
+        puts "Calculated #{pathway[:_id]} in #{pathway[:calculated_at]-next_pathway[:calculating]}s"
         results.save(pathway)
         queue.remove(_id: next_pathway['_id'])
       rescue Exception => e
