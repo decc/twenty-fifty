@@ -16,7 +16,6 @@ gem 'jquery-rails'
 gem 'haml'
 gem 'rubyfromexcel', '0.0.13'
 gem 'foreman'
-gem 'sqlite3-ruby'
 gem 'heroku'
 
 group :development do
