@@ -14,6 +14,7 @@
 //= require shims
 //= require d3.min
 //= require raphael.min
+//= require jstorage.min
 
 // Now the common methods
 //= require pathways

@@ -44,7 +44,7 @@ class CostsInContext
     @boxes_low['chosen'] = @r.rect(@x(0),@y("chosen"),0,@y.rangeBand()).attr({'fill':'#BCB645','stroke':'none'})
     @boxes_range['chosen'] = @r.rect(@x(0),@y("chosen"),0,@y.rangeBand()).attr({'fill':'#FF6','stroke':'none'})
     for code in comparator_pathways
-      @boxes_low[code] = @r.rect(@x(0),@y(code),0,@y.rangeBand()).attr({'fill':'#0080FF','stroke':'none'})
+      @boxes_low[code] = @r.rect(@x(0),@y(code),0,@y.rangeBand()).attr({'fill':'#134B9F','stroke':'none'})
       @boxes_range[code] = @r.rect(@x(0),@y(code),0,@y.rangeBand()).attr({'fill':'#60A4FA','stroke':'none'})
       
   drawIndicator: (value,text) ->
@@ -57,9 +57,107 @@ class CostsInContext
     @updateBar(pathway,'chosen')
     
   updateBar: (pathway,_id = pathway._id) =>
-    total_cost = 10000
-    total_range = 3000
+    total_cost = @total_cost_low_adjusted(pathway)
+    total_range = @total_cost_range_adjusted(pathway)
     @boxes_low[_id].attr({width: @x(total_cost) - @x(0)})
     @boxes_range[_id].attr({x:@x(total_cost),width: @x(total_range) - @x(0)})
+  
+  total_cost_low_adjusted: (pathway) ->
+    @adjust_costs_of_pathway pathway unless pathway.total_cost_low_adjusted?
+    pathway.total_cost_low_adjusted 
+
+  total_cost_range_adjusted: (pathway) ->
+    @adjust_costs_of_pathway pathway unless pathway.total_cost_range_adjusted?
+    pathway.total_cost_range_adjusted 
+
+  adjust_costs_of_pathway: (pathway) ->
+    total = { low: 0, range: 0, high: 0, finance_max:0}
+    for own name,values of pathway.cost_components
+      unless name == 'Finance cost'
+        fraction_of_width = jQuery.jStorage.get(name,null)
+        if fraction_of_width?
+          # Cost of this technology
+          cost = values.low + (values.range * fraction_of_width)
+          total.low += cost
+          total.range += 0
+          total.high += cost
+          total.finance_max += values.finance_low + (values.finance_range * fraction_of_width)
+        else          
+          total.low += values.low
+          total.range += values.range
+          total.high += values.high
+          total.finance_max += values.finance_high
+          
+    finance_fraction_of_width = jQuery.jStorage.get("Finance Cost",null)
+    if finance_fraction_of_width?
+      finance_cost = finance_fraction_of_width * total.finance_max
+      total.low += finance_cost
+      total.range += 0
+      total.high += finance_cost
+    else
+      total.low += 0
+      total.range += total.finance_max
+      total.high += total.finance_max
+    pathway.total_cost_low_adjusted = total.low
+    pathway.total_cost_range_adjusted = total.range
+    pathway
+
+  setDefaultStoreIfRequired: (pathway) ->
+    return false if jQuery.jStorage.get('defaultCostsSet') == true
+    for own name, values of pathway.cost_components
+      jQuery.jStorage.set(name,0) if ( (name != 'Oil') && (name != 'Gas') && (name != 'Coal') && (name != 'Finance cost'))
+    jQuery.jStorage.get('defaultCostsSet',true)
+    
+  cosnstructor: (@name,@cost_components) ->
+    @total = { low: 0, high: 0, range: 0}
+    for component in @cost_components 
+      @total.low = @total.low + component[1]
+      @total.high = @total.high + component[3]
+    @total.range = @total.high - @total.low
+    @total_low = @total.low
+    @total_range = @total.range
+
+  updateFromStore: () ->
+    @setDefaultStoreIfRequired();
+    @total = { low: 0, high: 0, finance_total: 0}
+    @addComponetToTotal(component) for component in @cost_components
+    finance_fraction_of_width = jQuery.jStorage.get("Finance Cost",null)
+    if finance_fraction_of_width?
+      finance_cost = finance_fraction_of_width * @total.finance_total
+      @total.low = @total.low + finance_cost
+      @total.high = @total.high + finance_cost
+      @finance_component[7] = 0
+      @finance_component[8] = finance_cost
+    else
+      @total.high = @total.high + @total.finance_total
+      @finance_component[7] = 0
+      @finance_component[8] = @total.finance_total
+    @total.range = @total.high - @total.low
+    @total_low = @total.low
+    @total_range = @total.range
+
+  addComponetToTotal: (component) ->
+    if component[0] == "Finance cost"
+      @finance_component = component
+      return
+    return if component[0] == 0 
+    fraction_of_width = jQuery.jStorage.get(component[0],null)
+    if fraction_of_width?
+      # Cost of this technology
+      cost = component[1] + (component[2] * fraction_of_width)
+      @total.low = @total.low + cost
+      @total.high = @total.high + cost
+      component[7] = component[8] = cost
+      # Finance cost
+      @total.finance_total = @total.finance_total + component[4] + (component[5] * fraction_of_width)
+    else
+      # Cost of this technology
+      @total.low = @total.low + component[1]
+      @total.high = @total.high + component[3]
+      component[7] = component[1]
+      component[8] = component[3]
+      # Finance cost
+      @total.finance_total = @total.finance_total + component[6]
+    
   
 window.twentyfifty['CostsInContext'] = CostsInContext
