@@ -51,20 +51,32 @@ load = () ->
   if cache[code()]?
     execute.updateResults(cache[code()])
   else
-    loadRemote(code())
+    $('#calculating').show()
+    $('#message').hide()
+    loadRemote(code(), (data) ->
+      if data['_id'] == code()
+        execute.updateResults(data)      
+        $('#calculating').hide()
+        $('#message').show()
+    )
 
-loadRemote = (code_to_load) ->
-  $('#calculating').show()
-  $('#message').hide()
+preLoad = (index,level) ->
+  preload_choices = choices.slice(0)
+  preload_choices[index] = level
+  preload_code = preload_choices.join('')
+  unless cache[preload_code]?
+    $.getJSON("/pathways/#{preload_code}/data", (data) ->
+      if data?
+        cache[preload_code] = data
+    )
+
+loadRemote = (code_to_load,callback) ->
   tryToFetchData = () ->
     $.getJSON("/pathways/#{code_to_load}/data", (data) ->
       if data?
-        if data['_id'] == code()
-          clearInterval(pathwayPollingTimer)
-          cache[code_to_load] = data
-          execute.updateResults(data)
-          $('#calculating').hide()
-          $('#message').show()
+        clearInterval(pathwayPollingTimer)
+        cache[code_to_load] = data
+        callback(data)
     )
   pathwayPollingTimer = setInterval(tryToFetchData,3000)
   tryToFetchData()
@@ -76,5 +88,6 @@ window.onpopstate = (event) ->
 
 window.twentyfifty['setup'] = setup
 window.twentyfifty['go'] = go
+window.twentyfifty['preLoad'] = preLoad
 window.twentyfifty['switchView'] = switchView
 window.twentyfifty['switchPathway'] = switchPathway
