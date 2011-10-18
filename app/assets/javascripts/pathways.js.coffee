@@ -43,14 +43,16 @@ load = () ->
   return if choices.join('') == old_choices.join('')
   execute.updateControls(old_choices,choices)
   history.pushState(choices,code(),url()) if history['pushState']?
-  $('#calculating, #message').toggle()
+  $('#calculating').show()
+  $('#message').hide()
   tryToFetchData = () ->
     $.getJSON("/pathways/#{code()}/data", (data) ->
       if data?
         if data['_id'] == code()
           clearInterval(pathwayPollingTimer)
           execute.updateResults(data)
-          $('#calculating, #message').toggle()
+          $('#calculating').hide()
+          $('#message').show()
     )
   pathwayPollingTimer = setInterval(tryToFetchData,3000)
   tryToFetchData()
