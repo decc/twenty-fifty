@@ -1,7 +1,11 @@
+require 'uri'
+
 class PathwaysController < ApplicationController
   
   def data
-    db = Mongo::Connection.new.db("2050")
+    conn = Mongo::Connection.from_uri(ENV['MONGO_URI'])
+    db   = conn.db(ENV['MONGO_DB'])
+    #db = Mongo::Connection.new.db("2050")
     p = db.collection('pathways').find_one(_id:params[:id])
     if p
       expires_in 1.minute, :public => true

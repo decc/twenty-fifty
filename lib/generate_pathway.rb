@@ -91,7 +91,8 @@ end
 
 if __FILE__ == $0
   require 'mongo'
-  db ||= Mongo::Connection.new.db("2050")
+  conn = Mongo::Connection.from_uri(ENV['MONGO_URI'])
+  db   = conn.db(ENV['MONGO_DB'])
   queue = db.collection('pathways_to_be_calculated')
   results = db.collection('pathways')
   loop do
