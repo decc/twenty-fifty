@@ -50,6 +50,8 @@ load = () ->
   history.pushState(choices,code(),url()) if history['pushState']?
   if cache[code()]?
     execute.updateResults(cache[code()])
+    $('#calculating').hide()
+    $('#message').show()
   else
     $('#calculating').show()
     $('#message').hide()
@@ -83,6 +85,7 @@ loadRemote = (code_to_load,callback) ->
   
 window.onpopstate = (event) ->
   if event.state
+    old_choices = choices.slice(0)
     choices = event.state
     load()
 
