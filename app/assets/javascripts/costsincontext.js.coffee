@@ -59,8 +59,8 @@ class CostsInContext
   updateBar: (pathway,_id = pathway._id) =>
     total_cost = @total_cost_low_adjusted(pathway)
     total_range = @total_cost_range_adjusted(pathway)
-    @boxes_low[_id].animate({width: @x(total_cost) - @x(0)},500)
-    @boxes_range[_id].animate({x:@x(total_cost),width: @x(total_range) - @x(0)},500)
+    @boxes_low[_id].attr({width: @x(total_cost) - @x(0)})
+    @boxes_range[_id].attr({x:@x(total_cost),width: @x(total_range) - @x(0)})
   
   total_cost_low_adjusted: (pathway) ->
     @adjust_costs_of_pathway pathway unless pathway.total_cost_low_adjusted?
