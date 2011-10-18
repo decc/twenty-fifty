@@ -27,11 +27,11 @@ class ModelStructure
   end
 
   def descriptions
-    @names ||= control_sheet.a('h5','h56').to_grid.flatten
+    @descriptions ||= control_sheet.a('h5','k56').to_grid
   end
 
   def long_descriptions
-    @names ||= control_sheet.a('cf5','cf56').to_grid.flatten
+    @long_descriptions ||= control_sheet.a('cf5','ci56').to_grid
   end
   
   def control_sheet

@@ -11,9 +11,13 @@ cache = {}
 setup = (e) ->
   execute = new e  
   setVariablesFromURL()
-  $(document).ready(() -> execute.updateControls(old_choices,choices))
+  $(document).ready(documentReadySetup)
   load()
-  
+
+documentReadySetup = () ->
+  execute.updateControls(old_choices,choices)
+  $("a[title]").tooltip({delay: 0, position: 'top left', offset:[3,3],tip:'#tooltip'});
+
 setVariablesFromURL = () ->
   url_elements = window.location.pathname.split( '/' )
   controller = url_elements[1]

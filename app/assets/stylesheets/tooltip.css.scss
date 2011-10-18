@@ -1,0 +1,20 @@
+#tooltip {
+  display: none;
+
+  background-color: #FFFF00;
+  color: #000;
+
+  border: 2px solid #000;
+  border-radius: 15px 15px 0px 15px;
+  -moz-border-radius: 15px 15px 0px 15px;
+  -moz-box-shadow: 0 0 5px #888;
+  -webkit-box-shadow: 0 0 5px#888;
+
+  font-size: 12px;
+
+  height: 5em;
+  width: 14em;
+  padding: 10px;
+
+  z-index: 10000;
+}
