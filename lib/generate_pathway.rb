@@ -13,6 +13,7 @@ class GeneratePathway
     table :ghg, 182, 192
     table :final_energy_demand, 13, 18
     table :primary_energy_supply, 278, 291
+    pathway[:sankey] = intermediate_output_sheet.a('h365','j455').to_grid
     cost_components_table
     pathway
   end

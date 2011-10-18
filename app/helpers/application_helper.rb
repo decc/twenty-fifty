@@ -7,7 +7,7 @@ module ApplicationHelper
       # "quick_choice" => "Quick choice", 
       "primary_energy_chart"=>"All energy", 
       # "show"=>"Electricity", 
-      # "sankey"=>"Flows", 
+      "sankey"=>"Energy flows", 
       # "map"=>"Area", 
       # "cost_comparison"=>"Costs: overview", 
       "costsincontext"=>"Costs in context",

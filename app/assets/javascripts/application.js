@@ -15,6 +15,7 @@
 //= require d3.min
 //= require raphael.min
 //= require jstorage.min
+//= require sankey
 
 // Now the common methods
 //= require pathways
@@ -22,5 +23,6 @@
 // Now the individual views
 //= require primary_energy
 //= require costsincontext
+//= require sankey_display
 
 
