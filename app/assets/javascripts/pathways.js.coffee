@@ -6,6 +6,7 @@ old_choices = []
 choices = null
 action = null
 emissions_chart = null
+cache = {}
 
 setup = (e) ->
   execute = new e  
@@ -43,13 +44,20 @@ load = () ->
   return if choices.join('') == old_choices.join('')
   execute.updateControls(old_choices,choices)
   history.pushState(choices,code(),url()) if history['pushState']?
+  if cache[code()]?
+    execute.updateResults(cache[code()])
+  else
+    loadRemote(code())
+
+loadRemote = (code_to_load) ->
   $('#calculating').show()
   $('#message').hide()
   tryToFetchData = () ->
-    $.getJSON("/pathways/#{code()}/data", (data) ->
+    $.getJSON("/pathways/#{code_to_load}/data", (data) ->
       if data?
         if data['_id'] == code()
           clearInterval(pathwayPollingTimer)
+          cache[code_to_load] = data
           execute.updateResults(data)
           $('#calculating').hide()
           $('#message').show()

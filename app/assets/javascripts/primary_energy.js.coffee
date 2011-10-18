@@ -5,11 +5,9 @@ class PrimaryEnergy
     
   updateControls: (old_choices,@choices) ->
     controls = $('#classic_controls')
-    # controls.find('.selected, .level1, .level2, .level3, .level4').removeClass('selected level1 level2 level3 level4')
     for choice, i in @choices
       unless choice == old_choices[i]
         row = controls.find("tr#r#{i}")
-        console.log ".selected .level#{old_choices[i]}"
         row.find(".selected, .level#{old_choices[i]}").removeClass("selected level#{old_choices[i]}")
         row.find("#c#{i}l#{choice}").addClass('selected')
         for c in [1..(parseInt(choice)])
@@ -23,7 +21,6 @@ class PrimaryEnergy
     @createCharts() unless @emissions_chart? && @final_energy_chart? && @primary_energy_chart?
     titles = ['Bioenergy credit','Carbon capture','International Aviation and Shipping','Industrial Processes','Solvent and Other Product Use','Agriculture','Land-Use, Land-Use Change and Forestry','Waste','Other','Fuel Combustion']
     i = 0
-    console.log @pathway['ghg']
     for name in titles
       data = @pathway['ghg'][name]
       if @emissions_chart.series[i]?
