@@ -1,5 +1,3 @@
-require 'uri'
-
 class PathwaysController < ApplicationController
   
   def data
