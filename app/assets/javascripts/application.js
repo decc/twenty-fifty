@@ -19,10 +19,12 @@
 
 // Now the common methods
 //= require pathways
+//= require costs_common_methods
 
 // Now the individual views
 //= require primary_energy
-//= require costsincontext
 //= require sankey_display
+//= require costs_in_context
+//= require costs_compared_overview
 
 

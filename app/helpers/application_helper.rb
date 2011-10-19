@@ -10,7 +10,8 @@ module ApplicationHelper
       "sankey"=>"Energy flows", 
       # "map"=>"Area", 
       # "cost_comparison"=>"Costs: overview", 
-      "costsincontext"=>"Costs in context",
+      "costs_in_context"=>"Costs in context",
+      "costs_compared_overview"=>"Costs compared",
       # "cost_over_time" => 'Costs: over time', 
       # "story"=>"Story"
     }
