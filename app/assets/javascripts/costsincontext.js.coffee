@@ -18,6 +18,7 @@ class CostsInContext
       twentyfifty.loadFromCacheOrRemote(code,@updateBar)
   
   setupComparisonChart: () =>
+    return false if @boxes_low?
     e = $('#costsincontext')
     @h = e.height()
     @w = e.width()
@@ -57,6 +58,7 @@ class CostsInContext
     @updateBar(pathway,'chosen')
     
   updateBar: (pathway,_id = pathway._id) =>
+    @setupComparisonChart() unless @boxes_low?
     total_cost = @total_cost_low_adjusted(pathway)
     total_range = @total_cost_range_adjusted(pathway)
     @boxes_low[_id].attr({width: @x(total_cost) - @x(0)})
