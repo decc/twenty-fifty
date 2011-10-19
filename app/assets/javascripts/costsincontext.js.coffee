@@ -58,7 +58,7 @@ class CostsInContext
     @updateBar(pathway,'chosen')
     
   updateBar: (pathway,_id = pathway._id) =>
-    @setDefaultStoreIfRequired()
+    @setDefaultStoreIfRequired(pathway)
     @setupComparisonChart() unless @boxes_low?
     total_cost = @total_cost_low_adjusted(pathway)
     total_range = @total_cost_range_adjusted(pathway)
@@ -66,11 +66,11 @@ class CostsInContext
     @boxes_range[_id].attr({x:@x(total_cost),width: @x(total_range) - @x(0)})
   
   total_cost_low_adjusted: (pathway) ->
-    @adjust_costs_of_pathway pathway unless pathway.total_cost_low_adjusted?
+    @adjust_costs_of_pathway(pathway) unless pathway.total_cost_low_adjusted?
     pathway.total_cost_low_adjusted 
 
   total_cost_range_adjusted: (pathway) ->
-    @adjust_costs_of_pathway pathway unless pathway.total_cost_range_adjusted?
+    @adjust_costs_of_pathway(pathway) unless pathway.total_cost_range_adjusted?
     pathway.total_cost_range_adjusted 
 
   adjust_costs_of_pathway: (pathway) ->
@@ -109,7 +109,7 @@ class CostsInContext
     return false if jQuery.jStorage.get('defaultCostsSet') == true
     for own name, values of pathway.cost_components
       jQuery.jStorage.set(name,0) if ( (name != 'Oil') && (name != 'Gas') && (name != 'Coal') && (name != 'Finance cost'))
-    jQuery.jStorage.get('defaultCostsSet',true)
+    jQuery.jStorage.set('defaultCostsSet',true)
     
   
 window.twentyfifty['CostsInContext'] = CostsInContext
