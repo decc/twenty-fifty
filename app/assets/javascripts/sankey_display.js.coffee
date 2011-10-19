@@ -8,7 +8,7 @@ class SankeyDisplay
     @updateSankey(pathway)
     
   updateSankey: (pathway) ->
-    @createSankey() unless @s
+    @createSankey() unless @s?
     if @drawn == true
       @s.updateData(pathway.sankey)
       @s.redraw()
@@ -18,6 +18,7 @@ class SankeyDisplay
       @drawn = true
 
   createSankey: () =>
+    return false if @s?
     @s = new Sankey()
     
     @s.stack(0,[
