@@ -25,7 +25,7 @@ class CostsComparedOverview
       twentyfifty.loadFromCacheOrRemote(code,@updateBar)
   
   setupComparisonChart: () =>
-    return false if @boxes_low?
+    return false if @boxes?
     e = $('#costscomparedoverview')
     @h = e.height()
     @w = e.width()
