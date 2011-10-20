@@ -30,7 +30,7 @@ class CostsComparedOverview
     @h = e.height()
     @w = e.width()
     @r = new Raphael('costscomparedoverview',@w,@h)
-    @x = d3.scale.linear().domain([0, 15000]).range([200,@w-50]).nice()
+    @x = d3.scale.linear().domain([0, 7000]).range([200,@w-50]).nice()
     @y = d3.scale.ordinal().domain(["chosen"].concat(twentyfifty.comparator_pathways)).rangeRoundBands([40,@h],0.5)
     # The vertical lines
     format = @x.tickFormat(10)
