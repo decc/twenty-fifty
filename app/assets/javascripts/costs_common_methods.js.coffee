@@ -116,18 +116,26 @@ adjust_costs_of_pathway = (pathway) ->
         total.high += values.high
         total.finance_max += values.finance_high
         
-  finance_fraction_of_width = jQuery.jStorage.get("Finance Cost",null)
+  finance_fraction_of_width = jQuery.jStorage.get("Finance cost",null)
+  finance_component = pathway.cost_components['Finance cost']
   if finance_fraction_of_width?
     finance_cost = finance_fraction_of_width * total.finance_max
-    total.low += finance_cost
-    total.range += 0
-    total.high += finance_cost
+    
+    finance_component.low_adjusted = finance_cost
+    finance_component.range_adjusted = 0
+    finance_component.high_adjusted = finance_cost    
   else
-    total.low += 0
-    total.range += total.finance_max
-    total.high += total.finance_max
+    finance_component.low_adjusted = 0
+    finance_component.range_adjusted = total.finance_max
+    finance_component.high_adjusted = total.finance_max
+  
+  total.low += finance_component.low_adjusted
+  total.range += finance_component.range_adjusted
+  total.high += finance_component.high_adjusted
+  
   pathway.total_cost_low_adjusted = total.low
   pathway.total_cost_range_adjusted = total.range
+  pathway.total_cost_high_adjusted = total.high
   pathway
 
 setDefaultStoreIfRequired = (pathway) ->
@@ -136,6 +144,43 @@ setDefaultStoreIfRequired = (pathway) ->
     jQuery.jStorage.set(name,0) if ( (name != 'Oil') && (name != 'Gas') && (name != 'Coal') && (name != 'Finance cost'))
   jQuery.jStorage.set('defaultCostsSet',true)
 
+calculateIncrementalCost = (pt,pc) ->
+  adjust_costs_of_pathway(pt) unless pt.total_cost_low_adjusted?
+  adjust_costs_of_pathway(pc) unless pc.total_cost_low_adjusted?
+  # tt = value of t when looking for lowest cost for t
+  # tc = value of t when looking for lowest cost for c
+  # ct = value of c when looking for lowest cost for t
+  # cc = value of c when looking for lowest cost for c
+  tt = 0
+  tc = 0
+  ct = 0
+  cc = 0
+  for own name, tvalues of pt.cost_components
+    unless name == 0
+      cvalues = pc.cost_components[name]
+      # Doesn't matter for relative size, add value to all
+      if tvalues.range_adjusted == cvalues.range_adjusted
+        tt += tvalues.low_adjusted
+        tc += tvalues.low_adjusted
+        ct += cvalues.low_adjusted
+        cc += cvalues.low_adjusted
+      else if tvalues.range_adjusted >= cvalues.range_adjusted # t is more uncertain than c
+        # best for t will be if take low values for both
+        tt += tvalues.low_adjusted
+        ct += cvalues.low_adjusted
+        # best for c will be if take high values for both
+        tc += tvalues.high_adjusted
+        cc += cvalues.high_adjusted
+      else # c is more uncertain than t
+        # best for t will be if take high values for both
+        tt += tvalues.high_adjusted
+        ct += cvalues.high_adjusted
+        # best for c will be if take low values for both
+        tc += tvalues.low_adjusted
+        cc += cvalues.low_adjusted
+  {tc: tc, tt: tt, cc: cc, ct: ct}
+
 window.twentyfifty.comparator_pathways = comparator_pathways
 window.twentyfifty.group_costs_of_pathway = group_costs_of_pathway
 window.twentyfifty.adjust_costs_of_pathway = adjust_costs_of_pathway
+window.twentyfifty.calculateIncrementalCost = calculateIncrementalCost

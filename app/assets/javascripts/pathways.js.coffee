@@ -5,12 +5,12 @@ controller = null
 old_choices = []
 choices = null
 action = null
-emissions_chart = null
 cache = {}
+comparator_code = null
 
 setup = (e) ->
-  execute = new e  
   setVariablesFromURL()
+  execute = new e  
   $(document).ready(documentReadySetup)
   load()
 
@@ -23,12 +23,16 @@ setVariablesFromURL = () ->
   controller = url_elements[1]
   choices = (parseInt(choice) for choice in url_elements[2].split(''))
   action = url_elements[3]
+  comparator_code = url_elements[5]
 
 code = () ->
   choices.join('')
 
 url = () ->
-  "/#{controller}/#{code()}/#{action}"
+  if comparator_code?
+    "/#{controller}/#{code()}/#{action}/comparator/#{comparator_code}"
+  else
+    "/#{controller}/#{code()}/#{action}"
 
 go = (index,level) ->
   old_choices = choices.slice(0)
@@ -128,3 +132,4 @@ window.twentyfifty['loadFromCacheOrRemote'] = loadFromCacheOrRemote
 window.twentyfifty['switchView'] = switchView
 window.twentyfifty['switchPathway'] = switchPathway
 window.twentyfifty['pathwayName'] = pathwayName
+window.twentyfifty.comparator_code = comparator_code
