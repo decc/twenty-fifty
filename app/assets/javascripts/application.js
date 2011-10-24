@@ -27,6 +27,7 @@
 //= require sankey_display
 //= require costs_in_context
 //= require costs_compared_overview
+//= require costs_across_sectors
 //= require costs_within_sector
 //= require costs_compared_detail
 //= require dashboard2

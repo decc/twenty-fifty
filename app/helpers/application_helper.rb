@@ -12,6 +12,7 @@ module ApplicationHelper
       # "cost_comparison"=>"Costs: overview", 
       "costs_in_context"=>"Costs in context",
       "costs_compared_overview"=>"Costs compared",
+      "costs_across_sectors"=>"Costs across sectors",
       "costs_within_sector"=>"Costs within sectors",
       "costs_compared_detail" => "Cost assumptions",
       # "cost_over_time" => 'Costs: over time', 
