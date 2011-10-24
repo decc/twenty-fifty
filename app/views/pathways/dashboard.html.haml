@@ -12,7 +12,7 @@
           /
             Basically a graphic to pop out the
             implications window
-          Implications
+          %a.iframe{:href => "http://www.tomblockley.co.uk"} Implications
       #demand.grid
         / Put your grid in here
     #costsvisual
@@ -34,9 +34,14 @@
     .clear
     / Top Level controls for changing the pathway.
   #footer
+
 :javascript
   $(document).ready(function(){
-  	drawGrids();
-  	fillColours();
-  	addOverflow("demand");
+    
+    $("a.iframe").fancybox({
+      'hideOnContentClick' : false,
+      'width' : '90%',
+      'height' : '90%'
+    });
+    
   })

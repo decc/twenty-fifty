@@ -12,16 +12,6 @@ var block_height = 16;
 var pixel_width = 4;
 var pixel_height = 4;
 
-function GridItem (colour) {
-    this.colour = "#ffaaaa";
-}
-
-function GridGroup() {
-    this.hover_text = "this is a hover text";
-    this.item_number = 0;
-    this.item_colour = 0;
-}
-
 function fillColours() {
     /*  Get the boxes, and reverse the order so that we can fill 
         from the bottom left to top right.
