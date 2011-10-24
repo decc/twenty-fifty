@@ -1,3 +1,5 @@
+cost_benchmark = 3000
+
 comparator_pathways = [
   "1011111111111111011111100111111011110110110111011011"  
   "1011343331444311024311100442444034330420230443042014"  
@@ -115,6 +117,7 @@ adjust_costs_of_pathway = (pathway) ->
         total.range += values.range
         total.high += values.high
         total.finance_max += values.finance_high
+
         
   finance_fraction_of_width = jQuery.jStorage.get("Finance cost",null)
   finance_component = pathway.cost_components['Finance cost']
@@ -136,6 +139,9 @@ adjust_costs_of_pathway = (pathway) ->
   pathway.total_cost_low_adjusted = total.low
   pathway.total_cost_range_adjusted = total.range
   pathway.total_cost_high_adjusted = total.high
+
+  pathway.cost_above_benchmark_high = Math.round(((total.high / cost_benchmark) - 1)*100,0)
+  pathway.cost_above_benchmark_low = Math.round(((total.low / cost_benchmark) - 1)*100,0)
   pathway
 
 setDefaultStoreIfRequired = (pathway) ->
