@@ -38,12 +38,12 @@ class GeneratePathway
     # Supply 
     ss[:supply] = s = {}
     other = 0
-    [278..290].to_a.each do |row|
+    (278..290).to_a.each do |row|
       value = intermediate_output_sheet.send("q#{row}")
       if value < threshold
-        s[label(intermediate_output_sheet,row)] = 0
+        s[intermediate_output_sheet.send("d#{row}")] = 0
       else
-        s[label(intermediate_output_sheet,row)] = value
+        s[intermediate_output_sheet.send("d#{row}")] = value
       end
     end
     s['other'] = other    
@@ -51,18 +51,18 @@ class GeneratePathway
     # Demand
     ss[:demand] = d = {}
     other = 0
-    [13..17].to_a.each do |row|
+    (13..17).to_a.each do |row|
       value = intermediate_output_sheet.send("q#{row}")
       if value < threshold
-        d[label(intermediate_output_sheet,row)] = 0
+        d[intermediate_output_sheet.send("d#{row}")] = 0
       else
-        d[label(intermediate_output_sheet,row)] = value
+        d[intermediate_output_sheet.send("d#{row}")] = value
       end
     end    
     d['other'] = other
     
     # Vectors
-    d[:vectors] = v = {}
+    ss[:vectors] = v = {}
     v['over_generation'] = intermediate_output_sheet.p403
     v['losses'] = intermediate_output_sheet.p394
     v['h2'] = intermediate_output_sheet.p383
