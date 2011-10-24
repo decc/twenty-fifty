@@ -7,6 +7,8 @@ http://www.decc.gov.uk/2050
 DEPENDENCIES
 ruby 1.9.2 (including development headers)
 mongodb
+bundle (gem)
+foreman (gem)
 
 INSTALATION
 
