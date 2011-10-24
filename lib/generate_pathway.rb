@@ -14,6 +14,7 @@ class GeneratePathway
     electricity_tables
     sankey_table
     simplified_sankey_table
+    ghg_by_sector_table
     energy_security_table
     cost_components_table
     heating_choice_table
@@ -72,6 +73,19 @@ class GeneratePathway
     v['gas'] = intermediate_output_sheet.p378 - intermediate_output_sheet.i394 - intermediate_output_sheet.i391
     
     pathway[:simplified_sankey] = ss
+  end
+  
+  def ghg_by_sector_table
+    g = {}
+    i = intermediate_output_sheet
+    g['electricity_generation'] = (i.q158 + i.q159 + i.q160 + i.q161 + i.q164) * i.h155
+    g['bioenergy'] = (i.q162) * i.h155
+    g['industry'] = (i.q163 + i.q168 + i.q172 + i.q173) * i.h155
+    g['transport'] = (i.q165 + i.q169) * i.h155
+    g['buildings'] = (i.q166 + i.q167 + i.q174) * i.h155
+    g['other'] = (i.q171) * i.h155
+    g['total'] = (i.q175) * i.h155
+    pathway[:ghg_by_sector] = g
   end
   
   def primary_energy_tables
