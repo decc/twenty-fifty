@@ -1,0 +1,179 @@
+html, body {
+    padding: 0;
+    margin: 0 auto 0;
+    text-align: center;
+}
+/* Do a little bit of normalistation */
+h1, h2, h3, h4, h5, h6, p, div, ol, ul, li, dl, dd, dt, span {
+    padding: 0;
+    margin: 0;
+}
+
+.clear {
+    clear: both;
+}
+#container {
+    margin: 0 auto 0;
+    text-align: left;
+    padding: 1em;
+    width: 960px;
+
+    border: 1px solid #000000;
+    position: relative;
+}
+#visuals {
+    height: 250px;
+    float: left;
+    width: 100%;
+    margin-bottom: 20px;
+}
+#supply_demand {
+    padding-top: 12px;
+    float: left;
+}
+.grid {
+    width: 306px;
+    height: 238px;
+    border: 1px solid #000000;
+    overflow: hidden;
+    float: left;
+    position: relative;
+    background: #afafaf;
+}
+#supply {
+    
+}
+#demand {
+    
+}
+#middle {
+    float: left;
+    width: 170px;
+}
+#connection {
+    float: left;
+    width: 170px;
+    height: 138px;
+    margin-top: 50px;
+    border-top: 1px solid #b2b2b2;
+    border-bottom: 1px solid #b2b2b2;
+    background: #aaaabb;
+    position: relative;
+} 
+.connector {
+    /* Individual connectors in the #connection */
+}
+#implications {
+    float: left;
+    height: 30px;
+    width: 103px;
+    border: 1px solid #000000;
+    margin-top: 1em;
+    margin-left: 30px;
+    text-align: center;
+}
+#costsvisual {
+    float: right;
+    height: 250px;
+}
+.costbar {
+    float: left;
+    width: 48px;
+    height: 248px;
+    border: 1px solid #000000;
+    margin-left: 15px;
+}
+#costsovertimebar {
+    background: #ff0000;
+} 
+#emissionsovertimebar {
+    background: #00ff00;
+} 
+#quickstartmenu {
+    position: relative;
+    clear: both;
+    width: 100%;
+    border: 1px solid #595959;
+    text-align: center;
+}
+#quickstartmenu .link {
+    float: left;
+    width: 278px;
+    margin-left: 29px;
+    margin-bottom: 10px;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 1px solid #3a3a3a;
+}
+#controls {
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+    border: 1px solid #595959;
+}
+#footer {
+    clear: both;
+    padding-bottom: 2em;
+}
+
+.title {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.grid {
+    width: 306px;
+    height: 238px;
+    border: 1px solid #000000;
+    overflow: hidden;
+    float: left;
+    position: relative;
+    background: #afafaf;
+}
+.grid_grid_box {
+    float: right;
+    border-right: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    height: 16px;
+    width: 16px;
+}
+
+.grid_item {
+    float: right;
+    width: 4px;
+    height: 4px;
+}
+.back_none {border-color: #000000;}
+.back1 {border-color: #ffaaaa;}
+.back2 {border-color: #aaffaa;}
+.back3 {border-color: #aaaaff;}
+.back4 {border-color: #ffffaa;}
+.back5 {border-color: #aaffff;}
+.back6 {border-color: #ffaaff;}
+.back7 {}
+
+.overflow_warning {
+    background: rgb(255,255,255);
+    background: rgba(255,255,255, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 238px;
+    display: none;
+}
+
+.overflow_warning div {
+    padding: 10px;
+    padding-top: 20%;
+    color: #bb2222;
+    text-align: center;
+}
+
+.overflow_warning div a {
+    text-decoration: none;
+    display: block;
+    width: auto;
+    margin-top: 2em;
+}

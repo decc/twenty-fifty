@@ -1,0 +1,42 @@
+%script{ :type => 'text/javascript' }
+  twentyfifty.setup(twentyfifty.Dashboard2)
+#container
+  #visuals
+    #supply_demand
+      #supply.grid
+        / supply grid
+      #middle
+        #connection
+          / Place for the connection drawing
+        #implications
+          /
+            Basically a graphic to pop out the
+            implications window
+          Implications
+      #demand.grid
+        / Put your grid in here
+    #costsvisual
+      / Visualisation of the costs bars
+      #costsovertimebar.costbar
+      #emissionsovertimebar.costbar
+  #quickstartmenu
+    / Quick start links menu
+    .title Quick start menu
+    #shortcutsmenu.link
+      Short Cuts
+    #startersmenu.link
+      Simple Starters
+    #expertsmenu.link
+      Expert Pathways
+    .clear
+  #controls
+    = render 'classic_controls'
+    .clear
+    / Top Level controls for changing the pathway.
+  #footer
+:javascript
+  $(document).ready(function(){
+  	drawGrids();
+  	fillColours();
+  	addOverflow("demand");
+  })

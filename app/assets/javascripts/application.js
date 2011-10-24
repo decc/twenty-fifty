@@ -27,5 +27,6 @@
 //= require costs_in_context
 //= require costs_compared_overview
 //= require costs_compared_detail
-
+//= require dashboard
+//= require dashboard2
 
