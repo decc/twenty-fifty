@@ -12,6 +12,9 @@
   
   table {
     width: 100%;
+    td.name {
+      text-align: left;
+    }
     td.choice {
       width: 20px;
       a {
