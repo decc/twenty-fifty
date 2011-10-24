@@ -70,17 +70,21 @@ group_costs_of_pathway = (pathway) ->
       category_name = cost_categories[name]
       category = categorised_costs[category_name]
       
+      unless category?
+        category = categorised_costs[category_name] = { low: 0, range: 0, high: 0}
+      
       low = values.low_adjusted + values.finance_low_adjusted
       range = values.range_adjusted + values.finance_range_adjusted
       high = values.high_adjusted + values.finance_high_adjusted
       
-      if category?
-        category.low += low
-        category.range += range
-        category.high += high
-      else
-        categorised_costs[category_name] = { low: low, range: range, high: high}
+      category.low += low
+      category.range += range
+      category.high += high
+      
+      category[name] = values
+      
   pathway.categorised_costs = categorised_costs
+  console.log pathway
   pathway
 
 adjust_costs_of_pathway = (pathway) ->
