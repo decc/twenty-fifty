@@ -7,6 +7,7 @@ choices = null
 action = null
 cache = {}
 comparator_code = null
+sector = null
 
 setup = (e) ->
   setVariablesFromURL()
@@ -23,7 +24,13 @@ setVariablesFromURL = () ->
   controller = url_elements[1]
   choices = (parseInt(choice) for choice in url_elements[2].split(''))
   action = url_elements[3]
-  comparator_code = url_elements[5]
+  if url_elements[4] == 'comparator'
+    comparator_code = url_elements[5]
+  if action == 'costs_within_sector'
+    sector = url_elements[4] || 0
+
+getSector = () ->
+  sector
 
 code = () ->
   choices.join('')
@@ -31,6 +38,8 @@ code = () ->
 url = () ->
   if comparator_code?
     "/#{controller}/#{code()}/#{action}/comparator/#{comparator_code}"
+  else if sector? && action == 'costs_within_sector'
+    "/#{controller}/#{code()}/#{action}/#{sector}"
   else
     "/#{controller}/#{code()}/#{action}"
 
@@ -140,3 +149,4 @@ window.twentyfifty['switchPathway'] = switchPathway
 window.twentyfifty['pathwayName'] = pathwayName
 window.twentyfifty.comparator_code = comparator_code
 window.twentyfifty.popup_url = popup_url
+window.twentyfifty.getSector = getSector

@@ -88,7 +88,6 @@ group_costs_of_pathway = (pathway) ->
       category[name] = values
       
   pathway.categorised_costs = categorised_costs
-  console.log pathway
   pathway
 
 adjust_costs_of_pathway = (pathway) ->
