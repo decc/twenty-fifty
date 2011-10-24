@@ -13,6 +13,7 @@ class GeneratePathway
     primary_energy_tables
     electricity_tables
     sankey_table
+    simplified_sankey_table
     energy_security_table
     cost_components_table
     heating_choice_table
@@ -27,6 +28,50 @@ class GeneratePathway
       control_sheet.set("e#{i+5}",choice.to_f)
     end
     choices
+  end
+  
+  def simplified_sankey_table
+    ss = {}
+    threshold = 10
+    
+    # Supply 
+    ss[:supply] = s = {}
+    other = 0
+    [278..290].to_a.each do |row|
+      value = intermediate_output_sheet.send("q#{row}")
+      if value < threshold
+        s[label(intermediate_output_sheet,row)] = 0
+      else
+        s[label(intermediate_output_sheet,row)] = value
+      end
+    end
+    s['other'] = other    
+    
+    # Demand
+    ss[:demand] = d = {}
+    other = 0
+    [13..17].to_a.each do |row|
+      value = intermediate_output_sheet.send("q#{row}")
+      if value < threshold
+        d[label(intermediate_output_sheet,row)] = 0
+      else
+        d[label(intermediate_output_sheet,row)] = value
+      end
+    end    
+    d['other'] = other
+    
+    # Vectors
+    d[:vectors] = v = {}
+    v['over_generation'] = intermediate_output_sheet.p403
+    v['losses'] = intermediate_output_sheet.p394
+    v['h2'] = intermediate_output_sheet.p383
+    v['electricity'] = intermediate_output_sheet.o376 - intermediate_output_sheet.i412 - intermediate_output_sheet.i411 - intermediate_output_sheet.i410
+    v['district_heating'] = intermediate_output_sheet.p374 - intermediate_output_sheet.i425
+    v['solid'] = intermediate_output_sheet.p410 - intermediate_output_sheet.i392 - intermediate_output_sheet.i389
+    v['liquid'] = intermediate_output_sheet.p393 - intermediate_output_sheet.i393 - intermediate_output_sheet.i390
+    v['gas'] = intermediate_output_sheet.p378 - intermediate_output_sheet.i394 - intermediate_output_sheet.i391
+    
+    pathway[:simplified_sankey] = ss
   end
   
   def primary_energy_tables
