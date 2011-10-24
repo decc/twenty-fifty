@@ -34,6 +34,12 @@ url = () ->
   else
     "/#{controller}/#{code()}/#{action}"
 
+popup_url = () ->
+  if comparator_code?
+    "/#{controller}/#{code()}/primary_energy_chart/comparator/#{comparator_code}"
+  else
+    "/#{controller}/#{code()}/primary_energy_chart"  
+
 go = (index,level) ->
   old_choices = choices.slice(0)
   choices[index] = level
@@ -133,3 +139,4 @@ window.twentyfifty['switchView'] = switchView
 window.twentyfifty['switchPathway'] = switchPathway
 window.twentyfifty['pathwayName'] = pathwayName
 window.twentyfifty.comparator_code = comparator_code
+window.twentyfifty.popup_url = popup_url
