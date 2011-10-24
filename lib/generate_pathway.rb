@@ -265,19 +265,24 @@ if __FILE__ == $0
   queue = db.collection('pathways_to_be_calculated')
   results = db.collection('pathways')
   loop do
-    while next_pathway = queue.find_and_modify({'query' => {'calculating' => nil}, 'update' => {'$set' => {'calculating' =>  Time.now }},'new' => true})
-      puts "Calculating #{next_pathway.inspect}"
-      begin
-        pathway = GeneratePathway.new.calculate_pathway(next_pathway['_id'])
-        pathway[:calculated_at] = Time.now
-        puts "Calculated #{pathway[:_id]}"
-        results.save(pathway)
-        queue.remove(_id: next_pathway['_id'])
-      rescue Exception => e
-        puts e
-        puts e.backtrace
+    begin
+      while next_pathway = queue.find_and_modify({'query' => {'calculating' => nil}, 'update' => {'$set' => {'calculating' =>  Time.now }},'new' => true})
+        puts "Calculating #{next_pathway.inspect}"
+        begin
+          pathway = GeneratePathway.new.calculate_pathway(next_pathway['_id'])
+          pathway[:calculated_at] = Time.now
+          puts "Calculated #{pathway[:_id]}"
+          results.save(pathway)
+          queue.remove(_id: next_pathway['_id'])
+        rescue Exception => e
+          puts e
+          puts e.backtrace
+        end
       end
+    rescue Mongo::OperationFailure => e
+      # Don't worry
     end
+      
     sleep 1
   end
 end
