@@ -11,6 +11,7 @@
 //= require highcharts
 //= require highcharts.setOptions
 //= require jquery.tools.min
+//= require jquery.fancybox-1.3.4.pack
 //= require shims
 //= require d3.min
 //= require raphael.min
@@ -27,6 +28,5 @@
 //= require costs_in_context
 //= require costs_compared_overview
 //= require costs_compared_detail
-//= require dashboard
 //= require dashboard2
 
