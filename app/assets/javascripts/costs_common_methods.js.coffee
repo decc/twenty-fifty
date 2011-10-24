@@ -77,6 +77,10 @@ group_costs_of_pathway = (pathway) ->
       range = values.range_adjusted + values.finance_range_adjusted
       high = values.high_adjusted + values.finance_high_adjusted
       
+      values.low_adjusted_with_finance = low
+      values.range_adjusted_with_finance = range
+      values.high_adjusted_with_finance = high
+      
       category.low += low
       category.range += range
       category.high += high
