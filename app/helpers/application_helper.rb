@@ -6,7 +6,7 @@ module ApplicationHelper
       # "structured" => "Multiple choice", 
       # "quick_choice" => "Quick choice", 
       "primary_energy_chart"=>"All energy", 
-      # "show"=>"Electricity", 
+      "show"=>"Electricity",
       "sankey"=>"Energy flows", 
       # "map"=>"Area", 
       # "cost_comparison"=>"Costs: overview", 
