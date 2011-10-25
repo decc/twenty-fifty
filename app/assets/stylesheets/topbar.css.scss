@@ -113,4 +113,27 @@
   width: 100%;
   background: #a8a8a8;
   height: 30px;
+  
+  li {
+    display: block;
+    float: left;
+    list-style-type: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    text-align: center;
+    
+    a {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+  li.active {
+    a {
+      color: #fff;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
 }

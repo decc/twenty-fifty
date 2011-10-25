@@ -1,6 +1,8 @@
 = render 'tabbed_menu'
+= render 'layouts/costs_submenu'
 %script{ :type => 'text/javascript' }
-  $('#menu_costs_compared_detail').addClass('active')
+  $('#menu_costs_in_context').addClass('active')
+  $('#submenu_costs_compared_overview').addClass('active')
   twentyfifty.setup(twentyfifty.CostsComparedDetail)
 
 #results

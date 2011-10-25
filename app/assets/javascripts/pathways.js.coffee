@@ -45,7 +45,7 @@ url = (options = {}) ->
     "/#{s.c}/#{s.id}/#{s.a}"
 
 popup_url = () ->
-  url({a:'primary_energy_chart'})
+  url({a:'story'})
 
 go = (index,level) ->
   old_choices = choices.slice(0)
