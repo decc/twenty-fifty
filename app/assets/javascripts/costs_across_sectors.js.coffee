@@ -30,21 +30,31 @@ class CostsAcrossSectors
     @h = e.height()
     @w = e.width()
     @r = new Raphael('costsacrosssectors',@w,@h)
+    
+    # Create a separate x-axis for each
     @x = []
     for category,i in categories
       @x[category] = d3.scale.linear().domain([0, 1000]).range([200+(i*150),200+((i+1)*150)-50]).nice()
+      
     @y = d3.scale.ordinal().domain(["chosen"].concat(twentyfifty.comparator_pathways)).rangeRoundBands([40,@h],0.5)
+    
     # The vertical lines
+    i = 0
     for own name,x of @x
-      @r.text(x(0),15,name).attr({'text-anchor':'start','font-weight':'bold'})
+      # Name the sector
+      @r.text(x(0),15,name).attr({'text-anchor':'start','font-weight':'bold', href: twentyfifty.url({sector:i,a:'costs_within_sector'})})
+      i++
+      
       format = x.tickFormat(3)
       for tick in x.ticks(3)
         @r.text(x(tick),30,format(tick)).attr({'text-anchor':'middle'})
         @r.path(["M", x(tick), 40, "L", x(tick),@h]).attr({stroke:'#aaa' ,'stroke-dasharray':'.'})
-    # The horizontal labels
+    
+    # The horizontal labels naming each pathway
     @r.text(195,@y("chosen")+(@y.rangeBand()/2),"Your pathway").attr({'text-anchor':'end'})
     for code in twentyfifty.comparator_pathways
       @r.text(195,@y(code)+(@y.rangeBand()/2),twentyfifty.pathwayName(code,code)).attr({'text-anchor':'end'})
+    
     # Initally empty boxes
     @boxes = {}
     for code in (["chosen"].concat(twentyfifty.comparator_pathways))

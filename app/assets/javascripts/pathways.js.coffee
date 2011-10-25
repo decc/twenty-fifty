@@ -35,19 +35,17 @@ getSector = () ->
 code = () ->
   choices.join('')
 
-url = () ->
-  if comparator_code?
-    "/#{controller}/#{code()}/#{action}/comparator/#{comparator_code}"
-  else if sector? && action == 'costs_within_sector'
-    "/#{controller}/#{code()}/#{action}/#{sector}"
+url = (options = {}) ->
+  s = jQuery.extend({c:controller, id:code(), a:action, cmp:comparator_code, sector:sector},options)
+  if s.cmp?
+    "/#{s.c}/#{s.id}/#{s.a}/comparator/#{s.cmp}"
+  else if s.sector? && s.a == 'costs_within_sector'
+    "/#{s.c}/#{s.id}/#{s.a}/#{s.sector}"
   else
-    "/#{controller}/#{code()}/#{action}"
+    "/#{s.c}/#{s.id}/#{s.a}"
 
 popup_url = () ->
-  if comparator_code?
-    "/#{controller}/#{code()}/primary_energy_chart/comparator/#{comparator_code}"
-  else
-    "/#{controller}/#{code()}/primary_energy_chart"  
+  url({a:'primary_energy_chart'})
 
 go = (index,level) ->
   old_choices = choices.slice(0)
@@ -56,7 +54,7 @@ go = (index,level) ->
   
 switchView = (new_action) ->
   action = new_action
-  window.location = "/pathways/#{code()}/#{action}"
+  window.location = url({a:action})
   
 switchPathway = (new_code) ->
   old_choices = choices.slice(0)
@@ -150,3 +148,4 @@ window.twentyfifty['pathwayName'] = pathwayName
 window.twentyfifty.comparator_code = comparator_code
 window.twentyfifty.popup_url = popup_url
 window.twentyfifty.getSector = getSector
+window.twentyfifty.url = url
