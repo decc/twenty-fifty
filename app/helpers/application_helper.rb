@@ -8,7 +8,7 @@ module ApplicationHelper
       "primary_energy_chart"=>"All energy", 
       "show"=>"Electricity",
       "sankey"=>"Energy flows", 
-      # "map"=>"Area", 
+      "map"=>"Area", 
       # "cost_comparison"=>"Costs: overview", 
       "costs_in_context"=>"Costs in context",
       "costs_compared_overview"=>"Costs compared",

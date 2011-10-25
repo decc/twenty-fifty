@@ -32,5 +32,5 @@
 //= require costs_within_sector
 //= require costs_compared_detail
 //= require dashboard2
-
+//= require map
 
