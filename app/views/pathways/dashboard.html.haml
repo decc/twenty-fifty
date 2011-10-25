@@ -44,10 +44,9 @@
   #footer
 
 :javascript
-  $(document).ready(function(){
-    
+  $(function(){
     $('body').addClass('dashboard')
-  
+    
     function openFancyBox() {
       $.fancybox({
         'href' : twentyfifty.popup_url(),
@@ -60,7 +59,5 @@
         'overlayOpacity':'0.8'
       })
     }
-    
     $("a#iframe").bind('click',openFancyBox);
-    
-  })
+  });
