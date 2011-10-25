@@ -112,15 +112,14 @@ body {
 #connection {
     float: left;
     width: 100%;
-    height: 138px;
+    height: 140px;
     margin-top: 10px;
-    border-top: 1px solid #b2b2b2;
-    border-bottom: 1px solid #b2b2b2;
-    background: #aaaabb;
     position: relative;
 } 
-.connector {
+#connection .connector {
     /* Individual connectors in the #connection */
+    width: 100%;
+    margin-bottom: 3px;
 }
 #implications {
     float: left;

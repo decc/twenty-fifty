@@ -22,6 +22,16 @@ class Dashboard2
     "Heating and cooling":"#aaaaff", 
     "Lighting & appliances":"#ffaaff", 
     "Food consumption [UNUSED]":"#aaaaaa"}
+  connectorcolours = {
+    "district_heating":"#ffaaaa",
+    "electricity": "#aaffaa",
+    "gas": "#aaaaff",
+    "h2": "#ffaa00",
+    "liquid": "#ff00aa",
+    "losses": "#aa00ff",
+    "over_generation": "#00aaff",
+    "solid": "#00ffaa"
+  }
   
   grid = []
   grid_width = 18
@@ -37,6 +47,7 @@ class Dashboard2
   updateResults: (@pathway) ->
     @fillColors(supply_id, @pathway.simplified_sankey.supply)
     @fillColors(demand_id, @pathway.simplified_sankey.demand)
+    @fillConnectors(@pathway.simplified_sankey.vectors)
     twentyfifty.adjust_costs_of_pathway(pathway) unless pathway.total_cost_low_adjusted?
     $('#costmessage').html("Cost #{abs_percent(@pathway.cost_above_benchmark_low)} to #{abs_percent(@pathway.cost_above_benchmark_high)} 2007 levels")
     null
@@ -90,8 +101,42 @@ class Dashboard2
       null
     
     null
-    
+  
+  fillConnectors: (fillwith) ->
+    total=0
+    datas = {}
+    connectorcount = 0
+    connectors = (name for name of fillwith)
+    for connector in connectors
+      amount = @toInt(fillwith[connector])
+      total=total+amount
+      if amount
+        connectorcount = connectorcount + 1
+        datas[connector] = amount
+        null
+      null
+      
+    for connector in connectors
+      if datas[connector]
+        $("#connection").append("<div id='connection_"+connector+"' class='connector'></div>")
+        height = @calcHeight(datas[connector], total, connectorcount)
+        $("#connection_"+connector).css({"background":connectorcolours[connector],"height":height})
+        null
+      null
+      
+  
   toInt: (number) ->
     Math.round(Number(number))
+  
+  calcHeight: (number, total, divisions) ->
+    connector_height = 140
+    connector_top_margin = 3
+    actual_height = connector_height - (connector_top_margin*divisions)
+    percTot = (Number(number)/Number(total))
+    heightToDraw = percTot*actual_height
+    if heightToDraw < 1
+      heightToDraw = 1
+    
+    @toInt(heightToDraw)
   
 window.twentyfifty['Dashboard2'] = Dashboard2
