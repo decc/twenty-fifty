@@ -1,7 +1,7 @@
 %script{ :type => 'text/javascript' }
   twentyfifty.setup(twentyfifty.Dashboard2)
 #container
-  %h1#pageheading DECC 2050 Calculator
+  %h1#pageheading 2050 Pathway Calculator
   #subheading Use the Energy controls to get emissions below the 2050 target whilst balancing supply and demand, and keeping an eye on cost. Use the quick start menu to try things out fast.
   #main
     #visuals
@@ -15,21 +15,24 @@
         #supplycontainer
           #supplylegend.legend YOUR ENERGY SUPPLY
           #supplygrid.grid
+          #supplygrid.grid_overlay
             / supply grid
         #middle
           #middlelegend.legend YOUR ENERGY FLOW
-          #costmessage
           #connection
+            .overlay
             / Place for the connection drawing
           #implications
             /
               Basically a graphic to pop out the
               implications window
-            %a#iframe{:href => '#'} Implications
+            %a#iframe{:href => '#'} See Implications
         #demandcontainer
           #demandlegend.legend YOUR ENERGY DEMAND
           #demandgrid.grid
+          #demandgrid.grid_overlay
             / Put your grid in here
+      #costmessage
       #calculating 
         #calcmessage Calculating
   .clear
@@ -41,20 +44,20 @@
   #footer
 
 :javascript
-  $(document).ready(function(){
+  $(function(){
+    $('body').addClass('dashboard')
+    
     function openFancyBox() {
       $.fancybox({
         'href' : twentyfifty.popup_url(),
         'type': 'iframe',
         'hideOnContentClick' : false,
-        'width' : '98%',
-        'height' : '98%',
+        'width' : 900,
+        'height' : 672,
         'padding': 0,
         'overlayColor':'#000000',
         'overlayOpacity':'0.8'
       })
     }
-    
     $("a#iframe").bind('click',openFancyBox);
-    
-  })
+  });

@@ -129,7 +129,7 @@ class Dashboard2
     Math.round(Number(number))
   
   calcHeight: (number, total, divisions) ->
-    connector_height = 140
+    connector_height = 130
     connector_top_margin = 3
     actual_height = connector_height - (connector_top_margin*divisions)
     percTot = (Number(number)/Number(total))

@@ -2,7 +2,7 @@ html, body {
     padding: 0;
     margin: 0 auto 0;
     text-align: center;
-    background: transparent;
+    background: #ffffff;
 }
 /* Do a little bit of normalistation */
 h1, h2, h3, h4, h5, h6, p, div, ol, ul, li, dl, dd, dt, span {
@@ -13,8 +13,9 @@ h1, h2, h3, h4, h5, h6, p, div, ol, ul, li, dl, dd, dt, span {
 .clear {
     clear: both;
 }
-body {
-    background: #f0f0f0;
+body.dashboard {
+    background: url('background.jpg') top left repeat-x #e1e1e1;
+    font-family: Helvetica, Arial, serif;
 }
 #pageheading {
     margin:0;
@@ -22,11 +23,14 @@ body {
     padding-left: 0;
     padding-bottom: 0;
     text-align: left;
-    color: #353535;
+    color: #000000;
 }
 #subheading {
-    font-size: 0.8em;
-    color: #898989;
+    border-bottom: 1px dotted #000000;
+    color: #706f6f;
+    font-size: 0.75em;
+    padding-bottom: 5px;
+    width: 100%;
 }
 #homepagemenu {
     width: 100%;
@@ -59,19 +63,20 @@ body {
 }
 #main {
     padding: 1em;
-    padding-top: 0;
+    padding-top: 0.8em;
     position: relative;
     border: none;
     clear:both;
+    background: url('header-drop.png') center top no-repeat transparent;
 }
 #visuals {
-    height: 330px;
+    height: 370px;
     float: left;
     width: 100%;
     position: relative;
 }
 #supply_demand {
-    margin-top: 70px;
+    margin-top: 75px;
 }
 .grid {
     width: 288px;
@@ -80,6 +85,14 @@ body {
     overflow: hidden;
     position: relative;
     background: #ffffff;
+}
+.grid_overlay {
+    width: 288px;
+    height: 224px;
+    background: url('grid-overlay.png');
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
 }
 #supplycontainer {
     position: absolute;
@@ -98,9 +111,9 @@ body {
 #demandgrid {
 }
 #visuals .legend {
-    color: #505050;
+    color: #000000;
     height: 20px;
-    font-size: 0.8em;
+    font-size: 12px;
     width: 100%;
 }
 #middle {
@@ -109,13 +122,27 @@ body {
     width: 331px;
     text-align: center;
 }
+#visuals #middle .legend {
+    position: relative;
+    top: 15px;
+}
 #connection {
     float: left;
     width: 100%;
-    height: 140px;
+    height: 130px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     margin-top: 10px;
     position: relative;
-} 
+}
+#connection .overlay {
+    position: absolute;
+    width: 100%;
+    height: 140px;
+    top: 0;
+    right: 0;
+    background: url('vector-overlay.png') top left no-repeat transparent;
+}
 #connection .connector {
     /* Individual connectors in the #connection */
     width: 100%;
@@ -123,12 +150,28 @@ body {
 }
 #implications {
     float: left;
-    height: 30px;
-    width: 100px;
-    border: 1px solid #000000;
+    height: 41px;
+    width: 100%;
     margin-top: 1em;
-    margin-left: 115px;
     text-align: center;
+    margin: 0 auto 0;
+}
+#implications a {
+    position: relative;
+    display: inline-block;
+    width: 158px;
+    text-align: left;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 20px;
+    height: 31px;
+    padding-left: 67px;
+    padding-top: 10px;
+    margin-top: 30px;
+    background: url('implications-button.png') top left no-repeat transparent;
+}
+#implications a:visited {
+    color: #ffffff;
 }
 #costsvisual {
     width: 100%;
@@ -149,22 +192,26 @@ body {
     background: #ff0000;
 } */
 #emissionsheading {
-    position: absolute;
-    top: 0;
-    left: 40%;
-    text-align: center;
-    background: #505050;
+    background: url('emissions-header.jpg') no-repeat 0 0 transparent;
     color: #000000;
-    width: 200px;
-    margin: 0 auto 0;
+    font-size: 0.7em;
+    height: 18px;
+    left: 40%;
+    margin: 0 auto;
+    padding-top: 5px;
+    padding-left: 1px;
+    position: absolute;
+    text-align: center;
+    top: 1px;
+    width: 128px;
 }
 #emissionsovertimebar {
     position: absolute;
     bottom: 0;
     height: 40px;
     width: 100%;
-    background: #a0a0a0;
-    border-top: 1px solid #505050;
+    background: url('emissions-main.png') repeat-x transparent;
+    border-top: 1px solid #aaaaaa;
 }
 #emissionsovertimebar #emissionscurrent {
     position: absolute;
@@ -173,7 +220,8 @@ body {
     height: 30px;
     padding: 10px;
     padding-bottom: 0;
-    background: #505050;
+    background: url('emissions-shadow-left.png') no-repeat right center #7d7d7d;
+    color: #ffffff;
 }
 #emissionsovertimebar #emissionspast {
     position: absolute;
@@ -182,7 +230,8 @@ body {
     height: 30px;
     padding: 10px;
     padding-bottom: 0;
-    background: #505050;
+    background: url('emissions-shadow-right.png') no-repeat left center #7d7d7d;
+    color: #ffffff;
 }
 #emissionsovertimebar #emissionstarget {
     position: absolute;
@@ -285,4 +334,11 @@ body {
     font-size: 36px;
     font-weight: bold;
     position: absolute;
+}
+#costmessage {
+    position: absolute;
+    bottom: 0;
+    height: 30px;
+    text-align: center;
+    width: 100%;
 }
