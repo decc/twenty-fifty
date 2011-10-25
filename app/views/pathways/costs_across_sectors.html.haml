@@ -1,7 +1,10 @@
+= render 'tabbed_menu'
+= render 'layouts/costs_submenu'
 %script{ :type => 'text/javascript' }
+  $('#menu_costs_in_context').addClass('active')
+  $('#submenu_costs_across_sectors').addClass('active')
   twentyfifty.setup(twentyfifty.CostsAcrossSectors)
 
 #results
   #costsacrosssectors
     
-= render 'classic_controls'

@@ -1,35 +1,39 @@
 %script{ :type => 'text/javascript' }
   twentyfifty.setup(twentyfifty.Dashboard2)
 #container
-  #visuals
-    #supply_demand
-      #supply.grid
-        / supply grid
-      #middle
-        #costmessage
-        #connection
-          / Place for the connection drawing
-        #implications
-          /
-            Basically a graphic to pop out the
-            implications window
-          %a#iframe{:href => '#'} Implications
-      #demand.grid
-        / Put your grid in here
-    #costsvisual
-      / Visualisation of the costs bars
-      #costsovertimebar.costbar
-      #emissionsovertimebar.costbar
-  #quickstartmenu
-    / Quick start links menu
-    .title Quick start menu
-    #shortcutsmenu.link
-      Short Cuts
-    #startersmenu.link
-      Simple Starters
-    #expertsmenu.link
-      Expert Pathways
-    .clear
+  %h1#pageheading DECC 2050 Calculator
+  #subheading Use the Energy controls to get emissions below the 2050 target whilst balancing supply and demand, and keeping an eye on cost. Use the quick start menu to try things out fast.
+  #main
+    #visuals
+      #costsvisual
+        #emissionsheading EMISSIONS METER
+        / Visualisation of the costs bars
+        #emissionsovertimebar.costbar
+          #emissionscurrent Currently 50&#037;
+          #emissionspast &lt;&lt; 1990 levels
+      #supply_demand
+        #supplycontainer
+          #supplylegend.legend YOUR ENERGY SUPPLY
+          #supplygrid.grid
+            / supply grid
+        #middle
+          #middlelegend.legend YOUR ENERGY FLOW
+          #costmessage
+          #connection
+            / Place for the connection drawing
+          #implications
+            /
+              Basically a graphic to pop out the
+              implications window
+            %a#iframe{:href => '#'} Implications
+        #demandcontainer
+          #demandlegend.legend YOUR ENERGY DEMAND
+          #demandgrid.grid
+            / Put your grid in here
+      #calculating 
+        #calcmessage Calculating
+  .clear
+  = render 'homepage_menu'
   #controls
     = render 'classic_controls'
     .clear
@@ -43,8 +47,11 @@
         'href' : twentyfifty.popup_url(),
         'type': 'iframe',
         'hideOnContentClick' : false,
-        'width' : '90%',
-        'height' : '90%'
+        'width' : '98%',
+        'height' : '98%',
+        'padding': 0,
+        'overlayColor':'#000000',
+        'overlayOpacity':'0.8'
       })
     }
     

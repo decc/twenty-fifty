@@ -5,18 +5,49 @@ module ApplicationHelper
       # "history" => "Your progress", 
       # "structured" => "Multiple choice", 
       # "quick_choice" => "Quick choice", 
-      "primary_energy_chart"=>"All energy", 
-      "show"=>"Electricity",
-      "sankey"=>"Energy flows", 
-      "map"=>"Area", 
-      # "cost_comparison"=>"Costs: overview", 
-      "costs_in_context"=>"Costs in context",
-      "costs_compared_overview"=>"Costs compared",
-      "costs_across_sectors"=>"Costs across sectors",
-      "costs_within_sector"=>"Costs within sectors",
-      "costs_compared_detail" => "Cost assumptions",
-      # "cost_over_time" => 'Costs: over time', 
-      # "story"=>"Story"
+# <<<<<<< HEAD
+#       "primary_energy_chart"=>"All energy", 
+#       "show"=>"Electricity",
+#       "sankey"=>"Energy flows", 
+#       "map"=>"Area", 
+#       # "cost_comparison"=>"Costs: overview", 
+#       "costs_in_context"=>"Costs in context",
+#       "costs_compared_overview"=>"Costs compared",
+#       "costs_across_sectors"=>"Costs across sectors",
+#       "costs_within_sector"=>"Costs within sectors",
+#       "costs_compared_detail" => "Cost assumptions",
+#       # "cost_over_time" => 'Costs: over time', 
+#       # "story"=>"Story"
+# =======
+      "story"=>"Story",
+      "primary_energy_chart"=>"Over Time", 
+      "costs_in_context"=>"Costs",
+      "show"=>"Energy Security",
+      "map"=>"Land Area",
+      "sankey"=>"Flow",
+      # "water_quality"=>"Water Quality"
+      # "air_quality"=>"Air Quality"
+    }
+  end
+  
+  def costing_submenu
+    {
+      "costs_in_context" => "Overview",
+      "costs_compared_overview" => "Compared to experts",
+      "costs_across_sectors" => "By Sector",
+      "costs_within_sector" => "Costs within sectors",
+    }
+  end
+  
+  def sector_submenu
+    {
+      "costs_within_sector#fossil" => "Fossil Fuels",
+      "costs_within_sector#bio" => "Bio-energy",
+      "costs_within_sector#electricity" => "Electricity Generation",
+      "costs_within_sector#buildings" => "Buildings",
+      "costs_within_sector#transport" => "Transport",
+      "costs_within_sector#industry" => "Industry",
+      "costs_within_sector#other" => "Other",
     }
   end
   

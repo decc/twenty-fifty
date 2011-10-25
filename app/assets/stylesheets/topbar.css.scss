@@ -2,8 +2,9 @@
   z-index: 1;
   width: 100%;
   height: 30px;
-  margin: 0 0 15px 0;
-  padding: 0;  
+  margin: 0;
+  padding: 0; 
+  text-align: left; 
 
   #viewdropdown {
     position: absolute;
@@ -13,17 +14,19 @@
   
   #savedpathwaydropdown {
     position: absolute;
-    top: 5px;
-    right: 5px;    
+    top: 0px;
+    right: 0px;    
   }
   
   .dropdown {
     width: 150px;
+    height: 30px;
     z-index: 1;
     list-style: none;
     margin: 0;
-    padding: 0;
-    border: 1px solid #ccc;
+    padding: 5px;
+    padding-top: 3px;
+    border-left: 1px solid #a8a8a8;
     text-align: left;
   
     a {
@@ -74,5 +77,63 @@
     z-index: 1;
     display: none;
     background-color: yellow;
+  }
+  
+  ul#view_choices {
+    position:relative;
+    top:0;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    height: 30px;
+    display: inline;
+    
+    li {
+      display: block;
+      float: left;
+      list-style-type: none;
+      height:20px;
+      padding: 5px;
+      border-right: 1px solid #a8a8a8;
+      
+      a {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    }
+    li.active {
+      background: #a8a8a8;
+    }
+  }
+}
+#submenu {
+  position: relative;
+  clear: both;
+  width: 100%;
+  background: #a8a8a8;
+  height: 30px;
+  
+  li {
+    display: block;
+    float: left;
+    list-style-type: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    text-align: center;
+    
+    a {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+  li.active {
+    a {
+      color: #fff;
+      text-decoration: none;
+      cursor: pointer;
+    }
   }
 }

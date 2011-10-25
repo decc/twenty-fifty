@@ -1,9 +1,11 @@
+= render 'tabbed_menu'
+#submenu
+
 %script{ :type => 'text/javascript' }
+  $('#menu_primary_energy_chart').addClass('active')
   twentyfifty.setup(twentyfifty.PrimaryEnergy)
 
 #results
   .chart#demand_chart
   .chart#supply_chart  
   .chart#emissions_chart
-
-= render 'classic_controls'
