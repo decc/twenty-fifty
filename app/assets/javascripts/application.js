@@ -33,4 +33,5 @@
 //= require costs_compared_detail
 //= require dashboard2
 //= require map
+//= require story
 

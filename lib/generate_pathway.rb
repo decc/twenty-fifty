@@ -92,6 +92,7 @@ class GeneratePathway
     table pathway, :ghg, 182, 192
     table pathway, :final_energy_demand, 13, 18
     table pathway, :primary_energy_supply, 278, 291
+    pathway[:ghg][:percent_reduction_from_1990] = (intermediate_output_sheet.q155 * 100).round
   end
   
   def electricity_tables
@@ -101,6 +102,7 @@ class GeneratePathway
     table e, :emissions, 265, 268
     table e, :capacity, 118, 132
     e['automatically_built'] = intermediate_output_sheet.q120
+    e['backup'] = control_sheet.cb9
     pathway['electricity'] = e
   end
   
@@ -110,7 +112,7 @@ class GeneratePathway
   
   def heating_choice_table
     h = {}
-    h['residential'] = r = {}
+    r = {}
     [ 'Gas boiler (old)',
       'Gas boiler (new)',
       'Resistive heating',
@@ -124,9 +126,15 @@ class GeneratePathway
       'Community scale gas CHP',
       'Community scale solid-fuel CHP',
       'District heating from power stations'].each_with_index do |name,i| 
+        p name
+        p i
+        p i+427
+        p heating_sheet.send("f#{427+i}")
         r[name] = heating_sheet.send("f#{427+i}")
       end
-    h['commercial'] = c = {}
+    h['residential'] = r
+    
+    c = {}
     ['Gas boiler (old)',
       'Gas boiler (new)',
       'Resistive heating',
@@ -142,6 +150,7 @@ class GeneratePathway
       'District heating from power stations'].each_with_index do |name,i| 
         r[name] = heating_sheet.send("n#{438+i}")
       end
+    h['commercial'] = c
     pathway[:heating] = h
   end
   

@@ -149,3 +149,4 @@ window.twentyfifty.comparator_code = comparator_code
 window.twentyfifty.popup_url = popup_url
 window.twentyfifty.getSector = getSector
 window.twentyfifty.url = url
+window.twentyfifty.choices = choices

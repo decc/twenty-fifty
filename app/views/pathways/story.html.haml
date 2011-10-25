@@ -3,10 +3,11 @@
 
 %script{ :type => 'text/javascript' }
   $('#menu_story').addClass('active')
-  twentyfifty.setup(twentyfifty.Electricity)
+  twentyfifty.longDescriptions = #{raw ModelStructure.instance.long_descriptions.to_json};
+  twentyfifty.setup(twentyfifty.Story)
 
 #stories
-  #demand_story.story Not Yet Implemented
-  #supply_story.story Not Yet Implemented
-  #ghg_story.story Not Yet Implemented
+  #demand_story.story
+  #supply_story.story
+  #ghg_story.story
 .clear
