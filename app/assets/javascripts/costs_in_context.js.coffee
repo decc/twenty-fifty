@@ -1,10 +1,10 @@
 class CostsInContext
-  
+
   constructor: () ->
     $(document).ready(@setupComparisonChart)
     for code in twentyfifty.comparator_pathways
       twentyfifty.loadFromCacheOrRemote(code,@updateBar)
-  
+
   setupComparisonChart: () =>
     return false if @boxes_low?
     e = $('#costsincontext')
@@ -12,7 +12,7 @@ class CostsInContext
     @w = e.width()
     @r = new Raphael('costsincontext',@w,@h)
     @x = d3.scale.linear().domain([0, 40000]).range([200,@w-50]).nice()
-    @y = d3.scale.ordinal().domain(["chosen"].concat(twentyfifty.comparator_pathways)).rangeRoundBands([40,@h],0.5)
+    @y = d3.scale.ordinal().domain(["chosen"].concat(twentyfifty.comparator_pathways)).rangeRoundBands([40,@h],0.25)
     # The vertical lines
     format = @x.tickFormat(10)
     for tick in @x.ticks(10)
@@ -35,29 +35,29 @@ class CostsInContext
     for code in twentyfifty.comparator_pathways
       @boxes_low[code] = @r.rect(@x(0),@y(code),0,@y.rangeBand()).attr({'fill':'#134B9F','stroke':'none'})
       @boxes_range[code] = @r.rect(@x(0),@y(code),0,@y.rangeBand()).attr({'fill':'#60A4FA','stroke':'none'})
-      
+
   drawIndicator: (value,text) ->
     x = @x(value)
     @r.path(["M",x-10,20,"L",x+10,20,x,30,"Z"]).attr({fill:'#aaa',stroke:'none'})
-    @r.text(x,10,text).attr({'text-anchor':'middle'})    
+    @r.text(x,10,text).attr({'text-anchor':'middle'})
     @r.path(["M", x, 32, "L", x,@h]).attr({stroke:'#aaa'})
-  
+
   updateResults: (pathway) ->
     @updateBar(pathway,'chosen')
-    
+
   updateBar: (pathway,_id = pathway._id) =>
     @setupComparisonChart() unless @boxes_low?
     total_cost = @total_cost_low_adjusted(pathway)
     total_range = @total_cost_range_adjusted(pathway)
     @boxes_low[_id].attr({width: @x(total_cost) - @x(0)})
     @boxes_range[_id].attr({x:@x(total_cost),width: @x(total_range) - @x(0)})
-  
+
   total_cost_low_adjusted: (pathway) ->
     twentyfifty.adjust_costs_of_pathway(pathway) unless pathway.total_cost_low_adjusted?
-    pathway.total_cost_low_adjusted 
+    pathway.total_cost_low_adjusted
 
   total_cost_range_adjusted: (pathway) ->
     twentyfifty.adjust_costs_of_pathway(pathway) unless pathway.total_cost_range_adjusted?
-    pathway.total_cost_range_adjusted 
-  
+    pathway.total_cost_range_adjusted
+
 window.twentyfifty['CostsInContext'] = CostsInContext
