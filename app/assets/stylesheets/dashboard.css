@@ -2,6 +2,7 @@ html, body {
     padding: 0;
     margin: 0 auto 0;
     text-align: center;
+    background: transparent;
 }
 /* Do a little bit of normalistation */
 h1, h2, h3, h4, h5, h6, p, div, ol, ul, li, dl, dd, dt, span {
@@ -12,13 +13,43 @@ h1, h2, h3, h4, h5, h6, p, div, ol, ul, li, dl, dd, dt, span {
 .clear {
     clear: both;
 }
-
+body {
+    background: #f0f0f0;
+}
 #pageheading {
+    margin:0;
     padding: 0.5em;
     padding-left: 0;
+    padding-bottom: 0;
     text-align: left;
+    color: #353535;
 }
-
+#subheading {
+    font-size: 0.8em;
+    color: #898989;
+}
+#homepagemenu {
+    width: 100%;
+    border-top: 1px dotted #afafaf;
+    border-bottom: 1px dotted #000000;
+    height: 30px;
+    overflow: hidden;
+}
+#homepagemenu ul li {
+    display: block;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    float: left;
+    width: 24%;
+    border-right: 1px dotted #afafaf;
+}
+#homepagemenu ul li.last {
+    display: block;
+    float: left;
+    width: 24%;
+    border-right: none;
+}
 #container {
     margin: 0 auto 0;
     text-align: left;
@@ -28,13 +59,15 @@ h1, h2, h3, h4, h5, h6, p, div, ol, ul, li, dl, dd, dt, span {
 #main {
     padding: 1em;
     position: relative;
-    border: 1px solid #000000;
+    border: none;
+    clear:both;
 }
 #visuals {
-    height: 250px;
+    height: 310px;
     float: left;
-    width: 100%;
-    margin-bottom: 20px;
+    width: 98%;
+    padding-left: 1%;
+    padding-right: 1%;
     position: relative;
 }
 #supply_demand {
@@ -44,28 +77,31 @@ h1, h2, h3, h4, h5, h6, p, div, ol, ul, li, dl, dd, dt, span {
 .grid {
     width: 288px;
     height: 224px;
-    border: 1px solid #000000;
+    border: 5px solid #ffffff;
     overflow: hidden;
-    float: left;
     position: relative;
     background: #afafaf;
 }
 
-#supply {
-    
+#supplygrid {
+    position: absolute;
+    left: 0;
 }
-#demand {
-    
+#demandgrid {
+    position: absolute;
+    right: 0;
 }
 #middle {
-    float: left;
-    width: 170px;
+    left: 299px;
+    position: absolute;
+    width: 331px;
+    text-align: center;
 }
 #connection {
     float: left;
-    width: 170px;
+    width: 100%;
     height: 138px;
-    margin-top: 50px;
+    margin-top: 10px;
     border-top: 1px solid #b2b2b2;
     border-bottom: 1px solid #b2b2b2;
     background: #aaaabb;
@@ -77,16 +113,20 @@ h1, h2, h3, h4, h5, h6, p, div, ol, ul, li, dl, dd, dt, span {
 #implications {
     float: left;
     height: 30px;
-    width: 103px;
+    width: 100px;
     border: 1px solid #000000;
     margin-top: 1em;
-    margin-left: 30px;
+    margin-left: 115px;
     text-align: center;
 }
 #costsvisual {
-    float: right;
-    height: 250px;
-}
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    height: 60px;
+}/*
 .costbar {
     float: left;
     width: 48px;
@@ -96,11 +136,47 @@ h1, h2, h3, h4, h5, h6, p, div, ol, ul, li, dl, dd, dt, span {
 }
 #costsovertimebar {
     background: #ff0000;
-} 
+} */
+#emissionsheading {
+    position: absolute;
+    top: 0;
+    left: 40%;
+    text-align: center;
+    background: #505050;
+    color: #000000;
+    width: 200px;
+    margin: 0 auto 0;
+}
 #emissionsovertimebar {
-    background: #00ff00;
-} 
-#quickstartmenu {
+    position: absolute;
+    bottom: 0;
+    height: 40px;
+    width: 100%;
+    background: #a0a0a0;
+    border-top: 1px solid #505050;
+}
+#emissionsovertimebar #emissionscurrent {
+    position: absolute;
+    left: 0;
+    width: 110px;
+    height: 30px;
+    padding: 10px;
+    padding-bottom: 0;
+    background: #505050;
+}
+#emissionsovertimebar #emissionspast {
+    position: absolute;
+    right: 0;
+    width: 110px;
+    height: 30px;
+    padding: 10px;
+    padding-bottom: 0;
+    background: #505050;
+}
+#emissionsovertimebar #emissionstarget {
+    position: absolute;
+}
+/*#quickstartmenu {
     position: relative;
     clear: both;
     width: 100%;
@@ -116,12 +192,16 @@ h1, h2, h3, h4, h5, h6, p, div, ol, ul, li, dl, dd, dt, span {
     padding-top: 5px;
     padding-bottom: 5px;
     border: 1px solid #3a3a3a;
-}
+}*/
 #controls {
     position: relative;
     width: 100%;
-    margin-top: 20px;
-    border: 1px solid #595959;
+    margin-top: 10px;
+    background: #ffffff;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border-top: 1px dotted #595959;
+    border-bottom: 1px dotted #000000;
 }
 #footer {
     clear: both;

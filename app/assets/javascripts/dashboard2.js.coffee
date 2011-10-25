@@ -1,7 +1,7 @@
 class Dashboard2
 
-  demand_id = "demand"
-  supply_id = "supply"
+  demand_id = "demandgrid"
+  supply_id = "supplygrid"
   colours = {
     "Nuclear fission":"#ff7777", 
     "Solar":"#ff0077", 
@@ -35,8 +35,8 @@ class Dashboard2
     $(document).ready(@drawGrids)
   
   updateResults: (@pathway) ->
-    @fillColors('supply', @pathway.simplified_sankey.supply)
-    @fillColors('demand', @pathway.simplified_sankey.demand)
+    @fillColors(supply_id, @pathway.simplified_sankey.supply)
+    @fillColors(demand_id, @pathway.simplified_sankey.demand)
     twentyfifty.adjust_costs_of_pathway(pathway) unless pathway.total_cost_low_adjusted?
     $('#costmessage').html("Cost #{abs_percent(@pathway.cost_above_benchmark_low)} to #{abs_percent(@pathway.cost_above_benchmark_high)} 2007 levels")
     null
@@ -48,8 +48,8 @@ class Dashboard2
       "#{Math.abs(value)}% above"
   
   drawGrids: () =>
-    @drawGrid('demand')
-    @drawGrid('supply')
+    @drawGrid(demand_id)
+    @drawGrid(supply_id)
     null
   
   drawGrid: (target) ->

@@ -2,10 +2,12 @@
   twentyfifty.setup(twentyfifty.Dashboard2)
 #container
   %h1#pageheading DECC 2050 Calculator
+  #subheading Use the Energy controls to get emissions below the 2050 target whilst balancing supply and demand, and keeping an eye on cost. Use the quick start menu to try things out fast.
+  = render 'homepage_menu'
   #main
     #visuals
       #supply_demand
-        #supply.grid
+        #supplygrid.grid
           / supply grid
         #middle
           #costmessage
@@ -16,24 +18,18 @@
               Basically a graphic to pop out the
               implications window
             %a#iframe{:href => '#'} Implications
-        #demand.grid
+        #demandgrid.grid
           / Put your grid in here
       #costsvisual
+        #emissionsheading Emissions Meter
         / Visualisation of the costs bars
-        #costsovertimebar.costbar
         #emissionsovertimebar.costbar
+          #emissionscurrent Currently 50&#037;
+          #emissionspast &lt;&lt; 1990 levels
       #calculating 
         #calcmessage Calculating
-    #quickstartmenu
-      / Quick start links menu
-      .title Quick start menu
-      #shortcutsmenu.link
-        Short Cuts
-      #startersmenu.link
-        Simple Starters
-      #expertsmenu.link
-        Expert Pathways
-      .clear
+    
+    .clear
     #controls
       = render 'classic_controls'
       .clear
