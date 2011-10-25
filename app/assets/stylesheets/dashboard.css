@@ -58,16 +58,15 @@ body {
 }
 #main {
     padding: 1em;
+    padding-top: 0;
     position: relative;
     border: none;
     clear:both;
 }
 #visuals {
-    height: 310px;
+    height: 330px;
     float: left;
-    width: 98%;
-    padding-left: 1%;
-    padding-right: 1%;
+    width: 100%;
     position: relative;
 }
 #supply_demand {
@@ -80,16 +79,29 @@ body {
     border: 5px solid #ffffff;
     overflow: hidden;
     position: relative;
-    background: #afafaf;
+    background: #ffffff;
 }
-
-#supplygrid {
+#supplycontainer {
     position: absolute;
     left: 0;
+    width: 298px;
+    text-align: center;
 }
-#demandgrid {
+#supplygrid {
+}
+#demandcontainer {
     position: absolute;
     right: 0;
+    width: 298px;
+    text-align: center;
+}
+#demandgrid {
+}
+#visuals .legend {
+    color: #505050;
+    height: 20px;
+    font-size: 0.8em;
+    width: 100%;
 }
 #middle {
     left: 299px;

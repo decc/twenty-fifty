@@ -7,9 +7,12 @@
   #main
     #visuals
       #supply_demand
-        #supplygrid.grid
-          / supply grid
+        #supplycontainer
+          #supplylegend.legend YOUR ENERGY SUPPLY
+          #supplygrid.grid
+            / supply grid
         #middle
+          #middlelegend.legend YOUR ENERGY FLOW
           #costmessage
           #connection
             / Place for the connection drawing
@@ -18,8 +21,10 @@
               Basically a graphic to pop out the
               implications window
             %a#iframe{:href => '#'} Implications
-        #demandgrid.grid
-          / Put your grid in here
+        #demandcontainer
+          #demandlegend.legend YOUR ENERGY DEMAND
+          #demandgrid.grid
+            / Put your grid in here
       #costsvisual
         #emissionsheading Emissions Meter
         / Visualisation of the costs bars
@@ -29,12 +34,12 @@
       #calculating 
         #calcmessage Calculating
     
+  .clear
+  #controls
+    = render 'classic_controls'
     .clear
-    #controls
-      = render 'classic_controls'
-      .clear
-      / Top Level controls for changing the pathway.
-    #footer
+    / Top Level controls for changing the pathway.
+  #footer
 
 :javascript
   $(document).ready(function(){
