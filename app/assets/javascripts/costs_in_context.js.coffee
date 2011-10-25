@@ -12,7 +12,7 @@ class CostsInContext
     @w = e.width()
     @r = new Raphael('costsincontext',@w,@h)
     @x = d3.scale.linear().domain([0, 40000]).range([200,@w-50]).nice()
-    @y = d3.scale.ordinal().domain(["chosen"].concat(twentyfifty.comparator_pathways)).rangeRoundBands([40,@h],0.25)
+    @y = d3.scale.ordinal().domain(["chosen"].concat(twentyfifty.comparator_pathways)).rangeRoundBands([40,@h],0.35)
     # The vertical lines
     format = @x.tickFormat(10)
     for tick in @x.ticks(10)
