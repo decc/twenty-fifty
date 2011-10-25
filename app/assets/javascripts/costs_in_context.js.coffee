@@ -30,11 +30,15 @@ class CostsInContext
     # Initally empty boxes
     @boxes_low = {}
     @boxes_range = {}
-    @boxes_low['chosen'] = @r.rect(@x(0),@y("chosen"),0,@y.rangeBand()).attr({'fill':'#BCB645','stroke':'none'})
-    @boxes_range['chosen'] = @r.rect(@x(0),@y("chosen"),0,@y.rangeBand()).attr({'fill':'#FF6','stroke':'none'})
-    for code in twentyfifty.comparator_pathways
+    @boxes_arrow = {}
+    for code in ["chosen"].concat(twentyfifty.comparator_pathways)
       @boxes_low[code] = @r.rect(@x(0),@y(code),0,@y.rangeBand()).attr({'fill':'#134B9F','stroke':'none'})
       @boxes_range[code] = @r.rect(@x(0),@y(code),0,@y.rangeBand()).attr({'fill':'#60A4FA','stroke':'none'})
+      @boxes_arrow[code] = @r.path(["M",@x(0),@y(code),"l",0,@y.rangeBand()]).attr({'stroke':'#000000'})
+
+    @boxes_low["chosen"].attr({'fill':'#BCB645'});
+    @boxes_range["chosen"].attr({'fill':'#FFFF66'});
+
 
   drawIndicator: (value,text) ->
     x = @x(value)
@@ -51,6 +55,21 @@ class CostsInContext
     total_range = @total_cost_range_adjusted(pathway)
     @boxes_low[_id].attr({width: @x(total_cost) - @x(0)})
     @boxes_range[_id].attr({x:@x(total_cost),width: @x(total_range) - @x(0)})
+    yrealtop = @y(_id)
+    yband = @y.rangeBand()
+    ymid = yrealtop+yband*0.5
+    ybot = yrealtop+yband*0.8
+    ytop = yrealtop+yband*0.2
+    xmin = @x(total_cost)
+    xmax = @x(total_range+total_cost)
+    xlen = xmax - xmin
+    x45 = Math.min(xlen, yband)/2
+    arrow_path = [
+      "M",xmin+x45,ybot, "L",xmin,ymid, "L",xmin+x45,ytop,
+      "M",xmin,ymid, "L",xmax,ymid,
+      "M",xmax-x45,ybot, "L",xmax,ymid, "L",xmax-x45,ytop
+    ]
+    @boxes_arrow[_id].attr({path:arrow_path})
 
   total_cost_low_adjusted: (pathway) ->
     twentyfifty.adjust_costs_of_pathway(pathway) unless pathway.total_cost_low_adjusted?
