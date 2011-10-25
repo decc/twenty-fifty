@@ -150,14 +150,17 @@ class Map
   
    point_stack: (x,y,number,colour,label,size) ->
      x_count = 0
-     x_step = size < 10 ? 5 : 1.5*size
-     y_step = size < 10 ? 5 : 1.5*size
+     if size < 10
+       x_step = 5 
+       y_step = 5
+     else
+       x_step = 1.5*size
+       y_step = 1.5*size
      width = 100
      @r.text(x-20,y,label).attr({'text-anchor':'end'}) if number > 0
-     for i in [0..number]
+     for i in [1..number]
        @r.circle(x+(x_count*x_step),y,size*km).attr({'stroke-width':0,'fill':colour})
        @r.circle(x+(x_count*x_step),y,1).attr({'stroke-width':0,'fill':'black'})  
-       i -= 1
        x_count = x_count + 1
        if (x_count*x_step) > width
          x_count = 0
@@ -183,7 +186,7 @@ class Map
      values.sort((a,b) -> b.value - a.value)
      for value in values
        box = @land_boxes[value.name]
-       side = Math.sqrt(value.value)
+       side = Math.sqrt(value.value*km2)
        box.square.attr({y:y-side,width:side,height:side})
        box.label.attr({y:y-(side/2)})
        if value.value > 10
@@ -201,7 +204,7 @@ class Map
      values.sort((a,b) -> b.value - a.value)
      for value in values
        box = @sea_boxes[value.name]
-       side = Math.sqrt(value.value)      
+       side = Math.sqrt(value.value*km2)    
        box.square.attr({x:x-side,y:y,width:side,height:side})
        box.label.attr({x:x+4,y:y+(side/2)})
        if value.value > 10
@@ -218,7 +221,7 @@ class Map
       values.sort((a,b) -> b.value - a.value)
       for value in values
         box = @overseas_land_boxes[value.name]
-        side = Math.sqrt(value.value)
+        side = Math.sqrt(value.value*km2)
         box.square.attr({y:y-side,width:side,height:side})
         box.label.attr({y:y-(side/2)})
         if value.value > 10
@@ -234,11 +237,17 @@ class Map
      @r.setStart()
      y = 35
      x = 955
+     values = []
      for name in ['I.a','I.b','II.a','III.d','VII.c','VI.b']
-       number = map[name]
-       console.log "#{name}:#{number}"
-       size = Math.round(Math.sqrt(pointSizes[name])*10)
-       y = @point_stack(x,y,number,colours[name],"#{Math.round(number)} x #{labels[name]}",size)
+       values.push({name: name, value: map[name]})
+     
+     values.sort((a,b) -> b.value - a.value)
+     
+     for value in values
+       if value.value >= 1
+         size = Math.round(Math.sqrt(pointSizes[value.name])*10)
+         console.log value.name, value.value, size
+         y = @point_stack(x,y,value.value,colours[value.name],"#{Math.round(value.value)} x #{labels[value.name]}",size)
      @points = @r.setFinish()
       
       
