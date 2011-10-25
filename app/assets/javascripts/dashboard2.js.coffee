@@ -37,7 +37,15 @@ class Dashboard2
   updateResults: (@pathway) ->
     @fillColors('supply', @pathway.simplified_sankey.supply)
     @fillColors('demand', @pathway.simplified_sankey.demand)
+    twentyfifty.adjust_costs_of_pathway(pathway) unless pathway.total_cost_low_adjusted?
+    $('#costmessage').html("Cost #{abs_percent(@pathway.cost_above_benchmark_low)} to #{abs_percent(@pathway.cost_above_benchmark_high)} 2007 levels")
     null
+  
+  abs_percent = (value) ->
+    if value < 0
+      "#{Math.abs(value)}% below"
+    else
+      "#{Math.abs(value)}% above"
   
   drawGrids: () =>
     @drawGrid('demand')
