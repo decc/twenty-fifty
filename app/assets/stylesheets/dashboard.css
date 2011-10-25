@@ -12,34 +12,45 @@ h1, h2, h3, h4, h5, h6, p, div, ol, ul, li, dl, dd, dt, span {
 .clear {
     clear: both;
 }
+
+#pageheading {
+    padding: 0.5em;
+    padding-left: 0;
+    text-align: left;
+}
+
 #container {
     margin: 0 auto 0;
     text-align: left;
-    padding: 1em;
     width: 960px;
-
-    border: 1px solid #000000;
     position: relative;
+}
+#main {
+    padding: 1em;
+    position: relative;
+    border: 1px solid #000000;
 }
 #visuals {
     height: 250px;
     float: left;
     width: 100%;
     margin-bottom: 20px;
+    position: relative;
 }
 #supply_demand {
     padding-top: 12px;
     float: left;
 }
 .grid {
-    width: 306px;
-    height: 238px;
+    width: 288px;
+    height: 224px;
     border: 1px solid #000000;
     overflow: hidden;
     float: left;
     position: relative;
     background: #afafaf;
 }
+
 #supply {
     
 }
@@ -98,7 +109,7 @@ h1, h2, h3, h4, h5, h6, p, div, ol, ul, li, dl, dd, dt, span {
 }
 #quickstartmenu .link {
     float: left;
-    width: 278px;
+    width: 268px;
     margin-left: 29px;
     margin-bottom: 10px;
     text-align: center;
@@ -122,19 +133,8 @@ h1, h2, h3, h4, h5, h6, p, div, ol, ul, li, dl, dd, dt, span {
     margin-bottom: 10px;
 }
 
-.grid {
-    width: 306px;
-    height: 238px;
-    border: 1px solid #000000;
-    overflow: hidden;
-    float: left;
-    position: relative;
-    background: #afafaf;
-}
 .grid_grid_box {
     float: right;
-    border-right: 1px solid transparent;
-    border-bottom: 1px solid transparent;
     height: 16px;
     width: 16px;
 }
@@ -176,4 +176,22 @@ h1, h2, h3, h4, h5, h6, p, div, ol, ul, li, dl, dd, dt, span {
     display: block;
     width: auto;
     margin-top: 2em;
+}
+
+#calculating {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(255,255,255);
+    background: rgba(255,255,255,0.8);
+}
+#calcmessage {
+    top: 40%;
+    width: 100%;
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    position: absolute;
 }

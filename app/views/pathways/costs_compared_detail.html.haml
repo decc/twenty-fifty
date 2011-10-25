@@ -1,4 +1,6 @@
+= render 'tabbed_menu'
 %script{ :type => 'text/javascript' }
+  $('#menu_costs_compared_detail').addClass('active')
   twentyfifty.setup(twentyfifty.CostsComparedDetail)
 
 #results
@@ -6,4 +8,3 @@
     #totals
     #components
     
-= render 'classic_controls'

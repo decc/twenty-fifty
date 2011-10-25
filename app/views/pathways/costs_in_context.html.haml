@@ -1,7 +1,9 @@
+= render 'tabbed_menu'
+
 %script{ :type => 'text/javascript' }
+  $('#menu_costs_in_context').addClass('active')
   twentyfifty.setup(twentyfifty.CostsInContext)
 
 #results
   #costsincontext
     
-= render 'classic_controls'

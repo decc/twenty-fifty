@@ -1,7 +1,9 @@
+= render 'tabbed_menu'
+
 %script{ :type => 'text/javascript' }
+  $('#menu_sankey').addClass('active')
   twentyfifty.setup(twentyfifty.SankeyDisplay)
 
 #results
   #sankey
     
-= render 'classic_controls'

@@ -2,7 +2,27 @@ class Dashboard2
 
   demand_id = "demand"
   supply_id = "supply"
-  colours = ["#ffaaaa", "#aaffaa", "#aaaaff", "#ffffaa", "#ffaaff", "#aaffff"]
+  colours = {
+    "Nuclear fission":"#ff7777", 
+    "Solar":"#ff0077", 
+    "Wind":"#770770", 
+    "Tidal":"#aabb66", 
+    "Wave":"#1234ff", 
+    "Geothermal":"#abcdef", 
+    "Hydro":"#fedcba", 
+    "Electricity oversupply (imports)":"#000000", 
+    "Environmental heat":"#595959", 
+    "Bioenergy":"#ffaaff", 
+    "Coal":"#aaffaa", 
+    "Oil":"#aaaaff", 
+    "Natural gas":"#ff00ff", 
+    "other":"#00ff00",
+    "Transport":"#ffaaaa", 
+    "Industry":"#aaffaa", 
+    "Heating and cooling":"#aaaaff", 
+    "Lighting & appliances":"#ffaaff", 
+    "Food consumption [UNUSED]":"#aaaaaa"}
+  
   grid = []
   grid_width = 18
   grid_height = 14
@@ -15,7 +35,8 @@ class Dashboard2
     $(document).ready(@drawGrids)
   
   updateResults: (@pathway) ->
-    @fillColors()
+    @fillColors('supply', @pathway.simplified_sankey.supply)
+    @fillColors('demand', @pathway.simplified_sankey.demand)
     null
   
   drawGrids: () =>
@@ -24,6 +45,7 @@ class Dashboard2
     null
   
   drawGrid: (target) ->
+    $('#'+target).empty()
     drawn = 0
     ht = []
     numtodraw = ((block_height*block_width)/(pixel_height*pixel_width))-1
@@ -38,24 +60,30 @@ class Dashboard2
     $('#'+target).append(ht.join(""))
     null
     
-  fillColors: () ->
-    boxes = $("#demand .grid_item").get().reverse()
-    boxes = $(boxes) 
+  fillColors: (target, fillwith) ->
+    boxes = $("#"+target+" .grid_item").get().reverse()
     total = boxes.length
     count = 0
     choose = 0
+    tally = 0
     
-    boxes.each ->
-      if count % 500 == 0 and count > 1
-        choose++
-      if (choose > 5)
-        choose = 0
+    fillers = (name for name of fillwith)
+    
+    for filler in fillers
+      fillamount = fillwith[filler]
+      fillamount = @toInt(fillamount)
       
-      $(this).css("background", colours[choose])
-      count++
+      if fillamount
+        for box in boxes[tally..(tally+fillamount)]
+          $(box).css("background", colours[filler])
+          $(box).addClass(filler)
+        tally = tally + fillamount
+      
       null
-      
+    
     null
-        
+    
+  toInt: (number) ->
+    Math.round(Number(number))
   
 window.twentyfifty['Dashboard2'] = Dashboard2
