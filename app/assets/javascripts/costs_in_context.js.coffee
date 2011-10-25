@@ -19,9 +19,9 @@ class CostsInContext
       @r.text(@x(tick),30,format(tick)).attr({'text-anchor':'middle'})
       @r.path(["M", @x(tick), 40, "L", @x(tick),@h]).attr({stroke:'#aaa' ,'stroke-dasharray':'.'})
     # The horizontal labels
-    @r.text(195,@y("chosen")+(@y.rangeBand()/2),"Your pathway").attr({'text-anchor':'end'})
+    @r.text(10,@y("chosen")+(@y.rangeBand()/2),"Your pathway").attr({'text-anchor':'start'})
     for code in twentyfifty.comparator_pathways
-      @r.text(195,@y(code)+(@y.rangeBand()/2),twentyfifty.pathwayName(code,code)).attr({'text-anchor':'end'})
+      @r.text(10,@y(code)+(@y.rangeBand()/2),twentyfifty.pathwayName(code,code)).attr({'text-anchor':'start'})
     # Indicator
     #@drawIndicator(26000,"GDP/capita in 2010")
     @drawIndicator(3000,"Aproximate energy system cost in 2007")
@@ -36,14 +36,14 @@ class CostsInContext
       @boxes_range[code] = @r.rect(@x(0),@y(code),0,@y.rangeBand()).attr({'fill':'#60A4FA','stroke':'none'})
       @boxes_arrow[code] = @r.path(["M",@x(0),@y(code),"l",0,@y.rangeBand()]).attr({'stroke':'#000000'})
 
-    @boxes_low["chosen"].attr({'fill':'#BCB645'});
-    @boxes_range["chosen"].attr({'fill':'#FFFF66'});
+    @boxes_low["chosen"].attr({'fill':'#e9169f'});
+    @boxes_range["chosen"].attr({'fill':'#d7b5d8'});
 
 
   drawIndicator: (value,text) ->
     x = @x(value)
     @r.path(["M",x-10,20,"L",x+10,20,x,30,"Z"]).attr({fill:'#aaa',stroke:'none'})
-    @r.text(x,10,text).attr({'text-anchor':'middle'})
+    @r.text(x,10,text).attr({'text-anchor':'middle',fill:'#e9169f'})
     @r.path(["M", x, 32, "L", x,@h]).attr({stroke:'#aaa'})
 
   updateResults: (pathway) ->
