@@ -3,9 +3,14 @@
 #container
   %h1#pageheading DECC 2050 Calculator
   #subheading Use the Energy controls to get emissions below the 2050 target whilst balancing supply and demand, and keeping an eye on cost. Use the quick start menu to try things out fast.
-  = render 'homepage_menu'
   #main
     #visuals
+      #costsvisual
+        #emissionsheading Emissions Meter
+        / Visualisation of the costs bars
+        #emissionsovertimebar.costbar
+          #emissionscurrent Currently 50&#037;
+          #emissionspast &lt;&lt; 1990 levels
       #supply_demand
         #supplycontainer
           #supplylegend.legend YOUR ENERGY SUPPLY
@@ -25,16 +30,10 @@
           #demandlegend.legend YOUR ENERGY DEMAND
           #demandgrid.grid
             / Put your grid in here
-      #costsvisual
-        #emissionsheading Emissions Meter
-        / Visualisation of the costs bars
-        #emissionsovertimebar.costbar
-          #emissionscurrent Currently 50&#037;
-          #emissionspast &lt;&lt; 1990 levels
       #calculating 
         #calcmessage Calculating
-    
   .clear
+  = render 'homepage_menu'
   #controls
     = render 'classic_controls'
     .clear

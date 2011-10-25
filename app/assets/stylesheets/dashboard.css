@@ -34,6 +34,7 @@ body {
     border-bottom: 1px dotted #000000;
     height: 30px;
     overflow: hidden;
+    clear: both;
 }
 #homepagemenu ul li {
     display: block;
@@ -70,8 +71,7 @@ body {
     position: relative;
 }
 #supply_demand {
-    padding-top: 12px;
-    float: left;
+    margin-top: 70px;
 }
 .grid {
     width: 288px;
@@ -133,7 +133,7 @@ body {
 #costsvisual {
     width: 100%;
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
     text-align: center;
     height: 60px;
