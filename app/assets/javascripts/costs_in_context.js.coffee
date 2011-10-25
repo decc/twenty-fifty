@@ -63,7 +63,7 @@ class CostsInContext
     xmin = @x(total_cost)
     xmax = @x(total_range+total_cost)
     xlen = xmax - xmin
-    x45 = Math.min(xlen, yband)/2
+    x45 = Math.min(xlen, yband)/4
     arrow_path = [
       "M",xmin+x45,ybot, "L",xmin,ymid, "L",xmin+x45,ytop,
       "M",xmin,ymid, "L",xmax,ymid,
