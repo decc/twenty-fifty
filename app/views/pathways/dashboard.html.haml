@@ -9,7 +9,12 @@
         #emissionsheading EMISSIONS METER
         / Visualisation of the costs bars
         #emissionsovertimebar.costbar
-          #emissionscurrent Currently 50&#037;
+          #emissionscurrent 
+            Currently 
+            %span#emissionscurrentpercent 100&#037;
+          #emissionsbar
+            .bar
+          #emissionstarget 2050 Target
           #emissionspast &lt;&lt; 1990 levels
       #supply_demand
         #supplycontainer
@@ -21,6 +26,7 @@
           #middlelegend.legend YOUR ENERGY FLOW
           #connection
             .overlay
+            #connections
             / Place for the connection drawing
           #implications
             /
