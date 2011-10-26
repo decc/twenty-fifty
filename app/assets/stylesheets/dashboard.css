@@ -33,12 +33,12 @@ body.dashboard {
     width: 100%;
 }
 #homepagemenu {
-    width: 100%;
-    border-top: 1px dotted #afafaf;
-    border-bottom: 1px dotted #000000;
+    position: absolute;
+    top: 10px;
+    right: 0;
     height: 30px;
-    overflow: hidden;
-    clear: both;
+    width: 500px;
+    font-size: 0.8em;
 }
 #homepagemenu ul li {
     display: block;
@@ -46,13 +46,13 @@ body.dashboard {
     padding-top: 5px;
     padding-bottom: 5px;
     float: left;
-    width: 24%;
+    width: 33%;
     border-right: 1px dotted #afafaf;
 }
 #homepagemenu ul li.last {
     display: block;
     float: left;
-    width: 24%;
+    width: 33%;
     border-right: none;
 }
 #container {
@@ -70,7 +70,7 @@ body.dashboard {
     background: url('header-drop.png') center top no-repeat transparent;
 }
 #visuals {
-    height: 370px;
+    height: 380px;
     float: left;
     width: 100%;
     position: relative;
@@ -81,9 +81,9 @@ body.dashboard {
 .grid {
     width: 288px;
     height: 224px;
-    border: 5px solid #ffffff;
     overflow: hidden;
     position: relative;
+    border: 5px solid #ffffff;
     background: #ffffff;
 }
 .grid_overlay {
@@ -101,6 +101,32 @@ body.dashboard {
     text-align: center;
 }
 #supplygrid {
+}
+.current {
+    height: 1px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    border-top: 1px dashed #888888;
+}
+.current_text_left {
+    position: absolute;
+    text-align: left;
+    font-size: 0.6em;
+    left: 8px;
+    top: 51%;
+    color: #888888;
+    background: transparent;
+}
+.current_text_right {
+    position: absolute;
+    text-align: right;
+    font-size: 0.6em;
+    right: 8px;
+    top: 51%;
+    color: #888888;
+    background: transparent;
 }
 #demandcontainer {
     position: absolute;
@@ -135,15 +161,26 @@ body.dashboard {
     margin-top: 10px;
     position: relative;
 }
-#connection .overlay {
+#connection .overlayright {
     position: absolute;
-    width: 100%;
+    width: 45px;
     height: 160px;
     top: 0;
     right: 0;
-    background: url('vector-overlay.png') top left no-repeat transparent;
+    background: url('vector-overlay-right.png') top left no-repeat transparent;
     z-index: 50;
 }
+#connection .overlayleft {
+    position: absolute;
+    width: 45px;
+    height: 160px;
+    top: 0;
+    right: left;
+    background: url('vector-overlay-left.png') top left no-repeat transparent;
+    z-index: 50;
+}
+
+
 #connection .connector {
     /* Individual connectors in the #connection */
     width: 100%;
@@ -163,25 +200,25 @@ body.dashboard {
     font-size: 0.8em;
 }
 #implications {
+    position: absolute;
+    bottom: 0;
     float: left;
     height: 41px;
     width: 100%;
-    margin-top: 1em;
     text-align: center;
     margin: 0 auto 0;
 }
 #implications a {
     position: relative;
     display: inline-block;
-    width: 158px;
-    text-align: left;
+    width: 926px;
+    text-align: center;
     text-decoration: none;
     color: #ffffff;
     font-size: 20px;
     height: 31px;
-    padding-left: 67px;
+    padding-left: 30px;
     padding-top: 10px;
-    margin-top: 15px;
     background: url('implications-button.png') top left no-repeat transparent;
 }
 #implications a:visited {
@@ -237,10 +274,12 @@ body.dashboard {
     padding-bottom: 0;
     background: url('emissions-shadow-left.png') no-repeat right center #7d7d7d;
     color: #ffffff;
+    font-size: 0.9em;
 }
 #emissionsovertimebar #emissionspast {
     position: absolute;
     right: 0;
+    font-size: 0.9em;
     width: 110px;
     height: 30px;
     padding: 10px;
@@ -255,10 +294,12 @@ body.dashboard {
     width: 660px;
     height: 30px;
     padding-top: 10px;
+    z-index: 50;
 }
 #emissionsovertimebar #emissionsbar .bar {
     float: left;
     height: 20px;
+    z-index: 50;
 }
 #emissionsovertimebar #emissionstarget {
     position: absolute;
@@ -268,7 +309,7 @@ body.dashboard {
     padding-left: 8px;
     font-size: 0.6em;
     background: url('emissions-target.png') no-repeat top left transparent;
-    z-index: 50;
+    z-index: 4;
 }
 /*#quickstartmenu {
     position: relative;

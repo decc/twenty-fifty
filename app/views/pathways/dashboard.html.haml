@@ -2,7 +2,8 @@
   twentyfifty.setup(twentyfifty.Dashboard2)
 #container
   %h1#pageheading 2050 Pathway Calculator
-  #subheading Use the Energy controls to get emissions below the 2050 target whilst balancing supply and demand, and keeping an eye on cost. Use the quick start menu to try things out fast.
+  #subheading Use the Energy controls to get emissions below the 2050 target whilst balancing supply and demand. Use the quick picks menu to try things out fast.
+  = render 'homepage_menu'
   #main
     #visuals
       #costsvisual
@@ -10,39 +11,45 @@
         / Visualisation of the costs bars
         #emissionsovertimebar.costbar
           #emissionscurrent 
-            Currently 
+            Emissions: 
             %span#emissionscurrentpercent 100&#037;
+          #emissionstarget 2050 Target
           #emissionsbar
             .bar
-          #emissionstarget 2050 Target
           #emissionspast &lt;&lt; 1990 levels
       #supply_demand
         #supplycontainer
           #supplylegend.legend YOUR ENERGY SUPPLY
           #supplygrid.grid
-          #supplygrid.grid_overlay
             / supply grid
+          #supplycontainer.current
+          .current_text_left Current Supply
         #middle
           #middlelegend.legend YOUR ENERGY FLOW
           #connection
-            .overlay
+            .overlayleft
+            .overlayright
             #connections
             / Place for the connection drawing
-          #implications
-            /
-              Basically a graphic to pop out the
-              implications window
-            %a#iframe{:href => '#'} See Implications
         #demandcontainer
           #demandlegend.legend YOUR ENERGY DEMAND
           #demandgrid.grid
-          #demandgrid.grid_overlay
+            /#demandgrid.grid_overlay
             / Put your grid in here
-      #costmessage
+          #demandcontainer.current
+          .current_text_right Current Demand
+      /#costmessage
+      #implications
+        /
+          Basically a graphic to pop out the
+          implications window
+        %a#iframe{:href => '#'} See Implications
       #calculating 
-        #calcmessage Calculating
+        #calcmessage 
+          Calculating
+          %br/
+          %img{:src => 'spinner3-black.gif', :alt => 'Loading image'}
   .clear
-  = render 'homepage_menu'
   #controls
     = render 'classic_controls'
     .clear
