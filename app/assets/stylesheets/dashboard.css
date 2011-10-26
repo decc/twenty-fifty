@@ -129,7 +129,7 @@ body.dashboard {
 #connection {
     float: left;
     width: 100%;
-    height: 130px;
+    height: 150px;
     padding-top: 5px;
     padding-bottom: 5px;
     margin-top: 10px;
@@ -138,15 +138,29 @@ body.dashboard {
 #connection .overlay {
     position: absolute;
     width: 100%;
-    height: 140px;
+    height: 160px;
     top: 0;
     right: 0;
     background: url('vector-overlay.png') top left no-repeat transparent;
+    z-index: 50;
 }
 #connection .connector {
     /* Individual connectors in the #connection */
     width: 100%;
     margin-bottom: 3px;
+}
+#connection #overgeneration {
+    background: url("energy-over-generation.png") no-repeat 0 0 transparent;
+    bottom: -10px;
+    height: 30px;
+    left: 20px;
+    position: absolute;
+    color: #706F6F;
+    width: 180px;
+    padding-left: 35px;
+    padding-top: 10px;
+    z-index: 0;
+    font-size: 0.8em;
 }
 #implications {
     float: left;
@@ -167,7 +181,7 @@ body.dashboard {
     height: 31px;
     padding-left: 67px;
     padding-top: 10px;
-    margin-top: 30px;
+    margin-top: 15px;
     background: url('implications-button.png') top left no-repeat transparent;
 }
 #implications a:visited {
@@ -216,9 +230,10 @@ body.dashboard {
 #emissionsovertimebar #emissionscurrent {
     position: absolute;
     left: 0;
-    width: 110px;
+    width: 115px;
     height: 30px;
     padding: 10px;
+    padding-left: 5px;
     padding-bottom: 0;
     background: url('emissions-shadow-left.png') no-repeat right center #7d7d7d;
     color: #ffffff;
@@ -233,8 +248,27 @@ body.dashboard {
     background: url('emissions-shadow-right.png') no-repeat left center #7d7d7d;
     color: #ffffff;
 }
+#emissionsovertimebar #emissionsbar {
+    position: absolute;
+    left: 131px;
+    background: transparent;
+    width: 660px;
+    height: 30px;
+    padding-top: 10px;
+}
+#emissionsovertimebar #emissionsbar .bar {
+    float: left;
+    height: 20px;
+}
 #emissionsovertimebar #emissionstarget {
     position: absolute;
+    left: 260px;
+    height: 40px;
+    color: #ffffff;
+    padding-left: 8px;
+    font-size: 0.6em;
+    background: url('emissions-target.png') no-repeat top left transparent;
+    z-index: 50;
 }
 /*#quickstartmenu {
     position: relative;
@@ -326,6 +360,7 @@ body.dashboard {
     height: 100%;
     background: rgb(255,255,255);
     background: rgba(255,255,255,0.8);
+    z-index: 99;
 }
 #calcmessage {
     top: 40%;

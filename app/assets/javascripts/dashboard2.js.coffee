@@ -3,25 +3,26 @@ class Dashboard2
   demand_id = "demandgrid"
   supply_id = "supplygrid"
   colours = {
-    "Nuclear fission":"#ff7777", 
-    "Solar":"#ff0077", 
-    "Wind":"#770770", 
-    "Tidal":"#aabb66", 
-    "Wave":"#1234ff", 
-    "Geothermal":"#abcdef", 
-    "Hydro":"#fedcba", 
-    "Electricity oversupply (imports)":"#000000", 
-    "Environmental heat":"#595959", 
-    "Bioenergy":"#ffaaff", 
-    "Coal":"#aaffaa", 
-    "Oil":"#aaaaff", 
-    "Natural gas":"#ff00ff", 
-    "other":"#00ff00",
-    "Transport":"#ffaaaa", 
-    "Industry":"#aaffaa", 
-    "Heating and cooling":"#aaaaff", 
-    "Lighting & appliances":"#ffaaff", 
-    "Food consumption [UNUSED]":"#aaaaaa"}
+    "supplygrid_Nuclear fission":"#ff7777", 
+    "supplygrid_Solar":"#ff0077", 
+    "supplygrid_Wind":"#770770", 
+    "supplygrid_Tidal":"#aabb66", 
+    "supplygrid_Wave":"#1234ff", 
+    "supplygrid_Geothermal":"#abcdef", 
+    "supplygrid_Hydro":"#fedcba", 
+    "supplygrid_Electricity oversupply (imports)":"#000000", 
+    "supplygrid_Environmental heat":"#595959", 
+    "supplygrid_Bioenergy":"#ffaaff", 
+    "supplygrid_Coal":"#aaffaa", 
+    "supplygrid_Oil":"#aaaaff", 
+    "supplygrid_Natural gas":"#ff00ff", 
+    "supplygrid_other":"#00ff00",
+    "demandgrid_Transport":"#ffaaaa", 
+    "demandgrid_Industry":"#aaffaa", 
+    "demandgrid_Heating and cooling":"#aaaaff", 
+    "demandgrid_Lighting & appliances":"#ffaaff", 
+    "demandgrid_Food consumption [UNUSED]":"#aaaaaa",
+    "demandgrid_other":"#00ff00"}
   connectorcolours = {
     "district_heating":"#ffaaaa",
     "electricity": "#aaffaa",
@@ -31,6 +32,14 @@ class Dashboard2
     "losses": "#aa00ff",
     "over_generation": "#00aaff",
     "solid": "#00ffaa"
+  }
+  emission_colours = {
+    "electricity_generation": "#ff0000",
+    "bioenergy":"#00ff00",
+    "industry":"#0000ff",
+    "transport":"#ffaa00",
+    "buildings":"#00ffaa",
+    "other":"#aa00ff"
   }
   
   grid = []
@@ -45,11 +54,12 @@ class Dashboard2
     $(document).ready(@drawGrids)
   
   updateResults: (@pathway) ->
+    @fillEmissions(@pathway.ghg_by_sector)
     @fillColors(supply_id, @pathway.simplified_sankey.supply)
     @fillColors(demand_id, @pathway.simplified_sankey.demand)
     @fillConnectors(@pathway.simplified_sankey.vectors)
     twentyfifty.adjust_costs_of_pathway(pathway) unless pathway.total_cost_low_adjusted?
-    $('#costmessage').html("Cost #{abs_percent(@pathway.cost_above_benchmark_low)} to #{abs_percent(@pathway.cost_above_benchmark_high)} 2007 levels")
+    $('#costmessage').html("<strong>COSTS:</strong> This pathway costs between <strong> #{abs_percent(@pathway.cost_above_benchmark_low)} and #{abs_percent(@pathway.cost_above_benchmark_high)} 2007 levels.</strong> For a cost breakdown see implications.")
     null
   
   abs_percent = (value) ->
@@ -81,6 +91,12 @@ class Dashboard2
     
   fillColors: (target, fillwith) ->
     boxes = $("#"+target+" .grid_item").get().reverse()
+    
+    for box in boxes
+      $(box).attr('class', 'grid_item')
+      $(box).css("background", "transparent")
+      null
+    
     total = boxes.length
     count = 0
     choose = 0
@@ -94,7 +110,7 @@ class Dashboard2
       
       if fillamount
         for box in boxes[tally..(tally+fillamount)]
-          $(box).css("background", colours[filler])
+          $(box).css("background", colours[target+"_"+filler])
           $(box).addClass(filler)
         tally = tally + fillamount
       
@@ -103,6 +119,7 @@ class Dashboard2
     null
   
   fillConnectors: (fillwith) ->
+    $('#connections').empty()
     total=0
     datas = {}
     connectorcount = 0
@@ -117,13 +134,49 @@ class Dashboard2
       null
       
     for connector in connectors
-      if datas[connector]
-        $("#connection").append("<div id='connection_"+connector+"' class='connector'></div>")
+      if datas[connector] and connector != "over_generation"
+        $("#connections").append("<div id='connection_"+connector+"' class='connector'></div>")
         height = @calcHeight(datas[connector], total, connectorcount)
         $("#connection_"+connector).css({"background":connectorcolours[connector],"height":height})
         null
       null
       
+    if datas["over_generation"]
+      $("#connections").append("<div id='overgeneration'>Over generation</div>")
+  
+  fillEmissions: (fillwith) ->
+    maxwidth = 660
+    compareto = 800
+    $('#emissionsbar .bar').remove()
+    emissions = (name for name of fillwith)
+    total = 0
+    drawus = {}
+    
+    for emission in emissions
+      amount = Number(fillwith[emission])
+      if amount > 1 and emission != "total"
+        total = total + amount
+        drawus[emission] = amount/compareto
+    
+    targetperc = @toInt((total/compareto)*100)
+    $("#emissionscurrentpercent").html(targetperc+"&#037;")
+    
+    for emission in emissions
+      width = (@toInt(drawus[emission]*maxwidth))-1 
+      if drawus[emission]
+        emissionid = 'embar_'+emission
+        $('#emissionsbar').append("<div class='bar' id='"+emissionid+"' name='"+emission+"' style='width: "+width+"px; background: #ffaaaa;'></div>")
+        $("#"+emissionid).hover(@emissionsHover, @emissionsOut)
+    
+    null
+  
+  emissionsHover: () ->
+    $(this).css("background", emission_colours[$(this)[0].getAttribute("name")])
+    null
+  
+  emissionsOut: () ->
+    $(this).css("background", "#ffaaaa")
+    null
   
   toInt: (number) ->
     Math.round(Number(number))
