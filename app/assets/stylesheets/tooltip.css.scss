@@ -1,7 +1,7 @@
 #tooltip {
   display: none;
 
-  background-color: #FFFF00;
+  background-color: #d1d1d1;
   color: #000;
 
   border: 2px solid #000;
@@ -16,5 +16,69 @@
   width: 14em;
   padding: 10px;
 
+  z-index: 10000;
+}
+#tooltipsmall {
+  display: none;
+
+  background-color: #d1d1d1;
+  color: #000;
+
+  border: 2px solid #000;
+  border-radius: 15px 15px 0px 15px;
+  -moz-border-radius: 15px 15px 0px 15px;
+  -moz-box-shadow: 0 0 5px #888;
+  -webkit-box-shadow: 0 0 5px#888;
+
+  font-size: 14px;
+
+  height: 15px;
+  width: 150px;
+  padding: 10px;
+  padding-top: 15px;
+
+  z-index: 10000;
+}
+#tooltipsmallright {
+  display: none;
+
+  background-color: #d1d1d1;
+  color: #000;
+
+  border: 2px solid #000;
+  border-radius: 15px 15px 0px 15px;
+  -moz-border-radius: 15px 15px 0px 15px;
+  -moz-box-shadow: 0 0 5px #888;
+  -webkit-box-shadow: 0 0 5px#888;
+
+  font-size: 14px;
+
+  height: 15px;
+  width: 150px;
+  padding: 10px;
+  padding-top: 15px;
+  margin-left: 70px;
+  z-index: 10000;
+}
+#tooltipgrid {
+  display: none;
+
+  background-color: #d1d1d1;
+  color: #000;
+
+  border: 2px solid #000;
+  border-radius: 15px 15px 0px 15px;
+  -moz-border-radius: 15px 15px 0px 15px;
+  -moz-box-shadow: 0 0 5px #888;
+  -webkit-box-shadow: 0 0 5px#888;
+
+  font-size: 14px;
+
+  height: 35px;
+  width: 150px;
+  padding: 10px;
+  padding-top: 15px;
+  margin-left: -10px;
+  margin-top: -10px;
   z-index: 10000;
 }

@@ -1,17 +1,18 @@
 #classic_controls
-  #demand
-    %table
-      - structure.demand_choices.each do |choice|
-        = classic_table_row_for_choice choice
   #supply
+    %h2 Energy Supply Controls
     %table
       - structure.supply_choices.each do |choice|
         = classic_table_row_for_choice choice
   #other
+    %h2 Miscellaneous Controls
     %table
       = classic_table_row_for_choice structure.geosequestration_choice
 
     %table
       = classic_table_row_for_choice structure.balancing_choice
-      
-    
+  #demand
+    %h2 Energy Demand Controls
+    %table
+      - structure.demand_choices.each do |choice|
+        = classic_table_row_for_choice choice  

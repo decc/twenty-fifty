@@ -24,22 +24,22 @@ class Dashboard2
     "demandgrid_Food consumption [UNUSED]":"#aaaaaa",
     "demandgrid_other":"#00ff00"}
   connectorcolours = {
-    "district_heating":"#ffaaaa",
-    "electricity": "#aaffaa",
-    "gas": "#aaaaff",
-    "h2": "#ffaa00",
-    "liquid": "#ff00aa",
-    "losses": "#aa00ff",
-    "over_generation": "#00aaff",
-    "solid": "#00ffaa"
+    "district_heating":["#ffaaaa", "District Heating"],
+    "electricity": ["#aaffaa", "Electricity"],
+    "gas": ["#aaaaff", "Gas"],
+    "h2": ["#ffaa00", "H2"],
+    "liquid": ["#ff00aa", "Liquid"],
+    "losses": ["#aa00ff", "Losses"],
+    "over_generation": ["#00aaff", "Over Generation"],
+    "solid": ["#00ffaa", "Solid"]
   }
   emission_colours = {
-    "electricity_generation": "#ff0000",
-    "bioenergy":"#00ff00",
-    "industry":"#0000ff",
-    "transport":"#ffaa00",
-    "buildings":"#00ffaa",
-    "other":"#aa00ff"
+    "electricity_generation": ["#ff0000", "Electricity Generation"],
+    "bioenergy":["#00ff00", "Bioenergy"],
+    "industry":["#0000ff", "Industry"],
+    "transport":["#ffaa00", "Transport"],
+    "buildings":["#00ffaa", "Buildings"],
+    "other":["#aa00ff", "Other"]
   }
   
   grid = []
@@ -57,8 +57,10 @@ class Dashboard2
     @fillEmissions(@pathway.ghg_by_sector)
     @fillColors(supply_id, @pathway.simplified_sankey.supply)
     @fillColors(demand_id, @pathway.simplified_sankey.demand)
+    $(".grid_item[title]").tooltip({delay: 0, position: 'top left', offset:[3,3],tip:'#tooltipgrid'})
     @fillConnectors(@pathway.simplified_sankey.vectors)
-    twentyfifty.adjust_costs_of_pathway(pathway) unless pathway.total_cost_low_adjusted?
+    $(".connector[title]").tooltip({delay: 0, position: 'top left', offset:[3,3],tip:'#tooltipsmallright'})
+    # twentyfifty.adjust_costs_of_pathway(pathway) unless pathway.total_cost_low_adjusted?
     $('#costmessage').html("<strong>COSTS:</strong> This pathway costs between <strong> #{abs_percent(@pathway.cost_above_benchmark_low)} and #{abs_percent(@pathway.cost_above_benchmark_high)} 2007 levels.</strong> For a cost breakdown see implications.")
     null
   
@@ -112,6 +114,7 @@ class Dashboard2
         for box in boxes[tally..(tally+fillamount)]
           $(box).css("background", colours[target+"_"+filler])
           $(box).addClass(filler)
+          $(box).attr("title", filler+" <br />"+fillamount+" TWh/y")
         tally = tally + fillamount
       
       null
@@ -137,7 +140,8 @@ class Dashboard2
       if datas[connector] and connector != "over_generation"
         $("#connections").append("<div id='connection_"+connector+"' class='connector'></div>")
         height = @calcHeight(datas[connector], total, connectorcount)
-        $("#connection_"+connector).css({"background":connectorcolours[connector],"height":height})
+        $("#connection_"+connector).css({"background":connectorcolours[connector][0],"height":height})
+        $("#connection_"+connector).attr("title", connectorcolours[connector][1])
         null
       null
       
@@ -165,13 +169,15 @@ class Dashboard2
       width = (@toInt(drawus[emission]*maxwidth))-1 
       if drawus[emission]
         emissionid = 'embar_'+emission
-        $('#emissionsbar').append("<div class='bar' id='"+emissionid+"' name='"+emission+"' style='width: "+width+"px; background: #ffaaaa;'></div>")
+        $('#emissionsbar').append("<div class='bar' id='"+emissionid+"' name='"+emission+"' style='width: "+width+"px; background: #ffaaaa;' title='"+emission_colours[emission][1]+"'></div>")
         $("#"+emissionid).hover(@emissionsHover, @emissionsOut)
+    
+    $("#emissionsbar .bar[title]").tooltip({delay: 0, position: 'top left', offset:[3,3],tip:'#tooltipsmall'})
     
     null
   
   emissionsHover: () ->
-    $(this).css("background", emission_colours[$(this)[0].getAttribute("name")])
+    $(this).css("background", emission_colours[$(this)[0].getAttribute("name")][0])
     null
   
   emissionsOut: () ->
