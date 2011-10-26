@@ -28,7 +28,7 @@
       list-style-type: none;
       height:20px;
       padding: 5px;
-      border-right: 1px solid #a8a8a8;
+      border-right: 1px solid #9b9b9b;
       
       a {
         color: #000;
@@ -37,7 +37,7 @@
       }
     }
     li.active {
-      background: #a8a8a8;
+      background: #9b9b9b;
     }
   }
 }
@@ -82,7 +82,7 @@
   position: relative;
   clear: both;
   width: 100%;
-  background: #a8a8a8;
+  background: #9b9b9b;
   height: 30px;
   
   li {
