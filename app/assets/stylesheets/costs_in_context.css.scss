@@ -15,13 +15,18 @@
     position:absolute;
     top:100px;
     left:100px;
-    width:500px;
-    height:400px;
+    width:700px;
+    height:500px;
     background:#999999;
     display: none;
+    text-align:left;
 }
-#explanatory-popup p {
-    margin:20px;
+#explanatory-popup ol {
+    margin:0 0 0 2.5em;
+}
+#explanatory-popup li, #explanatory-popup h2 {
+    margin:10px 0;
+    padding:0 10px;
 }
 #explanatory-popup a#removeexplanatory {
     position:absolute;
