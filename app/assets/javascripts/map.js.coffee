@@ -169,7 +169,6 @@ class Map
   
    updateResults: (data) ->
      # Setup
-     console.log data
      @createMap() unless @wave?
      map = data.map
      
@@ -246,7 +245,6 @@ class Map
      for value in values
        if value.value >= 1
          size = Math.round(Math.sqrt(pointSizes[value.name])*10)
-         console.log value.name, value.value, size
          y = @point_stack(x,y,value.value,colours[value.name],"#{Math.round(value.value)} x #{labels[value.name]}",size)
      @points = @r.setFinish()
       

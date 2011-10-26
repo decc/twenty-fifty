@@ -4,7 +4,6 @@ class Story
     @long_descriptions = twentyfifty.longDescriptions
     
   updateResults: (@pathway) ->
-    console.log @pathway
     @choices = twentyfifty.choices
     element = $('#demand_story')
     element.empty()

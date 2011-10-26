@@ -9,7 +9,6 @@ class Electricity
     
   updateChart: () ->
     @createCharts() unless @emissions_chart? && @demand_chart? && @supply_chart?
-    console.log @pathway['electricity']['emissions']
     titles = ["Fuel Combustion", "Bioenergy credit", "Carbon capture"]
     i = 0
     for name in titles
