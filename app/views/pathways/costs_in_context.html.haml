@@ -1,6 +1,7 @@
 = render 'tabbed_menu'
 = render 'layouts/costs_submenu'
-%script{ :type => 'text/javascript' }
+
+:javascript
   $('#menu_costs_in_context').addClass('active')
   $('#submenu_costs_in_context').addClass('active')
   twentyfifty.setup(twentyfifty.CostsInContext)
@@ -11,7 +12,15 @@
     Display explanatory text
 
 #explanatory-popup
-  %p
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec hendrerit tempor tellus. Donec pretium posuere tellus. Proin quam nisl, tincidunt et, mattis eget, convallis nec, purus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla posuere. Donec vitae dolor. Nullam tristique diam non turpis. Cras placerat accumsan nulla. Nullam rutrum. Nam vestibulum accumsan nisl.
+  %h2 Four important caveats to understand before viewing cost data:
+  %ol
+    %li
+      This is not your energy bill: it is the cost of all of our energy infrastructure, including anything that makes, converts or uses energy, from small things (such as your kettle) to large things (like the train you catch to work). All costs exclude profit.
+    %li
+      Costs are assumed to change: the difference in the minimum and maximum cost reflects the range of expert opinions on the costs of technologies and fuels in the future. You can see and adjust the default cost assumptions make in the 'Change Assumptions' menu above.
+    %li
+      This excludes important costs, like those we'd incur if we fail to tackle climate change. It also does not include profit, taxes and subsidies. These are important costs, but the calculator only includes the physical costs of constructing, operating and fuelling equipment. <a href="javascript:alert('fill me in');">A full list of inclusions and exclusions is available here.</a>
+    %li
+      This model does not cost optimise. It assumes your chosen pathway does not respond to price fluctuations including those caused by the pathway itself, such as economies of scale. Instead it assumes your chosen pathway is built exactly as specified.
   %a#removeexplanatory{ :href => '#' }
     I understand the caveats explained herein.
