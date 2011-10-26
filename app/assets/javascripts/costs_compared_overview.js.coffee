@@ -1,15 +1,15 @@
 class CostsComparedOverview
-  
+
   categories = [
     "Fossil fuels"
-    "Bioenergy"   
-    "Electricity" 
-    "Buildings"   
-    "Transport"   
-    "Industry"    
-    "Other"       
+    "Bioenergy"
+    "Electricity"
+    "Buildings"
+    "Transport"
+    "Industry"
+    "Other"
   ]
-  
+
   category_colors =
     "Fossil fuels": {low: "#8c564b",range: "#c49c94"}
     "Bioenergy"   : {low: "#2ca02c",range: "#98df8a "}
@@ -23,25 +23,21 @@ class CostsComparedOverview
     $(document).ready(@setupComparisonChart)
     for code in twentyfifty.comparator_pathways
       twentyfifty.loadFromCacheOrRemote(code,@updateBar)
-  
+
   setupComparisonChart: () =>
     return false if @boxes?
     e = $('#costscomparedoverview')
     @h = e.height()
     @w = e.width()
     @r = new Raphael('costscomparedoverview',@w,@h)
-    @x = d3.scale.linear().domain([0, 7000]).range([200,@w-50]).nice()
-    @y = d3.scale.ordinal().domain(["chosen"].concat(twentyfifty.comparator_pathways)).rangeRoundBands([40,@h],0.5)
+    @x = d3.scale.linear().domain([0, 7000]).range([10,@w-50]).nice()
+    @y = d3.scale.ordinal().domain(["chosen"].concat(twentyfifty.comparator_pathways)).rangeRoundBands([20,@h],0.5)
     # The vertical lines
     format = @x.tickFormat(10)
     for tick in @x.ticks(10)
       @r.text(@x(tick),30,format(tick)).attr({'text-anchor':'middle'})
       @r.path(["M", @x(tick), 40, "L", @x(tick),@h]).attr({stroke:'#aaa' ,'stroke-dasharray':'.'})
-    # The horizontal labels
-    @r.text(195,@y("chosen")+(@y.rangeBand()/2),"Your pathway").attr({'text-anchor':'end'})
-    for code in twentyfifty.comparator_pathways
-      @r.text(195,@y(code)+(@y.rangeBand()/2),twentyfifty.pathwayName(code,code)).attr({'text-anchor':'end'})
-  
+
     # Initally empty boxes
     @boxes = {}
     for code in (["chosen"].concat(twentyfifty.comparator_pathways))
@@ -51,10 +47,10 @@ class CostsComparedOverview
           low: @r.rect(@x(0),@y(code),0,@y.rangeBand()).attr({'fill':colors.low,'stroke':'none'})
           range: @r.rect(@x(0),@y(code),0,@y.rangeBand()).attr({'fill':colors.range,'stroke':'none'})
       @boxes[code] = b
-  
+
   updateResults: (pathway) ->
     @updateBar(pathway,'chosen')
-    
+
   updateBar: (pathway,_id = pathway._id) =>
     @setupComparisonChart() unless @boxes?
     twentyfifty.group_costs_of_pathway(pathway) unless pathway.categorised_costs?
@@ -69,5 +65,5 @@ class CostsComparedOverview
       cost = categorised_costs[category]
       b[category].range.attr({x: @x(_x), width: @x(cost.range) - @x(0)})
       _x += cost.range
-  
+
 window.twentyfifty.CostsComparedOverview = CostsComparedOverview
