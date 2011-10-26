@@ -3,43 +3,43 @@ class Dashboard2
   demand_id = "demandgrid"
   supply_id = "supplygrid"
   colours = {
-    "supplygrid_Nuclear fission":"#ff7777", 
-    "supplygrid_Solar":"#ff0077", 
-    "supplygrid_Wind":"#770770", 
-    "supplygrid_Tidal":"#aabb66", 
-    "supplygrid_Wave":"#1234ff", 
-    "supplygrid_Geothermal":"#abcdef", 
-    "supplygrid_Hydro":"#fedcba", 
-    "supplygrid_Electricity oversupply (imports)":"#000000", 
-    "supplygrid_Environmental heat":"#595959", 
-    "supplygrid_Bioenergy":"#ffaaff", 
-    "supplygrid_Coal":"#aaffaa", 
-    "supplygrid_Oil":"#aaaaff", 
-    "supplygrid_Natural gas":"#ff00ff", 
-    "supplygrid_other":"#00ff00",
-    "demandgrid_Transport":"#ffaaaa", 
-    "demandgrid_Industry":"#aaffaa", 
-    "demandgrid_Heating and cooling":"#aaaaff", 
-    "demandgrid_Lighting & appliances":"#ffaaff", 
-    "demandgrid_Food consumption [UNUSED]":"#aaaaaa",
-    "demandgrid_other":"#00ff00"}
+    "supplygrid_Nuclear fission":"#023858", 
+    "supplygrid_Solar":"#045a8d", 
+    "supplygrid_Wind":"#0570B0", 
+    "supplygrid_Tidal":"#3690C0", 
+    "supplygrid_Wave":"#74A9CF", 
+    "supplygrid_Geothermal":"#A6BDDB", 
+    "supplygrid_Hydro":"#D0D1E6", 
+    "supplygrid_Electricity oversupply (imports)":"#b8f6a8", 
+    "supplygrid_Environmental heat":"#525252", 
+    "supplygrid_Bioenergy":"#737373", 
+    "supplygrid_Coal":"#979797", 
+    "supplygrid_Oil":"#bdbdbd", 
+    "supplygrid_Natural gas":"#d9d9d9", 
+    "supplygrid_other":"#f0f0f0",
+    "demandgrid_Transport":"#bd0026", 
+    "demandgrid_Industry":"#f03b20", 
+    "demandgrid_Heating and cooling":"#fd8c3c", 
+    "demandgrid_Lighting & appliances":"#fdb24c", 
+    "demandgrid_Food consumption [UNUSED]":"#ffd976",
+    "demandgrid_other":"#feffb1"}
   connectorcolours = {
-    "district_heating":["#ffaaaa", "District Heating"],
-    "electricity": ["#aaffaa", "Electricity"],
-    "gas": ["#aaaaff", "Gas"],
-    "h2": ["#ffaa00", "H2"],
-    "liquid": ["#ff00aa", "Liquid"],
-    "losses": ["#aa00ff", "Losses"],
-    "over_generation": ["#00aaff", "Over Generation"],
-    "solid": ["#00ffaa", "Solid"]
+    "district_heating":["#6766cc", "District Heating"],
+    "electricity": ["#00aeef", "Electricity"],
+    "gas": ["#e50045", "Gas"],
+    "h2": ["#650066", "H2"],
+    "liquid": ["#e9179f", "Liquid"],
+    "losses": ["#666666", "Losses"],
+    "over_generation": ["#8ccb7a", "Over Generation"],
+    "solid": ["#1c1bb4", "Solid"]
   }
   emission_colours = {
-    "electricity_generation": ["#ff0000", "Electricity Generation"],
-    "bioenergy":["#00ff00", "Bioenergy"],
-    "industry":["#0000ff", "Industry"],
-    "transport":["#ffaa00", "Transport"],
-    "buildings":["#00ffaa", "Buildings"],
-    "other":["#aa00ff", "Other"]
+    "electricity_generation": ["#00aeef", "Electricity Generation"],
+    "bioenergy":["#737373", "Bioenergy"],
+    "industry":["#f03b20", "Industry"],
+    "transport":["#6d5036", "Transport"],
+    "buildings":["#bd0026", "Buildings"],
+    "other":["#ffffb2", "Other"]
   }
   
   grid = []
@@ -57,9 +57,9 @@ class Dashboard2
     @fillEmissions(@pathway.ghg_by_sector)
     @fillColors(supply_id, @pathway.simplified_sankey.supply)
     @fillColors(demand_id, @pathway.simplified_sankey.demand)
-    $(".grid_item[title]").tooltip({delay: 0, position: 'top left', offset:[3,3],tip:'#tooltipgrid'})
+    $(".grid_item[title]").tooltip({delay: 0, position: 'top left', offset:[3,3],tip:'#tooltipgrid', cancelDefault:true})
     @fillConnectors(@pathway.simplified_sankey.vectors)
-    $(".connector[title]").tooltip({delay: 0, position: 'top left', offset:[3,3],tip:'#tooltipsmallright'})
+    $(".connector[title]").tooltip({delay: 0, position: 'top left', offset:[3,3],tip:'#tooltipsmallright', cancelDefault:true})
     # twentyfifty.adjust_costs_of_pathway(pathway) unless pathway.total_cost_low_adjusted?
     $('#costmessage').html("<strong>COSTS:</strong> This pathway costs between <strong> #{abs_percent(@pathway.cost_above_benchmark_low)} and #{abs_percent(@pathway.cost_above_benchmark_high)} 2007 levels.</strong> For a cost breakdown see implications.")
     null
@@ -119,6 +119,15 @@ class Dashboard2
       
       null
     
+    # Basic over supply warning
+    if target==supply_id
+      $(".overflow_warning").remove()
+      if tally > 4032
+        $("#"+target).append("<div class='overflow_warning'><div>You have exceeded your supply limit by <br />"+(tally-4032)+" TWh/y!</div></div>")
+        $(".overflow_warning").show()
+        null
+      null
+    
     null
   
   fillConnectors: (fillwith) ->
@@ -135,9 +144,12 @@ class Dashboard2
         datas[connector] = amount
         null
       null
+    
+    if datas["losses"]
+      $("#connections").append("<div id='losses'>Losses: "+datas["losses"]+" TWh/y</div>")
       
     for connector in connectors
-      if datas[connector] and connector != "over_generation"
+      if datas[connector] and connector != "over_generation" and connector != "losses"
         $("#connections").append("<div id='connection_"+connector+"' class='connector'></div>")
         height = @calcHeight(datas[connector], total, connectorcount)
         $("#connection_"+connector).css({"background":connectorcolours[connector][0],"height":height})
@@ -146,7 +158,8 @@ class Dashboard2
       null
       
     if datas["over_generation"]
-      $("#connections").append("<div id='overgeneration'>Over generation</div>")
+      $("#connections").append("<div id='overgeneration'>Over generation: "+datas["over_generation"]+" TWh/y</div>")
+    
   
   fillEmissions: (fillwith) ->
     maxwidth = 660
@@ -155,24 +168,31 @@ class Dashboard2
     emissions = (name for name of fillwith)
     total = 0
     drawus = {}
+    titlestring = ["<ul>"]
     
     for emission in emissions
       amount = Number(fillwith[emission])
-      if amount > 1 and emission != "total"
+      if amount and emission != "total"
         total = total + amount
         drawus[emission] = amount/compareto
-    
+        titlestring.push("<li><strong>"+emission_colours[emission][1]+":</strong> "+@toInt(drawus[emission]*100)+" MtCO2e</li>")
+        
+    titlestring.push("</ul>")
     targetperc = @toInt((total/compareto)*100)
     $("#emissionscurrentpercent").html(targetperc+"&#037;")
     
-    for emission in emissions
-      width = (@toInt(drawus[emission]*maxwidth))-1 
-      if drawus[emission]
-        emissionid = 'embar_'+emission
-        $('#emissionsbar').append("<div class='bar' id='"+emissionid+"' name='"+emission+"' style='width: "+width+"px; background: #ffaaaa;' title='"+emission_colours[emission][1]+"'></div>")
-        $("#"+emissionid).hover(@emissionsHover, @emissionsOut)
+    # This is no longer needed for now.
+    #
+    # for emission in emissions
+    #  width = (@toInt(drawus[emission]*maxwidth))
+    #  if drawus[emission]
+    #    emissionid = 'embar_'+emission
+    #    $('#emissionsbar').append("<div class='bar' id='"+emissionid+"' name='"+emission+"' style='width: "+width+"px; background: #90d674;' title='"+emission_colours[emission][1]+"'></div>")
+    #    $("#"+emissionid).hover(@emissionsHover, @emissionsOut)
     
-    $("#emissionsbar .bar[title]").tooltip({delay: 0, position: 'top left', offset:[3,3],tip:'#tooltipsmall'})
+    width = @toInt((total/compareto)*maxwidth)
+    $("#emissionsbar").append("<div class='bar' id='allemissions' name='all' style='width: "+width+"px; background: #90d674;' title='"+titlestring.join("")+"'")
+    $("#emissionsbar .bar[title]").tooltip({delay: 0, position: 'top left', offset:[3,3],tip:'#tooltipemissions', cancelDefault:true})
     
     null
   
@@ -181,7 +201,7 @@ class Dashboard2
     null
   
   emissionsOut: () ->
-    $(this).css("background", "#ffaaaa")
+    $(this).css("background", "#90d674")
     null
   
   toInt: (number) ->
