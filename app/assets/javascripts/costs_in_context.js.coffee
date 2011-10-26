@@ -61,6 +61,10 @@ class CostsInContext
     @boxes_low["chosen"].attr({'fill':'#e9169f'});
     @boxes_range["chosen"].attr({'fill':'#d7b5d8'});
 
+    all1 = "1011111111111111011111100111111011110110110111011011"
+    @boxes_low[all1].attr({'fill':'#666'})
+    @boxes_range[all1].attr({'fill':'#888'})
+
 
   drawIndicator: (value,text) ->
     x = @x(value)
