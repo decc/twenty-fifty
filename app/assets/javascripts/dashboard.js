@@ -32,22 +32,22 @@ function fillColours() {
         $(this).css("background", colours[choose]);
         count++;
     });
-    
+
 }
 
 function drawGrid(target) {
     var drawn = 0;
-    ht = [];
+    var ht = [];
     var numtodraw = (block_height*block_width)/(pixel_height*pixel_width);
-    
+
     for (var x=0; x<(grid_height*grid_width); x++) {
         ht.push("<div class='grid_grid_box'>");
-        
+
         for (var j=0; j<numtodraw; j++) {
             ht.push("<div class='grid_item'></div>");
             drawn++;
         }
-        
+
         ht.push("</div>");
     }
     $('#'+target).append(ht.join(""));
