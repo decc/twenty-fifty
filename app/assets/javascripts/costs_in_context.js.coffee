@@ -1,7 +1,7 @@
 class CostsInContext
 
   constructor: () ->
-    $(document).ready(@setupComparisonChart)
+    $(@setupComparisonChart)
     for code in twentyfifty.comparator_pathways
       twentyfifty.loadFromCacheOrRemote(code,@updateBar)
 
