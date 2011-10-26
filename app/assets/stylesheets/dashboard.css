@@ -41,6 +41,7 @@ div#topbar, div#submenu {
     height: 30px;
     width: 500px;
     font-size: 0.8em;
+    z-index: 1000;
 }
 #homepagemenu ul li {
     display: block;
@@ -50,6 +51,23 @@ div#topbar, div#submenu {
     float: left;
     width: 33%;
     border-right: 1px dotted #afafaf;
+}
+#homepagemenu ul li ul {
+    display: none;
+    -moz-box-shadow: 0 5px 5px #888;
+    -webkit-box-shadow: 0 5px 5px#888;
+    box-shadow: 0 5px 5px #888;
+    border: 1px solid #888888;
+    border-top: 0;
+}
+#homepagemenu ul li ul li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 100%;
+    border: none;
+    background: #ffffff;
+    float: none;
+    border-bottom: 1px dashed #a8a8a8;
 }
 #homepagemenu ul li.last {
     display: block;
@@ -106,7 +124,8 @@ div#topbar, div#submenu {
 }
 .current {
     height: 1px;
-    width: 100%;
+    width: 288px;
+    margin-left: 5px;
     position: absolute;
     left: 0;
     top: 50%;
@@ -149,6 +168,7 @@ div#topbar, div#submenu {
     position: absolute;
     width: 331px;
     text-align: center;
+    top: 105px;
 }
 #visuals #middle .legend {
     position: relative;

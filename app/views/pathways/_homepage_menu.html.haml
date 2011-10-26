@@ -1,5 +1,8 @@
 #homepagemenu
   %ul
     %li#quickpicks.menuitem Quick Picks
-    %li#examplepathways.menuitem Example Pathways
-    %li#expertsolutions.menuitem.last Expert Solutions
+    %li#examplepathways.menuitem.dropdown
+      = render 'layouts/example_solutions'
+    %li#expertsolutions.menuitem.last.dropdown
+      = render 'layouts/expert_solutions'
+      

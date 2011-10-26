@@ -1,0 +1,4 @@
+= link_to_function raw("Example Pathways &#9662;"), "$('ul#expertpathway_choices').hide();$('ul#examplepathway_choices').toggle();$('ul#quickpickpathway_choices').hide();"
+%ul#examplepathway_choices.choices
+  - example_pathways.each do |name,code|
+    %li= link_to_function name, "twentyfifty.switchPathway('#{code}');$('ul#examplepathway_choices').toggle()"
