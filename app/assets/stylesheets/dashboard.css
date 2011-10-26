@@ -14,10 +14,10 @@ h1, h2, h3, h4, h5, h6, p, div, ol, ul, li, dl, dd, dt, span {
 }
 body.dashboard {
     background: url('background.jpg') top left repeat-x #e1e1e1;
-    font-family: Helvetica, Arial, serif;
+    font-family: Helvetica, Arial, sans-serif;
 }
 div#topbar, div#submenu {
-    font-family: Helvetica, Arial, serif;
+    font-family: Helvetica, Arial, sans-serif;
 }
 #pageheading {
     margin:0;
