@@ -2,8 +2,26 @@ class CostsInContext
 
   constructor: () ->
     $(@setupComparisonChart)
+    $(@initialExplanatoryPopup)
     for code in twentyfifty.comparator_pathways
       twentyfifty.loadFromCacheOrRemote(code,@updateBar)
+
+  fireExplanatoryPopup: () =>
+    $('#explanatory-popup').css('display','block');
+
+  initialExplanatoryPopup: () =>
+    if (!$.jStorage.get("costsContextExplained", false))
+      $.jStorage.set("costsContextExplained", true)
+      @fireExplanatoryPopup()
+    me = this
+    $('#bringbackexplanatory').click((event) ->
+      event.preventDefault();
+      me.fireExplanatoryPopup()
+    )
+    $('#removeexplanatory').click((event) ->
+      event.preventDefault();
+      $('#explanatory-popup').css('display','none');
+    )
 
   setupComparisonChart: () =>
     return false if @boxes_low?
