@@ -45,21 +45,24 @@ url = (options = {}) ->
     "/#{s.c}/#{s.id}/#{s.a}"
 
 popup_url = () ->
-  url({a:'story'})
+  # have to re-read because updates come from iframe
+  $.jStorage.reInit()
+  url({a:$.jStorage.get("popup_action","story")})
 
 go = (index,level) ->
   old_choices = choices.slice(0)
   choices[index] = level
   load()
-  
+
 switchView = (new_action) ->
   action = new_action
+  $.jStorage.set("popup_action", action)
   window.location = url({a:action})
-  
+
 switchPathway = (new_code) ->
   old_choices = choices.slice(0)
   choices = (parseInt(choice) for choice in new_code.split(''))
-  load()  
+  load()
 
 load = () ->
   return if choices.join('') == old_choices.join('')
