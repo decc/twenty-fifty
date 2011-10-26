@@ -1,10 +1,14 @@
+#topbar, #submenu {
+  font-size:14px;
+  line-height:14px;
+}
+
 #topbar {
   z-index: 1;
   width: 100%;
   height: 30px;
   margin: 0;
   padding: 0; 
-  text-align: left; 
 
   #viewdropdown {
     position: absolute;
@@ -12,8 +16,7 @@
     left: 5px;
   }
 
-  
-  ul#view_choices {
+    ul#view_choices {
     position:relative;
     top:0;
     left: 0;
@@ -26,18 +29,17 @@
       display: block;
       float: left;
       list-style-type: none;
-      height:20px;
-      padding: 5px;
-      border-right: 1px solid #9b9b9b;
-      
+      height:23px;
+      padding:7px 20px 0 20px;
+      border-right: 1px solid #aeaeae;
       a {
-        color: #000;
+        color: #3c3c3c;
         text-decoration: none;
         cursor: pointer;
       }
     }
     li.active {
-      background: #9b9b9b;
+      background: #aeaeae;
     }
   }
 }
@@ -46,19 +48,15 @@
   z-index: 1;
   list-style: none;
   margin: 0;
-  text-align: left;
-
   a {
     display: block;
     color: #000;
     background: transparent;
     text-decoration: none;
   }
-  
   a:hover {
     text-decoration: underline;
   }
-  
   ul.choices {
     background: #ffffff;
     -moz-box-shadow: 0 0 5px #888;
@@ -69,7 +67,6 @@
     margin: 0;
     padding: 0;
     z-index: 100;
-    
     li {
       padding-top: 5px;
       padding-bottom: 5px;
@@ -82,29 +79,39 @@
   position: relative;
   clear: both;
   width: 100%;
-  background: #9b9b9b;
-  height: 30px;
-  
+  background: #aeaeae;
+  height: 40px;
   li {
     display: block;
     float: left;
     list-style-type: none;
     padding-left: 10px;
     padding-right: 10px;
-    padding-top: 5px;
+    padding-top: 12px;
     text-align: center;
-    
     a {
-      color: #000;
+      color: #ffffff;
       text-decoration: none;
       cursor: pointer;
     }
   }
   li.active {
     a {
-      color: #fff;
-      text-decoration: none;
-      cursor: pointer;
+      color: #3c3c3c;
     }
+  }
+  #changeassumptionsbutton {
+    float:right;
+    text-decoration:none;
+    line-height:12px;
+    font-size:12px;
+    height:14px;
+    padding:6px;
+    margin:2px 10px 2px 0;
+    color:#000;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+    background: #eee;
   }
 }
