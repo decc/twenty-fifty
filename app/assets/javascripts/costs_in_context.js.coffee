@@ -40,9 +40,9 @@ class CostsInContext
       @font(@r.text(@x(tick),30,format(tick)).attr({'text-anchor':'middle'}))
       @r.path(["M", @x(tick), 40, "L", @x(tick),@h]).attr({stroke:'#aaa' ,'stroke-dasharray':'.'})
     # The horizontal labels
-    @font(@r.text(10,@y("chosen")+(@y.rangeBand()/2),"Your pathway").attr({'text-anchor':'start'}))
+    @font(@r.text(20,@y("chosen")+(@y.rangeBand()/2),"Your pathway").attr({'text-anchor':'start'}))
     for code in twentyfifty.comparator_pathways
-      @font(@r.text(10,@y(code)+(@y.rangeBand()/2),twentyfifty.pathwayName(code,code)).attr({'text-anchor':'start'}))
+      @font(@r.text(20,@y(code)+(@y.rangeBand()/2),twentyfifty.pathwayName(code,code)).attr({'text-anchor':'start'}))
     # Indicator
     #@drawIndicator(26000,"GDP/capita in 2010")
     @drawIndicator(3000,"Approximate energy system cost in 2007")
