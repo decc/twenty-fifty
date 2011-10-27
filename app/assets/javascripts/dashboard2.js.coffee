@@ -178,7 +178,7 @@ class Dashboard2
         titlestring.push("<li><strong>"+emission_colours[emission][1]+":</strong> "+@toInt(drawus[emission]*100)+" MtCO2e</li>")
         
     titlestring.push("</ul>")
-    targetperc = @toInt((total/compareto)*100)
+    targetperc = 100 - @toInt((total/compareto)*100)
     $("#emissionscurrentpercent").html(targetperc+"&#037;")
     
     # This is no longer needed for now.

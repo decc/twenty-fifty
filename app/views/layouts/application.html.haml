@@ -5,6 +5,12 @@
     = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
     = csrf_meta_tags
+    /[if IE 6] <style>#emissionsheading{padding-top: 1px;}</style>
+    /[if IE 7] <style>#emissionsheading{padding-top: 1px;}</style>
+    /[if IE 8] <style>#emissionsheading{padding-top: 1px;}</style>
+    /[if IE 9] <style>#emissionsheading{padding-top: 1px;}</style>
+      
+      
   %body
     = yield 
     #tooltip

@@ -194,7 +194,7 @@ body.dashboard {
     width: 45px;
     height: 160px;
     top: 0;
-    right: left;
+    left: 0;
     background: url('vector-overlay-left.png') top left no-repeat transparent;
     z-index: 50;
 }
@@ -294,30 +294,33 @@ body.dashboard {
 #emissionsovertimebar {
     position: absolute;
     bottom: 0;
-    height: 40px;
+    left: 0;
+    height: 42px;
     width: 100%;
-    background: url('emissions-main.png') repeat-x transparent;
+    background: url('emissions_scale.png') no-repeat 130px 0 transparent;
     border-top: 1px solid #aaaaaa;
 }
 #emissionsovertimebar #emissionscurrent {
     position: absolute;
     left: 0;
     width: 115px;
-    height: 30px;
+    height: 27px;
     padding: 10px;
+    padding-top: 15px;
     padding-left: 5px;
     padding-bottom: 0;
     background: url('emissions-shadow-left.png') no-repeat right center #7d7d7d;
     color: #ffffff;
-    font-size: 0.9em;
+    font-size: 0.8em;
 }
 #emissionsovertimebar #emissionspast {
     position: absolute;
     right: 0;
-    font-size: 0.9em;
+    font-size: 0.8em;
     width: 110px;
-    height: 30px;
+    height: 27px;
     padding: 10px;
+    padding-top: 15px;
     padding-bottom: 0;
     background: url('emissions-shadow-right.png') no-repeat left center #7d7d7d;
     color: #ffffff;
@@ -328,24 +331,14 @@ body.dashboard {
     background: transparent;
     width: 660px;
     height: 30px;
-    padding-top: 10px;
+    padding-top: 13px;
     z-index: 50;
     overflow: hidden;
 }
 #emissionsovertimebar #emissionsbar .bar {
     float: left;
-    height: 20px;
+    height: 16px;
     z-index: 50;
-}
-#emissionsovertimebar #emissionstarget {
-    position: absolute;
-    left: 260px;
-    height: 40px;
-    color: #ffffff;
-    padding-left: 8px;
-    font-size: 0.6em;
-    background: url('emissions-target.png') no-repeat top left transparent;
-    z-index: 4;
 }
 /*#quickstartmenu {
     position: relative;
