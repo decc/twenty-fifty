@@ -2,12 +2,21 @@
     margin: 0;
     padding: 0;
     width: 885px;
-    height: 500px;
-    position:relative;
-    top:0;
-    left:0;
+    height: 480px;
 }
-
+#bringbackexplanatory {
+    position:absolute;
+    bottom:19px;
+    left:360px;
+    font-size:13px;
+    color:#3c3c3c;
+    display:block;
+}
+#variationkey {
+    position:absolute;
+    bottom:10px;
+    left:20px;
+}
 #explanatory-popup {
     position:absolute;
     top:100px;
@@ -17,6 +26,10 @@
     background:#999999;
     display: none;
     text-align:left;
+}
+#explanatory-popup h2 {
+    font-size:20px;
+    font-weight:bold;
 }
 #explanatory-popup ol {
     margin:0 0 0 2.5em;

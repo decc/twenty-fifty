@@ -2,5 +2,5 @@
   %ul#view_choices.choices
     - costing_submenu.each do |action,title|
       %li{:id=>"submenu_#{action}"}= link_to_function title, "twentyfifty.switchView('#{action}')"
-  %a#changeassumptionsbutton{:href=>"#"}
+  %a#changeassumptionsbutton{:href=>'javascript:alert("change assumptions to go here")'}
     Change assumptions >>
