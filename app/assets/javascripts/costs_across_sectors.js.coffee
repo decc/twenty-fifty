@@ -11,13 +11,22 @@ class CostsAcrossSectors
   ]
 
   category_colors =
-    "Fossil fuels": {low: "#8c564b",range: "#c49c94"}
-    "Bioenergy"   : {low: "#2ca02c",range: "#98df8a "}
-    "Electricity" : {low: "#1f77b4",range: "#aec7e8"}
-    "Buildings"   : {low: "#ff7f0e",range: "#ffbb78"}
-    "Transport"   : {low: "#d62728",range: "#ff9896"}
-    "Industry"    : {low: "#7f7f7f",range: "#c7c7c7"}
-    "Other"       : {low: "#a55194",range: "#de9ed6"}
+    "Fossil fuels": {low: "#081d58",range: "#081d58"}
+    "Bioenergy"   : {low: "#253494",range: "#253494"}
+    "Electricity" : {low: "#225ea8",range: "#225ea8"}
+    "Buildings"   : {low: "#1d91c0",range: "#1d91c0"}
+    "Transport"   : {low: "#41b6c4",range: "#41b6c4"}
+    "Industry"    : {low: "#7fcdbb",range: "#7fcdbb"}
+    "Other"       : {low: "#edf8b1",range: "#edf8b1"}
+
+# Fossil Fuels: 081D58
+# Bioenergy: 253494
+# Electricity generation & grid: 225ea8
+# Changes in buildings: 1d91c0
+# Transport: 41b6c4
+# Improvements to industry: 7fcdbb
+# Finance cost: c7e9b4
+# other: edf8b1
 
   constructor: () ->
     $(document).ready(@setupComparisonChart)
