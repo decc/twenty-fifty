@@ -1,12 +1,12 @@
 module ApplicationHelper
   def view_names
-    { 
-      # "index" => "Home page", 
-      # "history" => "Your progress", 
-      # "structured" => "Multiple choice", 
-      # "quick_choice" => "Quick choice", 
+    {
+      # "index" => "Home page",
+      # "history" => "Your progress",
+      # "structured" => "Multiple choice",
+      # "quick_choice" => "Quick choice",
       "story"=>"Story",
-      "primary_energy_chart"=>"Over Time", 
+      "primary_energy_chart"=>"Over Time",
       "costs_in_context"=>"Costs",
       "show"=>"Energy Security",
       "map"=>"Land Area",
@@ -15,16 +15,17 @@ module ApplicationHelper
       # "air_quality"=>"Air Quality"
     }
   end
-  
+
   def costing_submenu
     {
       "costs_in_context" => "Overview",
       "costs_compared_overview" => "Compared to experts",
-      "costs_across_sectors" => "By Sector",
+      "costs_across_sectors" => "By sector",
       "costs_within_sector" => "Costs within sectors",
+      "costs_over_time" => "Costs over time",
     }
   end
-  
+
   def sector_submenu
     {
       "costs_within_sector#fossil" => "Fossil Fuels",
@@ -36,12 +37,12 @@ module ApplicationHelper
       "costs_within_sector#other" => "Other",
     }
   end
-  
-  def saved_pathways 
+
+  def saved_pathways
     {
     "All at Level 1" => "1011111111111111011111100111111011110110110111011011",
-    "Maximum demand" => "1011111111111111011111100444444044440420330444042011",    
-    "Maximum supply" => "4044444444444444044344400111111011110110110111011011",    
+    "Maximum demand" => "1011111111111111011111100444444044440420330444042011",
+    "Maximum supply" => "4044444444444444044344400111111011110110110111011011",
     "Friends of the Earth"=>"1011343331444311024311100442444034330420230443042014",
     "Campaign for Protection of Rural England"=>"1022313331233213023312200442443034330410230444041023",
     "Prof Nick Jenkins"=>"2023322221221211032214200332344034440420230344032012",
@@ -52,7 +53,7 @@ module ApplicationHelper
     "Mark Lynas"=>"3022312222131111022322100342443014440220220244012043"
     }
   end
-  
+
   def expert_pathways
     {
       "Green Alliance"=>"1022313331233213023312200442443034330410230444041023",
@@ -62,7 +63,7 @@ module ApplicationHelper
       "Friends of the Earth"=>"1011343331444311024311100442444034330420230443042014"
     }
   end
-  
+
   def example_pathways
     {
       "All at Level 1"=>"1011111111111101111110011111011110110110111011011",

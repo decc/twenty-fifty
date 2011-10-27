@@ -31,6 +31,7 @@
 //= require costs_across_sectors
 //= require costs_within_sector
 //= require costs_compared_detail
+//= require costs_over_time
 //= require dashboard2
 //= require map
 //= require story

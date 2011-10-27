@@ -1,0 +1,11 @@
+= render 'tabbed_menu'
+= render 'layouts/costs_submenu'
+
+:javascript
+  $('#menu_costs_in_context').addClass('active')
+  $('#submenu_costs_over_time').addClass('active')
+  twentyfifty.setup(twentyfifty.CostsOverTime)
+
+#results
+  .explainchart
+    These graphs show how cost may vary over time.
