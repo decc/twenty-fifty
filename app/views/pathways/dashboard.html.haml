@@ -58,8 +58,7 @@
 
 :javascript
   $(function(){
-    $('body').addClass('dashboard')
-    
+    $('body').addClass('dashboard');
     function openFancyBox() {
       $.fancybox({
         'href' : twentyfifty.popup_url(),
@@ -68,11 +67,15 @@
         'hideOnOverlayClick' : false,
         'width' : 900,
         'height' : 672,
-        'margin': 5,
+        'margin': 10,
         'padding': 0,
         'overlayColor':'#000000',
-        'overlayOpacity':'0.8'
-      })
+        'overlayOpacity':'0.8',
+        'onComplete':function(){
+          $('#fancybox-content').css({'width':'900px',height:'672px'});
+          $('#fancybox-iframe').attr({'width':'900','height':'672'});
+        }
+      });
     }
     $("a#iframe").bind('click',openFancyBox);
   });
