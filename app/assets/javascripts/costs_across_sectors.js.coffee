@@ -79,7 +79,6 @@ class CostsAcrossSectors
     twentyfifty.group_costs_of_pathway(pathway) unless pathway.categorised_costs?
     categorised_costs = pathway.categorised_costs
     b = @boxes[_id]
-    console.log(categorised_costs)
     for category in categories
       cost = categorised_costs[category]
       b[category].low.attr({x: @x[category](0), width: @x[category](cost.low) - @x[category](0)})
