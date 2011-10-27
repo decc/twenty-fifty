@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     width: 885px;
-    height: 500px;
+    height: 480px;
     position:relative;
     top:0;
     left:0;
@@ -17,6 +17,10 @@
     background:#999999;
     display: none;
     text-align:left;
+}
+#explanatory-popup h2 {
+    font-size: 20px;
+    font-weight: bold;
 }
 #explanatory-popup ol {
     margin:0 0 0 2.5em;
