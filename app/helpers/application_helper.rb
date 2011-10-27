@@ -21,8 +21,8 @@ module ApplicationHelper
       "costs_in_context" => "Overview",
       "costs_compared_overview" => "Compared to experts",
       "costs_across_sectors" => "By sector",
-      "costs_within_sector" => "Costs within sectors",
-      "costs_over_time" => "Costs over time",
+      "costs_within_sector" => "Within sectors",
+      "costs_over_time" => "Over time",
     }
   end
 
