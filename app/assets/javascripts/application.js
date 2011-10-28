@@ -7,6 +7,7 @@
 
 // First the support libs
 //= require jquery
+//= require jquery.j.son.min
 //= require jquery_ujs
 //= require highcharts
 //= require highcharts.setOptions
