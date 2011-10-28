@@ -20,12 +20,15 @@ class CostsComparedOverview
     "Other"       : {low: "#a55194",range: "#de9ed6"}
 
   constructor: () ->
-    $(document).ready(@setupComparisonChart)
+    for code in twentyfifty.comparator_pathways
+      twentyfifty.preLoadCode(code)
+      
+  documentReady: () ->
+    return false if @drawn?
+    
     for code in twentyfifty.comparator_pathways
       twentyfifty.loadFromCacheOrRemote(code,@updateBar)
-  
-  setupComparisonChart: () =>
-    return false if @boxes?
+      
     e = $('#costscomparedoverview')
     @h = e.height()
     @w = e.width()
@@ -51,7 +54,9 @@ class CostsComparedOverview
           low: @r.rect(@x(0),@y(code),0,@y.rangeBand()).attr({'fill':colors.low,'stroke':'none'})
           range: @r.rect(@x(0),@y(code),0,@y.rangeBand()).attr({'fill':colors.range,'stroke':'none'})
       @boxes[code] = b
-  
+    
+    @drawn = true
+    
   updateResults: (pathway) ->
     @updateBar(pathway,'chosen')
     

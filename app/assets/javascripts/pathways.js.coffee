@@ -7,15 +7,17 @@ choices = null
 action = null
 cache = {}
 comparator_code = null
+loading = {}
 
 setup = (e) ->
+  execute = new e
   setVariablesFromURL()
-  execute = new e  
-  $(document).ready(documentReadySetup)
-  load()
+  $(document).ready(documentReady)
+  preLoadCode(code())
 
-documentReadySetup = () ->
-  updateControls(old_choices,choices)
+documentReady = () ->
+  execute.documentReady()
+  load()
   $("a[title]").tooltip({delay: 0, position: 'top left', offset:[3,3],tip:'#tooltip'});
 
 setVariablesFromURL = () ->
@@ -66,21 +68,26 @@ load = () ->
         $('#message').show()
     )
 
+preLoadCode = (preload_code) ->
+  unless cache[preload_code]? && loading[preload_code]?
+    loading[preload_code] = true
+    $.getJSON("/pathways/#{preload_code}/data", (data) ->
+      if data?
+        cache[preload_code] = data
+        loading[preload_code] = undefined
+    )
+
 preLoad = (index,level) ->
   preload_choices = choices.slice(0)
   preload_choices[index] = level
   preload_code = preload_choices.join('')
-  unless cache[preload_code]?
-    $.getJSON("/pathways/#{preload_code}/data", (data) ->
-      if data?
-        cache[preload_code] = data
-    )
-
+  preLoadCode(preload_code)
+  
 loadFromCacheOrRemote = (code_to_load,callback) ->
-  if cache[code_to_load]?
-    callback(cache[code()])
-  else
-    loadRemote(code_to_load,callback)
+  return callback(cache[code()]) if cache[code_to_load]?
+  return false if loading[code_to_load]?
+  loading[code_to_load] = true
+  loadRemote(code_to_load,callback)
 
 loadRemote = (code_to_load,callback) ->
   tryToFetchData = () ->
@@ -133,3 +140,4 @@ window.twentyfifty['switchView'] = switchView
 window.twentyfifty['switchPathway'] = switchPathway
 window.twentyfifty['pathwayName'] = pathwayName
 window.twentyfifty.comparator_code = comparator_code
+window.twentyfifty.preLoadCode = preLoadCode

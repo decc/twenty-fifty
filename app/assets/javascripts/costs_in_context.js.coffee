@@ -1,12 +1,16 @@
 class CostsInContext
   
   constructor: () ->
-    $(document).ready(@setupComparisonChart)
     for code in twentyfifty.comparator_pathways
-      twentyfifty.loadFromCacheOrRemote(code,@updateBar)
+      twentyfifty.preLoadCode(code)
+    
   
-  setupComparisonChart: () =>
-    return false if @boxes_low?
+  documentReady: () =>
+    return false if @drawn?
+        
+    for code in twentyfifty.comparator_pathways
+      twentyfifty.loadFromCacheOrRemote(code,this.updateBar)  
+          
     e = $('#costsincontext')
     @h = e.height()
     @w = e.width()
@@ -36,6 +40,8 @@ class CostsInContext
       @boxes_low[code] = @r.rect(@x(0),@y(code),0,@y.rangeBand()).attr({'fill':'#134B9F','stroke':'none'})
       @boxes_range[code] = @r.rect(@x(0),@y(code),0,@y.rangeBand()).attr({'fill':'#60A4FA','stroke':'none'})
       
+    @drawn = true
+    
   drawIndicator: (value,text) ->
     x = @x(value)
     @r.path(["M",x-10,20,"L",x+10,20,x,30,"Z"]).attr({fill:'#aaa',stroke:'none'})

@@ -1,13 +1,11 @@
 class SankeyDisplay
 
   constructor: () ->
-    $(document).ready(@createSankey)
-    
+  
+  documentReady: () =>
+    # Nothing
+  
   updateResults: (pathway) ->
-    #$('#results').html(JSON.stringify(pathway))
-    @updateSankey(pathway)
-    
-  updateSankey: (pathway) ->
     @createSankey() unless @s?
     if @drawn == true
       @s.updateData(pathway.sankey)

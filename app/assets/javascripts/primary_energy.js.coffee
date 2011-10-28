@@ -1,13 +1,36 @@
 class PrimaryEnergy
 
   constructor: () ->
-    $(document).ready(@createEmissionsChart)
+    
+  documentReady: () =>
+    @final_energy_chart = new Highcharts.Chart({
+      chart: { renderTo: 'demand_chart' }, 
+      title: { text: 'UK energy demand' }, 
+      subtitle: { text: "TWh/yr of final energy"},
+      yAxis: { title: null, min: 0, max: 4000 },
+      series: []
+    });
+    @primary_energy_chart = new Highcharts.Chart({ 
+      chart: { renderTo: 'supply_chart' }, 
+      title: { text: 'UK energy supply' },
+      subtitle: { text: "TWh/yr of primary energy"},
+      yAxis: { title: null, min: 0, max: 4000 },
+      series: []
+    });
+    @emissions_chart = new Highcharts.Chart({
+      chart: { renderTo: 'emissions_chart' }, 
+      title: { text: 'UK greenhouse gas emissions' },
+      subtitle: { text: "MtCO<sub>2</sub>e/yr"},   
+      yAxis: { title: null, min: -500, max: 1000 },
+      tooltip: {
+        formatter: () ->
+          "<b>#{this.series.name}</b><br/>#{this.x}: #{Highcharts.numberFormat(this.y, 0, ',')} MtCO2e/yr"
+      },
+      series: []
+    });
+    @emissions_chart.renderer.text("80% reduction on 1990" ,60,170).css({color: '#fff',fill: '#fff', 'font-size': '0.75em'}).attr({zIndex:10}).add();
     
   updateResults: (@pathway) ->
-    #$('#results').html(JSON.stringify(pathway))
-    @updateChart()
-    
-  updateChart: () ->
     @createCharts() unless @emissions_chart? && @final_energy_chart? && @primary_energy_chart?
     titles = ['Bioenergy credit','Carbon capture','International Aviation and Shipping','Industrial Processes','Solvent and Other Product Use','Agriculture','Land-Use, Land-Use Change and Forestry','Waste','Other','Fuel Combustion']
     i = 0
@@ -53,32 +76,6 @@ class PrimaryEnergy
     @final_energy_chart.redraw()
     @primary_energy_chart.redraw()
     
-  createCharts: () ->
-    @final_energy_chart = new Highcharts.Chart({
-      chart: { renderTo: 'demand_chart' }, 
-      title: { text: 'UK energy demand' }, 
-      subtitle: { text: "TWh/yr of final energy"},
-      yAxis: { title: null, min: 0, max: 4000 },
-      series: []
-    });
-    @primary_energy_chart = new Highcharts.Chart({ 
-      chart: { renderTo: 'supply_chart' }, 
-      title: { text: 'UK energy supply' },
-      subtitle: { text: "TWh/yr of primary energy"},
-      yAxis: { title: null, min: 0, max: 4000 },
-      series: []
-    });
-    @emissions_chart = new Highcharts.Chart({
-      chart: { renderTo: 'emissions_chart' }, 
-      title: { text: 'UK greenhouse gas emissions' },
-      subtitle: { text: "MtCO<sub>2</sub>e/yr"},   
-      yAxis: { title: null, min: -500, max: 1000 },
-      tooltip: {
-        formatter: () ->
-          "<b>#{this.series.name}</b><br/>#{this.x}: #{Highcharts.numberFormat(this.y, 0, ',')} MtCO2e/yr"
-      },
-      series: []
-    });
-    @emissions_chart.renderer.text("80% reduction on 1990" ,60,170).css({color: '#fff',fill: '#fff', 'font-size': '0.75em'}).attr({zIndex:10}).add();
+
         
 window.twentyfifty['PrimaryEnergy'] = PrimaryEnergy

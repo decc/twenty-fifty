@@ -1,13 +1,14 @@
 class CostsComparedDetail
 
   cost_component_names = ["Conventional thermal plant", "Combustion + CCS", "Nuclear power", "Onshore wind", "Offshore wind", "Hydroelectric", "Wave and Tidal", "Geothermal", "Distributed solar PV", "Distributed solar thermal", "Micro wind", "Biomatter to fuel conversion", "Bioenergy imports", "Agriculture and land use", "Energy from waste", "Waste arising", "Marine algae", "Electricity imports", "Electricity Exports", "Electricity grid distribution", "Storage, demand shifting, backup", "H2 Production", "Domestic heating", "Domestic insulation", "Commercial heating and cooling", "Domestic lighting, appliances, and cooking", "Commercial lighting, appliances, and catering", "Industrial processes", "Conventional cars and buses", "Hybrid cars and buses", "Electric cars and buses", "Fuel cell cars and buses", "Bikes", "Rail", "Domestic aviation", "Domestic freight", "International aviation", "International shipping (maritime bunkers)", "Geosequestration", "Petroleum refineries", "Coal", "Oil", "Gas", "Fossil fuel transfers", "District heating effective demand", "Power Carbon Capture", "Industry Carbon Capture", "Finance cost"]
+  
+  default_comparator_code = "1011111111111111011111100111111011110110110111011011"
 
   constructor: () ->
-    $(document).ready(@setupChart)
-    twentyfifty.loadFromCacheOrRemote(twentyfifty.comparator_code || "1011111111111111011111100111111011110110110111011011",@updateComparator)
+    twentyfifty.preLoadCode(twentyfifty.comparator_code || default_comparator_code )
   
-  setupChart: () =>
-    # Deffer this until data loaded
+  documentReady: () ->
+    twentyfifty.loadFromCacheOrRemote(twentyfifty.comparator_code || default_comparator_code, @updateComparator)
     
   updateResults: (@pathway) =>
     twentyfifty.adjust_costs_of_pathway(@pathway) unless @pathway.total_cost_low_adjusted?
@@ -20,35 +21,7 @@ class CostsComparedDetail
   drawChart: () ->
     @drawTotals()
     @drawComponents()
-  
-  # setupAxes: () ->
-  #   # Common x axis, rest will be specific to individual chart
-  #   @
     
-    # @y = d3.scale.ordinal().domain(["chosen"].concat(twentyfifty.comparator_pathways)).rangeRoundBands([40,@h],0.5)
-    # 
-    # # The vertical lines
-    # format = @x.tickFormat(10)
-    # for tick in @x.ticks(10)
-    #   @r.text(@x(tick),30,format(tick)).attr({'text-anchor':'middle'})
-    #   @r.path(["M", @x(tick), 40, "L", @x(tick),@h]).attr({stroke:'#aaa' ,'stroke-dasharray':'.'})
-    # # The horizontal labels
-    # @r.text(195,@y("chosen")+(@y.rangeBand()/2),"Your pathway").attr({'text-anchor':'end'})
-    # 
-    # 
-    # for code in twentyfifty.comparator_pathways
-    #   @r.text(195,@y(code)+(@y.rangeBand()/2),twentyfifty.pathwayName(code,code)).attr({'text-anchor':'end'})
-    #   
-    # Initally empty boxes
-    # @boxes = {}
-    # for code in (["chosen"].concat(twentyfifty.comparator_pathways))
-    #   b = {}
-    #   for own category, colors of category_colors
-    #     b[category] =
-    #       low: @r.rect(@x(0),@y(code),0,@y.rangeBand()).attr({'fill':colors.low,'stroke':'none'})
-    #       range: @r.rect(@x(0),@y(code),0,@y.rangeBand()).attr({'fill':colors.range,'stroke':'none'})
-    #   @boxes[code] = b
-
   drawTotals: () ->
     return if @totalsdone == true
     @totalsdone = true
