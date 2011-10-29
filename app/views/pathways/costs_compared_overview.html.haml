@@ -1,7 +1,15 @@
 %script{ :type => 'text/javascript' }
   twentyfifty.setup(twentyfifty.CostsComparedOverview)
 
-#results
+#results.costscomparedoverview
+  %h1
+    The cost of your energy system, compared with other energy systems. 
+    This is not your energy bill.
+  
+  = render 'cost_caveats'
+
   #costscomparedoverview
-    
+  
+  = render 'essential_notes'
+      
 = render 'classic_controls'
