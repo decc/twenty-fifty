@@ -1,23 +1,28 @@
 window.twentyfifty = {};
 
-execute = null
 controller = null
-old_choices = []
 choices = null
 action = null
+
+execute = null
+old_choices = []
+
 cache = {}
 comparator_code = null
-loading = {}
+callbacks = {}
+timers = {}
+requested = {}
+mainPathwayTimer = null
 
 setup = (e) ->
   execute = new e
   setVariablesFromURL()
   $(document).ready(documentReady)
-  preLoadCode(code())
+  preLoadPathway(code())
 
 documentReady = () ->
   execute.documentReady()
-  load()
+  loadMainPathway()
   $("a[title]").tooltip({delay: 0, position: 'top left', offset:[3,3],tip:'#tooltip'});
 
 setVariablesFromURL = () ->
@@ -30,81 +35,99 @@ setVariablesFromURL = () ->
 code = () ->
   choices.join('')
 
-url = () ->
-  if comparator_code?
-    "/#{controller}/#{code()}/#{action}/comparator/#{comparator_code}"
-  else
-    "/#{controller}/#{code()}/#{action}"
+url = (options = {}) ->
+  s = jQuery.extend({controller:controller, code: choices.join(''), action:action},options)
+  "/#{s.controller}/#{s.code}/#{s.action}"
 
 go = (index,level) ->
   old_choices = choices.slice(0)
   choices[index] = level
-  load()
-  
+  loadMainPathway()
+
+preLoad = (index,level) ->
+  return false # Disable for the moment
+  preload_choices = choices.slice(0)
+  preload_choices[index] = level
+  preload_code = preload_choices.join('')
+  preLoadPathway(preload_code)
+
 switchView = (new_action) ->
   action = new_action
-  window.location = "/pathways/#{code()}/#{action}"
+  window.location = url()
   
 switchPathway = (new_code) ->
   old_choices = choices.slice(0)
   choices = (parseInt(choice) for choice in new_code.split(''))
-  load()  
+  loadMainPathway() 
 
-load = () ->
-  return if choices.join('') == old_choices.join('')
+preLoadPathway = (preload_code) ->
+  return false if cache[preload_code]? # Already loaded
+  return false if requested[preload_code]? # Already requested
+  requested[preload_code] = true
+  $.getJSON(url({code:preload_code, action:'data'}), (data) ->
+    if data?
+      cache[data._id] = data
+  )
+  
+loadMainPathway = (pushState = true) ->
+  # Check if we haven't really moved
+  return false if choices.join('') == old_choices.join('')
+  # Update the controls, if neccesarry
   updateControls(old_choices,choices)
-  history.pushState(choices,code(),url()) if history['pushState']?
-  if cache[code()]?
-    execute.updateResults(cache[code()])
+  
+  main_code = code()
+  # Change the url if we can
+  history.pushState(choices,main_code,url()) if pushState && history['pushState']?
+  
+  # Stop any previous timers
+  clearInterval(mainPathwayTimer) if mainPathwayTimer?
+  
+  # Check the cache
+  if cache[main_code]?
+    execute.updateResults(cache[main_code])
     $('#calculating').hide()
     $('#message').show()
   else
     $('#calculating').show()
     $('#message').hide()
-    loadRemote(code(), (data) ->
-      if data['_id'] == code()
-        execute.updateResults(data)      
-        $('#calculating').hide()
-        $('#message').show()
-    )
+    
+    requested[main_code] = true
+    
+    fetch = () ->
+      $.getJSON(url({code:main_code, action:'data'}), (data) ->
+        data ||= cache[main_code] # In case it arrived while we were waiting
+        if data?
+          cache[data._id] = data
+          if data._id == code()
+            clearInterval(mainPathwayTimer)
+            execute.updateResults(data)      
+            $('#calculating').hide()
+            $('#message').show()
+      )
+    
+    mainPathwayTimer = setInterval(fetch,3000)
+    fetch()
 
-preLoadCode = (preload_code) ->
-  unless cache[preload_code]? && loading[preload_code]?
-    loading[preload_code] = true
-    $.getJSON("/pathways/#{preload_code}/data", (data) ->
-      if data?
-        cache[preload_code] = data
-        loading[preload_code] = undefined
-    )
-
-preLoad = (index,level) ->
-  preload_choices = choices.slice(0)
-  preload_choices[index] = level
-  preload_code = preload_choices.join('')
-  preLoadCode(preload_code)
-  
-loadFromCacheOrRemote = (code_to_load,callback) ->
-  return callback(cache[code()]) if cache[code_to_load]?
-  return false if loading[code_to_load]?
-  loading[code_to_load] = true
-  loadRemote(code_to_load,callback)
-
-loadRemote = (code_to_load,callback) ->
-  tryToFetchData = () ->
-    $.getJSON("/pathways/#{code_to_load}/data", (data) ->
-      if data?
-        clearInterval(pathwayPollingTimer)
-        cache[code_to_load] = data
-        callback(data)
-    )
-  pathwayPollingTimer = setInterval(tryToFetchData,3000)
-  tryToFetchData()
+loadSecondaryPathway = (secondary_code,callback) ->
+  if cache[secondary_code]?
+    callback(secondary_code)
+  else
+    fetch = () =>
+      $.getJSON(url({code:secondary_code, action:'data'}), (data) =>
+        data ||= cache[secondary_code] # In case it arrived while we were waiting
+        if data?
+          clearInterval(timer)
+          cache[data._id] = data
+          callback(data) 
+      )
+    timer = setInterval((() -> fetch() ),3000)
+    fetch()
   
 window.onpopstate = (event) ->
   if event.state
     old_choices = choices.slice(0)
     choices = event.state
-    load()
+    loadMainPathway(false)
 
 updateControls = (old_choices,@choices) ->
   controls = $('#classic_controls')
@@ -132,12 +155,12 @@ pathway_names =
 pathwayName = (pathway_code,default_name = null) ->
   pathway_names[pathway_code] || default_name
   
-window.twentyfifty['setup'] = setup
-window.twentyfifty['go'] = go
-window.twentyfifty['preLoad'] = preLoad
-window.twentyfifty['loadFromCacheOrRemote'] = loadFromCacheOrRemote
-window.twentyfifty['switchView'] = switchView
-window.twentyfifty['switchPathway'] = switchPathway
-window.twentyfifty['pathwayName'] = pathwayName
-window.twentyfifty.comparator_code = comparator_code
-window.twentyfifty.preLoadCode = preLoadCode
+window.twentyfifty.setup = setup
+window.twentyfifty.go = go
+window.twentyfifty.preLoad = preLoad
+window.twentyfifty.preLoadPathway = preLoadPathway
+window.twentyfifty.loadMainPathway = loadMainPathway
+window.twentyfifty.loadSecondaryPathway = loadSecondaryPathway
+window.twentyfifty.switchView = switchView
+window.twentyfifty.switchPathway = switchPathway
+window.twentyfifty.pathwayName = pathwayName
