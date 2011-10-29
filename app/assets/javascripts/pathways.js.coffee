@@ -13,12 +13,13 @@ callbacks = {}
 timers = {}
 requested = {}
 mainPathwayTimer = null
+preLoadHoverTimer = null
 
 setup = (e) ->
-  execute = new e
   setVariablesFromURL()
-  $(document).ready(documentReady)
   preLoadPathway(code())
+  execute = new e
+  $(document).ready(documentReady)
 
 documentReady = () ->
   execute.documentReady()
@@ -45,11 +46,12 @@ go = (index,level) ->
   loadMainPathway()
 
 preLoad = (index,level) ->
-  return false # Disable for the moment
-  preload_choices = choices.slice(0)
-  preload_choices[index] = level
-  preload_code = preload_choices.join('')
-  preLoadPathway(preload_code)
+  clearInterval(preLoadHoverTimer) if preLoadHoverTimer?
+  preLoadHoverTimer = setInterval( (() ->
+    preload_choices = choices.slice(0)
+    preload_choices[index] = level
+    preload_code = preload_choices.join('')
+    preLoadPathway(preload_code)),500)
 
 switchView = (new_action) ->
   action = new_action
@@ -68,7 +70,7 @@ preLoadPathway = (preload_code) ->
     if data?
       cache[data._id] = data
   )
-  
+    
 loadMainPathway = (pushState = true) ->
   # Check if we haven't really moved
   return false if choices.join('') == old_choices.join('')

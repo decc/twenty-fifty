@@ -1,15 +1,12 @@
 class CostsInContext
   
   constructor: () ->
-    for code in twentyfifty.comparator_pathways
-      twentyfifty.preLoadCode(code)
-    
   
   documentReady: () =>
     return false if @drawn?
         
     for code in twentyfifty.comparator_pathways
-      twentyfifty.loadFromCacheOrRemote(code,this.updateBar)  
+      twentyfifty.loadSecondaryPathway(code,this.updateBar)  
           
     e = $('#costsincontext')
     @h = e.height()
