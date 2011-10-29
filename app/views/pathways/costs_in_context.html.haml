@@ -1,10 +1,5 @@
 %script{ :type => 'text/javascript' }
   twentyfifty.setup(twentyfifty.CostsInContext)
-  $(document).ready(function () {
-  if($.jStorage.get('CostCaveatShown') == true) {
-  $('#cost_caveats').hide();
-  }
-  })
 
 #results.costsincontext
   %h1
@@ -44,6 +39,12 @@
       
       #understand
         = link_to_function 'Click to confirm that you understand', "$.jStorage.set('CostCaveatShown',true);$('#cost_caveats').hide()"
+  :javascript
+    if($.jStorage.get('CostCaveatShown') == true) {
+      $('#cost_caveats').hide();
+    }
+  
+  
   #costsincontext
   
   #essentialnotes

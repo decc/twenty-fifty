@@ -8,8 +8,9 @@
   %body
     #topbar
       = render 'layouts/view_dropdown'
-      #calculating Calculating
-      #message= link_to "This tool is in development. Help us to make it better. Don't trust what it says.","http://www.decc.gov.uk/2050"
+      #messages
+        #calculating Calculating
+        #message= link_to "This tool is in development. Help us to make it better. Don't trust what it says.","http://www.decc.gov.uk/2050"
       = render 'layouts/saved_pathways_dropdown'
     = yield 
     #tooltip

@@ -1,6 +1,6 @@
 %ul#viewdropdown.dropdown
   %li
-    = link_to_function raw("See implications &#9662;"), "$('ul#view_choices').toggle()"
+    = link_to_function raw("See implications" + image_tag('dropdown-arrow.png')), "$('ul#view_choices').toggle()"
     %ul#view_choices.choices
       - view_names.each do |action,title|
         %li= link_to_function title, "twentyfifty.switchView('#{action}')"
