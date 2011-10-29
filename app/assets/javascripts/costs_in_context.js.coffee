@@ -23,8 +23,8 @@ class CostsInContext
      @r.rect(@x(0),@y(code),@x(40000)-@x(0),@y.rangeBand()).attr({'fill':'#ddd','stroke':'none'})
       
     # The y axis labels
-    @r.text(30,@y("chosen")+9,twentyfifty.pathwayName(twentyfifty.code(),"Your pathway")).attr({'text-anchor':'start','font-weight':'bold'})
-    @r.text(30,@y("chosen")+27,twentyfifty.pathwayDescriptions(twentyfifty.code(),"Your can click on the chart to make a more\ndetailed comparison with the pathways below")).attr({'text-anchor':'start'})
+    @r.text(30,@y("chosen")+9,"Your pathway").attr({'text-anchor':'start','font-weight':'bold'})
+    @r.text(30,@y("chosen")+27,"Your can click on the chart to make a more\ndetailed comparison with the pathways below").attr({'text-anchor':'start'})
     for code in twentyfifty.comparator_pathways
       @r.text(30,@y(code)+9,twentyfifty.pathwayName(code,code)).attr({'text-anchor':'start','font-weight':'bold', href: twentyfifty.url({action:'primary_energy_chart',code:code})})
       @r.text(30,@y(code)+27,twentyfifty.pathwayDescriptions(code,"")).attr({'text-anchor':'start'})
