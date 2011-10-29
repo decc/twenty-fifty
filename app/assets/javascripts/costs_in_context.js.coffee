@@ -4,6 +4,7 @@ class CostsInContext
   
   documentReady: () =>
     return false if @drawn?
+    @drawn = true
         
     for code in twentyfifty.comparator_pathways
       twentyfifty.loadSecondaryPathway(code,this.updateBar)  
@@ -50,8 +51,6 @@ class CostsInContext
     @drawIndicator(39000,"Forecast mean GDP/capita 2010-2050")
     #@drawIndicator(57000,"GDP/capita in 2050")
     
-    @drawn = true
-    
   drawIndicator: (value,text) ->
     x = @x(value)
     @r.path(["M",x-5,12,"L",x+5,12,x,17,"Z"]).attr({fill:'#aaa',stroke:'none'})
@@ -62,7 +61,6 @@ class CostsInContext
     @updateBar(pathway,'chosen')
     
   updateBar: (pathway,_id = pathway._id) =>
-    @setupComparisonChart() unless @boxes_low?
     total_cost = @total_cost_low_adjusted(pathway)
     total_range = @total_cost_range_adjusted(pathway)
     @boxes_low[_id].attr({width: @x(total_cost) - @x(0)})
