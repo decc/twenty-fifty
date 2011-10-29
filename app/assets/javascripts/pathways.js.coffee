@@ -154,10 +154,28 @@ pathway_names =
   "2022222221323212034311100342424024430320220443042021": "Atkins"
   "3022312222131111022322100342443014440220220244012043": "Mark Lynas"
 
+pathway_descriptions = 
+  "1011111111111111011111100111111011110110110111011011": "Imported natural gas for electricity and heat\nDoes not tackle climate change",
+  "1011111111111111011111100444444044440420330444042011": "Maximum demand"
+  "4044444444444444044344400111111011110110110111011011": "Maximum supply"
+  "1011343331444311024311100442444034330420230443042014": "No nuclear or CCS - only renewables\nMassive demand reduction"
+  "1022313331233213023312200442443034330410230444041023": "Lorem ipsum dolor sit amet, consectetur\nQuisque viverra luctus neque."
+  "2023322221221211032214200332344034440420230344032012": "Lorem ipsum dolor sit amet, consectetur\nQuisque viverra luctus neque."
+  "2022214441134111034332100342244042340420320334042014": "Lorem ipsum dolor sit amet, consectetur\nQuisque viverra luctus neque."
+  "2022211111121221033322200342324023410220220344032012": "Lorem ipsum dolor sit amet, consectetur\nQuisque viverra luctus neque."
+  "2023222221221311032312200232314013430220230243032013": "Lorem ipsum dolor sit amet, consectetur\nQuisque viverra luctus neque."
+  "2022222221323212034311100342424024430320220443042021": "Lorem ipsum dolor sit amet, consectetur\nQuisque viverra luctus neque."
+  "3022312222131111022322100342443014440220220244012043": "All vehicles and heaters are electric\nNuclear, offshore wind and geoequestration"
+
 pathwayName = (pathway_code,default_name = null) ->
   pathway_names[pathway_code] || default_name
-  
+
+pathwayDescriptions = (pathway_code,default_description = null) ->
+  pathway_descriptions[pathway_code] || default_description
+
 window.twentyfifty.setup = setup
+window.twentyfifty.code = code
+window.twentyfifty.url = url
 window.twentyfifty.go = go
 window.twentyfifty.preLoad = preLoad
 window.twentyfifty.preLoadPathway = preLoadPathway
@@ -166,3 +184,4 @@ window.twentyfifty.loadSecondaryPathway = loadSecondaryPathway
 window.twentyfifty.switchView = switchView
 window.twentyfifty.switchPathway = switchPathway
 window.twentyfifty.pathwayName = pathwayName
+window.twentyfifty.pathwayDescriptions = pathwayDescriptions
