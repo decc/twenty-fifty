@@ -44,6 +44,26 @@ class CostsInContext
     h = @y.rangeBand()
     url = twentyfifty.url({action:'costs_compared_overview'})
 
+    low_show = () =>
+      @low.top_label_box.show()
+      @low.top_label.show()
+      @low.labels.show()
+    
+    low_hide = () =>
+      @low.labels.hide()
+      @low.top_label_box.hide()
+      @low.top_label.hide()
+    
+    range_show = () =>
+      @range.top_label_box.show()
+      @range.top_label.show()
+      @range.labels.show()
+    
+    range_hide = () =>
+      @range.labels.hide()
+      @range.top_label_box.hide()
+      @range.top_label.hide()
+
     for code in all_pathways      
       y = @y(code)
       
@@ -61,26 +81,6 @@ class CostsInContext
       
       low_label.hide()
       range_label.hide()
-
-      low_show = () =>
-        @low.top_label_box.show()
-        @low.top_label.show()
-        @low.labels.show()
-      
-      low_hide = () =>
-        @low.labels.hide()
-        @low.top_label_box.hide()
-        @low.top_label.hide()
-      
-      range_show = () =>
-        @range.top_label_box.show()
-        @range.top_label.show()
-        @range.labels.show()
-      
-      range_hide = () =>
-        @range.labels.hide()
-        @range.top_label_box.hide()
-        @range.top_label.hide()
 
       low.hover(low_show,low_hide)      
       range.hover(range_show,range_hide)
