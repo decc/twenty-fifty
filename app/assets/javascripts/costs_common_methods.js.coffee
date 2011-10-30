@@ -96,56 +96,68 @@ group_costs_of_pathway = (pathway) ->
   pathway
 
 adjust_costs_of_pathway = (pathway) ->
-  setDefaultStoreIfRequired(pathway)
   total = { low: 0, range: 0, high: 0, finance_max:0}
   for own name,values of pathway.cost_components
-    unless name == 'Finance cost'
-      fraction_of_width = jQuery.jStorage.get(name,null)
-      if fraction_of_width?
-        # Cost of this technology
-        cost = values.low + (values.range * fraction_of_width)
-        finance = values.finance_low + (values.finance_range * fraction_of_width)
-        
-        values.low_adjusted = cost
-        values.range_adjusted = 0
-        values.high_adjusted = cost
-        values.finance_low_adjusted = finance
-        values.finance_range_adjusted = 0
-        values.finance_high_adjusted = finance
-        
-        total.low += cost
-        total.range += 0
-        total.high += cost
-        total.finance_max += finance
-      else
-        values.low_adjusted = values.low
-        values.range_adjusted = values.range
-        values.high_adjusted = values.high
-        values.finance_low_adjusted = values.finance_low
-        values.finance_range_adjusted = values.finance_range
-        values.finance_high_adjusted = values.finance_high
-        
-        total.low += values.low
-        total.range += values.range
-        total.high += values.high
-        total.finance_max += values.finance_high
-        
-  finance_fraction_of_width = jQuery.jStorage.get("Finance cost",null)
-  finance_component = pathway.cost_components['Finance cost']
-  if finance_fraction_of_width?
-    finance_cost = finance_fraction_of_width * total.finance_max
+    #unless name == 'Finance cost'
+    fraction_of_width = jQuery.jStorage.get(name,null)
+    # Check if someone has set a preference
+    if fraction_of_width? && fraction_of_width != 'point' && fraction_of_width != 'uncertain'
+      cost = values.low + (values.range * fraction_of_width)
+      finance = values.finance_low + (values.finance_range * fraction_of_width)
+      
+      values.low_adjusted = cost
+      values.range_adjusted = 0
+      values.high_adjusted = cost
+      
+      values.finance_low_adjusted = finance
+      values.finance_range_adjusted = 0
+      values.finance_high_adjusted = finance
     
-    finance_component.low_adjusted = finance_cost
-    finance_component.range_adjusted = 0
-    finance_component.high_adjusted = finance_cost    
-  else
-    finance_component.low_adjusted = 0
-    finance_component.range_adjusted = total.finance_max
-    finance_component.high_adjusted = total.finance_max
-  
-  total.low += finance_component.low_adjusted
-  total.range += finance_component.range_adjusted
-  total.high += finance_component.high_adjusted
+    # Check if someone has specified that the cost should be left uncertain
+    else if fraction_of_width == 'uncertain'
+      values.low_adjusted = values.low
+      values.range_adjusted = values.range
+      values.high_adjusted = values.high
+      values.finance_low_adjusted = values.finance_low
+      values.finance_range_adjusted = values.finance_range
+      values.finance_high_adjusted = values.finance_high
+      
+    # Otherwise use the point estimate
+    else 
+      values.low_adjusted = values.point
+      values.range_adjusted = 0
+      values.high_adjusted = values.point
+      
+      implied_fraction_of_width = (values.point-values.low)/values.range
+      finance = values.finance_low + (values.finance_range * implied_fraction_of_width)
+      
+      values.finance_low_adjusted = values.finance
+      values.finance_range_adjusted = 0
+      values.finance_high_adjusted = values.finance
+    
+    total.low += values.low_adjusted
+    total.range += values.range_adjusted
+    total.high += values.high_adjusted
+    total.finance_max += values.finance_high_adjusted
+        
+  # finance_fraction_of_width = jQuery.jStorage.get("Finance cost",null)
+  # finance_component = pathway.cost_components['Finance cost']
+  # if finance_fraction_of_width? && fraction_of_width != 'point' && fraction_of_width != 'uncertain'
+  #   finance_cost = finance_fraction_of_width * total.finance_max
+  #   
+  #   finance_component.low_adjusted = finance_cost
+  #   finance_component.range_adjusted = 0
+  #   finance_component.high_adjusted = finance_cost    
+  # else if fraction_of_width == 'uncertain'
+  #   finance_component.low_adjusted = 0
+  #   finance_component.range_adjusted = total.finance_max
+  #   finance_component.high_adjusted = total.finance_max
+  # else
+  #   finance_component.low_adjusted = 
+  # 
+  # total.low += finance_component.low_adjusted
+  # total.range += finance_component.range_adjusted
+  # total.high += finance_component.high_adjusted
   
   pathway.total_cost_low_adjusted = total.low
   pathway.total_cost_range_adjusted = total.range
