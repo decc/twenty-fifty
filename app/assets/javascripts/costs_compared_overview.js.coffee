@@ -44,7 +44,6 @@ class CostsComparedOverview
     # The x axis labels and indicators
     @r.text(@x(3500),17,"The mean cost to society of the whole energy system in undiscounted real pounds per person 2010-2050").attr({'text-anchor':'center','font-weight':'bold'})
 
-
     # The y axis labels
     @r.text(30,@y("chosen")+9,"Your pathway").attr({'text-anchor':'start','font-weight':'bold'})
     @r.text(30,@y("chosen")+27,"Your can click on the chart to make a more\ndetailed comparison with the pathways below").attr({'text-anchor':'start'})
@@ -62,11 +61,34 @@ class CostsComparedOverview
           range: @r.rect(@x(0),@y(code),0,@y.rangeBand()).attr({'fill':colors.range,'stroke':'none'})
       @boxes[code] = b
     
+    # Initally empty boxes
+    @boxes_low = {}
+    @boxes_range = {}
+    @boxes_low['chosen'] = @r.rect(@x(0),@y("chosen"),0,@y.rangeBand()).attr({'fill':'#F00','stroke':'none'})
+    @boxes_range['chosen'] = @r.rect(@x(0),@y("chosen"),0,@y.rangeBand()).attr({'fill':'url(/assets/hatch-red.png)','stroke':'none'})
+    for code in twentyfifty.comparator_pathways
+      @boxes_low[code] = @r.rect(@x(0),@y(code),0,@y.rangeBand()).attr({'fill':'#008000','stroke':'none'})
+      @boxes_range[code] = @r.rect(@x(0),@y(code),0,@y.rangeBand()).attr({'fill':'url(/assets/hatch-green.png)','stroke':'none'})
+    
     # The vertical lines
     format = @x.tickFormat(10)
     for tick in @x.ticks(10)
       @r.text(@x(tick),30,format(tick)).attr({'text-anchor':'middle'})
       @r.path(["M", @x(tick), 40, "L", @x(tick),@h]).attr({stroke:'#fff'})
+    
+    # The hover over box to trigger changes
+    hover_box = @r.rect(250,25,@w-250-100,@h-25)
+    hover_box.attr({stroke:'none',fill:'#fff','fill-opacity':'0.0'})
+    # hover_box.hover()
+    # hover_box.hover( (() -> console.log("Over")),(() -> console.log("Out")))
+    hover_box.hover( (() ->
+        for own name, box of @boxes_low
+          box.hide()
+      ),(() ->
+        for own name, box of @boxes_low
+          box.show()
+      ),@,@)
+    
     
     @drawn = true
     
@@ -76,6 +98,12 @@ class CostsComparedOverview
   updateBar: (pathway,_id = pathway._id) =>
     @setupComparisonChart() unless @boxes?
     twentyfifty.group_costs_of_pathway(pathway) unless pathway.categorised_costs?
+    
+    total_cost = pathway.total_cost_low_adjusted
+    total_range = pathway.total_cost_range_adjusted
+    @boxes_low[_id].attr({width: @x(total_cost) - @x(0)})
+    @boxes_range[_id].attr({x:@x(total_cost),width: @x(total_range) - @x(0)})
+    
     categorised_costs = pathway.categorised_costs
     b = @boxes[_id]
     _x = 0
