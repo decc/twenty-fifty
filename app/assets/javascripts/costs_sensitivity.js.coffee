@@ -7,7 +7,7 @@ class CostsSensitivity
   constructor: () ->
 
   documentReady: () ->
-    twentyfifty.loadSecondaryPathway(twentyfifty.comparator_code || default_comparator_code, @updateComparator)
+    twentyfifty.loadSecondaryPathway(twentyfifty.getComparator() || default_comparator_code, @updateComparator)
 
   updateResults: (@pathway) =>
     twentyfifty.adjust_costs_of_pathway(@pathway) unless @pathway.total_cost_low_adjusted?

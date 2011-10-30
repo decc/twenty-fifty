@@ -4,6 +4,7 @@ controller = null
 choices = null
 action = null
 sector = null
+comparator = null
 
 execute = null
 old_choices = []
@@ -33,6 +34,8 @@ setVariablesFromURL = () ->
   action = url_elements[3]
   if action == 'costs_compared_within_sector'
     sector = url_elements[4]
+  if url_elements[4] == 'comparator'
+    comparator = url_elements[5]
 
 float_to_letter_map = {1.0:"1", 1.1:"b", 1.2:"c", 1.3:"d", 1.4:"e", 1.5:"f", 1.6:"g", 1.7:"h", 1.8:"i", 1.9:"j", 2.0:"2", 2.1:"l", 2.2:"m", 2.3:"n", 2.4:"o", 2.5:"p", 2.6:"q", 2.7:"r", 2.8:"s", 2.9:"t", 3.0:"3", 3.1:"v", 3.2:"w", 3.3:"x", 3.4:"y", 3.5:"z", 3.6:"A", 3.7:"B", 3.8:"C", 3.9:"D", 0.0:"0", 4.0:"4"}
 
@@ -49,15 +52,24 @@ choicesForCode = (newCode) ->
 
 getSector = () ->
   parseInt(sector)
-  
+    
 switchSector = (new_sector) ->
   sector = new_sector
   window.location = url()
 
+getComparator = () ->
+  comparator
+
+switchCompator = (new_comparator) ->
+  comparator = new_comparator
+  window.location = url()
+
 url = (options = {}) ->
-  s = jQuery.extend({controller:controller, code: codeForChoices(), action:action, sector:sector},options)
+  s = jQuery.extend({controller:controller, code: codeForChoices(), action:action, sector:sector, comparator: getComparator()},options)
   if s.action == 'costs_compared_within_sector' && s.sector?
     "/#{s.controller}/#{s.code}/#{s.action}/#{s.sector}"
+  else if s.comparator?
+    "/#{s.controller}/#{s.code}/#{s.action}/comparator/#{s.comparator}"
   else
     "/#{s.controller}/#{s.code}/#{s.action}"
 
@@ -196,6 +208,7 @@ pathway_names =
   "2023222221221311032312200232314013430220230243032013": "Energy Technologies Institute"
   "2022222221323212034311100342424024430320220443042021": "Atkins"
   "3022312222131111022322100342443014440220220244012043": "Mark Lynas"
+  "f023df111111111f0322123003223220333203102303430310221": "Pathway V"
 
 pathway_descriptions = 
   "1011111111111111011111100111111011110110110111011011": "Imported natural gas for electricity and heat\nDoes not tackle climate change",
@@ -220,6 +233,8 @@ window.twentyfifty.setup = setup
 window.twentyfifty.code = codeForChoices
 window.twentyfifty.getSector = getSector
 window.twentyfifty.switchSector = switchSector
+window.twentyfifty.getComparator = getComparator
+window.twentyfifty.switchCompator = switchCompator
 window.twentyfifty.url = url
 window.twentyfifty.go = go
 window.twentyfifty.preLoad = preLoad
