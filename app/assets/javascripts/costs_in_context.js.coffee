@@ -17,7 +17,7 @@ class CostsInContext
     @h = e.height()
     @w = e.width()
     @r = new Raphael('costsincontext',@w,@h)
-    @x = d3.scale.linear().domain([0, 40000]).range([250,@w-100]).nice()
+    @x = d3.scale.linear().domain([0, 40000]).range([250,@w-30]).nice()
     @y = d3.scale.ordinal().domain(all_pathways).rangeRoundBands([25,@h],0.25)
 
     # Horizontal background boxes
@@ -111,9 +111,9 @@ class CostsInContext
     
   drawIndicator: (value,text) ->
     x = @x(value)
-    @r.path(["M",x-5,12,"L",x+5,12,x,17,"Z"]).attr({fill:'#aaa',stroke:'none'})
-    @r.text(x,5,text).attr({'text-anchor':'middle',fill:'#aaa'})    
-    @r.path(["M", x, 20, "L", x,@h]).attr({stroke:'#aaa','stroke-dasharray':'.'})
+    #@r.path(["M",x-5,12,"L",x+5,12,x,17,"Z"]).attr({fill:'#aaa',stroke:'none'})
+    @r.text(x,5,text).attr({'text-anchor':'end',fill:'#aaa'})    
+    @r.path(["M", x, 3, "L", x,@h]).attr({stroke:'#aaa','stroke-dasharray':'.'})
   
   updateResults: (pathway) ->
     @updateBar(pathway,'chosen')

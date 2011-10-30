@@ -36,7 +36,7 @@ class CostsComparedOverview
     @h = e.height()
     @w = e.width()
     @r = new Raphael('costscomparedoverview',@w,@h)
-    @x = d3.scale.linear().domain([0, 7000]).range([250,@w-100]).nice()
+    @x = d3.scale.linear().domain([0, 7000]).range([250,@w-30]).nice()
     @y = d3.scale.ordinal().domain(all_pathways).rangeRoundBands([25,@h],0.25)
 
     # Horizontal background boxes
