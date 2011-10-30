@@ -17,7 +17,7 @@ preLoadHoverTimer = null
 
 setup = (e) ->
   setVariablesFromURL()
-  preLoadPathway(code())
+  preLoadPathway(codeForChoices())
   execute = new e
   $(document).ready(documentReady)
 
@@ -29,14 +29,23 @@ documentReady = () ->
 setVariablesFromURL = () ->
   url_elements = window.location.pathname.split( '/' )
   controller = url_elements[1]
-  choices = (parseInt(choice) for choice in url_elements[2].split(''))
+  choices = choicesForCode(url_elements[2])
   action = url_elements[3]
   if action == 'costs_compared_within_sector'
     sector = url_elements[4]
 
+float_to_letter_map = {1.0:"1", 1.1:"b", 1.2:"c", 1.3:"d", 1.4:"e", 1.5:"f", 1.6:"g", 1.7:"h", 1.8:"i", 1.9:"j", 2.0:"2", 2.1:"l", 2.2:"m", 2.3:"n", 2.4:"o", 2.5:"p", 2.6:"q", 2.7:"r", 2.8:"s", 2.9:"t", 3.0:"3", 3.1:"v", 3.2:"w", 3.3:"x", 3.4:"y", 3.5:"z", 3.6:"A", 3.7:"B", 3.8:"C", 3.9:"D", 0.0:"0", 4.0:"4"}
 
-code = () ->
-  choices.join('')
+codeForChoices = (c = choices) ->
+  cd = for choice in c
+    float_to_letter_map[choice]
+  cd.join('')
+
+letter_to_float_map = {"1":1.0, "b":1.1, "c":1.2, "d":1.3, "e":1.4, "f":1.5, "g":1.6, "h":1.7, "i":1.8, "j":1.9, "2":2.0, "l":2.1, "m":2.2, "n":2.3, "o":2.4, "p":2.5, "q":2.6, "r":2.7, "s":2.8, "t":2.9, "3":3.0, "v":3.1, "w":3.2, "x":3.3, "y":3.4, "z":3.5, "A":3.6, "B":3.7, "C":3.8, "D":3.9, "0":0.0, "4":4.0}
+
+choicesForCode = (newCode) ->
+  for choice in newCode.split('')
+    letter_to_float_map[choice]
 
 getSector = () ->
   parseInt(sector)
@@ -46,7 +55,7 @@ switchSector = (new_sector) ->
   window.location = url()
 
 url = (options = {}) ->
-  s = jQuery.extend({controller:controller, code: choices.join(''), action:action, sector:sector},options)
+  s = jQuery.extend({controller:controller, code: codeForChoices(), action:action, sector:sector},options)
   if s.action == 'costs_compared_within_sector' && s.sector?
     "/#{s.controller}/#{s.code}/#{s.action}/#{s.sector}"
   else
@@ -62,7 +71,7 @@ preLoad = (index,level) ->
   preLoadHoverTimer = setInterval( (() ->
     preload_choices = choices.slice(0)
     preload_choices[index] = level
-    preload_code = preload_choices.join('')
+    preload_code = codeForChoices(preload_choices)
     preLoadPathway(preload_code)),500)
 
 switchView = (new_action) ->
@@ -71,7 +80,7 @@ switchView = (new_action) ->
   
 switchPathway = (new_code) ->
   old_choices = choices.slice(0)
-  choices = (parseInt(choice) for choice in new_code.split(''))
+  choices = choicesForCode(new_code)
   loadMainPathway() 
 
 preLoadPathway = (preload_code) ->
@@ -89,7 +98,7 @@ loadMainPathway = (pushState = true) ->
   # Update the controls, if neccesarry
   updateControls(old_choices,choices)
   
-  main_code = code()
+  main_code = codeForChoices()
   # Change the url if we can
   history.pushState(choices,main_code,url()) if pushState && history['pushState']?
   
@@ -112,7 +121,7 @@ loadMainPathway = (pushState = true) ->
         data ||= cache[main_code] # In case it arrived while we were waiting
         if data?
           cache[data._id] = data
-          if data._id == code()
+          if data._id == codeForChoices()
             clearInterval(mainPathwayTimer)
             execute.updateResults(data)      
             $('#calculating').hide()
@@ -143,15 +152,37 @@ window.onpopstate = (event) ->
     choices = event.state
     loadMainPathway(false)
 
+
+
 updateControls = (old_choices,@choices) ->
   controls = $('#classic_controls')
   for choice, i in @choices
+    old_choice = old_choices[i]
     unless choice == old_choices[i]
+
+      old_choice_whole = Math.ceil(old_choice)
+      old_choice_fraction = parseInt((old_choice % 1)*10)
+      
+      choice_whole = Math.ceil(choice)
+      choice_fraction = parseInt((choice % 1)*10)
+            
       row = controls.find("tr#r#{i}")
-      row.find(".selected, .level#{old_choices[i]}").removeClass("selected level#{old_choices[i]}")
-      row.find("#c#{i}l#{choice}").addClass('selected')
-      for c in [1..(parseInt(choice)])
-        controls.find("#c#{i}l#{c}").addClass("level#{choice}")
+      
+      # Revert the old
+      row.find(".selected, .level#{old_choice_whole}, .level#{old_choice_whole}_#{old_choice_fraction}").removeClass("selected level#{old_choice_whole} level#{old_choice_whole}_#{old_choice_fraction}")
+      unless old_choice_fraction == 0
+        controls.find("#c#{i}l#{old_choice_whole}").text(old_choice_whole)
+      
+      # Setup the new
+      row.find("#c#{i}l#{choice_whole}").addClass('selected')
+      
+      for c in [1..(choice_whole-1)]
+        controls.find("#c#{i}l#{c}").addClass("level#{choice_whole}")
+      unless choice_fraction == 0
+        controls.find("#c#{i}l#{choice_whole}").text(choice)
+        controls.find("#c#{i}l#{choice_whole}").addClass("level#{choice_whole}_#{choice_fraction}")
+      else
+        controls.find("#c#{i}l#{choice_whole}").addClass("level#{choice_whole}")
 
 pathway_names =
   "1011111111111111011111100111111011110110110111011011": "All at Level 1",
@@ -186,7 +217,7 @@ pathwayDescriptions = (pathway_code,default_description = null) ->
   pathway_descriptions[pathway_code] || default_description
 
 window.twentyfifty.setup = setup
-window.twentyfifty.code = code
+window.twentyfifty.code = codeForChoices
 window.twentyfifty.getSector = getSector
 window.twentyfifty.switchSector = switchSector
 window.twentyfifty.url = url

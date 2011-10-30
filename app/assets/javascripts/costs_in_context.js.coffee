@@ -68,7 +68,7 @@ class CostsInContext
       y = @y(code)
       
       low =   @r.rect(x,y,0,h).attr({'fill':'#008000','stroke':'none',href:url})
-      range = @r.rect(x,y,0,h).attr({'fill':'url(/assets/hatch-green.png)','stroke':'none',href:url})
+      range = @r.rect(x,y,0,h).attr({'fill':'url(/assets/hatches/hatch-green.png)','stroke':'none',href:url})
       low_label = @r.text(x,y+h/2,"").attr({'fill':'#000','text-anchor':'middle'})
       range_label = @r.text(x,y+h/2,"").attr({'fill':'#000','text-anchor':'middle'})
 
