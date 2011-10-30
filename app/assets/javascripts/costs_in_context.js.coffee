@@ -36,13 +36,11 @@ class CostsInContext
     @r.text(@x(20000),17,"The mean cost to society of the whole energy system in undiscounted real pounds per person 2010-2050").attr({'text-anchor':'center','font-weight':'bold'})
     
     # Initally empty boxes
-    @boxes_low = {}
-    @boxes_range = {}
-    # @boxes_low['chosen'] = @r.rect(@x(0),@y("chosen"),0,@y.rangeBand()).attr({'fill':'#F00','stroke':'none'})
-    # @boxes_range['chosen'] = @r.rect(@x(0),@y("chosen"),0,@y.rangeBand()).attr({'fill':'url(/assets/hatch-red.png)','stroke':'none'})
+    @boxes = {}
     for code in all_pathways
-      @boxes_low[code] = @r.rect(@x(0),@y(code),0,@y.rangeBand()).attr({'fill':'#008000','stroke':'none'})
-      @boxes_range[code] = @r.rect(@x(0),@y(code),0,@y.rangeBand()).attr({'fill':'url(/assets/hatch-green.png)','stroke':'none'})
+      @boxes[code] = {}
+      @boxes[code].low = @r.rect(@x(0),@y(code),0,@y.rangeBand()).attr({'fill':'#008000','stroke':'none'})
+      @boxes[code].range = @r.rect(@x(0),@y(code),0,@y.rangeBand()).attr({'fill':'url(/assets/hatch-green.png)','stroke':'none'})
     
     # The vertical lines
     format = @x.tickFormat(10)
@@ -71,8 +69,8 @@ class CostsInContext
   updateBar: (pathway,_id = pathway._id) =>
     total_cost = @total_cost_low_adjusted(pathway)
     total_range = @total_cost_range_adjusted(pathway)
-    @boxes_low[_id].attr({width: @x(total_cost) - @x(0)})
-    @boxes_range[_id].attr({x:@x(total_cost),width: @x(total_range) - @x(0)})
+    @boxes[_id].low.attr({width: @x(total_cost) - @x(0)})
+    @boxes[_id].range.attr({x:@x(total_cost),width: @x(total_range) - @x(0)})
   
   total_cost_low_adjusted: (pathway) ->
     twentyfifty.adjust_costs_of_pathway(pathway) unless pathway.total_cost_low_adjusted?
