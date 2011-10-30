@@ -58,26 +58,26 @@ cost_categories =
   "District heating effective demand":"Buildings"
   "Power Carbon Capture":"Electricity"
   "Industry Carbon Capture":"Industry"
-  "Finance cost":"Other"
+  "Finance cost":"Finance"
 
 group_costs_of_pathway = (pathway) ->
   adjust_costs_of_pathway(pathway) unless pathway.total_cost_low_adjusted?
   categorised_costs = {}
   for own name, values of pathway.cost_components
-    unless name == 'Finance cost' # Reallocating this
-      category_name = cost_categories[name]
-      category = categorised_costs[category_name]
-      
-      low = values.low_adjusted + values.finance_low_adjusted
-      range = values.range_adjusted + values.finance_range_adjusted
-      high = values.high_adjusted + values.finance_high_adjusted
-      
-      if category?
-        category.low += low
-        category.range += range
-        category.high += high
-      else
-        categorised_costs[category_name] = { low: low, range: range, high: high}
+    #unless name == 'Finance cost' # Reallocating this
+    category_name = cost_categories[name]
+    category = categorised_costs[category_name]
+    
+    low = values.low_adjusted #+ values.finance_low_adjusted
+    range = values.range_adjusted #+ values.finance_range_adjusted
+    high = values.high_adjusted #+ values.finance_high_adjusted
+    
+    if category?
+      category.low += low
+      category.range += range
+      category.high += high
+    else
+      categorised_costs[category_name] = { low: low, range: range, high: high}
   pathway.categorised_costs = categorised_costs
   pathway
 
