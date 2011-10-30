@@ -1,5 +1,5 @@
 # coding: utf-8
-# Global assumptions
+# Air Quality Impacts
 class Sheet9 < Spreadsheet
 end
 

@@ -4,816 +4,644 @@ require_relative '../spreadsheet'
 describe 'Sheet1' do
   def sheet1; $spreadsheet ||= Spreadsheet.new; $spreadsheet.sheet1; end
 
-  it 'cell ar5 should equal 2.2' do
-    sheet1.ar5.should be_within(0.22000000000000003).of(2.2)
+  it 'cell aw8 should equal "Balancing capacity used"' do
+    sheet1.aw8.should == "Balancing capacity used"
   end
 
-  it 'cell ar7 should equal 2.4' do
-    sheet1.ar7.should be_within(0.24).of(2.4)
+  it 'cell bb8 should equal 0.3128710880881836' do
+    sheet1.bb8.should be_within(0.03128710880881836).of(0.3128710880881836)
   end
 
-  it 'cell ar8 should equal 3.0' do
-    sheet1.ar8.should be_within(0.30000000000000004).of(3.0)
+  it 'cell bc8 should equal 0.6979127305577284' do
+    sheet1.bc8.should be_within(0.06979127305577285).of(0.6979127305577284)
   end
 
-  it 'cell bt8 should equal "Balancing capacity used"' do
-    sheet1.bt8.should == "Balancing capacity used"
+  it 'cell bd8 should equal 1.0' do
+    sheet1.bd8.should be_within(0.1).of(1.0)
   end
 
-  it 'cell by8 should equal 0.3733836479762125' do
-    sheet1.by8.should be_within(0.03733836479762125).of(0.3733836479762125)
+  it 'cell be8 should equal 0.6733131069382776' do
+    sheet1.be8.should be_within(0.06733131069382776).of(0.6733131069382776)
   end
 
-  it 'cell bz8 should equal 0.8795238321369432' do
-    sheet1.bz8.should be_within(0.08795238321369432).of(0.8795238321369432)
+  it 'cell aw9 should equal "Standby capacity required"' do
+    sheet1.aw9.should == "Standby capacity required"
   end
 
-  it 'cell ca8 should equal 1.0' do
-    sheet1.ca8.should be_within(0.1).of(1.0)
+  it 'cell az9 should equal "GWcapacity"' do
+    sheet1.az9.should == "GWcapacity"
   end
 
-  it 'cell cb8 should equal 1.0' do
-    sheet1.cb8.should be_within(0.1).of(1.0)
+  it 'cell bb9 should equal 0.0' do
+    sheet1.bb9.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ar9 should equal 2.2' do
-    sheet1.ar9.should be_within(0.22000000000000003).of(2.2)
+  it 'cell bc9 should equal 0.0' do
+    sheet1.bc9.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bt9 should equal "Standby capacity required"' do
-    sheet1.bt9.should == "Standby capacity required"
+  it 'cell bd9 should equal 1.2006882596494475' do
+    sheet1.bd9.should be_within(0.12006882596494475).of(1.2006882596494475)
   end
 
-  it 'cell bw9 should equal "GWcapacity"' do
-    sheet1.bw9.should == "GWcapacity"
+  it 'cell be9 should equal 0.0' do
+    sheet1.be9.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell by9 should equal 0.0' do
-    sheet1.by9.should be_within(1.0e-08).of(0.0)
+  it 'cell aw10 should equal "Probable annual emissions"' do
+    sheet1.aw10.should == "Probable annual emissions"
   end
 
-  it 'cell bz9 should equal 0.0' do
-    sheet1.bz9.should be_within(1.0e-08).of(0.0)
+  it 'cell az10 should equal "MtCO2e"' do
+    sheet1.az10.should == "MtCO2e"
   end
 
-  it 'cell ca9 should equal 8.257304147499498' do
-    sheet1.ca9.should be_within(0.8257304147499499).of(8.257304147499498)
+  it 'cell bb10 should equal 0.0' do
+    sheet1.bb10.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell cb9 should equal 8.461542588173769' do
-    sheet1.cb9.should be_within(0.8461542588173769).of(8.461542588173769)
+  it 'cell bc10 should equal 0.0' do
+    sheet1.bc10.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ar10 should equal 1.6' do
-    sheet1.ar10.should be_within(0.16000000000000003).of(1.6)
+  it 'cell bd10 should equal 0.06655373538994074' do
+    sheet1.bd10.should be_within(0.006655373538994074).of(0.06655373538994074)
   end
 
-  it 'cell bt10 should equal "Probable annual emissions"' do
-    sheet1.bt10.should == "Probable annual emissions"
+  it 'cell be10 should equal 0.0' do
+    sheet1.be10.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bw10 should equal "MtCO2e"' do
-    sheet1.bw10.should == "MtCO2e"
+  it 'cell ba21 should equal "TWh / year"' do
+    sheet1.ba21.should == "TWh / year"
   end
 
-  it 'cell by10 should equal 0.0' do
-    sheet1.by10.should be_within(1.0e-08).of(0.0)
+  it 'cell ax22 should equal "Coal oversupply (imports)"' do
+    sheet1.ax22.should == "Coal oversupply (imports)"
   end
 
-  it 'cell bz10 should equal 0.0' do
-    sheet1.bz10.should be_within(1.0e-08).of(0.0)
+  it 'cell bb22 should equal -345.85158236078615' do
+    sheet1.bb22.should be_within(34.58515823607862).of(-345.85158236078615)
   end
 
-  it 'cell ca10 should equal 0.4576995159654425' do
-    sheet1.ca10.should be_within(0.045769951596544255).of(0.4576995159654425)
+  it 'cell bc22 should equal -136.10188480211295' do
+    sheet1.bc22.should be_within(13.610188480211296).of(-136.10188480211295)
   end
 
-  it 'cell cb10 should equal 0.46902038216684766' do
-    sheet1.cb10.should be_within(0.04690203821668477).of(0.46902038216684766)
+  it 'cell bd22 should equal 40.94536001604693' do
+    sheet1.bd22.should be_within(4.094536001604694).of(40.94536001604693)
   end
 
-  it 'cell ar11 should equal 2.0' do
-    sheet1.ar11.should be_within(0.2).of(2.0)
+  it 'cell be22 should equal -22.59006943339304' do
+    sheet1.be22.should be_within(2.2590069433393043).of(-22.59006943339304)
   end
 
-  it 'cell ar12 should equal 2.0' do
-    sheet1.ar12.should be_within(0.2).of(2.0)
+  it 'cell ax23 should equal "Oil and petroleum products oversupply (imports)"' do
+    sheet1.ax23.should == "Oil and petroleum products oversupply (imports)"
   end
 
-  it 'cell ar13 should equal 2.0' do
-    sheet1.ar13.should be_within(0.2).of(2.0)
+  it 'cell bb23 should equal 74.38640088632644' do
+    sheet1.bb23.should be_within(7.438640088632645).of(74.38640088632644)
   end
 
-  it 'cell ar14 should equal 1.0' do
-    sheet1.ar14.should be_within(0.1).of(1.0)
+  it 'cell bc23 should equal -268.5092739709011' do
+    sheet1.bc23.should be_within(26.850927397090114).of(-268.5092739709011)
   end
 
-  it 'cell ar15 should equal 1.3' do
-    sheet1.ar15.should be_within(0.13).of(1.3)
+  it 'cell bd23 should equal -314.6553231580042' do
+    sheet1.bd23.should be_within(31.46553231580042).of(-314.6553231580042)
   end
 
-  it 'cell ar16 should equal 1.8' do
-    sheet1.ar16.should be_within(0.18000000000000002).of(1.8)
+  it 'cell be23 should equal -373.87377542238823' do
+    sheet1.be23.should be_within(37.38737754223882).of(-373.87377542238823)
   end
 
-  it 'cell ar17 should equal 1.0' do
-    sheet1.ar17.should be_within(0.1).of(1.0)
+  it 'cell ax24 should equal "Gas oversupply (imports)"' do
+    sheet1.ax24.should == "Gas oversupply (imports)"
   end
 
-  it 'cell ar18 should equal 1.5' do
-    sheet1.ar18.should be_within(0.15000000000000002).of(1.5)
+  it 'cell bb24 should equal -247.31424585054333' do
+    sheet1.bb24.should be_within(24.731424585054334).of(-247.31424585054333)
   end
 
-  it 'cell ar19 should equal 1.0' do
-    sheet1.ar19.should be_within(0.1).of(1.0)
+  it 'cell bc24 should equal -405.00955161218747' do
+    sheet1.bc24.should be_within(40.50095516121875).of(-405.00955161218747)
   end
 
-  it 'cell ar20 should equal 2.5' do
-    sheet1.ar20.should be_within(0.25).of(2.5)
+  it 'cell bd24 should equal -405.0229371751706' do
+    sheet1.bd24.should be_within(40.50229371751706).of(-405.0229371751706)
   end
 
-  it 'cell bx21 should equal "TWh / year"' do
-    sheet1.bx21.should == "TWh / year"
+  it 'cell be24 should equal -214.91648830119163' do
+    sheet1.be24.should be_within(21.491648830119164).of(-214.91648830119163)
   end
 
-  it 'cell ar22 should equal 3.0' do
-    sheet1.ar22.should be_within(0.30000000000000004).of(3.0)
+  it 'cell ax25 should equal "Biomass oversupply (imports)"' do
+    sheet1.ax25.should == "Biomass oversupply (imports)"
   end
 
-  it 'cell bu22 should equal "Coal oversupply (imports)"' do
-    sheet1.bu22.should == "Coal oversupply (imports)"
+  it 'cell bb25 should equal -4.00072' do
+    sheet1.bb25.should be_within(0.40007200000000004).of(-4.00072)
   end
 
-  it 'cell by22 should equal -345.85158236078615' do
-    sheet1.by22.should be_within(34.58515823607862).of(-345.85158236078615)
+  it 'cell bc25 should equal -45.11678139534884' do
+    sheet1.bc25.should be_within(4.511678139534884).of(-45.11678139534884)
   end
 
-  it 'cell bz22 should equal -163.43119574444424' do
-    sheet1.bz22.should be_within(16.343119574444426).of(-163.43119574444424)
+  it 'cell bd25 should equal -76.74452093023257' do
+    sheet1.bd25.should be_within(7.674452093023257).of(-76.74452093023257)
   end
 
-  it 'cell ca22 should equal 18.806731370816266' do
-    sheet1.ca22.should be_within(1.8806731370816268).of(18.806731370816266)
+  it 'cell be25 should equal -140.0' do
+    sheet1.be25.should be_within(14.0).of(-140.0)
   end
 
-  it 'cell cb22 should equal 40.794454830016434' do
-    sheet1.cb22.should be_within(4.079445483001644).of(40.794454830016434)
+  it 'cell ax26 should equal "Electricity oversupply (imports)"' do
+    sheet1.ax26.should == "Electricity oversupply (imports)"
   end
 
-  it 'cell ar23 should equal 3.0' do
-    sheet1.ar23.should be_within(0.30000000000000004).of(3.0)
+  it 'cell bb26 should equal -5.684341886080802e-14' do
+    sheet1.bb26.should be_within(1.0e-08).of(-5.684341886080802e-14)
   end
 
-  it 'cell bu23 should equal "Oil and petroleum products oversupply (imports)"' do
-    sheet1.bu23.should == "Oil and petroleum products oversupply (imports)"
+  it 'cell bc26 should equal -1.2857142857143424' do
+    sheet1.bc26.should be_within(0.12857142857143425).of(-1.2857142857143424)
   end
 
-  it 'cell by23 should equal 86.78455797358367' do
-    sheet1.by23.should be_within(8.678455797358367).of(86.78455797358367)
+  it 'cell bd26 should equal -4.928571428571428' do
+    sheet1.bd26.should be_within(0.4928571428571428).of(-4.928571428571428)
   end
 
-  it 'cell bz23 should equal -251.5366815608814' do
-    sheet1.bz23.should be_within(25.15366815608814).of(-251.5366815608814)
+  it 'cell be26 should equal 46.288314718968195' do
+    sheet1.be26.should be_within(4.628831471896819).of(46.288314718968195)
   end
 
-  it 'cell ca23 should equal -240.69910397772048' do
-    sheet1.ca23.should be_within(24.06991039777205).of(-240.69910397772048)
+  it 'cell ba30 should equal "TWh / year"' do
+    sheet1.ba30.should == "TWh / year"
   end
 
-  it 'cell cb23 should equal -326.2286591924491' do
-    sheet1.cb23.should be_within(32.62286591924491).of(-326.2286591924491)
+  it 'cell bb33 should equal 989.1712766501873' do
+    sheet1.bb33.should be_within(98.91712766501874).of(989.1712766501873)
   end
 
-  it 'cell ar24 should equal 3.0' do
-    sheet1.ar24.should be_within(0.30000000000000004).of(3.0)
+  it 'cell bc33 should equal 827.2633302131692' do
+    sheet1.bc33.should be_within(82.72633302131692).of(827.2633302131692)
   end
 
-  it 'cell bu24 should equal "Gas oversupply (imports)"' do
-    sheet1.bu24.should == "Gas oversupply (imports)"
+  it 'cell bd33 should equal 679.3734556432894' do
+    sheet1.bd33.should be_within(67.93734556432894).of(679.3734556432894)
   end
 
-  it 'cell by24 should equal -247.31424585054333' do
-    sheet1.by24.should be_within(24.731424585054334).of(-247.31424585054333)
+  it 'cell be33 should equal 347.2536423906747' do
+    sheet1.be33.should be_within(34.725364239067474).of(347.2536423906747)
   end
 
-  it 'cell bz24 should equal -365.9407896655032' do
-    sheet1.bz24.should be_within(36.59407896655032).of(-365.9407896655032)
+  it 'cell bb34 should equal 0.02224486582423221' do
+    sheet1.bb34.should be_within(0.002224486582423221).of(0.02224486582423221)
   end
 
-  it 'cell ca24 should equal -345.1359709793074' do
-    sheet1.ca24.should be_within(34.51359709793074).of(-345.1359709793074)
+  it 'cell bc34 should equal 0.058159376587986436' do
+    sheet1.bc34.should be_within(0.005815937658798644).of(0.058159376587986436)
   end
 
-  it 'cell cb24 should equal -99.92205395720289' do
-    sheet1.cb24.should be_within(9.99220539572029).of(-99.92205395720289)
+  it 'cell bd34 should equal 0.07735178732437677' do
+    sheet1.bd34.should be_within(0.007735178732437677).of(0.07735178732437677)
   end
 
-  it 'cell ar25 should equal 2.0' do
-    sheet1.ar25.should be_within(0.2).of(2.0)
+  it 'cell be34 should equal 0.15403824056229062' do
+    sheet1.be34.should be_within(0.015403824056229063).of(0.15403824056229062)
   end
 
-  it 'cell bu25 should equal "Biomass oversupply (imports)"' do
-    sheet1.bu25.should == "Biomass oversupply (imports)"
+  it 'cell bb35 should equal 0.32802995248386824' do
+    sheet1.bb35.should be_within(0.032802995248386826).of(0.32802995248386824)
   end
 
-  it 'cell by25 should equal -4.00072' do
-    sheet1.by25.should be_within(0.40007200000000004).of(-4.00072)
+  it 'cell bc35 should equal 0.3228273617851088' do
+    sheet1.bc35.should be_within(0.03228273617851088).of(0.3228273617851088)
   end
 
-  it 'cell bz25 should equal -28.186548837209305' do
-    sheet1.bz25.should be_within(2.8186548837209306).of(-28.186548837209305)
+  it 'cell bd35 should equal 0.2503951518662575' do
+    sheet1.bd35.should be_within(0.02503951518662575).of(0.2503951518662575)
   end
 
-  it 'cell ca25 should equal -46.79103255813954' do
-    sheet1.ca25.should be_within(4.6791032558139545).of(-46.79103255813954)
+  it 'cell be35 should equal 0.0' do
+    sheet1.be35.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell cb25 should equal -84.00000000000001' do
-    sheet1.cb25.should be_within(8.400000000000002).of(-84.00000000000001)
+  it 'cell al36 should equal "Hydrocarbon fuel power generation"' do
+    sheet1.al36.should == "Hydrocarbon fuel power generation"
   end
 
-  it 'cell ar26 should equal 2.0' do
-    sheet1.ar26.should be_within(0.2).of(2.0)
+  it 'cell ap36 should equal 200.1293411589495' do
+    sheet1.ap36.should be_within(20.01293411589495).of(200.1293411589495)
   end
 
-  it 'cell bu26 should equal "Electricity oversupply (imports)"' do
-    sheet1.bu26.should == "Electricity oversupply (imports)"
+  it 'cell aq36 should equal 12.932712493692904' do
+    sheet1.aq36.should be_within(1.2932712493692904).of(12.932712493692904)
   end
 
-  it 'cell by26 should equal -5.684341886080802e-14' do
-    sheet1.by26.should be_within(1.0e-08).of(-5.684341886080802e-14)
+  it 'cell ar36 should equal 0.01980687740732017' do
+    sheet1.ar36.should be_within(0.001980687740732017).of(0.01980687740732017)
   end
 
-  it 'cell bz26 should equal -1.2857142857142856' do
-    sheet1.bz26.should be_within(0.12857142857142856).of(-1.2857142857142856)
+  it 'cell bb36 should equal 0.07911911887624118' do
+    sheet1.bb36.should be_within(0.007911911887624119).of(0.07911911887624118)
   end
 
-  it 'cell ca26 should equal -4.928571428571428' do
-    sheet1.ca26.should be_within(0.4928571428571428).of(-4.928571428571428)
+  it 'cell bc36 should equal 0.07828580569908164' do
+    sheet1.bc36.should be_within(0.007828580569908164).of(0.07828580569908164)
   end
 
-  it 'cell cb26 should equal 66.84633933495041' do
-    sheet1.cb26.should be_within(6.684633933495042).of(66.84633933495041)
+  it 'cell bd36 should equal 0.06421983947482396' do
+    sheet1.bd36.should be_within(0.006421983947482396).of(0.06421983947482396)
   end
 
-  it 'cell ar27 should equal 3.5' do
-    sheet1.ar27.should be_within(0.35000000000000003).of(3.5)
+  it 'cell be36 should equal 0.0002989967280378673' do
+    sheet1.be36.should be_within(2.989967280378673e-05).of(0.0002989967280378673)
   end
 
-  it 'cell ar30 should equal 4.0' do
-    sheet1.ar30.should be_within(0.4).of(4.0)
+  it 'cell al37 should equal "Bioenergy"' do
+    sheet1.al37.should == "Bioenergy"
   end
 
-  it 'cell bx30 should equal "TWh / year"' do
-    sheet1.bx30.should == "TWh / year"
+  it 'cell ap37 should equal -10.173358128175925' do
+    sheet1.ap37.should be_within(1.0173358128175927).of(-10.173358128175925)
   end
 
-  it 'cell ar31 should equal 4.0' do
-    sheet1.ar31.should be_within(0.4).of(4.0)
+  it 'cell aq37 should equal -134.25687333808372' do
+    sheet1.aq37.should be_within(13.425687333808373).of(-134.25687333808372)
   end
 
-  it 'cell ar32 should equal 2.0' do
-    sheet1.ar32.should be_within(0.2).of(2.0)
+  it 'cell ar37 should equal -0.2056188469815898' do
+    sheet1.ar37.should be_within(0.02056188469815898).of(-0.2056188469815898)
   end
 
-  it 'cell ar33 should equal 4.0' do
-    sheet1.ar33.should be_within(0.4).of(4.0)
+  it 'cell bb37 should equal 0.15169564407197347' do
+    sheet1.bb37.should be_within(0.015169564407197349).of(0.15169564407197347)
   end
 
-  it 'cell by33 should equal 989.1712766501873' do
-    sheet1.by33.should be_within(98.91712766501874).of(989.1712766501873)
+  it 'cell bc37 should equal 0.13512703812466523' do
+    sheet1.bc37.should be_within(0.013512703812466524).of(0.13512703812466523)
   end
 
-  it 'cell bz33 should equal 773.6743731428917' do
-    sheet1.bz33.should be_within(77.36743731428918).of(773.6743731428917)
+  it 'cell bd37 should equal 0.12769760543939487' do
+    sheet1.bd37.should be_within(0.012769760543939489).of(0.12769760543939487)
   end
 
-  it 'cell ca33 should equal 603.2260409808257' do
-    sheet1.ca33.should be_within(60.32260409808257).of(603.2260409808257)
+  it 'cell be37 should equal 0.06678682790953405' do
+    sheet1.be37.should be_within(0.006678682790953405).of(0.06678682790953405)
   end
 
-  it 'cell cb33 should equal 215.56101997405443' do
-    sheet1.cb33.should be_within(21.556101997405445).of(215.56101997405443)
+  it 'cell al38 should equal "Geosequestration"' do
+    sheet1.al38.should == "Geosequestration"
   end
 
-  it 'cell ar34 should equal 4.0' do
-    sheet1.ar34.should be_within(0.4).of(4.0)
+  it 'cell ap38 should equal 0.0' do
+    sheet1.ap38.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell by34 should equal 0.02224486582423221' do
-    sheet1.by34.should be_within(0.002224486582423221).of(0.02224486582423221)
+  it 'cell aq38 should equal -1.0' do
+    sheet1.aq38.should be_within(0.1).of(-1.0)
   end
 
-  it 'cell bz34 should equal 0.04284460563117525' do
-    sheet1.bz34.should be_within(0.004284460563117525).of(0.04284460563117525)
+  it 'cell ar38 should equal -0.001531533111632977' do
+    sheet1.ar38.should be_within(0.0001531533111632977).of(-0.001531533111632977)
   end
 
-  it 'cell ca34 should equal 0.058432062336309314' do
-    sheet1.ca34.should be_within(0.0058432062336309315).of(0.058432062336309314)
+  it 'cell bb38 should equal 0.3544090019616174' do
+    sheet1.bb38.should be_within(0.035440900196161744).of(0.3544090019616174)
   end
 
-  it 'cell cb34 should equal 0.16460258382582482' do
-    sheet1.cb34.should be_within(0.01646025838258248).of(0.16460258382582482)
+  it 'cell bc38 should equal 0.3926178877291638' do
+    sheet1.bc38.should be_within(0.03926178877291638).of(0.3926178877291638)
   end
 
-  it 'cell ar35 should equal 4.0' do
-    sheet1.ar35.should be_within(0.4).of(4.0)
+  it 'cell bd38 should equal 0.3916598010023952' do
+    sheet1.bd38.should be_within(0.03916598010023953).of(0.3916598010023952)
   end
 
-  it 'cell by35 should equal 0.32802995248386824' do
-    sheet1.by35.should be_within(0.032802995248386826).of(0.32802995248386824)
+  it 'cell be38 should equal 0.0' do
+    sheet1.be38.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bz35 should equal 0.32133441310819916' do
-    sheet1.bz35.should be_within(0.03213344131081992).of(0.32133441310819916)
+  it 'cell al39 should equal "Agriculture and waste"' do
+    sheet1.al39.should == "Agriculture and waste"
   end
 
-  it 'cell ca35 should equal 0.25372095492592717' do
-    sheet1.ca35.should be_within(0.025372095492592717).of(0.25372095492592717)
+  it 'cell ap39 should equal 65.85811374101542' do
+    sheet1.ap39.should be_within(6.585811374101542).of(65.85811374101542)
   end
 
-  it 'cell cb35 should equal 0.0' do
-    sheet1.cb35.should be_within(1.0e-08).of(0.0)
+  it 'cell aq39 should equal 42.25866951136936' do
+    sheet1.aq39.should be_within(4.225866951136936).of(42.25866951136936)
   end
 
-  it 'cell bi36 should equal "Hydrocarbon fuel power generation"' do
-    sheet1.bi36.should == "Hydrocarbon fuel power generation"
+  it 'cell ar39 should equal 0.06472055161021713' do
+    sheet1.ar39.should be_within(0.006472055161021713).of(0.06472055161021713)
   end
 
-  it 'cell bm36 should equal 200.1293411589495' do
-    sheet1.bm36.should be_within(20.01293411589495).of(200.1293411589495)
+  it 'cell bb39 should equal 0.0' do
+    sheet1.bb39.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bn36 should equal 8.055738593070004' do
-    sheet1.bn36.should be_within(0.8055738593070004).of(8.055738593070004)
+  it 'cell bc39 should equal 0.0068696896929022' do
+    sheet1.bc39.should be_within(0.0006869689692902201).of(0.0068696896929022)
   end
 
-  it 'cell bo36 should equal 0.0104076512674332' do
-    sheet1.bo36.should be_within(0.00104076512674332).of(0.0104076512674332)
+  it 'cell bd39 should equal 0.10877606337000072' do
+    sheet1.bd39.should be_within(0.010877606337000072).of(0.10877606337000072)
   end
 
-  it 'cell by36 should equal 0.07911911887624118' do
-    sheet1.by36.should be_within(0.007911911887624119).of(0.07911911887624118)
+  it 'cell be39 should equal 0.8599311583762489' do
+    sheet1.be39.should be_within(0.0859931158376249).of(0.8599311583762489)
   end
 
-  it 'cell bz36 should equal 0.08078093366092508' do
-    sheet1.bz36.should be_within(0.008078093366092508).of(0.08078093366092508)
+  it 'cell al40 should equal "Heating"' do
+    sheet1.al40.should == "Heating"
   end
 
-  it 'cell ca36 should equal 0.06588932559919798' do
-    sheet1.ca36.should be_within(0.0065889325599197985).of(0.06588932559919798)
+  it 'cell ap40 should equal 84.42746088138698' do
+    sheet1.ap40.should be_within(8.442746088138698).of(84.42746088138698)
   end
 
-  it 'cell cb36 should equal 0.0003723589948986065' do
-    sheet1.cb36.should be_within(3.723589948986065e-05).of(0.0003723589948986065)
+  it 'cell aq40 should equal 65.72642820261795' do
+    sheet1.aq40.should be_within(6.5726428202617955).of(65.72642820261795)
   end
 
-  it 'cell ar37 should equal 4.0' do
-    sheet1.ar37.should be_within(0.4).of(4.0)
+  it 'cell ar40 should equal 0.10066220110167692' do
+    sheet1.ar40.should be_within(0.010066220110167693).of(0.10066220110167692)
   end
 
-  it 'cell bi37 should equal "Bioenergy"' do
-    sheet1.bi37.should == "Bioenergy"
+  it 'cell al41 should equal "Lighting and appliances"' do
+    sheet1.al41.should == "Lighting and appliances"
   end
 
-  it 'cell bm37 should equal -10.173358128175925' do
-    sheet1.bm37.should be_within(1.0173358128175927).of(-10.173358128175925)
+  it 'cell ap41 should equal 3.141184245661737' do
+    sheet1.ap41.should be_within(0.3141184245661737).of(3.141184245661737)
   end
 
-  it 'cell bn37 should equal -62.89679852990397' do
-    sheet1.bn37.should be_within(6.289679852990397).of(-62.89679852990397)
+  it 'cell aq41 should equal 2.6304333043784642' do
+    sheet1.aq41.should be_within(0.26304333043784645).of(2.6304333043784642)
   end
 
-  it 'cell bo37 should equal -0.0812598295456578' do
-    sheet1.bo37.should be_within(0.008125982954565781).of(-0.0812598295456578)
+  it 'cell ar41 should equal 0.004028595703597764' do
+    sheet1.ar41.should be_within(0.0004028595703597764).of(0.004028595703597764)
   end
 
-  it 'cell by37 should equal 0.15169564407197347' do
-    sheet1.by37.should be_within(0.015169564407197349).of(0.15169564407197347)
+  it 'cell bb41 should equal 905.6909617829599' do
+    sheet1.bb41.should be_within(90.569096178296).of(905.6909617829599)
   end
 
-  it 'cell bz37 should equal 0.144486682564845' do
-    sheet1.bz37.should be_within(0.014448668256484502).of(0.144486682564845)
+  it 'cell bc41 should equal 791.6034409136416' do
+    sheet1.bc41.should be_within(79.16034409136417).of(791.6034409136416)
   end
 
-  it 'cell ca37 should equal 0.14381733809713396' do
-    sheet1.ca37.should be_within(0.014381733809713396).of(0.14381733809713396)
+  it 'cell bd41 should equal 652.8297326743615' do
+    sheet1.bd41.should be_within(65.28297326743615).of(652.8297326743615)
   end
 
-  it 'cell cb37 should equal 0.10758888252661045' do
-    sheet1.cb37.should be_within(0.010758888252661046).of(0.10758888252661045)
+  it 'cell be41 should equal 552.1736401050265' do
+    sheet1.be41.should be_within(55.21736401050265).of(552.1736401050265)
   end
 
-  it 'cell ar38 should equal 4.0' do
-    sheet1.ar38.should be_within(0.4).of(4.0)
+  it 'cell al42 should equal "Industry"' do
+    sheet1.al42.should == "Industry"
   end
 
-  it 'cell bi38 should equal "Geosequestration"' do
-    sheet1.bi38.should == "Geosequestration"
+  it 'cell ap42 should equal 93.41484291354766' do
+    sheet1.ap42.should be_within(9.341484291354766).of(93.41484291354766)
   end
 
-  it 'cell bm38 should equal 0.0' do
-    sheet1.bm38.should be_within(1.0e-08).of(0.0)
+  it 'cell aq42 should equal 30.527564438683015' do
+    sheet1.aq42.should be_within(3.0527564438683017).of(30.527564438683015)
   end
 
-  it 'cell bn38 should equal 0.0' do
-    sheet1.bn38.should be_within(1.0e-08).of(0.0)
+  it 'cell ar42 should equal 0.04675397575535241' do
+    sheet1.ar42.should be_within(0.004675397575535241).of(0.04675397575535241)
   end
 
-  it 'cell bo38 should equal 0.0' do
-    sheet1.bo38.should be_within(1.0e-08).of(0.0)
+  it 'cell bb42 should equal 0.0009528228020528713' do
+    sheet1.bb42.should be_within(9.528228020528713e-05).of(0.0009528228020528713)
   end
 
-  it 'cell by38 should equal 0.3544090019616174' do
-    sheet1.by38.should be_within(0.035440900196161744).of(0.3544090019616174)
+  it 'cell bc42 should equal 0.026914002351229448' do
+    sheet1.bc42.should be_within(0.002691400235122945).of(0.026914002351229448)
   end
 
-  it 'cell bz38 should equal 0.3828709221189607' do
-    sheet1.bz38.should be_within(0.03828709221189607).of(0.3828709221189607)
+  it 'cell bd42 should equal 0.05780194669071899' do
+    sheet1.bd42.should be_within(0.005780194669071899).of(0.05780194669071899)
   end
 
-  it 'cell ca38 should equal 0.40331546547350317' do
-    sheet1.ca38.should be_within(0.04033154654735032).of(0.40331546547350317)
+  it 'cell be42 should equal 0.1278520008042602' do
+    sheet1.be42.should be_within(0.012785200080426022).of(0.1278520008042602)
   end
 
-  it 'cell cb38 should equal 0.0' do
-    sheet1.cb38.should be_within(1.0e-08).of(0.0)
+  it 'cell bb43 should equal 0.8093399869996578' do
+    sheet1.bb43.should be_within(0.08093399869996579).of(0.8093399869996578)
   end
 
-  it 'cell ar39 should equal 4.0' do
-    sheet1.ar39.should be_within(0.4).of(4.0)
+  it 'cell bc43 should equal 0.8306177323843446' do
+    sheet1.bc43.should be_within(0.08306177323843446).of(0.8306177323843446)
   end
 
-  it 'cell bi39 should equal "Agriculture and waste"' do
-    sheet1.bi39.should == "Agriculture and waste"
+  it 'cell bd43 should equal 0.8200216947857049' do
+    sheet1.bd43.should be_within(0.08200216947857049).of(0.8200216947857049)
   end
 
-  it 'cell bm39 should equal 65.85811374101542' do
-    sheet1.bm39.should be_within(6.585811374101542).of(65.85811374101542)
+  it 'cell be43 should equal 0.8343901885361918' do
+    sheet1.be43.should be_within(0.08343901885361919).of(0.8343901885361918)
   end
 
-  it 'cell bn39 should equal 52.88998981310525' do
-    sheet1.bn39.should be_within(5.288998981310526).of(52.88998981310525)
+  it 'cell al44 should equal "Transport"' do
+    sheet1.al44.should == "Transport"
   end
 
-  it 'cell bo39 should equal 0.06833148359436972' do
-    sheet1.bo39.should be_within(0.006833148359436972).of(0.06833148359436972)
+  it 'cell ap44 should equal 80.50232130450938' do
+    sheet1.ap44.should be_within(8.050232130450938).of(80.50232130450938)
   end
 
-  it 'cell by39 should equal 0.0' do
-    sheet1.by39.should be_within(1.0e-08).of(0.0)
+  it 'cell aq44 should equal 89.57153635356221' do
+    sheet1.aq44.should be_within(8.957153635356221).of(89.57153635356221)
   end
 
-  it 'cell bz39 should equal 0.007345522315538482' do
-    sheet1.bz39.should be_within(0.0007345522315538482).of(0.007345522315538482)
+  it 'cell ar44 should equal 0.13718177378531746' do
+    sheet1.ar44.should be_within(0.013718177378531746).of(0.13718177378531746)
   end
 
-  it 'cell ca39 should equal 0.07714923448596846' do
-    sheet1.ca39.should be_within(0.007714923448596846).of(0.07714923448596846)
+  it 'cell bb44 should equal 0.09012239088533965' do
+    sheet1.bb44.should be_within(0.009012239088533965).of(0.09012239088533965)
   end
 
-  it 'cell cb39 should equal 0.8407453153223434' do
-    sheet1.cb39.should be_within(0.08407453153223435).of(0.8407453153223434)
+  it 'cell bc44 should equal 0.08726144755861248' do
+    sheet1.bc44.should be_within(0.008726144755861249).of(0.08726144755861248)
   end
 
-  it 'cell ar40 should equal 3.0' do
-    sheet1.ar40.should be_within(0.30000000000000004).of(3.0)
+  it 'cell bd44 should equal 0.09312718625580355' do
+    sheet1.bd44.should be_within(0.009312718625580354).of(0.09312718625580355)
   end
 
-  it 'cell bi40 should equal "Heating"' do
-    sheet1.bi40.should == "Heating"
+  it 'cell be44 should equal 0.08525349723784338' do
+    sheet1.be44.should be_within(0.008525349723784338).of(0.08525349723784338)
   end
 
-  it 'cell bm40 should equal 84.42746088138698' do
-    sheet1.bm40.should be_within(8.442746088138698).of(84.42746088138698)
+  it 'cell al45 should equal "Fossil fuel production"' do
+    sheet1.al45.should == "Fossil fuel production"
   end
 
-  it 'cell bn40 should equal 8.001621985588844' do
-    sheet1.bn40.should be_within(0.8001621985588845).of(8.001621985588844)
+  it 'cell ap45 should equal 34.39920743834843' do
+    sheet1.ap45.should be_within(3.439920743834843).of(34.39920743834843)
   end
 
-  it 'cell bo40 should equal 0.01033773504908359' do
-    sheet1.bo40.should be_within(0.001033773504908359).of(0.01033773504908359)
+  it 'cell aq45 should equal 13.911074045661776' do
+    sheet1.aq45.should be_within(1.3911074045661778).of(13.911074045661776)
   end
 
-  it 'cell bi41 should equal "Lighting and appliances"' do
-    sheet1.bi41.should == "Lighting and appliances"
+  it 'cell ar45 should equal 0.021305270519309125' do
+    sheet1.ar45.should be_within(0.0021305270519309124).of(0.021305270519309125)
   end
 
-  it 'cell bm41 should equal 3.141184245661737' do
-    sheet1.bm41.should be_within(0.3141184245661737).of(3.141184245661737)
+  it 'cell bb45 should equal 0.06212570017417767' do
+    sheet1.bb45.should be_within(0.0062125700174177675).of(0.06212570017417767)
   end
 
-  it 'cell bn41 should equal 0.0' do
-    sheet1.bn41.should be_within(1.0e-08).of(0.0)
+  it 'cell bc45 should equal 0.060177805939818495' do
+    sheet1.bc45.should be_within(0.00601778059398185).of(0.060177805939818495)
   end
 
-  it 'cell bo41 should equal 0.0' do
-    sheet1.bo41.should be_within(1.0e-08).of(0.0)
+  it 'cell bd45 should equal 0.06747078960374929' do
+    sheet1.bd45.should be_within(0.006747078960374929).of(0.06747078960374929)
   end
 
-  it 'cell by41 should equal 893.2928046957027' do
-    sheet1.by41.should be_within(89.32928046957028).of(893.2928046957027)
+  it 'cell be45 should equal 0.07354658878119694' do
+    sheet1.be45.should be_within(0.007354658878119694).of(0.07354658878119694)
   end
 
-  it 'cell bz41 should equal 766.1531790118365' do
-    sheet1.bz41.should be_within(76.61531790118366).of(766.1531790118365)
+  it 'cell al46 should equal "Transfers"' do
+    sheet1.al46.should == "Transfers"
   end
 
-  it 'cell ca41 should equal 563.8717421797066' do
-    sheet1.ca41.should be_within(56.38717421797067).of(563.8717421797066)
+  it 'cell ap46 should equal 4.370651364088464' do
+    sheet1.ap46.should be_within(0.4370651364088464).of(4.370651364088464)
   end
 
-  it 'cell cb41 should equal 476.47133602208896' do
-    sheet1.cb41.should be_within(47.647133602208896).of(476.47133602208896)
+  it 'cell aq46 should equal 1.3275231548866144' do
+    sheet1.aq46.should be_within(0.13275231548866145).of(1.3275231548866144)
   end
 
-  it 'cell ar42 should equal 4.0' do
-    sheet1.ar42.should be_within(0.4).of(4.0)
+  it 'cell ar46 should equal 0.002033145668168323' do
+    sheet1.ar46.should be_within(0.0002033145668168323).of(0.002033145668168323)
   end
 
-  it 'cell bi42 should equal "Industry"' do
-    sheet1.bi42.should == "Industry"
+  it 'cell ap47 should equal 556.0697649193315' do
+    sheet1.ap47.should be_within(55.60697649193315).of(556.0697649193315)
   end
 
-  it 'cell bm42 should equal 93.41484291354766' do
-    sheet1.bm42.should be_within(9.341484291354766).of(93.41484291354766)
+  it 'cell aq47 should equal 123.62906816676859' do
+    sheet1.aq47.should be_within(12.36290681667686).of(123.62906816676859)
   end
 
-  it 'cell bn42 should equal 30.527564438683008' do
-    sheet1.bn42.should be_within(3.052756443868301).of(30.527564438683008)
+  it 'cell ar47 should equal 0.18934201145773652' do
+    sheet1.ar47.should be_within(0.018934201145773655).of(0.18934201145773652)
   end
 
-  it 'cell bo42 should equal 0.03944023767047613' do
-    sheet1.bo42.should be_within(0.003944023767047613).of(0.03944023767047613)
+  it 'cell bb47 should equal 496.28220167438485' do
+    sheet1.bb47.should be_within(49.628220167438485).of(496.28220167438485)
   end
 
-  it 'cell by42 should equal 0.0009660471857197657' do
-    sheet1.by42.should be_within(9.660471857197658e-05).of(0.0009660471857197657)
+  it 'cell bc47 should equal 380.3580634281359' do
+    sheet1.bc47.should be_within(38.03580634281359).of(380.3580634281359)
   end
 
-  it 'cell bz42 should equal 0.016742797301644494' do
-    sheet1.bz42.should be_within(0.0016742797301644496).of(0.016742797301644494)
+  it 'cell bd47 should equal 235.1629031147068' do
+    sheet1.bd47.should be_within(23.516290311470684).of(235.1629031147068)
   end
 
-  it 'cell ca42 should equal 0.04031600875034365' do
-    sheet1.ca42.should be_within(0.004031600875034365).of(0.04031600875034365)
+  it 'cell be47 should equal 448.34246895228694' do
+    sheet1.be47.should be_within(44.834246895228695).of(448.34246895228694)
   end
 
-  it 'cell cb42 should equal 0.08927990754060516' do
-    sheet1.cb42.should be_within(0.008927990754060517).of(0.08927990754060516)
+  it 'cell ap48 should equal 0.8209489406057895' do
+    sheet1.ap48.should be_within(0.08209489406057896).of(0.8209489406057895)
   end
 
-  it 'cell ar43 should equal 2.0' do
-    sheet1.ar43.should be_within(0.2).of(2.0)
+  it 'cell bb48 should equal 0.03801009284990403' do
+    sheet1.bb48.should be_within(0.0038010092849904034).of(0.03801009284990403)
   end
 
-  it 'cell by43 should equal 0.8066937854641579' do
-    sheet1.by43.should be_within(0.0806693785464158).of(0.8066937854641579)
+  it 'cell bc48 should equal 0.2785426679389262' do
+    sheet1.bc48.should be_within(0.02785426679389262).of(0.2785426679389262)
   end
 
-  it 'cell bz43 should equal 0.8259435507836671' do
-    sheet1.bz43.should be_within(0.08259435507836671).of(0.8259435507836671)
+  it 'cell bd48 should equal 0.8511749925459892' do
+    sheet1.bd48.should be_within(0.08511749925459892).of(0.8511749925459892)
   end
 
-  it 'cell ca43 should equal 0.7931984855717694' do
-    sheet1.ca43.should be_within(0.07931984855717694).of(0.7931984855717694)
+  it 'cell be48 should equal 0.773161896557065' do
+    sheet1.be48.should be_within(0.07731618965570651).of(0.773161896557065)
   end
 
-  it 'cell cb43 should equal 0.80826071668013' do
-    sheet1.cb43.should be_within(0.080826071668013).of(0.80826071668013)
+  it 'cell bb49 should equal 0.0' do
+    sheet1.bb49.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bi44 should equal "Transport"' do
-    sheet1.bi44.should == "Transport"
+  it 'cell bc49 should equal 0.05441583073973808' do
+    sheet1.bc49.should be_within(0.005441583073973809).of(0.05441583073973808)
   end
 
-  it 'cell bm44 should equal 183.61905836674865' do
-    sheet1.bm44.should be_within(18.361905836674865).of(183.61905836674865)
+  it 'cell bd49 should equal 0.2730327537815866' do
+    sheet1.bd49.should be_within(0.02730327537815866).of(0.2730327537815866)
   end
 
-  it 'cell bn44 should equal 98.1303752297517' do
-    sheet1.bn44.should be_within(9.813037522975172).of(98.1303752297517)
+  it 'cell be49 should equal 0.46700845773653976' do
+    sheet1.be49.should be_within(0.04670084577365398).of(0.46700845773653976)
   end
 
-  it 'cell bo44 should equal 0.12678002300275806' do
-    sheet1.bo44.should be_within(0.012678002300275807).of(0.12678002300275806)
+  it 'cell bb50 should equal 0.8595772059722248' do
+    sheet1.bb50.should be_within(0.08595772059722248).of(0.8595772059722248)
   end
 
-  it 'cell by44 should equal 0.09137321430337475' do
-    sheet1.by44.should be_within(0.009137321430337476).of(0.09137321430337475)
+  it 'cell bc50 should equal 0.7199560107439105' do
+    sheet1.bc50.should be_within(0.07199560107439106).of(0.7199560107439105)
   end
 
-  it 'cell bz44 should equal 0.09016011946278925' do
-    sheet1.bz44.should be_within(0.009016011946278926).of(0.09016011946278925)
+  it 'cell bd50 should equal 0.14090436697763215' do
+    sheet1.bd50.should be_within(0.014090436697763215).of(0.14090436697763215)
   end
 
-  it 'cell ca44 should equal 0.10781919284175775' do
-    sheet1.ca44.should be_within(0.010781919284175776).of(0.10781919284175775)
+  it 'cell be50 should equal 0.0' do
+    sheet1.be50.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell cb44 should equal 0.09879866918022' do
-    sheet1.cb44.should be_within(0.009879866918022).of(0.09879866918022)
+  it 'cell bb51 should equal 0.10992388791300337' do
+    sheet1.bb51.should be_within(0.010992388791300337).of(0.10992388791300337)
   end
 
-  it 'cell ar45 should equal 3.0' do
-    sheet1.ar45.should be_within(0.30000000000000004).of(3.0)
+  it 'cell bc51 should equal 0.11718705131893516' do
+    sheet1.bc51.should be_within(0.011718705131893516).of(0.11718705131893516)
   end
 
-  it 'cell bi45 should equal "Fossil fuel production"' do
-    sheet1.bi45.should == "Fossil fuel production"
+  it 'cell bd51 should equal 0.1616323441163793' do
+    sheet1.bd51.should be_within(0.01616323441163793).of(0.1616323441163793)
   end
 
-  it 'cell bm45 should equal 34.39920743834843' do
-    sheet1.bm45.should be_within(3.439920743834843).of(34.39920743834843)
+  it 'cell be51 should equal 0.060623739831794324' do
+    sheet1.be51.should be_within(0.006062373983179433).of(0.060623739831794324)
   end
 
-  it 'cell bn45 should equal 13.911074045661776' do
-    sheet1.bn45.should be_within(1.3911074045661778).of(13.911074045661776)
+  it 'cell bb52 should equal 0.028727209950603034' do
+    sheet1.bb52.should be_within(0.0028727209950603037).of(0.028727209950603034)
   end
 
-  it 'cell bo45 should equal 0.017972480828416914' do
-    sheet1.bo45.should be_within(0.0017972480828416914).of(0.017972480828416914)
+  it 'cell bc52 should equal 0.1060580132878023' do
+    sheet1.bc52.should be_within(0.01060580132878023).of(0.1060580132878023)
   end
 
-  it 'cell by45 should equal 0.06298795293818339' do
-    sheet1.by45.should be_within(0.00629879529381834).of(0.06298795293818339)
+  it 'cell bd52 should equal 0.420630340270039' do
+    sheet1.bd52.should be_within(0.0420630340270039).of(0.420630340270039)
   end
 
-  it 'cell bz45 should equal 0.062176806875662315' do
-    sheet1.bz45.should be_within(0.006217680687566232).of(0.062176806875662315)
-  end
-
-  it 'cell ca45 should equal 0.07811517096082096' do
-    sheet1.ca45.should be_within(0.007811517096082097).of(0.07811517096082096)
-  end
-
-  it 'cell cb45 should equal 0.0852317538840119' do
-    sheet1.cb45.should be_within(0.00852317538840119).of(0.0852317538840119)
-  end
-
-  it 'cell ar46 should equal 3.0' do
-    sheet1.ar46.should be_within(0.30000000000000004).of(3.0)
-  end
-
-  it 'cell bi46 should equal "Transfers"' do
-    sheet1.bi46.should == "Transfers"
-  end
-
-  it 'cell bm46 should equal 4.370651364088464' do
-    sheet1.bm46.should be_within(0.4370651364088464).of(4.370651364088464)
-  end
-
-  it 'cell bn46 should equal 0.8137817027306394' do
-    sheet1.bn46.should be_within(0.08137817027306395).of(0.8137817027306394)
-  end
-
-  it 'cell bo46 should equal 0.0010513692905979438' do
-    sheet1.bo46.should be_within(0.00010513692905979439).of(0.0010513692905979438)
-  end
-
-  it 'cell bm47 should equal 659.1865019815708' do
-    sheet1.bm47.should be_within(65.91865019815708).of(659.1865019815708)
-  end
-
-  it 'cell bn47 should equal 149.43334727868725' do
-    sheet1.bn47.should be_within(14.943334727868725).of(149.43334727868725)
-  end
-
-  it 'cell bo47 should equal 0.19306115115747774' do
-    sheet1.bo47.should be_within(0.019306115115747775).of(0.19306115115747774)
-  end
-
-  it 'cell by47 should equal 496.28220167438485' do
-    sheet1.by47.should be_within(49.628220167438485).of(496.28220167438485)
-  end
-
-  it 'cell bz47 should equal 351.0819776889369' do
-    sheet1.bz47.should be_within(35.10819776889369).of(351.0819776889369)
-  end
-
-  it 'cell ca47 should equal 134.4736795577619' do
-    sheet1.ca47.should be_within(13.44736795577619).of(134.4736795577619)
-  end
-
-  it 'cell cb47 should equal 186.80136993483086' do
-    sheet1.cb47.should be_within(18.680136993483085).of(186.80136993483086)
-  end
-
-  it 'cell ar48 should equal 4.0' do
-    sheet1.ar48.should be_within(0.4).of(4.0)
-  end
-
-  it 'cell bm48 should equal 0.9731844718115756' do
-    sheet1.bm48.should be_within(0.09731844718115756).of(0.9731844718115756)
-  end
-
-  it 'cell by48 should equal 0.03801009284990403' do
-    sheet1.by48.should be_within(0.0038010092849904034).of(0.03801009284990403)
-  end
-
-  it 'cell bz48 should equal 0.14053855285486158' do
-    sheet1.bz48.should be_within(0.01405385528548616).of(0.14053855285486158)
-  end
-
-  it 'cell ca48 should equal 0.5751083063831745' do
-    sheet1.ca48.should be_within(0.057510830638317446).of(0.5751083063831745)
-  end
-
-  it 'cell cb48 should equal 0.7948803528581311' do
-    sheet1.cb48.should be_within(0.07948803528581311).of(0.7948803528581311)
-  end
-
-  it 'cell ar49 should equal 4.0' do
-    sheet1.ar49.should be_within(0.4).of(4.0)
-  end
-
-  it 'cell by49 should equal 0.0' do
-    sheet1.by49.should be_within(1.0e-08).of(0.0)
-  end
-
-  it 'cell bz49 should equal 0.05895346760960272' do
-    sheet1.bz49.should be_within(0.005895346760960272).of(0.05895346760960272)
-  end
-
-  it 'cell ca49 should equal 0.345428245105136' do
-    sheet1.ca49.should be_within(0.034542824510513596).of(0.345428245105136)
-  end
-
-  it 'cell cb49 should equal 0.7124087742201628' do
-    sheet1.cb49.should be_within(0.07124087742201628).of(0.7124087742201628)
-  end
-
-  it 'cell ar50 should equal 4.0' do
-    sheet1.ar50.should be_within(0.4).of(4.0)
-  end
-
-  it 'cell by50 should equal 0.8595772059722248' do
-    sheet1.by50.should be_within(0.08595772059722248).of(0.8595772059722248)
-  end
-
-  it 'cell bz50 should equal 0.779991829266231' do
-    sheet1.bz50.should be_within(0.07799918292662311).of(0.779991829266231)
-  end
-
-  it 'cell ca50 should equal 0.24640866605994052' do
-    sheet1.ca50.should be_within(0.024640866605994054).of(0.24640866605994052)
-  end
-
-  it 'cell cb50 should equal 0.0' do
-    sheet1.cb50.should be_within(1.0e-08).of(0.0)
-  end
-
-  it 'cell by51 should equal 0.10992388791300337' do
-    sheet1.by51.should be_within(0.010992388791300337).of(0.10992388791300337)
-  end
-
-  it 'cell bz51 should equal 0.1269590657769851' do
-    sheet1.bz51.should be_within(0.01269590657769851).of(0.1269590657769851)
-  end
-
-  it 'cell ca51 should equal 0.28265703299444744' do
-    sheet1.ca51.should be_within(0.028265703299444746).of(0.28265703299444744)
-  end
-
-  it 'cell cb51 should equal 0.1455032005535617' do
-    sheet1.cb51.should be_within(0.01455032005535617).of(0.1455032005535617)
-  end
-
-  it 'cell ar52 should equal 4.0' do
-    sheet1.ar52.should be_within(0.4).of(4.0)
-  end
-
-  it 'cell by52 should equal 0.028727209950603034' do
-    sheet1.by52.should be_within(0.0028727209950603037).of(0.028727209950603034)
-  end
-
-  it 'cell bz52 should equal 0.031525462171621124' do
-    sheet1.bz52.should be_within(0.0031525462171621125).of(0.031525462171621124)
-  end
-
-  it 'cell ca52 should equal 0.11891612397305745' do
-    sheet1.ca52.should be_within(0.011891612397305747).of(0.11891612397305745)
-  end
-
-  it 'cell cb52 should equal 0.13719824457244148' do
-    sheet1.cb52.should be_within(0.013719824457244149).of(0.13719824457244148)
-  end
-
-  it 'cell ar53 should equal 2.0' do
-    sheet1.ar53.should be_within(0.2).of(2.0)
-  end
-
-  it 'cell ar55 should equal 2.0' do
-    sheet1.ar55.should be_within(0.2).of(2.0)
-  end
-
-  it 'cell ar56 should equal 4.0' do
-    sheet1.ar56.should be_within(0.4).of(4.0)
-  end
-
-  it 'cell ar57 should equal 1.0' do
-    sheet1.ar57.should be_within(0.1).of(1.0)
+  it 'cell be52 should equal 0.4702833849898098' do
+    sheet1.be52.should be_within(0.047028338498980984).of(0.4702833849898098)
   end
 
 end

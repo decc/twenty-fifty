@@ -1,5 +1,5 @@
 # coding: utf-8
-# DUKES 09 (5.6)
+# DUKES 09 (2.5)
 class Sheet65 < Spreadsheet
 end
 

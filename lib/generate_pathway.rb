@@ -12,8 +12,8 @@ class GeneratePathway
     @pathway = { _id: code, choices: set_choices(code) }
     table :ghg, 182, 192
     table :final_energy_demand, 13, 18
-    table :primary_energy_supply, 278, 291
-    pathway[:sankey] = intermediate_output_sheet.a('h365','j455').to_grid
+    table :primary_energy_supply, 283, 296
+    pathway[:sankey] = intermediate_output_sheet.a('h370','j460').to_grid
     cost_components_table
     pathway
   end
@@ -42,20 +42,66 @@ class GeneratePathway
   def annual_data(sheet,row)
     sheet.a("I#{row}","Q#{row}").to_grid.flatten
   end
-
+  
+  def sum(hash_a,hash_b)
+    summed_hash = {}
+    hash_a.each do |key,value|
+      summed_hash[key] = value + hash_b[key]
+    end
+    return summed_hash
+  end
+  
   def cost_components_table
     t = {}
-    # Each row has [name,low,range,high,finance_low,finance_range,finance_high]
-    names = %w{low range high finance_low finance_range finance_high}
-    cost_sheet.a('b6','h59').to_grid.each do |row|
-      name = row.shift
-      next if name == 0.0
-      r = {}
-      names.each_with_index do |name,i|
-        r[name] = row[i]
-      end
-      t[name] = r
+    low_start_row = 3
+    point_start_row = 57
+    high_start_row = 112
+    number_of_components = 49
+    
+    # Normal cost components
+    (0..number_of_components).to_a.each do |i|
+            
+      name          = cost_sheet.send("b#{low_start_row+i}")
+      
+      low           = cost_sheet.send("as#{low_start_row+i}")
+      point         = cost_sheet.send("as#{point_start_row+i}")
+      high          = cost_sheet.send("as#{high_start_row+i}")
+      range         = high - low
+      
+      finance_low   = 0 # cost_sheet.send("cp{low_start_row+i}") # Bodge for the zero interest rate at low
+      finance_point = cost_sheet.send("cp#{point_start_row+i}")
+      finance_high  = cost_sheet.send("cp#{high_start_row+i}")
+      finance_range = finance_high - finance_low
+      
+      t[name] = {low:low,point:point,high:high,range:range,finance_low:finance_low,finance_point:finance_point,finance_high:finance_high,finance_range:finance_range}
     end
+    
+    # Merge some of the points
+    t['Coal'] = sum(t['Indigenous fossil-fuel production - Coal'],t['Balancing imports - Coal'])
+    t.delete 'Indigenous fossil-fuel production - Coal'
+    t.delete 'Balancing imports - Coal'
+    t['Oil'] = sum(t['Indigenous fossil-fuel production - Oil'],t['Balancing imports - Oil'])
+    t.delete 'Indigenous fossil-fuel production - Oil'
+    t.delete 'Balancing imports - Oil'
+    t['Gas'] = sum(t['Indigenous fossil-fuel production - Gas'],t['Balancing imports - Gas'])
+    t.delete 'Indigenous fossil-fuel production - Gas'
+    t.delete 'Balancing imports - Gas'
+    
+    # Finance cost
+    name          = "Finance cost"
+    
+    low           = 0 # cost_sheet.send("cp#{low_start_row+number_of_components+1}") # Bodge for the zero interest rate at low
+    point         = cost_sheet.send("cp#{point_start_row+number_of_components+1}")
+    high          = cost_sheet.send("cp#{high_start_row+number_of_components+1}")
+    range         = high - low
+    
+    finance_low   = 0 # cost_sheet.send("cp{low_start_row+i}") # Bodge for the zero interest rate at low
+    finance_point = 0
+    finance_high  = 0
+    finance_range = finance_high - finance_low
+    
+    t[name] = {low:low,point:point,high:high,range:range,finance_low:finance_low,finance_point:finance_point,finance_high:finance_high,finance_range:finance_range}
+  
     pathway['cost_components'] = t
   end
   
@@ -68,15 +114,15 @@ class GeneratePathway
   end
   
   def heating_sheet
-    excel.sheet32
+    excel.sheet35
   end
   
   def heating_commercial_sheet
-    excel.sheet33
+    excel.sheet36
   end
   
   def cost_sheet
-    excel.sheet4
+    excel.sheet5
   end  
     
 end

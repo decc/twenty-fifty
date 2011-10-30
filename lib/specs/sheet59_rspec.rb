@@ -1,11 +1,11 @@
 # coding: utf-8
 require_relative '../spreadsheet'
-# 2045
+# 2035
 describe 'Sheet59' do
   def sheet59; $spreadsheet ||= Spreadsheet.new; $spreadsheet.sheet59; end
 
-  it 'cell g9 should equal 254.38195960269502' do
-    sheet59.g9.should be_within(25.438195960269503).of(254.38195960269502)
+  it 'cell g9 should equal 330.8430059219946' do
+    sheet59.g9.should be_within(33.08430059219946).of(330.8430059219946)
   end
 
   it 'cell h9 should equal 0.0' do
@@ -44,28 +44,28 @@ describe 'Sheet59' do
     sheet59.p9.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell q9 should equal 254.38195960269502' do
-    sheet59.q9.should be_within(25.438195960269503).of(254.38195960269502)
+  it 'cell q9 should equal 330.8430059219946' do
+    sheet59.q9.should be_within(33.08430059219946).of(330.8430059219946)
   end
 
-  it 'cell s9 should equal -67.9487737680638' do
-    sheet59.s9.should be_within(6.79487737680638).of(-67.9487737680638)
+  it 'cell s9 should equal -33.45082769685952' do
+    sheet59.s9.should be_within(3.345082769685952).of(-33.45082769685952)
   end
 
-  it 'cell t9 should equal 0.0' do
-    sheet59.t9.should be_within(1.0e-08).of(0.0)
+  it 'cell t9 should equal 21.000528408436438' do
+    sheet59.t9.should be_within(2.100052840843644).of(21.000528408436438)
   end
 
-  it 'cell u9 should equal -0.9882688908535548' do
-    sheet59.u9.should be_within(0.09882688908535549).of(-0.9882688908535548)
+  it 'cell u9 should equal -127.05710117148975' do
+    sheet59.u9.should be_within(12.705710117148975).of(-127.05710117148975)
   end
 
-  it 'cell v9 should equal -0.88638550004391' do
-    sheet59.v9.should be_within(0.08863855000439101).of(-0.88638550004391)
+  it 'cell v9 should equal -3.161222243321011' do
+    sheet59.v9.should be_within(0.31612222433210113).of(-3.161222243321011)
   end
 
-  it 'cell w9 should equal -35.206649941874545' do
-    sheet59.w9.should be_within(3.5206649941874546).of(-35.206649941874545)
+  it 'cell w9 should equal -125.56167142124585' do
+    sheet59.w9.should be_within(12.556167142124586).of(-125.56167142124585)
   end
 
   it 'cell x9 should equal 0.0' do
@@ -84,8 +84,8 @@ describe 'Sheet59' do
     sheet59.aa9.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ab9 should equal -24.36149512486047' do
-    sheet59.ab9.should be_within(2.436149512486047).of(-24.36149512486047)
+  it 'cell ab9 should equal -12.248990864148347' do
+    sheet59.ab9.should be_within(1.2248990864148348).of(-12.248990864148347)
   end
 
   it 'cell ac9 should equal 0.0' do
@@ -112,16 +112,16 @@ describe 'Sheet59' do
     sheet59.ah9.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ai9 should equal -12.957828652107947' do
-    sheet59.ai9.should be_within(1.2957828652107948).of(-12.957828652107947)
+  it 'cell ai9 should equal 0.0' do
+    sheet59.ai9.should be_within(1.0e-08).of(0.0)
   end
 
   it 'cell aj9 should equal 0.0' do
     sheet59.aj9.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ak9 should equal -142.3494018778042' do
-    sheet59.ak9.should be_within(14.234940187780422).of(-142.3494018778042)
+  it 'cell ak9 should equal -280.4792849886281' do
+    sheet59.ak9.should be_within(28.04792849886281).of(-280.4792849886281)
   end
 
   it 'cell am9 should equal 0.0' do
@@ -188,8 +188,8 @@ describe 'Sheet59' do
     sheet59.bb9.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bc9 should equal -112.03255772489081' do
-    sheet59.bc9.should be_within(11.203255772489081).of(-112.03255772489081)
+  it 'cell bc9 should equal -50.363720933366594' do
+    sheet59.bc9.should be_within(5.036372093336659).of(-50.363720933366594)
   end
 
   it 'cell bd9 should equal 0.0' do
@@ -200,8 +200,8 @@ describe 'Sheet59' do
     sheet59.be9.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bf9 should equal -112.03255772489081' do
-    sheet59.bf9.should be_within(11.203255772489081).of(-112.03255772489081)
+  it 'cell bf9 should equal -50.363720933366594' do
+    sheet59.bf9.should be_within(5.036372093336659).of(-50.363720933366594)
   end
 
   it 'cell bh9 should equal 0.0' do
@@ -216,20 +216,20 @@ describe 'Sheet59' do
     sheet59.bj9.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bl9 should equal 0.0' do
-    sheet59.bl9.should be_within(1.0e-08).of(0.0)
+  it 'cell bl9 should equal -9.947598300641403e-14' do
+    sheet59.bl9.should be_within(1.0e-08).of(-9.947598300641403e-14)
   end
 
-  it 'cell bo9 should equal 7.004006782698788' do
-    sheet59.bo9.should be_within(0.7004006782698788).of(7.004006782698788)
+  it 'cell bo9 should equal 63.02724026315832' do
+    sheet59.bo9.should be_within(6.302724026315833).of(63.02724026315832)
   end
 
-  it 'cell bp9 should equal 0.014155170789296212' do
-    sheet59.bp9.should be_within(0.0014155170789296213).of(0.014155170789296212)
+  it 'cell bp9 should equal 0.16225459439696766' do
+    sheet59.bp9.should be_within(0.016225459439696766).of(0.16225459439696766)
   end
 
-  it 'cell bq9 should equal 0.020649500052479466' do
-    sheet59.bq9.should be_within(0.002064950005247947).of(0.020649500052479466)
+  it 'cell bq9 should equal 0.41069363546403387' do
+    sheet59.bq9.should be_within(0.04106936354640339).of(0.41069363546403387)
   end
 
   it 'cell br9 should equal 0.0' do
@@ -396,8 +396,8 @@ describe 'Sheet59' do
     sheet59.df9.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell g11 should equal 254.38195960269502' do
-    sheet59.g11.should be_within(25.438195960269503).of(254.38195960269502)
+  it 'cell g11 should equal 330.8430059219946' do
+    sheet59.g11.should be_within(33.08430059219946).of(330.8430059219946)
   end
 
   it 'cell h11 should equal 0.0' do
@@ -436,28 +436,28 @@ describe 'Sheet59' do
     sheet59.p11.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell q11 should equal 254.38195960269502' do
-    sheet59.q11.should be_within(25.438195960269503).of(254.38195960269502)
+  it 'cell q11 should equal 330.8430059219946' do
+    sheet59.q11.should be_within(33.08430059219946).of(330.8430059219946)
   end
 
-  it 'cell s11 should equal -67.9487737680638' do
-    sheet59.s11.should be_within(6.79487737680638).of(-67.9487737680638)
+  it 'cell s11 should equal -33.45082769685952' do
+    sheet59.s11.should be_within(3.345082769685952).of(-33.45082769685952)
   end
 
-  it 'cell t11 should equal 0.0' do
-    sheet59.t11.should be_within(1.0e-08).of(0.0)
+  it 'cell t11 should equal 21.000528408436438' do
+    sheet59.t11.should be_within(2.100052840843644).of(21.000528408436438)
   end
 
-  it 'cell u11 should equal -0.9882688908535548' do
-    sheet59.u11.should be_within(0.09882688908535549).of(-0.9882688908535548)
+  it 'cell u11 should equal -127.05710117148975' do
+    sheet59.u11.should be_within(12.705710117148975).of(-127.05710117148975)
   end
 
-  it 'cell v11 should equal -0.88638550004391' do
-    sheet59.v11.should be_within(0.08863855000439101).of(-0.88638550004391)
+  it 'cell v11 should equal -3.161222243321011' do
+    sheet59.v11.should be_within(0.31612222433210113).of(-3.161222243321011)
   end
 
-  it 'cell w11 should equal -35.206649941874545' do
-    sheet59.w11.should be_within(3.5206649941874546).of(-35.206649941874545)
+  it 'cell w11 should equal -125.56167142124585' do
+    sheet59.w11.should be_within(12.556167142124586).of(-125.56167142124585)
   end
 
   it 'cell x11 should equal 0.0' do
@@ -476,8 +476,8 @@ describe 'Sheet59' do
     sheet59.aa11.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ab11 should equal -24.36149512486047' do
-    sheet59.ab11.should be_within(2.436149512486047).of(-24.36149512486047)
+  it 'cell ab11 should equal -12.248990864148347' do
+    sheet59.ab11.should be_within(1.2248990864148348).of(-12.248990864148347)
   end
 
   it 'cell ac11 should equal 0.0' do
@@ -504,16 +504,16 @@ describe 'Sheet59' do
     sheet59.ah11.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ai11 should equal -12.957828652107947' do
-    sheet59.ai11.should be_within(1.2957828652107948).of(-12.957828652107947)
+  it 'cell ai11 should equal 0.0' do
+    sheet59.ai11.should be_within(1.0e-08).of(0.0)
   end
 
   it 'cell aj11 should equal 0.0' do
     sheet59.aj11.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ak11 should equal -142.3494018778042' do
-    sheet59.ak11.should be_within(14.234940187780422).of(-142.3494018778042)
+  it 'cell ak11 should equal -280.4792849886281' do
+    sheet59.ak11.should be_within(28.04792849886281).of(-280.4792849886281)
   end
 
   it 'cell am11 should equal 0.0' do
@@ -580,8 +580,8 @@ describe 'Sheet59' do
     sheet59.bb11.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bc11 should equal -112.03255772489081' do
-    sheet59.bc11.should be_within(11.203255772489081).of(-112.03255772489081)
+  it 'cell bc11 should equal -50.363720933366594' do
+    sheet59.bc11.should be_within(5.036372093336659).of(-50.363720933366594)
   end
 
   it 'cell bd11 should equal 0.0' do
@@ -592,8 +592,8 @@ describe 'Sheet59' do
     sheet59.be11.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bf11 should equal -112.03255772489081' do
-    sheet59.bf11.should be_within(11.203255772489081).of(-112.03255772489081)
+  it 'cell bf11 should equal -50.363720933366594' do
+    sheet59.bf11.should be_within(5.036372093336659).of(-50.363720933366594)
   end
 
   it 'cell bh11 should equal 0.0' do
@@ -608,20 +608,20 @@ describe 'Sheet59' do
     sheet59.bj11.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bl11 should equal 0.0' do
-    sheet59.bl11.should be_within(1.0e-08).of(0.0)
+  it 'cell bl11 should equal -9.947598300641403e-14' do
+    sheet59.bl11.should be_within(1.0e-08).of(-9.947598300641403e-14)
   end
 
-  it 'cell bo11 should equal 7.004006782698788' do
-    sheet59.bo11.should be_within(0.7004006782698788).of(7.004006782698788)
+  it 'cell bo11 should equal 63.02724026315832' do
+    sheet59.bo11.should be_within(6.302724026315833).of(63.02724026315832)
   end
 
-  it 'cell bp11 should equal 0.014155170789296212' do
-    sheet59.bp11.should be_within(0.0014155170789296213).of(0.014155170789296212)
+  it 'cell bp11 should equal 0.16225459439696766' do
+    sheet59.bp11.should be_within(0.016225459439696766).of(0.16225459439696766)
   end
 
-  it 'cell bq11 should equal 0.020649500052479466' do
-    sheet59.bq11.should be_within(0.002064950005247947).of(0.020649500052479466)
+  it 'cell bq11 should equal 0.41069363546403387' do
+    sheet59.bq11.should be_within(0.04106936354640339).of(0.41069363546403387)
   end
 
   it 'cell br11 should equal 0.0' do
@@ -788,8 +788,8 @@ describe 'Sheet59' do
     sheet59.df11.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell g12 should equal 84.56903604270835' do
-    sheet59.g12.should be_within(8.456903604270835).of(84.56903604270835)
+  it 'cell g12 should equal 101.33255354354111' do
+    sheet59.g12.should be_within(10.133255354354112).of(101.33255354354111)
   end
 
   it 'cell h12 should equal 0.0' do
@@ -828,28 +828,28 @@ describe 'Sheet59' do
     sheet59.p12.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell q12 should equal 84.56903604270835' do
-    sheet59.q12.should be_within(8.456903604270835).of(84.56903604270835)
+  it 'cell q12 should equal 101.33255354354111' do
+    sheet59.q12.should be_within(10.133255354354112).of(101.33255354354111)
   end
 
-  it 'cell s12 should equal -21.62142299297683' do
-    sheet59.s12.should be_within(2.162142299297683).of(-21.62142299297683)
+  it 'cell s12 should equal -32.19816734188159' do
+    sheet59.s12.should be_within(3.2198167341881594).of(-32.19816734188159)
   end
 
-  it 'cell t12 should equal 3.7767988637428527' do
-    sheet59.t12.should be_within(0.3776798863742853).of(3.7767988637428527)
+  it 'cell t12 should equal 0.0' do
+    sheet59.t12.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell u12 should equal -22.21646390436972' do
-    sheet59.u12.should be_within(2.2216463904369723).of(-22.21646390436972)
+  it 'cell u12 should equal 0.0' do
+    sheet59.u12.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell v12 should equal -1.0335236429739016' do
-    sheet59.v12.should be_within(0.10335236429739017).of(-1.0335236429739016)
+  it 'cell v12 should equal -3.641858710393858' do
+    sheet59.v12.should be_within(0.3641858710393858).of(-3.641858710393858)
   end
 
-  it 'cell w12 should equal -9.498987882353585' do
-    sheet59.w12.should be_within(0.9498987882353586).of(-9.498987882353585)
+  it 'cell w12 should equal -33.28117883444509' do
+    sheet59.w12.should be_within(3.3281178834445093).of(-33.28117883444509)
   end
 
   it 'cell x12 should equal 0.0' do
@@ -868,8 +868,8 @@ describe 'Sheet59' do
     sheet59.aa12.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ab12 should equal 0.0' do
-    sheet59.ab12.should be_within(1.0e-08).of(0.0)
+  it 'cell ab12 should equal -2.293472255046352' do
+    sheet59.ab12.should be_within(0.2293472255046352).of(-2.293472255046352)
   end
 
   it 'cell ac12 should equal 0.0' do
@@ -904,8 +904,8 @@ describe 'Sheet59' do
     sheet59.aj12.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ak12 should equal -50.59359955893119' do
-    sheet59.ak12.should be_within(5.059359955893119).of(-50.59359955893119)
+  it 'cell ak12 should equal -71.41467714176689' do
+    sheet59.ak12.should be_within(7.141467714176689).of(-71.41467714176689)
   end
 
   it 'cell am12 should equal 0.0' do
@@ -972,8 +972,8 @@ describe 'Sheet59' do
     sheet59.bb12.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bc12 should equal -33.975436483777145' do
-    sheet59.bc12.should be_within(3.397543648377715).of(-33.975436483777145)
+  it 'cell bc12 should equal -29.91787640177421' do
+    sheet59.bc12.should be_within(2.991787640177421).of(-29.91787640177421)
   end
 
   it 'cell bd12 should equal 0.0' do
@@ -984,8 +984,8 @@ describe 'Sheet59' do
     sheet59.be12.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bf12 should equal -33.975436483777145' do
-    sheet59.bf12.should be_within(3.397543648377715).of(-33.975436483777145)
+  it 'cell bf12 should equal -29.91787640177421' do
+    sheet59.bf12.should be_within(2.991787640177421).of(-29.91787640177421)
   end
 
   it 'cell bh12 should equal 0.0' do
@@ -1004,16 +1004,16 @@ describe 'Sheet59' do
     sheet59.bl12.should be_within(1.0e-08).of(1.4210854715202004e-14)
   end
 
-  it 'cell bo12 should equal 8.848865563642407' do
-    sheet59.bo12.should be_within(0.8848865563642407).of(8.848865563642407)
+  it 'cell bo12 should equal 7.034201583136361' do
+    sheet59.bo12.should be_within(0.7034201583136361).of(7.034201583136361)
   end
 
-  it 'cell bp12 should equal 0.02392644521199363' do
-    sheet59.bp12.should be_within(0.002392644521199363).of(0.02392644521199363)
+  it 'cell bp12 should equal 0.013408468038012966' do
+    sheet59.bp12.should be_within(0.0013408468038012967).of(0.013408468038012966)
   end
 
-  it 'cell bq12 should equal 0.0690328438501396' do
-    sheet59.bq12.should be_within(0.00690328438501396).of(0.0690328438501396)
+  it 'cell bq12 should equal 0.029583423253202273' do
+    sheet59.bq12.should be_within(0.0029583423253202274).of(0.029583423253202273)
   end
 
   it 'cell br12 should equal 0.0' do
@@ -1180,8 +1180,8 @@ describe 'Sheet59' do
     sheet59.df12.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell g14 should equal 84.56903604270835' do
-    sheet59.g14.should be_within(8.456903604270835).of(84.56903604270835)
+  it 'cell g14 should equal 101.33255354354111' do
+    sheet59.g14.should be_within(10.133255354354112).of(101.33255354354111)
   end
 
   it 'cell h14 should equal 0.0' do
@@ -1220,28 +1220,28 @@ describe 'Sheet59' do
     sheet59.p14.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell q14 should equal 84.56903604270835' do
-    sheet59.q14.should be_within(8.456903604270835).of(84.56903604270835)
+  it 'cell q14 should equal 101.33255354354111' do
+    sheet59.q14.should be_within(10.133255354354112).of(101.33255354354111)
   end
 
-  it 'cell s14 should equal -21.62142299297683' do
-    sheet59.s14.should be_within(2.162142299297683).of(-21.62142299297683)
+  it 'cell s14 should equal -32.19816734188159' do
+    sheet59.s14.should be_within(3.2198167341881594).of(-32.19816734188159)
   end
 
-  it 'cell t14 should equal 3.7767988637428527' do
-    sheet59.t14.should be_within(0.3776798863742853).of(3.7767988637428527)
+  it 'cell t14 should equal 0.0' do
+    sheet59.t14.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell u14 should equal -22.21646390436972' do
-    sheet59.u14.should be_within(2.2216463904369723).of(-22.21646390436972)
+  it 'cell u14 should equal 0.0' do
+    sheet59.u14.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell v14 should equal -1.0335236429739016' do
-    sheet59.v14.should be_within(0.10335236429739017).of(-1.0335236429739016)
+  it 'cell v14 should equal -3.641858710393858' do
+    sheet59.v14.should be_within(0.3641858710393858).of(-3.641858710393858)
   end
 
-  it 'cell w14 should equal -9.498987882353585' do
-    sheet59.w14.should be_within(0.9498987882353586).of(-9.498987882353585)
+  it 'cell w14 should equal -33.28117883444509' do
+    sheet59.w14.should be_within(3.3281178834445093).of(-33.28117883444509)
   end
 
   it 'cell x14 should equal 0.0' do
@@ -1260,8 +1260,8 @@ describe 'Sheet59' do
     sheet59.aa14.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ab14 should equal 0.0' do
-    sheet59.ab14.should be_within(1.0e-08).of(0.0)
+  it 'cell ab14 should equal -2.293472255046352' do
+    sheet59.ab14.should be_within(0.2293472255046352).of(-2.293472255046352)
   end
 
   it 'cell ac14 should equal 0.0' do
@@ -1296,8 +1296,8 @@ describe 'Sheet59' do
     sheet59.aj14.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ak14 should equal -50.59359955893119' do
-    sheet59.ak14.should be_within(5.059359955893119).of(-50.59359955893119)
+  it 'cell ak14 should equal -71.41467714176689' do
+    sheet59.ak14.should be_within(7.141467714176689).of(-71.41467714176689)
   end
 
   it 'cell am14 should equal 0.0' do
@@ -1364,8 +1364,8 @@ describe 'Sheet59' do
     sheet59.bb14.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bc14 should equal -33.975436483777145' do
-    sheet59.bc14.should be_within(3.397543648377715).of(-33.975436483777145)
+  it 'cell bc14 should equal -29.91787640177421' do
+    sheet59.bc14.should be_within(2.991787640177421).of(-29.91787640177421)
   end
 
   it 'cell bd14 should equal 0.0' do
@@ -1376,8 +1376,8 @@ describe 'Sheet59' do
     sheet59.be14.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bf14 should equal -33.975436483777145' do
-    sheet59.bf14.should be_within(3.397543648377715).of(-33.975436483777145)
+  it 'cell bf14 should equal -29.91787640177421' do
+    sheet59.bf14.should be_within(2.991787640177421).of(-29.91787640177421)
   end
 
   it 'cell bh14 should equal 0.0' do
@@ -1396,16 +1396,16 @@ describe 'Sheet59' do
     sheet59.bl14.should be_within(1.0e-08).of(1.4210854715202004e-14)
   end
 
-  it 'cell bo14 should equal 8.848865563642407' do
-    sheet59.bo14.should be_within(0.8848865563642407).of(8.848865563642407)
+  it 'cell bo14 should equal 7.034201583136361' do
+    sheet59.bo14.should be_within(0.7034201583136361).of(7.034201583136361)
   end
 
-  it 'cell bp14 should equal 0.02392644521199363' do
-    sheet59.bp14.should be_within(0.002392644521199363).of(0.02392644521199363)
+  it 'cell bp14 should equal 0.013408468038012966' do
+    sheet59.bp14.should be_within(0.0013408468038012967).of(0.013408468038012966)
   end
 
-  it 'cell bq14 should equal 0.0690328438501396' do
-    sheet59.bq14.should be_within(0.00690328438501396).of(0.0690328438501396)
+  it 'cell bq14 should equal 0.029583423253202273' do
+    sheet59.bq14.should be_within(0.0029583423253202274).of(0.029583423253202273)
   end
 
   it 'cell br14 should equal 0.0' do
@@ -1572,8 +1572,8 @@ describe 'Sheet59' do
     sheet59.df14.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell g15 should equal 338.9509956454034' do
-    sheet59.g15.should be_within(33.89509956454034).of(338.9509956454034)
+  it 'cell g15 should equal 432.1755594655357' do
+    sheet59.g15.should be_within(43.217555946553574).of(432.1755594655357)
   end
 
   it 'cell h15 should equal 0.0' do
@@ -1612,28 +1612,28 @@ describe 'Sheet59' do
     sheet59.p15.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell q15 should equal 338.9509956454034' do
-    sheet59.q15.should be_within(33.89509956454034).of(338.9509956454034)
+  it 'cell q15 should equal 432.1755594655357' do
+    sheet59.q15.should be_within(43.217555946553574).of(432.1755594655357)
   end
 
-  it 'cell s15 should equal -89.57019676104063' do
-    sheet59.s15.should be_within(8.957019676104064).of(-89.57019676104063)
+  it 'cell s15 should equal -65.6489950387411' do
+    sheet59.s15.should be_within(6.564899503874111).of(-65.6489950387411)
   end
 
-  it 'cell t15 should equal 3.7767988637428527' do
-    sheet59.t15.should be_within(0.3776798863742853).of(3.7767988637428527)
+  it 'cell t15 should equal 21.000528408436438' do
+    sheet59.t15.should be_within(2.100052840843644).of(21.000528408436438)
   end
 
-  it 'cell u15 should equal -23.204732795223276' do
-    sheet59.u15.should be_within(2.3204732795223277).of(-23.204732795223276)
+  it 'cell u15 should equal -127.05710117148975' do
+    sheet59.u15.should be_within(12.705710117148975).of(-127.05710117148975)
   end
 
-  it 'cell v15 should equal -1.9199091430178117' do
-    sheet59.v15.should be_within(0.19199091430178117).of(-1.9199091430178117)
+  it 'cell v15 should equal -6.803080953714868' do
+    sheet59.v15.should be_within(0.6803080953714868).of(-6.803080953714868)
   end
 
-  it 'cell w15 should equal -44.705637824228134' do
-    sheet59.w15.should be_within(4.470563782422814).of(-44.705637824228134)
+  it 'cell w15 should equal -158.84285025569093' do
+    sheet59.w15.should be_within(15.884285025569094).of(-158.84285025569093)
   end
 
   it 'cell x15 should equal 0.0' do
@@ -1652,8 +1652,8 @@ describe 'Sheet59' do
     sheet59.aa15.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ab15 should equal -24.36149512486047' do
-    sheet59.ab15.should be_within(2.436149512486047).of(-24.36149512486047)
+  it 'cell ab15 should equal -14.542463119194698' do
+    sheet59.ab15.should be_within(1.45424631191947).of(-14.542463119194698)
   end
 
   it 'cell ac15 should equal 0.0' do
@@ -1680,16 +1680,16 @@ describe 'Sheet59' do
     sheet59.ah15.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ai15 should equal -12.957828652107947' do
-    sheet59.ai15.should be_within(1.2957828652107948).of(-12.957828652107947)
+  it 'cell ai15 should equal 0.0' do
+    sheet59.ai15.should be_within(1.0e-08).of(0.0)
   end
 
   it 'cell aj15 should equal 0.0' do
     sheet59.aj15.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ak15 should equal -192.94300143673541' do
-    sheet59.ak15.should be_within(19.294300143673542).of(-192.94300143673541)
+  it 'cell ak15 should equal -351.89396213039487' do
+    sheet59.ak15.should be_within(35.18939621303949).of(-351.89396213039487)
   end
 
   it 'cell am15 should equal 0.0' do
@@ -1756,8 +1756,8 @@ describe 'Sheet59' do
     sheet59.bb15.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bc15 should equal -146.00799420866795' do
-    sheet59.bc15.should be_within(14.600799420866796).of(-146.00799420866795)
+  it 'cell bc15 should equal -80.2815973351408' do
+    sheet59.bc15.should be_within(8.02815973351408).of(-80.2815973351408)
   end
 
   it 'cell bd15 should equal 0.0' do
@@ -1768,8 +1768,8 @@ describe 'Sheet59' do
     sheet59.be15.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bf15 should equal -146.00799420866795' do
-    sheet59.bf15.should be_within(14.600799420866796).of(-146.00799420866795)
+  it 'cell bf15 should equal -80.2815973351408' do
+    sheet59.bf15.should be_within(8.02815973351408).of(-80.2815973351408)
   end
 
   it 'cell bh15 should equal 0.0' do
@@ -1784,20 +1784,20 @@ describe 'Sheet59' do
     sheet59.bj15.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bl15 should equal 2.842170943040401e-14' do
-    sheet59.bl15.should be_within(1.0e-08).of(2.842170943040401e-14)
+  it 'cell bl15 should equal 1.4210854715202004e-14' do
+    sheet59.bl15.should be_within(1.0e-08).of(1.4210854715202004e-14)
   end
 
-  it 'cell bo15 should equal 15.852872346341195' do
-    sheet59.bo15.should be_within(1.5852872346341196).of(15.852872346341195)
+  it 'cell bo15 should equal 70.06144184629468' do
+    sheet59.bo15.should be_within(7.006144184629469).of(70.06144184629468)
   end
 
-  it 'cell bp15 should equal 0.03808161600128984' do
-    sheet59.bp15.should be_within(0.0038081616001289843).of(0.03808161600128984)
+  it 'cell bp15 should equal 0.17566306243498062' do
+    sheet59.bp15.should be_within(0.017566306243498062).of(0.17566306243498062)
   end
 
-  it 'cell bq15 should equal 0.08968234390261906' do
-    sheet59.bq15.should be_within(0.008968234390261906).of(0.08968234390261906)
+  it 'cell bq15 should equal 0.44027705871723616' do
+    sheet59.bq15.should be_within(0.04402770587172362).of(0.44027705871723616)
   end
 
   it 'cell br15 should equal 0.0' do
@@ -1964,16 +1964,16 @@ describe 'Sheet59' do
     sheet59.df15.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell dh15 should equal 15.980636306245103' do
-    sheet59.dh15.should be_within(1.5980636306245104).of(15.980636306245103)
+  it 'cell dh15 should equal 70.6773819674469' do
+    sheet59.dh15.should be_within(7.067738196744691).of(70.6773819674469)
   end
 
   it 'cell g17 should equal 0.0' do
     sheet59.g17.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell h17 should equal 51.91155972915405' do
-    sheet59.h17.should be_within(5.191155972915405).of(51.91155972915405)
+  it 'cell h17 should equal 64.89731377443906' do
+    sheet59.h17.should be_within(6.489731377443906).of(64.89731377443906)
   end
 
   it 'cell i17 should equal 0.0' do
@@ -2008,12 +2008,12 @@ describe 'Sheet59' do
     sheet59.p17.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell q17 should equal 51.91155972915405' do
-    sheet59.q17.should be_within(5.191155972915405).of(51.91155972915405)
+  it 'cell q17 should equal 64.89731377443906' do
+    sheet59.q17.should be_within(6.489731377443906).of(64.89731377443906)
   end
 
-  it 'cell s17 should equal -51.060472781307624' do
-    sheet59.s17.should be_within(5.106047278130763).of(-51.060472781307624)
+  it 'cell s17 should equal -57.39839956687096' do
+    sheet59.s17.should be_within(5.739839956687096).of(-57.39839956687096)
   end
 
   it 'cell t17 should equal 0.0' do
@@ -2028,8 +2028,8 @@ describe 'Sheet59' do
     sheet59.v17.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell w17 should equal -0.8510869478464239' do
-    sheet59.w17.should be_within(0.08510869478464239).of(-0.8510869478464239)
+  it 'cell w17 should equal -7.498914207568098' do
+    sheet59.w17.should be_within(0.7498914207568098).of(-7.498914207568098)
   end
 
   it 'cell x17 should equal 0.0' do
@@ -2084,8 +2084,8 @@ describe 'Sheet59' do
     sheet59.aj17.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ak17 should equal -51.91155972915405' do
-    sheet59.ak17.should be_within(5.191155972915405).of(-51.91155972915405)
+  it 'cell ak17 should equal -64.89731377443906' do
+    sheet59.ak17.should be_within(6.489731377443906).of(-64.89731377443906)
   end
 
   it 'cell am17 should equal 0.0' do
@@ -2184,16 +2184,16 @@ describe 'Sheet59' do
     sheet59.bl17.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bo17 should equal 0.15659999840374197' do
-    sheet59.bo17.should be_within(0.015659999840374198).of(0.15659999840374197)
+  it 'cell bo17 should equal 1.3798002141925299' do
+    sheet59.bo17.should be_within(0.137980021419253).of(1.3798002141925299)
   end
 
-  it 'cell bp17 should equal 0.00031390245872396226' do
-    sheet59.bp17.should be_within(3.139024587239623e-05).of(0.00031390245872396226)
+  it 'cell bp17 should equal 0.0027657898096922033' do
+    sheet59.bp17.should be_within(0.00027657898096922033).of(0.0027657898096922033)
   end
 
-  it 'cell bq17 should equal 0.0003376173552066209' do
-    sheet59.bq17.should be_within(3.3761735520662094e-05).of(0.0003376173552066209)
+  it 'cell bq17 should equal 0.0029747414034333704' do
+    sheet59.bq17.should be_within(0.00029747414034333704).of(0.0029747414034333704)
   end
 
   it 'cell br17 should equal 0.0' do
@@ -2360,16 +2360,16 @@ describe 'Sheet59' do
     sheet59.df17.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell dh17 should equal 0.15725151821767255' do
-    sheet59.dh17.should be_within(0.015725151821767255).of(0.15725151821767255)
+  it 'cell dh17 should equal 1.3855407454056554' do
+    sheet59.dh17.should be_within(0.13855407454056554).of(1.3855407454056554)
   end
 
   it 'cell g18 should equal 0.0' do
     sheet59.g18.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell h18 should equal 59.70809818699248' do
-    sheet59.h18.should be_within(5.970809818699248).of(59.70809818699248)
+  it 'cell h18 should equal 72.56010535446458' do
+    sheet59.h18.should be_within(7.256010535446459).of(72.56010535446458)
   end
 
   it 'cell i18 should equal 0.0' do
@@ -2404,12 +2404,12 @@ describe 'Sheet59' do
     sheet59.p18.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell q18 should equal 59.70809818699248' do
-    sheet59.q18.should be_within(5.970809818699248).of(59.70809818699248)
+  it 'cell q18 should equal 72.56010535446458' do
+    sheet59.q18.should be_within(7.256010535446459).of(72.56010535446458)
   end
 
-  it 'cell s18 should equal -58.89650672260337' do
-    sheet59.s18.should be_within(5.889650672260338).of(-58.89650672260337)
+  it 'cell s18 should equal -65.55468570549853' do
+    sheet59.s18.should be_within(6.555468570549853).of(-65.55468570549853)
   end
 
   it 'cell t18 should equal 0.0' do
@@ -2424,8 +2424,8 @@ describe 'Sheet59' do
     sheet59.v18.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell w18 should equal -0.8115914643891077' do
-    sheet59.w18.should be_within(0.08115914643891077).of(-0.8115914643891077)
+  it 'cell w18 should equal -7.005419648966056' do
+    sheet59.w18.should be_within(0.7005419648966056).of(-7.005419648966056)
   end
 
   it 'cell x18 should equal 0.0' do
@@ -2480,8 +2480,8 @@ describe 'Sheet59' do
     sheet59.aj18.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ak18 should equal -59.70809818699248' do
-    sheet59.ak18.should be_within(5.970809818699248).of(-59.70809818699248)
+  it 'cell ak18 should equal -72.56010535446458' do
+    sheet59.ak18.should be_within(7.256010535446459).of(-72.56010535446458)
   end
 
   it 'cell am18 should equal 0.0' do
@@ -2580,16 +2580,16 @@ describe 'Sheet59' do
     sheet59.bl18.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bo18 should equal 0.1493328294475958' do
-    sheet59.bo18.should be_within(0.01493328294475958).of(0.1493328294475958)
+  it 'cell bo18 should equal 1.288997215409754' do
+    sheet59.bo18.should be_within(0.1288997215409754).of(1.288997215409754)
   end
 
-  it 'cell bp18 should equal 0.00029933552241138674' do
-    sheet59.bp18.should be_within(2.9933552241138675e-05).of(0.00029933552241138674)
+  it 'cell bp18 should equal 0.0025837764963591095' do
+    sheet59.bp18.should be_within(0.00025837764963591094).of(0.0025837764963591095)
   end
 
-  it 'cell bq18 should equal 0.0003219499070085173' do
-    sheet59.bq18.should be_within(3.2194990700851735e-05).of(0.0003219499070085173)
+  it 'cell bq18 should equal 0.002778977236087515' do
+    sheet59.bq18.should be_within(0.0002778977236087515).of(0.002778977236087515)
   end
 
   it 'cell br18 should equal 0.0' do
@@ -2756,16 +2756,16 @@ describe 'Sheet59' do
     sheet59.df18.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell dh18 should equal 0.14995411487701568' do
-    sheet59.dh18.should be_within(0.014995411487701569).of(0.14995411487701568)
+  it 'cell dh18 should equal 1.2943599691422008' do
+    sheet59.dh18.should be_within(0.1294359969142201).of(1.2943599691422008)
   end
 
   it 'cell g19 should equal 0.0' do
     sheet59.g19.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell h19 should equal 111.61965791614654' do
-    sheet59.h19.should be_within(11.161965791614655).of(111.61965791614654)
+  it 'cell h19 should equal 137.45741912890364' do
+    sheet59.h19.should be_within(13.745741912890365).of(137.45741912890364)
   end
 
   it 'cell i19 should equal 0.0' do
@@ -2800,12 +2800,12 @@ describe 'Sheet59' do
     sheet59.p19.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell q19 should equal 111.61965791614654' do
-    sheet59.q19.should be_within(11.161965791614655).of(111.61965791614654)
+  it 'cell q19 should equal 137.45741912890364' do
+    sheet59.q19.should be_within(13.745741912890365).of(137.45741912890364)
   end
 
-  it 'cell s19 should equal -109.95697950391099' do
-    sheet59.s19.should be_within(10.995697950391099).of(-109.95697950391099)
+  it 'cell s19 should equal -122.95308527236949' do
+    sheet59.s19.should be_within(12.29530852723695).of(-122.95308527236949)
   end
 
   it 'cell t19 should equal 0.0' do
@@ -2820,8 +2820,8 @@ describe 'Sheet59' do
     sheet59.v19.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell w19 should equal -1.6626784122355316' do
-    sheet59.w19.should be_within(0.16626784122355318).of(-1.6626784122355316)
+  it 'cell w19 should equal -14.504333856534153' do
+    sheet59.w19.should be_within(1.4504333856534153).of(-14.504333856534153)
   end
 
   it 'cell x19 should equal 0.0' do
@@ -2876,8 +2876,8 @@ describe 'Sheet59' do
     sheet59.aj19.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ak19 should equal -111.61965791614652' do
-    sheet59.ak19.should be_within(11.161965791614653).of(-111.61965791614652)
+  it 'cell ak19 should equal -137.45741912890364' do
+    sheet59.ak19.should be_within(13.745741912890365).of(-137.45741912890364)
   end
 
   it 'cell am19 should equal 0.0' do
@@ -2972,20 +2972,20 @@ describe 'Sheet59' do
     sheet59.bj19.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bl19 should equal 1.4210854715202004e-14' do
-    sheet59.bl19.should be_within(1.0e-08).of(1.4210854715202004e-14)
+  it 'cell bl19 should equal 0.0' do
+    sheet59.bl19.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bo19 should equal 0.3059328278513378' do
-    sheet59.bo19.should be_within(0.03059328278513378).of(0.3059328278513378)
+  it 'cell bo19 should equal 2.668797429602284' do
+    sheet59.bo19.should be_within(0.2668797429602284).of(2.668797429602284)
   end
 
-  it 'cell bp19 should equal 0.000613237981135349' do
-    sheet59.bp19.should be_within(6.132379811353489e-05).of(0.000613237981135349)
+  it 'cell bp19 should equal 0.005349566306051313' do
+    sheet59.bp19.should be_within(0.0005349566306051313).of(0.005349566306051313)
   end
 
-  it 'cell bq19 should equal 0.0006595672622151383' do
-    sheet59.bq19.should be_within(6.595672622151384e-05).of(0.0006595672622151383)
+  it 'cell bq19 should equal 0.005753718639520886' do
+    sheet59.bq19.should be_within(0.0005753718639520886).of(0.005753718639520886)
   end
 
   it 'cell br19 should equal 0.0' do
@@ -3152,8 +3152,8 @@ describe 'Sheet59' do
     sheet59.df19.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell dh19 should equal 0.3072056330946883' do
-    sheet59.dh19.should be_within(0.030720563309468832).of(0.3072056330946883)
+  it 'cell dh19 should equal 2.679900714547856' do
+    sheet59.dh19.should be_within(0.2679900714547856).of(2.679900714547856)
   end
 
   it 'cell g21 should equal 0.0' do
@@ -3164,8 +3164,8 @@ describe 'Sheet59' do
     sheet59.h21.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell i21 should equal 310.3099092746047' do
-    sheet59.i21.should be_within(31.030990927460472).of(310.3099092746047)
+  it 'cell i21 should equal 332.08951411503637' do
+    sheet59.i21.should be_within(33.20895141150364).of(332.08951411503637)
   end
 
   it 'cell j21 should equal 0.0' do
@@ -3196,28 +3196,28 @@ describe 'Sheet59' do
     sheet59.p21.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell q21 should equal 310.3099092746047' do
-    sheet59.q21.should be_within(31.030990927460472).of(310.3099092746047)
+  it 'cell q21 should equal 332.08951411503637' do
+    sheet59.q21.should be_within(33.20895141150364).of(332.08951411503637)
   end
 
-  it 'cell s21 should equal -184.91577875047452' do
-    sheet59.s21.should be_within(18.49157787504745).of(-184.91577875047452)
+  it 'cell s21 should equal -158.04365124066655' do
+    sheet59.s21.should be_within(15.804365124066656).of(-158.04365124066655)
   end
 
   it 'cell t21 should equal 0.0' do
     sheet59.t21.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell u21 should equal -29.63764346846324' do
-    sheet59.u21.should be_within(2.963764346846324).of(-29.63764346846324)
+  it 'cell u21 should equal -35.038704739833776' do
+    sheet59.u21.should be_within(3.503870473983378).of(-35.038704739833776)
   end
 
-  it 'cell v21 should equal -50.195250999744935' do
-    sheet59.v21.should be_within(5.019525099974494).of(-50.195250999744935)
+  it 'cell v21 should equal -57.03918133560216' do
+    sheet59.v21.should be_within(5.703918133560216).of(-57.03918133560216)
   end
 
-  it 'cell w21 should equal -39.48043663432262' do
-    sheet59.w21.should be_within(3.948043663432262).of(-39.48043663432262)
+  it 'cell w21 should equal -75.46038659638278' do
+    sheet59.w21.should be_within(7.546038659638278).of(-75.46038659638278)
   end
 
   it 'cell x21 should equal 0.0' do
@@ -3236,8 +3236,8 @@ describe 'Sheet59' do
     sheet59.aa21.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ab21 should equal -6.080799421599356' do
-    sheet59.ab21.should be_within(0.6080799421599357).of(-6.080799421599356)
+  it 'cell ab21 should equal -6.5075902025510555' do
+    sheet59.ab21.should be_within(0.6507590202551056).of(-6.5075902025510555)
   end
 
   it 'cell ac21 should equal 0.0' do
@@ -3272,8 +3272,8 @@ describe 'Sheet59' do
     sheet59.aj21.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ak21 should equal -310.3099092746047' do
-    sheet59.ak21.should be_within(31.030990927460472).of(-310.3099092746047)
+  it 'cell ak21 should equal -332.0895141150363' do
+    sheet59.ak21.should be_within(33.208951411503634).of(-332.0895141150363)
   end
 
   it 'cell am21 should equal 0.0' do
@@ -3368,20 +3368,20 @@ describe 'Sheet59' do
     sheet59.bj21.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bl21 should equal 0.0' do
-    sheet59.bl21.should be_within(1.0e-08).of(0.0)
+  it 'cell bl21 should equal 5.684341886080802e-14' do
+    sheet59.bl21.should be_within(1.0e-08).of(5.684341886080802e-14)
   end
 
-  it 'cell bo21 should equal 28.94160727893827' do
-    sheet59.bo21.should be_within(2.8941607278938273).of(28.94160727893827)
+  it 'cell bo21 should equal 38.93642752750377' do
+    sheet59.bo21.should be_within(3.893642752750377).of(38.93642752750377)
   end
 
-  it 'cell bp21 should equal 0.057000532337558765' do
-    sheet59.bp21.should be_within(0.005700053233755877).of(0.057000532337558765)
+  it 'cell bp21 should equal 0.07728785805905716' do
+    sheet59.bp21.should be_within(0.0077287858059057165).of(0.07728785805905716)
   end
 
-  it 'cell bq21 should equal 0.32230433687935994' do
-    sheet59.bq21.should be_within(0.032230433687935996).of(0.32230433687935994)
+  it 'cell bq21 should equal 0.38209766723073035' do
+    sheet59.bq21.should be_within(0.03820976672307304).of(0.38209766723073035)
   end
 
   it 'cell br21 should equal 0.0' do
@@ -3404,20 +3404,20 @@ describe 'Sheet59' do
     sheet59.bv21.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bw21 should equal 10.633429720664042' do
-    sheet59.bw21.should be_within(1.0633429720664043).of(10.633429720664042)
+  it 'cell bw21 should equal 11.496479295483136' do
+    sheet59.bw21.should be_within(1.1496479295483135).of(11.496479295483136)
   end
 
-  it 'cell bx21 should equal 0.07737510934726302' do
-    sheet59.bx21.should be_within(0.007737510934726303).of(0.07737510934726302)
+  it 'cell bx21 should equal 0.08537927820647126' do
+    sheet59.bx21.should be_within(0.008537927820647126).of(0.08537927820647126)
   end
 
-  it 'cell by21 should equal 1.8844877955475168' do
-    sheet59.by21.should be_within(0.1884487795547517).of(1.8844877955475168)
+  it 'cell by21 should equal 2.084014882223126' do
+    sheet59.by21.should be_within(0.2084014882223126).of(2.084014882223126)
   end
 
-  it 'cell bz21 should equal 2.702158057672364' do
-    sheet59.bz21.should be_within(0.2702158057672364).of(2.702158057672364)
+  it 'cell bz21 should equal 3.873812636456127' do
+    sheet59.bz21.should be_within(0.3873812636456127).of(3.873812636456127)
   end
 
   it 'cell ca21 should equal 0.0' do
@@ -3532,8 +3532,8 @@ describe 'Sheet59' do
     sheet59.db21.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell dc21 should equal -5.030322192798337' do
-    sheet59.dc21.should be_within(0.5030322192798338).of(-5.030322192798337)
+  it 'cell dc21 should equal -1.7252876726280117' do
+    sheet59.dc21.should be_within(0.1725287672628012).of(-1.7252876726280117)
   end
 
   it 'cell dd21 should equal 0.0' do
@@ -3548,8 +3548,8 @@ describe 'Sheet59' do
     sheet59.df21.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell dh21 should equal 39.58804063858803' do
-    sheet59.dh21.should be_within(3.9588040638588033).of(39.58804063858803)
+  it 'cell dh21 should equal 55.210211472534404' do
+    sheet59.dh21.should be_within(5.521021147253441).of(55.210211472534404)
   end
 
   it 'cell g22 should equal 0.0' do
@@ -3560,8 +3560,8 @@ describe 'Sheet59' do
     sheet59.h22.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell i22 should equal 310.3099092746047' do
-    sheet59.i22.should be_within(31.030990927460472).of(310.3099092746047)
+  it 'cell i22 should equal 332.08951411503637' do
+    sheet59.i22.should be_within(33.20895141150364).of(332.08951411503637)
   end
 
   it 'cell j22 should equal 0.0' do
@@ -3592,28 +3592,28 @@ describe 'Sheet59' do
     sheet59.p22.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell q22 should equal 310.3099092746047' do
-    sheet59.q22.should be_within(31.030990927460472).of(310.3099092746047)
+  it 'cell q22 should equal 332.08951411503637' do
+    sheet59.q22.should be_within(33.20895141150364).of(332.08951411503637)
   end
 
-  it 'cell s22 should equal -184.91577875047452' do
-    sheet59.s22.should be_within(18.49157787504745).of(-184.91577875047452)
+  it 'cell s22 should equal -158.04365124066655' do
+    sheet59.s22.should be_within(15.804365124066656).of(-158.04365124066655)
   end
 
   it 'cell t22 should equal 0.0' do
     sheet59.t22.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell u22 should equal -29.63764346846324' do
-    sheet59.u22.should be_within(2.963764346846324).of(-29.63764346846324)
+  it 'cell u22 should equal -35.038704739833776' do
+    sheet59.u22.should be_within(3.503870473983378).of(-35.038704739833776)
   end
 
-  it 'cell v22 should equal -50.195250999744935' do
-    sheet59.v22.should be_within(5.019525099974494).of(-50.195250999744935)
+  it 'cell v22 should equal -57.03918133560216' do
+    sheet59.v22.should be_within(5.703918133560216).of(-57.03918133560216)
   end
 
-  it 'cell w22 should equal -39.48043663432262' do
-    sheet59.w22.should be_within(3.948043663432262).of(-39.48043663432262)
+  it 'cell w22 should equal -75.46038659638278' do
+    sheet59.w22.should be_within(7.546038659638278).of(-75.46038659638278)
   end
 
   it 'cell x22 should equal 0.0' do
@@ -3632,8 +3632,8 @@ describe 'Sheet59' do
     sheet59.aa22.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ab22 should equal -6.080799421599356' do
-    sheet59.ab22.should be_within(0.6080799421599357).of(-6.080799421599356)
+  it 'cell ab22 should equal -6.5075902025510555' do
+    sheet59.ab22.should be_within(0.6507590202551056).of(-6.5075902025510555)
   end
 
   it 'cell ac22 should equal 0.0' do
@@ -3668,8 +3668,8 @@ describe 'Sheet59' do
     sheet59.aj22.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ak22 should equal -310.3099092746047' do
-    sheet59.ak22.should be_within(31.030990927460472).of(-310.3099092746047)
+  it 'cell ak22 should equal -332.0895141150363' do
+    sheet59.ak22.should be_within(33.208951411503634).of(-332.0895141150363)
   end
 
   it 'cell am22 should equal 0.0' do
@@ -3764,20 +3764,20 @@ describe 'Sheet59' do
     sheet59.bj22.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bl22 should equal 0.0' do
-    sheet59.bl22.should be_within(1.0e-08).of(0.0)
+  it 'cell bl22 should equal 5.684341886080802e-14' do
+    sheet59.bl22.should be_within(1.0e-08).of(5.684341886080802e-14)
   end
 
-  it 'cell bo22 should equal 28.94160727893827' do
-    sheet59.bo22.should be_within(2.8941607278938273).of(28.94160727893827)
+  it 'cell bo22 should equal 38.93642752750377' do
+    sheet59.bo22.should be_within(3.893642752750377).of(38.93642752750377)
   end
 
-  it 'cell bp22 should equal 0.057000532337558765' do
-    sheet59.bp22.should be_within(0.005700053233755877).of(0.057000532337558765)
+  it 'cell bp22 should equal 0.07728785805905716' do
+    sheet59.bp22.should be_within(0.0077287858059057165).of(0.07728785805905716)
   end
 
-  it 'cell bq22 should equal 0.32230433687935994' do
-    sheet59.bq22.should be_within(0.032230433687935996).of(0.32230433687935994)
+  it 'cell bq22 should equal 0.38209766723073035' do
+    sheet59.bq22.should be_within(0.03820976672307304).of(0.38209766723073035)
   end
 
   it 'cell br22 should equal 0.0' do
@@ -3800,20 +3800,20 @@ describe 'Sheet59' do
     sheet59.bv22.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bw22 should equal 10.633429720664042' do
-    sheet59.bw22.should be_within(1.0633429720664043).of(10.633429720664042)
+  it 'cell bw22 should equal 11.496479295483136' do
+    sheet59.bw22.should be_within(1.1496479295483135).of(11.496479295483136)
   end
 
-  it 'cell bx22 should equal 0.07737510934726302' do
-    sheet59.bx22.should be_within(0.007737510934726303).of(0.07737510934726302)
+  it 'cell bx22 should equal 0.08537927820647126' do
+    sheet59.bx22.should be_within(0.008537927820647126).of(0.08537927820647126)
   end
 
-  it 'cell by22 should equal 1.8844877955475168' do
-    sheet59.by22.should be_within(0.1884487795547517).of(1.8844877955475168)
+  it 'cell by22 should equal 2.084014882223126' do
+    sheet59.by22.should be_within(0.2084014882223126).of(2.084014882223126)
   end
 
-  it 'cell bz22 should equal 2.702158057672364' do
-    sheet59.bz22.should be_within(0.2702158057672364).of(2.702158057672364)
+  it 'cell bz22 should equal 3.873812636456127' do
+    sheet59.bz22.should be_within(0.3873812636456127).of(3.873812636456127)
   end
 
   it 'cell ca22 should equal 0.0' do
@@ -3928,8 +3928,8 @@ describe 'Sheet59' do
     sheet59.db22.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell dc22 should equal -5.030322192798337' do
-    sheet59.dc22.should be_within(0.5030322192798338).of(-5.030322192798337)
+  it 'cell dc22 should equal -1.7252876726280117' do
+    sheet59.dc22.should be_within(0.1725287672628012).of(-1.7252876726280117)
   end
 
   it 'cell dd22 should equal 0.0' do
@@ -3944,8 +3944,8 @@ describe 'Sheet59' do
     sheet59.df22.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell dh22 should equal 39.58804063858803' do
-    sheet59.dh22.should be_within(3.9588040638588033).of(39.58804063858803)
+  it 'cell dh22 should equal 55.210211472534404' do
+    sheet59.dh22.should be_within(5.521021147253441).of(55.210211472534404)
   end
 
   it 'cell g24 should equal 0.0' do
@@ -3960,16 +3960,16 @@ describe 'Sheet59' do
     sheet59.i24.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell j24 should equal 79.84488966614302' do
-    sheet59.j24.should be_within(7.984488966614302).of(79.84488966614302)
+  it 'cell j24 should equal 176.8632831173463' do
+    sheet59.j24.should be_within(17.68632831173463).of(176.8632831173463)
   end
 
-  it 'cell k24 should equal 10.669018206229337' do
-    sheet59.k24.should be_within(1.0669018206229337).of(10.669018206229337)
+  it 'cell k24 should equal 13.03149902468369' do
+    sheet59.k24.should be_within(1.303149902468369).of(13.03149902468369)
   end
 
-  it 'cell l24 should equal 13.303419433940144' do
-    sheet59.l24.should be_within(1.3303419433940145).of(13.303419433940144)
+  it 'cell l24 should equal 13.223054307852369' do
+    sheet59.l24.should be_within(1.3223054307852369).of(13.223054307852369)
   end
 
   it 'cell m24 should equal 0.0' do
@@ -3988,12 +3988,12 @@ describe 'Sheet59' do
     sheet59.p24.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell q24 should equal 103.8173273063125' do
-    sheet59.q24.should be_within(10.381732730631251).of(103.8173273063125)
+  it 'cell q24 should equal 203.11783644988236' do
+    sheet59.q24.should be_within(20.31178364498824).of(203.11783644988236)
   end
 
-  it 'cell s24 should equal -47.84030207121435' do
-    sheet59.s24.should be_within(4.784030207121435).of(-47.84030207121435)
+  it 'cell s24 should equal -28.367925297159786' do
+    sheet59.s24.should be_within(2.8367925297159786).of(-28.367925297159786)
   end
 
   it 'cell t24 should equal 0.0' do
@@ -4004,8 +4004,8 @@ describe 'Sheet59' do
     sheet59.u24.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell v24 should equal -43.60487149801366' do
-    sheet59.v24.should be_within(4.360487149801366).of(-43.60487149801366)
+  it 'cell v24 should equal -173.7617258833494' do
+    sheet59.v24.should be_within(17.376172588334942).of(-173.7617258833494)
   end
 
   it 'cell w24 should equal 0.0' do
@@ -4060,12 +4060,12 @@ describe 'Sheet59' do
     sheet59.ai24.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell aj24 should equal -12.372153737084485' do
-    sheet59.aj24.should be_within(1.2372153737084486).of(-12.372153737084485)
+  it 'cell aj24 should equal -0.9881852693731742' do
+    sheet59.aj24.should be_within(0.09881852693731742).of(-0.9881852693731742)
   end
 
-  it 'cell ak24 should equal -103.8173273063125' do
-    sheet59.ak24.should be_within(10.381732730631251).of(-103.8173273063125)
+  it 'cell ak24 should equal -203.11783644988236' do
+    sheet59.ak24.should be_within(20.31178364498824).of(-203.11783644988236)
   end
 
   it 'cell am24 should equal 0.0' do
@@ -4164,186 +4164,6 @@ describe 'Sheet59' do
     sheet59.bl24.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bo24 should equal 10.901217874503415' do
-    sheet59.bo24.should be_within(1.0901217874503415).of(10.901217874503415)
-  end
-
-  it 'cell bp24 should equal 0.013571973218461165' do
-    sheet59.bp24.should be_within(0.0013571973218461167).of(0.013571973218461165)
-  end
-
-  it 'cell bq24 should equal 0.19613524714574107' do
-    sheet59.bq24.should be_within(0.01961352471457411).of(0.19613524714574107)
-  end
-
-  it 'cell br24 should equal 0.0' do
-    sheet59.br24.should be_within(1.0e-08).of(0.0)
-  end
-
-  it 'cell bs24 should equal 0.0' do
-    sheet59.bs24.should be_within(1.0e-08).of(0.0)
-  end
-
-  it 'cell bt24 should equal 0.0' do
-    sheet59.bt24.should be_within(1.0e-08).of(0.0)
-  end
-
-  it 'cell bu24 should equal 0.0' do
-    sheet59.bu24.should be_within(1.0e-08).of(0.0)
-  end
-
-  it 'cell bv24 should equal 0.0' do
-    sheet59.bv24.should be_within(1.0e-08).of(0.0)
-  end
-
-  it 'cell bw24 should equal 0.0' do
-    sheet59.bw24.should be_within(1.0e-08).of(0.0)
-  end
-
-  it 'cell bx24 should equal 0.0' do
-    sheet59.bx24.should be_within(1.0e-08).of(0.0)
-  end
-
-  it 'cell by24 should equal 0.0' do
-    sheet59.by24.should be_within(1.0e-08).of(0.0)
-  end
-
-  it 'cell bz24 should equal 0.0' do
-    sheet59.bz24.should be_within(1.0e-08).of(0.0)
-  end
-
-  it 'cell ca24 should equal 0.0' do
-    sheet59.ca24.should be_within(1.0e-08).of(0.0)
-  end
-
-  it 'cell cb24 should equal 0.0' do
-    sheet59.cb24.should be_within(1.0e-08).of(0.0)
-  end
-
-  it 'cell cc24 should equal 0.0' do
-    sheet59.cc24.should be_within(1.0e-08).of(0.0)
-  end
-
-  it 'cell cd24 should equal 0.0' do
-    sheet59.cd24.should be_within(1.0e-08).of(0.0)
-  end
-
-  it 'cell ce24 should equal 0.0' do
-    sheet59.ce24.should be_within(1.0e-08).of(0.0)
-  end
-
-  it 'cell cf24 should equal 0.0' do
-    sheet59.cf24.should be_within(1.0e-08).of(0.0)
-  end
-
-  it 'cell cg24 should equal 0.0' do
-    sheet59.cg24.should be_within(1.0e-08).of(0.0)
-  end
-
-  it 'cell ch24 should equal 0.0' do
-    sheet59.ch24.should be_within(1.0e-08).of(0.0)
-  end
-
-  it 'cell ci24 should equal 0.0' do
-    sheet59.ci24.should be_within(1.0e-08).of(0.0)
-  end
-
-  it 'cell cj24 should equal 0.0' do
-    sheet59.cj24.should be_within(1.0e-08).of(0.0)
-  end
-
-  it 'cell ck24 should equal 0.0' do
-    sheet59.ck24.should be_within(1.0e-08).of(0.0)
-  end
-
-  it 'cell cl24 should equal 0.0' do
-    sheet59.cl24.should be_within(1.0e-08).of(0.0)
-  end
-
-  it 'cell cm24 should equal 0.0' do
-    sheet59.cm24.should be_within(1.0e-08).of(0.0)
-  end
-
-  it 'cell cn24 should equal 0.0' do
-    sheet59.cn24.should be_within(1.0e-08).of(0.0)
-  end
-
-  it 'cell co24 should equal 0.0' do
-    sheet59.co24.should be_within(1.0e-08).of(0.0)
-  end
-
-  it 'cell cp24 should equal 0.0' do
-    sheet59.cp24.should be_within(1.0e-08).of(0.0)
-  end
-
-  it 'cell cq24 should equal 0.0' do
-    sheet59.cq24.should be_within(1.0e-08).of(0.0)
-  end
-
-  it 'cell cr24 should equal 0.0' do
-    sheet59.cr24.should be_within(1.0e-08).of(0.0)
-  end
-
-  it 'cell cs24 should equal 0.0' do
-    sheet59.cs24.should be_within(1.0e-08).of(0.0)
-  end
-
-  it 'cell ct24 should equal 0.0' do
-    sheet59.ct24.should be_within(1.0e-08).of(0.0)
-  end
-
-  it 'cell cu24 should equal 0.0' do
-    sheet59.cu24.should be_within(1.0e-08).of(0.0)
-  end
-
-  it 'cell cv24 should equal 0.0' do
-    sheet59.cv24.should be_within(1.0e-08).of(0.0)
-  end
-
-  it 'cell cw24 should equal 0.0' do
-    sheet59.cw24.should be_within(1.0e-08).of(0.0)
-  end
-
-  it 'cell cx24 should equal 0.0' do
-    sheet59.cx24.should be_within(1.0e-08).of(0.0)
-  end
-
-  it 'cell cy24 should equal 0.0' do
-    sheet59.cy24.should be_within(1.0e-08).of(0.0)
-  end
-
-  it 'cell cz24 should equal 0.0' do
-    sheet59.cz24.should be_within(1.0e-08).of(0.0)
-  end
-
-  it 'cell da24 should equal 0.0' do
-    sheet59.da24.should be_within(1.0e-08).of(0.0)
-  end
-
-  it 'cell db24 should equal 0.0' do
-    sheet59.db24.should be_within(1.0e-08).of(0.0)
-  end
-
-  it 'cell dc24 should equal 0.0' do
-    sheet59.dc24.should be_within(1.0e-08).of(0.0)
-  end
-
-  it 'cell dd24 should equal 0.0' do
-    sheet59.dd24.should be_within(1.0e-08).of(0.0)
-  end
-
-  it 'cell de24 should equal 0.0' do
-    sheet59.de24.should be_within(1.0e-08).of(0.0)
-  end
-
-  it 'cell df24 should equal 0.0' do
-    sheet59.df24.should be_within(1.0e-08).of(0.0)
-  end
-
-  it 'cell dh24 should equal 11.110925094867616' do
-    sheet59.dh24.should be_within(1.1110925094867616).of(11.110925094867616)
-  end
-
   it 'cell g25 should equal 0.0' do
     sheet59.g25.should be_within(1.0e-08).of(0.0)
   end
@@ -4356,20 +4176,20 @@ describe 'Sheet59' do
     sheet59.i25.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell j25 should equal 40.48748239752293' do
-    sheet59.j25.should be_within(4.048748239752293).of(40.48748239752293)
+  it 'cell j25 should equal 42.8388366678937' do
+    sheet59.j25.should be_within(4.283883666789371).of(42.8388366678937)
   end
 
-  it 'cell k25 should equal 2.6918797217765134' do
-    sheet59.k25.should be_within(0.26918797217765134).of(2.6918797217765134)
+  it 'cell k25 should equal 2.9618963306564146' do
+    sheet59.k25.should be_within(0.29618963306564144).of(2.9618963306564146)
   end
 
   it 'cell l25 should equal 0.0' do
     sheet59.l25.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell m25 should equal 27.663909204706563' do
-    sheet59.m25.should be_within(2.7663909204706565).of(27.663909204706563)
+  it 'cell m25 should equal 26.924236458661085' do
+    sheet59.m25.should be_within(2.692423645866109).of(26.924236458661085)
   end
 
   it 'cell n25 should equal 0.0' do
@@ -4384,12 +4204,12 @@ describe 'Sheet59' do
     sheet59.p25.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell q25 should equal 70.84327132400601' do
-    sheet59.q25.should be_within(7.084327132400602).of(70.84327132400601)
+  it 'cell q25 should equal 72.7249694572112' do
+    sheet59.q25.should be_within(7.27249694572112).of(72.7249694572112)
   end
 
-  it 'cell s25 should equal -0.695576392187079' do
-    sheet59.s25.should be_within(0.0695576392187079).of(-0.695576392187079)
+  it 'cell s25 should equal -0.453039529657146' do
+    sheet59.s25.should be_within(0.0453039529657146).of(-0.453039529657146)
   end
 
   it 'cell t25 should equal 0.0' do
@@ -4400,8 +4220,8 @@ describe 'Sheet59' do
     sheet59.u25.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell v25 should equal -70.14769493181893' do
-    sheet59.v25.should be_within(7.014769493181894).of(-70.14769493181893)
+  it 'cell v25 should equal -72.27192992755405' do
+    sheet59.v25.should be_within(7.2271929927554055).of(-72.27192992755405)
   end
 
   it 'cell w25 should equal 0.0' do
@@ -4460,8 +4280,8 @@ describe 'Sheet59' do
     sheet59.aj25.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ak25 should equal -70.84327132400601' do
-    sheet59.ak25.should be_within(7.084327132400602).of(-70.84327132400601)
+  it 'cell ak25 should equal -72.7249694572112' do
+    sheet59.ak25.should be_within(7.27249694572112).of(-72.7249694572112)
   end
 
   it 'cell am25 should equal 0.0' do
@@ -4560,16 +4380,16 @@ describe 'Sheet59' do
     sheet59.bl25.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bo25 should equal 17.536923732954733' do
-    sheet59.bo25.should be_within(1.7536923732954735).of(17.536923732954733)
+  it 'cell bo25 should equal 18.067982481888514' do
+    sheet59.bo25.should be_within(1.8067982481888514).of(18.067982481888514)
   end
 
-  it 'cell bp25 should equal 0.02183340081611751' do
-    sheet59.bp25.should be_within(0.002183340081611751).of(0.02183340081611751)
+  it 'cell bp25 should equal 0.02249456686205227' do
+    sheet59.bp25.should be_within(0.002249456686205227).of(0.02249456686205227)
   end
 
-  it 'cell bq25 should equal 0.3155251927019919' do
-    sheet59.bq25.should be_within(0.03155251927019919).of(0.3155251927019919)
+  it 'cell bq25 should equal 0.3250800277828182' do
+    sheet59.bq25.should be_within(0.03250800277828182).of(0.3250800277828182)
   end
 
   it 'cell br25 should equal 0.0' do
@@ -4736,8 +4556,8 @@ describe 'Sheet59' do
     sheet59.df25.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell dh25 should equal 17.87428232647284' do
-    sheet59.dh25.should be_within(1.7874282326472841).of(17.87428232647284)
+  it 'cell dh25 should equal 18.415557076533382' do
+    sheet59.dh25.should be_within(1.8415557076533382).of(18.415557076533382)
   end
 
   it 'cell g26 should equal 0.0' do
@@ -4768,8 +4588,8 @@ describe 'Sheet59' do
     sheet59.m26.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell n26 should equal 189.04420150487704' do
-    sheet59.n26.should be_within(18.904420150487706).of(189.04420150487704)
+  it 'cell n26 should equal 198.27433298880996' do
+    sheet59.n26.should be_within(19.827433298880997).of(198.27433298880996)
   end
 
   it 'cell o26 should equal 0.0' do
@@ -4780,8 +4600,8 @@ describe 'Sheet59' do
     sheet59.p26.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell q26 should equal 189.04420150487704' do
-    sheet59.q26.should be_within(18.904420150487706).of(189.04420150487704)
+  it 'cell q26 should equal 198.27433298880996' do
+    sheet59.q26.should be_within(19.827433298880997).of(198.27433298880996)
   end
 
   it 'cell s26 should equal 0.0' do
@@ -4796,8 +4616,8 @@ describe 'Sheet59' do
     sheet59.u26.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell v26 should equal -189.04420150487704' do
-    sheet59.v26.should be_within(18.904420150487706).of(-189.04420150487704)
+  it 'cell v26 should equal -198.27433298880996' do
+    sheet59.v26.should be_within(19.827433298880997).of(-198.27433298880996)
   end
 
   it 'cell w26 should equal 0.0' do
@@ -4856,8 +4676,8 @@ describe 'Sheet59' do
     sheet59.aj26.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ak26 should equal -189.04420150487704' do
-    sheet59.ak26.should be_within(18.904420150487706).of(-189.04420150487704)
+  it 'cell ak26 should equal -198.27433298880996' do
+    sheet59.ak26.should be_within(19.827433298880997).of(-198.27433298880996)
   end
 
   it 'cell am26 should equal 0.0' do
@@ -5084,16 +4904,16 @@ describe 'Sheet59' do
     sheet59.ct26.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell cu26 should equal 47.26105037621926' do
-    sheet59.cu26.should be_within(4.7261050376219265).of(47.26105037621926)
+  it 'cell cu26 should equal 49.56858324720249' do
+    sheet59.cu26.should be_within(4.956858324720249).of(49.56858324720249)
   end
 
-  it 'cell cv26 should equal 0.058839821143526205' do
-    sheet59.cv26.should be_within(0.0058839821143526205).of(0.058839821143526205)
+  it 'cell cv26 should equal 0.06171269045833474' do
+    sheet59.cv26.should be_within(0.006171269045833474).of(0.06171269045833474)
   end
 
-  it 'cell cw26 should equal 0.8503231384437716' do
-    sheet59.cw26.should be_within(0.08503231384437716).of(0.8503231384437716)
+  it 'cell cw26 should equal 0.891840383136749' do
+    sheet59.cw26.should be_within(0.0891840383136749).of(0.891840383136749)
   end
 
   it 'cell cx26 should equal 0.0' do
@@ -5132,8 +4952,8 @@ describe 'Sheet59' do
     sheet59.df26.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell dh26 should equal 48.17021333580656' do
-    sheet59.dh26.should be_within(4.817021333580656).of(48.17021333580656)
+  it 'cell dh26 should equal 50.52213632079757' do
+    sheet59.dh26.should be_within(5.0522136320797575).of(50.52213632079757)
   end
 
   it 'cell g28 should equal 0.0' do
@@ -5164,8 +4984,8 @@ describe 'Sheet59' do
     sheet59.m28.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell n28 should equal 189.04420150487704' do
-    sheet59.n28.should be_within(18.904420150487706).of(189.04420150487704)
+  it 'cell n28 should equal 198.27433298880996' do
+    sheet59.n28.should be_within(19.827433298880997).of(198.27433298880996)
   end
 
   it 'cell o28 should equal 0.0' do
@@ -5176,8 +4996,8 @@ describe 'Sheet59' do
     sheet59.p28.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell q28 should equal 189.04420150487704' do
-    sheet59.q28.should be_within(18.904420150487706).of(189.04420150487704)
+  it 'cell q28 should equal 198.27433298880996' do
+    sheet59.q28.should be_within(19.827433298880997).of(198.27433298880996)
   end
 
   it 'cell s28 should equal 0.0' do
@@ -5192,8 +5012,8 @@ describe 'Sheet59' do
     sheet59.u28.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell v28 should equal -189.04420150487704' do
-    sheet59.v28.should be_within(18.904420150487706).of(-189.04420150487704)
+  it 'cell v28 should equal -198.27433298880996' do
+    sheet59.v28.should be_within(19.827433298880997).of(-198.27433298880996)
   end
 
   it 'cell w28 should equal 0.0' do
@@ -5252,8 +5072,8 @@ describe 'Sheet59' do
     sheet59.aj28.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ak28 should equal -189.04420150487704' do
-    sheet59.ak28.should be_within(18.904420150487706).of(-189.04420150487704)
+  it 'cell ak28 should equal -198.27433298880996' do
+    sheet59.ak28.should be_within(19.827433298880997).of(-198.27433298880996)
   end
 
   it 'cell am28 should equal 0.0' do
@@ -5480,16 +5300,16 @@ describe 'Sheet59' do
     sheet59.ct28.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell cu28 should equal 47.26105037621926' do
-    sheet59.cu28.should be_within(4.7261050376219265).of(47.26105037621926)
+  it 'cell cu28 should equal 49.56858324720249' do
+    sheet59.cu28.should be_within(4.956858324720249).of(49.56858324720249)
   end
 
-  it 'cell cv28 should equal 0.058839821143526205' do
-    sheet59.cv28.should be_within(0.0058839821143526205).of(0.058839821143526205)
+  it 'cell cv28 should equal 0.06171269045833474' do
+    sheet59.cv28.should be_within(0.006171269045833474).of(0.06171269045833474)
   end
 
-  it 'cell cw28 should equal 0.8503231384437716' do
-    sheet59.cw28.should be_within(0.08503231384437716).of(0.8503231384437716)
+  it 'cell cw28 should equal 0.891840383136749' do
+    sheet59.cw28.should be_within(0.0891840383136749).of(0.891840383136749)
   end
 
   it 'cell cx28 should equal 0.0' do
@@ -5528,8 +5348,8 @@ describe 'Sheet59' do
     sheet59.df28.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell dh28 should equal 48.17021333580656' do
-    sheet59.dh28.should be_within(4.817021333580656).of(48.17021333580656)
+  it 'cell dh28 should equal 50.52213632079757' do
+    sheet59.dh28.should be_within(5.0522136320797575).of(50.52213632079757)
   end
 
   it 'cell g29 should equal 0.0' do
@@ -5564,16 +5384,16 @@ describe 'Sheet59' do
     sheet59.n29.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell o29 should equal 92.1065123835747' do
-    sheet59.o29.should be_within(9.21065123835747).of(92.1065123835747)
+  it 'cell o29 should equal 72.6033265300187' do
+    sheet59.o29.should be_within(7.260332653001871).of(72.6033265300187)
   end
 
   it 'cell p29 should equal 0.0' do
     sheet59.p29.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell q29 should equal 92.1065123835747' do
-    sheet59.q29.should be_within(9.21065123835747).of(92.1065123835747)
+  it 'cell q29 should equal 72.6033265300187' do
+    sheet59.q29.should be_within(7.260332653001871).of(72.6033265300187)
   end
 
   it 'cell s29 should equal 0.0' do
@@ -5588,8 +5408,8 @@ describe 'Sheet59' do
     sheet59.u29.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell v29 should equal -92.1065123835747' do
-    sheet59.v29.should be_within(9.21065123835747).of(-92.1065123835747)
+  it 'cell v29 should equal -72.6033265300187' do
+    sheet59.v29.should be_within(7.260332653001871).of(-72.6033265300187)
   end
 
   it 'cell w29 should equal 0.0' do
@@ -5648,8 +5468,8 @@ describe 'Sheet59' do
     sheet59.aj29.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ak29 should equal -92.1065123835747' do
-    sheet59.ak29.should be_within(9.21065123835747).of(-92.1065123835747)
+  it 'cell ak29 should equal -72.6033265300187' do
+    sheet59.ak29.should be_within(7.260332653001871).of(-72.6033265300187)
   end
 
   it 'cell am29 should equal 0.0' do
@@ -5876,16 +5696,16 @@ describe 'Sheet59' do
     sheet59.ct29.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell cu29 should equal 23.026628095893674' do
-    sheet59.cu29.should be_within(2.3026628095893673).of(23.026628095893674)
+  it 'cell cu29 should equal 18.150831632504676' do
+    sheet59.cu29.should be_within(1.8150831632504678).of(18.150831632504676)
   end
 
-  it 'cell cv29 should equal 0.02866806107598969' do
-    sheet59.cv29.should be_within(0.002866806107598969).of(0.02866806107598969)
+  it 'cell cv29 should equal 0.022597713727501564' do
+    sheet59.cv29.should be_within(0.0022597713727501565).of(0.022597713727501564)
   end
 
-  it 'cell cw29 should equal 0.41429622309304637' do
-    sheet59.cw29.should be_within(0.04142962230930464).of(0.41429622309304637)
+  it 'cell cw29 should equal 0.32657065376782135' do
+    sheet59.cw29.should be_within(0.03265706537678214).of(0.32657065376782135)
   end
 
   it 'cell cx29 should equal 0.0' do
@@ -5924,8 +5744,8 @@ describe 'Sheet59' do
     sheet59.df29.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell dh29 should equal 23.46959238006271' do
-    sheet59.dh29.should be_within(2.346959238006271).of(23.46959238006271)
+  it 'cell dh29 should equal 18.5' do
+    sheet59.dh29.should be_within(1.85).of(18.5)
   end
 
   it 'cell g31 should equal 0.0' do
@@ -5960,16 +5780,16 @@ describe 'Sheet59' do
     sheet59.n31.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell o31 should equal 92.1065123835747' do
-    sheet59.o31.should be_within(9.21065123835747).of(92.1065123835747)
+  it 'cell o31 should equal 72.6033265300187' do
+    sheet59.o31.should be_within(7.260332653001871).of(72.6033265300187)
   end
 
   it 'cell p31 should equal 0.0' do
     sheet59.p31.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell q31 should equal 92.1065123835747' do
-    sheet59.q31.should be_within(9.21065123835747).of(92.1065123835747)
+  it 'cell q31 should equal 72.6033265300187' do
+    sheet59.q31.should be_within(7.260332653001871).of(72.6033265300187)
   end
 
   it 'cell s31 should equal 0.0' do
@@ -5984,8 +5804,8 @@ describe 'Sheet59' do
     sheet59.u31.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell v31 should equal -92.1065123835747' do
-    sheet59.v31.should be_within(9.21065123835747).of(-92.1065123835747)
+  it 'cell v31 should equal -72.6033265300187' do
+    sheet59.v31.should be_within(7.260332653001871).of(-72.6033265300187)
   end
 
   it 'cell w31 should equal 0.0' do
@@ -6044,8 +5864,8 @@ describe 'Sheet59' do
     sheet59.aj31.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ak31 should equal -92.1065123835747' do
-    sheet59.ak31.should be_within(9.21065123835747).of(-92.1065123835747)
+  it 'cell ak31 should equal -72.6033265300187' do
+    sheet59.ak31.should be_within(7.260332653001871).of(-72.6033265300187)
   end
 
   it 'cell am31 should equal 0.0' do
@@ -6272,16 +6092,16 @@ describe 'Sheet59' do
     sheet59.ct31.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell cu31 should equal 23.026628095893674' do
-    sheet59.cu31.should be_within(2.3026628095893673).of(23.026628095893674)
+  it 'cell cu31 should equal 18.150831632504676' do
+    sheet59.cu31.should be_within(1.8150831632504678).of(18.150831632504676)
   end
 
-  it 'cell cv31 should equal 0.02866806107598969' do
-    sheet59.cv31.should be_within(0.002866806107598969).of(0.02866806107598969)
+  it 'cell cv31 should equal 0.022597713727501564' do
+    sheet59.cv31.should be_within(0.0022597713727501565).of(0.022597713727501564)
   end
 
-  it 'cell cw31 should equal 0.41429622309304637' do
-    sheet59.cw31.should be_within(0.04142962230930464).of(0.41429622309304637)
+  it 'cell cw31 should equal 0.32657065376782135' do
+    sheet59.cw31.should be_within(0.03265706537678214).of(0.32657065376782135)
   end
 
   it 'cell cx31 should equal 0.0' do
@@ -6320,8 +6140,8 @@ describe 'Sheet59' do
     sheet59.df31.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell dh31 should equal 23.46959238006271' do
-    sheet59.dh31.should be_within(2.346959238006271).of(23.46959238006271)
+  it 'cell dh31 should equal 18.5' do
+    sheet59.dh31.should be_within(1.85).of(18.5)
   end
 
   it 'cell g32 should equal 0.0' do
@@ -6336,40 +6156,40 @@ describe 'Sheet59' do
     sheet59.i32.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell j32 should equal 120.33237206366596' do
-    sheet59.j32.should be_within(12.033237206366596).of(120.33237206366596)
+  it 'cell j32 should equal 219.70211978524' do
+    sheet59.j32.should be_within(21.970211978524002).of(219.70211978524)
   end
 
-  it 'cell k32 should equal 13.360897928005851' do
-    sheet59.k32.should be_within(1.3360897928005853).of(13.360897928005851)
+  it 'cell k32 should equal 15.993395355340105' do
+    sheet59.k32.should be_within(1.5993395355340105).of(15.993395355340105)
   end
 
-  it 'cell l32 should equal 13.303419433940144' do
-    sheet59.l32.should be_within(1.3303419433940145).of(13.303419433940144)
+  it 'cell l32 should equal 13.223054307852369' do
+    sheet59.l32.should be_within(1.3223054307852369).of(13.223054307852369)
   end
 
-  it 'cell m32 should equal 27.663909204706563' do
-    sheet59.m32.should be_within(2.7663909204706565).of(27.663909204706563)
+  it 'cell m32 should equal 26.924236458661085' do
+    sheet59.m32.should be_within(2.692423645866109).of(26.924236458661085)
   end
 
-  it 'cell n32 should equal 189.04420150487704' do
-    sheet59.n32.should be_within(18.904420150487706).of(189.04420150487704)
+  it 'cell n32 should equal 198.27433298880996' do
+    sheet59.n32.should be_within(19.827433298880997).of(198.27433298880996)
   end
 
-  it 'cell o32 should equal 92.1065123835747' do
-    sheet59.o32.should be_within(9.21065123835747).of(92.1065123835747)
+  it 'cell o32 should equal 72.6033265300187' do
+    sheet59.o32.should be_within(7.260332653001871).of(72.6033265300187)
   end
 
   it 'cell p32 should equal 0.0' do
     sheet59.p32.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell q32 should equal 455.81131251877025' do
-    sheet59.q32.should be_within(45.581131251877025).of(455.81131251877025)
+  it 'cell q32 should equal 546.7204654259222' do
+    sheet59.q32.should be_within(54.67204654259222).of(546.7204654259222)
   end
 
-  it 'cell s32 should equal -48.53587846340143' do
-    sheet59.s32.should be_within(4.853587846340144).of(-48.53587846340143)
+  it 'cell s32 should equal -28.820964826816933' do
+    sheet59.s32.should be_within(2.8820964826816935).of(-28.820964826816933)
   end
 
   it 'cell t32 should equal 0.0' do
@@ -6380,8 +6200,8 @@ describe 'Sheet59' do
     sheet59.u32.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell v32 should equal -394.9032803182843' do
-    sheet59.v32.should be_within(39.49032803182843).of(-394.9032803182843)
+  it 'cell v32 should equal -516.9113153297321' do
+    sheet59.v32.should be_within(51.691131532973216).of(-516.9113153297321)
   end
 
   it 'cell w32 should equal 0.0' do
@@ -6436,12 +6256,12 @@ describe 'Sheet59' do
     sheet59.ai32.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell aj32 should equal -12.372153737084485' do
-    sheet59.aj32.should be_within(1.2372153737084486).of(-12.372153737084485)
+  it 'cell aj32 should equal -0.9881852693731742' do
+    sheet59.aj32.should be_within(0.09881852693731742).of(-0.9881852693731742)
   end
 
-  it 'cell ak32 should equal -455.81131251877025' do
-    sheet59.ak32.should be_within(45.581131251877025).of(-455.81131251877025)
+  it 'cell ak32 should equal -546.7204654259223' do
+    sheet59.ak32.should be_within(54.67204654259223).of(-546.7204654259223)
   end
 
   it 'cell am32 should equal 0.0' do
@@ -6536,20 +6356,20 @@ describe 'Sheet59' do
     sheet59.bj32.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bl32 should equal 0.0' do
-    sheet59.bl32.should be_within(1.0e-08).of(0.0)
+  it 'cell bl32 should equal -1.1368683772161603e-13' do
+    sheet59.bl32.should be_within(1.0e-08).of(-1.1368683772161603e-13)
   end
 
-  it 'cell bo32 should equal 28.43814160745815' do
-    sheet59.bo32.should be_within(2.843814160745815).of(28.43814160745815)
+  it 'cell bo32 should equal 18.067982481888514' do
+    sheet59.bo32.should be_within(1.8067982481888514).of(18.067982481888514)
   end
 
-  it 'cell bp32 should equal 0.03540537403457868' do
-    sheet59.bp32.should be_within(0.0035405374034578677).of(0.03540537403457868)
+  it 'cell bp32 should equal 0.02249456686205227' do
+    sheet59.bp32.should be_within(0.002249456686205227).of(0.02249456686205227)
   end
 
-  it 'cell bq32 should equal 0.511660439847733' do
-    sheet59.bq32.should be_within(0.051166043984773306).of(0.511660439847733)
+  it 'cell bq32 should equal 0.3250800277828182' do
+    sheet59.bq32.should be_within(0.03250800277828182).of(0.3250800277828182)
   end
 
   it 'cell br32 should equal 0.0' do
@@ -6668,16 +6488,16 @@ describe 'Sheet59' do
     sheet59.ct32.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell cu32 should equal 70.28767847211293' do
-    sheet59.cu32.should be_within(7.028767847211293).of(70.28767847211293)
+  it 'cell cu32 should equal 67.71941487970716' do
+    sheet59.cu32.should be_within(6.771941487970716).of(67.71941487970716)
   end
 
-  it 'cell cv32 should equal 0.08750788221951589' do
-    sheet59.cv32.should be_within(0.00875078822195159).of(0.08750788221951589)
+  it 'cell cv32 should equal 0.0843104041858363' do
+    sheet59.cv32.should be_within(0.00843104041858363).of(0.0843104041858363)
   end
 
-  it 'cell cw32 should equal 1.264619361536818' do
-    sheet59.cw32.should be_within(0.12646193615368181).of(1.264619361536818)
+  it 'cell cw32 should equal 1.2184110369045702' do
+    sheet59.cw32.should be_within(0.12184110369045703).of(1.2184110369045702)
   end
 
   it 'cell cx32 should equal 0.0' do
@@ -6716,8 +6536,8 @@ describe 'Sheet59' do
     sheet59.df32.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell dh32 should equal 100.62501313720972' do
-    sheet59.dh32.should be_within(10.062501313720972).of(100.62501313720972)
+  it 'cell dh32 should equal 87.43769339733096' do
+    sheet59.dh32.should be_within(8.743769339733097).of(87.43769339733096)
   end
 
   it 'cell g37 should equal 0.0' do
@@ -7096,8 +6916,8 @@ describe 'Sheet59' do
     sheet59.db37.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell dc37 should equal 0.0' do
-    sheet59.dc37.should be_within(1.0e-08).of(0.0)
+  it 'cell dc37 should equal -0.4' do
+    sheet59.dc37.should be_within(0.04000000000000001).of(-0.4)
   end
 
   it 'cell dd37 should equal 0.0' do
@@ -7112,8 +6932,8 @@ describe 'Sheet59' do
     sheet59.df37.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell dh37 should equal 0.0' do
-    sheet59.dh37.should be_within(1.0e-08).of(0.0)
+  it 'cell dh37 should equal -0.4' do
+    sheet59.dh37.should be_within(0.04000000000000001).of(-0.4)
   end
 
   it 'cell g38 should equal 0.0' do
@@ -7492,8 +7312,8 @@ describe 'Sheet59' do
     sheet59.db38.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell dc38 should equal 0.0' do
-    sheet59.dc38.should be_within(1.0e-08).of(0.0)
+  it 'cell dc38 should equal -0.4' do
+    sheet59.dc38.should be_within(0.04000000000000001).of(-0.4)
   end
 
   it 'cell dd38 should equal 0.0' do
@@ -7508,72 +7328,72 @@ describe 'Sheet59' do
     sheet59.df38.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell dh38 should equal 0.0' do
-    sheet59.dh38.should be_within(1.0e-08).of(0.0)
+  it 'cell dh38 should equal -0.4' do
+    sheet59.dh38.should be_within(0.04000000000000001).of(-0.4)
   end
 
-  it 'cell g40 should equal 338.9509956454034' do
-    sheet59.g40.should be_within(33.89509956454034).of(338.9509956454034)
+  it 'cell g40 should equal 432.1755594655357' do
+    sheet59.g40.should be_within(43.217555946553574).of(432.1755594655357)
   end
 
-  it 'cell h40 should equal 111.61965791614654' do
-    sheet59.h40.should be_within(11.161965791614655).of(111.61965791614654)
+  it 'cell h40 should equal 137.45741912890364' do
+    sheet59.h40.should be_within(13.745741912890365).of(137.45741912890364)
   end
 
-  it 'cell i40 should equal 310.3099092746047' do
-    sheet59.i40.should be_within(31.030990927460472).of(310.3099092746047)
+  it 'cell i40 should equal 332.08951411503637' do
+    sheet59.i40.should be_within(33.20895141150364).of(332.08951411503637)
   end
 
-  it 'cell j40 should equal 120.33237206366596' do
-    sheet59.j40.should be_within(12.033237206366596).of(120.33237206366596)
+  it 'cell j40 should equal 219.70211978524' do
+    sheet59.j40.should be_within(21.970211978524002).of(219.70211978524)
   end
 
-  it 'cell k40 should equal 13.360897928005851' do
-    sheet59.k40.should be_within(1.3360897928005853).of(13.360897928005851)
+  it 'cell k40 should equal 15.993395355340105' do
+    sheet59.k40.should be_within(1.5993395355340105).of(15.993395355340105)
   end
 
-  it 'cell l40 should equal 13.303419433940144' do
-    sheet59.l40.should be_within(1.3303419433940145).of(13.303419433940144)
+  it 'cell l40 should equal 13.223054307852369' do
+    sheet59.l40.should be_within(1.3223054307852369).of(13.223054307852369)
   end
 
-  it 'cell m40 should equal 27.663909204706563' do
-    sheet59.m40.should be_within(2.7663909204706565).of(27.663909204706563)
+  it 'cell m40 should equal 26.924236458661085' do
+    sheet59.m40.should be_within(2.692423645866109).of(26.924236458661085)
   end
 
-  it 'cell n40 should equal 189.04420150487704' do
-    sheet59.n40.should be_within(18.904420150487706).of(189.04420150487704)
+  it 'cell n40 should equal 198.27433298880996' do
+    sheet59.n40.should be_within(19.827433298880997).of(198.27433298880996)
   end
 
-  it 'cell o40 should equal 92.1065123835747' do
-    sheet59.o40.should be_within(9.21065123835747).of(92.1065123835747)
+  it 'cell o40 should equal 72.6033265300187' do
+    sheet59.o40.should be_within(7.260332653001871).of(72.6033265300187)
   end
 
   it 'cell p40 should equal 0.0' do
     sheet59.p40.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell q40 should equal 1216.6918753549248' do
-    sheet59.q40.should be_within(121.66918753549248).of(1216.6918753549248)
+  it 'cell q40 should equal 1448.442958135398' do
+    sheet59.q40.should be_within(144.8442958135398).of(1448.442958135398)
   end
 
-  it 'cell s40 should equal -432.9788334788276' do
-    sheet59.s40.should be_within(43.29788334788276).of(-432.9788334788276)
+  it 'cell s40 should equal -375.46669637859407' do
+    sheet59.s40.should be_within(37.54666963785941).of(-375.46669637859407)
   end
 
-  it 'cell t40 should equal 3.7767988637428527' do
-    sheet59.t40.should be_within(0.3776798863742853).of(3.7767988637428527)
+  it 'cell t40 should equal 21.000528408436438' do
+    sheet59.t40.should be_within(2.100052840843644).of(21.000528408436438)
   end
 
-  it 'cell u40 should equal -52.84237626368652' do
-    sheet59.u40.should be_within(5.284237626368652).of(-52.84237626368652)
+  it 'cell u40 should equal -162.0958059113235' do
+    sheet59.u40.should be_within(16.20958059113235).of(-162.0958059113235)
   end
 
-  it 'cell v40 should equal -447.0184404610471' do
-    sheet59.v40.should be_within(44.70184404610471).of(-447.0184404610471)
+  it 'cell v40 should equal -580.7535776190491' do
+    sheet59.v40.should be_within(58.07535776190491).of(-580.7535776190491)
   end
 
-  it 'cell w40 should equal -85.84875287078629' do
-    sheet59.w40.should be_within(8.58487528707863).of(-85.84875287078629)
+  it 'cell w40 should equal -248.80757070860784' do
+    sheet59.w40.should be_within(24.880757070860785).of(-248.80757070860784)
   end
 
   it 'cell x40 should equal 0.0' do
@@ -7592,8 +7412,8 @@ describe 'Sheet59' do
     sheet59.aa40.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ab40 should equal -30.442294546459824' do
-    sheet59.ab40.should be_within(3.0442294546459827).of(-30.442294546459824)
+  it 'cell ab40 should equal -21.050053321745754' do
+    sheet59.ab40.should be_within(2.1050053321745756).of(-21.050053321745754)
   end
 
   it 'cell ac40 should equal 0.0' do
@@ -7620,16 +7440,16 @@ describe 'Sheet59' do
     sheet59.ah40.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ai40 should equal -12.957828652107947' do
-    sheet59.ai40.should be_within(1.2957828652107948).of(-12.957828652107947)
+  it 'cell ai40 should equal 0.0' do
+    sheet59.ai40.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell aj40 should equal -12.372153737084485' do
-    sheet59.aj40.should be_within(1.2372153737084486).of(-12.372153737084485)
+  it 'cell aj40 should equal -0.9881852693731742' do
+    sheet59.aj40.should be_within(0.09881852693731742).of(-0.9881852693731742)
   end
 
-  it 'cell ak40 should equal -1070.683881146257' do
-    sheet59.ak40.should be_within(107.06838811462569).of(-1070.683881146257)
+  it 'cell ak40 should equal -1368.1613608002572' do
+    sheet59.ak40.should be_within(136.81613608002573).of(-1368.1613608002572)
   end
 
   it 'cell am40 should equal 0.0' do
@@ -7696,8 +7516,8 @@ describe 'Sheet59' do
     sheet59.bb40.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bc40 should equal -146.00799420866795' do
-    sheet59.bc40.should be_within(14.600799420866796).of(-146.00799420866795)
+  it 'cell bc40 should equal -80.2815973351408' do
+    sheet59.bc40.should be_within(8.02815973351408).of(-80.2815973351408)
   end
 
   it 'cell bd40 should equal 0.0' do
@@ -7708,8 +7528,8 @@ describe 'Sheet59' do
     sheet59.be40.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bf40 should equal -146.00799420866795' do
-    sheet59.bf40.should be_within(14.600799420866796).of(-146.00799420866795)
+  it 'cell bf40 should equal -80.2815973351408' do
+    sheet59.bf40.should be_within(8.02815973351408).of(-80.2815973351408)
   end
 
   it 'cell bh40 should equal 0.0' do
@@ -7724,20 +7544,20 @@ describe 'Sheet59' do
     sheet59.bj40.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bl40 should equal -2.842170943040401e-14' do
-    sheet59.bl40.should be_within(1.0e-08).of(-2.842170943040401e-14)
+  it 'cell bl40 should equal -4.263256414560601e-14' do
+    sheet59.bl40.should be_within(1.0e-08).of(-4.263256414560601e-14)
   end
 
-  it 'cell bo40 should equal 73.53855406058895' do
-    sheet59.bo40.should be_within(7.353855406058895).of(73.53855406058895)
+  it 'cell bo40 should equal 129.73464928528924' do
+    sheet59.bo40.should be_within(12.973464928528925).of(129.73464928528924)
   end
 
-  it 'cell bp40 should equal 0.13110076035456264' do
-    sheet59.bp40.should be_within(0.013110076035456265).of(0.13110076035456264)
+  it 'cell bp40 should equal 0.28079505366214136' do
+    sheet59.bp40.should be_within(0.028079505366214137).of(0.28079505366214136)
   end
 
-  it 'cell bq40 should equal 0.9243066878919272' do
-    sheet59.bq40.should be_within(0.09243066878919272).of(0.9243066878919272)
+  it 'cell bq40 should equal 1.1532084723703058' do
+    sheet59.bq40.should be_within(0.11532084723703058).of(1.1532084723703058)
   end
 
   it 'cell br40 should equal 0.0' do
@@ -7760,20 +7580,20 @@ describe 'Sheet59' do
     sheet59.bv40.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bw40 should equal 10.633429720664042' do
-    sheet59.bw40.should be_within(1.0633429720664043).of(10.633429720664042)
+  it 'cell bw40 should equal 11.496479295483136' do
+    sheet59.bw40.should be_within(1.1496479295483135).of(11.496479295483136)
   end
 
-  it 'cell bx40 should equal 0.07737510934726302' do
-    sheet59.bx40.should be_within(0.007737510934726303).of(0.07737510934726302)
+  it 'cell bx40 should equal 0.08537927820647126' do
+    sheet59.bx40.should be_within(0.008537927820647126).of(0.08537927820647126)
   end
 
-  it 'cell by40 should equal 1.8844877955475168' do
-    sheet59.by40.should be_within(0.1884487795547517).of(1.8844877955475168)
+  it 'cell by40 should equal 2.084014882223126' do
+    sheet59.by40.should be_within(0.2084014882223126).of(2.084014882223126)
   end
 
-  it 'cell bz40 should equal 2.702158057672364' do
-    sheet59.bz40.should be_within(0.2702158057672364).of(2.702158057672364)
+  it 'cell bz40 should equal 3.873812636456127' do
+    sheet59.bz40.should be_within(0.3873812636456127).of(3.873812636456127)
   end
 
   it 'cell ca40 should equal 0.0' do
@@ -7856,16 +7676,16 @@ describe 'Sheet59' do
     sheet59.ct40.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell cu40 should equal 70.28767847211293' do
-    sheet59.cu40.should be_within(7.028767847211293).of(70.28767847211293)
+  it 'cell cu40 should equal 67.71941487970716' do
+    sheet59.cu40.should be_within(6.771941487970716).of(67.71941487970716)
   end
 
-  it 'cell cv40 should equal 0.08750788221951589' do
-    sheet59.cv40.should be_within(0.00875078822195159).of(0.08750788221951589)
+  it 'cell cv40 should equal 0.0843104041858363' do
+    sheet59.cv40.should be_within(0.00843104041858363).of(0.0843104041858363)
   end
 
-  it 'cell cw40 should equal 1.264619361536818' do
-    sheet59.cw40.should be_within(0.12646193615368181).of(1.264619361536818)
+  it 'cell cw40 should equal 1.2184110369045702' do
+    sheet59.cw40.should be_within(0.12184110369045703).of(1.2184110369045702)
   end
 
   it 'cell cx40 should equal 0.0' do
@@ -7888,8 +7708,8 @@ describe 'Sheet59' do
     sheet59.db40.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell dc40 should equal -5.030322192798337' do
-    sheet59.dc40.should be_within(0.5030322192798338).of(-5.030322192798337)
+  it 'cell dc40 should equal -2.1252876726280117' do
+    sheet59.dc40.should be_within(0.21252876726280118).of(-2.1252876726280117)
   end
 
   it 'cell dd40 should equal 0.0' do
@@ -7904,12 +7724,12 @@ describe 'Sheet59' do
     sheet59.df40.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell dh40 should equal 156.50089571513755' do
-    sheet59.dh40.should be_within(15.650089571513755).of(156.50089571513755)
+  it 'cell dh40 should equal 215.60518755186007' do
+    sheet59.dh40.should be_within(21.56051875518601).of(215.60518755186007)
   end
 
-  it 'cell aj44 should equal -12.372153737084485' do
-    sheet59.aj44.should be_within(1.2372153737084486).of(-12.372153737084485)
+  it 'cell aj44 should equal -0.9881852693731742' do
+    sheet59.aj44.should be_within(0.09881852693731742).of(-0.9881852693731742)
   end
 
   it 'cell g45 should equal 0.0' do
@@ -7956,8 +7776,8 @@ describe 'Sheet59' do
     sheet59.q45.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell s45 should equal -13.495093478304113' do
-    sheet59.s45.should be_within(1.3495093478304114).of(-13.495093478304113)
+  it 'cell s45 should equal -0.7641053940773358' do
+    sheet59.s45.should be_within(0.07641053940773358).of(-0.7641053940773358)
   end
 
   it 'cell t45 should equal 0.0' do
@@ -7972,8 +7792,8 @@ describe 'Sheet59' do
     sheet59.v45.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell w45 should equal -3.1411523654708944' do
-    sheet59.w45.should be_within(0.31411523654708945).of(-3.1411523654708944)
+  it 'cell w45 should equal -0.6211842401643036' do
+    sheet59.w45.should be_within(0.06211842401643036).of(-0.6211842401643036)
   end
 
   it 'cell x45 should equal 0.0' do
@@ -8024,12 +7844,12 @@ describe 'Sheet59' do
     sheet59.ai45.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell aj45 should equal 12.372153737084485' do
-    sheet59.aj45.should be_within(1.2372153737084486).of(12.372153737084485)
+  it 'cell aj45 should equal 0.9881852693731742' do
+    sheet59.aj45.should be_within(0.09881852693731742).of(0.9881852693731742)
   end
 
-  it 'cell ak45 should equal -4.264092106690523' do
-    sheet59.ak45.should be_within(0.4264092106690523).of(-4.264092106690523)
+  it 'cell ak45 should equal -0.39710436486846523' do
+    sheet59.ak45.should be_within(0.03971043648684652).of(-0.39710436486846523)
   end
 
   it 'cell am45 should equal 0.0' do
@@ -8112,28 +7932,28 @@ describe 'Sheet59' do
     sheet59.bf45.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bh45 should equal 4.264092106690522' do
-    sheet59.bh45.should be_within(0.42640921066905224).of(4.264092106690522)
+  it 'cell bh45 should equal 0.3972031833954025' do
+    sheet59.bh45.should be_within(0.039720318339540255).of(0.3972031833954025)
   end
 
   it 'cell bi45 should equal 0.0' do
     sheet59.bi45.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bj45 should equal 4.264092106690522' do
-    sheet59.bj45.should be_within(0.42640921066905224).of(4.264092106690522)
+  it 'cell bj45 should equal 0.3972031833954025' do
+    sheet59.bj45.should be_within(0.039720318339540255).of(0.3972031833954025)
   end
 
-  it 'cell bo45 should equal 0.5779720352466444' do
-    sheet59.bo45.should be_within(0.05779720352466444).of(0.5779720352466444)
+  it 'cell bo45 should equal 0.11429790019023185' do
+    sheet59.bo45.should be_within(0.011429790019023186).of(0.11429790019023185)
   end
 
-  it 'cell bp45 should equal 0.0011585366844632042' do
-    sheet59.bp45.should be_within(0.00011585366844632042).of(0.0011585366844632042)
+  it 'cell bp45 should equal 0.0002291085074228359' do
+    sheet59.bp45.should be_within(2.2910850742283592e-05).of(0.0002291085074228359)
   end
 
-  it 'cell bq45 should equal 0.001246062528176228' do
-    sheet59.bq45.should be_within(0.0001246062528176228).of(0.001246062528176228)
+  it 'cell bq45 should equal 0.00024641733819439374' do
+    sheet59.bq45.should be_within(2.4641733819439374e-05).of(0.00024641733819439374)
   end
 
   it 'cell br45 should equal 0.0' do
@@ -8300,8 +8120,8 @@ describe 'Sheet59' do
     sheet59.df45.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell dh45 should equal 0.5803766344592839' do
-    sheet59.dh45.should be_within(0.058037663445928395).of(0.5803766344592839)
+  it 'cell dh45 should equal 0.11477342603584907' do
+    sheet59.dh45.should be_within(0.011477342603584908).of(0.11477342603584907)
   end
 
   it 'cell g46 should equal 0.0' do
@@ -8348,8 +8168,8 @@ describe 'Sheet59' do
     sheet59.q46.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell s46 should equal -13.495093478304113' do
-    sheet59.s46.should be_within(1.3495093478304114).of(-13.495093478304113)
+  it 'cell s46 should equal -0.7641053940773358' do
+    sheet59.s46.should be_within(0.07641053940773358).of(-0.7641053940773358)
   end
 
   it 'cell t46 should equal 0.0' do
@@ -8364,8 +8184,8 @@ describe 'Sheet59' do
     sheet59.v46.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell w46 should equal -3.1411523654708944' do
-    sheet59.w46.should be_within(0.31411523654708945).of(-3.1411523654708944)
+  it 'cell w46 should equal -0.6211842401643036' do
+    sheet59.w46.should be_within(0.06211842401643036).of(-0.6211842401643036)
   end
 
   it 'cell x46 should equal 0.0' do
@@ -8416,12 +8236,12 @@ describe 'Sheet59' do
     sheet59.ai46.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell aj46 should equal 12.372153737084485' do
-    sheet59.aj46.should be_within(1.2372153737084486).of(12.372153737084485)
+  it 'cell aj46 should equal 0.9881852693731742' do
+    sheet59.aj46.should be_within(0.09881852693731742).of(0.9881852693731742)
   end
 
-  it 'cell ak46 should equal -4.264092106690523' do
-    sheet59.ak46.should be_within(0.4264092106690523).of(-4.264092106690523)
+  it 'cell ak46 should equal -0.39710436486846523' do
+    sheet59.ak46.should be_within(0.03971043648684652).of(-0.39710436486846523)
   end
 
   it 'cell am46 should equal 0.0' do
@@ -8504,32 +8324,32 @@ describe 'Sheet59' do
     sheet59.bf46.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bh46 should equal 4.264092106690522' do
-    sheet59.bh46.should be_within(0.42640921066905224).of(4.264092106690522)
+  it 'cell bh46 should equal 0.3972031833954025' do
+    sheet59.bh46.should be_within(0.039720318339540255).of(0.3972031833954025)
   end
 
   it 'cell bi46 should equal 0.0' do
     sheet59.bi46.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bj46 should equal 4.264092106690522' do
-    sheet59.bj46.should be_within(0.42640921066905224).of(4.264092106690522)
+  it 'cell bj46 should equal 0.3972031833954025' do
+    sheet59.bj46.should be_within(0.039720318339540255).of(0.3972031833954025)
   end
 
-  it 'cell bl46 should equal 0.0' do
-    sheet59.bl46.should be_within(1.0e-08).of(0.0)
+  it 'cell bl46 should equal 9.881852693727211e-05' do
+    sheet59.bl46.should be_within(9.881852693727212e-06).of(9.881852693727211e-05)
   end
 
-  it 'cell bo46 should equal 0.5779720352466444' do
-    sheet59.bo46.should be_within(0.05779720352466444).of(0.5779720352466444)
+  it 'cell bo46 should equal 0.11429790019023185' do
+    sheet59.bo46.should be_within(0.011429790019023186).of(0.11429790019023185)
   end
 
-  it 'cell bp46 should equal 0.0011585366844632042' do
-    sheet59.bp46.should be_within(0.00011585366844632042).of(0.0011585366844632042)
+  it 'cell bp46 should equal 0.0002291085074228359' do
+    sheet59.bp46.should be_within(2.2910850742283592e-05).of(0.0002291085074228359)
   end
 
-  it 'cell bq46 should equal 0.001246062528176228' do
-    sheet59.bq46.should be_within(0.0001246062528176228).of(0.001246062528176228)
+  it 'cell bq46 should equal 0.00024641733819439374' do
+    sheet59.bq46.should be_within(2.4641733819439374e-05).of(0.00024641733819439374)
   end
 
   it 'cell br46 should equal 0.0' do
@@ -8696,8 +8516,8 @@ describe 'Sheet59' do
     sheet59.df46.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell dh46 should equal 0.5803766344592839' do
-    sheet59.dh46.should be_within(0.058037663445928395).of(0.5803766344592839)
+  it 'cell dh46 should equal 0.11477342603584907' do
+    sheet59.dh46.should be_within(0.011477342603584908).of(0.11477342603584907)
   end
 
   it 'cell g48 should equal 0.0' do
@@ -8976,8 +8796,8 @@ describe 'Sheet59' do
     sheet59.w49.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell x49 should equal 14.332655978125002' do
-    sheet59.x49.should be_within(1.4332655978125004).of(14.332655978125002)
+  it 'cell x49 should equal 12.748853432291671' do
+    sheet59.x49.should be_within(1.2748853432291671).of(12.748853432291671)
   end
 
   it 'cell y49 should equal 0.0' do
@@ -9008,16 +8828,16 @@ describe 'Sheet59' do
     sheet59.ae49.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell af49 should equal 27.657158336909724' do
-    sheet59.af49.should be_within(2.7657158336909724).of(27.657158336909724)
+  it 'cell af49 should equal 24.55847169149306' do
+    sheet59.af49.should be_within(2.4558471691493065).of(24.55847169149306)
   end
 
-  it 'cell ag49 should equal 10.48456952883301' do
-    sheet59.ag49.should be_within(1.048456952883301).of(10.48456952883301)
+  it 'cell ag49 should equal 8.871928333555793' do
+    sheet59.ag49.should be_within(0.8871928333555794).of(8.871928333555793)
   end
 
-  it 'cell ah49 should equal 4.1745362801615915' do
-    sheet59.ah49.should be_within(0.41745362801615915).of(4.1745362801615915)
+  it 'cell ah49 should equal 5.871512144112685' do
+    sheet59.ah49.should be_within(0.5871512144112686).of(5.871512144112685)
   end
 
   it 'cell ai49 should equal 0.0' do
@@ -9028,8 +8848,8 @@ describe 'Sheet59' do
     sheet59.aj49.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ak49 should equal 56.64892012402933' do
-    sheet59.ak49.should be_within(5.664892012402934).of(56.64892012402933)
+  it 'cell ak49 should equal 52.050765601453215' do
+    sheet59.ak49.should be_within(5.205076560145322).of(52.050765601453215)
   end
 
   it 'cell am49 should equal 0.0' do
@@ -9104,12 +8924,12 @@ describe 'Sheet59' do
     sheet59.bd49.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell be49 should equal -56.648920124029324' do
-    sheet59.be49.should be_within(5.664892012402933).of(-56.648920124029324)
+  it 'cell be49 should equal -52.050765601453215' do
+    sheet59.be49.should be_within(5.205076560145322).of(-52.050765601453215)
   end
 
-  it 'cell bf49 should equal -56.648920124029324' do
-    sheet59.bf49.should be_within(5.664892012402933).of(-56.648920124029324)
+  it 'cell bf49 should equal -52.050765601453215' do
+    sheet59.bf49.should be_within(5.205076560145322).of(-52.050765601453215)
   end
 
   it 'cell bh49 should equal 0.0' do
@@ -9224,12 +9044,12 @@ describe 'Sheet59' do
     sheet59.cm49.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell cn49 should equal 5.77910137758168' do
-    sheet59.cn49.should be_within(0.577910137758168).of(5.77910137758168)
+  it 'cell cn49 should equal 7.669976610351998' do
+    sheet59.cn49.should be_within(0.7669976610351998).of(7.669976610351998)
   end
 
-  it 'cell co49 should equal 1.5083153181180278' do
-    sheet59.co49.should be_within(0.15083153181180278).of(1.5083153181180278)
+  it 'cell co49 should equal 1.4467023048702474' do
+    sheet59.co49.should be_within(0.14467023048702474).of(1.4467023048702474)
   end
 
   it 'cell cp49 should equal 0.0' do
@@ -9300,8 +9120,8 @@ describe 'Sheet59' do
     sheet59.df49.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell dh49 should equal 7.287416695699708' do
-    sheet59.dh49.should be_within(0.7287416695699709).of(7.287416695699708)
+  it 'cell dh49 should equal 9.116678915222245' do
+    sheet59.dh49.should be_within(0.9116678915222245).of(9.116678915222245)
   end
 
   it 'cell g50 should equal 0.0' do
@@ -9312,8 +9132,8 @@ describe 'Sheet59' do
     sheet59.h50.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell i50 should equal 11.045315726699688' do
-    sheet59.i50.should be_within(1.1045315726699687).of(11.045315726699688)
+  it 'cell i50 should equal 11.011259053486869' do
+    sheet59.i50.should be_within(1.101125905348687).of(11.011259053486869)
   end
 
   it 'cell j50 should equal 0.0' do
@@ -9344,28 +9164,28 @@ describe 'Sheet59' do
     sheet59.p50.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell q50 should equal 11.045315726699688' do
-    sheet59.q50.should be_within(1.1045315726699687).of(11.045315726699688)
+  it 'cell q50 should equal 11.011259053486869' do
+    sheet59.q50.should be_within(1.101125905348687).of(11.011259053486869)
   end
 
-  it 'cell s50 should equal -4.418126290679875' do
-    sheet59.s50.should be_within(0.4418126290679875).of(-4.418126290679875)
+  it 'cell s50 should equal -4.404503621394748' do
+    sheet59.s50.should be_within(0.44045036213947486).of(-4.404503621394748)
   end
 
   it 'cell t50 should equal 0.0' do
     sheet59.t50.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell u50 should equal -0.883625258135975' do
-    sheet59.u50.should be_within(0.0883625258135975).of(-0.883625258135975)
+  it 'cell u50 should equal -0.8809007242789495' do
+    sheet59.u50.should be_within(0.08809007242789496).of(-0.8809007242789495)
   end
 
-  it 'cell v50 should equal -3.644954189810897' do
-    sheet59.v50.should be_within(0.3644954189810897).of(-3.644954189810897)
+  it 'cell v50 should equal -3.633715487650667' do
+    sheet59.v50.should be_within(0.3633715487650667).of(-3.633715487650667)
   end
 
-  it 'cell w50 should equal -2.0986099880729405' do
-    sheet59.w50.should be_within(0.20986099880729406).of(-2.0986099880729405)
+  it 'cell w50 should equal -2.092139220162505' do
+    sheet59.w50.should be_within(0.20921392201625053).of(-2.092139220162505)
   end
 
   it 'cell x50 should equal 0.0' do
@@ -9392,20 +9212,20 @@ describe 'Sheet59' do
     sheet59.ac50.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ad50 should equal 51.97143110679394' do
-    sheet59.ad50.should be_within(5.197143110679395).of(51.97143110679394)
+  it 'cell ad50 should equal 95.08315588824227' do
+    sheet59.ad50.should be_within(9.508315588824228).of(95.08315588824227)
   end
 
-  it 'cell ae50 should equal 1.6328504516407796' do
-    sheet59.ae50.should be_within(0.16328504516407796).of(1.6328504516407796)
+  it 'cell ae50 should equal 1.5959775502315894' do
+    sheet59.ae50.should be_within(0.15959775502315895).of(1.5959775502315894)
   end
 
-  it 'cell af50 should equal 17.097301320989146' do
-    sheet59.af50.should be_within(1.7097301320989147).of(17.097301320989146)
+  it 'cell af50 should equal 75.95552733765562' do
+    sheet59.af50.should be_within(7.595552733765563).of(75.95552733765562)
   end
 
-  it 'cell ag50 should equal 26.219750491922046' do
-    sheet59.ag50.should be_within(2.621975049192205).of(26.219750491922046)
+  it 'cell ag50 should equal 46.261940361684374' do
+    sheet59.ag50.should be_within(4.626194036168438).of(46.261940361684374)
   end
 
   it 'cell ah50 should equal 0.0' do
@@ -9420,8 +9240,8 @@ describe 'Sheet59' do
     sheet59.aj50.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ak50 should equal 85.87601764464623' do
-    sheet59.ak50.should be_within(8.587601764464623).of(85.87601764464623)
+  it 'cell ak50 should equal 207.885342084327' do
+    sheet59.ak50.should be_within(20.7885342084327).of(207.885342084327)
   end
 
   it 'cell am50 should equal 0.0' do
@@ -9492,16 +9312,16 @@ describe 'Sheet59' do
     sheet59.bc50.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bd50 should equal -53.60428155843472' do
-    sheet59.bd50.should be_within(5.360428155843472).of(-53.60428155843472)
+  it 'cell bd50 should equal -96.67913343847387' do
+    sheet59.bd50.should be_within(9.667913343847388).of(-96.67913343847387)
   end
 
-  it 'cell be50 should equal -43.31705181291119' do
-    sheet59.be50.should be_within(4.331705181291119).of(-43.31705181291119)
+  it 'cell be50 should equal -122.21746769934' do
+    sheet59.be50.should be_within(12.221746769934).of(-122.21746769934)
   end
 
-  it 'cell bf50 should equal -96.92133337134591' do
-    sheet59.bf50.should be_within(9.692133337134592).of(-96.92133337134591)
+  it 'cell bf50 should equal -218.8966011378139' do
+    sheet59.bf50.should be_within(21.88966011378139).of(-218.8966011378139)
   end
 
   it 'cell bh50 should equal 0.0' do
@@ -9516,20 +9336,20 @@ describe 'Sheet59' do
     sheet59.bj50.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bl50 should equal 0.0' do
-    sheet59.bl50.should be_within(1.0e-08).of(0.0)
+  it 'cell bl50 should equal -2.842170943040401e-14' do
+    sheet59.bl50.should be_within(1.0e-08).of(-2.842170943040401e-14)
   end
 
-  it 'cell bo50 should equal 1.5695393647640254' do
-    sheet59.bo50.should be_within(0.15695393647640254).of(1.5695393647640254)
+  it 'cell bo50 should equal 1.564699911500484' do
+    sheet59.bo50.should be_within(0.15646999115004842).of(1.564699911500484)
   end
 
-  it 'cell bp50 should equal 0.0027080066799517162' do
-    sheet59.bp50.should be_within(0.0002708006679951716).of(0.0027080066799517162)
+  it 'cell bp50 should equal 0.0026996569232911336' do
+    sheet59.bp50.should be_within(0.00026996569232911336).of(0.0026996569232911336)
   end
 
-  it 'cell bq50 should equal 0.01963844818750877' do
-    sheet59.bq50.should be_within(0.001963844818750877).of(0.01963844818750877)
+  it 'cell bq50 should equal 0.019577895802327775' do
+    sheet59.bq50.should be_within(0.0019577895802327778).of(0.019577895802327775)
   end
 
   it 'cell br50 should equal 0.0' do
@@ -9588,20 +9408,20 @@ describe 'Sheet59' do
     sheet59.ce50.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell cf50 should equal 17.035217715824224' do
-    sheet59.cf50.should be_within(1.7035217715824225).of(17.035217715824224)
+  it 'cell cf50 should equal 14.431892485871735' do
+    sheet59.cf50.should be_within(1.4431892485871736).of(14.431892485871735)
   end
 
-  it 'cell cg50 should equal 21.06004038863483' do
-    sheet59.cg50.should be_within(2.106004038863483).of(21.06004038863483)
+  it 'cell cg50 should equal 20.65438545386428' do
+    sheet59.cg50.should be_within(2.065438545386428).of(20.65438545386428)
   end
 
   it 'cell ch50 should equal 0.0' do
     sheet59.ch50.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ci50 should equal 8.116378861191098' do
-    sheet59.ci50.should be_within(0.8116378861191098).of(8.116378861191098)
+  it 'cell ci50 should equal 7.6465012608286695' do
+    sheet59.ci50.should be_within(0.764650126082867).of(7.6465012608286695)
   end
 
   it 'cell cj50 should equal 0.0' do
@@ -9696,8 +9516,8 @@ describe 'Sheet59' do
     sheet59.df50.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell dh50 should equal 47.80352278528164' do
-    sheet59.dh50.should be_within(4.780352278528165).of(47.80352278528164)
+  it 'cell dh50 should equal 44.31975666479079' do
+    sheet59.dh50.should be_within(4.431975666479079).of(44.31975666479079)
   end
 
   it 'cell g51 should equal 0.0' do
@@ -9708,8 +9528,8 @@ describe 'Sheet59' do
     sheet59.h51.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell i51 should equal 11.045315726699688' do
-    sheet59.i51.should be_within(1.1045315726699687).of(11.045315726699688)
+  it 'cell i51 should equal 11.011259053486869' do
+    sheet59.i51.should be_within(1.101125905348687).of(11.011259053486869)
   end
 
   it 'cell j51 should equal 0.0' do
@@ -9740,32 +9560,32 @@ describe 'Sheet59' do
     sheet59.p51.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell q51 should equal 11.045315726699688' do
-    sheet59.q51.should be_within(1.1045315726699687).of(11.045315726699688)
+  it 'cell q51 should equal 11.011259053486869' do
+    sheet59.q51.should be_within(1.101125905348687).of(11.011259053486869)
   end
 
-  it 'cell s51 should equal -4.418126290679875' do
-    sheet59.s51.should be_within(0.4418126290679875).of(-4.418126290679875)
+  it 'cell s51 should equal -4.404503621394748' do
+    sheet59.s51.should be_within(0.44045036213947486).of(-4.404503621394748)
   end
 
   it 'cell t51 should equal 0.0' do
     sheet59.t51.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell u51 should equal -0.883625258135975' do
-    sheet59.u51.should be_within(0.0883625258135975).of(-0.883625258135975)
+  it 'cell u51 should equal -0.8809007242789495' do
+    sheet59.u51.should be_within(0.08809007242789496).of(-0.8809007242789495)
   end
 
-  it 'cell v51 should equal -3.644954189810897' do
-    sheet59.v51.should be_within(0.3644954189810897).of(-3.644954189810897)
+  it 'cell v51 should equal -3.633715487650667' do
+    sheet59.v51.should be_within(0.3633715487650667).of(-3.633715487650667)
   end
 
-  it 'cell w51 should equal -2.0986099880729405' do
-    sheet59.w51.should be_within(0.20986099880729406).of(-2.0986099880729405)
+  it 'cell w51 should equal -2.092139220162505' do
+    sheet59.w51.should be_within(0.20921392201625053).of(-2.092139220162505)
   end
 
-  it 'cell x51 should equal 14.332655978125002' do
-    sheet59.x51.should be_within(1.4332655978125004).of(14.332655978125002)
+  it 'cell x51 should equal 12.748853432291671' do
+    sheet59.x51.should be_within(1.2748853432291671).of(12.748853432291671)
   end
 
   it 'cell y51 should equal 0.0' do
@@ -9788,24 +9608,24 @@ describe 'Sheet59' do
     sheet59.ac51.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ad51 should equal 51.97143110679394' do
-    sheet59.ad51.should be_within(5.197143110679395).of(51.97143110679394)
+  it 'cell ad51 should equal 95.08315588824227' do
+    sheet59.ad51.should be_within(9.508315588824228).of(95.08315588824227)
   end
 
-  it 'cell ae51 should equal 1.6328504516407796' do
-    sheet59.ae51.should be_within(0.16328504516407796).of(1.6328504516407796)
+  it 'cell ae51 should equal 1.5959775502315894' do
+    sheet59.ae51.should be_within(0.15959775502315895).of(1.5959775502315894)
   end
 
-  it 'cell af51 should equal 44.75445965789887' do
-    sheet59.af51.should be_within(4.475445965789887).of(44.75445965789887)
+  it 'cell af51 should equal 100.51399902914869' do
+    sheet59.af51.should be_within(10.05139990291487).of(100.51399902914869)
   end
 
-  it 'cell ag51 should equal 36.704320020755056' do
-    sheet59.ag51.should be_within(3.670432002075506).of(36.704320020755056)
+  it 'cell ag51 should equal 55.13386869524017' do
+    sheet59.ag51.should be_within(5.513386869524017).of(55.13386869524017)
   end
 
-  it 'cell ah51 should equal 4.1745362801615915' do
-    sheet59.ah51.should be_within(0.41745362801615915).of(4.1745362801615915)
+  it 'cell ah51 should equal 5.871512144112685' do
+    sheet59.ah51.should be_within(0.5871512144112686).of(5.871512144112685)
   end
 
   it 'cell ai51 should equal 0.0' do
@@ -9816,8 +9636,8 @@ describe 'Sheet59' do
     sheet59.aj51.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ak51 should equal 142.52493776867556' do
-    sheet59.ak51.should be_within(14.252493776867556).of(142.52493776867556)
+  it 'cell ak51 should equal 259.9361076857802' do
+    sheet59.ak51.should be_within(25.993610768578023).of(259.9361076857802)
   end
 
   it 'cell am51 should equal 0.0' do
@@ -9888,16 +9708,16 @@ describe 'Sheet59' do
     sheet59.bc51.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bd51 should equal -53.60428155843472' do
-    sheet59.bd51.should be_within(5.360428155843472).of(-53.60428155843472)
+  it 'cell bd51 should equal -96.67913343847387' do
+    sheet59.bd51.should be_within(9.667913343847388).of(-96.67913343847387)
   end
 
-  it 'cell be51 should equal -99.96597193694052' do
-    sheet59.be51.should be_within(9.996597193694052).of(-99.96597193694052)
+  it 'cell be51 should equal -174.2682333007932' do
+    sheet59.be51.should be_within(17.426823330079323).of(-174.2682333007932)
   end
 
-  it 'cell bf51 should equal -153.57025349537525' do
-    sheet59.bf51.should be_within(15.357025349537526).of(-153.57025349537525)
+  it 'cell bf51 should equal -270.94736673926707' do
+    sheet59.bf51.should be_within(27.094736673926707).of(-270.94736673926707)
   end
 
   it 'cell bh51 should equal 0.0' do
@@ -9916,16 +9736,16 @@ describe 'Sheet59' do
     sheet59.bl51.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bo51 should equal 1.5695393647640254' do
-    sheet59.bo51.should be_within(0.15695393647640254).of(1.5695393647640254)
+  it 'cell bo51 should equal 1.564699911500484' do
+    sheet59.bo51.should be_within(0.15646999115004842).of(1.564699911500484)
   end
 
-  it 'cell bp51 should equal 0.0027080066799517162' do
-    sheet59.bp51.should be_within(0.0002708006679951716).of(0.0027080066799517162)
+  it 'cell bp51 should equal 0.0026996569232911336' do
+    sheet59.bp51.should be_within(0.00026996569232911336).of(0.0026996569232911336)
   end
 
-  it 'cell bq51 should equal 0.01963844818750877' do
-    sheet59.bq51.should be_within(0.001963844818750877).of(0.01963844818750877)
+  it 'cell bq51 should equal 0.019577895802327775' do
+    sheet59.bq51.should be_within(0.0019577895802327778).of(0.019577895802327775)
   end
 
   it 'cell br51 should equal 0.0' do
@@ -9984,20 +9804,20 @@ describe 'Sheet59' do
     sheet59.ce51.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell cf51 should equal 17.035217715824224' do
-    sheet59.cf51.should be_within(1.7035217715824225).of(17.035217715824224)
+  it 'cell cf51 should equal 14.431892485871735' do
+    sheet59.cf51.should be_within(1.4431892485871736).of(14.431892485871735)
   end
 
-  it 'cell cg51 should equal 21.06004038863483' do
-    sheet59.cg51.should be_within(2.106004038863483).of(21.06004038863483)
+  it 'cell cg51 should equal 20.65438545386428' do
+    sheet59.cg51.should be_within(2.065438545386428).of(20.65438545386428)
   end
 
   it 'cell ch51 should equal 0.0' do
     sheet59.ch51.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ci51 should equal 8.116378861191098' do
-    sheet59.ci51.should be_within(0.8116378861191098).of(8.116378861191098)
+  it 'cell ci51 should equal 7.6465012608286695' do
+    sheet59.ci51.should be_within(0.764650126082867).of(7.6465012608286695)
   end
 
   it 'cell cj51 should equal 0.0' do
@@ -10016,12 +9836,12 @@ describe 'Sheet59' do
     sheet59.cm51.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell cn51 should equal 5.77910137758168' do
-    sheet59.cn51.should be_within(0.577910137758168).of(5.77910137758168)
+  it 'cell cn51 should equal 7.669976610351998' do
+    sheet59.cn51.should be_within(0.7669976610351998).of(7.669976610351998)
   end
 
-  it 'cell co51 should equal 1.5083153181180278' do
-    sheet59.co51.should be_within(0.15083153181180278).of(1.5083153181180278)
+  it 'cell co51 should equal 1.4467023048702474' do
+    sheet59.co51.should be_within(0.14467023048702474).of(1.4467023048702474)
   end
 
   it 'cell cp51 should equal 0.0' do
@@ -10092,8 +9912,8 @@ describe 'Sheet59' do
     sheet59.df51.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell dh51 should equal 55.090939480981355' do
-    sheet59.dh51.should be_within(5.509093948098136).of(55.090939480981355)
+  it 'cell dh51 should equal 53.43643558001303' do
+    sheet59.dh51.should be_within(5.343643558001304).of(53.43643558001303)
   end
 
   it 'cell g53 should equal 0.0' do
@@ -10140,8 +9960,8 @@ describe 'Sheet59' do
     sheet59.q53.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell s53 should equal -5.0231778947204795' do
-    sheet59.s53.should be_within(0.502317789472048).of(-5.0231778947204795)
+  it 'cell s53 should equal -5.226099651069918' do
+    sheet59.s53.should be_within(0.5226099651069918).of(-5.226099651069918)
   end
 
   it 'cell t53 should equal 0.0' do
@@ -10152,12 +9972,12 @@ describe 'Sheet59' do
     sheet59.u53.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell v53 should equal -41.17190663989083' do
-    sheet59.v53.should be_within(4.117190663989083).of(-41.17190663989083)
+  it 'cell v53 should equal -42.83513175011493' do
+    sheet59.v53.should be_within(4.283513175011493).of(-42.83513175011493)
   end
 
-  it 'cell w53 should equal -1.83159936831072' do
-    sheet59.w53.should be_within(0.183159936831072).of(-1.83159936831072)
+  it 'cell w53 should equal -1.9055906480415794' do
+    sheet59.w53.should be_within(0.19055906480415796).of(-1.9055906480415794)
   end
 
   it 'cell x53 should equal 0.0' do
@@ -10176,8 +9996,8 @@ describe 'Sheet59' do
     sheet59.aa53.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ab53 should equal -0.589876594123589' do
-    sheet59.ab53.should be_within(0.058987659412358895).of(-0.589876594123589)
+  it 'cell ab53 should equal -0.6137058904411236' do
+    sheet59.ab53.should be_within(0.061370589044112356).of(-0.6137058904411236)
   end
 
   it 'cell ac53 should equal 0.0' do
@@ -10212,8 +10032,8 @@ describe 'Sheet59' do
     sheet59.aj53.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ak53 should equal -48.61656049704562' do
-    sheet59.ak53.should be_within(4.861656049704562).of(-48.61656049704562)
+  it 'cell ak53 should equal -50.580527939667554' do
+    sheet59.ak53.should be_within(5.0580527939667554).of(-50.580527939667554)
   end
 
   it 'cell am53 should equal 0.0' do
@@ -10300,28 +10120,28 @@ describe 'Sheet59' do
     sheet59.bh53.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bi53 should equal 48.61656049704562' do
-    sheet59.bi53.should be_within(4.861656049704562).of(48.61656049704562)
+  it 'cell bi53 should equal 50.580527939667554' do
+    sheet59.bi53.should be_within(5.0580527939667554).of(50.580527939667554)
   end
 
-  it 'cell bj53 should equal 48.61656049704562' do
-    sheet59.bj53.should be_within(4.861656049704562).of(48.61656049704562)
+  it 'cell bj53 should equal 50.580527939667554' do
+    sheet59.bj53.should be_within(5.0580527939667554).of(50.580527939667554)
   end
 
   it 'cell bl53 should equal 0.0' do
     sheet59.bl53.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bo53 should equal 10.629990943741879' do
-    sheet59.bo53.should be_within(1.0629990943741878).of(10.629990943741879)
+  it 'cell bo53 should equal 11.059411616768383' do
+    sheet59.bo53.should be_within(1.1059411616768384).of(11.059411616768383)
   end
 
-  it 'cell bp53 should equal 0.013490255622871969' do
-    sheet59.bp53.should be_within(0.001349025562287197).of(0.013490255622871969)
+  it 'cell bp53 should equal 0.014035222658077558' do
+    sheet59.bp53.should be_within(0.001403522265807756).of(0.014035222658077558)
   end
 
-  it 'cell bq53 should equal 0.18591831780650941' do
-    sheet59.bq53.should be_within(0.018591831780650943).of(0.18591831780650941)
+  it 'cell bq53 should equal 0.19342887633689357' do
+    sheet59.bq53.should be_within(0.019342887633689358).of(0.19342887633689357)
   end
 
   it 'cell br53 should equal 0.0' do
@@ -10488,8 +10308,8 @@ describe 'Sheet59' do
     sheet59.df53.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell dh53 should equal 10.82939951717126' do
-    sheet59.dh53.should be_within(1.0829399517171259).of(10.82939951717126)
+  it 'cell dh53 should equal 11.266875715763355' do
+    sheet59.dh53.should be_within(1.1266875715763356).of(11.266875715763355)
   end
 
   it 'cell g54 should equal 0.0' do
@@ -10500,8 +10320,8 @@ describe 'Sheet59' do
     sheet59.h54.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell i54 should equal 9.816252930600987' do
-    sheet59.i54.should be_within(0.9816252930600987).of(9.816252930600987)
+  it 'cell i54 should equal 16.00941024007375' do
+    sheet59.i54.should be_within(1.600941024007375).of(16.00941024007375)
   end
 
   it 'cell j54 should equal 0.0' do
@@ -10532,12 +10352,12 @@ describe 'Sheet59' do
     sheet59.p54.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell q54 should equal 9.816252930600987' do
-    sheet59.q54.should be_within(0.9816252930600987).of(9.816252930600987)
+  it 'cell q54 should equal 16.00941024007375' do
+    sheet59.q54.should be_within(1.600941024007375).of(16.00941024007375)
   end
 
-  it 'cell s54 should equal -0.585406195024668' do
-    sheet59.s54.should be_within(0.0585406195024668).of(-0.585406195024668)
+  it 'cell s54 should equal -0.638972143961614' do
+    sheet59.s54.should be_within(0.0638972143961614).of(-0.638972143961614)
   end
 
   it 'cell t54 should equal 0.0' do
@@ -10552,20 +10372,20 @@ describe 'Sheet59' do
     sheet59.v54.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell w54 should equal -9.207865603537858' do
-    sheet59.w54.should be_within(0.9207865603537858).of(-9.207865603537858)
+  it 'cell w54 should equal -15.347456964073672' do
+    sheet59.w54.should be_within(1.5347456964073674).of(-15.347456964073672)
   end
 
   it 'cell x54 should equal 63.965' do
     sheet59.x54.should be_within(6.3965000000000005).of(63.965)
   end
 
-  it 'cell y54 should equal 139.19102265793308' do
-    sheet59.y54.should be_within(13.919102265793308).of(139.19102265793308)
+  it 'cell y54 should equal 232.47441995977493' do
+    sheet59.y54.should be_within(23.247441995977496).of(232.47441995977493)
   end
 
-  it 'cell z54 should equal 106.27367243105833' do
-    sheet59.z54.should be_within(10.627367243105834).of(106.27367243105833)
+  it 'cell z54 should equal 177.49643535647462' do
+    sheet59.z54.should be_within(17.74964353564746).of(177.49643535647462)
   end
 
   it 'cell aa54 should equal 0.0' do
@@ -10608,20 +10428,20 @@ describe 'Sheet59' do
     sheet59.aj54.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ak54 should equal 299.6134421583904' do
-    sheet59.ak54.should be_within(29.96134421583904).of(299.6134421583904)
+  it 'cell ak54 should equal 457.9264450761758' do
+    sheet59.ak54.should be_within(45.79264450761758).of(457.9264450761758)
   end
 
   it 'cell am54 should equal -63.965' do
     sheet59.am54.should be_within(6.3965000000000005).of(-63.965)
   end
 
-  it 'cell an54 should equal -139.19102265793308' do
-    sheet59.an54.should be_within(13.919102265793308).of(-139.19102265793308)
+  it 'cell an54 should equal -232.47441995977493' do
+    sheet59.an54.should be_within(23.247441995977496).of(-232.47441995977493)
   end
 
-  it 'cell ao54 should equal -106.27367243105833' do
-    sheet59.ao54.should be_within(10.627367243105834).of(-106.27367243105833)
+  it 'cell ao54 should equal -177.49643535647462' do
+    sheet59.ao54.should be_within(17.74964353564746).of(-177.49643535647462)
   end
 
   it 'cell ap54 should equal 0.0' do
@@ -10688,8 +10508,8 @@ describe 'Sheet59' do
     sheet59.be54.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bf54 should equal -309.4296950889914' do
-    sheet59.bf54.should be_within(30.942969508899143).of(-309.4296950889914)
+  it 'cell bf54 should equal -473.93585531624956' do
+    sheet59.bf54.should be_within(47.39358553162496).of(-473.93585531624956)
   end
 
   it 'cell bh54 should equal 0.0' do
@@ -10704,24 +10524,24 @@ describe 'Sheet59' do
     sheet59.bj54.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bo54 should equal 1.6856374079447973' do
-    sheet59.bo54.should be_within(0.16856374079447975).of(1.6856374079447973)
+  it 'cell bo54 should equal 2.815322218283387' do
+    sheet59.bo54.should be_within(0.2815322218283387).of(2.815322218283387)
   end
 
-  it 'cell bp54 should equal 0.0033788360936427377' do
-    sheet59.bp54.should be_within(0.0003378836093642738).of(0.0033788360936427377)
+  it 'cell bp54 should equal 0.0056432731508778726' do
+    sheet59.bp54.should be_within(0.0005643273150877872).of(0.0056432731508778726)
   end
 
-  it 'cell bq54 should equal 0.003634102486006588' do
-    sheet59.bq54.should be_within(0.0003634102486006588).of(0.003634102486006588)
+  it 'cell bq54 should equal 0.0060696146301401355' do
+    sheet59.bq54.should be_within(0.0006069614630140136).of(0.0060696146301401355)
   end
 
   it 'cell br54 should equal 0.0' do
     sheet59.br54.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bs54 should equal 0.7262248256975227' do
-    sheet59.bs54.should be_within(0.07262248256975228).of(0.7262248256975227)
+  it 'cell bs54 should equal 1.2129280458648746' do
+    sheet59.bs54.should be_within(0.12129280458648746).of(1.2129280458648746)
   end
 
   it 'cell bt54 should equal 1.3576644262911814' do
@@ -10880,8 +10700,8 @@ describe 'Sheet59' do
     sheet59.df54.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell dh54 should equal 3.7765395985131507' do
-    sheet59.dh54.should be_within(0.3776539598513151).of(3.7765395985131507)
+  it 'cell dh54 should equal 5.397627578220462' do
+    sheet59.dh54.should be_within(0.5397627578220462).of(5.397627578220462)
   end
 
   it 'cell g55 should equal 0.0' do
@@ -10892,8 +10712,8 @@ describe 'Sheet59' do
     sheet59.h55.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell i55 should equal 9.816252930600987' do
-    sheet59.i55.should be_within(0.9816252930600987).of(9.816252930600987)
+  it 'cell i55 should equal 16.00941024007375' do
+    sheet59.i55.should be_within(1.600941024007375).of(16.00941024007375)
   end
 
   it 'cell j55 should equal 0.0' do
@@ -10924,12 +10744,12 @@ describe 'Sheet59' do
     sheet59.p55.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell q55 should equal 9.816252930600987' do
-    sheet59.q55.should be_within(0.9816252930600987).of(9.816252930600987)
+  it 'cell q55 should equal 16.00941024007375' do
+    sheet59.q55.should be_within(1.600941024007375).of(16.00941024007375)
   end
 
-  it 'cell s55 should equal -5.608584089745148' do
-    sheet59.s55.should be_within(0.5608584089745148).of(-5.608584089745148)
+  it 'cell s55 should equal -5.865071795031532' do
+    sheet59.s55.should be_within(0.5865071795031532).of(-5.865071795031532)
   end
 
   it 'cell t55 should equal 0.0' do
@@ -10940,32 +10760,32 @@ describe 'Sheet59' do
     sheet59.u55.should be_within(0.0022981132038460915).of(-0.022981132038460916)
   end
 
-  it 'cell v55 should equal -41.17190663989083' do
-    sheet59.v55.should be_within(4.117190663989083).of(-41.17190663989083)
+  it 'cell v55 should equal -42.83513175011493' do
+    sheet59.v55.should be_within(4.283513175011493).of(-42.83513175011493)
   end
 
-  it 'cell w55 should equal -11.039464971848577' do
-    sheet59.w55.should be_within(1.1039464971848578).of(-11.039464971848577)
+  it 'cell w55 should equal -17.25304761211525' do
+    sheet59.w55.should be_within(1.725304761211525).of(-17.25304761211525)
   end
 
   it 'cell x55 should equal 63.965' do
     sheet59.x55.should be_within(6.3965000000000005).of(63.965)
   end
 
-  it 'cell y55 should equal 139.19102265793308' do
-    sheet59.y55.should be_within(13.919102265793308).of(139.19102265793308)
+  it 'cell y55 should equal 232.47441995977493' do
+    sheet59.y55.should be_within(23.247441995977496).of(232.47441995977493)
   end
 
-  it 'cell z55 should equal 106.27367243105833' do
-    sheet59.z55.should be_within(10.627367243105834).of(106.27367243105833)
+  it 'cell z55 should equal 177.49643535647462' do
+    sheet59.z55.should be_within(17.74964353564746).of(177.49643535647462)
   end
 
   it 'cell aa55 should equal 0.0' do
     sheet59.aa55.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ab55 should equal -0.589876594123589' do
-    sheet59.ab55.should be_within(0.058987659412358895).of(-0.589876594123589)
+  it 'cell ab55 should equal -0.6137058904411236' do
+    sheet59.ab55.should be_within(0.061370589044112356).of(-0.6137058904411236)
   end
 
   it 'cell ac55 should equal 0.0' do
@@ -11000,20 +10820,20 @@ describe 'Sheet59' do
     sheet59.aj55.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ak55 should equal 250.99688166134482' do
-    sheet59.ak55.should be_within(25.099688166134484).of(250.99688166134482)
+  it 'cell ak55 should equal 407.3459171365083' do
+    sheet59.ak55.should be_within(40.734591713650836).of(407.3459171365083)
   end
 
   it 'cell am55 should equal -63.965' do
     sheet59.am55.should be_within(6.3965000000000005).of(-63.965)
   end
 
-  it 'cell an55 should equal -139.19102265793308' do
-    sheet59.an55.should be_within(13.919102265793308).of(-139.19102265793308)
+  it 'cell an55 should equal -232.47441995977493' do
+    sheet59.an55.should be_within(23.247441995977496).of(-232.47441995977493)
   end
 
-  it 'cell ao55 should equal -106.27367243105833' do
-    sheet59.ao55.should be_within(10.627367243105834).of(-106.27367243105833)
+  it 'cell ao55 should equal -177.49643535647462' do
+    sheet59.ao55.should be_within(17.74964353564746).of(-177.49643535647462)
   end
 
   it 'cell ap55 should equal 0.0' do
@@ -11080,44 +10900,44 @@ describe 'Sheet59' do
     sheet59.be55.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bf55 should equal -309.4296950889914' do
-    sheet59.bf55.should be_within(30.942969508899143).of(-309.4296950889914)
+  it 'cell bf55 should equal -473.93585531624956' do
+    sheet59.bf55.should be_within(47.39358553162496).of(-473.93585531624956)
   end
 
   it 'cell bh55 should equal 0.0' do
     sheet59.bh55.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bi55 should equal 48.61656049704562' do
-    sheet59.bi55.should be_within(4.861656049704562).of(48.61656049704562)
+  it 'cell bi55 should equal 50.580527939667554' do
+    sheet59.bi55.should be_within(5.0580527939667554).of(50.580527939667554)
   end
 
-  it 'cell bj55 should equal 48.61656049704562' do
-    sheet59.bj55.should be_within(4.861656049704562).of(48.61656049704562)
+  it 'cell bj55 should equal 50.580527939667554' do
+    sheet59.bj55.should be_within(5.0580527939667554).of(50.580527939667554)
   end
 
-  it 'cell bl55 should equal 0.0' do
-    sheet59.bl55.should be_within(1.0e-08).of(0.0)
+  it 'cell bl55 should equal 6.394884621840902e-14' do
+    sheet59.bl55.should be_within(1.0e-08).of(6.394884621840902e-14)
   end
 
-  it 'cell bo55 should equal 12.315628351686676' do
-    sheet59.bo55.should be_within(1.2315628351686678).of(12.315628351686676)
+  it 'cell bo55 should equal 13.87473383505177' do
+    sheet59.bo55.should be_within(1.3874733835051771).of(13.87473383505177)
   end
 
-  it 'cell bp55 should equal 0.016869091716514708' do
-    sheet59.bp55.should be_within(0.001686909171651471).of(0.016869091716514708)
+  it 'cell bp55 should equal 0.01967849580895543' do
+    sheet59.bp55.should be_within(0.0019678495808955433).of(0.01967849580895543)
   end
 
-  it 'cell bq55 should equal 0.189552420292516' do
-    sheet59.bq55.should be_within(0.018955242029251602).of(0.189552420292516)
+  it 'cell bq55 should equal 0.1994984909670337' do
+    sheet59.bq55.should be_within(0.019949849096703373).of(0.1994984909670337)
   end
 
   it 'cell br55 should equal 0.0' do
     sheet59.br55.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bs55 should equal 0.7262248256975227' do
-    sheet59.bs55.should be_within(0.07262248256975228).of(0.7262248256975227)
+  it 'cell bs55 should equal 1.2129280458648746' do
+    sheet59.bs55.should be_within(0.12129280458648746).of(1.2129280458648746)
   end
 
   it 'cell bt55 should equal 1.3576644262911814' do
@@ -11276,8 +11096,8 @@ describe 'Sheet59' do
     sheet59.df55.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell dh55 should equal 14.605939115684412' do
-    sheet59.dh55.should be_within(1.4605939115684414).of(14.605939115684412)
+  it 'cell dh55 should equal 16.664503293983817' do
+    sheet59.dh55.should be_within(1.6664503293983817).of(16.664503293983817)
   end
 
   it 'cell g57 should equal 0.0' do
@@ -11328,8 +11148,8 @@ describe 'Sheet59' do
     sheet59.s57.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell t57 should equal 31.645435320000004' do
-    sheet59.t57.should be_within(3.1645435320000006).of(31.645435320000004)
+  it 'cell t57 should equal 33.61778531999999' do
+    sheet59.t57.should be_within(3.361778531999999).of(33.61778531999999)
   end
 
   it 'cell u57 should equal 0.0' do
@@ -11396,8 +11216,8 @@ describe 'Sheet59' do
     sheet59.aj57.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ak57 should equal 31.645435320000004' do
-    sheet59.ak57.should be_within(3.1645435320000006).of(31.645435320000004)
+  it 'cell ak57 should equal 33.61778531999999' do
+    sheet59.ak57.should be_within(3.361778531999999).of(33.61778531999999)
   end
 
   it 'cell am57 should equal 0.0' do
@@ -11444,8 +11264,8 @@ describe 'Sheet59' do
     sheet59.aw57.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ax57 should equal -31.645435320000004' do
-    sheet59.ax57.should be_within(3.1645435320000006).of(-31.645435320000004)
+  it 'cell ax57 should equal -33.61778531999999' do
+    sheet59.ax57.should be_within(3.361778531999999).of(-33.61778531999999)
   end
 
   it 'cell ay57 should equal 0.0' do
@@ -11476,8 +11296,8 @@ describe 'Sheet59' do
     sheet59.be57.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bf57 should equal -31.645435320000004' do
-    sheet59.bf57.should be_within(3.1645435320000006).of(-31.645435320000004)
+  it 'cell bf57 should equal -33.61778531999999' do
+    sheet59.bf57.should be_within(3.361778531999999).of(-33.61778531999999)
   end
 
   it 'cell bh57 should equal 0.0' do
@@ -11544,8 +11364,8 @@ describe 'Sheet59' do
     sheet59.s58.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell t58 should equal 94.6728' do
-    sheet59.t58.should be_within(9.46728).of(94.6728)
+  it 'cell t58 should equal 76.09326300000002' do
+    sheet59.t58.should be_within(7.609326300000003).of(76.09326300000002)
   end
 
   it 'cell u58 should equal 0.0' do
@@ -11612,8 +11432,8 @@ describe 'Sheet59' do
     sheet59.aj58.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ak58 should equal 94.6728' do
-    sheet59.ak58.should be_within(9.46728).of(94.6728)
+  it 'cell ak58 should equal 76.09326300000002' do
+    sheet59.ak58.should be_within(7.609326300000003).of(76.09326300000002)
   end
 
   it 'cell am58 should equal 0.0' do
@@ -11660,8 +11480,8 @@ describe 'Sheet59' do
     sheet59.aw58.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ax58 should equal -94.6728' do
-    sheet59.ax58.should be_within(9.46728).of(-94.6728)
+  it 'cell ax58 should equal -76.09326300000002' do
+    sheet59.ax58.should be_within(7.609326300000003).of(-76.09326300000002)
   end
 
   it 'cell ay58 should equal 0.0' do
@@ -11692,8 +11512,8 @@ describe 'Sheet59' do
     sheet59.be58.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bf58 should equal -94.6728' do
-    sheet59.bf58.should be_within(9.46728).of(-94.6728)
+  it 'cell bf58 should equal -76.09326300000002' do
+    sheet59.bf58.should be_within(7.609326300000003).of(-76.09326300000002)
   end
 
   it 'cell bh58 should equal 0.0' do
@@ -11760,8 +11580,8 @@ describe 'Sheet59' do
     sheet59.s59.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell t59 should equal 6.0792209999999995' do
-    sheet59.t59.should be_within(0.6079221).of(6.0792209999999995)
+  it 'cell t59 should equal 5.329728000000001' do
+    sheet59.t59.should be_within(0.5329728000000001).of(5.329728000000001)
   end
 
   it 'cell u59 should equal 0.0' do
@@ -11828,8 +11648,8 @@ describe 'Sheet59' do
     sheet59.aj59.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ak59 should equal 6.0792209999999995' do
-    sheet59.ak59.should be_within(0.6079221).of(6.0792209999999995)
+  it 'cell ak59 should equal 5.329728000000001' do
+    sheet59.ak59.should be_within(0.5329728000000001).of(5.329728000000001)
   end
 
   it 'cell am59 should equal 0.0' do
@@ -11892,8 +11712,8 @@ describe 'Sheet59' do
     sheet59.ba59.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bb59 should equal -6.0792209999999995' do
-    sheet59.bb59.should be_within(0.6079221).of(-6.0792209999999995)
+  it 'cell bb59 should equal -5.329728000000001' do
+    sheet59.bb59.should be_within(0.5329728000000001).of(-5.329728000000001)
   end
 
   it 'cell bc59 should equal 0.0' do
@@ -11908,8 +11728,8 @@ describe 'Sheet59' do
     sheet59.be59.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bf59 should equal -6.0792209999999995' do
-    sheet59.bf59.should be_within(0.6079221).of(-6.0792209999999995)
+  it 'cell bf59 should equal -5.329728000000001' do
+    sheet59.bf59.should be_within(0.5329728000000001).of(-5.329728000000001)
   end
 
   it 'cell bh59 should equal 0.0' do
@@ -11976,8 +11796,8 @@ describe 'Sheet59' do
     sheet59.s60.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell t60 should equal 14.076819858082196' do
-    sheet59.t60.should be_within(1.4076819858082197).of(14.076819858082196)
+  it 'cell t60 should equal 0.0' do
+    sheet59.t60.should be_within(1.0e-08).of(0.0)
   end
 
   it 'cell u60 should equal 0.0' do
@@ -12044,8 +11864,8 @@ describe 'Sheet59' do
     sheet59.aj60.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ak60 should equal 14.076819858082196' do
-    sheet59.ak60.should be_within(1.4076819858082197).of(14.076819858082196)
+  it 'cell ak60 should equal 0.0' do
+    sheet59.ak60.should be_within(1.0e-08).of(0.0)
   end
 
   it 'cell am60 should equal 0.0' do
@@ -12096,12 +11916,12 @@ describe 'Sheet59' do
     sheet59.ax60.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ay60 should equal -4.950573282739726' do
-    sheet59.ay60.should be_within(0.49505732827397264).of(-4.950573282739726)
+  it 'cell ay60 should equal 0.0' do
+    sheet59.ay60.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell az60 should equal -9.12624657534247' do
-    sheet59.az60.should be_within(0.9126246575342472).of(-9.12624657534247)
+  it 'cell az60 should equal 0.0' do
+    sheet59.az60.should be_within(1.0e-08).of(0.0)
   end
 
   it 'cell ba60 should equal 0.0' do
@@ -12124,8 +11944,8 @@ describe 'Sheet59' do
     sheet59.be60.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bf60 should equal -14.076819858082196' do
-    sheet59.bf60.should be_within(1.4076819858082197).of(-14.076819858082196)
+  it 'cell bf60 should equal 0.0' do
+    sheet59.bf60.should be_within(1.0e-08).of(0.0)
   end
 
   it 'cell bh60 should equal 0.0' do
@@ -12408,8 +12228,8 @@ describe 'Sheet59' do
     sheet59.s63.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell t63 should equal 146.4742761780822' do
-    sheet59.t63.should be_within(14.64742761780822).of(146.4742761780822)
+  it 'cell t63 should equal 115.04077632' do
+    sheet59.t63.should be_within(11.504077632000001).of(115.04077632)
   end
 
   it 'cell u63 should equal 0.0' do
@@ -12476,8 +12296,8 @@ describe 'Sheet59' do
     sheet59.aj63.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ak63 should equal 146.4742761780822' do
-    sheet59.ak63.should be_within(14.64742761780822).of(146.4742761780822)
+  it 'cell ak63 should equal 115.04077632' do
+    sheet59.ak63.should be_within(11.504077632000001).of(115.04077632)
   end
 
   it 'cell am63 should equal 0.0' do
@@ -12524,24 +12344,24 @@ describe 'Sheet59' do
     sheet59.aw63.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ax63 should equal -126.31823532' do
-    sheet59.ax63.should be_within(12.631823532).of(-126.31823532)
+  it 'cell ax63 should equal -109.71104832' do
+    sheet59.ax63.should be_within(10.971104832000002).of(-109.71104832)
   end
 
-  it 'cell ay63 should equal -4.950573282739726' do
-    sheet59.ay63.should be_within(0.49505732827397264).of(-4.950573282739726)
+  it 'cell ay63 should equal 0.0' do
+    sheet59.ay63.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell az63 should equal -9.12624657534247' do
-    sheet59.az63.should be_within(0.9126246575342472).of(-9.12624657534247)
+  it 'cell az63 should equal 0.0' do
+    sheet59.az63.should be_within(1.0e-08).of(0.0)
   end
 
   it 'cell ba63 should equal 0.0' do
     sheet59.ba63.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bb63 should equal -6.0792209999999995' do
-    sheet59.bb63.should be_within(0.6079221).of(-6.0792209999999995)
+  it 'cell bb63 should equal -5.329728000000001' do
+    sheet59.bb63.should be_within(0.5329728000000001).of(-5.329728000000001)
   end
 
   it 'cell bc63 should equal 0.0' do
@@ -12556,8 +12376,8 @@ describe 'Sheet59' do
     sheet59.be63.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bf63 should equal -146.4742761780822' do
-    sheet59.bf63.should be_within(14.64742761780822).of(-146.4742761780822)
+  it 'cell bf63 should equal -115.04077632' do
+    sheet59.bf63.should be_within(11.504077632000001).of(-115.04077632)
   end
 
   it 'cell bh63 should equal 0.0' do
@@ -12796,8 +12616,8 @@ describe 'Sheet59' do
     sheet59.g66.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell h66 should equal 0.9255591894362819' do
-    sheet59.h66.should be_within(0.09255591894362819).of(0.9255591894362819)
+  it 'cell h66 should equal 0.0' do
+    sheet59.h66.should be_within(1.0e-08).of(0.0)
   end
 
   it 'cell i66 should equal 0.0' do
@@ -12832,12 +12652,12 @@ describe 'Sheet59' do
     sheet59.p66.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell q66 should equal 0.9255591894362819' do
-    sheet59.q66.should be_within(0.09255591894362819).of(0.9255591894362819)
+  it 'cell q66 should equal 0.0' do
+    sheet59.q66.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell s66 should equal -0.9255591894362819' do
-    sheet59.s66.should be_within(0.09255591894362819).of(-0.9255591894362819)
+  it 'cell s66 should equal 0.0' do
+    sheet59.s66.should be_within(1.0e-08).of(0.0)
   end
 
   it 'cell t66 should equal 0.0' do
@@ -12900,16 +12720,16 @@ describe 'Sheet59' do
     sheet59.ah66.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ai66 should equal 12.957828652107947' do
-    sheet59.ai66.should be_within(1.2957828652107948).of(12.957828652107947)
+  it 'cell ai66 should equal 0.0' do
+    sheet59.ai66.should be_within(1.0e-08).of(0.0)
   end
 
   it 'cell aj66 should equal 0.0' do
     sheet59.aj66.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ak66 should equal 12.032269462671666' do
-    sheet59.ak66.should be_within(1.2032269462671668).of(12.032269462671666)
+  it 'cell ak66 should equal 0.0' do
+    sheet59.ak66.should be_within(1.0e-08).of(0.0)
   end
 
   it 'cell am66 should equal 0.0' do
@@ -12952,8 +12772,8 @@ describe 'Sheet59' do
     sheet59.av66.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell aw66 should equal -12.957828652107947' do
-    sheet59.aw66.should be_within(1.2957828652107948).of(-12.957828652107947)
+  it 'cell aw66 should equal 0.0' do
+    sheet59.aw66.should be_within(1.0e-08).of(0.0)
   end
 
   it 'cell ax66 should equal 0.0' do
@@ -12988,8 +12808,8 @@ describe 'Sheet59' do
     sheet59.be66.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bf66 should equal -12.957828652107947' do
-    sheet59.bf66.should be_within(1.2957828652107948).of(-12.957828652107947)
+  it 'cell bf66 should equal 0.0' do
+    sheet59.bf66.should be_within(1.0e-08).of(0.0)
   end
 
   it 'cell bh66 should equal 0.0' do
@@ -13228,8 +13048,8 @@ describe 'Sheet59' do
     sheet59.g68.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell h68 should equal 0.9255591894362819' do
-    sheet59.h68.should be_within(0.09255591894362819).of(0.9255591894362819)
+  it 'cell h68 should equal 0.0' do
+    sheet59.h68.should be_within(1.0e-08).of(0.0)
   end
 
   it 'cell i68 should equal 0.0' do
@@ -13264,12 +13084,12 @@ describe 'Sheet59' do
     sheet59.p68.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell q68 should equal 0.9255591894362819' do
-    sheet59.q68.should be_within(0.09255591894362819).of(0.9255591894362819)
+  it 'cell q68 should equal 0.0' do
+    sheet59.q68.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell s68 should equal -0.9255591894362819' do
-    sheet59.s68.should be_within(0.09255591894362819).of(-0.9255591894362819)
+  it 'cell s68 should equal 0.0' do
+    sheet59.s68.should be_within(1.0e-08).of(0.0)
   end
 
   it 'cell t68 should equal 0.0' do
@@ -13332,16 +13152,16 @@ describe 'Sheet59' do
     sheet59.ah68.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ai68 should equal 12.957828652107947' do
-    sheet59.ai68.should be_within(1.2957828652107948).of(12.957828652107947)
+  it 'cell ai68 should equal 0.0' do
+    sheet59.ai68.should be_within(1.0e-08).of(0.0)
   end
 
   it 'cell aj68 should equal 0.0' do
     sheet59.aj68.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ak68 should equal 12.032269462671666' do
-    sheet59.ak68.should be_within(1.2032269462671668).of(12.032269462671666)
+  it 'cell ak68 should equal 0.0' do
+    sheet59.ak68.should be_within(1.0e-08).of(0.0)
   end
 
   it 'cell am68 should equal 0.0' do
@@ -13384,8 +13204,8 @@ describe 'Sheet59' do
     sheet59.av68.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell aw68 should equal -12.957828652107947' do
-    sheet59.aw68.should be_within(1.2957828652107948).of(-12.957828652107947)
+  it 'cell aw68 should equal 0.0' do
+    sheet59.aw68.should be_within(1.0e-08).of(0.0)
   end
 
   it 'cell ax68 should equal 0.0' do
@@ -13420,8 +13240,8 @@ describe 'Sheet59' do
     sheet59.be68.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bf68 should equal -12.957828652107947' do
-    sheet59.bf68.should be_within(1.2957828652107948).of(-12.957828652107947)
+  it 'cell bf68 should equal 0.0' do
+    sheet59.bf68.should be_within(1.0e-08).of(0.0)
   end
 
   it 'cell bh68 should equal 0.0' do
@@ -13440,8 +13260,8 @@ describe 'Sheet59' do
     sheet59.bl68.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ab70 should equal -31.03217114058341' do
-    sheet59.ab70.should be_within(3.1032171140583413).of(-31.03217114058341)
+  it 'cell ab70 should equal -21.66375921218688' do
+    sheet59.ab70.should be_within(2.166375921218688).of(-21.66375921218688)
   end
 
   it 'cell g71 should equal 0.0' do
@@ -13492,8 +13312,8 @@ describe 'Sheet59' do
     sheet59.s71.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell t71 should equal -4.43316730579763' do
-    sheet59.t71.should be_within(0.443316730579763).of(-4.43316730579763)
+  it 'cell t71 should equal -3.0948227445981256' do
+    sheet59.t71.should be_within(0.3094822744598126).of(-3.0948227445981256)
   end
 
   it 'cell u71 should equal 0.0' do
@@ -13524,8 +13344,8 @@ describe 'Sheet59' do
     sheet59.aa71.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ab71 should equal 31.03217114058341' do
-    sheet59.ab71.should be_within(3.1032171140583413).of(31.03217114058341)
+  it 'cell ab71 should equal 21.66375921218688' do
+    sheet59.ab71.should be_within(2.166375921218688).of(21.66375921218688)
   end
 
   it 'cell ac71 should equal 0.0' do
@@ -13560,8 +13380,8 @@ describe 'Sheet59' do
     sheet59.aj71.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ak71 should equal 26.599003834785783' do
-    sheet59.ak71.should be_within(2.6599003834785786).of(26.599003834785783)
+  it 'cell ak71 should equal 18.568936467588752' do
+    sheet59.ak71.should be_within(1.8568936467588752).of(18.568936467588752)
   end
 
   it 'cell am71 should equal 0.0' do
@@ -13644,16 +13464,16 @@ describe 'Sheet59' do
     sheet59.bf71.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bh71 should equal -26.599003834785783' do
-    sheet59.bh71.should be_within(2.6599003834785786).of(-26.599003834785783)
+  it 'cell bh71 should equal -18.568936467588752' do
+    sheet59.bh71.should be_within(1.8568936467588752).of(-18.568936467588752)
   end
 
   it 'cell bi71 should equal 0.0' do
     sheet59.bi71.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bj71 should equal -26.599003834785783' do
-    sheet59.bj71.should be_within(2.6599003834785786).of(-26.599003834785783)
+  it 'cell bj71 should equal -18.568936467588752' do
+    sheet59.bj71.should be_within(1.8568936467588752).of(-18.568936467588752)
   end
 
   it 'cell bl71 should equal 0.0' do
@@ -13708,8 +13528,8 @@ describe 'Sheet59' do
     sheet59.s72.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell t72 should equal -4.43316730579763' do
-    sheet59.t72.should be_within(0.443316730579763).of(-4.43316730579763)
+  it 'cell t72 should equal -3.0948227445981256' do
+    sheet59.t72.should be_within(0.3094822744598126).of(-3.0948227445981256)
   end
 
   it 'cell u72 should equal 0.0' do
@@ -13740,8 +13560,8 @@ describe 'Sheet59' do
     sheet59.aa72.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ab72 should equal 31.03217114058341' do
-    sheet59.ab72.should be_within(3.1032171140583413).of(31.03217114058341)
+  it 'cell ab72 should equal 21.66375921218688' do
+    sheet59.ab72.should be_within(2.166375921218688).of(21.66375921218688)
   end
 
   it 'cell ac72 should equal 0.0' do
@@ -13776,8 +13596,8 @@ describe 'Sheet59' do
     sheet59.aj72.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ak72 should equal 26.599003834785783' do
-    sheet59.ak72.should be_within(2.6599003834785786).of(26.599003834785783)
+  it 'cell ak72 should equal 18.568936467588752' do
+    sheet59.ak72.should be_within(1.8568936467588752).of(18.568936467588752)
   end
 
   it 'cell am72 should equal 0.0' do
@@ -13860,28 +13680,28 @@ describe 'Sheet59' do
     sheet59.bf72.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bh72 should equal -26.599003834785783' do
-    sheet59.bh72.should be_within(2.6599003834785786).of(-26.599003834785783)
+  it 'cell bh72 should equal -18.568936467588752' do
+    sheet59.bh72.should be_within(1.8568936467588752).of(-18.568936467588752)
   end
 
   it 'cell bi72 should equal 0.0' do
     sheet59.bi72.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bj72 should equal -26.599003834785783' do
-    sheet59.bj72.should be_within(2.6599003834785786).of(-26.599003834785783)
+  it 'cell bj72 should equal -18.568936467588752' do
+    sheet59.bj72.should be_within(1.8568936467588752).of(-18.568936467588752)
   end
 
   it 'cell bl72 should equal 0.0' do
     sheet59.bl72.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell s74 should equal -457.426196526993' do
-    sheet59.s74.should be_within(45.742619652699304).of(-457.426196526993)
+  it 'cell s74 should equal -386.50037718909766' do
+    sheet59.s74.should be_within(38.65003771890977).of(-386.50037718909766)
   end
 
-  it 'cell t74 should equal 124.12528349285917' do
-    sheet59.t74.should be_within(12.412528349285918).of(124.12528349285917)
+  it 'cell t74 should equal 111.46675080728151' do
+    sheet59.t74.should be_within(11.146675080728151).of(111.46675080728151)
   end
 
   it 'cell g75 should equal 0.0' do
@@ -13932,8 +13752,8 @@ describe 'Sheet59' do
     sheet59.s75.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell t75 should equal 232.82496000000003' do
-    sheet59.t75.should be_within(23.282496000000005).of(232.82496000000003)
+  it 'cell t75 should equal 74.33568000000002' do
+    sheet59.t75.should be_within(7.433568000000003).of(74.33568000000002)
   end
 
   it 'cell u75 should equal 0.0' do
@@ -14000,8 +13820,8 @@ describe 'Sheet59' do
     sheet59.aj75.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ak75 should equal 232.82496000000003' do
-    sheet59.ak75.should be_within(23.282496000000005).of(232.82496000000003)
+  it 'cell ak75 should equal 74.33568000000002' do
+    sheet59.ak75.should be_within(7.433568000000003).of(74.33568000000002)
   end
 
   it 'cell am75 should equal 0.0' do
@@ -14040,8 +13860,8 @@ describe 'Sheet59' do
     sheet59.au75.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell av75 should equal -711.4096000000001' do
-    sheet59.av75.should be_within(71.14096).of(-711.4096000000001)
+  it 'cell av75 should equal -227.1368000000001' do
+    sheet59.av75.should be_within(22.71368000000001).of(-227.1368000000001)
   end
 
   it 'cell aw75 should equal 0.0' do
@@ -14080,20 +13900,20 @@ describe 'Sheet59' do
     sheet59.be75.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bf75 should equal -711.4096000000001' do
-    sheet59.bf75.should be_within(71.14096).of(-711.4096000000001)
+  it 'cell bf75 should equal -227.1368000000001' do
+    sheet59.bf75.should be_within(22.71368000000001).of(-227.1368000000001)
   end
 
-  it 'cell bh75 should equal 455.30214400000006' do
-    sheet59.bh75.should be_within(45.530214400000006).of(455.30214400000006)
+  it 'cell bh75 should equal 145.36755200000007' do
+    sheet59.bh75.should be_within(14.536755200000009).of(145.36755200000007)
   end
 
-  it 'cell bi75 should equal 23.282496000000005' do
-    sheet59.bi75.should be_within(2.328249600000001).of(23.282496000000005)
+  it 'cell bi75 should equal 7.433568000000003' do
+    sheet59.bi75.should be_within(0.7433568000000004).of(7.433568000000003)
   end
 
-  it 'cell bj75 should equal 478.58464000000004' do
-    sheet59.bj75.should be_within(47.858464000000005).of(478.58464000000004)
+  it 'cell bj75 should equal 152.80112000000008' do
+    sheet59.bj75.should be_within(15.28011200000001).of(152.80112000000008)
   end
 
   it 'cell bl75 should equal 0.0' do
@@ -14148,8 +13968,8 @@ describe 'Sheet59' do
     sheet59.s76.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell t76 should equal 232.82496000000003' do
-    sheet59.t76.should be_within(23.282496000000005).of(232.82496000000003)
+  it 'cell t76 should equal 74.33568000000002' do
+    sheet59.t76.should be_within(7.433568000000003).of(74.33568000000002)
   end
 
   it 'cell u76 should equal 0.0' do
@@ -14216,8 +14036,8 @@ describe 'Sheet59' do
     sheet59.aj76.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ak76 should equal 232.82496000000003' do
-    sheet59.ak76.should be_within(23.282496000000005).of(232.82496000000003)
+  it 'cell ak76 should equal 74.33568000000002' do
+    sheet59.ak76.should be_within(7.433568000000003).of(74.33568000000002)
   end
 
   it 'cell am76 should equal 0.0' do
@@ -14256,8 +14076,8 @@ describe 'Sheet59' do
     sheet59.au76.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell av76 should equal -711.4096000000001' do
-    sheet59.av76.should be_within(71.14096).of(-711.4096000000001)
+  it 'cell av76 should equal -227.1368000000001' do
+    sheet59.av76.should be_within(22.71368000000001).of(-227.1368000000001)
   end
 
   it 'cell aw76 should equal 0.0' do
@@ -14296,32 +14116,32 @@ describe 'Sheet59' do
     sheet59.be76.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bf76 should equal -711.4096000000001' do
-    sheet59.bf76.should be_within(71.14096).of(-711.4096000000001)
+  it 'cell bf76 should equal -227.1368000000001' do
+    sheet59.bf76.should be_within(22.71368000000001).of(-227.1368000000001)
   end
 
-  it 'cell bh76 should equal 455.30214400000006' do
-    sheet59.bh76.should be_within(45.530214400000006).of(455.30214400000006)
+  it 'cell bh76 should equal 145.36755200000007' do
+    sheet59.bh76.should be_within(14.536755200000009).of(145.36755200000007)
   end
 
-  it 'cell bi76 should equal 23.282496000000005' do
-    sheet59.bi76.should be_within(2.328249600000001).of(23.282496000000005)
+  it 'cell bi76 should equal 7.433568000000003' do
+    sheet59.bi76.should be_within(0.7433568000000004).of(7.433568000000003)
   end
 
-  it 'cell bj76 should equal 478.58464000000004' do
-    sheet59.bj76.should be_within(47.858464000000005).of(478.58464000000004)
+  it 'cell bj76 should equal 152.80112000000008' do
+    sheet59.bj76.should be_within(15.28011200000001).of(152.80112000000008)
   end
 
   it 'cell bl76 should equal 0.0' do
     sheet59.bl76.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell s78 should equal -457.426196526993' do
-    sheet59.s78.should be_within(45.742619652699304).of(-457.426196526993)
+  it 'cell s78 should equal -386.50037718909766' do
+    sheet59.s78.should be_within(38.65003771890977).of(-386.50037718909766)
   end
 
-  it 'cell t78 should equal 356.9502434928592' do
-    sheet59.t78.should be_within(35.69502434928592).of(356.9502434928592)
+  it 'cell t78 should equal 185.80243080728155' do
+    sheet59.t78.should be_within(18.580243080728156).of(185.80243080728155)
   end
 
   it 'cell g79 should equal 0.0' do
@@ -14372,20 +14192,20 @@ describe 'Sheet59' do
     sheet59.s79.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell t79 should equal 133.16148442428954' do
-    sheet59.t79.should be_within(13.316148442428954).of(133.16148442428954)
+  it 'cell t79 should equal 115.24091782755599' do
+    sheet59.t79.should be_within(11.5240917827556).of(115.24091782755599)
   end
 
-  it 'cell u79 should equal -112.98488562440818' do
-    sheet59.u79.should be_within(11.298488562440818).of(-112.98488562440818)
+  it 'cell u79 should equal -101.67811420125' do
+    sheet59.u79.should be_within(10.167811420125).of(-101.67811420125)
   end
 
   it 'cell v79 should equal 0.0' do
     sheet59.v79.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell w79 should equal -149.13698444381257' do
-    sheet59.w79.should be_within(14.913698444381257).of(-149.13698444381257)
+  it 'cell w79 should equal -132.79655674741934' do
+    sheet59.w79.should be_within(13.279655674741935).of(-132.79655674741934)
   end
 
   it 'cell x79 should equal 0.0' do
@@ -14440,8 +14260,8 @@ describe 'Sheet59' do
     sheet59.aj79.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ak79 should equal -128.9603856439312' do
-    sheet59.ak79.should be_within(12.896038564393121).of(-128.9603856439312)
+  it 'cell ak79 should equal -119.23375312111335' do
+    sheet59.ak79.should be_within(11.923375312111336).of(-119.23375312111335)
   end
 
   it 'cell am79 should equal 0.0' do
@@ -14524,32 +14344,32 @@ describe 'Sheet59' do
     sheet59.bf79.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bh79 should equal 111.3116060682207' do
-    sheet59.bh79.should be_within(11.131160606822071).of(111.3116060682207)
+  it 'cell bh79 should equal 103.33531094866936' do
+    sheet59.bh79.should be_within(10.333531094866936).of(103.33531094866936)
   end
 
-  it 'cell bi79 should equal 17.648779575710527' do
-    sheet59.bi79.should be_within(1.764877957571053).of(17.648779575710527)
+  it 'cell bi79 should equal 15.898442172444' do
+    sheet59.bi79.should be_within(1.5898442172444).of(15.898442172444)
   end
 
-  it 'cell bj79 should equal 128.96038564393123' do
-    sheet59.bj79.should be_within(12.896038564393123).of(128.96038564393123)
+  it 'cell bj79 should equal 119.23375312111335' do
+    sheet59.bj79.should be_within(11.923375312111336).of(119.23375312111335)
   end
 
   it 'cell bl79 should equal 0.0' do
     sheet59.bl79.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bo79 should equal 62.24054990997922' do
-    sheet59.bo79.should be_within(6.224054990997923).of(62.24054990997922)
+  it 'cell bo79 should equal 55.75142561551015' do
+    sheet59.bo79.should be_within(5.575142561551015).of(55.75142561551015)
   end
 
-  it 'cell bp79 should equal 0.1572334028044393' do
-    sheet59.bp79.should be_within(0.01572334028044393).of(0.1572334028044393)
+  it 'cell bp79 should equal 0.14097635430737873' do
+    sheet59.bp79.should be_within(0.014097635430737873).of(0.14097635430737873)
   end
 
-  it 'cell bq79 should equal 0.36743155646883735' do
-    sheet59.bq79.should be_within(0.036743155646883734).of(0.36743155646883735)
+  it 'cell bq79 should equal 0.33009983300114065' do
+    sheet59.bq79.should be_within(0.033009983300114065).of(0.33009983300114065)
   end
 
   it 'cell br79 should equal 0.0' do
@@ -14700,8 +14520,8 @@ describe 'Sheet59' do
     sheet59.db79.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell dc79 should equal -56.0164949189813' do
-    sheet59.dc79.should be_within(5.60164949189813).of(-56.0164949189813)
+  it 'cell dc79 should equal -50.17628305395914' do
+    sheet59.dc79.should be_within(5.017628305395914).of(-50.17628305395914)
   end
 
   it 'cell dd79 should equal 0.0' do
@@ -14716,16 +14536,16 @@ describe 'Sheet59' do
     sheet59.df79.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell dh79 should equal 6.7487199502711945' do
-    sheet59.dh79.should be_within(0.6748719950271195).of(6.7487199502711945)
+  it 'cell dh79 should equal 6.0462187488595305' do
+    sheet59.dh79.should be_within(0.6046218748859531).of(6.0462187488595305)
   end
 
-  it 'cell s80 should equal -457.426196526993' do
-    sheet59.s80.should be_within(45.742619652699304).of(-457.426196526993)
+  it 'cell s80 should equal -386.50037718909766' do
+    sheet59.s80.should be_within(38.65003771890977).of(-386.50037718909766)
   end
 
-  it 'cell t80 should equal 490.11172791714876' do
-    sheet59.t80.should be_within(49.01117279171488).of(490.11172791714876)
+  it 'cell t80 should equal 301.04334863483757' do
+    sheet59.t80.should be_within(30.104334863483757).of(301.04334863483757)
   end
 
   it 'cell g81 should equal 0.0' do
@@ -14776,20 +14596,20 @@ describe 'Sheet59' do
     sheet59.s81.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell t81 should equal 0.0' do
-    sheet59.t81.should be_within(1.0e-08).of(0.0)
+  it 'cell t81 should equal 85.45702855426009' do
+    sheet59.t81.should be_within(8.54570285542601).of(85.45702855426009)
   end
 
-  it 'cell u81 should equal 0.0' do
-    sheet59.u81.should be_within(1.0e-08).of(0.0)
+  it 'cell u81 should equal -14.200920000000002' do
+    sheet59.u81.should be_within(1.4200920000000004).of(-14.200920000000002)
   end
 
   it 'cell v81 should equal 0.0' do
     sheet59.v81.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell w81 should equal 0.0' do
-    sheet59.w81.should be_within(1.0e-08).of(0.0)
+  it 'cell w81 should equal -164.6757126506906' do
+    sheet59.w81.should be_within(16.46757126506906).of(-164.6757126506906)
   end
 
   it 'cell x81 should equal 0.0' do
@@ -14844,8 +14664,8 @@ describe 'Sheet59' do
     sheet59.aj81.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ak81 should equal 0.0' do
-    sheet59.ak81.should be_within(1.0e-08).of(0.0)
+  it 'cell ak81 should equal -93.4196040964305' do
+    sheet59.ak81.should be_within(9.34196040964305).of(-93.4196040964305)
   end
 
   it 'cell am81 should equal 0.0' do
@@ -14928,32 +14748,32 @@ describe 'Sheet59' do
     sheet59.bf81.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bh81 should equal 0.0' do
-    sheet59.bh81.should be_within(1.0e-08).of(0.0)
+  it 'cell bh81 should equal 91.5684543253453' do
+    sheet59.bh81.should be_within(9.15684543253453).of(91.5684543253453)
   end
 
-  it 'cell bi81 should equal 0.0' do
-    sheet59.bi81.should be_within(1.0e-08).of(0.0)
+  it 'cell bi81 should equal 1.851149771085202' do
+    sheet59.bi81.should be_within(0.1851149771085202).of(1.851149771085202)
   end
 
-  it 'cell bj81 should equal 0.0' do
-    sheet59.bj81.should be_within(1.0e-08).of(0.0)
+  it 'cell bj81 should equal 93.4196040964305' do
+    sheet59.bj81.should be_within(9.34196040964305).of(93.4196040964305)
   end
 
   it 'cell bl81 should equal 0.0' do
     sheet59.bl81.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bo81 should equal 0.0' do
-    sheet59.bo81.should be_within(1.0e-08).of(0.0)
+  it 'cell bo81 should equal 34.67421448772706' do
+    sheet59.bo81.should be_within(3.4674214487727064).of(34.67421448772706)
   end
 
-  it 'cell bp81 should equal 0.0' do
-    sheet59.bp81.should be_within(1.0e-08).of(0.0)
+  it 'cell bp81 should equal 0.0735854693974531' do
+    sheet59.bp81.should be_within(0.00735854693974531).of(0.0735854693974531)
   end
 
-  it 'cell bq81 should equal 0.0' do
-    sheet59.bq81.should be_within(1.0e-08).of(0.0)
+  it 'cell bq81 should equal 0.10407124986377203' do
+    sheet59.bq81.should be_within(0.010407124986377204).of(0.10407124986377203)
   end
 
   it 'cell br81 should equal 0.0' do
@@ -15120,8 +14940,8 @@ describe 'Sheet59' do
     sheet59.df81.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell dh81 should equal 0.0' do
-    sheet59.dh81.should be_within(1.0e-08).of(0.0)
+  it 'cell dh81 should equal 34.851871206988285' do
+    sheet59.dh81.should be_within(3.4851871206988285).of(34.851871206988285)
   end
 
   it 'cell g82 should equal 0.0' do
@@ -15172,20 +14992,20 @@ describe 'Sheet59' do
     sheet59.s82.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell t82 should equal 133.16148442428954' do
-    sheet59.t82.should be_within(13.316148442428954).of(133.16148442428954)
+  it 'cell t82 should equal 200.69794638181608' do
+    sheet59.t82.should be_within(20.06979463818161).of(200.69794638181608)
   end
 
-  it 'cell u82 should equal -112.98488562440818' do
-    sheet59.u82.should be_within(11.298488562440818).of(-112.98488562440818)
+  it 'cell u82 should equal -115.87903420125' do
+    sheet59.u82.should be_within(11.587903420125).of(-115.87903420125)
   end
 
   it 'cell v82 should equal 0.0' do
     sheet59.v82.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell w82 should equal -149.13698444381257' do
-    sheet59.w82.should be_within(14.913698444381257).of(-149.13698444381257)
+  it 'cell w82 should equal -297.4722693981099' do
+    sheet59.w82.should be_within(29.747226939810993).of(-297.4722693981099)
   end
 
   it 'cell x82 should equal 0.0' do
@@ -15240,8 +15060,8 @@ describe 'Sheet59' do
     sheet59.aj82.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ak82 should equal -128.9603856439312' do
-    sheet59.ak82.should be_within(12.896038564393121).of(-128.9603856439312)
+  it 'cell ak82 should equal -212.65335721754383' do
+    sheet59.ak82.should be_within(21.265335721754383).of(-212.65335721754383)
   end
 
   it 'cell am82 should equal 0.0' do
@@ -15324,32 +15144,32 @@ describe 'Sheet59' do
     sheet59.bf82.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bh82 should equal 111.3116060682207' do
-    sheet59.bh82.should be_within(11.131160606822071).of(111.3116060682207)
+  it 'cell bh82 should equal 194.90376527401466' do
+    sheet59.bh82.should be_within(19.490376527401466).of(194.90376527401466)
   end
 
-  it 'cell bi82 should equal 17.648779575710527' do
-    sheet59.bi82.should be_within(1.764877957571053).of(17.648779575710527)
+  it 'cell bi82 should equal 17.7495919435292' do
+    sheet59.bi82.should be_within(1.7749591943529202).of(17.7495919435292)
   end
 
-  it 'cell bj82 should equal 128.96038564393123' do
-    sheet59.bj82.should be_within(12.896038564393123).of(128.96038564393123)
+  it 'cell bj82 should equal 212.65335721754386' do
+    sheet59.bj82.should be_within(21.265335721754386).of(212.65335721754386)
   end
 
   it 'cell bl82 should equal 0.0' do
     sheet59.bl82.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bo82 should equal 62.24054990997922' do
-    sheet59.bo82.should be_within(6.224054990997923).of(62.24054990997922)
+  it 'cell bo82 should equal 90.42564010323721' do
+    sheet59.bo82.should be_within(9.042564010323721).of(90.42564010323721)
   end
 
-  it 'cell bp82 should equal 0.1572334028044393' do
-    sheet59.bp82.should be_within(0.01572334028044393).of(0.1572334028044393)
+  it 'cell bp82 should equal 0.21456182370483184' do
+    sheet59.bp82.should be_within(0.021456182370483187).of(0.21456182370483184)
   end
 
-  it 'cell bq82 should equal 0.36743155646883735' do
-    sheet59.bq82.should be_within(0.036743155646883734).of(0.36743155646883735)
+  it 'cell bq82 should equal 0.4341710828649127' do
+    sheet59.bq82.should be_within(0.04341710828649127).of(0.4341710828649127)
   end
 
   it 'cell br82 should equal 0.0' do
@@ -15500,8 +15320,8 @@ describe 'Sheet59' do
     sheet59.db82.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell dc82 should equal -56.0164949189813' do
-    sheet59.dc82.should be_within(5.60164949189813).of(-56.0164949189813)
+  it 'cell dc82 should equal -50.17628305395914' do
+    sheet59.dc82.should be_within(5.017628305395914).of(-50.17628305395914)
   end
 
   it 'cell dd82 should equal 0.0' do
@@ -15516,20 +15336,20 @@ describe 'Sheet59' do
     sheet59.df82.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell dh82 should equal 6.7487199502711945' do
-    sheet59.dh82.should be_within(0.6748719950271195).of(6.7487199502711945)
+  it 'cell dh82 should equal 40.89808995584781' do
+    sheet59.dh82.should be_within(4.089808995584781).of(40.89808995584781)
   end
 
   it 'cell g84 should equal 0.0' do
     sheet59.g84.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell h84 should equal 0.9255591894362819' do
-    sheet59.h84.should be_within(0.09255591894362819).of(0.9255591894362819)
+  it 'cell h84 should equal 0.0' do
+    sheet59.h84.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell i84 should equal 20.861568657300673' do
-    sheet59.i84.should be_within(2.0861568657300675).of(20.861568657300673)
+  it 'cell i84 should equal 27.020669293560616' do
+    sheet59.i84.should be_within(2.7020669293560617).of(27.020669293560616)
   end
 
   it 'cell j84 should equal 0.0' do
@@ -15560,96 +15380,96 @@ describe 'Sheet59' do
     sheet59.p84.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell q84 should equal 21.787127846736954' do
-    sheet59.q84.should be_within(2.1787127846736953).of(21.787127846736954)
+  it 'cell q84 should equal 27.020669293560616' do
+    sheet59.q84.should be_within(2.7020669293560617).of(27.020669293560616)
   end
 
-  it 'cell s84 should equal -24.447363048165418' do
-    sheet59.s84.should be_within(2.444736304816542).of(-24.447363048165418)
+  it 'cell s84 should equal -11.033680810503615' do
+    sheet59.s84.should be_within(1.1033680810503614).of(-11.033680810503615)
   end
 
-  it 'cell t84 should equal 508.0275532965741' do
-    sheet59.t84.should be_within(50.802755329657415).of(508.0275532965741)
+  it 'cell t84 should equal 386.979579957218' do
+    sheet59.t84.should be_within(38.6979579957218).of(386.979579957218)
   end
 
-  it 'cell u84 should equal -113.89149201458261' do
-    sheet59.u84.should be_within(11.389149201458261).of(-113.89149201458261)
+  it 'cell u84 should equal -116.7829160575674' do
+    sheet59.u84.should be_within(11.67829160575674).of(-116.7829160575674)
   end
 
-  it 'cell v84 should equal -44.816860829701724' do
-    sheet59.v84.should be_within(4.481686082970173).of(-44.816860829701724)
+  it 'cell v84 should equal -46.4688472377656' do
+    sheet59.v84.should be_within(4.6468847237765605).of(-46.4688472377656)
   end
 
-  it 'cell w84 should equal -165.41621176920498' do
-    sheet59.w84.should be_within(16.541621176920497).of(-165.41621176920498)
+  it 'cell w84 should equal -317.438640470552' do
+    sheet59.w84.should be_within(31.7438640470552).of(-317.438640470552)
   end
 
-  it 'cell x84 should equal 78.29765597812501' do
-    sheet59.x84.should be_within(7.829765597812501).of(78.29765597812501)
+  it 'cell x84 should equal 76.71385343229167' do
+    sheet59.x84.should be_within(7.671385343229168).of(76.71385343229167)
   end
 
-  it 'cell y84 should equal 139.19102265793308' do
-    sheet59.y84.should be_within(13.919102265793308).of(139.19102265793308)
+  it 'cell y84 should equal 232.47441995977493' do
+    sheet59.y84.should be_within(23.247441995977496).of(232.47441995977493)
   end
 
-  it 'cell z84 should equal 106.27367243105833' do
-    sheet59.z84.should be_within(10.627367243105834).of(106.27367243105833)
+  it 'cell z84 should equal 177.49643535647462' do
+    sheet59.z84.should be_within(17.74964353564746).of(177.49643535647462)
   end
 
   it 'cell aa84 should equal 0.0' do
     sheet59.aa84.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ab84 should equal 30.442294546459824' do
-    sheet59.ab84.should be_within(3.0442294546459827).of(30.442294546459824)
+  it 'cell ab84 should equal 21.050053321745754' do
+    sheet59.ab84.should be_within(2.1050053321745756).of(21.050053321745754)
   end
 
   it 'cell ac84 should equal 0.0' do
     sheet59.ac84.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ad84 should equal 51.97143110679394' do
-    sheet59.ad84.should be_within(5.197143110679395).of(51.97143110679394)
+  it 'cell ad84 should equal 95.08315588824227' do
+    sheet59.ad84.should be_within(9.508315588824228).of(95.08315588824227)
   end
 
-  it 'cell ae84 should equal 1.6328504516407796' do
-    sheet59.ae84.should be_within(0.16328504516407796).of(1.6328504516407796)
+  it 'cell ae84 should equal 1.5959775502315894' do
+    sheet59.ae84.should be_within(0.15959775502315895).of(1.5959775502315894)
   end
 
-  it 'cell af84 should equal 44.75445965789887' do
-    sheet59.af84.should be_within(4.475445965789887).of(44.75445965789887)
+  it 'cell af84 should equal 100.51399902914869' do
+    sheet59.af84.should be_within(10.05139990291487).of(100.51399902914869)
   end
 
-  it 'cell ag84 should equal 36.704320020755056' do
-    sheet59.ag84.should be_within(3.670432002075506).of(36.704320020755056)
+  it 'cell ag84 should equal 55.13386869524017' do
+    sheet59.ag84.should be_within(5.513386869524017).of(55.13386869524017)
   end
 
-  it 'cell ah84 should equal 4.1745362801615915' do
-    sheet59.ah84.should be_within(0.41745362801615915).of(4.1745362801615915)
+  it 'cell ah84 should equal 5.871512144112685' do
+    sheet59.ah84.should be_within(0.5871512144112686).of(5.871512144112685)
   end
 
-  it 'cell ai84 should equal 12.957828652107947' do
-    sheet59.ai84.should be_within(1.2957828652107948).of(12.957828652107947)
+  it 'cell ai84 should equal 0.0' do
+    sheet59.ai84.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell aj84 should equal 12.372153737084485' do
-    sheet59.aj84.should be_within(1.2372153737084486).of(12.372153737084485)
+  it 'cell aj84 should equal 0.9881852693731742' do
+    sheet59.aj84.should be_within(0.09881852693731742).of(0.9881852693731742)
   end
 
-  it 'cell ak84 should equal 678.2278511549384' do
-    sheet59.ak84.should be_within(67.82278511549384).of(678.2278511549384)
+  it 'cell ak84 should equal 662.1769560274648' do
+    sheet59.ak84.should be_within(66.21769560274649).of(662.1769560274648)
   end
 
   it 'cell am84 should equal -63.965' do
     sheet59.am84.should be_within(6.3965000000000005).of(-63.965)
   end
 
-  it 'cell an84 should equal -139.19102265793308' do
-    sheet59.an84.should be_within(13.919102265793308).of(-139.19102265793308)
+  it 'cell an84 should equal -232.47441995977493' do
+    sheet59.an84.should be_within(23.247441995977496).of(-232.47441995977493)
   end
 
-  it 'cell ao84 should equal -106.27367243105833' do
-    sheet59.ao84.should be_within(10.627367243105834).of(-106.27367243105833)
+  it 'cell ao84 should equal -177.49643535647462' do
+    sheet59.ao84.should be_within(17.74964353564746).of(-177.49643535647462)
   end
 
   it 'cell ap84 should equal 0.0' do
@@ -15676,84 +15496,84 @@ describe 'Sheet59' do
     sheet59.au84.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell av84 should equal -711.4096000000001' do
-    sheet59.av84.should be_within(71.14096).of(-711.4096000000001)
+  it 'cell av84 should equal -227.1368000000001' do
+    sheet59.av84.should be_within(22.71368000000001).of(-227.1368000000001)
   end
 
-  it 'cell aw84 should equal -12.957828652107947' do
-    sheet59.aw84.should be_within(1.2957828652107948).of(-12.957828652107947)
+  it 'cell aw84 should equal 0.0' do
+    sheet59.aw84.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ax84 should equal -126.31823532' do
-    sheet59.ax84.should be_within(12.631823532).of(-126.31823532)
+  it 'cell ax84 should equal -109.71104832' do
+    sheet59.ax84.should be_within(10.971104832000002).of(-109.71104832)
   end
 
-  it 'cell ay84 should equal -4.950573282739726' do
-    sheet59.ay84.should be_within(0.49505732827397264).of(-4.950573282739726)
+  it 'cell ay84 should equal 0.0' do
+    sheet59.ay84.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell az84 should equal -9.12624657534247' do
-    sheet59.az84.should be_within(0.9126246575342472).of(-9.12624657534247)
+  it 'cell az84 should equal 0.0' do
+    sheet59.az84.should be_within(1.0e-08).of(0.0)
   end
 
   it 'cell ba84 should equal 0.0' do
     sheet59.ba84.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bb84 should equal -6.0792209999999995' do
-    sheet59.bb84.should be_within(0.6079221).of(-6.0792209999999995)
+  it 'cell bb84 should equal -5.329728000000001' do
+    sheet59.bb84.should be_within(0.5329728000000001).of(-5.329728000000001)
   end
 
   it 'cell bc84 should equal 0.0' do
     sheet59.bc84.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bd84 should equal -53.60428155843472' do
-    sheet59.bd84.should be_within(5.360428155843472).of(-53.60428155843472)
+  it 'cell bd84 should equal -96.67913343847387' do
+    sheet59.bd84.should be_within(9.667913343847388).of(-96.67913343847387)
   end
 
-  it 'cell be84 should equal -99.96597193694052' do
-    sheet59.be84.should be_within(9.996597193694052).of(-99.96597193694052)
+  it 'cell be84 should equal -174.2682333007932' do
+    sheet59.be84.should be_within(17.426823330079323).of(-174.2682333007932)
   end
 
-  it 'cell bf84 should equal -1333.841653414557' do
-    sheet59.bf84.should be_within(133.3841653414557).of(-1333.841653414557)
+  it 'cell bf84 should equal -1087.0607983755167' do
+    sheet59.bf84.should be_within(108.70607983755167).of(-1087.0607983755167)
   end
 
-  it 'cell bh84 should equal 544.2788383401255' do
-    sheet59.bh84.should be_within(54.427883834012555).of(544.2788383401255)
+  it 'cell bh84 should equal 322.0995839898214' do
+    sheet59.bh84.should be_within(32.20995839898214).of(322.0995839898214)
   end
 
-  it 'cell bi84 should equal 89.54783607275616' do
-    sheet59.bi84.should be_within(8.954783607275616).of(89.54783607275616)
+  it 'cell bi84 should equal 75.76368788319675' do
+    sheet59.bi84.should be_within(7.576368788319676).of(75.76368788319675)
   end
 
-  it 'cell bj84 should equal 633.8266744128816' do
-    sheet59.bj84.should be_within(63.38266744128816).of(633.8266744128816)
+  it 'cell bj84 should equal 397.8632718730181' do
+    sheet59.bj84.should be_within(39.786327187301815).of(397.8632718730181)
   end
 
-  it 'cell bl84 should equal 0.0' do
-    sheet59.bl84.should be_within(1.0e-08).of(0.0)
+  it 'cell bl84 should equal 9.881852690796222e-05' do
+    sheet59.bl84.should be_within(9.881852690796222e-06).of(9.881852690796222e-05)
   end
 
-  it 'cell bo84 should equal 76.70368966167656' do
-    sheet59.bo84.should be_within(7.670368966167657).of(76.70368966167656)
+  it 'cell bo84 should equal 105.9793717499797' do
+    sheet59.bo84.should be_within(10.597937174997972).of(105.9793717499797)
   end
 
-  it 'cell bp84 should equal 0.1779690378853689' do
-    sheet59.bp84.should be_within(0.01779690378853689).of(0.1779690378853689)
+  it 'cell bp84 should equal 0.23716908494450123' do
+    sheet59.bp84.should be_within(0.023716908494450125).of(0.23716908494450123)
   end
 
-  it 'cell bq84 should equal 0.5778684874770383' do
-    sheet59.bq84.should be_within(0.05778684874770384).of(0.5778684874770383)
+  it 'cell bq84 should equal 0.6534938869724686' do
+    sheet59.bq84.should be_within(0.06534938869724687).of(0.6534938869724686)
   end
 
   it 'cell br84 should equal 0.0' do
     sheet59.br84.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bs84 should equal 0.7262248256975227' do
-    sheet59.bs84.should be_within(0.07262248256975228).of(0.7262248256975227)
+  it 'cell bs84 should equal 1.2129280458648746' do
+    sheet59.bs84.should be_within(0.12129280458648746).of(1.2129280458648746)
   end
 
   it 'cell bt84 should equal 1.3576644262911814' do
@@ -15804,20 +15624,20 @@ describe 'Sheet59' do
     sheet59.ce84.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell cf84 should equal 17.035217715824224' do
-    sheet59.cf84.should be_within(1.7035217715824225).of(17.035217715824224)
+  it 'cell cf84 should equal 14.431892485871735' do
+    sheet59.cf84.should be_within(1.4431892485871736).of(14.431892485871735)
   end
 
-  it 'cell cg84 should equal 21.06004038863483' do
-    sheet59.cg84.should be_within(2.106004038863483).of(21.06004038863483)
+  it 'cell cg84 should equal 20.65438545386428' do
+    sheet59.cg84.should be_within(2.065438545386428).of(20.65438545386428)
   end
 
   it 'cell ch84 should equal 0.0' do
     sheet59.ch84.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ci84 should equal 8.116378861191098' do
-    sheet59.ci84.should be_within(0.8116378861191098).of(8.116378861191098)
+  it 'cell ci84 should equal 7.6465012608286695' do
+    sheet59.ci84.should be_within(0.764650126082867).of(7.6465012608286695)
   end
 
   it 'cell cj84 should equal 0.0' do
@@ -15836,12 +15656,12 @@ describe 'Sheet59' do
     sheet59.cm84.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell cn84 should equal 5.77910137758168' do
-    sheet59.cn84.should be_within(0.577910137758168).of(5.77910137758168)
+  it 'cell cn84 should equal 7.669976610351998' do
+    sheet59.cn84.should be_within(0.7669976610351998).of(7.669976610351998)
   end
 
-  it 'cell co84 should equal 1.5083153181180278' do
-    sheet59.co84.should be_within(0.15083153181180278).of(1.5083153181180278)
+  it 'cell co84 should equal 1.4467023048702474' do
+    sheet59.co84.should be_within(0.14467023048702474).of(1.4467023048702474)
   end
 
   it 'cell cp84 should equal 0.0' do
@@ -15896,8 +15716,8 @@ describe 'Sheet59' do
     sheet59.db84.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell dc84 should equal -56.0164949189813' do
-    sheet59.dc84.should be_within(5.60164949189813).of(-56.0164949189813)
+  it 'cell dc84 should equal -50.17628305395914' do
+    sheet59.dc84.should be_within(5.017628305395914).of(-50.17628305395914)
   end
 
   it 'cell dd84 should equal 0.0' do
@@ -15912,8 +15732,8 @@ describe 'Sheet59' do
     sheet59.df84.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell dh84 should equal 77.02597518139623' do
-    sheet59.dh84.should be_within(7.702597518139624).of(77.02597518139623)
+  it 'cell dh84 should equal 111.11380225588053' do
+    sheet59.dh84.should be_within(11.111380225588054).of(111.11380225588053)
   end
 
   it 'cell g89 should equal 0.0' do
@@ -15964,8 +15784,8 @@ describe 'Sheet59' do
     sheet59.s89.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell t89 should equal 12.535714285714285' do
-    sheet59.t89.should be_within(1.2535714285714286).of(12.535714285714285)
+  it 'cell t89 should equal 7.5' do
+    sheet59.t89.should be_within(0.75).of(7.5)
   end
 
   it 'cell u89 should equal 0.0' do
@@ -16032,8 +15852,8 @@ describe 'Sheet59' do
     sheet59.aj89.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ak89 should equal 12.535714285714285' do
-    sheet59.ak89.should be_within(1.2535714285714286).of(12.535714285714285)
+  it 'cell ak89 should equal 7.5' do
+    sheet59.ak89.should be_within(0.75).of(7.5)
   end
 
   it 'cell am89 should equal 0.0' do
@@ -16052,8 +15872,8 @@ describe 'Sheet59' do
     sheet59.ap89.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell aq89 should equal -12.535714285714285' do
-    sheet59.aq89.should be_within(1.2535714285714286).of(-12.535714285714285)
+  it 'cell aq89 should equal -7.5' do
+    sheet59.aq89.should be_within(0.75).of(-7.5)
   end
 
   it 'cell ar89 should equal 0.0' do
@@ -16112,8 +15932,8 @@ describe 'Sheet59' do
     sheet59.be89.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bf89 should equal -12.535714285714285' do
-    sheet59.bf89.should be_within(1.2535714285714286).of(-12.535714285714285)
+  it 'cell bf89 should equal -7.5' do
+    sheet59.bf89.should be_within(0.75).of(-7.5)
   end
 
   it 'cell bh89 should equal 0.0' do
@@ -16132,12 +15952,12 @@ describe 'Sheet59' do
     sheet59.bl89.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell s90 should equal -456.5006373375567' do
-    sheet59.s90.should be_within(45.65006373375567).of(-456.5006373375567)
+  it 'cell s90 should equal -386.50037718909766' do
+    sheet59.s90.should be_within(38.65003771890977).of(-386.50037718909766)
   end
 
-  it 'cell t90 should equal 2.817419671153024' do
-    sheet59.t90.should be_within(0.2817419671153024).of(2.817419671153024)
+  it 'cell t90 should equal 27.7364230143591' do
+    sheet59.t90.should be_within(2.77364230143591).of(27.7364230143591)
   end
 
   it 'cell g91 should equal 0.0' do
@@ -16188,8 +16008,8 @@ describe 'Sheet59' do
     sheet59.s91.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell t91 should equal -34.228338528882546' do
-    sheet59.t91.should be_within(3.422833852888255).of(-34.228338528882546)
+  it 'cell t91 should equal -28.97973117655681' do
+    sheet59.t91.should be_within(2.897973117655681).of(-28.97973117655681)
   end
 
   it 'cell u91 should equal 0.0' do
@@ -16256,8 +16076,8 @@ describe 'Sheet59' do
     sheet59.aj91.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ak91 should equal -34.228338528882546' do
-    sheet59.ak91.should be_within(3.422833852888255).of(-34.228338528882546)
+  it 'cell ak91 should equal -28.97973117655681' do
+    sheet59.ak91.should be_within(2.897973117655681).of(-28.97973117655681)
   end
 
   it 'cell am91 should equal 0.0' do
@@ -16344,28 +16164,244 @@ describe 'Sheet59' do
     sheet59.bh91.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bi91 should equal 34.22833852888255' do
-    sheet59.bi91.should be_within(3.4228338528882554).of(34.22833852888255)
+  it 'cell bi91 should equal 28.979731176556776' do
+    sheet59.bi91.should be_within(2.8979731176556776).of(28.979731176556776)
   end
 
-  it 'cell bj91 should equal 34.22833852888255' do
-    sheet59.bj91.should be_within(3.4228338528882554).of(34.22833852888255)
+  it 'cell bj91 should equal 28.979731176556776' do
+    sheet59.bj91.should be_within(2.8979731176556776).of(28.979731176556776)
   end
 
-  it 'cell bl91 should equal 0.0' do
-    sheet59.bl91.should be_within(1.0e-08).of(0.0)
+  it 'cell bl91 should equal -3.552713678800501e-14' do
+    sheet59.bl91.should be_within(1.0e-08).of(-3.552713678800501e-14)
   end
 
-  it 'cell bo92 should equal 0.7046796141239543' do
-    sheet59.bo92.should be_within(0.07046796141239543).of(0.7046796141239543)
+  it 'cell g92 should equal 0.0' do
+    sheet59.g92.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bp92 should equal 0.0014125202154591887' do
-    sheet59.bp92.should be_within(0.00014125202154591888).of(0.0014125202154591887)
+  it 'cell h92 should equal 0.0' do
+    sheet59.h92.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bq92 should equal 0.0015192341635609282' do
-    sheet59.bq92.should be_within(0.00015192341635609282).of(0.0015192341635609282)
+  it 'cell i92 should equal 0.0' do
+    sheet59.i92.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell j92 should equal 0.0' do
+    sheet59.j92.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell k92 should equal 0.0' do
+    sheet59.k92.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell l92 should equal 0.0' do
+    sheet59.l92.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell m92 should equal 0.0' do
+    sheet59.m92.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell n92 should equal 0.0' do
+    sheet59.n92.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell o92 should equal 0.0' do
+    sheet59.o92.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell p92 should equal 0.0' do
+    sheet59.p92.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell q92 should equal 0.0' do
+    sheet59.q92.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell s92 should equal 0.0' do
+    sheet59.s92.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell t92 should equal 0.0' do
+    sheet59.t92.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell u92 should equal 0.0' do
+    sheet59.u92.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell v92 should equal 0.0' do
+    sheet59.v92.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell w92 should equal -0.8066413362820798' do
+    sheet59.w92.should be_within(0.08066413362820798).of(-0.8066413362820798)
+  end
+
+  it 'cell x92 should equal 0.0' do
+    sheet59.x92.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell y92 should equal 0.0' do
+    sheet59.y92.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell z92 should equal 0.0' do
+    sheet59.z92.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell aa92 should equal 0.0' do
+    sheet59.aa92.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell ab92 should equal 0.0' do
+    sheet59.ab92.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell ac92 should equal 0.0' do
+    sheet59.ac92.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell ad92 should equal 0.0' do
+    sheet59.ad92.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell ae92 should equal 0.0' do
+    sheet59.ae92.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell af92 should equal 0.0' do
+    sheet59.af92.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell ag92 should equal 0.0' do
+    sheet59.ag92.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell ah92 should equal 0.0' do
+    sheet59.ah92.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell ai92 should equal 0.0' do
+    sheet59.ai92.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell aj92 should equal 0.0' do
+    sheet59.aj92.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell ak92 should equal -0.8066413362820798' do
+    sheet59.ak92.should be_within(0.08066413362820798).of(-0.8066413362820798)
+  end
+
+  it 'cell am92 should equal 0.0' do
+    sheet59.am92.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell an92 should equal 0.0' do
+    sheet59.an92.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell ao92 should equal 0.0' do
+    sheet59.ao92.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell ap92 should equal 0.0' do
+    sheet59.ap92.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell aq92 should equal 0.0' do
+    sheet59.aq92.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell ar92 should equal 0.0' do
+    sheet59.ar92.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell as92 should equal 0.0' do
+    sheet59.as92.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell at92 should equal 0.0' do
+    sheet59.at92.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell au92 should equal 0.0' do
+    sheet59.au92.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell av92 should equal 0.0' do
+    sheet59.av92.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell aw92 should equal 0.0' do
+    sheet59.aw92.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell ax92 should equal 0.0' do
+    sheet59.ax92.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell ay92 should equal 0.0' do
+    sheet59.ay92.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell az92 should equal 0.0' do
+    sheet59.az92.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell ba92 should equal 0.0' do
+    sheet59.ba92.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell bb92 should equal 0.0' do
+    sheet59.bb92.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell bc92 should equal 0.0' do
+    sheet59.bc92.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell bd92 should equal 0.0' do
+    sheet59.bd92.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell be92 should equal 0.0' do
+    sheet59.be92.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell bf92 should equal 0.0' do
+    sheet59.bf92.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell bh92 should equal 0.48398480176924785' do
+    sheet59.bh92.should be_within(0.04839848017692479).of(0.48398480176924785)
+  end
+
+  it 'cell bi92 should equal 0.32265653451283194' do
+    sheet59.bi92.should be_within(0.0322656534512832).of(0.32265653451283194)
+  end
+
+  it 'cell bj92 should equal 0.8066413362820798' do
+    sheet59.bj92.should be_within(0.08066413362820798).of(0.8066413362820798)
+  end
+
+  it 'cell bl92 should equal 0.0' do
+    sheet59.bl92.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell bo92 should equal 0.14842200587590265' do
+    sheet59.bo92.should be_within(0.014842200587590266).of(0.14842200587590265)
+  end
+
+  it 'cell bp92 should equal 0.0002975097895791226' do
+    sheet59.bp92.should be_within(2.9750978957912264e-05).of(0.0002975097895791226)
+  end
+
+  it 'cell bq92 should equal 0.0003199862425866182' do
+    sheet59.bq92.should be_within(3.199862425866182e-05).of(0.0003199862425866182)
   end
 
   it 'cell br92 should equal 0.0' do
@@ -16580,8 +16616,8 @@ describe 'Sheet59' do
     sheet59.s93.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell t93 should equal -21.69262424316826' do
-    sheet59.t93.should be_within(2.1692624243168264).of(-21.69262424316826)
+  it 'cell t93 should equal -21.47973117655681' do
+    sheet59.t93.should be_within(2.147973117655681).of(-21.47973117655681)
   end
 
   it 'cell u93 should equal 0.0' do
@@ -16592,8 +16628,8 @@ describe 'Sheet59' do
     sheet59.v93.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell w93 should equal 0.0' do
-    sheet59.w93.should be_within(1.0e-08).of(0.0)
+  it 'cell w93 should equal -0.8066413362820798' do
+    sheet59.w93.should be_within(0.08066413362820798).of(-0.8066413362820798)
   end
 
   it 'cell x93 should equal 0.0' do
@@ -16648,8 +16684,8 @@ describe 'Sheet59' do
     sheet59.aj93.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ak93 should equal -21.69262424316826' do
-    sheet59.ak93.should be_within(2.1692624243168264).of(-21.69262424316826)
+  it 'cell ak93 should equal -22.28637251283889' do
+    sheet59.ak93.should be_within(2.2286372512838892).of(-22.28637251283889)
   end
 
   it 'cell am93 should equal 0.0' do
@@ -16668,8 +16704,8 @@ describe 'Sheet59' do
     sheet59.ap93.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell aq93 should equal -12.535714285714285' do
-    sheet59.aq93.should be_within(1.2535714285714286).of(-12.535714285714285)
+  it 'cell aq93 should equal -7.5' do
+    sheet59.aq93.should be_within(0.75).of(-7.5)
   end
 
   it 'cell ar93 should equal 0.0' do
@@ -16728,36 +16764,36 @@ describe 'Sheet59' do
     sheet59.be93.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bf93 should equal -12.535714285714285' do
-    sheet59.bf93.should be_within(1.2535714285714286).of(-12.535714285714285)
+  it 'cell bf93 should equal -7.5' do
+    sheet59.bf93.should be_within(0.75).of(-7.5)
   end
 
-  it 'cell bh93 should equal 0.0' do
-    sheet59.bh93.should be_within(1.0e-08).of(0.0)
+  it 'cell bh93 should equal 0.48398480176924785' do
+    sheet59.bh93.should be_within(0.04839848017692479).of(0.48398480176924785)
   end
 
-  it 'cell bi93 should equal 34.22833852888255' do
-    sheet59.bi93.should be_within(3.4228338528882554).of(34.22833852888255)
+  it 'cell bi93 should equal 29.302387711069606' do
+    sheet59.bi93.should be_within(2.9302387711069606).of(29.302387711069606)
   end
 
-  it 'cell bj93 should equal 34.22833852888255' do
-    sheet59.bj93.should be_within(3.4228338528882554).of(34.22833852888255)
+  it 'cell bj93 should equal 29.786372512838852' do
+    sheet59.bj93.should be_within(2.9786372512838852).of(29.786372512838852)
   end
 
-  it 'cell bl93 should equal 0.0' do
-    sheet59.bl93.should be_within(1.0e-08).of(0.0)
+  it 'cell bl93 should equal -3.907985046680551e-14' do
+    sheet59.bl93.should be_within(1.0e-08).of(-3.907985046680551e-14)
   end
 
-  it 'cell bo93 should equal 0.7046796141239543' do
-    sheet59.bo93.should be_within(0.07046796141239543).of(0.7046796141239543)
+  it 'cell bo93 should equal 0.14842200587590265' do
+    sheet59.bo93.should be_within(0.014842200587590266).of(0.14842200587590265)
   end
 
-  it 'cell bp93 should equal 0.0014125202154591887' do
-    sheet59.bp93.should be_within(0.00014125202154591888).of(0.0014125202154591887)
+  it 'cell bp93 should equal 0.0002975097895791226' do
+    sheet59.bp93.should be_within(2.9750978957912264e-05).of(0.0002975097895791226)
   end
 
-  it 'cell bq93 should equal 0.0015192341635609282' do
-    sheet59.bq93.should be_within(0.00015192341635609282).of(0.0015192341635609282)
+  it 'cell bq93 should equal 0.0003199862425866182' do
+    sheet59.bq93.should be_within(3.199862425866182e-05).of(0.0003199862425866182)
   end
 
   it 'cell br93 should equal 0.0' do
@@ -16924,44 +16960,52 @@ describe 'Sheet59' do
     sheet59.df93.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell dh93 should equal 0.7076113685029745' do
-    sheet59.dh93.should be_within(0.07076113685029745).of(0.7076113685029745)
+  it 'cell dh93 should equal 0.1490395019080684' do
+    sheet59.dh93.should be_within(0.01490395019080684).of(0.1490395019080684)
   end
 
-  it 'cell u95 should equal -166.73386827826914' do
-    sheet59.u95.should be_within(16.673386827826914).of(-166.73386827826914)
+  it 'cell u95 should equal -278.8787219688909' do
+    sheet59.u95.should be_within(27.88787219688909).of(-278.8787219688909)
   end
 
-  it 'cell v95 should equal -491.8353012907488' do
-    sheet59.v95.should be_within(49.18353012907488).of(-491.8353012907488)
+  it 'cell v95 should equal -627.2224248568148' do
+    sheet59.v95.should be_within(62.72224248568148).of(-627.2224248568148)
   end
 
-  it 'cell w95 should equal -251.26496463999126' do
-    sheet59.w95.should be_within(25.12649646399913).of(-251.26496463999126)
+  it 'cell w95 should equal -567.0528525154419' do
+    sheet59.w95.should be_within(56.7052852515442).of(-567.0528525154419)
   end
 
   it 'cell ac95 should equal 0.0' do
     sheet59.ac95.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ad95 should equal 51.97143110679394' do
-    sheet59.ad95.should be_within(5.197143110679395).of(51.97143110679394)
+  it 'cell ad95 should equal 95.08315588824227' do
+    sheet59.ad95.should be_within(9.508315588824228).of(95.08315588824227)
   end
 
-  it 'cell ae95 should equal 1.6328504516407796' do
-    sheet59.ae95.should be_within(0.16328504516407796).of(1.6328504516407796)
+  it 'cell ae95 should equal 1.5959775502315894' do
+    sheet59.ae95.should be_within(0.15959775502315895).of(1.5959775502315894)
   end
 
-  it 'cell af95 should equal 44.75445965789887' do
-    sheet59.af95.should be_within(4.475445965789887).of(44.75445965789887)
+  it 'cell af95 should equal 100.51399902914869' do
+    sheet59.af95.should be_within(10.05139990291487).of(100.51399902914869)
   end
 
-  it 'cell ag95 should equal 36.704320020755056' do
-    sheet59.ag95.should be_within(3.670432002075506).of(36.704320020755056)
+  it 'cell ag95 should equal 55.13386869524017' do
+    sheet59.ag95.should be_within(5.513386869524017).of(55.13386869524017)
   end
 
-  it 'cell ah95 should equal 4.1745362801615915' do
-    sheet59.ah95.should be_within(0.41745362801615915).of(4.1745362801615915)
+  it 'cell ah95 should equal 5.871512144112685' do
+    sheet59.ah95.should be_within(0.5871512144112686).of(5.871512144112685)
+  end
+
+  it 'cell be95 should equal -174.2682333007932' do
+    sheet59.be95.should be_within(17.426823330079323).of(-174.2682333007932)
+  end
+
+  it 'cell bf95 should equal -174.2682333007932' do
+    sheet59.bf95.should be_within(17.426823330079323).of(-174.2682333007932)
   end
 
   it 'cell g96 should equal 0.0' do
@@ -17016,16 +17060,16 @@ describe 'Sheet59' do
     sheet59.t96.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell u96 should equal 91.88959622645817' do
-    sheet59.u96.should be_within(9.188959622645816).of(91.88959622645817)
+  it 'cell u96 should equal 185.8172971715214' do
+    sheet59.u96.should be_within(18.58172971715214).of(185.8172971715214)
   end
 
-  it 'cell v96 should equal 0.5159807427184864' do
-    sheet59.v96.should be_within(0.05159807427184864).of(0.5159807427184864)
+  it 'cell v96 should equal 0.5043289058731822' do
+    sheet59.v96.should be_within(0.05043289058731823).of(0.5043289058731822)
   end
 
-  it 'cell w96 should equal 35.37320829780339' do
-    sheet59.w96.should be_within(3.537320829780339).of(35.37320829780339)
+  it 'cell w96 should equal 52.73530053506683' do
+    sheet59.w96.should be_within(5.273530053506683).of(52.73530053506683)
   end
 
   it 'cell x96 should equal 0.0' do
@@ -17052,24 +17096,24 @@ describe 'Sheet59' do
     sheet59.ac96.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ad96 should equal -51.97143110679394' do
-    sheet59.ad96.should be_within(5.197143110679395).of(-51.97143110679394)
+  it 'cell ad96 should equal -95.08315588824227' do
+    sheet59.ad96.should be_within(9.508315588824228).of(-95.08315588824227)
   end
 
-  it 'cell ae96 should equal -1.6328504516407796' do
-    sheet59.ae96.should be_within(0.16328504516407796).of(-1.6328504516407796)
+  it 'cell ae96 should equal -1.5959775502315894' do
+    sheet59.ae96.should be_within(0.15959775502315895).of(-1.5959775502315894)
   end
 
-  it 'cell af96 should equal -44.75445965789887' do
-    sheet59.af96.should be_within(4.475445965789887).of(-44.75445965789887)
+  it 'cell af96 should equal -100.51399902914869' do
+    sheet59.af96.should be_within(10.05139990291487).of(-100.51399902914869)
   end
 
-  it 'cell ag96 should equal -36.704320020755056' do
-    sheet59.ag96.should be_within(3.670432002075506).of(-36.704320020755056)
+  it 'cell ag96 should equal -55.13386869524017' do
+    sheet59.ag96.should be_within(5.513386869524017).of(-55.13386869524017)
   end
 
-  it 'cell ah96 should equal -4.1745362801615915' do
-    sheet59.ah96.should be_within(0.41745362801615915).of(-4.1745362801615915)
+  it 'cell ah96 should equal -5.871512144112685' do
+    sheet59.ah96.should be_within(0.5871512144112686).of(-5.871512144112685)
   end
 
   it 'cell ai96 should equal 0.0' do
@@ -17080,8 +17124,8 @@ describe 'Sheet59' do
     sheet59.aj96.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ak96 should equal -11.458812250270201' do
-    sheet59.ak96.should be_within(1.14588122502702).of(-11.458812250270201)
+  it 'cell ak96 should equal -19.14158669451399' do
+    sheet59.ak96.should be_within(1.914158669451399).of(-19.14158669451399)
   end
 
   it 'cell am96 should equal 0.0' do
@@ -17164,20 +17208,20 @@ describe 'Sheet59' do
     sheet59.bf96.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bh96 should equal 11.4588122502702' do
-    sheet59.bh96.should be_within(1.14588122502702).of(11.4588122502702)
+  it 'cell bh96 should equal 19.141586694513933' do
+    sheet59.bh96.should be_within(1.9141586694513935).of(19.141586694513933)
   end
 
   it 'cell bi96 should equal 0.0' do
     sheet59.bi96.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bj96 should equal 11.4588122502702' do
-    sheet59.bj96.should be_within(1.14588122502702).of(11.4588122502702)
+  it 'cell bj96 should equal 19.141586694513933' do
+    sheet59.bj96.should be_within(1.9141586694513935).of(19.141586694513933)
   end
 
-  it 'cell bl96 should equal 0.0' do
-    sheet59.bl96.should be_within(1.0e-08).of(0.0)
+  it 'cell bl96 should equal -5.684341886080802e-14' do
+    sheet59.bl96.should be_within(1.0e-08).of(-5.684341886080802e-14)
   end
 
   it 'cell bo96 should equal 0.0' do
@@ -17324,8 +17368,8 @@ describe 'Sheet59' do
     sheet59.cx96.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell cy96 should equal -34.93966115022455' do
-    sheet59.cy96.should be_within(3.4939661150224555).of(-34.93966115022455)
+  it 'cell cy96 should equal -67.06110505374917' do
+    sheet59.cy96.should be_within(6.706110505374918).of(-67.06110505374917)
   end
 
   it 'cell cz96 should equal 0.0' do
@@ -17356,20 +17400,20 @@ describe 'Sheet59' do
     sheet59.df96.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell dh96 should equal -34.93966115022455' do
-    sheet59.dh96.should be_within(3.4939661150224555).of(-34.93966115022455)
+  it 'cell dh96 should equal -67.06110505374917' do
+    sheet59.dh96.should be_within(6.706110505374918).of(-67.06110505374917)
   end
 
-  it 'cell u97 should equal -74.84427205181098' do
-    sheet59.u97.should be_within(7.484427205181098).of(-74.84427205181098)
+  it 'cell u97 should equal -93.06142479736948' do
+    sheet59.u97.should be_within(9.306142479736948).of(-93.06142479736948)
   end
 
-  it 'cell v97 should equal -491.3193205480303' do
-    sheet59.v97.should be_within(49.13193205480303).of(-491.3193205480303)
+  it 'cell v97 should equal -626.7180959509416' do
+    sheet59.v97.should be_within(62.67180959509416).of(-626.7180959509416)
   end
 
-  it 'cell w97 should equal -215.89175634218788' do
-    sheet59.w97.should be_within(21.58917563421879).of(-215.89175634218788)
+  it 'cell w97 should equal -514.3175519803751' do
+    sheet59.w97.should be_within(51.431755198037514).of(-514.3175519803751)
   end
 
   it 'cell ac97 should equal 0.0' do
@@ -17394,6 +17438,14 @@ describe 'Sheet59' do
 
   it 'cell ah97 should equal 0.0' do
     sheet59.ah97.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell be97 should equal -52.050765601453215' do
+    sheet59.be97.should be_within(5.205076560145322).of(-52.050765601453215)
+  end
+
+  it 'cell bf97 should equal -52.050765601453215' do
+    sheet59.bf97.should be_within(5.205076560145322).of(-52.050765601453215)
   end
 
   it 'cell g98 should equal 0.0' do
@@ -17448,12 +17500,12 @@ describe 'Sheet59' do
     sheet59.t98.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell u98 should equal 37.62745813953489' do
-    sheet59.u98.should be_within(3.762745813953489).of(37.62745813953489)
+  it 'cell u98 should equal 47.114932558139536' do
+    sheet59.u98.should be_within(4.711493255813954).of(47.114932558139536)
   end
 
-  it 'cell v98 should equal 37.07030000000001' do
-    sheet59.v98.should be_within(3.7070300000000014).of(37.07030000000001)
+  it 'cell v98 should equal 45.44345813953488' do
+    sheet59.v98.should be_within(4.5443458139534885).of(45.44345813953488)
   end
 
   it 'cell w98 should equal 0.0' do
@@ -17512,8 +17564,8 @@ describe 'Sheet59' do
     sheet59.aj98.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ak98 should equal 74.6977581395349' do
-    sheet59.ak98.should be_within(7.46977581395349).of(74.6977581395349)
+  it 'cell ak98 should equal 92.55839069767441' do
+    sheet59.ak98.should be_within(9.255839069767442).of(92.55839069767441)
   end
 
   it 'cell am98 should equal 0.0' do
@@ -17528,8 +17580,8 @@ describe 'Sheet59' do
     sheet59.ao98.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ap98 should equal -74.6977581395349' do
-    sheet59.ap98.should be_within(7.46977581395349).of(-74.6977581395349)
+  it 'cell ap98 should equal -92.55839069767441' do
+    sheet59.ap98.should be_within(9.255839069767442).of(-92.55839069767441)
   end
 
   it 'cell aq98 should equal 0.0' do
@@ -17592,8 +17644,8 @@ describe 'Sheet59' do
     sheet59.be98.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bf98 should equal -74.6977581395349' do
-    sheet59.bf98.should be_within(7.46977581395349).of(-74.6977581395349)
+  it 'cell bf98 should equal -92.55839069767441' do
+    sheet59.bf98.should be_within(9.255839069767442).of(-92.55839069767441)
   end
 
   it 'cell bh98 should equal 0.0' do
@@ -17756,8 +17808,8 @@ describe 'Sheet59' do
     sheet59.cx98.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell cy98 should equal -20.856832106976746' do
-    sheet59.cy98.should be_within(2.085683210697675).of(-20.856832106976746)
+  it 'cell cy98 should equal -25.872263762790695' do
+    sheet59.cy98.should be_within(2.5872263762790695).of(-25.872263762790695)
   end
 
   it 'cell cz98 should equal 0.0' do
@@ -17788,8 +17840,8 @@ describe 'Sheet59' do
     sheet59.df98.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell dh98 should equal -20.856832106976746' do
-    sheet59.dh98.should be_within(2.085683210697675).of(-20.856832106976746)
+  it 'cell dh98 should equal -25.872263762790695' do
+    sheet59.dh98.should be_within(2.5872263762790695).of(-25.872263762790695)
   end
 
   it 'cell g99 should equal 0.0' do
@@ -17844,16 +17896,16 @@ describe 'Sheet59' do
     sheet59.t99.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell u99 should equal 129.51705436599306' do
-    sheet59.u99.should be_within(12.951705436599307).of(129.51705436599306)
+  it 'cell u99 should equal 232.93222972966095' do
+    sheet59.u99.should be_within(23.293222972966095).of(232.93222972966095)
   end
 
-  it 'cell v99 should equal 37.58628074271849' do
-    sheet59.v99.should be_within(3.7586280742718494).of(37.58628074271849)
+  it 'cell v99 should equal 45.94778704540806' do
+    sheet59.v99.should be_within(4.594778704540807).of(45.94778704540806)
   end
 
-  it 'cell w99 should equal 35.37320829780339' do
-    sheet59.w99.should be_within(3.537320829780339).of(35.37320829780339)
+  it 'cell w99 should equal 52.73530053506683' do
+    sheet59.w99.should be_within(5.273530053506683).of(52.73530053506683)
   end
 
   it 'cell x99 should equal 0.0' do
@@ -17880,24 +17932,24 @@ describe 'Sheet59' do
     sheet59.ac99.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ad99 should equal -51.97143110679394' do
-    sheet59.ad99.should be_within(5.197143110679395).of(-51.97143110679394)
+  it 'cell ad99 should equal -95.08315588824227' do
+    sheet59.ad99.should be_within(9.508315588824228).of(-95.08315588824227)
   end
 
-  it 'cell ae99 should equal -1.6328504516407796' do
-    sheet59.ae99.should be_within(0.16328504516407796).of(-1.6328504516407796)
+  it 'cell ae99 should equal -1.5959775502315894' do
+    sheet59.ae99.should be_within(0.15959775502315895).of(-1.5959775502315894)
   end
 
-  it 'cell af99 should equal -44.75445965789887' do
-    sheet59.af99.should be_within(4.475445965789887).of(-44.75445965789887)
+  it 'cell af99 should equal -100.51399902914869' do
+    sheet59.af99.should be_within(10.05139990291487).of(-100.51399902914869)
   end
 
-  it 'cell ag99 should equal -36.704320020755056' do
-    sheet59.ag99.should be_within(3.670432002075506).of(-36.704320020755056)
+  it 'cell ag99 should equal -55.13386869524017' do
+    sheet59.ag99.should be_within(5.513386869524017).of(-55.13386869524017)
   end
 
-  it 'cell ah99 should equal -4.1745362801615915' do
-    sheet59.ah99.should be_within(0.41745362801615915).of(-4.1745362801615915)
+  it 'cell ah99 should equal -5.871512144112685' do
+    sheet59.ah99.should be_within(0.5871512144112686).of(-5.871512144112685)
   end
 
   it 'cell ai99 should equal 0.0' do
@@ -17908,8 +17960,8 @@ describe 'Sheet59' do
     sheet59.aj99.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ak99 should equal 63.23894588926467' do
-    sheet59.ak99.should be_within(6.323894588926468).of(63.23894588926467)
+  it 'cell ak99 should equal 73.4168040031604' do
+    sheet59.ak99.should be_within(7.34168040031604).of(73.4168040031604)
   end
 
   it 'cell am99 should equal 0.0' do
@@ -17924,8 +17976,8 @@ describe 'Sheet59' do
     sheet59.ao99.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ap99 should equal -74.6977581395349' do
-    sheet59.ap99.should be_within(7.46977581395349).of(-74.6977581395349)
+  it 'cell ap99 should equal -92.55839069767441' do
+    sheet59.ap99.should be_within(9.255839069767442).of(-92.55839069767441)
   end
 
   it 'cell aq99 should equal 0.0' do
@@ -17988,24 +18040,24 @@ describe 'Sheet59' do
     sheet59.be99.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bf99 should equal -74.6977581395349' do
-    sheet59.bf99.should be_within(7.46977581395349).of(-74.6977581395349)
+  it 'cell bf99 should equal -92.55839069767441' do
+    sheet59.bf99.should be_within(9.255839069767442).of(-92.55839069767441)
   end
 
-  it 'cell bh99 should equal 11.4588122502702' do
-    sheet59.bh99.should be_within(1.14588122502702).of(11.4588122502702)
+  it 'cell bh99 should equal 19.141586694513933' do
+    sheet59.bh99.should be_within(1.9141586694513935).of(19.141586694513933)
   end
 
   it 'cell bi99 should equal 0.0' do
     sheet59.bi99.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bj99 should equal 11.4588122502702' do
-    sheet59.bj99.should be_within(1.14588122502702).of(11.4588122502702)
+  it 'cell bj99 should equal 19.141586694513933' do
+    sheet59.bj99.should be_within(1.9141586694513935).of(19.141586694513933)
   end
 
-  it 'cell bl99 should equal -2.842170943040401e-14' do
-    sheet59.bl99.should be_within(1.0e-08).of(-2.842170943040401e-14)
+  it 'cell bl99 should equal -8.526512829121202e-14' do
+    sheet59.bl99.should be_within(1.0e-08).of(-8.526512829121202e-14)
   end
 
   it 'cell bo99 should equal 0.0' do
@@ -18152,8 +18204,8 @@ describe 'Sheet59' do
     sheet59.cx99.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell cy99 should equal -55.7964932572013' do
-    sheet59.cy99.should be_within(5.57964932572013).of(-55.7964932572013)
+  it 'cell cy99 should equal -92.93336881653987' do
+    sheet59.cy99.should be_within(9.293336881653987).of(-92.93336881653987)
   end
 
   it 'cell cz99 should equal 0.0' do
@@ -18184,28 +18236,28 @@ describe 'Sheet59' do
     sheet59.df99.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell dh99 should equal -55.7964932572013' do
-    sheet59.dh99.should be_within(5.57964932572013).of(-55.7964932572013)
+  it 'cell dh99 should equal -92.93336881653987' do
+    sheet59.dh99.should be_within(9.293336881653987).of(-92.93336881653987)
   end
 
-  it 'cell s101 should equal -457.426196526993' do
-    sheet59.s101.should be_within(45.742619652699304).of(-457.426196526993)
+  it 'cell s101 should equal -386.50037718909766' do
+    sheet59.s101.should be_within(38.65003771890977).of(-386.50037718909766)
   end
 
-  it 'cell t101 should equal 490.1117279171487' do
-    sheet59.t101.should be_within(49.01117279171487).of(490.1117279171487)
+  it 'cell t101 should equal 386.5003771890976' do
+    sheet59.t101.should be_within(38.650037718909765).of(386.5003771890976)
   end
 
-  it 'cell u101 should equal -37.21681391227608' do
-    sheet59.u101.should be_within(3.7216813912276083).of(-37.21681391227608)
+  it 'cell u101 should equal -45.94649223922994' do
+    sheet59.u101.should be_within(4.594649223922994).of(-45.94649223922994)
   end
 
-  it 'cell v101 should equal -454.24902054803033' do
-    sheet59.v101.should be_within(45.424902054803034).of(-454.24902054803033)
+  it 'cell v101 should equal -581.2746378114067' do
+    sheet59.v101.should be_within(58.127463781140676).of(-581.2746378114067)
   end
 
-  it 'cell w101 should equal -215.89175634218788' do
-    sheet59.w101.should be_within(21.58917563421879).of(-215.89175634218788)
+  it 'cell w101 should equal -514.3175519803751' do
+    sheet59.w101.should be_within(51.431755198037514).of(-514.3175519803751)
   end
 
   it 'cell g102 should equal 0.0' do
@@ -18260,28 +18312,28 @@ describe 'Sheet59' do
     sheet59.t102.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell u102 should equal 37.21681391227608' do
-    sheet59.u102.should be_within(3.7216813912276083).of(37.21681391227608)
+  it 'cell u102 should equal 45.94649223922994' do
+    sheet59.u102.should be_within(4.594649223922994).of(45.94649223922994)
   end
 
-  it 'cell v102 should equal 454.24902054803033' do
-    sheet59.v102.should be_within(45.424902054803034).of(454.24902054803033)
+  it 'cell v102 should equal 581.2746378114067' do
+    sheet59.v102.should be_within(58.127463781140676).of(581.2746378114067)
   end
 
-  it 'cell w102 should equal 215.89175634218788' do
-    sheet59.w102.should be_within(21.58917563421879).of(215.89175634218788)
+  it 'cell w102 should equal 514.3175519803751' do
+    sheet59.w102.should be_within(51.431755198037514).of(514.3175519803751)
   end
 
-  it 'cell x102 should equal -37.21681391227608' do
-    sheet59.x102.should be_within(3.7216813912276083).of(-37.21681391227608)
+  it 'cell x102 should equal -45.94649223922994' do
+    sheet59.x102.should be_within(4.594649223922994).of(-45.94649223922994)
   end
 
-  it 'cell y102 should equal -454.24902054803033' do
-    sheet59.y102.should be_within(45.424902054803034).of(-454.24902054803033)
+  it 'cell y102 should equal -581.2746378114067' do
+    sheet59.y102.should be_within(58.127463781140676).of(-581.2746378114067)
   end
 
-  it 'cell z102 should equal -218.3799866174127' do
-    sheet59.z102.should be_within(21.83799866174127).of(-218.3799866174127)
+  it 'cell z102 should equal -520.2452470698009' do
+    sheet59.z102.should be_within(52.024524706980095).of(-520.2452470698009)
   end
 
   it 'cell aa102 should equal 0.0' do
@@ -18324,8 +18376,8 @@ describe 'Sheet59' do
     sheet59.aj102.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ak102 should equal -2.4882302752247654' do
-    sheet59.ak102.should be_within(0.24882302752247654).of(-2.4882302752247654)
+  it 'cell ak102 should equal -5.927695089425697' do
+    sheet59.ak102.should be_within(0.5927695089425697).of(-5.927695089425697)
   end
 
   it 'cell am102 should equal 0.0' do
@@ -18412,16 +18464,16 @@ describe 'Sheet59' do
     sheet59.bh102.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bi102 should equal 2.48823027522483' do
-    sheet59.bi102.should be_within(0.24882302752248303).of(2.48823027522483)
+  it 'cell bi102 should equal 5.92769508942576' do
+    sheet59.bi102.should be_within(0.5927695089425761).of(5.92769508942576)
   end
 
-  it 'cell bj102 should equal 2.48823027522483' do
-    sheet59.bj102.should be_within(0.24882302752248303).of(2.48823027522483)
+  it 'cell bj102 should equal 5.92769508942576' do
+    sheet59.bj102.should be_within(0.5927695089425761).of(5.92769508942576)
   end
 
-  it 'cell bl102 should equal 6.483702463810914e-14' do
-    sheet59.bl102.should be_within(1.0e-08).of(6.483702463810914e-14)
+  it 'cell bl102 should equal 6.306066779870889e-14' do
+    sheet59.bl102.should be_within(1.0e-08).of(6.306066779870889e-14)
   end
 
   it 'cell bo102 should equal 0.0' do
@@ -18444,8 +18496,8 @@ describe 'Sheet59' do
     sheet59.bs102.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bt102 should equal 0.975619838356957' do
-    sheet59.bt102.should be_within(0.0975619838356957).of(0.975619838356957)
+  it 'cell bt102 should equal 2.3242129084906877' do
+    sheet59.bt102.should be_within(0.2324212908490688).of(2.3242129084906877)
   end
 
   it 'cell bu102 should equal 0.0' do
@@ -18600,48 +18652,48 @@ describe 'Sheet59' do
     sheet59.df102.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell dh102 should equal 0.975619838356957' do
-    sheet59.dh102.should be_within(0.0975619838356957).of(0.975619838356957)
+  it 'cell dh102 should equal 2.3242129084906877' do
+    sheet59.dh102.should be_within(0.2324212908490688).of(2.3242129084906877)
   end
 
-  it 'cell t103 should equal -32.68553139015569' do
-    sheet59.t103.should be_within(3.268553139015569).of(-32.68553139015569)
+  it 'cell t103 should equal 5.684341886080802e-14' do
+    sheet59.t103.should be_within(1.0e-08).of(5.684341886080802e-14)
   end
 
-  it 'cell x103 should equal -41.08084206584893' do
-    sheet59.x103.should be_within(4.108084206584893).of(-41.08084206584893)
+  it 'cell x103 should equal -30.76736119306173' do
+    sheet59.x103.should be_within(3.0767361193061733).of(-30.76736119306173)
   end
 
-  it 'cell y103 should equal 315.0579978900972' do
-    sheet59.y103.should be_within(31.505799789009725).of(315.0579978900972)
+  it 'cell y103 should equal 348.80021785163177' do
+    sheet59.y103.should be_within(34.88002178516318).of(348.80021785163177)
   end
 
-  it 'cell z103 should equal 112.10631418635437' do
-    sheet59.z103.should be_within(11.210631418635437).of(112.10631418635437)
+  it 'cell z103 should equal 342.7488117133263' do
+    sheet59.z103.should be_within(34.27488117133263).of(342.7488117133263)
   end
 
-  it 'cell ak103 should equal 353.397938620447' do
-    sheet59.ak103.should be_within(35.3397938620447).of(353.397938620447)
+  it 'cell ak103 should equal 660.7816683718963' do
+    sheet59.ak103.should be_within(66.07816683718964).of(660.7816683718963)
   end
 
-  it 'cell aq103 should equal 32.68553139015569' do
-    sheet59.aq103.should be_within(3.268553139015569).of(32.68553139015569)
+  it 'cell aq103 should equal -5.684341886080802e-14' do
+    sheet59.aq103.should be_within(1.0e-08).of(-5.684341886080802e-14)
   end
 
-  it 'cell as103 should equal 41.08084206584893' do
-    sheet59.as103.should be_within(4.108084206584893).of(41.08084206584893)
+  it 'cell as103 should equal 30.76736119306173' do
+    sheet59.as103.should be_within(3.0767361193061733).of(30.76736119306173)
   end
 
-  it 'cell at103 should equal -315.0579978900972' do
-    sheet59.at103.should be_within(31.505799789009725).of(-315.0579978900972)
+  it 'cell at103 should equal -348.80021785163177' do
+    sheet59.at103.should be_within(34.88002178516318).of(-348.80021785163177)
   end
 
-  it 'cell au103 should equal -112.10631418635437' do
-    sheet59.au103.should be_within(11.210631418635437).of(-112.10631418635437)
+  it 'cell au103 should equal -342.7488117133263' do
+    sheet59.au103.should be_within(34.27488117133263).of(-342.7488117133263)
   end
 
-  it 'cell bf103 should equal -353.397938620447' do
-    sheet59.bf103.should be_within(35.3397938620447).of(-353.397938620447)
+  it 'cell bf103 should equal -660.7816683718963' do
+    sheet59.bf103.should be_within(66.07816683718964).of(-660.7816683718963)
   end
 
   it 'cell bl103 should equal 0.0' do
@@ -18696,32 +18748,32 @@ describe 'Sheet59' do
     sheet59.s104.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell t104 should equal -32.68553139015569' do
-    sheet59.t104.should be_within(3.268553139015569).of(-32.68553139015569)
+  it 'cell t104 should equal 5.684341886080802e-14' do
+    sheet59.t104.should be_within(1.0e-08).of(5.684341886080802e-14)
   end
 
-  it 'cell u104 should equal 37.21681391227608' do
-    sheet59.u104.should be_within(3.7216813912276083).of(37.21681391227608)
+  it 'cell u104 should equal 45.94649223922994' do
+    sheet59.u104.should be_within(4.594649223922994).of(45.94649223922994)
   end
 
-  it 'cell v104 should equal 454.24902054803033' do
-    sheet59.v104.should be_within(45.424902054803034).of(454.24902054803033)
+  it 'cell v104 should equal 581.2746378114067' do
+    sheet59.v104.should be_within(58.127463781140676).of(581.2746378114067)
   end
 
-  it 'cell w104 should equal 215.89175634218788' do
-    sheet59.w104.should be_within(21.58917563421879).of(215.89175634218788)
+  it 'cell w104 should equal 514.3175519803751' do
+    sheet59.w104.should be_within(51.431755198037514).of(514.3175519803751)
   end
 
-  it 'cell x104 should equal -78.29765597812501' do
-    sheet59.x104.should be_within(7.829765597812501).of(-78.29765597812501)
+  it 'cell x104 should equal -76.71385343229167' do
+    sheet59.x104.should be_within(7.671385343229168).of(-76.71385343229167)
   end
 
-  it 'cell y104 should equal -139.1910226579331' do
-    sheet59.y104.should be_within(13.919102265793311).of(-139.1910226579331)
+  it 'cell y104 should equal -232.47441995977493' do
+    sheet59.y104.should be_within(23.247441995977496).of(-232.47441995977493)
   end
 
-  it 'cell z104 should equal -106.27367243105833' do
-    sheet59.z104.should be_within(10.627367243105834).of(-106.27367243105833)
+  it 'cell z104 should equal -177.49643535647465' do
+    sheet59.z104.should be_within(17.749643535647465).of(-177.49643535647465)
   end
 
   it 'cell aa104 should equal 0.0' do
@@ -18764,8 +18816,8 @@ describe 'Sheet59' do
     sheet59.aj104.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ak104 should equal 350.90970834522204' do
-    sheet59.ak104.should be_within(35.0909708345222).of(350.90970834522204)
+  it 'cell ak104 should equal 654.8539732824706' do
+    sheet59.ak104.should be_within(65.48539732824706).of(654.8539732824706)
   end
 
   it 'cell am104 should equal 0.0' do
@@ -18784,24 +18836,24 @@ describe 'Sheet59' do
     sheet59.ap104.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell aq104 should equal 32.68553139015569' do
-    sheet59.aq104.should be_within(3.268553139015569).of(32.68553139015569)
+  it 'cell aq104 should equal -5.684341886080802e-14' do
+    sheet59.aq104.should be_within(1.0e-08).of(-5.684341886080802e-14)
   end
 
   it 'cell ar104 should equal 0.0' do
     sheet59.ar104.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell as104 should equal 41.08084206584893' do
-    sheet59.as104.should be_within(4.108084206584893).of(41.08084206584893)
+  it 'cell as104 should equal 30.76736119306173' do
+    sheet59.as104.should be_within(3.0767361193061733).of(30.76736119306173)
   end
 
-  it 'cell at104 should equal -315.0579978900972' do
-    sheet59.at104.should be_within(31.505799789009725).of(-315.0579978900972)
+  it 'cell at104 should equal -348.80021785163177' do
+    sheet59.at104.should be_within(34.88002178516318).of(-348.80021785163177)
   end
 
-  it 'cell au104 should equal -112.10631418635437' do
-    sheet59.au104.should be_within(11.210631418635437).of(-112.10631418635437)
+  it 'cell au104 should equal -342.7488117133263' do
+    sheet59.au104.should be_within(34.27488117133263).of(-342.7488117133263)
   end
 
   it 'cell av104 should equal 0.0' do
@@ -18844,24 +18896,24 @@ describe 'Sheet59' do
     sheet59.be104.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bf104 should equal -353.397938620447' do
-    sheet59.bf104.should be_within(35.3397938620447).of(-353.397938620447)
+  it 'cell bf104 should equal -660.7816683718963' do
+    sheet59.bf104.should be_within(66.07816683718964).of(-660.7816683718963)
   end
 
   it 'cell bh104 should equal 0.0' do
     sheet59.bh104.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bi104 should equal 2.48823027522483' do
-    sheet59.bi104.should be_within(0.24882302752248303).of(2.48823027522483)
+  it 'cell bi104 should equal 5.92769508942576' do
+    sheet59.bi104.should be_within(0.5927695089425761).of(5.92769508942576)
   end
 
-  it 'cell bj104 should equal 2.48823027522483' do
-    sheet59.bj104.should be_within(0.24882302752248303).of(2.48823027522483)
+  it 'cell bj104 should equal 5.92769508942576' do
+    sheet59.bj104.should be_within(0.5927695089425761).of(5.92769508942576)
   end
 
-  it 'cell bl104 should equal -1.341149413747189e-13' do
-    sheet59.bl104.should be_within(1.0e-08).of(-1.341149413747189e-13)
+  it 'cell bl104 should equal 6.306066779870889e-14' do
+    sheet59.bl104.should be_within(1.0e-08).of(6.306066779870889e-14)
   end
 
   it 'cell bo104 should equal 0.0' do
@@ -18884,8 +18936,8 @@ describe 'Sheet59' do
     sheet59.bs104.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bt104 should equal 0.975619838356957' do
-    sheet59.bt104.should be_within(0.0975619838356957).of(0.975619838356957)
+  it 'cell bt104 should equal 2.3242129084906877' do
+    sheet59.bt104.should be_within(0.2324212908490688).of(2.3242129084906877)
   end
 
   it 'cell bu104 should equal 0.0' do
@@ -19040,8 +19092,8 @@ describe 'Sheet59' do
     sheet59.df104.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell dh104 should equal 0.975619838356957' do
-    sheet59.dh104.should be_within(0.0975619838356957).of(0.975619838356957)
+  it 'cell dh104 should equal 2.3242129084906877' do
+    sheet59.dh104.should be_within(0.2324212908490688).of(2.3242129084906877)
   end
 
   it 'cell g106 should equal 0.0' do
@@ -19092,32 +19144,32 @@ describe 'Sheet59' do
     sheet59.s106.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell t106 should equal -54.37815563332395' do
-    sheet59.t106.should be_within(5.4378155633323955).of(-54.37815563332395)
+  it 'cell t106 should equal -21.479731176556754' do
+    sheet59.t106.should be_within(2.1479731176556753).of(-21.479731176556754)
   end
 
-  it 'cell u106 should equal 166.73386827826914' do
-    sheet59.u106.should be_within(16.673386827826914).of(166.73386827826914)
+  it 'cell u106 should equal 278.8787219688909' do
+    sheet59.u106.should be_within(27.88787219688909).of(278.8787219688909)
   end
 
-  it 'cell v106 should equal 491.8353012907488' do
-    sheet59.v106.should be_within(49.18353012907488).of(491.8353012907488)
+  it 'cell v106 should equal 627.2224248568148' do
+    sheet59.v106.should be_within(62.72224248568148).of(627.2224248568148)
   end
 
-  it 'cell w106 should equal 251.26496463999126' do
-    sheet59.w106.should be_within(25.12649646399913).of(251.26496463999126)
+  it 'cell w106 should equal 566.2462111791599' do
+    sheet59.w106.should be_within(56.62462111791599).of(566.2462111791599)
   end
 
-  it 'cell x106 should equal -78.29765597812501' do
-    sheet59.x106.should be_within(7.829765597812501).of(-78.29765597812501)
+  it 'cell x106 should equal -76.71385343229167' do
+    sheet59.x106.should be_within(7.671385343229168).of(-76.71385343229167)
   end
 
-  it 'cell y106 should equal -139.1910226579331' do
-    sheet59.y106.should be_within(13.919102265793311).of(-139.1910226579331)
+  it 'cell y106 should equal -232.47441995977493' do
+    sheet59.y106.should be_within(23.247441995977496).of(-232.47441995977493)
   end
 
-  it 'cell z106 should equal -106.27367243105833' do
-    sheet59.z106.should be_within(10.627367243105834).of(-106.27367243105833)
+  it 'cell z106 should equal -177.49643535647465' do
+    sheet59.z106.should be_within(17.749643535647465).of(-177.49643535647465)
   end
 
   it 'cell aa106 should equal 0.0' do
@@ -19132,24 +19184,24 @@ describe 'Sheet59' do
     sheet59.ac106.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ad106 should equal -51.97143110679394' do
-    sheet59.ad106.should be_within(5.197143110679395).of(-51.97143110679394)
+  it 'cell ad106 should equal -95.08315588824227' do
+    sheet59.ad106.should be_within(9.508315588824228).of(-95.08315588824227)
   end
 
-  it 'cell ae106 should equal -1.6328504516407796' do
-    sheet59.ae106.should be_within(0.16328504516407796).of(-1.6328504516407796)
+  it 'cell ae106 should equal -1.5959775502315894' do
+    sheet59.ae106.should be_within(0.15959775502315895).of(-1.5959775502315894)
   end
 
-  it 'cell af106 should equal -44.75445965789887' do
-    sheet59.af106.should be_within(4.475445965789887).of(-44.75445965789887)
+  it 'cell af106 should equal -100.51399902914869' do
+    sheet59.af106.should be_within(10.05139990291487).of(-100.51399902914869)
   end
 
-  it 'cell ag106 should equal -36.704320020755056' do
-    sheet59.ag106.should be_within(3.670432002075506).of(-36.704320020755056)
+  it 'cell ag106 should equal -55.13386869524017' do
+    sheet59.ag106.should be_within(5.513386869524017).of(-55.13386869524017)
   end
 
-  it 'cell ah106 should equal -4.1745362801615915' do
-    sheet59.ah106.should be_within(0.41745362801615915).of(-4.1745362801615915)
+  it 'cell ah106 should equal -5.871512144112685' do
+    sheet59.ah106.should be_within(0.5871512144112686).of(-5.871512144112685)
   end
 
   it 'cell ai106 should equal 0.0' do
@@ -19160,8 +19212,8 @@ describe 'Sheet59' do
     sheet59.aj106.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ak106 should equal 392.45602999131853' do
-    sheet59.ak106.should be_within(39.245602999131854).of(392.45602999131853)
+  it 'cell ak106 should equal 705.9844047727923' do
+    sheet59.ak106.should be_within(70.59844047727924).of(705.9844047727923)
   end
 
   it 'cell am106 should equal 0.0' do
@@ -19176,28 +19228,28 @@ describe 'Sheet59' do
     sheet59.ao106.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ap106 should equal -74.6977581395349' do
-    sheet59.ap106.should be_within(7.46977581395349).of(-74.6977581395349)
+  it 'cell ap106 should equal -92.55839069767441' do
+    sheet59.ap106.should be_within(9.255839069767442).of(-92.55839069767441)
   end
 
-  it 'cell aq106 should equal 20.149817104441404' do
-    sheet59.aq106.should be_within(2.0149817104441405).of(20.149817104441404)
+  it 'cell aq106 should equal -7.500000000000057' do
+    sheet59.aq106.should be_within(0.7500000000000058).of(-7.500000000000057)
   end
 
   it 'cell ar106 should equal 0.0' do
     sheet59.ar106.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell as106 should equal 41.08084206584893' do
-    sheet59.as106.should be_within(4.108084206584893).of(41.08084206584893)
+  it 'cell as106 should equal 30.76736119306173' do
+    sheet59.as106.should be_within(3.0767361193061733).of(30.76736119306173)
   end
 
-  it 'cell at106 should equal -315.0579978900972' do
-    sheet59.at106.should be_within(31.505799789009725).of(-315.0579978900972)
+  it 'cell at106 should equal -348.80021785163177' do
+    sheet59.at106.should be_within(34.88002178516318).of(-348.80021785163177)
   end
 
-  it 'cell au106 should equal -112.10631418635437' do
-    sheet59.au106.should be_within(11.210631418635437).of(-112.10631418635437)
+  it 'cell au106 should equal -342.7488117133263' do
+    sheet59.au106.should be_within(34.27488117133263).of(-342.7488117133263)
   end
 
   it 'cell av106 should equal 0.0' do
@@ -19240,36 +19292,36 @@ describe 'Sheet59' do
     sheet59.be106.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bf106 should equal -440.63141104569615' do
-    sheet59.bf106.should be_within(44.06314110456962).of(-440.63141104569615)
+  it 'cell bf106 should equal -760.8400590695708' do
+    sheet59.bf106.should be_within(76.08400590695707).of(-760.8400590695708)
   end
 
-  it 'cell bh106 should equal 11.4588122502702' do
-    sheet59.bh106.should be_within(1.14588122502702).of(11.4588122502702)
+  it 'cell bh106 should equal 19.62557149628318' do
+    sheet59.bh106.should be_within(1.962557149628318).of(19.62557149628318)
   end
 
-  it 'cell bi106 should equal 36.71656880410738' do
-    sheet59.bi106.should be_within(3.6716568804107386).of(36.71656880410738)
+  it 'cell bi106 should equal 35.23008280049537' do
+    sheet59.bi106.should be_within(3.523008280049537).of(35.23008280049537)
   end
 
-  it 'cell bj106 should equal 48.17538105437758' do
-    sheet59.bj106.should be_within(4.817538105437759).of(48.17538105437758)
+  it 'cell bj106 should equal 54.855654296778546' do
+    sheet59.bj106.should be_within(5.485565429677855).of(54.855654296778546)
   end
 
-  it 'cell bl106 should equal 0.0' do
-    sheet59.bl106.should be_within(1.0e-08).of(0.0)
+  it 'cell bl106 should equal 1.2079226507921703e-13' do
+    sheet59.bl106.should be_within(1.0e-08).of(1.2079226507921703e-13)
   end
 
-  it 'cell bo106 should equal 0.7046796141239543' do
-    sheet59.bo106.should be_within(0.07046796141239543).of(0.7046796141239543)
+  it 'cell bo106 should equal 0.14842200587590265' do
+    sheet59.bo106.should be_within(0.014842200587590266).of(0.14842200587590265)
   end
 
-  it 'cell bp106 should equal 0.0014125202154591887' do
-    sheet59.bp106.should be_within(0.00014125202154591888).of(0.0014125202154591887)
+  it 'cell bp106 should equal 0.0002975097895791226' do
+    sheet59.bp106.should be_within(2.9750978957912264e-05).of(0.0002975097895791226)
   end
 
-  it 'cell bq106 should equal 0.0015192341635609282' do
-    sheet59.bq106.should be_within(0.00015192341635609282).of(0.0015192341635609282)
+  it 'cell bq106 should equal 0.0003199862425866182' do
+    sheet59.bq106.should be_within(3.199862425866182e-05).of(0.0003199862425866182)
   end
 
   it 'cell br106 should equal 0.0' do
@@ -19280,8 +19332,8 @@ describe 'Sheet59' do
     sheet59.bs106.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bt106 should equal 0.975619838356957' do
-    sheet59.bt106.should be_within(0.0975619838356957).of(0.975619838356957)
+  it 'cell bt106 should equal 2.3242129084906877' do
+    sheet59.bt106.should be_within(0.2324212908490688).of(2.3242129084906877)
   end
 
   it 'cell bu106 should equal 0.0' do
@@ -19404,8 +19456,8 @@ describe 'Sheet59' do
     sheet59.cx106.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell cy106 should equal -55.7964932572013' do
-    sheet59.cy106.should be_within(5.57964932572013).of(-55.7964932572013)
+  it 'cell cy106 should equal -92.93336881653987' do
+    sheet59.cy106.should be_within(9.293336881653987).of(-92.93336881653987)
   end
 
   it 'cell cz106 should equal 0.0' do
@@ -19436,60 +19488,60 @@ describe 'Sheet59' do
     sheet59.df106.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell dh106 should equal -54.11326205034137' do
-    sheet59.dh106.should be_within(5.411326205034137).of(-54.11326205034137)
+  it 'cell dh106 should equal -90.46011640614111' do
+    sheet59.dh106.should be_within(9.046011640614111).of(-90.46011640614111)
   end
 
-  it 'cell g109 should equal 338.9509956454034' do
-    sheet59.g109.should be_within(33.89509956454034).of(338.9509956454034)
+  it 'cell g109 should equal 432.1755594655357' do
+    sheet59.g109.should be_within(43.217555946553574).of(432.1755594655357)
   end
 
-  it 'cell h109 should equal 112.54521710558282' do
-    sheet59.h109.should be_within(11.254521710558283).of(112.54521710558282)
+  it 'cell h109 should equal 137.45741912890364' do
+    sheet59.h109.should be_within(13.745741912890365).of(137.45741912890364)
   end
 
-  it 'cell i109 should equal 331.1714779319054' do
-    sheet59.i109.should be_within(33.11714779319054).of(331.1714779319054)
+  it 'cell i109 should equal 359.110183408597' do
+    sheet59.i109.should be_within(35.9110183408597).of(359.110183408597)
   end
 
-  it 'cell j109 should equal 120.33237206366596' do
-    sheet59.j109.should be_within(12.033237206366596).of(120.33237206366596)
+  it 'cell j109 should equal 219.70211978524' do
+    sheet59.j109.should be_within(21.970211978524002).of(219.70211978524)
   end
 
-  it 'cell k109 should equal 13.360897928005851' do
-    sheet59.k109.should be_within(1.3360897928005853).of(13.360897928005851)
+  it 'cell k109 should equal 15.993395355340105' do
+    sheet59.k109.should be_within(1.5993395355340105).of(15.993395355340105)
   end
 
-  it 'cell l109 should equal 13.303419433940144' do
-    sheet59.l109.should be_within(1.3303419433940145).of(13.303419433940144)
+  it 'cell l109 should equal 13.223054307852369' do
+    sheet59.l109.should be_within(1.3223054307852369).of(13.223054307852369)
   end
 
-  it 'cell m109 should equal 27.663909204706563' do
-    sheet59.m109.should be_within(2.7663909204706565).of(27.663909204706563)
+  it 'cell m109 should equal 26.924236458661085' do
+    sheet59.m109.should be_within(2.692423645866109).of(26.924236458661085)
   end
 
-  it 'cell n109 should equal 189.04420150487704' do
-    sheet59.n109.should be_within(18.904420150487706).of(189.04420150487704)
+  it 'cell n109 should equal 198.27433298880996' do
+    sheet59.n109.should be_within(19.827433298880997).of(198.27433298880996)
   end
 
-  it 'cell o109 should equal 92.1065123835747' do
-    sheet59.o109.should be_within(9.21065123835747).of(92.1065123835747)
+  it 'cell o109 should equal 72.6033265300187' do
+    sheet59.o109.should be_within(7.260332653001871).of(72.6033265300187)
   end
 
   it 'cell p109 should equal 0.0' do
     sheet59.p109.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell q109 should equal 1238.4790032016617' do
-    sheet59.q109.should be_within(123.84790032016618).of(1238.4790032016617)
+  it 'cell q109 should equal 1475.4636274289585' do
+    sheet59.q109.should be_within(147.54636274289587).of(1475.4636274289585)
   end
 
-  it 'cell s109 should equal -457.426196526993' do
-    sheet59.s109.should be_within(45.742619652699304).of(-457.426196526993)
+  it 'cell s109 should equal -386.50037718909766' do
+    sheet59.s109.should be_within(38.65003771890977).of(-386.50037718909766)
   end
 
-  it 'cell t109 should equal 457.426196526993' do
-    sheet59.t109.should be_within(45.742619652699304).of(457.426196526993)
+  it 'cell t109 should equal 386.50037718909766' do
+    sheet59.t109.should be_within(38.65003771890977).of(386.50037718909766)
   end
 
   it 'cell u109 should equal 0.0' do
@@ -19564,120 +19616,120 @@ describe 'Sheet59' do
     sheet59.am109.should be_within(6.3965000000000005).of(-63.965)
   end
 
-  it 'cell an109 should equal -139.19102265793308' do
-    sheet59.an109.should be_within(13.919102265793308).of(-139.19102265793308)
+  it 'cell an109 should equal -232.47441995977493' do
+    sheet59.an109.should be_within(23.247441995977496).of(-232.47441995977493)
   end
 
-  it 'cell ao109 should equal -106.27367243105833' do
-    sheet59.ao109.should be_within(10.627367243105834).of(-106.27367243105833)
+  it 'cell ao109 should equal -177.49643535647462' do
+    sheet59.ao109.should be_within(17.74964353564746).of(-177.49643535647462)
   end
 
-  it 'cell ap109 should equal -74.6977581395349' do
-    sheet59.ap109.should be_within(7.46977581395349).of(-74.6977581395349)
+  it 'cell ap109 should equal -92.55839069767441' do
+    sheet59.ap109.should be_within(9.255839069767442).of(-92.55839069767441)
   end
 
-  it 'cell aq109 should equal 20.149817104441404' do
-    sheet59.aq109.should be_within(2.0149817104441405).of(20.149817104441404)
+  it 'cell aq109 should equal -7.500000000000057' do
+    sheet59.aq109.should be_within(0.7500000000000058).of(-7.500000000000057)
   end
 
   it 'cell ar109 should equal 0.0' do
     sheet59.ar109.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell as109 should equal 41.08084206584893' do
-    sheet59.as109.should be_within(4.108084206584893).of(41.08084206584893)
+  it 'cell as109 should equal 30.76736119306173' do
+    sheet59.as109.should be_within(3.0767361193061733).of(30.76736119306173)
   end
 
-  it 'cell at109 should equal -315.0579978900972' do
-    sheet59.at109.should be_within(31.505799789009725).of(-315.0579978900972)
+  it 'cell at109 should equal -348.80021785163177' do
+    sheet59.at109.should be_within(34.88002178516318).of(-348.80021785163177)
   end
 
-  it 'cell au109 should equal -112.10631418635437' do
-    sheet59.au109.should be_within(11.210631418635437).of(-112.10631418635437)
+  it 'cell au109 should equal -342.7488117133263' do
+    sheet59.au109.should be_within(34.27488117133263).of(-342.7488117133263)
   end
 
-  it 'cell av109 should equal -711.4096000000001' do
-    sheet59.av109.should be_within(71.14096).of(-711.4096000000001)
+  it 'cell av109 should equal -227.1368000000001' do
+    sheet59.av109.should be_within(22.71368000000001).of(-227.1368000000001)
   end
 
-  it 'cell aw109 should equal -12.957828652107947' do
-    sheet59.aw109.should be_within(1.2957828652107948).of(-12.957828652107947)
+  it 'cell aw109 should equal 0.0' do
+    sheet59.aw109.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ax109 should equal -126.31823532' do
-    sheet59.ax109.should be_within(12.631823532).of(-126.31823532)
+  it 'cell ax109 should equal -109.71104832' do
+    sheet59.ax109.should be_within(10.971104832000002).of(-109.71104832)
   end
 
-  it 'cell ay109 should equal -4.950573282739726' do
-    sheet59.ay109.should be_within(0.49505732827397264).of(-4.950573282739726)
+  it 'cell ay109 should equal 0.0' do
+    sheet59.ay109.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell az109 should equal -9.12624657534247' do
-    sheet59.az109.should be_within(0.9126246575342472).of(-9.12624657534247)
+  it 'cell az109 should equal 0.0' do
+    sheet59.az109.should be_within(1.0e-08).of(0.0)
   end
 
   it 'cell ba109 should equal 0.0' do
     sheet59.ba109.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bb109 should equal -6.0792209999999995' do
-    sheet59.bb109.should be_within(0.6079221).of(-6.0792209999999995)
+  it 'cell bb109 should equal -5.329728000000001' do
+    sheet59.bb109.should be_within(0.5329728000000001).of(-5.329728000000001)
   end
 
-  it 'cell bc109 should equal -146.00799420866795' do
-    sheet59.bc109.should be_within(14.600799420866796).of(-146.00799420866795)
+  it 'cell bc109 should equal -80.2815973351408' do
+    sheet59.bc109.should be_within(8.02815973351408).of(-80.2815973351408)
   end
 
-  it 'cell bd109 should equal -53.60428155843472' do
-    sheet59.bd109.should be_within(5.360428155843472).of(-53.60428155843472)
+  it 'cell bd109 should equal -96.67913343847387' do
+    sheet59.bd109.should be_within(9.667913343847388).of(-96.67913343847387)
   end
 
-  it 'cell be109 should equal -99.96597193694052' do
-    sheet59.be109.should be_within(9.996597193694052).of(-99.96597193694052)
+  it 'cell be109 should equal -174.2682333007932' do
+    sheet59.be109.should be_within(17.426823330079323).of(-174.2682333007932)
   end
 
-  it 'cell bf109 should equal -1920.481058668921' do
-    sheet59.bf109.should be_within(192.04810586689212).of(-1920.481058668921)
+  it 'cell bf109 should equal -1928.182454780228' do
+    sheet59.bf109.should be_within(192.81824547802282).of(-1928.182454780228)
   end
 
-  it 'cell bh109 should equal 555.7376505903957' do
-    sheet59.bh109.should be_within(55.57376505903957).of(555.7376505903957)
+  it 'cell bh109 should equal 341.72515548610454' do
+    sheet59.bh109.should be_within(34.172515548610455).of(341.72515548610454)
   end
 
-  it 'cell bi109 should equal 126.26440487686354' do
-    sheet59.bi109.should be_within(12.626440487686354).of(126.26440487686354)
+  it 'cell bi109 should equal 110.99377068369212' do
+    sheet59.bi109.should be_within(11.099377068369213).of(110.99377068369212)
   end
 
-  it 'cell bj109 should equal 682.0020554672592' do
-    sheet59.bj109.should be_within(68.20020554672593).of(682.0020554672592)
+  it 'cell bj109 should equal 452.71892616979665' do
+    sheet59.bj109.should be_within(45.27189261697967).of(452.71892616979665)
   end
 
-  it 'cell bl109 should equal 0.0' do
-    sheet59.bl109.should be_within(1.0e-08).of(0.0)
+  it 'cell bl109 should equal 9.88185271353359e-05' do
+    sheet59.bl109.should be_within(9.88185271353359e-06).of(9.88185271353359e-05)
   end
 
-  it 'cell bo109 should equal 150.9469233363895' do
-    sheet59.bo109.should be_within(15.09469233363895).of(150.9469233363895)
+  it 'cell bo109 should equal 235.86244304114487' do
+    sheet59.bo109.should be_within(23.586244304114487).of(235.86244304114487)
   end
 
-  it 'cell bp109 should equal 0.3104823184553907' do
-    sheet59.bp109.should be_within(0.031048231845539072).of(0.3104823184553907)
+  it 'cell bp109 should equal 0.5182616483962217' do
+    sheet59.bp109.should be_within(0.05182616483962217).of(0.5182616483962217)
   end
 
-  it 'cell bq109 should equal 1.5036944095325264' do
-    sheet59.bq109.should be_within(0.15036944095325266).of(1.5036944095325264)
+  it 'cell bq109 should equal 1.807022345585361' do
+    sheet59.bq109.should be_within(0.1807022345585361).of(1.807022345585361)
   end
 
   it 'cell br109 should equal 0.0' do
     sheet59.br109.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bs109 should equal 0.7262248256975227' do
-    sheet59.bs109.should be_within(0.07262248256975228).of(0.7262248256975227)
+  it 'cell bs109 should equal 1.2129280458648746' do
+    sheet59.bs109.should be_within(0.12129280458648746).of(1.2129280458648746)
   end
 
-  it 'cell bt109 should equal 2.3332842646481384' do
-    sheet59.bt109.should be_within(0.23332842646481386).of(2.3332842646481384)
+  it 'cell bt109 should equal 3.681877334781869' do
+    sheet59.bt109.should be_within(0.3681877334781869).of(3.681877334781869)
   end
 
   it 'cell bu109 should equal 0.0' do
@@ -19688,20 +19740,20 @@ describe 'Sheet59' do
     sheet59.bv109.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell bw109 should equal 10.633429720664042' do
-    sheet59.bw109.should be_within(1.0633429720664043).of(10.633429720664042)
+  it 'cell bw109 should equal 11.496479295483136' do
+    sheet59.bw109.should be_within(1.1496479295483135).of(11.496479295483136)
   end
 
-  it 'cell bx109 should equal 0.07737510934726302' do
-    sheet59.bx109.should be_within(0.007737510934726303).of(0.07737510934726302)
+  it 'cell bx109 should equal 0.08537927820647126' do
+    sheet59.bx109.should be_within(0.008537927820647126).of(0.08537927820647126)
   end
 
-  it 'cell by109 should equal 1.8844877955475168' do
-    sheet59.by109.should be_within(0.1884487795547517).of(1.8844877955475168)
+  it 'cell by109 should equal 2.084014882223126' do
+    sheet59.by109.should be_within(0.2084014882223126).of(2.084014882223126)
   end
 
-  it 'cell bz109 should equal 2.702158057672364' do
-    sheet59.bz109.should be_within(0.2702158057672364).of(2.702158057672364)
+  it 'cell bz109 should equal 3.873812636456127' do
+    sheet59.bz109.should be_within(0.3873812636456127).of(3.873812636456127)
   end
 
   it 'cell ca109 should equal 0.0' do
@@ -19724,20 +19776,20 @@ describe 'Sheet59' do
     sheet59.ce109.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell cf109 should equal 17.035217715824224' do
-    sheet59.cf109.should be_within(1.7035217715824225).of(17.035217715824224)
+  it 'cell cf109 should equal 14.431892485871735' do
+    sheet59.cf109.should be_within(1.4431892485871736).of(14.431892485871735)
   end
 
-  it 'cell cg109 should equal 21.06004038863483' do
-    sheet59.cg109.should be_within(2.106004038863483).of(21.06004038863483)
+  it 'cell cg109 should equal 20.65438545386428' do
+    sheet59.cg109.should be_within(2.065438545386428).of(20.65438545386428)
   end
 
   it 'cell ch109 should equal 0.0' do
     sheet59.ch109.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell ci109 should equal 8.116378861191098' do
-    sheet59.ci109.should be_within(0.8116378861191098).of(8.116378861191098)
+  it 'cell ci109 should equal 7.6465012608286695' do
+    sheet59.ci109.should be_within(0.764650126082867).of(7.6465012608286695)
   end
 
   it 'cell cj109 should equal 0.0' do
@@ -19756,12 +19808,12 @@ describe 'Sheet59' do
     sheet59.cm109.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell cn109 should equal 5.77910137758168' do
-    sheet59.cn109.should be_within(0.577910137758168).of(5.77910137758168)
+  it 'cell cn109 should equal 7.669976610351998' do
+    sheet59.cn109.should be_within(0.7669976610351998).of(7.669976610351998)
   end
 
-  it 'cell co109 should equal 1.5083153181180278' do
-    sheet59.co109.should be_within(0.15083153181180278).of(1.5083153181180278)
+  it 'cell co109 should equal 1.4467023048702474' do
+    sheet59.co109.should be_within(0.14467023048702474).of(1.4467023048702474)
   end
 
   it 'cell cp109 should equal 0.0' do
@@ -19784,24 +19836,24 @@ describe 'Sheet59' do
     sheet59.ct109.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell cu109 should equal 70.28767847211293' do
-    sheet59.cu109.should be_within(7.028767847211293).of(70.28767847211293)
+  it 'cell cu109 should equal 67.71941487970716' do
+    sheet59.cu109.should be_within(6.771941487970716).of(67.71941487970716)
   end
 
-  it 'cell cv109 should equal 0.08750788221951589' do
-    sheet59.cv109.should be_within(0.00875078822195159).of(0.08750788221951589)
+  it 'cell cv109 should equal 0.0843104041858363' do
+    sheet59.cv109.should be_within(0.00843104041858363).of(0.0843104041858363)
   end
 
-  it 'cell cw109 should equal 1.264619361536818' do
-    sheet59.cw109.should be_within(0.12646193615368181).of(1.264619361536818)
+  it 'cell cw109 should equal 1.2184110369045702' do
+    sheet59.cw109.should be_within(0.12184110369045703).of(1.2184110369045702)
   end
 
   it 'cell cx109 should equal 0.0' do
     sheet59.cx109.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell cy109 should equal -55.7964932572013' do
-    sheet59.cy109.should be_within(5.57964932572013).of(-55.7964932572013)
+  it 'cell cy109 should equal -92.93336881653987' do
+    sheet59.cy109.should be_within(9.293336881653987).of(-92.93336881653987)
   end
 
   it 'cell cz109 should equal 0.0' do
@@ -19816,8 +19868,8 @@ describe 'Sheet59' do
     sheet59.db109.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell dc109 should equal -61.04681711177964' do
-    sheet59.dc109.should be_within(6.104681711177964).of(-61.04681711177964)
+  it 'cell dc109 should equal -52.30157072658715' do
+    sheet59.dc109.should be_within(5.230157072658716).of(-52.30157072658715)
   end
 
   it 'cell dd109 should equal 0.0' do
@@ -19832,8 +19884,8 @@ describe 'Sheet59' do
     sheet59.df109.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell dh109 should equal 179.4136088461925' do
-    sheet59.dh109.should be_within(17.94136088461925).of(179.4136088461925)
+  it 'cell dh109 should equal 236.2588734015995' do
+    sheet59.dh109.should be_within(23.62588734015995).of(236.2588734015995)
   end
 
 end
