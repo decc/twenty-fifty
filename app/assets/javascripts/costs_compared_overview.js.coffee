@@ -12,14 +12,14 @@ class CostsComparedOverview
   ]
   
   category_colors =
-    "Fossil fuels": {low: "#8c564b",range: "url(/assets/hatch-green.png)"}
-    "Bioenergy"   : {low: "#2ca02c",range: "url(/assets/hatch-green.png)"}
-    "Electricity" : {low: "#1f77b4",range: "url(/assets/hatch-green.png)"}
-    "Buildings"   : {low: "#ff7f0e",range: "url(/assets/hatch-green.png)"}
-    "Transport"   : {low: "#d62728",range: "url(/assets/hatch-green.png)"}
-    "Industry"    : {low: "#7f7f7f",range: "url(/assets/hatch-green.png)"}
-    "Finance"     : {low: "#EA8BCC",range: "url(/assets/hatch-green.png)"}
-    "Other"       : {low: "#a55194",range: "url(/assets/hatch-green.png)"}
+    "Fossil fuels": {low: "#8c564b",range: "url(/assets/hatch-8c564b.png)"}
+    "Bioenergy"   : {low: "#2ca02c",range: "url(/assets/hatch-2ca02c.png)"}
+    "Electricity" : {low: "#1f77b4",range: "url(/assets/hatch-1f77b4.png)"}
+    "Buildings"   : {low: "#ff7f0e",range: "url(/assets/hatch-ff7f0e.png)"}
+    "Transport"   : {low: "#d62728",range: "url(/assets/hatch-d62728.png)"}
+    "Industry"    : {low: "#7f7f7f",range: "url(/assets/hatch-7f7f7f.png)"}
+    "Finance"     : {low: "#EA8BCC",range: "url(/assets/hatch-EA8BCC.png)"}
+    "Other"       : {low: "#a55194",range: "url(/assets/hatch-a55194.png)"}
 
   constructor: () ->
     # Nowt
