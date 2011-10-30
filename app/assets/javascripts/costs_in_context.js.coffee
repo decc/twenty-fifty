@@ -36,11 +36,54 @@ class CostsInContext
     @r.text(@x(20000),17,"The mean cost to society of the whole energy system in undiscounted real pounds per person 2010-2050").attr({'text-anchor':'center','font-weight':'bold'})
     
     # Initally empty boxes
-    @boxes = {}
-    for code in all_pathways
-      @boxes[code] = {}
-      @boxes[code].low = @r.rect(@x(0),@y(code),0,@y.rangeBand()).attr({'fill':'#008000','stroke':'none'})
-      @boxes[code].range = @r.rect(@x(0),@y(code),0,@y.rangeBand()).attr({'fill':'url(/assets/hatch-green.png)','stroke':'none'})
+    @bars = {}
+    
+    @low   = { boxes: @r.set(), labels: @r.set(), top_label: null, top_label_box: null}
+    @range = { boxes: @r.set(), labels: @r.set(), top_label: null, top_label_box: null}
+    x = @x(0)
+    h = @y.rangeBand()
+    url = twentyfifty.url({action:'costs_compared_overview'})
+
+    for code in all_pathways      
+      y = @y(code)
+      
+      low =   @r.rect(x,y,0,h).attr({'fill':'#008000','stroke':'none',href:url})
+      range = @r.rect(x,y,0,h).attr({'fill':'url(/assets/hatch-green.png)','stroke':'none',href:url})
+      low_label = @r.text(x,y+h/2,"").attr({'fill':'#000','text-anchor':'middle'})
+      range_label = @r.text(x,y+h/2,"").attr({'fill':'#000','text-anchor':'middle'})
+
+      @bars[code] = { low: low, range: range, low_label: low_label, range_label: range_label}
+      
+      @low.boxes.push low
+      @low.labels.push low_label
+      @range.boxes.push range
+      @range.labels.push range_label
+      
+      low_label.hide()
+      range_label.hide()
+
+      low_show = () =>
+        @low.top_label_box.show()
+        @low.top_label.show()
+        @low.labels.show()
+      
+      low_hide = () =>
+        @low.labels.hide()
+        @low.top_label_box.hide()
+        @low.top_label.hide()
+      
+      range_show = () =>
+        @range.top_label_box.show()
+        @range.top_label.show()
+        @range.labels.show()
+      
+      range_hide = () =>
+        @range.labels.hide()
+        @range.top_label_box.hide()
+        @range.top_label.hide()
+
+      low.hover(low_show,low_hide)      
+      range.hover(range_show,range_hide)
     
     # The vertical lines
     format = @x.tickFormat(10)
@@ -55,7 +98,16 @@ class CostsInContext
     #hover_box = @r.rect(250,25,@w-250-100,@h-25)
     #hover_box.attr({stroke:'none',fill:'#fff','fill-opacity':'0.0',href: twentyfifty.url({action:'costs_compared_overview'})})
 
-    
+    @low.top_label_box = @r.rect(@x(0),0,100,h*0.75,5).attr({'fill':'#fff','stroke':'#000'})
+    @low.top_label = @r.text(@x(0)+50,h*0.75/2,"Cost").attr({'text-anchor':'middle','font-weight':'bold'})
+    @low.top_label_box.hide()
+    @low.top_label.hide()
+
+    @range.top_label_box = @r.rect(@x(0),0,100,h*0.75,5).attr({'fill':'#fff','stroke':'#000'})
+    @range.top_label = @r.text(@x(0)+50,h*0.75/2,"Uncertainty").attr({'text-anchor':'middle','font-weight':'bold'})
+    @range.top_label_box.hide()
+    @range.top_label.hide()
+
     
   drawIndicator: (value,text) ->
     x = @x(value)
@@ -69,8 +121,19 @@ class CostsInContext
   updateBar: (pathway,_id = pathway._id) =>
     total_cost = @total_cost_low_adjusted(pathway)
     total_range = @total_cost_range_adjusted(pathway)
-    @boxes[_id].low.attr({width: @x(total_cost) - @x(0)})
-    @boxes[_id].range.attr({x:@x(total_cost),width: @x(total_range) - @x(0)})
+    
+    if _id == 'chosen'
+      @low.top_label_box.attr({x: @x(total_cost/2)-50})
+      @low.top_label.attr({x: @x(total_cost/2)})
+      @range.top_label_box.attr({x: @x(total_cost+(total_range/2))-50})
+      @range.top_label.attr({x: @x(total_cost+(total_range/2))})
+      
+    bar = @bars[_id]
+    bar.low.attr({width: @x(total_cost) - @x(0)})
+    bar.low_label.attr({x:@x(total_cost/2),text:"#{Math.round(total_cost)}"})
+
+    bar.range.attr({x:@x(total_cost),width: @x(total_range) - @x(0)})
+    bar.range_label.attr({x:@x(total_cost+(total_range/2)),text:"#{Math.round(total_range)}"})
   
   total_cost_low_adjusted: (pathway) ->
     twentyfifty.adjust_costs_of_pathway(pathway) unless pathway.total_cost_low_adjusted?
