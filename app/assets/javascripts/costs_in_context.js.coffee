@@ -5,11 +5,13 @@ class CostsInContext
   documentReady: () =>
     return false if @drawn?
     @drawn = true
+
+    all_pathways = ["chosen"].concat(twentyfifty.comparator_pathways)
+    comparator_pathways = twentyfifty.comparator_pathways
         
-    for code in twentyfifty.comparator_pathways
+    for code in comparator_pathways
       twentyfifty.loadSecondaryPathway(code,this.updateBar)  
     
-    all_pathways = ["chosen"].concat(twentyfifty.comparator_pathways)
     
     e = $('#costsincontext')
     @h = e.height()
@@ -19,13 +21,14 @@ class CostsInContext
     @y = d3.scale.ordinal().domain(all_pathways).rangeRoundBands([25,@h],0.25)
 
     # Horizontal background boxes
-    for code in all_pathways
+    for code in comparator_pathways
      @r.rect(@x(0),@y(code),@x(40000)-@x(0),@y.rangeBand()).attr({'fill':'#ddd','stroke':'none'})
       
     # The y axis labels
+    @r.rect(25,@y("chosen"),@x(40000)-25,@y.rangeBand()).attr({'fill':'#FCFF9B','stroke':'none'})
     @r.text(30,@y("chosen")+9,"Your pathway").attr({'text-anchor':'start','font-weight':'bold'})
     @r.text(30,@y("chosen")+27,"Your can click on the chart to make a more\ndetailed comparison with the pathways below").attr({'text-anchor':'start'})
-    for code in twentyfifty.comparator_pathways
+    for code in comparator_pathways
       @r.text(30,@y(code)+9,twentyfifty.pathwayName(code,code)).attr({'text-anchor':'start','font-weight':'bold', href: twentyfifty.url({action:'primary_energy_chart',code:code})})
       @r.text(30,@y(code)+27,twentyfifty.pathwayDescriptions(code,"")).attr({'text-anchor':'start'})
       
@@ -35,9 +38,9 @@ class CostsInContext
     # Initally empty boxes
     @boxes_low = {}
     @boxes_range = {}
-    @boxes_low['chosen'] = @r.rect(@x(0),@y("chosen"),0,@y.rangeBand()).attr({'fill':'#F00','stroke':'none'})
-    @boxes_range['chosen'] = @r.rect(@x(0),@y("chosen"),0,@y.rangeBand()).attr({'fill':'url(/assets/hatch-red.png)','stroke':'none'})
-    for code in twentyfifty.comparator_pathways
+    # @boxes_low['chosen'] = @r.rect(@x(0),@y("chosen"),0,@y.rangeBand()).attr({'fill':'#F00','stroke':'none'})
+    # @boxes_range['chosen'] = @r.rect(@x(0),@y("chosen"),0,@y.rangeBand()).attr({'fill':'url(/assets/hatch-red.png)','stroke':'none'})
+    for code in all_pathways
       @boxes_low[code] = @r.rect(@x(0),@y(code),0,@y.rangeBand()).attr({'fill':'#008000','stroke':'none'})
       @boxes_range[code] = @r.rect(@x(0),@y(code),0,@y.rangeBand()).attr({'fill':'url(/assets/hatch-green.png)','stroke':'none'})
     
@@ -50,6 +53,11 @@ class CostsInContext
     @drawIndicator(3000,"Aproximate energy system cost in 2007")
     @drawIndicator(39000,"Forecast mean GDP/capita 2010-2050")
     #@drawIndicator(57000,"GDP/capita in 2050")
+    
+    #hover_box = @r.rect(250,25,@w-250-100,@h-25)
+    #hover_box.attr({stroke:'none',fill:'#fff','fill-opacity':'0.0',href: twentyfifty.url({action:'costs_compared_overview'})})
+
+    
     
   drawIndicator: (value,text) ->
     x = @x(value)
