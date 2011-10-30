@@ -3,12 +3,12 @@ window.twentyfifty = {};
 controller = null
 choices = null
 action = null
+sector = null
 
 execute = null
 old_choices = []
 
 cache = {}
-comparator_code = null
 callbacks = {}
 timers = {}
 requested = {}
@@ -31,14 +31,26 @@ setVariablesFromURL = () ->
   controller = url_elements[1]
   choices = (parseInt(choice) for choice in url_elements[2].split(''))
   action = url_elements[3]
-  comparator_code = url_elements[5]
+  if action == 'costs_compared_within_sector'
+    sector = url_elements[4]
+
 
 code = () ->
   choices.join('')
 
+getSector = () ->
+  parseInt(sector)
+  
+switchSector = (new_sector) ->
+  sector = new_sector
+  window.location = url()
+
 url = (options = {}) ->
-  s = jQuery.extend({controller:controller, code: choices.join(''), action:action},options)
-  "/#{s.controller}/#{s.code}/#{s.action}"
+  s = jQuery.extend({controller:controller, code: choices.join(''), action:action, sector:sector},options)
+  if s.action == 'costs_compared_within_sector' && s.sector?
+    "/#{s.controller}/#{s.code}/#{s.action}/#{s.sector}"
+  else
+    "/#{s.controller}/#{s.code}/#{s.action}"
 
 go = (index,level) ->
   old_choices = choices.slice(0)
@@ -175,6 +187,8 @@ pathwayDescriptions = (pathway_code,default_description = null) ->
 
 window.twentyfifty.setup = setup
 window.twentyfifty.code = code
+window.twentyfifty.getSector = getSector
+window.twentyfifty.switchSector = switchSector
 window.twentyfifty.url = url
 window.twentyfifty.go = go
 window.twentyfifty.preLoad = preLoad

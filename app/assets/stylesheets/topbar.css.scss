@@ -1,5 +1,4 @@
 #topbar {
-  z-index: 1;
   width: 100%;
   height: 30px;
   margin: 0 0 15px 0;
@@ -7,61 +6,16 @@
 
   #viewdropdown {
     position: absolute;
+    z-index: 10;
     top: 5px;
     left: 5px;
   }
   
   #savedpathwaydropdown {
     position: absolute;
+    z-index: 10;    
     top: 5px;
     right: 5px;    
-  }
-  
-  .dropdown {
-    width: 150px;
-    z-index: 1;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    border: 1px solid #ccc;
-    background: #fff;
-    height: 25px;
-    
-    .dropdown > li {
-      margin: 0;
-      padding: 0;
-      height: 20px;
-    }
-    
-    li img {
-      border: none;
-      position: absolute;
-      top: 7px;
-      right: 8px;
-    }
-      
-    a {
-      display: block;
-      color: #000;
-      padding: 3px;
-      padding-left: 5px;
-      background: #fff;
-      text-decoration: none;
-    }
-    
-    a:hover {
-      text-decoration: underline;
-    }
-    
-    ul.choices {
-      -moz-box-shadow: 0 0 5px #888;
-      -webkit-box-shadow: 0 0 5px#888;
-      box-shadow: 0 0 5px #888;      
-      display: none;
-      list-style: none;
-      margin: 0;
-      padding: 0;    
-    }  
   }
   
   #messages {
@@ -93,4 +47,50 @@
     display: none;
     background-color: yellow;
   }
+}
+
+.dropdown {
+   width: 150px;
+   list-style: none;
+   margin: 0;
+   padding: 0;
+   border: 1px solid #ccc;
+   background: #fff;
+   height: 25px;
+   
+   .dropdown > li {
+     margin: 0;
+     padding: 0;
+     height: 20px;
+   }
+   
+   li img {
+     border: none;
+     position: absolute;
+     top: 7px;
+     right: 8px;
+   }
+     
+   a {
+     display: block;
+     color: #000;
+     padding: 3px;
+     padding-left: 5px;
+     background: #fff;
+     text-decoration: none;
+   }
+   
+   a:hover {
+     text-decoration: underline;
+   }
+   
+   ul.choices {
+     -moz-box-shadow: 0 0 5px #888;
+     -webkit-box-shadow: 0 0 5px#888;
+     box-shadow: 0 0 5px #888;      
+     display: none;
+     list-style: none;
+     margin: 0;
+     padding: 0;    
+   }  
 }

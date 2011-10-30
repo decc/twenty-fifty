@@ -60,24 +60,38 @@ cost_categories =
   "Industry Carbon Capture":"Industry"
   "Finance cost":"Finance"
 
+costs_in_category = (desired_category) ->
+  costs = []
+  for own cost,category of cost_categories
+    if category == desired_category
+      costs.push(cost)
+  costs
+
 group_costs_of_pathway = (pathway) ->
-  adjust_costs_of_pathway(pathway) unless pathway.total_cost_low_adjusted?
+  adjust_costs_of_pathway(pathway) #unless pathway.total_cost_low_adjusted?
   categorised_costs = {}
   for own name, values of pathway.cost_components
     #unless name == 'Finance cost' # Reallocating this
     category_name = cost_categories[name]
     category = categorised_costs[category_name]
     
+    unless category?
+      category = categorised_costs[category_name] = { low: 0, range: 0, high: 0}
+    
     low = values.low_adjusted #+ values.finance_low_adjusted
     range = values.range_adjusted #+ values.finance_range_adjusted
     high = values.high_adjusted #+ values.finance_high_adjusted
     
-    if category?
-      category.low += low
-      category.range += range
-      category.high += high
-    else
-      categorised_costs[category_name] = { low: low, range: range, high: high}
+    values.low_adjusted_with_finance = low
+    values.range_adjusted_with_finance = range
+    values.high_adjusted_with_finance = high
+    
+    category.low += low
+    category.range += range
+    category.high += high
+    
+    category[name] = values
+      
   pathway.categorised_costs = categorised_costs
   pathway
 
@@ -184,3 +198,4 @@ window.twentyfifty.comparator_pathways = comparator_pathways
 window.twentyfifty.group_costs_of_pathway = group_costs_of_pathway
 window.twentyfifty.adjust_costs_of_pathway = adjust_costs_of_pathway
 window.twentyfifty.calculateIncrementalCost = calculateIncrementalCost
+window.twentyfifty.costs_in_category = costs_in_category

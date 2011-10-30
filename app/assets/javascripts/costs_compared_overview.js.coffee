@@ -60,6 +60,10 @@ class CostsComparedOverview
     for category in categories
       @boxes_by_category[category] = { boxes: @r.set(), labels: @r.set(), top_label: null, top_label_box: null}
       
+    urls = {}
+    for category,i in categories
+      urls[category] = twentyfifty.url({action:'costs_compared_within_sector',sector:i})
+      
     x = @x(0)
     h = @y.rangeBand()
     
@@ -68,9 +72,9 @@ class CostsComparedOverview
       y = @y(code)
       for own category, colors of category_colors
         b[category] =
-          low: @r.rect(x,y,0,h).attr({'fill':colors.low,'stroke':'none'})
+          low: @r.rect(x,y,0,h).attr({'fill':colors.low,'stroke':'none',href:urls[category]})
           low_label: @r.text(x,y+h/2,"").attr({'fill':'#000','text-anchor':'middle'})
-          range: @r.rect(x,y,0,h).attr({'fill':colors.range,'stroke':'none'})
+          range: @r.rect(x,y,0,h).attr({'fill':colors.range,'stroke':'none',href:urls[category]})
           range_label: @r.text(x,y+h/2,"").attr({'fill':'#000','text-anchor':'middle'}) 
           
         c = @boxes_by_category[category]
