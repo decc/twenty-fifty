@@ -28,6 +28,7 @@
 //= require costs_in_context
 //= require costs_compared_overview
 //= require costs_compared_within_sector
+//= require cost_sensitivity_charts
 //= require costs_sensitivity
 
 

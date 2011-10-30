@@ -11,7 +11,6 @@ module ApplicationHelper
       # "map"=>"Area", 
       "costs_in_context"=>"Costs in context",
       "costs_compared_overview"=>"Costs compared",
-      "costs_compared_detail" => "Costs in detail",
       "costs_sensitivity" => "Cost sensitivity"
       # "cost_over_time" => 'Costs: over time', 
       # "story"=>"Story"

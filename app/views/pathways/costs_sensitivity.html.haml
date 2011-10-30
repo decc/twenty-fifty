@@ -1,7 +1,21 @@
 %script{ :type => 'text/javascript' }
   twentyfifty.setup(twentyfifty.CostsSensitivity)
 
-#results
+#results.costssensitivity
+  %ul#comparatorchoice.dropdown
+    %li
+      = link_to_function raw("Choose comparison" + image_tag('dropdown-arrow.png')), "$('ul#view_comparatorchoice').toggle()"
+      %ul#view_comparatorchoice.choices
+        - saved_pathways.each do |name,code|
+          %li= link_to_function name, "twentyfifty.switchPathway('#{code}');$('ul#savedpathway_choices').toggle()"
+          
+  %h1
+    The cost of your energy system, compared with another, under different cost assumptions. 
+    This is not your energy bill.
+  = render 'cost_caveats'
+
   #costssensitivity
+    
+  = render 'essential_notes'    
     
 = render 'classic_controls'
