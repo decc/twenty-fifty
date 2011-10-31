@@ -166,7 +166,7 @@ class CostsSensitivity
       py = y(name)
       ly = py+(y.rangeBand()/2)
       # Label
-      url = "http://decc-wiki.greenonblack.com#{cost_wiki_links[name] || "/"}"
+      url = "http://2050-wiki.greenonblack.com#{cost_wiki_links[name] || "/"}"
       r.text(245,ly,name).attr({'text-anchor':'end',href:url})
       # background
       r.rect(x(0),py,x(10000)-x(0),y.rangeBand()).attr({'fill':'#ddd','stroke':'none'})
