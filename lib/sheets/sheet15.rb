@@ -176,13 +176,13 @@ class Sheet15 < Spreadsheet
   def n153; 1638.0; end
   def o153; 1638.0; end
   def g154; 1454.4321831934517; end
-  def h154; 1454.4321831934517; end
-  def i154; 1454.4321831934517; end
-  def j154; 1454.4321831934517; end
-  def k154; 1454.4321831934517; end
-  def l154; 1454.4321831934517; end
-  def m154; 1454.4321831934517; end
-  def n154; 1454.4321831934517; end
+  def h154; 1322.0177960833075; end
+  def i154; 1189.6034089731634; end
+  def j154; 1057.1890218630192; end
+  def k154; 924.7746347528754; end
+  def l154; 924.7746347528754; end
+  def m154; 924.7746347528754; end
+  def n154; 924.7746347528754; end
   def o154; 924.7746347528754; end
   def g155; 1036.0; end
   def h155; 1017.75; end
@@ -194,31 +194,31 @@ class Sheet15 < Spreadsheet
   def n155; 908.25; end
   def o155; 890.0; end
   def g159; 2580.0; end
-  def h159; 10320.0; end
-  def i159; 23220.0; end
-  def j159; 36120.0; end
-  def k159; 49020.0; end
-  def l159; 61920.0; end
-  def m159; 74820.0; end
-  def n159; 87720.0; end
+  def h159; 2580.0; end
+  def i159; 2580.0; end
+  def j159; 2580.0; end
+  def k159; 2580.0; end
+  def l159; 2580.0; end
+  def m159; 2580.0; end
+  def n159; 2580.0; end
   def o159; 2580.0; end
-  def g160; 886.5; end
-  def h160; 3546.0; end
-  def i160; 7978.5; end
-  def j160; 12411.0; end
-  def k160; 16843.5; end
-  def l160; 21276.0; end
-  def m160; 25708.5; end
-  def n160; 30141.0; end
-  def o160; 685.0; end
+  def g160; 1148.1970780230029; end
+  def h160; 1115.57416329914; end
+  def i160; 1082.9512485752773; end
+  def j160; 1050.3283338514145; end
+  def k160; 1017.7054191275517; end
+  def l160; 985.082504403689; end
+  def m160; 952.4595896798262; end
+  def n160; 919.8366749559634; end
+  def o160; 887.2137602321003; end
   def g161; 61.0; end
-  def h161; 244.0; end
-  def i161; 549.0; end
-  def j161; 854.0; end
-  def k161; 1159.0; end
-  def l161; 1464.0; end
-  def m161; 1769.0; end
-  def n161; 2074.0; end
+  def h161; 59.9375; end
+  def i161; 58.875; end
+  def j161; 57.8125; end
+  def k161; 56.75; end
+  def l161; 55.6875; end
+  def m161; 54.625; end
+  def n161; 53.5625; end
   def o161; 52.5; end
   def g166; 104.0; end
   def h166; 104.0; end
@@ -302,31 +302,31 @@ class Sheet15 < Spreadsheet
   def n180; 30.0; end
   def o180; 30.0; end
   def g184; 127.0; end
-  def h184; 508.0; end
-  def i184; 1143.0; end
-  def j184; 1778.0; end
-  def k184; 2413.0; end
-  def l184; 3048.0; end
-  def m184; 3683.0; end
-  def n184; 4318.0; end
+  def h184; 127.0; end
+  def i184; 127.0; end
+  def j184; 127.0; end
+  def k184; 127.0; end
+  def l184; 127.0; end
+  def m184; 127.0; end
+  def n184; 127.0; end
   def o184; 127.0; end
   def g185; 43.389286084343595; end
-  def h185; 173.55714433737438; end
-  def i185; 390.5035747590924; end
-  def j185; 607.4500051808104; end
-  def k185; 824.3964356025284; end
-  def l185; 1041.3428660242464; end
-  def m185; 1258.2892964459643; end
-  def n185; 1475.2357268676824; end
+  def h185; 42.984535281318; end
+  def i185; 42.57978447829241; end
+  def j185; 42.17503367526682; end
+  def k185; 41.770282872241225; end
+  def l185; 41.36553206921563; end
+  def m185; 40.96078126619004; end
+  def n185; 40.55603046316445; end
   def o185; 40.15127966013885; end
   def g186; 22.5; end
-  def h186; 90.0; end
-  def i186; 202.5; end
-  def j186; 315.0; end
-  def k186; 427.5; end
-  def l186; 540.0; end
-  def m186; 652.5; end
-  def n186; 765.0; end
+  def h186; 22.5; end
+  def i186; 22.5; end
+  def j186; 22.5; end
+  def k186; 22.5; end
+  def l186; 22.5; end
+  def m186; 22.5; end
+  def n186; 22.5; end
   def o186; 22.5; end
   def g198; 27.537999999999997; end
   def h198; @h198 ||= h76+g37; end
@@ -725,14 +725,14 @@ class Sheet15 < Spreadsheet
   def n301; @n301 ||= excel_if(excel_comparison(n299-m299+n300,">",n299),0.0,n299-m299+n300); end
   def o301; @o301 ||= excel_if(excel_comparison(o299-n299+o300,">",o299),0.0,o299-n299+o300); end
   def g302; 0.0; end
-  def h302; @h302 ||= h301/(h219-g219); end
-  def i302; @i302 ||= i301/(i219-h219); end
-  def j302; @j302 ||= j301/(j219-i219); end
-  def k302; @k302 ||= k301/(k219-j219); end
-  def l302; @l302 ||= l301/(l219-k219); end
-  def m302; @m302 ||= m301/(m219-l219); end
-  def n302; @n302 ||= n301/(n219-m219); end
-  def o302; @o302 ||= o301/(o219-n219); end
+  def h302; @h302 ||= excel_if(excel_comparison((h301/(h219-g219)),">",0.0),h301/(h219-g219),0.0); end
+  def i302; @i302 ||= excel_if(excel_comparison((i301/(i219-h219)),">",0.0),i301/(i219-h219),0.0); end
+  def j302; @j302 ||= excel_if(excel_comparison((j301/(j219-i219)),">",0.0),j301/(j219-i219),0.0); end
+  def k302; @k302 ||= excel_if(excel_comparison((k301/(k219-j219)),">",0.0),k301/(k219-j219),0.0); end
+  def l302; @l302 ||= excel_if(excel_comparison((l301/(l219-k219)),">",0.0),l301/(l219-k219),0.0); end
+  def m302; @m302 ||= excel_if(excel_comparison((m301/(m219-l219)),">",0.0),m301/(m219-l219),0.0); end
+  def n302; @n302 ||= excel_if(excel_comparison((n301/(n219-m219)),">",0.0),n301/(n219-m219),0.0); end
+  def o302; @o302 ||= excel_if(excel_comparison((o301/(o219-n219)),">",0.0),o301/(o219-n219),0.0); end
   def g307; @g307 ||= (g290*g153)+(g302*g159); end
   def h307; @h307 ||= (h290*h153)+(h302*h159); end
   def i307; @i307 ||= (i290*i153)+(i302*i159); end
