@@ -6,14 +6,14 @@ module ApplicationHelper
       # "structured" => "Multiple choice", 
       # "quick_choice" => "Quick choice", 
       "primary_energy_chart"=>"All energy", 
-      # "show"=>"Electricity", 
+      "show"=>"Electricity", 
       "sankey"=>"Energy flows", 
-      # "map"=>"Area", 
+      "map"=>"Area", 
       "costs_in_context"=>"Costs in context",
       "costs_compared_overview"=>"Costs compared",
-      "costs_sensitivity" => "Cost sensitivity"
+      "costs_sensitivity" => "Cost sensitivity",
       # "cost_over_time" => 'Costs: over time', 
-      # "story"=>"Story"
+      "story"=>"Story"
     }
   end
   
