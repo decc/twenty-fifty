@@ -1,0 +1,40 @@
+#cost_caveats
+  Before viewing the cost implications of your choice, note that:
+
+  %ol
+    %li 
+      %b The results may be wrong:
+      We are opening up this initial version for feedback. Please 
+      = link_to "read and comment on our methodology and assumptions.",'http://2050-wiki.greenonblack.com'
+    %li
+      %b The unit is average pounds per person per year, but this is not your energy bill:
+      it is the cost of all of our energy infrastructure, including anything that makes, converts or uses energy, from small things (such as your kettle) to large things (like the train you catch to work) divided by the UK population, which is expected to grow over time. It excludes profit. You can see the results in different units, including net present values under different discount rates by using the 
+      = link_to 'excel version of this calculator.', 'http://2050-wiki.greenonblack.com'
+    %li
+      %b All possible futures involve spending money on the energy system.
+      Therefore you should use these results as one factor in comparing different pathways. We have provided some pathways to compare with below.
+    %li
+      %b Costs are assumed to change over time.
+      The costs are forecasts of how the costs of particular technologies and fuels might rise or fall. You can see what happens if you vary these forecasts using the 
+      = link_to_function 'Cost Sensitivity', "twentyfifty.switchView('costs_sensitivity')"
+      implication from the menu on the top left. You can see the full set of cost data points
+      = link_to 'on our wiki','http://2050-wiki.greenonblack.com'
+      and can examine and alter all our assumptions by downloading the 
+      = link_to 'excel version of this calculator.', 'http://2050-wiki.greenonblack.com'
+    %li
+      %b The model doesn't optimise.
+      It assumes your chosen pathway does not respond to price fluctuations including those caused by the pathway itself, such as economies of scale. Instead it assumes your chosen pathway is built exactly as specified. 
+    %li 
+      %b Important costs have been excluded. 
+      The costs of travelling less or differently, of having colder homes, of having fewer goods, of changing the appearance of our houses or landscape are not included. Nor are profits, taxes and subsidies. These are important costs, but the calculator only includes the physical costs of constructing, operating and fuelling equipment. You can read and comment on our full list of inclusions and exclusions
+      = link_to 'on our wiki.','http://2050-wiki.greenonblack.com'
+    %li
+      %b In particular, the cost of failing to tackle climate change are not included:
+      Some pathways, including the 'All at Level 1' pathway shown here, fail to tackle climate change. The Stern review estimated that failing to tackle climate change could reduce global GDP by up to 20% (equivalent to up to £6500 per person per year in the scale we have used below)
+  
+    #understand
+      = link_to_function 'Click to confirm that you understand', "$.jStorage.set('CostCaveatShown',true);$('#cost_caveats').hide()"
+:javascript
+  if($.jStorage.get('CostCaveatShown') == true) {
+    $('#cost_caveats').hide();
+  }

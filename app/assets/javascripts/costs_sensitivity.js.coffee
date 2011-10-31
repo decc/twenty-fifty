@@ -132,7 +132,7 @@ class CostsSensitivity
       r.path( ["M",x(p.total_cost_low_adjusted-i1),y('i')+bar_height/2,"L",x(p.total_cost_low_adjusted),y('i')+bar_height/2]).attr( {stroke:color(i1), fill:color(i1),'arrow-end':"classic-narrow-short", 'stroke-width':'15'})
       r.text(x(max)+3,y('i')+bar_height/2,"£#{Math.round(Math.abs(i1))}/person/year #{direction(i1)}").attr({'text-anchor':'start'})
     else
-      r.path( ["M",x(average-i2/2),y('i')+bar_height*0.25,"L",x(average+i2/2),y('i')+bar_height*0.25]).attr( {stroke:color(i2),  fill:color(i2),'arrow-end':"classic-narrow-short", 'stroke-width':'10'})
+      r.path( ["M",x(average-i2/2),y('i')+bar_height*0.25,"L",x(average+i2/2),y('i')+bar_height*0.25]).attr( {stroke:color(i2),  fill:color(i2),'arrow-end':"block-narrow-short", 'stroke-width':'10'})
       r.path( ["M",x(average-i1/2),y('i')+bar_height*0.75,"L",x(average+i1/2),y('i')+bar_height*0.75]).attr( {stroke:color(i1),  fill:color(i1), 'arrow-end':"classic-narrow-short", 'stroke-width':'10'})
       r.text(x(min)-3,y('i')+bar_height/2,"Some costs are uncertain, therefore your pathway could be").attr({'text-anchor':'end'})
       r.text(x(max)+3,y('i')+bar_height*0.25,"£#{Math.round(Math.abs(i2))}/person/year #{direction(i2)}, or").attr({'text-anchor':'start'})
