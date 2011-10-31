@@ -176,7 +176,7 @@ class CostsSensitivity
       # Override links
       cheap = r.text(x(6500),ly,"Cheapest").attr({'text-anchor':'middle'})
       bestguess = r.text(x(7500),ly,"Best guess").attr({'text-anchor':'middle'})
-      if name == "Oil" || name == "Gas" || name == "Coal" || name == "Bioenergy imports"
+      if name == "Oil" || name == "Gas" || name == "Coal" || name == "Bioenergy imports" || name == "Finance cost"
         high_text = "Most expensive"
       else
         high_text = "Today's cost"
