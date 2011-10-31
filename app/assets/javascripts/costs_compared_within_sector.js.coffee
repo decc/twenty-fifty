@@ -12,7 +12,7 @@ class CostsComparedWithinSector
   ]
   
   cost_component_colors = {
-    "Conventional thermal plant"
+    "Conventional thermal plant":                     {low: "#a55194",range: "url(/assets/hatches/hatch-a55194.png)"}
     "Combustion + CCS":                               {low: "#8c564b",range: "url(/assets/hatches/hatch-8c564b.png)"}
     "Nuclear power":                                  {low: "#2ca02c",range: "url(/assets/hatches/hatch-2ca02c.png)"}
     "Onshore wind":                                   {low: "#1f77b4",range: "url(/assets/hatches/hatch-1f77b4.png)"}
@@ -179,11 +179,13 @@ class CostsComparedWithinSector
     for own category, cost of categorised_costs
       unless category == "high" || category == "low" || category == "range"
         low = cost.low_adjusted
+        if category == "Conventional thermal plant"
+          console.log category, low
         if low >= 0
           b[category].low.attr({x: @x(_x), width: @x(low) - @x(0)})
         else
           b[category].low.attr({x: @x(_x+low), width: @x(-low) - @x(0)})
-        if cost.low > 1
+        if low > 1
           b[category].low_label.attr({x:@x(_x + low/2),text:"#{Math.round(low)}"})
         if _id == 'chosen'
           @boxes_by_category[category].top_label_box.attr({x:@x(_x+low/2)-50})

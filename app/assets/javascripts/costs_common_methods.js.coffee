@@ -68,9 +68,11 @@ costs_in_category = (desired_category) ->
   costs
 
 group_costs_of_pathway = (pathway) ->
-  adjust_costs_of_pathway(pathway) #unless pathway.total_cost_low_adjusted?
+  console.log pathway._id, pathway.cost_components
+  adjust_costs_of_pathway(pathway) unless pathway.total_cost_low_adjusted?
   categorised_costs = {}
   for own name, values of pathway.cost_components
+    #console.log name, values
     #unless name == 'Finance cost' # Reallocating this
     category_name = cost_categories[name]
     category = categorised_costs[category_name]
@@ -96,8 +98,10 @@ group_costs_of_pathway = (pathway) ->
   pathway
 
 adjust_costs_of_pathway = (pathway) ->
+  return if pathway.total_cost_low_adjusted?
   total = { low: 0, range: 0, high: 0, finance_max:0}
   for own name,values of pathway.cost_components
+    console.log name, values if name == "Conventional thermal plant"
     #unless name == 'Finance cost'
     fraction_of_width = jQuery.jStorage.get(name,null)
     # Check if someone has set a preference
