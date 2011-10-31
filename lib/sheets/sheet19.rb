@@ -103,15 +103,6 @@ class Sheet19 < Spreadsheet
   def m78; 24.8008; end
   def n78; 24.8008; end
   def o78; 24.8008; end
-  def g79; 10.651093023255815; end
-  def h79; 10.577581395348838; end
-  def i79; 10.504069767441862; end
-  def j79; 10.430558139534886; end
-  def k79; 10.35704651162791; end
-  def l79; 10.283534883720934; end
-  def m79; 10.210023255813958; end
-  def n79; 10.136511627906982; end
-  def o79; 10.062999999999999; end
   def g80; 13.34; end
   def h80; 12.496976744186046; end
   def i80; 11.653953488372093; end
@@ -139,6 +130,15 @@ class Sheet19 < Spreadsheet
   def m100; 1.2411999999999999; end
   def n100; 1.2411999999999999; end
   def o100; 1.2411999999999999; end
+  def g101; 0.32827999999999996; end
+  def h101; 0.32827999999999996; end
+  def i101; 0.32827999999999996; end
+  def j101; 0.32827999999999996; end
+  def k101; 0.32827999999999996; end
+  def l101; 0.32827999999999996; end
+  def m101; 0.32827999999999996; end
+  def n101; 0.32827999999999996; end
+  def o101; 0.32827999999999996; end
   def g102; 0.174; end
   def h102; 0.174; end
   def i102; 0.174; end
@@ -258,15 +258,15 @@ class Sheet19 < Spreadsheet
   def m131; @m131 ||= m122*m89; end
   def n131; @n131 ||= n122*n89; end
   def o131; @o131 ||= o122*o89; end
-  def g132; @g132 ||= g121*g79; end
-  def h132; @h132 ||= h121*h79; end
-  def i132; @i132 ||= i121*i79; end
-  def j132; @j132 ||= j121*j79; end
-  def k132; @k132 ||= k121*k79; end
-  def l132; @l132 ||= l121*l79; end
-  def m132; @m132 ||= m121*m79; end
-  def n132; @n132 ||= n121*n79; end
-  def o132; @o132 ||= o121*o79; end
+  def g132; @g132 ||= g121*g101; end
+  def h132; @h132 ||= h121*h101; end
+  def i132; @i132 ||= i121*i101; end
+  def j132; @j132 ||= j121*j101; end
+  def k132; @k132 ||= k121*k101; end
+  def l132; @l132 ||= l121*l101; end
+  def m132; @m132 ||= m121*m101; end
+  def n132; @n132 ||= n121*n101; end
+  def o132; @o132 ||= o121*o101; end
   def g136; @g136 ||= g122*g80; end
   def h136; @h136 ||= h122*h80; end
   def i136; @i136 ||= i122*i80; end

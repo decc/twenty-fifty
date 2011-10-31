@@ -33,7 +33,7 @@ class Sheet1 < Spreadsheet
   def b5; "UK Electricity Generation"; end
   def c5; "II.a"; end
   def d5; "Nuclear power stations"; end
-  def e5; 1.5; end
+  def e5; 1.4; end
   def f5; 4.0; end
   def h5; "No new nuclear power installed; estimated closure of final plant in 2035"; end
   def i5; "No new nuclear power installed; estimated closure of final plant in 2035"; end
@@ -55,7 +55,7 @@ class Sheet1 < Spreadsheet
   def c6; "I.b"; end
   def d6; "Carbon Capture Storage (CCS)"; end
   def d7; "CCS power stations"; end
-  def e7; 2.0; end
+  def e7; 1.3; end
   def f7; 4.0; end
   def h7; "Demonstration plants only; no roll-out of CCS"; end
   def i7; "~240 TWh/yr from 25-40 CCS power stations; comparable to current gas & coal generation"; end
@@ -104,7 +104,7 @@ class Sheet1 < Spreadsheet
   def bl8; "After demonstration plants, all CCS electricity is from gas (natural gas or biogas)"; end
   def c9; "III.a.2"; end
   def d9; "Offshore wind"; end
-  def e9; 1.3; end
+  def e9; 1.9; end
   def f9; 4.0; end
   def h9; "~1,400 turbines in 2025, reducing to zero as decommissioned sites are not replanted"; end
   def i9; "~10,000 turbines in 2050, delivering ~180 TWh/yr"; end
@@ -130,7 +130,7 @@ class Sheet1 < Spreadsheet
   def bl9; "~40,000 offshore wind turbines in 2050, delivering ~430 TWh/yr"; end
   def c10; "III.a.1"; end
   def d10; "Onshore wind"; end
-  def e10; 1.5; end
+  def e10; 2.7; end
   def f10; 4.0; end
   def h10; "~4,400 turbines in 2025, reducing to zero as decommissioned sites are not replanted"; end
   def i10; "~8,000 turbines in 2050, delivering ~50 TWh/yr. "; end
@@ -156,7 +156,7 @@ class Sheet1 < Spreadsheet
   def bl10; "~20,000 onshore wind turbines in 2050, delivering ~130 TWh/yr"; end
   def c11; "III.c.Wave"; end
   def d11; "Wave"; end
-  def e11; 1.0; end
+  def e11; 1.6; end
   def f11; 4.0; end
   def h11; "None in 2050"; end
   def i11; "~300km of wave farms"; end
@@ -176,7 +176,7 @@ class Sheet1 < Spreadsheet
   def bl11; "~900km of wave farms"; end
   def c12; "III.c.TidalStream"; end
   def d12; "Tidal Stream"; end
-  def e12; 1.0; end
+  def e12; 2.0; end
   def f12; 4.0; end
   def h12; "None in 2050"; end
   def i12; "1,000 tidal stream turbines"; end
@@ -196,7 +196,7 @@ class Sheet1 < Spreadsheet
   def bl12; "10,600 tidal stream turbines"; end
   def c13; "III.c.TidalRange"; end
   def d13; "Tidal Range"; end
-  def e13; 1.0; end
+  def e13; 2.0; end
   def f13; 4.0; end
   def h13; "None in  2050"; end
   def i13; "3 small tidal range schemes"; end
@@ -237,7 +237,7 @@ class Sheet1 < Spreadsheet
   def bl14; "Over 20GW of biomass power stations by 2050 delivering 180TWh/yr"; end
   def c15; "IV.a"; end
   def d15; "Solar panels for electricity"; end
-  def e15; 1.0; end
+  def e15; 1.2; end
   def f15; 4.0; end
   def h15; "No significant solar PV capacity is installed"; end
   def i15; "4m2 of photovoltaic panels per person in 2050, supplying ~60 TWh/yr of electricity"; end
@@ -258,7 +258,7 @@ class Sheet1 < Spreadsheet
   def bl15; "9.5m2 of photovoltaic panels per person – all suitable roof and facade space used"; end
   def c16; "IV.b"; end
   def d16; "Solar panels for hot water"; end
-  def e16; 1.0; end
+  def e16; 1.8; end
   def f16; 4.0; end
   def h16; "As today, a negligible proportion of buildings have solar thermal in 2050"; end
   def i16; "~30% of suitable buildings get ~30% of their hot water from solar thermal"; end
@@ -299,7 +299,7 @@ class Sheet1 < Spreadsheet
   def bl17; "Supply of geothermal electricity grows rapidly reaching 35 TWh/yr by 2030 and is sustained"; end
   def c18; "III.b"; end
   def d18; "Hydroelectric power stations"; end
-  def e18; 1.0; end
+  def e18; 2.0; end
   def f18; 4.0; end
   def h18; "Supply of electricity is maintained at current levels of 5 TWh/yr"; end
   def i18; "Supply grows slowly, reaching 7 TWh/yr by 2050"; end
@@ -341,7 +341,7 @@ class Sheet1 < Spreadsheet
   def b20; "Imported Electricity"; end
   def c20; "VII.a"; end
   def d20; "Electricity imports"; end
-  def e20; 1.5; end
+  def e20; 1.0; end
   def f20; 4.0; end
   def h20; "No electricity imports, other than for balancing"; end
   def i20; "30 TWh/yr of electricity imported from Southern Europe"; end
@@ -370,7 +370,7 @@ class Sheet1 < Spreadsheet
   def bd21; 2030.0; end
   def be21; 2050.0; end
   def d22; "Land dedicated to bioenergy"; end
-  def e22; 3.0; end
+  def e22; 2.0; end
   def f22; 4.0; end
   def h22; "Energy crops and food production similar to today"; end
   def i22; "5% of land used for energy crops"; end
@@ -473,7 +473,7 @@ class Sheet1 < Spreadsheet
   def bl25; "Macro algae covering the same area as four times natural reserve used, delivering ~46 TWh/yr"; end
   def c26; "V.a"; end
   def d26; "Type of fuels from biomass"; end
-  def e26; 2.0; end
+  def e26; 1.0; end
   def f26; "D"; end
   def h26; "Biomass converted to a mixture of solid, liquid and gas biofuels"; end
   def i26; "Biomass mainly converted to solid biofuel"; end
@@ -500,7 +500,7 @@ class Sheet1 < Spreadsheet
   def b27; "Imported Bioenergy"; end
   def c27; "V.b"; end
   def d27; "Bioenergy imports"; end
-  def e27; 3.0; end
+  def e27; 2.0; end
   def f27; 4.0; end
   def h27; "Imported biofuel declines from ~ 4 TWh/yr currently to zero"; end
   def i27; "Up to 70 TWh/yr of imported bioenergy in 2050"; end
@@ -526,7 +526,7 @@ class Sheet1 < Spreadsheet
   def d29; "Domestic passenger transport"; end
   def ak29; "NB: Modelled emissions adjusted to match 2007 actuals. See note below emission table."; end
   def d30; "Domestic transport behaviour"; end
-  def e30; 3.0; end
+  def e30; 4.0; end
   def f30; 4.0; end
   def h30; "In 2050, individuals travel 9% further than today. No noticeable modal shift."; end
   def i30; "Individuals travel 7% further than today, cars and vans are 80% of 2050 passenger mileage"; end
@@ -551,7 +551,7 @@ class Sheet1 < Spreadsheet
   def bk30; "Individuals travel 7% further than today; cars and vans 74% of 2050 passenger mileage"; end
   def bl30; "In 2050, individuals travel the same distance as today. Signficant shift to public transport."; end
   def d31; "Shift to electric or fuel cell vehicles"; end
-  def e31; 2.0; end
+  def e31; 4.0; end
   def f31; 4.0; end
   def h31; "By 2050, conventional fuelled cars and vans cover 80% of mileage "; end
   def i31; "By 2050, plug-in, electric & fuel cell cars & vans cover 65% of passenger distance"; end
@@ -687,7 +687,7 @@ class Sheet1 < Spreadsheet
   def bd36; @bd36 ||= -sheet58.w12/bd33; end
   def be36; @be36 ||= -sheet62.w12/be33; end
   def d37; "Average temperature of homes"; end
-  def e37; 3.0; end
+  def e37; 4.0; end
   def f37; 4.0; end
   def h37; "Average room temperature increases to 20°C (a 2.5°C increase on 2007)"; end
   def i37; "Average room temperature increases to 18°C (a 0.5°C increase on 2007)"; end
@@ -717,7 +717,7 @@ class Sheet1 < Spreadsheet
   def bk37; "Average room temperature decreases to 17°C (a 0.5°C decrease on 2007)"; end
   def bl37; "Average room temperature decreases to 16°C (a 1.5°C decrease on 2007)"; end
   def d38; "Home insulation"; end
-  def e38; 3.0; end
+  def e38; 4.0; end
   def f38; 4.0; end
   def h38; "Over 7m homes insulated, average thermal leakiness falls by 25%"; end
   def i38; "Over 8m homes insulated, average thermal leakiness falls by 33%"; end
@@ -747,7 +747,7 @@ class Sheet1 < Spreadsheet
   def bk38; "Over 18m homes insulated, average thermal leakiness falls by 42%"; end
   def bl38; "Over 24m homes insulated, average thermal leakiness decreases by 50% "; end
   def d39; "Home heating electrification"; end
-  def e39; 3.0; end
+  def e39; 4.0; end
   def f39; "D"; end
   def h39; "The proportion of domestic heat supplied using electricity is 0-10%, as today"; end
   def i39; "The proportion of new domestic heating systems using electricity is 20%"; end
@@ -777,7 +777,7 @@ class Sheet1 < Spreadsheet
   def bk39; "The proportion of new domestic heating systems supplied using electricity is 30-60%"; end
   def bl39; "The proportion of new domestic heating systems supplied using electricity is 80-100%"; end
   def d40; "Home heating that isn't electric"; end
-  def e40; 2.0; end
+  def e40; 4.0; end
   def f40; "D"; end
   def h40; "The dominant non-electric heat source is gas (biogas if available)"; end
   def i40; "The dominant non-electric heat source is coal (biomass if available)"; end
@@ -814,7 +814,7 @@ class Sheet1 < Spreadsheet
   def bd41; @bd41 ||= -(sheet58.v84+sheet58.v40); end
   def be41; @be41 ||= -(sheet62.v84+sheet62.v40); end
   def d42; "Home lighting & appliances"; end
-  def e42; 3.0; end
+  def e42; 4.0; end
   def f42; 4.0; end
   def h42; "Energy demand for domestic lights and appliances increases by 20% (relative to 2007)"; end
   def i42; "Energy demand for domestic lights and appliances is stable"; end
@@ -844,7 +844,7 @@ class Sheet1 < Spreadsheet
   def bk42; "Energy demand for domestic lights and appliances decreases by 40%"; end
   def bl42; "Energy demand for domestic lights and appliances decreases by 60%"; end
   def d43; "Electrification of home cooking"; end
-  def e43; 1.0; end
+  def e43; 2.0; end
   def f43; "B"; end
   def h43; "Energy used for domestic cooking remains at 63% electricity and 37% gas"; end
   def i43; "Energy used for domestic cooking is entirely electric"; end
@@ -950,7 +950,7 @@ class Sheet1 < Spreadsheet
   def bd47; @bd47 ||= -(sheet58.u84+sheet58.u40); end
   def be47; @be47 ||= -(sheet62.u84+sheet62.u40); end
   def d48; "Commercial demand for heating and cooling"; end
-  def e48; 3.0; end
+  def e48; 4.0; end
   def f48; 4.0; end
   def h48; "Space heating demand increases by 50%, hot water demand by 60%, cooling demand by 250%"; end
   def i48; "Space heating demand increases by 30%, hot water demand by 50%, cooling demand by 60%"; end
@@ -1003,7 +1003,7 @@ class Sheet1 < Spreadsheet
   def bk49; "The proportion of non-domestic heat supplied using electricity is 30-60%"; end
   def bl49; "The proportion of non-domestic heat supplied using electricity is 80-100%"; end
   def d50; "Commercial heating that isn't electric"; end
-  def e50; 3.0; end
+  def e50; 4.0; end
   def f50; "D"; end
   def h50; "The dominant non-electric heat source is gas (biogas if available)"; end
   def i50; "The dominant non-electric heating fuel is coal (biomass if available)"; end
@@ -1039,7 +1039,7 @@ class Sheet1 < Spreadsheet
   def bd51; @bd51 ||= -sheet58.u22/bd47; end
   def be51; @be51 ||= -sheet62.u22/be47; end
   def d52; "Commercial lighting & appliances"; end
-  def e52; 3.0; end
+  def e52; 4.0; end
   def f52; 4.0; end
   def h52; "Energy demand for lights & appliances increases by 33%. Energy for cooking is stable"; end
   def i52; "Energy demand for lights & appliances increases by 15%; decreases by 5% for cooking"; end
@@ -1064,7 +1064,7 @@ class Sheet1 < Spreadsheet
   def bk52; "Energy demand for commercial lights & appliances decreases by 5%; decreases by 20% for cooking"; end
   def bl52; "Energy demand for commercial lights & appliances decreases by 30%; decreases by 25% for cooking"; end
   def d53; "Electrification of commercial cooking"; end
-  def e53; 1.0; end
+  def e53; 2.0; end
   def f53; "B"; end
   def h53; "60% electricity and 40% gas (no change from 2007)"; end
   def i53; "100% electric"; end
@@ -1086,7 +1086,7 @@ class Sheet1 < Spreadsheet
   def a55; "Geosequestration"; end
   def c55; "XIV.a"; end
   def d55; "Geosequestration"; end
-  def e55; 2.0; end
+  def e55; 1.0; end
   def f55; 4.0; end
   def h55; "No geosequestration"; end
   def i55; "Carbon dioxide sequestration rate of 1 million tonnes per annum by 2050"; end
@@ -1107,7 +1107,7 @@ class Sheet1 < Spreadsheet
   def a56; "Balancing & Storage"; end
   def c56; "VII.c"; end
   def d56; "Storage, demand shifting & interconnection"; end
-  def e56; 2.0; end
+  def e56; 4.0; end
   def f56; 4.0; end
   def h56; "Today’s 3.5 GW storage & 4 GW interconnection with Europe for balancing"; end
   def i56; "4 GW storage & 10 GW interconnection with Europe for balancing"; end
