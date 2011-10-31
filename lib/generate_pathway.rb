@@ -13,6 +13,7 @@ class GeneratePathway
     table :ghg, 182, 192
     table :final_energy_demand, 13, 18
     table :primary_energy_supply, 283, 296
+    electricity_tables
     pathway[:sankey] = intermediate_output_sheet.a('h370','j460').to_grid
     cost_components_table
     pathway
@@ -33,6 +34,25 @@ class GeneratePathway
       t[label(intermediate_output_sheet,row)] = annual_data(intermediate_output_sheet,row)
     end
     pathway[name] = t
+  end
+  
+  def table_(target, name,start_row,end_row)
+    t = {}
+    (start_row..end_row).each do |row|
+      t[label(intermediate_output_sheet,row)] = annual_data(intermediate_output_sheet,row)
+    end
+    target[name] = t
+  end
+  
+  def electricity_tables
+    e = {}
+    table_ e, :demand, 322, 326
+    table_ e, :supply, 96, 111
+    table_ e, :emissions, 270, 273
+    table_ e, :capacity, 118, 132
+    e['automatically_built'] = intermediate_output_sheet.q120
+    e['backup'] = intermediate_output_sheet.q131
+    pathway['electricity'] = e
   end
   
   def label(sheet,row)
