@@ -20,7 +20,7 @@ class GeneratePathway
   
   def set_choices(code)
     choices = code.split('')
-    choices.convert_letters_to_float
+    choices = choices.convert_letters_to_float
     choices.each_with_index do |choice,i|
       control_sheet.set("e#{i+5}",choice.to_f)
     end
