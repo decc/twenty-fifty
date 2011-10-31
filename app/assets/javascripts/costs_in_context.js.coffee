@@ -92,7 +92,7 @@ class CostsInContext
       @r.path(["M", @x(tick), 40, "L", @x(tick),@h]).attr({stroke:'#fff'})
     #@drawIndicator(26000,"GDP/capita in 2010")
     @drawIndicator(3000,"Aproximate energy system cost in 2007")
-    @drawIndicator(39000,"Forecast mean GDP/capita 2010-2050")
+    @drawIndicator(34656,"Forecast mean GDP/capita 2010-2050")
     #@drawIndicator(57000,"GDP/capita in 2050")
     
     #hover_box = @r.rect(250,25,@w-250-100,@h-25)
