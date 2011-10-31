@@ -34,7 +34,3 @@
   
     #understand
       = link_to_function 'Click to confirm that you understand', "$.jStorage.set('CostCaveatShown',true);$('#cost_caveats').hide()"
-:javascript
-  if($.jStorage.get('CostCaveatShown') == true) {
-    $('#cost_caveats').hide();
-  }

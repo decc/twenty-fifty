@@ -23,6 +23,8 @@ setup = (e) ->
   $(document).ready(documentReady)
 
 documentReady = () ->
+  if $.jStorage.get('CostCaveatShown') == true
+    $('#cost_caveats').hide();
   execute.documentReady()
   loadMainPathway()
   $("a[title]").tooltip({delay: 0, position: 'top left', offset:[3,3],tip:'#tooltip'});
