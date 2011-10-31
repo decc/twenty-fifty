@@ -128,16 +128,28 @@ class CostsSensitivity
       return "#f00" if value > 0
       "#0f0"
     
+    r.setStart();
+    
     if i1 == i2
-      r.path( ["M",x(p.total_cost_low_adjusted-i1),y('i')+bar_height/2,"L",x(p.total_cost_low_adjusted),y('i')+bar_height/2]).attr( {stroke:color(i1), fill:color(i1),'arrow-end':"classic-narrow-short", 'stroke-width':'15'})
+      arrow  = r.path( ["M",x(p.total_cost_low_adjusted-i1),y('i')+bar_height/2,"L",x(p.total_cost_low_adjusted),y('i')+bar_height/2]).attr( {stroke:color(i1), fill:color(i1), 'stroke-width':'15'})
+      if Math.abs(i1) > 200
+        arrow.attr({'arrow-end':"classic-narrow-short"})
       r.text(x(max)+3,y('i')+bar_height/2,"£#{Math.round(Math.abs(i1))}/person/year #{direction(i1)}").attr({'text-anchor':'start'})
     else
-      r.path( ["M",x(average-i2/2),y('i')+bar_height*0.25,"L",x(average+i2/2),y('i')+bar_height*0.25]).attr( {stroke:color(i2),  fill:color(i2),'arrow-end':"block-narrow-short", 'stroke-width':'10'})
-      r.path( ["M",x(average-i1/2),y('i')+bar_height*0.75,"L",x(average+i1/2),y('i')+bar_height*0.75]).attr( {stroke:color(i1),  fill:color(i1), 'arrow-end':"classic-narrow-short", 'stroke-width':'10'})
+      arrow2 = r.path( ["M",x(average-i2/2),y('i')+bar_height*0.25,"L",x(average+i2/2),y('i')+bar_height*0.25]).attr( {stroke:color(i2),  fill:color(i2),'arrow-end':"block-narrow-short", 'stroke-width':'10'})
+      arrow1 = r.path( ["M",x(average-i1/2),y('i')+bar_height*0.75,"L",x(average+i1/2),y('i')+bar_height*0.75]).attr( {stroke:color(i1),  fill:color(i1), 'arrow-end':"classic-narrow-short", 'stroke-width':'10'})
+        
+      if Math.abs(i2) > 200
+        arrow2.attr({'arrow-end':"classic-narrow-short"})
+      if Math.abs(i1) > 200
+        arrow1.attr({'arrow-end':"classic-narrow-short"})
+
+        
       r.text(x(min)-3,y('i')+bar_height/2,"Some costs are uncertain, therefore your pathway could be").attr({'text-anchor':'end'})
       r.text(x(max)+3,y('i')+bar_height*0.25,"£#{Math.round(Math.abs(i2))}/person/year #{direction(i2)}, or").attr({'text-anchor':'start'})
       r.text(x(max)+3,y('i')+bar_height*0.75,"£#{Math.round(Math.abs(i1))}/person/year #{direction(i1)}").attr({'text-anchor':'start'})  
-
+    
+    increment = r.setFinish()
 
     # Set up a sorted y axis
     p = @pathway.cost_components
@@ -207,6 +219,8 @@ class CostsSensitivity
     r.text(30,205,"The biggest costs").attr({'text-anchor':'start','font-weight':'bold'})
     r.text(250,205,"The arrow indicates the range of estimates, click the labels to see the assumptions").attr({'text-anchor':'start','font-weight':'bold'})
     r.text(w-30,205,"Use these links to try different assumptions").attr({'text-anchor':'end','font-weight':'bold'})
+    
+    increment.toFront()
   
   clickToChangeCost: (element,name,level) ->
     element.click(() ->

@@ -68,11 +68,9 @@ costs_in_category = (desired_category) ->
   costs
 
 group_costs_of_pathway = (pathway) ->
-  console.log pathway._id, pathway.cost_components
   adjust_costs_of_pathway(pathway) unless pathway.total_cost_low_adjusted?
   categorised_costs = {}
   for own name, values of pathway.cost_components
-    #console.log name, values
     #unless name == 'Finance cost' # Reallocating this
     category_name = cost_categories[name]
     category = categorised_costs[category_name]
