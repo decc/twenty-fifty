@@ -77,6 +77,45 @@ class GeneratePathway
     pathway['map'] = m
   end
   
+  def heating_choice_table
+    h = {}
+    r = {}
+    [ 'Gas boiler (old)',
+      'Gas boiler (new)',
+      'Resistive heating',
+      'Oil-fired boiler',
+      'Solid-fuel boiler',
+      'Stirling engine in home CHP',
+      'Fuel-cell in home CHP',
+      'Air-source heat pump',
+      'Ground-source heat pump',
+      'Geothermal heat',
+      'Community scale gas CHP',
+      'Community scale solid-fuel CHP',
+      'District heating from power stations'].each_with_index do |name,i| 
+        r[name] = heating_sheet.send("f#{579+i}")
+      end
+    h['residential'] = r
+    
+    c = {}
+    ['Gas boiler (old)',
+      'Gas boiler (new)',
+      'Resistive heating',
+      'Oil-fired boiler',
+      'Solid-fuel boiler',
+      'Stirling engine in home CHP',
+      'Fuel-cell in home CHP',
+      'Air-source heat pump',
+      'Ground-source heat pump',
+      'Geothermal heat',
+      'Community scale gas CHP',
+      'Community scale solid-fuel CHP',
+      'District heating from power stations'].each_with_index do |name,i| 
+        c[name] = heating_commercial_sheet.send("n#{330+i}")
+      end
+    h['commercial'] = c
+    pathway[:heating] = h
+  end
   
   def label(sheet,row)
     sheet.send("d#{row}").to_s

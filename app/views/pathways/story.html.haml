@@ -1,0 +1,11 @@
+:javascript
+  twentyfifty.longDescriptions = #{raw ModelStructure.instance.long_descriptions.to_json};
+  twentyfifty.setup(twentyfifty.Story)
+
+#stories
+  #demand_story.story
+  #supply_story.story
+  #ghg_story.story
+.clear
+
+= render 'classic_controls'

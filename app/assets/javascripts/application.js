@@ -31,5 +31,6 @@
 //= require costs_compared_overview
 //= require costs_compared_within_sector
 //= require costs_sensitivity
+//= require story
 
 
