@@ -16,6 +16,7 @@ class GeneratePathway
     electricity_tables
     pathway[:sankey] = intermediate_output_sheet.a('h370','j460').to_grid
     cost_components_table
+    map_table    
     pathway
   end
   
@@ -54,6 +55,18 @@ class GeneratePathway
     e['backup'] = intermediate_output_sheet.q131
     pathway['electricity'] = e
   end
+  
+  def map_table
+    m = {}
+    m['wave'] = intermediate_output_sheet.q355
+    [333..339,343..346,350..351,359..364].each do |range|
+      range.to_a.each do |row|
+        m[intermediate_output_sheet.send("c#{row}")] = intermediate_output_sheet.send("q#{row}")
+      end
+    end
+    pathway['map'] = m
+  end
+  
   
   def label(sheet,row)
     sheet.send("d#{row}").to_s
