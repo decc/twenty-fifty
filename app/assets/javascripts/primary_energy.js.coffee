@@ -46,7 +46,7 @@ class PrimaryEnergy
       @emissions_chart.addSeries({type: 'line', name: '80% reduction on 1990', data: [160,160,160,160,160,160,160,160,160], lineColor:'#fff', color:'#fff',dashStyle:'Dot', lineWidth:2},false)
     i++
     # Net emissions line
-    data = @pathway['ghg']["0.0"]
+    data = @pathway['ghg']["Total"]
     if @emissions_chart.series[i]?
       @emissions_chart.series[i].setData(data,false)
     else
