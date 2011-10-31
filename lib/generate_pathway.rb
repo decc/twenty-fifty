@@ -10,11 +10,10 @@ class GeneratePathway
   
   def calculate_pathway(code)
     @pathway = { _id: code, choices: set_choices(code) }
-    table :ghg, 182, 192
-    table :final_energy_demand, 13, 18
-    table :primary_energy_supply, 283, 296
+    sankey_table
+    primary_energy_tables
     electricity_tables
-    pathway[:sankey] = intermediate_output_sheet.a('h370','j460').to_grid
+    heating_choice_table
     cost_components_table
     map_table    
     pathway
@@ -43,6 +42,17 @@ class GeneratePathway
       t[label(intermediate_output_sheet,row)] = annual_data(intermediate_output_sheet,row)
     end
     target[name] = t
+  end
+  
+  def primary_energy_tables
+    table :ghg, 182, 192
+    table :final_energy_demand, 13, 18
+    table :primary_energy_supply, 283, 296
+    pathway[:ghg][:percent_reduction_from_1990] = (intermediate_output_sheet.q155 * 100).round
+  end
+  
+  def sankey_table
+    pathway[:sankey] = intermediate_output_sheet.a('h370','j460').to_grid
   end
   
   def electricity_tables
