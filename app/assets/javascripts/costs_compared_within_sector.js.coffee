@@ -135,8 +135,8 @@ class CostsComparedWithinSector
       @boxes_by_category[category].labels.toFront()
       @hover(@boxes_by_category[category].boxes,category)
       @hover(@boxes_by_category[category].labels,category)
-      @boxes_by_category[category].top_label_box = @r.rect(@x(0),0,100,h*0.75,5).attr({'fill':'#fff','stroke':cost_component_colors[category].low}).hide()
-      @boxes_by_category[category].top_label = @r.text(@x(0)+50,h*0.75/2,category).attr({'text-anchor':'middle','font-weight':'bold'}).hide()
+      @boxes_by_category[category].top_label_box = @r.rect(@x(0),0,200,h*0.75,5).attr({'fill':'#fff','stroke':cost_component_colors[category].low}).hide()
+      @boxes_by_category[category].top_label = @r.text(@x(0)+100,h*0.75/2,category).attr({'text-anchor':'middle','font-weight':'bold'}).hide()
     
     @drawn = true
   
@@ -188,7 +188,7 @@ class CostsComparedWithinSector
         if low > 1
           b[category].low_label.attr({x:@x(_x + low/2),text:"#{Math.round(low)}"})
         if _id == 'chosen'
-          @boxes_by_category[category].top_label_box.attr({x:@x(_x+low/2)-50})
+          @boxes_by_category[category].top_label_box.attr({x:@x(_x+low/2)-100})
           @boxes_by_category[category].top_label.attr({x:@x(_x+low/2)})
         _x += low
     for own category, cost of categorised_costs
