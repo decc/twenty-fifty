@@ -51,15 +51,15 @@ class CostsComparedWithinSector
     "International aviation":                         {low: "#ff7f0e",range: "url(/assets/hatches/hatch-ff7f0e.png)"}
     "International shipping (maritime bunkers)":      {low: "#d62728",range: "url(/assets/hatches/hatch-d62728.png)"}
     "Geosequestration":                               {low: "#7f7f7f",range: "url(/assets/hatches/hatch-7f7f7f.png)"}
-    "Petroleum refineries":                           {low: "8c564b",range: "url(/assets/hatches/hatch-8c564b.png)"}
-    "Coal":                                           {low: "2ca02c",range: "url(/assets/hatches/hatch-2ca02c.png)"}
-    "Oil":                                            {low: "1f77b4",range: "url(/assets/hatches/hatch-1f77b4.png)"}
-    "Gas":                                            {low: "ff7f0e",range: "url(/assets/hatches/hatch-ff7f0e.png)"}
-    "Fossil fuel transfers":                          {low: "d62728",range: "url(/assets/hatches/hatch-d62728.png)"}
-    "District heating effective demand":              {low: "7f7f7f",range: "url(/assets/hatches/hatch-7f7f7f.png)"}
-    "Power Carbon Capture":                           {low: "EA8BCC",range: "url(/assets/hatches/hatch-EA8BCC.png)"}
-    "Industry Carbon Capture":                        {low: "a55194",range: "url(/assets/hatches/hatch-a55194.png)"}
-    "Finance cost":                                   {low: "8c564b",range: "url(/assets/hatches/hatch-8c564b.png)"}
+    "Petroleum refineries":                           {low: "#8c564b",range: "url(/assets/hatches/hatch-8c564b.png)"}
+    "Coal":                                           {low: "#2ca02c",range: "url(/assets/hatches/hatch-2ca02c.png)"}
+    "Oil":                                            {low: "#1f77b4",range: "url(/assets/hatches/hatch-1f77b4.png)"}
+    "Gas":                                            {low: "#ff7f0e",range: "url(/assets/hatches/hatch-ff7f0e.png)"}
+    "Fossil fuel transfers":                          {low: "#d62728",range: "url(/assets/hatches/hatch-d62728.png)"}
+    "District heating effective demand":              {low: "#7f7f7f",range: "url(/assets/hatches/hatch-7f7f7f.png)"}
+    "Power Carbon Capture":                           {low: "#EA8BCC",range: "url(/assets/hatches/hatch-EA8BCC.png)"}
+    "Industry Carbon Capture":                        {low: "#a55194",range: "url(/assets/hatches/hatch-a55194.png)"}
+    "Finance cost":                                   {low: "#8c564b",range: "url(/assets/hatches/hatch-8c564b.png)"}
   }                                                          
   
   constructor: () ->
@@ -111,7 +111,7 @@ class CostsComparedWithinSector
       b = {}
       y = @y(code)
       for category in @relevant_costs
-        b[category] =
+        b[category] = 
           low: @r.rect(x,y,0,h).attr({'fill':cost_component_colors[category].low,'stroke':'none'})
           low_label: @r.text(x,y+h/2,"").attr({'fill':'#000','text-anchor':'middle'})
           range: @r.rect(x,y,0,h).attr({'fill':cost_component_colors[category].range,'stroke':'none'})
