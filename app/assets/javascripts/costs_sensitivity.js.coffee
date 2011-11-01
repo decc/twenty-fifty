@@ -78,10 +78,11 @@ class CostsSensitivity
     twentyfifty.adjust_costs_of_pathway(@pathway) unless @pathway.total_cost_low_adjusted?
     @updateBar(@top_pathway_chart,@pathway.total_cost_low_adjusted,@pathway.total_cost_range_adjusted)
     @updateIncrement()
+    @sortComponents()
+    @updateComponents(true,false)
     
   switchComparator: (code) ->
     twentyfifty.loadSecondaryPathway(code, @updateComparator)
-  
   
   updateComparator: (@comparator) =>
     twentyfifty.adjust_costs_of_pathway(@comparator) unless @comparator.total_cost_low_adjusted?
@@ -89,6 +90,7 @@ class CostsSensitivity
     @top_comparator_chart.name.attr({ text:twentyfifty.pathwayName(@comparator._id,@comparator._id), href: twentyfifty.url({action:'primary_energy_chart',code:@comparator._id})})
     @top_comparator_chart.description.attr({ text: twentyfifty.pathwayDescriptions(@comparator._id,"") })
     @updateIncrement()    
+    @updateComponents(false,true)
   
   updateIncrement: () ->
     return unless @pathway? && @comparator?
@@ -137,16 +139,59 @@ class CostsSensitivity
     else
       arrow.attr({'arrow-end':'none'})
   
+  sortComponents: () ->
+    p = @pathway.cost_components
+    bar_offset = @bar_offset
+    cost_component_names.sort( (a,b) -> p[b].high_adjusted - p[a].high_adjusted)
+    @bottom_y = y = d3.scale.ordinal().domain(cost_component_names).rangeRoundBands([200,@h],0.25)
+    for name in cost_component_names
+      component = @components[name]
+      py = y(name)
+      cy = py+bar_offset
+      ly = py+(y.rangeBand()/2)
+      component.name.attr({y:ly})
+      component.pathway.low.attr({y:py})
+      component.pathway.range.attr({y:py})
+      component.comparator.low.attr({y:cy})
+      component.comparator.range.attr({y:cy})
+      
+  
+  updateComponents: (update_pathway = true, update_comparator = true) ->
+    return unless @pathway || @comparator
+    for name in cost_component_names
+      component = @components[name]
+      if update_pathway
+        p = @pathway.cost_components[name]
+        py = @bottom_y(name)
+        # Bar
+        @updateBar(component.pathway,p.low_adjusted,p.range_adjusted)
+        # Uncertainty arrow
+        component.pathway.uncertainty.attr({path: ["M",@x(p.low),py,"L",@x(p.high),py] })
+      if update_comparator
+        c = @comparator.cost_components[name]
+        cy = @bottom_y(name) + @bar_offset
+        # Bar
+        @updateBar(component.comparator,c.low_adjusted,c.range_adjusted)
+        # Uncertainty arrow
+        component.comparator.uncertainty.attr({path: ["M",@x(c.low),cy,"L",@x(c.high),cy] })
+    
+  
   updateBar: (bar,low,range) ->
-    bar.low.attr({width:@w(low)})
-    bar.range.attr({x:@x(low),width:@w(range)})  
+    if low < 0
+      bar.low.attr({x:@x(low+range),width:@w(Math.abs(range))})
+    else
+      bar.low.attr({width:@w(low)})
+    if range < 0
+      bar.range.attr({x:@x(low+range),width:@w(Math.abs(range))})  
+    else
+      bar.range.attr({x:@x(low),width:@w(range)})  
   
   w: (value) ->
     @x(value) - @x(0)
     
   drawChart: () ->
     e = $('#costssensitivity')
-    h = e.height()
+    @h = h = e.height()
     w = e.width()
     r = new Raphael('costssensitivity',w,h)
 
@@ -186,44 +231,49 @@ class CostsSensitivity
       low_value:          r.text(0,y('i')+bar_height*0.25,"").attr({'text-anchor':'start'})
       high_value:         r.text(0,y('i')+bar_height*0.75,"").attr({'text-anchor':'start'})  
       
-    r.setFinish().hide()
+    increment = r.setFinish()
+    increment.hide()
+
+    @bottom_y = y = d3.scale.ordinal().domain(cost_component_names).rangeRoundBands([200,h],0.25)
     
-    # # Increment
-    # # r.rect(x(0),y('i'),x(10000)-x(0),bar_height).attr({'fill':'#ddd','stroke':'none'})
-    # #r.text(195,y('i')+bar_height/2,"Incremental cost").attr({'text-anchor':'end'})
-    # 
-    # min = Math.min(p.total_cost_low_adjusted,c.total_cost_low_adjusted)
-    # max = Math.max(p.total_cost_high_adjusted,c.total_cost_high_adjusted)
-    # average = (min + max) / 2
-    # i1 = i.tc - i.cc
-    # i2 = i.tt - i.ct
-    # 
-    # xi1 = x(Math.abs(i1)) - x(0)
-    # xi2 = x(Math.abs(i2)) - x(0)
-    # 
-    # r.setStart();
-    # 
-    # if i1 == i2
-    #   arrow  = r.path( ["M",x(p.total_cost_low_adjusted-i1),y('i')+bar_height/2,"L",x(p.total_cost_low_adjusted),y('i')+bar_height/2]).attr( {stroke:color(i1), fill:color(i1), 'stroke-width':'15'})
-    #   if Math.abs(i1) > 200
-    #     arrow.attr({'arrow-end':"classic-narrow-short"})
-    #   r.text(x(max)+3,y('i')+bar_height/2,"£#{Math.round(Math.abs(i1))}/person/year #{direction(i1)}").attr({'text-anchor':'start'})
-    # else
-    #   arrow2 = r.path( ["M",x(average-i2/2),y('i')+bar_height*0.25,"L",x(average+i2/2),y('i')+bar_height*0.25]).attr( {stroke:color(i2),  fill:color(i2),'arrow-end':"block-narrow-short", 'stroke-width':'10'})
-    #   arrow1 = r.path( ["M",x(average-i1/2),y('i')+bar_height*0.75,"L",x(average+i1/2),y('i')+bar_height*0.75]).attr( {stroke:color(i1),  fill:color(i1), 'arrow-end':"classic-narrow-short", 'stroke-width':'10'})
-    #     
-    #   if Math.abs(i2) > 200
-    #     arrow2.attr({'arrow-end':"classic-narrow-short"})
-    #   if Math.abs(i1) > 200
-    #     arrow1.attr({'arrow-end':"classic-narrow-short"})
-    # 
-    #     
-    #   r.text(x(min)-3,y('i')+bar_height/2,"Some costs are uncertain, therefore your pathway could be").attr({'text-anchor':'end'})
-    #   r.text(x(max)+3,y('i')+bar_height*0.25,"£#{Math.round(Math.abs(i2))}/person/year #{direction(i2)}, or").attr({'text-anchor':'start'})
-    #   r.text(x(max)+3,y('i')+bar_height*0.75,"£#{Math.round(Math.abs(i1))}/person/year #{direction(i1)}").attr({'text-anchor':'start'})  
-    # 
-    # increment = r.setFinish()
-    # 
+    # Draw our bars
+    bar_height = (y.rangeBand()-2)/2
+    @bar_offset = bar_offset = ((y.rangeBand()-2)/2)+2
+    
+    components = {}
+    
+    for name in cost_component_names
+      py = y(name)
+      # background
+      r.rect(x(0),py,x(10000)-x(0),y.rangeBand()).attr({'fill':'#ddd','stroke':'none'})
+      
+    
+    for name in cost_component_names
+      py = y(name)
+      cy = py+bar_offset
+      ly = py+(y.rangeBand()/2)
+      component = {}
+
+      # Label
+      url = "http://2050-wiki.greenonblack.com#{cost_wiki_links[name] || "/"}"
+      component.name = r.text(245,ly,name).attr({'text-anchor':'end',href:url})
+      
+      # This pathway
+      component.pathway = {}
+      component.pathway.low         = r.rect(x(0),py,0,bar_height).attr({'fill':p_low_fill_color,'stroke':'none'})
+      component.pathway.range       = r.rect(x(0),py,0,bar_height).attr({'fill':p_range_fill_color,'stroke':'none'})
+      component.pathway.uncertainty = r.path( ["M",0,0,"L",0,0]).attr( {stroke:'#000','arrow-end':"classic-wide-long", 'arrow-start':"classic-wide-long"})
+      
+      # The comparator
+      component.comparator = {}
+      component.comparator.low   = r.rect(x(0),cy,0,bar_height).attr({'fill':c_low_fill_color,'stroke':'none'})
+      component.comparator.range = r.rect(x(0),cy,0,bar_height).attr({'fill':c_range_fill_color,'stroke':'none'})
+      component.comparator.uncertainty = r.path( ["M",0,0,"L",0,0]).attr( {stroke:'#000','arrow-end':"classic-wide-long", 'arrow-start':"classic-wide-long"})
+        
+      components[name] = component
+          
+    @components = components  
+    
     # # Set up a sorted y axis
     # p = @pathway.cost_components
     # cost_component_names.sort( (a,b) -> p[b].high_adjusted - p[a].high_adjusted)
@@ -282,18 +332,18 @@ class CostsSensitivity
     #   else if p.low_adjusted == p.high
     #     expensive.attr({'font-weight':'bold'})
     # 
-    # # The vertical lines
-    # format = x.tickFormat(10)
-    # for tick in x.ticks(10)
-    #   r.text(x(tick),30,format(tick)).attr({'text-anchor':'middle'})
-    #   r.path(["M", x(tick), 40, "L", x(tick),h]).attr({stroke:'#fff'})
-    # 
-    # # The sensitivity stuff
-    # r.text(30,205,"The biggest costs").attr({'text-anchor':'start','font-weight':'bold'})
-    # r.text(250,205,"The arrow indicates the range of estimates, click the labels to see the assumptions").attr({'text-anchor':'start','font-weight':'bold'})
-    # r.text(w-30,205,"Use these links to try different assumptions").attr({'text-anchor':'end','font-weight':'bold'})
-    # 
-    # increment.toFront()
+    # The vertical lines
+    format = x.tickFormat(10)
+    for tick in x.ticks(10)
+      r.text(x(tick),30,format(tick)).attr({'text-anchor':'middle'})
+      r.path(["M", x(tick), 40, "L", x(tick),h]).attr({stroke:'#fff'})
+    
+    # The sensitivity stuff
+    r.text(30,205,"The biggest costs").attr({'text-anchor':'start','font-weight':'bold'})
+    r.text(250,205,"The arrow indicates the range of estimates, click the labels to see the assumptions").attr({'text-anchor':'start','font-weight':'bold'})
+    r.text(w-30,205,"Use these links to try different assumptions").attr({'text-anchor':'end','font-weight':'bold'})
+    
+    increment.toFront()
   
   clickToChangeCost: (element,name,level) ->
     element.click(() ->
