@@ -1,11 +1,3 @@
-PATH
-  remote: /Users/tamc/Documents/github/rubyfromexcel
-  specs:
-    rubyfromexcel (0.0.16)
-      nokogiri (>= 1.4.1)
-      rubypeg (>= 0.0.2)
-      rubyscriptwriter (>= 0.0.1)
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -114,6 +106,10 @@ GEM
     rspec-expectations (2.6.0)
       diff-lcs (~> 1.1.2)
     rspec-mocks (2.6.0)
+    rubyfromexcel (0.0.16)
+      nokogiri (>= 1.4.1)
+      rubypeg (>= 0.0.2)
+      rubyscriptwriter (>= 0.0.1)
     rubypeg (0.0.3)
       rubyscriptwriter
     rubyscriptwriter (0.0.2)
@@ -152,6 +148,6 @@ DEPENDENCIES
   mongo
   rails (= 3.1.1)
   rspec
-  rubyfromexcel!
+  rubyfromexcel (= 0.0.16)
   sass-rails (~> 3.1.4)
   uglifier (>= 1.0.3)
