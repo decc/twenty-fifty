@@ -187,7 +187,7 @@ class CostsSensitivity
       r.path( ["M",x(c.low),cy,"L",x(c.high),cy]).attr( {stroke:'#000','arrow-end':"classic-wide-long", 'arrow-start':"classic-wide-long"})      
       # Override links
       cheap = r.text(x(6500),ly,"Cheapest").attr({'text-anchor':'middle'})
-      bestguess = r.text(x(7500),ly,"Best guess").attr({'text-anchor':'middle'})
+      bestguess = r.text(x(7500),ly,"Default").attr({'text-anchor':'middle'})
       if name == "Oil" || name == "Gas" || name == "Coal" || name == "Bioenergy imports" || name == "Finance cost"
         high_text = "Most expensive"
       else
@@ -224,7 +224,7 @@ class CostsSensitivity
   
   clickToChangeCost: (element,name,level) ->
     element.click(() ->
-      console.log name
+      # console.log name
       jQuery.jStorage.set(name,level)
       window.location = twentyfifty.url()
     )
