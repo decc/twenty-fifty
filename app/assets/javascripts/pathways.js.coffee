@@ -64,7 +64,7 @@ getComparator = () ->
 
 switchCompator = (new_comparator) ->
   comparator = new_comparator
-  window.location = url()
+  execute.switchComparator(comparator)
 
 url = (options = {}) ->
   s = jQuery.extend({controller:controller, code: codeForChoices(), action:action, sector:sector, comparator: getComparator()},options)
@@ -147,7 +147,7 @@ loadMainPathway = (pushState = true) ->
 
 loadSecondaryPathway = (secondary_code,callback) ->
   if cache[secondary_code]?
-    callback(secondary_code)
+    callback(cache[secondary_code])
   else
     fetch = () =>
       $.getJSON(url({code:secondary_code, action:'data'}), (data) =>
