@@ -123,6 +123,7 @@ class CostsSensitivity
       @increment_arrows.single_value.show()
     else
       @increment_arrows.single.hide()
+      @increment_arrows.single_value.hide()
       @increment_arrows.low.attr( {path:["M",@x(average-i2/2),@top_y('i')+@top_bar_height*0.25,"L",@x(average+i2/2),@top_y('i')+@top_bar_height*0.25], stroke:color(i2), fill:color(i2)})
       @increment_arrows.high.attr({path:["M",@x(average-i1/2),@top_y('i')+@top_bar_height*0.75,"L",@x(average+i1/2),@top_y('i')+@top_bar_height*0.75], stroke:color(i1), fill:color(i1)})
       @increment_arrows.range_message.attr({x:@x(min)-3})
@@ -162,8 +163,7 @@ class CostsSensitivity
       component.pathway.range.attr({y:py})
       component.comparator.low.attr({y:cy})
       component.comparator.range.attr({y:cy})
-      
-  
+       
   updateComponents: (update_pathway = true, update_comparator = true) ->
     return unless @pathway || @comparator
     for name in cost_component_names
@@ -185,7 +185,19 @@ class CostsSensitivity
         @updateBar(component.comparator,c.low_adjusted,c.range_adjusted)
         # Uncertainty arrow
         component.comparator.uncertainty.attr({path: ["M",@x(c.low),cy,"L",@x(c.high),cy] })
-    
+      
+      
+      setting = $.jStorage.get(name)
+      component[a].attr({'font-weight':'normal'}) for a in ['cheap','default','expensive','uncertain']
+      if !setting? || setting == 'point'
+        chosen = component.default
+      else if setting == 'uncertain'
+        chosen = component.uncertain
+      else if setting == 0
+        chosen = component.cheap
+      else if setting == 1
+        chosen = component.expensive
+      chosen.attr({'font-weight':'bold'})
   
   updateBar: (bar,low,range) ->
     if low < 0
@@ -298,65 +310,7 @@ class CostsSensitivity
       components[name] = component
           
     @components = components  
-    
-    # # Set up a sorted y axis
-    # p = @pathway.cost_components
-    # cost_component_names.sort( (a,b) -> p[b].high_adjusted - p[a].high_adjusted)
-    # y = d3.scale.ordinal().domain(cost_component_names).rangeRoundBands([200,h],0.25)
-    #     
-    # # Draw our bars
-    # bar_height = (y.rangeBand()-2)/2
-    # bar_offset = ((y.rangeBand()-2)/2)+2
-    # 
-    # for name in cost_component_names
-    #   p = @pathway.cost_components[name]
-    #   c = @comparator.cost_components[name]
-    #   py = y(name)
-    #   ly = py+(y.rangeBand()/2)
-    #   # Label
-    #   url = "http://2050-wiki.greenonblack.com#{cost_wiki_links[name] || "/"}"
-    #   r.text(245,ly,name).attr({'text-anchor':'end',href:url})
-    #   # background
-    #   r.rect(x(0),py,x(10000)-x(0),y.rangeBand()).attr({'fill':'#ddd','stroke':'none'})
-    #   # This pathway
-    #   if p.low_adjusted < 0
-    #     r.rect(x(0)+x(p.low_adjusted),py,x(0)-x(p.low_adjusted),bar_height).attr({'fill':p_low_fill_color,'stroke':'none'})
-    #     r.rect(x(0)+x(p.low_adjusted)+x(p.range_adjusted),py,p.range_adjusted-x(0),bar_height).attr({'fill':p_range_fill_color,'stroke':'none'})
-    #   else
-    #     r.rect(x(0),py,x(p.low_adjusted)-x(0),bar_height).attr({'fill':p_low_fill_color,'stroke':'none'})
-    #     r.rect(x(p.low_adjusted),py,x(p.range_adjusted)-x(0),bar_height).attr({'fill':p_range_fill_color,'stroke':'none'})
-    #   # Uncertainty arrow
-    #   r.path( ["M",x(p.low),py,"L",x(p.high),py]).attr( {stroke:'#000','arrow-end':"classic-wide-long", 'arrow-start':"classic-wide-long"})
-    #   # Comparator pathway
-    #   cy = py+bar_offset
-    #   r.rect(x(0),cy,x(c.low_adjusted)-x(0),bar_height).attr({'fill':c_low_fill_color,'stroke':'none'})
-    #   r.rect(x(c.low_adjusted),cy,x(c.range_adjusted)-x(0),bar_height).attr({'fill':c_range_fill_color,'stroke':'none'})
-    #   # Uncertainty arrow
-    #   r.path( ["M",x(c.low),cy,"L",x(c.high),cy]).attr( {stroke:'#000','arrow-end':"classic-wide-long", 'arrow-start':"classic-wide-long"})      
-    #   # Override links
-    #   cheap = r.text(x(6500),ly,"Cheapest").attr({'text-anchor':'middle'})
-    #   bestguess = r.text(x(7500),ly,"Default").attr({'text-anchor':'middle'})
-    #   if name == "Oil" || name == "Gas" || name == "Coal" || name == "Bioenergy imports" || name == "Finance cost"
-    #     high_text = "Most expensive"
-    #   else
-    #     high_text = "Today's cost"
-    #   expensive = r.text(x(8500),ly,high_text).attr({'text-anchor':'middle'})
-    #   uncertain = r.text(x(9500),ly,"Uncertain").attr({'text-anchor':'middle'})
-    #   
-    #   @clickToChangeCost(cheap,name,0)
-    #   @clickToChangeCost(bestguess,name,"point")
-    #   @clickToChangeCost(expensive,name,1)
-    #   @clickToChangeCost(uncertain,name,"uncertain")
-    # 
-    #   if p.range_adjusted == p.range
-    #     uncertain.attr({'font-weight':'bold'})      
-    #   else if p.low_adjusted == p.point
-    #     bestguess.attr({'font-weight':'bold'})
-    #   else if p.low_adjusted == p.low
-    #     cheap.attr({'font-weight':'bold'})
-    #   else if p.low_adjusted == p.high
-    #     expensive.attr({'font-weight':'bold'})
-    # 
+ 
     # The vertical lines
     format = x.tickFormat(10)
     for tick in x.ticks(10)
@@ -366,7 +320,15 @@ class CostsSensitivity
     # The sensitivity stuff
     r.text(30,205,"The biggest costs").attr({'text-anchor':'start','font-weight':'bold'})
     r.text(250,205,"The arrow indicates the range of estimates, click the labels to see the assumptions").attr({'text-anchor':'start','font-weight':'bold'})
-    r.text(w-30,205,"Use these links to try different assumptions").attr({'text-anchor':'end','font-weight':'bold'})
+    r.text(x(6300),205,"Use these links to try different assumptions").attr({'text-anchor':'start','font-weight':'bold'})
+    r.text(w-30,205,"(reset)").attr({'text-anchor':'end'}).click( () =>
+      for name in cost_component_names
+        jQuery.jStorage.set(name,'point')
+      twentyfifty.adjust_costs_of_pathway(@pathway)
+      twentyfifty.adjust_costs_of_pathway(@comparator)        
+      @updateComponents()
+      @updateToBarForNewCost()
+    )
     
     increment.toFront()
   
