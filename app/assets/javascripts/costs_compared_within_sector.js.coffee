@@ -179,8 +179,8 @@ class CostsComparedWithinSector
     for own category, cost of categorised_costs
       unless category == "high" || category == "low" || category == "range"
         low = cost.low_adjusted
-        if category == "Conventional thermal plant"
-          # console.log category, low
+        # if category == "Conventional thermal plant"
+        #   # console.log category, low
         if low >= 0
           b[category].low.attr({x: @x(_x), width: @x(low) - @x(0)})
         else
