@@ -131,7 +131,7 @@ loadMainPathway = (pushState = true) ->
     requested[main_code] = true
     
     fetch = () ->
-      $.getJSON(url({code:main_code, action:'data'}+'?' + Math.round(new Date().getTime())), (data) ->
+      $.getJSON(url({code:main_code, action:'data'}), (data) ->
         data ||= cache[main_code] # In case it arrived while we were waiting
         if data?
           cache[data._id] = data
@@ -150,7 +150,7 @@ loadSecondaryPathway = (secondary_code,callback) ->
     callback(secondary_code)
   else
     fetch = () =>
-      $.getJSON(url({code:secondary_code, action:'data'}+'?' + Math.round(new Date().getTime())), (data) =>
+      $.getJSON(url({code:secondary_code, action:'data'}), (data) =>
         data ||= cache[secondary_code] # In case it arrived while we were waiting
         if data?
           clearInterval(timer)
