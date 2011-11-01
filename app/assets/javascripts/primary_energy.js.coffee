@@ -28,6 +28,8 @@ class PrimaryEnergy
       },
       series: []
     });
+    alert("Missing emissions chart") unless @emissions_chart?
+    alert("Missing emissions chart renderer") unless @emissions_chart.renderer?
     @emissions_chart.renderer.text("80% reduction on 1990" ,60,170).css({color: '#fff',fill: '#fff', 'font-size': '0.75em'}).attr({zIndex:10}).add();
     
   updateResults: (@pathway) ->
