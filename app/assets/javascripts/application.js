@@ -25,6 +25,7 @@
 // Now the individual views
 //= require primary_energy
 //= require electricity
+//= require energy_security
 //= require map
 //= require sankey_display
 //= require costs_in_context
