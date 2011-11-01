@@ -91,7 +91,12 @@ class CostsSensitivity
     @top_comparator_chart.description.attr({ text: twentyfifty.pathwayDescriptions(@comparator._id,"") })
     @updateIncrement()    
     @updateComponents(false,true)
-  
+    
+  updateToBarForNewCost: () ->
+    @updateBar(@top_pathway_chart,@pathway.total_cost_low_adjusted,@pathway.total_cost_range_adjusted)
+    @updateBar(@top_comparator_chart,@comparator.total_cost_low_adjusted,@comparator.total_cost_range_adjusted)
+    @updateIncrement()
+    
   updateIncrement: () ->
     return unless @pathway? && @comparator?
     p = @pathway
@@ -121,7 +126,7 @@ class CostsSensitivity
       @increment_arrows.low.attr( {path:["M",@x(average-i2/2),@top_y('i')+@top_bar_height*0.25,"L",@x(average+i2/2),@top_y('i')+@top_bar_height*0.25], stroke:color(i2), fill:color(i2)})
       @increment_arrows.high.attr({path:["M",@x(average-i1/2),@top_y('i')+@top_bar_height*0.75,"L",@x(average+i1/2),@top_y('i')+@top_bar_height*0.75], stroke:color(i1), fill:color(i1)})
       @increment_arrows.range_message.attr({x:@x(min)-3})
-      @increment_arrows.low_value.attr({x:@x(max)+3,text:"£#{Math.round(Math.abs(i2))}/person/year #{direction(i2)}, or"})
+      @increment_arrows.low_value.attr({x:@x(max)+3,text:"£#{Math.round(Math.abs(i2))}/person/year #{direction(i2)} and"})
       @increment_arrows.high_value.attr({x:@x(max)+3,text:"£#{Math.round(Math.abs(i1))}/person/year #{direction(i1)}"})
       
       optional_arrow(@increment_arrows.low,i2)
@@ -139,6 +144,8 @@ class CostsSensitivity
     else
       arrow.attr({'arrow-end':'none'})
   
+  label_components = ['name','cheap','default','expensive','uncertain']
+  
   sortComponents: () ->
     p = @pathway.cost_components
     bar_offset = @bar_offset
@@ -149,7 +156,8 @@ class CostsSensitivity
       py = y(name)
       cy = py+bar_offset
       ly = py+(y.rangeBand()/2)
-      component.name.attr({y:ly})
+      for a in label_components
+        component[a].attr({y:ly})
       component.pathway.low.attr({y:py})
       component.pathway.range.attr({y:py})
       component.comparator.low.attr({y:cy})
@@ -159,6 +167,9 @@ class CostsSensitivity
   updateComponents: (update_pathway = true, update_comparator = true) ->
     return unless @pathway || @comparator
     for name in cost_component_names
+      @updateComponentNamed(name,update_pathway,update_comparator)
+  
+  updateComponentNamed: (name,update_pathway = true,update_comparator = true) ->
       component = @components[name]
       if update_pathway
         p = @pathway.cost_components[name]
@@ -225,7 +236,7 @@ class CostsSensitivity
     @increment_arrows = 
       single:             r.path( ["M",0,0,"L",0,0]).attr({'stroke-width':'15'})
       single_value:       r.text(0,y('i')+bar_height/2,"").attr({'text-anchor':'start'})
-      range_message:      r.text(0,y('i')+bar_height/2,"Some costs are uncertain, therefore your pathway could be").attr({'text-anchor':'end'})
+      range_message:      r.text(0,y('i')+bar_height/2,"Some costs are uncertain, therefore your pathway could be between").attr({'text-anchor':'end'})
       low:                r.path( ["M",0,0,"L",0,0]).attr({'stroke-width':'10'})
       high:               r.path( ["M",0,0,"L",0,0]).attr({'stroke-width':'10'})
       low_value:          r.text(0,y('i')+bar_height*0.25,"").attr({'text-anchor':'start'})
@@ -247,7 +258,6 @@ class CostsSensitivity
       # background
       r.rect(x(0),py,x(10000)-x(0),y.rangeBand()).attr({'fill':'#ddd','stroke':'none'})
       
-    
     for name in cost_component_names
       py = y(name)
       cy = py+bar_offset
@@ -269,6 +279,21 @@ class CostsSensitivity
       component.comparator.low   = r.rect(x(0),cy,0,bar_height).attr({'fill':c_low_fill_color,'stroke':'none'})
       component.comparator.range = r.rect(x(0),cy,0,bar_height).attr({'fill':c_range_fill_color,'stroke':'none'})
       component.comparator.uncertainty = r.path( ["M",0,0,"L",0,0]).attr( {stroke:'#000','arrow-end':"classic-wide-long", 'arrow-start':"classic-wide-long"})
+        
+      # The quick sensitivity links
+      component.cheap = r.text(x(6500),ly,"Cheapest").attr({'text-anchor':'middle'})
+      component.default = r.text(x(7500),ly,"Default").attr({'text-anchor':'middle'})
+      if name == "Oil" || name == "Gas" || name == "Coal" || name == "Bioenergy imports" || name == "Finance cost"
+        high_text = "Most expensive"
+      else
+        high_text = "Today's cost"
+      component.expensive = r.text(x(8500),ly,high_text).attr({'text-anchor':'middle'})
+      component.uncertain = r.text(x(9500),ly,"Uncertain").attr({'text-anchor':'middle'})
+      
+      @clickToChangeCost(component.cheap,name,0)
+      @clickToChangeCost(component.default,name,"point")
+      @clickToChangeCost(component.expensive,name,1)
+      @clickToChangeCost(component.uncertain,name,"uncertain")      
         
       components[name] = component
           
@@ -346,10 +371,12 @@ class CostsSensitivity
     increment.toFront()
   
   clickToChangeCost: (element,name,level) ->
-    element.click(() ->
-      # console.log name
+    element.click(() =>
       jQuery.jStorage.set(name,level)
-      window.location = twentyfifty.url()
+      twentyfifty.adjust_costs_of_pathway(@pathway)
+      twentyfifty.adjust_costs_of_pathway(@comparator)
+      @updateComponentNamed(name)
+      @updateToBarForNewCost()
     )
   
 window.twentyfifty.CostsSensitivity = CostsSensitivity
