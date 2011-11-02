@@ -6,7 +6,6 @@
   margin-left: 2.5%;
   font-size:12px;
   width: 30%;
-  height: 600px;
   margin-bottom: 30px;
   float: left;
   h4 {
@@ -18,4 +17,8 @@
   td.target, th.target {
     text-align: right
   }  
+}
+
+#stories .clear {
+  clear: both;
 }
