@@ -53,6 +53,16 @@ class CostsSensitivity
     "Electricity imports" : '/pages/32'
   }
   
+  cost_component_values = 
+    "Oil" : {cheap: "$75/bbl", default: "$130/bbl", expensive: "$170/bbl"}
+    "Coal" : {cheap: "$80/tCoal", default: "$110/tCoal", expensive: "$155/tCoal"}
+    "Gas" : {cheap: "45p/therm", default: "70p/therm", expensive: "100p/therm"}
+    "Finance cost" : {cheap: "None", default: "7% real", expensive: "10% real"}
+    "Nuclear power": {cheap: "£1.4bn/GW", default: "£2.1bn/GW", expensive: "£4.5bn/GW"}
+  
+  cost_component_value = (name) ->
+    cost_component_values[name] || { cheap: "Cheap", default: "Default", expensive: "Expensive"}
+  
   direction = (value) ->
     return "more expensive" if value > 0
     "cheaper"
@@ -145,7 +155,7 @@ class CostsSensitivity
     else
       arrow.attr({'arrow-end':'none'})
   
-  label_components = ['name','cheap','default','expensive','uncertain']
+  label_components = ['name','details','cheap','default','expensive','uncertain']
   
   sortComponents: () ->
     p = @pathway.cost_components
@@ -185,7 +195,6 @@ class CostsSensitivity
         @updateBar(component.comparator,c.low_adjusted,c.range_adjusted)
         # Uncertainty arrow
         component.comparator.uncertainty.attr({path: ["M",@x(c.low),cy,"L",@x(c.high),cy] })
-      
       
       setting = $.jStorage.get(name)
       component[a].attr({'font-weight':'normal'}) for a in ['cheap','default','expensive','uncertain']
@@ -293,13 +302,11 @@ class CostsSensitivity
       component.comparator.uncertainty = r.path( ["M",0,0,"L",0,0]).attr( {stroke:'#000','arrow-end':"classic-wide-long", 'arrow-start':"classic-wide-long"})
         
       # The quick sensitivity links
-      component.cheap = r.text(x(6500),ly,"Cheapest").attr({'text-anchor':'middle'})
-      component.default = r.text(x(7500),ly,"Default").attr({'text-anchor':'middle'})
-      if name == "Oil" || name == "Gas" || name == "Coal" || name == "Bioenergy imports" || name == "Finance cost"
-        high_text = "Most expensive"
-      else
-        high_text = "Today's cost"
-      component.expensive = r.text(x(8500),ly,high_text).attr({'text-anchor':'middle'})
+      labels = cost_component_value(name)
+      component.details = r.text(x(5500),ly,"See assumptions").attr({'text-anchor':'middle',href:url})
+      component.cheap = r.text(x(6500),ly,labels.cheap).attr({'text-anchor':'middle'})
+      component.default = r.text(x(7500),ly,labels.default).attr({'text-anchor':'middle'})
+      component.expensive = r.text(x(8500),ly,labels.expensive).attr({'text-anchor':'middle'})
       component.uncertain = r.text(x(9500),ly,"Uncertain").attr({'text-anchor':'middle'})
       
       @clickToChangeCost(component.cheap,name,0)
@@ -319,8 +326,8 @@ class CostsSensitivity
     
     # The sensitivity stuff
     r.text(30,205,"The biggest costs").attr({'text-anchor':'start','font-weight':'bold'})
-    r.text(250,205,"The arrow indicates the range of estimates, click the labels to see the assumptions").attr({'text-anchor':'start','font-weight':'bold'})
-    r.text(x(6300),205,"Use these links to try different assumptions").attr({'text-anchor':'start','font-weight':'bold'})
+    r.text(250,205,"The arrow indicates the range of estimates").attr({'text-anchor':'start','font-weight':'bold'})
+    r.text(x(8000),205,"Use these links to try different cost scenarios").attr({'text-anchor':'middle','font-weight':'bold'})
     r.text(w-30,205,"(reset)").attr({'text-anchor':'end'}).click( () =>
       for name in cost_component_names
         jQuery.jStorage.set(name,'point')
