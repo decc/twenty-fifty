@@ -67,12 +67,10 @@ class CostsComparedWithinSector
     
   documentReady: () ->
     return false if @drawn?
-    
+    @drawn = true
+  
     $('#sectorname').html(categories[twentyfifty.getSector()])
-    
-    for code in twentyfifty.comparator_pathways
-      twentyfifty.loadSecondaryPathway(code,@updateBar)
-      
+        
     all_pathways = ["chosen"].concat(twentyfifty.comparator_pathways)
     @relevant_costs = twentyfifty.costs_in_category(categories[twentyfifty.getSector()])
       
@@ -138,8 +136,9 @@ class CostsComparedWithinSector
       @boxes_by_category[category].top_label_box = @r.rect(@x(0),0,200,h*0.75,5).attr({'fill':'#fff','stroke':cost_component_colors[category].low}).hide()
       @boxes_by_category[category].top_label = @r.text(@x(0)+100,h*0.75/2,category).attr({'text-anchor':'middle','font-weight':'bold'}).hide()
     
-    @drawn = true
-  
+    for code in twentyfifty.comparator_pathways
+      twentyfifty.loadSecondaryPathway(code,@updateBar)
+    
   hover: (boxes,category) ->
     boxes.hover(( () => @show(category)), (() => @hide(category)))
   

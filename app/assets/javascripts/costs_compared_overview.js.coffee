@@ -26,10 +26,8 @@ class CostsComparedOverview
     
   documentReady: () ->
     return false if @drawn?
+    @drawn = true
     
-    for code in twentyfifty.comparator_pathways
-      twentyfifty.loadSecondaryPathway(code,@updateBar)
-      
     all_pathways = ["chosen"].concat(twentyfifty.comparator_pathways)      
       
     e = $('#costscomparedoverview')
@@ -98,8 +96,10 @@ class CostsComparedOverview
       @boxes_by_category[category].top_label_box = @r.rect(@x(0),0,100,h*0.75,5).attr({'fill':'#fff','stroke':color.low}).hide()
       @boxes_by_category[category].top_label = @r.text(@x(0)+50,h*0.75/2,category).attr({'text-anchor':'middle','font-weight':'bold'}).hide()
     
-    @drawn = true
-  
+    for code in twentyfifty.comparator_pathways
+      twentyfifty.loadSecondaryPathway(code,@updateBar)
+      
+    
   hover: (boxes,category) ->
     boxes.hover(( () => @show(category)), (() => @hide(category)))
   

@@ -81,15 +81,14 @@ class CostsSensitivity
   constructor: () ->
 
   documentReady: () ->
-    @switchComparator(twentyfifty.getComparator() || default_comparator_code)
     @drawChart()
+    @switchComparator(twentyfifty.getComparator() || default_comparator_code)
     
   updateResults: (@pathway) =>
     twentyfifty.adjust_costs_of_pathway(@pathway) unless @pathway.total_cost_low_adjusted?
+    @sortComponents()
     @updateBar(@top_pathway_chart,@pathway.total_cost_low_adjusted,@pathway.total_cost_range_adjusted)
     @updateIncrement()
-    @sortComponents()
-    @updateComponents(true,false)
     
   switchComparator: (code) ->
     twentyfifty.loadSecondaryPathway(code, @updateComparator)
@@ -99,8 +98,9 @@ class CostsSensitivity
     @updateBar(@top_comparator_chart,@comparator.total_cost_low_adjusted,@comparator.total_cost_range_adjusted)
     @top_comparator_chart.name.attr({ text:twentyfifty.pathwayName(@comparator._id,@comparator._id), href: twentyfifty.url({action:'primary_energy_chart',code:@comparator._id})})
     @top_comparator_chart.description.attr({ text: twentyfifty.pathwayDescriptions(@comparator._id,"") })
-    @updateIncrement()    
-    @updateComponents(false,true)
+    if @pathway?
+      @updateIncrement()    
+      @updateComponents(false,true)
     
   updateToBarForNewCost: () ->
     @updateBar(@top_pathway_chart,@pathway.total_cost_low_adjusted,@pathway.total_cost_range_adjusted)
@@ -173,6 +173,7 @@ class CostsSensitivity
       component.pathway.range.attr({y:py})
       component.comparator.low.attr({y:cy})
       component.comparator.range.attr({y:cy})
+    @updateComponents()    
        
   updateComponents: (update_pathway = true, update_comparator = true) ->
     return unless @pathway || @comparator
@@ -181,14 +182,14 @@ class CostsSensitivity
   
   updateComponentNamed: (name,update_pathway = true,update_comparator = true) ->
       component = @components[name]
-      if update_pathway
+      if update_pathway && @pathway?
         p = @pathway.cost_components[name]
         py = @bottom_y(name)
         # Bar
         @updateBar(component.pathway,p.low_adjusted,p.range_adjusted)
         # Uncertainty arrow
         component.pathway.uncertainty.attr({path: ["M",@x(p.low),py,"L",@x(p.high),py] })
-      if update_comparator
+      if update_comparator && @comparator?
         c = @comparator.cost_components[name]
         cy = @bottom_y(name) + @bar_offset
         # Bar
@@ -293,13 +294,13 @@ class CostsSensitivity
       component.pathway = {}
       component.pathway.low         = r.rect(x(0),py,0,bar_height).attr({'fill':p_low_fill_color,'stroke':'none'})
       component.pathway.range       = r.rect(x(0),py,0,bar_height).attr({'fill':p_range_fill_color,'stroke':'none'})
-      component.pathway.uncertainty = r.path( ["M",0,0,"L",0,0]).attr( {stroke:'#000','arrow-end':"classic-wide-long", 'arrow-start':"classic-wide-long"})
+      component.pathway.uncertainty = r.path( ["M",0,0,"L",0,0]).attr( {stroke:'#000','arrow-end':"classic-narrow-long", 'arrow-start':"classic-narrow-long"})
       
       # The comparator
       component.comparator = {}
       component.comparator.low   = r.rect(x(0),cy,0,bar_height).attr({'fill':c_low_fill_color,'stroke':'none'})
       component.comparator.range = r.rect(x(0),cy,0,bar_height).attr({'fill':c_range_fill_color,'stroke':'none'})
-      component.comparator.uncertainty = r.path( ["M",0,0,"L",0,0]).attr( {stroke:'#000','arrow-end':"classic-wide-long", 'arrow-start':"classic-wide-long"})
+      component.comparator.uncertainty = r.path( ["M",0,0,"L",0,0]).attr( {stroke:'#000','arrow-end':"classic-narrow-long", 'arrow-start':"classic-narrow-long"})
         
       # The quick sensitivity links
       labels = cost_component_value(name)
@@ -326,9 +327,9 @@ class CostsSensitivity
     
     # The sensitivity stuff
     r.text(30,205,"The biggest costs").attr({'text-anchor':'start','font-weight':'bold'})
-    r.text(250,205,"The arrow indicates the range of estimates").attr({'text-anchor':'start','font-weight':'bold'})
+    r.text(250,205,"The black lines indicate the range for each cost estimate").attr({'text-anchor':'start','font-weight':'bold'})
     r.text(x(8000),205,"Use these links to try different cost scenarios").attr({'text-anchor':'middle','font-weight':'bold'})
-    r.text(w-30,205,"(reset)").attr({'text-anchor':'end'}).click( () =>
+    r.text(w-30,205,"(reset)").attr({'text-anchor':'end',cursor:'pointer'}).click( () =>
       for name in cost_component_names
         jQuery.jStorage.set(name,'point')
       twentyfifty.adjust_costs_of_pathway(@pathway)
@@ -347,5 +348,6 @@ class CostsSensitivity
       @updateComponentNamed(name)
       @updateToBarForNewCost()
     )
+    element.attr({cursor:'pointer'})
   
 window.twentyfifty.CostsSensitivity = CostsSensitivity

@@ -18,7 +18,12 @@ class PrimaryEnergy
       series: []
     });
     @emissions_chart = new Highcharts.Chart({
-      chart: { renderTo: 'emissions_chart' }, 
+      chart: { 
+        renderTo: 'emissions_chart'
+        events:
+          load: () ->
+            @renderer.text("80% reduction on 1990" ,60,170).css({color: '#fff',fill: '#fff', 'font-size': '0.75em'}).attr({zIndex:10}).add()
+      }, 
       title: { text: 'UK greenhouse gas emissions' },
       subtitle: { text: "MtCO<sub>2</sub>e/yr"},   
       yAxis: { title: null, min: -500, max: 1000 },
@@ -26,11 +31,9 @@ class PrimaryEnergy
         formatter: () ->
           "<b>#{this.series.name}</b><br/>#{this.x}: #{Highcharts.numberFormat(this.y, 0, ',')} MtCO2e/yr"
       },
+      
       series: []
     });
-    alert("Missing emissions chart") unless @emissions_chart?
-    alert("Missing emissions chart renderer") unless @emissions_chart.renderer?
-    @emissions_chart.renderer.text("80% reduction on 1990" ,60,170).css({color: '#fff',fill: '#fff', 'font-size': '0.75em'}).attr({zIndex:10}).add();
     
   updateResults: (@pathway) ->
     @createCharts() unless @emissions_chart? && @final_energy_chart? && @primary_energy_chart?

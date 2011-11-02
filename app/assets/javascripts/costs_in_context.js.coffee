@@ -8,11 +8,7 @@ class CostsInContext
 
     all_pathways = ["chosen"].concat(twentyfifty.comparator_pathways)
     comparator_pathways = twentyfifty.comparator_pathways
-        
-    for code in comparator_pathways
-      twentyfifty.loadSecondaryPathway(code,this.updateBar)  
-    
-    
+            
     e = $('#costsincontext')
     @h = e.height()
     @w = e.width()
@@ -108,6 +104,8 @@ class CostsInContext
     @range.top_label_box.hide()
     @range.top_label.hide()
 
+    for code in comparator_pathways
+      twentyfifty.loadSecondaryPathway(code,this.updateBar)
     
   drawIndicator: (value,text) ->
     x = @x(value)
