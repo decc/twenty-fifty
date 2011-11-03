@@ -61,7 +61,7 @@ class CostsSensitivity
     "Nuclear power": {cheap: "£1.4bn/GW", default: "£2.1bn/GW", expensive: "£4.5bn/GW"}
   
   cost_component_value = (name) ->
-    cost_component_values[name] || { cheap: "Cheap", default: "Default", expensive: "Expensive"}
+    cost_component_values[name] || { cheap: "Cheap", default: "Default", expensive: "Today's cost"}
   
   direction = (value) ->
     return "more expensive" if value > 0
@@ -155,7 +155,7 @@ class CostsSensitivity
     else
       arrow.attr({'arrow-end':'none'})
   
-  label_components = ['name','details','cheap','default','expensive','uncertain']
+  label_components = ['name','details','cheap','default','expensive','uncertain','details_box','cheap_box','default_box','expensive_box','uncertain_box']
   
   sortComponents: () ->
     p = @pathway.cost_components
@@ -198,7 +198,7 @@ class CostsSensitivity
         component.comparator.uncertainty.attr({path: ["M",@x(c.low),cy,"L",@x(c.high),cy] })
       
       setting = $.jStorage.get(name)
-      component[a].attr({'font-weight':'normal'}) for a in ['cheap','default','expensive','uncertain']
+      component[a].attr({'font-weight':'normal'}) for a in ['details','cheap','default','expensive','uncertain','details_box','cheap_box','default_box','expensive_box','uncertain_box']
       if !setting? || setting == 'point'
         chosen = component.default
       else if setting == 'uncertain'
@@ -279,7 +279,10 @@ class CostsSensitivity
       py = y(name)
       # background
       r.rect(x(0),py,x(10000)-x(0),y.rangeBand()).attr({'fill':'#ddd','stroke':'none'})
-      
+    
+    sensitivity_label_height = y.rangeBand()
+    sensitivity_label_width = @w(1000)
+    
     for name in cost_component_names
       py = y(name)
       cy = py+bar_offset
@@ -305,15 +308,20 @@ class CostsSensitivity
       # The quick sensitivity links
       labels = cost_component_value(name)
       component.details = r.text(x(5500),ly,"See assumptions").attr({'text-anchor':'middle',href:url})
+      component.details_box = r.rect(x(5000),py,sensitivity_label_width,sensitivity_label_height).attr({fill:'#ccc',opacity:0,cursor:'pointer',href:url})
       component.cheap = r.text(x(6500),ly,labels.cheap).attr({'text-anchor':'middle'})
+      component.cheap_box = r.rect(x(6000),py,sensitivity_label_width,sensitivity_label_height).attr({fill:'#ccc',opacity:0})
       component.default = r.text(x(7500),ly,labels.default).attr({'text-anchor':'middle'})
+      component.default_box = r.rect(x(7000),py,sensitivity_label_width,sensitivity_label_height).attr({fill:'#ccc',opacity:0})
       component.expensive = r.text(x(8500),ly,labels.expensive).attr({'text-anchor':'middle'})
+      component.expensive_box = r.rect(x(8000),py,sensitivity_label_width,sensitivity_label_height).attr({fill:'#ccc',opacity:0})
       component.uncertain = r.text(x(9500),ly,"Uncertain").attr({'text-anchor':'middle'})
+      component.uncertain_box = r.rect(x(9000),py,sensitivity_label_width,sensitivity_label_height).attr({fill:'#ccc',opacity:0})
       
-      @clickToChangeCost(component.cheap,name,0)
-      @clickToChangeCost(component.default,name,"point")
-      @clickToChangeCost(component.expensive,name,1)
-      @clickToChangeCost(component.uncertain,name,"uncertain")      
+      @clickToChangeCost(component.cheap_box,name,0)
+      @clickToChangeCost(component.default_box,name,"point")
+      @clickToChangeCost(component.expensive_box,name,1)
+      @clickToChangeCost(component.uncertain_box,name,"uncertain")      
         
       components[name] = component
           
