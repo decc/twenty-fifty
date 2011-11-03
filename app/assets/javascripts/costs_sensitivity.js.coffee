@@ -5,9 +5,9 @@ class CostsSensitivity
   default_comparator_code = "1011111111111111011111100111111011110110110111011011"
   
   cost_wiki_links = {
-    "Fuel cell cars and buses": '/pages/35',
-    "Conventional cars and buses": '/pages/35',
-    "Hybrid cars and buses": '/pages/35',
+    "Fuel cell cars and buses": '/pages/63',
+    "Conventional cars and buses": '/pages/63',
+    "Hybrid cars and buses": '/pages/63',
     "Gas": '/pages/13',
     "Electric cars and buses": '/pages/63',
     "Domestic insulation": '/pages/31',
