@@ -624,15 +624,15 @@ class Sheet33 < Spreadsheet
   def m203; 0.5789555486478085; end
   def n203; 0.5789555486478085; end
   def o203; 0.5789555486478085; end
-  def g204; 53.54367423064968; end
-  def h204; 53.54367423064968; end
-  def i204; 53.54367423064968; end
-  def j204; 53.54367423064968; end
-  def k204; 53.54367423064968; end
-  def l204; 53.54367423064968; end
-  def m204; 53.54367423064968; end
-  def n204; 53.54367423064968; end
-  def o204; 53.54367423064968; end
+  def g204; @g204 ||= sheet15.g179; end
+  def h204; @h204 ||= sheet15.h179; end
+  def i204; @i204 ||= sheet15.i179; end
+  def j204; @j204 ||= sheet15.j179; end
+  def k204; @k204 ||= sheet15.k179; end
+  def l204; @l204 ||= sheet15.l179; end
+  def m204; @m204 ||= sheet15.m179; end
+  def n204; @n204 ||= sheet15.n179; end
+  def o204; @o204 ||= sheet15.o179; end
   def g208; 26.257641695161123; end
   def h208; 24.225436483265984; end
   def i208; 22.193231271370845; end

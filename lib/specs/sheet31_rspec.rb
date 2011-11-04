@@ -1064,8 +1064,8 @@ describe 'Sheet31' do
     sheet31.o158.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell g159 should equal -9.777068044058979e-12' do
-    sheet31.g159.should be_within(1.0e-08).of(-9.777068044058979e-12)
+  it 'cell g159 should equal -4.160938260611146e-12' do
+    sheet31.g159.should be_within(1.0e-08).of(-4.160938260611146e-12)
   end
 
   it 'cell h159 should equal 0.0' do
@@ -1076,8 +1076,8 @@ describe 'Sheet31' do
     sheet31.i159.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell j159 should equal -8.15703060652595e-12' do
-    sheet31.j159.should be_within(1.0e-08).of(-8.15703060652595e-12)
+  it 'cell j159 should equal -4.160938260611146e-12' do
+    sheet31.j159.should be_within(1.0e-08).of(-4.160938260611146e-12)
   end
 
   it 'cell k159 should equal 0.0' do
@@ -1096,8 +1096,8 @@ describe 'Sheet31' do
     sheet31.n159.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell o159 should equal -269.53261216008286' do
-    sheet31.o159.should be_within(26.953261216008286).of(-269.53261216008286)
+  it 'cell o159 should equal -205.51861677206315' do
+    sheet31.o159.should be_within(20.55186167720632).of(-205.51861677206315)
   end
 
   it 'cell g163 should equal 0.0' do
@@ -1764,8 +1764,8 @@ describe 'Sheet31' do
     sheet31.o206.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell g207 should equal -9.777068044058979e-12' do
-    sheet31.g207.should be_within(1.0e-08).of(-9.777068044058979e-12)
+  it 'cell g207 should equal -4.160938260611146e-12' do
+    sheet31.g207.should be_within(1.0e-08).of(-4.160938260611146e-12)
   end
 
   it 'cell h207 should equal 0.0' do
@@ -1776,8 +1776,8 @@ describe 'Sheet31' do
     sheet31.i207.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell j207 should equal -8.15703060652595e-12' do
-    sheet31.j207.should be_within(1.0e-08).of(-8.15703060652595e-12)
+  it 'cell j207 should equal -4.160938260611146e-12' do
+    sheet31.j207.should be_within(1.0e-08).of(-4.160938260611146e-12)
   end
 
   it 'cell k207 should equal 0.0' do
@@ -1796,8 +1796,8 @@ describe 'Sheet31' do
     sheet31.n207.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell o207 should equal -269.53261216008286' do
-    sheet31.o207.should be_within(26.953261216008286).of(-269.53261216008286)
+  it 'cell o207 should equal -205.51861677206315' do
+    sheet31.o207.should be_within(20.55186167720632).of(-205.51861677206315)
   end
 
   it 'cell g208 should equal 0.0' do

@@ -31,7 +31,7 @@ class ModelStructure
   end
 
   def long_descriptions
-    @long_descriptions ||= control_sheet.a('bi5','bl56').to_grid
+    @long_descriptions ||= control_sheet.a('br5','bu56').to_grid
   end
   
   def control_sheet

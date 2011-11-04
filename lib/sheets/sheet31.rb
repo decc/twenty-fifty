@@ -109,23 +109,23 @@ class Sheet31 < Spreadsheet
   def f51; 0.11176650000000002; end
   def e53; 30.0; end
   def g68; 755.0; end
-  def h68; 741.8125; end
-  def i68; 728.625; end
-  def j68; 715.4375; end
-  def k68; 702.25; end
-  def l68; 689.0625; end
-  def m68; 675.875; end
-  def n68; 662.6875; end
+  def h68; 737.85625; end
+  def i68; 720.7125000000001; end
+  def j68; 703.5687500000001; end
+  def k68; 686.4250000000002; end
+  def l68; 669.2812500000002; end
+  def m68; 652.1375000000003; end
+  def n68; 634.9937500000003; end
   def o68; 755.0; end
-  def g69; 649.5; end
-  def h69; 636.3125; end
-  def i69; 623.125; end
-  def j69; 609.9375; end
-  def k69; 596.75; end
-  def l69; 583.5625; end
-  def m69; 570.375; end
-  def n69; 557.1875; end
-  def o69; 649.5; end
+  def g69; 617.85; end
+  def h69; 617.85; end
+  def i69; 617.85; end
+  def j69; 617.85; end
+  def k69; 617.85; end
+  def l69; 617.85; end
+  def m69; 617.85; end
+  def n69; 617.85; end
+  def o69; 617.85; end
   def g70; 544.0; end
   def h70; 544.0; end
   def i70; 544.0; end
@@ -144,15 +144,15 @@ class Sheet31 < Spreadsheet
   def m75; 0.5789555486478085; end
   def n75; 0.5789555486478085; end
   def o75; 0.5789555486478085; end
-  def g76; 0.38597036576520566; end
-  def h76; 0.38597036576520566; end
-  def i76; 0.38597036576520566; end
-  def j76; 0.38597036576520566; end
-  def k76; 0.38597036576520566; end
-  def l76; 0.38597036576520566; end
-  def m76; 0.38597036576520566; end
-  def n76; 0.38597036576520566; end
-  def o76; 0.38597036576520566; end
+  def g76; 0.3280748109004248; end
+  def h76; 0.3280748109004248; end
+  def i76; 0.3280748109004248; end
+  def j76; 0.3280748109004248; end
+  def k76; 0.3280748109004248; end
+  def l76; 0.3280748109004248; end
+  def m76; 0.3280748109004248; end
+  def n76; 0.3280748109004248; end
+  def o76; 0.3280748109004248; end
   def g77; 0.19298518288260283; end
   def h77; 0.19298518288260283; end
   def i77; 0.19298518288260283; end
@@ -171,15 +171,15 @@ class Sheet31 < Spreadsheet
   def m84; 783.0; end
   def n84; 783.0; end
   def o84; 783.0; end
-  def g85; 417.6; end
-  def h85; 417.6; end
-  def i85; 417.6; end
-  def j85; 417.6; end
-  def k85; 417.6; end
-  def l85; 417.6; end
-  def m85; 417.6; end
-  def n85; 417.6; end
-  def o85; 417.6; end
+  def g85; 443.7; end
+  def h85; 443.7; end
+  def i85; 443.7; end
+  def j85; 443.7; end
+  def k85; 443.7; end
+  def l85; 443.7; end
+  def m85; 443.7; end
+  def n85; 443.7; end
+  def o85; 443.7; end
   def g86; 261.0; end
   def h86; 261.0; end
   def i86; 261.0; end
@@ -198,15 +198,15 @@ class Sheet31 < Spreadsheet
   def m91; 0.5789555486478085; end
   def n91; 0.5789555486478085; end
   def o91; 0.5789555486478085; end
-  def g92; 0.3203554035851207; end
-  def h92; 0.3203554035851207; end
-  def i92; 0.3203554035851207; end
-  def j92; 0.3203554035851207; end
-  def k92; 0.3203554035851207; end
-  def l92; 0.3203554035851207; end
-  def m92; 0.3203554035851207; end
-  def n92; 0.3203554035851207; end
-  def o92; 0.3203554035851207; end
+  def g92; 0.3280748109004248; end
+  def h92; 0.3280748109004248; end
+  def i92; 0.3280748109004248; end
+  def j92; 0.3280748109004248; end
+  def k92; 0.3280748109004248; end
+  def l92; 0.3280748109004248; end
+  def m92; 0.3280748109004248; end
+  def n92; 0.3280748109004248; end
+  def o92; 0.3280748109004248; end
   def g93; 0.19298518288260283; end
   def h93; 0.19298518288260283; end
   def i93; 0.19298518288260283; end
@@ -225,15 +225,15 @@ class Sheet31 < Spreadsheet
   def m98; 172.0; end
   def n98; 172.0; end
   def o98; 172.0; end
-  def g99; 172.0; end
-  def h99; 162.5; end
-  def i99; 153.0; end
-  def j99; 143.5; end
-  def k99; 134.0; end
-  def l99; 124.5; end
-  def m99; 115.0; end
-  def n99; 105.5; end
-  def o99; 96.0; end
+  def g99; 73.19999999999999; end
+  def h99; 73.19999999999999; end
+  def i99; 73.19999999999999; end
+  def j99; 73.19999999999999; end
+  def k99; 73.19999999999999; end
+  def l99; 73.19999999999999; end
+  def m99; 73.19999999999999; end
+  def n99; 73.19999999999999; end
+  def o99; 73.19999999999999; end
   def g100; 20.0; end
   def h100; 20.0; end
   def i100; 20.0; end

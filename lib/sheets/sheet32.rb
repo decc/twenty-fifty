@@ -66,7 +66,6 @@ class Sheet32 < Spreadsheet
   def m35; 82.0; end
   def n35; 82.0; end
   def o35; 82.0; end
-  def f40; 12.0; end
   def g40; 12.0; end
   def h40; 12.0; end
   def i40; 12.0; end
@@ -76,15 +75,15 @@ class Sheet32 < Spreadsheet
   def m40; 12.0; end
   def n40; 12.0; end
   def o40; 12.0; end
-  def g41; 1.3894933167547403; end
-  def h41; 1.3894933167547403; end
-  def i41; 1.3894933167547403; end
-  def j41; 1.3894933167547403; end
-  def k41; 1.3894933167547403; end
-  def l41; 1.3894933167547403; end
-  def m41; 1.3894933167547403; end
-  def n41; 1.3894933167547403; end
-  def o41; 1.3894933167547403; end
+  def g41; 12.180020516008689; end
+  def h41; 12.180020516008689; end
+  def i41; 12.180020516008689; end
+  def j41; 12.180020516008689; end
+  def k41; 12.180020516008689; end
+  def l41; 12.180020516008689; end
+  def m41; 12.180020516008689; end
+  def n41; 12.180020516008689; end
+  def o41; 12.180020516008689; end
   def g42; 2.0; end
   def f47; 1688.0; end
   def g47; 1688.0; end
@@ -116,15 +115,24 @@ class Sheet32 < Spreadsheet
   def m49; 106.0; end
   def n49; 106.0; end
   def o49; 106.0; end
-  def g55; 0.45368355610817535; end
-  def h55; 0.45368355610817535; end
-  def i55; 0.45368355610817535; end
-  def j55; 0.45368355610817535; end
-  def k55; 0.45368355610817535; end
-  def l55; 0.45368355610817535; end
-  def m55; 0.45368355610817535; end
-  def n55; 0.45368355610817535; end
-  def o55; 0.45368355610817535; end
+  def g54; 3.0; end
+  def h54; 3.0; end
+  def i54; 3.0; end
+  def j54; 3.0; end
+  def k54; 3.0; end
+  def l54; 3.0; end
+  def m54; 3.0; end
+  def n54; 3.0; end
+  def o54; 3.0; end
+  def g55; 3.976899316133039; end
+  def h55; 3.976899316133039; end
+  def i55; 3.976899316133039; end
+  def j55; 3.976899316133039; end
+  def k55; 3.976899316133039; end
+  def l55; 3.976899316133039; end
+  def m55; 3.976899316133039; end
+  def n55; 3.976899316133039; end
+  def o55; 3.976899316133039; end
   def g56; 3.0; end
   def h56; 3.0; end
   def i56; 3.0; end
@@ -203,15 +211,15 @@ class Sheet32 < Spreadsheet
   def m74; @m74 ||= (l73/d22)+((m73-l73)/5.0); end
   def n74; @n74 ||= (m73/d22)+((n73-m73)/5.0); end
   def o74; @o74 ||= (n73/d22)+((o73-n73)/5.0); end
-  def g75; @g75 ||= g10*f40; end
-  def h75; @h75 ||= h10*g40; end
-  def i75; @i75 ||= i10*h40; end
-  def j75; @j75 ||= j10*i40; end
-  def k75; @k75 ||= k10*j40; end
-  def l75; @l75 ||= l10*k40; end
-  def m75; @m75 ||= m10*l40; end
-  def n75; @n75 ||= n10*m40; end
-  def o75; @o75 ||= o10*n40; end
+  def g75; @g75 ||= g10*g40; end
+  def h75; @h75 ||= h10*h40; end
+  def i75; @i75 ||= i10*i40; end
+  def j75; @j75 ||= j10*j40; end
+  def k75; @k75 ||= k10*k40; end
+  def l75; @l75 ||= l10*l40; end
+  def m75; @m75 ||= m10*m40; end
+  def n75; @n75 ||= n10*n40; end
+  def o75; @o75 ||= o10*o40; end
   def f79; @f79 ||= f10*f34; end
   def g79; @g79 ||= g10*g34; end
   def h79; @h79 ||= h10*h34; end
@@ -287,15 +295,15 @@ class Sheet32 < Spreadsheet
   def m94; @m94 ||= (l93/d23)+((m93-l93)/5.0); end
   def n94; @n94 ||= (m93/d23)+((n93-m93)/5.0); end
   def o94; @o94 ||= (n93/d23)+((o93-n93)/5.0); end
-  def g95; @g95 ||= g10*g40; end
-  def h95; @h95 ||= h10*h40; end
-  def i95; @i95 ||= i10*i40; end
-  def j95; @j95 ||= j10*j40; end
-  def k95; @k95 ||= k10*k40; end
-  def l95; @l95 ||= l10*l40; end
-  def m95; @m95 ||= m10*m40; end
-  def n95; @n95 ||= n10*n40; end
-  def o95; @o95 ||= o10*o40; end
+  def g95; @g95 ||= g10*g54; end
+  def h95; @h95 ||= h10*h54; end
+  def i95; @i95 ||= i10*i54; end
+  def j95; @j95 ||= j10*j54; end
+  def k95; @k95 ||= k10*k54; end
+  def l95; @l95 ||= l10*l54; end
+  def m95; @m95 ||= m10*m54; end
+  def n95; @n95 ||= n10*n54; end
+  def o95; @o95 ||= o10*o54; end
   def f99; @f99 ||= f10*f48; end
   def g99; @g99 ||= g10*g48; end
   def h99; @h99 ||= h10*h48; end

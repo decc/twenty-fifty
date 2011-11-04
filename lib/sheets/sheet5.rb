@@ -5510,26 +5510,26 @@ class Sheet5 < Spreadsheet
   def u69; 0.0; end
   def v69; 0.0; end
   def w69; 0.0; end
-  def y69; 0.7582604384399967; end
-  def z69; 0.7582604384399967; end
-  def aa69; 0.7582604384399967; end
-  def ab69; 0.7582604384399967; end
-  def ac69; 0.7582604384399967; end
-  def ad69; 0.7582604384399967; end
-  def ae69; 0.7582604384399967; end
-  def af69; 0.7582604384399967; end
-  def ag69; 0.7582604384399967; end
-  def ai69; 0.7582604384399967; end
-  def aj69; 0.7582604384399967; end
-  def ak69; 0.7582604384399967; end
-  def al69; 0.7582604384399967; end
-  def am69; 0.7582604384399967; end
-  def an69; 0.7582604384399967; end
-  def ao69; 0.7582604384399967; end
-  def ap69; 0.7582604384399967; end
-  def aq69; 0.7582604384399967; end
-  def as69; 0.7582604384399967; end
-  def at69; 15.931838004509302; end
+  def y69; 1.847331733376896; end
+  def z69; 1.8175414572868793; end
+  def aa69; 1.838177150282581; end
+  def ab69; 1.8442538994055317; end
+  def ac69; 1.838177150282581; end
+  def ad69; 1.8442538994055317; end
+  def ae69; 1.8503306485284818; end
+  def af69; 1.8564073976514324; end
+  def ag69; 2.0417877053113056; end
+  def ai69; 1.847331733376896; end
+  def aj69; 1.8175414572868793; end
+  def ak69; 1.838177150282581; end
+  def al69; 1.8442538994055317; end
+  def am69; 1.838177150282581; end
+  def an69; 1.8442538994055317; end
+  def ao69; 1.8503306485284818; end
+  def ap69; 1.8564073976514324; end
+  def aq69; 2.0417877053113056; end
+  def as69; 1.8642512268368021; end
+  def at69; 38.89483549023877; end
   def av69; 0.0; end
   def aw69; 5.0; end
   def ay69; 0.0; end
@@ -5550,17 +5550,17 @@ class Sheet5 < Spreadsheet
   def bo69; 0.0; end
   def bp69; 0.0; end
   def bq69; 0.0; end
-  def bs69; 0.7582604384399967; end
-  def bt69; 0.7582604384399967; end
-  def bu69; 0.7582604384399967; end
-  def bv69; 0.7582604384399967; end
-  def bw69; 0.7582604384399967; end
-  def bx69; 0.7582604384399967; end
-  def by69; 0.7582604384399967; end
-  def bz69; 0.7582604384399967; end
-  def ca69; 0.7582604384399967; end
-  def cc69; 0.7582604384399967; end
-  def cd69; 15.931838004509302; end
+  def bs69; 1.847331733376896; end
+  def bt69; 1.8175414572868793; end
+  def bu69; 1.838177150282581; end
+  def bv69; 1.8442538994055317; end
+  def bw69; 1.838177150282581; end
+  def bx69; 1.8442538994055317; end
+  def by69; 1.8503306485284818; end
+  def bz69; 1.8564073976514324; end
+  def ca69; 2.0417877053113056; end
+  def cc69; 1.8642512268368021; end
+  def cd69; 38.89483549023877; end
   def cf69; 0.0; end
   def cg69; 0.0; end
   def ch69; 0.0; end
@@ -6416,7 +6416,7 @@ class Sheet5 < Spreadsheet
   def a80; "IX.a.Heating"; end
   def b80; "Domestic heating"; end
   def c80; "Heating"; end
-  def e80; 80.54311079321464; end
+  def e80; 125.56229575366756; end
   def f80; @f80 ||= sheet7.f80/(sheet12.c13*sheet11.e79); end
   def g80; @g80 ||= sheet7.g80/(sheet12.c13*sheet11.e79); end
   def h80; @h80 ||= sheet7.h80/(sheet12.c13*sheet11.e79); end
@@ -6425,7 +6425,7 @@ class Sheet5 < Spreadsheet
   def k80; @k80 ||= sheet7.k80/(sheet12.c13*sheet11.e79); end
   def l80; @l80 ||= sheet7.l80/(sheet12.c13*sheet11.e79); end
   def m80; @m80 ||= sheet7.m80/(sheet12.c13*sheet11.e79); end
-  def o80; 25.01261477338103; end
+  def o80; 67.9111691938607; end
   def p80; @p80 ||= sheet7.p80/(sheet12.c13*sheet11.e79); end
   def q80; @q80 ||= sheet7.q80/(sheet12.c13*sheet11.e79); end
   def r80; @r80 ||= sheet7.r80/(sheet12.c13*sheet11.e79); end
@@ -6443,7 +6443,7 @@ class Sheet5 < Spreadsheet
   def ae80; @ae80 ||= sheet7.ae80/(sheet12.c13*sheet11.e79); end
   def af80; @af80 ||= sheet7.af80/(sheet12.c13*sheet11.e79); end
   def ag80; @ag80 ||= sheet7.ag80/(sheet12.c13*sheet11.e79); end
-  def ai80; 105.55572556659568; end
+  def ai80; 193.47346494752827; end
   def aj80; @aj80 ||= sheet7.aj80/(sheet12.c13*sheet11.e79); end
   def ak80; @ak80 ||= sheet7.ak80/(sheet12.c13*sheet11.e79); end
   def al80; @al80 ||= sheet7.al80/(sheet12.c13*sheet11.e79); end
@@ -6456,7 +6456,7 @@ class Sheet5 < Spreadsheet
   def at80; @at80 ||= (sumproduct(a('aj80','aq80'),sheet12.a('d28','k28'))*5.0)+ai80; end
   def av80; 0.0; end
   def aw80; 5.0; end
-  def ay80; 26.529601865377774; end
+  def ay80; 41.358195416612155; end
   def az80; @az80 ||= sheet7.az80/(sheet12.c13*sheet11.e79); end
   def ba80; @ba80 ||= sheet7.ba80/(sheet12.c13*sheet11.e79); end
   def bb80; @bb80 ||= sheet7.bb80/(sheet12.c13*sheet11.e79); end
@@ -6465,7 +6465,7 @@ class Sheet5 < Spreadsheet
   def be80; @be80 ||= sheet7.be80/(sheet12.c13*sheet11.e79); end
   def bf80; @bf80 ||= sheet7.bf80/(sheet12.c13*sheet11.e79); end
   def bg80; @bg80 ||= sheet7.bg80/(sheet12.c13*sheet11.e79); end
-  def bi80; 26.529601865377774; end
+  def bi80; 41.358195416612155; end
   def bj80; @bj80 ||= sheet7.bj80/(sheet12.c13*sheet11.e79); end
   def bk80; @bk80 ||= sheet7.bk80/(sheet12.c13*sheet11.e79); end
   def bl80; @bl80 ||= sheet7.bl80/(sheet12.c13*sheet11.e79); end
@@ -6474,7 +6474,7 @@ class Sheet5 < Spreadsheet
   def bo80; @bo80 ||= sheet7.bo80/(sheet12.c13*sheet11.e79); end
   def bp80; @bp80 ||= sheet7.bp80/(sheet12.c13*sheet11.e79); end
   def bq80; @bq80 ||= sheet7.bq80/(sheet12.c13*sheet11.e79); end
-  def bs80; 51.54221663875881; end
+  def bs80; 109.26936461047285; end
   def bt80; @bt80 ||= sheet7.bt80/(sheet12.c13*sheet11.e79); end
   def bu80; @bu80 ||= sheet7.bu80/(sheet12.c13*sheet11.e79); end
   def bv80; @bv80 ||= sheet7.bv80/(sheet12.c13*sheet11.e79); end
@@ -6485,7 +6485,7 @@ class Sheet5 < Spreadsheet
   def ca80; @ca80 ||= sheet7.ca80/(sheet12.c13*sheet11.e79); end
   def cc80; @cc80 ||= average(a('bs80','ca80')); end
   def cd80; @cd80 ||= (sumproduct(a('bt80','ca80'),sheet12.a('d28','k28'))*5.0)+bs80; end
-  def cf80; -54.01350892783687; end
+  def cf80; -84.20410033705542; end
   def cg80; @cg80 ||= sheet7.cg80/(sheet12.c13*sheet11.e79); end
   def ch80; @ch80 ||= sheet7.ch80/(sheet12.c13*sheet11.e79); end
   def ci80; @ci80 ||= sheet7.ci80/(sheet12.c13*sheet11.e79); end

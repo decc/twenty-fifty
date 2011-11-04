@@ -52,7 +52,7 @@ class Sheet30 < Spreadsheet
   def m19; @m19 ||= (index(a('m15','m18'),rounddown(e7,0.0))*(1.0-mod(e7,1.0)))+(index(a('m15','m18'),roundup(e7,0.0))*mod(e7,1.0)); end
   def n19; @n19 ||= (index(a('n15','n18'),rounddown(e7,0.0))*(1.0-mod(e7,1.0)))+(index(a('n15','n18'),roundup(e7,0.0))*mod(e7,1.0)); end
   def o19; @o19 ||= (index(a('o15','o18'),rounddown(e7,0.0))*(1.0-mod(e7,1.0)))+(index(a('o15','o18'),roundup(e7,0.0))*mod(e7,1.0)); end
-  def f43; 1470.0; end
+  def f43; 524.25; end
   def f44; 15.0; end
   def f56; @f56 ||= f19; end
   def g56; @g56 ||= g19; end

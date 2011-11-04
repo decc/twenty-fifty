@@ -62,6 +62,15 @@ class Sheet24 < Spreadsheet
   def m47; 0.0003641; end
   def n47; 0.0003641; end
   def o47; 0.0003641; end
+  def g48; 0.0002603535; end
+  def h48; 0.0002515679375; end
+  def i48; 0.000242782375; end
+  def j48; 0.0002339968125; end
+  def k48; 0.00022521124999999999; end
+  def l48; 0.00021642568749999998; end
+  def m48; 0.00020764012499999997; end
+  def n48; 0.00019885456249999997; end
+  def o48; 0.000190069; end
   def g49; 0.00020449000000000002; end
   def h49; 0.00020674003056678065; end
   def i49; 0.00020899006113356128; end
@@ -159,7 +168,7 @@ class Sheet24 < Spreadsheet
   def n67; 0.5; end
   def o67; 0.5; end
   def f68; @f68 ||= f66*f67; end
-  def g68; @g68 ||= g66*g67; end
+  def g68; @g68 ||= (g66*g67)*sheet11.f12; end
   def h68; @h68 ||= h66*h67; end
   def i68; @i68 ||= i66*i67; end
   def j68; @j68 ||= j66*j67; end
@@ -239,15 +248,15 @@ class Sheet24 < Spreadsheet
   def m83; @m83 ||= m76*m56; end
   def n83; @n83 ||= n76*n56; end
   def o83; @o83 ||= o76*o56; end
-  def g87; @g87 ||= g78*g49; end
-  def h87; @h87 ||= h78*h49; end
-  def i87; @i87 ||= i78*i49; end
-  def j87; @j87 ||= j78*j49; end
-  def k87; @k87 ||= k78*k49; end
-  def l87; @l87 ||= l78*l49; end
-  def m87; @m87 ||= m78*m49; end
-  def n87; @n87 ||= n78*n49; end
-  def o87; @o87 ||= o78*o49; end
+  def g87; @g87 ||= g78*g48; end
+  def h87; @h87 ||= h78*h48; end
+  def i87; @i87 ||= i78*i48; end
+  def j87; @j87 ||= j78*j48; end
+  def k87; @k87 ||= k78*k48; end
+  def l87; @l87 ||= l78*l48; end
+  def m87; @m87 ||= m78*m48; end
+  def n87; @n87 ||= n78*n48; end
+  def o87; @o87 ||= o78*o48; end
   def g88; @g88 ||= g76*g55; end
   def h88; @h88 ||= h76*h55; end
   def i88; @i88 ||= i76*i55; end

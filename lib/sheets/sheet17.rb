@@ -1,7 +1,22 @@
 # coding: utf-8
 # II.a
 class Sheet17 < Spreadsheet
+  def a2; "II.a"; end
   def e7; @e7 ||= sheet1.e5; end
+  def l14; "2035"; end
+  def m14; "2040"; end
+  def n14; "2045"; end
+  def o14; "2050"; end
+  def c15; "V.01"; end
+  def l15; @l15 ||= index(sheet59.a('g6','bl110'),match("Subtotal."+(a2).to_s,sheet59.a('c6','c110'),0.0),13.0); end
+  def m15; @m15 ||= index(sheet60.a('g6','bl110'),match("Subtotal."+(a2).to_s,sheet60.a('c6','c110'),0.0),13.0); end
+  def n15; @n15 ||= index(sheet61.a('g6','bl110'),match("Subtotal."+(a2).to_s,sheet61.a('c6','c110'),0.0),13.0); end
+  def o15; @o15 ||= index(sheet62.a('g6','bl110'),match("Subtotal."+(a2).to_s,sheet62.a('c6','c110'),0.0),13.0); end
+  def c16; "V.02"; end
+  def l16; @l16 ||= index(sheet59.a('g6','bl110'),match("Subtotal."+(a2).to_s,sheet59.a('c6','c110'),0.0),14.0); end
+  def m16; @m16 ||= index(sheet60.a('g6','bl110'),match("Subtotal."+(a2).to_s,sheet60.a('c6','c110'),0.0),14.0); end
+  def n16; @n16 ||= index(sheet61.a('g6','bl110'),match("Subtotal."+(a2).to_s,sheet61.a('c6','c110'),0.0),14.0); end
+  def o16; @o16 ||= index(sheet62.a('g6','bl110'),match("Subtotal."+(a2).to_s,sheet62.a('c6','c110'),0.0),14.0); end
   def f24; 0.0; end
   def g24; 0.0; end
   def h24; 0.0; end
@@ -111,6 +126,7 @@ class Sheet17 < Spreadsheet
   def m69; 0.0; end
   def n69; 0.0; end
   def f74; 3.0; end
+  def d77; 3.0; end
   def h96; 13644.0; end
   def i96; 13644.0; end
   def j96; 13644.0; end
@@ -138,32 +154,32 @@ class Sheet17 < Spreadsheet
   def o98; 4499.25; end
   def p98; 4080.0; end
   def h103; 360.0; end
-  def i103; 319.875; end
-  def j103; 279.75; end
-  def k103; 239.625; end
-  def l103; 199.5; end
-  def m103; 159.375; end
-  def n103; 119.25; end
-  def o103; 79.125; end
-  def p103; 39.0; end
-  def h104; 166.30400994715575; end
-  def i104; 166.30400994715575; end
-  def j104; 189.97901771837115; end
-  def k104; 189.97901771837115; end
-  def l104; 189.97901771837115; end
-  def m104; 189.97901771837115; end
-  def n104; 189.97901771837115; end
-  def o104; 189.97901771837115; end
-  def p104; 189.97901771837115; end
+  def i103; 360.0; end
+  def j103; 360.0; end
+  def k103; 360.0; end
+  def l103; 360.0; end
+  def m103; 360.0; end
+  def n103; 360.0; end
+  def o103; 360.0; end
+  def p103; 360.0; end
+  def h104; @h104 ||= ((42.8*sheet11.d95*sheet11.e79/sheet11.f32)+((0.38646*sheet11.e74/sheet11.f5*sheet11.d95)*(h142/h134)))*sheet17.d77; end
+  def i104; @i104 ||= ((42.8*sheet11.d95*sheet11.e79/sheet11.f32)+((0.38646*sheet11.e74/sheet11.f5*sheet11.d95)*(i142/i134)))*sheet17.d77; end
+  def j104; @j104 ||= ((48.893*sheet11.d95*sheet11.e79/sheet11.f32)+((0.38646*sheet11.e74/sheet11.f5*sheet11.d95)*(j142/j134)))*sheet17.d77; end
+  def k104; @k104 ||= ((48.893*sheet11.d95*sheet11.e79/sheet11.f32)+((0.38646*sheet11.e74/sheet11.f5*sheet11.d95)*(k142/k134)))*sheet17.d77; end
+  def l104; @l104 ||= ((48.893*sheet11.d95*sheet11.e79/sheet11.f32)+((0.38646*sheet11.e74/sheet11.f5*sheet11.d95)*(l142/l134)))*sheet17.d77; end
+  def m104; @m104 ||= ((48.893*sheet11.d95*sheet11.e79/sheet11.f32)+iferror(((0.38646*sheet11.e74*sheet11.d95/sheet11.f5)*(m140/m134)),0.0))*sheet17.d77; end
+  def n104; @n104 ||= ((48.893*sheet11.d95*sheet11.e79/sheet11.f32)+iferror(((0.38646*sheet11.e74*sheet11.d95/sheet11.f5)*(n140/n134)),0.0))*sheet17.d77; end
+  def o104; @o104 ||= ((48.893*sheet11.d95*sheet11.e79/sheet11.f32)+iferror(((0.38646*sheet11.e74*sheet11.d95/sheet11.f5)*(o140/o134)),0.0))*sheet17.d77; end
+  def p104; @p104 ||= ((48.893*sheet11.d95*sheet11.e79/sheet11.f32)+iferror(((0.38646*sheet11.e74*sheet11.d95/sheet11.f5)*(p140/p134)),0.0))*sheet17.d77; end
   def h105; 39.0; end
-  def i105; 34.1271875; end
-  def j105; 29.254374999999996; end
-  def k105; 24.381562499999994; end
-  def l105; 19.508749999999992; end
-  def m105; 14.635937499999992; end
-  def n105; 9.763124999999992; end
-  def o105; 4.890312499999991; end
-  def p105; 0.0175; end
+  def i105; 39.0; end
+  def j105; 39.0; end
+  def k105; 39.0; end
+  def l105; 39.0; end
+  def m105; 39.0; end
+  def n105; 39.0; end
+  def o105; 39.0; end
+  def p105; 39.0; end
   def h110; 1.0351258936897734; end
   def i110; 1.0351258936897734; end
   def j110; 1.0351258936897734; end
@@ -274,6 +290,14 @@ class Sheet17 < Spreadsheet
   def n137; @n137 ||= n136*sheet2.f5*sheet11.f40/sheet2.f3; end
   def o137; @o137 ||= o136*sheet2.f5*sheet11.f40/sheet2.f3; end
   def p137; @p137 ||= p136*sheet2.f5*sheet11.f40/sheet2.f3; end
+  def m139; @m139 ||= -sum(sheet17.a('l15','l16')); end
+  def n139; @n139 ||= -sum(sheet17.a('m15','m16')); end
+  def o139; @o139 ||= -sum(sheet17.a('n15','n16')); end
+  def p139; @p139 ||= -sum(sheet17.a('o15','o16')); end
+  def m140; @m140 ||= max(min(m139,m137),0.0); end
+  def n140; @n140 ||= max(min(n139,n137),0.0); end
+  def o140; @o140 ||= max(min(o139,o137),0.0); end
+  def p140; @p140 ||= max(min(p139,p137),0.0); end
   def h142; @h142 ||= h137; end
   def i142; @i142 ||= i137; end
   def j142; @j142 ||= j137; end

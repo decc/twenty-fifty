@@ -280,36 +280,36 @@ describe 'Sheet43' do
     sheet43.g92.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell h92 should equal 89.37500000000003' do
-    sheet43.h92.should be_within(8.937500000000004).of(89.37500000000003)
+  it 'cell h92 should equal 73.28750000000002' do
+    sheet43.h92.should be_within(7.328750000000003).of(73.28750000000002)
   end
 
-  it 'cell i92 should equal 247.50000000000006' do
-    sheet43.i92.should be_within(24.750000000000007).of(247.50000000000006)
+  it 'cell i92 should equal 202.95000000000002' do
+    sheet43.i92.should be_within(20.295).of(202.95000000000002)
   end
 
-  it 'cell j92 should equal 312.3749999999999' do
-    sheet43.j92.should be_within(31.23749999999999).of(312.3749999999999)
+  it 'cell j92 should equal 256.1474999999999' do
+    sheet43.j92.should be_within(25.614749999999994).of(256.1474999999999)
   end
 
-  it 'cell k92 should equal 391.99999999999983' do
-    sheet43.k92.should be_within(39.19999999999999).of(391.99999999999983)
+  it 'cell k92 should equal 321.4399999999999' do
+    sheet43.k92.should be_within(32.14399999999999).of(321.4399999999999)
   end
 
-  it 'cell l92 should equal 479.5000000000001' do
-    sheet43.l92.should be_within(47.95000000000002).of(479.5000000000001)
+  it 'cell l92 should equal 393.1900000000001' do
+    sheet43.l92.should be_within(39.31900000000002).of(393.1900000000001)
   end
 
-  it 'cell m92 should equal 593.125' do
-    sheet43.m92.should be_within(59.3125).of(593.125)
+  it 'cell m92 should equal 486.36249999999995' do
+    sheet43.m92.should be_within(48.63625).of(486.36249999999995)
   end
 
-  it 'cell n92 should equal 716.8749999999999' do
-    sheet43.n92.should be_within(71.68749999999999).of(716.8749999999999)
+  it 'cell n92 should equal 587.8374999999999' do
+    sheet43.n92.should be_within(58.78374999999999).of(587.8374999999999)
   end
 
-  it 'cell o92 should equal 871.25' do
-    sheet43.o92.should be_within(87.125).of(871.25)
+  it 'cell o92 should equal 714.425' do
+    sheet43.o92.should be_within(71.4425).of(714.425)
   end
 
   it 'cell g93 should equal 0.0' do
@@ -588,36 +588,36 @@ describe 'Sheet43' do
     sheet43.g136.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell h136 should equal 89.37500000000003' do
-    sheet43.h136.should be_within(8.937500000000004).of(89.37500000000003)
+  it 'cell h136 should equal 73.28750000000002' do
+    sheet43.h136.should be_within(7.328750000000003).of(73.28750000000002)
   end
 
-  it 'cell i136 should equal 247.50000000000006' do
-    sheet43.i136.should be_within(24.750000000000007).of(247.50000000000006)
+  it 'cell i136 should equal 202.95000000000002' do
+    sheet43.i136.should be_within(20.295).of(202.95000000000002)
   end
 
-  it 'cell j136 should equal 312.3749999999999' do
-    sheet43.j136.should be_within(31.23749999999999).of(312.3749999999999)
+  it 'cell j136 should equal 256.1474999999999' do
+    sheet43.j136.should be_within(25.614749999999994).of(256.1474999999999)
   end
 
-  it 'cell k136 should equal 391.99999999999983' do
-    sheet43.k136.should be_within(39.19999999999999).of(391.99999999999983)
+  it 'cell k136 should equal 321.4399999999999' do
+    sheet43.k136.should be_within(32.14399999999999).of(321.4399999999999)
   end
 
-  it 'cell l136 should equal 479.5000000000001' do
-    sheet43.l136.should be_within(47.95000000000002).of(479.5000000000001)
+  it 'cell l136 should equal 393.1900000000001' do
+    sheet43.l136.should be_within(39.31900000000002).of(393.1900000000001)
   end
 
-  it 'cell m136 should equal 593.125' do
-    sheet43.m136.should be_within(59.3125).of(593.125)
+  it 'cell m136 should equal 486.36249999999995' do
+    sheet43.m136.should be_within(48.63625).of(486.36249999999995)
   end
 
-  it 'cell n136 should equal 716.8749999999999' do
-    sheet43.n136.should be_within(71.68749999999999).of(716.8749999999999)
+  it 'cell n136 should equal 587.8374999999999' do
+    sheet43.n136.should be_within(58.78374999999999).of(587.8374999999999)
   end
 
-  it 'cell o136 should equal 871.25' do
-    sheet43.o136.should be_within(87.125).of(871.25)
+  it 'cell o136 should equal 714.425' do
+    sheet43.o136.should be_within(71.4425).of(714.425)
   end
 
   it 'cell g139 should equal 0.0' do

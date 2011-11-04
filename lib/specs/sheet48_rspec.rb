@@ -292,6 +292,42 @@ describe 'Sheet48' do
     sheet48.o64.should be_within(1486.4372590451205).of(14864.372590451205)
   end
 
+  it 'cell g65 should equal 4060.5565772863465' do
+    sheet48.g65.should be_within(406.0556577286347).of(4060.5565772863465)
+  end
+
+  it 'cell h65 should equal 5525.330869189647' do
+    sheet48.h65.should be_within(552.5330869189647).of(5525.330869189647)
+  end
+
+  it 'cell i65 should equal 6065.132377483673' do
+    sheet48.i65.should be_within(606.5132377483673).of(6065.132377483673)
+  end
+
+  it 'cell j65 should equal 7125.87780782533' do
+    sheet48.j65.should be_within(712.5877807825331).of(7125.87780782533)
+  end
+
+  it 'cell k65 should equal 6542.87802787664' do
+    sheet48.k65.should be_within(654.2878027876641).of(6542.87802787664)
+  end
+
+  it 'cell l65 should equal 4505.69335534157' do
+    sheet48.l65.should be_within(450.56933553415706).of(4505.69335534157)
+  end
+
+  it 'cell m65 should equal 2514.7798300273766' do
+    sheet48.m65.should be_within(251.4779830027377).of(2514.7798300273766)
+  end
+
+  it 'cell n65 should equal 1452.6624366398569' do
+    sheet48.n65.should be_within(145.2662436639857).of(1452.6624366398569)
+  end
+
+  it 'cell o65 should equal 446.2847587099045' do
+    sheet48.o65.should be_within(44.62847587099046).of(446.2847587099045)
+  end
+
   it 'cell g69 should equal 2477.462657650087' do
     sheet48.g69.should be_within(247.7462657650087).of(2477.462657650087)
   end
@@ -368,20 +404,20 @@ describe 'Sheet48' do
     sheet48.g71.should be_within(406.0556577286347).of(4060.5565772863465)
   end
 
-  it 'cell h71 should equal 4814.149668204841' do
-    sheet48.h71.should be_within(481.4149668204841).of(4814.149668204841)
+  it 'cell h71 should equal 4841.502791319642' do
+    sheet48.h71.should be_within(484.1502791319642).of(4841.502791319642)
   end
 
-  it 'cell i71 should equal 4708.45802988864' do
-    sheet48.i71.should be_within(470.8458029888641).of(4708.45802988864)
+  it 'cell i71 should equal 4735.059487684622' do
+    sheet48.i71.should be_within(473.5059487684622).of(4735.059487684622)
   end
 
-  it 'cell j71 should equal 4993.725392885468' do
-    sheet48.j71.should be_within(499.3725392885468).of(4993.725392885468)
+  it 'cell j71 should equal 5021.780029924151' do
+    sheet48.j71.should be_within(502.1780029924151).of(5021.780029924151)
   end
 
-  it 'cell k71 should equal 4182.768453535424' do
-    sheet48.k71.should be_within(418.2768453535424).of(4182.768453535424)
+  it 'cell k71 should equal 4206.1358750635545' do
+    sheet48.k71.should be_within(420.6135875063555).of(4206.1358750635545)
   end
 
   it 'cell l71 should equal 2896.5171570052953' do
@@ -656,56 +692,56 @@ describe 'Sheet48' do
     sheet48.g121.should be_within(406.0556577286347).of(4060.5565772863465)
   end
 
-  it 'cell h121 should equal 4814.149668204841' do
-    sheet48.h121.should be_within(481.4149668204841).of(4814.149668204841)
+  it 'cell h121 should equal 5525.330869189647' do
+    sheet48.h121.should be_within(552.5330869189647).of(5525.330869189647)
   end
 
-  it 'cell i121 should equal 4708.45802988864' do
-    sheet48.i121.should be_within(470.8458029888641).of(4708.45802988864)
+  it 'cell i121 should equal 6065.132377483673' do
+    sheet48.i121.should be_within(606.5132377483673).of(6065.132377483673)
   end
 
-  it 'cell j121 should equal 4993.725392885468' do
-    sheet48.j121.should be_within(499.3725392885468).of(4993.725392885468)
+  it 'cell j121 should equal 7125.87780782533' do
+    sheet48.j121.should be_within(712.5877807825331).of(7125.87780782533)
   end
 
-  it 'cell k121 should equal 4182.768453535424' do
-    sheet48.k121.should be_within(418.2768453535424).of(4182.768453535424)
+  it 'cell k121 should equal 6542.87802787664' do
+    sheet48.k121.should be_within(654.2878027876641).of(6542.87802787664)
   end
 
-  it 'cell l121 should equal 2896.5171570052953' do
-    sheet48.l121.should be_within(289.65171570052956).of(2896.5171570052953)
+  it 'cell l121 should equal 4505.69335534157' do
+    sheet48.l121.should be_within(450.56933553415706).of(4505.69335534157)
   end
 
-  it 'cell m121 should equal 1616.6441764461708' do
-    sheet48.m121.should be_within(161.6644176446171).of(1616.6441764461708)
+  it 'cell m121 should equal 2514.7798300273766' do
+    sheet48.m121.should be_within(251.4779830027377).of(2514.7798300273766)
   end
 
-  it 'cell n121 should equal 933.8544235541938' do
-    sheet48.n121.should be_within(93.38544235541939).of(933.8544235541938)
+  it 'cell n121 should equal 1452.6624366398569' do
+    sheet48.n121.should be_within(145.2662436639857).of(1452.6624366398569)
   end
 
-  it 'cell o121 should equal 286.8973448849386' do
-    sheet48.o121.should be_within(28.689734488493862).of(286.8973448849386)
+  it 'cell o121 should equal 446.2847587099045' do
+    sheet48.o121.should be_within(44.62847587099046).of(446.2847587099045)
   end
 
   it 'cell g122 should equal 4060.5565772863465' do
     sheet48.g122.should be_within(406.0556577286347).of(4060.5565772863465)
   end
 
-  it 'cell h122 should equal 4814.149668204841' do
-    sheet48.h122.should be_within(481.4149668204841).of(4814.149668204841)
+  it 'cell h122 should equal 4841.502791319642' do
+    sheet48.h122.should be_within(484.1502791319642).of(4841.502791319642)
   end
 
-  it 'cell i122 should equal 4708.45802988864' do
-    sheet48.i122.should be_within(470.8458029888641).of(4708.45802988864)
+  it 'cell i122 should equal 4735.059487684622' do
+    sheet48.i122.should be_within(473.5059487684622).of(4735.059487684622)
   end
 
-  it 'cell j122 should equal 4993.725392885468' do
-    sheet48.j122.should be_within(499.3725392885468).of(4993.725392885468)
+  it 'cell j122 should equal 5021.780029924151' do
+    sheet48.j122.should be_within(502.1780029924151).of(5021.780029924151)
   end
 
-  it 'cell k122 should equal 4182.768453535424' do
-    sheet48.k122.should be_within(418.2768453535424).of(4182.768453535424)
+  it 'cell k122 should equal 4206.1358750635545' do
+    sheet48.k122.should be_within(420.6135875063555).of(4206.1358750635545)
   end
 
   it 'cell l122 should equal 2896.5171570052953' do

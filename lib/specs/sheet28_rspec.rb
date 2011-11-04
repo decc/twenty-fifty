@@ -2860,40 +2860,40 @@ describe 'Sheet28' do
     sheet28.o496.should be_within(0.0015913095569151268).of(0.015913095569151266)
   end
 
-  it 'cell g497 should equal 2.376493052459352e-05' do
-    sheet28.g497.should be_within(2.376493052459352e-06).of(2.376493052459352e-05)
+  it 'cell g497 should equal 8.317725683607734e-06' do
+    sheet28.g497.should be_within(8.317725683607734e-07).of(8.317725683607734e-06)
   end
 
-  it 'cell h497 should equal 5.746096838453085e-05' do
-    sheet28.h497.should be_within(5.746096838453085e-06).of(5.746096838453085e-05)
+  it 'cell h497 should equal 2.2045450678933195e-05' do
+    sheet28.h497.should be_within(2.2045450678933194e-06).of(2.2045450678933195e-05)
   end
 
-  it 'cell i497 should equal 8.388108592367163e-05' do
-    sheet28.i497.should be_within(8.388108592367163e-06).of(8.388108592367163e-05)
+  it 'cell i497 should equal 3.56060202772045e-05' do
+    sheet28.i497.should be_within(3.5606020277204503e-06).of(3.56060202772045e-05)
   end
 
-  it 'cell j497 should equal 8.354784880001467e-05' do
-    sheet28.j497.should be_within(8.354784880001466e-06).of(8.354784880001467e-05)
+  it 'cell j497 should equal 3.9687429124390544e-05' do
+    sheet28.j497.should be_within(3.968742912439055e-06).of(3.9687429124390544e-05)
   end
 
-  it 'cell k497 should equal 8.114039438441732e-05' do
-    sheet28.k497.should be_within(8.114039438441732e-06).of(8.114039438441732e-05)
+  it 'cell k497 should equal 4.37536959192528e-05' do
+    sheet28.k497.should be_within(4.37536959192528e-06).of(4.37536959192528e-05)
   end
 
-  it 'cell l497 should equal 7.667019954419816e-05' do
-    sheet28.l497.should be_within(7.667019954419816e-06).of(7.667019954419816e-05)
+  it 'cell l497 should equal 4.780487683889979e-05' do
+    sheet28.l497.should be_within(4.78048768388998e-06).of(4.780487683889979e-05)
   end
 
-  it 'cell m497 should equal 7.01486845380081e-05' do
-    sheet28.m497.should be_within(7.0148684538008105e-06).of(7.01486845380081e-05)
+  it 'cell m497 should equal 5.184102785202307e-05' do
+    sheet28.m497.should be_within(5.184102785202307e-06).of(5.184102785202307e-05)
   end
 
-  it 'cell n497 should equal 6.158721327789658e-05' do
-    sheet28.n497.should be_within(6.158721327789658e-06).of(6.158721327789658e-05)
+  it 'cell n497 should equal 5.5862204719669624e-05' do
+    sheet28.n497.should be_within(5.586220471966963e-06).of(5.5862204719669624e-05)
   end
 
-  it 'cell o497 should equal 5.099709359021508e-05' do
-    sheet28.o497.should be_within(5.099709359021508e-06).of(5.099709359021508e-05)
+  it 'cell o497 should equal 5.9868462996012904e-05' do
+    sheet28.o497.should be_within(5.98684629960129e-06).of(5.9868462996012904e-05)
   end
 
   it 'cell g499 should equal 0.0' do
@@ -4124,40 +4124,40 @@ describe 'Sheet28' do
     sheet28.o576.should be_within(2.1607212439184908e-05).of(0.00021607212439184905)
   end
 
-  it 'cell g577 should equal 2.376493052459352e-05' do
-    sheet28.g577.should be_within(2.376493052459352e-06).of(2.376493052459352e-05)
+  it 'cell g577 should equal 8.317725683607734e-06' do
+    sheet28.g577.should be_within(8.317725683607734e-07).of(8.317725683607734e-06)
   end
 
-  it 'cell h577 should equal 5.746096838453085e-05' do
-    sheet28.h577.should be_within(5.746096838453085e-06).of(5.746096838453085e-05)
+  it 'cell h577 should equal 2.2045450678933195e-05' do
+    sheet28.h577.should be_within(2.2045450678933194e-06).of(2.2045450678933195e-05)
   end
 
-  it 'cell i577 should equal 8.388108592367163e-05' do
-    sheet28.i577.should be_within(8.388108592367163e-06).of(8.388108592367163e-05)
+  it 'cell i577 should equal 3.56060202772045e-05' do
+    sheet28.i577.should be_within(3.5606020277204503e-06).of(3.56060202772045e-05)
   end
 
-  it 'cell j577 should equal 8.354784880001467e-05' do
-    sheet28.j577.should be_within(8.354784880001466e-06).of(8.354784880001467e-05)
+  it 'cell j577 should equal 3.9687429124390544e-05' do
+    sheet28.j577.should be_within(3.968742912439055e-06).of(3.9687429124390544e-05)
   end
 
-  it 'cell k577 should equal 8.114039438441732e-05' do
-    sheet28.k577.should be_within(8.114039438441732e-06).of(8.114039438441732e-05)
+  it 'cell k577 should equal 4.37536959192528e-05' do
+    sheet28.k577.should be_within(4.37536959192528e-06).of(4.37536959192528e-05)
   end
 
-  it 'cell l577 should equal 7.667019954419816e-05' do
-    sheet28.l577.should be_within(7.667019954419816e-06).of(7.667019954419816e-05)
+  it 'cell l577 should equal 4.780487683889979e-05' do
+    sheet28.l577.should be_within(4.78048768388998e-06).of(4.780487683889979e-05)
   end
 
-  it 'cell m577 should equal 7.01486845380081e-05' do
-    sheet28.m577.should be_within(7.0148684538008105e-06).of(7.01486845380081e-05)
+  it 'cell m577 should equal 5.184102785202307e-05' do
+    sheet28.m577.should be_within(5.184102785202307e-06).of(5.184102785202307e-05)
   end
 
-  it 'cell n577 should equal 6.158721327789658e-05' do
-    sheet28.n577.should be_within(6.158721327789658e-06).of(6.158721327789658e-05)
+  it 'cell n577 should equal 5.5862204719669624e-05' do
+    sheet28.n577.should be_within(5.586220471966963e-06).of(5.5862204719669624e-05)
   end
 
-  it 'cell o577 should equal 5.099709359021508e-05' do
-    sheet28.o577.should be_within(5.099709359021508e-06).of(5.099709359021508e-05)
+  it 'cell o577 should equal 5.9868462996012904e-05' do
+    sheet28.o577.should be_within(5.98684629960129e-06).of(5.9868462996012904e-05)
   end
 
   it 'cell g578 should equal 2.1151726681159796e-06' do

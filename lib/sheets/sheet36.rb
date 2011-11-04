@@ -681,59 +681,85 @@ class Sheet36 < Spreadsheet
   def l171; 0.3; end
   def m171; 0.7; end
   def l301; 110.0; end
+  def m301; 87.9; end
   def n301; 76.0; end
   def o301; 24.0; end
+  def p301; 12.3; end
   def q301; 6.0; end
   def l302; 110.0; end
+  def m302; 87.9; end
   def n302; 76.0; end
   def o302; 24.0; end
+  def p302; 12.3; end
   def q302; 6.0; end
   def l303; 390.0; end
+  def m303; 221.0; end
   def n303; 130.0; end
   def o303; 3.0; end
+  def p303; 1.7; end
   def q303; 1.0; end
   def l304; 111.0; end
+  def m304; 62.9; end
   def n304; 37.0; end
   def o304; 9.0; end
+  def p304; 5.1; end
   def q304; 3.0; end
   def l305; 768.0; end
+  def m305; 309.1; end
   def n305; 62.0; end
   def o305; 10.0; end
+  def p305; 7.4; end
   def q305; 6.0; end
   def l306; 392.0; end
+  def m306; 366.0; end
   def n306; 352.0; end
   def o306; 24.0; end
+  def p306; 12.3; end
   def q306; 6.0; end
   def l307; 552.0; end
+  def m307; 475.3; end
   def n307; 434.0; end
   def o307; 24.0; end
+  def p307; 12.3; end
   def q307; 6.0; end
   def l308; 410.0; end
+  def m308; 326.8; end
   def n308; 282.0; end
   def o308; 4.0; end
+  def p308; 1.6600000000000001; end
   def q308; 0.4; end
   def l309; 366.0; end
+  def m309; 294.5; end
   def n309; 256.0; end
   def o309; 1.2; end
+  def p309; 0.55; end
   def q309; 0.2; end
   def l310; 1530.8; end
+  def m310; 711.54; end
   def n310; 270.4; end
   def o310; 15.0; end
+  def p310; 8.5; end
   def q310; 5.0; end
   def l311; 332.8; end
+  def m311; 196.04000000000002; end
   def n311; 122.4; end
   def o311; 10.0; end
+  def p311; 6.75; end
   def q311; 5.0; end
   def l312; 452.8; end
+  def m312; 255.58999999999997; end
   def n312; 149.4; end
   def o312; 11.0; end
+  def p312; 5.8; end
   def q312; 3.0; end
   def l313; 64.8; end
+  def m313; 39.839999999999996; end
   def n313; 26.4; end
   def o313; 0.0; end
+  def p313; 0.0; end
   def q313; 0.0; end
   def l314; 671.0; end
-  def m314; 535.9; end
+  def m314; 545.55; end
   def n314; 478.0; end
   def o314; 4.0e-06; end
   def q314; 3.0e-06; end
@@ -2367,24 +2393,24 @@ class Sheet36 < Spreadsheet
   def m651; @m651 ||= sumproduct(a('m613','m625'),a('o301','o313')); end
   def n651; @n651 ||= sumproduct(a('n613','n625'),a('o301','o313')); end
   def o651; @o651 ||= sumproduct(a('o613','o625'),a('o301','o313')); end
-  def g655; @g655 ||= (sumproduct(a('g629','g641'),a('l301','l313')))/(g610-f610); end
-  def h655; @h655 ||= (sumproduct(a('h629','h641'),a('l301','l313')))/(h610-g610); end
-  def i655; @i655 ||= (sumproduct(a('i629','i641'),a('l301','l313')))/(i610-h610); end
-  def j655; @j655 ||= (sumproduct(a('j629','j641'),a('l301','l313')))/(j610-i610); end
-  def k655; @k655 ||= (sumproduct(a('k629','k641'),a('l301','l313')))/(k610-j610); end
-  def l655; @l655 ||= (sumproduct(a('l629','l641'),a('l301','l313')))/(l610-k610); end
-  def m655; @m655 ||= (sumproduct(a('m629','m641'),a('l301','l313')))/(m610-l610); end
-  def n655; @n655 ||= (sumproduct(a('n629','n641'),a('l301','l313')))/(n610-m610); end
-  def o655; @o655 ||= (sumproduct(a('o629','o641'),a('l301','l313')))/(o610-n610); end
-  def g656; @g656 ||= sumproduct(a('g613','g625'),a('o301','o313')); end
-  def h656; @h656 ||= sumproduct(a('h613','h625'),a('o301','o313')); end
-  def i656; @i656 ||= sumproduct(a('i613','i625'),a('o301','o313')); end
-  def j656; @j656 ||= sumproduct(a('j613','j625'),a('o301','o313')); end
-  def k656; @k656 ||= sumproduct(a('k613','k625'),a('o301','o313')); end
-  def l656; @l656 ||= sumproduct(a('l613','l625'),a('o301','o313')); end
-  def m656; @m656 ||= sumproduct(a('m613','m625'),a('o301','o313')); end
-  def n656; @n656 ||= sumproduct(a('n613','n625'),a('o301','o313')); end
-  def o656; @o656 ||= sumproduct(a('o613','o625'),a('o301','o313')); end
+  def g655; @g655 ||= (sumproduct(a('g629','g641'),a('m301','m313')))/(g610-f610); end
+  def h655; @h655 ||= (sumproduct(a('h629','h641'),a('m301','m313')))/(h610-g610); end
+  def i655; @i655 ||= (sumproduct(a('i629','i641'),a('m301','m313')))/(i610-h610); end
+  def j655; @j655 ||= (sumproduct(a('j629','j641'),a('m301','m313')))/(j610-i610); end
+  def k655; @k655 ||= (sumproduct(a('k629','k641'),a('m301','m313')))/(k610-j610); end
+  def l655; @l655 ||= (sumproduct(a('l629','l641'),a('m301','m313')))/(l610-k610); end
+  def m655; @m655 ||= (sumproduct(a('m629','m641'),a('m301','m313')))/(m610-l610); end
+  def n655; @n655 ||= (sumproduct(a('n629','n641'),a('m301','m313')))/(n610-m610); end
+  def o655; @o655 ||= (sumproduct(a('o629','o641'),a('m301','m313')))/(o610-n610); end
+  def g656; @g656 ||= sumproduct(a('g613','g625'),a('p301','p313')); end
+  def h656; @h656 ||= sumproduct(a('h613','h625'),a('p301','p313')); end
+  def i656; @i656 ||= sumproduct(a('i613','i625'),a('p301','p313')); end
+  def j656; @j656 ||= sumproduct(a('j613','j625'),a('p301','p313')); end
+  def k656; @k656 ||= sumproduct(a('k613','k625'),a('p301','p313')); end
+  def l656; @l656 ||= sumproduct(a('l613','l625'),a('p301','p313')); end
+  def m656; @m656 ||= sumproduct(a('m613','m625'),a('p301','p313')); end
+  def n656; @n656 ||= sumproduct(a('n613','n625'),a('p301','p313')); end
+  def o656; @o656 ||= sumproduct(a('o613','o625'),a('p301','p313')); end
   def g660; @g660 ||= (sumproduct(a('g629','g641'),a('n301','n313')))/(g610-f610); end
   def h660; @h660 ||= (sumproduct(a('h629','h641'),a('n301','n313')))/(h610-g610); end
   def i660; @i660 ||= (sumproduct(a('i629','i641'),a('n301','n313')))/(i610-h610); end
@@ -2412,15 +2438,15 @@ class Sheet36 < Spreadsheet
   def m665; @m665 ||= (sum(a('m639','m641'))*g316)/(m610-l610); end
   def n665; @n665 ||= (sum(a('n639','n641'))*g316)/(n610-m610); end
   def o665; @o665 ||= (sum(a('o639','o641'))*g316)/(o610-n610); end
-  def g666; @g666 ||= (sum(a('g639','g641'))*g316)/(g610-f610); end
-  def h666; @h666 ||= (sum(a('h639','h641'))*g316)/(h610-g610); end
-  def i666; @i666 ||= (sum(a('i639','i641'))*g316)/(i610-h610); end
-  def j666; @j666 ||= (sum(a('j639','j641'))*g316)/(j610-i610); end
-  def k666; @k666 ||= (sum(a('k639','k641'))*g316)/(k610-j610); end
-  def l666; @l666 ||= (sum(a('l639','l641'))*g316)/(l610-k610); end
-  def m666; @m666 ||= (sum(a('m639','m641'))*g316)/(m610-l610); end
-  def n666; @n666 ||= (sum(a('n639','n641'))*g316)/(n610-m610); end
-  def o666; @o666 ||= (sum(a('o639','o641'))*g316)/(o610-n610); end
+  def g666; @g666 ||= (g665+((g667-g665)*0.35)); end
+  def h666; @h666 ||= (h665+((h667-h665)*0.35)); end
+  def i666; @i666 ||= (i665+((i667-i665)*0.35)); end
+  def j666; @j666 ||= (j665+((j667-j665)*0.35)); end
+  def k666; @k666 ||= (k665+((k667-k665)*0.35)); end
+  def l666; @l666 ||= (l665+((l667-l665)*0.35)); end
+  def m666; @m666 ||= (m665+((m667-m665)*0.35)); end
+  def n666; @n666 ||= (n665+((n667-n665)*0.35)); end
+  def o666; @o666 ||= (o665+((o667-o665)*0.35)); end
   def g667; @g667 ||= (sum(a('g639','g641'))*f316)/(g610-f610); end
   def h667; @h667 ||= (sum(a('h639','h641'))*f316)/(h610-g610); end
   def i667; @i667 ||= (sum(a('i639','i641'))*f316)/(i610-h610); end
@@ -2449,6 +2475,14 @@ class Sheet36 < Spreadsheet
   def n673; @n673 ||= n644*o314; end
   def o673; @o673 ||= o644*o314; end
   def g677; @g677 ||= g645*m314; end
+  def h677; @h677 ||= h645*m314; end
+  def i677; @i677 ||= i645*m314; end
+  def j677; @j677 ||= j645*m314; end
+  def k677; @k677 ||= k645*m314; end
+  def l677; @l677 ||= l645*m314; end
+  def m677; @m677 ||= m645*m314; end
+  def n677; @n677 ||= n645*m314; end
+  def o677; @o677 ||= o645*m314; end
   def g678; @g678 ||= g644*q314; end
   def h678; @h678 ||= h644*q314; end
   def i678; @i678 ||= i644*q314; end
@@ -2657,14 +2691,14 @@ class Sheet36 < Spreadsheet
   def c778; "C3.High"; end
   def c779; "C1.Point"; end
   def g779; @g779 ||= g655+g677+g666; end
-  def h779; @h779 ||= h655+h678+h666; end
-  def i779; @i779 ||= i655+i678+i666; end
-  def j779; @j779 ||= j655+j678+j666; end
-  def k779; @k779 ||= k655+k678+k666; end
-  def l779; @l779 ||= l655+l678+l666; end
-  def m779; @m779 ||= m655+m678+m666; end
-  def n779; @n779 ||= n655+n678+n666; end
-  def o779; @o779 ||= o655+o678+o666; end
+  def h779; @h779 ||= h655+h677+h666; end
+  def i779; @i779 ||= i655+i677+i666; end
+  def j779; @j779 ||= j655+j677+j666; end
+  def k779; @k779 ||= k655+k677+k666; end
+  def l779; @l779 ||= l655+l677+l666; end
+  def m779; @m779 ||= m655+m677+m666; end
+  def n779; @n779 ||= n655+n677+n666; end
+  def o779; @o779 ||= o655+o677+o666; end
   def c780; "C2.Point"; end
   def g780; @g780 ||= g656+g678; end
   def h780; @h780 ||= h656+h678; end

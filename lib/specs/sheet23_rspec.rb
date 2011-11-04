@@ -504,40 +504,40 @@ describe 'Sheet23' do
     sheet23.o91.should be_within(1.408935255242724).of(14.089352552427238)
   end
 
-  it 'cell g95 should equal 43.758173246295726' do
-    sheet23.g95.should be_within(4.375817324629573).of(43.758173246295726)
+  it 'cell g95 should equal 27.763090788519328' do
+    sheet23.g95.should be_within(2.776309078851933).of(27.763090788519328)
   end
 
-  it 'cell h95 should equal 27.22342617760984' do
-    sheet23.h95.should be_within(2.7223426177609844).of(27.22342617760984)
+  it 'cell h95 should equal 16.188252858093335' do
+    sheet23.h95.should be_within(1.6188252858093337).of(16.188252858093335)
   end
 
-  it 'cell i95 should equal 166.30177822949113' do
-    sheet23.i95.should be_within(16.630177822949115).of(166.30177822949113)
+  it 'cell i95 should equal 90.71725158204119' do
+    sheet23.i95.should be_within(9.071725158204119).of(90.71725158204119)
   end
 
-  it 'cell j95 should equal 324.4116868250344' do
-    sheet23.j95.should be_within(32.44116868250344).of(324.4116868250344)
+  it 'cell j95 should equal 156.79401284719918' do
+    sheet23.j95.should be_within(15.67940128471992).of(156.79401284719918)
   end
 
-  it 'cell k95 should equal 714.9120888144312' do
-    sheet23.k95.should be_within(71.49120888144311).of(714.9120888144312)
+  it 'cell k95 should equal 287.486038935445' do
+    sheet23.k95.should be_within(28.748603893544498).of(287.486038935445)
   end
 
-  it 'cell l95 should equal 896.9562815735816' do
-    sheet23.l95.should be_within(89.69562815735816).of(896.9562815735816)
+  it 'cell l95 should equal 261.5845616864156' do
+    sheet23.l95.should be_within(26.158456168641564).of(261.5845616864156)
   end
 
-  it 'cell m95 should equal 1363.3565982685723' do
-    sheet23.m95.should be_within(136.33565982685724).of(1363.3565982685723)
+  it 'cell m95 should equal 180.6264050775282' do
+    sheet23.m95.should be_within(18.06264050775282).of(180.6264050775282)
   end
 
-  it 'cell n95 should equal 2027.956394822286' do
-    sheet23.n95.should be_within(202.7956394822286).of(2027.956394822286)
+  it 'cell n95 should equal -236.32931234976402' do
+    sheet23.n95.should be_within(23.632931234976404).of(-236.32931234976402)
   end
 
-  it 'cell o95 should equal 2764.9800256046124' do
-    sheet23.o95.should be_within(276.49800256046126).of(2764.9800256046124)
+  it 'cell o95 should equal 2639.3466188749067' do
+    sheet23.o95.should be_within(263.9346618874907).of(2639.3466188749067)
   end
 
   it 'cell g96 should equal 0.0' do
@@ -880,40 +880,40 @@ describe 'Sheet23' do
     sheet23.o129.should be_within(1.408935255242724).of(14.089352552427238)
   end
 
-  it 'cell g130 should equal 43.758173246295726' do
-    sheet23.g130.should be_within(4.375817324629573).of(43.758173246295726)
+  it 'cell g130 should equal 27.763090788519328' do
+    sheet23.g130.should be_within(2.776309078851933).of(27.763090788519328)
   end
 
-  it 'cell h130 should equal 27.22342617760984' do
-    sheet23.h130.should be_within(2.7223426177609844).of(27.22342617760984)
+  it 'cell h130 should equal 16.188252858093335' do
+    sheet23.h130.should be_within(1.6188252858093337).of(16.188252858093335)
   end
 
-  it 'cell i130 should equal 166.30177822949113' do
-    sheet23.i130.should be_within(16.630177822949115).of(166.30177822949113)
+  it 'cell i130 should equal 90.71725158204119' do
+    sheet23.i130.should be_within(9.071725158204119).of(90.71725158204119)
   end
 
-  it 'cell j130 should equal 324.4116868250344' do
-    sheet23.j130.should be_within(32.44116868250344).of(324.4116868250344)
+  it 'cell j130 should equal 156.79401284719918' do
+    sheet23.j130.should be_within(15.67940128471992).of(156.79401284719918)
   end
 
-  it 'cell k130 should equal 714.9120888144312' do
-    sheet23.k130.should be_within(71.49120888144311).of(714.9120888144312)
+  it 'cell k130 should equal 287.486038935445' do
+    sheet23.k130.should be_within(28.748603893544498).of(287.486038935445)
   end
 
-  it 'cell l130 should equal 896.9562815735816' do
-    sheet23.l130.should be_within(89.69562815735816).of(896.9562815735816)
+  it 'cell l130 should equal 261.5845616864156' do
+    sheet23.l130.should be_within(26.158456168641564).of(261.5845616864156)
   end
 
-  it 'cell m130 should equal 1363.3565982685723' do
-    sheet23.m130.should be_within(136.33565982685724).of(1363.3565982685723)
+  it 'cell m130 should equal 180.6264050775282' do
+    sheet23.m130.should be_within(18.06264050775282).of(180.6264050775282)
   end
 
-  it 'cell n130 should equal 2027.956394822286' do
-    sheet23.n130.should be_within(202.7956394822286).of(2027.956394822286)
+  it 'cell n130 should equal -236.32931234976402' do
+    sheet23.n130.should be_within(23.632931234976404).of(-236.32931234976402)
   end
 
-  it 'cell o130 should equal 2764.9800256046124' do
-    sheet23.o130.should be_within(276.49800256046126).of(2764.9800256046124)
+  it 'cell o130 should equal 2639.3466188749067' do
+    sheet23.o130.should be_within(263.9346618874907).of(2639.3466188749067)
   end
 
   it 'cell g131 should equal 0.0' do

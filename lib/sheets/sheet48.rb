@@ -103,7 +103,15 @@ class Sheet48 < Spreadsheet
   def m44; 33.12741570594962; end
   def n44; 33.12741570594962; end
   def o44; 33.12741570594962; end
-  def f46; 14.576062910617834; end
+  def g45; 14.576062910617834; end
+  def h45; 16.72934493150456; end
+  def i45; 18.882626952391284; end
+  def j45; 21.03590897327801; end
+  def k45; 23.189190994164736; end
+  def l45; 23.189190994164736; end
+  def m45; 23.189190994164736; end
+  def n45; 23.189190994164736; end
+  def o45; 23.189190994164736; end
   def g46; 14.576062910617834; end
   def h46; 14.658881449882708; end
   def i46; 14.741699989147582; end
@@ -112,6 +120,7 @@ class Sheet48 < Spreadsheet
   def l46; 14.907337067677332; end
   def m46; 14.907337067677332; end
   def n46; 14.907337067677332; end
+  def o46; 14.907337067677332; end
   def g57; @g57 ||= -g9*g26; end
   def h57; @h57 ||= -h9*h26; end
   def i57; @i57 ||= -i9*i26; end
@@ -157,6 +166,15 @@ class Sheet48 < Spreadsheet
   def m64; @m64 ||= -m10*m36; end
   def n64; @n64 ||= -n10*n36; end
   def o64; @o64 ||= -o10*o36; end
+  def g65; @g65 ||= -g11*g45; end
+  def h65; @h65 ||= -h11*h45; end
+  def i65; @i65 ||= -i11*i45; end
+  def j65; @j65 ||= -j11*j45; end
+  def k65; @k65 ||= -k11*k45; end
+  def l65; @l65 ||= -l11*l45; end
+  def m65; @m65 ||= -m11*m45; end
+  def n65; @n65 ||= -n11*n45; end
+  def o65; @o65 ||= -o11*o45; end
   def g69; @g69 ||= -g9*g28; end
   def h69; @h69 ||= -h9*h28; end
   def i69; @i69 ||= -i9*i28; end
@@ -175,15 +193,15 @@ class Sheet48 < Spreadsheet
   def m70; @m70 ||= -m10*m37; end
   def n70; @n70 ||= -n10*n37; end
   def o70; @o70 ||= -o10*o37; end
-  def g71; @g71 ||= -g11*f46; end
-  def h71; @h71 ||= -h11*g46; end
-  def i71; @i71 ||= -i11*h46; end
-  def j71; @j71 ||= -j11*i46; end
-  def k71; @k71 ||= -k11*j46; end
-  def l71; @l71 ||= -l11*k46; end
-  def m71; @m71 ||= -m11*l46; end
-  def n71; @n71 ||= -n11*m46; end
-  def o71; @o71 ||= -o11*n46; end
+  def g71; @g71 ||= -g11*g46; end
+  def h71; @h71 ||= -h11*h46; end
+  def i71; @i71 ||= -i11*i46; end
+  def j71; @j71 ||= -j11*j46; end
+  def k71; @k71 ||= -k11*k46; end
+  def l71; @l71 ||= -l11*l46; end
+  def m71; @m71 ||= -m11*m46; end
+  def n71; @n71 ||= -n11*n46; end
+  def o71; @o71 ||= -o11*o46; end
   def c106; "C3.High"; end
   def g106; @g106 ||= g57; end
   def h106; @h106 ||= h57; end
@@ -255,15 +273,15 @@ class Sheet48 < Spreadsheet
   def n120; @n120 ||= n59; end
   def o120; @o120 ||= o59; end
   def c121; "C3.Point"; end
-  def g121; @g121 ||= g71; end
-  def h121; @h121 ||= h71; end
-  def i121; @i121 ||= i71; end
-  def j121; @j121 ||= j71; end
-  def k121; @k121 ||= k71; end
-  def l121; @l121 ||= l71; end
-  def m121; @m121 ||= m71; end
-  def n121; @n121 ||= n71; end
-  def o121; @o121 ||= o71; end
+  def g121; @g121 ||= g65; end
+  def h121; @h121 ||= h65; end
+  def i121; @i121 ||= i65; end
+  def j121; @j121 ||= j65; end
+  def k121; @k121 ||= k65; end
+  def l121; @l121 ||= l65; end
+  def m121; @m121 ||= m65; end
+  def n121; @n121 ||= n65; end
+  def o121; @o121 ||= o65; end
   def c122; "C3.Low"; end
   def g122; @g122 ||= g71; end
   def h122; @h122 ||= h71; end

@@ -4382,6 +4382,8 @@ class Sheet7 < Spreadsheet
   def cp53; @cp53 ||= average(sheet7.a('cf53','cn53')); end
   def cq53; @cq53 ||= sum(a('cq3','cq52')); end
   def cr53; @cr53 ||= excel_if(excel_comparison(abs(cd53-cq53-at53),"<",1.0),"ok","err"); end
+  def cc54; 69156213.9; end
+  def cd54; 69156213.9; end
   def b55; "£m"; end
   def e55; "C1.Point"; end
   def f55; "Point estimate of capital costs"; end
@@ -5510,26 +5512,26 @@ class Sheet7 < Spreadsheet
   def u69; 0.0; end
   def v69; 0.0; end
   def w69; 0.0; end
-  def y69; 56.0; end
-  def z69; 56.0; end
-  def aa69; 56.0; end
-  def ab69; 56.0; end
-  def ac69; 56.0; end
-  def ad69; 56.0; end
-  def ae69; 56.0; end
-  def af69; 56.0; end
-  def ag69; 56.0; end
-  def ai69; 56.0; end
-  def aj69; 56.0; end
-  def ak69; 56.0; end
-  def al69; 56.0; end
-  def am69; 56.0; end
-  def an69; 56.0; end
-  def ao69; 56.0; end
-  def ap69; 56.0; end
-  def aq69; 56.0; end
-  def as69; 56.0; end
-  def at69; 1176.6180629020405; end
+  def y69; 136.43145788001243; end
+  def z69; 134.2313490829966; end
+  def aa69; 135.75536213863847; end
+  def ab69; 136.20414982903327; end
+  def ac69; 135.75536213863847; end
+  def ad69; 136.20414982903327; end
+  def ae69; 136.65293751942804; end
+  def af69; 137.10172520982283; end
+  def ag69; 150.7926639726453; end
+  def ai69; 136.43145788001243; end
+  def aj69; 134.2313490829966; end
+  def ak69; 135.75536213863847; end
+  def al69; 136.20414982903327; end
+  def am69; 135.75536213863847; end
+  def an69; 136.20414982903327; end
+  def ao69; 136.65293751942804; end
+  def ap69; 137.10172520982283; end
+  def aq69; 150.7926639726453; end
+  def as69; 137.68101751113875; end
+  def at69; 2872.5101258539826; end
   def av69; 0.07; end
   def aw69; 15.0; end
   def ay69; 0.0; end
@@ -5550,17 +5552,17 @@ class Sheet7 < Spreadsheet
   def bo69; 0.0; end
   def bp69; 0.0; end
   def bq69; 0.0; end
-  def bs69; 56.0; end
-  def bt69; 56.0; end
-  def bu69; 56.0; end
-  def bv69; 56.0; end
-  def bw69; 56.0; end
-  def bx69; 56.0; end
-  def by69; 56.0; end
-  def bz69; 56.0; end
-  def ca69; 56.0; end
-  def cc69; 56.0; end
-  def cd69; 1176.6180629020405; end
+  def bs69; 136.43145788001243; end
+  def bt69; 134.2313490829966; end
+  def bu69; 135.75536213863847; end
+  def bv69; 136.20414982903327; end
+  def bw69; 135.75536213863847; end
+  def bx69; 136.20414982903327; end
+  def by69; 136.65293751942804; end
+  def bz69; 137.10172520982283; end
+  def ca69; 150.7926639726453; end
+  def cc69; 137.68101751113875; end
+  def cd69; 2872.5101258539826; end
   def cf69; 0.0; end
   def cg69; 0.0; end
   def ch69; 0.0; end
@@ -6416,7 +6418,7 @@ class Sheet7 < Spreadsheet
   def a80; "IX.a.Heating"; end
   def b80; "Domestic heating"; end
   def c80; "Heating"; end
-  def e80; 5948.370738818311; end
+  def e80; 9273.183995556436; end
   def f80; @f80 ||= iferror(sheet35.h1207,0.0); end
   def g80; @g80 ||= iferror(sheet35.i1207,0.0); end
   def h80; @h80 ||= iferror(sheet35.j1207,0.0); end
@@ -6425,7 +6427,7 @@ class Sheet7 < Spreadsheet
   def k80; @k80 ||= iferror(sheet35.m1207,0.0); end
   def l80; @l80 ||= iferror(sheet35.n1207,0.0); end
   def m80; @m80 ||= iferror(sheet35.o1207,0.0); end
-  def o80; 1847.2629670500469; end
+  def o80; 5015.46076; end
   def p80; @p80 ||= iferror(sheet35.h1208,0.0); end
   def q80; @q80 ||= iferror(sheet35.i1208,0.0); end
   def r80; @r80 ||= iferror(sheet35.j1208,0.0); end
@@ -6443,7 +6445,7 @@ class Sheet7 < Spreadsheet
   def ae80; @ae80 ||= iferror(index(sheet35.a('m1205','m1210'),na),0.0); end
   def af80; @af80 ||= iferror(index(sheet35.a('n1205','n1210'),na),0.0); end
   def ag80; @ag80 ||= iferror(index(sheet35.a('o1205','o1210'),na),0.0); end
-  def ai80; 7795.633705868358; end
+  def ai80; 14288.644755556435; end
   def aj80; @aj80 ||= sum(f80,p80,z80); end
   def ak80; @ak80 ||= sum(g80,q80,aa80); end
   def al80; @al80 ||= sum(h80,r80,ab80); end
@@ -6456,7 +6458,7 @@ class Sheet7 < Spreadsheet
   def at80; @at80 ||= (sumproduct(a('aj80','aq80'),sheet12.a('d28','k28'))*5.0)+ai80; end
   def av80; 0.07; end
   def aw80; 15.0; end
-  def ay80; 1959.2973985530166; end
+  def ay80; 3054.4372697264976; end
   def az80; @az80 ||= -pmt(av80,aw80,f80*5.0); end
   def ba80; @ba80 ||= -pmt(av80,aw80,g80*5.0); end
   def bb80; @bb80 ||= -pmt(av80,aw80,h80*5.0); end
@@ -6465,7 +6467,7 @@ class Sheet7 < Spreadsheet
   def be80; @be80 ||= -pmt(av80,aw80,k80*5.0); end
   def bf80; @bf80 ||= -pmt(av80,aw80,l80*5.0); end
   def bg80; @bg80 ||= -pmt(av80,aw80,m80*5.0); end
-  def bi80; 1959.2973985530166; end
+  def bi80; 3054.4372697264976; end
   def bj80; @bj80 ||= az80+excel_if(excel_comparison(bj2-bi2,"<",aw80),ay80,0.0); end
   def bk80; @bk80 ||= ba80+excel_if(excel_comparison(bk2-bi2,"<",aw80),ay80,0.0)+excel_if(excel_comparison(bk2-bj2,"<",aw80),az80,0.0); end
   def bl80; @bl80 ||= bb80+excel_if(excel_comparison(bl2-bi2,"<",aw80),ay80,0.0)+excel_if(excel_comparison(bl2-bj2,"<",aw80),az80,0.0)+excel_if(excel_comparison(bl2-bk2,"<",aw80),ba80,0.0); end
@@ -6474,7 +6476,7 @@ class Sheet7 < Spreadsheet
   def bo80; @bo80 ||= be80+excel_if(excel_comparison(bo2-bi2,"<",aw80),ay80,0.0)+excel_if(excel_comparison(bo2-bj2,"<",aw80),az80,0.0)+excel_if(excel_comparison(bo2-bk2,"<",aw80),ba80,0.0)+excel_if(excel_comparison(bo2-bl2,"<",aw80),bb80,0.0)+excel_if(excel_comparison(bo2-bm2,"<",aw80),bc80,0.0)+excel_if(excel_comparison(bo2-bn2,"<",aw80),bd80,0.0); end
   def bp80; @bp80 ||= bf80+excel_if(excel_comparison(bp2-bi2,"<",aw80),ay80,0.0)+excel_if(excel_comparison(bp2-bj2,"<",aw80),az80,0.0)+excel_if(excel_comparison(bp2-bk2,"<",aw80),ba80,0.0)+excel_if(excel_comparison(bp2-bl2,"<",aw80),bb80,0.0)+excel_if(excel_comparison(bp2-bm2,"<",aw80),bc80,0.0)+excel_if(excel_comparison(bp2-bn2,"<",aw80),bd80,0.0)+excel_if(excel_comparison(bp2-bm2,"<",aw80),bc80,0.0)+excel_if(excel_comparison(bp2-bo2,"<",aw80),be80,0.0); end
   def bq80; @bq80 ||= bg80+excel_if(excel_comparison(bq2-bi2,"<",aw80),ay80,0.0)+excel_if(excel_comparison(bq2-bj2,"<",aw80),az80,0.0)+excel_if(excel_comparison(bq2-bk2,"<",aw80),ba80,0.0)+excel_if(excel_comparison(bq2-bl2,"<",aw80),bb80,0.0)+excel_if(excel_comparison(bq2-bm2,"<",aw80),bc80,0.0)+excel_if(excel_comparison(bq2-bn2,"<",aw80),bd80,0.0)+excel_if(excel_comparison(bq2-bm2,"<",aw80),bc80,0.0)+excel_if(excel_comparison(bq2-bo2,"<",aw80),be80,0.0)+excel_if(excel_comparison(bq2-bp2,"<",aw80),bf80,0.0); end
-  def bs80; 3806.5603656030635; end
+  def bs80; 8069.898029726497; end
   def bt80; @bt80 ||= p80+z80+bj80; end
   def bu80; @bu80 ||= q80+aa80+bk80; end
   def bv80; @bv80 ||= r80+ab80+bl80; end
@@ -6485,7 +6487,7 @@ class Sheet7 < Spreadsheet
   def ca80; @ca80 ||= w80+ag80+bq80; end
   def cc80; @cc80 ||= average(sheet7.a('bs80','ca80')); end
   def cd80; @cd80 ||= (sumproduct(a('bt80','ca80'),sheet12.a('d28','k28'))*5.0)+bs80; end
-  def cf80; -3989.0733402652945; end
+  def cf80; -6218.746725829938; end
   def cg80; @cg80 ||= bj80-f80; end
   def ch80; @ch80 ||= bk80-g80; end
   def ci80; @ci80 ||= bl80-h80; end
@@ -8763,6 +8765,7 @@ class Sheet7 < Spreadsheet
   def cp107; @cp107 ||= average(sheet7.a('cf107','cn107')); end
   def cq107; @cq107 ||= (sumproduct(a('cg107','cn107'),sheet12.a('d28','k28'))*5.0)+cf107; end
   def cr107; @cr107 ||= excel_if(excel_comparison(abs(cd107-cq107-at107),"<",1.0),"ok","err"); end
+  def ca108; @ca108 ||= ((average(a('bs107','ca107')))/cd54)*1000000.0; end
   def cf108; @cf108 ||= excel_if(excel_comparison(round(bs53-cf53-ai53,0.0),"==",0.0),"ok",bs53-cf53-ai53); end
   def cg108; @cg108 ||= excel_if(excel_comparison(round(bt53-cg53-aj53,0.0),"==",0.0),"ok",bt53-cg53-aj53); end
   def ch108; @ch108 ||= excel_if(excel_comparison(round(bu53-ch53-ak53,0.0),"==",0.0),"ok",bu53-ch53-ak53); end
@@ -8787,6 +8790,7 @@ class Sheet7 < Spreadsheet
   def ay110; "Repayments for capital spent in that period"; end
   def bi110; "Repayments for outstanding capital"; end
   def br110; "Total cost (ammortised capital)"; end
+  def ca110; @ca110 ||= ((average(a('bs107','ca107')))/cd54)*1000000.0; end
   def cc110; "Amortised Capital"; end
   def cf110; "Extra cost due to financing capital, compared with doing it out of cash"; end
   def cp110; "Extra cost due to financing capital, compared with doing it out of cash"; end

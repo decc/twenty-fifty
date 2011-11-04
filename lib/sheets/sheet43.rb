@@ -65,15 +65,15 @@ class Sheet43 < Spreadsheet
   def m63; 36.5; end
   def n63; 38.75; end
   def o63; 41.0; end
-  def g64; 68.74999999999999; end
-  def h64; 68.74999999999999; end
-  def i64; 68.74999999999999; end
-  def j64; 74.37499999999999; end
-  def k64; 79.99999999999999; end
-  def l64; 85.625; end
-  def m64; 91.25; end
-  def n64; 96.875; end
-  def o64; 102.5; end
+  def g64; 56.374999999999986; end
+  def h64; 56.374999999999986; end
+  def i64; 56.374999999999986; end
+  def j64; 60.98749999999999; end
+  def k64; 65.6; end
+  def l64; 70.2125; end
+  def m64; 74.82499999999999; end
+  def n64; 79.4375; end
+  def o64; 84.05; end
   def g65; 109.99999999999999; end
   def h65; 109.99999999999999; end
   def i65; 109.99999999999999; end
