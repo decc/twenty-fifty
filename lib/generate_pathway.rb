@@ -15,7 +15,8 @@ class GeneratePathway
     electricity_tables
     heating_choice_table
     cost_components_table
-    map_table    
+    map_table
+    energy_imports 
     pathway
   end
   
@@ -62,7 +63,7 @@ class GeneratePathway
     table_ e, :emissions, 270, 273
     table_ e, :capacity, 118, 132
     e['automatically_built'] = intermediate_output_sheet.q120
-    e['backup'] = intermediate_output_sheet.q131
+    e['peaking'] = intermediate_output_sheet.q131
     pathway['electricity'] = e
   end
   
@@ -186,6 +187,27 @@ class GeneratePathway
   
     pathway['cost_components'] = t
   end
+  
+  def energy_imports
+    i = {}
+    [
+      ["Coal",37,39],
+      ["Oil",41,43],
+      ["Gas",44,46],
+      ["Bioenergy",35,36],
+      ["Uranium",23,23],
+      ["Electricity",110,111],
+      ["Primary energy",297,296]
+    ].each do |vector|
+      imported = intermediate_output_sheet.send("q#{vector[1]}").to_f
+      imported = imported > 0 ? imported.round : 0
+      total = intermediate_output_sheet.send("q#{vector[2]}").to_f
+      proportion = total > 0 ? "#{((imported/total) * 100).round}%" : "0%"
+      i[vector[0]] = { quantity: imported, proportion: proportion }
+    end
+    pathway['imports'] = i
+  end
+  
   
   def control_sheet
     excel.sheet1

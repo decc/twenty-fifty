@@ -6,7 +6,16 @@
   margin-left: 2.5%;
   font-size:12px;
   width: 30%;
-  height: 600px;
+  height: 300px;
   margin-bottom: 30px;
   float: left;
+}
+
+.energysecurity {
+  td.value, td.description {
+    width: 30%;
+  }
+  td.value, th.value {
+    text-align: right;
+  }
 }
