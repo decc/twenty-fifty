@@ -32,7 +32,6 @@ class EnergySecurity
     # element.append("<p>TBD</p>")
 
   updateImportsSection: () ->
-    console.log @pathway
     element = $('#imports')
     element.empty()
     element.append("<h2>Dependence on imported energy</h2>")
