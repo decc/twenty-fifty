@@ -67,8 +67,9 @@ class CostsInContext
       range = @r.rect(x,y,0,h).attr({'fill':'url(/assets/hatches/hatch-green.png)','stroke':'none',href:url})
       low_label = @r.text(x,y+h/2,"").attr({'fill':'#000','text-anchor':'middle'})
       range_label = @r.text(x,y+h/2,"").attr({'fill':'#000','text-anchor':'middle'})
-
-      @bars[code] = { low: low, range: range, low_label: low_label, range_label: range_label}
+      message = @r.text(x,y+h/2,"").attr({'fill':'#000','text-anchor':'start'})
+      
+      @bars[code] = { low: low, range: range, low_label: low_label, range_label: range_label, message: message}
       
       @low.boxes.push low
       @low.labels.push low_label
@@ -132,6 +133,11 @@ class CostsInContext
 
     bar.range.attr({x:@x(total_cost),width: @x(total_range) - @x(0)})
     bar.range_label.attr({x:@x(total_cost+(total_range/2)),text:"#{Math.round(total_range)}"})
+    console.log twentyfifty.pathwayName(_id,_id), pathway.ghg
+    if pathway.ghg['Total'][8] > 166
+      bar.message.attr({x:@x(total_cost+total_range)+10,text:"This pathway does not meet the 80% emissions reduction target"})
+    else
+      bar.message.attr({x:@x(total_cost+total_range)+10,text:""})
   
   total_cost_low_adjusted: (pathway) ->
     twentyfifty.adjust_costs_of_pathway(pathway) unless pathway.total_cost_low_adjusted?
