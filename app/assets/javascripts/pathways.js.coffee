@@ -210,9 +210,10 @@ pathway_names =
   "2023222221221311032312200232314013430220230243032013": "Energy Technologies Institute"
   "2022222221323212034311100342424024430320220443042021": "Atkins"
   "3022312222131111022322100342443014440220220244012043": "Mark Lynas"
-  "e0d3jrg221ci12110222112004423220444404202304440420141": "Pathway T"
-  "r013ce1111111111042233B002322220233302202102330220121": "Pathway U"
-  "f023df111111111f0322123003223220333203102303430310221": "Pathway V"
+  "j0h2cd2221121f1b032211p004314110433304202304320420121": "Analogous to Markal 3.26"
+  "e0d3jrg221ci12110222112004423220444404202304440420141": "Higher renewables, more energy efficiency"
+  "r013ce1111111111042233B002322220233302202102330220121": "Higher nuclear, less energy efficiency"
+  "f023df111111111f0322123003223220333203102303430310221": "Higher CCS, more bioenergy"
 
 pathway_descriptions = 
   "1011111111111111011111100111111011110110110111011011": "Imported natural gas for electricity and heat\nDoes not tackle climate change",
@@ -226,6 +227,8 @@ pathway_descriptions =
   "2023222221221311032312200232314013430220230243032013": "Lorem ipsum dolor sit amet, consectetur\nQuisque viverra luctus neque."
   "2022222221323212034311100342424024430320220443042021": "Lorem ipsum dolor sit amet, consectetur\nQuisque viverra luctus neque."
   "3022312222131111022322100342443014440220220244012043": "All vehicles and heaters are electric\nNuclear, offshore wind and geoequestration"
+  "j0h2cd2221121f1b032211p004314110433304202304320420121": "An illustration of the kind of pathway that\nthe Markal cost optimising model suggests"
+  
 
 pathwayName = (pathway_code,default_name = null) ->
   pathway_names[pathway_code] || default_name

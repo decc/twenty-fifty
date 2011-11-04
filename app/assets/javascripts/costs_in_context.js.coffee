@@ -87,7 +87,7 @@ class CostsInContext
       @r.text(@x(tick),30,format(tick)).attr({'text-anchor':'middle'})
       @r.path(["M", @x(tick), 40, "L", @x(tick),@h]).attr({stroke:'#fff'})
     #@drawIndicator(26000,"GDP/capita in 2010")
-    @drawIndicator(3000,"Aproximate energy system cost in 2007")
+    #@drawIndicator(3000,"Aproximate energy system cost in 2007")
     @drawIndicator(34656,"Forecast mean GDP/capita 2010-2050")
     #@drawIndicator(57000,"GDP/capita in 2050")
     
