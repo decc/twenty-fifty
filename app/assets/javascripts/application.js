@@ -33,5 +33,6 @@
 //= require costs_compared_within_sector
 //= require costs_sensitivity
 //= require story
+//= require simple_sankey
 
 
