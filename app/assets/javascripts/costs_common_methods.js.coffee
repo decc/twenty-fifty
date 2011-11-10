@@ -11,6 +11,8 @@ comparator_pathways = [
   "1011111111111111011111100111111011110110110111011011"
 ]
 
+default_comparator_code = "1011111111111111011111100111111011110110110111011011"
+
 cost_categories =
   "Conventional thermal plant":"Electricity"
   "Combustion + CCS":"Electricity"
@@ -209,6 +211,7 @@ calculateIncrementalCost = (pt,pc) ->
   {tc: tc, tt: tt, cc: cc, ct: ct}
 
 window.twentyfifty.comparator_pathways = comparator_pathways
+window.twentyfifty.default_comparator_code = default_comparator_code
 window.twentyfifty.group_costs_of_pathway = group_costs_of_pathway
 window.twentyfifty.adjust_costs_of_pathway = adjust_costs_of_pathway
 window.twentyfifty.calculateIncrementalCost = calculateIncrementalCost

@@ -14,7 +14,7 @@ class CostsInContext
     @w = e.width()
     @r = new Raphael('costsincontext',@w,@h)
     @x = d3.scale.linear().domain([0, 40000]).range([250,@w-30]).nice()
-    @y = d3.scale.ordinal().domain(all_pathways).rangeRoundBands([25,@h],0.25)
+    @y = d3.scale.ordinal().domain(all_pathways).rangeRoundBands([25,@h-20],0.25)
 
     # Horizontal background boxes
     for code in comparator_pathways
@@ -27,9 +27,6 @@ class CostsInContext
     for code in comparator_pathways
       @r.text(30,@y(code)+9,twentyfifty.pathwayName(code,code)).attr({'text-anchor':'start','font-weight':'bold', href: twentyfifty.url({action:'primary_energy_chart',code:code})})
       @r.text(30,@y(code)+27,twentyfifty.pathwayDescriptions(code,"")).attr({'text-anchor':'start'})
-      
-    # The x axis labels and indicators
-    @r.text(@x(20000),17,"The mean cost to society of the whole energy system in undiscounted real pounds per person 2010-2050").attr({'text-anchor':'center','font-weight':'bold'})
     
     # Initally empty boxes
     @bars = {}
@@ -81,15 +78,18 @@ class CostsInContext
 
       low.hover(low_show,low_hide)      
       range.hover(range_show,range_hide)
+          
+    # The bottom x axis labels and indicators
+    @r.text(@x(20000),@h-5,"The absolute cost to society of the whole energy system in mean undiscounted real pounds per person per year 2010-2050").attr({'text-anchor':'center','font-weight':'bold'})
+    @r.path(["M",@x(0),40,"L",@x(0),@h-28,"L",@w-30,@h-28]).attr({'stroke':'#000'})
     
-    # The vertical lines
     format = @x.tickFormat(10)
     for tick in @x.ticks(10)
-      @r.text(@x(tick),30,format(tick)).attr({'text-anchor':'middle'})
-      @r.path(["M", @x(tick), 40, "L", @x(tick),@h]).attr({stroke:'#fff'})
+      @r.text(@x(tick),@h-20,format(tick)).attr({'text-anchor':'middle'})
+      #@r.path(["M", @x(tick), 40, "L", @x(tick),@h]).attr({stroke:'#fff'})
     #@drawIndicator(26000,"GDP/capita in 2010")
     #@drawIndicator(3000,"Aproximate energy system cost in 2007")
-    @drawIndicator(34656,"Forecast mean GDP/capita 2010-2050")
+    #@drawIndicator(34656,"Forecast mean GDP/capita 2010-2050")
     #@drawIndicator(57000,"GDP/capita in 2050")
     
     #hover_box = @r.rect(250,25,@w-250-100,@h-25)
@@ -121,19 +121,29 @@ class CostsInContext
     total_cost = @total_cost_low_adjusted(pathway)
     total_range = @total_cost_range_adjusted(pathway)
     
+    bar = @bars[_id]
+    
     if _id == 'chosen'
       @low.top_label_box.attr({x: @x(total_cost/2)-50})
       @low.top_label.attr({x: @x(total_cost/2)})
       @range.top_label_box.attr({x: @x(total_cost+(total_range/2))-50})
       @range.top_label.attr({x: @x(total_cost+(total_range/2))})
+    else if _id == twentyfifty.getComparator() || _id == twentyfifty.default_comparator_code# Draw the incremental scale
+      # The top x axis label
+      @r.text(@x(total_cost),10,"The extra cost to society of the chosen pathway (mean undiscounted real pounds per person per year 2010-2050)").attr({'text-anchor':'start','font-weight':'bold','fill':'#f00'})
+    
+      format = @x.tickFormat(10)
+      for tick in @x.ticks(10)
+        @r.text(@x(tick+total_cost),23,format(tick)).attr({'text-anchor':'middle','fill':'#f00'})
+        @r.path(["M", @x(tick+total_cost), 40, "L", @x(tick+total_cost),@h-30]).attr({stroke:'#fff'})
+      @r.path(["M",@x(total_cost),@h-35,"L",@x(total_cost),30,"L",@w-30,30]).attr({'stroke':'#f00'})
+      bar.low.attr({fill:'#f00'})
       
-    bar = @bars[_id]
     bar.low.attr({width: @x(total_cost) - @x(0)})
     bar.low_label.attr({x:@x(total_cost/2),text:"#{Math.round(total_cost)}"})
 
     bar.range.attr({x:@x(total_cost),width: @x(total_range) - @x(0)})
     bar.range_label.attr({x:@x(total_cost+(total_range/2)),text:"#{Math.round(total_range)}"})
-    console.log twentyfifty.pathwayName(_id,_id), pathway.ghg
     if pathway.ghg['Total'][8] > 166
       bar.message.attr({x:@x(total_cost+total_range)+10,text:"This pathway does not meet the 80% emissions reduction target"})
     else

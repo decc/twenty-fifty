@@ -1,8 +1,6 @@
 class CostsSensitivity
 
   cost_component_names = ["Conventional thermal plant","Combustion + CCS","Nuclear power","Onshore wind","Offshore wind","Hydroelectric","Wave and Tidal","Geothermal","Distributed solar PV","Distributed solar thermal","Micro wind","Biomatter to fuel conversion","Bioenergy imports","Agriculture and land use","Energy from waste","Waste arising","Marine algae","Electricity imports","Electricity Exports","Electricity grid distribution","Storage, demand shifting, backup","H2 Production","Domestic heating","Domestic insulation","Commercial heating and cooling","Domestic lighting, appliances, and cooking","Commercial lighting, appliances, and catering","Industrial processes","Conventional cars and buses","Hybrid cars and buses","Electric cars and buses","Fuel cell cars and buses","Bikes","Rail","Domestic aviation","Domestic freight","International aviation","International shipping (maritime bunkers)","Geosequestration","Petroleum refineries","Fossil fuel transfers","District heating effective demand","Storage of captured CO2","Coal","Oil","Gas","Finance cost"]
-
-  default_comparator_code = "1011111111111111011111100111111011110110110111011011"
   
   cost_wiki_links = {
     "Fuel cell cars and buses": '/pages/63',
@@ -82,7 +80,7 @@ class CostsSensitivity
 
   documentReady: () ->
     @drawChart()
-    @switchComparator(twentyfifty.getComparator() || default_comparator_code)
+    @switchComparator(twentyfifty.getComparator() || twentyfifty.default_comparator_code)
     
   updateResults: (@pathway) =>
     twentyfifty.adjust_costs_of_pathway(@pathway) unless @pathway.total_cost_low_adjusted?
