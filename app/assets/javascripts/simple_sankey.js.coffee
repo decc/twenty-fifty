@@ -98,7 +98,7 @@ FilledBoxChart = (r,px,py,h,w,maximum_value,square_size,titles) ->
     sum = 0
     for own name,value of values
       boxes[name].attr({path:path(sum,sum+value)})
-      labels[name].attr({x:_x(sum+(value/2)),y:_y(sum+value/2)})
+      labels[name].attr({x:(_x(sum)+_x(sum+value))/2,y:(_y(sum)+_y(sum+value))/2})
       sum += value
   
   return { box: box, setValues: setValues}
@@ -106,6 +106,7 @@ FilledBoxChart = (r,px,py,h,w,maximum_value,square_size,titles) ->
 VectorChart = (r,px,py,h,w,maximum_value,square_size,titles) ->
   rows = cols = Math.ceil(Math.sqrt(maximum_value/square_size))
   row_size = cols * square_size
+  spacing = row_size * 0.1
 
   x = d3.scale.linear().domain([0, row_size]).range([px,px+w])
   y = d3.scale.linear().domain([0,maximum_value]).range([h+py,py])
@@ -125,7 +126,10 @@ VectorChart = (r,px,py,h,w,maximum_value,square_size,titles) ->
     l
     
   box = (name,start,value,color = "#0f0") ->
-    b = r.rect(x(0),y(start),x(row_size)-x(0),y(start+value)-y(start)).attr({'stroke':'#000',fill:color,'fill-opacity':0.5,'stroke-width':'1'})
+    if name == "Oil"
+      b = r.path(["M",x(0),y(start+value/2),"L",x(row_size),y(start+value/2)]).attr({"stroke":'#F00','stroke-width':y(start)-y(start+value)})
+    else
+      b = r.rect(x(0),y(start),x(row_size)-x(0),y(start+value)-y(start)).attr({'stroke':'#000',fill:color,'fill-opacity':0.5,'stroke-width':'1'})
     b.hover( 
       () ->
         labels[name].show()
@@ -144,7 +148,8 @@ VectorChart = (r,px,py,h,w,maximum_value,square_size,titles) ->
     for own name,value of values
       boxes[name].attr({y:y(sum+value),height:(y(sum)-y(sum+value))})
       labels[name].attr({x:x(sum+(value/2)),y:y(sum+value/2)})
-      sum += value
+      if value > 0
+        sum += (value + spacing)
   
   return { box: box, setValues: setValues}
 
