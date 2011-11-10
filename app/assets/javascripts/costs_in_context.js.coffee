@@ -78,14 +78,17 @@ class CostsInContext
 
       low.hover(low_show,low_hide)      
       range.hover(range_show,range_hide)
-          
+    
+    # Overlay to emphasise the incremental axis
+    @incremental_overlay = @r.rect(@x(0),@y('chosen'),0,480).attr({'fill':'#fff','fill-opacity':0.5,'stroke':'none'})
+    
     # The bottom x axis labels and indicators
-    @r.text(@x(20000),@h-5,"The absolute cost to society of the whole energy system in mean undiscounted real pounds per person per year 2010-2050").attr({'text-anchor':'center','font-weight':'bold'})
-    @r.path(["M",@x(0),40,"L",@x(0),@h-28,"L",@w-30,@h-28]).attr({'stroke':'#000'})
+    @r.text(@x(20000),@h-5,"The absolute cost to society of the whole energy system in mean undiscounted real pounds per person per year 2010-2050").attr({'text-anchor':'center','font-weight':'bold','fill':'#008000'})
+    @r.path(["M",@x(0),40,"L",@x(0),@h-28,"L",@w-30,@h-28]).attr({'stroke':'#003000'})
     
     format = @x.tickFormat(10)
     for tick in @x.ticks(10)
-      @r.text(@x(tick),@h-20,format(tick)).attr({'text-anchor':'middle'})
+      @r.text(@x(tick),@h-20,format(tick)).attr({'text-anchor':'middle',fill:'#008000'})
       #@r.path(["M", @x(tick), 40, "L", @x(tick),@h]).attr({stroke:'#fff'})
     #@drawIndicator(26000,"GDP/capita in 2010")
     #@drawIndicator(3000,"Aproximate energy system cost in 2007")
@@ -138,6 +141,9 @@ class CostsInContext
         @r.path(["M", @x(tick+total_cost), 40, "L", @x(tick+total_cost),@h-30]).attr({stroke:'#fff'})
       @r.path(["M",@x(total_cost),@h-35,"L",@x(total_cost),30,"L",@w-30,30]).attr({'stroke':'#f00'})
       bar.low.attr({fill:'#f00'})
+      @incremental_overlay.attr({width:@x(total_cost)-@x(0)})
+      @low.labels.toFront()
+      @range.labels.toFront()
       
     bar.low.attr({width: @x(total_cost) - @x(0)})
     bar.low_label.attr({x:@x(total_cost/2),text:"#{Math.round(total_cost)}"})
