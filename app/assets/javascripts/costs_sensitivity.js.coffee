@@ -70,11 +70,11 @@ class CostsSensitivity
     "#0f0"
     
   # Define some colors
-  p_low_fill_color = '#2ca02c'
-  p_range_fill_color = 'url(/assets/hatches/hatch-2ca02c.png)'
+  p_low_fill_color = '#1f77b4'
+  p_range_fill_color = 'url(/assets/hatches/hatch-1f77b4.png)'
   
-  c_low_fill_color = '#1f77b4'
-  c_range_fill_color = 'url(/assets/hatches/hatch-1f77b4.png)'
+  c_low_fill_color = '#f00'
+  c_range_fill_color = 'url(/assets/hatches/hatch-f00.png)'
     
   constructor: () ->
 
