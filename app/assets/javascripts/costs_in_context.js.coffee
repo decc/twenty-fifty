@@ -76,7 +76,7 @@ class CostsInContext
     overlays.insertAfter(@incremental_overlay)
     
     # The bottom x axis labels and indicators
-    @r.text(@x(20000),@h-5,"The absolute cost to society of the whole energy system (mean undiscounted real pounds per person per year 2010-2050)").attr({'text-anchor':'center','font-weight':'bold','fill':'#008000'})
+    @r.text(@x(0),@h-5,"The absolute cost to society of the whole energy system (mean undiscounted real pounds per person per year 2010-2050)").attr({'text-anchor':'start','font-weight':'bold','fill':'#008000'})
     @r.path(["M",@x(0),40,"L",@x(0),@h-28,"L",@w-30,@h-28]).attr({'stroke':'#008000','stroke-width':2})
     
     format = @x.tickFormat(10)

@@ -35,14 +35,11 @@ class CostsComparedOverview
     @w = e.width()
     @r = new Raphael('costscomparedoverview',@w,@h)
     @x = d3.scale.linear().domain([0, 7000]).range([250,@w-30]).nice()
-    @y = d3.scale.ordinal().domain(all_pathways).rangeRoundBands([25,@h],0.25)
+    @y = d3.scale.ordinal().domain(all_pathways).rangeRoundBands([25,@h-20],0.25)
 
     # Horizontal background boxes
     for code in twentyfifty.comparator_pathways
      @r.rect(@x(0),@y(code),@x(7000)-@x(0),@y.rangeBand()).attr({'fill':'#ddd','stroke':'none'})
-
-    # The x axis labels and indicators
-    @r.text(@x(3500),17,"The mean cost to society of the whole energy system in undiscounted real pounds per person 2010-2050").attr({'text-anchor':'center','font-weight':'bold'})
 
     # The y axis labels
     @r.rect(25,@y("chosen"),@x(7000)-25,@y.rangeBand()).attr({'fill':'#FCFF9B','stroke':'none'})
@@ -80,12 +77,15 @@ class CostsComparedOverview
         c.labels.push b[category].low_label, b[category].range_label
         
       @boxes[code] = b
-    
-    # The vertical lines
+
+    # The bottom x axis labels and indicators
+    @r.text(@x(0),@h-5,"The absolute cost to society of the whole energy system (mean undiscounted real pounds per person per year 2010-2050)").attr({'text-anchor':'start','font-weight':'bold','fill':'#008000'})
+    @r.path(["M",@x(0),40,"L",@x(0),@h-28,"L",@w-30,@h-28]).attr({'stroke':'#008000','stroke-width':2})
+
     format = @x.tickFormat(10)
     for tick in @x.ticks(10)
-      @r.text(@x(tick),30,format(tick)).attr({'text-anchor':'middle'})
-      @r.path(["M", @x(tick), 40, "L", @x(tick),@h]).attr({stroke:'#fff'})    
+      @r.text(@x(tick),@h-20,format(tick)).attr({'text-anchor':'middle',fill:'#008000'})
+      @r.path(["M", @x(tick), 40, "L", @x(tick),@h-26]).attr({stroke:'#fff'})    
     
     # Category labels
     for own category, color of category_colors
