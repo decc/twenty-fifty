@@ -154,13 +154,29 @@ class CostsInContext
   setIncrementalCostLabel: (code,pathway) ->
     return false unless @comparator?
     return false if code == @comparator._id
-    delta = Math.round(pathway.total_cost_low_adjusted - @comparator.total_cost_low_adjusted)
-    if delta < 0
-      message = "#{-delta} less"
-    else if delta == 0
-      message = "the same"
+    if pathway.total_cost_range_adjusted == 0 && @comparator.total_cost_range_adjusted == 0
+      delta = Math.round(pathway.total_cost_low_adjusted - @comparator.total_cost_low_adjusted)
+      if delta < 0
+        message = "#{-delta} less"
+      else if delta == 0
+        message = "the same"
+      else
+        message = "#{delta} more"
     else
-      message = "#{delta} more"
+      i = twentyfifty.calculateIncrementalCost(pathway,@comparator)
+      i1 = Math.round(i.tc - i.cc)
+      i2 = Math.round(i.tt - i.ct)
+      if i1 > i2
+        a = i2
+        i2 = i1
+        i1 = a
+      if i1 < 0 && i2 < 0
+        message = "#{-i1} to #{-i2} less"
+      else if i1 < 0 && i2 > 0
+        message = "#{-i1} less to #{i2} more"
+      else
+        message = "#{i1} to #{i2} more"
+      
     @bars[code].range_label.attr({text:message})
   
   total_cost_low_adjusted: (pathway) ->
