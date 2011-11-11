@@ -41,8 +41,10 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.1.2)
+    daemons (1.1.4)
     diff-lcs (1.1.3)
     erubis (2.7.0)
+    eventmachine (0.12.10)
     execjs (1.2.9)
       multi_json (~> 1.0)
     foreman (0.24.0)
@@ -126,6 +128,10 @@ GEM
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
     term-ansicolor (1.0.7)
+    thin (1.2.11)
+      daemons (>= 1.0.9)
+      eventmachine (>= 0.12.6)
+      rack (>= 1.0.0)
     thor (0.14.6)
     tilt (1.3.3)
     treetop (1.4.10)
@@ -150,4 +156,5 @@ DEPENDENCIES
   rspec
   rubyfromexcel (= 0.0.16)
   sass-rails (~> 3.1.4)
+  thin
   uglifier (>= 1.0.3)
