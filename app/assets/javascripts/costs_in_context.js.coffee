@@ -1,7 +1,8 @@
 class CostsInContext
   
   constructor: () ->
-  
+    @pathways = {}
+    
   documentReady: () =>
     return false if @drawn?
     @drawn = true
@@ -33,81 +34,61 @@ class CostsInContext
     
     @low   = { boxes: @r.set(), labels: @r.set(), top_label: null, top_label_box: null}
     @range = { boxes: @r.set(), labels: @r.set(), top_label: null, top_label_box: null}
+    overlays = @r.set()
     x = @x(0)
     h = @y.rangeBand()
     url = twentyfifty.url({action:'costs_compared_overview'})
 
-    low_show = () =>
-      @low.top_label_box.show()
-      @low.top_label.show()
+    labels_show = () =>
       @low.labels.show()
-    
-    low_hide = () =>
-      @low.labels.hide()
-      @low.top_label_box.hide()
-      @low.top_label.hide()
-    
-    range_show = () =>
-      @range.top_label_box.show()
-      @range.top_label.show()
       @range.labels.show()
     
-    range_hide = () =>
+    labels_hide = () =>
+      @low.labels.hide()
       @range.labels.hide()
-      @range.top_label_box.hide()
-      @range.top_label.hide()
 
     for code in all_pathways      
       y = @y(code)
       
-      low =   @r.rect(x,y,0,h).attr({'fill':'#008000','stroke':'none',href:url})
-      range = @r.rect(x,y,0,h).attr({'fill':'url(/assets/hatches/hatch-green.png)','stroke':'none',href:url})
-      low_label = @r.text(x,y+h/2,"").attr({'fill':'#000','text-anchor':'middle'})
-      range_label = @r.text(x,y+h/2,"").attr({'fill':'#000','text-anchor':'middle'})
+      low =   @r.rect(x,y,0,h).attr({'fill':'#008000','stroke':'none'})
+      range = @r.rect(x,y,0,h).attr({'fill':'url(/assets/hatches/hatch-green.png)','stroke':'none'})
+      low_label = @r.text(x+10,y+h/2,"").attr({'fill':'#000','text-anchor':'start'})
+      range_label = @r.text(x,y+h/2,"").attr({'fill':'#000','text-anchor':'start','fill':'#f00'})
       message = @r.text(x,y+h/2,"").attr({'fill':'#000','text-anchor':'start'})
-      
-      @bars[code] = { low: low, range: range, low_label: low_label, range_label: range_label, message: message}
+      overlay = @r.rect(x,y,0,h).attr({'fill':'#fff','stroke':'none', href: url, cursor:'pointer','fill-opacity':0.0})
+      @bars[code] = { low: low, range: range, low_label: low_label, range_label: range_label, message: message, overlay: overlay}
       
       @low.boxes.push low
       @low.labels.push low_label
       @range.boxes.push range
       @range.labels.push range_label
+      overlays.push overlay
       
       low_label.hide()
       range_label.hide()
 
-      low.hover(low_show,low_hide)      
-      range.hover(range_show,range_hide)
+      overlay.hover(labels_show,labels_hide)
     
     # Overlay to emphasise the incremental axis
     @incremental_overlay = @r.rect(@x(0),@y('chosen'),0,480).attr({'fill':'#fff','fill-opacity':0.5,'stroke':'none'})
     
+    # Get the overlays in front
+    overlays.insertAfter(@incremental_overlay)
+    
     # The bottom x axis labels and indicators
-    @r.text(@x(20000),@h-5,"The absolute cost to society of the whole energy system in mean undiscounted real pounds per person per year 2010-2050").attr({'text-anchor':'center','font-weight':'bold','fill':'#008000'})
-    @r.path(["M",@x(0),40,"L",@x(0),@h-28,"L",@w-30,@h-28]).attr({'stroke':'#003000'})
+    @r.text(@x(20000),@h-5,"The absolute cost to society of the whole energy system (mean undiscounted real pounds per person per year 2010-2050)").attr({'text-anchor':'center','font-weight':'bold','fill':'#008000'})
+    @r.path(["M",@x(0),40,"L",@x(0),@h-28,"L",@w-30,@h-28]).attr({'stroke':'#008000','stroke-width':2})
     
     format = @x.tickFormat(10)
     for tick in @x.ticks(10)
       @r.text(@x(tick),@h-20,format(tick)).attr({'text-anchor':'middle',fill:'#008000'})
       #@r.path(["M", @x(tick), 40, "L", @x(tick),@h]).attr({stroke:'#fff'})
+
     #@drawIndicator(26000,"GDP/capita in 2010")
     #@drawIndicator(3000,"Aproximate energy system cost in 2007")
     #@drawIndicator(34656,"Forecast mean GDP/capita 2010-2050")
     #@drawIndicator(57000,"GDP/capita in 2050")
     
-    #hover_box = @r.rect(250,25,@w-250-100,@h-25)
-    #hover_box.attr({stroke:'none',fill:'#fff','fill-opacity':'0.0',href: twentyfifty.url({action:'costs_compared_overview'})})
-
-    @low.top_label_box = @r.rect(@x(0),0,100,h*0.75,5).attr({'fill':'#fff','stroke':'#000'})
-    @low.top_label = @r.text(@x(0)+50,h*0.75/2,"Cost").attr({'text-anchor':'middle','font-weight':'bold'})
-    @low.top_label_box.hide()
-    @low.top_label.hide()
-
-    @range.top_label_box = @r.rect(@x(0),0,100,h*0.75,5).attr({'fill':'#fff','stroke':'#000'})
-    @range.top_label = @r.text(@x(0)+50,h*0.75/2,"Uncertainty").attr({'text-anchor':'middle','font-weight':'bold'})
-    @range.top_label_box.hide()
-    @range.top_label.hide()
-
     for code in comparator_pathways
       twentyfifty.loadSecondaryPathway(code,this.updateBar)
     
@@ -121,39 +102,66 @@ class CostsInContext
     @updateBar(pathway,'chosen')
     
   updateBar: (pathway,_id = pathway._id) =>
+    @pathways[_id] = pathway
+    
     total_cost = @total_cost_low_adjusted(pathway)
     total_range = @total_cost_range_adjusted(pathway)
     
     bar = @bars[_id]
     
     if _id == 'chosen'
-      @low.top_label_box.attr({x: @x(total_cost/2)-50})
-      @low.top_label.attr({x: @x(total_cost/2)})
-      @range.top_label_box.attr({x: @x(total_cost+(total_range/2))-50})
-      @range.top_label.attr({x: @x(total_cost+(total_range/2))})
-    else if _id == twentyfifty.getComparator() || _id == twentyfifty.default_comparator_code# Draw the incremental scale
+      bar.low.attr(fill:'#1f77b4')
+      bar.range.attr(fill:'url(/assets/hatches/hatch-1f77b4.png)')
+    else if _id == (twentyfifty.getComparator() || twentyfifty.default_comparator_code )# Draw the incremental scale
+      @comparator = pathway
       # The top x axis label
-      @r.text(@x(total_cost),10,"The extra cost to society of the chosen pathway (mean undiscounted real pounds per person per year 2010-2050)").attr({'text-anchor':'start','font-weight':'bold','fill':'#f00'})
-    
+      @r.text(@x(total_cost),10,"The extra cost to society of your pathway above that of '#{twentyfifty.pathwayName(_id,"your comparison pathway")}' (mean undiscounted real pounds per person per year 2010-2050)").attr({'text-anchor':'start','font-weight':'bold','fill':'#f00'})
+      @r.path(["M",@x(total_cost),@h-35,"L",@x(total_cost),30,"L",@w-30,30]).attr({'stroke':'#f00','stroke-width':2})
       format = @x.tickFormat(10)
       for tick in @x.ticks(10)
         @r.text(@x(tick+total_cost),23,format(tick)).attr({'text-anchor':'middle','fill':'#f00'})
-        @r.path(["M", @x(tick+total_cost), 40, "L", @x(tick+total_cost),@h-30]).attr({stroke:'#fff'})
-      @r.path(["M",@x(total_cost),@h-35,"L",@x(total_cost),30,"L",@w-30,30]).attr({'stroke':'#f00'})
+        if tick > 0
+          @r.path(["M", @x(tick+total_cost), 27, "L", @x(tick+total_cost),@h-30]).attr({stroke:'#fff'})
       bar.low.attr({fill:'#f00'})
+      bar.range.attr({fill:'url(/assets/hatches/hatch-f00.png)'})
       @incremental_overlay.attr({width:@x(total_cost)-@x(0)})
       @low.labels.toFront()
       @range.labels.toFront()
+      for own code, p of @pathways
+        @setIncrementalCostLabel(code,p)
       
     bar.low.attr({width: @x(total_cost) - @x(0)})
-    bar.low_label.attr({x:@x(total_cost/2),text:"#{Math.round(total_cost)}"})
+    if total_range == 0
+      bar.low_label.attr({text:"#{Math.round(total_cost)}"})
+    else
+      bar.low_label.attr({text:"#{Math.round(total_cost)}–#{Math.round(total_cost+total_range)}"})
+    
+    bar.range_label.attr({x:@x(total_cost+total_range)+10})
+
+    @setIncrementalCostLabel(_id,pathway)
 
     bar.range.attr({x:@x(total_cost),width: @x(total_range) - @x(0)})
-    bar.range_label.attr({x:@x(total_cost+(total_range/2)),text:"#{Math.round(total_range)}"})
+    
+    bar.overlay.attr({width: @x(total_cost+total_range) - @x(0)})
+    
     if pathway.ghg['Total'][8] > 166
-      bar.message.attr({x:@x(total_cost+total_range)+10,text:"This pathway does not meet the 80% emissions reduction target"})
+      bar.message.attr({x:@x(total_cost+total_range)+100,text:"This pathway does not meet the 80% emissions reduction target"})
+      bar.message.toFront()
     else
-      bar.message.attr({x:@x(total_cost+total_range)+10,text:""})
+      bar.message.attr({x:@x(total_cost+total_range)+100,text:""})
+      bar.message.toFront()
+  
+  setIncrementalCostLabel: (code,pathway) ->
+    return false unless @comparator?
+    return false if code == @comparator._id
+    delta = Math.round(pathway.total_cost_low_adjusted - @comparator.total_cost_low_adjusted)
+    if delta < 0
+      message = "#{-delta} less"
+    else if delta == 0
+      message = "the same"
+    else
+      message = "#{delta} more"
+    @bars[code].range_label.attr({text:message})
   
   total_cost_low_adjusted: (pathway) ->
     twentyfifty.adjust_costs_of_pathway(pathway) unless pathway.total_cost_low_adjusted?
