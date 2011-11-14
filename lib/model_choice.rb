@@ -13,4 +13,10 @@ class ModelChoice
   def levels
     1.upto(type.to_i)
   end
+
+  NUMBER_TO_DOC_MAP = {}
+
+  def doc
+    "#{NUMBER_TO_DOC_MAP[number] || number}.pdf"
+  end
 end

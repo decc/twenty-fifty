@@ -39,8 +39,14 @@
       background-image: url('../assets/onegreypixel.png');
       background-position: left center;
       background-repeat: repeat-x;
-      span {
+      a {
         background-color: #fff;
+	text-decoration: none;
+	color: #000;
+	cursor: help;
+      }
+      a:hover {
+	text-decoration: underline;
       }
     }
     tr.incremental {
