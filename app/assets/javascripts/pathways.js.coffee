@@ -88,6 +88,22 @@ preLoad = (index,level) ->
     preload_code = codeForChoices(preload_choices)
     preLoadPathway(preload_code)),500)
 
+demoTimer = null
+demoOriginalLevel = null
+
+startDemo = (choice) ->
+  demoLevel = 1
+  demoOriginalLevel = choices[choice]
+  demoTimer = setInterval( (() ->
+    go(choice,demoLevel)
+    demoLevel = demoLevel + 1
+    demoLevel = 1 if demoLevel > 4
+  ),1000)
+
+stopDemo = (choice) ->
+  clearInterval(demoTimer) if demoTimer?
+  go(choice,demoOriginalLevel) if demoOriginalLevel?
+
 switchView = (new_action) ->
   action = new_action
   window.location = url()
@@ -255,3 +271,6 @@ window.twentyfifty.switchView = switchView
 window.twentyfifty.switchPathway = switchPathway
 window.twentyfifty.pathwayName = pathwayName
 window.twentyfifty.pathwayDescriptions = pathwayDescriptions
+window.twentyfifty.startDemo = startDemo
+window.twentyfifty.stopDemo = stopDemo
+
