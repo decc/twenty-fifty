@@ -2,13 +2,13 @@ class CostsComparedOverview
   
   categories = [
     "Fossil fuels"
-    "Bioenergy"   
-    "Electricity" 
-    "Buildings"   
-    "Transport"   
+    "Bioenergy"
+    "Electricity"
+    "Buildings"
+    "Transport"
     "Industry"
-    "Finance"    
-    "Other"       
+    "Finance"
+    "Other"
   ]
   
   category_colors =
@@ -28,7 +28,7 @@ class CostsComparedOverview
     return false if @drawn?
     @drawn = true
     
-    all_pathways = ["chosen"].concat(twentyfifty.comparator_pathways)      
+    all_pathways = ["chosen"].concat(twentyfifty.comparator_pathways)
       
     e = $('#costscomparedoverview')
     @h = e.height()
@@ -36,6 +36,8 @@ class CostsComparedOverview
     @r = new Raphael('costscomparedoverview',@w,@h)
     @x = d3.scale.linear().domain([0, 7000]).range([250,@w-30]).nice()
     @y = d3.scale.ordinal().domain(all_pathways).rangeRoundBands([25,@h-20],0.25)
+
+    @r.text(250,30,"Move your mouse over a coloured bar to see what it refers to. Click on a bar to see more detail").attr({'text-anchor':'start'})
 
     # Horizontal background boxes
     for code in twentyfifty.comparator_pathways
@@ -85,7 +87,7 @@ class CostsComparedOverview
     format = @x.tickFormat(10)
     for tick in @x.ticks(10)
       @r.text(@x(tick),@h-20,format(tick)).attr({'text-anchor':'middle',fill:'#008000'})
-      @r.path(["M", @x(tick), 40, "L", @x(tick),@h-26]).attr({stroke:'#fff'})    
+      @r.path(["M", @x(tick), 40, "L", @x(tick),@h-26]).attr({stroke:'#fff'})
     
     # Category labels
     for own category, color of category_colors
