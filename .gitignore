@@ -4,3 +4,7 @@ log/*.log
 tmp/
 .sass-cache/
 ~$*
+*.swo
+*.swp
+*~
+
