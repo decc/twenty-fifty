@@ -47,7 +47,7 @@ class CostsInContext
       @low.labels.hide()
       @range.labels.hide()
 
-    for code in all_pathways      
+    for code in all_pathways
       y = @y(code)
       
       low =   @r.rect(x,y,0,h).attr({'fill':'#008000','stroke':'none'})
@@ -55,7 +55,7 @@ class CostsInContext
       low_label = @r.text(x+10,y+h/2,"").attr({'fill':'#000','text-anchor':'start'})
       range_label = @r.text(x,y+h/2,"").attr({'fill':'#000','text-anchor':'start','fill':'#f00'})
       message = @r.text(x,y+h/2,"").attr({'fill':'#000','text-anchor':'start'})
-      overlay = @r.rect(x,y,0,h).attr({'fill':'#fff','stroke':'none', href: url, cursor:'pointer','fill-opacity':0.0})
+      overlay = @r.rect(x,y,0,h).attr({'fill':'#fff','stroke':'none', cursor:'pointer','fill-opacity':0.0})
       @bars[code] = { low: low, range: range, low_label: low_label, range_label: range_label, message: message, overlay: overlay}
       
       @low.boxes.push low
@@ -68,6 +68,7 @@ class CostsInContext
       range_label.hide()
 
       overlay.hover(labels_show,labels_hide)
+      overlay.click( () -> window.location = url )
     
     # Overlay to emphasise the incremental axis
     @incremental_overlay = @r.rect(@x(0),@y('chosen'),0,480).attr({'fill':'#fff','fill-opacity':0.5,'stroke':'none'})
