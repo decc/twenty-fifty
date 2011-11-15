@@ -7,6 +7,9 @@ class PathwaysController < ApplicationController
     if p
       expires_in 1.minute, :public => true
     else
+      response.cache_control.replace(:no_cache => true)
+      response.headers['Expires'] = "-1"
+      response.headers['Pragam'] = "no-cache"
       db.collection('pathways_to_be_calculated').insert({_id:params[:id]})
     end
     render :json => p
