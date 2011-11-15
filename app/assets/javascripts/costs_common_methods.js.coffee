@@ -23,7 +23,7 @@ cost_categories =
   "Wave and Tidal":"Electricity"
   "Geothermal":"Electricity"
   "Distributed solar PV":"Electricity"
-  "Distributed solar thermal":"Electricity"
+  "Distributed solar thermal":"Buildings"
   "Micro wind":"Electricity"
   "Biomatter to fuel conversion":"Bioenergy"
   "Bioenergy imports":"Bioenergy"
@@ -61,6 +61,7 @@ cost_categories =
   "District heating effective demand":"Buildings"
   "Power Carbon Capture":"Electricity"
   "Industry Carbon Capture":"Industry"
+  "Storage of captured CO2":"Electricity"
   "Finance cost":"Finance"
 
 costs_in_category = (desired_category) ->

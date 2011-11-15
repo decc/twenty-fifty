@@ -153,7 +153,7 @@ loadMainPathway = (pushState = true) ->
           cache[data._id] = data
           if data._id == codeForChoices()
             clearInterval(mainPathwayTimer)
-            execute.updateResults(data)      
+            execute.updateResults(data)
             $('#calculating').hide()
             $('#message').show()
       )
