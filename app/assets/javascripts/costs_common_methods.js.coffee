@@ -61,7 +61,7 @@ cost_categories =
   "District heating effective demand":"Buildings"
   "Power Carbon Capture":"Electricity"
   "Industry Carbon Capture":"Industry"
-  "Storage of captured CO2":"Electricity"
+  "Storage of captured CO2":"Other"
   "Finance cost":"Finance"
 
 costs_in_category = (desired_category) ->
