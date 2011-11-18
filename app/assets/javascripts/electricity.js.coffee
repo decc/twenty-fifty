@@ -17,7 +17,7 @@ class Electricity
       @emissions_chart.series[i].setData(data,false)
     else
       @emissions_chart.addSeries({type: 'line', name: 'Total net emissions',data:data, lineColor: '#000', color: '#000',lineWidth:2, shadow: true},false)
-    i++      
+    i++
       
     titles = ['Industry','Transport','Heating and cooling','Lighting & appliances']
     i = 0
@@ -47,14 +47,14 @@ class Electricity
   documentReady: () ->
     @demand_chart = new Highcharts.Chart({
       chart: { renderTo: 'demand_chart' }, 
-      title: { text: 'UK electricity supply' },
+      title: { text: 'UK electricity demand' },
       subtitle: { text: "TWh/yr of electricity"},
       yAxis: { title: null, min: 0, max: 4000 },
       series: []
     });
     @supply_chart = new Highcharts.Chart({ 
       chart: { renderTo: 'supply_chart' }, 
-      title: { text: 'UK electricity demand' }, 
+      title: { text: 'UK electricity supply' }, 
       subtitle: { text: "TWh/yr of electricity"},
       yAxis: { title: null, min: 0, max: 4000 },
       series: []
