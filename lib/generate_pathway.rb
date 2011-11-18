@@ -282,10 +282,8 @@ if __FILE__ == $0
   results = db.collection('pathways')
   loop do
     while next_pathway = queue.find_one(calculating:nil)
-      puts "Working"
       calculate_pathway(queue,results,next_pathway)
     end
-    puts "Sleeping"
     sleep 1
   end
 end
