@@ -54,7 +54,7 @@ class EnergySecurity
           unless value == 0
             share = value / totals[i]
             natural_log_share = Math.log(share)
-            console.log share, natural_log_share
+            # console.log share, natural_log_share
             sw[i] += (share * -natural_log_share)
     element.append("<p>TBD - Shannon-Wiener measure</p>")
     element.append("<p>TBD - Higher is better, numbers below buggy?</p>")    
