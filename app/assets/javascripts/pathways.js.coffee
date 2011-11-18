@@ -119,6 +119,11 @@ switchPathway = (new_code) ->
   choices = choicesForCode(new_code)
   loadMainPathway() 
 
+setChoices = (new_choices) ->
+  old_choices = choices.slice(0)
+  choices = new_choices
+  loadMainPathway() 
+
 preLoadPathway = (preload_code) ->
   return false if cache[preload_code]? # Already loaded
   return false if requested[preload_code]? # Already requested
@@ -264,6 +269,7 @@ pathwayDescriptions = (pathway_code,default_description = null) ->
 window.twentyfifty.setup = setup
 window.twentyfifty.code = codeForChoices
 window.twentyfifty.getChoices = getChoices
+window.twentyfifty.setChoices = setChoices
 window.twentyfifty.getSector = getSector
 window.twentyfifty.switchSector = switchSector
 window.twentyfifty.getComparator = getComparator
