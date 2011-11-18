@@ -24,16 +24,16 @@ module ApplicationHelper
       # "history" => "Your progress", 
       # "structured" => "Multiple choice", 
       # "quick_choice" => "Quick choice", 
-      "primary_energy_chart"=>"All energy", 
-      "electricity"=>"Electricity",
-      "energy_security" => "Energy security",
-      "sankey"=>"Energy flows", 
-      "map"=>"Area", 
-      "costs_in_context"=>"Costs in context",
-      "costs_compared_overview"=>"Costs compared",
-      "costs_sensitivity" => "Cost sensitivity",
+      "primary_energy_chart"=>"83", 
+      "electricity"=>"84",
+      "energy_security" => "85",
+      "sankey"=>"86", 
+      "map"=>"87", 
+      "costs_in_context"=>"88",
+      "costs_compared_overview"=>"89",
+      "costs_sensitivity" => "90",
       # "cost_over_time" => 'Costs: over time', 
-      "story"=>"Story"
+      "story"=>"91"
     }[action_name]
   end
 
