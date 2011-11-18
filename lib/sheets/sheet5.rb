@@ -1,13170 +1,2343 @@
 # coding: utf-8
-# CostPerCapita
+# Flows
 class Sheet5 < Spreadsheet
-  def b1; "£/Capita/yr"; end
-  def e1; "C1.Low"; end
-  def f1; "Low estimate of capital costs"; end
-  def o1; "C2.Low"; end
-  def p1; "Low estimate of operating costs"; end
-  def y1; "C3.Low"; end
-  def z1; "Low estimate of fuel costs"; end
-  def ai1; "Low estimate of total cost"; end
-  def as1; "Cashflow capital basis"; end
-  def av1; "Loan"; end
-  def ay1; "Finance cost for capital spent in that period"; end
-  def bi1; "Finance cost for outstanding capital"; end
-  def bs1; "Total cost (ammortised capital)"; end
-  def cc1; "Amortised Capital"; end
-  def cf1; "Extra cost due to financing capital, compared with doing it out of cash"; end
-  def cp1; "Extra cost due to financing capital, compared with doing it out of cash"; end
-  def a2; "Code"; end
-  def b2; "Description"; end
-  def c2; "Category"; end
-  def e2; "2010"; end
-  def f2; "2015"; end
-  def g2; "2020"; end
-  def h2; "2025"; end
-  def i2; "2030"; end
-  def j2; "2035"; end
-  def k2; "2040"; end
-  def l2; "2045"; end
-  def m2; "2050"; end
-  def o2; "2010"; end
-  def p2; "2015"; end
-  def q2; "2020"; end
-  def r2; "2025"; end
-  def s2; "2030"; end
-  def t2; "2035"; end
-  def u2; "2040"; end
-  def v2; "2045"; end
-  def w2; "2050"; end
-  def y2; "2010"; end
-  def z2; "2015"; end
-  def aa2; "2020"; end
-  def ab2; "2025"; end
-  def ac2; "2030"; end
-  def ad2; "2035"; end
-  def ae2; "2040"; end
-  def af2; "2045"; end
-  def ag2; "2050"; end
-  def ai2; "2010"; end
-  def aj2; "2015"; end
-  def ak2; "2020"; end
-  def al2; "2025"; end
-  def am2; "2030"; end
-  def an2; "2035"; end
-  def ao2; "2040"; end
-  def ap2; "2045"; end
-  def aq2; "2050"; end
-  def as2; "Mean"; end
-  def at2; "NPV"; end
-  def av2; "Rate"; end
-  def aw2; "Years"; end
-  def ay2; 2010.0; end
-  def az2; 2015.0; end
-  def ba2; 2020.0; end
-  def bb2; 2025.0; end
-  def bc2; 2030.0; end
-  def bd2; 2035.0; end
-  def be2; 2040.0; end
-  def bf2; 2045.0; end
-  def bg2; 2050.0; end
-  def bi2; 2010.0; end
-  def bj2; 2015.0; end
-  def bk2; 2020.0; end
-  def bl2; 2025.0; end
-  def bm2; 2030.0; end
-  def bn2; 2035.0; end
-  def bo2; 2040.0; end
-  def bp2; 2045.0; end
-  def bq2; 2050.0; end
-  def bs2; "2010"; end
-  def bt2; "2015"; end
-  def bu2; "2020"; end
-  def bv2; "2025"; end
-  def bw2; "2030"; end
-  def bx2; "2035"; end
-  def by2; "2040"; end
-  def bz2; "2045"; end
-  def ca2; "2050"; end
-  def cc2; "Mean"; end
-  def cd2; "NPV"; end
-  def cf2; "2010"; end
-  def cg2; "2015"; end
-  def ch2; "2020"; end
-  def ci2; "2025"; end
-  def cj2; "2030"; end
-  def ck2; "2035"; end
-  def cl2; "2040"; end
-  def cm2; "2045"; end
-  def cn2; "2050"; end
-  def cp2; "Mean"; end
-  def cq2; "NPV"; end
-  def a3; "I.a"; end
-  def b3; "Conventional thermal plant"; end
-  def c3; "Power"; end
-  def e3; @e3 ||= sheet7.e3/(sheet12.c13*sheet11.e79); end
-  def f3; @f3 ||= sheet7.f3/(sheet12.c13*sheet11.e79); end
-  def g3; @g3 ||= sheet7.g3/(sheet12.c13*sheet11.e79); end
-  def h3; @h3 ||= sheet7.h3/(sheet12.c13*sheet11.e79); end
-  def i3; @i3 ||= sheet7.i3/(sheet12.c13*sheet11.e79); end
-  def j3; @j3 ||= sheet7.j3/(sheet12.c13*sheet11.e79); end
-  def k3; @k3 ||= sheet7.k3/(sheet12.c13*sheet11.e79); end
-  def l3; @l3 ||= sheet7.l3/(sheet12.c13*sheet11.e79); end
-  def m3; @m3 ||= sheet7.m3/(sheet12.c13*sheet11.e79); end
-  def o3; @o3 ||= sheet7.o3/(sheet12.c13*sheet11.e79); end
-  def p3; @p3 ||= sheet7.p3/(sheet12.c13*sheet11.e79); end
-  def q3; @q3 ||= sheet7.q3/(sheet12.c13*sheet11.e79); end
-  def r3; @r3 ||= sheet7.r3/(sheet12.c13*sheet11.e79); end
-  def s3; @s3 ||= sheet7.s3/(sheet12.c13*sheet11.e79); end
-  def t3; @t3 ||= sheet7.t3/(sheet12.c13*sheet11.e79); end
-  def u3; @u3 ||= sheet7.u3/(sheet12.c13*sheet11.e79); end
-  def v3; @v3 ||= sheet7.v3/(sheet12.c13*sheet11.e79); end
-  def w3; @w3 ||= sheet7.w3/(sheet12.c13*sheet11.e79); end
-  def y3; @y3 ||= sheet7.y3/(sheet12.c13*sheet11.e79); end
-  def z3; @z3 ||= sheet7.z3/(sheet12.c13*sheet11.e79); end
-  def aa3; @aa3 ||= sheet7.aa3/(sheet12.c13*sheet11.e79); end
-  def ab3; @ab3 ||= sheet7.ab3/(sheet12.c13*sheet11.e79); end
-  def ac3; @ac3 ||= sheet7.ac3/(sheet12.c13*sheet11.e79); end
-  def ad3; @ad3 ||= sheet7.ad3/(sheet12.c13*sheet11.e79); end
-  def ae3; @ae3 ||= sheet7.ae3/(sheet12.c13*sheet11.e79); end
-  def af3; @af3 ||= sheet7.af3/(sheet12.c13*sheet11.e79); end
-  def ag3; @ag3 ||= sheet7.ag3/(sheet12.c13*sheet11.e79); end
-  def ai3; @ai3 ||= sheet7.ai3/(sheet12.c13*sheet11.e79); end
-  def aj3; @aj3 ||= sheet7.aj3/(sheet12.c13*sheet11.e79); end
-  def ak3; @ak3 ||= sheet7.ak3/(sheet12.c13*sheet11.e79); end
-  def al3; @al3 ||= sheet7.al3/(sheet12.c13*sheet11.e79); end
-  def am3; @am3 ||= sheet7.am3/(sheet12.c13*sheet11.e79); end
-  def an3; @an3 ||= sheet7.an3/(sheet12.c13*sheet11.e79); end
-  def ao3; @ao3 ||= sheet7.ao3/(sheet12.c13*sheet11.e79); end
-  def ap3; @ap3 ||= sheet7.ap3/(sheet12.c13*sheet11.e79); end
-  def aq3; @aq3 ||= sheet7.aq3/(sheet12.c13*sheet11.e79); end
-  def as3; @as3 ||= average(a('ai3','aq3')); end
-  def at3; @at3 ||= (sumproduct(a('aj3','aq3'),sheet12.a('d28','k28'))*5.0)+ai3; end
-  def av3; 0.0; end
-  def aw3; 5.0; end
-  def ay3; @ay3 ||= sheet7.ay3/(sheet12.c13*sheet11.e79); end
-  def az3; @az3 ||= sheet7.az3/(sheet12.c13*sheet11.e79); end
-  def ba3; @ba3 ||= sheet7.ba3/(sheet12.c13*sheet11.e79); end
-  def bb3; @bb3 ||= sheet7.bb3/(sheet12.c13*sheet11.e79); end
-  def bc3; @bc3 ||= sheet7.bc3/(sheet12.c13*sheet11.e79); end
-  def bd3; @bd3 ||= sheet7.bd3/(sheet12.c13*sheet11.e79); end
-  def be3; @be3 ||= sheet7.be3/(sheet12.c13*sheet11.e79); end
-  def bf3; @bf3 ||= sheet7.bf3/(sheet12.c13*sheet11.e79); end
-  def bg3; @bg3 ||= sheet7.bg3/(sheet12.c13*sheet11.e79); end
-  def bi3; @bi3 ||= sheet7.bi3/(sheet12.c13*sheet11.e79); end
-  def bj3; @bj3 ||= sheet7.bj3/(sheet12.c13*sheet11.e79); end
-  def bk3; @bk3 ||= sheet7.bk3/(sheet12.c13*sheet11.e79); end
-  def bl3; @bl3 ||= sheet7.bl3/(sheet12.c13*sheet11.e79); end
-  def bm3; @bm3 ||= sheet7.bm3/(sheet12.c13*sheet11.e79); end
-  def bn3; @bn3 ||= sheet7.bn3/(sheet12.c13*sheet11.e79); end
-  def bo3; @bo3 ||= sheet7.bo3/(sheet12.c13*sheet11.e79); end
-  def bp3; @bp3 ||= sheet7.bp3/(sheet12.c13*sheet11.e79); end
-  def bq3; @bq3 ||= sheet7.bq3/(sheet12.c13*sheet11.e79); end
-  def bs3; @bs3 ||= sheet7.bs3/(sheet12.c13*sheet11.e79); end
-  def bt3; @bt3 ||= sheet7.bt3/(sheet12.c13*sheet11.e79); end
-  def bu3; @bu3 ||= sheet7.bu3/(sheet12.c13*sheet11.e79); end
-  def bv3; @bv3 ||= sheet7.bv3/(sheet12.c13*sheet11.e79); end
-  def bw3; @bw3 ||= sheet7.bw3/(sheet12.c13*sheet11.e79); end
-  def bx3; @bx3 ||= sheet7.bx3/(sheet12.c13*sheet11.e79); end
-  def by3; @by3 ||= sheet7.by3/(sheet12.c13*sheet11.e79); end
-  def bz3; @bz3 ||= sheet7.bz3/(sheet12.c13*sheet11.e79); end
-  def ca3; @ca3 ||= sheet7.ca3/(sheet12.c13*sheet11.e79); end
-  def cc3; @cc3 ||= average(a('bs3','ca3')); end
-  def cd3; @cd3 ||= (sumproduct(a('bt3','ca3'),sheet12.a('d28','k28'))*5.0)+bs3; end
-  def cf3; @cf3 ||= sheet7.cf3/(sheet12.c13*sheet11.e79); end
-  def cg3; @cg3 ||= sheet7.cg3/(sheet12.c13*sheet11.e79); end
-  def ch3; @ch3 ||= sheet7.ch3/(sheet12.c13*sheet11.e79); end
-  def ci3; @ci3 ||= sheet7.ci3/(sheet12.c13*sheet11.e79); end
-  def cj3; @cj3 ||= sheet7.cj3/(sheet12.c13*sheet11.e79); end
-  def ck3; @ck3 ||= sheet7.ck3/(sheet12.c13*sheet11.e79); end
-  def cl3; @cl3 ||= sheet7.cl3/(sheet12.c13*sheet11.e79); end
-  def cm3; @cm3 ||= sheet7.cm3/(sheet12.c13*sheet11.e79); end
-  def cn3; @cn3 ||= sheet7.cn3/(sheet12.c13*sheet11.e79); end
-  def cp3; @cp3 ||= average(a('cf3','cn3')); end
-  def cq3; @cq3 ||= (sumproduct(a('cg3','cn3'),sheet12.a('d28','k28'))*5.0)+cf3; end
-  def cr3; @cr3 ||= excel_if(excel_comparison(abs(cd3-cq3-at3),"<",1.0),"ok","err"); end
-  def a4; "I.b"; end
-  def b4; "Combustion + CCS"; end
-  def c4; "Power"; end
-  def e4; @e4 ||= sheet7.e4/(sheet12.c13*sheet11.e79); end
-  def f4; @f4 ||= sheet7.f4/(sheet12.c13*sheet11.e79); end
-  def g4; @g4 ||= sheet7.g4/(sheet12.c13*sheet11.e79); end
-  def h4; @h4 ||= sheet7.h4/(sheet12.c13*sheet11.e79); end
-  def i4; @i4 ||= sheet7.i4/(sheet12.c13*sheet11.e79); end
-  def j4; @j4 ||= sheet7.j4/(sheet12.c13*sheet11.e79); end
-  def k4; @k4 ||= sheet7.k4/(sheet12.c13*sheet11.e79); end
-  def l4; @l4 ||= sheet7.l4/(sheet12.c13*sheet11.e79); end
-  def m4; @m4 ||= sheet7.m4/(sheet12.c13*sheet11.e79); end
-  def o4; @o4 ||= sheet7.o4/(sheet12.c13*sheet11.e79); end
-  def p4; @p4 ||= sheet7.p4/(sheet12.c13*sheet11.e79); end
-  def q4; @q4 ||= sheet7.q4/(sheet12.c13*sheet11.e79); end
-  def r4; @r4 ||= sheet7.r4/(sheet12.c13*sheet11.e79); end
-  def s4; @s4 ||= sheet7.s4/(sheet12.c13*sheet11.e79); end
-  def t4; @t4 ||= sheet7.t4/(sheet12.c13*sheet11.e79); end
-  def u4; @u4 ||= sheet7.u4/(sheet12.c13*sheet11.e79); end
-  def v4; @v4 ||= sheet7.v4/(sheet12.c13*sheet11.e79); end
-  def w4; @w4 ||= sheet7.w4/(sheet12.c13*sheet11.e79); end
-  def y4; @y4 ||= sheet7.y4/(sheet12.c13*sheet11.e79); end
-  def z4; @z4 ||= sheet7.z4/(sheet12.c13*sheet11.e79); end
-  def aa4; @aa4 ||= sheet7.aa4/(sheet12.c13*sheet11.e79); end
-  def ab4; @ab4 ||= sheet7.ab4/(sheet12.c13*sheet11.e79); end
-  def ac4; @ac4 ||= sheet7.ac4/(sheet12.c13*sheet11.e79); end
-  def ad4; @ad4 ||= sheet7.ad4/(sheet12.c13*sheet11.e79); end
-  def ae4; @ae4 ||= sheet7.ae4/(sheet12.c13*sheet11.e79); end
-  def af4; @af4 ||= sheet7.af4/(sheet12.c13*sheet11.e79); end
-  def ag4; @ag4 ||= sheet7.ag4/(sheet12.c13*sheet11.e79); end
-  def ai4; @ai4 ||= sheet7.ai4/(sheet12.c13*sheet11.e79); end
-  def aj4; @aj4 ||= sheet7.aj4/(sheet12.c13*sheet11.e79); end
-  def ak4; @ak4 ||= sheet7.ak4/(sheet12.c13*sheet11.e79); end
-  def al4; @al4 ||= sheet7.al4/(sheet12.c13*sheet11.e79); end
-  def am4; @am4 ||= sheet7.am4/(sheet12.c13*sheet11.e79); end
-  def an4; @an4 ||= sheet7.an4/(sheet12.c13*sheet11.e79); end
-  def ao4; @ao4 ||= sheet7.ao4/(sheet12.c13*sheet11.e79); end
-  def ap4; @ap4 ||= sheet7.ap4/(sheet12.c13*sheet11.e79); end
-  def aq4; @aq4 ||= sheet7.aq4/(sheet12.c13*sheet11.e79); end
-  def as4; @as4 ||= average(a('ai4','aq4')); end
-  def at4; @at4 ||= (sumproduct(a('aj4','aq4'),sheet12.a('d28','k28'))*5.0)+ai4; end
-  def av4; 0.0; end
-  def aw4; 5.0; end
-  def ay4; @ay4 ||= sheet7.ay4/(sheet12.c13*sheet11.e79); end
-  def az4; @az4 ||= sheet7.az4/(sheet12.c13*sheet11.e79); end
-  def ba4; @ba4 ||= sheet7.ba4/(sheet12.c13*sheet11.e79); end
-  def bb4; @bb4 ||= sheet7.bb4/(sheet12.c13*sheet11.e79); end
-  def bc4; @bc4 ||= sheet7.bc4/(sheet12.c13*sheet11.e79); end
-  def bd4; @bd4 ||= sheet7.bd4/(sheet12.c13*sheet11.e79); end
-  def be4; @be4 ||= sheet7.be4/(sheet12.c13*sheet11.e79); end
-  def bf4; @bf4 ||= sheet7.bf4/(sheet12.c13*sheet11.e79); end
-  def bg4; @bg4 ||= sheet7.bg4/(sheet12.c13*sheet11.e79); end
-  def bi4; @bi4 ||= sheet7.bi4/(sheet12.c13*sheet11.e79); end
-  def bj4; @bj4 ||= sheet7.bj4/(sheet12.c13*sheet11.e79); end
-  def bk4; @bk4 ||= sheet7.bk4/(sheet12.c13*sheet11.e79); end
-  def bl4; @bl4 ||= sheet7.bl4/(sheet12.c13*sheet11.e79); end
-  def bm4; @bm4 ||= sheet7.bm4/(sheet12.c13*sheet11.e79); end
-  def bn4; @bn4 ||= sheet7.bn4/(sheet12.c13*sheet11.e79); end
-  def bo4; @bo4 ||= sheet7.bo4/(sheet12.c13*sheet11.e79); end
-  def bp4; @bp4 ||= sheet7.bp4/(sheet12.c13*sheet11.e79); end
-  def bq4; @bq4 ||= sheet7.bq4/(sheet12.c13*sheet11.e79); end
-  def bs4; @bs4 ||= sheet7.bs4/(sheet12.c13*sheet11.e79); end
-  def bt4; @bt4 ||= sheet7.bt4/(sheet12.c13*sheet11.e79); end
-  def bu4; @bu4 ||= sheet7.bu4/(sheet12.c13*sheet11.e79); end
-  def bv4; @bv4 ||= sheet7.bv4/(sheet12.c13*sheet11.e79); end
-  def bw4; @bw4 ||= sheet7.bw4/(sheet12.c13*sheet11.e79); end
-  def bx4; @bx4 ||= sheet7.bx4/(sheet12.c13*sheet11.e79); end
-  def by4; @by4 ||= sheet7.by4/(sheet12.c13*sheet11.e79); end
-  def bz4; @bz4 ||= sheet7.bz4/(sheet12.c13*sheet11.e79); end
-  def ca4; @ca4 ||= sheet7.ca4/(sheet12.c13*sheet11.e79); end
-  def cc4; @cc4 ||= average(a('bs4','ca4')); end
-  def cd4; @cd4 ||= (sumproduct(a('bt4','ca4'),sheet12.a('d28','k28'))*5.0)+bs4; end
-  def cf4; @cf4 ||= sheet7.cf4/(sheet12.c13*sheet11.e79); end
-  def cg4; @cg4 ||= sheet7.cg4/(sheet12.c13*sheet11.e79); end
-  def ch4; @ch4 ||= sheet7.ch4/(sheet12.c13*sheet11.e79); end
-  def ci4; @ci4 ||= sheet7.ci4/(sheet12.c13*sheet11.e79); end
-  def cj4; @cj4 ||= sheet7.cj4/(sheet12.c13*sheet11.e79); end
-  def ck4; @ck4 ||= sheet7.ck4/(sheet12.c13*sheet11.e79); end
-  def cl4; @cl4 ||= sheet7.cl4/(sheet12.c13*sheet11.e79); end
-  def cm4; @cm4 ||= sheet7.cm4/(sheet12.c13*sheet11.e79); end
-  def cn4; @cn4 ||= sheet7.cn4/(sheet12.c13*sheet11.e79); end
-  def cp4; @cp4 ||= average(a('cf4','cn4')); end
-  def cq4; @cq4 ||= (sumproduct(a('cg4','cn4'),sheet12.a('d28','k28'))*5.0)+cf4; end
-  def cr4; @cr4 ||= excel_if(excel_comparison(abs(cd4-cq4-at4),"<",1.0),"ok","err"); end
-  def a5; "II.a"; end
-  def b5; "Nuclear power"; end
-  def c5; "Power"; end
-  def e5; @e5 ||= sheet7.e5/(sheet12.c13*sheet11.e79); end
-  def f5; @f5 ||= sheet7.f5/(sheet12.c13*sheet11.e79); end
-  def g5; @g5 ||= sheet7.g5/(sheet12.c13*sheet11.e79); end
-  def h5; @h5 ||= sheet7.h5/(sheet12.c13*sheet11.e79); end
-  def i5; @i5 ||= sheet7.i5/(sheet12.c13*sheet11.e79); end
-  def j5; @j5 ||= sheet7.j5/(sheet12.c13*sheet11.e79); end
-  def k5; @k5 ||= sheet7.k5/(sheet12.c13*sheet11.e79); end
-  def l5; @l5 ||= sheet7.l5/(sheet12.c13*sheet11.e79); end
-  def m5; @m5 ||= sheet7.m5/(sheet12.c13*sheet11.e79); end
-  def o5; @o5 ||= sheet7.o5/(sheet12.c13*sheet11.e79); end
-  def p5; @p5 ||= sheet7.p5/(sheet12.c13*sheet11.e79); end
-  def q5; @q5 ||= sheet7.q5/(sheet12.c13*sheet11.e79); end
-  def r5; @r5 ||= sheet7.r5/(sheet12.c13*sheet11.e79); end
-  def s5; @s5 ||= sheet7.s5/(sheet12.c13*sheet11.e79); end
-  def t5; @t5 ||= sheet7.t5/(sheet12.c13*sheet11.e79); end
-  def u5; @u5 ||= sheet7.u5/(sheet12.c13*sheet11.e79); end
-  def v5; @v5 ||= sheet7.v5/(sheet12.c13*sheet11.e79); end
-  def w5; @w5 ||= sheet7.w5/(sheet12.c13*sheet11.e79); end
-  def y5; @y5 ||= sheet7.y5/(sheet12.c13*sheet11.e79); end
-  def z5; @z5 ||= sheet7.z5/(sheet12.c13*sheet11.e79); end
-  def aa5; @aa5 ||= sheet7.aa5/(sheet12.c13*sheet11.e79); end
-  def ab5; @ab5 ||= sheet7.ab5/(sheet12.c13*sheet11.e79); end
-  def ac5; @ac5 ||= sheet7.ac5/(sheet12.c13*sheet11.e79); end
-  def ad5; @ad5 ||= sheet7.ad5/(sheet12.c13*sheet11.e79); end
-  def ae5; @ae5 ||= sheet7.ae5/(sheet12.c13*sheet11.e79); end
-  def af5; @af5 ||= sheet7.af5/(sheet12.c13*sheet11.e79); end
-  def ag5; @ag5 ||= sheet7.ag5/(sheet12.c13*sheet11.e79); end
-  def ai5; @ai5 ||= sheet7.ai5/(sheet12.c13*sheet11.e79); end
-  def aj5; @aj5 ||= sheet7.aj5/(sheet12.c13*sheet11.e79); end
-  def ak5; @ak5 ||= sheet7.ak5/(sheet12.c13*sheet11.e79); end
-  def al5; @al5 ||= sheet7.al5/(sheet12.c13*sheet11.e79); end
-  def am5; @am5 ||= sheet7.am5/(sheet12.c13*sheet11.e79); end
-  def an5; @an5 ||= sheet7.an5/(sheet12.c13*sheet11.e79); end
-  def ao5; @ao5 ||= sheet7.ao5/(sheet12.c13*sheet11.e79); end
-  def ap5; @ap5 ||= sheet7.ap5/(sheet12.c13*sheet11.e79); end
-  def aq5; @aq5 ||= sheet7.aq5/(sheet12.c13*sheet11.e79); end
-  def as5; @as5 ||= average(a('ai5','aq5')); end
-  def at5; @at5 ||= (sumproduct(a('aj5','aq5'),sheet12.a('d28','k28'))*5.0)+ai5; end
-  def av5; 0.0; end
-  def aw5; 5.0; end
-  def ay5; @ay5 ||= sheet7.ay5/(sheet12.c13*sheet11.e79); end
-  def az5; @az5 ||= sheet7.az5/(sheet12.c13*sheet11.e79); end
-  def ba5; @ba5 ||= sheet7.ba5/(sheet12.c13*sheet11.e79); end
-  def bb5; @bb5 ||= sheet7.bb5/(sheet12.c13*sheet11.e79); end
-  def bc5; @bc5 ||= sheet7.bc5/(sheet12.c13*sheet11.e79); end
-  def bd5; @bd5 ||= sheet7.bd5/(sheet12.c13*sheet11.e79); end
-  def be5; @be5 ||= sheet7.be5/(sheet12.c13*sheet11.e79); end
-  def bf5; @bf5 ||= sheet7.bf5/(sheet12.c13*sheet11.e79); end
-  def bg5; @bg5 ||= sheet7.bg5/(sheet12.c13*sheet11.e79); end
-  def bi5; @bi5 ||= sheet7.bi5/(sheet12.c13*sheet11.e79); end
-  def bj5; @bj5 ||= sheet7.bj5/(sheet12.c13*sheet11.e79); end
-  def bk5; @bk5 ||= sheet7.bk5/(sheet12.c13*sheet11.e79); end
-  def bl5; @bl5 ||= sheet7.bl5/(sheet12.c13*sheet11.e79); end
-  def bm5; @bm5 ||= sheet7.bm5/(sheet12.c13*sheet11.e79); end
-  def bn5; @bn5 ||= sheet7.bn5/(sheet12.c13*sheet11.e79); end
-  def bo5; @bo5 ||= sheet7.bo5/(sheet12.c13*sheet11.e79); end
-  def bp5; @bp5 ||= sheet7.bp5/(sheet12.c13*sheet11.e79); end
-  def bq5; @bq5 ||= sheet7.bq5/(sheet12.c13*sheet11.e79); end
-  def bs5; @bs5 ||= sheet7.bs5/(sheet12.c13*sheet11.e79); end
-  def bt5; @bt5 ||= sheet7.bt5/(sheet12.c13*sheet11.e79); end
-  def bu5; @bu5 ||= sheet7.bu5/(sheet12.c13*sheet11.e79); end
-  def bv5; @bv5 ||= sheet7.bv5/(sheet12.c13*sheet11.e79); end
-  def bw5; @bw5 ||= sheet7.bw5/(sheet12.c13*sheet11.e79); end
-  def bx5; @bx5 ||= sheet7.bx5/(sheet12.c13*sheet11.e79); end
-  def by5; @by5 ||= sheet7.by5/(sheet12.c13*sheet11.e79); end
-  def bz5; @bz5 ||= sheet7.bz5/(sheet12.c13*sheet11.e79); end
-  def ca5; @ca5 ||= sheet7.ca5/(sheet12.c13*sheet11.e79); end
-  def cc5; @cc5 ||= average(a('bs5','ca5')); end
-  def cd5; @cd5 ||= (sumproduct(a('bt5','ca5'),sheet12.a('d28','k28'))*5.0)+bs5; end
-  def cf5; @cf5 ||= sheet7.cf5/(sheet12.c13*sheet11.e79); end
-  def cg5; @cg5 ||= sheet7.cg5/(sheet12.c13*sheet11.e79); end
-  def ch5; @ch5 ||= sheet7.ch5/(sheet12.c13*sheet11.e79); end
-  def ci5; @ci5 ||= sheet7.ci5/(sheet12.c13*sheet11.e79); end
-  def cj5; @cj5 ||= sheet7.cj5/(sheet12.c13*sheet11.e79); end
-  def ck5; @ck5 ||= sheet7.ck5/(sheet12.c13*sheet11.e79); end
-  def cl5; @cl5 ||= sheet7.cl5/(sheet12.c13*sheet11.e79); end
-  def cm5; @cm5 ||= sheet7.cm5/(sheet12.c13*sheet11.e79); end
-  def cn5; @cn5 ||= sheet7.cn5/(sheet12.c13*sheet11.e79); end
-  def cp5; @cp5 ||= average(a('cf5','cn5')); end
-  def cq5; @cq5 ||= (sumproduct(a('cg5','cn5'),sheet12.a('d28','k28'))*5.0)+cf5; end
-  def cr5; @cr5 ||= excel_if(excel_comparison(abs(cd5-cq5-at5),"<",1.0),"ok","err"); end
-  def a6; "III.a.1"; end
-  def b6; "Onshore wind"; end
-  def c6; "Power"; end
-  def e6; @e6 ||= sheet7.e6/(sheet12.c13*sheet11.e79); end
-  def f6; @f6 ||= sheet7.f6/(sheet12.c13*sheet11.e79); end
-  def g6; @g6 ||= sheet7.g6/(sheet12.c13*sheet11.e79); end
-  def h6; @h6 ||= sheet7.h6/(sheet12.c13*sheet11.e79); end
-  def i6; @i6 ||= sheet7.i6/(sheet12.c13*sheet11.e79); end
-  def j6; @j6 ||= sheet7.j6/(sheet12.c13*sheet11.e79); end
-  def k6; @k6 ||= sheet7.k6/(sheet12.c13*sheet11.e79); end
-  def l6; @l6 ||= sheet7.l6/(sheet12.c13*sheet11.e79); end
-  def m6; @m6 ||= sheet7.m6/(sheet12.c13*sheet11.e79); end
-  def o6; @o6 ||= sheet7.o6/(sheet12.c13*sheet11.e79); end
-  def p6; @p6 ||= sheet7.p6/(sheet12.c13*sheet11.e79); end
-  def q6; @q6 ||= sheet7.q6/(sheet12.c13*sheet11.e79); end
-  def r6; @r6 ||= sheet7.r6/(sheet12.c13*sheet11.e79); end
-  def s6; @s6 ||= sheet7.s6/(sheet12.c13*sheet11.e79); end
-  def t6; @t6 ||= sheet7.t6/(sheet12.c13*sheet11.e79); end
-  def u6; @u6 ||= sheet7.u6/(sheet12.c13*sheet11.e79); end
-  def v6; @v6 ||= sheet7.v6/(sheet12.c13*sheet11.e79); end
-  def w6; @w6 ||= sheet7.w6/(sheet12.c13*sheet11.e79); end
-  def y6; @y6 ||= sheet7.y6/(sheet12.c13*sheet11.e79); end
-  def z6; @z6 ||= sheet7.z6/(sheet12.c13*sheet11.e79); end
-  def aa6; @aa6 ||= sheet7.aa6/(sheet12.c13*sheet11.e79); end
-  def ab6; @ab6 ||= sheet7.ab6/(sheet12.c13*sheet11.e79); end
-  def ac6; @ac6 ||= sheet7.ac6/(sheet12.c13*sheet11.e79); end
-  def ad6; @ad6 ||= sheet7.ad6/(sheet12.c13*sheet11.e79); end
-  def ae6; @ae6 ||= sheet7.ae6/(sheet12.c13*sheet11.e79); end
-  def af6; @af6 ||= sheet7.af6/(sheet12.c13*sheet11.e79); end
-  def ag6; @ag6 ||= sheet7.ag6/(sheet12.c13*sheet11.e79); end
-  def ai6; @ai6 ||= sheet7.ai6/(sheet12.c13*sheet11.e79); end
-  def aj6; @aj6 ||= sheet7.aj6/(sheet12.c13*sheet11.e79); end
-  def ak6; @ak6 ||= sheet7.ak6/(sheet12.c13*sheet11.e79); end
-  def al6; @al6 ||= sheet7.al6/(sheet12.c13*sheet11.e79); end
-  def am6; @am6 ||= sheet7.am6/(sheet12.c13*sheet11.e79); end
-  def an6; @an6 ||= sheet7.an6/(sheet12.c13*sheet11.e79); end
-  def ao6; @ao6 ||= sheet7.ao6/(sheet12.c13*sheet11.e79); end
-  def ap6; @ap6 ||= sheet7.ap6/(sheet12.c13*sheet11.e79); end
-  def aq6; @aq6 ||= sheet7.aq6/(sheet12.c13*sheet11.e79); end
-  def as6; @as6 ||= average(a('ai6','aq6')); end
-  def at6; @at6 ||= (sumproduct(a('aj6','aq6'),sheet12.a('d28','k28'))*5.0)+ai6; end
-  def av6; 0.0; end
-  def aw6; 5.0; end
-  def ay6; @ay6 ||= sheet7.ay6/(sheet12.c13*sheet11.e79); end
-  def az6; @az6 ||= sheet7.az6/(sheet12.c13*sheet11.e79); end
-  def ba6; @ba6 ||= sheet7.ba6/(sheet12.c13*sheet11.e79); end
-  def bb6; @bb6 ||= sheet7.bb6/(sheet12.c13*sheet11.e79); end
-  def bc6; @bc6 ||= sheet7.bc6/(sheet12.c13*sheet11.e79); end
-  def bd6; @bd6 ||= sheet7.bd6/(sheet12.c13*sheet11.e79); end
-  def be6; @be6 ||= sheet7.be6/(sheet12.c13*sheet11.e79); end
-  def bf6; @bf6 ||= sheet7.bf6/(sheet12.c13*sheet11.e79); end
-  def bg6; @bg6 ||= sheet7.bg6/(sheet12.c13*sheet11.e79); end
-  def bi6; @bi6 ||= sheet7.bi6/(sheet12.c13*sheet11.e79); end
-  def bj6; @bj6 ||= sheet7.bj6/(sheet12.c13*sheet11.e79); end
-  def bk6; @bk6 ||= sheet7.bk6/(sheet12.c13*sheet11.e79); end
-  def bl6; @bl6 ||= sheet7.bl6/(sheet12.c13*sheet11.e79); end
-  def bm6; @bm6 ||= sheet7.bm6/(sheet12.c13*sheet11.e79); end
-  def bn6; @bn6 ||= sheet7.bn6/(sheet12.c13*sheet11.e79); end
-  def bo6; @bo6 ||= sheet7.bo6/(sheet12.c13*sheet11.e79); end
-  def bp6; @bp6 ||= sheet7.bp6/(sheet12.c13*sheet11.e79); end
-  def bq6; @bq6 ||= sheet7.bq6/(sheet12.c13*sheet11.e79); end
-  def bs6; @bs6 ||= sheet7.bs6/(sheet12.c13*sheet11.e79); end
-  def bt6; @bt6 ||= sheet7.bt6/(sheet12.c13*sheet11.e79); end
-  def bu6; @bu6 ||= sheet7.bu6/(sheet12.c13*sheet11.e79); end
-  def bv6; @bv6 ||= sheet7.bv6/(sheet12.c13*sheet11.e79); end
-  def bw6; @bw6 ||= sheet7.bw6/(sheet12.c13*sheet11.e79); end
-  def bx6; @bx6 ||= sheet7.bx6/(sheet12.c13*sheet11.e79); end
-  def by6; @by6 ||= sheet7.by6/(sheet12.c13*sheet11.e79); end
-  def bz6; @bz6 ||= sheet7.bz6/(sheet12.c13*sheet11.e79); end
-  def ca6; @ca6 ||= sheet7.ca6/(sheet12.c13*sheet11.e79); end
-  def cc6; @cc6 ||= average(a('bs6','ca6')); end
-  def cd6; @cd6 ||= (sumproduct(a('bt6','ca6'),sheet12.a('d28','k28'))*5.0)+bs6; end
-  def cf6; @cf6 ||= sheet7.cf6/(sheet12.c13*sheet11.e79); end
-  def cg6; @cg6 ||= sheet7.cg6/(sheet12.c13*sheet11.e79); end
-  def ch6; @ch6 ||= sheet7.ch6/(sheet12.c13*sheet11.e79); end
-  def ci6; @ci6 ||= sheet7.ci6/(sheet12.c13*sheet11.e79); end
-  def cj6; @cj6 ||= sheet7.cj6/(sheet12.c13*sheet11.e79); end
-  def ck6; @ck6 ||= sheet7.ck6/(sheet12.c13*sheet11.e79); end
-  def cl6; @cl6 ||= sheet7.cl6/(sheet12.c13*sheet11.e79); end
-  def cm6; @cm6 ||= sheet7.cm6/(sheet12.c13*sheet11.e79); end
-  def cn6; @cn6 ||= sheet7.cn6/(sheet12.c13*sheet11.e79); end
-  def cp6; @cp6 ||= average(a('cf6','cn6')); end
-  def cq6; @cq6 ||= (sumproduct(a('cg6','cn6'),sheet12.a('d28','k28'))*5.0)+cf6; end
-  def cr6; @cr6 ||= excel_if(excel_comparison(abs(cd6-cq6-at6),"<",1.0),"ok","err"); end
-  def a7; "III.a.2"; end
-  def b7; "Offshore wind"; end
-  def c7; "Power"; end
-  def e7; @e7 ||= sheet7.e7/(sheet12.c13*sheet11.e79); end
-  def f7; @f7 ||= sheet7.f7/(sheet12.c13*sheet11.e79); end
-  def g7; @g7 ||= sheet7.g7/(sheet12.c13*sheet11.e79); end
-  def h7; @h7 ||= sheet7.h7/(sheet12.c13*sheet11.e79); end
-  def i7; @i7 ||= sheet7.i7/(sheet12.c13*sheet11.e79); end
-  def j7; @j7 ||= sheet7.j7/(sheet12.c13*sheet11.e79); end
-  def k7; @k7 ||= sheet7.k7/(sheet12.c13*sheet11.e79); end
-  def l7; @l7 ||= sheet7.l7/(sheet12.c13*sheet11.e79); end
-  def m7; @m7 ||= sheet7.m7/(sheet12.c13*sheet11.e79); end
-  def o7; @o7 ||= sheet7.o7/(sheet12.c13*sheet11.e79); end
-  def p7; @p7 ||= sheet7.p7/(sheet12.c13*sheet11.e79); end
-  def q7; @q7 ||= sheet7.q7/(sheet12.c13*sheet11.e79); end
-  def r7; @r7 ||= sheet7.r7/(sheet12.c13*sheet11.e79); end
-  def s7; @s7 ||= sheet7.s7/(sheet12.c13*sheet11.e79); end
-  def t7; @t7 ||= sheet7.t7/(sheet12.c13*sheet11.e79); end
-  def u7; @u7 ||= sheet7.u7/(sheet12.c13*sheet11.e79); end
-  def v7; @v7 ||= sheet7.v7/(sheet12.c13*sheet11.e79); end
-  def w7; @w7 ||= sheet7.w7/(sheet12.c13*sheet11.e79); end
-  def y7; @y7 ||= sheet7.y7/(sheet12.c13*sheet11.e79); end
-  def z7; @z7 ||= sheet7.z7/(sheet12.c13*sheet11.e79); end
-  def aa7; @aa7 ||= sheet7.aa7/(sheet12.c13*sheet11.e79); end
-  def ab7; @ab7 ||= sheet7.ab7/(sheet12.c13*sheet11.e79); end
-  def ac7; @ac7 ||= sheet7.ac7/(sheet12.c13*sheet11.e79); end
-  def ad7; @ad7 ||= sheet7.ad7/(sheet12.c13*sheet11.e79); end
-  def ae7; @ae7 ||= sheet7.ae7/(sheet12.c13*sheet11.e79); end
-  def af7; @af7 ||= sheet7.af7/(sheet12.c13*sheet11.e79); end
-  def ag7; @ag7 ||= sheet7.ag7/(sheet12.c13*sheet11.e79); end
-  def ai7; @ai7 ||= sheet7.ai7/(sheet12.c13*sheet11.e79); end
-  def aj7; @aj7 ||= sheet7.aj7/(sheet12.c13*sheet11.e79); end
-  def ak7; @ak7 ||= sheet7.ak7/(sheet12.c13*sheet11.e79); end
-  def al7; @al7 ||= sheet7.al7/(sheet12.c13*sheet11.e79); end
-  def am7; @am7 ||= sheet7.am7/(sheet12.c13*sheet11.e79); end
-  def an7; @an7 ||= sheet7.an7/(sheet12.c13*sheet11.e79); end
-  def ao7; @ao7 ||= sheet7.ao7/(sheet12.c13*sheet11.e79); end
-  def ap7; @ap7 ||= sheet7.ap7/(sheet12.c13*sheet11.e79); end
-  def aq7; @aq7 ||= sheet7.aq7/(sheet12.c13*sheet11.e79); end
-  def as7; @as7 ||= average(a('ai7','aq7')); end
-  def at7; @at7 ||= (sumproduct(a('aj7','aq7'),sheet12.a('d28','k28'))*5.0)+ai7; end
-  def av7; 0.0; end
-  def aw7; 5.0; end
-  def ay7; @ay7 ||= sheet7.ay7/(sheet12.c13*sheet11.e79); end
-  def az7; @az7 ||= sheet7.az7/(sheet12.c13*sheet11.e79); end
-  def ba7; @ba7 ||= sheet7.ba7/(sheet12.c13*sheet11.e79); end
-  def bb7; @bb7 ||= sheet7.bb7/(sheet12.c13*sheet11.e79); end
-  def bc7; @bc7 ||= sheet7.bc7/(sheet12.c13*sheet11.e79); end
-  def bd7; @bd7 ||= sheet7.bd7/(sheet12.c13*sheet11.e79); end
-  def be7; @be7 ||= sheet7.be7/(sheet12.c13*sheet11.e79); end
-  def bf7; @bf7 ||= sheet7.bf7/(sheet12.c13*sheet11.e79); end
-  def bg7; @bg7 ||= sheet7.bg7/(sheet12.c13*sheet11.e79); end
-  def bi7; @bi7 ||= sheet7.bi7/(sheet12.c13*sheet11.e79); end
-  def bj7; @bj7 ||= sheet7.bj7/(sheet12.c13*sheet11.e79); end
-  def bk7; @bk7 ||= sheet7.bk7/(sheet12.c13*sheet11.e79); end
-  def bl7; @bl7 ||= sheet7.bl7/(sheet12.c13*sheet11.e79); end
-  def bm7; @bm7 ||= sheet7.bm7/(sheet12.c13*sheet11.e79); end
-  def bn7; @bn7 ||= sheet7.bn7/(sheet12.c13*sheet11.e79); end
-  def bo7; @bo7 ||= sheet7.bo7/(sheet12.c13*sheet11.e79); end
-  def bp7; @bp7 ||= sheet7.bp7/(sheet12.c13*sheet11.e79); end
-  def bq7; @bq7 ||= sheet7.bq7/(sheet12.c13*sheet11.e79); end
-  def bs7; @bs7 ||= sheet7.bs7/(sheet12.c13*sheet11.e79); end
-  def bt7; @bt7 ||= sheet7.bt7/(sheet12.c13*sheet11.e79); end
-  def bu7; @bu7 ||= sheet7.bu7/(sheet12.c13*sheet11.e79); end
-  def bv7; @bv7 ||= sheet7.bv7/(sheet12.c13*sheet11.e79); end
-  def bw7; @bw7 ||= sheet7.bw7/(sheet12.c13*sheet11.e79); end
-  def bx7; @bx7 ||= sheet7.bx7/(sheet12.c13*sheet11.e79); end
-  def by7; @by7 ||= sheet7.by7/(sheet12.c13*sheet11.e79); end
-  def bz7; @bz7 ||= sheet7.bz7/(sheet12.c13*sheet11.e79); end
-  def ca7; @ca7 ||= sheet7.ca7/(sheet12.c13*sheet11.e79); end
-  def cc7; @cc7 ||= average(a('bs7','ca7')); end
-  def cd7; @cd7 ||= (sumproduct(a('bt7','ca7'),sheet12.a('d28','k28'))*5.0)+bs7; end
-  def cf7; @cf7 ||= sheet7.cf7/(sheet12.c13*sheet11.e79); end
-  def cg7; @cg7 ||= sheet7.cg7/(sheet12.c13*sheet11.e79); end
-  def ch7; @ch7 ||= sheet7.ch7/(sheet12.c13*sheet11.e79); end
-  def ci7; @ci7 ||= sheet7.ci7/(sheet12.c13*sheet11.e79); end
-  def cj7; @cj7 ||= sheet7.cj7/(sheet12.c13*sheet11.e79); end
-  def ck7; @ck7 ||= sheet7.ck7/(sheet12.c13*sheet11.e79); end
-  def cl7; @cl7 ||= sheet7.cl7/(sheet12.c13*sheet11.e79); end
-  def cm7; @cm7 ||= sheet7.cm7/(sheet12.c13*sheet11.e79); end
-  def cn7; @cn7 ||= sheet7.cn7/(sheet12.c13*sheet11.e79); end
-  def cp7; @cp7 ||= average(a('cf7','cn7')); end
-  def cq7; @cq7 ||= (sumproduct(a('cg7','cn7'),sheet12.a('d28','k28'))*5.0)+cf7; end
-  def cr7; @cr7 ||= excel_if(excel_comparison(abs(cd7-cq7-at7),"<",1.0),"ok","err"); end
-  def a8; "III.b"; end
-  def b8; "Hydroelectric"; end
-  def c8; "Power"; end
-  def e8; @e8 ||= sheet7.e8/(sheet12.c13*sheet11.e79); end
-  def f8; @f8 ||= sheet7.f8/(sheet12.c13*sheet11.e79); end
-  def g8; @g8 ||= sheet7.g8/(sheet12.c13*sheet11.e79); end
-  def h8; @h8 ||= sheet7.h8/(sheet12.c13*sheet11.e79); end
-  def i8; @i8 ||= sheet7.i8/(sheet12.c13*sheet11.e79); end
-  def j8; @j8 ||= sheet7.j8/(sheet12.c13*sheet11.e79); end
-  def k8; @k8 ||= sheet7.k8/(sheet12.c13*sheet11.e79); end
-  def l8; @l8 ||= sheet7.l8/(sheet12.c13*sheet11.e79); end
-  def m8; @m8 ||= sheet7.m8/(sheet12.c13*sheet11.e79); end
-  def o8; @o8 ||= sheet7.o8/(sheet12.c13*sheet11.e79); end
-  def p8; @p8 ||= sheet7.p8/(sheet12.c13*sheet11.e79); end
-  def q8; @q8 ||= sheet7.q8/(sheet12.c13*sheet11.e79); end
-  def r8; @r8 ||= sheet7.r8/(sheet12.c13*sheet11.e79); end
-  def s8; @s8 ||= sheet7.s8/(sheet12.c13*sheet11.e79); end
-  def t8; @t8 ||= sheet7.t8/(sheet12.c13*sheet11.e79); end
-  def u8; @u8 ||= sheet7.u8/(sheet12.c13*sheet11.e79); end
-  def v8; @v8 ||= sheet7.v8/(sheet12.c13*sheet11.e79); end
-  def w8; @w8 ||= sheet7.w8/(sheet12.c13*sheet11.e79); end
-  def y8; @y8 ||= sheet7.y8/(sheet12.c13*sheet11.e79); end
-  def z8; @z8 ||= sheet7.z8/(sheet12.c13*sheet11.e79); end
-  def aa8; @aa8 ||= sheet7.aa8/(sheet12.c13*sheet11.e79); end
-  def ab8; @ab8 ||= sheet7.ab8/(sheet12.c13*sheet11.e79); end
-  def ac8; @ac8 ||= sheet7.ac8/(sheet12.c13*sheet11.e79); end
-  def ad8; @ad8 ||= sheet7.ad8/(sheet12.c13*sheet11.e79); end
-  def ae8; @ae8 ||= sheet7.ae8/(sheet12.c13*sheet11.e79); end
-  def af8; @af8 ||= sheet7.af8/(sheet12.c13*sheet11.e79); end
-  def ag8; @ag8 ||= sheet7.ag8/(sheet12.c13*sheet11.e79); end
-  def ai8; @ai8 ||= sheet7.ai8/(sheet12.c13*sheet11.e79); end
-  def aj8; @aj8 ||= sheet7.aj8/(sheet12.c13*sheet11.e79); end
-  def ak8; @ak8 ||= sheet7.ak8/(sheet12.c13*sheet11.e79); end
-  def al8; @al8 ||= sheet7.al8/(sheet12.c13*sheet11.e79); end
-  def am8; @am8 ||= sheet7.am8/(sheet12.c13*sheet11.e79); end
-  def an8; @an8 ||= sheet7.an8/(sheet12.c13*sheet11.e79); end
-  def ao8; @ao8 ||= sheet7.ao8/(sheet12.c13*sheet11.e79); end
-  def ap8; @ap8 ||= sheet7.ap8/(sheet12.c13*sheet11.e79); end
-  def aq8; @aq8 ||= sheet7.aq8/(sheet12.c13*sheet11.e79); end
-  def as8; @as8 ||= average(a('ai8','aq8')); end
-  def at8; @at8 ||= (sumproduct(a('aj8','aq8'),sheet12.a('d28','k28'))*5.0)+ai8; end
-  def av8; 0.0; end
-  def aw8; 5.0; end
-  def ay8; @ay8 ||= sheet7.ay8/(sheet12.c13*sheet11.e79); end
-  def az8; @az8 ||= sheet7.az8/(sheet12.c13*sheet11.e79); end
-  def ba8; @ba8 ||= sheet7.ba8/(sheet12.c13*sheet11.e79); end
-  def bb8; @bb8 ||= sheet7.bb8/(sheet12.c13*sheet11.e79); end
-  def bc8; @bc8 ||= sheet7.bc8/(sheet12.c13*sheet11.e79); end
-  def bd8; @bd8 ||= sheet7.bd8/(sheet12.c13*sheet11.e79); end
-  def be8; @be8 ||= sheet7.be8/(sheet12.c13*sheet11.e79); end
-  def bf8; @bf8 ||= sheet7.bf8/(sheet12.c13*sheet11.e79); end
-  def bg8; @bg8 ||= sheet7.bg8/(sheet12.c13*sheet11.e79); end
-  def bi8; @bi8 ||= sheet7.bi8/(sheet12.c13*sheet11.e79); end
-  def bj8; @bj8 ||= sheet7.bj8/(sheet12.c13*sheet11.e79); end
-  def bk8; @bk8 ||= sheet7.bk8/(sheet12.c13*sheet11.e79); end
-  def bl8; @bl8 ||= sheet7.bl8/(sheet12.c13*sheet11.e79); end
-  def bm8; @bm8 ||= sheet7.bm8/(sheet12.c13*sheet11.e79); end
-  def bn8; @bn8 ||= sheet7.bn8/(sheet12.c13*sheet11.e79); end
-  def bo8; @bo8 ||= sheet7.bo8/(sheet12.c13*sheet11.e79); end
-  def bp8; @bp8 ||= sheet7.bp8/(sheet12.c13*sheet11.e79); end
-  def bq8; @bq8 ||= sheet7.bq8/(sheet12.c13*sheet11.e79); end
-  def bs8; @bs8 ||= sheet7.bs8/(sheet12.c13*sheet11.e79); end
-  def bt8; @bt8 ||= sheet7.bt8/(sheet12.c13*sheet11.e79); end
-  def bu8; @bu8 ||= sheet7.bu8/(sheet12.c13*sheet11.e79); end
-  def bv8; @bv8 ||= sheet7.bv8/(sheet12.c13*sheet11.e79); end
-  def bw8; @bw8 ||= sheet7.bw8/(sheet12.c13*sheet11.e79); end
-  def bx8; @bx8 ||= sheet7.bx8/(sheet12.c13*sheet11.e79); end
-  def by8; @by8 ||= sheet7.by8/(sheet12.c13*sheet11.e79); end
-  def bz8; @bz8 ||= sheet7.bz8/(sheet12.c13*sheet11.e79); end
-  def ca8; @ca8 ||= sheet7.ca8/(sheet12.c13*sheet11.e79); end
-  def cc8; @cc8 ||= average(a('bs8','ca8')); end
-  def cd8; @cd8 ||= (sumproduct(a('bt8','ca8'),sheet12.a('d28','k28'))*5.0)+bs8; end
-  def cf8; @cf8 ||= sheet7.cf8/(sheet12.c13*sheet11.e79); end
-  def cg8; @cg8 ||= sheet7.cg8/(sheet12.c13*sheet11.e79); end
-  def ch8; @ch8 ||= sheet7.ch8/(sheet12.c13*sheet11.e79); end
-  def ci8; @ci8 ||= sheet7.ci8/(sheet12.c13*sheet11.e79); end
-  def cj8; @cj8 ||= sheet7.cj8/(sheet12.c13*sheet11.e79); end
-  def ck8; @ck8 ||= sheet7.ck8/(sheet12.c13*sheet11.e79); end
-  def cl8; @cl8 ||= sheet7.cl8/(sheet12.c13*sheet11.e79); end
-  def cm8; @cm8 ||= sheet7.cm8/(sheet12.c13*sheet11.e79); end
-  def cn8; @cn8 ||= sheet7.cn8/(sheet12.c13*sheet11.e79); end
-  def cp8; @cp8 ||= average(a('cf8','cn8')); end
-  def cq8; @cq8 ||= (sumproduct(a('cg8','cn8'),sheet12.a('d28','k28'))*5.0)+cf8; end
-  def cr8; @cr8 ||= excel_if(excel_comparison(abs(cd8-cq8-at8),"<",1.0),"ok","err"); end
-  def a9; "III.c"; end
-  def b9; "Wave and Tidal"; end
-  def c9; "Power"; end
-  def e9; @e9 ||= sheet7.e9/(sheet12.c13*sheet11.e79); end
-  def f9; @f9 ||= sheet7.f9/(sheet12.c13*sheet11.e79); end
-  def g9; @g9 ||= sheet7.g9/(sheet12.c13*sheet11.e79); end
-  def h9; @h9 ||= sheet7.h9/(sheet12.c13*sheet11.e79); end
-  def i9; @i9 ||= sheet7.i9/(sheet12.c13*sheet11.e79); end
-  def j9; @j9 ||= sheet7.j9/(sheet12.c13*sheet11.e79); end
-  def k9; @k9 ||= sheet7.k9/(sheet12.c13*sheet11.e79); end
-  def l9; @l9 ||= sheet7.l9/(sheet12.c13*sheet11.e79); end
-  def m9; @m9 ||= sheet7.m9/(sheet12.c13*sheet11.e79); end
-  def o9; @o9 ||= sheet7.o9/(sheet12.c13*sheet11.e79); end
-  def p9; @p9 ||= sheet7.p9/(sheet12.c13*sheet11.e79); end
-  def q9; @q9 ||= sheet7.q9/(sheet12.c13*sheet11.e79); end
-  def r9; @r9 ||= sheet7.r9/(sheet12.c13*sheet11.e79); end
-  def s9; @s9 ||= sheet7.s9/(sheet12.c13*sheet11.e79); end
-  def t9; @t9 ||= sheet7.t9/(sheet12.c13*sheet11.e79); end
-  def u9; @u9 ||= sheet7.u9/(sheet12.c13*sheet11.e79); end
-  def v9; @v9 ||= sheet7.v9/(sheet12.c13*sheet11.e79); end
-  def w9; @w9 ||= sheet7.w9/(sheet12.c13*sheet11.e79); end
-  def y9; @y9 ||= sheet7.y9/(sheet12.c13*sheet11.e79); end
-  def z9; @z9 ||= sheet7.z9/(sheet12.c13*sheet11.e79); end
-  def aa9; @aa9 ||= sheet7.aa9/(sheet12.c13*sheet11.e79); end
-  def ab9; @ab9 ||= sheet7.ab9/(sheet12.c13*sheet11.e79); end
-  def ac9; @ac9 ||= sheet7.ac9/(sheet12.c13*sheet11.e79); end
-  def ad9; @ad9 ||= sheet7.ad9/(sheet12.c13*sheet11.e79); end
-  def ae9; @ae9 ||= sheet7.ae9/(sheet12.c13*sheet11.e79); end
-  def af9; @af9 ||= sheet7.af9/(sheet12.c13*sheet11.e79); end
-  def ag9; @ag9 ||= sheet7.ag9/(sheet12.c13*sheet11.e79); end
-  def ai9; @ai9 ||= sheet7.ai9/(sheet12.c13*sheet11.e79); end
-  def aj9; @aj9 ||= sheet7.aj9/(sheet12.c13*sheet11.e79); end
-  def ak9; @ak9 ||= sheet7.ak9/(sheet12.c13*sheet11.e79); end
-  def al9; @al9 ||= sheet7.al9/(sheet12.c13*sheet11.e79); end
-  def am9; @am9 ||= sheet7.am9/(sheet12.c13*sheet11.e79); end
-  def an9; @an9 ||= sheet7.an9/(sheet12.c13*sheet11.e79); end
-  def ao9; @ao9 ||= sheet7.ao9/(sheet12.c13*sheet11.e79); end
-  def ap9; @ap9 ||= sheet7.ap9/(sheet12.c13*sheet11.e79); end
-  def aq9; @aq9 ||= sheet7.aq9/(sheet12.c13*sheet11.e79); end
-  def as9; @as9 ||= average(a('ai9','aq9')); end
-  def at9; @at9 ||= (sumproduct(a('aj9','aq9'),sheet12.a('d28','k28'))*5.0)+ai9; end
-  def av9; 0.0; end
-  def aw9; 5.0; end
-  def ay9; @ay9 ||= sheet7.ay9/(sheet12.c13*sheet11.e79); end
-  def az9; @az9 ||= sheet7.az9/(sheet12.c13*sheet11.e79); end
-  def ba9; @ba9 ||= sheet7.ba9/(sheet12.c13*sheet11.e79); end
-  def bb9; @bb9 ||= sheet7.bb9/(sheet12.c13*sheet11.e79); end
-  def bc9; @bc9 ||= sheet7.bc9/(sheet12.c13*sheet11.e79); end
-  def bd9; @bd9 ||= sheet7.bd9/(sheet12.c13*sheet11.e79); end
-  def be9; @be9 ||= sheet7.be9/(sheet12.c13*sheet11.e79); end
-  def bf9; @bf9 ||= sheet7.bf9/(sheet12.c13*sheet11.e79); end
-  def bg9; @bg9 ||= sheet7.bg9/(sheet12.c13*sheet11.e79); end
-  def bi9; @bi9 ||= sheet7.bi9/(sheet12.c13*sheet11.e79); end
-  def bj9; @bj9 ||= sheet7.bj9/(sheet12.c13*sheet11.e79); end
-  def bk9; @bk9 ||= sheet7.bk9/(sheet12.c13*sheet11.e79); end
-  def bl9; @bl9 ||= sheet7.bl9/(sheet12.c13*sheet11.e79); end
-  def bm9; @bm9 ||= sheet7.bm9/(sheet12.c13*sheet11.e79); end
-  def bn9; @bn9 ||= sheet7.bn9/(sheet12.c13*sheet11.e79); end
-  def bo9; @bo9 ||= sheet7.bo9/(sheet12.c13*sheet11.e79); end
-  def bp9; @bp9 ||= sheet7.bp9/(sheet12.c13*sheet11.e79); end
-  def bq9; @bq9 ||= sheet7.bq9/(sheet12.c13*sheet11.e79); end
-  def bs9; @bs9 ||= sheet7.bs9/(sheet12.c13*sheet11.e79); end
-  def bt9; @bt9 ||= sheet7.bt9/(sheet12.c13*sheet11.e79); end
-  def bu9; @bu9 ||= sheet7.bu9/(sheet12.c13*sheet11.e79); end
-  def bv9; @bv9 ||= sheet7.bv9/(sheet12.c13*sheet11.e79); end
-  def bw9; @bw9 ||= sheet7.bw9/(sheet12.c13*sheet11.e79); end
-  def bx9; @bx9 ||= sheet7.bx9/(sheet12.c13*sheet11.e79); end
-  def by9; @by9 ||= sheet7.by9/(sheet12.c13*sheet11.e79); end
-  def bz9; @bz9 ||= sheet7.bz9/(sheet12.c13*sheet11.e79); end
-  def ca9; @ca9 ||= sheet7.ca9/(sheet12.c13*sheet11.e79); end
-  def cc9; @cc9 ||= average(a('bs9','ca9')); end
-  def cd9; @cd9 ||= (sumproduct(a('bt9','ca9'),sheet12.a('d28','k28'))*5.0)+bs9; end
-  def cf9; @cf9 ||= sheet7.cf9/(sheet12.c13*sheet11.e79); end
-  def cg9; @cg9 ||= sheet7.cg9/(sheet12.c13*sheet11.e79); end
-  def ch9; @ch9 ||= sheet7.ch9/(sheet12.c13*sheet11.e79); end
-  def ci9; @ci9 ||= sheet7.ci9/(sheet12.c13*sheet11.e79); end
-  def cj9; @cj9 ||= sheet7.cj9/(sheet12.c13*sheet11.e79); end
-  def ck9; @ck9 ||= sheet7.ck9/(sheet12.c13*sheet11.e79); end
-  def cl9; @cl9 ||= sheet7.cl9/(sheet12.c13*sheet11.e79); end
-  def cm9; @cm9 ||= sheet7.cm9/(sheet12.c13*sheet11.e79); end
-  def cn9; @cn9 ||= sheet7.cn9/(sheet12.c13*sheet11.e79); end
-  def cp9; @cp9 ||= average(a('cf9','cn9')); end
-  def cq9; @cq9 ||= (sumproduct(a('cg9','cn9'),sheet12.a('d28','k28'))*5.0)+cf9; end
-  def cr9; @cr9 ||= excel_if(excel_comparison(abs(cd9-cq9-at9),"<",1.0),"ok","err"); end
-  def a10; "III.d"; end
-  def b10; "Geothermal"; end
-  def c10; "Power"; end
-  def e10; @e10 ||= sheet7.e10/(sheet12.c13*sheet11.e79); end
-  def f10; @f10 ||= sheet7.f10/(sheet12.c13*sheet11.e79); end
-  def g10; @g10 ||= sheet7.g10/(sheet12.c13*sheet11.e79); end
-  def h10; @h10 ||= sheet7.h10/(sheet12.c13*sheet11.e79); end
-  def i10; @i10 ||= sheet7.i10/(sheet12.c13*sheet11.e79); end
-  def j10; @j10 ||= sheet7.j10/(sheet12.c13*sheet11.e79); end
-  def k10; @k10 ||= sheet7.k10/(sheet12.c13*sheet11.e79); end
-  def l10; @l10 ||= sheet7.l10/(sheet12.c13*sheet11.e79); end
-  def m10; @m10 ||= sheet7.m10/(sheet12.c13*sheet11.e79); end
-  def o10; @o10 ||= sheet7.o10/(sheet12.c13*sheet11.e79); end
-  def p10; @p10 ||= sheet7.p10/(sheet12.c13*sheet11.e79); end
-  def q10; @q10 ||= sheet7.q10/(sheet12.c13*sheet11.e79); end
-  def r10; @r10 ||= sheet7.r10/(sheet12.c13*sheet11.e79); end
-  def s10; @s10 ||= sheet7.s10/(sheet12.c13*sheet11.e79); end
-  def t10; @t10 ||= sheet7.t10/(sheet12.c13*sheet11.e79); end
-  def u10; @u10 ||= sheet7.u10/(sheet12.c13*sheet11.e79); end
-  def v10; @v10 ||= sheet7.v10/(sheet12.c13*sheet11.e79); end
-  def w10; @w10 ||= sheet7.w10/(sheet12.c13*sheet11.e79); end
-  def y10; @y10 ||= sheet7.y10/(sheet12.c13*sheet11.e79); end
-  def z10; @z10 ||= sheet7.z10/(sheet12.c13*sheet11.e79); end
-  def aa10; @aa10 ||= sheet7.aa10/(sheet12.c13*sheet11.e79); end
-  def ab10; @ab10 ||= sheet7.ab10/(sheet12.c13*sheet11.e79); end
-  def ac10; @ac10 ||= sheet7.ac10/(sheet12.c13*sheet11.e79); end
-  def ad10; @ad10 ||= sheet7.ad10/(sheet12.c13*sheet11.e79); end
-  def ae10; @ae10 ||= sheet7.ae10/(sheet12.c13*sheet11.e79); end
-  def af10; @af10 ||= sheet7.af10/(sheet12.c13*sheet11.e79); end
-  def ag10; @ag10 ||= sheet7.ag10/(sheet12.c13*sheet11.e79); end
-  def ai10; @ai10 ||= sheet7.ai10/(sheet12.c13*sheet11.e79); end
-  def aj10; @aj10 ||= sheet7.aj10/(sheet12.c13*sheet11.e79); end
-  def ak10; @ak10 ||= sheet7.ak10/(sheet12.c13*sheet11.e79); end
-  def al10; @al10 ||= sheet7.al10/(sheet12.c13*sheet11.e79); end
-  def am10; @am10 ||= sheet7.am10/(sheet12.c13*sheet11.e79); end
-  def an10; @an10 ||= sheet7.an10/(sheet12.c13*sheet11.e79); end
-  def ao10; @ao10 ||= sheet7.ao10/(sheet12.c13*sheet11.e79); end
-  def ap10; @ap10 ||= sheet7.ap10/(sheet12.c13*sheet11.e79); end
-  def aq10; @aq10 ||= sheet7.aq10/(sheet12.c13*sheet11.e79); end
-  def as10; @as10 ||= average(a('ai10','aq10')); end
-  def at10; @at10 ||= (sumproduct(a('aj10','aq10'),sheet12.a('d28','k28'))*5.0)+ai10; end
-  def av10; 0.0; end
-  def aw10; 5.0; end
-  def ay10; @ay10 ||= sheet7.ay10/(sheet12.c13*sheet11.e79); end
-  def az10; @az10 ||= sheet7.az10/(sheet12.c13*sheet11.e79); end
-  def ba10; @ba10 ||= sheet7.ba10/(sheet12.c13*sheet11.e79); end
-  def bb10; @bb10 ||= sheet7.bb10/(sheet12.c13*sheet11.e79); end
-  def bc10; @bc10 ||= sheet7.bc10/(sheet12.c13*sheet11.e79); end
-  def bd10; @bd10 ||= sheet7.bd10/(sheet12.c13*sheet11.e79); end
-  def be10; @be10 ||= sheet7.be10/(sheet12.c13*sheet11.e79); end
-  def bf10; @bf10 ||= sheet7.bf10/(sheet12.c13*sheet11.e79); end
-  def bg10; @bg10 ||= sheet7.bg10/(sheet12.c13*sheet11.e79); end
-  def bi10; @bi10 ||= sheet7.bi10/(sheet12.c13*sheet11.e79); end
-  def bj10; @bj10 ||= sheet7.bj10/(sheet12.c13*sheet11.e79); end
-  def bk10; @bk10 ||= sheet7.bk10/(sheet12.c13*sheet11.e79); end
-  def bl10; @bl10 ||= sheet7.bl10/(sheet12.c13*sheet11.e79); end
-  def bm10; @bm10 ||= sheet7.bm10/(sheet12.c13*sheet11.e79); end
-  def bn10; @bn10 ||= sheet7.bn10/(sheet12.c13*sheet11.e79); end
-  def bo10; @bo10 ||= sheet7.bo10/(sheet12.c13*sheet11.e79); end
-  def bp10; @bp10 ||= sheet7.bp10/(sheet12.c13*sheet11.e79); end
-  def bq10; @bq10 ||= sheet7.bq10/(sheet12.c13*sheet11.e79); end
-  def bs10; @bs10 ||= sheet7.bs10/(sheet12.c13*sheet11.e79); end
-  def bt10; @bt10 ||= sheet7.bt10/(sheet12.c13*sheet11.e79); end
-  def bu10; @bu10 ||= sheet7.bu10/(sheet12.c13*sheet11.e79); end
-  def bv10; @bv10 ||= sheet7.bv10/(sheet12.c13*sheet11.e79); end
-  def bw10; @bw10 ||= sheet7.bw10/(sheet12.c13*sheet11.e79); end
-  def bx10; @bx10 ||= sheet7.bx10/(sheet12.c13*sheet11.e79); end
-  def by10; @by10 ||= sheet7.by10/(sheet12.c13*sheet11.e79); end
-  def bz10; @bz10 ||= sheet7.bz10/(sheet12.c13*sheet11.e79); end
-  def ca10; @ca10 ||= sheet7.ca10/(sheet12.c13*sheet11.e79); end
-  def cc10; @cc10 ||= average(a('bs10','ca10')); end
-  def cd10; @cd10 ||= (sumproduct(a('bt10','ca10'),sheet12.a('d28','k28'))*5.0)+bs10; end
-  def cf10; @cf10 ||= sheet7.cf10/(sheet12.c13*sheet11.e79); end
-  def cg10; @cg10 ||= sheet7.cg10/(sheet12.c13*sheet11.e79); end
-  def ch10; @ch10 ||= sheet7.ch10/(sheet12.c13*sheet11.e79); end
-  def ci10; @ci10 ||= sheet7.ci10/(sheet12.c13*sheet11.e79); end
-  def cj10; @cj10 ||= sheet7.cj10/(sheet12.c13*sheet11.e79); end
-  def ck10; @ck10 ||= sheet7.ck10/(sheet12.c13*sheet11.e79); end
-  def cl10; @cl10 ||= sheet7.cl10/(sheet12.c13*sheet11.e79); end
-  def cm10; @cm10 ||= sheet7.cm10/(sheet12.c13*sheet11.e79); end
-  def cn10; @cn10 ||= sheet7.cn10/(sheet12.c13*sheet11.e79); end
-  def cp10; @cp10 ||= average(a('cf10','cn10')); end
-  def cq10; @cq10 ||= (sumproduct(a('cg10','cn10'),sheet12.a('d28','k28'))*5.0)+cf10; end
-  def cr10; @cr10 ||= excel_if(excel_comparison(abs(cd10-cq10-at10),"<",1.0),"ok","err"); end
-  def a11; "IV.a"; end
-  def b11; "Distributed solar PV"; end
-  def c11; "Power"; end
-  def e11; @e11 ||= sheet7.e11/(sheet12.c13*sheet11.e79); end
-  def f11; @f11 ||= sheet7.f11/(sheet12.c13*sheet11.e79); end
-  def g11; @g11 ||= sheet7.g11/(sheet12.c13*sheet11.e79); end
-  def h11; @h11 ||= sheet7.h11/(sheet12.c13*sheet11.e79); end
-  def i11; @i11 ||= sheet7.i11/(sheet12.c13*sheet11.e79); end
-  def j11; @j11 ||= sheet7.j11/(sheet12.c13*sheet11.e79); end
-  def k11; @k11 ||= sheet7.k11/(sheet12.c13*sheet11.e79); end
-  def l11; @l11 ||= sheet7.l11/(sheet12.c13*sheet11.e79); end
-  def m11; @m11 ||= sheet7.m11/(sheet12.c13*sheet11.e79); end
-  def o11; @o11 ||= sheet7.o11/(sheet12.c13*sheet11.e79); end
-  def p11; @p11 ||= sheet7.p11/(sheet12.c13*sheet11.e79); end
-  def q11; @q11 ||= sheet7.q11/(sheet12.c13*sheet11.e79); end
-  def r11; @r11 ||= sheet7.r11/(sheet12.c13*sheet11.e79); end
-  def s11; @s11 ||= sheet7.s11/(sheet12.c13*sheet11.e79); end
-  def t11; @t11 ||= sheet7.t11/(sheet12.c13*sheet11.e79); end
-  def u11; @u11 ||= sheet7.u11/(sheet12.c13*sheet11.e79); end
-  def v11; @v11 ||= sheet7.v11/(sheet12.c13*sheet11.e79); end
-  def w11; @w11 ||= sheet7.w11/(sheet12.c13*sheet11.e79); end
-  def y11; @y11 ||= sheet7.y11/(sheet12.c13*sheet11.e79); end
-  def z11; @z11 ||= sheet7.z11/(sheet12.c13*sheet11.e79); end
-  def aa11; @aa11 ||= sheet7.aa11/(sheet12.c13*sheet11.e79); end
-  def ab11; @ab11 ||= sheet7.ab11/(sheet12.c13*sheet11.e79); end
-  def ac11; @ac11 ||= sheet7.ac11/(sheet12.c13*sheet11.e79); end
-  def ad11; @ad11 ||= sheet7.ad11/(sheet12.c13*sheet11.e79); end
-  def ae11; @ae11 ||= sheet7.ae11/(sheet12.c13*sheet11.e79); end
-  def af11; @af11 ||= sheet7.af11/(sheet12.c13*sheet11.e79); end
-  def ag11; @ag11 ||= sheet7.ag11/(sheet12.c13*sheet11.e79); end
-  def ai11; @ai11 ||= sheet7.ai11/(sheet12.c13*sheet11.e79); end
-  def aj11; @aj11 ||= sheet7.aj11/(sheet12.c13*sheet11.e79); end
-  def ak11; @ak11 ||= sheet7.ak11/(sheet12.c13*sheet11.e79); end
-  def al11; @al11 ||= sheet7.al11/(sheet12.c13*sheet11.e79); end
-  def am11; @am11 ||= sheet7.am11/(sheet12.c13*sheet11.e79); end
-  def an11; @an11 ||= sheet7.an11/(sheet12.c13*sheet11.e79); end
-  def ao11; @ao11 ||= sheet7.ao11/(sheet12.c13*sheet11.e79); end
-  def ap11; @ap11 ||= sheet7.ap11/(sheet12.c13*sheet11.e79); end
-  def aq11; @aq11 ||= sheet7.aq11/(sheet12.c13*sheet11.e79); end
-  def as11; @as11 ||= average(a('ai11','aq11')); end
-  def at11; @at11 ||= (sumproduct(a('aj11','aq11'),sheet12.a('d28','k28'))*5.0)+ai11; end
-  def av11; 0.0; end
-  def aw11; 5.0; end
-  def ay11; @ay11 ||= sheet7.ay11/(sheet12.c13*sheet11.e79); end
-  def az11; @az11 ||= sheet7.az11/(sheet12.c13*sheet11.e79); end
-  def ba11; @ba11 ||= sheet7.ba11/(sheet12.c13*sheet11.e79); end
-  def bb11; @bb11 ||= sheet7.bb11/(sheet12.c13*sheet11.e79); end
-  def bc11; @bc11 ||= sheet7.bc11/(sheet12.c13*sheet11.e79); end
-  def bd11; @bd11 ||= sheet7.bd11/(sheet12.c13*sheet11.e79); end
-  def be11; @be11 ||= sheet7.be11/(sheet12.c13*sheet11.e79); end
-  def bf11; @bf11 ||= sheet7.bf11/(sheet12.c13*sheet11.e79); end
-  def bg11; @bg11 ||= sheet7.bg11/(sheet12.c13*sheet11.e79); end
-  def bi11; @bi11 ||= sheet7.bi11/(sheet12.c13*sheet11.e79); end
-  def bj11; @bj11 ||= sheet7.bj11/(sheet12.c13*sheet11.e79); end
-  def bk11; @bk11 ||= sheet7.bk11/(sheet12.c13*sheet11.e79); end
-  def bl11; @bl11 ||= sheet7.bl11/(sheet12.c13*sheet11.e79); end
-  def bm11; @bm11 ||= sheet7.bm11/(sheet12.c13*sheet11.e79); end
-  def bn11; @bn11 ||= sheet7.bn11/(sheet12.c13*sheet11.e79); end
-  def bo11; @bo11 ||= sheet7.bo11/(sheet12.c13*sheet11.e79); end
-  def bp11; @bp11 ||= sheet7.bp11/(sheet12.c13*sheet11.e79); end
-  def bq11; @bq11 ||= sheet7.bq11/(sheet12.c13*sheet11.e79); end
-  def bs11; @bs11 ||= sheet7.bs11/(sheet12.c13*sheet11.e79); end
-  def bt11; @bt11 ||= sheet7.bt11/(sheet12.c13*sheet11.e79); end
-  def bu11; @bu11 ||= sheet7.bu11/(sheet12.c13*sheet11.e79); end
-  def bv11; @bv11 ||= sheet7.bv11/(sheet12.c13*sheet11.e79); end
-  def bw11; @bw11 ||= sheet7.bw11/(sheet12.c13*sheet11.e79); end
-  def bx11; @bx11 ||= sheet7.bx11/(sheet12.c13*sheet11.e79); end
-  def by11; @by11 ||= sheet7.by11/(sheet12.c13*sheet11.e79); end
-  def bz11; @bz11 ||= sheet7.bz11/(sheet12.c13*sheet11.e79); end
-  def ca11; @ca11 ||= sheet7.ca11/(sheet12.c13*sheet11.e79); end
-  def cc11; @cc11 ||= average(a('bs11','ca11')); end
-  def cd11; @cd11 ||= (sumproduct(a('bt11','ca11'),sheet12.a('d28','k28'))*5.0)+bs11; end
-  def cf11; @cf11 ||= sheet7.cf11/(sheet12.c13*sheet11.e79); end
-  def cg11; @cg11 ||= sheet7.cg11/(sheet12.c13*sheet11.e79); end
-  def ch11; @ch11 ||= sheet7.ch11/(sheet12.c13*sheet11.e79); end
-  def ci11; @ci11 ||= sheet7.ci11/(sheet12.c13*sheet11.e79); end
-  def cj11; @cj11 ||= sheet7.cj11/(sheet12.c13*sheet11.e79); end
-  def ck11; @ck11 ||= sheet7.ck11/(sheet12.c13*sheet11.e79); end
-  def cl11; @cl11 ||= sheet7.cl11/(sheet12.c13*sheet11.e79); end
-  def cm11; @cm11 ||= sheet7.cm11/(sheet12.c13*sheet11.e79); end
-  def cn11; @cn11 ||= sheet7.cn11/(sheet12.c13*sheet11.e79); end
-  def cp11; @cp11 ||= average(a('cf11','cn11')); end
-  def cq11; @cq11 ||= (sumproduct(a('cg11','cn11'),sheet12.a('d28','k28'))*5.0)+cf11; end
-  def cr11; @cr11 ||= excel_if(excel_comparison(abs(cd11-cq11-at11),"<",1.0),"ok","err"); end
-  def a12; "IV.b"; end
-  def b12; "Distributed solar thermal"; end
-  def c12; "Heating"; end
-  def e12; @e12 ||= sheet7.e12/(sheet12.c13*sheet11.e79); end
-  def f12; @f12 ||= sheet7.f12/(sheet12.c13*sheet11.e79); end
-  def g12; @g12 ||= sheet7.g12/(sheet12.c13*sheet11.e79); end
-  def h12; @h12 ||= sheet7.h12/(sheet12.c13*sheet11.e79); end
-  def i12; @i12 ||= sheet7.i12/(sheet12.c13*sheet11.e79); end
-  def j12; @j12 ||= sheet7.j12/(sheet12.c13*sheet11.e79); end
-  def k12; @k12 ||= sheet7.k12/(sheet12.c13*sheet11.e79); end
-  def l12; @l12 ||= sheet7.l12/(sheet12.c13*sheet11.e79); end
-  def m12; @m12 ||= sheet7.m12/(sheet12.c13*sheet11.e79); end
-  def o12; @o12 ||= sheet7.o12/(sheet12.c13*sheet11.e79); end
-  def p12; @p12 ||= sheet7.p12/(sheet12.c13*sheet11.e79); end
-  def q12; @q12 ||= sheet7.q12/(sheet12.c13*sheet11.e79); end
-  def r12; @r12 ||= sheet7.r12/(sheet12.c13*sheet11.e79); end
-  def s12; @s12 ||= sheet7.s12/(sheet12.c13*sheet11.e79); end
-  def t12; @t12 ||= sheet7.t12/(sheet12.c13*sheet11.e79); end
-  def u12; @u12 ||= sheet7.u12/(sheet12.c13*sheet11.e79); end
-  def v12; @v12 ||= sheet7.v12/(sheet12.c13*sheet11.e79); end
-  def w12; @w12 ||= sheet7.w12/(sheet12.c13*sheet11.e79); end
-  def y12; @y12 ||= sheet7.y12/(sheet12.c13*sheet11.e79); end
-  def z12; @z12 ||= sheet7.z12/(sheet12.c13*sheet11.e79); end
-  def aa12; @aa12 ||= sheet7.aa12/(sheet12.c13*sheet11.e79); end
-  def ab12; @ab12 ||= sheet7.ab12/(sheet12.c13*sheet11.e79); end
-  def ac12; @ac12 ||= sheet7.ac12/(sheet12.c13*sheet11.e79); end
-  def ad12; @ad12 ||= sheet7.ad12/(sheet12.c13*sheet11.e79); end
-  def ae12; @ae12 ||= sheet7.ae12/(sheet12.c13*sheet11.e79); end
-  def af12; @af12 ||= sheet7.af12/(sheet12.c13*sheet11.e79); end
-  def ag12; @ag12 ||= sheet7.ag12/(sheet12.c13*sheet11.e79); end
-  def ai12; @ai12 ||= sheet7.ai12/(sheet12.c13*sheet11.e79); end
-  def aj12; @aj12 ||= sheet7.aj12/(sheet12.c13*sheet11.e79); end
-  def ak12; @ak12 ||= sheet7.ak12/(sheet12.c13*sheet11.e79); end
-  def al12; @al12 ||= sheet7.al12/(sheet12.c13*sheet11.e79); end
-  def am12; @am12 ||= sheet7.am12/(sheet12.c13*sheet11.e79); end
-  def an12; @an12 ||= sheet7.an12/(sheet12.c13*sheet11.e79); end
-  def ao12; @ao12 ||= sheet7.ao12/(sheet12.c13*sheet11.e79); end
-  def ap12; @ap12 ||= sheet7.ap12/(sheet12.c13*sheet11.e79); end
-  def aq12; @aq12 ||= sheet7.aq12/(sheet12.c13*sheet11.e79); end
-  def as12; @as12 ||= average(a('ai12','aq12')); end
-  def at12; @at12 ||= (sumproduct(a('aj12','aq12'),sheet12.a('d28','k28'))*5.0)+ai12; end
-  def av12; 0.0; end
-  def aw12; 5.0; end
-  def ay12; @ay12 ||= sheet7.ay12/(sheet12.c13*sheet11.e79); end
-  def az12; @az12 ||= sheet7.az12/(sheet12.c13*sheet11.e79); end
-  def ba12; @ba12 ||= sheet7.ba12/(sheet12.c13*sheet11.e79); end
-  def bb12; @bb12 ||= sheet7.bb12/(sheet12.c13*sheet11.e79); end
-  def bc12; @bc12 ||= sheet7.bc12/(sheet12.c13*sheet11.e79); end
-  def bd12; @bd12 ||= sheet7.bd12/(sheet12.c13*sheet11.e79); end
-  def be12; @be12 ||= sheet7.be12/(sheet12.c13*sheet11.e79); end
-  def bf12; @bf12 ||= sheet7.bf12/(sheet12.c13*sheet11.e79); end
-  def bg12; @bg12 ||= sheet7.bg12/(sheet12.c13*sheet11.e79); end
-  def bi12; @bi12 ||= sheet7.bi12/(sheet12.c13*sheet11.e79); end
-  def bj12; @bj12 ||= sheet7.bj12/(sheet12.c13*sheet11.e79); end
-  def bk12; @bk12 ||= sheet7.bk12/(sheet12.c13*sheet11.e79); end
-  def bl12; @bl12 ||= sheet7.bl12/(sheet12.c13*sheet11.e79); end
-  def bm12; @bm12 ||= sheet7.bm12/(sheet12.c13*sheet11.e79); end
-  def bn12; @bn12 ||= sheet7.bn12/(sheet12.c13*sheet11.e79); end
-  def bo12; @bo12 ||= sheet7.bo12/(sheet12.c13*sheet11.e79); end
-  def bp12; @bp12 ||= sheet7.bp12/(sheet12.c13*sheet11.e79); end
-  def bq12; @bq12 ||= sheet7.bq12/(sheet12.c13*sheet11.e79); end
-  def bs12; @bs12 ||= sheet7.bs12/(sheet12.c13*sheet11.e79); end
-  def bt12; @bt12 ||= sheet7.bt12/(sheet12.c13*sheet11.e79); end
-  def bu12; @bu12 ||= sheet7.bu12/(sheet12.c13*sheet11.e79); end
-  def bv12; @bv12 ||= sheet7.bv12/(sheet12.c13*sheet11.e79); end
-  def bw12; @bw12 ||= sheet7.bw12/(sheet12.c13*sheet11.e79); end
-  def bx12; @bx12 ||= sheet7.bx12/(sheet12.c13*sheet11.e79); end
-  def by12; @by12 ||= sheet7.by12/(sheet12.c13*sheet11.e79); end
-  def bz12; @bz12 ||= sheet7.bz12/(sheet12.c13*sheet11.e79); end
-  def ca12; @ca12 ||= sheet7.ca12/(sheet12.c13*sheet11.e79); end
-  def cc12; @cc12 ||= average(a('bs12','ca12')); end
-  def cd12; @cd12 ||= (sumproduct(a('bt12','ca12'),sheet12.a('d28','k28'))*5.0)+bs12; end
-  def cf12; @cf12 ||= sheet7.cf12/(sheet12.c13*sheet11.e79); end
-  def cg12; @cg12 ||= sheet7.cg12/(sheet12.c13*sheet11.e79); end
-  def ch12; @ch12 ||= sheet7.ch12/(sheet12.c13*sheet11.e79); end
-  def ci12; @ci12 ||= sheet7.ci12/(sheet12.c13*sheet11.e79); end
-  def cj12; @cj12 ||= sheet7.cj12/(sheet12.c13*sheet11.e79); end
-  def ck12; @ck12 ||= sheet7.ck12/(sheet12.c13*sheet11.e79); end
-  def cl12; @cl12 ||= sheet7.cl12/(sheet12.c13*sheet11.e79); end
-  def cm12; @cm12 ||= sheet7.cm12/(sheet12.c13*sheet11.e79); end
-  def cn12; @cn12 ||= sheet7.cn12/(sheet12.c13*sheet11.e79); end
-  def cp12; @cp12 ||= average(a('cf12','cn12')); end
-  def cq12; @cq12 ||= (sumproduct(a('cg12','cn12'),sheet12.a('d28','k28'))*5.0)+cf12; end
-  def cr12; @cr12 ||= excel_if(excel_comparison(abs(cd12-cq12-at12),"<",1.0),"ok","err"); end
-  def a13; "IV.c"; end
-  def b13; "Micro wind"; end
-  def c13; "Power"; end
-  def e13; @e13 ||= sheet7.e13/(sheet12.c13*sheet11.e79); end
-  def f13; @f13 ||= sheet7.f13/(sheet12.c13*sheet11.e79); end
-  def g13; @g13 ||= sheet7.g13/(sheet12.c13*sheet11.e79); end
-  def h13; @h13 ||= sheet7.h13/(sheet12.c13*sheet11.e79); end
-  def i13; @i13 ||= sheet7.i13/(sheet12.c13*sheet11.e79); end
-  def j13; @j13 ||= sheet7.j13/(sheet12.c13*sheet11.e79); end
-  def k13; @k13 ||= sheet7.k13/(sheet12.c13*sheet11.e79); end
-  def l13; @l13 ||= sheet7.l13/(sheet12.c13*sheet11.e79); end
-  def m13; @m13 ||= sheet7.m13/(sheet12.c13*sheet11.e79); end
-  def o13; @o13 ||= sheet7.o13/(sheet12.c13*sheet11.e79); end
-  def p13; @p13 ||= sheet7.p13/(sheet12.c13*sheet11.e79); end
-  def q13; @q13 ||= sheet7.q13/(sheet12.c13*sheet11.e79); end
-  def r13; @r13 ||= sheet7.r13/(sheet12.c13*sheet11.e79); end
-  def s13; @s13 ||= sheet7.s13/(sheet12.c13*sheet11.e79); end
-  def t13; @t13 ||= sheet7.t13/(sheet12.c13*sheet11.e79); end
-  def u13; @u13 ||= sheet7.u13/(sheet12.c13*sheet11.e79); end
-  def v13; @v13 ||= sheet7.v13/(sheet12.c13*sheet11.e79); end
-  def w13; @w13 ||= sheet7.w13/(sheet12.c13*sheet11.e79); end
-  def y13; @y13 ||= sheet7.y13/(sheet12.c13*sheet11.e79); end
-  def z13; @z13 ||= sheet7.z13/(sheet12.c13*sheet11.e79); end
-  def aa13; @aa13 ||= sheet7.aa13/(sheet12.c13*sheet11.e79); end
-  def ab13; @ab13 ||= sheet7.ab13/(sheet12.c13*sheet11.e79); end
-  def ac13; @ac13 ||= sheet7.ac13/(sheet12.c13*sheet11.e79); end
-  def ad13; @ad13 ||= sheet7.ad13/(sheet12.c13*sheet11.e79); end
-  def ae13; @ae13 ||= sheet7.ae13/(sheet12.c13*sheet11.e79); end
-  def af13; @af13 ||= sheet7.af13/(sheet12.c13*sheet11.e79); end
-  def ag13; @ag13 ||= sheet7.ag13/(sheet12.c13*sheet11.e79); end
-  def ai13; @ai13 ||= sheet7.ai13/(sheet12.c13*sheet11.e79); end
-  def aj13; @aj13 ||= sheet7.aj13/(sheet12.c13*sheet11.e79); end
-  def ak13; @ak13 ||= sheet7.ak13/(sheet12.c13*sheet11.e79); end
-  def al13; @al13 ||= sheet7.al13/(sheet12.c13*sheet11.e79); end
-  def am13; @am13 ||= sheet7.am13/(sheet12.c13*sheet11.e79); end
-  def an13; @an13 ||= sheet7.an13/(sheet12.c13*sheet11.e79); end
-  def ao13; @ao13 ||= sheet7.ao13/(sheet12.c13*sheet11.e79); end
-  def ap13; @ap13 ||= sheet7.ap13/(sheet12.c13*sheet11.e79); end
-  def aq13; @aq13 ||= sheet7.aq13/(sheet12.c13*sheet11.e79); end
-  def as13; @as13 ||= average(a('ai13','aq13')); end
-  def at13; @at13 ||= (sumproduct(a('aj13','aq13'),sheet12.a('d28','k28'))*5.0)+ai13; end
-  def av13; 0.0; end
-  def aw13; 5.0; end
-  def ay13; @ay13 ||= sheet7.ay13/(sheet12.c13*sheet11.e79); end
-  def az13; @az13 ||= sheet7.az13/(sheet12.c13*sheet11.e79); end
-  def ba13; @ba13 ||= sheet7.ba13/(sheet12.c13*sheet11.e79); end
-  def bb13; @bb13 ||= sheet7.bb13/(sheet12.c13*sheet11.e79); end
-  def bc13; @bc13 ||= sheet7.bc13/(sheet12.c13*sheet11.e79); end
-  def bd13; @bd13 ||= sheet7.bd13/(sheet12.c13*sheet11.e79); end
-  def be13; @be13 ||= sheet7.be13/(sheet12.c13*sheet11.e79); end
-  def bf13; @bf13 ||= sheet7.bf13/(sheet12.c13*sheet11.e79); end
-  def bg13; @bg13 ||= sheet7.bg13/(sheet12.c13*sheet11.e79); end
-  def bi13; @bi13 ||= sheet7.bi13/(sheet12.c13*sheet11.e79); end
-  def bj13; @bj13 ||= sheet7.bj13/(sheet12.c13*sheet11.e79); end
-  def bk13; @bk13 ||= sheet7.bk13/(sheet12.c13*sheet11.e79); end
-  def bl13; @bl13 ||= sheet7.bl13/(sheet12.c13*sheet11.e79); end
-  def bm13; @bm13 ||= sheet7.bm13/(sheet12.c13*sheet11.e79); end
-  def bn13; @bn13 ||= sheet7.bn13/(sheet12.c13*sheet11.e79); end
-  def bo13; @bo13 ||= sheet7.bo13/(sheet12.c13*sheet11.e79); end
-  def bp13; @bp13 ||= sheet7.bp13/(sheet12.c13*sheet11.e79); end
-  def bq13; @bq13 ||= sheet7.bq13/(sheet12.c13*sheet11.e79); end
-  def bs13; @bs13 ||= sheet7.bs13/(sheet12.c13*sheet11.e79); end
-  def bt13; @bt13 ||= sheet7.bt13/(sheet12.c13*sheet11.e79); end
-  def bu13; @bu13 ||= sheet7.bu13/(sheet12.c13*sheet11.e79); end
-  def bv13; @bv13 ||= sheet7.bv13/(sheet12.c13*sheet11.e79); end
-  def bw13; @bw13 ||= sheet7.bw13/(sheet12.c13*sheet11.e79); end
-  def bx13; @bx13 ||= sheet7.bx13/(sheet12.c13*sheet11.e79); end
-  def by13; @by13 ||= sheet7.by13/(sheet12.c13*sheet11.e79); end
-  def bz13; @bz13 ||= sheet7.bz13/(sheet12.c13*sheet11.e79); end
-  def ca13; @ca13 ||= sheet7.ca13/(sheet12.c13*sheet11.e79); end
-  def cc13; @cc13 ||= average(a('bs13','ca13')); end
-  def cd13; @cd13 ||= (sumproduct(a('bt13','ca13'),sheet12.a('d28','k28'))*5.0)+bs13; end
-  def cf13; @cf13 ||= sheet7.cf13/(sheet12.c13*sheet11.e79); end
-  def cg13; @cg13 ||= sheet7.cg13/(sheet12.c13*sheet11.e79); end
-  def ch13; @ch13 ||= sheet7.ch13/(sheet12.c13*sheet11.e79); end
-  def ci13; @ci13 ||= sheet7.ci13/(sheet12.c13*sheet11.e79); end
-  def cj13; @cj13 ||= sheet7.cj13/(sheet12.c13*sheet11.e79); end
-  def ck13; @ck13 ||= sheet7.ck13/(sheet12.c13*sheet11.e79); end
-  def cl13; @cl13 ||= sheet7.cl13/(sheet12.c13*sheet11.e79); end
-  def cm13; @cm13 ||= sheet7.cm13/(sheet12.c13*sheet11.e79); end
-  def cn13; @cn13 ||= sheet7.cn13/(sheet12.c13*sheet11.e79); end
-  def cp13; @cp13 ||= average(a('cf13','cn13')); end
-  def cq13; @cq13 ||= (sumproduct(a('cg13','cn13'),sheet12.a('d28','k28'))*5.0)+cf13; end
-  def cr13; @cr13 ||= excel_if(excel_comparison(abs(cd13-cq13-at13),"<",1.0),"ok","err"); end
-  def a14; "V.a"; end
-  def b14; "Biomatter to fuel conversion"; end
-  def c14; "Biomass Supply"; end
-  def e14; @e14 ||= sheet7.e14/(sheet12.c13*sheet11.e79); end
-  def f14; @f14 ||= sheet7.f14/(sheet12.c13*sheet11.e79); end
-  def g14; @g14 ||= sheet7.g14/(sheet12.c13*sheet11.e79); end
-  def h14; @h14 ||= sheet7.h14/(sheet12.c13*sheet11.e79); end
-  def i14; @i14 ||= sheet7.i14/(sheet12.c13*sheet11.e79); end
-  def j14; @j14 ||= sheet7.j14/(sheet12.c13*sheet11.e79); end
-  def k14; @k14 ||= sheet7.k14/(sheet12.c13*sheet11.e79); end
-  def l14; @l14 ||= sheet7.l14/(sheet12.c13*sheet11.e79); end
-  def m14; @m14 ||= sheet7.m14/(sheet12.c13*sheet11.e79); end
-  def o14; @o14 ||= sheet7.o14/(sheet12.c13*sheet11.e79); end
-  def p14; @p14 ||= sheet7.p14/(sheet12.c13*sheet11.e79); end
-  def q14; @q14 ||= sheet7.q14/(sheet12.c13*sheet11.e79); end
-  def r14; @r14 ||= sheet7.r14/(sheet12.c13*sheet11.e79); end
-  def s14; @s14 ||= sheet7.s14/(sheet12.c13*sheet11.e79); end
-  def t14; @t14 ||= sheet7.t14/(sheet12.c13*sheet11.e79); end
-  def u14; @u14 ||= sheet7.u14/(sheet12.c13*sheet11.e79); end
-  def v14; @v14 ||= sheet7.v14/(sheet12.c13*sheet11.e79); end
-  def w14; @w14 ||= sheet7.w14/(sheet12.c13*sheet11.e79); end
-  def y14; @y14 ||= sheet7.y14/(sheet12.c13*sheet11.e79); end
-  def z14; @z14 ||= sheet7.z14/(sheet12.c13*sheet11.e79); end
-  def aa14; @aa14 ||= sheet7.aa14/(sheet12.c13*sheet11.e79); end
-  def ab14; @ab14 ||= sheet7.ab14/(sheet12.c13*sheet11.e79); end
-  def ac14; @ac14 ||= sheet7.ac14/(sheet12.c13*sheet11.e79); end
-  def ad14; @ad14 ||= sheet7.ad14/(sheet12.c13*sheet11.e79); end
-  def ae14; @ae14 ||= sheet7.ae14/(sheet12.c13*sheet11.e79); end
-  def af14; @af14 ||= sheet7.af14/(sheet12.c13*sheet11.e79); end
-  def ag14; @ag14 ||= sheet7.ag14/(sheet12.c13*sheet11.e79); end
-  def ai14; @ai14 ||= sheet7.ai14/(sheet12.c13*sheet11.e79); end
-  def aj14; @aj14 ||= sheet7.aj14/(sheet12.c13*sheet11.e79); end
-  def ak14; @ak14 ||= sheet7.ak14/(sheet12.c13*sheet11.e79); end
-  def al14; @al14 ||= sheet7.al14/(sheet12.c13*sheet11.e79); end
-  def am14; @am14 ||= sheet7.am14/(sheet12.c13*sheet11.e79); end
-  def an14; @an14 ||= sheet7.an14/(sheet12.c13*sheet11.e79); end
-  def ao14; @ao14 ||= sheet7.ao14/(sheet12.c13*sheet11.e79); end
-  def ap14; @ap14 ||= sheet7.ap14/(sheet12.c13*sheet11.e79); end
-  def aq14; @aq14 ||= sheet7.aq14/(sheet12.c13*sheet11.e79); end
-  def as14; @as14 ||= average(a('ai14','aq14')); end
-  def at14; @at14 ||= (sumproduct(a('aj14','aq14'),sheet12.a('d28','k28'))*5.0)+ai14; end
-  def av14; 0.0; end
-  def aw14; 5.0; end
-  def ay14; @ay14 ||= sheet7.ay14/(sheet12.c13*sheet11.e79); end
-  def az14; @az14 ||= sheet7.az14/(sheet12.c13*sheet11.e79); end
-  def ba14; @ba14 ||= sheet7.ba14/(sheet12.c13*sheet11.e79); end
-  def bb14; @bb14 ||= sheet7.bb14/(sheet12.c13*sheet11.e79); end
-  def bc14; @bc14 ||= sheet7.bc14/(sheet12.c13*sheet11.e79); end
-  def bd14; @bd14 ||= sheet7.bd14/(sheet12.c13*sheet11.e79); end
-  def be14; @be14 ||= sheet7.be14/(sheet12.c13*sheet11.e79); end
-  def bf14; @bf14 ||= sheet7.bf14/(sheet12.c13*sheet11.e79); end
-  def bg14; @bg14 ||= sheet7.bg14/(sheet12.c13*sheet11.e79); end
-  def bi14; @bi14 ||= sheet7.bi14/(sheet12.c13*sheet11.e79); end
-  def bj14; @bj14 ||= sheet7.bj14/(sheet12.c13*sheet11.e79); end
-  def bk14; @bk14 ||= sheet7.bk14/(sheet12.c13*sheet11.e79); end
-  def bl14; @bl14 ||= sheet7.bl14/(sheet12.c13*sheet11.e79); end
-  def bm14; @bm14 ||= sheet7.bm14/(sheet12.c13*sheet11.e79); end
-  def bn14; @bn14 ||= sheet7.bn14/(sheet12.c13*sheet11.e79); end
-  def bo14; @bo14 ||= sheet7.bo14/(sheet12.c13*sheet11.e79); end
-  def bp14; @bp14 ||= sheet7.bp14/(sheet12.c13*sheet11.e79); end
-  def bq14; @bq14 ||= sheet7.bq14/(sheet12.c13*sheet11.e79); end
-  def bs14; @bs14 ||= sheet7.bs14/(sheet12.c13*sheet11.e79); end
-  def bt14; @bt14 ||= sheet7.bt14/(sheet12.c13*sheet11.e79); end
-  def bu14; @bu14 ||= sheet7.bu14/(sheet12.c13*sheet11.e79); end
-  def bv14; @bv14 ||= sheet7.bv14/(sheet12.c13*sheet11.e79); end
-  def bw14; @bw14 ||= sheet7.bw14/(sheet12.c13*sheet11.e79); end
-  def bx14; @bx14 ||= sheet7.bx14/(sheet12.c13*sheet11.e79); end
-  def by14; @by14 ||= sheet7.by14/(sheet12.c13*sheet11.e79); end
-  def bz14; @bz14 ||= sheet7.bz14/(sheet12.c13*sheet11.e79); end
-  def ca14; @ca14 ||= sheet7.ca14/(sheet12.c13*sheet11.e79); end
-  def cc14; @cc14 ||= average(a('bs14','ca14')); end
-  def cd14; @cd14 ||= (sumproduct(a('bt14','ca14'),sheet12.a('d28','k28'))*5.0)+bs14; end
-  def cf14; @cf14 ||= sheet7.cf14/(sheet12.c13*sheet11.e79); end
-  def cg14; @cg14 ||= sheet7.cg14/(sheet12.c13*sheet11.e79); end
-  def ch14; @ch14 ||= sheet7.ch14/(sheet12.c13*sheet11.e79); end
-  def ci14; @ci14 ||= sheet7.ci14/(sheet12.c13*sheet11.e79); end
-  def cj14; @cj14 ||= sheet7.cj14/(sheet12.c13*sheet11.e79); end
-  def ck14; @ck14 ||= sheet7.ck14/(sheet12.c13*sheet11.e79); end
-  def cl14; @cl14 ||= sheet7.cl14/(sheet12.c13*sheet11.e79); end
-  def cm14; @cm14 ||= sheet7.cm14/(sheet12.c13*sheet11.e79); end
-  def cn14; @cn14 ||= sheet7.cn14/(sheet12.c13*sheet11.e79); end
-  def cp14; @cp14 ||= average(a('cf14','cn14')); end
-  def cq14; @cq14 ||= (sumproduct(a('cg14','cn14'),sheet12.a('d28','k28'))*5.0)+cf14; end
-  def cr14; @cr14 ||= excel_if(excel_comparison(abs(cd14-cq14-at14),"<",1.0),"ok","err"); end
-  def a15; "V.b"; end
-  def b15; "Bioenergy imports"; end
-  def c15; "Biomass Supply"; end
-  def e15; 0.0; end
-  def f15; 0.0; end
-  def g15; 0.0; end
-  def h15; 0.0; end
-  def i15; 0.0; end
-  def j15; 0.0; end
-  def k15; 0.0; end
-  def l15; 0.0; end
-  def m15; 0.0; end
-  def o15; 0.0; end
-  def p15; 0.0; end
-  def q15; 0.0; end
-  def r15; 0.0; end
-  def s15; 0.0; end
-  def t15; 0.0; end
-  def u15; 0.0; end
-  def v15; 0.0; end
-  def w15; 0.0; end
-  def y15; 0.7582604384399967; end
-  def z15; 0.7582604384399967; end
-  def aa15; 0.7582604384399967; end
-  def ab15; 0.7582604384399967; end
-  def ac15; 0.7582604384399967; end
-  def ad15; 0.7582604384399967; end
-  def ae15; 0.7582604384399967; end
-  def af15; 0.7582604384399967; end
-  def ag15; 0.7582604384399967; end
-  def ai15; 0.7582604384399967; end
-  def aj15; 0.7582604384399967; end
-  def ak15; 0.7582604384399967; end
-  def al15; 0.7582604384399967; end
-  def am15; 0.7582604384399967; end
-  def an15; 0.7582604384399967; end
-  def ao15; 0.7582604384399967; end
-  def ap15; 0.7582604384399967; end
-  def aq15; 0.7582604384399967; end
-  def as15; 0.7582604384399967; end
-  def at15; 15.931838004509302; end
-  def av15; 0.0; end
-  def aw15; 5.0; end
-  def ay15; 0.0; end
-  def az15; 0.0; end
-  def ba15; 0.0; end
-  def bb15; 0.0; end
-  def bc15; 0.0; end
-  def bd15; 0.0; end
-  def be15; 0.0; end
-  def bf15; 0.0; end
-  def bg15; 0.0; end
-  def bi15; 0.0; end
-  def bj15; 0.0; end
-  def bk15; 0.0; end
-  def bl15; 0.0; end
-  def bm15; 0.0; end
-  def bn15; 0.0; end
-  def bo15; 0.0; end
-  def bp15; 0.0; end
-  def bq15; 0.0; end
-  def bs15; 0.7582604384399967; end
-  def bt15; 0.7582604384399967; end
-  def bu15; 0.7582604384399967; end
-  def bv15; 0.7582604384399967; end
-  def bw15; 0.7582604384399967; end
-  def bx15; 0.7582604384399967; end
-  def by15; 0.7582604384399967; end
-  def bz15; 0.7582604384399967; end
-  def ca15; 0.7582604384399967; end
-  def cc15; 0.7582604384399967; end
-  def cd15; 15.931838004509302; end
-  def cf15; 0.0; end
-  def cg15; 0.0; end
-  def ch15; 0.0; end
-  def ci15; 0.0; end
-  def cj15; 0.0; end
-  def ck15; 0.0; end
-  def cl15; 0.0; end
-  def cm15; 0.0; end
-  def cn15; 0.0; end
-  def cp15; 0.0; end
-  def cq15; 0.0; end
-  def cr15; "ok"; end
-  def a16; "VI.a.Bioenergy"; end
-  def b16; "Agriculture and land use"; end
-  def c16; "Biomass Supply"; end
-  def e16; @e16 ||= sheet7.e16/(sheet12.c13*sheet11.e79); end
-  def f16; @f16 ||= sheet7.f16/(sheet12.c13*sheet11.e79); end
-  def g16; @g16 ||= sheet7.g16/(sheet12.c13*sheet11.e79); end
-  def h16; @h16 ||= sheet7.h16/(sheet12.c13*sheet11.e79); end
-  def i16; @i16 ||= sheet7.i16/(sheet12.c13*sheet11.e79); end
-  def j16; @j16 ||= sheet7.j16/(sheet12.c13*sheet11.e79); end
-  def k16; @k16 ||= sheet7.k16/(sheet12.c13*sheet11.e79); end
-  def l16; @l16 ||= sheet7.l16/(sheet12.c13*sheet11.e79); end
-  def m16; @m16 ||= sheet7.m16/(sheet12.c13*sheet11.e79); end
-  def o16; @o16 ||= sheet7.o16/(sheet12.c13*sheet11.e79); end
-  def p16; @p16 ||= sheet7.p16/(sheet12.c13*sheet11.e79); end
-  def q16; @q16 ||= sheet7.q16/(sheet12.c13*sheet11.e79); end
-  def r16; @r16 ||= sheet7.r16/(sheet12.c13*sheet11.e79); end
-  def s16; @s16 ||= sheet7.s16/(sheet12.c13*sheet11.e79); end
-  def t16; @t16 ||= sheet7.t16/(sheet12.c13*sheet11.e79); end
-  def u16; @u16 ||= sheet7.u16/(sheet12.c13*sheet11.e79); end
-  def v16; @v16 ||= sheet7.v16/(sheet12.c13*sheet11.e79); end
-  def w16; @w16 ||= sheet7.w16/(sheet12.c13*sheet11.e79); end
-  def y16; @y16 ||= sheet7.y16/(sheet12.c13*sheet11.e79); end
-  def z16; @z16 ||= sheet7.z16/(sheet12.c13*sheet11.e79); end
-  def aa16; @aa16 ||= sheet7.aa16/(sheet12.c13*sheet11.e79); end
-  def ab16; @ab16 ||= sheet7.ab16/(sheet12.c13*sheet11.e79); end
-  def ac16; @ac16 ||= sheet7.ac16/(sheet12.c13*sheet11.e79); end
-  def ad16; @ad16 ||= sheet7.ad16/(sheet12.c13*sheet11.e79); end
-  def ae16; @ae16 ||= sheet7.ae16/(sheet12.c13*sheet11.e79); end
-  def af16; @af16 ||= sheet7.af16/(sheet12.c13*sheet11.e79); end
-  def ag16; @ag16 ||= sheet7.ag16/(sheet12.c13*sheet11.e79); end
-  def ai16; @ai16 ||= sheet7.ai16/(sheet12.c13*sheet11.e79); end
-  def aj16; @aj16 ||= sheet7.aj16/(sheet12.c13*sheet11.e79); end
-  def ak16; @ak16 ||= sheet7.ak16/(sheet12.c13*sheet11.e79); end
-  def al16; @al16 ||= sheet7.al16/(sheet12.c13*sheet11.e79); end
-  def am16; @am16 ||= sheet7.am16/(sheet12.c13*sheet11.e79); end
-  def an16; @an16 ||= sheet7.an16/(sheet12.c13*sheet11.e79); end
-  def ao16; @ao16 ||= sheet7.ao16/(sheet12.c13*sheet11.e79); end
-  def ap16; @ap16 ||= sheet7.ap16/(sheet12.c13*sheet11.e79); end
-  def aq16; @aq16 ||= sheet7.aq16/(sheet12.c13*sheet11.e79); end
-  def as16; @as16 ||= average(a('ai16','aq16')); end
-  def at16; @at16 ||= (sumproduct(a('aj16','aq16'),sheet12.a('d28','k28'))*5.0)+ai16; end
-  def av16; 0.0; end
-  def aw16; 5.0; end
-  def ay16; @ay16 ||= sheet7.ay16/(sheet12.c13*sheet11.e79); end
-  def az16; @az16 ||= sheet7.az16/(sheet12.c13*sheet11.e79); end
-  def ba16; @ba16 ||= sheet7.ba16/(sheet12.c13*sheet11.e79); end
-  def bb16; @bb16 ||= sheet7.bb16/(sheet12.c13*sheet11.e79); end
-  def bc16; @bc16 ||= sheet7.bc16/(sheet12.c13*sheet11.e79); end
-  def bd16; @bd16 ||= sheet7.bd16/(sheet12.c13*sheet11.e79); end
-  def be16; @be16 ||= sheet7.be16/(sheet12.c13*sheet11.e79); end
-  def bf16; @bf16 ||= sheet7.bf16/(sheet12.c13*sheet11.e79); end
-  def bg16; @bg16 ||= sheet7.bg16/(sheet12.c13*sheet11.e79); end
-  def bi16; @bi16 ||= sheet7.bi16/(sheet12.c13*sheet11.e79); end
-  def bj16; @bj16 ||= sheet7.bj16/(sheet12.c13*sheet11.e79); end
-  def bk16; @bk16 ||= sheet7.bk16/(sheet12.c13*sheet11.e79); end
-  def bl16; @bl16 ||= sheet7.bl16/(sheet12.c13*sheet11.e79); end
-  def bm16; @bm16 ||= sheet7.bm16/(sheet12.c13*sheet11.e79); end
-  def bn16; @bn16 ||= sheet7.bn16/(sheet12.c13*sheet11.e79); end
-  def bo16; @bo16 ||= sheet7.bo16/(sheet12.c13*sheet11.e79); end
-  def bp16; @bp16 ||= sheet7.bp16/(sheet12.c13*sheet11.e79); end
-  def bq16; @bq16 ||= sheet7.bq16/(sheet12.c13*sheet11.e79); end
-  def bs16; @bs16 ||= sheet7.bs16/(sheet12.c13*sheet11.e79); end
-  def bt16; @bt16 ||= sheet7.bt16/(sheet12.c13*sheet11.e79); end
-  def bu16; @bu16 ||= sheet7.bu16/(sheet12.c13*sheet11.e79); end
-  def bv16; @bv16 ||= sheet7.bv16/(sheet12.c13*sheet11.e79); end
-  def bw16; @bw16 ||= sheet7.bw16/(sheet12.c13*sheet11.e79); end
-  def bx16; @bx16 ||= sheet7.bx16/(sheet12.c13*sheet11.e79); end
-  def by16; @by16 ||= sheet7.by16/(sheet12.c13*sheet11.e79); end
-  def bz16; @bz16 ||= sheet7.bz16/(sheet12.c13*sheet11.e79); end
-  def ca16; @ca16 ||= sheet7.ca16/(sheet12.c13*sheet11.e79); end
-  def cc16; @cc16 ||= average(a('bs16','ca16')); end
-  def cd16; @cd16 ||= (sumproduct(a('bt16','ca16'),sheet12.a('d28','k28'))*5.0)+bs16; end
-  def cf16; @cf16 ||= sheet7.cf16/(sheet12.c13*sheet11.e79); end
-  def cg16; @cg16 ||= sheet7.cg16/(sheet12.c13*sheet11.e79); end
-  def ch16; @ch16 ||= sheet7.ch16/(sheet12.c13*sheet11.e79); end
-  def ci16; @ci16 ||= sheet7.ci16/(sheet12.c13*sheet11.e79); end
-  def cj16; @cj16 ||= sheet7.cj16/(sheet12.c13*sheet11.e79); end
-  def ck16; @ck16 ||= sheet7.ck16/(sheet12.c13*sheet11.e79); end
-  def cl16; @cl16 ||= sheet7.cl16/(sheet12.c13*sheet11.e79); end
-  def cm16; @cm16 ||= sheet7.cm16/(sheet12.c13*sheet11.e79); end
-  def cn16; @cn16 ||= sheet7.cn16/(sheet12.c13*sheet11.e79); end
-  def cp16; @cp16 ||= average(a('cf16','cn16')); end
-  def cq16; @cq16 ||= (sumproduct(a('cg16','cn16'),sheet12.a('d28','k28'))*5.0)+cf16; end
-  def cr16; @cr16 ||= excel_if(excel_comparison(abs(cd16-cq16-at16),"<",1.0),"ok","err"); end
-  def a17; "VI.a.Emissions"; end
-  def b17; "Agriculture and land use"; end
-  def c17; "Business"; end
-  def e17; @e17 ||= sheet7.e17/(sheet12.c13*sheet11.e79); end
-  def f17; @f17 ||= sheet7.f17/(sheet12.c13*sheet11.e79); end
-  def g17; @g17 ||= sheet7.g17/(sheet12.c13*sheet11.e79); end
-  def h17; @h17 ||= sheet7.h17/(sheet12.c13*sheet11.e79); end
-  def i17; @i17 ||= sheet7.i17/(sheet12.c13*sheet11.e79); end
-  def j17; @j17 ||= sheet7.j17/(sheet12.c13*sheet11.e79); end
-  def k17; @k17 ||= sheet7.k17/(sheet12.c13*sheet11.e79); end
-  def l17; @l17 ||= sheet7.l17/(sheet12.c13*sheet11.e79); end
-  def m17; @m17 ||= sheet7.m17/(sheet12.c13*sheet11.e79); end
-  def o17; @o17 ||= sheet7.o17/(sheet12.c13*sheet11.e79); end
-  def p17; @p17 ||= sheet7.p17/(sheet12.c13*sheet11.e79); end
-  def q17; @q17 ||= sheet7.q17/(sheet12.c13*sheet11.e79); end
-  def r17; @r17 ||= sheet7.r17/(sheet12.c13*sheet11.e79); end
-  def s17; @s17 ||= sheet7.s17/(sheet12.c13*sheet11.e79); end
-  def t17; @t17 ||= sheet7.t17/(sheet12.c13*sheet11.e79); end
-  def u17; @u17 ||= sheet7.u17/(sheet12.c13*sheet11.e79); end
-  def v17; @v17 ||= sheet7.v17/(sheet12.c13*sheet11.e79); end
-  def w17; @w17 ||= sheet7.w17/(sheet12.c13*sheet11.e79); end
-  def y17; @y17 ||= sheet7.y17/(sheet12.c13*sheet11.e79); end
-  def z17; @z17 ||= sheet7.z17/(sheet12.c13*sheet11.e79); end
-  def aa17; @aa17 ||= sheet7.aa17/(sheet12.c13*sheet11.e79); end
-  def ab17; @ab17 ||= sheet7.ab17/(sheet12.c13*sheet11.e79); end
-  def ac17; @ac17 ||= sheet7.ac17/(sheet12.c13*sheet11.e79); end
-  def ad17; @ad17 ||= sheet7.ad17/(sheet12.c13*sheet11.e79); end
-  def ae17; @ae17 ||= sheet7.ae17/(sheet12.c13*sheet11.e79); end
-  def af17; @af17 ||= sheet7.af17/(sheet12.c13*sheet11.e79); end
-  def ag17; @ag17 ||= sheet7.ag17/(sheet12.c13*sheet11.e79); end
-  def ai17; @ai17 ||= sheet7.ai17/(sheet12.c13*sheet11.e79); end
-  def aj17; @aj17 ||= sheet7.aj17/(sheet12.c13*sheet11.e79); end
-  def ak17; @ak17 ||= sheet7.ak17/(sheet12.c13*sheet11.e79); end
-  def al17; @al17 ||= sheet7.al17/(sheet12.c13*sheet11.e79); end
-  def am17; @am17 ||= sheet7.am17/(sheet12.c13*sheet11.e79); end
-  def an17; @an17 ||= sheet7.an17/(sheet12.c13*sheet11.e79); end
-  def ao17; @ao17 ||= sheet7.ao17/(sheet12.c13*sheet11.e79); end
-  def ap17; @ap17 ||= sheet7.ap17/(sheet12.c13*sheet11.e79); end
-  def aq17; @aq17 ||= sheet7.aq17/(sheet12.c13*sheet11.e79); end
-  def as17; @as17 ||= average(a('ai17','aq17')); end
-  def at17; @at17 ||= (sumproduct(a('aj17','aq17'),sheet12.a('d28','k28'))*5.0)+ai17; end
-  def av17; 0.0; end
-  def aw17; 5.0; end
-  def ay17; @ay17 ||= sheet7.ay17/(sheet12.c13*sheet11.e79); end
-  def az17; @az17 ||= sheet7.az17/(sheet12.c13*sheet11.e79); end
-  def ba17; @ba17 ||= sheet7.ba17/(sheet12.c13*sheet11.e79); end
-  def bb17; @bb17 ||= sheet7.bb17/(sheet12.c13*sheet11.e79); end
-  def bc17; @bc17 ||= sheet7.bc17/(sheet12.c13*sheet11.e79); end
-  def bd17; @bd17 ||= sheet7.bd17/(sheet12.c13*sheet11.e79); end
-  def be17; @be17 ||= sheet7.be17/(sheet12.c13*sheet11.e79); end
-  def bf17; @bf17 ||= sheet7.bf17/(sheet12.c13*sheet11.e79); end
-  def bg17; @bg17 ||= sheet7.bg17/(sheet12.c13*sheet11.e79); end
-  def bi17; @bi17 ||= sheet7.bi17/(sheet12.c13*sheet11.e79); end
-  def bj17; @bj17 ||= sheet7.bj17/(sheet12.c13*sheet11.e79); end
-  def bk17; @bk17 ||= sheet7.bk17/(sheet12.c13*sheet11.e79); end
-  def bl17; @bl17 ||= sheet7.bl17/(sheet12.c13*sheet11.e79); end
-  def bm17; @bm17 ||= sheet7.bm17/(sheet12.c13*sheet11.e79); end
-  def bn17; @bn17 ||= sheet7.bn17/(sheet12.c13*sheet11.e79); end
-  def bo17; @bo17 ||= sheet7.bo17/(sheet12.c13*sheet11.e79); end
-  def bp17; @bp17 ||= sheet7.bp17/(sheet12.c13*sheet11.e79); end
-  def bq17; @bq17 ||= sheet7.bq17/(sheet12.c13*sheet11.e79); end
-  def bs17; @bs17 ||= sheet7.bs17/(sheet12.c13*sheet11.e79); end
-  def bt17; @bt17 ||= sheet7.bt17/(sheet12.c13*sheet11.e79); end
-  def bu17; @bu17 ||= sheet7.bu17/(sheet12.c13*sheet11.e79); end
-  def bv17; @bv17 ||= sheet7.bv17/(sheet12.c13*sheet11.e79); end
-  def bw17; @bw17 ||= sheet7.bw17/(sheet12.c13*sheet11.e79); end
-  def bx17; @bx17 ||= sheet7.bx17/(sheet12.c13*sheet11.e79); end
-  def by17; @by17 ||= sheet7.by17/(sheet12.c13*sheet11.e79); end
-  def bz17; @bz17 ||= sheet7.bz17/(sheet12.c13*sheet11.e79); end
-  def ca17; @ca17 ||= sheet7.ca17/(sheet12.c13*sheet11.e79); end
-  def cc17; @cc17 ||= average(a('bs17','ca17')); end
-  def cd17; @cd17 ||= (sumproduct(a('bt17','ca17'),sheet12.a('d28','k28'))*5.0)+bs17; end
-  def cf17; @cf17 ||= sheet7.cf17/(sheet12.c13*sheet11.e79); end
-  def cg17; @cg17 ||= sheet7.cg17/(sheet12.c13*sheet11.e79); end
-  def ch17; @ch17 ||= sheet7.ch17/(sheet12.c13*sheet11.e79); end
-  def ci17; @ci17 ||= sheet7.ci17/(sheet12.c13*sheet11.e79); end
-  def cj17; @cj17 ||= sheet7.cj17/(sheet12.c13*sheet11.e79); end
-  def ck17; @ck17 ||= sheet7.ck17/(sheet12.c13*sheet11.e79); end
-  def cl17; @cl17 ||= sheet7.cl17/(sheet12.c13*sheet11.e79); end
-  def cm17; @cm17 ||= sheet7.cm17/(sheet12.c13*sheet11.e79); end
-  def cn17; @cn17 ||= sheet7.cn17/(sheet12.c13*sheet11.e79); end
-  def cp17; @cp17 ||= average(a('cf17','cn17')); end
-  def cq17; @cq17 ||= (sumproduct(a('cg17','cn17'),sheet12.a('d28','k28'))*5.0)+cf17; end
-  def cr17; @cr17 ||= excel_if(excel_comparison(abs(cd17-cq17-at17),"<",1.0),"ok","err"); end
-  def a18; "VI.b.Bioenergy"; end
-  def b18; "Energy from waste"; end
-  def c18; "Biomass Supply"; end
-  def e18; @e18 ||= sheet7.e18/(sheet12.c13*sheet11.e79); end
-  def f18; @f18 ||= sheet7.f18/(sheet12.c13*sheet11.e79); end
-  def g18; @g18 ||= sheet7.g18/(sheet12.c13*sheet11.e79); end
-  def h18; @h18 ||= sheet7.h18/(sheet12.c13*sheet11.e79); end
-  def i18; @i18 ||= sheet7.i18/(sheet12.c13*sheet11.e79); end
-  def j18; @j18 ||= sheet7.j18/(sheet12.c13*sheet11.e79); end
-  def k18; @k18 ||= sheet7.k18/(sheet12.c13*sheet11.e79); end
-  def l18; @l18 ||= sheet7.l18/(sheet12.c13*sheet11.e79); end
-  def m18; @m18 ||= sheet7.m18/(sheet12.c13*sheet11.e79); end
-  def o18; @o18 ||= sheet7.o18/(sheet12.c13*sheet11.e79); end
-  def p18; @p18 ||= sheet7.p18/(sheet12.c13*sheet11.e79); end
-  def q18; @q18 ||= sheet7.q18/(sheet12.c13*sheet11.e79); end
-  def r18; @r18 ||= sheet7.r18/(sheet12.c13*sheet11.e79); end
-  def s18; @s18 ||= sheet7.s18/(sheet12.c13*sheet11.e79); end
-  def t18; @t18 ||= sheet7.t18/(sheet12.c13*sheet11.e79); end
-  def u18; @u18 ||= sheet7.u18/(sheet12.c13*sheet11.e79); end
-  def v18; @v18 ||= sheet7.v18/(sheet12.c13*sheet11.e79); end
-  def w18; @w18 ||= sheet7.w18/(sheet12.c13*sheet11.e79); end
-  def y18; @y18 ||= sheet7.y18/(sheet12.c13*sheet11.e79); end
-  def z18; @z18 ||= sheet7.z18/(sheet12.c13*sheet11.e79); end
-  def aa18; @aa18 ||= sheet7.aa18/(sheet12.c13*sheet11.e79); end
-  def ab18; @ab18 ||= sheet7.ab18/(sheet12.c13*sheet11.e79); end
-  def ac18; @ac18 ||= sheet7.ac18/(sheet12.c13*sheet11.e79); end
-  def ad18; @ad18 ||= sheet7.ad18/(sheet12.c13*sheet11.e79); end
-  def ae18; @ae18 ||= sheet7.ae18/(sheet12.c13*sheet11.e79); end
-  def af18; @af18 ||= sheet7.af18/(sheet12.c13*sheet11.e79); end
-  def ag18; @ag18 ||= sheet7.ag18/(sheet12.c13*sheet11.e79); end
-  def ai18; @ai18 ||= sheet7.ai18/(sheet12.c13*sheet11.e79); end
-  def aj18; @aj18 ||= sheet7.aj18/(sheet12.c13*sheet11.e79); end
-  def ak18; @ak18 ||= sheet7.ak18/(sheet12.c13*sheet11.e79); end
-  def al18; @al18 ||= sheet7.al18/(sheet12.c13*sheet11.e79); end
-  def am18; @am18 ||= sheet7.am18/(sheet12.c13*sheet11.e79); end
-  def an18; @an18 ||= sheet7.an18/(sheet12.c13*sheet11.e79); end
-  def ao18; @ao18 ||= sheet7.ao18/(sheet12.c13*sheet11.e79); end
-  def ap18; @ap18 ||= sheet7.ap18/(sheet12.c13*sheet11.e79); end
-  def aq18; @aq18 ||= sheet7.aq18/(sheet12.c13*sheet11.e79); end
-  def as18; @as18 ||= average(a('ai18','aq18')); end
-  def at18; @at18 ||= (sumproduct(a('aj18','aq18'),sheet12.a('d28','k28'))*5.0)+ai18; end
-  def av18; 0.0; end
-  def aw18; 5.0; end
-  def ay18; @ay18 ||= sheet7.ay18/(sheet12.c13*sheet11.e79); end
-  def az18; @az18 ||= sheet7.az18/(sheet12.c13*sheet11.e79); end
-  def ba18; @ba18 ||= sheet7.ba18/(sheet12.c13*sheet11.e79); end
-  def bb18; @bb18 ||= sheet7.bb18/(sheet12.c13*sheet11.e79); end
-  def bc18; @bc18 ||= sheet7.bc18/(sheet12.c13*sheet11.e79); end
-  def bd18; @bd18 ||= sheet7.bd18/(sheet12.c13*sheet11.e79); end
-  def be18; @be18 ||= sheet7.be18/(sheet12.c13*sheet11.e79); end
-  def bf18; @bf18 ||= sheet7.bf18/(sheet12.c13*sheet11.e79); end
-  def bg18; @bg18 ||= sheet7.bg18/(sheet12.c13*sheet11.e79); end
-  def bi18; @bi18 ||= sheet7.bi18/(sheet12.c13*sheet11.e79); end
-  def bj18; @bj18 ||= sheet7.bj18/(sheet12.c13*sheet11.e79); end
-  def bk18; @bk18 ||= sheet7.bk18/(sheet12.c13*sheet11.e79); end
-  def bl18; @bl18 ||= sheet7.bl18/(sheet12.c13*sheet11.e79); end
-  def bm18; @bm18 ||= sheet7.bm18/(sheet12.c13*sheet11.e79); end
-  def bn18; @bn18 ||= sheet7.bn18/(sheet12.c13*sheet11.e79); end
-  def bo18; @bo18 ||= sheet7.bo18/(sheet12.c13*sheet11.e79); end
-  def bp18; @bp18 ||= sheet7.bp18/(sheet12.c13*sheet11.e79); end
-  def bq18; @bq18 ||= sheet7.bq18/(sheet12.c13*sheet11.e79); end
-  def bs18; @bs18 ||= sheet7.bs18/(sheet12.c13*sheet11.e79); end
-  def bt18; @bt18 ||= sheet7.bt18/(sheet12.c13*sheet11.e79); end
-  def bu18; @bu18 ||= sheet7.bu18/(sheet12.c13*sheet11.e79); end
-  def bv18; @bv18 ||= sheet7.bv18/(sheet12.c13*sheet11.e79); end
-  def bw18; @bw18 ||= sheet7.bw18/(sheet12.c13*sheet11.e79); end
-  def bx18; @bx18 ||= sheet7.bx18/(sheet12.c13*sheet11.e79); end
-  def by18; @by18 ||= sheet7.by18/(sheet12.c13*sheet11.e79); end
-  def bz18; @bz18 ||= sheet7.bz18/(sheet12.c13*sheet11.e79); end
-  def ca18; @ca18 ||= sheet7.ca18/(sheet12.c13*sheet11.e79); end
-  def cc18; @cc18 ||= average(a('bs18','ca18')); end
-  def cd18; @cd18 ||= (sumproduct(a('bt18','ca18'),sheet12.a('d28','k28'))*5.0)+bs18; end
-  def cf18; @cf18 ||= sheet7.cf18/(sheet12.c13*sheet11.e79); end
-  def cg18; @cg18 ||= sheet7.cg18/(sheet12.c13*sheet11.e79); end
-  def ch18; @ch18 ||= sheet7.ch18/(sheet12.c13*sheet11.e79); end
-  def ci18; @ci18 ||= sheet7.ci18/(sheet12.c13*sheet11.e79); end
-  def cj18; @cj18 ||= sheet7.cj18/(sheet12.c13*sheet11.e79); end
-  def ck18; @ck18 ||= sheet7.ck18/(sheet12.c13*sheet11.e79); end
-  def cl18; @cl18 ||= sheet7.cl18/(sheet12.c13*sheet11.e79); end
-  def cm18; @cm18 ||= sheet7.cm18/(sheet12.c13*sheet11.e79); end
-  def cn18; @cn18 ||= sheet7.cn18/(sheet12.c13*sheet11.e79); end
-  def cp18; @cp18 ||= average(a('cf18','cn18')); end
-  def cq18; @cq18 ||= (sumproduct(a('cg18','cn18'),sheet12.a('d28','k28'))*5.0)+cf18; end
-  def cr18; @cr18 ||= excel_if(excel_comparison(abs(cd18-cq18-at18),"<",1.0),"ok","err"); end
-  def a19; "VI.b.Waste"; end
-  def b19; "Waste arising"; end
-  def c19; "Business"; end
-  def e19; @e19 ||= sheet7.e19/(sheet12.c13*sheet11.e79); end
-  def f19; @f19 ||= sheet7.f19/(sheet12.c13*sheet11.e79); end
-  def g19; @g19 ||= sheet7.g19/(sheet12.c13*sheet11.e79); end
-  def h19; @h19 ||= sheet7.h19/(sheet12.c13*sheet11.e79); end
-  def i19; @i19 ||= sheet7.i19/(sheet12.c13*sheet11.e79); end
-  def j19; @j19 ||= sheet7.j19/(sheet12.c13*sheet11.e79); end
-  def k19; @k19 ||= sheet7.k19/(sheet12.c13*sheet11.e79); end
-  def l19; @l19 ||= sheet7.l19/(sheet12.c13*sheet11.e79); end
-  def m19; @m19 ||= sheet7.m19/(sheet12.c13*sheet11.e79); end
-  def o19; @o19 ||= sheet7.o19/(sheet12.c13*sheet11.e79); end
-  def p19; @p19 ||= sheet7.p19/(sheet12.c13*sheet11.e79); end
-  def q19; @q19 ||= sheet7.q19/(sheet12.c13*sheet11.e79); end
-  def r19; @r19 ||= sheet7.r19/(sheet12.c13*sheet11.e79); end
-  def s19; @s19 ||= sheet7.s19/(sheet12.c13*sheet11.e79); end
-  def t19; @t19 ||= sheet7.t19/(sheet12.c13*sheet11.e79); end
-  def u19; @u19 ||= sheet7.u19/(sheet12.c13*sheet11.e79); end
-  def v19; @v19 ||= sheet7.v19/(sheet12.c13*sheet11.e79); end
-  def w19; @w19 ||= sheet7.w19/(sheet12.c13*sheet11.e79); end
-  def y19; @y19 ||= sheet7.y19/(sheet12.c13*sheet11.e79); end
-  def z19; @z19 ||= sheet7.z19/(sheet12.c13*sheet11.e79); end
-  def aa19; @aa19 ||= sheet7.aa19/(sheet12.c13*sheet11.e79); end
-  def ab19; @ab19 ||= sheet7.ab19/(sheet12.c13*sheet11.e79); end
-  def ac19; @ac19 ||= sheet7.ac19/(sheet12.c13*sheet11.e79); end
-  def ad19; @ad19 ||= sheet7.ad19/(sheet12.c13*sheet11.e79); end
-  def ae19; @ae19 ||= sheet7.ae19/(sheet12.c13*sheet11.e79); end
-  def af19; @af19 ||= sheet7.af19/(sheet12.c13*sheet11.e79); end
-  def ag19; @ag19 ||= sheet7.ag19/(sheet12.c13*sheet11.e79); end
-  def ai19; @ai19 ||= sheet7.ai19/(sheet12.c13*sheet11.e79); end
-  def aj19; @aj19 ||= sheet7.aj19/(sheet12.c13*sheet11.e79); end
-  def ak19; @ak19 ||= sheet7.ak19/(sheet12.c13*sheet11.e79); end
-  def al19; @al19 ||= sheet7.al19/(sheet12.c13*sheet11.e79); end
-  def am19; @am19 ||= sheet7.am19/(sheet12.c13*sheet11.e79); end
-  def an19; @an19 ||= sheet7.an19/(sheet12.c13*sheet11.e79); end
-  def ao19; @ao19 ||= sheet7.ao19/(sheet12.c13*sheet11.e79); end
-  def ap19; @ap19 ||= sheet7.ap19/(sheet12.c13*sheet11.e79); end
-  def aq19; @aq19 ||= sheet7.aq19/(sheet12.c13*sheet11.e79); end
-  def as19; @as19 ||= average(a('ai19','aq19')); end
-  def at19; @at19 ||= (sumproduct(a('aj19','aq19'),sheet12.a('d28','k28'))*5.0)+ai19; end
-  def av19; 0.0; end
-  def aw19; 5.0; end
-  def ay19; @ay19 ||= sheet7.ay19/(sheet12.c13*sheet11.e79); end
-  def az19; @az19 ||= sheet7.az19/(sheet12.c13*sheet11.e79); end
-  def ba19; @ba19 ||= sheet7.ba19/(sheet12.c13*sheet11.e79); end
-  def bb19; @bb19 ||= sheet7.bb19/(sheet12.c13*sheet11.e79); end
-  def bc19; @bc19 ||= sheet7.bc19/(sheet12.c13*sheet11.e79); end
-  def bd19; @bd19 ||= sheet7.bd19/(sheet12.c13*sheet11.e79); end
-  def be19; @be19 ||= sheet7.be19/(sheet12.c13*sheet11.e79); end
-  def bf19; @bf19 ||= sheet7.bf19/(sheet12.c13*sheet11.e79); end
-  def bg19; @bg19 ||= sheet7.bg19/(sheet12.c13*sheet11.e79); end
-  def bi19; @bi19 ||= sheet7.bi19/(sheet12.c13*sheet11.e79); end
-  def bj19; @bj19 ||= sheet7.bj19/(sheet12.c13*sheet11.e79); end
-  def bk19; @bk19 ||= sheet7.bk19/(sheet12.c13*sheet11.e79); end
-  def bl19; @bl19 ||= sheet7.bl19/(sheet12.c13*sheet11.e79); end
-  def bm19; @bm19 ||= sheet7.bm19/(sheet12.c13*sheet11.e79); end
-  def bn19; @bn19 ||= sheet7.bn19/(sheet12.c13*sheet11.e79); end
-  def bo19; @bo19 ||= sheet7.bo19/(sheet12.c13*sheet11.e79); end
-  def bp19; @bp19 ||= sheet7.bp19/(sheet12.c13*sheet11.e79); end
-  def bq19; @bq19 ||= sheet7.bq19/(sheet12.c13*sheet11.e79); end
-  def bs19; @bs19 ||= sheet7.bs19/(sheet12.c13*sheet11.e79); end
-  def bt19; @bt19 ||= sheet7.bt19/(sheet12.c13*sheet11.e79); end
-  def bu19; @bu19 ||= sheet7.bu19/(sheet12.c13*sheet11.e79); end
-  def bv19; @bv19 ||= sheet7.bv19/(sheet12.c13*sheet11.e79); end
-  def bw19; @bw19 ||= sheet7.bw19/(sheet12.c13*sheet11.e79); end
-  def bx19; @bx19 ||= sheet7.bx19/(sheet12.c13*sheet11.e79); end
-  def by19; @by19 ||= sheet7.by19/(sheet12.c13*sheet11.e79); end
-  def bz19; @bz19 ||= sheet7.bz19/(sheet12.c13*sheet11.e79); end
-  def ca19; @ca19 ||= sheet7.ca19/(sheet12.c13*sheet11.e79); end
-  def cc19; @cc19 ||= average(a('bs19','ca19')); end
-  def cd19; @cd19 ||= (sumproduct(a('bt19','ca19'),sheet12.a('d28','k28'))*5.0)+bs19; end
-  def cf19; @cf19 ||= sheet7.cf19/(sheet12.c13*sheet11.e79); end
-  def cg19; @cg19 ||= sheet7.cg19/(sheet12.c13*sheet11.e79); end
-  def ch19; @ch19 ||= sheet7.ch19/(sheet12.c13*sheet11.e79); end
-  def ci19; @ci19 ||= sheet7.ci19/(sheet12.c13*sheet11.e79); end
-  def cj19; @cj19 ||= sheet7.cj19/(sheet12.c13*sheet11.e79); end
-  def ck19; @ck19 ||= sheet7.ck19/(sheet12.c13*sheet11.e79); end
-  def cl19; @cl19 ||= sheet7.cl19/(sheet12.c13*sheet11.e79); end
-  def cm19; @cm19 ||= sheet7.cm19/(sheet12.c13*sheet11.e79); end
-  def cn19; @cn19 ||= sheet7.cn19/(sheet12.c13*sheet11.e79); end
-  def cp19; @cp19 ||= average(a('cf19','cn19')); end
-  def cq19; @cq19 ||= (sumproduct(a('cg19','cn19'),sheet12.a('d28','k28'))*5.0)+cf19; end
-  def cr19; @cr19 ||= excel_if(excel_comparison(abs(cd19-cq19-at19),"<",1.0),"ok","err"); end
-  def a20; "VI.c"; end
-  def b20; "Marine algae"; end
-  def c20; "Biomass Supply"; end
-  def e20; @e20 ||= sheet7.e20/(sheet12.c13*sheet11.e79); end
-  def f20; @f20 ||= sheet7.f20/(sheet12.c13*sheet11.e79); end
-  def g20; @g20 ||= sheet7.g20/(sheet12.c13*sheet11.e79); end
-  def h20; @h20 ||= sheet7.h20/(sheet12.c13*sheet11.e79); end
-  def i20; @i20 ||= sheet7.i20/(sheet12.c13*sheet11.e79); end
-  def j20; @j20 ||= sheet7.j20/(sheet12.c13*sheet11.e79); end
-  def k20; @k20 ||= sheet7.k20/(sheet12.c13*sheet11.e79); end
-  def l20; @l20 ||= sheet7.l20/(sheet12.c13*sheet11.e79); end
-  def m20; @m20 ||= sheet7.m20/(sheet12.c13*sheet11.e79); end
-  def o20; @o20 ||= sheet7.o20/(sheet12.c13*sheet11.e79); end
-  def p20; @p20 ||= sheet7.p20/(sheet12.c13*sheet11.e79); end
-  def q20; @q20 ||= sheet7.q20/(sheet12.c13*sheet11.e79); end
-  def r20; @r20 ||= sheet7.r20/(sheet12.c13*sheet11.e79); end
-  def s20; @s20 ||= sheet7.s20/(sheet12.c13*sheet11.e79); end
-  def t20; @t20 ||= sheet7.t20/(sheet12.c13*sheet11.e79); end
-  def u20; @u20 ||= sheet7.u20/(sheet12.c13*sheet11.e79); end
-  def v20; @v20 ||= sheet7.v20/(sheet12.c13*sheet11.e79); end
-  def w20; @w20 ||= sheet7.w20/(sheet12.c13*sheet11.e79); end
-  def y20; @y20 ||= sheet7.y20/(sheet12.c13*sheet11.e79); end
-  def z20; @z20 ||= sheet7.z20/(sheet12.c13*sheet11.e79); end
-  def aa20; @aa20 ||= sheet7.aa20/(sheet12.c13*sheet11.e79); end
-  def ab20; @ab20 ||= sheet7.ab20/(sheet12.c13*sheet11.e79); end
-  def ac20; @ac20 ||= sheet7.ac20/(sheet12.c13*sheet11.e79); end
-  def ad20; @ad20 ||= sheet7.ad20/(sheet12.c13*sheet11.e79); end
-  def ae20; @ae20 ||= sheet7.ae20/(sheet12.c13*sheet11.e79); end
-  def af20; @af20 ||= sheet7.af20/(sheet12.c13*sheet11.e79); end
-  def ag20; @ag20 ||= sheet7.ag20/(sheet12.c13*sheet11.e79); end
-  def ai20; @ai20 ||= sheet7.ai20/(sheet12.c13*sheet11.e79); end
-  def aj20; @aj20 ||= sheet7.aj20/(sheet12.c13*sheet11.e79); end
-  def ak20; @ak20 ||= sheet7.ak20/(sheet12.c13*sheet11.e79); end
-  def al20; @al20 ||= sheet7.al20/(sheet12.c13*sheet11.e79); end
-  def am20; @am20 ||= sheet7.am20/(sheet12.c13*sheet11.e79); end
-  def an20; @an20 ||= sheet7.an20/(sheet12.c13*sheet11.e79); end
-  def ao20; @ao20 ||= sheet7.ao20/(sheet12.c13*sheet11.e79); end
-  def ap20; @ap20 ||= sheet7.ap20/(sheet12.c13*sheet11.e79); end
-  def aq20; @aq20 ||= sheet7.aq20/(sheet12.c13*sheet11.e79); end
-  def as20; @as20 ||= average(a('ai20','aq20')); end
-  def at20; @at20 ||= (sumproduct(a('aj20','aq20'),sheet12.a('d28','k28'))*5.0)+ai20; end
-  def av20; 0.0; end
-  def aw20; 5.0; end
-  def ay20; @ay20 ||= sheet7.ay20/(sheet12.c13*sheet11.e79); end
-  def az20; @az20 ||= sheet7.az20/(sheet12.c13*sheet11.e79); end
-  def ba20; @ba20 ||= sheet7.ba20/(sheet12.c13*sheet11.e79); end
-  def bb20; @bb20 ||= sheet7.bb20/(sheet12.c13*sheet11.e79); end
-  def bc20; @bc20 ||= sheet7.bc20/(sheet12.c13*sheet11.e79); end
-  def bd20; @bd20 ||= sheet7.bd20/(sheet12.c13*sheet11.e79); end
-  def be20; @be20 ||= sheet7.be20/(sheet12.c13*sheet11.e79); end
-  def bf20; @bf20 ||= sheet7.bf20/(sheet12.c13*sheet11.e79); end
-  def bg20; @bg20 ||= sheet7.bg20/(sheet12.c13*sheet11.e79); end
-  def bi20; @bi20 ||= sheet7.bi20/(sheet12.c13*sheet11.e79); end
-  def bj20; @bj20 ||= sheet7.bj20/(sheet12.c13*sheet11.e79); end
-  def bk20; @bk20 ||= sheet7.bk20/(sheet12.c13*sheet11.e79); end
-  def bl20; @bl20 ||= sheet7.bl20/(sheet12.c13*sheet11.e79); end
-  def bm20; @bm20 ||= sheet7.bm20/(sheet12.c13*sheet11.e79); end
-  def bn20; @bn20 ||= sheet7.bn20/(sheet12.c13*sheet11.e79); end
-  def bo20; @bo20 ||= sheet7.bo20/(sheet12.c13*sheet11.e79); end
-  def bp20; @bp20 ||= sheet7.bp20/(sheet12.c13*sheet11.e79); end
-  def bq20; @bq20 ||= sheet7.bq20/(sheet12.c13*sheet11.e79); end
-  def bs20; @bs20 ||= sheet7.bs20/(sheet12.c13*sheet11.e79); end
-  def bt20; @bt20 ||= sheet7.bt20/(sheet12.c13*sheet11.e79); end
-  def bu20; @bu20 ||= sheet7.bu20/(sheet12.c13*sheet11.e79); end
-  def bv20; @bv20 ||= sheet7.bv20/(sheet12.c13*sheet11.e79); end
-  def bw20; @bw20 ||= sheet7.bw20/(sheet12.c13*sheet11.e79); end
-  def bx20; @bx20 ||= sheet7.bx20/(sheet12.c13*sheet11.e79); end
-  def by20; @by20 ||= sheet7.by20/(sheet12.c13*sheet11.e79); end
-  def bz20; @bz20 ||= sheet7.bz20/(sheet12.c13*sheet11.e79); end
-  def ca20; @ca20 ||= sheet7.ca20/(sheet12.c13*sheet11.e79); end
-  def cc20; @cc20 ||= average(a('bs20','ca20')); end
-  def cd20; @cd20 ||= (sumproduct(a('bt20','ca20'),sheet12.a('d28','k28'))*5.0)+bs20; end
-  def cf20; @cf20 ||= sheet7.cf20/(sheet12.c13*sheet11.e79); end
-  def cg20; @cg20 ||= sheet7.cg20/(sheet12.c13*sheet11.e79); end
-  def ch20; @ch20 ||= sheet7.ch20/(sheet12.c13*sheet11.e79); end
-  def ci20; @ci20 ||= sheet7.ci20/(sheet12.c13*sheet11.e79); end
-  def cj20; @cj20 ||= sheet7.cj20/(sheet12.c13*sheet11.e79); end
-  def ck20; @ck20 ||= sheet7.ck20/(sheet12.c13*sheet11.e79); end
-  def cl20; @cl20 ||= sheet7.cl20/(sheet12.c13*sheet11.e79); end
-  def cm20; @cm20 ||= sheet7.cm20/(sheet12.c13*sheet11.e79); end
-  def cn20; @cn20 ||= sheet7.cn20/(sheet12.c13*sheet11.e79); end
-  def cp20; @cp20 ||= average(a('cf20','cn20')); end
-  def cq20; @cq20 ||= (sumproduct(a('cg20','cn20'),sheet12.a('d28','k28'))*5.0)+cf20; end
-  def cr20; @cr20 ||= excel_if(excel_comparison(abs(cd20-cq20-at20),"<",1.0),"ok","err"); end
-  def a21; "VII.a.Imports"; end
-  def b21; "Electricity imports"; end
-  def c21; "Power"; end
-  def e21; @e21 ||= sheet7.e21/(sheet12.c13*sheet11.e79); end
-  def f21; @f21 ||= sheet7.f21/(sheet12.c13*sheet11.e79); end
-  def g21; @g21 ||= sheet7.g21/(sheet12.c13*sheet11.e79); end
-  def h21; @h21 ||= sheet7.h21/(sheet12.c13*sheet11.e79); end
-  def i21; @i21 ||= sheet7.i21/(sheet12.c13*sheet11.e79); end
-  def j21; @j21 ||= sheet7.j21/(sheet12.c13*sheet11.e79); end
-  def k21; @k21 ||= sheet7.k21/(sheet12.c13*sheet11.e79); end
-  def l21; @l21 ||= sheet7.l21/(sheet12.c13*sheet11.e79); end
-  def m21; @m21 ||= sheet7.m21/(sheet12.c13*sheet11.e79); end
-  def o21; @o21 ||= sheet7.o21/(sheet12.c13*sheet11.e79); end
-  def p21; @p21 ||= sheet7.p21/(sheet12.c13*sheet11.e79); end
-  def q21; @q21 ||= sheet7.q21/(sheet12.c13*sheet11.e79); end
-  def r21; @r21 ||= sheet7.r21/(sheet12.c13*sheet11.e79); end
-  def s21; @s21 ||= sheet7.s21/(sheet12.c13*sheet11.e79); end
-  def t21; @t21 ||= sheet7.t21/(sheet12.c13*sheet11.e79); end
-  def u21; @u21 ||= sheet7.u21/(sheet12.c13*sheet11.e79); end
-  def v21; @v21 ||= sheet7.v21/(sheet12.c13*sheet11.e79); end
-  def w21; @w21 ||= sheet7.w21/(sheet12.c13*sheet11.e79); end
-  def y21; @y21 ||= sheet7.y21/(sheet12.c13*sheet11.e79); end
-  def z21; @z21 ||= sheet7.z21/(sheet12.c13*sheet11.e79); end
-  def aa21; @aa21 ||= sheet7.aa21/(sheet12.c13*sheet11.e79); end
-  def ab21; @ab21 ||= sheet7.ab21/(sheet12.c13*sheet11.e79); end
-  def ac21; @ac21 ||= sheet7.ac21/(sheet12.c13*sheet11.e79); end
-  def ad21; @ad21 ||= sheet7.ad21/(sheet12.c13*sheet11.e79); end
-  def ae21; @ae21 ||= sheet7.ae21/(sheet12.c13*sheet11.e79); end
-  def af21; @af21 ||= sheet7.af21/(sheet12.c13*sheet11.e79); end
-  def ag21; @ag21 ||= sheet7.ag21/(sheet12.c13*sheet11.e79); end
-  def ai21; @ai21 ||= sheet7.ai21/(sheet12.c13*sheet11.e79); end
-  def aj21; @aj21 ||= sheet7.aj21/(sheet12.c13*sheet11.e79); end
-  def ak21; @ak21 ||= sheet7.ak21/(sheet12.c13*sheet11.e79); end
-  def al21; @al21 ||= sheet7.al21/(sheet12.c13*sheet11.e79); end
-  def am21; @am21 ||= sheet7.am21/(sheet12.c13*sheet11.e79); end
-  def an21; @an21 ||= sheet7.an21/(sheet12.c13*sheet11.e79); end
-  def ao21; @ao21 ||= sheet7.ao21/(sheet12.c13*sheet11.e79); end
-  def ap21; @ap21 ||= sheet7.ap21/(sheet12.c13*sheet11.e79); end
-  def aq21; @aq21 ||= sheet7.aq21/(sheet12.c13*sheet11.e79); end
-  def as21; @as21 ||= average(a('ai21','aq21')); end
-  def at21; @at21 ||= (sumproduct(a('aj21','aq21'),sheet12.a('d28','k28'))*5.0)+ai21; end
-  def av21; 0.0; end
-  def aw21; 5.0; end
-  def ay21; @ay21 ||= sheet7.ay21/(sheet12.c13*sheet11.e79); end
-  def az21; @az21 ||= sheet7.az21/(sheet12.c13*sheet11.e79); end
-  def ba21; @ba21 ||= sheet7.ba21/(sheet12.c13*sheet11.e79); end
-  def bb21; @bb21 ||= sheet7.bb21/(sheet12.c13*sheet11.e79); end
-  def bc21; @bc21 ||= sheet7.bc21/(sheet12.c13*sheet11.e79); end
-  def bd21; @bd21 ||= sheet7.bd21/(sheet12.c13*sheet11.e79); end
-  def be21; @be21 ||= sheet7.be21/(sheet12.c13*sheet11.e79); end
-  def bf21; @bf21 ||= sheet7.bf21/(sheet12.c13*sheet11.e79); end
-  def bg21; @bg21 ||= sheet7.bg21/(sheet12.c13*sheet11.e79); end
-  def bi21; @bi21 ||= sheet7.bi21/(sheet12.c13*sheet11.e79); end
-  def bj21; @bj21 ||= sheet7.bj21/(sheet12.c13*sheet11.e79); end
-  def bk21; @bk21 ||= sheet7.bk21/(sheet12.c13*sheet11.e79); end
-  def bl21; @bl21 ||= sheet7.bl21/(sheet12.c13*sheet11.e79); end
-  def bm21; @bm21 ||= sheet7.bm21/(sheet12.c13*sheet11.e79); end
-  def bn21; @bn21 ||= sheet7.bn21/(sheet12.c13*sheet11.e79); end
-  def bo21; @bo21 ||= sheet7.bo21/(sheet12.c13*sheet11.e79); end
-  def bp21; @bp21 ||= sheet7.bp21/(sheet12.c13*sheet11.e79); end
-  def bq21; @bq21 ||= sheet7.bq21/(sheet12.c13*sheet11.e79); end
-  def bs21; @bs21 ||= sheet7.bs21/(sheet12.c13*sheet11.e79); end
-  def bt21; @bt21 ||= sheet7.bt21/(sheet12.c13*sheet11.e79); end
-  def bu21; @bu21 ||= sheet7.bu21/(sheet12.c13*sheet11.e79); end
-  def bv21; @bv21 ||= sheet7.bv21/(sheet12.c13*sheet11.e79); end
-  def bw21; @bw21 ||= sheet7.bw21/(sheet12.c13*sheet11.e79); end
-  def bx21; @bx21 ||= sheet7.bx21/(sheet12.c13*sheet11.e79); end
-  def by21; @by21 ||= sheet7.by21/(sheet12.c13*sheet11.e79); end
-  def bz21; @bz21 ||= sheet7.bz21/(sheet12.c13*sheet11.e79); end
-  def ca21; @ca21 ||= sheet7.ca21/(sheet12.c13*sheet11.e79); end
-  def cc21; @cc21 ||= average(a('bs21','ca21')); end
-  def cd21; @cd21 ||= (sumproduct(a('bt21','ca21'),sheet12.a('d28','k28'))*5.0)+bs21; end
-  def cf21; @cf21 ||= sheet7.cf21/(sheet12.c13*sheet11.e79); end
-  def cg21; @cg21 ||= sheet7.cg21/(sheet12.c13*sheet11.e79); end
-  def ch21; @ch21 ||= sheet7.ch21/(sheet12.c13*sheet11.e79); end
-  def ci21; @ci21 ||= sheet7.ci21/(sheet12.c13*sheet11.e79); end
-  def cj21; @cj21 ||= sheet7.cj21/(sheet12.c13*sheet11.e79); end
-  def ck21; @ck21 ||= sheet7.ck21/(sheet12.c13*sheet11.e79); end
-  def cl21; @cl21 ||= sheet7.cl21/(sheet12.c13*sheet11.e79); end
-  def cm21; @cm21 ||= sheet7.cm21/(sheet12.c13*sheet11.e79); end
-  def cn21; @cn21 ||= sheet7.cn21/(sheet12.c13*sheet11.e79); end
-  def cp21; @cp21 ||= average(a('cf21','cn21')); end
-  def cq21; @cq21 ||= (sumproduct(a('cg21','cn21'),sheet12.a('d28','k28'))*5.0)+cf21; end
-  def cr21; @cr21 ||= excel_if(excel_comparison(abs(cd21-cq21-at21),"<",1.0),"ok","err"); end
-  def a22; "VII.a.Exports"; end
-  def b22; "Electricity Exports"; end
-  def c22; "Power"; end
-  def e22; @e22 ||= sheet7.e22/(sheet12.c13*sheet11.e79); end
-  def f22; @f22 ||= sheet7.f22/(sheet12.c13*sheet11.e79); end
-  def g22; @g22 ||= sheet7.g22/(sheet12.c13*sheet11.e79); end
-  def h22; @h22 ||= sheet7.h22/(sheet12.c13*sheet11.e79); end
-  def i22; @i22 ||= sheet7.i22/(sheet12.c13*sheet11.e79); end
-  def j22; @j22 ||= sheet7.j22/(sheet12.c13*sheet11.e79); end
-  def k22; @k22 ||= sheet7.k22/(sheet12.c13*sheet11.e79); end
-  def l22; @l22 ||= sheet7.l22/(sheet12.c13*sheet11.e79); end
-  def m22; @m22 ||= sheet7.m22/(sheet12.c13*sheet11.e79); end
-  def o22; @o22 ||= sheet7.o22/(sheet12.c13*sheet11.e79); end
-  def p22; @p22 ||= sheet7.p22/(sheet12.c13*sheet11.e79); end
-  def q22; @q22 ||= sheet7.q22/(sheet12.c13*sheet11.e79); end
-  def r22; @r22 ||= sheet7.r22/(sheet12.c13*sheet11.e79); end
-  def s22; @s22 ||= sheet7.s22/(sheet12.c13*sheet11.e79); end
-  def t22; @t22 ||= sheet7.t22/(sheet12.c13*sheet11.e79); end
-  def u22; @u22 ||= sheet7.u22/(sheet12.c13*sheet11.e79); end
-  def v22; @v22 ||= sheet7.v22/(sheet12.c13*sheet11.e79); end
-  def w22; @w22 ||= sheet7.w22/(sheet12.c13*sheet11.e79); end
-  def y22; @y22 ||= sheet7.y22/(sheet12.c13*sheet11.e79); end
-  def z22; @z22 ||= sheet7.z22/(sheet12.c13*sheet11.e79); end
-  def aa22; @aa22 ||= sheet7.aa22/(sheet12.c13*sheet11.e79); end
-  def ab22; @ab22 ||= sheet7.ab22/(sheet12.c13*sheet11.e79); end
-  def ac22; @ac22 ||= sheet7.ac22/(sheet12.c13*sheet11.e79); end
-  def ad22; @ad22 ||= sheet7.ad22/(sheet12.c13*sheet11.e79); end
-  def ae22; @ae22 ||= sheet7.ae22/(sheet12.c13*sheet11.e79); end
-  def af22; @af22 ||= sheet7.af22/(sheet12.c13*sheet11.e79); end
-  def ag22; @ag22 ||= sheet7.ag22/(sheet12.c13*sheet11.e79); end
-  def ai22; @ai22 ||= sheet7.ai22/(sheet12.c13*sheet11.e79); end
-  def aj22; @aj22 ||= sheet7.aj22/(sheet12.c13*sheet11.e79); end
-  def ak22; @ak22 ||= sheet7.ak22/(sheet12.c13*sheet11.e79); end
-  def al22; @al22 ||= sheet7.al22/(sheet12.c13*sheet11.e79); end
-  def am22; @am22 ||= sheet7.am22/(sheet12.c13*sheet11.e79); end
-  def an22; @an22 ||= sheet7.an22/(sheet12.c13*sheet11.e79); end
-  def ao22; @ao22 ||= sheet7.ao22/(sheet12.c13*sheet11.e79); end
-  def ap22; @ap22 ||= sheet7.ap22/(sheet12.c13*sheet11.e79); end
-  def aq22; @aq22 ||= sheet7.aq22/(sheet12.c13*sheet11.e79); end
-  def as22; @as22 ||= average(a('ai22','aq22')); end
-  def at22; @at22 ||= (sumproduct(a('aj22','aq22'),sheet12.a('d28','k28'))*5.0)+ai22; end
-  def av22; 0.0; end
-  def aw22; 5.0; end
-  def ay22; @ay22 ||= sheet7.ay22/(sheet12.c13*sheet11.e79); end
-  def az22; @az22 ||= sheet7.az22/(sheet12.c13*sheet11.e79); end
-  def ba22; @ba22 ||= sheet7.ba22/(sheet12.c13*sheet11.e79); end
-  def bb22; @bb22 ||= sheet7.bb22/(sheet12.c13*sheet11.e79); end
-  def bc22; @bc22 ||= sheet7.bc22/(sheet12.c13*sheet11.e79); end
-  def bd22; @bd22 ||= sheet7.bd22/(sheet12.c13*sheet11.e79); end
-  def be22; @be22 ||= sheet7.be22/(sheet12.c13*sheet11.e79); end
-  def bf22; @bf22 ||= sheet7.bf22/(sheet12.c13*sheet11.e79); end
-  def bg22; @bg22 ||= sheet7.bg22/(sheet12.c13*sheet11.e79); end
-  def bi22; @bi22 ||= sheet7.bi22/(sheet12.c13*sheet11.e79); end
-  def bj22; @bj22 ||= sheet7.bj22/(sheet12.c13*sheet11.e79); end
-  def bk22; @bk22 ||= sheet7.bk22/(sheet12.c13*sheet11.e79); end
-  def bl22; @bl22 ||= sheet7.bl22/(sheet12.c13*sheet11.e79); end
-  def bm22; @bm22 ||= sheet7.bm22/(sheet12.c13*sheet11.e79); end
-  def bn22; @bn22 ||= sheet7.bn22/(sheet12.c13*sheet11.e79); end
-  def bo22; @bo22 ||= sheet7.bo22/(sheet12.c13*sheet11.e79); end
-  def bp22; @bp22 ||= sheet7.bp22/(sheet12.c13*sheet11.e79); end
-  def bq22; @bq22 ||= sheet7.bq22/(sheet12.c13*sheet11.e79); end
-  def bs22; @bs22 ||= sheet7.bs22/(sheet12.c13*sheet11.e79); end
-  def bt22; @bt22 ||= sheet7.bt22/(sheet12.c13*sheet11.e79); end
-  def bu22; @bu22 ||= sheet7.bu22/(sheet12.c13*sheet11.e79); end
-  def bv22; @bv22 ||= sheet7.bv22/(sheet12.c13*sheet11.e79); end
-  def bw22; @bw22 ||= sheet7.bw22/(sheet12.c13*sheet11.e79); end
-  def bx22; @bx22 ||= sheet7.bx22/(sheet12.c13*sheet11.e79); end
-  def by22; @by22 ||= sheet7.by22/(sheet12.c13*sheet11.e79); end
-  def bz22; @bz22 ||= sheet7.bz22/(sheet12.c13*sheet11.e79); end
-  def ca22; @ca22 ||= sheet7.ca22/(sheet12.c13*sheet11.e79); end
-  def cc22; @cc22 ||= average(a('bs22','ca22')); end
-  def cd22; @cd22 ||= (sumproduct(a('bt22','ca22'),sheet12.a('d28','k28'))*5.0)+bs22; end
-  def cf22; @cf22 ||= sheet7.cf22/(sheet12.c13*sheet11.e79); end
-  def cg22; @cg22 ||= sheet7.cg22/(sheet12.c13*sheet11.e79); end
-  def ch22; @ch22 ||= sheet7.ch22/(sheet12.c13*sheet11.e79); end
-  def ci22; @ci22 ||= sheet7.ci22/(sheet12.c13*sheet11.e79); end
-  def cj22; @cj22 ||= sheet7.cj22/(sheet12.c13*sheet11.e79); end
-  def ck22; @ck22 ||= sheet7.ck22/(sheet12.c13*sheet11.e79); end
-  def cl22; @cl22 ||= sheet7.cl22/(sheet12.c13*sheet11.e79); end
-  def cm22; @cm22 ||= sheet7.cm22/(sheet12.c13*sheet11.e79); end
-  def cn22; @cn22 ||= sheet7.cn22/(sheet12.c13*sheet11.e79); end
-  def cp22; @cp22 ||= average(a('cf22','cn22')); end
-  def cq22; @cq22 ||= (sumproduct(a('cg22','cn22'),sheet12.a('d28','k28'))*5.0)+cf22; end
-  def cr22; @cr22 ||= excel_if(excel_comparison(abs(cd22-cq22-at22),"<",1.0),"ok","err"); end
-  def a23; "VII.b"; end
-  def b23; "Electricity grid distribution"; end
-  def c23; "Power"; end
-  def e23; @e23 ||= sheet7.e23/(sheet12.c13*sheet11.e79); end
-  def f23; @f23 ||= sheet7.f23/(sheet12.c13*sheet11.e79); end
-  def g23; @g23 ||= sheet7.g23/(sheet12.c13*sheet11.e79); end
-  def h23; @h23 ||= sheet7.h23/(sheet12.c13*sheet11.e79); end
-  def i23; @i23 ||= sheet7.i23/(sheet12.c13*sheet11.e79); end
-  def j23; @j23 ||= sheet7.j23/(sheet12.c13*sheet11.e79); end
-  def k23; @k23 ||= sheet7.k23/(sheet12.c13*sheet11.e79); end
-  def l23; @l23 ||= sheet7.l23/(sheet12.c13*sheet11.e79); end
-  def m23; @m23 ||= sheet7.m23/(sheet12.c13*sheet11.e79); end
-  def o23; @o23 ||= sheet7.o23/(sheet12.c13*sheet11.e79); end
-  def p23; @p23 ||= sheet7.p23/(sheet12.c13*sheet11.e79); end
-  def q23; @q23 ||= sheet7.q23/(sheet12.c13*sheet11.e79); end
-  def r23; @r23 ||= sheet7.r23/(sheet12.c13*sheet11.e79); end
-  def s23; @s23 ||= sheet7.s23/(sheet12.c13*sheet11.e79); end
-  def t23; @t23 ||= sheet7.t23/(sheet12.c13*sheet11.e79); end
-  def u23; @u23 ||= sheet7.u23/(sheet12.c13*sheet11.e79); end
-  def v23; @v23 ||= sheet7.v23/(sheet12.c13*sheet11.e79); end
-  def w23; @w23 ||= sheet7.w23/(sheet12.c13*sheet11.e79); end
-  def y23; @y23 ||= sheet7.y23/(sheet12.c13*sheet11.e79); end
-  def z23; @z23 ||= sheet7.z23/(sheet12.c13*sheet11.e79); end
-  def aa23; @aa23 ||= sheet7.aa23/(sheet12.c13*sheet11.e79); end
-  def ab23; @ab23 ||= sheet7.ab23/(sheet12.c13*sheet11.e79); end
-  def ac23; @ac23 ||= sheet7.ac23/(sheet12.c13*sheet11.e79); end
-  def ad23; @ad23 ||= sheet7.ad23/(sheet12.c13*sheet11.e79); end
-  def ae23; @ae23 ||= sheet7.ae23/(sheet12.c13*sheet11.e79); end
-  def af23; @af23 ||= sheet7.af23/(sheet12.c13*sheet11.e79); end
-  def ag23; @ag23 ||= sheet7.ag23/(sheet12.c13*sheet11.e79); end
-  def ai23; @ai23 ||= sheet7.ai23/(sheet12.c13*sheet11.e79); end
-  def aj23; @aj23 ||= sheet7.aj23/(sheet12.c13*sheet11.e79); end
-  def ak23; @ak23 ||= sheet7.ak23/(sheet12.c13*sheet11.e79); end
-  def al23; @al23 ||= sheet7.al23/(sheet12.c13*sheet11.e79); end
-  def am23; @am23 ||= sheet7.am23/(sheet12.c13*sheet11.e79); end
-  def an23; @an23 ||= sheet7.an23/(sheet12.c13*sheet11.e79); end
-  def ao23; @ao23 ||= sheet7.ao23/(sheet12.c13*sheet11.e79); end
-  def ap23; @ap23 ||= sheet7.ap23/(sheet12.c13*sheet11.e79); end
-  def aq23; @aq23 ||= sheet7.aq23/(sheet12.c13*sheet11.e79); end
-  def as23; @as23 ||= average(a('ai23','aq23')); end
-  def at23; @at23 ||= (sumproduct(a('aj23','aq23'),sheet12.a('d28','k28'))*5.0)+ai23; end
-  def av23; 0.0; end
-  def aw23; 5.0; end
-  def ay23; @ay23 ||= sheet7.ay23/(sheet12.c13*sheet11.e79); end
-  def az23; @az23 ||= sheet7.az23/(sheet12.c13*sheet11.e79); end
-  def ba23; @ba23 ||= sheet7.ba23/(sheet12.c13*sheet11.e79); end
-  def bb23; @bb23 ||= sheet7.bb23/(sheet12.c13*sheet11.e79); end
-  def bc23; @bc23 ||= sheet7.bc23/(sheet12.c13*sheet11.e79); end
-  def bd23; @bd23 ||= sheet7.bd23/(sheet12.c13*sheet11.e79); end
-  def be23; @be23 ||= sheet7.be23/(sheet12.c13*sheet11.e79); end
-  def bf23; @bf23 ||= sheet7.bf23/(sheet12.c13*sheet11.e79); end
-  def bg23; @bg23 ||= sheet7.bg23/(sheet12.c13*sheet11.e79); end
-  def bi23; @bi23 ||= sheet7.bi23/(sheet12.c13*sheet11.e79); end
-  def bj23; @bj23 ||= sheet7.bj23/(sheet12.c13*sheet11.e79); end
-  def bk23; @bk23 ||= sheet7.bk23/(sheet12.c13*sheet11.e79); end
-  def bl23; @bl23 ||= sheet7.bl23/(sheet12.c13*sheet11.e79); end
-  def bm23; @bm23 ||= sheet7.bm23/(sheet12.c13*sheet11.e79); end
-  def bn23; @bn23 ||= sheet7.bn23/(sheet12.c13*sheet11.e79); end
-  def bo23; @bo23 ||= sheet7.bo23/(sheet12.c13*sheet11.e79); end
-  def bp23; @bp23 ||= sheet7.bp23/(sheet12.c13*sheet11.e79); end
-  def bq23; @bq23 ||= sheet7.bq23/(sheet12.c13*sheet11.e79); end
-  def bs23; @bs23 ||= sheet7.bs23/(sheet12.c13*sheet11.e79); end
-  def bt23; @bt23 ||= sheet7.bt23/(sheet12.c13*sheet11.e79); end
-  def bu23; @bu23 ||= sheet7.bu23/(sheet12.c13*sheet11.e79); end
-  def bv23; @bv23 ||= sheet7.bv23/(sheet12.c13*sheet11.e79); end
-  def bw23; @bw23 ||= sheet7.bw23/(sheet12.c13*sheet11.e79); end
-  def bx23; @bx23 ||= sheet7.bx23/(sheet12.c13*sheet11.e79); end
-  def by23; @by23 ||= sheet7.by23/(sheet12.c13*sheet11.e79); end
-  def bz23; @bz23 ||= sheet7.bz23/(sheet12.c13*sheet11.e79); end
-  def ca23; @ca23 ||= sheet7.ca23/(sheet12.c13*sheet11.e79); end
-  def cc23; @cc23 ||= average(a('bs23','ca23')); end
-  def cd23; @cd23 ||= (sumproduct(a('bt23','ca23'),sheet12.a('d28','k28'))*5.0)+bs23; end
-  def cf23; @cf23 ||= sheet7.cf23/(sheet12.c13*sheet11.e79); end
-  def cg23; @cg23 ||= sheet7.cg23/(sheet12.c13*sheet11.e79); end
-  def ch23; @ch23 ||= sheet7.ch23/(sheet12.c13*sheet11.e79); end
-  def ci23; @ci23 ||= sheet7.ci23/(sheet12.c13*sheet11.e79); end
-  def cj23; @cj23 ||= sheet7.cj23/(sheet12.c13*sheet11.e79); end
-  def ck23; @ck23 ||= sheet7.ck23/(sheet12.c13*sheet11.e79); end
-  def cl23; @cl23 ||= sheet7.cl23/(sheet12.c13*sheet11.e79); end
-  def cm23; @cm23 ||= sheet7.cm23/(sheet12.c13*sheet11.e79); end
-  def cn23; @cn23 ||= sheet7.cn23/(sheet12.c13*sheet11.e79); end
-  def cp23; @cp23 ||= average(a('cf23','cn23')); end
-  def cq23; @cq23 ||= (sumproduct(a('cg23','cn23'),sheet12.a('d28','k28'))*5.0)+cf23; end
-  def cr23; @cr23 ||= excel_if(excel_comparison(abs(cd23-cq23-at23),"<",1.0),"ok","err"); end
-  def a24; "VII.c"; end
-  def b24; "Storage, demand shifting, backup"; end
-  def c24; "Power"; end
-  def e24; @e24 ||= sheet7.e24/(sheet12.c13*sheet11.e79); end
-  def f24; @f24 ||= sheet7.f24/(sheet12.c13*sheet11.e79); end
-  def g24; @g24 ||= sheet7.g24/(sheet12.c13*sheet11.e79); end
-  def h24; @h24 ||= sheet7.h24/(sheet12.c13*sheet11.e79); end
-  def i24; @i24 ||= sheet7.i24/(sheet12.c13*sheet11.e79); end
-  def j24; @j24 ||= sheet7.j24/(sheet12.c13*sheet11.e79); end
-  def k24; @k24 ||= sheet7.k24/(sheet12.c13*sheet11.e79); end
-  def l24; @l24 ||= sheet7.l24/(sheet12.c13*sheet11.e79); end
-  def m24; @m24 ||= sheet7.m24/(sheet12.c13*sheet11.e79); end
-  def o24; @o24 ||= sheet7.o24/(sheet12.c13*sheet11.e79); end
-  def p24; @p24 ||= sheet7.p24/(sheet12.c13*sheet11.e79); end
-  def q24; @q24 ||= sheet7.q24/(sheet12.c13*sheet11.e79); end
-  def r24; @r24 ||= sheet7.r24/(sheet12.c13*sheet11.e79); end
-  def s24; @s24 ||= sheet7.s24/(sheet12.c13*sheet11.e79); end
-  def t24; @t24 ||= sheet7.t24/(sheet12.c13*sheet11.e79); end
-  def u24; @u24 ||= sheet7.u24/(sheet12.c13*sheet11.e79); end
-  def v24; @v24 ||= sheet7.v24/(sheet12.c13*sheet11.e79); end
-  def w24; @w24 ||= sheet7.w24/(sheet12.c13*sheet11.e79); end
-  def y24; @y24 ||= sheet7.y24/(sheet12.c13*sheet11.e79); end
-  def z24; @z24 ||= sheet7.z24/(sheet12.c13*sheet11.e79); end
-  def aa24; @aa24 ||= sheet7.aa24/(sheet12.c13*sheet11.e79); end
-  def ab24; @ab24 ||= sheet7.ab24/(sheet12.c13*sheet11.e79); end
-  def ac24; @ac24 ||= sheet7.ac24/(sheet12.c13*sheet11.e79); end
-  def ad24; @ad24 ||= sheet7.ad24/(sheet12.c13*sheet11.e79); end
-  def ae24; @ae24 ||= sheet7.ae24/(sheet12.c13*sheet11.e79); end
-  def af24; @af24 ||= sheet7.af24/(sheet12.c13*sheet11.e79); end
-  def ag24; @ag24 ||= sheet7.ag24/(sheet12.c13*sheet11.e79); end
-  def ai24; @ai24 ||= sheet7.ai24/(sheet12.c13*sheet11.e79); end
-  def aj24; @aj24 ||= sheet7.aj24/(sheet12.c13*sheet11.e79); end
-  def ak24; @ak24 ||= sheet7.ak24/(sheet12.c13*sheet11.e79); end
-  def al24; @al24 ||= sheet7.al24/(sheet12.c13*sheet11.e79); end
-  def am24; @am24 ||= sheet7.am24/(sheet12.c13*sheet11.e79); end
-  def an24; @an24 ||= sheet7.an24/(sheet12.c13*sheet11.e79); end
-  def ao24; @ao24 ||= sheet7.ao24/(sheet12.c13*sheet11.e79); end
-  def ap24; @ap24 ||= sheet7.ap24/(sheet12.c13*sheet11.e79); end
-  def aq24; @aq24 ||= sheet7.aq24/(sheet12.c13*sheet11.e79); end
-  def as24; @as24 ||= average(a('ai24','aq24')); end
-  def at24; @at24 ||= (sumproduct(a('aj24','aq24'),sheet12.a('d28','k28'))*5.0)+ai24; end
-  def av24; 0.0; end
-  def aw24; 5.0; end
-  def ay24; @ay24 ||= sheet7.ay24/(sheet12.c13*sheet11.e79); end
-  def az24; @az24 ||= sheet7.az24/(sheet12.c13*sheet11.e79); end
-  def ba24; @ba24 ||= sheet7.ba24/(sheet12.c13*sheet11.e79); end
-  def bb24; @bb24 ||= sheet7.bb24/(sheet12.c13*sheet11.e79); end
-  def bc24; @bc24 ||= sheet7.bc24/(sheet12.c13*sheet11.e79); end
-  def bd24; @bd24 ||= sheet7.bd24/(sheet12.c13*sheet11.e79); end
-  def be24; @be24 ||= sheet7.be24/(sheet12.c13*sheet11.e79); end
-  def bf24; @bf24 ||= sheet7.bf24/(sheet12.c13*sheet11.e79); end
-  def bg24; @bg24 ||= sheet7.bg24/(sheet12.c13*sheet11.e79); end
-  def bi24; @bi24 ||= sheet7.bi24/(sheet12.c13*sheet11.e79); end
-  def bj24; @bj24 ||= sheet7.bj24/(sheet12.c13*sheet11.e79); end
-  def bk24; @bk24 ||= sheet7.bk24/(sheet12.c13*sheet11.e79); end
-  def bl24; @bl24 ||= sheet7.bl24/(sheet12.c13*sheet11.e79); end
-  def bm24; @bm24 ||= sheet7.bm24/(sheet12.c13*sheet11.e79); end
-  def bn24; @bn24 ||= sheet7.bn24/(sheet12.c13*sheet11.e79); end
-  def bo24; @bo24 ||= sheet7.bo24/(sheet12.c13*sheet11.e79); end
-  def bp24; @bp24 ||= sheet7.bp24/(sheet12.c13*sheet11.e79); end
-  def bq24; @bq24 ||= sheet7.bq24/(sheet12.c13*sheet11.e79); end
-  def bs24; @bs24 ||= sheet7.bs24/(sheet12.c13*sheet11.e79); end
-  def bt24; @bt24 ||= sheet7.bt24/(sheet12.c13*sheet11.e79); end
-  def bu24; @bu24 ||= sheet7.bu24/(sheet12.c13*sheet11.e79); end
-  def bv24; @bv24 ||= sheet7.bv24/(sheet12.c13*sheet11.e79); end
-  def bw24; @bw24 ||= sheet7.bw24/(sheet12.c13*sheet11.e79); end
-  def bx24; @bx24 ||= sheet7.bx24/(sheet12.c13*sheet11.e79); end
-  def by24; @by24 ||= sheet7.by24/(sheet12.c13*sheet11.e79); end
-  def bz24; @bz24 ||= sheet7.bz24/(sheet12.c13*sheet11.e79); end
-  def ca24; @ca24 ||= sheet7.ca24/(sheet12.c13*sheet11.e79); end
-  def cc24; @cc24 ||= average(a('bs24','ca24')); end
-  def cd24; @cd24 ||= (sumproduct(a('bt24','ca24'),sheet12.a('d28','k28'))*5.0)+bs24; end
-  def cf24; @cf24 ||= sheet7.cf24/(sheet12.c13*sheet11.e79); end
-  def cg24; @cg24 ||= sheet7.cg24/(sheet12.c13*sheet11.e79); end
-  def ch24; @ch24 ||= sheet7.ch24/(sheet12.c13*sheet11.e79); end
-  def ci24; @ci24 ||= sheet7.ci24/(sheet12.c13*sheet11.e79); end
-  def cj24; @cj24 ||= sheet7.cj24/(sheet12.c13*sheet11.e79); end
-  def ck24; @ck24 ||= sheet7.ck24/(sheet12.c13*sheet11.e79); end
-  def cl24; @cl24 ||= sheet7.cl24/(sheet12.c13*sheet11.e79); end
-  def cm24; @cm24 ||= sheet7.cm24/(sheet12.c13*sheet11.e79); end
-  def cn24; @cn24 ||= sheet7.cn24/(sheet12.c13*sheet11.e79); end
-  def cp24; @cp24 ||= average(a('cf24','cn24')); end
-  def cq24; @cq24 ||= (sumproduct(a('cg24','cn24'),sheet12.a('d28','k28'))*5.0)+cf24; end
-  def cr24; @cr24 ||= excel_if(excel_comparison(abs(cd24-cq24-at24),"<",1.0),"ok","err"); end
-  def a25; "VIII.a"; end
-  def b25; "H2 Production"; end
-  def c25; "Transport"; end
-  def e25; @e25 ||= sheet7.e25/(sheet12.c13*sheet11.e79); end
-  def f25; @f25 ||= sheet7.f25/(sheet12.c13*sheet11.e79); end
-  def g25; @g25 ||= sheet7.g25/(sheet12.c13*sheet11.e79); end
-  def h25; @h25 ||= sheet7.h25/(sheet12.c13*sheet11.e79); end
-  def i25; @i25 ||= sheet7.i25/(sheet12.c13*sheet11.e79); end
-  def j25; @j25 ||= sheet7.j25/(sheet12.c13*sheet11.e79); end
-  def k25; @k25 ||= sheet7.k25/(sheet12.c13*sheet11.e79); end
-  def l25; @l25 ||= sheet7.l25/(sheet12.c13*sheet11.e79); end
-  def m25; @m25 ||= sheet7.m25/(sheet12.c13*sheet11.e79); end
-  def o25; @o25 ||= sheet7.o25/(sheet12.c13*sheet11.e79); end
-  def p25; @p25 ||= sheet7.p25/(sheet12.c13*sheet11.e79); end
-  def q25; @q25 ||= sheet7.q25/(sheet12.c13*sheet11.e79); end
-  def r25; @r25 ||= sheet7.r25/(sheet12.c13*sheet11.e79); end
-  def s25; @s25 ||= sheet7.s25/(sheet12.c13*sheet11.e79); end
-  def t25; @t25 ||= sheet7.t25/(sheet12.c13*sheet11.e79); end
-  def u25; @u25 ||= sheet7.u25/(sheet12.c13*sheet11.e79); end
-  def v25; @v25 ||= sheet7.v25/(sheet12.c13*sheet11.e79); end
-  def w25; @w25 ||= sheet7.w25/(sheet12.c13*sheet11.e79); end
-  def y25; @y25 ||= sheet7.y25/(sheet12.c13*sheet11.e79); end
-  def z25; @z25 ||= sheet7.z25/(sheet12.c13*sheet11.e79); end
-  def aa25; @aa25 ||= sheet7.aa25/(sheet12.c13*sheet11.e79); end
-  def ab25; @ab25 ||= sheet7.ab25/(sheet12.c13*sheet11.e79); end
-  def ac25; @ac25 ||= sheet7.ac25/(sheet12.c13*sheet11.e79); end
-  def ad25; @ad25 ||= sheet7.ad25/(sheet12.c13*sheet11.e79); end
-  def ae25; @ae25 ||= sheet7.ae25/(sheet12.c13*sheet11.e79); end
-  def af25; @af25 ||= sheet7.af25/(sheet12.c13*sheet11.e79); end
-  def ag25; @ag25 ||= sheet7.ag25/(sheet12.c13*sheet11.e79); end
-  def ai25; @ai25 ||= sheet7.ai25/(sheet12.c13*sheet11.e79); end
-  def aj25; @aj25 ||= sheet7.aj25/(sheet12.c13*sheet11.e79); end
-  def ak25; @ak25 ||= sheet7.ak25/(sheet12.c13*sheet11.e79); end
-  def al25; @al25 ||= sheet7.al25/(sheet12.c13*sheet11.e79); end
-  def am25; @am25 ||= sheet7.am25/(sheet12.c13*sheet11.e79); end
-  def an25; @an25 ||= sheet7.an25/(sheet12.c13*sheet11.e79); end
-  def ao25; @ao25 ||= sheet7.ao25/(sheet12.c13*sheet11.e79); end
-  def ap25; @ap25 ||= sheet7.ap25/(sheet12.c13*sheet11.e79); end
-  def aq25; @aq25 ||= sheet7.aq25/(sheet12.c13*sheet11.e79); end
-  def as25; @as25 ||= average(a('ai25','aq25')); end
-  def at25; @at25 ||= (sumproduct(a('aj25','aq25'),sheet12.a('d28','k28'))*5.0)+ai25; end
-  def av25; 0.0; end
-  def aw25; 5.0; end
-  def ay25; @ay25 ||= sheet7.ay25/(sheet12.c13*sheet11.e79); end
-  def az25; @az25 ||= sheet7.az25/(sheet12.c13*sheet11.e79); end
-  def ba25; @ba25 ||= sheet7.ba25/(sheet12.c13*sheet11.e79); end
-  def bb25; @bb25 ||= sheet7.bb25/(sheet12.c13*sheet11.e79); end
-  def bc25; @bc25 ||= sheet7.bc25/(sheet12.c13*sheet11.e79); end
-  def bd25; @bd25 ||= sheet7.bd25/(sheet12.c13*sheet11.e79); end
-  def be25; @be25 ||= sheet7.be25/(sheet12.c13*sheet11.e79); end
-  def bf25; @bf25 ||= sheet7.bf25/(sheet12.c13*sheet11.e79); end
-  def bg25; @bg25 ||= sheet7.bg25/(sheet12.c13*sheet11.e79); end
-  def bi25; @bi25 ||= sheet7.bi25/(sheet12.c13*sheet11.e79); end
-  def bj25; @bj25 ||= sheet7.bj25/(sheet12.c13*sheet11.e79); end
-  def bk25; @bk25 ||= sheet7.bk25/(sheet12.c13*sheet11.e79); end
-  def bl25; @bl25 ||= sheet7.bl25/(sheet12.c13*sheet11.e79); end
-  def bm25; @bm25 ||= sheet7.bm25/(sheet12.c13*sheet11.e79); end
-  def bn25; @bn25 ||= sheet7.bn25/(sheet12.c13*sheet11.e79); end
-  def bo25; @bo25 ||= sheet7.bo25/(sheet12.c13*sheet11.e79); end
-  def bp25; @bp25 ||= sheet7.bp25/(sheet12.c13*sheet11.e79); end
-  def bq25; @bq25 ||= sheet7.bq25/(sheet12.c13*sheet11.e79); end
-  def bs25; @bs25 ||= sheet7.bs25/(sheet12.c13*sheet11.e79); end
-  def bt25; @bt25 ||= sheet7.bt25/(sheet12.c13*sheet11.e79); end
-  def bu25; @bu25 ||= sheet7.bu25/(sheet12.c13*sheet11.e79); end
-  def bv25; @bv25 ||= sheet7.bv25/(sheet12.c13*sheet11.e79); end
-  def bw25; @bw25 ||= sheet7.bw25/(sheet12.c13*sheet11.e79); end
-  def bx25; @bx25 ||= sheet7.bx25/(sheet12.c13*sheet11.e79); end
-  def by25; @by25 ||= sheet7.by25/(sheet12.c13*sheet11.e79); end
-  def bz25; @bz25 ||= sheet7.bz25/(sheet12.c13*sheet11.e79); end
-  def ca25; @ca25 ||= sheet7.ca25/(sheet12.c13*sheet11.e79); end
-  def cc25; @cc25 ||= average(a('bs25','ca25')); end
-  def cd25; @cd25 ||= (sumproduct(a('bt25','ca25'),sheet12.a('d28','k28'))*5.0)+bs25; end
-  def cf25; @cf25 ||= sheet7.cf25/(sheet12.c13*sheet11.e79); end
-  def cg25; @cg25 ||= sheet7.cg25/(sheet12.c13*sheet11.e79); end
-  def ch25; @ch25 ||= sheet7.ch25/(sheet12.c13*sheet11.e79); end
-  def ci25; @ci25 ||= sheet7.ci25/(sheet12.c13*sheet11.e79); end
-  def cj25; @cj25 ||= sheet7.cj25/(sheet12.c13*sheet11.e79); end
-  def ck25; @ck25 ||= sheet7.ck25/(sheet12.c13*sheet11.e79); end
-  def cl25; @cl25 ||= sheet7.cl25/(sheet12.c13*sheet11.e79); end
-  def cm25; @cm25 ||= sheet7.cm25/(sheet12.c13*sheet11.e79); end
-  def cn25; @cn25 ||= sheet7.cn25/(sheet12.c13*sheet11.e79); end
-  def cp25; @cp25 ||= average(a('cf25','cn25')); end
-  def cq25; @cq25 ||= (sumproduct(a('cg25','cn25'),sheet12.a('d28','k28'))*5.0)+cf25; end
-  def cr25; @cr25 ||= excel_if(excel_comparison(abs(cd25-cq25-at25),"<",1.0),"ok","err"); end
-  def a26; "IX.a.Heating"; end
-  def b26; "Domestic heating"; end
-  def c26; "Heating"; end
-  def e26; 114.32368444726612; end
-  def f26; @f26 ||= sheet7.f26/(sheet12.c13*sheet11.e79); end
-  def g26; @g26 ||= sheet7.g26/(sheet12.c13*sheet11.e79); end
-  def h26; @h26 ||= sheet7.h26/(sheet12.c13*sheet11.e79); end
-  def i26; @i26 ||= sheet7.i26/(sheet12.c13*sheet11.e79); end
-  def j26; @j26 ||= sheet7.j26/(sheet12.c13*sheet11.e79); end
-  def k26; @k26 ||= sheet7.k26/(sheet12.c13*sheet11.e79); end
-  def l26; @l26 ||= sheet7.l26/(sheet12.c13*sheet11.e79); end
-  def m26; @m26 ||= sheet7.m26/(sheet12.c13*sheet11.e79); end
-  def o26; 64.85686202610466; end
-  def p26; @p26 ||= sheet7.p26/(sheet12.c13*sheet11.e79); end
-  def q26; @q26 ||= sheet7.q26/(sheet12.c13*sheet11.e79); end
-  def r26; @r26 ||= sheet7.r26/(sheet12.c13*sheet11.e79); end
-  def s26; @s26 ||= sheet7.s26/(sheet12.c13*sheet11.e79); end
-  def t26; @t26 ||= sheet7.t26/(sheet12.c13*sheet11.e79); end
-  def u26; @u26 ||= sheet7.u26/(sheet12.c13*sheet11.e79); end
-  def v26; @v26 ||= sheet7.v26/(sheet12.c13*sheet11.e79); end
-  def w26; @w26 ||= sheet7.w26/(sheet12.c13*sheet11.e79); end
-  def y26; 0.0; end
-  def z26; @z26 ||= sheet7.z26/(sheet12.c13*sheet11.e79); end
-  def aa26; @aa26 ||= sheet7.aa26/(sheet12.c13*sheet11.e79); end
-  def ab26; @ab26 ||= sheet7.ab26/(sheet12.c13*sheet11.e79); end
-  def ac26; @ac26 ||= sheet7.ac26/(sheet12.c13*sheet11.e79); end
-  def ad26; @ad26 ||= sheet7.ad26/(sheet12.c13*sheet11.e79); end
-  def ae26; @ae26 ||= sheet7.ae26/(sheet12.c13*sheet11.e79); end
-  def af26; @af26 ||= sheet7.af26/(sheet12.c13*sheet11.e79); end
-  def ag26; @ag26 ||= sheet7.ag26/(sheet12.c13*sheet11.e79); end
-  def ai26; 179.18054647337078; end
-  def aj26; @aj26 ||= sheet7.aj26/(sheet12.c13*sheet11.e79); end
-  def ak26; @ak26 ||= sheet7.ak26/(sheet12.c13*sheet11.e79); end
-  def al26; @al26 ||= sheet7.al26/(sheet12.c13*sheet11.e79); end
-  def am26; @am26 ||= sheet7.am26/(sheet12.c13*sheet11.e79); end
-  def an26; @an26 ||= sheet7.an26/(sheet12.c13*sheet11.e79); end
-  def ao26; @ao26 ||= sheet7.ao26/(sheet12.c13*sheet11.e79); end
-  def ap26; @ap26 ||= sheet7.ap26/(sheet12.c13*sheet11.e79); end
-  def aq26; @aq26 ||= sheet7.aq26/(sheet12.c13*sheet11.e79); end
-  def as26; @as26 ||= average(a('ai26','aq26')); end
-  def at26; @at26 ||= (sumproduct(a('aj26','aq26'),sheet12.a('d28','k28'))*5.0)+ai26; end
-  def av26; 0.0; end
-  def aw26; 5.0; end
-  def ay26; 68.59421066835966; end
-  def az26; @az26 ||= sheet7.az26/(sheet12.c13*sheet11.e79); end
-  def ba26; @ba26 ||= sheet7.ba26/(sheet12.c13*sheet11.e79); end
-  def bb26; @bb26 ||= sheet7.bb26/(sheet12.c13*sheet11.e79); end
-  def bc26; @bc26 ||= sheet7.bc26/(sheet12.c13*sheet11.e79); end
-  def bd26; @bd26 ||= sheet7.bd26/(sheet12.c13*sheet11.e79); end
-  def be26; @be26 ||= sheet7.be26/(sheet12.c13*sheet11.e79); end
-  def bf26; @bf26 ||= sheet7.bf26/(sheet12.c13*sheet11.e79); end
-  def bg26; @bg26 ||= sheet7.bg26/(sheet12.c13*sheet11.e79); end
-  def bi26; 68.59421066835966; end
-  def bj26; @bj26 ||= sheet7.bj26/(sheet12.c13*sheet11.e79); end
-  def bk26; @bk26 ||= sheet7.bk26/(sheet12.c13*sheet11.e79); end
-  def bl26; @bl26 ||= sheet7.bl26/(sheet12.c13*sheet11.e79); end
-  def bm26; @bm26 ||= sheet7.bm26/(sheet12.c13*sheet11.e79); end
-  def bn26; @bn26 ||= sheet7.bn26/(sheet12.c13*sheet11.e79); end
-  def bo26; @bo26 ||= sheet7.bo26/(sheet12.c13*sheet11.e79); end
-  def bp26; @bp26 ||= sheet7.bp26/(sheet12.c13*sheet11.e79); end
-  def bq26; @bq26 ||= sheet7.bq26/(sheet12.c13*sheet11.e79); end
-  def bs26; 133.45107269446433; end
-  def bt26; @bt26 ||= sheet7.bt26/(sheet12.c13*sheet11.e79); end
-  def bu26; @bu26 ||= sheet7.bu26/(sheet12.c13*sheet11.e79); end
-  def bv26; @bv26 ||= sheet7.bv26/(sheet12.c13*sheet11.e79); end
-  def bw26; @bw26 ||= sheet7.bw26/(sheet12.c13*sheet11.e79); end
-  def bx26; @bx26 ||= sheet7.bx26/(sheet12.c13*sheet11.e79); end
-  def by26; @by26 ||= sheet7.by26/(sheet12.c13*sheet11.e79); end
-  def bz26; @bz26 ||= sheet7.bz26/(sheet12.c13*sheet11.e79); end
-  def ca26; @ca26 ||= sheet7.ca26/(sheet12.c13*sheet11.e79); end
-  def cc26; @cc26 ||= average(a('bs26','ca26')); end
-  def cd26; @cd26 ||= (sumproduct(a('bt26','ca26'),sheet12.a('d28','k28'))*5.0)+bs26; end
-  def cf26; -45.729473778906446; end
-  def cg26; @cg26 ||= sheet7.cg26/(sheet12.c13*sheet11.e79); end
-  def ch26; @ch26 ||= sheet7.ch26/(sheet12.c13*sheet11.e79); end
-  def ci26; @ci26 ||= sheet7.ci26/(sheet12.c13*sheet11.e79); end
-  def cj26; @cj26 ||= sheet7.cj26/(sheet12.c13*sheet11.e79); end
-  def ck26; @ck26 ||= sheet7.ck26/(sheet12.c13*sheet11.e79); end
-  def cl26; @cl26 ||= sheet7.cl26/(sheet12.c13*sheet11.e79); end
-  def cm26; @cm26 ||= sheet7.cm26/(sheet12.c13*sheet11.e79); end
-  def cn26; @cn26 ||= sheet7.cn26/(sheet12.c13*sheet11.e79); end
-  def cp26; @cp26 ||= average(a('cf26','cn26')); end
-  def cq26; @cq26 ||= (sumproduct(a('cg26','cn26'),sheet12.a('d28','k28'))*5.0)+cf26; end
-  def cr26; @cr26 ||= excel_if(excel_comparison(abs(cd26-cq26-at26),"<",1.0),"ok","err"); end
-  def a27; "IX.a.Insulation"; end
-  def b27; "Domestic insulation"; end
-  def c27; "Heating"; end
-  def e27; @e27 ||= sheet7.e27/(sheet12.c13*sheet11.e79); end
-  def f27; @f27 ||= sheet7.f27/(sheet12.c13*sheet11.e79); end
-  def g27; @g27 ||= sheet7.g27/(sheet12.c13*sheet11.e79); end
-  def h27; @h27 ||= sheet7.h27/(sheet12.c13*sheet11.e79); end
-  def i27; @i27 ||= sheet7.i27/(sheet12.c13*sheet11.e79); end
-  def j27; @j27 ||= sheet7.j27/(sheet12.c13*sheet11.e79); end
-  def k27; @k27 ||= sheet7.k27/(sheet12.c13*sheet11.e79); end
-  def l27; @l27 ||= sheet7.l27/(sheet12.c13*sheet11.e79); end
-  def m27; @m27 ||= sheet7.m27/(sheet12.c13*sheet11.e79); end
-  def o27; @o27 ||= sheet7.o27/(sheet12.c13*sheet11.e79); end
-  def p27; @p27 ||= sheet7.p27/(sheet12.c13*sheet11.e79); end
-  def q27; @q27 ||= sheet7.q27/(sheet12.c13*sheet11.e79); end
-  def r27; @r27 ||= sheet7.r27/(sheet12.c13*sheet11.e79); end
-  def s27; @s27 ||= sheet7.s27/(sheet12.c13*sheet11.e79); end
-  def t27; @t27 ||= sheet7.t27/(sheet12.c13*sheet11.e79); end
-  def u27; @u27 ||= sheet7.u27/(sheet12.c13*sheet11.e79); end
-  def v27; @v27 ||= sheet7.v27/(sheet12.c13*sheet11.e79); end
-  def w27; @w27 ||= sheet7.w27/(sheet12.c13*sheet11.e79); end
-  def y27; @y27 ||= sheet7.y27/(sheet12.c13*sheet11.e79); end
-  def z27; @z27 ||= sheet7.z27/(sheet12.c13*sheet11.e79); end
-  def aa27; @aa27 ||= sheet7.aa27/(sheet12.c13*sheet11.e79); end
-  def ab27; @ab27 ||= sheet7.ab27/(sheet12.c13*sheet11.e79); end
-  def ac27; @ac27 ||= sheet7.ac27/(sheet12.c13*sheet11.e79); end
-  def ad27; @ad27 ||= sheet7.ad27/(sheet12.c13*sheet11.e79); end
-  def ae27; @ae27 ||= sheet7.ae27/(sheet12.c13*sheet11.e79); end
-  def af27; @af27 ||= sheet7.af27/(sheet12.c13*sheet11.e79); end
-  def ag27; @ag27 ||= sheet7.ag27/(sheet12.c13*sheet11.e79); end
-  def ai27; @ai27 ||= sheet7.ai27/(sheet12.c13*sheet11.e79); end
-  def aj27; @aj27 ||= sheet7.aj27/(sheet12.c13*sheet11.e79); end
-  def ak27; @ak27 ||= sheet7.ak27/(sheet12.c13*sheet11.e79); end
-  def al27; @al27 ||= sheet7.al27/(sheet12.c13*sheet11.e79); end
-  def am27; @am27 ||= sheet7.am27/(sheet12.c13*sheet11.e79); end
-  def an27; @an27 ||= sheet7.an27/(sheet12.c13*sheet11.e79); end
-  def ao27; @ao27 ||= sheet7.ao27/(sheet12.c13*sheet11.e79); end
-  def ap27; @ap27 ||= sheet7.ap27/(sheet12.c13*sheet11.e79); end
-  def aq27; @aq27 ||= sheet7.aq27/(sheet12.c13*sheet11.e79); end
-  def as27; @as27 ||= average(a('ai27','aq27')); end
-  def at27; @at27 ||= (sumproduct(a('aj27','aq27'),sheet12.a('d28','k28'))*5.0)+ai27; end
-  def av27; 0.0; end
-  def aw27; 5.0; end
-  def ay27; @ay27 ||= sheet7.ay27/(sheet12.c13*sheet11.e79); end
-  def az27; @az27 ||= sheet7.az27/(sheet12.c13*sheet11.e79); end
-  def ba27; @ba27 ||= sheet7.ba27/(sheet12.c13*sheet11.e79); end
-  def bb27; @bb27 ||= sheet7.bb27/(sheet12.c13*sheet11.e79); end
-  def bc27; @bc27 ||= sheet7.bc27/(sheet12.c13*sheet11.e79); end
-  def bd27; @bd27 ||= sheet7.bd27/(sheet12.c13*sheet11.e79); end
-  def be27; @be27 ||= sheet7.be27/(sheet12.c13*sheet11.e79); end
-  def bf27; @bf27 ||= sheet7.bf27/(sheet12.c13*sheet11.e79); end
-  def bg27; @bg27 ||= sheet7.bg27/(sheet12.c13*sheet11.e79); end
-  def bi27; @bi27 ||= sheet7.bi27/(sheet12.c13*sheet11.e79); end
-  def bj27; @bj27 ||= sheet7.bj27/(sheet12.c13*sheet11.e79); end
-  def bk27; @bk27 ||= sheet7.bk27/(sheet12.c13*sheet11.e79); end
-  def bl27; @bl27 ||= sheet7.bl27/(sheet12.c13*sheet11.e79); end
-  def bm27; @bm27 ||= sheet7.bm27/(sheet12.c13*sheet11.e79); end
-  def bn27; @bn27 ||= sheet7.bn27/(sheet12.c13*sheet11.e79); end
-  def bo27; @bo27 ||= sheet7.bo27/(sheet12.c13*sheet11.e79); end
-  def bp27; @bp27 ||= sheet7.bp27/(sheet12.c13*sheet11.e79); end
-  def bq27; @bq27 ||= sheet7.bq27/(sheet12.c13*sheet11.e79); end
-  def bs27; @bs27 ||= sheet7.bs27/(sheet12.c13*sheet11.e79); end
-  def bt27; @bt27 ||= sheet7.bt27/(sheet12.c13*sheet11.e79); end
-  def bu27; @bu27 ||= sheet7.bu27/(sheet12.c13*sheet11.e79); end
-  def bv27; @bv27 ||= sheet7.bv27/(sheet12.c13*sheet11.e79); end
-  def bw27; @bw27 ||= sheet7.bw27/(sheet12.c13*sheet11.e79); end
-  def bx27; @bx27 ||= sheet7.bx27/(sheet12.c13*sheet11.e79); end
-  def by27; @by27 ||= sheet7.by27/(sheet12.c13*sheet11.e79); end
-  def bz27; @bz27 ||= sheet7.bz27/(sheet12.c13*sheet11.e79); end
-  def ca27; @ca27 ||= sheet7.ca27/(sheet12.c13*sheet11.e79); end
-  def cc27; @cc27 ||= average(a('bs27','ca27')); end
-  def cd27; @cd27 ||= (sumproduct(a('bt27','ca27'),sheet12.a('d28','k28'))*5.0)+bs27; end
-  def cf27; @cf27 ||= sheet7.cf27/(sheet12.c13*sheet11.e79); end
-  def cg27; @cg27 ||= sheet7.cg27/(sheet12.c13*sheet11.e79); end
-  def ch27; @ch27 ||= sheet7.ch27/(sheet12.c13*sheet11.e79); end
-  def ci27; @ci27 ||= sheet7.ci27/(sheet12.c13*sheet11.e79); end
-  def cj27; @cj27 ||= sheet7.cj27/(sheet12.c13*sheet11.e79); end
-  def ck27; @ck27 ||= sheet7.ck27/(sheet12.c13*sheet11.e79); end
-  def cl27; @cl27 ||= sheet7.cl27/(sheet12.c13*sheet11.e79); end
-  def cm27; @cm27 ||= sheet7.cm27/(sheet12.c13*sheet11.e79); end
-  def cn27; @cn27 ||= sheet7.cn27/(sheet12.c13*sheet11.e79); end
-  def cp27; @cp27 ||= average(a('cf27','cn27')); end
-  def cq27; @cq27 ||= (sumproduct(a('cg27','cn27'),sheet12.a('d28','k28'))*5.0)+cf27; end
-  def cr27; @cr27 ||= excel_if(excel_comparison(abs(cd27-cq27-at27),"<",1.0),"ok","err"); end
-  def a28; "IX.c"; end
-  def b28; "Commercial heating and cooling"; end
-  def c28; "Heating"; end
-  def e28; @e28 ||= sheet7.e28/(sheet12.c13*sheet11.e79); end
-  def f28; @f28 ||= sheet7.f28/(sheet12.c13*sheet11.e79); end
-  def g28; @g28 ||= sheet7.g28/(sheet12.c13*sheet11.e79); end
-  def h28; @h28 ||= sheet7.h28/(sheet12.c13*sheet11.e79); end
-  def i28; @i28 ||= sheet7.i28/(sheet12.c13*sheet11.e79); end
-  def j28; @j28 ||= sheet7.j28/(sheet12.c13*sheet11.e79); end
-  def k28; @k28 ||= sheet7.k28/(sheet12.c13*sheet11.e79); end
-  def l28; @l28 ||= sheet7.l28/(sheet12.c13*sheet11.e79); end
-  def m28; @m28 ||= sheet7.m28/(sheet12.c13*sheet11.e79); end
-  def o28; @o28 ||= sheet7.o28/(sheet12.c13*sheet11.e79); end
-  def p28; @p28 ||= sheet7.p28/(sheet12.c13*sheet11.e79); end
-  def q28; @q28 ||= sheet7.q28/(sheet12.c13*sheet11.e79); end
-  def r28; @r28 ||= sheet7.r28/(sheet12.c13*sheet11.e79); end
-  def s28; @s28 ||= sheet7.s28/(sheet12.c13*sheet11.e79); end
-  def t28; @t28 ||= sheet7.t28/(sheet12.c13*sheet11.e79); end
-  def u28; @u28 ||= sheet7.u28/(sheet12.c13*sheet11.e79); end
-  def v28; @v28 ||= sheet7.v28/(sheet12.c13*sheet11.e79); end
-  def w28; @w28 ||= sheet7.w28/(sheet12.c13*sheet11.e79); end
-  def y28; @y28 ||= sheet7.y28/(sheet12.c13*sheet11.e79); end
-  def z28; @z28 ||= sheet7.z28/(sheet12.c13*sheet11.e79); end
-  def aa28; @aa28 ||= sheet7.aa28/(sheet12.c13*sheet11.e79); end
-  def ab28; @ab28 ||= sheet7.ab28/(sheet12.c13*sheet11.e79); end
-  def ac28; @ac28 ||= sheet7.ac28/(sheet12.c13*sheet11.e79); end
-  def ad28; @ad28 ||= sheet7.ad28/(sheet12.c13*sheet11.e79); end
-  def ae28; @ae28 ||= sheet7.ae28/(sheet12.c13*sheet11.e79); end
-  def af28; @af28 ||= sheet7.af28/(sheet12.c13*sheet11.e79); end
-  def ag28; @ag28 ||= sheet7.ag28/(sheet12.c13*sheet11.e79); end
-  def ai28; @ai28 ||= sheet7.ai28/(sheet12.c13*sheet11.e79); end
-  def aj28; @aj28 ||= sheet7.aj28/(sheet12.c13*sheet11.e79); end
-  def ak28; @ak28 ||= sheet7.ak28/(sheet12.c13*sheet11.e79); end
-  def al28; @al28 ||= sheet7.al28/(sheet12.c13*sheet11.e79); end
-  def am28; @am28 ||= sheet7.am28/(sheet12.c13*sheet11.e79); end
-  def an28; @an28 ||= sheet7.an28/(sheet12.c13*sheet11.e79); end
-  def ao28; @ao28 ||= sheet7.ao28/(sheet12.c13*sheet11.e79); end
-  def ap28; @ap28 ||= sheet7.ap28/(sheet12.c13*sheet11.e79); end
-  def aq28; @aq28 ||= sheet7.aq28/(sheet12.c13*sheet11.e79); end
-  def as28; @as28 ||= average(a('ai28','aq28')); end
-  def at28; @at28 ||= (sumproduct(a('aj28','aq28'),sheet12.a('d28','k28'))*5.0)+ai28; end
-  def av28; 0.0; end
-  def aw28; 5.0; end
-  def ay28; @ay28 ||= sheet7.ay28/(sheet12.c13*sheet11.e79); end
-  def az28; @az28 ||= sheet7.az28/(sheet12.c13*sheet11.e79); end
-  def ba28; @ba28 ||= sheet7.ba28/(sheet12.c13*sheet11.e79); end
-  def bb28; @bb28 ||= sheet7.bb28/(sheet12.c13*sheet11.e79); end
-  def bc28; @bc28 ||= sheet7.bc28/(sheet12.c13*sheet11.e79); end
-  def bd28; @bd28 ||= sheet7.bd28/(sheet12.c13*sheet11.e79); end
-  def be28; @be28 ||= sheet7.be28/(sheet12.c13*sheet11.e79); end
-  def bf28; @bf28 ||= sheet7.bf28/(sheet12.c13*sheet11.e79); end
-  def bg28; @bg28 ||= sheet7.bg28/(sheet12.c13*sheet11.e79); end
-  def bi28; @bi28 ||= sheet7.bi28/(sheet12.c13*sheet11.e79); end
-  def bj28; @bj28 ||= sheet7.bj28/(sheet12.c13*sheet11.e79); end
-  def bk28; @bk28 ||= sheet7.bk28/(sheet12.c13*sheet11.e79); end
-  def bl28; @bl28 ||= sheet7.bl28/(sheet12.c13*sheet11.e79); end
-  def bm28; @bm28 ||= sheet7.bm28/(sheet12.c13*sheet11.e79); end
-  def bn28; @bn28 ||= sheet7.bn28/(sheet12.c13*sheet11.e79); end
-  def bo28; @bo28 ||= sheet7.bo28/(sheet12.c13*sheet11.e79); end
-  def bp28; @bp28 ||= sheet7.bp28/(sheet12.c13*sheet11.e79); end
-  def bq28; @bq28 ||= sheet7.bq28/(sheet12.c13*sheet11.e79); end
-  def bs28; @bs28 ||= sheet7.bs28/(sheet12.c13*sheet11.e79); end
-  def bt28; @bt28 ||= sheet7.bt28/(sheet12.c13*sheet11.e79); end
-  def bu28; @bu28 ||= sheet7.bu28/(sheet12.c13*sheet11.e79); end
-  def bv28; @bv28 ||= sheet7.bv28/(sheet12.c13*sheet11.e79); end
-  def bw28; @bw28 ||= sheet7.bw28/(sheet12.c13*sheet11.e79); end
-  def bx28; @bx28 ||= sheet7.bx28/(sheet12.c13*sheet11.e79); end
-  def by28; @by28 ||= sheet7.by28/(sheet12.c13*sheet11.e79); end
-  def bz28; @bz28 ||= sheet7.bz28/(sheet12.c13*sheet11.e79); end
-  def ca28; @ca28 ||= sheet7.ca28/(sheet12.c13*sheet11.e79); end
-  def cc28; @cc28 ||= average(a('bs28','ca28')); end
-  def cd28; @cd28 ||= (sumproduct(a('bt28','ca28'),sheet12.a('d28','k28'))*5.0)+bs28; end
-  def cf28; @cf28 ||= sheet7.cf28/(sheet12.c13*sheet11.e79); end
-  def cg28; @cg28 ||= sheet7.cg28/(sheet12.c13*sheet11.e79); end
-  def ch28; @ch28 ||= sheet7.ch28/(sheet12.c13*sheet11.e79); end
-  def ci28; @ci28 ||= sheet7.ci28/(sheet12.c13*sheet11.e79); end
-  def cj28; @cj28 ||= sheet7.cj28/(sheet12.c13*sheet11.e79); end
-  def ck28; @ck28 ||= sheet7.ck28/(sheet12.c13*sheet11.e79); end
-  def cl28; @cl28 ||= sheet7.cl28/(sheet12.c13*sheet11.e79); end
-  def cm28; @cm28 ||= sheet7.cm28/(sheet12.c13*sheet11.e79); end
-  def cn28; @cn28 ||= sheet7.cn28/(sheet12.c13*sheet11.e79); end
-  def cp28; @cp28 ||= average(a('cf28','cn28')); end
-  def cq28; @cq28 ||= (sumproduct(a('cg28','cn28'),sheet12.a('d28','k28'))*5.0)+cf28; end
-  def cr28; @cr28 ||= excel_if(excel_comparison(abs(cd28-cq28-at28),"<",1.0),"ok","err"); end
-  def a29; "X.a"; end
-  def b29; "Domestic lighting, appliances, and cooking"; end
-  def c29; "Residential"; end
-  def e29; @e29 ||= sheet7.e29/(sheet12.c13*sheet11.e79); end
-  def f29; @f29 ||= sheet7.f29/(sheet12.c13*sheet11.e79); end
-  def g29; @g29 ||= sheet7.g29/(sheet12.c13*sheet11.e79); end
-  def h29; @h29 ||= sheet7.h29/(sheet12.c13*sheet11.e79); end
-  def i29; @i29 ||= sheet7.i29/(sheet12.c13*sheet11.e79); end
-  def j29; @j29 ||= sheet7.j29/(sheet12.c13*sheet11.e79); end
-  def k29; @k29 ||= sheet7.k29/(sheet12.c13*sheet11.e79); end
-  def l29; @l29 ||= sheet7.l29/(sheet12.c13*sheet11.e79); end
-  def m29; @m29 ||= sheet7.m29/(sheet12.c13*sheet11.e79); end
-  def o29; @o29 ||= sheet7.o29/(sheet12.c13*sheet11.e79); end
-  def p29; @p29 ||= sheet7.p29/(sheet12.c13*sheet11.e79); end
-  def q29; @q29 ||= sheet7.q29/(sheet12.c13*sheet11.e79); end
-  def r29; @r29 ||= sheet7.r29/(sheet12.c13*sheet11.e79); end
-  def s29; @s29 ||= sheet7.s29/(sheet12.c13*sheet11.e79); end
-  def t29; @t29 ||= sheet7.t29/(sheet12.c13*sheet11.e79); end
-  def u29; @u29 ||= sheet7.u29/(sheet12.c13*sheet11.e79); end
-  def v29; @v29 ||= sheet7.v29/(sheet12.c13*sheet11.e79); end
-  def w29; @w29 ||= sheet7.w29/(sheet12.c13*sheet11.e79); end
-  def y29; @y29 ||= sheet7.y29/(sheet12.c13*sheet11.e79); end
-  def z29; @z29 ||= sheet7.z29/(sheet12.c13*sheet11.e79); end
-  def aa29; @aa29 ||= sheet7.aa29/(sheet12.c13*sheet11.e79); end
-  def ab29; @ab29 ||= sheet7.ab29/(sheet12.c13*sheet11.e79); end
-  def ac29; @ac29 ||= sheet7.ac29/(sheet12.c13*sheet11.e79); end
-  def ad29; @ad29 ||= sheet7.ad29/(sheet12.c13*sheet11.e79); end
-  def ae29; @ae29 ||= sheet7.ae29/(sheet12.c13*sheet11.e79); end
-  def af29; @af29 ||= sheet7.af29/(sheet12.c13*sheet11.e79); end
-  def ag29; @ag29 ||= sheet7.ag29/(sheet12.c13*sheet11.e79); end
-  def ai29; @ai29 ||= sheet7.ai29/(sheet12.c13*sheet11.e79); end
-  def aj29; @aj29 ||= sheet7.aj29/(sheet12.c13*sheet11.e79); end
-  def ak29; @ak29 ||= sheet7.ak29/(sheet12.c13*sheet11.e79); end
-  def al29; @al29 ||= sheet7.al29/(sheet12.c13*sheet11.e79); end
-  def am29; @am29 ||= sheet7.am29/(sheet12.c13*sheet11.e79); end
-  def an29; @an29 ||= sheet7.an29/(sheet12.c13*sheet11.e79); end
-  def ao29; @ao29 ||= sheet7.ao29/(sheet12.c13*sheet11.e79); end
-  def ap29; @ap29 ||= sheet7.ap29/(sheet12.c13*sheet11.e79); end
-  def aq29; @aq29 ||= sheet7.aq29/(sheet12.c13*sheet11.e79); end
-  def as29; @as29 ||= average(a('ai29','aq29')); end
-  def at29; @at29 ||= (sumproduct(a('aj29','aq29'),sheet12.a('d28','k28'))*5.0)+ai29; end
-  def av29; 0.0; end
-  def aw29; 5.0; end
-  def ay29; @ay29 ||= sheet7.ay29/(sheet12.c13*sheet11.e79); end
-  def az29; @az29 ||= sheet7.az29/(sheet12.c13*sheet11.e79); end
-  def ba29; @ba29 ||= sheet7.ba29/(sheet12.c13*sheet11.e79); end
-  def bb29; @bb29 ||= sheet7.bb29/(sheet12.c13*sheet11.e79); end
-  def bc29; @bc29 ||= sheet7.bc29/(sheet12.c13*sheet11.e79); end
-  def bd29; @bd29 ||= sheet7.bd29/(sheet12.c13*sheet11.e79); end
-  def be29; @be29 ||= sheet7.be29/(sheet12.c13*sheet11.e79); end
-  def bf29; @bf29 ||= sheet7.bf29/(sheet12.c13*sheet11.e79); end
-  def bg29; @bg29 ||= sheet7.bg29/(sheet12.c13*sheet11.e79); end
-  def bi29; @bi29 ||= sheet7.bi29/(sheet12.c13*sheet11.e79); end
-  def bj29; @bj29 ||= sheet7.bj29/(sheet12.c13*sheet11.e79); end
-  def bk29; @bk29 ||= sheet7.bk29/(sheet12.c13*sheet11.e79); end
-  def bl29; @bl29 ||= sheet7.bl29/(sheet12.c13*sheet11.e79); end
-  def bm29; @bm29 ||= sheet7.bm29/(sheet12.c13*sheet11.e79); end
-  def bn29; @bn29 ||= sheet7.bn29/(sheet12.c13*sheet11.e79); end
-  def bo29; @bo29 ||= sheet7.bo29/(sheet12.c13*sheet11.e79); end
-  def bp29; @bp29 ||= sheet7.bp29/(sheet12.c13*sheet11.e79); end
-  def bq29; @bq29 ||= sheet7.bq29/(sheet12.c13*sheet11.e79); end
-  def bs29; @bs29 ||= sheet7.bs29/(sheet12.c13*sheet11.e79); end
-  def bt29; @bt29 ||= sheet7.bt29/(sheet12.c13*sheet11.e79); end
-  def bu29; @bu29 ||= sheet7.bu29/(sheet12.c13*sheet11.e79); end
-  def bv29; @bv29 ||= sheet7.bv29/(sheet12.c13*sheet11.e79); end
-  def bw29; @bw29 ||= sheet7.bw29/(sheet12.c13*sheet11.e79); end
-  def bx29; @bx29 ||= sheet7.bx29/(sheet12.c13*sheet11.e79); end
-  def by29; @by29 ||= sheet7.by29/(sheet12.c13*sheet11.e79); end
-  def bz29; @bz29 ||= sheet7.bz29/(sheet12.c13*sheet11.e79); end
-  def ca29; @ca29 ||= sheet7.ca29/(sheet12.c13*sheet11.e79); end
-  def cc29; @cc29 ||= average(a('bs29','ca29')); end
-  def cd29; @cd29 ||= (sumproduct(a('bt29','ca29'),sheet12.a('d28','k28'))*5.0)+bs29; end
-  def cf29; @cf29 ||= sheet7.cf29/(sheet12.c13*sheet11.e79); end
-  def cg29; @cg29 ||= sheet7.cg29/(sheet12.c13*sheet11.e79); end
-  def ch29; @ch29 ||= sheet7.ch29/(sheet12.c13*sheet11.e79); end
-  def ci29; @ci29 ||= sheet7.ci29/(sheet12.c13*sheet11.e79); end
-  def cj29; @cj29 ||= sheet7.cj29/(sheet12.c13*sheet11.e79); end
-  def ck29; @ck29 ||= sheet7.ck29/(sheet12.c13*sheet11.e79); end
-  def cl29; @cl29 ||= sheet7.cl29/(sheet12.c13*sheet11.e79); end
-  def cm29; @cm29 ||= sheet7.cm29/(sheet12.c13*sheet11.e79); end
-  def cn29; @cn29 ||= sheet7.cn29/(sheet12.c13*sheet11.e79); end
-  def cp29; @cp29 ||= average(a('cf29','cn29')); end
-  def cq29; @cq29 ||= (sumproduct(a('cg29','cn29'),sheet12.a('d28','k28'))*5.0)+cf29; end
-  def cr29; @cr29 ||= excel_if(excel_comparison(abs(cd29-cq29-at29),"<",1.0),"ok","err"); end
-  def a30; "X.b"; end
-  def b30; "Commercial lighting, appliances, and catering"; end
-  def c30; "Business"; end
-  def e30; @e30 ||= sheet7.e30/(sheet12.c13*sheet11.e79); end
-  def f30; @f30 ||= sheet7.f30/(sheet12.c13*sheet11.e79); end
-  def g30; @g30 ||= sheet7.g30/(sheet12.c13*sheet11.e79); end
-  def h30; @h30 ||= sheet7.h30/(sheet12.c13*sheet11.e79); end
-  def i30; @i30 ||= sheet7.i30/(sheet12.c13*sheet11.e79); end
-  def j30; @j30 ||= sheet7.j30/(sheet12.c13*sheet11.e79); end
-  def k30; @k30 ||= sheet7.k30/(sheet12.c13*sheet11.e79); end
-  def l30; @l30 ||= sheet7.l30/(sheet12.c13*sheet11.e79); end
-  def m30; @m30 ||= sheet7.m30/(sheet12.c13*sheet11.e79); end
-  def o30; @o30 ||= sheet7.o30/(sheet12.c13*sheet11.e79); end
-  def p30; @p30 ||= sheet7.p30/(sheet12.c13*sheet11.e79); end
-  def q30; @q30 ||= sheet7.q30/(sheet12.c13*sheet11.e79); end
-  def r30; @r30 ||= sheet7.r30/(sheet12.c13*sheet11.e79); end
-  def s30; @s30 ||= sheet7.s30/(sheet12.c13*sheet11.e79); end
-  def t30; @t30 ||= sheet7.t30/(sheet12.c13*sheet11.e79); end
-  def u30; @u30 ||= sheet7.u30/(sheet12.c13*sheet11.e79); end
-  def v30; @v30 ||= sheet7.v30/(sheet12.c13*sheet11.e79); end
-  def w30; @w30 ||= sheet7.w30/(sheet12.c13*sheet11.e79); end
-  def y30; @y30 ||= sheet7.y30/(sheet12.c13*sheet11.e79); end
-  def z30; @z30 ||= sheet7.z30/(sheet12.c13*sheet11.e79); end
-  def aa30; @aa30 ||= sheet7.aa30/(sheet12.c13*sheet11.e79); end
-  def ab30; @ab30 ||= sheet7.ab30/(sheet12.c13*sheet11.e79); end
-  def ac30; @ac30 ||= sheet7.ac30/(sheet12.c13*sheet11.e79); end
-  def ad30; @ad30 ||= sheet7.ad30/(sheet12.c13*sheet11.e79); end
-  def ae30; @ae30 ||= sheet7.ae30/(sheet12.c13*sheet11.e79); end
-  def af30; @af30 ||= sheet7.af30/(sheet12.c13*sheet11.e79); end
-  def ag30; @ag30 ||= sheet7.ag30/(sheet12.c13*sheet11.e79); end
-  def ai30; @ai30 ||= sheet7.ai30/(sheet12.c13*sheet11.e79); end
-  def aj30; @aj30 ||= sheet7.aj30/(sheet12.c13*sheet11.e79); end
-  def ak30; @ak30 ||= sheet7.ak30/(sheet12.c13*sheet11.e79); end
-  def al30; @al30 ||= sheet7.al30/(sheet12.c13*sheet11.e79); end
-  def am30; @am30 ||= sheet7.am30/(sheet12.c13*sheet11.e79); end
-  def an30; @an30 ||= sheet7.an30/(sheet12.c13*sheet11.e79); end
-  def ao30; @ao30 ||= sheet7.ao30/(sheet12.c13*sheet11.e79); end
-  def ap30; @ap30 ||= sheet7.ap30/(sheet12.c13*sheet11.e79); end
-  def aq30; @aq30 ||= sheet7.aq30/(sheet12.c13*sheet11.e79); end
-  def as30; @as30 ||= average(a('ai30','aq30')); end
-  def at30; @at30 ||= (sumproduct(a('aj30','aq30'),sheet12.a('d28','k28'))*5.0)+ai30; end
-  def av30; 0.0; end
-  def aw30; 5.0; end
-  def ay30; @ay30 ||= sheet7.ay30/(sheet12.c13*sheet11.e79); end
-  def az30; @az30 ||= sheet7.az30/(sheet12.c13*sheet11.e79); end
-  def ba30; @ba30 ||= sheet7.ba30/(sheet12.c13*sheet11.e79); end
-  def bb30; @bb30 ||= sheet7.bb30/(sheet12.c13*sheet11.e79); end
-  def bc30; @bc30 ||= sheet7.bc30/(sheet12.c13*sheet11.e79); end
-  def bd30; @bd30 ||= sheet7.bd30/(sheet12.c13*sheet11.e79); end
-  def be30; @be30 ||= sheet7.be30/(sheet12.c13*sheet11.e79); end
-  def bf30; @bf30 ||= sheet7.bf30/(sheet12.c13*sheet11.e79); end
-  def bg30; @bg30 ||= sheet7.bg30/(sheet12.c13*sheet11.e79); end
-  def bi30; @bi30 ||= sheet7.bi30/(sheet12.c13*sheet11.e79); end
-  def bj30; @bj30 ||= sheet7.bj30/(sheet12.c13*sheet11.e79); end
-  def bk30; @bk30 ||= sheet7.bk30/(sheet12.c13*sheet11.e79); end
-  def bl30; @bl30 ||= sheet7.bl30/(sheet12.c13*sheet11.e79); end
-  def bm30; @bm30 ||= sheet7.bm30/(sheet12.c13*sheet11.e79); end
-  def bn30; @bn30 ||= sheet7.bn30/(sheet12.c13*sheet11.e79); end
-  def bo30; @bo30 ||= sheet7.bo30/(sheet12.c13*sheet11.e79); end
-  def bp30; @bp30 ||= sheet7.bp30/(sheet12.c13*sheet11.e79); end
-  def bq30; @bq30 ||= sheet7.bq30/(sheet12.c13*sheet11.e79); end
-  def bs30; @bs30 ||= sheet7.bs30/(sheet12.c13*sheet11.e79); end
-  def bt30; @bt30 ||= sheet7.bt30/(sheet12.c13*sheet11.e79); end
-  def bu30; @bu30 ||= sheet7.bu30/(sheet12.c13*sheet11.e79); end
-  def bv30; @bv30 ||= sheet7.bv30/(sheet12.c13*sheet11.e79); end
-  def bw30; @bw30 ||= sheet7.bw30/(sheet12.c13*sheet11.e79); end
-  def bx30; @bx30 ||= sheet7.bx30/(sheet12.c13*sheet11.e79); end
-  def by30; @by30 ||= sheet7.by30/(sheet12.c13*sheet11.e79); end
-  def bz30; @bz30 ||= sheet7.bz30/(sheet12.c13*sheet11.e79); end
-  def ca30; @ca30 ||= sheet7.ca30/(sheet12.c13*sheet11.e79); end
-  def cc30; @cc30 ||= average(a('bs30','ca30')); end
-  def cd30; @cd30 ||= (sumproduct(a('bt30','ca30'),sheet12.a('d28','k28'))*5.0)+bs30; end
-  def cf30; @cf30 ||= sheet7.cf30/(sheet12.c13*sheet11.e79); end
-  def cg30; @cg30 ||= sheet7.cg30/(sheet12.c13*sheet11.e79); end
-  def ch30; @ch30 ||= sheet7.ch30/(sheet12.c13*sheet11.e79); end
-  def ci30; @ci30 ||= sheet7.ci30/(sheet12.c13*sheet11.e79); end
-  def cj30; @cj30 ||= sheet7.cj30/(sheet12.c13*sheet11.e79); end
-  def ck30; @ck30 ||= sheet7.ck30/(sheet12.c13*sheet11.e79); end
-  def cl30; @cl30 ||= sheet7.cl30/(sheet12.c13*sheet11.e79); end
-  def cm30; @cm30 ||= sheet7.cm30/(sheet12.c13*sheet11.e79); end
-  def cn30; @cn30 ||= sheet7.cn30/(sheet12.c13*sheet11.e79); end
-  def cp30; @cp30 ||= average(a('cf30','cn30')); end
-  def cq30; @cq30 ||= (sumproduct(a('cg30','cn30'),sheet12.a('d28','k28'))*5.0)+cf30; end
-  def cr30; @cr30 ||= excel_if(excel_comparison(abs(cd30-cq30-at30),"<",1.0),"ok","err"); end
-  def a31; "XI.a"; end
-  def b31; "Industrial processes"; end
-  def c31; "Business"; end
-  def e31; @e31 ||= sheet7.e31/(sheet12.c13*sheet11.e79); end
-  def f31; @f31 ||= sheet7.f31/(sheet12.c13*sheet11.e79); end
-  def g31; @g31 ||= sheet7.g31/(sheet12.c13*sheet11.e79); end
-  def h31; @h31 ||= sheet7.h31/(sheet12.c13*sheet11.e79); end
-  def i31; @i31 ||= sheet7.i31/(sheet12.c13*sheet11.e79); end
-  def j31; @j31 ||= sheet7.j31/(sheet12.c13*sheet11.e79); end
-  def k31; @k31 ||= sheet7.k31/(sheet12.c13*sheet11.e79); end
-  def l31; @l31 ||= sheet7.l31/(sheet12.c13*sheet11.e79); end
-  def m31; @m31 ||= sheet7.m31/(sheet12.c13*sheet11.e79); end
-  def o31; @o31 ||= sheet7.o31/(sheet12.c13*sheet11.e79); end
-  def p31; @p31 ||= sheet7.p31/(sheet12.c13*sheet11.e79); end
-  def q31; @q31 ||= sheet7.q31/(sheet12.c13*sheet11.e79); end
-  def r31; @r31 ||= sheet7.r31/(sheet12.c13*sheet11.e79); end
-  def s31; @s31 ||= sheet7.s31/(sheet12.c13*sheet11.e79); end
-  def t31; @t31 ||= sheet7.t31/(sheet12.c13*sheet11.e79); end
-  def u31; @u31 ||= sheet7.u31/(sheet12.c13*sheet11.e79); end
-  def v31; @v31 ||= sheet7.v31/(sheet12.c13*sheet11.e79); end
-  def w31; @w31 ||= sheet7.w31/(sheet12.c13*sheet11.e79); end
-  def y31; @y31 ||= sheet7.y31/(sheet12.c13*sheet11.e79); end
-  def z31; @z31 ||= sheet7.z31/(sheet12.c13*sheet11.e79); end
-  def aa31; @aa31 ||= sheet7.aa31/(sheet12.c13*sheet11.e79); end
-  def ab31; @ab31 ||= sheet7.ab31/(sheet12.c13*sheet11.e79); end
-  def ac31; @ac31 ||= sheet7.ac31/(sheet12.c13*sheet11.e79); end
-  def ad31; @ad31 ||= sheet7.ad31/(sheet12.c13*sheet11.e79); end
-  def ae31; @ae31 ||= sheet7.ae31/(sheet12.c13*sheet11.e79); end
-  def af31; @af31 ||= sheet7.af31/(sheet12.c13*sheet11.e79); end
-  def ag31; @ag31 ||= sheet7.ag31/(sheet12.c13*sheet11.e79); end
-  def ai31; @ai31 ||= sheet7.ai31/(sheet12.c13*sheet11.e79); end
-  def aj31; @aj31 ||= sheet7.aj31/(sheet12.c13*sheet11.e79); end
-  def ak31; @ak31 ||= sheet7.ak31/(sheet12.c13*sheet11.e79); end
-  def al31; @al31 ||= sheet7.al31/(sheet12.c13*sheet11.e79); end
-  def am31; @am31 ||= sheet7.am31/(sheet12.c13*sheet11.e79); end
-  def an31; @an31 ||= sheet7.an31/(sheet12.c13*sheet11.e79); end
-  def ao31; @ao31 ||= sheet7.ao31/(sheet12.c13*sheet11.e79); end
-  def ap31; @ap31 ||= sheet7.ap31/(sheet12.c13*sheet11.e79); end
-  def aq31; @aq31 ||= sheet7.aq31/(sheet12.c13*sheet11.e79); end
-  def as31; @as31 ||= average(a('ai31','aq31')); end
-  def at31; @at31 ||= (sumproduct(a('aj31','aq31'),sheet12.a('d28','k28'))*5.0)+ai31; end
-  def av31; 0.0; end
-  def aw31; 5.0; end
-  def ay31; @ay31 ||= sheet7.ay31/(sheet12.c13*sheet11.e79); end
-  def az31; @az31 ||= sheet7.az31/(sheet12.c13*sheet11.e79); end
-  def ba31; @ba31 ||= sheet7.ba31/(sheet12.c13*sheet11.e79); end
-  def bb31; @bb31 ||= sheet7.bb31/(sheet12.c13*sheet11.e79); end
-  def bc31; @bc31 ||= sheet7.bc31/(sheet12.c13*sheet11.e79); end
-  def bd31; @bd31 ||= sheet7.bd31/(sheet12.c13*sheet11.e79); end
-  def be31; @be31 ||= sheet7.be31/(sheet12.c13*sheet11.e79); end
-  def bf31; @bf31 ||= sheet7.bf31/(sheet12.c13*sheet11.e79); end
-  def bg31; @bg31 ||= sheet7.bg31/(sheet12.c13*sheet11.e79); end
-  def bi31; @bi31 ||= sheet7.bi31/(sheet12.c13*sheet11.e79); end
-  def bj31; @bj31 ||= sheet7.bj31/(sheet12.c13*sheet11.e79); end
-  def bk31; @bk31 ||= sheet7.bk31/(sheet12.c13*sheet11.e79); end
-  def bl31; @bl31 ||= sheet7.bl31/(sheet12.c13*sheet11.e79); end
-  def bm31; @bm31 ||= sheet7.bm31/(sheet12.c13*sheet11.e79); end
-  def bn31; @bn31 ||= sheet7.bn31/(sheet12.c13*sheet11.e79); end
-  def bo31; @bo31 ||= sheet7.bo31/(sheet12.c13*sheet11.e79); end
-  def bp31; @bp31 ||= sheet7.bp31/(sheet12.c13*sheet11.e79); end
-  def bq31; @bq31 ||= sheet7.bq31/(sheet12.c13*sheet11.e79); end
-  def bs31; @bs31 ||= sheet7.bs31/(sheet12.c13*sheet11.e79); end
-  def bt31; @bt31 ||= sheet7.bt31/(sheet12.c13*sheet11.e79); end
-  def bu31; @bu31 ||= sheet7.bu31/(sheet12.c13*sheet11.e79); end
-  def bv31; @bv31 ||= sheet7.bv31/(sheet12.c13*sheet11.e79); end
-  def bw31; @bw31 ||= sheet7.bw31/(sheet12.c13*sheet11.e79); end
-  def bx31; @bx31 ||= sheet7.bx31/(sheet12.c13*sheet11.e79); end
-  def by31; @by31 ||= sheet7.by31/(sheet12.c13*sheet11.e79); end
-  def bz31; @bz31 ||= sheet7.bz31/(sheet12.c13*sheet11.e79); end
-  def ca31; @ca31 ||= sheet7.ca31/(sheet12.c13*sheet11.e79); end
-  def cc31; @cc31 ||= average(a('bs31','ca31')); end
-  def cd31; @cd31 ||= (sumproduct(a('bt31','ca31'),sheet12.a('d28','k28'))*5.0)+bs31; end
-  def cf31; @cf31 ||= sheet7.cf31/(sheet12.c13*sheet11.e79); end
-  def cg31; @cg31 ||= sheet7.cg31/(sheet12.c13*sheet11.e79); end
-  def ch31; @ch31 ||= sheet7.ch31/(sheet12.c13*sheet11.e79); end
-  def ci31; @ci31 ||= sheet7.ci31/(sheet12.c13*sheet11.e79); end
-  def cj31; @cj31 ||= sheet7.cj31/(sheet12.c13*sheet11.e79); end
-  def ck31; @ck31 ||= sheet7.ck31/(sheet12.c13*sheet11.e79); end
-  def cl31; @cl31 ||= sheet7.cl31/(sheet12.c13*sheet11.e79); end
-  def cm31; @cm31 ||= sheet7.cm31/(sheet12.c13*sheet11.e79); end
-  def cn31; @cn31 ||= sheet7.cn31/(sheet12.c13*sheet11.e79); end
-  def cp31; @cp31 ||= average(a('cf31','cn31')); end
-  def cq31; @cq31 ||= (sumproduct(a('cg31','cn31'),sheet12.a('d28','k28'))*5.0)+cf31; end
-  def cr31; @cr31 ||= excel_if(excel_comparison(abs(cd31-cq31-at31),"<",1.0),"ok","err"); end
-  def a32; "XII.a.ICE"; end
-  def b32; "Conventional cars and buses"; end
-  def c32; "Transport"; end
-  def e32; @e32 ||= sheet7.e32/(sheet12.c13*sheet11.e79); end
-  def f32; @f32 ||= sheet7.f32/(sheet12.c13*sheet11.e79); end
-  def g32; @g32 ||= sheet7.g32/(sheet12.c13*sheet11.e79); end
-  def h32; @h32 ||= sheet7.h32/(sheet12.c13*sheet11.e79); end
-  def i32; @i32 ||= sheet7.i32/(sheet12.c13*sheet11.e79); end
-  def j32; @j32 ||= sheet7.j32/(sheet12.c13*sheet11.e79); end
-  def k32; @k32 ||= sheet7.k32/(sheet12.c13*sheet11.e79); end
-  def l32; @l32 ||= sheet7.l32/(sheet12.c13*sheet11.e79); end
-  def m32; @m32 ||= sheet7.m32/(sheet12.c13*sheet11.e79); end
-  def o32; @o32 ||= sheet7.o32/(sheet12.c13*sheet11.e79); end
-  def p32; @p32 ||= sheet7.p32/(sheet12.c13*sheet11.e79); end
-  def q32; @q32 ||= sheet7.q32/(sheet12.c13*sheet11.e79); end
-  def r32; @r32 ||= sheet7.r32/(sheet12.c13*sheet11.e79); end
-  def s32; @s32 ||= sheet7.s32/(sheet12.c13*sheet11.e79); end
-  def t32; @t32 ||= sheet7.t32/(sheet12.c13*sheet11.e79); end
-  def u32; @u32 ||= sheet7.u32/(sheet12.c13*sheet11.e79); end
-  def v32; @v32 ||= sheet7.v32/(sheet12.c13*sheet11.e79); end
-  def w32; @w32 ||= sheet7.w32/(sheet12.c13*sheet11.e79); end
-  def y32; @y32 ||= sheet7.y32/(sheet12.c13*sheet11.e79); end
-  def z32; @z32 ||= sheet7.z32/(sheet12.c13*sheet11.e79); end
-  def aa32; @aa32 ||= sheet7.aa32/(sheet12.c13*sheet11.e79); end
-  def ab32; @ab32 ||= sheet7.ab32/(sheet12.c13*sheet11.e79); end
-  def ac32; @ac32 ||= sheet7.ac32/(sheet12.c13*sheet11.e79); end
-  def ad32; @ad32 ||= sheet7.ad32/(sheet12.c13*sheet11.e79); end
-  def ae32; @ae32 ||= sheet7.ae32/(sheet12.c13*sheet11.e79); end
-  def af32; @af32 ||= sheet7.af32/(sheet12.c13*sheet11.e79); end
-  def ag32; @ag32 ||= sheet7.ag32/(sheet12.c13*sheet11.e79); end
-  def ai32; @ai32 ||= sheet7.ai32/(sheet12.c13*sheet11.e79); end
-  def aj32; @aj32 ||= sheet7.aj32/(sheet12.c13*sheet11.e79); end
-  def ak32; @ak32 ||= sheet7.ak32/(sheet12.c13*sheet11.e79); end
-  def al32; @al32 ||= sheet7.al32/(sheet12.c13*sheet11.e79); end
-  def am32; @am32 ||= sheet7.am32/(sheet12.c13*sheet11.e79); end
-  def an32; @an32 ||= sheet7.an32/(sheet12.c13*sheet11.e79); end
-  def ao32; @ao32 ||= sheet7.ao32/(sheet12.c13*sheet11.e79); end
-  def ap32; @ap32 ||= sheet7.ap32/(sheet12.c13*sheet11.e79); end
-  def aq32; @aq32 ||= sheet7.aq32/(sheet12.c13*sheet11.e79); end
-  def as32; @as32 ||= average(a('ai32','aq32')); end
-  def at32; @at32 ||= (sumproduct(a('aj32','aq32'),sheet12.a('d28','k28'))*5.0)+ai32; end
-  def av32; 0.0; end
-  def aw32; 5.0; end
-  def ay32; @ay32 ||= sheet7.ay32/(sheet12.c13*sheet11.e79); end
-  def az32; @az32 ||= sheet7.az32/(sheet12.c13*sheet11.e79); end
-  def ba32; @ba32 ||= sheet7.ba32/(sheet12.c13*sheet11.e79); end
-  def bb32; @bb32 ||= sheet7.bb32/(sheet12.c13*sheet11.e79); end
-  def bc32; @bc32 ||= sheet7.bc32/(sheet12.c13*sheet11.e79); end
-  def bd32; @bd32 ||= sheet7.bd32/(sheet12.c13*sheet11.e79); end
-  def be32; @be32 ||= sheet7.be32/(sheet12.c13*sheet11.e79); end
-  def bf32; @bf32 ||= sheet7.bf32/(sheet12.c13*sheet11.e79); end
-  def bg32; @bg32 ||= sheet7.bg32/(sheet12.c13*sheet11.e79); end
-  def bi32; @bi32 ||= sheet7.bi32/(sheet12.c13*sheet11.e79); end
-  def bj32; @bj32 ||= sheet7.bj32/(sheet12.c13*sheet11.e79); end
-  def bk32; @bk32 ||= sheet7.bk32/(sheet12.c13*sheet11.e79); end
-  def bl32; @bl32 ||= sheet7.bl32/(sheet12.c13*sheet11.e79); end
-  def bm32; @bm32 ||= sheet7.bm32/(sheet12.c13*sheet11.e79); end
-  def bn32; @bn32 ||= sheet7.bn32/(sheet12.c13*sheet11.e79); end
-  def bo32; @bo32 ||= sheet7.bo32/(sheet12.c13*sheet11.e79); end
-  def bp32; @bp32 ||= sheet7.bp32/(sheet12.c13*sheet11.e79); end
-  def bq32; @bq32 ||= sheet7.bq32/(sheet12.c13*sheet11.e79); end
-  def bs32; @bs32 ||= sheet7.bs32/(sheet12.c13*sheet11.e79); end
-  def bt32; @bt32 ||= sheet7.bt32/(sheet12.c13*sheet11.e79); end
-  def bu32; @bu32 ||= sheet7.bu32/(sheet12.c13*sheet11.e79); end
-  def bv32; @bv32 ||= sheet7.bv32/(sheet12.c13*sheet11.e79); end
-  def bw32; @bw32 ||= sheet7.bw32/(sheet12.c13*sheet11.e79); end
-  def bx32; @bx32 ||= sheet7.bx32/(sheet12.c13*sheet11.e79); end
-  def by32; @by32 ||= sheet7.by32/(sheet12.c13*sheet11.e79); end
-  def bz32; @bz32 ||= sheet7.bz32/(sheet12.c13*sheet11.e79); end
-  def ca32; @ca32 ||= sheet7.ca32/(sheet12.c13*sheet11.e79); end
-  def cc32; @cc32 ||= average(a('bs32','ca32')); end
-  def cd32; @cd32 ||= (sumproduct(a('bt32','ca32'),sheet12.a('d28','k28'))*5.0)+bs32; end
-  def cf32; @cf32 ||= sheet7.cf32/(sheet12.c13*sheet11.e79); end
-  def cg32; @cg32 ||= sheet7.cg32/(sheet12.c13*sheet11.e79); end
-  def ch32; @ch32 ||= sheet7.ch32/(sheet12.c13*sheet11.e79); end
-  def ci32; @ci32 ||= sheet7.ci32/(sheet12.c13*sheet11.e79); end
-  def cj32; @cj32 ||= sheet7.cj32/(sheet12.c13*sheet11.e79); end
-  def ck32; @ck32 ||= sheet7.ck32/(sheet12.c13*sheet11.e79); end
-  def cl32; @cl32 ||= sheet7.cl32/(sheet12.c13*sheet11.e79); end
-  def cm32; @cm32 ||= sheet7.cm32/(sheet12.c13*sheet11.e79); end
-  def cn32; @cn32 ||= sheet7.cn32/(sheet12.c13*sheet11.e79); end
-  def cp32; @cp32 ||= average(a('cf32','cn32')); end
-  def cq32; @cq32 ||= (sumproduct(a('cg32','cn32'),sheet12.a('d28','k28'))*5.0)+cf32; end
-  def cr32; @cr32 ||= excel_if(excel_comparison(abs(cd32-cq32-at32),"<",1.0),"ok","err"); end
-  def a33; "XII.a.HEV"; end
-  def b33; "Hybrid cars and buses"; end
-  def c33; "Transport"; end
-  def e33; @e33 ||= sheet7.e33/(sheet12.c13*sheet11.e79); end
-  def f33; @f33 ||= sheet7.f33/(sheet12.c13*sheet11.e79); end
-  def g33; @g33 ||= sheet7.g33/(sheet12.c13*sheet11.e79); end
-  def h33; @h33 ||= sheet7.h33/(sheet12.c13*sheet11.e79); end
-  def i33; @i33 ||= sheet7.i33/(sheet12.c13*sheet11.e79); end
-  def j33; @j33 ||= sheet7.j33/(sheet12.c13*sheet11.e79); end
-  def k33; @k33 ||= sheet7.k33/(sheet12.c13*sheet11.e79); end
-  def l33; @l33 ||= sheet7.l33/(sheet12.c13*sheet11.e79); end
-  def m33; @m33 ||= sheet7.m33/(sheet12.c13*sheet11.e79); end
-  def o33; @o33 ||= sheet7.o33/(sheet12.c13*sheet11.e79); end
-  def p33; @p33 ||= sheet7.p33/(sheet12.c13*sheet11.e79); end
-  def q33; @q33 ||= sheet7.q33/(sheet12.c13*sheet11.e79); end
-  def r33; @r33 ||= sheet7.r33/(sheet12.c13*sheet11.e79); end
-  def s33; @s33 ||= sheet7.s33/(sheet12.c13*sheet11.e79); end
-  def t33; @t33 ||= sheet7.t33/(sheet12.c13*sheet11.e79); end
-  def u33; @u33 ||= sheet7.u33/(sheet12.c13*sheet11.e79); end
-  def v33; @v33 ||= sheet7.v33/(sheet12.c13*sheet11.e79); end
-  def w33; @w33 ||= sheet7.w33/(sheet12.c13*sheet11.e79); end
-  def y33; @y33 ||= sheet7.y33/(sheet12.c13*sheet11.e79); end
-  def z33; @z33 ||= sheet7.z33/(sheet12.c13*sheet11.e79); end
-  def aa33; @aa33 ||= sheet7.aa33/(sheet12.c13*sheet11.e79); end
-  def ab33; @ab33 ||= sheet7.ab33/(sheet12.c13*sheet11.e79); end
-  def ac33; @ac33 ||= sheet7.ac33/(sheet12.c13*sheet11.e79); end
-  def ad33; @ad33 ||= sheet7.ad33/(sheet12.c13*sheet11.e79); end
-  def ae33; @ae33 ||= sheet7.ae33/(sheet12.c13*sheet11.e79); end
-  def af33; @af33 ||= sheet7.af33/(sheet12.c13*sheet11.e79); end
-  def ag33; @ag33 ||= sheet7.ag33/(sheet12.c13*sheet11.e79); end
-  def ai33; @ai33 ||= sheet7.ai33/(sheet12.c13*sheet11.e79); end
-  def aj33; @aj33 ||= sheet7.aj33/(sheet12.c13*sheet11.e79); end
-  def ak33; @ak33 ||= sheet7.ak33/(sheet12.c13*sheet11.e79); end
-  def al33; @al33 ||= sheet7.al33/(sheet12.c13*sheet11.e79); end
-  def am33; @am33 ||= sheet7.am33/(sheet12.c13*sheet11.e79); end
-  def an33; @an33 ||= sheet7.an33/(sheet12.c13*sheet11.e79); end
-  def ao33; @ao33 ||= sheet7.ao33/(sheet12.c13*sheet11.e79); end
-  def ap33; @ap33 ||= sheet7.ap33/(sheet12.c13*sheet11.e79); end
-  def aq33; @aq33 ||= sheet7.aq33/(sheet12.c13*sheet11.e79); end
-  def as33; @as33 ||= average(a('ai33','aq33')); end
-  def at33; @at33 ||= (sumproduct(a('aj33','aq33'),sheet12.a('d28','k28'))*5.0)+ai33; end
-  def av33; 0.0; end
-  def aw33; 5.0; end
-  def ay33; @ay33 ||= sheet7.ay33/(sheet12.c13*sheet11.e79); end
-  def az33; @az33 ||= sheet7.az33/(sheet12.c13*sheet11.e79); end
-  def ba33; @ba33 ||= sheet7.ba33/(sheet12.c13*sheet11.e79); end
-  def bb33; @bb33 ||= sheet7.bb33/(sheet12.c13*sheet11.e79); end
-  def bc33; @bc33 ||= sheet7.bc33/(sheet12.c13*sheet11.e79); end
-  def bd33; @bd33 ||= sheet7.bd33/(sheet12.c13*sheet11.e79); end
-  def be33; @be33 ||= sheet7.be33/(sheet12.c13*sheet11.e79); end
-  def bf33; @bf33 ||= sheet7.bf33/(sheet12.c13*sheet11.e79); end
-  def bg33; @bg33 ||= sheet7.bg33/(sheet12.c13*sheet11.e79); end
-  def bi33; @bi33 ||= sheet7.bi33/(sheet12.c13*sheet11.e79); end
-  def bj33; @bj33 ||= sheet7.bj33/(sheet12.c13*sheet11.e79); end
-  def bk33; @bk33 ||= sheet7.bk33/(sheet12.c13*sheet11.e79); end
-  def bl33; @bl33 ||= sheet7.bl33/(sheet12.c13*sheet11.e79); end
-  def bm33; @bm33 ||= sheet7.bm33/(sheet12.c13*sheet11.e79); end
-  def bn33; @bn33 ||= sheet7.bn33/(sheet12.c13*sheet11.e79); end
-  def bo33; @bo33 ||= sheet7.bo33/(sheet12.c13*sheet11.e79); end
-  def bp33; @bp33 ||= sheet7.bp33/(sheet12.c13*sheet11.e79); end
-  def bq33; @bq33 ||= sheet7.bq33/(sheet12.c13*sheet11.e79); end
-  def bs33; @bs33 ||= sheet7.bs33/(sheet12.c13*sheet11.e79); end
-  def bt33; @bt33 ||= sheet7.bt33/(sheet12.c13*sheet11.e79); end
-  def bu33; @bu33 ||= sheet7.bu33/(sheet12.c13*sheet11.e79); end
-  def bv33; @bv33 ||= sheet7.bv33/(sheet12.c13*sheet11.e79); end
-  def bw33; @bw33 ||= sheet7.bw33/(sheet12.c13*sheet11.e79); end
-  def bx33; @bx33 ||= sheet7.bx33/(sheet12.c13*sheet11.e79); end
-  def by33; @by33 ||= sheet7.by33/(sheet12.c13*sheet11.e79); end
-  def bz33; @bz33 ||= sheet7.bz33/(sheet12.c13*sheet11.e79); end
-  def ca33; @ca33 ||= sheet7.ca33/(sheet12.c13*sheet11.e79); end
-  def cc33; @cc33 ||= average(a('bs33','ca33')); end
-  def cd33; @cd33 ||= (sumproduct(a('bt33','ca33'),sheet12.a('d28','k28'))*5.0)+bs33; end
-  def cf33; @cf33 ||= sheet7.cf33/(sheet12.c13*sheet11.e79); end
-  def cg33; @cg33 ||= sheet7.cg33/(sheet12.c13*sheet11.e79); end
-  def ch33; @ch33 ||= sheet7.ch33/(sheet12.c13*sheet11.e79); end
-  def ci33; @ci33 ||= sheet7.ci33/(sheet12.c13*sheet11.e79); end
-  def cj33; @cj33 ||= sheet7.cj33/(sheet12.c13*sheet11.e79); end
-  def ck33; @ck33 ||= sheet7.ck33/(sheet12.c13*sheet11.e79); end
-  def cl33; @cl33 ||= sheet7.cl33/(sheet12.c13*sheet11.e79); end
-  def cm33; @cm33 ||= sheet7.cm33/(sheet12.c13*sheet11.e79); end
-  def cn33; @cn33 ||= sheet7.cn33/(sheet12.c13*sheet11.e79); end
-  def cp33; @cp33 ||= average(a('cf33','cn33')); end
-  def cq33; @cq33 ||= (sumproduct(a('cg33','cn33'),sheet12.a('d28','k28'))*5.0)+cf33; end
-  def cr33; @cr33 ||= excel_if(excel_comparison(abs(cd33-cq33-at33),"<",1.0),"ok","err"); end
-  def a34; "XII.a.EV"; end
-  def b34; "Electric cars and buses"; end
-  def c34; "Transport"; end
-  def e34; @e34 ||= sheet7.e34/(sheet12.c13*sheet11.e79); end
-  def f34; @f34 ||= sheet7.f34/(sheet12.c13*sheet11.e79); end
-  def g34; @g34 ||= sheet7.g34/(sheet12.c13*sheet11.e79); end
-  def h34; @h34 ||= sheet7.h34/(sheet12.c13*sheet11.e79); end
-  def i34; @i34 ||= sheet7.i34/(sheet12.c13*sheet11.e79); end
-  def j34; @j34 ||= sheet7.j34/(sheet12.c13*sheet11.e79); end
-  def k34; @k34 ||= sheet7.k34/(sheet12.c13*sheet11.e79); end
-  def l34; @l34 ||= sheet7.l34/(sheet12.c13*sheet11.e79); end
-  def m34; @m34 ||= sheet7.m34/(sheet12.c13*sheet11.e79); end
-  def o34; @o34 ||= sheet7.o34/(sheet12.c13*sheet11.e79); end
-  def p34; @p34 ||= sheet7.p34/(sheet12.c13*sheet11.e79); end
-  def q34; @q34 ||= sheet7.q34/(sheet12.c13*sheet11.e79); end
-  def r34; @r34 ||= sheet7.r34/(sheet12.c13*sheet11.e79); end
-  def s34; @s34 ||= sheet7.s34/(sheet12.c13*sheet11.e79); end
-  def t34; @t34 ||= sheet7.t34/(sheet12.c13*sheet11.e79); end
-  def u34; @u34 ||= sheet7.u34/(sheet12.c13*sheet11.e79); end
-  def v34; @v34 ||= sheet7.v34/(sheet12.c13*sheet11.e79); end
-  def w34; @w34 ||= sheet7.w34/(sheet12.c13*sheet11.e79); end
-  def y34; @y34 ||= sheet7.y34/(sheet12.c13*sheet11.e79); end
-  def z34; @z34 ||= sheet7.z34/(sheet12.c13*sheet11.e79); end
-  def aa34; @aa34 ||= sheet7.aa34/(sheet12.c13*sheet11.e79); end
-  def ab34; @ab34 ||= sheet7.ab34/(sheet12.c13*sheet11.e79); end
-  def ac34; @ac34 ||= sheet7.ac34/(sheet12.c13*sheet11.e79); end
-  def ad34; @ad34 ||= sheet7.ad34/(sheet12.c13*sheet11.e79); end
-  def ae34; @ae34 ||= sheet7.ae34/(sheet12.c13*sheet11.e79); end
-  def af34; @af34 ||= sheet7.af34/(sheet12.c13*sheet11.e79); end
-  def ag34; @ag34 ||= sheet7.ag34/(sheet12.c13*sheet11.e79); end
-  def ai34; @ai34 ||= sheet7.ai34/(sheet12.c13*sheet11.e79); end
-  def aj34; @aj34 ||= sheet7.aj34/(sheet12.c13*sheet11.e79); end
-  def ak34; @ak34 ||= sheet7.ak34/(sheet12.c13*sheet11.e79); end
-  def al34; @al34 ||= sheet7.al34/(sheet12.c13*sheet11.e79); end
-  def am34; @am34 ||= sheet7.am34/(sheet12.c13*sheet11.e79); end
-  def an34; @an34 ||= sheet7.an34/(sheet12.c13*sheet11.e79); end
-  def ao34; @ao34 ||= sheet7.ao34/(sheet12.c13*sheet11.e79); end
-  def ap34; @ap34 ||= sheet7.ap34/(sheet12.c13*sheet11.e79); end
-  def aq34; @aq34 ||= sheet7.aq34/(sheet12.c13*sheet11.e79); end
-  def as34; @as34 ||= average(a('ai34','aq34')); end
-  def at34; @at34 ||= (sumproduct(a('aj34','aq34'),sheet12.a('d28','k28'))*5.0)+ai34; end
-  def av34; 0.0; end
-  def aw34; 5.0; end
-  def ay34; @ay34 ||= sheet7.ay34/(sheet12.c13*sheet11.e79); end
-  def az34; @az34 ||= sheet7.az34/(sheet12.c13*sheet11.e79); end
-  def ba34; @ba34 ||= sheet7.ba34/(sheet12.c13*sheet11.e79); end
-  def bb34; @bb34 ||= sheet7.bb34/(sheet12.c13*sheet11.e79); end
-  def bc34; @bc34 ||= sheet7.bc34/(sheet12.c13*sheet11.e79); end
-  def bd34; @bd34 ||= sheet7.bd34/(sheet12.c13*sheet11.e79); end
-  def be34; @be34 ||= sheet7.be34/(sheet12.c13*sheet11.e79); end
-  def bf34; @bf34 ||= sheet7.bf34/(sheet12.c13*sheet11.e79); end
-  def bg34; @bg34 ||= sheet7.bg34/(sheet12.c13*sheet11.e79); end
-  def bi34; @bi34 ||= sheet7.bi34/(sheet12.c13*sheet11.e79); end
-  def bj34; @bj34 ||= sheet7.bj34/(sheet12.c13*sheet11.e79); end
-  def bk34; @bk34 ||= sheet7.bk34/(sheet12.c13*sheet11.e79); end
-  def bl34; @bl34 ||= sheet7.bl34/(sheet12.c13*sheet11.e79); end
-  def bm34; @bm34 ||= sheet7.bm34/(sheet12.c13*sheet11.e79); end
-  def bn34; @bn34 ||= sheet7.bn34/(sheet12.c13*sheet11.e79); end
-  def bo34; @bo34 ||= sheet7.bo34/(sheet12.c13*sheet11.e79); end
-  def bp34; @bp34 ||= sheet7.bp34/(sheet12.c13*sheet11.e79); end
-  def bq34; @bq34 ||= sheet7.bq34/(sheet12.c13*sheet11.e79); end
-  def bs34; @bs34 ||= sheet7.bs34/(sheet12.c13*sheet11.e79); end
-  def bt34; @bt34 ||= sheet7.bt34/(sheet12.c13*sheet11.e79); end
-  def bu34; @bu34 ||= sheet7.bu34/(sheet12.c13*sheet11.e79); end
-  def bv34; @bv34 ||= sheet7.bv34/(sheet12.c13*sheet11.e79); end
-  def bw34; @bw34 ||= sheet7.bw34/(sheet12.c13*sheet11.e79); end
-  def bx34; @bx34 ||= sheet7.bx34/(sheet12.c13*sheet11.e79); end
-  def by34; @by34 ||= sheet7.by34/(sheet12.c13*sheet11.e79); end
-  def bz34; @bz34 ||= sheet7.bz34/(sheet12.c13*sheet11.e79); end
-  def ca34; @ca34 ||= sheet7.ca34/(sheet12.c13*sheet11.e79); end
-  def cc34; @cc34 ||= average(a('bs34','ca34')); end
-  def cd34; @cd34 ||= (sumproduct(a('bt34','ca34'),sheet12.a('d28','k28'))*5.0)+bs34; end
-  def cf34; @cf34 ||= sheet7.cf34/(sheet12.c13*sheet11.e79); end
-  def cg34; @cg34 ||= sheet7.cg34/(sheet12.c13*sheet11.e79); end
-  def ch34; @ch34 ||= sheet7.ch34/(sheet12.c13*sheet11.e79); end
-  def ci34; @ci34 ||= sheet7.ci34/(sheet12.c13*sheet11.e79); end
-  def cj34; @cj34 ||= sheet7.cj34/(sheet12.c13*sheet11.e79); end
-  def ck34; @ck34 ||= sheet7.ck34/(sheet12.c13*sheet11.e79); end
-  def cl34; @cl34 ||= sheet7.cl34/(sheet12.c13*sheet11.e79); end
-  def cm34; @cm34 ||= sheet7.cm34/(sheet12.c13*sheet11.e79); end
-  def cn34; @cn34 ||= sheet7.cn34/(sheet12.c13*sheet11.e79); end
-  def cp34; @cp34 ||= average(a('cf34','cn34')); end
-  def cq34; @cq34 ||= (sumproduct(a('cg34','cn34'),sheet12.a('d28','k28'))*5.0)+cf34; end
-  def cr34; @cr34 ||= excel_if(excel_comparison(abs(cd34-cq34-at34),"<",1.0),"ok","err"); end
-  def a35; "XII.a.FCV"; end
-  def b35; "Fuel cell cars and buses"; end
-  def c35; "Transport"; end
-  def e35; @e35 ||= sheet7.e35/(sheet12.c13*sheet11.e79); end
-  def f35; @f35 ||= sheet7.f35/(sheet12.c13*sheet11.e79); end
-  def g35; @g35 ||= sheet7.g35/(sheet12.c13*sheet11.e79); end
-  def h35; @h35 ||= sheet7.h35/(sheet12.c13*sheet11.e79); end
-  def i35; @i35 ||= sheet7.i35/(sheet12.c13*sheet11.e79); end
-  def j35; @j35 ||= sheet7.j35/(sheet12.c13*sheet11.e79); end
-  def k35; @k35 ||= sheet7.k35/(sheet12.c13*sheet11.e79); end
-  def l35; @l35 ||= sheet7.l35/(sheet12.c13*sheet11.e79); end
-  def m35; @m35 ||= sheet7.m35/(sheet12.c13*sheet11.e79); end
-  def o35; @o35 ||= sheet7.o35/(sheet12.c13*sheet11.e79); end
-  def p35; @p35 ||= sheet7.p35/(sheet12.c13*sheet11.e79); end
-  def q35; @q35 ||= sheet7.q35/(sheet12.c13*sheet11.e79); end
-  def r35; @r35 ||= sheet7.r35/(sheet12.c13*sheet11.e79); end
-  def s35; @s35 ||= sheet7.s35/(sheet12.c13*sheet11.e79); end
-  def t35; @t35 ||= sheet7.t35/(sheet12.c13*sheet11.e79); end
-  def u35; @u35 ||= sheet7.u35/(sheet12.c13*sheet11.e79); end
-  def v35; @v35 ||= sheet7.v35/(sheet12.c13*sheet11.e79); end
-  def w35; @w35 ||= sheet7.w35/(sheet12.c13*sheet11.e79); end
-  def y35; @y35 ||= sheet7.y35/(sheet12.c13*sheet11.e79); end
-  def z35; @z35 ||= sheet7.z35/(sheet12.c13*sheet11.e79); end
-  def aa35; @aa35 ||= sheet7.aa35/(sheet12.c13*sheet11.e79); end
-  def ab35; @ab35 ||= sheet7.ab35/(sheet12.c13*sheet11.e79); end
-  def ac35; @ac35 ||= sheet7.ac35/(sheet12.c13*sheet11.e79); end
-  def ad35; @ad35 ||= sheet7.ad35/(sheet12.c13*sheet11.e79); end
-  def ae35; @ae35 ||= sheet7.ae35/(sheet12.c13*sheet11.e79); end
-  def af35; @af35 ||= sheet7.af35/(sheet12.c13*sheet11.e79); end
-  def ag35; @ag35 ||= sheet7.ag35/(sheet12.c13*sheet11.e79); end
-  def ai35; @ai35 ||= sheet7.ai35/(sheet12.c13*sheet11.e79); end
-  def aj35; @aj35 ||= sheet7.aj35/(sheet12.c13*sheet11.e79); end
-  def ak35; @ak35 ||= sheet7.ak35/(sheet12.c13*sheet11.e79); end
-  def al35; @al35 ||= sheet7.al35/(sheet12.c13*sheet11.e79); end
-  def am35; @am35 ||= sheet7.am35/(sheet12.c13*sheet11.e79); end
-  def an35; @an35 ||= sheet7.an35/(sheet12.c13*sheet11.e79); end
-  def ao35; @ao35 ||= sheet7.ao35/(sheet12.c13*sheet11.e79); end
-  def ap35; @ap35 ||= sheet7.ap35/(sheet12.c13*sheet11.e79); end
-  def aq35; @aq35 ||= sheet7.aq35/(sheet12.c13*sheet11.e79); end
-  def as35; @as35 ||= average(a('ai35','aq35')); end
-  def at35; @at35 ||= (sumproduct(a('aj35','aq35'),sheet12.a('d28','k28'))*5.0)+ai35; end
-  def av35; 0.0; end
-  def aw35; 5.0; end
-  def ay35; @ay35 ||= sheet7.ay35/(sheet12.c13*sheet11.e79); end
-  def az35; @az35 ||= sheet7.az35/(sheet12.c13*sheet11.e79); end
-  def ba35; @ba35 ||= sheet7.ba35/(sheet12.c13*sheet11.e79); end
-  def bb35; @bb35 ||= sheet7.bb35/(sheet12.c13*sheet11.e79); end
-  def bc35; @bc35 ||= sheet7.bc35/(sheet12.c13*sheet11.e79); end
-  def bd35; @bd35 ||= sheet7.bd35/(sheet12.c13*sheet11.e79); end
-  def be35; @be35 ||= sheet7.be35/(sheet12.c13*sheet11.e79); end
-  def bf35; @bf35 ||= sheet7.bf35/(sheet12.c13*sheet11.e79); end
-  def bg35; @bg35 ||= sheet7.bg35/(sheet12.c13*sheet11.e79); end
-  def bi35; @bi35 ||= sheet7.bi35/(sheet12.c13*sheet11.e79); end
-  def bj35; @bj35 ||= sheet7.bj35/(sheet12.c13*sheet11.e79); end
-  def bk35; @bk35 ||= sheet7.bk35/(sheet12.c13*sheet11.e79); end
-  def bl35; @bl35 ||= sheet7.bl35/(sheet12.c13*sheet11.e79); end
-  def bm35; @bm35 ||= sheet7.bm35/(sheet12.c13*sheet11.e79); end
-  def bn35; @bn35 ||= sheet7.bn35/(sheet12.c13*sheet11.e79); end
-  def bo35; @bo35 ||= sheet7.bo35/(sheet12.c13*sheet11.e79); end
-  def bp35; @bp35 ||= sheet7.bp35/(sheet12.c13*sheet11.e79); end
-  def bq35; @bq35 ||= sheet7.bq35/(sheet12.c13*sheet11.e79); end
-  def bs35; @bs35 ||= sheet7.bs35/(sheet12.c13*sheet11.e79); end
-  def bt35; @bt35 ||= sheet7.bt35/(sheet12.c13*sheet11.e79); end
-  def bu35; @bu35 ||= sheet7.bu35/(sheet12.c13*sheet11.e79); end
-  def bv35; @bv35 ||= sheet7.bv35/(sheet12.c13*sheet11.e79); end
-  def bw35; @bw35 ||= sheet7.bw35/(sheet12.c13*sheet11.e79); end
-  def bx35; @bx35 ||= sheet7.bx35/(sheet12.c13*sheet11.e79); end
-  def by35; @by35 ||= sheet7.by35/(sheet12.c13*sheet11.e79); end
-  def bz35; @bz35 ||= sheet7.bz35/(sheet12.c13*sheet11.e79); end
-  def ca35; @ca35 ||= sheet7.ca35/(sheet12.c13*sheet11.e79); end
-  def cc35; @cc35 ||= average(a('bs35','ca35')); end
-  def cd35; @cd35 ||= (sumproduct(a('bt35','ca35'),sheet12.a('d28','k28'))*5.0)+bs35; end
-  def cf35; @cf35 ||= sheet7.cf35/(sheet12.c13*sheet11.e79); end
-  def cg35; @cg35 ||= sheet7.cg35/(sheet12.c13*sheet11.e79); end
-  def ch35; @ch35 ||= sheet7.ch35/(sheet12.c13*sheet11.e79); end
-  def ci35; @ci35 ||= sheet7.ci35/(sheet12.c13*sheet11.e79); end
-  def cj35; @cj35 ||= sheet7.cj35/(sheet12.c13*sheet11.e79); end
-  def ck35; @ck35 ||= sheet7.ck35/(sheet12.c13*sheet11.e79); end
-  def cl35; @cl35 ||= sheet7.cl35/(sheet12.c13*sheet11.e79); end
-  def cm35; @cm35 ||= sheet7.cm35/(sheet12.c13*sheet11.e79); end
-  def cn35; @cn35 ||= sheet7.cn35/(sheet12.c13*sheet11.e79); end
-  def cp35; @cp35 ||= average(a('cf35','cn35')); end
-  def cq35; @cq35 ||= (sumproduct(a('cg35','cn35'),sheet12.a('d28','k28'))*5.0)+cf35; end
-  def cr35; @cr35 ||= excel_if(excel_comparison(abs(cd35-cq35-at35),"<",1.0),"ok","err"); end
-  def a36; "XII.a.Bike"; end
-  def b36; "Bikes"; end
-  def c36; "Transport"; end
-  def e36; @e36 ||= sheet7.e36/(sheet12.c13*sheet11.e79); end
-  def f36; @f36 ||= sheet7.f36/(sheet12.c13*sheet11.e79); end
-  def g36; @g36 ||= sheet7.g36/(sheet12.c13*sheet11.e79); end
-  def h36; @h36 ||= sheet7.h36/(sheet12.c13*sheet11.e79); end
-  def i36; @i36 ||= sheet7.i36/(sheet12.c13*sheet11.e79); end
-  def j36; @j36 ||= sheet7.j36/(sheet12.c13*sheet11.e79); end
-  def k36; @k36 ||= sheet7.k36/(sheet12.c13*sheet11.e79); end
-  def l36; @l36 ||= sheet7.l36/(sheet12.c13*sheet11.e79); end
-  def m36; @m36 ||= sheet7.m36/(sheet12.c13*sheet11.e79); end
-  def o36; @o36 ||= sheet7.o36/(sheet12.c13*sheet11.e79); end
-  def p36; @p36 ||= sheet7.p36/(sheet12.c13*sheet11.e79); end
-  def q36; @q36 ||= sheet7.q36/(sheet12.c13*sheet11.e79); end
-  def r36; @r36 ||= sheet7.r36/(sheet12.c13*sheet11.e79); end
-  def s36; @s36 ||= sheet7.s36/(sheet12.c13*sheet11.e79); end
-  def t36; @t36 ||= sheet7.t36/(sheet12.c13*sheet11.e79); end
-  def u36; @u36 ||= sheet7.u36/(sheet12.c13*sheet11.e79); end
-  def v36; @v36 ||= sheet7.v36/(sheet12.c13*sheet11.e79); end
-  def w36; @w36 ||= sheet7.w36/(sheet12.c13*sheet11.e79); end
-  def y36; @y36 ||= sheet7.y36/(sheet12.c13*sheet11.e79); end
-  def z36; @z36 ||= sheet7.z36/(sheet12.c13*sheet11.e79); end
-  def aa36; @aa36 ||= sheet7.aa36/(sheet12.c13*sheet11.e79); end
-  def ab36; @ab36 ||= sheet7.ab36/(sheet12.c13*sheet11.e79); end
-  def ac36; @ac36 ||= sheet7.ac36/(sheet12.c13*sheet11.e79); end
-  def ad36; @ad36 ||= sheet7.ad36/(sheet12.c13*sheet11.e79); end
-  def ae36; @ae36 ||= sheet7.ae36/(sheet12.c13*sheet11.e79); end
-  def af36; @af36 ||= sheet7.af36/(sheet12.c13*sheet11.e79); end
-  def ag36; @ag36 ||= sheet7.ag36/(sheet12.c13*sheet11.e79); end
-  def ai36; @ai36 ||= sheet7.ai36/(sheet12.c13*sheet11.e79); end
-  def aj36; @aj36 ||= sheet7.aj36/(sheet12.c13*sheet11.e79); end
-  def ak36; @ak36 ||= sheet7.ak36/(sheet12.c13*sheet11.e79); end
-  def al36; @al36 ||= sheet7.al36/(sheet12.c13*sheet11.e79); end
-  def am36; @am36 ||= sheet7.am36/(sheet12.c13*sheet11.e79); end
-  def an36; @an36 ||= sheet7.an36/(sheet12.c13*sheet11.e79); end
-  def ao36; @ao36 ||= sheet7.ao36/(sheet12.c13*sheet11.e79); end
-  def ap36; @ap36 ||= sheet7.ap36/(sheet12.c13*sheet11.e79); end
-  def aq36; @aq36 ||= sheet7.aq36/(sheet12.c13*sheet11.e79); end
-  def as36; @as36 ||= average(a('ai36','aq36')); end
-  def at36; @at36 ||= (sumproduct(a('aj36','aq36'),sheet12.a('d28','k28'))*5.0)+ai36; end
-  def av36; 0.0; end
-  def aw36; 5.0; end
-  def ay36; @ay36 ||= sheet7.ay36/(sheet12.c13*sheet11.e79); end
-  def az36; @az36 ||= sheet7.az36/(sheet12.c13*sheet11.e79); end
-  def ba36; @ba36 ||= sheet7.ba36/(sheet12.c13*sheet11.e79); end
-  def bb36; @bb36 ||= sheet7.bb36/(sheet12.c13*sheet11.e79); end
-  def bc36; @bc36 ||= sheet7.bc36/(sheet12.c13*sheet11.e79); end
-  def bd36; @bd36 ||= sheet7.bd36/(sheet12.c13*sheet11.e79); end
-  def be36; @be36 ||= sheet7.be36/(sheet12.c13*sheet11.e79); end
-  def bf36; @bf36 ||= sheet7.bf36/(sheet12.c13*sheet11.e79); end
-  def bg36; @bg36 ||= sheet7.bg36/(sheet12.c13*sheet11.e79); end
-  def bi36; @bi36 ||= sheet7.bi36/(sheet12.c13*sheet11.e79); end
-  def bj36; @bj36 ||= sheet7.bj36/(sheet12.c13*sheet11.e79); end
-  def bk36; @bk36 ||= sheet7.bk36/(sheet12.c13*sheet11.e79); end
-  def bl36; @bl36 ||= sheet7.bl36/(sheet12.c13*sheet11.e79); end
-  def bm36; @bm36 ||= sheet7.bm36/(sheet12.c13*sheet11.e79); end
-  def bn36; @bn36 ||= sheet7.bn36/(sheet12.c13*sheet11.e79); end
-  def bo36; @bo36 ||= sheet7.bo36/(sheet12.c13*sheet11.e79); end
-  def bp36; @bp36 ||= sheet7.bp36/(sheet12.c13*sheet11.e79); end
-  def bq36; @bq36 ||= sheet7.bq36/(sheet12.c13*sheet11.e79); end
-  def bs36; @bs36 ||= sheet7.bs36/(sheet12.c13*sheet11.e79); end
-  def bt36; @bt36 ||= sheet7.bt36/(sheet12.c13*sheet11.e79); end
-  def bu36; @bu36 ||= sheet7.bu36/(sheet12.c13*sheet11.e79); end
-  def bv36; @bv36 ||= sheet7.bv36/(sheet12.c13*sheet11.e79); end
-  def bw36; @bw36 ||= sheet7.bw36/(sheet12.c13*sheet11.e79); end
-  def bx36; @bx36 ||= sheet7.bx36/(sheet12.c13*sheet11.e79); end
-  def by36; @by36 ||= sheet7.by36/(sheet12.c13*sheet11.e79); end
-  def bz36; @bz36 ||= sheet7.bz36/(sheet12.c13*sheet11.e79); end
-  def ca36; @ca36 ||= sheet7.ca36/(sheet12.c13*sheet11.e79); end
-  def cc36; @cc36 ||= average(a('bs36','ca36')); end
-  def cd36; @cd36 ||= (sumproduct(a('bt36','ca36'),sheet12.a('d28','k28'))*5.0)+bs36; end
-  def cf36; @cf36 ||= sheet7.cf36/(sheet12.c13*sheet11.e79); end
-  def cg36; @cg36 ||= sheet7.cg36/(sheet12.c13*sheet11.e79); end
-  def ch36; @ch36 ||= sheet7.ch36/(sheet12.c13*sheet11.e79); end
-  def ci36; @ci36 ||= sheet7.ci36/(sheet12.c13*sheet11.e79); end
-  def cj36; @cj36 ||= sheet7.cj36/(sheet12.c13*sheet11.e79); end
-  def ck36; @ck36 ||= sheet7.ck36/(sheet12.c13*sheet11.e79); end
-  def cl36; @cl36 ||= sheet7.cl36/(sheet12.c13*sheet11.e79); end
-  def cm36; @cm36 ||= sheet7.cm36/(sheet12.c13*sheet11.e79); end
-  def cn36; @cn36 ||= sheet7.cn36/(sheet12.c13*sheet11.e79); end
-  def cp36; @cp36 ||= average(a('cf36','cn36')); end
-  def cq36; @cq36 ||= (sumproduct(a('cg36','cn36'),sheet12.a('d28','k28'))*5.0)+cf36; end
-  def cr36; @cr36 ||= excel_if(excel_comparison(abs(cd36-cq36-at36),"<",1.0),"ok","err"); end
-  def a37; "XII.a.Rail"; end
-  def b37; "Rail"; end
-  def c37; "Transport"; end
-  def e37; @e37 ||= sheet7.e37/(sheet12.c13*sheet11.e79); end
-  def f37; @f37 ||= sheet7.f37/(sheet12.c13*sheet11.e79); end
-  def g37; @g37 ||= sheet7.g37/(sheet12.c13*sheet11.e79); end
-  def h37; @h37 ||= sheet7.h37/(sheet12.c13*sheet11.e79); end
-  def i37; @i37 ||= sheet7.i37/(sheet12.c13*sheet11.e79); end
-  def j37; @j37 ||= sheet7.j37/(sheet12.c13*sheet11.e79); end
-  def k37; @k37 ||= sheet7.k37/(sheet12.c13*sheet11.e79); end
-  def l37; @l37 ||= sheet7.l37/(sheet12.c13*sheet11.e79); end
-  def m37; @m37 ||= sheet7.m37/(sheet12.c13*sheet11.e79); end
-  def o37; @o37 ||= sheet7.o37/(sheet12.c13*sheet11.e79); end
-  def p37; @p37 ||= sheet7.p37/(sheet12.c13*sheet11.e79); end
-  def q37; @q37 ||= sheet7.q37/(sheet12.c13*sheet11.e79); end
-  def r37; @r37 ||= sheet7.r37/(sheet12.c13*sheet11.e79); end
-  def s37; @s37 ||= sheet7.s37/(sheet12.c13*sheet11.e79); end
-  def t37; @t37 ||= sheet7.t37/(sheet12.c13*sheet11.e79); end
-  def u37; @u37 ||= sheet7.u37/(sheet12.c13*sheet11.e79); end
-  def v37; @v37 ||= sheet7.v37/(sheet12.c13*sheet11.e79); end
-  def w37; @w37 ||= sheet7.w37/(sheet12.c13*sheet11.e79); end
-  def y37; @y37 ||= sheet7.y37/(sheet12.c13*sheet11.e79); end
-  def z37; @z37 ||= sheet7.z37/(sheet12.c13*sheet11.e79); end
-  def aa37; @aa37 ||= sheet7.aa37/(sheet12.c13*sheet11.e79); end
-  def ab37; @ab37 ||= sheet7.ab37/(sheet12.c13*sheet11.e79); end
-  def ac37; @ac37 ||= sheet7.ac37/(sheet12.c13*sheet11.e79); end
-  def ad37; @ad37 ||= sheet7.ad37/(sheet12.c13*sheet11.e79); end
-  def ae37; @ae37 ||= sheet7.ae37/(sheet12.c13*sheet11.e79); end
-  def af37; @af37 ||= sheet7.af37/(sheet12.c13*sheet11.e79); end
-  def ag37; @ag37 ||= sheet7.ag37/(sheet12.c13*sheet11.e79); end
-  def ai37; @ai37 ||= sheet7.ai37/(sheet12.c13*sheet11.e79); end
-  def aj37; @aj37 ||= sheet7.aj37/(sheet12.c13*sheet11.e79); end
-  def ak37; @ak37 ||= sheet7.ak37/(sheet12.c13*sheet11.e79); end
-  def al37; @al37 ||= sheet7.al37/(sheet12.c13*sheet11.e79); end
-  def am37; @am37 ||= sheet7.am37/(sheet12.c13*sheet11.e79); end
-  def an37; @an37 ||= sheet7.an37/(sheet12.c13*sheet11.e79); end
-  def ao37; @ao37 ||= sheet7.ao37/(sheet12.c13*sheet11.e79); end
-  def ap37; @ap37 ||= sheet7.ap37/(sheet12.c13*sheet11.e79); end
-  def aq37; @aq37 ||= sheet7.aq37/(sheet12.c13*sheet11.e79); end
-  def as37; @as37 ||= average(a('ai37','aq37')); end
-  def at37; @at37 ||= (sumproduct(a('aj37','aq37'),sheet12.a('d28','k28'))*5.0)+ai37; end
-  def av37; 0.0; end
-  def aw37; 5.0; end
-  def ay37; @ay37 ||= sheet7.ay37/(sheet12.c13*sheet11.e79); end
-  def az37; @az37 ||= sheet7.az37/(sheet12.c13*sheet11.e79); end
-  def ba37; @ba37 ||= sheet7.ba37/(sheet12.c13*sheet11.e79); end
-  def bb37; @bb37 ||= sheet7.bb37/(sheet12.c13*sheet11.e79); end
-  def bc37; @bc37 ||= sheet7.bc37/(sheet12.c13*sheet11.e79); end
-  def bd37; @bd37 ||= sheet7.bd37/(sheet12.c13*sheet11.e79); end
-  def be37; @be37 ||= sheet7.be37/(sheet12.c13*sheet11.e79); end
-  def bf37; @bf37 ||= sheet7.bf37/(sheet12.c13*sheet11.e79); end
-  def bg37; @bg37 ||= sheet7.bg37/(sheet12.c13*sheet11.e79); end
-  def bi37; @bi37 ||= sheet7.bi37/(sheet12.c13*sheet11.e79); end
-  def bj37; @bj37 ||= sheet7.bj37/(sheet12.c13*sheet11.e79); end
-  def bk37; @bk37 ||= sheet7.bk37/(sheet12.c13*sheet11.e79); end
-  def bl37; @bl37 ||= sheet7.bl37/(sheet12.c13*sheet11.e79); end
-  def bm37; @bm37 ||= sheet7.bm37/(sheet12.c13*sheet11.e79); end
-  def bn37; @bn37 ||= sheet7.bn37/(sheet12.c13*sheet11.e79); end
-  def bo37; @bo37 ||= sheet7.bo37/(sheet12.c13*sheet11.e79); end
-  def bp37; @bp37 ||= sheet7.bp37/(sheet12.c13*sheet11.e79); end
-  def bq37; @bq37 ||= sheet7.bq37/(sheet12.c13*sheet11.e79); end
-  def bs37; @bs37 ||= sheet7.bs37/(sheet12.c13*sheet11.e79); end
-  def bt37; @bt37 ||= sheet7.bt37/(sheet12.c13*sheet11.e79); end
-  def bu37; @bu37 ||= sheet7.bu37/(sheet12.c13*sheet11.e79); end
-  def bv37; @bv37 ||= sheet7.bv37/(sheet12.c13*sheet11.e79); end
-  def bw37; @bw37 ||= sheet7.bw37/(sheet12.c13*sheet11.e79); end
-  def bx37; @bx37 ||= sheet7.bx37/(sheet12.c13*sheet11.e79); end
-  def by37; @by37 ||= sheet7.by37/(sheet12.c13*sheet11.e79); end
-  def bz37; @bz37 ||= sheet7.bz37/(sheet12.c13*sheet11.e79); end
-  def ca37; @ca37 ||= sheet7.ca37/(sheet12.c13*sheet11.e79); end
-  def cc37; @cc37 ||= average(a('bs37','ca37')); end
-  def cd37; @cd37 ||= (sumproduct(a('bt37','ca37'),sheet12.a('d28','k28'))*5.0)+bs37; end
-  def cf37; @cf37 ||= sheet7.cf37/(sheet12.c13*sheet11.e79); end
-  def cg37; @cg37 ||= sheet7.cg37/(sheet12.c13*sheet11.e79); end
-  def ch37; @ch37 ||= sheet7.ch37/(sheet12.c13*sheet11.e79); end
-  def ci37; @ci37 ||= sheet7.ci37/(sheet12.c13*sheet11.e79); end
-  def cj37; @cj37 ||= sheet7.cj37/(sheet12.c13*sheet11.e79); end
-  def ck37; @ck37 ||= sheet7.ck37/(sheet12.c13*sheet11.e79); end
-  def cl37; @cl37 ||= sheet7.cl37/(sheet12.c13*sheet11.e79); end
-  def cm37; @cm37 ||= sheet7.cm37/(sheet12.c13*sheet11.e79); end
-  def cn37; @cn37 ||= sheet7.cn37/(sheet12.c13*sheet11.e79); end
-  def cp37; @cp37 ||= average(a('cf37','cn37')); end
-  def cq37; @cq37 ||= (sumproduct(a('cg37','cn37'),sheet12.a('d28','k28'))*5.0)+cf37; end
-  def cr37; @cr37 ||= excel_if(excel_comparison(abs(cd37-cq37-at37),"<",1.0),"ok","err"); end
-  def a38; "XII.a.Air"; end
-  def b38; "Domestic aviation"; end
-  def c38; "Transport"; end
-  def e38; @e38 ||= sheet7.e38/(sheet12.c13*sheet11.e79); end
-  def f38; @f38 ||= sheet7.f38/(sheet12.c13*sheet11.e79); end
-  def g38; @g38 ||= sheet7.g38/(sheet12.c13*sheet11.e79); end
-  def h38; @h38 ||= sheet7.h38/(sheet12.c13*sheet11.e79); end
-  def i38; @i38 ||= sheet7.i38/(sheet12.c13*sheet11.e79); end
-  def j38; @j38 ||= sheet7.j38/(sheet12.c13*sheet11.e79); end
-  def k38; @k38 ||= sheet7.k38/(sheet12.c13*sheet11.e79); end
-  def l38; @l38 ||= sheet7.l38/(sheet12.c13*sheet11.e79); end
-  def m38; @m38 ||= sheet7.m38/(sheet12.c13*sheet11.e79); end
-  def o38; @o38 ||= sheet7.o38/(sheet12.c13*sheet11.e79); end
-  def p38; @p38 ||= sheet7.p38/(sheet12.c13*sheet11.e79); end
-  def q38; @q38 ||= sheet7.q38/(sheet12.c13*sheet11.e79); end
-  def r38; @r38 ||= sheet7.r38/(sheet12.c13*sheet11.e79); end
-  def s38; @s38 ||= sheet7.s38/(sheet12.c13*sheet11.e79); end
-  def t38; @t38 ||= sheet7.t38/(sheet12.c13*sheet11.e79); end
-  def u38; @u38 ||= sheet7.u38/(sheet12.c13*sheet11.e79); end
-  def v38; @v38 ||= sheet7.v38/(sheet12.c13*sheet11.e79); end
-  def w38; @w38 ||= sheet7.w38/(sheet12.c13*sheet11.e79); end
-  def y38; @y38 ||= sheet7.y38/(sheet12.c13*sheet11.e79); end
-  def z38; @z38 ||= sheet7.z38/(sheet12.c13*sheet11.e79); end
-  def aa38; @aa38 ||= sheet7.aa38/(sheet12.c13*sheet11.e79); end
-  def ab38; @ab38 ||= sheet7.ab38/(sheet12.c13*sheet11.e79); end
-  def ac38; @ac38 ||= sheet7.ac38/(sheet12.c13*sheet11.e79); end
-  def ad38; @ad38 ||= sheet7.ad38/(sheet12.c13*sheet11.e79); end
-  def ae38; @ae38 ||= sheet7.ae38/(sheet12.c13*sheet11.e79); end
-  def af38; @af38 ||= sheet7.af38/(sheet12.c13*sheet11.e79); end
-  def ag38; @ag38 ||= sheet7.ag38/(sheet12.c13*sheet11.e79); end
-  def ai38; @ai38 ||= sheet7.ai38/(sheet12.c13*sheet11.e79); end
-  def aj38; @aj38 ||= sheet7.aj38/(sheet12.c13*sheet11.e79); end
-  def ak38; @ak38 ||= sheet7.ak38/(sheet12.c13*sheet11.e79); end
-  def al38; @al38 ||= sheet7.al38/(sheet12.c13*sheet11.e79); end
-  def am38; @am38 ||= sheet7.am38/(sheet12.c13*sheet11.e79); end
-  def an38; @an38 ||= sheet7.an38/(sheet12.c13*sheet11.e79); end
-  def ao38; @ao38 ||= sheet7.ao38/(sheet12.c13*sheet11.e79); end
-  def ap38; @ap38 ||= sheet7.ap38/(sheet12.c13*sheet11.e79); end
-  def aq38; @aq38 ||= sheet7.aq38/(sheet12.c13*sheet11.e79); end
-  def as38; @as38 ||= average(a('ai38','aq38')); end
-  def at38; @at38 ||= (sumproduct(a('aj38','aq38'),sheet12.a('d28','k28'))*5.0)+ai38; end
-  def av38; 0.0; end
-  def aw38; 5.0; end
-  def ay38; @ay38 ||= sheet7.ay38/(sheet12.c13*sheet11.e79); end
-  def az38; @az38 ||= sheet7.az38/(sheet12.c13*sheet11.e79); end
-  def ba38; @ba38 ||= sheet7.ba38/(sheet12.c13*sheet11.e79); end
-  def bb38; @bb38 ||= sheet7.bb38/(sheet12.c13*sheet11.e79); end
-  def bc38; @bc38 ||= sheet7.bc38/(sheet12.c13*sheet11.e79); end
-  def bd38; @bd38 ||= sheet7.bd38/(sheet12.c13*sheet11.e79); end
-  def be38; @be38 ||= sheet7.be38/(sheet12.c13*sheet11.e79); end
-  def bf38; @bf38 ||= sheet7.bf38/(sheet12.c13*sheet11.e79); end
-  def bg38; @bg38 ||= sheet7.bg38/(sheet12.c13*sheet11.e79); end
-  def bi38; @bi38 ||= sheet7.bi38/(sheet12.c13*sheet11.e79); end
-  def bj38; @bj38 ||= sheet7.bj38/(sheet12.c13*sheet11.e79); end
-  def bk38; @bk38 ||= sheet7.bk38/(sheet12.c13*sheet11.e79); end
-  def bl38; @bl38 ||= sheet7.bl38/(sheet12.c13*sheet11.e79); end
-  def bm38; @bm38 ||= sheet7.bm38/(sheet12.c13*sheet11.e79); end
-  def bn38; @bn38 ||= sheet7.bn38/(sheet12.c13*sheet11.e79); end
-  def bo38; @bo38 ||= sheet7.bo38/(sheet12.c13*sheet11.e79); end
-  def bp38; @bp38 ||= sheet7.bp38/(sheet12.c13*sheet11.e79); end
-  def bq38; @bq38 ||= sheet7.bq38/(sheet12.c13*sheet11.e79); end
-  def bs38; @bs38 ||= sheet7.bs38/(sheet12.c13*sheet11.e79); end
-  def bt38; @bt38 ||= sheet7.bt38/(sheet12.c13*sheet11.e79); end
-  def bu38; @bu38 ||= sheet7.bu38/(sheet12.c13*sheet11.e79); end
-  def bv38; @bv38 ||= sheet7.bv38/(sheet12.c13*sheet11.e79); end
-  def bw38; @bw38 ||= sheet7.bw38/(sheet12.c13*sheet11.e79); end
-  def bx38; @bx38 ||= sheet7.bx38/(sheet12.c13*sheet11.e79); end
-  def by38; @by38 ||= sheet7.by38/(sheet12.c13*sheet11.e79); end
-  def bz38; @bz38 ||= sheet7.bz38/(sheet12.c13*sheet11.e79); end
-  def ca38; @ca38 ||= sheet7.ca38/(sheet12.c13*sheet11.e79); end
-  def cc38; @cc38 ||= average(a('bs38','ca38')); end
-  def cd38; @cd38 ||= (sumproduct(a('bt38','ca38'),sheet12.a('d28','k28'))*5.0)+bs38; end
-  def cf38; @cf38 ||= sheet7.cf38/(sheet12.c13*sheet11.e79); end
-  def cg38; @cg38 ||= sheet7.cg38/(sheet12.c13*sheet11.e79); end
-  def ch38; @ch38 ||= sheet7.ch38/(sheet12.c13*sheet11.e79); end
-  def ci38; @ci38 ||= sheet7.ci38/(sheet12.c13*sheet11.e79); end
-  def cj38; @cj38 ||= sheet7.cj38/(sheet12.c13*sheet11.e79); end
-  def ck38; @ck38 ||= sheet7.ck38/(sheet12.c13*sheet11.e79); end
-  def cl38; @cl38 ||= sheet7.cl38/(sheet12.c13*sheet11.e79); end
-  def cm38; @cm38 ||= sheet7.cm38/(sheet12.c13*sheet11.e79); end
-  def cn38; @cn38 ||= sheet7.cn38/(sheet12.c13*sheet11.e79); end
-  def cp38; @cp38 ||= average(a('cf38','cn38')); end
-  def cq38; @cq38 ||= (sumproduct(a('cg38','cn38'),sheet12.a('d28','k28'))*5.0)+cf38; end
-  def cr38; @cr38 ||= excel_if(excel_comparison(abs(cd38-cq38-at38),"<",1.0),"ok","err"); end
-  def a39; "XII.b"; end
-  def b39; "Domestic freight"; end
-  def c39; "Transport"; end
-  def e39; @e39 ||= sheet7.e39/(sheet12.c13*sheet11.e79); end
-  def f39; @f39 ||= sheet7.f39/(sheet12.c13*sheet11.e79); end
-  def g39; @g39 ||= sheet7.g39/(sheet12.c13*sheet11.e79); end
-  def h39; @h39 ||= sheet7.h39/(sheet12.c13*sheet11.e79); end
-  def i39; @i39 ||= sheet7.i39/(sheet12.c13*sheet11.e79); end
-  def j39; @j39 ||= sheet7.j39/(sheet12.c13*sheet11.e79); end
-  def k39; @k39 ||= sheet7.k39/(sheet12.c13*sheet11.e79); end
-  def l39; @l39 ||= sheet7.l39/(sheet12.c13*sheet11.e79); end
-  def m39; @m39 ||= sheet7.m39/(sheet12.c13*sheet11.e79); end
-  def o39; @o39 ||= sheet7.o39/(sheet12.c13*sheet11.e79); end
-  def p39; @p39 ||= sheet7.p39/(sheet12.c13*sheet11.e79); end
-  def q39; @q39 ||= sheet7.q39/(sheet12.c13*sheet11.e79); end
-  def r39; @r39 ||= sheet7.r39/(sheet12.c13*sheet11.e79); end
-  def s39; @s39 ||= sheet7.s39/(sheet12.c13*sheet11.e79); end
-  def t39; @t39 ||= sheet7.t39/(sheet12.c13*sheet11.e79); end
-  def u39; @u39 ||= sheet7.u39/(sheet12.c13*sheet11.e79); end
-  def v39; @v39 ||= sheet7.v39/(sheet12.c13*sheet11.e79); end
-  def w39; @w39 ||= sheet7.w39/(sheet12.c13*sheet11.e79); end
-  def y39; @y39 ||= sheet7.y39/(sheet12.c13*sheet11.e79); end
-  def z39; @z39 ||= sheet7.z39/(sheet12.c13*sheet11.e79); end
-  def aa39; @aa39 ||= sheet7.aa39/(sheet12.c13*sheet11.e79); end
-  def ab39; @ab39 ||= sheet7.ab39/(sheet12.c13*sheet11.e79); end
-  def ac39; @ac39 ||= sheet7.ac39/(sheet12.c13*sheet11.e79); end
-  def ad39; @ad39 ||= sheet7.ad39/(sheet12.c13*sheet11.e79); end
-  def ae39; @ae39 ||= sheet7.ae39/(sheet12.c13*sheet11.e79); end
-  def af39; @af39 ||= sheet7.af39/(sheet12.c13*sheet11.e79); end
-  def ag39; @ag39 ||= sheet7.ag39/(sheet12.c13*sheet11.e79); end
-  def ai39; @ai39 ||= sheet7.ai39/(sheet12.c13*sheet11.e79); end
-  def aj39; @aj39 ||= sheet7.aj39/(sheet12.c13*sheet11.e79); end
-  def ak39; @ak39 ||= sheet7.ak39/(sheet12.c13*sheet11.e79); end
-  def al39; @al39 ||= sheet7.al39/(sheet12.c13*sheet11.e79); end
-  def am39; @am39 ||= sheet7.am39/(sheet12.c13*sheet11.e79); end
-  def an39; @an39 ||= sheet7.an39/(sheet12.c13*sheet11.e79); end
-  def ao39; @ao39 ||= sheet7.ao39/(sheet12.c13*sheet11.e79); end
-  def ap39; @ap39 ||= sheet7.ap39/(sheet12.c13*sheet11.e79); end
-  def aq39; @aq39 ||= sheet7.aq39/(sheet12.c13*sheet11.e79); end
-  def as39; @as39 ||= average(a('ai39','aq39')); end
-  def at39; @at39 ||= (sumproduct(a('aj39','aq39'),sheet12.a('d28','k28'))*5.0)+ai39; end
-  def av39; 0.0; end
-  def aw39; 5.0; end
-  def ay39; @ay39 ||= sheet7.ay39/(sheet12.c13*sheet11.e79); end
-  def az39; @az39 ||= sheet7.az39/(sheet12.c13*sheet11.e79); end
-  def ba39; @ba39 ||= sheet7.ba39/(sheet12.c13*sheet11.e79); end
-  def bb39; @bb39 ||= sheet7.bb39/(sheet12.c13*sheet11.e79); end
-  def bc39; @bc39 ||= sheet7.bc39/(sheet12.c13*sheet11.e79); end
-  def bd39; @bd39 ||= sheet7.bd39/(sheet12.c13*sheet11.e79); end
-  def be39; @be39 ||= sheet7.be39/(sheet12.c13*sheet11.e79); end
-  def bf39; @bf39 ||= sheet7.bf39/(sheet12.c13*sheet11.e79); end
-  def bg39; @bg39 ||= sheet7.bg39/(sheet12.c13*sheet11.e79); end
-  def bi39; @bi39 ||= sheet7.bi39/(sheet12.c13*sheet11.e79); end
-  def bj39; @bj39 ||= sheet7.bj39/(sheet12.c13*sheet11.e79); end
-  def bk39; @bk39 ||= sheet7.bk39/(sheet12.c13*sheet11.e79); end
-  def bl39; @bl39 ||= sheet7.bl39/(sheet12.c13*sheet11.e79); end
-  def bm39; @bm39 ||= sheet7.bm39/(sheet12.c13*sheet11.e79); end
-  def bn39; @bn39 ||= sheet7.bn39/(sheet12.c13*sheet11.e79); end
-  def bo39; @bo39 ||= sheet7.bo39/(sheet12.c13*sheet11.e79); end
-  def bp39; @bp39 ||= sheet7.bp39/(sheet12.c13*sheet11.e79); end
-  def bq39; @bq39 ||= sheet7.bq39/(sheet12.c13*sheet11.e79); end
-  def bs39; @bs39 ||= sheet7.bs39/(sheet12.c13*sheet11.e79); end
-  def bt39; @bt39 ||= sheet7.bt39/(sheet12.c13*sheet11.e79); end
-  def bu39; @bu39 ||= sheet7.bu39/(sheet12.c13*sheet11.e79); end
-  def bv39; @bv39 ||= sheet7.bv39/(sheet12.c13*sheet11.e79); end
-  def bw39; @bw39 ||= sheet7.bw39/(sheet12.c13*sheet11.e79); end
-  def bx39; @bx39 ||= sheet7.bx39/(sheet12.c13*sheet11.e79); end
-  def by39; @by39 ||= sheet7.by39/(sheet12.c13*sheet11.e79); end
-  def bz39; @bz39 ||= sheet7.bz39/(sheet12.c13*sheet11.e79); end
-  def ca39; @ca39 ||= sheet7.ca39/(sheet12.c13*sheet11.e79); end
-  def cc39; @cc39 ||= average(a('bs39','ca39')); end
-  def cd39; @cd39 ||= (sumproduct(a('bt39','ca39'),sheet12.a('d28','k28'))*5.0)+bs39; end
-  def cf39; @cf39 ||= sheet7.cf39/(sheet12.c13*sheet11.e79); end
-  def cg39; @cg39 ||= sheet7.cg39/(sheet12.c13*sheet11.e79); end
-  def ch39; @ch39 ||= sheet7.ch39/(sheet12.c13*sheet11.e79); end
-  def ci39; @ci39 ||= sheet7.ci39/(sheet12.c13*sheet11.e79); end
-  def cj39; @cj39 ||= sheet7.cj39/(sheet12.c13*sheet11.e79); end
-  def ck39; @ck39 ||= sheet7.ck39/(sheet12.c13*sheet11.e79); end
-  def cl39; @cl39 ||= sheet7.cl39/(sheet12.c13*sheet11.e79); end
-  def cm39; @cm39 ||= sheet7.cm39/(sheet12.c13*sheet11.e79); end
-  def cn39; @cn39 ||= sheet7.cn39/(sheet12.c13*sheet11.e79); end
-  def cp39; @cp39 ||= average(a('cf39','cn39')); end
-  def cq39; @cq39 ||= (sumproduct(a('cg39','cn39'),sheet12.a('d28','k28'))*5.0)+cf39; end
-  def cr39; @cr39 ||= excel_if(excel_comparison(abs(cd39-cq39-at39),"<",1.0),"ok","err"); end
-  def a40; "XII.c"; end
-  def b40; "International aviation"; end
-  def c40; "Transport"; end
-  def e40; @e40 ||= sheet7.e40/(sheet12.c13*sheet11.e79); end
-  def f40; @f40 ||= sheet7.f40/(sheet12.c13*sheet11.e79); end
-  def g40; @g40 ||= sheet7.g40/(sheet12.c13*sheet11.e79); end
-  def h40; @h40 ||= sheet7.h40/(sheet12.c13*sheet11.e79); end
-  def i40; @i40 ||= sheet7.i40/(sheet12.c13*sheet11.e79); end
-  def j40; @j40 ||= sheet7.j40/(sheet12.c13*sheet11.e79); end
-  def k40; @k40 ||= sheet7.k40/(sheet12.c13*sheet11.e79); end
-  def l40; @l40 ||= sheet7.l40/(sheet12.c13*sheet11.e79); end
-  def m40; @m40 ||= sheet7.m40/(sheet12.c13*sheet11.e79); end
-  def o40; @o40 ||= sheet7.o40/(sheet12.c13*sheet11.e79); end
-  def p40; @p40 ||= sheet7.p40/(sheet12.c13*sheet11.e79); end
-  def q40; @q40 ||= sheet7.q40/(sheet12.c13*sheet11.e79); end
-  def r40; @r40 ||= sheet7.r40/(sheet12.c13*sheet11.e79); end
-  def s40; @s40 ||= sheet7.s40/(sheet12.c13*sheet11.e79); end
-  def t40; @t40 ||= sheet7.t40/(sheet12.c13*sheet11.e79); end
-  def u40; @u40 ||= sheet7.u40/(sheet12.c13*sheet11.e79); end
-  def v40; @v40 ||= sheet7.v40/(sheet12.c13*sheet11.e79); end
-  def w40; @w40 ||= sheet7.w40/(sheet12.c13*sheet11.e79); end
-  def y40; @y40 ||= sheet7.y40/(sheet12.c13*sheet11.e79); end
-  def z40; @z40 ||= sheet7.z40/(sheet12.c13*sheet11.e79); end
-  def aa40; @aa40 ||= sheet7.aa40/(sheet12.c13*sheet11.e79); end
-  def ab40; @ab40 ||= sheet7.ab40/(sheet12.c13*sheet11.e79); end
-  def ac40; @ac40 ||= sheet7.ac40/(sheet12.c13*sheet11.e79); end
-  def ad40; @ad40 ||= sheet7.ad40/(sheet12.c13*sheet11.e79); end
-  def ae40; @ae40 ||= sheet7.ae40/(sheet12.c13*sheet11.e79); end
-  def af40; @af40 ||= sheet7.af40/(sheet12.c13*sheet11.e79); end
-  def ag40; @ag40 ||= sheet7.ag40/(sheet12.c13*sheet11.e79); end
-  def ai40; @ai40 ||= sheet7.ai40/(sheet12.c13*sheet11.e79); end
-  def aj40; @aj40 ||= sheet7.aj40/(sheet12.c13*sheet11.e79); end
-  def ak40; @ak40 ||= sheet7.ak40/(sheet12.c13*sheet11.e79); end
-  def al40; @al40 ||= sheet7.al40/(sheet12.c13*sheet11.e79); end
-  def am40; @am40 ||= sheet7.am40/(sheet12.c13*sheet11.e79); end
-  def an40; @an40 ||= sheet7.an40/(sheet12.c13*sheet11.e79); end
-  def ao40; @ao40 ||= sheet7.ao40/(sheet12.c13*sheet11.e79); end
-  def ap40; @ap40 ||= sheet7.ap40/(sheet12.c13*sheet11.e79); end
-  def aq40; @aq40 ||= sheet7.aq40/(sheet12.c13*sheet11.e79); end
-  def as40; @as40 ||= average(a('ai40','aq40')); end
-  def at40; @at40 ||= (sumproduct(a('aj40','aq40'),sheet12.a('d28','k28'))*5.0)+ai40; end
-  def av40; 0.0; end
-  def aw40; 5.0; end
-  def ay40; @ay40 ||= sheet7.ay40/(sheet12.c13*sheet11.e79); end
-  def az40; @az40 ||= sheet7.az40/(sheet12.c13*sheet11.e79); end
-  def ba40; @ba40 ||= sheet7.ba40/(sheet12.c13*sheet11.e79); end
-  def bb40; @bb40 ||= sheet7.bb40/(sheet12.c13*sheet11.e79); end
-  def bc40; @bc40 ||= sheet7.bc40/(sheet12.c13*sheet11.e79); end
-  def bd40; @bd40 ||= sheet7.bd40/(sheet12.c13*sheet11.e79); end
-  def be40; @be40 ||= sheet7.be40/(sheet12.c13*sheet11.e79); end
-  def bf40; @bf40 ||= sheet7.bf40/(sheet12.c13*sheet11.e79); end
-  def bg40; @bg40 ||= sheet7.bg40/(sheet12.c13*sheet11.e79); end
-  def bi40; @bi40 ||= sheet7.bi40/(sheet12.c13*sheet11.e79); end
-  def bj40; @bj40 ||= sheet7.bj40/(sheet12.c13*sheet11.e79); end
-  def bk40; @bk40 ||= sheet7.bk40/(sheet12.c13*sheet11.e79); end
-  def bl40; @bl40 ||= sheet7.bl40/(sheet12.c13*sheet11.e79); end
-  def bm40; @bm40 ||= sheet7.bm40/(sheet12.c13*sheet11.e79); end
-  def bn40; @bn40 ||= sheet7.bn40/(sheet12.c13*sheet11.e79); end
-  def bo40; @bo40 ||= sheet7.bo40/(sheet12.c13*sheet11.e79); end
-  def bp40; @bp40 ||= sheet7.bp40/(sheet12.c13*sheet11.e79); end
-  def bq40; @bq40 ||= sheet7.bq40/(sheet12.c13*sheet11.e79); end
-  def bs40; @bs40 ||= sheet7.bs40/(sheet12.c13*sheet11.e79); end
-  def bt40; @bt40 ||= sheet7.bt40/(sheet12.c13*sheet11.e79); end
-  def bu40; @bu40 ||= sheet7.bu40/(sheet12.c13*sheet11.e79); end
-  def bv40; @bv40 ||= sheet7.bv40/(sheet12.c13*sheet11.e79); end
-  def bw40; @bw40 ||= sheet7.bw40/(sheet12.c13*sheet11.e79); end
-  def bx40; @bx40 ||= sheet7.bx40/(sheet12.c13*sheet11.e79); end
-  def by40; @by40 ||= sheet7.by40/(sheet12.c13*sheet11.e79); end
-  def bz40; @bz40 ||= sheet7.bz40/(sheet12.c13*sheet11.e79); end
-  def ca40; @ca40 ||= sheet7.ca40/(sheet12.c13*sheet11.e79); end
-  def cc40; @cc40 ||= average(a('bs40','ca40')); end
-  def cd40; @cd40 ||= (sumproduct(a('bt40','ca40'),sheet12.a('d28','k28'))*5.0)+bs40; end
-  def cf40; @cf40 ||= sheet7.cf40/(sheet12.c13*sheet11.e79); end
-  def cg40; @cg40 ||= sheet7.cg40/(sheet12.c13*sheet11.e79); end
-  def ch40; @ch40 ||= sheet7.ch40/(sheet12.c13*sheet11.e79); end
-  def ci40; @ci40 ||= sheet7.ci40/(sheet12.c13*sheet11.e79); end
-  def cj40; @cj40 ||= sheet7.cj40/(sheet12.c13*sheet11.e79); end
-  def ck40; @ck40 ||= sheet7.ck40/(sheet12.c13*sheet11.e79); end
-  def cl40; @cl40 ||= sheet7.cl40/(sheet12.c13*sheet11.e79); end
-  def cm40; @cm40 ||= sheet7.cm40/(sheet12.c13*sheet11.e79); end
-  def cn40; @cn40 ||= sheet7.cn40/(sheet12.c13*sheet11.e79); end
-  def cp40; @cp40 ||= average(a('cf40','cn40')); end
-  def cq40; @cq40 ||= (sumproduct(a('cg40','cn40'),sheet12.a('d28','k28'))*5.0)+cf40; end
-  def cr40; @cr40 ||= excel_if(excel_comparison(abs(cd40-cq40-at40),"<",1.0),"ok","err"); end
-  def a41; "XII.e"; end
-  def b41; "International shipping (maritime bunkers)"; end
-  def c41; "Transport"; end
-  def e41; @e41 ||= sheet7.e41/(sheet12.c13*sheet11.e79); end
-  def f41; @f41 ||= sheet7.f41/(sheet12.c13*sheet11.e79); end
-  def g41; @g41 ||= sheet7.g41/(sheet12.c13*sheet11.e79); end
-  def h41; @h41 ||= sheet7.h41/(sheet12.c13*sheet11.e79); end
-  def i41; @i41 ||= sheet7.i41/(sheet12.c13*sheet11.e79); end
-  def j41; @j41 ||= sheet7.j41/(sheet12.c13*sheet11.e79); end
-  def k41; @k41 ||= sheet7.k41/(sheet12.c13*sheet11.e79); end
-  def l41; @l41 ||= sheet7.l41/(sheet12.c13*sheet11.e79); end
-  def m41; @m41 ||= sheet7.m41/(sheet12.c13*sheet11.e79); end
-  def o41; @o41 ||= sheet7.o41/(sheet12.c13*sheet11.e79); end
-  def p41; @p41 ||= sheet7.p41/(sheet12.c13*sheet11.e79); end
-  def q41; @q41 ||= sheet7.q41/(sheet12.c13*sheet11.e79); end
-  def r41; @r41 ||= sheet7.r41/(sheet12.c13*sheet11.e79); end
-  def s41; @s41 ||= sheet7.s41/(sheet12.c13*sheet11.e79); end
-  def t41; @t41 ||= sheet7.t41/(sheet12.c13*sheet11.e79); end
-  def u41; @u41 ||= sheet7.u41/(sheet12.c13*sheet11.e79); end
-  def v41; @v41 ||= sheet7.v41/(sheet12.c13*sheet11.e79); end
-  def w41; @w41 ||= sheet7.w41/(sheet12.c13*sheet11.e79); end
-  def y41; @y41 ||= sheet7.y41/(sheet12.c13*sheet11.e79); end
-  def z41; @z41 ||= sheet7.z41/(sheet12.c13*sheet11.e79); end
-  def aa41; @aa41 ||= sheet7.aa41/(sheet12.c13*sheet11.e79); end
-  def ab41; @ab41 ||= sheet7.ab41/(sheet12.c13*sheet11.e79); end
-  def ac41; @ac41 ||= sheet7.ac41/(sheet12.c13*sheet11.e79); end
-  def ad41; @ad41 ||= sheet7.ad41/(sheet12.c13*sheet11.e79); end
-  def ae41; @ae41 ||= sheet7.ae41/(sheet12.c13*sheet11.e79); end
-  def af41; @af41 ||= sheet7.af41/(sheet12.c13*sheet11.e79); end
-  def ag41; @ag41 ||= sheet7.ag41/(sheet12.c13*sheet11.e79); end
-  def ai41; @ai41 ||= sheet7.ai41/(sheet12.c13*sheet11.e79); end
-  def aj41; @aj41 ||= sheet7.aj41/(sheet12.c13*sheet11.e79); end
-  def ak41; @ak41 ||= sheet7.ak41/(sheet12.c13*sheet11.e79); end
-  def al41; @al41 ||= sheet7.al41/(sheet12.c13*sheet11.e79); end
-  def am41; @am41 ||= sheet7.am41/(sheet12.c13*sheet11.e79); end
-  def an41; @an41 ||= sheet7.an41/(sheet12.c13*sheet11.e79); end
-  def ao41; @ao41 ||= sheet7.ao41/(sheet12.c13*sheet11.e79); end
-  def ap41; @ap41 ||= sheet7.ap41/(sheet12.c13*sheet11.e79); end
-  def aq41; @aq41 ||= sheet7.aq41/(sheet12.c13*sheet11.e79); end
-  def as41; @as41 ||= average(a('ai41','aq41')); end
-  def at41; @at41 ||= (sumproduct(a('aj41','aq41'),sheet12.a('d28','k28'))*5.0)+ai41; end
-  def av41; 0.0; end
-  def aw41; 5.0; end
-  def ay41; @ay41 ||= sheet7.ay41/(sheet12.c13*sheet11.e79); end
-  def az41; @az41 ||= sheet7.az41/(sheet12.c13*sheet11.e79); end
-  def ba41; @ba41 ||= sheet7.ba41/(sheet12.c13*sheet11.e79); end
-  def bb41; @bb41 ||= sheet7.bb41/(sheet12.c13*sheet11.e79); end
-  def bc41; @bc41 ||= sheet7.bc41/(sheet12.c13*sheet11.e79); end
-  def bd41; @bd41 ||= sheet7.bd41/(sheet12.c13*sheet11.e79); end
-  def be41; @be41 ||= sheet7.be41/(sheet12.c13*sheet11.e79); end
-  def bf41; @bf41 ||= sheet7.bf41/(sheet12.c13*sheet11.e79); end
-  def bg41; @bg41 ||= sheet7.bg41/(sheet12.c13*sheet11.e79); end
-  def bi41; @bi41 ||= sheet7.bi41/(sheet12.c13*sheet11.e79); end
-  def bj41; @bj41 ||= sheet7.bj41/(sheet12.c13*sheet11.e79); end
-  def bk41; @bk41 ||= sheet7.bk41/(sheet12.c13*sheet11.e79); end
-  def bl41; @bl41 ||= sheet7.bl41/(sheet12.c13*sheet11.e79); end
-  def bm41; @bm41 ||= sheet7.bm41/(sheet12.c13*sheet11.e79); end
-  def bn41; @bn41 ||= sheet7.bn41/(sheet12.c13*sheet11.e79); end
-  def bo41; @bo41 ||= sheet7.bo41/(sheet12.c13*sheet11.e79); end
-  def bp41; @bp41 ||= sheet7.bp41/(sheet12.c13*sheet11.e79); end
-  def bq41; @bq41 ||= sheet7.bq41/(sheet12.c13*sheet11.e79); end
-  def bs41; @bs41 ||= sheet7.bs41/(sheet12.c13*sheet11.e79); end
-  def bt41; @bt41 ||= sheet7.bt41/(sheet12.c13*sheet11.e79); end
-  def bu41; @bu41 ||= sheet7.bu41/(sheet12.c13*sheet11.e79); end
-  def bv41; @bv41 ||= sheet7.bv41/(sheet12.c13*sheet11.e79); end
-  def bw41; @bw41 ||= sheet7.bw41/(sheet12.c13*sheet11.e79); end
-  def bx41; @bx41 ||= sheet7.bx41/(sheet12.c13*sheet11.e79); end
-  def by41; @by41 ||= sheet7.by41/(sheet12.c13*sheet11.e79); end
-  def bz41; @bz41 ||= sheet7.bz41/(sheet12.c13*sheet11.e79); end
-  def ca41; @ca41 ||= sheet7.ca41/(sheet12.c13*sheet11.e79); end
-  def cc41; @cc41 ||= average(a('bs41','ca41')); end
-  def cd41; @cd41 ||= (sumproduct(a('bt41','ca41'),sheet12.a('d28','k28'))*5.0)+bs41; end
-  def cf41; @cf41 ||= sheet7.cf41/(sheet12.c13*sheet11.e79); end
-  def cg41; @cg41 ||= sheet7.cg41/(sheet12.c13*sheet11.e79); end
-  def ch41; @ch41 ||= sheet7.ch41/(sheet12.c13*sheet11.e79); end
-  def ci41; @ci41 ||= sheet7.ci41/(sheet12.c13*sheet11.e79); end
-  def cj41; @cj41 ||= sheet7.cj41/(sheet12.c13*sheet11.e79); end
-  def ck41; @ck41 ||= sheet7.ck41/(sheet12.c13*sheet11.e79); end
-  def cl41; @cl41 ||= sheet7.cl41/(sheet12.c13*sheet11.e79); end
-  def cm41; @cm41 ||= sheet7.cm41/(sheet12.c13*sheet11.e79); end
-  def cn41; @cn41 ||= sheet7.cn41/(sheet12.c13*sheet11.e79); end
-  def cp41; @cp41 ||= average(a('cf41','cn41')); end
-  def cq41; @cq41 ||= (sumproduct(a('cg41','cn41'),sheet12.a('d28','k28'))*5.0)+cf41; end
-  def cr41; @cr41 ||= excel_if(excel_comparison(abs(cd41-cq41-at41),"<",1.0),"ok","err"); end
-  def a42; "XIV.a"; end
-  def b42; "Geosequestration"; end
-  def c42; "Carbon Capture"; end
-  def e42; @e42 ||= sheet7.e42/(sheet12.c13*sheet11.e79); end
-  def f42; @f42 ||= sheet7.f42/(sheet12.c13*sheet11.e79); end
-  def g42; @g42 ||= sheet7.g42/(sheet12.c13*sheet11.e79); end
-  def h42; @h42 ||= sheet7.h42/(sheet12.c13*sheet11.e79); end
-  def i42; @i42 ||= sheet7.i42/(sheet12.c13*sheet11.e79); end
-  def j42; @j42 ||= sheet7.j42/(sheet12.c13*sheet11.e79); end
-  def k42; @k42 ||= sheet7.k42/(sheet12.c13*sheet11.e79); end
-  def l42; @l42 ||= sheet7.l42/(sheet12.c13*sheet11.e79); end
-  def m42; @m42 ||= sheet7.m42/(sheet12.c13*sheet11.e79); end
-  def o42; @o42 ||= sheet7.o42/(sheet12.c13*sheet11.e79); end
-  def p42; @p42 ||= sheet7.p42/(sheet12.c13*sheet11.e79); end
-  def q42; @q42 ||= sheet7.q42/(sheet12.c13*sheet11.e79); end
-  def r42; @r42 ||= sheet7.r42/(sheet12.c13*sheet11.e79); end
-  def s42; @s42 ||= sheet7.s42/(sheet12.c13*sheet11.e79); end
-  def t42; @t42 ||= sheet7.t42/(sheet12.c13*sheet11.e79); end
-  def u42; @u42 ||= sheet7.u42/(sheet12.c13*sheet11.e79); end
-  def v42; @v42 ||= sheet7.v42/(sheet12.c13*sheet11.e79); end
-  def w42; @w42 ||= sheet7.w42/(sheet12.c13*sheet11.e79); end
-  def y42; @y42 ||= sheet7.y42/(sheet12.c13*sheet11.e79); end
-  def z42; @z42 ||= sheet7.z42/(sheet12.c13*sheet11.e79); end
-  def aa42; @aa42 ||= sheet7.aa42/(sheet12.c13*sheet11.e79); end
-  def ab42; @ab42 ||= sheet7.ab42/(sheet12.c13*sheet11.e79); end
-  def ac42; @ac42 ||= sheet7.ac42/(sheet12.c13*sheet11.e79); end
-  def ad42; @ad42 ||= sheet7.ad42/(sheet12.c13*sheet11.e79); end
-  def ae42; @ae42 ||= sheet7.ae42/(sheet12.c13*sheet11.e79); end
-  def af42; @af42 ||= sheet7.af42/(sheet12.c13*sheet11.e79); end
-  def ag42; @ag42 ||= sheet7.ag42/(sheet12.c13*sheet11.e79); end
-  def ai42; @ai42 ||= sheet7.ai42/(sheet12.c13*sheet11.e79); end
-  def aj42; @aj42 ||= sheet7.aj42/(sheet12.c13*sheet11.e79); end
-  def ak42; @ak42 ||= sheet7.ak42/(sheet12.c13*sheet11.e79); end
-  def al42; @al42 ||= sheet7.al42/(sheet12.c13*sheet11.e79); end
-  def am42; @am42 ||= sheet7.am42/(sheet12.c13*sheet11.e79); end
-  def an42; @an42 ||= sheet7.an42/(sheet12.c13*sheet11.e79); end
-  def ao42; @ao42 ||= sheet7.ao42/(sheet12.c13*sheet11.e79); end
-  def ap42; @ap42 ||= sheet7.ap42/(sheet12.c13*sheet11.e79); end
-  def aq42; @aq42 ||= sheet7.aq42/(sheet12.c13*sheet11.e79); end
-  def as42; @as42 ||= average(a('ai42','aq42')); end
-  def at42; @at42 ||= (sumproduct(a('aj42','aq42'),sheet12.a('d28','k28'))*5.0)+ai42; end
-  def av42; 0.0; end
-  def aw42; 5.0; end
-  def ay42; @ay42 ||= sheet7.ay42/(sheet12.c13*sheet11.e79); end
-  def az42; @az42 ||= sheet7.az42/(sheet12.c13*sheet11.e79); end
-  def ba42; @ba42 ||= sheet7.ba42/(sheet12.c13*sheet11.e79); end
-  def bb42; @bb42 ||= sheet7.bb42/(sheet12.c13*sheet11.e79); end
-  def bc42; @bc42 ||= sheet7.bc42/(sheet12.c13*sheet11.e79); end
-  def bd42; @bd42 ||= sheet7.bd42/(sheet12.c13*sheet11.e79); end
-  def be42; @be42 ||= sheet7.be42/(sheet12.c13*sheet11.e79); end
-  def bf42; @bf42 ||= sheet7.bf42/(sheet12.c13*sheet11.e79); end
-  def bg42; @bg42 ||= sheet7.bg42/(sheet12.c13*sheet11.e79); end
-  def bi42; @bi42 ||= sheet7.bi42/(sheet12.c13*sheet11.e79); end
-  def bj42; @bj42 ||= sheet7.bj42/(sheet12.c13*sheet11.e79); end
-  def bk42; @bk42 ||= sheet7.bk42/(sheet12.c13*sheet11.e79); end
-  def bl42; @bl42 ||= sheet7.bl42/(sheet12.c13*sheet11.e79); end
-  def bm42; @bm42 ||= sheet7.bm42/(sheet12.c13*sheet11.e79); end
-  def bn42; @bn42 ||= sheet7.bn42/(sheet12.c13*sheet11.e79); end
-  def bo42; @bo42 ||= sheet7.bo42/(sheet12.c13*sheet11.e79); end
-  def bp42; @bp42 ||= sheet7.bp42/(sheet12.c13*sheet11.e79); end
-  def bq42; @bq42 ||= sheet7.bq42/(sheet12.c13*sheet11.e79); end
-  def bs42; @bs42 ||= sheet7.bs42/(sheet12.c13*sheet11.e79); end
-  def bt42; @bt42 ||= sheet7.bt42/(sheet12.c13*sheet11.e79); end
-  def bu42; @bu42 ||= sheet7.bu42/(sheet12.c13*sheet11.e79); end
-  def bv42; @bv42 ||= sheet7.bv42/(sheet12.c13*sheet11.e79); end
-  def bw42; @bw42 ||= sheet7.bw42/(sheet12.c13*sheet11.e79); end
-  def bx42; @bx42 ||= sheet7.bx42/(sheet12.c13*sheet11.e79); end
-  def by42; @by42 ||= sheet7.by42/(sheet12.c13*sheet11.e79); end
-  def bz42; @bz42 ||= sheet7.bz42/(sheet12.c13*sheet11.e79); end
-  def ca42; @ca42 ||= sheet7.ca42/(sheet12.c13*sheet11.e79); end
-  def cc42; @cc42 ||= average(a('bs42','ca42')); end
-  def cd42; @cd42 ||= (sumproduct(a('bt42','ca42'),sheet12.a('d28','k28'))*5.0)+bs42; end
-  def cf42; @cf42 ||= sheet7.cf42/(sheet12.c13*sheet11.e79); end
-  def cg42; @cg42 ||= sheet7.cg42/(sheet12.c13*sheet11.e79); end
-  def ch42; @ch42 ||= sheet7.ch42/(sheet12.c13*sheet11.e79); end
-  def ci42; @ci42 ||= sheet7.ci42/(sheet12.c13*sheet11.e79); end
-  def cj42; @cj42 ||= sheet7.cj42/(sheet12.c13*sheet11.e79); end
-  def ck42; @ck42 ||= sheet7.ck42/(sheet12.c13*sheet11.e79); end
-  def cl42; @cl42 ||= sheet7.cl42/(sheet12.c13*sheet11.e79); end
-  def cm42; @cm42 ||= sheet7.cm42/(sheet12.c13*sheet11.e79); end
-  def cn42; @cn42 ||= sheet7.cn42/(sheet12.c13*sheet11.e79); end
-  def cp42; @cp42 ||= average(a('cf42','cn42')); end
-  def cq42; @cq42 ||= (sumproduct(a('cg42','cn42'),sheet12.a('d28','k28'))*5.0)+cf42; end
-  def cr42; @cr42 ||= excel_if(excel_comparison(abs(cd42-cq42-at42),"<",1.0),"ok","err"); end
-  def a43; "XV.a"; end
-  def b43; "Petroleum refineries"; end
-  def c43; "Fossil Fuels"; end
-  def e43; @e43 ||= sheet7.e43/(sheet12.c13*sheet11.e79); end
-  def f43; @f43 ||= sheet7.f43/(sheet12.c13*sheet11.e79); end
-  def g43; @g43 ||= sheet7.g43/(sheet12.c13*sheet11.e79); end
-  def h43; @h43 ||= sheet7.h43/(sheet12.c13*sheet11.e79); end
-  def i43; @i43 ||= sheet7.i43/(sheet12.c13*sheet11.e79); end
-  def j43; @j43 ||= sheet7.j43/(sheet12.c13*sheet11.e79); end
-  def k43; @k43 ||= sheet7.k43/(sheet12.c13*sheet11.e79); end
-  def l43; @l43 ||= sheet7.l43/(sheet12.c13*sheet11.e79); end
-  def m43; @m43 ||= sheet7.m43/(sheet12.c13*sheet11.e79); end
-  def o43; @o43 ||= sheet7.o43/(sheet12.c13*sheet11.e79); end
-  def p43; @p43 ||= sheet7.p43/(sheet12.c13*sheet11.e79); end
-  def q43; @q43 ||= sheet7.q43/(sheet12.c13*sheet11.e79); end
-  def r43; @r43 ||= sheet7.r43/(sheet12.c13*sheet11.e79); end
-  def s43; @s43 ||= sheet7.s43/(sheet12.c13*sheet11.e79); end
-  def t43; @t43 ||= sheet7.t43/(sheet12.c13*sheet11.e79); end
-  def u43; @u43 ||= sheet7.u43/(sheet12.c13*sheet11.e79); end
-  def v43; @v43 ||= sheet7.v43/(sheet12.c13*sheet11.e79); end
-  def w43; @w43 ||= sheet7.w43/(sheet12.c13*sheet11.e79); end
-  def y43; @y43 ||= sheet7.y43/(sheet12.c13*sheet11.e79); end
-  def z43; @z43 ||= sheet7.z43/(sheet12.c13*sheet11.e79); end
-  def aa43; @aa43 ||= sheet7.aa43/(sheet12.c13*sheet11.e79); end
-  def ab43; @ab43 ||= sheet7.ab43/(sheet12.c13*sheet11.e79); end
-  def ac43; @ac43 ||= sheet7.ac43/(sheet12.c13*sheet11.e79); end
-  def ad43; @ad43 ||= sheet7.ad43/(sheet12.c13*sheet11.e79); end
-  def ae43; @ae43 ||= sheet7.ae43/(sheet12.c13*sheet11.e79); end
-  def af43; @af43 ||= sheet7.af43/(sheet12.c13*sheet11.e79); end
-  def ag43; @ag43 ||= sheet7.ag43/(sheet12.c13*sheet11.e79); end
-  def ai43; @ai43 ||= sheet7.ai43/(sheet12.c13*sheet11.e79); end
-  def aj43; @aj43 ||= sheet7.aj43/(sheet12.c13*sheet11.e79); end
-  def ak43; @ak43 ||= sheet7.ak43/(sheet12.c13*sheet11.e79); end
-  def al43; @al43 ||= sheet7.al43/(sheet12.c13*sheet11.e79); end
-  def am43; @am43 ||= sheet7.am43/(sheet12.c13*sheet11.e79); end
-  def an43; @an43 ||= sheet7.an43/(sheet12.c13*sheet11.e79); end
-  def ao43; @ao43 ||= sheet7.ao43/(sheet12.c13*sheet11.e79); end
-  def ap43; @ap43 ||= sheet7.ap43/(sheet12.c13*sheet11.e79); end
-  def aq43; @aq43 ||= sheet7.aq43/(sheet12.c13*sheet11.e79); end
-  def as43; @as43 ||= average(a('ai43','aq43')); end
-  def at43; @at43 ||= (sumproduct(a('aj43','aq43'),sheet12.a('d28','k28'))*5.0)+ai43; end
-  def av43; 0.0; end
-  def aw43; 5.0; end
-  def ay43; @ay43 ||= sheet7.ay43/(sheet12.c13*sheet11.e79); end
-  def az43; @az43 ||= sheet7.az43/(sheet12.c13*sheet11.e79); end
-  def ba43; @ba43 ||= sheet7.ba43/(sheet12.c13*sheet11.e79); end
-  def bb43; @bb43 ||= sheet7.bb43/(sheet12.c13*sheet11.e79); end
-  def bc43; @bc43 ||= sheet7.bc43/(sheet12.c13*sheet11.e79); end
-  def bd43; @bd43 ||= sheet7.bd43/(sheet12.c13*sheet11.e79); end
-  def be43; @be43 ||= sheet7.be43/(sheet12.c13*sheet11.e79); end
-  def bf43; @bf43 ||= sheet7.bf43/(sheet12.c13*sheet11.e79); end
-  def bg43; @bg43 ||= sheet7.bg43/(sheet12.c13*sheet11.e79); end
-  def bi43; @bi43 ||= sheet7.bi43/(sheet12.c13*sheet11.e79); end
-  def bj43; @bj43 ||= sheet7.bj43/(sheet12.c13*sheet11.e79); end
-  def bk43; @bk43 ||= sheet7.bk43/(sheet12.c13*sheet11.e79); end
-  def bl43; @bl43 ||= sheet7.bl43/(sheet12.c13*sheet11.e79); end
-  def bm43; @bm43 ||= sheet7.bm43/(sheet12.c13*sheet11.e79); end
-  def bn43; @bn43 ||= sheet7.bn43/(sheet12.c13*sheet11.e79); end
-  def bo43; @bo43 ||= sheet7.bo43/(sheet12.c13*sheet11.e79); end
-  def bp43; @bp43 ||= sheet7.bp43/(sheet12.c13*sheet11.e79); end
-  def bq43; @bq43 ||= sheet7.bq43/(sheet12.c13*sheet11.e79); end
-  def bs43; @bs43 ||= sheet7.bs43/(sheet12.c13*sheet11.e79); end
-  def bt43; @bt43 ||= sheet7.bt43/(sheet12.c13*sheet11.e79); end
-  def bu43; @bu43 ||= sheet7.bu43/(sheet12.c13*sheet11.e79); end
-  def bv43; @bv43 ||= sheet7.bv43/(sheet12.c13*sheet11.e79); end
-  def bw43; @bw43 ||= sheet7.bw43/(sheet12.c13*sheet11.e79); end
-  def bx43; @bx43 ||= sheet7.bx43/(sheet12.c13*sheet11.e79); end
-  def by43; @by43 ||= sheet7.by43/(sheet12.c13*sheet11.e79); end
-  def bz43; @bz43 ||= sheet7.bz43/(sheet12.c13*sheet11.e79); end
-  def ca43; @ca43 ||= sheet7.ca43/(sheet12.c13*sheet11.e79); end
-  def cc43; @cc43 ||= average(a('bs43','ca43')); end
-  def cd43; @cd43 ||= (sumproduct(a('bt43','ca43'),sheet12.a('d28','k28'))*5.0)+bs43; end
-  def cf43; @cf43 ||= sheet7.cf43/(sheet12.c13*sheet11.e79); end
-  def cg43; @cg43 ||= sheet7.cg43/(sheet12.c13*sheet11.e79); end
-  def ch43; @ch43 ||= sheet7.ch43/(sheet12.c13*sheet11.e79); end
-  def ci43; @ci43 ||= sheet7.ci43/(sheet12.c13*sheet11.e79); end
-  def cj43; @cj43 ||= sheet7.cj43/(sheet12.c13*sheet11.e79); end
-  def ck43; @ck43 ||= sheet7.ck43/(sheet12.c13*sheet11.e79); end
-  def cl43; @cl43 ||= sheet7.cl43/(sheet12.c13*sheet11.e79); end
-  def cm43; @cm43 ||= sheet7.cm43/(sheet12.c13*sheet11.e79); end
-  def cn43; @cn43 ||= sheet7.cn43/(sheet12.c13*sheet11.e79); end
-  def cp43; @cp43 ||= average(a('cf43','cn43')); end
-  def cq43; @cq43 ||= (sumproduct(a('cg43','cn43'),sheet12.a('d28','k28'))*5.0)+cf43; end
-  def cr43; @cr43 ||= excel_if(excel_comparison(abs(cd43-cq43-at43),"<",1.0),"ok","err"); end
-  def a44; "XV.b.Coal"; end
-  def b44; "Indigenous fossil-fuel production - Coal"; end
-  def c44; "Fossil Fuels"; end
-  def e44; @e44 ||= sheet7.e44/(sheet12.c13*sheet11.e79); end
-  def f44; @f44 ||= sheet7.f44/(sheet12.c13*sheet11.e79); end
-  def g44; @g44 ||= sheet7.g44/(sheet12.c13*sheet11.e79); end
-  def h44; @h44 ||= sheet7.h44/(sheet12.c13*sheet11.e79); end
-  def i44; @i44 ||= sheet7.i44/(sheet12.c13*sheet11.e79); end
-  def j44; @j44 ||= sheet7.j44/(sheet12.c13*sheet11.e79); end
-  def k44; @k44 ||= sheet7.k44/(sheet12.c13*sheet11.e79); end
-  def l44; @l44 ||= sheet7.l44/(sheet12.c13*sheet11.e79); end
-  def m44; @m44 ||= sheet7.m44/(sheet12.c13*sheet11.e79); end
-  def o44; @o44 ||= sheet7.o44/(sheet12.c13*sheet11.e79); end
-  def p44; @p44 ||= sheet7.p44/(sheet12.c13*sheet11.e79); end
-  def q44; @q44 ||= sheet7.q44/(sheet12.c13*sheet11.e79); end
-  def r44; @r44 ||= sheet7.r44/(sheet12.c13*sheet11.e79); end
-  def s44; @s44 ||= sheet7.s44/(sheet12.c13*sheet11.e79); end
-  def t44; @t44 ||= sheet7.t44/(sheet12.c13*sheet11.e79); end
-  def u44; @u44 ||= sheet7.u44/(sheet12.c13*sheet11.e79); end
-  def v44; @v44 ||= sheet7.v44/(sheet12.c13*sheet11.e79); end
-  def w44; @w44 ||= sheet7.w44/(sheet12.c13*sheet11.e79); end
-  def y44; @y44 ||= sheet7.y44/(sheet12.c13*sheet11.e79); end
-  def z44; @z44 ||= sheet7.z44/(sheet12.c13*sheet11.e79); end
-  def aa44; @aa44 ||= sheet7.aa44/(sheet12.c13*sheet11.e79); end
-  def ab44; @ab44 ||= sheet7.ab44/(sheet12.c13*sheet11.e79); end
-  def ac44; @ac44 ||= sheet7.ac44/(sheet12.c13*sheet11.e79); end
-  def ad44; @ad44 ||= sheet7.ad44/(sheet12.c13*sheet11.e79); end
-  def ae44; @ae44 ||= sheet7.ae44/(sheet12.c13*sheet11.e79); end
-  def af44; @af44 ||= sheet7.af44/(sheet12.c13*sheet11.e79); end
-  def ag44; @ag44 ||= sheet7.ag44/(sheet12.c13*sheet11.e79); end
-  def ai44; @ai44 ||= sheet7.ai44/(sheet12.c13*sheet11.e79); end
-  def aj44; @aj44 ||= sheet7.aj44/(sheet12.c13*sheet11.e79); end
-  def ak44; @ak44 ||= sheet7.ak44/(sheet12.c13*sheet11.e79); end
-  def al44; @al44 ||= sheet7.al44/(sheet12.c13*sheet11.e79); end
-  def am44; @am44 ||= sheet7.am44/(sheet12.c13*sheet11.e79); end
-  def an44; @an44 ||= sheet7.an44/(sheet12.c13*sheet11.e79); end
-  def ao44; @ao44 ||= sheet7.ao44/(sheet12.c13*sheet11.e79); end
-  def ap44; @ap44 ||= sheet7.ap44/(sheet12.c13*sheet11.e79); end
-  def aq44; @aq44 ||= sheet7.aq44/(sheet12.c13*sheet11.e79); end
-  def as44; @as44 ||= average(a('ai44','aq44')); end
-  def at44; @at44 ||= (sumproduct(a('aj44','aq44'),sheet12.a('d28','k28'))*5.0)+ai44; end
-  def av44; 0.0; end
-  def aw44; 5.0; end
-  def ay44; @ay44 ||= sheet7.ay44/(sheet12.c13*sheet11.e79); end
-  def az44; @az44 ||= sheet7.az44/(sheet12.c13*sheet11.e79); end
-  def ba44; @ba44 ||= sheet7.ba44/(sheet12.c13*sheet11.e79); end
-  def bb44; @bb44 ||= sheet7.bb44/(sheet12.c13*sheet11.e79); end
-  def bc44; @bc44 ||= sheet7.bc44/(sheet12.c13*sheet11.e79); end
-  def bd44; @bd44 ||= sheet7.bd44/(sheet12.c13*sheet11.e79); end
-  def be44; @be44 ||= sheet7.be44/(sheet12.c13*sheet11.e79); end
-  def bf44; @bf44 ||= sheet7.bf44/(sheet12.c13*sheet11.e79); end
-  def bg44; @bg44 ||= sheet7.bg44/(sheet12.c13*sheet11.e79); end
-  def bi44; @bi44 ||= sheet7.bi44/(sheet12.c13*sheet11.e79); end
-  def bj44; @bj44 ||= sheet7.bj44/(sheet12.c13*sheet11.e79); end
-  def bk44; @bk44 ||= sheet7.bk44/(sheet12.c13*sheet11.e79); end
-  def bl44; @bl44 ||= sheet7.bl44/(sheet12.c13*sheet11.e79); end
-  def bm44; @bm44 ||= sheet7.bm44/(sheet12.c13*sheet11.e79); end
-  def bn44; @bn44 ||= sheet7.bn44/(sheet12.c13*sheet11.e79); end
-  def bo44; @bo44 ||= sheet7.bo44/(sheet12.c13*sheet11.e79); end
-  def bp44; @bp44 ||= sheet7.bp44/(sheet12.c13*sheet11.e79); end
-  def bq44; @bq44 ||= sheet7.bq44/(sheet12.c13*sheet11.e79); end
-  def bs44; @bs44 ||= sheet7.bs44/(sheet12.c13*sheet11.e79); end
-  def bt44; @bt44 ||= sheet7.bt44/(sheet12.c13*sheet11.e79); end
-  def bu44; @bu44 ||= sheet7.bu44/(sheet12.c13*sheet11.e79); end
-  def bv44; @bv44 ||= sheet7.bv44/(sheet12.c13*sheet11.e79); end
-  def bw44; @bw44 ||= sheet7.bw44/(sheet12.c13*sheet11.e79); end
-  def bx44; @bx44 ||= sheet7.bx44/(sheet12.c13*sheet11.e79); end
-  def by44; @by44 ||= sheet7.by44/(sheet12.c13*sheet11.e79); end
-  def bz44; @bz44 ||= sheet7.bz44/(sheet12.c13*sheet11.e79); end
-  def ca44; @ca44 ||= sheet7.ca44/(sheet12.c13*sheet11.e79); end
-  def cc44; @cc44 ||= average(a('bs44','ca44')); end
-  def cd44; @cd44 ||= (sumproduct(a('bt44','ca44'),sheet12.a('d28','k28'))*5.0)+bs44; end
-  def cf44; @cf44 ||= sheet7.cf44/(sheet12.c13*sheet11.e79); end
-  def cg44; @cg44 ||= sheet7.cg44/(sheet12.c13*sheet11.e79); end
-  def ch44; @ch44 ||= sheet7.ch44/(sheet12.c13*sheet11.e79); end
-  def ci44; @ci44 ||= sheet7.ci44/(sheet12.c13*sheet11.e79); end
-  def cj44; @cj44 ||= sheet7.cj44/(sheet12.c13*sheet11.e79); end
-  def ck44; @ck44 ||= sheet7.ck44/(sheet12.c13*sheet11.e79); end
-  def cl44; @cl44 ||= sheet7.cl44/(sheet12.c13*sheet11.e79); end
-  def cm44; @cm44 ||= sheet7.cm44/(sheet12.c13*sheet11.e79); end
-  def cn44; @cn44 ||= sheet7.cn44/(sheet12.c13*sheet11.e79); end
-  def cp44; @cp44 ||= average(a('cf44','cn44')); end
-  def cq44; @cq44 ||= (sumproduct(a('cg44','cn44'),sheet12.a('d28','k28'))*5.0)+cf44; end
-  def cr44; @cr44 ||= excel_if(excel_comparison(abs(cd44-cq44-at44),"<",1.0),"ok","err"); end
-  def a45; "XV.b.Oil"; end
-  def b45; "Indigenous fossil-fuel production - Oil"; end
-  def c45; "Fossil Fuels"; end
-  def e45; @e45 ||= sheet7.e45/(sheet12.c13*sheet11.e79); end
-  def f45; @f45 ||= sheet7.f45/(sheet12.c13*sheet11.e79); end
-  def g45; @g45 ||= sheet7.g45/(sheet12.c13*sheet11.e79); end
-  def h45; @h45 ||= sheet7.h45/(sheet12.c13*sheet11.e79); end
-  def i45; @i45 ||= sheet7.i45/(sheet12.c13*sheet11.e79); end
-  def j45; @j45 ||= sheet7.j45/(sheet12.c13*sheet11.e79); end
-  def k45; @k45 ||= sheet7.k45/(sheet12.c13*sheet11.e79); end
-  def l45; @l45 ||= sheet7.l45/(sheet12.c13*sheet11.e79); end
-  def m45; @m45 ||= sheet7.m45/(sheet12.c13*sheet11.e79); end
-  def o45; @o45 ||= sheet7.o45/(sheet12.c13*sheet11.e79); end
-  def p45; @p45 ||= sheet7.p45/(sheet12.c13*sheet11.e79); end
-  def q45; @q45 ||= sheet7.q45/(sheet12.c13*sheet11.e79); end
-  def r45; @r45 ||= sheet7.r45/(sheet12.c13*sheet11.e79); end
-  def s45; @s45 ||= sheet7.s45/(sheet12.c13*sheet11.e79); end
-  def t45; @t45 ||= sheet7.t45/(sheet12.c13*sheet11.e79); end
-  def u45; @u45 ||= sheet7.u45/(sheet12.c13*sheet11.e79); end
-  def v45; @v45 ||= sheet7.v45/(sheet12.c13*sheet11.e79); end
-  def w45; @w45 ||= sheet7.w45/(sheet12.c13*sheet11.e79); end
-  def y45; @y45 ||= sheet7.y45/(sheet12.c13*sheet11.e79); end
-  def z45; @z45 ||= sheet7.z45/(sheet12.c13*sheet11.e79); end
-  def aa45; @aa45 ||= sheet7.aa45/(sheet12.c13*sheet11.e79); end
-  def ab45; @ab45 ||= sheet7.ab45/(sheet12.c13*sheet11.e79); end
-  def ac45; @ac45 ||= sheet7.ac45/(sheet12.c13*sheet11.e79); end
-  def ad45; @ad45 ||= sheet7.ad45/(sheet12.c13*sheet11.e79); end
-  def ae45; @ae45 ||= sheet7.ae45/(sheet12.c13*sheet11.e79); end
-  def af45; @af45 ||= sheet7.af45/(sheet12.c13*sheet11.e79); end
-  def ag45; @ag45 ||= sheet7.ag45/(sheet12.c13*sheet11.e79); end
-  def ai45; @ai45 ||= sheet7.ai45/(sheet12.c13*sheet11.e79); end
-  def aj45; @aj45 ||= sheet7.aj45/(sheet12.c13*sheet11.e79); end
-  def ak45; @ak45 ||= sheet7.ak45/(sheet12.c13*sheet11.e79); end
-  def al45; @al45 ||= sheet7.al45/(sheet12.c13*sheet11.e79); end
-  def am45; @am45 ||= sheet7.am45/(sheet12.c13*sheet11.e79); end
-  def an45; @an45 ||= sheet7.an45/(sheet12.c13*sheet11.e79); end
-  def ao45; @ao45 ||= sheet7.ao45/(sheet12.c13*sheet11.e79); end
-  def ap45; @ap45 ||= sheet7.ap45/(sheet12.c13*sheet11.e79); end
-  def aq45; @aq45 ||= sheet7.aq45/(sheet12.c13*sheet11.e79); end
-  def as45; @as45 ||= average(a('ai45','aq45')); end
-  def at45; @at45 ||= (sumproduct(a('aj45','aq45'),sheet12.a('d28','k28'))*5.0)+ai45; end
-  def av45; 0.0; end
-  def aw45; 5.0; end
-  def ay45; @ay45 ||= sheet7.ay45/(sheet12.c13*sheet11.e79); end
-  def az45; @az45 ||= sheet7.az45/(sheet12.c13*sheet11.e79); end
-  def ba45; @ba45 ||= sheet7.ba45/(sheet12.c13*sheet11.e79); end
-  def bb45; @bb45 ||= sheet7.bb45/(sheet12.c13*sheet11.e79); end
-  def bc45; @bc45 ||= sheet7.bc45/(sheet12.c13*sheet11.e79); end
-  def bd45; @bd45 ||= sheet7.bd45/(sheet12.c13*sheet11.e79); end
-  def be45; @be45 ||= sheet7.be45/(sheet12.c13*sheet11.e79); end
-  def bf45; @bf45 ||= sheet7.bf45/(sheet12.c13*sheet11.e79); end
-  def bg45; @bg45 ||= sheet7.bg45/(sheet12.c13*sheet11.e79); end
-  def bi45; @bi45 ||= sheet7.bi45/(sheet12.c13*sheet11.e79); end
-  def bj45; @bj45 ||= sheet7.bj45/(sheet12.c13*sheet11.e79); end
-  def bk45; @bk45 ||= sheet7.bk45/(sheet12.c13*sheet11.e79); end
-  def bl45; @bl45 ||= sheet7.bl45/(sheet12.c13*sheet11.e79); end
-  def bm45; @bm45 ||= sheet7.bm45/(sheet12.c13*sheet11.e79); end
-  def bn45; @bn45 ||= sheet7.bn45/(sheet12.c13*sheet11.e79); end
-  def bo45; @bo45 ||= sheet7.bo45/(sheet12.c13*sheet11.e79); end
-  def bp45; @bp45 ||= sheet7.bp45/(sheet12.c13*sheet11.e79); end
-  def bq45; @bq45 ||= sheet7.bq45/(sheet12.c13*sheet11.e79); end
-  def bs45; @bs45 ||= sheet7.bs45/(sheet12.c13*sheet11.e79); end
-  def bt45; @bt45 ||= sheet7.bt45/(sheet12.c13*sheet11.e79); end
-  def bu45; @bu45 ||= sheet7.bu45/(sheet12.c13*sheet11.e79); end
-  def bv45; @bv45 ||= sheet7.bv45/(sheet12.c13*sheet11.e79); end
-  def bw45; @bw45 ||= sheet7.bw45/(sheet12.c13*sheet11.e79); end
-  def bx45; @bx45 ||= sheet7.bx45/(sheet12.c13*sheet11.e79); end
-  def by45; @by45 ||= sheet7.by45/(sheet12.c13*sheet11.e79); end
-  def bz45; @bz45 ||= sheet7.bz45/(sheet12.c13*sheet11.e79); end
-  def ca45; @ca45 ||= sheet7.ca45/(sheet12.c13*sheet11.e79); end
-  def cc45; @cc45 ||= average(a('bs45','ca45')); end
-  def cd45; @cd45 ||= (sumproduct(a('bt45','ca45'),sheet12.a('d28','k28'))*5.0)+bs45; end
-  def cf45; @cf45 ||= sheet7.cf45/(sheet12.c13*sheet11.e79); end
-  def cg45; @cg45 ||= sheet7.cg45/(sheet12.c13*sheet11.e79); end
-  def ch45; @ch45 ||= sheet7.ch45/(sheet12.c13*sheet11.e79); end
-  def ci45; @ci45 ||= sheet7.ci45/(sheet12.c13*sheet11.e79); end
-  def cj45; @cj45 ||= sheet7.cj45/(sheet12.c13*sheet11.e79); end
-  def ck45; @ck45 ||= sheet7.ck45/(sheet12.c13*sheet11.e79); end
-  def cl45; @cl45 ||= sheet7.cl45/(sheet12.c13*sheet11.e79); end
-  def cm45; @cm45 ||= sheet7.cm45/(sheet12.c13*sheet11.e79); end
-  def cn45; @cn45 ||= sheet7.cn45/(sheet12.c13*sheet11.e79); end
-  def cp45; @cp45 ||= average(a('cf45','cn45')); end
-  def cq45; @cq45 ||= (sumproduct(a('cg45','cn45'),sheet12.a('d28','k28'))*5.0)+cf45; end
-  def cr45; @cr45 ||= excel_if(excel_comparison(abs(cd45-cq45-at45),"<",1.0),"ok","err"); end
-  def a46; "XV.b.Gas"; end
-  def b46; "Indigenous fossil-fuel production - Gas"; end
-  def c46; "Fossil Fuels"; end
-  def e46; @e46 ||= sheet7.e46/(sheet12.c13*sheet11.e79); end
-  def f46; @f46 ||= sheet7.f46/(sheet12.c13*sheet11.e79); end
-  def g46; @g46 ||= sheet7.g46/(sheet12.c13*sheet11.e79); end
-  def h46; @h46 ||= sheet7.h46/(sheet12.c13*sheet11.e79); end
-  def i46; @i46 ||= sheet7.i46/(sheet12.c13*sheet11.e79); end
-  def j46; @j46 ||= sheet7.j46/(sheet12.c13*sheet11.e79); end
-  def k46; @k46 ||= sheet7.k46/(sheet12.c13*sheet11.e79); end
-  def l46; @l46 ||= sheet7.l46/(sheet12.c13*sheet11.e79); end
-  def m46; @m46 ||= sheet7.m46/(sheet12.c13*sheet11.e79); end
-  def o46; @o46 ||= sheet7.o46/(sheet12.c13*sheet11.e79); end
-  def p46; @p46 ||= sheet7.p46/(sheet12.c13*sheet11.e79); end
-  def q46; @q46 ||= sheet7.q46/(sheet12.c13*sheet11.e79); end
-  def r46; @r46 ||= sheet7.r46/(sheet12.c13*sheet11.e79); end
-  def s46; @s46 ||= sheet7.s46/(sheet12.c13*sheet11.e79); end
-  def t46; @t46 ||= sheet7.t46/(sheet12.c13*sheet11.e79); end
-  def u46; @u46 ||= sheet7.u46/(sheet12.c13*sheet11.e79); end
-  def v46; @v46 ||= sheet7.v46/(sheet12.c13*sheet11.e79); end
-  def w46; @w46 ||= sheet7.w46/(sheet12.c13*sheet11.e79); end
-  def y46; @y46 ||= sheet7.y46/(sheet12.c13*sheet11.e79); end
-  def z46; @z46 ||= sheet7.z46/(sheet12.c13*sheet11.e79); end
-  def aa46; @aa46 ||= sheet7.aa46/(sheet12.c13*sheet11.e79); end
-  def ab46; @ab46 ||= sheet7.ab46/(sheet12.c13*sheet11.e79); end
-  def ac46; @ac46 ||= sheet7.ac46/(sheet12.c13*sheet11.e79); end
-  def ad46; @ad46 ||= sheet7.ad46/(sheet12.c13*sheet11.e79); end
-  def ae46; @ae46 ||= sheet7.ae46/(sheet12.c13*sheet11.e79); end
-  def af46; @af46 ||= sheet7.af46/(sheet12.c13*sheet11.e79); end
-  def ag46; @ag46 ||= sheet7.ag46/(sheet12.c13*sheet11.e79); end
-  def ai46; @ai46 ||= sheet7.ai46/(sheet12.c13*sheet11.e79); end
-  def aj46; @aj46 ||= sheet7.aj46/(sheet12.c13*sheet11.e79); end
-  def ak46; @ak46 ||= sheet7.ak46/(sheet12.c13*sheet11.e79); end
-  def al46; @al46 ||= sheet7.al46/(sheet12.c13*sheet11.e79); end
-  def am46; @am46 ||= sheet7.am46/(sheet12.c13*sheet11.e79); end
-  def an46; @an46 ||= sheet7.an46/(sheet12.c13*sheet11.e79); end
-  def ao46; @ao46 ||= sheet7.ao46/(sheet12.c13*sheet11.e79); end
-  def ap46; @ap46 ||= sheet7.ap46/(sheet12.c13*sheet11.e79); end
-  def aq46; @aq46 ||= sheet7.aq46/(sheet12.c13*sheet11.e79); end
-  def as46; @as46 ||= average(a('ai46','aq46')); end
-  def at46; @at46 ||= (sumproduct(a('aj46','aq46'),sheet12.a('d28','k28'))*5.0)+ai46; end
-  def av46; 0.0; end
-  def aw46; 5.0; end
-  def ay46; @ay46 ||= sheet7.ay46/(sheet12.c13*sheet11.e79); end
-  def az46; @az46 ||= sheet7.az46/(sheet12.c13*sheet11.e79); end
-  def ba46; @ba46 ||= sheet7.ba46/(sheet12.c13*sheet11.e79); end
-  def bb46; @bb46 ||= sheet7.bb46/(sheet12.c13*sheet11.e79); end
-  def bc46; @bc46 ||= sheet7.bc46/(sheet12.c13*sheet11.e79); end
-  def bd46; @bd46 ||= sheet7.bd46/(sheet12.c13*sheet11.e79); end
-  def be46; @be46 ||= sheet7.be46/(sheet12.c13*sheet11.e79); end
-  def bf46; @bf46 ||= sheet7.bf46/(sheet12.c13*sheet11.e79); end
-  def bg46; @bg46 ||= sheet7.bg46/(sheet12.c13*sheet11.e79); end
-  def bi46; @bi46 ||= sheet7.bi46/(sheet12.c13*sheet11.e79); end
-  def bj46; @bj46 ||= sheet7.bj46/(sheet12.c13*sheet11.e79); end
-  def bk46; @bk46 ||= sheet7.bk46/(sheet12.c13*sheet11.e79); end
-  def bl46; @bl46 ||= sheet7.bl46/(sheet12.c13*sheet11.e79); end
-  def bm46; @bm46 ||= sheet7.bm46/(sheet12.c13*sheet11.e79); end
-  def bn46; @bn46 ||= sheet7.bn46/(sheet12.c13*sheet11.e79); end
-  def bo46; @bo46 ||= sheet7.bo46/(sheet12.c13*sheet11.e79); end
-  def bp46; @bp46 ||= sheet7.bp46/(sheet12.c13*sheet11.e79); end
-  def bq46; @bq46 ||= sheet7.bq46/(sheet12.c13*sheet11.e79); end
-  def bs46; @bs46 ||= sheet7.bs46/(sheet12.c13*sheet11.e79); end
-  def bt46; @bt46 ||= sheet7.bt46/(sheet12.c13*sheet11.e79); end
-  def bu46; @bu46 ||= sheet7.bu46/(sheet12.c13*sheet11.e79); end
-  def bv46; @bv46 ||= sheet7.bv46/(sheet12.c13*sheet11.e79); end
-  def bw46; @bw46 ||= sheet7.bw46/(sheet12.c13*sheet11.e79); end
-  def bx46; @bx46 ||= sheet7.bx46/(sheet12.c13*sheet11.e79); end
-  def by46; @by46 ||= sheet7.by46/(sheet12.c13*sheet11.e79); end
-  def bz46; @bz46 ||= sheet7.bz46/(sheet12.c13*sheet11.e79); end
-  def ca46; @ca46 ||= sheet7.ca46/(sheet12.c13*sheet11.e79); end
-  def cc46; @cc46 ||= average(a('bs46','ca46')); end
-  def cd46; @cd46 ||= (sumproduct(a('bt46','ca46'),sheet12.a('d28','k28'))*5.0)+bs46; end
-  def cf46; @cf46 ||= sheet7.cf46/(sheet12.c13*sheet11.e79); end
-  def cg46; @cg46 ||= sheet7.cg46/(sheet12.c13*sheet11.e79); end
-  def ch46; @ch46 ||= sheet7.ch46/(sheet12.c13*sheet11.e79); end
-  def ci46; @ci46 ||= sheet7.ci46/(sheet12.c13*sheet11.e79); end
-  def cj46; @cj46 ||= sheet7.cj46/(sheet12.c13*sheet11.e79); end
-  def ck46; @ck46 ||= sheet7.ck46/(sheet12.c13*sheet11.e79); end
-  def cl46; @cl46 ||= sheet7.cl46/(sheet12.c13*sheet11.e79); end
-  def cm46; @cm46 ||= sheet7.cm46/(sheet12.c13*sheet11.e79); end
-  def cn46; @cn46 ||= sheet7.cn46/(sheet12.c13*sheet11.e79); end
-  def cp46; @cp46 ||= average(a('cf46','cn46')); end
-  def cq46; @cq46 ||= (sumproduct(a('cg46','cn46'),sheet12.a('d28','k28'))*5.0)+cf46; end
-  def cr46; @cr46 ||= excel_if(excel_comparison(abs(cd46-cq46-at46),"<",1.0),"ok","err"); end
-  def a47; "XVI.a"; end
-  def b47; "Fossil fuel transfers"; end
-  def c47; "Fossil Fuels"; end
-  def e47; @e47 ||= sheet7.e47/(sheet12.c13*sheet11.e79); end
-  def f47; @f47 ||= sheet7.f47/(sheet12.c13*sheet11.e79); end
-  def g47; @g47 ||= sheet7.g47/(sheet12.c13*sheet11.e79); end
-  def h47; @h47 ||= sheet7.h47/(sheet12.c13*sheet11.e79); end
-  def i47; @i47 ||= sheet7.i47/(sheet12.c13*sheet11.e79); end
-  def j47; @j47 ||= sheet7.j47/(sheet12.c13*sheet11.e79); end
-  def k47; @k47 ||= sheet7.k47/(sheet12.c13*sheet11.e79); end
-  def l47; @l47 ||= sheet7.l47/(sheet12.c13*sheet11.e79); end
-  def m47; @m47 ||= sheet7.m47/(sheet12.c13*sheet11.e79); end
-  def o47; @o47 ||= sheet7.o47/(sheet12.c13*sheet11.e79); end
-  def p47; @p47 ||= sheet7.p47/(sheet12.c13*sheet11.e79); end
-  def q47; @q47 ||= sheet7.q47/(sheet12.c13*sheet11.e79); end
-  def r47; @r47 ||= sheet7.r47/(sheet12.c13*sheet11.e79); end
-  def s47; @s47 ||= sheet7.s47/(sheet12.c13*sheet11.e79); end
-  def t47; @t47 ||= sheet7.t47/(sheet12.c13*sheet11.e79); end
-  def u47; @u47 ||= sheet7.u47/(sheet12.c13*sheet11.e79); end
-  def v47; @v47 ||= sheet7.v47/(sheet12.c13*sheet11.e79); end
-  def w47; @w47 ||= sheet7.w47/(sheet12.c13*sheet11.e79); end
-  def y47; @y47 ||= sheet7.y47/(sheet12.c13*sheet11.e79); end
-  def z47; @z47 ||= sheet7.z47/(sheet12.c13*sheet11.e79); end
-  def aa47; @aa47 ||= sheet7.aa47/(sheet12.c13*sheet11.e79); end
-  def ab47; @ab47 ||= sheet7.ab47/(sheet12.c13*sheet11.e79); end
-  def ac47; @ac47 ||= sheet7.ac47/(sheet12.c13*sheet11.e79); end
-  def ad47; @ad47 ||= sheet7.ad47/(sheet12.c13*sheet11.e79); end
-  def ae47; @ae47 ||= sheet7.ae47/(sheet12.c13*sheet11.e79); end
-  def af47; @af47 ||= sheet7.af47/(sheet12.c13*sheet11.e79); end
-  def ag47; @ag47 ||= sheet7.ag47/(sheet12.c13*sheet11.e79); end
-  def ai47; @ai47 ||= sheet7.ai47/(sheet12.c13*sheet11.e79); end
-  def aj47; @aj47 ||= sheet7.aj47/(sheet12.c13*sheet11.e79); end
-  def ak47; @ak47 ||= sheet7.ak47/(sheet12.c13*sheet11.e79); end
-  def al47; @al47 ||= sheet7.al47/(sheet12.c13*sheet11.e79); end
-  def am47; @am47 ||= sheet7.am47/(sheet12.c13*sheet11.e79); end
-  def an47; @an47 ||= sheet7.an47/(sheet12.c13*sheet11.e79); end
-  def ao47; @ao47 ||= sheet7.ao47/(sheet12.c13*sheet11.e79); end
-  def ap47; @ap47 ||= sheet7.ap47/(sheet12.c13*sheet11.e79); end
-  def aq47; @aq47 ||= sheet7.aq47/(sheet12.c13*sheet11.e79); end
-  def as47; @as47 ||= average(a('ai47','aq47')); end
-  def at47; @at47 ||= (sumproduct(a('aj47','aq47'),sheet12.a('d28','k28'))*5.0)+ai47; end
-  def av47; 0.0; end
-  def aw47; 5.0; end
-  def ay47; @ay47 ||= sheet7.ay47/(sheet12.c13*sheet11.e79); end
-  def az47; @az47 ||= sheet7.az47/(sheet12.c13*sheet11.e79); end
-  def ba47; @ba47 ||= sheet7.ba47/(sheet12.c13*sheet11.e79); end
-  def bb47; @bb47 ||= sheet7.bb47/(sheet12.c13*sheet11.e79); end
-  def bc47; @bc47 ||= sheet7.bc47/(sheet12.c13*sheet11.e79); end
-  def bd47; @bd47 ||= sheet7.bd47/(sheet12.c13*sheet11.e79); end
-  def be47; @be47 ||= sheet7.be47/(sheet12.c13*sheet11.e79); end
-  def bf47; @bf47 ||= sheet7.bf47/(sheet12.c13*sheet11.e79); end
-  def bg47; @bg47 ||= sheet7.bg47/(sheet12.c13*sheet11.e79); end
-  def bi47; @bi47 ||= sheet7.bi47/(sheet12.c13*sheet11.e79); end
-  def bj47; @bj47 ||= sheet7.bj47/(sheet12.c13*sheet11.e79); end
-  def bk47; @bk47 ||= sheet7.bk47/(sheet12.c13*sheet11.e79); end
-  def bl47; @bl47 ||= sheet7.bl47/(sheet12.c13*sheet11.e79); end
-  def bm47; @bm47 ||= sheet7.bm47/(sheet12.c13*sheet11.e79); end
-  def bn47; @bn47 ||= sheet7.bn47/(sheet12.c13*sheet11.e79); end
-  def bo47; @bo47 ||= sheet7.bo47/(sheet12.c13*sheet11.e79); end
-  def bp47; @bp47 ||= sheet7.bp47/(sheet12.c13*sheet11.e79); end
-  def bq47; @bq47 ||= sheet7.bq47/(sheet12.c13*sheet11.e79); end
-  def bs47; @bs47 ||= sheet7.bs47/(sheet12.c13*sheet11.e79); end
-  def bt47; @bt47 ||= sheet7.bt47/(sheet12.c13*sheet11.e79); end
-  def bu47; @bu47 ||= sheet7.bu47/(sheet12.c13*sheet11.e79); end
-  def bv47; @bv47 ||= sheet7.bv47/(sheet12.c13*sheet11.e79); end
-  def bw47; @bw47 ||= sheet7.bw47/(sheet12.c13*sheet11.e79); end
-  def bx47; @bx47 ||= sheet7.bx47/(sheet12.c13*sheet11.e79); end
-  def by47; @by47 ||= sheet7.by47/(sheet12.c13*sheet11.e79); end
-  def bz47; @bz47 ||= sheet7.bz47/(sheet12.c13*sheet11.e79); end
-  def ca47; @ca47 ||= sheet7.ca47/(sheet12.c13*sheet11.e79); end
-  def cc47; @cc47 ||= average(a('bs47','ca47')); end
-  def cd47; @cd47 ||= (sumproduct(a('bt47','ca47'),sheet12.a('d28','k28'))*5.0)+bs47; end
-  def cf47; @cf47 ||= sheet7.cf47/(sheet12.c13*sheet11.e79); end
-  def cg47; @cg47 ||= sheet7.cg47/(sheet12.c13*sheet11.e79); end
-  def ch47; @ch47 ||= sheet7.ch47/(sheet12.c13*sheet11.e79); end
-  def ci47; @ci47 ||= sheet7.ci47/(sheet12.c13*sheet11.e79); end
-  def cj47; @cj47 ||= sheet7.cj47/(sheet12.c13*sheet11.e79); end
-  def ck47; @ck47 ||= sheet7.ck47/(sheet12.c13*sheet11.e79); end
-  def cl47; @cl47 ||= sheet7.cl47/(sheet12.c13*sheet11.e79); end
-  def cm47; @cm47 ||= sheet7.cm47/(sheet12.c13*sheet11.e79); end
-  def cn47; @cn47 ||= sheet7.cn47/(sheet12.c13*sheet11.e79); end
-  def cp47; @cp47 ||= average(a('cf47','cn47')); end
-  def cq47; @cq47 ||= (sumproduct(a('cg47','cn47'),sheet12.a('d28','k28'))*5.0)+cf47; end
-  def cr47; @cr47 ||= excel_if(excel_comparison(abs(cd47-cq47-at47),"<",1.0),"ok","err"); end
-  def a48; "XVI.b.Coal"; end
-  def b48; "Balancing imports - Coal"; end
-  def c48; "Fossil Fuels"; end
-  def e48; @e48 ||= sheet7.e48/(sheet12.c13*sheet11.e79); end
-  def f48; @f48 ||= sheet7.f48/(sheet12.c13*sheet11.e79); end
-  def g48; @g48 ||= sheet7.g48/(sheet12.c13*sheet11.e79); end
-  def h48; @h48 ||= sheet7.h48/(sheet12.c13*sheet11.e79); end
-  def i48; @i48 ||= sheet7.i48/(sheet12.c13*sheet11.e79); end
-  def j48; @j48 ||= sheet7.j48/(sheet12.c13*sheet11.e79); end
-  def k48; @k48 ||= sheet7.k48/(sheet12.c13*sheet11.e79); end
-  def l48; @l48 ||= sheet7.l48/(sheet12.c13*sheet11.e79); end
-  def m48; @m48 ||= sheet7.m48/(sheet12.c13*sheet11.e79); end
-  def o48; @o48 ||= sheet7.o48/(sheet12.c13*sheet11.e79); end
-  def p48; @p48 ||= sheet7.p48/(sheet12.c13*sheet11.e79); end
-  def q48; @q48 ||= sheet7.q48/(sheet12.c13*sheet11.e79); end
-  def r48; @r48 ||= sheet7.r48/(sheet12.c13*sheet11.e79); end
-  def s48; @s48 ||= sheet7.s48/(sheet12.c13*sheet11.e79); end
-  def t48; @t48 ||= sheet7.t48/(sheet12.c13*sheet11.e79); end
-  def u48; @u48 ||= sheet7.u48/(sheet12.c13*sheet11.e79); end
-  def v48; @v48 ||= sheet7.v48/(sheet12.c13*sheet11.e79); end
-  def w48; @w48 ||= sheet7.w48/(sheet12.c13*sheet11.e79); end
-  def y48; @y48 ||= sheet7.y48/(sheet12.c13*sheet11.e79); end
-  def z48; @z48 ||= sheet7.z48/(sheet12.c13*sheet11.e79); end
-  def aa48; @aa48 ||= sheet7.aa48/(sheet12.c13*sheet11.e79); end
-  def ab48; @ab48 ||= sheet7.ab48/(sheet12.c13*sheet11.e79); end
-  def ac48; @ac48 ||= sheet7.ac48/(sheet12.c13*sheet11.e79); end
-  def ad48; @ad48 ||= sheet7.ad48/(sheet12.c13*sheet11.e79); end
-  def ae48; @ae48 ||= sheet7.ae48/(sheet12.c13*sheet11.e79); end
-  def af48; @af48 ||= sheet7.af48/(sheet12.c13*sheet11.e79); end
-  def ag48; @ag48 ||= sheet7.ag48/(sheet12.c13*sheet11.e79); end
-  def ai48; @ai48 ||= sheet7.ai48/(sheet12.c13*sheet11.e79); end
-  def aj48; @aj48 ||= sheet7.aj48/(sheet12.c13*sheet11.e79); end
-  def ak48; @ak48 ||= sheet7.ak48/(sheet12.c13*sheet11.e79); end
-  def al48; @al48 ||= sheet7.al48/(sheet12.c13*sheet11.e79); end
-  def am48; @am48 ||= sheet7.am48/(sheet12.c13*sheet11.e79); end
-  def an48; @an48 ||= sheet7.an48/(sheet12.c13*sheet11.e79); end
-  def ao48; @ao48 ||= sheet7.ao48/(sheet12.c13*sheet11.e79); end
-  def ap48; @ap48 ||= sheet7.ap48/(sheet12.c13*sheet11.e79); end
-  def aq48; @aq48 ||= sheet7.aq48/(sheet12.c13*sheet11.e79); end
-  def as48; @as48 ||= average(a('ai48','aq48')); end
-  def at48; @at48 ||= (sumproduct(a('aj48','aq48'),sheet12.a('d28','k28'))*5.0)+ai48; end
-  def av48; 0.0; end
-  def aw48; 5.0; end
-  def ay48; @ay48 ||= sheet7.ay48/(sheet12.c13*sheet11.e79); end
-  def az48; @az48 ||= sheet7.az48/(sheet12.c13*sheet11.e79); end
-  def ba48; @ba48 ||= sheet7.ba48/(sheet12.c13*sheet11.e79); end
-  def bb48; @bb48 ||= sheet7.bb48/(sheet12.c13*sheet11.e79); end
-  def bc48; @bc48 ||= sheet7.bc48/(sheet12.c13*sheet11.e79); end
-  def bd48; @bd48 ||= sheet7.bd48/(sheet12.c13*sheet11.e79); end
-  def be48; @be48 ||= sheet7.be48/(sheet12.c13*sheet11.e79); end
-  def bf48; @bf48 ||= sheet7.bf48/(sheet12.c13*sheet11.e79); end
-  def bg48; @bg48 ||= sheet7.bg48/(sheet12.c13*sheet11.e79); end
-  def bi48; @bi48 ||= sheet7.bi48/(sheet12.c13*sheet11.e79); end
-  def bj48; @bj48 ||= sheet7.bj48/(sheet12.c13*sheet11.e79); end
-  def bk48; @bk48 ||= sheet7.bk48/(sheet12.c13*sheet11.e79); end
-  def bl48; @bl48 ||= sheet7.bl48/(sheet12.c13*sheet11.e79); end
-  def bm48; @bm48 ||= sheet7.bm48/(sheet12.c13*sheet11.e79); end
-  def bn48; @bn48 ||= sheet7.bn48/(sheet12.c13*sheet11.e79); end
-  def bo48; @bo48 ||= sheet7.bo48/(sheet12.c13*sheet11.e79); end
-  def bp48; @bp48 ||= sheet7.bp48/(sheet12.c13*sheet11.e79); end
-  def bq48; @bq48 ||= sheet7.bq48/(sheet12.c13*sheet11.e79); end
-  def bs48; @bs48 ||= sheet7.bs48/(sheet12.c13*sheet11.e79); end
-  def bt48; @bt48 ||= sheet7.bt48/(sheet12.c13*sheet11.e79); end
-  def bu48; @bu48 ||= sheet7.bu48/(sheet12.c13*sheet11.e79); end
-  def bv48; @bv48 ||= sheet7.bv48/(sheet12.c13*sheet11.e79); end
-  def bw48; @bw48 ||= sheet7.bw48/(sheet12.c13*sheet11.e79); end
-  def bx48; @bx48 ||= sheet7.bx48/(sheet12.c13*sheet11.e79); end
-  def by48; @by48 ||= sheet7.by48/(sheet12.c13*sheet11.e79); end
-  def bz48; @bz48 ||= sheet7.bz48/(sheet12.c13*sheet11.e79); end
-  def ca48; @ca48 ||= sheet7.ca48/(sheet12.c13*sheet11.e79); end
-  def cc48; @cc48 ||= average(a('bs48','ca48')); end
-  def cd48; @cd48 ||= (sumproduct(a('bt48','ca48'),sheet12.a('d28','k28'))*5.0)+bs48; end
-  def cf48; @cf48 ||= sheet7.cf48/(sheet12.c13*sheet11.e79); end
-  def cg48; @cg48 ||= sheet7.cg48/(sheet12.c13*sheet11.e79); end
-  def ch48; @ch48 ||= sheet7.ch48/(sheet12.c13*sheet11.e79); end
-  def ci48; @ci48 ||= sheet7.ci48/(sheet12.c13*sheet11.e79); end
-  def cj48; @cj48 ||= sheet7.cj48/(sheet12.c13*sheet11.e79); end
-  def ck48; @ck48 ||= sheet7.ck48/(sheet12.c13*sheet11.e79); end
-  def cl48; @cl48 ||= sheet7.cl48/(sheet12.c13*sheet11.e79); end
-  def cm48; @cm48 ||= sheet7.cm48/(sheet12.c13*sheet11.e79); end
-  def cn48; @cn48 ||= sheet7.cn48/(sheet12.c13*sheet11.e79); end
-  def cp48; @cp48 ||= average(a('cf48','cn48')); end
-  def cq48; @cq48 ||= (sumproduct(a('cg48','cn48'),sheet12.a('d28','k28'))*5.0)+cf48; end
-  def cr48; @cr48 ||= excel_if(excel_comparison(abs(cd48-cq48-at48),"<",1.0),"ok","err"); end
-  def a49; "XVI.b.Oil"; end
-  def b49; "Balancing imports - Oil"; end
-  def c49; "Fossil Fuels"; end
-  def e49; @e49 ||= sheet7.e49/(sheet12.c13*sheet11.e79); end
-  def f49; @f49 ||= sheet7.f49/(sheet12.c13*sheet11.e79); end
-  def g49; @g49 ||= sheet7.g49/(sheet12.c13*sheet11.e79); end
-  def h49; @h49 ||= sheet7.h49/(sheet12.c13*sheet11.e79); end
-  def i49; @i49 ||= sheet7.i49/(sheet12.c13*sheet11.e79); end
-  def j49; @j49 ||= sheet7.j49/(sheet12.c13*sheet11.e79); end
-  def k49; @k49 ||= sheet7.k49/(sheet12.c13*sheet11.e79); end
-  def l49; @l49 ||= sheet7.l49/(sheet12.c13*sheet11.e79); end
-  def m49; @m49 ||= sheet7.m49/(sheet12.c13*sheet11.e79); end
-  def o49; @o49 ||= sheet7.o49/(sheet12.c13*sheet11.e79); end
-  def p49; @p49 ||= sheet7.p49/(sheet12.c13*sheet11.e79); end
-  def q49; @q49 ||= sheet7.q49/(sheet12.c13*sheet11.e79); end
-  def r49; @r49 ||= sheet7.r49/(sheet12.c13*sheet11.e79); end
-  def s49; @s49 ||= sheet7.s49/(sheet12.c13*sheet11.e79); end
-  def t49; @t49 ||= sheet7.t49/(sheet12.c13*sheet11.e79); end
-  def u49; @u49 ||= sheet7.u49/(sheet12.c13*sheet11.e79); end
-  def v49; @v49 ||= sheet7.v49/(sheet12.c13*sheet11.e79); end
-  def w49; @w49 ||= sheet7.w49/(sheet12.c13*sheet11.e79); end
-  def y49; @y49 ||= sheet7.y49/(sheet12.c13*sheet11.e79); end
-  def z49; @z49 ||= sheet7.z49/(sheet12.c13*sheet11.e79); end
-  def aa49; @aa49 ||= sheet7.aa49/(sheet12.c13*sheet11.e79); end
-  def ab49; @ab49 ||= sheet7.ab49/(sheet12.c13*sheet11.e79); end
-  def ac49; @ac49 ||= sheet7.ac49/(sheet12.c13*sheet11.e79); end
-  def ad49; @ad49 ||= sheet7.ad49/(sheet12.c13*sheet11.e79); end
-  def ae49; @ae49 ||= sheet7.ae49/(sheet12.c13*sheet11.e79); end
-  def af49; @af49 ||= sheet7.af49/(sheet12.c13*sheet11.e79); end
-  def ag49; @ag49 ||= sheet7.ag49/(sheet12.c13*sheet11.e79); end
-  def ai49; @ai49 ||= sheet7.ai49/(sheet12.c13*sheet11.e79); end
-  def aj49; @aj49 ||= sheet7.aj49/(sheet12.c13*sheet11.e79); end
-  def ak49; @ak49 ||= sheet7.ak49/(sheet12.c13*sheet11.e79); end
-  def al49; @al49 ||= sheet7.al49/(sheet12.c13*sheet11.e79); end
-  def am49; @am49 ||= sheet7.am49/(sheet12.c13*sheet11.e79); end
-  def an49; @an49 ||= sheet7.an49/(sheet12.c13*sheet11.e79); end
-  def ao49; @ao49 ||= sheet7.ao49/(sheet12.c13*sheet11.e79); end
-  def ap49; @ap49 ||= sheet7.ap49/(sheet12.c13*sheet11.e79); end
-  def aq49; @aq49 ||= sheet7.aq49/(sheet12.c13*sheet11.e79); end
-  def as49; @as49 ||= average(a('ai49','aq49')); end
-  def at49; @at49 ||= (sumproduct(a('aj49','aq49'),sheet12.a('d28','k28'))*5.0)+ai49; end
-  def av49; 0.0; end
-  def aw49; 5.0; end
-  def ay49; @ay49 ||= sheet7.ay49/(sheet12.c13*sheet11.e79); end
-  def az49; @az49 ||= sheet7.az49/(sheet12.c13*sheet11.e79); end
-  def ba49; @ba49 ||= sheet7.ba49/(sheet12.c13*sheet11.e79); end
-  def bb49; @bb49 ||= sheet7.bb49/(sheet12.c13*sheet11.e79); end
-  def bc49; @bc49 ||= sheet7.bc49/(sheet12.c13*sheet11.e79); end
-  def bd49; @bd49 ||= sheet7.bd49/(sheet12.c13*sheet11.e79); end
-  def be49; @be49 ||= sheet7.be49/(sheet12.c13*sheet11.e79); end
-  def bf49; @bf49 ||= sheet7.bf49/(sheet12.c13*sheet11.e79); end
-  def bg49; @bg49 ||= sheet7.bg49/(sheet12.c13*sheet11.e79); end
-  def bi49; @bi49 ||= sheet7.bi49/(sheet12.c13*sheet11.e79); end
-  def bj49; @bj49 ||= sheet7.bj49/(sheet12.c13*sheet11.e79); end
-  def bk49; @bk49 ||= sheet7.bk49/(sheet12.c13*sheet11.e79); end
-  def bl49; @bl49 ||= sheet7.bl49/(sheet12.c13*sheet11.e79); end
-  def bm49; @bm49 ||= sheet7.bm49/(sheet12.c13*sheet11.e79); end
-  def bn49; @bn49 ||= sheet7.bn49/(sheet12.c13*sheet11.e79); end
-  def bo49; @bo49 ||= sheet7.bo49/(sheet12.c13*sheet11.e79); end
-  def bp49; @bp49 ||= sheet7.bp49/(sheet12.c13*sheet11.e79); end
-  def bq49; @bq49 ||= sheet7.bq49/(sheet12.c13*sheet11.e79); end
-  def bs49; @bs49 ||= sheet7.bs49/(sheet12.c13*sheet11.e79); end
-  def bt49; @bt49 ||= sheet7.bt49/(sheet12.c13*sheet11.e79); end
-  def bu49; @bu49 ||= sheet7.bu49/(sheet12.c13*sheet11.e79); end
-  def bv49; @bv49 ||= sheet7.bv49/(sheet12.c13*sheet11.e79); end
-  def bw49; @bw49 ||= sheet7.bw49/(sheet12.c13*sheet11.e79); end
-  def bx49; @bx49 ||= sheet7.bx49/(sheet12.c13*sheet11.e79); end
-  def by49; @by49 ||= sheet7.by49/(sheet12.c13*sheet11.e79); end
-  def bz49; @bz49 ||= sheet7.bz49/(sheet12.c13*sheet11.e79); end
-  def ca49; @ca49 ||= sheet7.ca49/(sheet12.c13*sheet11.e79); end
-  def cc49; @cc49 ||= average(a('bs49','ca49')); end
-  def cd49; @cd49 ||= (sumproduct(a('bt49','ca49'),sheet12.a('d28','k28'))*5.0)+bs49; end
-  def cf49; @cf49 ||= sheet7.cf49/(sheet12.c13*sheet11.e79); end
-  def cg49; @cg49 ||= sheet7.cg49/(sheet12.c13*sheet11.e79); end
-  def ch49; @ch49 ||= sheet7.ch49/(sheet12.c13*sheet11.e79); end
-  def ci49; @ci49 ||= sheet7.ci49/(sheet12.c13*sheet11.e79); end
-  def cj49; @cj49 ||= sheet7.cj49/(sheet12.c13*sheet11.e79); end
-  def ck49; @ck49 ||= sheet7.ck49/(sheet12.c13*sheet11.e79); end
-  def cl49; @cl49 ||= sheet7.cl49/(sheet12.c13*sheet11.e79); end
-  def cm49; @cm49 ||= sheet7.cm49/(sheet12.c13*sheet11.e79); end
-  def cn49; @cn49 ||= sheet7.cn49/(sheet12.c13*sheet11.e79); end
-  def cp49; @cp49 ||= average(a('cf49','cn49')); end
-  def cq49; @cq49 ||= (sumproduct(a('cg49','cn49'),sheet12.a('d28','k28'))*5.0)+cf49; end
-  def cr49; @cr49 ||= excel_if(excel_comparison(abs(cd49-cq49-at49),"<",1.0),"ok","err"); end
-  def a50; "XVI.b.Gas"; end
-  def b50; "Balancing imports - Gas"; end
-  def c50; "Fossil Fuels"; end
-  def e50; @e50 ||= sheet7.e50/(sheet12.c13*sheet11.e79); end
-  def f50; @f50 ||= sheet7.f50/(sheet12.c13*sheet11.e79); end
-  def g50; @g50 ||= sheet7.g50/(sheet12.c13*sheet11.e79); end
-  def h50; @h50 ||= sheet7.h50/(sheet12.c13*sheet11.e79); end
-  def i50; @i50 ||= sheet7.i50/(sheet12.c13*sheet11.e79); end
-  def j50; @j50 ||= sheet7.j50/(sheet12.c13*sheet11.e79); end
-  def k50; @k50 ||= sheet7.k50/(sheet12.c13*sheet11.e79); end
-  def l50; @l50 ||= sheet7.l50/(sheet12.c13*sheet11.e79); end
-  def m50; @m50 ||= sheet7.m50/(sheet12.c13*sheet11.e79); end
-  def o50; @o50 ||= sheet7.o50/(sheet12.c13*sheet11.e79); end
-  def p50; @p50 ||= sheet7.p50/(sheet12.c13*sheet11.e79); end
-  def q50; @q50 ||= sheet7.q50/(sheet12.c13*sheet11.e79); end
-  def r50; @r50 ||= sheet7.r50/(sheet12.c13*sheet11.e79); end
-  def s50; @s50 ||= sheet7.s50/(sheet12.c13*sheet11.e79); end
-  def t50; @t50 ||= sheet7.t50/(sheet12.c13*sheet11.e79); end
-  def u50; @u50 ||= sheet7.u50/(sheet12.c13*sheet11.e79); end
-  def v50; @v50 ||= sheet7.v50/(sheet12.c13*sheet11.e79); end
-  def w50; @w50 ||= sheet7.w50/(sheet12.c13*sheet11.e79); end
-  def y50; @y50 ||= sheet7.y50/(sheet12.c13*sheet11.e79); end
-  def z50; @z50 ||= sheet7.z50/(sheet12.c13*sheet11.e79); end
-  def aa50; @aa50 ||= sheet7.aa50/(sheet12.c13*sheet11.e79); end
-  def ab50; @ab50 ||= sheet7.ab50/(sheet12.c13*sheet11.e79); end
-  def ac50; @ac50 ||= sheet7.ac50/(sheet12.c13*sheet11.e79); end
-  def ad50; @ad50 ||= sheet7.ad50/(sheet12.c13*sheet11.e79); end
-  def ae50; @ae50 ||= sheet7.ae50/(sheet12.c13*sheet11.e79); end
-  def af50; @af50 ||= sheet7.af50/(sheet12.c13*sheet11.e79); end
-  def ag50; @ag50 ||= sheet7.ag50/(sheet12.c13*sheet11.e79); end
-  def ai50; @ai50 ||= sheet7.ai50/(sheet12.c13*sheet11.e79); end
-  def aj50; @aj50 ||= sheet7.aj50/(sheet12.c13*sheet11.e79); end
-  def ak50; @ak50 ||= sheet7.ak50/(sheet12.c13*sheet11.e79); end
-  def al50; @al50 ||= sheet7.al50/(sheet12.c13*sheet11.e79); end
-  def am50; @am50 ||= sheet7.am50/(sheet12.c13*sheet11.e79); end
-  def an50; @an50 ||= sheet7.an50/(sheet12.c13*sheet11.e79); end
-  def ao50; @ao50 ||= sheet7.ao50/(sheet12.c13*sheet11.e79); end
-  def ap50; @ap50 ||= sheet7.ap50/(sheet12.c13*sheet11.e79); end
-  def aq50; @aq50 ||= sheet7.aq50/(sheet12.c13*sheet11.e79); end
-  def as50; @as50 ||= average(a('ai50','aq50')); end
-  def at50; @at50 ||= (sumproduct(a('aj50','aq50'),sheet12.a('d28','k28'))*5.0)+ai50; end
-  def av50; 0.0; end
-  def aw50; 5.0; end
-  def ay50; @ay50 ||= sheet7.ay50/(sheet12.c13*sheet11.e79); end
-  def az50; @az50 ||= sheet7.az50/(sheet12.c13*sheet11.e79); end
-  def ba50; @ba50 ||= sheet7.ba50/(sheet12.c13*sheet11.e79); end
-  def bb50; @bb50 ||= sheet7.bb50/(sheet12.c13*sheet11.e79); end
-  def bc50; @bc50 ||= sheet7.bc50/(sheet12.c13*sheet11.e79); end
-  def bd50; @bd50 ||= sheet7.bd50/(sheet12.c13*sheet11.e79); end
-  def be50; @be50 ||= sheet7.be50/(sheet12.c13*sheet11.e79); end
-  def bf50; @bf50 ||= sheet7.bf50/(sheet12.c13*sheet11.e79); end
-  def bg50; @bg50 ||= sheet7.bg50/(sheet12.c13*sheet11.e79); end
-  def bi50; @bi50 ||= sheet7.bi50/(sheet12.c13*sheet11.e79); end
-  def bj50; @bj50 ||= sheet7.bj50/(sheet12.c13*sheet11.e79); end
-  def bk50; @bk50 ||= sheet7.bk50/(sheet12.c13*sheet11.e79); end
-  def bl50; @bl50 ||= sheet7.bl50/(sheet12.c13*sheet11.e79); end
-  def bm50; @bm50 ||= sheet7.bm50/(sheet12.c13*sheet11.e79); end
-  def bn50; @bn50 ||= sheet7.bn50/(sheet12.c13*sheet11.e79); end
-  def bo50; @bo50 ||= sheet7.bo50/(sheet12.c13*sheet11.e79); end
-  def bp50; @bp50 ||= sheet7.bp50/(sheet12.c13*sheet11.e79); end
-  def bq50; @bq50 ||= sheet7.bq50/(sheet12.c13*sheet11.e79); end
-  def bs50; @bs50 ||= sheet7.bs50/(sheet12.c13*sheet11.e79); end
-  def bt50; @bt50 ||= sheet7.bt50/(sheet12.c13*sheet11.e79); end
-  def bu50; @bu50 ||= sheet7.bu50/(sheet12.c13*sheet11.e79); end
-  def bv50; @bv50 ||= sheet7.bv50/(sheet12.c13*sheet11.e79); end
-  def bw50; @bw50 ||= sheet7.bw50/(sheet12.c13*sheet11.e79); end
-  def bx50; @bx50 ||= sheet7.bx50/(sheet12.c13*sheet11.e79); end
-  def by50; @by50 ||= sheet7.by50/(sheet12.c13*sheet11.e79); end
-  def bz50; @bz50 ||= sheet7.bz50/(sheet12.c13*sheet11.e79); end
-  def ca50; @ca50 ||= sheet7.ca50/(sheet12.c13*sheet11.e79); end
-  def cc50; @cc50 ||= average(a('bs50','ca50')); end
-  def cd50; @cd50 ||= (sumproduct(a('bt50','ca50'),sheet12.a('d28','k28'))*5.0)+bs50; end
-  def cf50; @cf50 ||= sheet7.cf50/(sheet12.c13*sheet11.e79); end
-  def cg50; @cg50 ||= sheet7.cg50/(sheet12.c13*sheet11.e79); end
-  def ch50; @ch50 ||= sheet7.ch50/(sheet12.c13*sheet11.e79); end
-  def ci50; @ci50 ||= sheet7.ci50/(sheet12.c13*sheet11.e79); end
-  def cj50; @cj50 ||= sheet7.cj50/(sheet12.c13*sheet11.e79); end
-  def ck50; @ck50 ||= sheet7.ck50/(sheet12.c13*sheet11.e79); end
-  def cl50; @cl50 ||= sheet7.cl50/(sheet12.c13*sheet11.e79); end
-  def cm50; @cm50 ||= sheet7.cm50/(sheet12.c13*sheet11.e79); end
-  def cn50; @cn50 ||= sheet7.cn50/(sheet12.c13*sheet11.e79); end
-  def cp50; @cp50 ||= average(a('cf50','cn50')); end
-  def cq50; @cq50 ||= (sumproduct(a('cg50','cn50'),sheet12.a('d28','k28'))*5.0)+cf50; end
-  def cr50; @cr50 ||= excel_if(excel_comparison(abs(cd50-cq50-at50),"<",1.0),"ok","err"); end
-  def a51; "XVII.a"; end
-  def b51; "District heating effective demand"; end
-  def c51; "Heating"; end
-  def e51; @e51 ||= sheet7.e51/(sheet12.c13*sheet11.e79); end
-  def f51; @f51 ||= sheet7.f51/(sheet12.c13*sheet11.e79); end
-  def g51; @g51 ||= sheet7.g51/(sheet12.c13*sheet11.e79); end
-  def h51; @h51 ||= sheet7.h51/(sheet12.c13*sheet11.e79); end
-  def i51; @i51 ||= sheet7.i51/(sheet12.c13*sheet11.e79); end
-  def j51; @j51 ||= sheet7.j51/(sheet12.c13*sheet11.e79); end
-  def k51; @k51 ||= sheet7.k51/(sheet12.c13*sheet11.e79); end
-  def l51; @l51 ||= sheet7.l51/(sheet12.c13*sheet11.e79); end
-  def m51; @m51 ||= sheet7.m51/(sheet12.c13*sheet11.e79); end
-  def o51; @o51 ||= sheet7.o51/(sheet12.c13*sheet11.e79); end
-  def p51; @p51 ||= sheet7.p51/(sheet12.c13*sheet11.e79); end
-  def q51; @q51 ||= sheet7.q51/(sheet12.c13*sheet11.e79); end
-  def r51; @r51 ||= sheet7.r51/(sheet12.c13*sheet11.e79); end
-  def s51; @s51 ||= sheet7.s51/(sheet12.c13*sheet11.e79); end
-  def t51; @t51 ||= sheet7.t51/(sheet12.c13*sheet11.e79); end
-  def u51; @u51 ||= sheet7.u51/(sheet12.c13*sheet11.e79); end
-  def v51; @v51 ||= sheet7.v51/(sheet12.c13*sheet11.e79); end
-  def w51; @w51 ||= sheet7.w51/(sheet12.c13*sheet11.e79); end
-  def y51; @y51 ||= sheet7.y51/(sheet12.c13*sheet11.e79); end
-  def z51; @z51 ||= sheet7.z51/(sheet12.c13*sheet11.e79); end
-  def aa51; @aa51 ||= sheet7.aa51/(sheet12.c13*sheet11.e79); end
-  def ab51; @ab51 ||= sheet7.ab51/(sheet12.c13*sheet11.e79); end
-  def ac51; @ac51 ||= sheet7.ac51/(sheet12.c13*sheet11.e79); end
-  def ad51; @ad51 ||= sheet7.ad51/(sheet12.c13*sheet11.e79); end
-  def ae51; @ae51 ||= sheet7.ae51/(sheet12.c13*sheet11.e79); end
-  def af51; @af51 ||= sheet7.af51/(sheet12.c13*sheet11.e79); end
-  def ag51; @ag51 ||= sheet7.ag51/(sheet12.c13*sheet11.e79); end
-  def ai51; @ai51 ||= sheet7.ai51/(sheet12.c13*sheet11.e79); end
-  def aj51; @aj51 ||= sheet7.aj51/(sheet12.c13*sheet11.e79); end
-  def ak51; @ak51 ||= sheet7.ak51/(sheet12.c13*sheet11.e79); end
-  def al51; @al51 ||= sheet7.al51/(sheet12.c13*sheet11.e79); end
-  def am51; @am51 ||= sheet7.am51/(sheet12.c13*sheet11.e79); end
-  def an51; @an51 ||= sheet7.an51/(sheet12.c13*sheet11.e79); end
-  def ao51; @ao51 ||= sheet7.ao51/(sheet12.c13*sheet11.e79); end
-  def ap51; @ap51 ||= sheet7.ap51/(sheet12.c13*sheet11.e79); end
-  def aq51; @aq51 ||= sheet7.aq51/(sheet12.c13*sheet11.e79); end
-  def as51; @as51 ||= average(a('ai51','aq51')); end
-  def at51; @at51 ||= (sumproduct(a('aj51','aq51'),sheet12.a('d28','k28'))*5.0)+ai51; end
-  def av51; 0.0; end
-  def aw51; 5.0; end
-  def ay51; @ay51 ||= sheet7.ay51/(sheet12.c13*sheet11.e79); end
-  def az51; @az51 ||= sheet7.az51/(sheet12.c13*sheet11.e79); end
-  def ba51; @ba51 ||= sheet7.ba51/(sheet12.c13*sheet11.e79); end
-  def bb51; @bb51 ||= sheet7.bb51/(sheet12.c13*sheet11.e79); end
-  def bc51; @bc51 ||= sheet7.bc51/(sheet12.c13*sheet11.e79); end
-  def bd51; @bd51 ||= sheet7.bd51/(sheet12.c13*sheet11.e79); end
-  def be51; @be51 ||= sheet7.be51/(sheet12.c13*sheet11.e79); end
-  def bf51; @bf51 ||= sheet7.bf51/(sheet12.c13*sheet11.e79); end
-  def bg51; @bg51 ||= sheet7.bg51/(sheet12.c13*sheet11.e79); end
-  def bi51; @bi51 ||= sheet7.bi51/(sheet12.c13*sheet11.e79); end
-  def bj51; @bj51 ||= sheet7.bj51/(sheet12.c13*sheet11.e79); end
-  def bk51; @bk51 ||= sheet7.bk51/(sheet12.c13*sheet11.e79); end
-  def bl51; @bl51 ||= sheet7.bl51/(sheet12.c13*sheet11.e79); end
-  def bm51; @bm51 ||= sheet7.bm51/(sheet12.c13*sheet11.e79); end
-  def bn51; @bn51 ||= sheet7.bn51/(sheet12.c13*sheet11.e79); end
-  def bo51; @bo51 ||= sheet7.bo51/(sheet12.c13*sheet11.e79); end
-  def bp51; @bp51 ||= sheet7.bp51/(sheet12.c13*sheet11.e79); end
-  def bq51; @bq51 ||= sheet7.bq51/(sheet12.c13*sheet11.e79); end
-  def bs51; @bs51 ||= sheet7.bs51/(sheet12.c13*sheet11.e79); end
-  def bt51; @bt51 ||= sheet7.bt51/(sheet12.c13*sheet11.e79); end
-  def bu51; @bu51 ||= sheet7.bu51/(sheet12.c13*sheet11.e79); end
-  def bv51; @bv51 ||= sheet7.bv51/(sheet12.c13*sheet11.e79); end
-  def bw51; @bw51 ||= sheet7.bw51/(sheet12.c13*sheet11.e79); end
-  def bx51; @bx51 ||= sheet7.bx51/(sheet12.c13*sheet11.e79); end
-  def by51; @by51 ||= sheet7.by51/(sheet12.c13*sheet11.e79); end
-  def bz51; @bz51 ||= sheet7.bz51/(sheet12.c13*sheet11.e79); end
-  def ca51; @ca51 ||= sheet7.ca51/(sheet12.c13*sheet11.e79); end
-  def cc51; @cc51 ||= average(a('bs51','ca51')); end
-  def cd51; @cd51 ||= (sumproduct(a('bt51','ca51'),sheet12.a('d28','k28'))*5.0)+bs51; end
-  def cf51; @cf51 ||= sheet7.cf51/(sheet12.c13*sheet11.e79); end
-  def cg51; @cg51 ||= sheet7.cg51/(sheet12.c13*sheet11.e79); end
-  def ch51; @ch51 ||= sheet7.ch51/(sheet12.c13*sheet11.e79); end
-  def ci51; @ci51 ||= sheet7.ci51/(sheet12.c13*sheet11.e79); end
-  def cj51; @cj51 ||= sheet7.cj51/(sheet12.c13*sheet11.e79); end
-  def ck51; @ck51 ||= sheet7.ck51/(sheet12.c13*sheet11.e79); end
-  def cl51; @cl51 ||= sheet7.cl51/(sheet12.c13*sheet11.e79); end
-  def cm51; @cm51 ||= sheet7.cm51/(sheet12.c13*sheet11.e79); end
-  def cn51; @cn51 ||= sheet7.cn51/(sheet12.c13*sheet11.e79); end
-  def cp51; @cp51 ||= average(a('cf51','cn51')); end
-  def cq51; @cq51 ||= (sumproduct(a('cg51','cn51'),sheet12.a('d28','k28'))*5.0)+cf51; end
-  def cr51; @cr51 ||= excel_if(excel_comparison(abs(cd51-cq51-at51),"<",1.0),"ok","err"); end
-  def a52; "XVIII.a"; end
-  def b52; "Storage of captured CO2"; end
-  def c52; "Business"; end
-  def e52; @e52 ||= sheet7.e52/(sheet12.c13*sheet11.e79); end
-  def f52; @f52 ||= sheet7.f52/(sheet12.c13*sheet11.e79); end
-  def g52; @g52 ||= sheet7.g52/(sheet12.c13*sheet11.e79); end
-  def h52; @h52 ||= sheet7.h52/(sheet12.c13*sheet11.e79); end
-  def i52; @i52 ||= sheet7.i52/(sheet12.c13*sheet11.e79); end
-  def j52; @j52 ||= sheet7.j52/(sheet12.c13*sheet11.e79); end
-  def k52; @k52 ||= sheet7.k52/(sheet12.c13*sheet11.e79); end
-  def l52; @l52 ||= sheet7.l52/(sheet12.c13*sheet11.e79); end
-  def m52; @m52 ||= sheet7.m52/(sheet12.c13*sheet11.e79); end
-  def o52; @o52 ||= sheet7.o52/(sheet12.c13*sheet11.e79); end
-  def p52; @p52 ||= sheet7.p52/(sheet12.c13*sheet11.e79); end
-  def q52; @q52 ||= sheet7.q52/(sheet12.c13*sheet11.e79); end
-  def r52; @r52 ||= sheet7.r52/(sheet12.c13*sheet11.e79); end
-  def s52; @s52 ||= sheet7.s52/(sheet12.c13*sheet11.e79); end
-  def t52; @t52 ||= sheet7.t52/(sheet12.c13*sheet11.e79); end
-  def u52; @u52 ||= sheet7.u52/(sheet12.c13*sheet11.e79); end
-  def v52; @v52 ||= sheet7.v52/(sheet12.c13*sheet11.e79); end
-  def w52; @w52 ||= sheet7.w52/(sheet12.c13*sheet11.e79); end
-  def y52; @y52 ||= sheet7.y52/(sheet12.c13*sheet11.e79); end
-  def z52; @z52 ||= sheet7.z52/(sheet12.c13*sheet11.e79); end
-  def aa52; @aa52 ||= sheet7.aa52/(sheet12.c13*sheet11.e79); end
-  def ab52; @ab52 ||= sheet7.ab52/(sheet12.c13*sheet11.e79); end
-  def ac52; @ac52 ||= sheet7.ac52/(sheet12.c13*sheet11.e79); end
-  def ad52; @ad52 ||= sheet7.ad52/(sheet12.c13*sheet11.e79); end
-  def ae52; @ae52 ||= sheet7.ae52/(sheet12.c13*sheet11.e79); end
-  def af52; @af52 ||= sheet7.af52/(sheet12.c13*sheet11.e79); end
-  def ag52; @ag52 ||= sheet7.ag52/(sheet12.c13*sheet11.e79); end
-  def ai52; @ai52 ||= sheet7.ai52/(sheet12.c13*sheet11.e79); end
-  def aj52; @aj52 ||= sheet7.aj52/(sheet12.c13*sheet11.e79); end
-  def ak52; @ak52 ||= sheet7.ak52/(sheet12.c13*sheet11.e79); end
-  def al52; @al52 ||= sheet7.al52/(sheet12.c13*sheet11.e79); end
-  def am52; @am52 ||= sheet7.am52/(sheet12.c13*sheet11.e79); end
-  def an52; @an52 ||= sheet7.an52/(sheet12.c13*sheet11.e79); end
-  def ao52; @ao52 ||= sheet7.ao52/(sheet12.c13*sheet11.e79); end
-  def ap52; @ap52 ||= sheet7.ap52/(sheet12.c13*sheet11.e79); end
-  def aq52; @aq52 ||= sheet7.aq52/(sheet12.c13*sheet11.e79); end
-  def as52; @as52 ||= average(a('ai52','aq52')); end
-  def at52; @at52 ||= (sumproduct(a('aj52','aq52'),sheet12.a('d28','k28'))*5.0)+ai52; end
-  def av52; 0.0; end
-  def aw52; 5.0; end
-  def ay52; @ay52 ||= sheet7.ay52/(sheet12.c13*sheet11.e79); end
-  def az52; @az52 ||= sheet7.az52/(sheet12.c13*sheet11.e79); end
-  def ba52; @ba52 ||= sheet7.ba52/(sheet12.c13*sheet11.e79); end
-  def bb52; @bb52 ||= sheet7.bb52/(sheet12.c13*sheet11.e79); end
-  def bc52; @bc52 ||= sheet7.bc52/(sheet12.c13*sheet11.e79); end
-  def bd52; @bd52 ||= sheet7.bd52/(sheet12.c13*sheet11.e79); end
-  def be52; @be52 ||= sheet7.be52/(sheet12.c13*sheet11.e79); end
-  def bf52; @bf52 ||= sheet7.bf52/(sheet12.c13*sheet11.e79); end
-  def bg52; @bg52 ||= sheet7.bg52/(sheet12.c13*sheet11.e79); end
-  def bi52; @bi52 ||= sheet7.bi52/(sheet12.c13*sheet11.e79); end
-  def bj52; @bj52 ||= sheet7.bj52/(sheet12.c13*sheet11.e79); end
-  def bk52; @bk52 ||= sheet7.bk52/(sheet12.c13*sheet11.e79); end
-  def bl52; @bl52 ||= sheet7.bl52/(sheet12.c13*sheet11.e79); end
-  def bm52; @bm52 ||= sheet7.bm52/(sheet12.c13*sheet11.e79); end
-  def bn52; @bn52 ||= sheet7.bn52/(sheet12.c13*sheet11.e79); end
-  def bo52; @bo52 ||= sheet7.bo52/(sheet12.c13*sheet11.e79); end
-  def bp52; @bp52 ||= sheet7.bp52/(sheet12.c13*sheet11.e79); end
-  def bq52; @bq52 ||= sheet7.bq52/(sheet12.c13*sheet11.e79); end
-  def bs52; @bs52 ||= sheet7.bs52/(sheet12.c13*sheet11.e79); end
-  def bt52; @bt52 ||= sheet7.bt52/(sheet12.c13*sheet11.e79); end
-  def bu52; @bu52 ||= sheet7.bu52/(sheet12.c13*sheet11.e79); end
-  def bv52; @bv52 ||= sheet7.bv52/(sheet12.c13*sheet11.e79); end
-  def bw52; @bw52 ||= sheet7.bw52/(sheet12.c13*sheet11.e79); end
-  def bx52; @bx52 ||= sheet7.bx52/(sheet12.c13*sheet11.e79); end
-  def by52; @by52 ||= sheet7.by52/(sheet12.c13*sheet11.e79); end
-  def bz52; @bz52 ||= sheet7.bz52/(sheet12.c13*sheet11.e79); end
-  def ca52; @ca52 ||= sheet7.ca52/(sheet12.c13*sheet11.e79); end
-  def cc52; @cc52 ||= average(a('bs52','ca52')); end
-  def cd52; @cd52 ||= (sumproduct(a('bt52','ca52'),sheet12.a('d28','k28'))*5.0)+bs52; end
-  def cf52; @cf52 ||= sheet7.cf52/(sheet12.c13*sheet11.e79); end
-  def cg52; @cg52 ||= sheet7.cg52/(sheet12.c13*sheet11.e79); end
-  def ch52; @ch52 ||= sheet7.ch52/(sheet12.c13*sheet11.e79); end
-  def ci52; @ci52 ||= sheet7.ci52/(sheet12.c13*sheet11.e79); end
-  def cj52; @cj52 ||= sheet7.cj52/(sheet12.c13*sheet11.e79); end
-  def ck52; @ck52 ||= sheet7.ck52/(sheet12.c13*sheet11.e79); end
-  def cl52; @cl52 ||= sheet7.cl52/(sheet12.c13*sheet11.e79); end
-  def cm52; @cm52 ||= sheet7.cm52/(sheet12.c13*sheet11.e79); end
-  def cn52; @cn52 ||= sheet7.cn52/(sheet12.c13*sheet11.e79); end
-  def cp52; @cp52 ||= average(a('cf52','cn52')); end
-  def cq52; @cq52 ||= (sumproduct(a('cg52','cn52'),sheet12.a('d28','k28'))*5.0)+cf52; end
-  def cr52; @cr52 ||= excel_if(excel_comparison(abs(cd52-cq52-at52),"<",1.0),"ok","err"); end
-  def a53; "Total"; end
-  def b53; "Total"; end
-  def c53; "Total"; end
-  def e53; @e53 ||= sheet7.e53/(sheet12.c13*sheet11.e79); end
-  def f53; @f53 ||= sheet7.f53/(sheet12.c13*sheet11.e79); end
-  def g53; @g53 ||= sheet7.g53/(sheet12.c13*sheet11.e79); end
-  def h53; @h53 ||= sheet7.h53/(sheet12.c13*sheet11.e79); end
-  def i53; @i53 ||= sheet7.i53/(sheet12.c13*sheet11.e79); end
-  def j53; @j53 ||= sheet7.j53/(sheet12.c13*sheet11.e79); end
-  def k53; @k53 ||= sheet7.k53/(sheet12.c13*sheet11.e79); end
-  def l53; @l53 ||= sheet7.l53/(sheet12.c13*sheet11.e79); end
-  def m53; @m53 ||= sheet7.m53/(sheet12.c13*sheet11.e79); end
-  def o53; @o53 ||= sheet7.o53/(sheet12.c13*sheet11.e79); end
-  def p53; @p53 ||= sheet7.p53/(sheet12.c13*sheet11.e79); end
-  def q53; @q53 ||= sheet7.q53/(sheet12.c13*sheet11.e79); end
-  def r53; @r53 ||= sheet7.r53/(sheet12.c13*sheet11.e79); end
-  def s53; @s53 ||= sheet7.s53/(sheet12.c13*sheet11.e79); end
-  def t53; @t53 ||= sheet7.t53/(sheet12.c13*sheet11.e79); end
-  def u53; @u53 ||= sheet7.u53/(sheet12.c13*sheet11.e79); end
-  def v53; @v53 ||= sheet7.v53/(sheet12.c13*sheet11.e79); end
-  def w53; @w53 ||= sheet7.w53/(sheet12.c13*sheet11.e79); end
-  def y53; @y53 ||= sheet7.y53/(sheet12.c13*sheet11.e79); end
-  def z53; @z53 ||= sheet7.z53/(sheet12.c13*sheet11.e79); end
-  def aa53; @aa53 ||= sheet7.aa53/(sheet12.c13*sheet11.e79); end
-  def ab53; @ab53 ||= sheet7.ab53/(sheet12.c13*sheet11.e79); end
-  def ac53; @ac53 ||= sheet7.ac53/(sheet12.c13*sheet11.e79); end
-  def ad53; @ad53 ||= sheet7.ad53/(sheet12.c13*sheet11.e79); end
-  def ae53; @ae53 ||= sheet7.ae53/(sheet12.c13*sheet11.e79); end
-  def af53; @af53 ||= sheet7.af53/(sheet12.c13*sheet11.e79); end
-  def ag53; @ag53 ||= sheet7.ag53/(sheet12.c13*sheet11.e79); end
-  def ai53; @ai53 ||= sheet7.ai53/(sheet12.c13*sheet11.e79); end
-  def aj53; @aj53 ||= sheet7.aj53/(sheet12.c13*sheet11.e79); end
-  def ak53; @ak53 ||= sheet7.ak53/(sheet12.c13*sheet11.e79); end
-  def al53; @al53 ||= sheet7.al53/(sheet12.c13*sheet11.e79); end
-  def am53; @am53 ||= sheet7.am53/(sheet12.c13*sheet11.e79); end
-  def an53; @an53 ||= sheet7.an53/(sheet12.c13*sheet11.e79); end
-  def ao53; @ao53 ||= sheet7.ao53/(sheet12.c13*sheet11.e79); end
-  def ap53; @ap53 ||= sheet7.ap53/(sheet12.c13*sheet11.e79); end
-  def aq53; @aq53 ||= sheet7.aq53/(sheet12.c13*sheet11.e79); end
-  def as53; @as53 ||= average(a('ai53','aq53')); end
-  def at53; @at53 ||= (sumproduct(a('aj53','aq53'),sheet12.a('d28','k28'))*5.0)+ai53; end
-  def ay53; @ay53 ||= sheet7.ay53/(sheet12.c13*sheet11.e79); end
-  def az53; @az53 ||= sheet7.az53/(sheet12.c13*sheet11.e79); end
-  def ba53; @ba53 ||= sheet7.ba53/(sheet12.c13*sheet11.e79); end
-  def bb53; @bb53 ||= sheet7.bb53/(sheet12.c13*sheet11.e79); end
-  def bc53; @bc53 ||= sheet7.bc53/(sheet12.c13*sheet11.e79); end
-  def bd53; @bd53 ||= sheet7.bd53/(sheet12.c13*sheet11.e79); end
-  def be53; @be53 ||= sheet7.be53/(sheet12.c13*sheet11.e79); end
-  def bf53; @bf53 ||= sheet7.bf53/(sheet12.c13*sheet11.e79); end
-  def bg53; @bg53 ||= sheet7.bg53/(sheet12.c13*sheet11.e79); end
-  def bi53; @bi53 ||= sheet7.bi53/(sheet12.c13*sheet11.e79); end
-  def bj53; @bj53 ||= sheet7.bj53/(sheet12.c13*sheet11.e79); end
-  def bk53; @bk53 ||= sheet7.bk53/(sheet12.c13*sheet11.e79); end
-  def bl53; @bl53 ||= sheet7.bl53/(sheet12.c13*sheet11.e79); end
-  def bm53; @bm53 ||= sheet7.bm53/(sheet12.c13*sheet11.e79); end
-  def bn53; @bn53 ||= sheet7.bn53/(sheet12.c13*sheet11.e79); end
-  def bo53; @bo53 ||= sheet7.bo53/(sheet12.c13*sheet11.e79); end
-  def bp53; @bp53 ||= sheet7.bp53/(sheet12.c13*sheet11.e79); end
-  def bq53; @bq53 ||= sheet7.bq53/(sheet12.c13*sheet11.e79); end
-  def bs53; @bs53 ||= sheet7.bs53/(sheet12.c13*sheet11.e79); end
-  def bt53; @bt53 ||= sheet7.bt53/(sheet12.c13*sheet11.e79); end
-  def bu53; @bu53 ||= sheet7.bu53/(sheet12.c13*sheet11.e79); end
-  def bv53; @bv53 ||= sheet7.bv53/(sheet12.c13*sheet11.e79); end
-  def bw53; @bw53 ||= sheet7.bw53/(sheet12.c13*sheet11.e79); end
-  def bx53; @bx53 ||= sheet7.bx53/(sheet12.c13*sheet11.e79); end
-  def by53; @by53 ||= sheet7.by53/(sheet12.c13*sheet11.e79); end
-  def bz53; @bz53 ||= sheet7.bz53/(sheet12.c13*sheet11.e79); end
-  def ca53; @ca53 ||= sheet7.ca53/(sheet12.c13*sheet11.e79); end
-  def cc53; @cc53 ||= average(a('bs53','ca53')); end
-  def cd53; @cd53 ||= (sumproduct(a('bt53','ca53'),sheet12.a('d28','k28'))*5.0)+bs53; end
-  def cf53; @cf53 ||= sheet7.cf53/(sheet12.c13*sheet11.e79); end
-  def cg53; @cg53 ||= sheet7.cg53/(sheet12.c13*sheet11.e79); end
-  def ch53; @ch53 ||= sheet7.ch53/(sheet12.c13*sheet11.e79); end
-  def ci53; @ci53 ||= sheet7.ci53/(sheet12.c13*sheet11.e79); end
-  def cj53; @cj53 ||= sheet7.cj53/(sheet12.c13*sheet11.e79); end
-  def ck53; @ck53 ||= sheet7.ck53/(sheet12.c13*sheet11.e79); end
-  def cl53; @cl53 ||= sheet7.cl53/(sheet12.c13*sheet11.e79); end
-  def cm53; @cm53 ||= sheet7.cm53/(sheet12.c13*sheet11.e79); end
-  def cn53; @cn53 ||= sheet7.cn53/(sheet12.c13*sheet11.e79); end
-  def cp53; @cp53 ||= average(a('cf53','cn53')); end
-  def cq53; @cq53 ||= sum(a('cq3','cq52')); end
-  def cr53; @cr53 ||= excel_if(excel_comparison(abs(cd53-cq53-at53),"<",1.0),"ok","err"); end
-  def b55; "£/Capita/yr"; end
-  def e55; "C1.Point"; end
-  def f55; "Point estimate of capital costs"; end
-  def o55; "C2.Point"; end
-  def p55; "Point estimate of operating costs"; end
-  def y55; "C3.Point"; end
-  def z55; "Point estimate of fuel costs"; end
-  def ai55; "Point estimate of total cost"; end
-  def as55; "Cashflow capital basis"; end
-  def av55; "Loan"; end
-  def ay55; "Finance cost for capital spent in that period"; end
-  def bi55; "Finance cost for outstanding capital"; end
-  def br55; "Total cost (ammortised capital)"; end
-  def cc55; "Amortised Capital"; end
-  def cf55; "Extra cost due to financing capital, compared with doing it out of cash"; end
-  def cp55; "Extra cost due to financing capital, compared with doing it out of cash"; end
-  def a56; "Code"; end
-  def b56; "Description"; end
-  def c56; "Category"; end
-  def e56; "2010"; end
-  def f56; "2015"; end
-  def g56; "2020"; end
-  def h56; "2025"; end
-  def i56; "2030"; end
-  def j56; "2035"; end
-  def k56; "2040"; end
-  def l56; "2045"; end
-  def m56; "2050"; end
-  def o56; "2010"; end
-  def p56; "2015"; end
-  def q56; "2020"; end
-  def r56; "2025"; end
-  def s56; "2030"; end
-  def t56; "2035"; end
-  def u56; "2040"; end
-  def v56; "2045"; end
-  def w56; "2050"; end
-  def y56; "2010"; end
-  def z56; "2015"; end
-  def aa56; "2020"; end
-  def ab56; "2025"; end
-  def ac56; "2030"; end
-  def ad56; "2035"; end
-  def ae56; "2040"; end
-  def af56; "2045"; end
-  def ag56; "2050"; end
-  def ai56; "2010"; end
-  def aj56; "2015"; end
-  def ak56; "2020"; end
-  def al56; "2025"; end
-  def am56; "2030"; end
-  def an56; "2035"; end
-  def ao56; "2040"; end
-  def ap56; "2045"; end
-  def aq56; "2050"; end
-  def as56; "Mean"; end
-  def at56; "NPV"; end
-  def av56; "Rate"; end
-  def aw56; "Years"; end
-  def ay56; 2010.0; end
-  def az56; 2015.0; end
-  def ba56; 2020.0; end
-  def bb56; 2025.0; end
-  def bc56; 2030.0; end
-  def bd56; 2035.0; end
-  def be56; 2040.0; end
-  def bf56; 2045.0; end
-  def bg56; 2050.0; end
-  def bi56; 2010.0; end
-  def bj56; 2015.0; end
-  def bk56; 2020.0; end
-  def bl56; 2025.0; end
-  def bm56; 2030.0; end
-  def bn56; 2035.0; end
-  def bo56; 2040.0; end
-  def bp56; 2045.0; end
-  def bq56; 2050.0; end
-  def bs56; "2010"; end
-  def bt56; "2015"; end
-  def bu56; "2020"; end
-  def bv56; "2025"; end
-  def bw56; "2030"; end
-  def bx56; "2035"; end
-  def by56; "2040"; end
-  def bz56; "2045"; end
-  def ca56; "2050"; end
-  def cc56; "Mean"; end
-  def cd56; "NPV"; end
-  def cf56; "2010"; end
-  def cg56; "2015"; end
-  def ch56; "2020"; end
-  def ci56; "2025"; end
-  def cj56; "2030"; end
-  def ck56; "2035"; end
-  def cl56; "2040"; end
-  def cm56; "2045"; end
-  def cn56; "2050"; end
-  def cp56; "Mean"; end
-  def cq56; "NPV"; end
-  def a57; "I.a"; end
-  def b57; "Conventional thermal plant"; end
-  def c57; "Power"; end
-  def e57; @e57 ||= sheet7.e57/(sheet12.c13*sheet11.e79); end
-  def f57; @f57 ||= sheet7.f57/(sheet12.c13*sheet11.e79); end
-  def g57; @g57 ||= sheet7.g57/(sheet12.c13*sheet11.e79); end
-  def h57; @h57 ||= sheet7.h57/(sheet12.c13*sheet11.e79); end
-  def i57; @i57 ||= sheet7.i57/(sheet12.c13*sheet11.e79); end
-  def j57; @j57 ||= sheet7.j57/(sheet12.c13*sheet11.e79); end
-  def k57; @k57 ||= sheet7.k57/(sheet12.c13*sheet11.e79); end
-  def l57; @l57 ||= sheet7.l57/(sheet12.c13*sheet11.e79); end
-  def m57; @m57 ||= sheet7.m57/(sheet12.c13*sheet11.e79); end
-  def o57; @o57 ||= sheet7.o57/(sheet12.c13*sheet11.e79); end
-  def p57; @p57 ||= sheet7.p57/(sheet12.c13*sheet11.e79); end
-  def q57; @q57 ||= sheet7.q57/(sheet12.c13*sheet11.e79); end
-  def r57; @r57 ||= sheet7.r57/(sheet12.c13*sheet11.e79); end
-  def s57; @s57 ||= sheet7.s57/(sheet12.c13*sheet11.e79); end
-  def t57; @t57 ||= sheet7.t57/(sheet12.c13*sheet11.e79); end
-  def u57; @u57 ||= sheet7.u57/(sheet12.c13*sheet11.e79); end
-  def v57; @v57 ||= sheet7.v57/(sheet12.c13*sheet11.e79); end
-  def w57; @w57 ||= sheet7.w57/(sheet12.c13*sheet11.e79); end
-  def y57; @y57 ||= sheet7.y57/(sheet12.c13*sheet11.e79); end
-  def z57; @z57 ||= sheet7.z57/(sheet12.c13*sheet11.e79); end
-  def aa57; @aa57 ||= sheet7.aa57/(sheet12.c13*sheet11.e79); end
-  def ab57; @ab57 ||= sheet7.ab57/(sheet12.c13*sheet11.e79); end
-  def ac57; @ac57 ||= sheet7.ac57/(sheet12.c13*sheet11.e79); end
-  def ad57; @ad57 ||= sheet7.ad57/(sheet12.c13*sheet11.e79); end
-  def ae57; @ae57 ||= sheet7.ae57/(sheet12.c13*sheet11.e79); end
-  def af57; @af57 ||= sheet7.af57/(sheet12.c13*sheet11.e79); end
-  def ag57; @ag57 ||= sheet7.ag57/(sheet12.c13*sheet11.e79); end
-  def ai57; @ai57 ||= sheet7.ai57/(sheet12.c13*sheet11.e79); end
-  def aj57; @aj57 ||= sheet7.aj57/(sheet12.c13*sheet11.e79); end
-  def ak57; @ak57 ||= sheet7.ak57/(sheet12.c13*sheet11.e79); end
-  def al57; @al57 ||= sheet7.al57/(sheet12.c13*sheet11.e79); end
-  def am57; @am57 ||= sheet7.am57/(sheet12.c13*sheet11.e79); end
-  def an57; @an57 ||= sheet7.an57/(sheet12.c13*sheet11.e79); end
-  def ao57; @ao57 ||= sheet7.ao57/(sheet12.c13*sheet11.e79); end
-  def ap57; @ap57 ||= sheet7.ap57/(sheet12.c13*sheet11.e79); end
-  def aq57; @aq57 ||= sheet7.aq57/(sheet12.c13*sheet11.e79); end
-  def as57; @as57 ||= average(a('ai57','aq57')); end
-  def at57; @at57 ||= (sumproduct(a('aj57','aq57'),sheet12.a('d28','k28'))*5.0)+ai57; end
-  def av57; 0.0; end
-  def aw57; 5.0; end
-  def ay57; @ay57 ||= sheet7.ay57/(sheet12.c13*sheet11.e79); end
-  def az57; @az57 ||= sheet7.az57/(sheet12.c13*sheet11.e79); end
-  def ba57; @ba57 ||= sheet7.ba57/(sheet12.c13*sheet11.e79); end
-  def bb57; @bb57 ||= sheet7.bb57/(sheet12.c13*sheet11.e79); end
-  def bc57; @bc57 ||= sheet7.bc57/(sheet12.c13*sheet11.e79); end
-  def bd57; @bd57 ||= sheet7.bd57/(sheet12.c13*sheet11.e79); end
-  def be57; @be57 ||= sheet7.be57/(sheet12.c13*sheet11.e79); end
-  def bf57; @bf57 ||= sheet7.bf57/(sheet12.c13*sheet11.e79); end
-  def bg57; @bg57 ||= sheet7.bg57/(sheet12.c13*sheet11.e79); end
-  def bi57; @bi57 ||= sheet7.bi57/(sheet12.c13*sheet11.e79); end
-  def bj57; @bj57 ||= sheet7.bj57/(sheet12.c13*sheet11.e79); end
-  def bk57; @bk57 ||= sheet7.bk57/(sheet12.c13*sheet11.e79); end
-  def bl57; @bl57 ||= sheet7.bl57/(sheet12.c13*sheet11.e79); end
-  def bm57; @bm57 ||= sheet7.bm57/(sheet12.c13*sheet11.e79); end
-  def bn57; @bn57 ||= sheet7.bn57/(sheet12.c13*sheet11.e79); end
-  def bo57; @bo57 ||= sheet7.bo57/(sheet12.c13*sheet11.e79); end
-  def bp57; @bp57 ||= sheet7.bp57/(sheet12.c13*sheet11.e79); end
-  def bq57; @bq57 ||= sheet7.bq57/(sheet12.c13*sheet11.e79); end
-  def bs57; @bs57 ||= sheet7.bs57/(sheet12.c13*sheet11.e79); end
-  def bt57; @bt57 ||= sheet7.bt57/(sheet12.c13*sheet11.e79); end
-  def bu57; @bu57 ||= sheet7.bu57/(sheet12.c13*sheet11.e79); end
-  def bv57; @bv57 ||= sheet7.bv57/(sheet12.c13*sheet11.e79); end
-  def bw57; @bw57 ||= sheet7.bw57/(sheet12.c13*sheet11.e79); end
-  def bx57; @bx57 ||= sheet7.bx57/(sheet12.c13*sheet11.e79); end
-  def by57; @by57 ||= sheet7.by57/(sheet12.c13*sheet11.e79); end
-  def bz57; @bz57 ||= sheet7.bz57/(sheet12.c13*sheet11.e79); end
-  def ca57; @ca57 ||= sheet7.ca57/(sheet12.c13*sheet11.e79); end
-  def cc57; @cc57 ||= average(a('bs57','ca57')); end
-  def cd57; @cd57 ||= (sumproduct(a('bt57','ca57'),sheet12.a('d28','k28'))*5.0)+bs57; end
-  def cf57; @cf57 ||= sheet7.cf57/(sheet12.c13*sheet11.e79); end
-  def cg57; @cg57 ||= sheet7.cg57/(sheet12.c13*sheet11.e79); end
-  def ch57; @ch57 ||= sheet7.ch57/(sheet12.c13*sheet11.e79); end
-  def ci57; @ci57 ||= sheet7.ci57/(sheet12.c13*sheet11.e79); end
-  def cj57; @cj57 ||= sheet7.cj57/(sheet12.c13*sheet11.e79); end
-  def ck57; @ck57 ||= sheet7.ck57/(sheet12.c13*sheet11.e79); end
-  def cl57; @cl57 ||= sheet7.cl57/(sheet12.c13*sheet11.e79); end
-  def cm57; @cm57 ||= sheet7.cm57/(sheet12.c13*sheet11.e79); end
-  def cn57; @cn57 ||= sheet7.cn57/(sheet12.c13*sheet11.e79); end
-  def cp57; @cp57 ||= average(a('cf57','cn57')); end
-  def cq57; @cq57 ||= (sumproduct(a('cg57','cn57'),sheet12.a('d28','k28'))*5.0)+cf57; end
-  def cr57; @cr57 ||= excel_if(excel_comparison(abs(cd57-cq57-at57),"<",1.0),"ok","err"); end
-  def a58; "I.b"; end
-  def b58; "Combustion + CCS"; end
-  def c58; "Power"; end
-  def e58; @e58 ||= sheet7.e58/(sheet12.c13*sheet11.e79); end
-  def f58; @f58 ||= sheet7.f58/(sheet12.c13*sheet11.e79); end
-  def g58; @g58 ||= sheet7.g58/(sheet12.c13*sheet11.e79); end
-  def h58; @h58 ||= sheet7.h58/(sheet12.c13*sheet11.e79); end
-  def i58; @i58 ||= sheet7.i58/(sheet12.c13*sheet11.e79); end
-  def j58; @j58 ||= sheet7.j58/(sheet12.c13*sheet11.e79); end
-  def k58; @k58 ||= sheet7.k58/(sheet12.c13*sheet11.e79); end
-  def l58; @l58 ||= sheet7.l58/(sheet12.c13*sheet11.e79); end
-  def m58; @m58 ||= sheet7.m58/(sheet12.c13*sheet11.e79); end
-  def o58; @o58 ||= sheet7.o58/(sheet12.c13*sheet11.e79); end
-  def p58; @p58 ||= sheet7.p58/(sheet12.c13*sheet11.e79); end
-  def q58; @q58 ||= sheet7.q58/(sheet12.c13*sheet11.e79); end
-  def r58; @r58 ||= sheet7.r58/(sheet12.c13*sheet11.e79); end
-  def s58; @s58 ||= sheet7.s58/(sheet12.c13*sheet11.e79); end
-  def t58; @t58 ||= sheet7.t58/(sheet12.c13*sheet11.e79); end
-  def u58; @u58 ||= sheet7.u58/(sheet12.c13*sheet11.e79); end
-  def v58; @v58 ||= sheet7.v58/(sheet12.c13*sheet11.e79); end
-  def w58; @w58 ||= sheet7.w58/(sheet12.c13*sheet11.e79); end
-  def y58; @y58 ||= sheet7.y58/(sheet12.c13*sheet11.e79); end
-  def z58; @z58 ||= sheet7.z58/(sheet12.c13*sheet11.e79); end
-  def aa58; @aa58 ||= sheet7.aa58/(sheet12.c13*sheet11.e79); end
-  def ab58; @ab58 ||= sheet7.ab58/(sheet12.c13*sheet11.e79); end
-  def ac58; @ac58 ||= sheet7.ac58/(sheet12.c13*sheet11.e79); end
-  def ad58; @ad58 ||= sheet7.ad58/(sheet12.c13*sheet11.e79); end
-  def ae58; @ae58 ||= sheet7.ae58/(sheet12.c13*sheet11.e79); end
-  def af58; @af58 ||= sheet7.af58/(sheet12.c13*sheet11.e79); end
-  def ag58; @ag58 ||= sheet7.ag58/(sheet12.c13*sheet11.e79); end
-  def ai58; @ai58 ||= sheet7.ai58/(sheet12.c13*sheet11.e79); end
-  def aj58; @aj58 ||= sheet7.aj58/(sheet12.c13*sheet11.e79); end
-  def ak58; @ak58 ||= sheet7.ak58/(sheet12.c13*sheet11.e79); end
-  def al58; @al58 ||= sheet7.al58/(sheet12.c13*sheet11.e79); end
-  def am58; @am58 ||= sheet7.am58/(sheet12.c13*sheet11.e79); end
-  def an58; @an58 ||= sheet7.an58/(sheet12.c13*sheet11.e79); end
-  def ao58; @ao58 ||= sheet7.ao58/(sheet12.c13*sheet11.e79); end
-  def ap58; @ap58 ||= sheet7.ap58/(sheet12.c13*sheet11.e79); end
-  def aq58; @aq58 ||= sheet7.aq58/(sheet12.c13*sheet11.e79); end
-  def as58; @as58 ||= average(a('ai58','aq58')); end
-  def at58; @at58 ||= (sumproduct(a('aj58','aq58'),sheet12.a('d28','k28'))*5.0)+ai58; end
-  def av58; 0.0; end
-  def aw58; 5.0; end
-  def ay58; @ay58 ||= sheet7.ay58/(sheet12.c13*sheet11.e79); end
-  def az58; @az58 ||= sheet7.az58/(sheet12.c13*sheet11.e79); end
-  def ba58; @ba58 ||= sheet7.ba58/(sheet12.c13*sheet11.e79); end
-  def bb58; @bb58 ||= sheet7.bb58/(sheet12.c13*sheet11.e79); end
-  def bc58; @bc58 ||= sheet7.bc58/(sheet12.c13*sheet11.e79); end
-  def bd58; @bd58 ||= sheet7.bd58/(sheet12.c13*sheet11.e79); end
-  def be58; @be58 ||= sheet7.be58/(sheet12.c13*sheet11.e79); end
-  def bf58; @bf58 ||= sheet7.bf58/(sheet12.c13*sheet11.e79); end
-  def bg58; @bg58 ||= sheet7.bg58/(sheet12.c13*sheet11.e79); end
-  def bi58; @bi58 ||= sheet7.bi58/(sheet12.c13*sheet11.e79); end
-  def bj58; @bj58 ||= sheet7.bj58/(sheet12.c13*sheet11.e79); end
-  def bk58; @bk58 ||= sheet7.bk58/(sheet12.c13*sheet11.e79); end
-  def bl58; @bl58 ||= sheet7.bl58/(sheet12.c13*sheet11.e79); end
-  def bm58; @bm58 ||= sheet7.bm58/(sheet12.c13*sheet11.e79); end
-  def bn58; @bn58 ||= sheet7.bn58/(sheet12.c13*sheet11.e79); end
-  def bo58; @bo58 ||= sheet7.bo58/(sheet12.c13*sheet11.e79); end
-  def bp58; @bp58 ||= sheet7.bp58/(sheet12.c13*sheet11.e79); end
-  def bq58; @bq58 ||= sheet7.bq58/(sheet12.c13*sheet11.e79); end
-  def bs58; @bs58 ||= sheet7.bs58/(sheet12.c13*sheet11.e79); end
-  def bt58; @bt58 ||= sheet7.bt58/(sheet12.c13*sheet11.e79); end
-  def bu58; @bu58 ||= sheet7.bu58/(sheet12.c13*sheet11.e79); end
-  def bv58; @bv58 ||= sheet7.bv58/(sheet12.c13*sheet11.e79); end
-  def bw58; @bw58 ||= sheet7.bw58/(sheet12.c13*sheet11.e79); end
-  def bx58; @bx58 ||= sheet7.bx58/(sheet12.c13*sheet11.e79); end
-  def by58; @by58 ||= sheet7.by58/(sheet12.c13*sheet11.e79); end
-  def bz58; @bz58 ||= sheet7.bz58/(sheet12.c13*sheet11.e79); end
-  def ca58; @ca58 ||= sheet7.ca58/(sheet12.c13*sheet11.e79); end
-  def cc58; @cc58 ||= average(a('bs58','ca58')); end
-  def cd58; @cd58 ||= (sumproduct(a('bt58','ca58'),sheet12.a('d28','k28'))*5.0)+bs58; end
-  def cf58; @cf58 ||= sheet7.cf58/(sheet12.c13*sheet11.e79); end
-  def cg58; @cg58 ||= sheet7.cg58/(sheet12.c13*sheet11.e79); end
-  def ch58; @ch58 ||= sheet7.ch58/(sheet12.c13*sheet11.e79); end
-  def ci58; @ci58 ||= sheet7.ci58/(sheet12.c13*sheet11.e79); end
-  def cj58; @cj58 ||= sheet7.cj58/(sheet12.c13*sheet11.e79); end
-  def ck58; @ck58 ||= sheet7.ck58/(sheet12.c13*sheet11.e79); end
-  def cl58; @cl58 ||= sheet7.cl58/(sheet12.c13*sheet11.e79); end
-  def cm58; @cm58 ||= sheet7.cm58/(sheet12.c13*sheet11.e79); end
-  def cn58; @cn58 ||= sheet7.cn58/(sheet12.c13*sheet11.e79); end
-  def cp58; @cp58 ||= average(a('cf58','cn58')); end
-  def cq58; @cq58 ||= (sumproduct(a('cg58','cn58'),sheet12.a('d28','k28'))*5.0)+cf58; end
-  def cr58; @cr58 ||= excel_if(excel_comparison(abs(cd58-cq58-at58),"<",1.0),"ok","err"); end
-  def a59; "II.a"; end
-  def b59; "Nuclear power"; end
-  def c59; "Power"; end
-  def e59; @e59 ||= sheet7.e59/(sheet12.c13*sheet11.e79); end
-  def f59; @f59 ||= sheet7.f59/(sheet12.c13*sheet11.e79); end
-  def g59; @g59 ||= sheet7.g59/(sheet12.c13*sheet11.e79); end
-  def h59; @h59 ||= sheet7.h59/(sheet12.c13*sheet11.e79); end
-  def i59; @i59 ||= sheet7.i59/(sheet12.c13*sheet11.e79); end
-  def j59; @j59 ||= sheet7.j59/(sheet12.c13*sheet11.e79); end
-  def k59; @k59 ||= sheet7.k59/(sheet12.c13*sheet11.e79); end
-  def l59; @l59 ||= sheet7.l59/(sheet12.c13*sheet11.e79); end
-  def m59; @m59 ||= sheet7.m59/(sheet12.c13*sheet11.e79); end
-  def o59; @o59 ||= sheet7.o59/(sheet12.c13*sheet11.e79); end
-  def p59; @p59 ||= sheet7.p59/(sheet12.c13*sheet11.e79); end
-  def q59; @q59 ||= sheet7.q59/(sheet12.c13*sheet11.e79); end
-  def r59; @r59 ||= sheet7.r59/(sheet12.c13*sheet11.e79); end
-  def s59; @s59 ||= sheet7.s59/(sheet12.c13*sheet11.e79); end
-  def t59; @t59 ||= sheet7.t59/(sheet12.c13*sheet11.e79); end
-  def u59; @u59 ||= sheet7.u59/(sheet12.c13*sheet11.e79); end
-  def v59; @v59 ||= sheet7.v59/(sheet12.c13*sheet11.e79); end
-  def w59; @w59 ||= sheet7.w59/(sheet12.c13*sheet11.e79); end
-  def y59; @y59 ||= sheet7.y59/(sheet12.c13*sheet11.e79); end
-  def z59; @z59 ||= sheet7.z59/(sheet12.c13*sheet11.e79); end
-  def aa59; @aa59 ||= sheet7.aa59/(sheet12.c13*sheet11.e79); end
-  def ab59; @ab59 ||= sheet7.ab59/(sheet12.c13*sheet11.e79); end
-  def ac59; @ac59 ||= sheet7.ac59/(sheet12.c13*sheet11.e79); end
-  def ad59; @ad59 ||= sheet7.ad59/(sheet12.c13*sheet11.e79); end
-  def ae59; @ae59 ||= sheet7.ae59/(sheet12.c13*sheet11.e79); end
-  def af59; @af59 ||= sheet7.af59/(sheet12.c13*sheet11.e79); end
-  def ag59; @ag59 ||= sheet7.ag59/(sheet12.c13*sheet11.e79); end
-  def ai59; @ai59 ||= sheet7.ai59/(sheet12.c13*sheet11.e79); end
-  def aj59; @aj59 ||= sheet7.aj59/(sheet12.c13*sheet11.e79); end
-  def ak59; @ak59 ||= sheet7.ak59/(sheet12.c13*sheet11.e79); end
-  def al59; @al59 ||= sheet7.al59/(sheet12.c13*sheet11.e79); end
-  def am59; @am59 ||= sheet7.am59/(sheet12.c13*sheet11.e79); end
-  def an59; @an59 ||= sheet7.an59/(sheet12.c13*sheet11.e79); end
-  def ao59; @ao59 ||= sheet7.ao59/(sheet12.c13*sheet11.e79); end
-  def ap59; @ap59 ||= sheet7.ap59/(sheet12.c13*sheet11.e79); end
-  def aq59; @aq59 ||= sheet7.aq59/(sheet12.c13*sheet11.e79); end
-  def as59; @as59 ||= average(a('ai59','aq59')); end
-  def at59; @at59 ||= (sumproduct(a('aj59','aq59'),sheet12.a('d28','k28'))*5.0)+ai59; end
-  def av59; 0.0; end
-  def aw59; 5.0; end
-  def ay59; @ay59 ||= sheet7.ay59/(sheet12.c13*sheet11.e79); end
-  def az59; @az59 ||= sheet7.az59/(sheet12.c13*sheet11.e79); end
-  def ba59; @ba59 ||= sheet7.ba59/(sheet12.c13*sheet11.e79); end
-  def bb59; @bb59 ||= sheet7.bb59/(sheet12.c13*sheet11.e79); end
-  def bc59; @bc59 ||= sheet7.bc59/(sheet12.c13*sheet11.e79); end
-  def bd59; @bd59 ||= sheet7.bd59/(sheet12.c13*sheet11.e79); end
-  def be59; @be59 ||= sheet7.be59/(sheet12.c13*sheet11.e79); end
-  def bf59; @bf59 ||= sheet7.bf59/(sheet12.c13*sheet11.e79); end
-  def bg59; @bg59 ||= sheet7.bg59/(sheet12.c13*sheet11.e79); end
-  def bi59; @bi59 ||= sheet7.bi59/(sheet12.c13*sheet11.e79); end
-  def bj59; @bj59 ||= sheet7.bj59/(sheet12.c13*sheet11.e79); end
-  def bk59; @bk59 ||= sheet7.bk59/(sheet12.c13*sheet11.e79); end
-  def bl59; @bl59 ||= sheet7.bl59/(sheet12.c13*sheet11.e79); end
-  def bm59; @bm59 ||= sheet7.bm59/(sheet12.c13*sheet11.e79); end
-  def bn59; @bn59 ||= sheet7.bn59/(sheet12.c13*sheet11.e79); end
-  def bo59; @bo59 ||= sheet7.bo59/(sheet12.c13*sheet11.e79); end
-  def bp59; @bp59 ||= sheet7.bp59/(sheet12.c13*sheet11.e79); end
-  def bq59; @bq59 ||= sheet7.bq59/(sheet12.c13*sheet11.e79); end
-  def bs59; @bs59 ||= sheet7.bs59/(sheet12.c13*sheet11.e79); end
-  def bt59; @bt59 ||= sheet7.bt59/(sheet12.c13*sheet11.e79); end
-  def bu59; @bu59 ||= sheet7.bu59/(sheet12.c13*sheet11.e79); end
-  def bv59; @bv59 ||= sheet7.bv59/(sheet12.c13*sheet11.e79); end
-  def bw59; @bw59 ||= sheet7.bw59/(sheet12.c13*sheet11.e79); end
-  def bx59; @bx59 ||= sheet7.bx59/(sheet12.c13*sheet11.e79); end
-  def by59; @by59 ||= sheet7.by59/(sheet12.c13*sheet11.e79); end
-  def bz59; @bz59 ||= sheet7.bz59/(sheet12.c13*sheet11.e79); end
-  def ca59; @ca59 ||= sheet7.ca59/(sheet12.c13*sheet11.e79); end
-  def cc59; @cc59 ||= average(a('bs59','ca59')); end
-  def cd59; @cd59 ||= (sumproduct(a('bt59','ca59'),sheet12.a('d28','k28'))*5.0)+bs59; end
-  def cf59; @cf59 ||= sheet7.cf59/(sheet12.c13*sheet11.e79); end
-  def cg59; @cg59 ||= sheet7.cg59/(sheet12.c13*sheet11.e79); end
-  def ch59; @ch59 ||= sheet7.ch59/(sheet12.c13*sheet11.e79); end
-  def ci59; @ci59 ||= sheet7.ci59/(sheet12.c13*sheet11.e79); end
-  def cj59; @cj59 ||= sheet7.cj59/(sheet12.c13*sheet11.e79); end
-  def ck59; @ck59 ||= sheet7.ck59/(sheet12.c13*sheet11.e79); end
-  def cl59; @cl59 ||= sheet7.cl59/(sheet12.c13*sheet11.e79); end
-  def cm59; @cm59 ||= sheet7.cm59/(sheet12.c13*sheet11.e79); end
-  def cn59; @cn59 ||= sheet7.cn59/(sheet12.c13*sheet11.e79); end
-  def cp59; @cp59 ||= average(a('cf59','cn59')); end
-  def cq59; @cq59 ||= (sumproduct(a('cg59','cn59'),sheet12.a('d28','k28'))*5.0)+cf59; end
-  def cr59; @cr59 ||= excel_if(excel_comparison(abs(cd59-cq59-at59),"<",1.0),"ok","err"); end
-  def a60; "III.a.1"; end
-  def b60; "Onshore wind"; end
-  def c60; "Power"; end
-  def e60; @e60 ||= sheet7.e60/(sheet12.c13*sheet11.e79); end
-  def f60; @f60 ||= sheet7.f60/(sheet12.c13*sheet11.e79); end
-  def g60; @g60 ||= sheet7.g60/(sheet12.c13*sheet11.e79); end
-  def h60; @h60 ||= sheet7.h60/(sheet12.c13*sheet11.e79); end
-  def i60; @i60 ||= sheet7.i60/(sheet12.c13*sheet11.e79); end
-  def j60; @j60 ||= sheet7.j60/(sheet12.c13*sheet11.e79); end
-  def k60; @k60 ||= sheet7.k60/(sheet12.c13*sheet11.e79); end
-  def l60; @l60 ||= sheet7.l60/(sheet12.c13*sheet11.e79); end
-  def m60; @m60 ||= sheet7.m60/(sheet12.c13*sheet11.e79); end
-  def o60; @o60 ||= sheet7.o60/(sheet12.c13*sheet11.e79); end
-  def p60; @p60 ||= sheet7.p60/(sheet12.c13*sheet11.e79); end
-  def q60; @q60 ||= sheet7.q60/(sheet12.c13*sheet11.e79); end
-  def r60; @r60 ||= sheet7.r60/(sheet12.c13*sheet11.e79); end
-  def s60; @s60 ||= sheet7.s60/(sheet12.c13*sheet11.e79); end
-  def t60; @t60 ||= sheet7.t60/(sheet12.c13*sheet11.e79); end
-  def u60; @u60 ||= sheet7.u60/(sheet12.c13*sheet11.e79); end
-  def v60; @v60 ||= sheet7.v60/(sheet12.c13*sheet11.e79); end
-  def w60; @w60 ||= sheet7.w60/(sheet12.c13*sheet11.e79); end
-  def y60; @y60 ||= sheet7.y60/(sheet12.c13*sheet11.e79); end
-  def z60; @z60 ||= sheet7.z60/(sheet12.c13*sheet11.e79); end
-  def aa60; @aa60 ||= sheet7.aa60/(sheet12.c13*sheet11.e79); end
-  def ab60; @ab60 ||= sheet7.ab60/(sheet12.c13*sheet11.e79); end
-  def ac60; @ac60 ||= sheet7.ac60/(sheet12.c13*sheet11.e79); end
-  def ad60; @ad60 ||= sheet7.ad60/(sheet12.c13*sheet11.e79); end
-  def ae60; @ae60 ||= sheet7.ae60/(sheet12.c13*sheet11.e79); end
-  def af60; @af60 ||= sheet7.af60/(sheet12.c13*sheet11.e79); end
-  def ag60; @ag60 ||= sheet7.ag60/(sheet12.c13*sheet11.e79); end
-  def ai60; @ai60 ||= sheet7.ai60/(sheet12.c13*sheet11.e79); end
-  def aj60; @aj60 ||= sheet7.aj60/(sheet12.c13*sheet11.e79); end
-  def ak60; @ak60 ||= sheet7.ak60/(sheet12.c13*sheet11.e79); end
-  def al60; @al60 ||= sheet7.al60/(sheet12.c13*sheet11.e79); end
-  def am60; @am60 ||= sheet7.am60/(sheet12.c13*sheet11.e79); end
-  def an60; @an60 ||= sheet7.an60/(sheet12.c13*sheet11.e79); end
-  def ao60; @ao60 ||= sheet7.ao60/(sheet12.c13*sheet11.e79); end
-  def ap60; @ap60 ||= sheet7.ap60/(sheet12.c13*sheet11.e79); end
-  def aq60; @aq60 ||= sheet7.aq60/(sheet12.c13*sheet11.e79); end
-  def as60; @as60 ||= average(a('ai60','aq60')); end
-  def at60; @at60 ||= (sumproduct(a('aj60','aq60'),sheet12.a('d28','k28'))*5.0)+ai60; end
-  def av60; 0.0; end
-  def aw60; 5.0; end
-  def ay60; @ay60 ||= sheet7.ay60/(sheet12.c13*sheet11.e79); end
-  def az60; @az60 ||= sheet7.az60/(sheet12.c13*sheet11.e79); end
-  def ba60; @ba60 ||= sheet7.ba60/(sheet12.c13*sheet11.e79); end
-  def bb60; @bb60 ||= sheet7.bb60/(sheet12.c13*sheet11.e79); end
-  def bc60; @bc60 ||= sheet7.bc60/(sheet12.c13*sheet11.e79); end
-  def bd60; @bd60 ||= sheet7.bd60/(sheet12.c13*sheet11.e79); end
-  def be60; @be60 ||= sheet7.be60/(sheet12.c13*sheet11.e79); end
-  def bf60; @bf60 ||= sheet7.bf60/(sheet12.c13*sheet11.e79); end
-  def bg60; @bg60 ||= sheet7.bg60/(sheet12.c13*sheet11.e79); end
-  def bi60; @bi60 ||= sheet7.bi60/(sheet12.c13*sheet11.e79); end
-  def bj60; @bj60 ||= sheet7.bj60/(sheet12.c13*sheet11.e79); end
-  def bk60; @bk60 ||= sheet7.bk60/(sheet12.c13*sheet11.e79); end
-  def bl60; @bl60 ||= sheet7.bl60/(sheet12.c13*sheet11.e79); end
-  def bm60; @bm60 ||= sheet7.bm60/(sheet12.c13*sheet11.e79); end
-  def bn60; @bn60 ||= sheet7.bn60/(sheet12.c13*sheet11.e79); end
-  def bo60; @bo60 ||= sheet7.bo60/(sheet12.c13*sheet11.e79); end
-  def bp60; @bp60 ||= sheet7.bp60/(sheet12.c13*sheet11.e79); end
-  def bq60; @bq60 ||= sheet7.bq60/(sheet12.c13*sheet11.e79); end
-  def bs60; @bs60 ||= sheet7.bs60/(sheet12.c13*sheet11.e79); end
-  def bt60; @bt60 ||= sheet7.bt60/(sheet12.c13*sheet11.e79); end
-  def bu60; @bu60 ||= sheet7.bu60/(sheet12.c13*sheet11.e79); end
-  def bv60; @bv60 ||= sheet7.bv60/(sheet12.c13*sheet11.e79); end
-  def bw60; @bw60 ||= sheet7.bw60/(sheet12.c13*sheet11.e79); end
-  def bx60; @bx60 ||= sheet7.bx60/(sheet12.c13*sheet11.e79); end
-  def by60; @by60 ||= sheet7.by60/(sheet12.c13*sheet11.e79); end
-  def bz60; @bz60 ||= sheet7.bz60/(sheet12.c13*sheet11.e79); end
-  def ca60; @ca60 ||= sheet7.ca60/(sheet12.c13*sheet11.e79); end
-  def cc60; @cc60 ||= average(a('bs60','ca60')); end
-  def cd60; @cd60 ||= (sumproduct(a('bt60','ca60'),sheet12.a('d28','k28'))*5.0)+bs60; end
-  def cf60; @cf60 ||= sheet7.cf60/(sheet12.c13*sheet11.e79); end
-  def cg60; @cg60 ||= sheet7.cg60/(sheet12.c13*sheet11.e79); end
-  def ch60; @ch60 ||= sheet7.ch60/(sheet12.c13*sheet11.e79); end
-  def ci60; @ci60 ||= sheet7.ci60/(sheet12.c13*sheet11.e79); end
-  def cj60; @cj60 ||= sheet7.cj60/(sheet12.c13*sheet11.e79); end
-  def ck60; @ck60 ||= sheet7.ck60/(sheet12.c13*sheet11.e79); end
-  def cl60; @cl60 ||= sheet7.cl60/(sheet12.c13*sheet11.e79); end
-  def cm60; @cm60 ||= sheet7.cm60/(sheet12.c13*sheet11.e79); end
-  def cn60; @cn60 ||= sheet7.cn60/(sheet12.c13*sheet11.e79); end
-  def cp60; @cp60 ||= average(a('cf60','cn60')); end
-  def cq60; @cq60 ||= (sumproduct(a('cg60','cn60'),sheet12.a('d28','k28'))*5.0)+cf60; end
-  def cr60; @cr60 ||= excel_if(excel_comparison(abs(cd60-cq60-at60),"<",1.0),"ok","err"); end
-  def a61; "III.a.2"; end
-  def b61; "Offshore wind"; end
-  def c61; "Power"; end
-  def e61; @e61 ||= sheet7.e61/(sheet12.c13*sheet11.e79); end
-  def f61; @f61 ||= sheet7.f61/(sheet12.c13*sheet11.e79); end
-  def g61; @g61 ||= sheet7.g61/(sheet12.c13*sheet11.e79); end
-  def h61; @h61 ||= sheet7.h61/(sheet12.c13*sheet11.e79); end
-  def i61; @i61 ||= sheet7.i61/(sheet12.c13*sheet11.e79); end
-  def j61; @j61 ||= sheet7.j61/(sheet12.c13*sheet11.e79); end
-  def k61; @k61 ||= sheet7.k61/(sheet12.c13*sheet11.e79); end
-  def l61; @l61 ||= sheet7.l61/(sheet12.c13*sheet11.e79); end
-  def m61; @m61 ||= sheet7.m61/(sheet12.c13*sheet11.e79); end
-  def o61; @o61 ||= sheet7.o61/(sheet12.c13*sheet11.e79); end
-  def p61; @p61 ||= sheet7.p61/(sheet12.c13*sheet11.e79); end
-  def q61; @q61 ||= sheet7.q61/(sheet12.c13*sheet11.e79); end
-  def r61; @r61 ||= sheet7.r61/(sheet12.c13*sheet11.e79); end
-  def s61; @s61 ||= sheet7.s61/(sheet12.c13*sheet11.e79); end
-  def t61; @t61 ||= sheet7.t61/(sheet12.c13*sheet11.e79); end
-  def u61; @u61 ||= sheet7.u61/(sheet12.c13*sheet11.e79); end
-  def v61; @v61 ||= sheet7.v61/(sheet12.c13*sheet11.e79); end
-  def w61; @w61 ||= sheet7.w61/(sheet12.c13*sheet11.e79); end
-  def y61; @y61 ||= sheet7.y61/(sheet12.c13*sheet11.e79); end
-  def z61; @z61 ||= sheet7.z61/(sheet12.c13*sheet11.e79); end
-  def aa61; @aa61 ||= sheet7.aa61/(sheet12.c13*sheet11.e79); end
-  def ab61; @ab61 ||= sheet7.ab61/(sheet12.c13*sheet11.e79); end
-  def ac61; @ac61 ||= sheet7.ac61/(sheet12.c13*sheet11.e79); end
-  def ad61; @ad61 ||= sheet7.ad61/(sheet12.c13*sheet11.e79); end
-  def ae61; @ae61 ||= sheet7.ae61/(sheet12.c13*sheet11.e79); end
-  def af61; @af61 ||= sheet7.af61/(sheet12.c13*sheet11.e79); end
-  def ag61; @ag61 ||= sheet7.ag61/(sheet12.c13*sheet11.e79); end
-  def ai61; @ai61 ||= sheet7.ai61/(sheet12.c13*sheet11.e79); end
-  def aj61; @aj61 ||= sheet7.aj61/(sheet12.c13*sheet11.e79); end
-  def ak61; @ak61 ||= sheet7.ak61/(sheet12.c13*sheet11.e79); end
-  def al61; @al61 ||= sheet7.al61/(sheet12.c13*sheet11.e79); end
-  def am61; @am61 ||= sheet7.am61/(sheet12.c13*sheet11.e79); end
-  def an61; @an61 ||= sheet7.an61/(sheet12.c13*sheet11.e79); end
-  def ao61; @ao61 ||= sheet7.ao61/(sheet12.c13*sheet11.e79); end
-  def ap61; @ap61 ||= sheet7.ap61/(sheet12.c13*sheet11.e79); end
-  def aq61; @aq61 ||= sheet7.aq61/(sheet12.c13*sheet11.e79); end
-  def as61; @as61 ||= average(a('ai61','aq61')); end
-  def at61; @at61 ||= (sumproduct(a('aj61','aq61'),sheet12.a('d28','k28'))*5.0)+ai61; end
-  def av61; 0.0; end
-  def aw61; 5.0; end
-  def ay61; @ay61 ||= sheet7.ay61/(sheet12.c13*sheet11.e79); end
-  def az61; @az61 ||= sheet7.az61/(sheet12.c13*sheet11.e79); end
-  def ba61; @ba61 ||= sheet7.ba61/(sheet12.c13*sheet11.e79); end
-  def bb61; @bb61 ||= sheet7.bb61/(sheet12.c13*sheet11.e79); end
-  def bc61; @bc61 ||= sheet7.bc61/(sheet12.c13*sheet11.e79); end
-  def bd61; @bd61 ||= sheet7.bd61/(sheet12.c13*sheet11.e79); end
-  def be61; @be61 ||= sheet7.be61/(sheet12.c13*sheet11.e79); end
-  def bf61; @bf61 ||= sheet7.bf61/(sheet12.c13*sheet11.e79); end
-  def bg61; @bg61 ||= sheet7.bg61/(sheet12.c13*sheet11.e79); end
-  def bi61; @bi61 ||= sheet7.bi61/(sheet12.c13*sheet11.e79); end
-  def bj61; @bj61 ||= sheet7.bj61/(sheet12.c13*sheet11.e79); end
-  def bk61; @bk61 ||= sheet7.bk61/(sheet12.c13*sheet11.e79); end
-  def bl61; @bl61 ||= sheet7.bl61/(sheet12.c13*sheet11.e79); end
-  def bm61; @bm61 ||= sheet7.bm61/(sheet12.c13*sheet11.e79); end
-  def bn61; @bn61 ||= sheet7.bn61/(sheet12.c13*sheet11.e79); end
-  def bo61; @bo61 ||= sheet7.bo61/(sheet12.c13*sheet11.e79); end
-  def bp61; @bp61 ||= sheet7.bp61/(sheet12.c13*sheet11.e79); end
-  def bq61; @bq61 ||= sheet7.bq61/(sheet12.c13*sheet11.e79); end
-  def bs61; @bs61 ||= sheet7.bs61/(sheet12.c13*sheet11.e79); end
-  def bt61; @bt61 ||= sheet7.bt61/(sheet12.c13*sheet11.e79); end
-  def bu61; @bu61 ||= sheet7.bu61/(sheet12.c13*sheet11.e79); end
-  def bv61; @bv61 ||= sheet7.bv61/(sheet12.c13*sheet11.e79); end
-  def bw61; @bw61 ||= sheet7.bw61/(sheet12.c13*sheet11.e79); end
-  def bx61; @bx61 ||= sheet7.bx61/(sheet12.c13*sheet11.e79); end
-  def by61; @by61 ||= sheet7.by61/(sheet12.c13*sheet11.e79); end
-  def bz61; @bz61 ||= sheet7.bz61/(sheet12.c13*sheet11.e79); end
-  def ca61; @ca61 ||= sheet7.ca61/(sheet12.c13*sheet11.e79); end
-  def cc61; @cc61 ||= average(a('bs61','ca61')); end
-  def cd61; @cd61 ||= (sumproduct(a('bt61','ca61'),sheet12.a('d28','k28'))*5.0)+bs61; end
-  def cf61; @cf61 ||= sheet7.cf61/(sheet12.c13*sheet11.e79); end
-  def cg61; @cg61 ||= sheet7.cg61/(sheet12.c13*sheet11.e79); end
-  def ch61; @ch61 ||= sheet7.ch61/(sheet12.c13*sheet11.e79); end
-  def ci61; @ci61 ||= sheet7.ci61/(sheet12.c13*sheet11.e79); end
-  def cj61; @cj61 ||= sheet7.cj61/(sheet12.c13*sheet11.e79); end
-  def ck61; @ck61 ||= sheet7.ck61/(sheet12.c13*sheet11.e79); end
-  def cl61; @cl61 ||= sheet7.cl61/(sheet12.c13*sheet11.e79); end
-  def cm61; @cm61 ||= sheet7.cm61/(sheet12.c13*sheet11.e79); end
-  def cn61; @cn61 ||= sheet7.cn61/(sheet12.c13*sheet11.e79); end
-  def cp61; @cp61 ||= average(a('cf61','cn61')); end
-  def cq61; @cq61 ||= (sumproduct(a('cg61','cn61'),sheet12.a('d28','k28'))*5.0)+cf61; end
-  def cr61; @cr61 ||= excel_if(excel_comparison(abs(cd61-cq61-at61),"<",1.0),"ok","err"); end
-  def a62; "III.b"; end
-  def b62; "Hydroelectric"; end
-  def c62; "Power"; end
-  def e62; @e62 ||= sheet7.e62/(sheet12.c13*sheet11.e79); end
-  def f62; @f62 ||= sheet7.f62/(sheet12.c13*sheet11.e79); end
-  def g62; @g62 ||= sheet7.g62/(sheet12.c13*sheet11.e79); end
-  def h62; @h62 ||= sheet7.h62/(sheet12.c13*sheet11.e79); end
-  def i62; @i62 ||= sheet7.i62/(sheet12.c13*sheet11.e79); end
-  def j62; @j62 ||= sheet7.j62/(sheet12.c13*sheet11.e79); end
-  def k62; @k62 ||= sheet7.k62/(sheet12.c13*sheet11.e79); end
-  def l62; @l62 ||= sheet7.l62/(sheet12.c13*sheet11.e79); end
-  def m62; @m62 ||= sheet7.m62/(sheet12.c13*sheet11.e79); end
-  def o62; @o62 ||= sheet7.o62/(sheet12.c13*sheet11.e79); end
-  def p62; @p62 ||= sheet7.p62/(sheet12.c13*sheet11.e79); end
-  def q62; @q62 ||= sheet7.q62/(sheet12.c13*sheet11.e79); end
-  def r62; @r62 ||= sheet7.r62/(sheet12.c13*sheet11.e79); end
-  def s62; @s62 ||= sheet7.s62/(sheet12.c13*sheet11.e79); end
-  def t62; @t62 ||= sheet7.t62/(sheet12.c13*sheet11.e79); end
-  def u62; @u62 ||= sheet7.u62/(sheet12.c13*sheet11.e79); end
-  def v62; @v62 ||= sheet7.v62/(sheet12.c13*sheet11.e79); end
-  def w62; @w62 ||= sheet7.w62/(sheet12.c13*sheet11.e79); end
-  def y62; @y62 ||= sheet7.y62/(sheet12.c13*sheet11.e79); end
-  def z62; @z62 ||= sheet7.z62/(sheet12.c13*sheet11.e79); end
-  def aa62; @aa62 ||= sheet7.aa62/(sheet12.c13*sheet11.e79); end
-  def ab62; @ab62 ||= sheet7.ab62/(sheet12.c13*sheet11.e79); end
-  def ac62; @ac62 ||= sheet7.ac62/(sheet12.c13*sheet11.e79); end
-  def ad62; @ad62 ||= sheet7.ad62/(sheet12.c13*sheet11.e79); end
-  def ae62; @ae62 ||= sheet7.ae62/(sheet12.c13*sheet11.e79); end
-  def af62; @af62 ||= sheet7.af62/(sheet12.c13*sheet11.e79); end
-  def ag62; @ag62 ||= sheet7.ag62/(sheet12.c13*sheet11.e79); end
-  def ai62; @ai62 ||= sheet7.ai62/(sheet12.c13*sheet11.e79); end
-  def aj62; @aj62 ||= sheet7.aj62/(sheet12.c13*sheet11.e79); end
-  def ak62; @ak62 ||= sheet7.ak62/(sheet12.c13*sheet11.e79); end
-  def al62; @al62 ||= sheet7.al62/(sheet12.c13*sheet11.e79); end
-  def am62; @am62 ||= sheet7.am62/(sheet12.c13*sheet11.e79); end
-  def an62; @an62 ||= sheet7.an62/(sheet12.c13*sheet11.e79); end
-  def ao62; @ao62 ||= sheet7.ao62/(sheet12.c13*sheet11.e79); end
-  def ap62; @ap62 ||= sheet7.ap62/(sheet12.c13*sheet11.e79); end
-  def aq62; @aq62 ||= sheet7.aq62/(sheet12.c13*sheet11.e79); end
-  def as62; @as62 ||= average(a('ai62','aq62')); end
-  def at62; @at62 ||= (sumproduct(a('aj62','aq62'),sheet12.a('d28','k28'))*5.0)+ai62; end
-  def av62; 0.0; end
-  def aw62; 5.0; end
-  def ay62; @ay62 ||= sheet7.ay62/(sheet12.c13*sheet11.e79); end
-  def az62; @az62 ||= sheet7.az62/(sheet12.c13*sheet11.e79); end
-  def ba62; @ba62 ||= sheet7.ba62/(sheet12.c13*sheet11.e79); end
-  def bb62; @bb62 ||= sheet7.bb62/(sheet12.c13*sheet11.e79); end
-  def bc62; @bc62 ||= sheet7.bc62/(sheet12.c13*sheet11.e79); end
-  def bd62; @bd62 ||= sheet7.bd62/(sheet12.c13*sheet11.e79); end
-  def be62; @be62 ||= sheet7.be62/(sheet12.c13*sheet11.e79); end
-  def bf62; @bf62 ||= sheet7.bf62/(sheet12.c13*sheet11.e79); end
-  def bg62; @bg62 ||= sheet7.bg62/(sheet12.c13*sheet11.e79); end
-  def bi62; @bi62 ||= sheet7.bi62/(sheet12.c13*sheet11.e79); end
-  def bj62; @bj62 ||= sheet7.bj62/(sheet12.c13*sheet11.e79); end
-  def bk62; @bk62 ||= sheet7.bk62/(sheet12.c13*sheet11.e79); end
-  def bl62; @bl62 ||= sheet7.bl62/(sheet12.c13*sheet11.e79); end
-  def bm62; @bm62 ||= sheet7.bm62/(sheet12.c13*sheet11.e79); end
-  def bn62; @bn62 ||= sheet7.bn62/(sheet12.c13*sheet11.e79); end
-  def bo62; @bo62 ||= sheet7.bo62/(sheet12.c13*sheet11.e79); end
-  def bp62; @bp62 ||= sheet7.bp62/(sheet12.c13*sheet11.e79); end
-  def bq62; @bq62 ||= sheet7.bq62/(sheet12.c13*sheet11.e79); end
-  def bs62; @bs62 ||= sheet7.bs62/(sheet12.c13*sheet11.e79); end
-  def bt62; @bt62 ||= sheet7.bt62/(sheet12.c13*sheet11.e79); end
-  def bu62; @bu62 ||= sheet7.bu62/(sheet12.c13*sheet11.e79); end
-  def bv62; @bv62 ||= sheet7.bv62/(sheet12.c13*sheet11.e79); end
-  def bw62; @bw62 ||= sheet7.bw62/(sheet12.c13*sheet11.e79); end
-  def bx62; @bx62 ||= sheet7.bx62/(sheet12.c13*sheet11.e79); end
-  def by62; @by62 ||= sheet7.by62/(sheet12.c13*sheet11.e79); end
-  def bz62; @bz62 ||= sheet7.bz62/(sheet12.c13*sheet11.e79); end
-  def ca62; @ca62 ||= sheet7.ca62/(sheet12.c13*sheet11.e79); end
-  def cc62; @cc62 ||= average(a('bs62','ca62')); end
-  def cd62; @cd62 ||= (sumproduct(a('bt62','ca62'),sheet12.a('d28','k28'))*5.0)+bs62; end
-  def cf62; @cf62 ||= sheet7.cf62/(sheet12.c13*sheet11.e79); end
-  def cg62; @cg62 ||= sheet7.cg62/(sheet12.c13*sheet11.e79); end
-  def ch62; @ch62 ||= sheet7.ch62/(sheet12.c13*sheet11.e79); end
-  def ci62; @ci62 ||= sheet7.ci62/(sheet12.c13*sheet11.e79); end
-  def cj62; @cj62 ||= sheet7.cj62/(sheet12.c13*sheet11.e79); end
-  def ck62; @ck62 ||= sheet7.ck62/(sheet12.c13*sheet11.e79); end
-  def cl62; @cl62 ||= sheet7.cl62/(sheet12.c13*sheet11.e79); end
-  def cm62; @cm62 ||= sheet7.cm62/(sheet12.c13*sheet11.e79); end
-  def cn62; @cn62 ||= sheet7.cn62/(sheet12.c13*sheet11.e79); end
-  def cp62; @cp62 ||= average(a('cf62','cn62')); end
-  def cq62; @cq62 ||= (sumproduct(a('cg62','cn62'),sheet12.a('d28','k28'))*5.0)+cf62; end
-  def cr62; @cr62 ||= excel_if(excel_comparison(abs(cd62-cq62-at62),"<",1.0),"ok","err"); end
-  def a63; "III.c"; end
-  def b63; "Wave and Tidal"; end
-  def c63; "Power"; end
-  def e63; @e63 ||= sheet7.e63/(sheet12.c13*sheet11.e79); end
-  def f63; @f63 ||= sheet7.f63/(sheet12.c13*sheet11.e79); end
-  def g63; @g63 ||= sheet7.g63/(sheet12.c13*sheet11.e79); end
-  def h63; @h63 ||= sheet7.h63/(sheet12.c13*sheet11.e79); end
-  def i63; @i63 ||= sheet7.i63/(sheet12.c13*sheet11.e79); end
-  def j63; @j63 ||= sheet7.j63/(sheet12.c13*sheet11.e79); end
-  def k63; @k63 ||= sheet7.k63/(sheet12.c13*sheet11.e79); end
-  def l63; @l63 ||= sheet7.l63/(sheet12.c13*sheet11.e79); end
-  def m63; @m63 ||= sheet7.m63/(sheet12.c13*sheet11.e79); end
-  def o63; @o63 ||= sheet7.o63/(sheet12.c13*sheet11.e79); end
-  def p63; @p63 ||= sheet7.p63/(sheet12.c13*sheet11.e79); end
-  def q63; @q63 ||= sheet7.q63/(sheet12.c13*sheet11.e79); end
-  def r63; @r63 ||= sheet7.r63/(sheet12.c13*sheet11.e79); end
-  def s63; @s63 ||= sheet7.s63/(sheet12.c13*sheet11.e79); end
-  def t63; @t63 ||= sheet7.t63/(sheet12.c13*sheet11.e79); end
-  def u63; @u63 ||= sheet7.u63/(sheet12.c13*sheet11.e79); end
-  def v63; @v63 ||= sheet7.v63/(sheet12.c13*sheet11.e79); end
-  def w63; @w63 ||= sheet7.w63/(sheet12.c13*sheet11.e79); end
-  def y63; @y63 ||= sheet7.y63/(sheet12.c13*sheet11.e79); end
-  def z63; @z63 ||= sheet7.z63/(sheet12.c13*sheet11.e79); end
-  def aa63; @aa63 ||= sheet7.aa63/(sheet12.c13*sheet11.e79); end
-  def ab63; @ab63 ||= sheet7.ab63/(sheet12.c13*sheet11.e79); end
-  def ac63; @ac63 ||= sheet7.ac63/(sheet12.c13*sheet11.e79); end
-  def ad63; @ad63 ||= sheet7.ad63/(sheet12.c13*sheet11.e79); end
-  def ae63; @ae63 ||= sheet7.ae63/(sheet12.c13*sheet11.e79); end
-  def af63; @af63 ||= sheet7.af63/(sheet12.c13*sheet11.e79); end
-  def ag63; @ag63 ||= sheet7.ag63/(sheet12.c13*sheet11.e79); end
-  def ai63; @ai63 ||= sheet7.ai63/(sheet12.c13*sheet11.e79); end
-  def aj63; @aj63 ||= sheet7.aj63/(sheet12.c13*sheet11.e79); end
-  def ak63; @ak63 ||= sheet7.ak63/(sheet12.c13*sheet11.e79); end
-  def al63; @al63 ||= sheet7.al63/(sheet12.c13*sheet11.e79); end
-  def am63; @am63 ||= sheet7.am63/(sheet12.c13*sheet11.e79); end
-  def an63; @an63 ||= sheet7.an63/(sheet12.c13*sheet11.e79); end
-  def ao63; @ao63 ||= sheet7.ao63/(sheet12.c13*sheet11.e79); end
-  def ap63; @ap63 ||= sheet7.ap63/(sheet12.c13*sheet11.e79); end
-  def aq63; @aq63 ||= sheet7.aq63/(sheet12.c13*sheet11.e79); end
-  def as63; @as63 ||= average(a('ai63','aq63')); end
-  def at63; @at63 ||= (sumproduct(a('aj63','aq63'),sheet12.a('d28','k28'))*5.0)+ai63; end
-  def av63; 0.0; end
-  def aw63; 5.0; end
-  def ay63; @ay63 ||= sheet7.ay63/(sheet12.c13*sheet11.e79); end
-  def az63; @az63 ||= sheet7.az63/(sheet12.c13*sheet11.e79); end
-  def ba63; @ba63 ||= sheet7.ba63/(sheet12.c13*sheet11.e79); end
-  def bb63; @bb63 ||= sheet7.bb63/(sheet12.c13*sheet11.e79); end
-  def bc63; @bc63 ||= sheet7.bc63/(sheet12.c13*sheet11.e79); end
-  def bd63; @bd63 ||= sheet7.bd63/(sheet12.c13*sheet11.e79); end
-  def be63; @be63 ||= sheet7.be63/(sheet12.c13*sheet11.e79); end
-  def bf63; @bf63 ||= sheet7.bf63/(sheet12.c13*sheet11.e79); end
-  def bg63; @bg63 ||= sheet7.bg63/(sheet12.c13*sheet11.e79); end
-  def bi63; @bi63 ||= sheet7.bi63/(sheet12.c13*sheet11.e79); end
-  def bj63; @bj63 ||= sheet7.bj63/(sheet12.c13*sheet11.e79); end
-  def bk63; @bk63 ||= sheet7.bk63/(sheet12.c13*sheet11.e79); end
-  def bl63; @bl63 ||= sheet7.bl63/(sheet12.c13*sheet11.e79); end
-  def bm63; @bm63 ||= sheet7.bm63/(sheet12.c13*sheet11.e79); end
-  def bn63; @bn63 ||= sheet7.bn63/(sheet12.c13*sheet11.e79); end
-  def bo63; @bo63 ||= sheet7.bo63/(sheet12.c13*sheet11.e79); end
-  def bp63; @bp63 ||= sheet7.bp63/(sheet12.c13*sheet11.e79); end
-  def bq63; @bq63 ||= sheet7.bq63/(sheet12.c13*sheet11.e79); end
-  def bs63; @bs63 ||= sheet7.bs63/(sheet12.c13*sheet11.e79); end
-  def bt63; @bt63 ||= sheet7.bt63/(sheet12.c13*sheet11.e79); end
-  def bu63; @bu63 ||= sheet7.bu63/(sheet12.c13*sheet11.e79); end
-  def bv63; @bv63 ||= sheet7.bv63/(sheet12.c13*sheet11.e79); end
-  def bw63; @bw63 ||= sheet7.bw63/(sheet12.c13*sheet11.e79); end
-  def bx63; @bx63 ||= sheet7.bx63/(sheet12.c13*sheet11.e79); end
-  def by63; @by63 ||= sheet7.by63/(sheet12.c13*sheet11.e79); end
-  def bz63; @bz63 ||= sheet7.bz63/(sheet12.c13*sheet11.e79); end
-  def ca63; @ca63 ||= sheet7.ca63/(sheet12.c13*sheet11.e79); end
-  def cc63; @cc63 ||= average(a('bs63','ca63')); end
-  def cd63; @cd63 ||= (sumproduct(a('bt63','ca63'),sheet12.a('d28','k28'))*5.0)+bs63; end
-  def cf63; @cf63 ||= sheet7.cf63/(sheet12.c13*sheet11.e79); end
-  def cg63; @cg63 ||= sheet7.cg63/(sheet12.c13*sheet11.e79); end
-  def ch63; @ch63 ||= sheet7.ch63/(sheet12.c13*sheet11.e79); end
-  def ci63; @ci63 ||= sheet7.ci63/(sheet12.c13*sheet11.e79); end
-  def cj63; @cj63 ||= sheet7.cj63/(sheet12.c13*sheet11.e79); end
-  def ck63; @ck63 ||= sheet7.ck63/(sheet12.c13*sheet11.e79); end
-  def cl63; @cl63 ||= sheet7.cl63/(sheet12.c13*sheet11.e79); end
-  def cm63; @cm63 ||= sheet7.cm63/(sheet12.c13*sheet11.e79); end
-  def cn63; @cn63 ||= sheet7.cn63/(sheet12.c13*sheet11.e79); end
-  def cp63; @cp63 ||= average(a('cf63','cn63')); end
-  def cq63; @cq63 ||= (sumproduct(a('cg63','cn63'),sheet12.a('d28','k28'))*5.0)+cf63; end
-  def cr63; @cr63 ||= excel_if(excel_comparison(abs(cd63-cq63-at63),"<",1.0),"ok","err"); end
-  def a64; "III.d"; end
-  def b64; "Geothermal"; end
-  def c64; "Power"; end
-  def e64; @e64 ||= sheet7.e64/(sheet12.c13*sheet11.e79); end
-  def f64; @f64 ||= sheet7.f64/(sheet12.c13*sheet11.e79); end
-  def g64; @g64 ||= sheet7.g64/(sheet12.c13*sheet11.e79); end
-  def h64; @h64 ||= sheet7.h64/(sheet12.c13*sheet11.e79); end
-  def i64; @i64 ||= sheet7.i64/(sheet12.c13*sheet11.e79); end
-  def j64; @j64 ||= sheet7.j64/(sheet12.c13*sheet11.e79); end
-  def k64; @k64 ||= sheet7.k64/(sheet12.c13*sheet11.e79); end
-  def l64; @l64 ||= sheet7.l64/(sheet12.c13*sheet11.e79); end
-  def m64; @m64 ||= sheet7.m64/(sheet12.c13*sheet11.e79); end
-  def o64; @o64 ||= sheet7.o64/(sheet12.c13*sheet11.e79); end
-  def p64; @p64 ||= sheet7.p64/(sheet12.c13*sheet11.e79); end
-  def q64; @q64 ||= sheet7.q64/(sheet12.c13*sheet11.e79); end
-  def r64; @r64 ||= sheet7.r64/(sheet12.c13*sheet11.e79); end
-  def s64; @s64 ||= sheet7.s64/(sheet12.c13*sheet11.e79); end
-  def t64; @t64 ||= sheet7.t64/(sheet12.c13*sheet11.e79); end
-  def u64; @u64 ||= sheet7.u64/(sheet12.c13*sheet11.e79); end
-  def v64; @v64 ||= sheet7.v64/(sheet12.c13*sheet11.e79); end
-  def w64; @w64 ||= sheet7.w64/(sheet12.c13*sheet11.e79); end
-  def y64; @y64 ||= sheet7.y64/(sheet12.c13*sheet11.e79); end
-  def z64; @z64 ||= sheet7.z64/(sheet12.c13*sheet11.e79); end
-  def aa64; @aa64 ||= sheet7.aa64/(sheet12.c13*sheet11.e79); end
-  def ab64; @ab64 ||= sheet7.ab64/(sheet12.c13*sheet11.e79); end
-  def ac64; @ac64 ||= sheet7.ac64/(sheet12.c13*sheet11.e79); end
-  def ad64; @ad64 ||= sheet7.ad64/(sheet12.c13*sheet11.e79); end
-  def ae64; @ae64 ||= sheet7.ae64/(sheet12.c13*sheet11.e79); end
-  def af64; @af64 ||= sheet7.af64/(sheet12.c13*sheet11.e79); end
-  def ag64; @ag64 ||= sheet7.ag64/(sheet12.c13*sheet11.e79); end
-  def ai64; @ai64 ||= sheet7.ai64/(sheet12.c13*sheet11.e79); end
-  def aj64; @aj64 ||= sheet7.aj64/(sheet12.c13*sheet11.e79); end
-  def ak64; @ak64 ||= sheet7.ak64/(sheet12.c13*sheet11.e79); end
-  def al64; @al64 ||= sheet7.al64/(sheet12.c13*sheet11.e79); end
-  def am64; @am64 ||= sheet7.am64/(sheet12.c13*sheet11.e79); end
-  def an64; @an64 ||= sheet7.an64/(sheet12.c13*sheet11.e79); end
-  def ao64; @ao64 ||= sheet7.ao64/(sheet12.c13*sheet11.e79); end
-  def ap64; @ap64 ||= sheet7.ap64/(sheet12.c13*sheet11.e79); end
-  def aq64; @aq64 ||= sheet7.aq64/(sheet12.c13*sheet11.e79); end
-  def as64; @as64 ||= average(a('ai64','aq64')); end
-  def at64; @at64 ||= (sumproduct(a('aj64','aq64'),sheet12.a('d28','k28'))*5.0)+ai64; end
-  def av64; 0.0; end
-  def aw64; 5.0; end
-  def ay64; @ay64 ||= sheet7.ay64/(sheet12.c13*sheet11.e79); end
-  def az64; @az64 ||= sheet7.az64/(sheet12.c13*sheet11.e79); end
-  def ba64; @ba64 ||= sheet7.ba64/(sheet12.c13*sheet11.e79); end
-  def bb64; @bb64 ||= sheet7.bb64/(sheet12.c13*sheet11.e79); end
-  def bc64; @bc64 ||= sheet7.bc64/(sheet12.c13*sheet11.e79); end
-  def bd64; @bd64 ||= sheet7.bd64/(sheet12.c13*sheet11.e79); end
-  def be64; @be64 ||= sheet7.be64/(sheet12.c13*sheet11.e79); end
-  def bf64; @bf64 ||= sheet7.bf64/(sheet12.c13*sheet11.e79); end
-  def bg64; @bg64 ||= sheet7.bg64/(sheet12.c13*sheet11.e79); end
-  def bi64; @bi64 ||= sheet7.bi64/(sheet12.c13*sheet11.e79); end
-  def bj64; @bj64 ||= sheet7.bj64/(sheet12.c13*sheet11.e79); end
-  def bk64; @bk64 ||= sheet7.bk64/(sheet12.c13*sheet11.e79); end
-  def bl64; @bl64 ||= sheet7.bl64/(sheet12.c13*sheet11.e79); end
-  def bm64; @bm64 ||= sheet7.bm64/(sheet12.c13*sheet11.e79); end
-  def bn64; @bn64 ||= sheet7.bn64/(sheet12.c13*sheet11.e79); end
-  def bo64; @bo64 ||= sheet7.bo64/(sheet12.c13*sheet11.e79); end
-  def bp64; @bp64 ||= sheet7.bp64/(sheet12.c13*sheet11.e79); end
-  def bq64; @bq64 ||= sheet7.bq64/(sheet12.c13*sheet11.e79); end
-  def bs64; @bs64 ||= sheet7.bs64/(sheet12.c13*sheet11.e79); end
-  def bt64; @bt64 ||= sheet7.bt64/(sheet12.c13*sheet11.e79); end
-  def bu64; @bu64 ||= sheet7.bu64/(sheet12.c13*sheet11.e79); end
-  def bv64; @bv64 ||= sheet7.bv64/(sheet12.c13*sheet11.e79); end
-  def bw64; @bw64 ||= sheet7.bw64/(sheet12.c13*sheet11.e79); end
-  def bx64; @bx64 ||= sheet7.bx64/(sheet12.c13*sheet11.e79); end
-  def by64; @by64 ||= sheet7.by64/(sheet12.c13*sheet11.e79); end
-  def bz64; @bz64 ||= sheet7.bz64/(sheet12.c13*sheet11.e79); end
-  def ca64; @ca64 ||= sheet7.ca64/(sheet12.c13*sheet11.e79); end
-  def cc64; @cc64 ||= average(a('bs64','ca64')); end
-  def cd64; @cd64 ||= (sumproduct(a('bt64','ca64'),sheet12.a('d28','k28'))*5.0)+bs64; end
-  def cf64; @cf64 ||= sheet7.cf64/(sheet12.c13*sheet11.e79); end
-  def cg64; @cg64 ||= sheet7.cg64/(sheet12.c13*sheet11.e79); end
-  def ch64; @ch64 ||= sheet7.ch64/(sheet12.c13*sheet11.e79); end
-  def ci64; @ci64 ||= sheet7.ci64/(sheet12.c13*sheet11.e79); end
-  def cj64; @cj64 ||= sheet7.cj64/(sheet12.c13*sheet11.e79); end
-  def ck64; @ck64 ||= sheet7.ck64/(sheet12.c13*sheet11.e79); end
-  def cl64; @cl64 ||= sheet7.cl64/(sheet12.c13*sheet11.e79); end
-  def cm64; @cm64 ||= sheet7.cm64/(sheet12.c13*sheet11.e79); end
-  def cn64; @cn64 ||= sheet7.cn64/(sheet12.c13*sheet11.e79); end
-  def cp64; @cp64 ||= average(a('cf64','cn64')); end
-  def cq64; @cq64 ||= (sumproduct(a('cg64','cn64'),sheet12.a('d28','k28'))*5.0)+cf64; end
-  def cr64; @cr64 ||= excel_if(excel_comparison(abs(cd64-cq64-at64),"<",1.0),"ok","err"); end
-  def a65; "IV.a"; end
-  def b65; "Distributed solar PV"; end
-  def c65; "Power"; end
-  def e65; @e65 ||= sheet7.e65/(sheet12.c13*sheet11.e79); end
-  def f65; @f65 ||= sheet7.f65/(sheet12.c13*sheet11.e79); end
-  def g65; @g65 ||= sheet7.g65/(sheet12.c13*sheet11.e79); end
-  def h65; @h65 ||= sheet7.h65/(sheet12.c13*sheet11.e79); end
-  def i65; @i65 ||= sheet7.i65/(sheet12.c13*sheet11.e79); end
-  def j65; @j65 ||= sheet7.j65/(sheet12.c13*sheet11.e79); end
-  def k65; @k65 ||= sheet7.k65/(sheet12.c13*sheet11.e79); end
-  def l65; @l65 ||= sheet7.l65/(sheet12.c13*sheet11.e79); end
-  def m65; @m65 ||= sheet7.m65/(sheet12.c13*sheet11.e79); end
-  def o65; @o65 ||= sheet7.o65/(sheet12.c13*sheet11.e79); end
-  def p65; @p65 ||= sheet7.p65/(sheet12.c13*sheet11.e79); end
-  def q65; @q65 ||= sheet7.q65/(sheet12.c13*sheet11.e79); end
-  def r65; @r65 ||= sheet7.r65/(sheet12.c13*sheet11.e79); end
-  def s65; @s65 ||= sheet7.s65/(sheet12.c13*sheet11.e79); end
-  def t65; @t65 ||= sheet7.t65/(sheet12.c13*sheet11.e79); end
-  def u65; @u65 ||= sheet7.u65/(sheet12.c13*sheet11.e79); end
-  def v65; @v65 ||= sheet7.v65/(sheet12.c13*sheet11.e79); end
-  def w65; @w65 ||= sheet7.w65/(sheet12.c13*sheet11.e79); end
-  def y65; @y65 ||= sheet7.y65/(sheet12.c13*sheet11.e79); end
-  def z65; @z65 ||= sheet7.z65/(sheet12.c13*sheet11.e79); end
-  def aa65; @aa65 ||= sheet7.aa65/(sheet12.c13*sheet11.e79); end
-  def ab65; @ab65 ||= sheet7.ab65/(sheet12.c13*sheet11.e79); end
-  def ac65; @ac65 ||= sheet7.ac65/(sheet12.c13*sheet11.e79); end
-  def ad65; @ad65 ||= sheet7.ad65/(sheet12.c13*sheet11.e79); end
-  def ae65; @ae65 ||= sheet7.ae65/(sheet12.c13*sheet11.e79); end
-  def af65; @af65 ||= sheet7.af65/(sheet12.c13*sheet11.e79); end
-  def ag65; @ag65 ||= sheet7.ag65/(sheet12.c13*sheet11.e79); end
-  def ai65; @ai65 ||= sheet7.ai65/(sheet12.c13*sheet11.e79); end
-  def aj65; @aj65 ||= sheet7.aj65/(sheet12.c13*sheet11.e79); end
-  def ak65; @ak65 ||= sheet7.ak65/(sheet12.c13*sheet11.e79); end
-  def al65; @al65 ||= sheet7.al65/(sheet12.c13*sheet11.e79); end
-  def am65; @am65 ||= sheet7.am65/(sheet12.c13*sheet11.e79); end
-  def an65; @an65 ||= sheet7.an65/(sheet12.c13*sheet11.e79); end
-  def ao65; @ao65 ||= sheet7.ao65/(sheet12.c13*sheet11.e79); end
-  def ap65; @ap65 ||= sheet7.ap65/(sheet12.c13*sheet11.e79); end
-  def aq65; @aq65 ||= sheet7.aq65/(sheet12.c13*sheet11.e79); end
-  def as65; @as65 ||= average(a('ai65','aq65')); end
-  def at65; @at65 ||= (sumproduct(a('aj65','aq65'),sheet12.a('d28','k28'))*5.0)+ai65; end
-  def av65; 0.0; end
-  def aw65; 5.0; end
-  def ay65; @ay65 ||= sheet7.ay65/(sheet12.c13*sheet11.e79); end
-  def az65; @az65 ||= sheet7.az65/(sheet12.c13*sheet11.e79); end
-  def ba65; @ba65 ||= sheet7.ba65/(sheet12.c13*sheet11.e79); end
-  def bb65; @bb65 ||= sheet7.bb65/(sheet12.c13*sheet11.e79); end
-  def bc65; @bc65 ||= sheet7.bc65/(sheet12.c13*sheet11.e79); end
-  def bd65; @bd65 ||= sheet7.bd65/(sheet12.c13*sheet11.e79); end
-  def be65; @be65 ||= sheet7.be65/(sheet12.c13*sheet11.e79); end
-  def bf65; @bf65 ||= sheet7.bf65/(sheet12.c13*sheet11.e79); end
-  def bg65; @bg65 ||= sheet7.bg65/(sheet12.c13*sheet11.e79); end
-  def bi65; @bi65 ||= sheet7.bi65/(sheet12.c13*sheet11.e79); end
-  def bj65; @bj65 ||= sheet7.bj65/(sheet12.c13*sheet11.e79); end
-  def bk65; @bk65 ||= sheet7.bk65/(sheet12.c13*sheet11.e79); end
-  def bl65; @bl65 ||= sheet7.bl65/(sheet12.c13*sheet11.e79); end
-  def bm65; @bm65 ||= sheet7.bm65/(sheet12.c13*sheet11.e79); end
-  def bn65; @bn65 ||= sheet7.bn65/(sheet12.c13*sheet11.e79); end
-  def bo65; @bo65 ||= sheet7.bo65/(sheet12.c13*sheet11.e79); end
-  def bp65; @bp65 ||= sheet7.bp65/(sheet12.c13*sheet11.e79); end
-  def bq65; @bq65 ||= sheet7.bq65/(sheet12.c13*sheet11.e79); end
-  def bs65; @bs65 ||= sheet7.bs65/(sheet12.c13*sheet11.e79); end
-  def bt65; @bt65 ||= sheet7.bt65/(sheet12.c13*sheet11.e79); end
-  def bu65; @bu65 ||= sheet7.bu65/(sheet12.c13*sheet11.e79); end
-  def bv65; @bv65 ||= sheet7.bv65/(sheet12.c13*sheet11.e79); end
-  def bw65; @bw65 ||= sheet7.bw65/(sheet12.c13*sheet11.e79); end
-  def bx65; @bx65 ||= sheet7.bx65/(sheet12.c13*sheet11.e79); end
-  def by65; @by65 ||= sheet7.by65/(sheet12.c13*sheet11.e79); end
-  def bz65; @bz65 ||= sheet7.bz65/(sheet12.c13*sheet11.e79); end
-  def ca65; @ca65 ||= sheet7.ca65/(sheet12.c13*sheet11.e79); end
-  def cc65; @cc65 ||= average(a('bs65','ca65')); end
-  def cd65; @cd65 ||= (sumproduct(a('bt65','ca65'),sheet12.a('d28','k28'))*5.0)+bs65; end
-  def cf65; @cf65 ||= sheet7.cf65/(sheet12.c13*sheet11.e79); end
-  def cg65; @cg65 ||= sheet7.cg65/(sheet12.c13*sheet11.e79); end
-  def ch65; @ch65 ||= sheet7.ch65/(sheet12.c13*sheet11.e79); end
-  def ci65; @ci65 ||= sheet7.ci65/(sheet12.c13*sheet11.e79); end
-  def cj65; @cj65 ||= sheet7.cj65/(sheet12.c13*sheet11.e79); end
-  def ck65; @ck65 ||= sheet7.ck65/(sheet12.c13*sheet11.e79); end
-  def cl65; @cl65 ||= sheet7.cl65/(sheet12.c13*sheet11.e79); end
-  def cm65; @cm65 ||= sheet7.cm65/(sheet12.c13*sheet11.e79); end
-  def cn65; @cn65 ||= sheet7.cn65/(sheet12.c13*sheet11.e79); end
-  def cp65; @cp65 ||= average(a('cf65','cn65')); end
-  def cq65; @cq65 ||= (sumproduct(a('cg65','cn65'),sheet12.a('d28','k28'))*5.0)+cf65; end
-  def cr65; @cr65 ||= excel_if(excel_comparison(abs(cd65-cq65-at65),"<",1.0),"ok","err"); end
-  def a66; "IV.b"; end
-  def b66; "Distributed solar thermal"; end
-  def c66; "Heating"; end
-  def e66; @e66 ||= sheet7.e66/(sheet12.c13*sheet11.e79); end
-  def f66; @f66 ||= sheet7.f66/(sheet12.c13*sheet11.e79); end
-  def g66; @g66 ||= sheet7.g66/(sheet12.c13*sheet11.e79); end
-  def h66; @h66 ||= sheet7.h66/(sheet12.c13*sheet11.e79); end
-  def i66; @i66 ||= sheet7.i66/(sheet12.c13*sheet11.e79); end
-  def j66; @j66 ||= sheet7.j66/(sheet12.c13*sheet11.e79); end
-  def k66; @k66 ||= sheet7.k66/(sheet12.c13*sheet11.e79); end
-  def l66; @l66 ||= sheet7.l66/(sheet12.c13*sheet11.e79); end
-  def m66; @m66 ||= sheet7.m66/(sheet12.c13*sheet11.e79); end
-  def o66; @o66 ||= sheet7.o66/(sheet12.c13*sheet11.e79); end
-  def p66; @p66 ||= sheet7.p66/(sheet12.c13*sheet11.e79); end
-  def q66; @q66 ||= sheet7.q66/(sheet12.c13*sheet11.e79); end
-  def r66; @r66 ||= sheet7.r66/(sheet12.c13*sheet11.e79); end
-  def s66; @s66 ||= sheet7.s66/(sheet12.c13*sheet11.e79); end
-  def t66; @t66 ||= sheet7.t66/(sheet12.c13*sheet11.e79); end
-  def u66; @u66 ||= sheet7.u66/(sheet12.c13*sheet11.e79); end
-  def v66; @v66 ||= sheet7.v66/(sheet12.c13*sheet11.e79); end
-  def w66; @w66 ||= sheet7.w66/(sheet12.c13*sheet11.e79); end
-  def y66; @y66 ||= sheet7.y66/(sheet12.c13*sheet11.e79); end
-  def z66; @z66 ||= sheet7.z66/(sheet12.c13*sheet11.e79); end
-  def aa66; @aa66 ||= sheet7.aa66/(sheet12.c13*sheet11.e79); end
-  def ab66; @ab66 ||= sheet7.ab66/(sheet12.c13*sheet11.e79); end
-  def ac66; @ac66 ||= sheet7.ac66/(sheet12.c13*sheet11.e79); end
-  def ad66; @ad66 ||= sheet7.ad66/(sheet12.c13*sheet11.e79); end
-  def ae66; @ae66 ||= sheet7.ae66/(sheet12.c13*sheet11.e79); end
-  def af66; @af66 ||= sheet7.af66/(sheet12.c13*sheet11.e79); end
-  def ag66; @ag66 ||= sheet7.ag66/(sheet12.c13*sheet11.e79); end
-  def ai66; @ai66 ||= sheet7.ai66/(sheet12.c13*sheet11.e79); end
-  def aj66; @aj66 ||= sheet7.aj66/(sheet12.c13*sheet11.e79); end
-  def ak66; @ak66 ||= sheet7.ak66/(sheet12.c13*sheet11.e79); end
-  def al66; @al66 ||= sheet7.al66/(sheet12.c13*sheet11.e79); end
-  def am66; @am66 ||= sheet7.am66/(sheet12.c13*sheet11.e79); end
-  def an66; @an66 ||= sheet7.an66/(sheet12.c13*sheet11.e79); end
-  def ao66; @ao66 ||= sheet7.ao66/(sheet12.c13*sheet11.e79); end
-  def ap66; @ap66 ||= sheet7.ap66/(sheet12.c13*sheet11.e79); end
-  def aq66; @aq66 ||= sheet7.aq66/(sheet12.c13*sheet11.e79); end
-  def as66; @as66 ||= average(a('ai66','aq66')); end
-  def at66; @at66 ||= (sumproduct(a('aj66','aq66'),sheet12.a('d28','k28'))*5.0)+ai66; end
-  def av66; 0.0; end
-  def aw66; 5.0; end
-  def ay66; @ay66 ||= sheet7.ay66/(sheet12.c13*sheet11.e79); end
-  def az66; @az66 ||= sheet7.az66/(sheet12.c13*sheet11.e79); end
-  def ba66; @ba66 ||= sheet7.ba66/(sheet12.c13*sheet11.e79); end
-  def bb66; @bb66 ||= sheet7.bb66/(sheet12.c13*sheet11.e79); end
-  def bc66; @bc66 ||= sheet7.bc66/(sheet12.c13*sheet11.e79); end
-  def bd66; @bd66 ||= sheet7.bd66/(sheet12.c13*sheet11.e79); end
-  def be66; @be66 ||= sheet7.be66/(sheet12.c13*sheet11.e79); end
-  def bf66; @bf66 ||= sheet7.bf66/(sheet12.c13*sheet11.e79); end
-  def bg66; @bg66 ||= sheet7.bg66/(sheet12.c13*sheet11.e79); end
-  def bi66; @bi66 ||= sheet7.bi66/(sheet12.c13*sheet11.e79); end
-  def bj66; @bj66 ||= sheet7.bj66/(sheet12.c13*sheet11.e79); end
-  def bk66; @bk66 ||= sheet7.bk66/(sheet12.c13*sheet11.e79); end
-  def bl66; @bl66 ||= sheet7.bl66/(sheet12.c13*sheet11.e79); end
-  def bm66; @bm66 ||= sheet7.bm66/(sheet12.c13*sheet11.e79); end
-  def bn66; @bn66 ||= sheet7.bn66/(sheet12.c13*sheet11.e79); end
-  def bo66; @bo66 ||= sheet7.bo66/(sheet12.c13*sheet11.e79); end
-  def bp66; @bp66 ||= sheet7.bp66/(sheet12.c13*sheet11.e79); end
-  def bq66; @bq66 ||= sheet7.bq66/(sheet12.c13*sheet11.e79); end
-  def bs66; @bs66 ||= sheet7.bs66/(sheet12.c13*sheet11.e79); end
-  def bt66; @bt66 ||= sheet7.bt66/(sheet12.c13*sheet11.e79); end
-  def bu66; @bu66 ||= sheet7.bu66/(sheet12.c13*sheet11.e79); end
-  def bv66; @bv66 ||= sheet7.bv66/(sheet12.c13*sheet11.e79); end
-  def bw66; @bw66 ||= sheet7.bw66/(sheet12.c13*sheet11.e79); end
-  def bx66; @bx66 ||= sheet7.bx66/(sheet12.c13*sheet11.e79); end
-  def by66; @by66 ||= sheet7.by66/(sheet12.c13*sheet11.e79); end
-  def bz66; @bz66 ||= sheet7.bz66/(sheet12.c13*sheet11.e79); end
-  def ca66; @ca66 ||= sheet7.ca66/(sheet12.c13*sheet11.e79); end
-  def cc66; @cc66 ||= average(a('bs66','ca66')); end
-  def cd66; @cd66 ||= (sumproduct(a('bt66','ca66'),sheet12.a('d28','k28'))*5.0)+bs66; end
-  def cf66; @cf66 ||= sheet7.cf66/(sheet12.c13*sheet11.e79); end
-  def cg66; @cg66 ||= sheet7.cg66/(sheet12.c13*sheet11.e79); end
-  def ch66; @ch66 ||= sheet7.ch66/(sheet12.c13*sheet11.e79); end
-  def ci66; @ci66 ||= sheet7.ci66/(sheet12.c13*sheet11.e79); end
-  def cj66; @cj66 ||= sheet7.cj66/(sheet12.c13*sheet11.e79); end
-  def ck66; @ck66 ||= sheet7.ck66/(sheet12.c13*sheet11.e79); end
-  def cl66; @cl66 ||= sheet7.cl66/(sheet12.c13*sheet11.e79); end
-  def cm66; @cm66 ||= sheet7.cm66/(sheet12.c13*sheet11.e79); end
-  def cn66; @cn66 ||= sheet7.cn66/(sheet12.c13*sheet11.e79); end
-  def cp66; @cp66 ||= average(a('cf66','cn66')); end
-  def cq66; @cq66 ||= (sumproduct(a('cg66','cn66'),sheet12.a('d28','k28'))*5.0)+cf66; end
-  def cr66; @cr66 ||= excel_if(excel_comparison(abs(cd66-cq66-at66),"<",1.0),"ok","err"); end
-  def a67; "IV.c"; end
-  def b67; "Micro wind"; end
-  def c67; "Power"; end
-  def e67; @e67 ||= sheet7.e67/(sheet12.c13*sheet11.e79); end
-  def f67; @f67 ||= sheet7.f67/(sheet12.c13*sheet11.e79); end
-  def g67; @g67 ||= sheet7.g67/(sheet12.c13*sheet11.e79); end
-  def h67; @h67 ||= sheet7.h67/(sheet12.c13*sheet11.e79); end
-  def i67; @i67 ||= sheet7.i67/(sheet12.c13*sheet11.e79); end
-  def j67; @j67 ||= sheet7.j67/(sheet12.c13*sheet11.e79); end
-  def k67; @k67 ||= sheet7.k67/(sheet12.c13*sheet11.e79); end
-  def l67; @l67 ||= sheet7.l67/(sheet12.c13*sheet11.e79); end
-  def m67; @m67 ||= sheet7.m67/(sheet12.c13*sheet11.e79); end
-  def o67; @o67 ||= sheet7.o67/(sheet12.c13*sheet11.e79); end
-  def p67; @p67 ||= sheet7.p67/(sheet12.c13*sheet11.e79); end
-  def q67; @q67 ||= sheet7.q67/(sheet12.c13*sheet11.e79); end
-  def r67; @r67 ||= sheet7.r67/(sheet12.c13*sheet11.e79); end
-  def s67; @s67 ||= sheet7.s67/(sheet12.c13*sheet11.e79); end
-  def t67; @t67 ||= sheet7.t67/(sheet12.c13*sheet11.e79); end
-  def u67; @u67 ||= sheet7.u67/(sheet12.c13*sheet11.e79); end
-  def v67; @v67 ||= sheet7.v67/(sheet12.c13*sheet11.e79); end
-  def w67; @w67 ||= sheet7.w67/(sheet12.c13*sheet11.e79); end
-  def y67; @y67 ||= sheet7.y67/(sheet12.c13*sheet11.e79); end
-  def z67; @z67 ||= sheet7.z67/(sheet12.c13*sheet11.e79); end
-  def aa67; @aa67 ||= sheet7.aa67/(sheet12.c13*sheet11.e79); end
-  def ab67; @ab67 ||= sheet7.ab67/(sheet12.c13*sheet11.e79); end
-  def ac67; @ac67 ||= sheet7.ac67/(sheet12.c13*sheet11.e79); end
-  def ad67; @ad67 ||= sheet7.ad67/(sheet12.c13*sheet11.e79); end
-  def ae67; @ae67 ||= sheet7.ae67/(sheet12.c13*sheet11.e79); end
-  def af67; @af67 ||= sheet7.af67/(sheet12.c13*sheet11.e79); end
-  def ag67; @ag67 ||= sheet7.ag67/(sheet12.c13*sheet11.e79); end
-  def ai67; @ai67 ||= sheet7.ai67/(sheet12.c13*sheet11.e79); end
-  def aj67; @aj67 ||= sheet7.aj67/(sheet12.c13*sheet11.e79); end
-  def ak67; @ak67 ||= sheet7.ak67/(sheet12.c13*sheet11.e79); end
-  def al67; @al67 ||= sheet7.al67/(sheet12.c13*sheet11.e79); end
-  def am67; @am67 ||= sheet7.am67/(sheet12.c13*sheet11.e79); end
-  def an67; @an67 ||= sheet7.an67/(sheet12.c13*sheet11.e79); end
-  def ao67; @ao67 ||= sheet7.ao67/(sheet12.c13*sheet11.e79); end
-  def ap67; @ap67 ||= sheet7.ap67/(sheet12.c13*sheet11.e79); end
-  def aq67; @aq67 ||= sheet7.aq67/(sheet12.c13*sheet11.e79); end
-  def as67; @as67 ||= average(a('ai67','aq67')); end
-  def at67; @at67 ||= (sumproduct(a('aj67','aq67'),sheet12.a('d28','k28'))*5.0)+ai67; end
-  def av67; 0.0; end
-  def aw67; 5.0; end
-  def ay67; @ay67 ||= sheet7.ay67/(sheet12.c13*sheet11.e79); end
-  def az67; @az67 ||= sheet7.az67/(sheet12.c13*sheet11.e79); end
-  def ba67; @ba67 ||= sheet7.ba67/(sheet12.c13*sheet11.e79); end
-  def bb67; @bb67 ||= sheet7.bb67/(sheet12.c13*sheet11.e79); end
-  def bc67; @bc67 ||= sheet7.bc67/(sheet12.c13*sheet11.e79); end
-  def bd67; @bd67 ||= sheet7.bd67/(sheet12.c13*sheet11.e79); end
-  def be67; @be67 ||= sheet7.be67/(sheet12.c13*sheet11.e79); end
-  def bf67; @bf67 ||= sheet7.bf67/(sheet12.c13*sheet11.e79); end
-  def bg67; @bg67 ||= sheet7.bg67/(sheet12.c13*sheet11.e79); end
-  def bi67; @bi67 ||= sheet7.bi67/(sheet12.c13*sheet11.e79); end
-  def bj67; @bj67 ||= sheet7.bj67/(sheet12.c13*sheet11.e79); end
-  def bk67; @bk67 ||= sheet7.bk67/(sheet12.c13*sheet11.e79); end
-  def bl67; @bl67 ||= sheet7.bl67/(sheet12.c13*sheet11.e79); end
-  def bm67; @bm67 ||= sheet7.bm67/(sheet12.c13*sheet11.e79); end
-  def bn67; @bn67 ||= sheet7.bn67/(sheet12.c13*sheet11.e79); end
-  def bo67; @bo67 ||= sheet7.bo67/(sheet12.c13*sheet11.e79); end
-  def bp67; @bp67 ||= sheet7.bp67/(sheet12.c13*sheet11.e79); end
-  def bq67; @bq67 ||= sheet7.bq67/(sheet12.c13*sheet11.e79); end
-  def bs67; @bs67 ||= sheet7.bs67/(sheet12.c13*sheet11.e79); end
-  def bt67; @bt67 ||= sheet7.bt67/(sheet12.c13*sheet11.e79); end
-  def bu67; @bu67 ||= sheet7.bu67/(sheet12.c13*sheet11.e79); end
-  def bv67; @bv67 ||= sheet7.bv67/(sheet12.c13*sheet11.e79); end
-  def bw67; @bw67 ||= sheet7.bw67/(sheet12.c13*sheet11.e79); end
-  def bx67; @bx67 ||= sheet7.bx67/(sheet12.c13*sheet11.e79); end
-  def by67; @by67 ||= sheet7.by67/(sheet12.c13*sheet11.e79); end
-  def bz67; @bz67 ||= sheet7.bz67/(sheet12.c13*sheet11.e79); end
-  def ca67; @ca67 ||= sheet7.ca67/(sheet12.c13*sheet11.e79); end
-  def cc67; @cc67 ||= average(a('bs67','ca67')); end
-  def cd67; @cd67 ||= (sumproduct(a('bt67','ca67'),sheet12.a('d28','k28'))*5.0)+bs67; end
-  def cf67; @cf67 ||= sheet7.cf67/(sheet12.c13*sheet11.e79); end
-  def cg67; @cg67 ||= sheet7.cg67/(sheet12.c13*sheet11.e79); end
-  def ch67; @ch67 ||= sheet7.ch67/(sheet12.c13*sheet11.e79); end
-  def ci67; @ci67 ||= sheet7.ci67/(sheet12.c13*sheet11.e79); end
-  def cj67; @cj67 ||= sheet7.cj67/(sheet12.c13*sheet11.e79); end
-  def ck67; @ck67 ||= sheet7.ck67/(sheet12.c13*sheet11.e79); end
-  def cl67; @cl67 ||= sheet7.cl67/(sheet12.c13*sheet11.e79); end
-  def cm67; @cm67 ||= sheet7.cm67/(sheet12.c13*sheet11.e79); end
-  def cn67; @cn67 ||= sheet7.cn67/(sheet12.c13*sheet11.e79); end
-  def cp67; @cp67 ||= average(a('cf67','cn67')); end
-  def cq67; @cq67 ||= (sumproduct(a('cg67','cn67'),sheet12.a('d28','k28'))*5.0)+cf67; end
-  def cr67; @cr67 ||= excel_if(excel_comparison(abs(cd67-cq67-at67),"<",1.0),"ok","err"); end
-  def a68; "V.a"; end
-  def b68; "Biomatter to fuel conversion"; end
-  def c68; "Biomass Supply"; end
-  def e68; @e68 ||= sheet7.e68/(sheet12.c13*sheet11.e79); end
-  def f68; @f68 ||= sheet7.f68/(sheet12.c13*sheet11.e79); end
-  def g68; @g68 ||= sheet7.g68/(sheet12.c13*sheet11.e79); end
-  def h68; @h68 ||= sheet7.h68/(sheet12.c13*sheet11.e79); end
-  def i68; @i68 ||= sheet7.i68/(sheet12.c13*sheet11.e79); end
-  def j68; @j68 ||= sheet7.j68/(sheet12.c13*sheet11.e79); end
-  def k68; @k68 ||= sheet7.k68/(sheet12.c13*sheet11.e79); end
-  def l68; @l68 ||= sheet7.l68/(sheet12.c13*sheet11.e79); end
-  def m68; @m68 ||= sheet7.m68/(sheet12.c13*sheet11.e79); end
-  def o68; @o68 ||= sheet7.o68/(sheet12.c13*sheet11.e79); end
-  def p68; @p68 ||= sheet7.p68/(sheet12.c13*sheet11.e79); end
-  def q68; @q68 ||= sheet7.q68/(sheet12.c13*sheet11.e79); end
-  def r68; @r68 ||= sheet7.r68/(sheet12.c13*sheet11.e79); end
-  def s68; @s68 ||= sheet7.s68/(sheet12.c13*sheet11.e79); end
-  def t68; @t68 ||= sheet7.t68/(sheet12.c13*sheet11.e79); end
-  def u68; @u68 ||= sheet7.u68/(sheet12.c13*sheet11.e79); end
-  def v68; @v68 ||= sheet7.v68/(sheet12.c13*sheet11.e79); end
-  def w68; @w68 ||= sheet7.w68/(sheet12.c13*sheet11.e79); end
-  def y68; @y68 ||= sheet7.y68/(sheet12.c13*sheet11.e79); end
-  def z68; @z68 ||= sheet7.z68/(sheet12.c13*sheet11.e79); end
-  def aa68; @aa68 ||= sheet7.aa68/(sheet12.c13*sheet11.e79); end
-  def ab68; @ab68 ||= sheet7.ab68/(sheet12.c13*sheet11.e79); end
-  def ac68; @ac68 ||= sheet7.ac68/(sheet12.c13*sheet11.e79); end
-  def ad68; @ad68 ||= sheet7.ad68/(sheet12.c13*sheet11.e79); end
-  def ae68; @ae68 ||= sheet7.ae68/(sheet12.c13*sheet11.e79); end
-  def af68; @af68 ||= sheet7.af68/(sheet12.c13*sheet11.e79); end
-  def ag68; @ag68 ||= sheet7.ag68/(sheet12.c13*sheet11.e79); end
-  def ai68; @ai68 ||= sheet7.ai68/(sheet12.c13*sheet11.e79); end
-  def aj68; @aj68 ||= sheet7.aj68/(sheet12.c13*sheet11.e79); end
-  def ak68; @ak68 ||= sheet7.ak68/(sheet12.c13*sheet11.e79); end
-  def al68; @al68 ||= sheet7.al68/(sheet12.c13*sheet11.e79); end
-  def am68; @am68 ||= sheet7.am68/(sheet12.c13*sheet11.e79); end
-  def an68; @an68 ||= sheet7.an68/(sheet12.c13*sheet11.e79); end
-  def ao68; @ao68 ||= sheet7.ao68/(sheet12.c13*sheet11.e79); end
-  def ap68; @ap68 ||= sheet7.ap68/(sheet12.c13*sheet11.e79); end
-  def aq68; @aq68 ||= sheet7.aq68/(sheet12.c13*sheet11.e79); end
-  def as68; @as68 ||= average(a('ai68','aq68')); end
-  def at68; @at68 ||= (sumproduct(a('aj68','aq68'),sheet12.a('d28','k28'))*5.0)+ai68; end
-  def av68; 0.0; end
-  def aw68; 5.0; end
-  def ay68; @ay68 ||= sheet7.ay68/(sheet12.c13*sheet11.e79); end
-  def az68; @az68 ||= sheet7.az68/(sheet12.c13*sheet11.e79); end
-  def ba68; @ba68 ||= sheet7.ba68/(sheet12.c13*sheet11.e79); end
-  def bb68; @bb68 ||= sheet7.bb68/(sheet12.c13*sheet11.e79); end
-  def bc68; @bc68 ||= sheet7.bc68/(sheet12.c13*sheet11.e79); end
-  def bd68; @bd68 ||= sheet7.bd68/(sheet12.c13*sheet11.e79); end
-  def be68; @be68 ||= sheet7.be68/(sheet12.c13*sheet11.e79); end
-  def bf68; @bf68 ||= sheet7.bf68/(sheet12.c13*sheet11.e79); end
-  def bg68; @bg68 ||= sheet7.bg68/(sheet12.c13*sheet11.e79); end
-  def bi68; @bi68 ||= sheet7.bi68/(sheet12.c13*sheet11.e79); end
-  def bj68; @bj68 ||= sheet7.bj68/(sheet12.c13*sheet11.e79); end
-  def bk68; @bk68 ||= sheet7.bk68/(sheet12.c13*sheet11.e79); end
-  def bl68; @bl68 ||= sheet7.bl68/(sheet12.c13*sheet11.e79); end
-  def bm68; @bm68 ||= sheet7.bm68/(sheet12.c13*sheet11.e79); end
-  def bn68; @bn68 ||= sheet7.bn68/(sheet12.c13*sheet11.e79); end
-  def bo68; @bo68 ||= sheet7.bo68/(sheet12.c13*sheet11.e79); end
-  def bp68; @bp68 ||= sheet7.bp68/(sheet12.c13*sheet11.e79); end
-  def bq68; @bq68 ||= sheet7.bq68/(sheet12.c13*sheet11.e79); end
-  def bs68; @bs68 ||= sheet7.bs68/(sheet12.c13*sheet11.e79); end
-  def bt68; @bt68 ||= sheet7.bt68/(sheet12.c13*sheet11.e79); end
-  def bu68; @bu68 ||= sheet7.bu68/(sheet12.c13*sheet11.e79); end
-  def bv68; @bv68 ||= sheet7.bv68/(sheet12.c13*sheet11.e79); end
-  def bw68; @bw68 ||= sheet7.bw68/(sheet12.c13*sheet11.e79); end
-  def bx68; @bx68 ||= sheet7.bx68/(sheet12.c13*sheet11.e79); end
-  def by68; @by68 ||= sheet7.by68/(sheet12.c13*sheet11.e79); end
-  def bz68; @bz68 ||= sheet7.bz68/(sheet12.c13*sheet11.e79); end
-  def ca68; @ca68 ||= sheet7.ca68/(sheet12.c13*sheet11.e79); end
-  def cc68; @cc68 ||= average(a('bs68','ca68')); end
-  def cd68; @cd68 ||= (sumproduct(a('bt68','ca68'),sheet12.a('d28','k28'))*5.0)+bs68; end
-  def cf68; @cf68 ||= sheet7.cf68/(sheet12.c13*sheet11.e79); end
-  def cg68; @cg68 ||= sheet7.cg68/(sheet12.c13*sheet11.e79); end
-  def ch68; @ch68 ||= sheet7.ch68/(sheet12.c13*sheet11.e79); end
-  def ci68; @ci68 ||= sheet7.ci68/(sheet12.c13*sheet11.e79); end
-  def cj68; @cj68 ||= sheet7.cj68/(sheet12.c13*sheet11.e79); end
-  def ck68; @ck68 ||= sheet7.ck68/(sheet12.c13*sheet11.e79); end
-  def cl68; @cl68 ||= sheet7.cl68/(sheet12.c13*sheet11.e79); end
-  def cm68; @cm68 ||= sheet7.cm68/(sheet12.c13*sheet11.e79); end
-  def cn68; @cn68 ||= sheet7.cn68/(sheet12.c13*sheet11.e79); end
-  def cp68; @cp68 ||= average(a('cf68','cn68')); end
-  def cq68; @cq68 ||= (sumproduct(a('cg68','cn68'),sheet12.a('d28','k28'))*5.0)+cf68; end
-  def cr68; @cr68 ||= excel_if(excel_comparison(abs(cd68-cq68-at68),"<",1.0),"ok","err"); end
-  def a69; "V.b"; end
-  def b69; "Bioenergy imports"; end
-  def c69; "Biomass Supply"; end
-  def e69; 0.0; end
-  def f69; 0.0; end
-  def g69; 0.0; end
-  def h69; 0.0; end
-  def i69; 0.0; end
-  def j69; 0.0; end
-  def k69; 0.0; end
-  def l69; 0.0; end
-  def m69; 0.0; end
-  def o69; 0.0; end
-  def p69; 0.0; end
-  def q69; 0.0; end
-  def r69; 0.0; end
-  def s69; 0.0; end
-  def t69; 0.0; end
-  def u69; 0.0; end
-  def v69; 0.0; end
-  def w69; 0.0; end
-  def y69; 1.847331733376896; end
-  def z69; 1.8175414572868793; end
-  def aa69; 1.838177150282581; end
-  def ab69; 1.8442538994055317; end
-  def ac69; 1.838177150282581; end
-  def ad69; 1.8442538994055317; end
-  def ae69; 1.8503306485284818; end
-  def af69; 1.8564073976514324; end
-  def ag69; 2.0417877053113056; end
-  def ai69; 1.847331733376896; end
-  def aj69; 1.8175414572868793; end
-  def ak69; 1.838177150282581; end
-  def al69; 1.8442538994055317; end
-  def am69; 1.838177150282581; end
-  def an69; 1.8442538994055317; end
-  def ao69; 1.8503306485284818; end
-  def ap69; 1.8564073976514324; end
-  def aq69; 2.0417877053113056; end
-  def as69; 1.8642512268368021; end
-  def at69; 38.89483549023877; end
-  def av69; 0.0; end
-  def aw69; 5.0; end
-  def ay69; 0.0; end
-  def az69; 0.0; end
-  def ba69; 0.0; end
-  def bb69; 0.0; end
-  def bc69; 0.0; end
-  def bd69; 0.0; end
-  def be69; 0.0; end
-  def bf69; 0.0; end
-  def bg69; 0.0; end
-  def bi69; 0.0; end
-  def bj69; 0.0; end
-  def bk69; 0.0; end
-  def bl69; 0.0; end
-  def bm69; 0.0; end
-  def bn69; 0.0; end
-  def bo69; 0.0; end
-  def bp69; 0.0; end
-  def bq69; 0.0; end
-  def bs69; 1.847331733376896; end
-  def bt69; 1.8175414572868793; end
-  def bu69; 1.838177150282581; end
-  def bv69; 1.8442538994055317; end
-  def bw69; 1.838177150282581; end
-  def bx69; 1.8442538994055317; end
-  def by69; 1.8503306485284818; end
-  def bz69; 1.8564073976514324; end
-  def ca69; 2.0417877053113056; end
-  def cc69; 1.8642512268368021; end
-  def cd69; 38.89483549023877; end
-  def cf69; 0.0; end
-  def cg69; 0.0; end
-  def ch69; 0.0; end
-  def ci69; 0.0; end
-  def cj69; 0.0; end
-  def ck69; 0.0; end
-  def cl69; 0.0; end
-  def cm69; 0.0; end
-  def cn69; 0.0; end
-  def cp69; 0.0; end
-  def cq69; 0.0; end
-  def cr69; "ok"; end
-  def a70; "VI.a.Bioenergy"; end
-  def b70; "Agriculture and land use"; end
-  def c70; "Biomass Supply"; end
-  def e70; @e70 ||= sheet7.e70/(sheet12.c13*sheet11.e79); end
-  def f70; @f70 ||= sheet7.f70/(sheet12.c13*sheet11.e79); end
-  def g70; @g70 ||= sheet7.g70/(sheet12.c13*sheet11.e79); end
-  def h70; @h70 ||= sheet7.h70/(sheet12.c13*sheet11.e79); end
-  def i70; @i70 ||= sheet7.i70/(sheet12.c13*sheet11.e79); end
-  def j70; @j70 ||= sheet7.j70/(sheet12.c13*sheet11.e79); end
-  def k70; @k70 ||= sheet7.k70/(sheet12.c13*sheet11.e79); end
-  def l70; @l70 ||= sheet7.l70/(sheet12.c13*sheet11.e79); end
-  def m70; @m70 ||= sheet7.m70/(sheet12.c13*sheet11.e79); end
-  def o70; @o70 ||= sheet7.o70/(sheet12.c13*sheet11.e79); end
-  def p70; @p70 ||= sheet7.p70/(sheet12.c13*sheet11.e79); end
-  def q70; @q70 ||= sheet7.q70/(sheet12.c13*sheet11.e79); end
-  def r70; @r70 ||= sheet7.r70/(sheet12.c13*sheet11.e79); end
-  def s70; @s70 ||= sheet7.s70/(sheet12.c13*sheet11.e79); end
-  def t70; @t70 ||= sheet7.t70/(sheet12.c13*sheet11.e79); end
-  def u70; @u70 ||= sheet7.u70/(sheet12.c13*sheet11.e79); end
-  def v70; @v70 ||= sheet7.v70/(sheet12.c13*sheet11.e79); end
-  def w70; @w70 ||= sheet7.w70/(sheet12.c13*sheet11.e79); end
-  def y70; @y70 ||= sheet7.y70/(sheet12.c13*sheet11.e79); end
-  def z70; @z70 ||= sheet7.z70/(sheet12.c13*sheet11.e79); end
-  def aa70; @aa70 ||= sheet7.aa70/(sheet12.c13*sheet11.e79); end
-  def ab70; @ab70 ||= sheet7.ab70/(sheet12.c13*sheet11.e79); end
-  def ac70; @ac70 ||= sheet7.ac70/(sheet12.c13*sheet11.e79); end
-  def ad70; @ad70 ||= sheet7.ad70/(sheet12.c13*sheet11.e79); end
-  def ae70; @ae70 ||= sheet7.ae70/(sheet12.c13*sheet11.e79); end
-  def af70; @af70 ||= sheet7.af70/(sheet12.c13*sheet11.e79); end
-  def ag70; @ag70 ||= sheet7.ag70/(sheet12.c13*sheet11.e79); end
-  def ai70; @ai70 ||= sheet7.ai70/(sheet12.c13*sheet11.e79); end
-  def aj70; @aj70 ||= sheet7.aj70/(sheet12.c13*sheet11.e79); end
-  def ak70; @ak70 ||= sheet7.ak70/(sheet12.c13*sheet11.e79); end
-  def al70; @al70 ||= sheet7.al70/(sheet12.c13*sheet11.e79); end
-  def am70; @am70 ||= sheet7.am70/(sheet12.c13*sheet11.e79); end
-  def an70; @an70 ||= sheet7.an70/(sheet12.c13*sheet11.e79); end
-  def ao70; @ao70 ||= sheet7.ao70/(sheet12.c13*sheet11.e79); end
-  def ap70; @ap70 ||= sheet7.ap70/(sheet12.c13*sheet11.e79); end
-  def aq70; @aq70 ||= sheet7.aq70/(sheet12.c13*sheet11.e79); end
-  def as70; @as70 ||= average(a('ai70','aq70')); end
-  def at70; @at70 ||= (sumproduct(a('aj70','aq70'),sheet12.a('d28','k28'))*5.0)+ai70; end
-  def av70; 0.0; end
-  def aw70; 5.0; end
-  def ay70; @ay70 ||= sheet7.ay70/(sheet12.c13*sheet11.e79); end
-  def az70; @az70 ||= sheet7.az70/(sheet12.c13*sheet11.e79); end
-  def ba70; @ba70 ||= sheet7.ba70/(sheet12.c13*sheet11.e79); end
-  def bb70; @bb70 ||= sheet7.bb70/(sheet12.c13*sheet11.e79); end
-  def bc70; @bc70 ||= sheet7.bc70/(sheet12.c13*sheet11.e79); end
-  def bd70; @bd70 ||= sheet7.bd70/(sheet12.c13*sheet11.e79); end
-  def be70; @be70 ||= sheet7.be70/(sheet12.c13*sheet11.e79); end
-  def bf70; @bf70 ||= sheet7.bf70/(sheet12.c13*sheet11.e79); end
-  def bg70; @bg70 ||= sheet7.bg70/(sheet12.c13*sheet11.e79); end
-  def bi70; @bi70 ||= sheet7.bi70/(sheet12.c13*sheet11.e79); end
-  def bj70; @bj70 ||= sheet7.bj70/(sheet12.c13*sheet11.e79); end
-  def bk70; @bk70 ||= sheet7.bk70/(sheet12.c13*sheet11.e79); end
-  def bl70; @bl70 ||= sheet7.bl70/(sheet12.c13*sheet11.e79); end
-  def bm70; @bm70 ||= sheet7.bm70/(sheet12.c13*sheet11.e79); end
-  def bn70; @bn70 ||= sheet7.bn70/(sheet12.c13*sheet11.e79); end
-  def bo70; @bo70 ||= sheet7.bo70/(sheet12.c13*sheet11.e79); end
-  def bp70; @bp70 ||= sheet7.bp70/(sheet12.c13*sheet11.e79); end
-  def bq70; @bq70 ||= sheet7.bq70/(sheet12.c13*sheet11.e79); end
-  def bs70; @bs70 ||= sheet7.bs70/(sheet12.c13*sheet11.e79); end
-  def bt70; @bt70 ||= sheet7.bt70/(sheet12.c13*sheet11.e79); end
-  def bu70; @bu70 ||= sheet7.bu70/(sheet12.c13*sheet11.e79); end
-  def bv70; @bv70 ||= sheet7.bv70/(sheet12.c13*sheet11.e79); end
-  def bw70; @bw70 ||= sheet7.bw70/(sheet12.c13*sheet11.e79); end
-  def bx70; @bx70 ||= sheet7.bx70/(sheet12.c13*sheet11.e79); end
-  def by70; @by70 ||= sheet7.by70/(sheet12.c13*sheet11.e79); end
-  def bz70; @bz70 ||= sheet7.bz70/(sheet12.c13*sheet11.e79); end
-  def ca70; @ca70 ||= sheet7.ca70/(sheet12.c13*sheet11.e79); end
-  def cc70; @cc70 ||= average(a('bs70','ca70')); end
-  def cd70; @cd70 ||= (sumproduct(a('bt70','ca70'),sheet12.a('d28','k28'))*5.0)+bs70; end
-  def cf70; @cf70 ||= sheet7.cf70/(sheet12.c13*sheet11.e79); end
-  def cg70; @cg70 ||= sheet7.cg70/(sheet12.c13*sheet11.e79); end
-  def ch70; @ch70 ||= sheet7.ch70/(sheet12.c13*sheet11.e79); end
-  def ci70; @ci70 ||= sheet7.ci70/(sheet12.c13*sheet11.e79); end
-  def cj70; @cj70 ||= sheet7.cj70/(sheet12.c13*sheet11.e79); end
-  def ck70; @ck70 ||= sheet7.ck70/(sheet12.c13*sheet11.e79); end
-  def cl70; @cl70 ||= sheet7.cl70/(sheet12.c13*sheet11.e79); end
-  def cm70; @cm70 ||= sheet7.cm70/(sheet12.c13*sheet11.e79); end
-  def cn70; @cn70 ||= sheet7.cn70/(sheet12.c13*sheet11.e79); end
-  def cp70; @cp70 ||= average(a('cf70','cn70')); end
-  def cq70; @cq70 ||= (sumproduct(a('cg70','cn70'),sheet12.a('d28','k28'))*5.0)+cf70; end
-  def cr70; @cr70 ||= excel_if(excel_comparison(abs(cd70-cq70-at70),"<",1.0),"ok","err"); end
-  def a71; "VI.a.Emissions"; end
-  def b71; "Agriculture and land use"; end
-  def c71; "Business"; end
-  def e71; @e71 ||= sheet7.e71/(sheet12.c13*sheet11.e79); end
-  def f71; @f71 ||= sheet7.f71/(sheet12.c13*sheet11.e79); end
-  def g71; @g71 ||= sheet7.g71/(sheet12.c13*sheet11.e79); end
-  def h71; @h71 ||= sheet7.h71/(sheet12.c13*sheet11.e79); end
-  def i71; @i71 ||= sheet7.i71/(sheet12.c13*sheet11.e79); end
-  def j71; @j71 ||= sheet7.j71/(sheet12.c13*sheet11.e79); end
-  def k71; @k71 ||= sheet7.k71/(sheet12.c13*sheet11.e79); end
-  def l71; @l71 ||= sheet7.l71/(sheet12.c13*sheet11.e79); end
-  def m71; @m71 ||= sheet7.m71/(sheet12.c13*sheet11.e79); end
-  def o71; @o71 ||= sheet7.o71/(sheet12.c13*sheet11.e79); end
-  def p71; @p71 ||= sheet7.p71/(sheet12.c13*sheet11.e79); end
-  def q71; @q71 ||= sheet7.q71/(sheet12.c13*sheet11.e79); end
-  def r71; @r71 ||= sheet7.r71/(sheet12.c13*sheet11.e79); end
-  def s71; @s71 ||= sheet7.s71/(sheet12.c13*sheet11.e79); end
-  def t71; @t71 ||= sheet7.t71/(sheet12.c13*sheet11.e79); end
-  def u71; @u71 ||= sheet7.u71/(sheet12.c13*sheet11.e79); end
-  def v71; @v71 ||= sheet7.v71/(sheet12.c13*sheet11.e79); end
-  def w71; @w71 ||= sheet7.w71/(sheet12.c13*sheet11.e79); end
-  def y71; @y71 ||= sheet7.y71/(sheet12.c13*sheet11.e79); end
-  def z71; @z71 ||= sheet7.z71/(sheet12.c13*sheet11.e79); end
-  def aa71; @aa71 ||= sheet7.aa71/(sheet12.c13*sheet11.e79); end
-  def ab71; @ab71 ||= sheet7.ab71/(sheet12.c13*sheet11.e79); end
-  def ac71; @ac71 ||= sheet7.ac71/(sheet12.c13*sheet11.e79); end
-  def ad71; @ad71 ||= sheet7.ad71/(sheet12.c13*sheet11.e79); end
-  def ae71; @ae71 ||= sheet7.ae71/(sheet12.c13*sheet11.e79); end
-  def af71; @af71 ||= sheet7.af71/(sheet12.c13*sheet11.e79); end
-  def ag71; @ag71 ||= sheet7.ag71/(sheet12.c13*sheet11.e79); end
-  def ai71; @ai71 ||= sheet7.ai71/(sheet12.c13*sheet11.e79); end
-  def aj71; @aj71 ||= sheet7.aj71/(sheet12.c13*sheet11.e79); end
-  def ak71; @ak71 ||= sheet7.ak71/(sheet12.c13*sheet11.e79); end
-  def al71; @al71 ||= sheet7.al71/(sheet12.c13*sheet11.e79); end
-  def am71; @am71 ||= sheet7.am71/(sheet12.c13*sheet11.e79); end
-  def an71; @an71 ||= sheet7.an71/(sheet12.c13*sheet11.e79); end
-  def ao71; @ao71 ||= sheet7.ao71/(sheet12.c13*sheet11.e79); end
-  def ap71; @ap71 ||= sheet7.ap71/(sheet12.c13*sheet11.e79); end
-  def aq71; @aq71 ||= sheet7.aq71/(sheet12.c13*sheet11.e79); end
-  def as71; @as71 ||= average(a('ai71','aq71')); end
-  def at71; @at71 ||= (sumproduct(a('aj71','aq71'),sheet12.a('d28','k28'))*5.0)+ai71; end
-  def av71; 0.0; end
-  def aw71; 5.0; end
-  def ay71; @ay71 ||= sheet7.ay71/(sheet12.c13*sheet11.e79); end
-  def az71; @az71 ||= sheet7.az71/(sheet12.c13*sheet11.e79); end
-  def ba71; @ba71 ||= sheet7.ba71/(sheet12.c13*sheet11.e79); end
-  def bb71; @bb71 ||= sheet7.bb71/(sheet12.c13*sheet11.e79); end
-  def bc71; @bc71 ||= sheet7.bc71/(sheet12.c13*sheet11.e79); end
-  def bd71; @bd71 ||= sheet7.bd71/(sheet12.c13*sheet11.e79); end
-  def be71; @be71 ||= sheet7.be71/(sheet12.c13*sheet11.e79); end
-  def bf71; @bf71 ||= sheet7.bf71/(sheet12.c13*sheet11.e79); end
-  def bg71; @bg71 ||= sheet7.bg71/(sheet12.c13*sheet11.e79); end
-  def bi71; @bi71 ||= sheet7.bi71/(sheet12.c13*sheet11.e79); end
-  def bj71; @bj71 ||= sheet7.bj71/(sheet12.c13*sheet11.e79); end
-  def bk71; @bk71 ||= sheet7.bk71/(sheet12.c13*sheet11.e79); end
-  def bl71; @bl71 ||= sheet7.bl71/(sheet12.c13*sheet11.e79); end
-  def bm71; @bm71 ||= sheet7.bm71/(sheet12.c13*sheet11.e79); end
-  def bn71; @bn71 ||= sheet7.bn71/(sheet12.c13*sheet11.e79); end
-  def bo71; @bo71 ||= sheet7.bo71/(sheet12.c13*sheet11.e79); end
-  def bp71; @bp71 ||= sheet7.bp71/(sheet12.c13*sheet11.e79); end
-  def bq71; @bq71 ||= sheet7.bq71/(sheet12.c13*sheet11.e79); end
-  def bs71; @bs71 ||= sheet7.bs71/(sheet12.c13*sheet11.e79); end
-  def bt71; @bt71 ||= sheet7.bt71/(sheet12.c13*sheet11.e79); end
-  def bu71; @bu71 ||= sheet7.bu71/(sheet12.c13*sheet11.e79); end
-  def bv71; @bv71 ||= sheet7.bv71/(sheet12.c13*sheet11.e79); end
-  def bw71; @bw71 ||= sheet7.bw71/(sheet12.c13*sheet11.e79); end
-  def bx71; @bx71 ||= sheet7.bx71/(sheet12.c13*sheet11.e79); end
-  def by71; @by71 ||= sheet7.by71/(sheet12.c13*sheet11.e79); end
-  def bz71; @bz71 ||= sheet7.bz71/(sheet12.c13*sheet11.e79); end
-  def ca71; @ca71 ||= sheet7.ca71/(sheet12.c13*sheet11.e79); end
-  def cc71; @cc71 ||= average(a('bs71','ca71')); end
-  def cd71; @cd71 ||= (sumproduct(a('bt71','ca71'),sheet12.a('d28','k28'))*5.0)+bs71; end
-  def cf71; @cf71 ||= sheet7.cf71/(sheet12.c13*sheet11.e79); end
-  def cg71; @cg71 ||= sheet7.cg71/(sheet12.c13*sheet11.e79); end
-  def ch71; @ch71 ||= sheet7.ch71/(sheet12.c13*sheet11.e79); end
-  def ci71; @ci71 ||= sheet7.ci71/(sheet12.c13*sheet11.e79); end
-  def cj71; @cj71 ||= sheet7.cj71/(sheet12.c13*sheet11.e79); end
-  def ck71; @ck71 ||= sheet7.ck71/(sheet12.c13*sheet11.e79); end
-  def cl71; @cl71 ||= sheet7.cl71/(sheet12.c13*sheet11.e79); end
-  def cm71; @cm71 ||= sheet7.cm71/(sheet12.c13*sheet11.e79); end
-  def cn71; @cn71 ||= sheet7.cn71/(sheet12.c13*sheet11.e79); end
-  def cp71; @cp71 ||= average(a('cf71','cn71')); end
-  def cq71; @cq71 ||= (sumproduct(a('cg71','cn71'),sheet12.a('d28','k28'))*5.0)+cf71; end
-  def cr71; @cr71 ||= excel_if(excel_comparison(abs(cd71-cq71-at71),"<",1.0),"ok","err"); end
-  def a72; "VI.b.Bioenergy"; end
-  def b72; "Energy from waste"; end
-  def c72; "Biomass Supply"; end
-  def e72; @e72 ||= sheet7.e72/(sheet12.c13*sheet11.e79); end
-  def f72; @f72 ||= sheet7.f72/(sheet12.c13*sheet11.e79); end
-  def g72; @g72 ||= sheet7.g72/(sheet12.c13*sheet11.e79); end
-  def h72; @h72 ||= sheet7.h72/(sheet12.c13*sheet11.e79); end
-  def i72; @i72 ||= sheet7.i72/(sheet12.c13*sheet11.e79); end
-  def j72; @j72 ||= sheet7.j72/(sheet12.c13*sheet11.e79); end
-  def k72; @k72 ||= sheet7.k72/(sheet12.c13*sheet11.e79); end
-  def l72; @l72 ||= sheet7.l72/(sheet12.c13*sheet11.e79); end
-  def m72; @m72 ||= sheet7.m72/(sheet12.c13*sheet11.e79); end
-  def o72; @o72 ||= sheet7.o72/(sheet12.c13*sheet11.e79); end
-  def p72; @p72 ||= sheet7.p72/(sheet12.c13*sheet11.e79); end
-  def q72; @q72 ||= sheet7.q72/(sheet12.c13*sheet11.e79); end
-  def r72; @r72 ||= sheet7.r72/(sheet12.c13*sheet11.e79); end
-  def s72; @s72 ||= sheet7.s72/(sheet12.c13*sheet11.e79); end
-  def t72; @t72 ||= sheet7.t72/(sheet12.c13*sheet11.e79); end
-  def u72; @u72 ||= sheet7.u72/(sheet12.c13*sheet11.e79); end
-  def v72; @v72 ||= sheet7.v72/(sheet12.c13*sheet11.e79); end
-  def w72; @w72 ||= sheet7.w72/(sheet12.c13*sheet11.e79); end
-  def y72; @y72 ||= sheet7.y72/(sheet12.c13*sheet11.e79); end
-  def z72; @z72 ||= sheet7.z72/(sheet12.c13*sheet11.e79); end
-  def aa72; @aa72 ||= sheet7.aa72/(sheet12.c13*sheet11.e79); end
-  def ab72; @ab72 ||= sheet7.ab72/(sheet12.c13*sheet11.e79); end
-  def ac72; @ac72 ||= sheet7.ac72/(sheet12.c13*sheet11.e79); end
-  def ad72; @ad72 ||= sheet7.ad72/(sheet12.c13*sheet11.e79); end
-  def ae72; @ae72 ||= sheet7.ae72/(sheet12.c13*sheet11.e79); end
-  def af72; @af72 ||= sheet7.af72/(sheet12.c13*sheet11.e79); end
-  def ag72; @ag72 ||= sheet7.ag72/(sheet12.c13*sheet11.e79); end
-  def ai72; @ai72 ||= sheet7.ai72/(sheet12.c13*sheet11.e79); end
-  def aj72; @aj72 ||= sheet7.aj72/(sheet12.c13*sheet11.e79); end
-  def ak72; @ak72 ||= sheet7.ak72/(sheet12.c13*sheet11.e79); end
-  def al72; @al72 ||= sheet7.al72/(sheet12.c13*sheet11.e79); end
-  def am72; @am72 ||= sheet7.am72/(sheet12.c13*sheet11.e79); end
-  def an72; @an72 ||= sheet7.an72/(sheet12.c13*sheet11.e79); end
-  def ao72; @ao72 ||= sheet7.ao72/(sheet12.c13*sheet11.e79); end
-  def ap72; @ap72 ||= sheet7.ap72/(sheet12.c13*sheet11.e79); end
-  def aq72; @aq72 ||= sheet7.aq72/(sheet12.c13*sheet11.e79); end
-  def as72; @as72 ||= average(a('ai72','aq72')); end
-  def at72; @at72 ||= (sumproduct(a('aj72','aq72'),sheet12.a('d28','k28'))*5.0)+ai72; end
-  def av72; 0.0; end
-  def aw72; 5.0; end
-  def ay72; @ay72 ||= sheet7.ay72/(sheet12.c13*sheet11.e79); end
-  def az72; @az72 ||= sheet7.az72/(sheet12.c13*sheet11.e79); end
-  def ba72; @ba72 ||= sheet7.ba72/(sheet12.c13*sheet11.e79); end
-  def bb72; @bb72 ||= sheet7.bb72/(sheet12.c13*sheet11.e79); end
-  def bc72; @bc72 ||= sheet7.bc72/(sheet12.c13*sheet11.e79); end
-  def bd72; @bd72 ||= sheet7.bd72/(sheet12.c13*sheet11.e79); end
-  def be72; @be72 ||= sheet7.be72/(sheet12.c13*sheet11.e79); end
-  def bf72; @bf72 ||= sheet7.bf72/(sheet12.c13*sheet11.e79); end
-  def bg72; @bg72 ||= sheet7.bg72/(sheet12.c13*sheet11.e79); end
-  def bi72; @bi72 ||= sheet7.bi72/(sheet12.c13*sheet11.e79); end
-  def bj72; @bj72 ||= sheet7.bj72/(sheet12.c13*sheet11.e79); end
-  def bk72; @bk72 ||= sheet7.bk72/(sheet12.c13*sheet11.e79); end
-  def bl72; @bl72 ||= sheet7.bl72/(sheet12.c13*sheet11.e79); end
-  def bm72; @bm72 ||= sheet7.bm72/(sheet12.c13*sheet11.e79); end
-  def bn72; @bn72 ||= sheet7.bn72/(sheet12.c13*sheet11.e79); end
-  def bo72; @bo72 ||= sheet7.bo72/(sheet12.c13*sheet11.e79); end
-  def bp72; @bp72 ||= sheet7.bp72/(sheet12.c13*sheet11.e79); end
-  def bq72; @bq72 ||= sheet7.bq72/(sheet12.c13*sheet11.e79); end
-  def bs72; @bs72 ||= sheet7.bs72/(sheet12.c13*sheet11.e79); end
-  def bt72; @bt72 ||= sheet7.bt72/(sheet12.c13*sheet11.e79); end
-  def bu72; @bu72 ||= sheet7.bu72/(sheet12.c13*sheet11.e79); end
-  def bv72; @bv72 ||= sheet7.bv72/(sheet12.c13*sheet11.e79); end
-  def bw72; @bw72 ||= sheet7.bw72/(sheet12.c13*sheet11.e79); end
-  def bx72; @bx72 ||= sheet7.bx72/(sheet12.c13*sheet11.e79); end
-  def by72; @by72 ||= sheet7.by72/(sheet12.c13*sheet11.e79); end
-  def bz72; @bz72 ||= sheet7.bz72/(sheet12.c13*sheet11.e79); end
-  def ca72; @ca72 ||= sheet7.ca72/(sheet12.c13*sheet11.e79); end
-  def cc72; @cc72 ||= average(a('bs72','ca72')); end
-  def cd72; @cd72 ||= (sumproduct(a('bt72','ca72'),sheet12.a('d28','k28'))*5.0)+bs72; end
-  def cf72; @cf72 ||= sheet7.cf72/(sheet12.c13*sheet11.e79); end
-  def cg72; @cg72 ||= sheet7.cg72/(sheet12.c13*sheet11.e79); end
-  def ch72; @ch72 ||= sheet7.ch72/(sheet12.c13*sheet11.e79); end
-  def ci72; @ci72 ||= sheet7.ci72/(sheet12.c13*sheet11.e79); end
-  def cj72; @cj72 ||= sheet7.cj72/(sheet12.c13*sheet11.e79); end
-  def ck72; @ck72 ||= sheet7.ck72/(sheet12.c13*sheet11.e79); end
-  def cl72; @cl72 ||= sheet7.cl72/(sheet12.c13*sheet11.e79); end
-  def cm72; @cm72 ||= sheet7.cm72/(sheet12.c13*sheet11.e79); end
-  def cn72; @cn72 ||= sheet7.cn72/(sheet12.c13*sheet11.e79); end
-  def cp72; @cp72 ||= average(a('cf72','cn72')); end
-  def cq72; @cq72 ||= (sumproduct(a('cg72','cn72'),sheet12.a('d28','k28'))*5.0)+cf72; end
-  def cr72; @cr72 ||= excel_if(excel_comparison(abs(cd72-cq72-at72),"<",1.0),"ok","err"); end
-  def a73; "VI.b.Waste"; end
-  def b73; "Waste arising"; end
-  def c73; "Business"; end
-  def e73; @e73 ||= sheet7.e73/(sheet12.c13*sheet11.e79); end
-  def f73; @f73 ||= sheet7.f73/(sheet12.c13*sheet11.e79); end
-  def g73; @g73 ||= sheet7.g73/(sheet12.c13*sheet11.e79); end
-  def h73; @h73 ||= sheet7.h73/(sheet12.c13*sheet11.e79); end
-  def i73; @i73 ||= sheet7.i73/(sheet12.c13*sheet11.e79); end
-  def j73; @j73 ||= sheet7.j73/(sheet12.c13*sheet11.e79); end
-  def k73; @k73 ||= sheet7.k73/(sheet12.c13*sheet11.e79); end
-  def l73; @l73 ||= sheet7.l73/(sheet12.c13*sheet11.e79); end
-  def m73; @m73 ||= sheet7.m73/(sheet12.c13*sheet11.e79); end
-  def o73; @o73 ||= sheet7.o73/(sheet12.c13*sheet11.e79); end
-  def p73; @p73 ||= sheet7.p73/(sheet12.c13*sheet11.e79); end
-  def q73; @q73 ||= sheet7.q73/(sheet12.c13*sheet11.e79); end
-  def r73; @r73 ||= sheet7.r73/(sheet12.c13*sheet11.e79); end
-  def s73; @s73 ||= sheet7.s73/(sheet12.c13*sheet11.e79); end
-  def t73; @t73 ||= sheet7.t73/(sheet12.c13*sheet11.e79); end
-  def u73; @u73 ||= sheet7.u73/(sheet12.c13*sheet11.e79); end
-  def v73; @v73 ||= sheet7.v73/(sheet12.c13*sheet11.e79); end
-  def w73; @w73 ||= sheet7.w73/(sheet12.c13*sheet11.e79); end
-  def y73; @y73 ||= sheet7.y73/(sheet12.c13*sheet11.e79); end
-  def z73; @z73 ||= sheet7.z73/(sheet12.c13*sheet11.e79); end
-  def aa73; @aa73 ||= sheet7.aa73/(sheet12.c13*sheet11.e79); end
-  def ab73; @ab73 ||= sheet7.ab73/(sheet12.c13*sheet11.e79); end
-  def ac73; @ac73 ||= sheet7.ac73/(sheet12.c13*sheet11.e79); end
-  def ad73; @ad73 ||= sheet7.ad73/(sheet12.c13*sheet11.e79); end
-  def ae73; @ae73 ||= sheet7.ae73/(sheet12.c13*sheet11.e79); end
-  def af73; @af73 ||= sheet7.af73/(sheet12.c13*sheet11.e79); end
-  def ag73; @ag73 ||= sheet7.ag73/(sheet12.c13*sheet11.e79); end
-  def ai73; @ai73 ||= sheet7.ai73/(sheet12.c13*sheet11.e79); end
-  def aj73; @aj73 ||= sheet7.aj73/(sheet12.c13*sheet11.e79); end
-  def ak73; @ak73 ||= sheet7.ak73/(sheet12.c13*sheet11.e79); end
-  def al73; @al73 ||= sheet7.al73/(sheet12.c13*sheet11.e79); end
-  def am73; @am73 ||= sheet7.am73/(sheet12.c13*sheet11.e79); end
-  def an73; @an73 ||= sheet7.an73/(sheet12.c13*sheet11.e79); end
-  def ao73; @ao73 ||= sheet7.ao73/(sheet12.c13*sheet11.e79); end
-  def ap73; @ap73 ||= sheet7.ap73/(sheet12.c13*sheet11.e79); end
-  def aq73; @aq73 ||= sheet7.aq73/(sheet12.c13*sheet11.e79); end
-  def as73; @as73 ||= average(a('ai73','aq73')); end
-  def at73; @at73 ||= (sumproduct(a('aj73','aq73'),sheet12.a('d28','k28'))*5.0)+ai73; end
-  def av73; 0.0; end
-  def aw73; 5.0; end
-  def ay73; @ay73 ||= sheet7.ay73/(sheet12.c13*sheet11.e79); end
-  def az73; @az73 ||= sheet7.az73/(sheet12.c13*sheet11.e79); end
-  def ba73; @ba73 ||= sheet7.ba73/(sheet12.c13*sheet11.e79); end
-  def bb73; @bb73 ||= sheet7.bb73/(sheet12.c13*sheet11.e79); end
-  def bc73; @bc73 ||= sheet7.bc73/(sheet12.c13*sheet11.e79); end
-  def bd73; @bd73 ||= sheet7.bd73/(sheet12.c13*sheet11.e79); end
-  def be73; @be73 ||= sheet7.be73/(sheet12.c13*sheet11.e79); end
-  def bf73; @bf73 ||= sheet7.bf73/(sheet12.c13*sheet11.e79); end
-  def bg73; @bg73 ||= sheet7.bg73/(sheet12.c13*sheet11.e79); end
-  def bi73; @bi73 ||= sheet7.bi73/(sheet12.c13*sheet11.e79); end
-  def bj73; @bj73 ||= sheet7.bj73/(sheet12.c13*sheet11.e79); end
-  def bk73; @bk73 ||= sheet7.bk73/(sheet12.c13*sheet11.e79); end
-  def bl73; @bl73 ||= sheet7.bl73/(sheet12.c13*sheet11.e79); end
-  def bm73; @bm73 ||= sheet7.bm73/(sheet12.c13*sheet11.e79); end
-  def bn73; @bn73 ||= sheet7.bn73/(sheet12.c13*sheet11.e79); end
-  def bo73; @bo73 ||= sheet7.bo73/(sheet12.c13*sheet11.e79); end
-  def bp73; @bp73 ||= sheet7.bp73/(sheet12.c13*sheet11.e79); end
-  def bq73; @bq73 ||= sheet7.bq73/(sheet12.c13*sheet11.e79); end
-  def bs73; @bs73 ||= sheet7.bs73/(sheet12.c13*sheet11.e79); end
-  def bt73; @bt73 ||= sheet7.bt73/(sheet12.c13*sheet11.e79); end
-  def bu73; @bu73 ||= sheet7.bu73/(sheet12.c13*sheet11.e79); end
-  def bv73; @bv73 ||= sheet7.bv73/(sheet12.c13*sheet11.e79); end
-  def bw73; @bw73 ||= sheet7.bw73/(sheet12.c13*sheet11.e79); end
-  def bx73; @bx73 ||= sheet7.bx73/(sheet12.c13*sheet11.e79); end
-  def by73; @by73 ||= sheet7.by73/(sheet12.c13*sheet11.e79); end
-  def bz73; @bz73 ||= sheet7.bz73/(sheet12.c13*sheet11.e79); end
-  def ca73; @ca73 ||= sheet7.ca73/(sheet12.c13*sheet11.e79); end
-  def cc73; @cc73 ||= average(a('bs73','ca73')); end
-  def cd73; @cd73 ||= (sumproduct(a('bt73','ca73'),sheet12.a('d28','k28'))*5.0)+bs73; end
-  def cf73; @cf73 ||= sheet7.cf73/(sheet12.c13*sheet11.e79); end
-  def cg73; @cg73 ||= sheet7.cg73/(sheet12.c13*sheet11.e79); end
-  def ch73; @ch73 ||= sheet7.ch73/(sheet12.c13*sheet11.e79); end
-  def ci73; @ci73 ||= sheet7.ci73/(sheet12.c13*sheet11.e79); end
-  def cj73; @cj73 ||= sheet7.cj73/(sheet12.c13*sheet11.e79); end
-  def ck73; @ck73 ||= sheet7.ck73/(sheet12.c13*sheet11.e79); end
-  def cl73; @cl73 ||= sheet7.cl73/(sheet12.c13*sheet11.e79); end
-  def cm73; @cm73 ||= sheet7.cm73/(sheet12.c13*sheet11.e79); end
-  def cn73; @cn73 ||= sheet7.cn73/(sheet12.c13*sheet11.e79); end
-  def cp73; @cp73 ||= average(a('cf73','cn73')); end
-  def cq73; @cq73 ||= (sumproduct(a('cg73','cn73'),sheet12.a('d28','k28'))*5.0)+cf73; end
-  def cr73; @cr73 ||= excel_if(excel_comparison(abs(cd73-cq73-at73),"<",1.0),"ok","err"); end
-  def a74; "VI.c"; end
-  def b74; "Marine algae"; end
-  def c74; "Biomass Supply"; end
-  def e74; @e74 ||= sheet7.e74/(sheet12.c13*sheet11.e79); end
-  def f74; @f74 ||= sheet7.f74/(sheet12.c13*sheet11.e79); end
-  def g74; @g74 ||= sheet7.g74/(sheet12.c13*sheet11.e79); end
-  def h74; @h74 ||= sheet7.h74/(sheet12.c13*sheet11.e79); end
-  def i74; @i74 ||= sheet7.i74/(sheet12.c13*sheet11.e79); end
-  def j74; @j74 ||= sheet7.j74/(sheet12.c13*sheet11.e79); end
-  def k74; @k74 ||= sheet7.k74/(sheet12.c13*sheet11.e79); end
-  def l74; @l74 ||= sheet7.l74/(sheet12.c13*sheet11.e79); end
-  def m74; @m74 ||= sheet7.m74/(sheet12.c13*sheet11.e79); end
-  def o74; @o74 ||= sheet7.o74/(sheet12.c13*sheet11.e79); end
-  def p74; @p74 ||= sheet7.p74/(sheet12.c13*sheet11.e79); end
-  def q74; @q74 ||= sheet7.q74/(sheet12.c13*sheet11.e79); end
-  def r74; @r74 ||= sheet7.r74/(sheet12.c13*sheet11.e79); end
-  def s74; @s74 ||= sheet7.s74/(sheet12.c13*sheet11.e79); end
-  def t74; @t74 ||= sheet7.t74/(sheet12.c13*sheet11.e79); end
-  def u74; @u74 ||= sheet7.u74/(sheet12.c13*sheet11.e79); end
-  def v74; @v74 ||= sheet7.v74/(sheet12.c13*sheet11.e79); end
-  def w74; @w74 ||= sheet7.w74/(sheet12.c13*sheet11.e79); end
-  def y74; @y74 ||= sheet7.y74/(sheet12.c13*sheet11.e79); end
-  def z74; @z74 ||= sheet7.z74/(sheet12.c13*sheet11.e79); end
-  def aa74; @aa74 ||= sheet7.aa74/(sheet12.c13*sheet11.e79); end
-  def ab74; @ab74 ||= sheet7.ab74/(sheet12.c13*sheet11.e79); end
-  def ac74; @ac74 ||= sheet7.ac74/(sheet12.c13*sheet11.e79); end
-  def ad74; @ad74 ||= sheet7.ad74/(sheet12.c13*sheet11.e79); end
-  def ae74; @ae74 ||= sheet7.ae74/(sheet12.c13*sheet11.e79); end
-  def af74; @af74 ||= sheet7.af74/(sheet12.c13*sheet11.e79); end
-  def ag74; @ag74 ||= sheet7.ag74/(sheet12.c13*sheet11.e79); end
-  def ai74; @ai74 ||= sheet7.ai74/(sheet12.c13*sheet11.e79); end
-  def aj74; @aj74 ||= sheet7.aj74/(sheet12.c13*sheet11.e79); end
-  def ak74; @ak74 ||= sheet7.ak74/(sheet12.c13*sheet11.e79); end
-  def al74; @al74 ||= sheet7.al74/(sheet12.c13*sheet11.e79); end
-  def am74; @am74 ||= sheet7.am74/(sheet12.c13*sheet11.e79); end
-  def an74; @an74 ||= sheet7.an74/(sheet12.c13*sheet11.e79); end
-  def ao74; @ao74 ||= sheet7.ao74/(sheet12.c13*sheet11.e79); end
-  def ap74; @ap74 ||= sheet7.ap74/(sheet12.c13*sheet11.e79); end
-  def aq74; @aq74 ||= sheet7.aq74/(sheet12.c13*sheet11.e79); end
-  def as74; @as74 ||= average(a('ai74','aq74')); end
-  def at74; @at74 ||= (sumproduct(a('aj74','aq74'),sheet12.a('d28','k28'))*5.0)+ai74; end
-  def av74; 0.0; end
-  def aw74; 5.0; end
-  def ay74; @ay74 ||= sheet7.ay74/(sheet12.c13*sheet11.e79); end
-  def az74; @az74 ||= sheet7.az74/(sheet12.c13*sheet11.e79); end
-  def ba74; @ba74 ||= sheet7.ba74/(sheet12.c13*sheet11.e79); end
-  def bb74; @bb74 ||= sheet7.bb74/(sheet12.c13*sheet11.e79); end
-  def bc74; @bc74 ||= sheet7.bc74/(sheet12.c13*sheet11.e79); end
-  def bd74; @bd74 ||= sheet7.bd74/(sheet12.c13*sheet11.e79); end
-  def be74; @be74 ||= sheet7.be74/(sheet12.c13*sheet11.e79); end
-  def bf74; @bf74 ||= sheet7.bf74/(sheet12.c13*sheet11.e79); end
-  def bg74; @bg74 ||= sheet7.bg74/(sheet12.c13*sheet11.e79); end
-  def bi74; @bi74 ||= sheet7.bi74/(sheet12.c13*sheet11.e79); end
-  def bj74; @bj74 ||= sheet7.bj74/(sheet12.c13*sheet11.e79); end
-  def bk74; @bk74 ||= sheet7.bk74/(sheet12.c13*sheet11.e79); end
-  def bl74; @bl74 ||= sheet7.bl74/(sheet12.c13*sheet11.e79); end
-  def bm74; @bm74 ||= sheet7.bm74/(sheet12.c13*sheet11.e79); end
-  def bn74; @bn74 ||= sheet7.bn74/(sheet12.c13*sheet11.e79); end
-  def bo74; @bo74 ||= sheet7.bo74/(sheet12.c13*sheet11.e79); end
-  def bp74; @bp74 ||= sheet7.bp74/(sheet12.c13*sheet11.e79); end
-  def bq74; @bq74 ||= sheet7.bq74/(sheet12.c13*sheet11.e79); end
-  def bs74; @bs74 ||= sheet7.bs74/(sheet12.c13*sheet11.e79); end
-  def bt74; @bt74 ||= sheet7.bt74/(sheet12.c13*sheet11.e79); end
-  def bu74; @bu74 ||= sheet7.bu74/(sheet12.c13*sheet11.e79); end
-  def bv74; @bv74 ||= sheet7.bv74/(sheet12.c13*sheet11.e79); end
-  def bw74; @bw74 ||= sheet7.bw74/(sheet12.c13*sheet11.e79); end
-  def bx74; @bx74 ||= sheet7.bx74/(sheet12.c13*sheet11.e79); end
-  def by74; @by74 ||= sheet7.by74/(sheet12.c13*sheet11.e79); end
-  def bz74; @bz74 ||= sheet7.bz74/(sheet12.c13*sheet11.e79); end
-  def ca74; @ca74 ||= sheet7.ca74/(sheet12.c13*sheet11.e79); end
-  def cc74; @cc74 ||= average(a('bs74','ca74')); end
-  def cd74; @cd74 ||= (sumproduct(a('bt74','ca74'),sheet12.a('d28','k28'))*5.0)+bs74; end
-  def cf74; @cf74 ||= sheet7.cf74/(sheet12.c13*sheet11.e79); end
-  def cg74; @cg74 ||= sheet7.cg74/(sheet12.c13*sheet11.e79); end
-  def ch74; @ch74 ||= sheet7.ch74/(sheet12.c13*sheet11.e79); end
-  def ci74; @ci74 ||= sheet7.ci74/(sheet12.c13*sheet11.e79); end
-  def cj74; @cj74 ||= sheet7.cj74/(sheet12.c13*sheet11.e79); end
-  def ck74; @ck74 ||= sheet7.ck74/(sheet12.c13*sheet11.e79); end
-  def cl74; @cl74 ||= sheet7.cl74/(sheet12.c13*sheet11.e79); end
-  def cm74; @cm74 ||= sheet7.cm74/(sheet12.c13*sheet11.e79); end
-  def cn74; @cn74 ||= sheet7.cn74/(sheet12.c13*sheet11.e79); end
-  def cp74; @cp74 ||= average(a('cf74','cn74')); end
-  def cq74; @cq74 ||= (sumproduct(a('cg74','cn74'),sheet12.a('d28','k28'))*5.0)+cf74; end
-  def cr74; @cr74 ||= excel_if(excel_comparison(abs(cd74-cq74-at74),"<",1.0),"ok","err"); end
-  def a75; "VII.a.Imports"; end
-  def b75; "Electricity imports"; end
-  def c75; "Power"; end
-  def e75; @e75 ||= sheet7.e75/(sheet12.c13*sheet11.e79); end
-  def f75; @f75 ||= sheet7.f75/(sheet12.c13*sheet11.e79); end
-  def g75; @g75 ||= sheet7.g75/(sheet12.c13*sheet11.e79); end
-  def h75; @h75 ||= sheet7.h75/(sheet12.c13*sheet11.e79); end
-  def i75; @i75 ||= sheet7.i75/(sheet12.c13*sheet11.e79); end
-  def j75; @j75 ||= sheet7.j75/(sheet12.c13*sheet11.e79); end
-  def k75; @k75 ||= sheet7.k75/(sheet12.c13*sheet11.e79); end
-  def l75; @l75 ||= sheet7.l75/(sheet12.c13*sheet11.e79); end
-  def m75; @m75 ||= sheet7.m75/(sheet12.c13*sheet11.e79); end
-  def o75; @o75 ||= sheet7.o75/(sheet12.c13*sheet11.e79); end
-  def p75; @p75 ||= sheet7.p75/(sheet12.c13*sheet11.e79); end
-  def q75; @q75 ||= sheet7.q75/(sheet12.c13*sheet11.e79); end
-  def r75; @r75 ||= sheet7.r75/(sheet12.c13*sheet11.e79); end
-  def s75; @s75 ||= sheet7.s75/(sheet12.c13*sheet11.e79); end
-  def t75; @t75 ||= sheet7.t75/(sheet12.c13*sheet11.e79); end
-  def u75; @u75 ||= sheet7.u75/(sheet12.c13*sheet11.e79); end
-  def v75; @v75 ||= sheet7.v75/(sheet12.c13*sheet11.e79); end
-  def w75; @w75 ||= sheet7.w75/(sheet12.c13*sheet11.e79); end
-  def y75; @y75 ||= sheet7.y75/(sheet12.c13*sheet11.e79); end
-  def z75; @z75 ||= sheet7.z75/(sheet12.c13*sheet11.e79); end
-  def aa75; @aa75 ||= sheet7.aa75/(sheet12.c13*sheet11.e79); end
-  def ab75; @ab75 ||= sheet7.ab75/(sheet12.c13*sheet11.e79); end
-  def ac75; @ac75 ||= sheet7.ac75/(sheet12.c13*sheet11.e79); end
-  def ad75; @ad75 ||= sheet7.ad75/(sheet12.c13*sheet11.e79); end
-  def ae75; @ae75 ||= sheet7.ae75/(sheet12.c13*sheet11.e79); end
-  def af75; @af75 ||= sheet7.af75/(sheet12.c13*sheet11.e79); end
-  def ag75; @ag75 ||= sheet7.ag75/(sheet12.c13*sheet11.e79); end
-  def ai75; @ai75 ||= sheet7.ai75/(sheet12.c13*sheet11.e79); end
-  def aj75; @aj75 ||= sheet7.aj75/(sheet12.c13*sheet11.e79); end
-  def ak75; @ak75 ||= sheet7.ak75/(sheet12.c13*sheet11.e79); end
-  def al75; @al75 ||= sheet7.al75/(sheet12.c13*sheet11.e79); end
-  def am75; @am75 ||= sheet7.am75/(sheet12.c13*sheet11.e79); end
-  def an75; @an75 ||= sheet7.an75/(sheet12.c13*sheet11.e79); end
-  def ao75; @ao75 ||= sheet7.ao75/(sheet12.c13*sheet11.e79); end
-  def ap75; @ap75 ||= sheet7.ap75/(sheet12.c13*sheet11.e79); end
-  def aq75; @aq75 ||= sheet7.aq75/(sheet12.c13*sheet11.e79); end
-  def as75; @as75 ||= average(a('ai75','aq75')); end
-  def at75; @at75 ||= (sumproduct(a('aj75','aq75'),sheet12.a('d28','k28'))*5.0)+ai75; end
-  def av75; 0.0; end
-  def aw75; 5.0; end
-  def ay75; @ay75 ||= sheet7.ay75/(sheet12.c13*sheet11.e79); end
-  def az75; @az75 ||= sheet7.az75/(sheet12.c13*sheet11.e79); end
-  def ba75; @ba75 ||= sheet7.ba75/(sheet12.c13*sheet11.e79); end
-  def bb75; @bb75 ||= sheet7.bb75/(sheet12.c13*sheet11.e79); end
-  def bc75; @bc75 ||= sheet7.bc75/(sheet12.c13*sheet11.e79); end
-  def bd75; @bd75 ||= sheet7.bd75/(sheet12.c13*sheet11.e79); end
-  def be75; @be75 ||= sheet7.be75/(sheet12.c13*sheet11.e79); end
-  def bf75; @bf75 ||= sheet7.bf75/(sheet12.c13*sheet11.e79); end
-  def bg75; @bg75 ||= sheet7.bg75/(sheet12.c13*sheet11.e79); end
-  def bi75; @bi75 ||= sheet7.bi75/(sheet12.c13*sheet11.e79); end
-  def bj75; @bj75 ||= sheet7.bj75/(sheet12.c13*sheet11.e79); end
-  def bk75; @bk75 ||= sheet7.bk75/(sheet12.c13*sheet11.e79); end
-  def bl75; @bl75 ||= sheet7.bl75/(sheet12.c13*sheet11.e79); end
-  def bm75; @bm75 ||= sheet7.bm75/(sheet12.c13*sheet11.e79); end
-  def bn75; @bn75 ||= sheet7.bn75/(sheet12.c13*sheet11.e79); end
-  def bo75; @bo75 ||= sheet7.bo75/(sheet12.c13*sheet11.e79); end
-  def bp75; @bp75 ||= sheet7.bp75/(sheet12.c13*sheet11.e79); end
-  def bq75; @bq75 ||= sheet7.bq75/(sheet12.c13*sheet11.e79); end
-  def bs75; @bs75 ||= sheet7.bs75/(sheet12.c13*sheet11.e79); end
-  def bt75; @bt75 ||= sheet7.bt75/(sheet12.c13*sheet11.e79); end
-  def bu75; @bu75 ||= sheet7.bu75/(sheet12.c13*sheet11.e79); end
-  def bv75; @bv75 ||= sheet7.bv75/(sheet12.c13*sheet11.e79); end
-  def bw75; @bw75 ||= sheet7.bw75/(sheet12.c13*sheet11.e79); end
-  def bx75; @bx75 ||= sheet7.bx75/(sheet12.c13*sheet11.e79); end
-  def by75; @by75 ||= sheet7.by75/(sheet12.c13*sheet11.e79); end
-  def bz75; @bz75 ||= sheet7.bz75/(sheet12.c13*sheet11.e79); end
-  def ca75; @ca75 ||= sheet7.ca75/(sheet12.c13*sheet11.e79); end
-  def cc75; @cc75 ||= average(a('bs75','ca75')); end
-  def cd75; @cd75 ||= (sumproduct(a('bt75','ca75'),sheet12.a('d28','k28'))*5.0)+bs75; end
-  def cf75; @cf75 ||= sheet7.cf75/(sheet12.c13*sheet11.e79); end
-  def cg75; @cg75 ||= sheet7.cg75/(sheet12.c13*sheet11.e79); end
-  def ch75; @ch75 ||= sheet7.ch75/(sheet12.c13*sheet11.e79); end
-  def ci75; @ci75 ||= sheet7.ci75/(sheet12.c13*sheet11.e79); end
-  def cj75; @cj75 ||= sheet7.cj75/(sheet12.c13*sheet11.e79); end
-  def ck75; @ck75 ||= sheet7.ck75/(sheet12.c13*sheet11.e79); end
-  def cl75; @cl75 ||= sheet7.cl75/(sheet12.c13*sheet11.e79); end
-  def cm75; @cm75 ||= sheet7.cm75/(sheet12.c13*sheet11.e79); end
-  def cn75; @cn75 ||= sheet7.cn75/(sheet12.c13*sheet11.e79); end
-  def cp75; @cp75 ||= average(a('cf75','cn75')); end
-  def cq75; @cq75 ||= (sumproduct(a('cg75','cn75'),sheet12.a('d28','k28'))*5.0)+cf75; end
-  def cr75; @cr75 ||= excel_if(excel_comparison(abs(cd75-cq75-at75),"<",1.0),"ok","err"); end
-  def a76; "VII.a.Exports"; end
-  def b76; "Electricity Exports"; end
-  def c76; "Power"; end
-  def e76; @e76 ||= sheet7.e76/(sheet12.c13*sheet11.e79); end
-  def f76; @f76 ||= sheet7.f76/(sheet12.c13*sheet11.e79); end
-  def g76; @g76 ||= sheet7.g76/(sheet12.c13*sheet11.e79); end
-  def h76; @h76 ||= sheet7.h76/(sheet12.c13*sheet11.e79); end
-  def i76; @i76 ||= sheet7.i76/(sheet12.c13*sheet11.e79); end
-  def j76; @j76 ||= sheet7.j76/(sheet12.c13*sheet11.e79); end
-  def k76; @k76 ||= sheet7.k76/(sheet12.c13*sheet11.e79); end
-  def l76; @l76 ||= sheet7.l76/(sheet12.c13*sheet11.e79); end
-  def m76; @m76 ||= sheet7.m76/(sheet12.c13*sheet11.e79); end
-  def o76; @o76 ||= sheet7.o76/(sheet12.c13*sheet11.e79); end
-  def p76; @p76 ||= sheet7.p76/(sheet12.c13*sheet11.e79); end
-  def q76; @q76 ||= sheet7.q76/(sheet12.c13*sheet11.e79); end
-  def r76; @r76 ||= sheet7.r76/(sheet12.c13*sheet11.e79); end
-  def s76; @s76 ||= sheet7.s76/(sheet12.c13*sheet11.e79); end
-  def t76; @t76 ||= sheet7.t76/(sheet12.c13*sheet11.e79); end
-  def u76; @u76 ||= sheet7.u76/(sheet12.c13*sheet11.e79); end
-  def v76; @v76 ||= sheet7.v76/(sheet12.c13*sheet11.e79); end
-  def w76; @w76 ||= sheet7.w76/(sheet12.c13*sheet11.e79); end
-  def y76; @y76 ||= sheet7.y76/(sheet12.c13*sheet11.e79); end
-  def z76; @z76 ||= sheet7.z76/(sheet12.c13*sheet11.e79); end
-  def aa76; @aa76 ||= sheet7.aa76/(sheet12.c13*sheet11.e79); end
-  def ab76; @ab76 ||= sheet7.ab76/(sheet12.c13*sheet11.e79); end
-  def ac76; @ac76 ||= sheet7.ac76/(sheet12.c13*sheet11.e79); end
-  def ad76; @ad76 ||= sheet7.ad76/(sheet12.c13*sheet11.e79); end
-  def ae76; @ae76 ||= sheet7.ae76/(sheet12.c13*sheet11.e79); end
-  def af76; @af76 ||= sheet7.af76/(sheet12.c13*sheet11.e79); end
-  def ag76; @ag76 ||= sheet7.ag76/(sheet12.c13*sheet11.e79); end
-  def ai76; @ai76 ||= sheet7.ai76/(sheet12.c13*sheet11.e79); end
-  def aj76; @aj76 ||= sheet7.aj76/(sheet12.c13*sheet11.e79); end
-  def ak76; @ak76 ||= sheet7.ak76/(sheet12.c13*sheet11.e79); end
-  def al76; @al76 ||= sheet7.al76/(sheet12.c13*sheet11.e79); end
-  def am76; @am76 ||= sheet7.am76/(sheet12.c13*sheet11.e79); end
-  def an76; @an76 ||= sheet7.an76/(sheet12.c13*sheet11.e79); end
-  def ao76; @ao76 ||= sheet7.ao76/(sheet12.c13*sheet11.e79); end
-  def ap76; @ap76 ||= sheet7.ap76/(sheet12.c13*sheet11.e79); end
-  def aq76; @aq76 ||= sheet7.aq76/(sheet12.c13*sheet11.e79); end
-  def as76; @as76 ||= average(a('ai76','aq76')); end
-  def at76; @at76 ||= (sumproduct(a('aj76','aq76'),sheet12.a('d28','k28'))*5.0)+ai76; end
-  def av76; 0.0; end
-  def aw76; 5.0; end
-  def ay76; @ay76 ||= sheet7.ay76/(sheet12.c13*sheet11.e79); end
-  def az76; @az76 ||= sheet7.az76/(sheet12.c13*sheet11.e79); end
-  def ba76; @ba76 ||= sheet7.ba76/(sheet12.c13*sheet11.e79); end
-  def bb76; @bb76 ||= sheet7.bb76/(sheet12.c13*sheet11.e79); end
-  def bc76; @bc76 ||= sheet7.bc76/(sheet12.c13*sheet11.e79); end
-  def bd76; @bd76 ||= sheet7.bd76/(sheet12.c13*sheet11.e79); end
-  def be76; @be76 ||= sheet7.be76/(sheet12.c13*sheet11.e79); end
-  def bf76; @bf76 ||= sheet7.bf76/(sheet12.c13*sheet11.e79); end
-  def bg76; @bg76 ||= sheet7.bg76/(sheet12.c13*sheet11.e79); end
-  def bi76; @bi76 ||= sheet7.bi76/(sheet12.c13*sheet11.e79); end
-  def bj76; @bj76 ||= sheet7.bj76/(sheet12.c13*sheet11.e79); end
-  def bk76; @bk76 ||= sheet7.bk76/(sheet12.c13*sheet11.e79); end
-  def bl76; @bl76 ||= sheet7.bl76/(sheet12.c13*sheet11.e79); end
-  def bm76; @bm76 ||= sheet7.bm76/(sheet12.c13*sheet11.e79); end
-  def bn76; @bn76 ||= sheet7.bn76/(sheet12.c13*sheet11.e79); end
-  def bo76; @bo76 ||= sheet7.bo76/(sheet12.c13*sheet11.e79); end
-  def bp76; @bp76 ||= sheet7.bp76/(sheet12.c13*sheet11.e79); end
-  def bq76; @bq76 ||= sheet7.bq76/(sheet12.c13*sheet11.e79); end
-  def bs76; @bs76 ||= sheet7.bs76/(sheet12.c13*sheet11.e79); end
-  def bt76; @bt76 ||= sheet7.bt76/(sheet12.c13*sheet11.e79); end
-  def bu76; @bu76 ||= sheet7.bu76/(sheet12.c13*sheet11.e79); end
-  def bv76; @bv76 ||= sheet7.bv76/(sheet12.c13*sheet11.e79); end
-  def bw76; @bw76 ||= sheet7.bw76/(sheet12.c13*sheet11.e79); end
-  def bx76; @bx76 ||= sheet7.bx76/(sheet12.c13*sheet11.e79); end
-  def by76; @by76 ||= sheet7.by76/(sheet12.c13*sheet11.e79); end
-  def bz76; @bz76 ||= sheet7.bz76/(sheet12.c13*sheet11.e79); end
-  def ca76; @ca76 ||= sheet7.ca76/(sheet12.c13*sheet11.e79); end
-  def cc76; @cc76 ||= average(a('bs76','ca76')); end
-  def cd76; @cd76 ||= (sumproduct(a('bt76','ca76'),sheet12.a('d28','k28'))*5.0)+bs76; end
-  def cf76; @cf76 ||= sheet7.cf76/(sheet12.c13*sheet11.e79); end
-  def cg76; @cg76 ||= sheet7.cg76/(sheet12.c13*sheet11.e79); end
-  def ch76; @ch76 ||= sheet7.ch76/(sheet12.c13*sheet11.e79); end
-  def ci76; @ci76 ||= sheet7.ci76/(sheet12.c13*sheet11.e79); end
-  def cj76; @cj76 ||= sheet7.cj76/(sheet12.c13*sheet11.e79); end
-  def ck76; @ck76 ||= sheet7.ck76/(sheet12.c13*sheet11.e79); end
-  def cl76; @cl76 ||= sheet7.cl76/(sheet12.c13*sheet11.e79); end
-  def cm76; @cm76 ||= sheet7.cm76/(sheet12.c13*sheet11.e79); end
-  def cn76; @cn76 ||= sheet7.cn76/(sheet12.c13*sheet11.e79); end
-  def cp76; @cp76 ||= average(a('cf76','cn76')); end
-  def cq76; @cq76 ||= (sumproduct(a('cg76','cn76'),sheet12.a('d28','k28'))*5.0)+cf76; end
-  def cr76; @cr76 ||= excel_if(excel_comparison(abs(cd76-cq76-at76),"<",1.0),"ok","err"); end
-  def a77; "VII.b"; end
-  def b77; "Electricity grid distribution"; end
-  def c77; "Power"; end
-  def e77; @e77 ||= sheet7.e77/(sheet12.c13*sheet11.e79); end
-  def f77; @f77 ||= sheet7.f77/(sheet12.c13*sheet11.e79); end
-  def g77; @g77 ||= sheet7.g77/(sheet12.c13*sheet11.e79); end
-  def h77; @h77 ||= sheet7.h77/(sheet12.c13*sheet11.e79); end
-  def i77; @i77 ||= sheet7.i77/(sheet12.c13*sheet11.e79); end
-  def j77; @j77 ||= sheet7.j77/(sheet12.c13*sheet11.e79); end
-  def k77; @k77 ||= sheet7.k77/(sheet12.c13*sheet11.e79); end
-  def l77; @l77 ||= sheet7.l77/(sheet12.c13*sheet11.e79); end
-  def m77; @m77 ||= sheet7.m77/(sheet12.c13*sheet11.e79); end
-  def o77; @o77 ||= sheet7.o77/(sheet12.c13*sheet11.e79); end
-  def p77; @p77 ||= sheet7.p77/(sheet12.c13*sheet11.e79); end
-  def q77; @q77 ||= sheet7.q77/(sheet12.c13*sheet11.e79); end
-  def r77; @r77 ||= sheet7.r77/(sheet12.c13*sheet11.e79); end
-  def s77; @s77 ||= sheet7.s77/(sheet12.c13*sheet11.e79); end
-  def t77; @t77 ||= sheet7.t77/(sheet12.c13*sheet11.e79); end
-  def u77; @u77 ||= sheet7.u77/(sheet12.c13*sheet11.e79); end
-  def v77; @v77 ||= sheet7.v77/(sheet12.c13*sheet11.e79); end
-  def w77; @w77 ||= sheet7.w77/(sheet12.c13*sheet11.e79); end
-  def y77; @y77 ||= sheet7.y77/(sheet12.c13*sheet11.e79); end
-  def z77; @z77 ||= sheet7.z77/(sheet12.c13*sheet11.e79); end
-  def aa77; @aa77 ||= sheet7.aa77/(sheet12.c13*sheet11.e79); end
-  def ab77; @ab77 ||= sheet7.ab77/(sheet12.c13*sheet11.e79); end
-  def ac77; @ac77 ||= sheet7.ac77/(sheet12.c13*sheet11.e79); end
-  def ad77; @ad77 ||= sheet7.ad77/(sheet12.c13*sheet11.e79); end
-  def ae77; @ae77 ||= sheet7.ae77/(sheet12.c13*sheet11.e79); end
-  def af77; @af77 ||= sheet7.af77/(sheet12.c13*sheet11.e79); end
-  def ag77; @ag77 ||= sheet7.ag77/(sheet12.c13*sheet11.e79); end
-  def ai77; @ai77 ||= sheet7.ai77/(sheet12.c13*sheet11.e79); end
-  def aj77; @aj77 ||= sheet7.aj77/(sheet12.c13*sheet11.e79); end
-  def ak77; @ak77 ||= sheet7.ak77/(sheet12.c13*sheet11.e79); end
-  def al77; @al77 ||= sheet7.al77/(sheet12.c13*sheet11.e79); end
-  def am77; @am77 ||= sheet7.am77/(sheet12.c13*sheet11.e79); end
-  def an77; @an77 ||= sheet7.an77/(sheet12.c13*sheet11.e79); end
-  def ao77; @ao77 ||= sheet7.ao77/(sheet12.c13*sheet11.e79); end
-  def ap77; @ap77 ||= sheet7.ap77/(sheet12.c13*sheet11.e79); end
-  def aq77; @aq77 ||= sheet7.aq77/(sheet12.c13*sheet11.e79); end
-  def as77; @as77 ||= average(a('ai77','aq77')); end
-  def at77; @at77 ||= (sumproduct(a('aj77','aq77'),sheet12.a('d28','k28'))*5.0)+ai77; end
-  def av77; 0.0; end
-  def aw77; 5.0; end
-  def ay77; @ay77 ||= sheet7.ay77/(sheet12.c13*sheet11.e79); end
-  def az77; @az77 ||= sheet7.az77/(sheet12.c13*sheet11.e79); end
-  def ba77; @ba77 ||= sheet7.ba77/(sheet12.c13*sheet11.e79); end
-  def bb77; @bb77 ||= sheet7.bb77/(sheet12.c13*sheet11.e79); end
-  def bc77; @bc77 ||= sheet7.bc77/(sheet12.c13*sheet11.e79); end
-  def bd77; @bd77 ||= sheet7.bd77/(sheet12.c13*sheet11.e79); end
-  def be77; @be77 ||= sheet7.be77/(sheet12.c13*sheet11.e79); end
-  def bf77; @bf77 ||= sheet7.bf77/(sheet12.c13*sheet11.e79); end
-  def bg77; @bg77 ||= sheet7.bg77/(sheet12.c13*sheet11.e79); end
-  def bi77; @bi77 ||= sheet7.bi77/(sheet12.c13*sheet11.e79); end
-  def bj77; @bj77 ||= sheet7.bj77/(sheet12.c13*sheet11.e79); end
-  def bk77; @bk77 ||= sheet7.bk77/(sheet12.c13*sheet11.e79); end
-  def bl77; @bl77 ||= sheet7.bl77/(sheet12.c13*sheet11.e79); end
-  def bm77; @bm77 ||= sheet7.bm77/(sheet12.c13*sheet11.e79); end
-  def bn77; @bn77 ||= sheet7.bn77/(sheet12.c13*sheet11.e79); end
-  def bo77; @bo77 ||= sheet7.bo77/(sheet12.c13*sheet11.e79); end
-  def bp77; @bp77 ||= sheet7.bp77/(sheet12.c13*sheet11.e79); end
-  def bq77; @bq77 ||= sheet7.bq77/(sheet12.c13*sheet11.e79); end
-  def bs77; @bs77 ||= sheet7.bs77/(sheet12.c13*sheet11.e79); end
-  def bt77; @bt77 ||= sheet7.bt77/(sheet12.c13*sheet11.e79); end
-  def bu77; @bu77 ||= sheet7.bu77/(sheet12.c13*sheet11.e79); end
-  def bv77; @bv77 ||= sheet7.bv77/(sheet12.c13*sheet11.e79); end
-  def bw77; @bw77 ||= sheet7.bw77/(sheet12.c13*sheet11.e79); end
-  def bx77; @bx77 ||= sheet7.bx77/(sheet12.c13*sheet11.e79); end
-  def by77; @by77 ||= sheet7.by77/(sheet12.c13*sheet11.e79); end
-  def bz77; @bz77 ||= sheet7.bz77/(sheet12.c13*sheet11.e79); end
-  def ca77; @ca77 ||= sheet7.ca77/(sheet12.c13*sheet11.e79); end
-  def cc77; @cc77 ||= average(a('bs77','ca77')); end
-  def cd77; @cd77 ||= (sumproduct(a('bt77','ca77'),sheet12.a('d28','k28'))*5.0)+bs77; end
-  def cf77; @cf77 ||= sheet7.cf77/(sheet12.c13*sheet11.e79); end
-  def cg77; @cg77 ||= sheet7.cg77/(sheet12.c13*sheet11.e79); end
-  def ch77; @ch77 ||= sheet7.ch77/(sheet12.c13*sheet11.e79); end
-  def ci77; @ci77 ||= sheet7.ci77/(sheet12.c13*sheet11.e79); end
-  def cj77; @cj77 ||= sheet7.cj77/(sheet12.c13*sheet11.e79); end
-  def ck77; @ck77 ||= sheet7.ck77/(sheet12.c13*sheet11.e79); end
-  def cl77; @cl77 ||= sheet7.cl77/(sheet12.c13*sheet11.e79); end
-  def cm77; @cm77 ||= sheet7.cm77/(sheet12.c13*sheet11.e79); end
-  def cn77; @cn77 ||= sheet7.cn77/(sheet12.c13*sheet11.e79); end
-  def cp77; @cp77 ||= average(a('cf77','cn77')); end
-  def cq77; @cq77 ||= (sumproduct(a('cg77','cn77'),sheet12.a('d28','k28'))*5.0)+cf77; end
-  def cr77; @cr77 ||= excel_if(excel_comparison(abs(cd77-cq77-at77),"<",1.0),"ok","err"); end
-  def a78; "VII.c"; end
-  def b78; "Storage, demand shifting, backup"; end
-  def c78; "Power"; end
-  def e78; @e78 ||= sheet7.e78/(sheet12.c13*sheet11.e79); end
-  def f78; @f78 ||= sheet7.f78/(sheet12.c13*sheet11.e79); end
-  def g78; @g78 ||= sheet7.g78/(sheet12.c13*sheet11.e79); end
-  def h78; @h78 ||= sheet7.h78/(sheet12.c13*sheet11.e79); end
-  def i78; @i78 ||= sheet7.i78/(sheet12.c13*sheet11.e79); end
-  def j78; @j78 ||= sheet7.j78/(sheet12.c13*sheet11.e79); end
-  def k78; @k78 ||= sheet7.k78/(sheet12.c13*sheet11.e79); end
-  def l78; @l78 ||= sheet7.l78/(sheet12.c13*sheet11.e79); end
-  def m78; @m78 ||= sheet7.m78/(sheet12.c13*sheet11.e79); end
-  def o78; @o78 ||= sheet7.o78/(sheet12.c13*sheet11.e79); end
-  def p78; @p78 ||= sheet7.p78/(sheet12.c13*sheet11.e79); end
-  def q78; @q78 ||= sheet7.q78/(sheet12.c13*sheet11.e79); end
-  def r78; @r78 ||= sheet7.r78/(sheet12.c13*sheet11.e79); end
-  def s78; @s78 ||= sheet7.s78/(sheet12.c13*sheet11.e79); end
-  def t78; @t78 ||= sheet7.t78/(sheet12.c13*sheet11.e79); end
-  def u78; @u78 ||= sheet7.u78/(sheet12.c13*sheet11.e79); end
-  def v78; @v78 ||= sheet7.v78/(sheet12.c13*sheet11.e79); end
-  def w78; @w78 ||= sheet7.w78/(sheet12.c13*sheet11.e79); end
-  def y78; @y78 ||= sheet7.y78/(sheet12.c13*sheet11.e79); end
-  def z78; @z78 ||= sheet7.z78/(sheet12.c13*sheet11.e79); end
-  def aa78; @aa78 ||= sheet7.aa78/(sheet12.c13*sheet11.e79); end
-  def ab78; @ab78 ||= sheet7.ab78/(sheet12.c13*sheet11.e79); end
-  def ac78; @ac78 ||= sheet7.ac78/(sheet12.c13*sheet11.e79); end
-  def ad78; @ad78 ||= sheet7.ad78/(sheet12.c13*sheet11.e79); end
-  def ae78; @ae78 ||= sheet7.ae78/(sheet12.c13*sheet11.e79); end
-  def af78; @af78 ||= sheet7.af78/(sheet12.c13*sheet11.e79); end
-  def ag78; @ag78 ||= sheet7.ag78/(sheet12.c13*sheet11.e79); end
-  def ai78; @ai78 ||= sheet7.ai78/(sheet12.c13*sheet11.e79); end
-  def aj78; @aj78 ||= sheet7.aj78/(sheet12.c13*sheet11.e79); end
-  def ak78; @ak78 ||= sheet7.ak78/(sheet12.c13*sheet11.e79); end
-  def al78; @al78 ||= sheet7.al78/(sheet12.c13*sheet11.e79); end
-  def am78; @am78 ||= sheet7.am78/(sheet12.c13*sheet11.e79); end
-  def an78; @an78 ||= sheet7.an78/(sheet12.c13*sheet11.e79); end
-  def ao78; @ao78 ||= sheet7.ao78/(sheet12.c13*sheet11.e79); end
-  def ap78; @ap78 ||= sheet7.ap78/(sheet12.c13*sheet11.e79); end
-  def aq78; @aq78 ||= sheet7.aq78/(sheet12.c13*sheet11.e79); end
-  def as78; @as78 ||= average(a('ai78','aq78')); end
-  def at78; @at78 ||= (sumproduct(a('aj78','aq78'),sheet12.a('d28','k28'))*5.0)+ai78; end
-  def av78; 0.0; end
-  def aw78; 5.0; end
-  def ay78; @ay78 ||= sheet7.ay78/(sheet12.c13*sheet11.e79); end
-  def az78; @az78 ||= sheet7.az78/(sheet12.c13*sheet11.e79); end
-  def ba78; @ba78 ||= sheet7.ba78/(sheet12.c13*sheet11.e79); end
-  def bb78; @bb78 ||= sheet7.bb78/(sheet12.c13*sheet11.e79); end
-  def bc78; @bc78 ||= sheet7.bc78/(sheet12.c13*sheet11.e79); end
-  def bd78; @bd78 ||= sheet7.bd78/(sheet12.c13*sheet11.e79); end
-  def be78; @be78 ||= sheet7.be78/(sheet12.c13*sheet11.e79); end
-  def bf78; @bf78 ||= sheet7.bf78/(sheet12.c13*sheet11.e79); end
-  def bg78; @bg78 ||= sheet7.bg78/(sheet12.c13*sheet11.e79); end
-  def bi78; @bi78 ||= sheet7.bi78/(sheet12.c13*sheet11.e79); end
-  def bj78; @bj78 ||= sheet7.bj78/(sheet12.c13*sheet11.e79); end
-  def bk78; @bk78 ||= sheet7.bk78/(sheet12.c13*sheet11.e79); end
-  def bl78; @bl78 ||= sheet7.bl78/(sheet12.c13*sheet11.e79); end
-  def bm78; @bm78 ||= sheet7.bm78/(sheet12.c13*sheet11.e79); end
-  def bn78; @bn78 ||= sheet7.bn78/(sheet12.c13*sheet11.e79); end
-  def bo78; @bo78 ||= sheet7.bo78/(sheet12.c13*sheet11.e79); end
-  def bp78; @bp78 ||= sheet7.bp78/(sheet12.c13*sheet11.e79); end
-  def bq78; @bq78 ||= sheet7.bq78/(sheet12.c13*sheet11.e79); end
-  def bs78; @bs78 ||= sheet7.bs78/(sheet12.c13*sheet11.e79); end
-  def bt78; @bt78 ||= sheet7.bt78/(sheet12.c13*sheet11.e79); end
-  def bu78; @bu78 ||= sheet7.bu78/(sheet12.c13*sheet11.e79); end
-  def bv78; @bv78 ||= sheet7.bv78/(sheet12.c13*sheet11.e79); end
-  def bw78; @bw78 ||= sheet7.bw78/(sheet12.c13*sheet11.e79); end
-  def bx78; @bx78 ||= sheet7.bx78/(sheet12.c13*sheet11.e79); end
-  def by78; @by78 ||= sheet7.by78/(sheet12.c13*sheet11.e79); end
-  def bz78; @bz78 ||= sheet7.bz78/(sheet12.c13*sheet11.e79); end
-  def ca78; @ca78 ||= sheet7.ca78/(sheet12.c13*sheet11.e79); end
-  def cc78; @cc78 ||= average(a('bs78','ca78')); end
-  def cd78; @cd78 ||= (sumproduct(a('bt78','ca78'),sheet12.a('d28','k28'))*5.0)+bs78; end
-  def cf78; @cf78 ||= sheet7.cf78/(sheet12.c13*sheet11.e79); end
-  def cg78; @cg78 ||= sheet7.cg78/(sheet12.c13*sheet11.e79); end
-  def ch78; @ch78 ||= sheet7.ch78/(sheet12.c13*sheet11.e79); end
-  def ci78; @ci78 ||= sheet7.ci78/(sheet12.c13*sheet11.e79); end
-  def cj78; @cj78 ||= sheet7.cj78/(sheet12.c13*sheet11.e79); end
-  def ck78; @ck78 ||= sheet7.ck78/(sheet12.c13*sheet11.e79); end
-  def cl78; @cl78 ||= sheet7.cl78/(sheet12.c13*sheet11.e79); end
-  def cm78; @cm78 ||= sheet7.cm78/(sheet12.c13*sheet11.e79); end
-  def cn78; @cn78 ||= sheet7.cn78/(sheet12.c13*sheet11.e79); end
-  def cp78; @cp78 ||= average(a('cf78','cn78')); end
-  def cq78; @cq78 ||= (sumproduct(a('cg78','cn78'),sheet12.a('d28','k28'))*5.0)+cf78; end
-  def cr78; @cr78 ||= excel_if(excel_comparison(abs(cd78-cq78-at78),"<",1.0),"ok","err"); end
-  def a79; "VIII.a"; end
-  def b79; "H2 Production"; end
-  def c79; "Transport"; end
-  def e79; @e79 ||= sheet7.e79/(sheet12.c13*sheet11.e79); end
-  def f79; @f79 ||= sheet7.f79/(sheet12.c13*sheet11.e79); end
-  def g79; @g79 ||= sheet7.g79/(sheet12.c13*sheet11.e79); end
-  def h79; @h79 ||= sheet7.h79/(sheet12.c13*sheet11.e79); end
-  def i79; @i79 ||= sheet7.i79/(sheet12.c13*sheet11.e79); end
-  def j79; @j79 ||= sheet7.j79/(sheet12.c13*sheet11.e79); end
-  def k79; @k79 ||= sheet7.k79/(sheet12.c13*sheet11.e79); end
-  def l79; @l79 ||= sheet7.l79/(sheet12.c13*sheet11.e79); end
-  def m79; @m79 ||= sheet7.m79/(sheet12.c13*sheet11.e79); end
-  def o79; @o79 ||= sheet7.o79/(sheet12.c13*sheet11.e79); end
-  def p79; @p79 ||= sheet7.p79/(sheet12.c13*sheet11.e79); end
-  def q79; @q79 ||= sheet7.q79/(sheet12.c13*sheet11.e79); end
-  def r79; @r79 ||= sheet7.r79/(sheet12.c13*sheet11.e79); end
-  def s79; @s79 ||= sheet7.s79/(sheet12.c13*sheet11.e79); end
-  def t79; @t79 ||= sheet7.t79/(sheet12.c13*sheet11.e79); end
-  def u79; @u79 ||= sheet7.u79/(sheet12.c13*sheet11.e79); end
-  def v79; @v79 ||= sheet7.v79/(sheet12.c13*sheet11.e79); end
-  def w79; @w79 ||= sheet7.w79/(sheet12.c13*sheet11.e79); end
-  def y79; @y79 ||= sheet7.y79/(sheet12.c13*sheet11.e79); end
-  def z79; @z79 ||= sheet7.z79/(sheet12.c13*sheet11.e79); end
-  def aa79; @aa79 ||= sheet7.aa79/(sheet12.c13*sheet11.e79); end
-  def ab79; @ab79 ||= sheet7.ab79/(sheet12.c13*sheet11.e79); end
-  def ac79; @ac79 ||= sheet7.ac79/(sheet12.c13*sheet11.e79); end
-  def ad79; @ad79 ||= sheet7.ad79/(sheet12.c13*sheet11.e79); end
-  def ae79; @ae79 ||= sheet7.ae79/(sheet12.c13*sheet11.e79); end
-  def af79; @af79 ||= sheet7.af79/(sheet12.c13*sheet11.e79); end
-  def ag79; @ag79 ||= sheet7.ag79/(sheet12.c13*sheet11.e79); end
-  def ai79; @ai79 ||= sheet7.ai79/(sheet12.c13*sheet11.e79); end
-  def aj79; @aj79 ||= sheet7.aj79/(sheet12.c13*sheet11.e79); end
-  def ak79; @ak79 ||= sheet7.ak79/(sheet12.c13*sheet11.e79); end
-  def al79; @al79 ||= sheet7.al79/(sheet12.c13*sheet11.e79); end
-  def am79; @am79 ||= sheet7.am79/(sheet12.c13*sheet11.e79); end
-  def an79; @an79 ||= sheet7.an79/(sheet12.c13*sheet11.e79); end
-  def ao79; @ao79 ||= sheet7.ao79/(sheet12.c13*sheet11.e79); end
-  def ap79; @ap79 ||= sheet7.ap79/(sheet12.c13*sheet11.e79); end
-  def aq79; @aq79 ||= sheet7.aq79/(sheet12.c13*sheet11.e79); end
-  def as79; @as79 ||= average(a('ai79','aq79')); end
-  def at79; @at79 ||= (sumproduct(a('aj79','aq79'),sheet12.a('d28','k28'))*5.0)+ai79; end
-  def av79; 0.0; end
-  def aw79; 5.0; end
-  def ay79; @ay79 ||= sheet7.ay79/(sheet12.c13*sheet11.e79); end
-  def az79; @az79 ||= sheet7.az79/(sheet12.c13*sheet11.e79); end
-  def ba79; @ba79 ||= sheet7.ba79/(sheet12.c13*sheet11.e79); end
-  def bb79; @bb79 ||= sheet7.bb79/(sheet12.c13*sheet11.e79); end
-  def bc79; @bc79 ||= sheet7.bc79/(sheet12.c13*sheet11.e79); end
-  def bd79; @bd79 ||= sheet7.bd79/(sheet12.c13*sheet11.e79); end
-  def be79; @be79 ||= sheet7.be79/(sheet12.c13*sheet11.e79); end
-  def bf79; @bf79 ||= sheet7.bf79/(sheet12.c13*sheet11.e79); end
-  def bg79; @bg79 ||= sheet7.bg79/(sheet12.c13*sheet11.e79); end
-  def bi79; @bi79 ||= sheet7.bi79/(sheet12.c13*sheet11.e79); end
-  def bj79; @bj79 ||= sheet7.bj79/(sheet12.c13*sheet11.e79); end
-  def bk79; @bk79 ||= sheet7.bk79/(sheet12.c13*sheet11.e79); end
-  def bl79; @bl79 ||= sheet7.bl79/(sheet12.c13*sheet11.e79); end
-  def bm79; @bm79 ||= sheet7.bm79/(sheet12.c13*sheet11.e79); end
-  def bn79; @bn79 ||= sheet7.bn79/(sheet12.c13*sheet11.e79); end
-  def bo79; @bo79 ||= sheet7.bo79/(sheet12.c13*sheet11.e79); end
-  def bp79; @bp79 ||= sheet7.bp79/(sheet12.c13*sheet11.e79); end
-  def bq79; @bq79 ||= sheet7.bq79/(sheet12.c13*sheet11.e79); end
-  def bs79; @bs79 ||= sheet7.bs79/(sheet12.c13*sheet11.e79); end
-  def bt79; @bt79 ||= sheet7.bt79/(sheet12.c13*sheet11.e79); end
-  def bu79; @bu79 ||= sheet7.bu79/(sheet12.c13*sheet11.e79); end
-  def bv79; @bv79 ||= sheet7.bv79/(sheet12.c13*sheet11.e79); end
-  def bw79; @bw79 ||= sheet7.bw79/(sheet12.c13*sheet11.e79); end
-  def bx79; @bx79 ||= sheet7.bx79/(sheet12.c13*sheet11.e79); end
-  def by79; @by79 ||= sheet7.by79/(sheet12.c13*sheet11.e79); end
-  def bz79; @bz79 ||= sheet7.bz79/(sheet12.c13*sheet11.e79); end
-  def ca79; @ca79 ||= sheet7.ca79/(sheet12.c13*sheet11.e79); end
-  def cc79; @cc79 ||= average(a('bs79','ca79')); end
-  def cd79; @cd79 ||= (sumproduct(a('bt79','ca79'),sheet12.a('d28','k28'))*5.0)+bs79; end
-  def cf79; @cf79 ||= sheet7.cf79/(sheet12.c13*sheet11.e79); end
-  def cg79; @cg79 ||= sheet7.cg79/(sheet12.c13*sheet11.e79); end
-  def ch79; @ch79 ||= sheet7.ch79/(sheet12.c13*sheet11.e79); end
-  def ci79; @ci79 ||= sheet7.ci79/(sheet12.c13*sheet11.e79); end
-  def cj79; @cj79 ||= sheet7.cj79/(sheet12.c13*sheet11.e79); end
-  def ck79; @ck79 ||= sheet7.ck79/(sheet12.c13*sheet11.e79); end
-  def cl79; @cl79 ||= sheet7.cl79/(sheet12.c13*sheet11.e79); end
-  def cm79; @cm79 ||= sheet7.cm79/(sheet12.c13*sheet11.e79); end
-  def cn79; @cn79 ||= sheet7.cn79/(sheet12.c13*sheet11.e79); end
-  def cp79; @cp79 ||= average(a('cf79','cn79')); end
-  def cq79; @cq79 ||= (sumproduct(a('cg79','cn79'),sheet12.a('d28','k28'))*5.0)+cf79; end
-  def cr79; @cr79 ||= excel_if(excel_comparison(abs(cd79-cq79-at79),"<",1.0),"ok","err"); end
-  def a80; "IX.a.Heating"; end
-  def b80; "Domestic heating"; end
-  def c80; "Heating"; end
-  def e80; 125.56229575366756; end
-  def f80; @f80 ||= sheet7.f80/(sheet12.c13*sheet11.e79); end
-  def g80; @g80 ||= sheet7.g80/(sheet12.c13*sheet11.e79); end
-  def h80; @h80 ||= sheet7.h80/(sheet12.c13*sheet11.e79); end
-  def i80; @i80 ||= sheet7.i80/(sheet12.c13*sheet11.e79); end
-  def j80; @j80 ||= sheet7.j80/(sheet12.c13*sheet11.e79); end
-  def k80; @k80 ||= sheet7.k80/(sheet12.c13*sheet11.e79); end
-  def l80; @l80 ||= sheet7.l80/(sheet12.c13*sheet11.e79); end
-  def m80; @m80 ||= sheet7.m80/(sheet12.c13*sheet11.e79); end
-  def o80; 67.9111691938607; end
-  def p80; @p80 ||= sheet7.p80/(sheet12.c13*sheet11.e79); end
-  def q80; @q80 ||= sheet7.q80/(sheet12.c13*sheet11.e79); end
-  def r80; @r80 ||= sheet7.r80/(sheet12.c13*sheet11.e79); end
-  def s80; @s80 ||= sheet7.s80/(sheet12.c13*sheet11.e79); end
-  def t80; @t80 ||= sheet7.t80/(sheet12.c13*sheet11.e79); end
-  def u80; @u80 ||= sheet7.u80/(sheet12.c13*sheet11.e79); end
-  def v80; @v80 ||= sheet7.v80/(sheet12.c13*sheet11.e79); end
-  def w80; @w80 ||= sheet7.w80/(sheet12.c13*sheet11.e79); end
-  def y80; 0.0; end
-  def z80; @z80 ||= sheet7.z80/(sheet12.c13*sheet11.e79); end
-  def aa80; @aa80 ||= sheet7.aa80/(sheet12.c13*sheet11.e79); end
-  def ab80; @ab80 ||= sheet7.ab80/(sheet12.c13*sheet11.e79); end
-  def ac80; @ac80 ||= sheet7.ac80/(sheet12.c13*sheet11.e79); end
-  def ad80; @ad80 ||= sheet7.ad80/(sheet12.c13*sheet11.e79); end
-  def ae80; @ae80 ||= sheet7.ae80/(sheet12.c13*sheet11.e79); end
-  def af80; @af80 ||= sheet7.af80/(sheet12.c13*sheet11.e79); end
-  def ag80; @ag80 ||= sheet7.ag80/(sheet12.c13*sheet11.e79); end
-  def ai80; 193.47346494752827; end
-  def aj80; @aj80 ||= sheet7.aj80/(sheet12.c13*sheet11.e79); end
-  def ak80; @ak80 ||= sheet7.ak80/(sheet12.c13*sheet11.e79); end
-  def al80; @al80 ||= sheet7.al80/(sheet12.c13*sheet11.e79); end
-  def am80; @am80 ||= sheet7.am80/(sheet12.c13*sheet11.e79); end
-  def an80; @an80 ||= sheet7.an80/(sheet12.c13*sheet11.e79); end
-  def ao80; @ao80 ||= sheet7.ao80/(sheet12.c13*sheet11.e79); end
-  def ap80; @ap80 ||= sheet7.ap80/(sheet12.c13*sheet11.e79); end
-  def aq80; @aq80 ||= sheet7.aq80/(sheet12.c13*sheet11.e79); end
-  def as80; @as80 ||= average(a('ai80','aq80')); end
-  def at80; @at80 ||= (sumproduct(a('aj80','aq80'),sheet12.a('d28','k28'))*5.0)+ai80; end
-  def av80; 0.0; end
-  def aw80; 5.0; end
-  def ay80; 41.358195416612155; end
-  def az80; @az80 ||= sheet7.az80/(sheet12.c13*sheet11.e79); end
-  def ba80; @ba80 ||= sheet7.ba80/(sheet12.c13*sheet11.e79); end
-  def bb80; @bb80 ||= sheet7.bb80/(sheet12.c13*sheet11.e79); end
-  def bc80; @bc80 ||= sheet7.bc80/(sheet12.c13*sheet11.e79); end
-  def bd80; @bd80 ||= sheet7.bd80/(sheet12.c13*sheet11.e79); end
-  def be80; @be80 ||= sheet7.be80/(sheet12.c13*sheet11.e79); end
-  def bf80; @bf80 ||= sheet7.bf80/(sheet12.c13*sheet11.e79); end
-  def bg80; @bg80 ||= sheet7.bg80/(sheet12.c13*sheet11.e79); end
-  def bi80; 41.358195416612155; end
-  def bj80; @bj80 ||= sheet7.bj80/(sheet12.c13*sheet11.e79); end
-  def bk80; @bk80 ||= sheet7.bk80/(sheet12.c13*sheet11.e79); end
-  def bl80; @bl80 ||= sheet7.bl80/(sheet12.c13*sheet11.e79); end
-  def bm80; @bm80 ||= sheet7.bm80/(sheet12.c13*sheet11.e79); end
-  def bn80; @bn80 ||= sheet7.bn80/(sheet12.c13*sheet11.e79); end
-  def bo80; @bo80 ||= sheet7.bo80/(sheet12.c13*sheet11.e79); end
-  def bp80; @bp80 ||= sheet7.bp80/(sheet12.c13*sheet11.e79); end
-  def bq80; @bq80 ||= sheet7.bq80/(sheet12.c13*sheet11.e79); end
-  def bs80; 109.26936461047285; end
-  def bt80; @bt80 ||= sheet7.bt80/(sheet12.c13*sheet11.e79); end
-  def bu80; @bu80 ||= sheet7.bu80/(sheet12.c13*sheet11.e79); end
-  def bv80; @bv80 ||= sheet7.bv80/(sheet12.c13*sheet11.e79); end
-  def bw80; @bw80 ||= sheet7.bw80/(sheet12.c13*sheet11.e79); end
-  def bx80; @bx80 ||= sheet7.bx80/(sheet12.c13*sheet11.e79); end
-  def by80; @by80 ||= sheet7.by80/(sheet12.c13*sheet11.e79); end
-  def bz80; @bz80 ||= sheet7.bz80/(sheet12.c13*sheet11.e79); end
-  def ca80; @ca80 ||= sheet7.ca80/(sheet12.c13*sheet11.e79); end
-  def cc80; @cc80 ||= average(a('bs80','ca80')); end
-  def cd80; @cd80 ||= (sumproduct(a('bt80','ca80'),sheet12.a('d28','k28'))*5.0)+bs80; end
-  def cf80; -84.20410033705542; end
-  def cg80; @cg80 ||= sheet7.cg80/(sheet12.c13*sheet11.e79); end
-  def ch80; @ch80 ||= sheet7.ch80/(sheet12.c13*sheet11.e79); end
-  def ci80; @ci80 ||= sheet7.ci80/(sheet12.c13*sheet11.e79); end
-  def cj80; @cj80 ||= sheet7.cj80/(sheet12.c13*sheet11.e79); end
-  def ck80; @ck80 ||= sheet7.ck80/(sheet12.c13*sheet11.e79); end
-  def cl80; @cl80 ||= sheet7.cl80/(sheet12.c13*sheet11.e79); end
-  def cm80; @cm80 ||= sheet7.cm80/(sheet12.c13*sheet11.e79); end
-  def cn80; @cn80 ||= sheet7.cn80/(sheet12.c13*sheet11.e79); end
-  def cp80; @cp80 ||= average(a('cf80','cn80')); end
-  def cq80; @cq80 ||= (sumproduct(a('cg80','cn80'),sheet12.a('d28','k28'))*5.0)+cf80; end
-  def cr80; @cr80 ||= excel_if(excel_comparison(abs(cd80-cq80-at80),"<",1.0),"ok","err"); end
-  def a81; "IX.a.Insulation"; end
-  def b81; "Domestic insulation"; end
-  def c81; "Heating"; end
-  def e81; @e81 ||= sheet7.e81/(sheet12.c13*sheet11.e79); end
-  def f81; @f81 ||= sheet7.f81/(sheet12.c13*sheet11.e79); end
-  def g81; @g81 ||= sheet7.g81/(sheet12.c13*sheet11.e79); end
-  def h81; @h81 ||= sheet7.h81/(sheet12.c13*sheet11.e79); end
-  def i81; @i81 ||= sheet7.i81/(sheet12.c13*sheet11.e79); end
-  def j81; @j81 ||= sheet7.j81/(sheet12.c13*sheet11.e79); end
-  def k81; @k81 ||= sheet7.k81/(sheet12.c13*sheet11.e79); end
-  def l81; @l81 ||= sheet7.l81/(sheet12.c13*sheet11.e79); end
-  def m81; @m81 ||= sheet7.m81/(sheet12.c13*sheet11.e79); end
-  def o81; @o81 ||= sheet7.o81/(sheet12.c13*sheet11.e79); end
-  def p81; @p81 ||= sheet7.p81/(sheet12.c13*sheet11.e79); end
-  def q81; @q81 ||= sheet7.q81/(sheet12.c13*sheet11.e79); end
-  def r81; @r81 ||= sheet7.r81/(sheet12.c13*sheet11.e79); end
-  def s81; @s81 ||= sheet7.s81/(sheet12.c13*sheet11.e79); end
-  def t81; @t81 ||= sheet7.t81/(sheet12.c13*sheet11.e79); end
-  def u81; @u81 ||= sheet7.u81/(sheet12.c13*sheet11.e79); end
-  def v81; @v81 ||= sheet7.v81/(sheet12.c13*sheet11.e79); end
-  def w81; @w81 ||= sheet7.w81/(sheet12.c13*sheet11.e79); end
-  def y81; @y81 ||= sheet7.y81/(sheet12.c13*sheet11.e79); end
-  def z81; @z81 ||= sheet7.z81/(sheet12.c13*sheet11.e79); end
-  def aa81; @aa81 ||= sheet7.aa81/(sheet12.c13*sheet11.e79); end
-  def ab81; @ab81 ||= sheet7.ab81/(sheet12.c13*sheet11.e79); end
-  def ac81; @ac81 ||= sheet7.ac81/(sheet12.c13*sheet11.e79); end
-  def ad81; @ad81 ||= sheet7.ad81/(sheet12.c13*sheet11.e79); end
-  def ae81; @ae81 ||= sheet7.ae81/(sheet12.c13*sheet11.e79); end
-  def af81; @af81 ||= sheet7.af81/(sheet12.c13*sheet11.e79); end
-  def ag81; @ag81 ||= sheet7.ag81/(sheet12.c13*sheet11.e79); end
-  def ai81; @ai81 ||= sheet7.ai81/(sheet12.c13*sheet11.e79); end
-  def aj81; @aj81 ||= sheet7.aj81/(sheet12.c13*sheet11.e79); end
-  def ak81; @ak81 ||= sheet7.ak81/(sheet12.c13*sheet11.e79); end
-  def al81; @al81 ||= sheet7.al81/(sheet12.c13*sheet11.e79); end
-  def am81; @am81 ||= sheet7.am81/(sheet12.c13*sheet11.e79); end
-  def an81; @an81 ||= sheet7.an81/(sheet12.c13*sheet11.e79); end
-  def ao81; @ao81 ||= sheet7.ao81/(sheet12.c13*sheet11.e79); end
-  def ap81; @ap81 ||= sheet7.ap81/(sheet12.c13*sheet11.e79); end
-  def aq81; @aq81 ||= sheet7.aq81/(sheet12.c13*sheet11.e79); end
-  def as81; @as81 ||= average(a('ai81','aq81')); end
-  def at81; @at81 ||= (sumproduct(a('aj81','aq81'),sheet12.a('d28','k28'))*5.0)+ai81; end
-  def av81; 0.0; end
-  def aw81; 5.0; end
-  def ay81; @ay81 ||= sheet7.ay81/(sheet12.c13*sheet11.e79); end
-  def az81; @az81 ||= sheet7.az81/(sheet12.c13*sheet11.e79); end
-  def ba81; @ba81 ||= sheet7.ba81/(sheet12.c13*sheet11.e79); end
-  def bb81; @bb81 ||= sheet7.bb81/(sheet12.c13*sheet11.e79); end
-  def bc81; @bc81 ||= sheet7.bc81/(sheet12.c13*sheet11.e79); end
-  def bd81; @bd81 ||= sheet7.bd81/(sheet12.c13*sheet11.e79); end
-  def be81; @be81 ||= sheet7.be81/(sheet12.c13*sheet11.e79); end
-  def bf81; @bf81 ||= sheet7.bf81/(sheet12.c13*sheet11.e79); end
-  def bg81; @bg81 ||= sheet7.bg81/(sheet12.c13*sheet11.e79); end
-  def bi81; @bi81 ||= sheet7.bi81/(sheet12.c13*sheet11.e79); end
-  def bj81; @bj81 ||= sheet7.bj81/(sheet12.c13*sheet11.e79); end
-  def bk81; @bk81 ||= sheet7.bk81/(sheet12.c13*sheet11.e79); end
-  def bl81; @bl81 ||= sheet7.bl81/(sheet12.c13*sheet11.e79); end
-  def bm81; @bm81 ||= sheet7.bm81/(sheet12.c13*sheet11.e79); end
-  def bn81; @bn81 ||= sheet7.bn81/(sheet12.c13*sheet11.e79); end
-  def bo81; @bo81 ||= sheet7.bo81/(sheet12.c13*sheet11.e79); end
-  def bp81; @bp81 ||= sheet7.bp81/(sheet12.c13*sheet11.e79); end
-  def bq81; @bq81 ||= sheet7.bq81/(sheet12.c13*sheet11.e79); end
-  def bs81; @bs81 ||= sheet7.bs81/(sheet12.c13*sheet11.e79); end
-  def bt81; @bt81 ||= sheet7.bt81/(sheet12.c13*sheet11.e79); end
-  def bu81; @bu81 ||= sheet7.bu81/(sheet12.c13*sheet11.e79); end
-  def bv81; @bv81 ||= sheet7.bv81/(sheet12.c13*sheet11.e79); end
-  def bw81; @bw81 ||= sheet7.bw81/(sheet12.c13*sheet11.e79); end
-  def bx81; @bx81 ||= sheet7.bx81/(sheet12.c13*sheet11.e79); end
-  def by81; @by81 ||= sheet7.by81/(sheet12.c13*sheet11.e79); end
-  def bz81; @bz81 ||= sheet7.bz81/(sheet12.c13*sheet11.e79); end
-  def ca81; @ca81 ||= sheet7.ca81/(sheet12.c13*sheet11.e79); end
-  def cc81; @cc81 ||= average(a('bs81','ca81')); end
-  def cd81; @cd81 ||= (sumproduct(a('bt81','ca81'),sheet12.a('d28','k28'))*5.0)+bs81; end
-  def cf81; @cf81 ||= sheet7.cf81/(sheet12.c13*sheet11.e79); end
-  def cg81; @cg81 ||= sheet7.cg81/(sheet12.c13*sheet11.e79); end
-  def ch81; @ch81 ||= sheet7.ch81/(sheet12.c13*sheet11.e79); end
-  def ci81; @ci81 ||= sheet7.ci81/(sheet12.c13*sheet11.e79); end
-  def cj81; @cj81 ||= sheet7.cj81/(sheet12.c13*sheet11.e79); end
-  def ck81; @ck81 ||= sheet7.ck81/(sheet12.c13*sheet11.e79); end
-  def cl81; @cl81 ||= sheet7.cl81/(sheet12.c13*sheet11.e79); end
-  def cm81; @cm81 ||= sheet7.cm81/(sheet12.c13*sheet11.e79); end
-  def cn81; @cn81 ||= sheet7.cn81/(sheet12.c13*sheet11.e79); end
-  def cp81; @cp81 ||= average(a('cf81','cn81')); end
-  def cq81; @cq81 ||= (sumproduct(a('cg81','cn81'),sheet12.a('d28','k28'))*5.0)+cf81; end
-  def cr81; @cr81 ||= excel_if(excel_comparison(abs(cd81-cq81-at81),"<",1.0),"ok","err"); end
-  def a82; "IX.c"; end
-  def b82; "Commercial heating and cooling"; end
-  def c82; "Heating"; end
-  def e82; @e82 ||= sheet7.e82/(sheet12.c13*sheet11.e79); end
-  def f82; @f82 ||= sheet7.f82/(sheet12.c13*sheet11.e79); end
-  def g82; @g82 ||= sheet7.g82/(sheet12.c13*sheet11.e79); end
-  def h82; @h82 ||= sheet7.h82/(sheet12.c13*sheet11.e79); end
-  def i82; @i82 ||= sheet7.i82/(sheet12.c13*sheet11.e79); end
-  def j82; @j82 ||= sheet7.j82/(sheet12.c13*sheet11.e79); end
-  def k82; @k82 ||= sheet7.k82/(sheet12.c13*sheet11.e79); end
-  def l82; @l82 ||= sheet7.l82/(sheet12.c13*sheet11.e79); end
-  def m82; @m82 ||= sheet7.m82/(sheet12.c13*sheet11.e79); end
-  def o82; @o82 ||= sheet7.o82/(sheet12.c13*sheet11.e79); end
-  def p82; @p82 ||= sheet7.p82/(sheet12.c13*sheet11.e79); end
-  def q82; @q82 ||= sheet7.q82/(sheet12.c13*sheet11.e79); end
-  def r82; @r82 ||= sheet7.r82/(sheet12.c13*sheet11.e79); end
-  def s82; @s82 ||= sheet7.s82/(sheet12.c13*sheet11.e79); end
-  def t82; @t82 ||= sheet7.t82/(sheet12.c13*sheet11.e79); end
-  def u82; @u82 ||= sheet7.u82/(sheet12.c13*sheet11.e79); end
-  def v82; @v82 ||= sheet7.v82/(sheet12.c13*sheet11.e79); end
-  def w82; @w82 ||= sheet7.w82/(sheet12.c13*sheet11.e79); end
-  def y82; @y82 ||= sheet7.y82/(sheet12.c13*sheet11.e79); end
-  def z82; @z82 ||= sheet7.z82/(sheet12.c13*sheet11.e79); end
-  def aa82; @aa82 ||= sheet7.aa82/(sheet12.c13*sheet11.e79); end
-  def ab82; @ab82 ||= sheet7.ab82/(sheet12.c13*sheet11.e79); end
-  def ac82; @ac82 ||= sheet7.ac82/(sheet12.c13*sheet11.e79); end
-  def ad82; @ad82 ||= sheet7.ad82/(sheet12.c13*sheet11.e79); end
-  def ae82; @ae82 ||= sheet7.ae82/(sheet12.c13*sheet11.e79); end
-  def af82; @af82 ||= sheet7.af82/(sheet12.c13*sheet11.e79); end
-  def ag82; @ag82 ||= sheet7.ag82/(sheet12.c13*sheet11.e79); end
-  def ai82; @ai82 ||= sheet7.ai82/(sheet12.c13*sheet11.e79); end
-  def aj82; @aj82 ||= sheet7.aj82/(sheet12.c13*sheet11.e79); end
-  def ak82; @ak82 ||= sheet7.ak82/(sheet12.c13*sheet11.e79); end
-  def al82; @al82 ||= sheet7.al82/(sheet12.c13*sheet11.e79); end
-  def am82; @am82 ||= sheet7.am82/(sheet12.c13*sheet11.e79); end
-  def an82; @an82 ||= sheet7.an82/(sheet12.c13*sheet11.e79); end
-  def ao82; @ao82 ||= sheet7.ao82/(sheet12.c13*sheet11.e79); end
-  def ap82; @ap82 ||= sheet7.ap82/(sheet12.c13*sheet11.e79); end
-  def aq82; @aq82 ||= sheet7.aq82/(sheet12.c13*sheet11.e79); end
-  def as82; @as82 ||= average(a('ai82','aq82')); end
-  def at82; @at82 ||= (sumproduct(a('aj82','aq82'),sheet12.a('d28','k28'))*5.0)+ai82; end
-  def av82; 0.0; end
-  def aw82; 5.0; end
-  def ay82; @ay82 ||= sheet7.ay82/(sheet12.c13*sheet11.e79); end
-  def az82; @az82 ||= sheet7.az82/(sheet12.c13*sheet11.e79); end
-  def ba82; @ba82 ||= sheet7.ba82/(sheet12.c13*sheet11.e79); end
-  def bb82; @bb82 ||= sheet7.bb82/(sheet12.c13*sheet11.e79); end
-  def bc82; @bc82 ||= sheet7.bc82/(sheet12.c13*sheet11.e79); end
-  def bd82; @bd82 ||= sheet7.bd82/(sheet12.c13*sheet11.e79); end
-  def be82; @be82 ||= sheet7.be82/(sheet12.c13*sheet11.e79); end
-  def bf82; @bf82 ||= sheet7.bf82/(sheet12.c13*sheet11.e79); end
-  def bg82; @bg82 ||= sheet7.bg82/(sheet12.c13*sheet11.e79); end
-  def bi82; @bi82 ||= sheet7.bi82/(sheet12.c13*sheet11.e79); end
-  def bj82; @bj82 ||= sheet7.bj82/(sheet12.c13*sheet11.e79); end
-  def bk82; @bk82 ||= sheet7.bk82/(sheet12.c13*sheet11.e79); end
-  def bl82; @bl82 ||= sheet7.bl82/(sheet12.c13*sheet11.e79); end
-  def bm82; @bm82 ||= sheet7.bm82/(sheet12.c13*sheet11.e79); end
-  def bn82; @bn82 ||= sheet7.bn82/(sheet12.c13*sheet11.e79); end
-  def bo82; @bo82 ||= sheet7.bo82/(sheet12.c13*sheet11.e79); end
-  def bp82; @bp82 ||= sheet7.bp82/(sheet12.c13*sheet11.e79); end
-  def bq82; @bq82 ||= sheet7.bq82/(sheet12.c13*sheet11.e79); end
-  def bs82; @bs82 ||= sheet7.bs82/(sheet12.c13*sheet11.e79); end
-  def bt82; @bt82 ||= sheet7.bt82/(sheet12.c13*sheet11.e79); end
-  def bu82; @bu82 ||= sheet7.bu82/(sheet12.c13*sheet11.e79); end
-  def bv82; @bv82 ||= sheet7.bv82/(sheet12.c13*sheet11.e79); end
-  def bw82; @bw82 ||= sheet7.bw82/(sheet12.c13*sheet11.e79); end
-  def bx82; @bx82 ||= sheet7.bx82/(sheet12.c13*sheet11.e79); end
-  def by82; @by82 ||= sheet7.by82/(sheet12.c13*sheet11.e79); end
-  def bz82; @bz82 ||= sheet7.bz82/(sheet12.c13*sheet11.e79); end
-  def ca82; @ca82 ||= sheet7.ca82/(sheet12.c13*sheet11.e79); end
-  def cc82; @cc82 ||= average(a('bs82','ca82')); end
-  def cd82; @cd82 ||= (sumproduct(a('bt82','ca82'),sheet12.a('d28','k28'))*5.0)+bs82; end
-  def cf82; @cf82 ||= sheet7.cf82/(sheet12.c13*sheet11.e79); end
-  def cg82; @cg82 ||= sheet7.cg82/(sheet12.c13*sheet11.e79); end
-  def ch82; @ch82 ||= sheet7.ch82/(sheet12.c13*sheet11.e79); end
-  def ci82; @ci82 ||= sheet7.ci82/(sheet12.c13*sheet11.e79); end
-  def cj82; @cj82 ||= sheet7.cj82/(sheet12.c13*sheet11.e79); end
-  def ck82; @ck82 ||= sheet7.ck82/(sheet12.c13*sheet11.e79); end
-  def cl82; @cl82 ||= sheet7.cl82/(sheet12.c13*sheet11.e79); end
-  def cm82; @cm82 ||= sheet7.cm82/(sheet12.c13*sheet11.e79); end
-  def cn82; @cn82 ||= sheet7.cn82/(sheet12.c13*sheet11.e79); end
-  def cp82; @cp82 ||= average(a('cf82','cn82')); end
-  def cq82; @cq82 ||= (sumproduct(a('cg82','cn82'),sheet12.a('d28','k28'))*5.0)+cf82; end
-  def cr82; @cr82 ||= excel_if(excel_comparison(abs(cd82-cq82-at82),"<",1.0),"ok","err"); end
-  def a83; "X.a"; end
-  def b83; "Domestic lighting, appliances, and cooking"; end
-  def c83; "Residential"; end
-  def e83; @e83 ||= sheet7.e83/(sheet12.c13*sheet11.e79); end
-  def f83; @f83 ||= sheet7.f83/(sheet12.c13*sheet11.e79); end
-  def g83; @g83 ||= sheet7.g83/(sheet12.c13*sheet11.e79); end
-  def h83; @h83 ||= sheet7.h83/(sheet12.c13*sheet11.e79); end
-  def i83; @i83 ||= sheet7.i83/(sheet12.c13*sheet11.e79); end
-  def j83; @j83 ||= sheet7.j83/(sheet12.c13*sheet11.e79); end
-  def k83; @k83 ||= sheet7.k83/(sheet12.c13*sheet11.e79); end
-  def l83; @l83 ||= sheet7.l83/(sheet12.c13*sheet11.e79); end
-  def m83; @m83 ||= sheet7.m83/(sheet12.c13*sheet11.e79); end
-  def o83; @o83 ||= sheet7.o83/(sheet12.c13*sheet11.e79); end
-  def p83; @p83 ||= sheet7.p83/(sheet12.c13*sheet11.e79); end
-  def q83; @q83 ||= sheet7.q83/(sheet12.c13*sheet11.e79); end
-  def r83; @r83 ||= sheet7.r83/(sheet12.c13*sheet11.e79); end
-  def s83; @s83 ||= sheet7.s83/(sheet12.c13*sheet11.e79); end
-  def t83; @t83 ||= sheet7.t83/(sheet12.c13*sheet11.e79); end
-  def u83; @u83 ||= sheet7.u83/(sheet12.c13*sheet11.e79); end
-  def v83; @v83 ||= sheet7.v83/(sheet12.c13*sheet11.e79); end
-  def w83; @w83 ||= sheet7.w83/(sheet12.c13*sheet11.e79); end
-  def y83; @y83 ||= sheet7.y83/(sheet12.c13*sheet11.e79); end
-  def z83; @z83 ||= sheet7.z83/(sheet12.c13*sheet11.e79); end
-  def aa83; @aa83 ||= sheet7.aa83/(sheet12.c13*sheet11.e79); end
-  def ab83; @ab83 ||= sheet7.ab83/(sheet12.c13*sheet11.e79); end
-  def ac83; @ac83 ||= sheet7.ac83/(sheet12.c13*sheet11.e79); end
-  def ad83; @ad83 ||= sheet7.ad83/(sheet12.c13*sheet11.e79); end
-  def ae83; @ae83 ||= sheet7.ae83/(sheet12.c13*sheet11.e79); end
-  def af83; @af83 ||= sheet7.af83/(sheet12.c13*sheet11.e79); end
-  def ag83; @ag83 ||= sheet7.ag83/(sheet12.c13*sheet11.e79); end
-  def ai83; @ai83 ||= sheet7.ai83/(sheet12.c13*sheet11.e79); end
-  def aj83; @aj83 ||= sheet7.aj83/(sheet12.c13*sheet11.e79); end
-  def ak83; @ak83 ||= sheet7.ak83/(sheet12.c13*sheet11.e79); end
-  def al83; @al83 ||= sheet7.al83/(sheet12.c13*sheet11.e79); end
-  def am83; @am83 ||= sheet7.am83/(sheet12.c13*sheet11.e79); end
-  def an83; @an83 ||= sheet7.an83/(sheet12.c13*sheet11.e79); end
-  def ao83; @ao83 ||= sheet7.ao83/(sheet12.c13*sheet11.e79); end
-  def ap83; @ap83 ||= sheet7.ap83/(sheet12.c13*sheet11.e79); end
-  def aq83; @aq83 ||= sheet7.aq83/(sheet12.c13*sheet11.e79); end
-  def as83; @as83 ||= average(a('ai83','aq83')); end
-  def at83; @at83 ||= (sumproduct(a('aj83','aq83'),sheet12.a('d28','k28'))*5.0)+ai83; end
-  def av83; 0.0; end
-  def aw83; 5.0; end
-  def ay83; @ay83 ||= sheet7.ay83/(sheet12.c13*sheet11.e79); end
-  def az83; @az83 ||= sheet7.az83/(sheet12.c13*sheet11.e79); end
-  def ba83; @ba83 ||= sheet7.ba83/(sheet12.c13*sheet11.e79); end
-  def bb83; @bb83 ||= sheet7.bb83/(sheet12.c13*sheet11.e79); end
-  def bc83; @bc83 ||= sheet7.bc83/(sheet12.c13*sheet11.e79); end
-  def bd83; @bd83 ||= sheet7.bd83/(sheet12.c13*sheet11.e79); end
-  def be83; @be83 ||= sheet7.be83/(sheet12.c13*sheet11.e79); end
-  def bf83; @bf83 ||= sheet7.bf83/(sheet12.c13*sheet11.e79); end
-  def bg83; @bg83 ||= sheet7.bg83/(sheet12.c13*sheet11.e79); end
-  def bi83; @bi83 ||= sheet7.bi83/(sheet12.c13*sheet11.e79); end
-  def bj83; @bj83 ||= sheet7.bj83/(sheet12.c13*sheet11.e79); end
-  def bk83; @bk83 ||= sheet7.bk83/(sheet12.c13*sheet11.e79); end
-  def bl83; @bl83 ||= sheet7.bl83/(sheet12.c13*sheet11.e79); end
-  def bm83; @bm83 ||= sheet7.bm83/(sheet12.c13*sheet11.e79); end
-  def bn83; @bn83 ||= sheet7.bn83/(sheet12.c13*sheet11.e79); end
-  def bo83; @bo83 ||= sheet7.bo83/(sheet12.c13*sheet11.e79); end
-  def bp83; @bp83 ||= sheet7.bp83/(sheet12.c13*sheet11.e79); end
-  def bq83; @bq83 ||= sheet7.bq83/(sheet12.c13*sheet11.e79); end
-  def bs83; @bs83 ||= sheet7.bs83/(sheet12.c13*sheet11.e79); end
-  def bt83; @bt83 ||= sheet7.bt83/(sheet12.c13*sheet11.e79); end
-  def bu83; @bu83 ||= sheet7.bu83/(sheet12.c13*sheet11.e79); end
-  def bv83; @bv83 ||= sheet7.bv83/(sheet12.c13*sheet11.e79); end
-  def bw83; @bw83 ||= sheet7.bw83/(sheet12.c13*sheet11.e79); end
-  def bx83; @bx83 ||= sheet7.bx83/(sheet12.c13*sheet11.e79); end
-  def by83; @by83 ||= sheet7.by83/(sheet12.c13*sheet11.e79); end
-  def bz83; @bz83 ||= sheet7.bz83/(sheet12.c13*sheet11.e79); end
-  def ca83; @ca83 ||= sheet7.ca83/(sheet12.c13*sheet11.e79); end
-  def cc83; @cc83 ||= average(a('bs83','ca83')); end
-  def cd83; @cd83 ||= (sumproduct(a('bt83','ca83'),sheet12.a('d28','k28'))*5.0)+bs83; end
-  def cf83; @cf83 ||= sheet7.cf83/(sheet12.c13*sheet11.e79); end
-  def cg83; @cg83 ||= sheet7.cg83/(sheet12.c13*sheet11.e79); end
-  def ch83; @ch83 ||= sheet7.ch83/(sheet12.c13*sheet11.e79); end
-  def ci83; @ci83 ||= sheet7.ci83/(sheet12.c13*sheet11.e79); end
-  def cj83; @cj83 ||= sheet7.cj83/(sheet12.c13*sheet11.e79); end
-  def ck83; @ck83 ||= sheet7.ck83/(sheet12.c13*sheet11.e79); end
-  def cl83; @cl83 ||= sheet7.cl83/(sheet12.c13*sheet11.e79); end
-  def cm83; @cm83 ||= sheet7.cm83/(sheet12.c13*sheet11.e79); end
-  def cn83; @cn83 ||= sheet7.cn83/(sheet12.c13*sheet11.e79); end
-  def cp83; @cp83 ||= average(a('cf83','cn83')); end
-  def cq83; @cq83 ||= (sumproduct(a('cg83','cn83'),sheet12.a('d28','k28'))*5.0)+cf83; end
-  def cr83; @cr83 ||= excel_if(excel_comparison(abs(cd83-cq83-at83),"<",1.0),"ok","err"); end
-  def a84; "X.b"; end
-  def b84; "Commercial lighting, appliances, and catering"; end
-  def c84; "Business"; end
-  def e84; @e84 ||= sheet7.e84/(sheet12.c13*sheet11.e79); end
-  def f84; @f84 ||= sheet7.f84/(sheet12.c13*sheet11.e79); end
-  def g84; @g84 ||= sheet7.g84/(sheet12.c13*sheet11.e79); end
-  def h84; @h84 ||= sheet7.h84/(sheet12.c13*sheet11.e79); end
-  def i84; @i84 ||= sheet7.i84/(sheet12.c13*sheet11.e79); end
-  def j84; @j84 ||= sheet7.j84/(sheet12.c13*sheet11.e79); end
-  def k84; @k84 ||= sheet7.k84/(sheet12.c13*sheet11.e79); end
-  def l84; @l84 ||= sheet7.l84/(sheet12.c13*sheet11.e79); end
-  def m84; @m84 ||= sheet7.m84/(sheet12.c13*sheet11.e79); end
-  def o84; @o84 ||= sheet7.o84/(sheet12.c13*sheet11.e79); end
-  def p84; @p84 ||= sheet7.p84/(sheet12.c13*sheet11.e79); end
-  def q84; @q84 ||= sheet7.q84/(sheet12.c13*sheet11.e79); end
-  def r84; @r84 ||= sheet7.r84/(sheet12.c13*sheet11.e79); end
-  def s84; @s84 ||= sheet7.s84/(sheet12.c13*sheet11.e79); end
-  def t84; @t84 ||= sheet7.t84/(sheet12.c13*sheet11.e79); end
-  def u84; @u84 ||= sheet7.u84/(sheet12.c13*sheet11.e79); end
-  def v84; @v84 ||= sheet7.v84/(sheet12.c13*sheet11.e79); end
-  def w84; @w84 ||= sheet7.w84/(sheet12.c13*sheet11.e79); end
-  def y84; @y84 ||= sheet7.y84/(sheet12.c13*sheet11.e79); end
-  def z84; @z84 ||= sheet7.z84/(sheet12.c13*sheet11.e79); end
-  def aa84; @aa84 ||= sheet7.aa84/(sheet12.c13*sheet11.e79); end
-  def ab84; @ab84 ||= sheet7.ab84/(sheet12.c13*sheet11.e79); end
-  def ac84; @ac84 ||= sheet7.ac84/(sheet12.c13*sheet11.e79); end
-  def ad84; @ad84 ||= sheet7.ad84/(sheet12.c13*sheet11.e79); end
-  def ae84; @ae84 ||= sheet7.ae84/(sheet12.c13*sheet11.e79); end
-  def af84; @af84 ||= sheet7.af84/(sheet12.c13*sheet11.e79); end
-  def ag84; @ag84 ||= sheet7.ag84/(sheet12.c13*sheet11.e79); end
-  def ai84; @ai84 ||= sheet7.ai84/(sheet12.c13*sheet11.e79); end
-  def aj84; @aj84 ||= sheet7.aj84/(sheet12.c13*sheet11.e79); end
-  def ak84; @ak84 ||= sheet7.ak84/(sheet12.c13*sheet11.e79); end
-  def al84; @al84 ||= sheet7.al84/(sheet12.c13*sheet11.e79); end
-  def am84; @am84 ||= sheet7.am84/(sheet12.c13*sheet11.e79); end
-  def an84; @an84 ||= sheet7.an84/(sheet12.c13*sheet11.e79); end
-  def ao84; @ao84 ||= sheet7.ao84/(sheet12.c13*sheet11.e79); end
-  def ap84; @ap84 ||= sheet7.ap84/(sheet12.c13*sheet11.e79); end
-  def aq84; @aq84 ||= sheet7.aq84/(sheet12.c13*sheet11.e79); end
-  def as84; @as84 ||= average(a('ai84','aq84')); end
-  def at84; @at84 ||= (sumproduct(a('aj84','aq84'),sheet12.a('d28','k28'))*5.0)+ai84; end
-  def av84; 0.0; end
-  def aw84; 5.0; end
-  def ay84; @ay84 ||= sheet7.ay84/(sheet12.c13*sheet11.e79); end
-  def az84; @az84 ||= sheet7.az84/(sheet12.c13*sheet11.e79); end
-  def ba84; @ba84 ||= sheet7.ba84/(sheet12.c13*sheet11.e79); end
-  def bb84; @bb84 ||= sheet7.bb84/(sheet12.c13*sheet11.e79); end
-  def bc84; @bc84 ||= sheet7.bc84/(sheet12.c13*sheet11.e79); end
-  def bd84; @bd84 ||= sheet7.bd84/(sheet12.c13*sheet11.e79); end
-  def be84; @be84 ||= sheet7.be84/(sheet12.c13*sheet11.e79); end
-  def bf84; @bf84 ||= sheet7.bf84/(sheet12.c13*sheet11.e79); end
-  def bg84; @bg84 ||= sheet7.bg84/(sheet12.c13*sheet11.e79); end
-  def bi84; @bi84 ||= sheet7.bi84/(sheet12.c13*sheet11.e79); end
-  def bj84; @bj84 ||= sheet7.bj84/(sheet12.c13*sheet11.e79); end
-  def bk84; @bk84 ||= sheet7.bk84/(sheet12.c13*sheet11.e79); end
-  def bl84; @bl84 ||= sheet7.bl84/(sheet12.c13*sheet11.e79); end
-  def bm84; @bm84 ||= sheet7.bm84/(sheet12.c13*sheet11.e79); end
-  def bn84; @bn84 ||= sheet7.bn84/(sheet12.c13*sheet11.e79); end
-  def bo84; @bo84 ||= sheet7.bo84/(sheet12.c13*sheet11.e79); end
-  def bp84; @bp84 ||= sheet7.bp84/(sheet12.c13*sheet11.e79); end
-  def bq84; @bq84 ||= sheet7.bq84/(sheet12.c13*sheet11.e79); end
-  def bs84; @bs84 ||= sheet7.bs84/(sheet12.c13*sheet11.e79); end
-  def bt84; @bt84 ||= sheet7.bt84/(sheet12.c13*sheet11.e79); end
-  def bu84; @bu84 ||= sheet7.bu84/(sheet12.c13*sheet11.e79); end
-  def bv84; @bv84 ||= sheet7.bv84/(sheet12.c13*sheet11.e79); end
-  def bw84; @bw84 ||= sheet7.bw84/(sheet12.c13*sheet11.e79); end
-  def bx84; @bx84 ||= sheet7.bx84/(sheet12.c13*sheet11.e79); end
-  def by84; @by84 ||= sheet7.by84/(sheet12.c13*sheet11.e79); end
-  def bz84; @bz84 ||= sheet7.bz84/(sheet12.c13*sheet11.e79); end
-  def ca84; @ca84 ||= sheet7.ca84/(sheet12.c13*sheet11.e79); end
-  def cc84; @cc84 ||= average(a('bs84','ca84')); end
-  def cd84; @cd84 ||= (sumproduct(a('bt84','ca84'),sheet12.a('d28','k28'))*5.0)+bs84; end
-  def cf84; @cf84 ||= sheet7.cf84/(sheet12.c13*sheet11.e79); end
-  def cg84; @cg84 ||= sheet7.cg84/(sheet12.c13*sheet11.e79); end
-  def ch84; @ch84 ||= sheet7.ch84/(sheet12.c13*sheet11.e79); end
-  def ci84; @ci84 ||= sheet7.ci84/(sheet12.c13*sheet11.e79); end
-  def cj84; @cj84 ||= sheet7.cj84/(sheet12.c13*sheet11.e79); end
-  def ck84; @ck84 ||= sheet7.ck84/(sheet12.c13*sheet11.e79); end
-  def cl84; @cl84 ||= sheet7.cl84/(sheet12.c13*sheet11.e79); end
-  def cm84; @cm84 ||= sheet7.cm84/(sheet12.c13*sheet11.e79); end
-  def cn84; @cn84 ||= sheet7.cn84/(sheet12.c13*sheet11.e79); end
-  def cp84; @cp84 ||= average(a('cf84','cn84')); end
-  def cq84; @cq84 ||= (sumproduct(a('cg84','cn84'),sheet12.a('d28','k28'))*5.0)+cf84; end
-  def cr84; @cr84 ||= excel_if(excel_comparison(abs(cd84-cq84-at84),"<",1.0),"ok","err"); end
-  def a85; "XI.a"; end
-  def b85; "Industrial processes"; end
-  def c85; "Business"; end
-  def e85; @e85 ||= sheet7.e85/(sheet12.c13*sheet11.e79); end
-  def f85; @f85 ||= sheet7.f85/(sheet12.c13*sheet11.e79); end
-  def g85; @g85 ||= sheet7.g85/(sheet12.c13*sheet11.e79); end
-  def h85; @h85 ||= sheet7.h85/(sheet12.c13*sheet11.e79); end
-  def i85; @i85 ||= sheet7.i85/(sheet12.c13*sheet11.e79); end
-  def j85; @j85 ||= sheet7.j85/(sheet12.c13*sheet11.e79); end
-  def k85; @k85 ||= sheet7.k85/(sheet12.c13*sheet11.e79); end
-  def l85; @l85 ||= sheet7.l85/(sheet12.c13*sheet11.e79); end
-  def m85; @m85 ||= sheet7.m85/(sheet12.c13*sheet11.e79); end
-  def o85; @o85 ||= sheet7.o85/(sheet12.c13*sheet11.e79); end
-  def p85; @p85 ||= sheet7.p85/(sheet12.c13*sheet11.e79); end
-  def q85; @q85 ||= sheet7.q85/(sheet12.c13*sheet11.e79); end
-  def r85; @r85 ||= sheet7.r85/(sheet12.c13*sheet11.e79); end
-  def s85; @s85 ||= sheet7.s85/(sheet12.c13*sheet11.e79); end
-  def t85; @t85 ||= sheet7.t85/(sheet12.c13*sheet11.e79); end
-  def u85; @u85 ||= sheet7.u85/(sheet12.c13*sheet11.e79); end
-  def v85; @v85 ||= sheet7.v85/(sheet12.c13*sheet11.e79); end
-  def w85; @w85 ||= sheet7.w85/(sheet12.c13*sheet11.e79); end
-  def y85; @y85 ||= sheet7.y85/(sheet12.c13*sheet11.e79); end
-  def z85; @z85 ||= sheet7.z85/(sheet12.c13*sheet11.e79); end
-  def aa85; @aa85 ||= sheet7.aa85/(sheet12.c13*sheet11.e79); end
-  def ab85; @ab85 ||= sheet7.ab85/(sheet12.c13*sheet11.e79); end
-  def ac85; @ac85 ||= sheet7.ac85/(sheet12.c13*sheet11.e79); end
-  def ad85; @ad85 ||= sheet7.ad85/(sheet12.c13*sheet11.e79); end
-  def ae85; @ae85 ||= sheet7.ae85/(sheet12.c13*sheet11.e79); end
-  def af85; @af85 ||= sheet7.af85/(sheet12.c13*sheet11.e79); end
-  def ag85; @ag85 ||= sheet7.ag85/(sheet12.c13*sheet11.e79); end
-  def ai85; @ai85 ||= sheet7.ai85/(sheet12.c13*sheet11.e79); end
-  def aj85; @aj85 ||= sheet7.aj85/(sheet12.c13*sheet11.e79); end
-  def ak85; @ak85 ||= sheet7.ak85/(sheet12.c13*sheet11.e79); end
-  def al85; @al85 ||= sheet7.al85/(sheet12.c13*sheet11.e79); end
-  def am85; @am85 ||= sheet7.am85/(sheet12.c13*sheet11.e79); end
-  def an85; @an85 ||= sheet7.an85/(sheet12.c13*sheet11.e79); end
-  def ao85; @ao85 ||= sheet7.ao85/(sheet12.c13*sheet11.e79); end
-  def ap85; @ap85 ||= sheet7.ap85/(sheet12.c13*sheet11.e79); end
-  def aq85; @aq85 ||= sheet7.aq85/(sheet12.c13*sheet11.e79); end
-  def as85; @as85 ||= average(a('ai85','aq85')); end
-  def at85; @at85 ||= (sumproduct(a('aj85','aq85'),sheet12.a('d28','k28'))*5.0)+ai85; end
-  def av85; 0.0; end
-  def aw85; 5.0; end
-  def ay85; @ay85 ||= sheet7.ay85/(sheet12.c13*sheet11.e79); end
-  def az85; @az85 ||= sheet7.az85/(sheet12.c13*sheet11.e79); end
-  def ba85; @ba85 ||= sheet7.ba85/(sheet12.c13*sheet11.e79); end
-  def bb85; @bb85 ||= sheet7.bb85/(sheet12.c13*sheet11.e79); end
-  def bc85; @bc85 ||= sheet7.bc85/(sheet12.c13*sheet11.e79); end
-  def bd85; @bd85 ||= sheet7.bd85/(sheet12.c13*sheet11.e79); end
-  def be85; @be85 ||= sheet7.be85/(sheet12.c13*sheet11.e79); end
-  def bf85; @bf85 ||= sheet7.bf85/(sheet12.c13*sheet11.e79); end
-  def bg85; @bg85 ||= sheet7.bg85/(sheet12.c13*sheet11.e79); end
-  def bi85; @bi85 ||= sheet7.bi85/(sheet12.c13*sheet11.e79); end
-  def bj85; @bj85 ||= sheet7.bj85/(sheet12.c13*sheet11.e79); end
-  def bk85; @bk85 ||= sheet7.bk85/(sheet12.c13*sheet11.e79); end
-  def bl85; @bl85 ||= sheet7.bl85/(sheet12.c13*sheet11.e79); end
-  def bm85; @bm85 ||= sheet7.bm85/(sheet12.c13*sheet11.e79); end
-  def bn85; @bn85 ||= sheet7.bn85/(sheet12.c13*sheet11.e79); end
-  def bo85; @bo85 ||= sheet7.bo85/(sheet12.c13*sheet11.e79); end
-  def bp85; @bp85 ||= sheet7.bp85/(sheet12.c13*sheet11.e79); end
-  def bq85; @bq85 ||= sheet7.bq85/(sheet12.c13*sheet11.e79); end
-  def bs85; @bs85 ||= sheet7.bs85/(sheet12.c13*sheet11.e79); end
-  def bt85; @bt85 ||= sheet7.bt85/(sheet12.c13*sheet11.e79); end
-  def bu85; @bu85 ||= sheet7.bu85/(sheet12.c13*sheet11.e79); end
-  def bv85; @bv85 ||= sheet7.bv85/(sheet12.c13*sheet11.e79); end
-  def bw85; @bw85 ||= sheet7.bw85/(sheet12.c13*sheet11.e79); end
-  def bx85; @bx85 ||= sheet7.bx85/(sheet12.c13*sheet11.e79); end
-  def by85; @by85 ||= sheet7.by85/(sheet12.c13*sheet11.e79); end
-  def bz85; @bz85 ||= sheet7.bz85/(sheet12.c13*sheet11.e79); end
-  def ca85; @ca85 ||= sheet7.ca85/(sheet12.c13*sheet11.e79); end
-  def cc85; @cc85 ||= average(a('bs85','ca85')); end
-  def cd85; @cd85 ||= (sumproduct(a('bt85','ca85'),sheet12.a('d28','k28'))*5.0)+bs85; end
-  def cf85; @cf85 ||= sheet7.cf85/(sheet12.c13*sheet11.e79); end
-  def cg85; @cg85 ||= sheet7.cg85/(sheet12.c13*sheet11.e79); end
-  def ch85; @ch85 ||= sheet7.ch85/(sheet12.c13*sheet11.e79); end
-  def ci85; @ci85 ||= sheet7.ci85/(sheet12.c13*sheet11.e79); end
-  def cj85; @cj85 ||= sheet7.cj85/(sheet12.c13*sheet11.e79); end
-  def ck85; @ck85 ||= sheet7.ck85/(sheet12.c13*sheet11.e79); end
-  def cl85; @cl85 ||= sheet7.cl85/(sheet12.c13*sheet11.e79); end
-  def cm85; @cm85 ||= sheet7.cm85/(sheet12.c13*sheet11.e79); end
-  def cn85; @cn85 ||= sheet7.cn85/(sheet12.c13*sheet11.e79); end
-  def cp85; @cp85 ||= average(a('cf85','cn85')); end
-  def cq85; @cq85 ||= (sumproduct(a('cg85','cn85'),sheet12.a('d28','k28'))*5.0)+cf85; end
-  def cr85; @cr85 ||= excel_if(excel_comparison(abs(cd85-cq85-at85),"<",1.0),"ok","err"); end
-  def a86; "XII.a.ICE"; end
-  def b86; "Conventional cars and buses"; end
-  def c86; "Transport"; end
-  def e86; @e86 ||= sheet7.e86/(sheet12.c13*sheet11.e79); end
-  def f86; @f86 ||= sheet7.f86/(sheet12.c13*sheet11.e79); end
-  def g86; @g86 ||= sheet7.g86/(sheet12.c13*sheet11.e79); end
-  def h86; @h86 ||= sheet7.h86/(sheet12.c13*sheet11.e79); end
-  def i86; @i86 ||= sheet7.i86/(sheet12.c13*sheet11.e79); end
-  def j86; @j86 ||= sheet7.j86/(sheet12.c13*sheet11.e79); end
-  def k86; @k86 ||= sheet7.k86/(sheet12.c13*sheet11.e79); end
-  def l86; @l86 ||= sheet7.l86/(sheet12.c13*sheet11.e79); end
-  def m86; @m86 ||= sheet7.m86/(sheet12.c13*sheet11.e79); end
-  def o86; @o86 ||= sheet7.o86/(sheet12.c13*sheet11.e79); end
-  def p86; @p86 ||= sheet7.p86/(sheet12.c13*sheet11.e79); end
-  def q86; @q86 ||= sheet7.q86/(sheet12.c13*sheet11.e79); end
-  def r86; @r86 ||= sheet7.r86/(sheet12.c13*sheet11.e79); end
-  def s86; @s86 ||= sheet7.s86/(sheet12.c13*sheet11.e79); end
-  def t86; @t86 ||= sheet7.t86/(sheet12.c13*sheet11.e79); end
-  def u86; @u86 ||= sheet7.u86/(sheet12.c13*sheet11.e79); end
-  def v86; @v86 ||= sheet7.v86/(sheet12.c13*sheet11.e79); end
-  def w86; @w86 ||= sheet7.w86/(sheet12.c13*sheet11.e79); end
-  def y86; @y86 ||= sheet7.y86/(sheet12.c13*sheet11.e79); end
-  def z86; @z86 ||= sheet7.z86/(sheet12.c13*sheet11.e79); end
-  def aa86; @aa86 ||= sheet7.aa86/(sheet12.c13*sheet11.e79); end
-  def ab86; @ab86 ||= sheet7.ab86/(sheet12.c13*sheet11.e79); end
-  def ac86; @ac86 ||= sheet7.ac86/(sheet12.c13*sheet11.e79); end
-  def ad86; @ad86 ||= sheet7.ad86/(sheet12.c13*sheet11.e79); end
-  def ae86; @ae86 ||= sheet7.ae86/(sheet12.c13*sheet11.e79); end
-  def af86; @af86 ||= sheet7.af86/(sheet12.c13*sheet11.e79); end
-  def ag86; @ag86 ||= sheet7.ag86/(sheet12.c13*sheet11.e79); end
-  def ai86; @ai86 ||= sheet7.ai86/(sheet12.c13*sheet11.e79); end
-  def aj86; @aj86 ||= sheet7.aj86/(sheet12.c13*sheet11.e79); end
-  def ak86; @ak86 ||= sheet7.ak86/(sheet12.c13*sheet11.e79); end
-  def al86; @al86 ||= sheet7.al86/(sheet12.c13*sheet11.e79); end
-  def am86; @am86 ||= sheet7.am86/(sheet12.c13*sheet11.e79); end
-  def an86; @an86 ||= sheet7.an86/(sheet12.c13*sheet11.e79); end
-  def ao86; @ao86 ||= sheet7.ao86/(sheet12.c13*sheet11.e79); end
-  def ap86; @ap86 ||= sheet7.ap86/(sheet12.c13*sheet11.e79); end
-  def aq86; @aq86 ||= sheet7.aq86/(sheet12.c13*sheet11.e79); end
-  def as86; @as86 ||= average(a('ai86','aq86')); end
-  def at86; @at86 ||= (sumproduct(a('aj86','aq86'),sheet12.a('d28','k28'))*5.0)+ai86; end
-  def av86; 0.0; end
-  def aw86; 5.0; end
-  def ay86; @ay86 ||= sheet7.ay86/(sheet12.c13*sheet11.e79); end
-  def az86; @az86 ||= sheet7.az86/(sheet12.c13*sheet11.e79); end
-  def ba86; @ba86 ||= sheet7.ba86/(sheet12.c13*sheet11.e79); end
-  def bb86; @bb86 ||= sheet7.bb86/(sheet12.c13*sheet11.e79); end
-  def bc86; @bc86 ||= sheet7.bc86/(sheet12.c13*sheet11.e79); end
-  def bd86; @bd86 ||= sheet7.bd86/(sheet12.c13*sheet11.e79); end
-  def be86; @be86 ||= sheet7.be86/(sheet12.c13*sheet11.e79); end
-  def bf86; @bf86 ||= sheet7.bf86/(sheet12.c13*sheet11.e79); end
-  def bg86; @bg86 ||= sheet7.bg86/(sheet12.c13*sheet11.e79); end
-  def bi86; @bi86 ||= sheet7.bi86/(sheet12.c13*sheet11.e79); end
-  def bj86; @bj86 ||= sheet7.bj86/(sheet12.c13*sheet11.e79); end
-  def bk86; @bk86 ||= sheet7.bk86/(sheet12.c13*sheet11.e79); end
-  def bl86; @bl86 ||= sheet7.bl86/(sheet12.c13*sheet11.e79); end
-  def bm86; @bm86 ||= sheet7.bm86/(sheet12.c13*sheet11.e79); end
-  def bn86; @bn86 ||= sheet7.bn86/(sheet12.c13*sheet11.e79); end
-  def bo86; @bo86 ||= sheet7.bo86/(sheet12.c13*sheet11.e79); end
-  def bp86; @bp86 ||= sheet7.bp86/(sheet12.c13*sheet11.e79); end
-  def bq86; @bq86 ||= sheet7.bq86/(sheet12.c13*sheet11.e79); end
-  def bs86; @bs86 ||= sheet7.bs86/(sheet12.c13*sheet11.e79); end
-  def bt86; @bt86 ||= sheet7.bt86/(sheet12.c13*sheet11.e79); end
-  def bu86; @bu86 ||= sheet7.bu86/(sheet12.c13*sheet11.e79); end
-  def bv86; @bv86 ||= sheet7.bv86/(sheet12.c13*sheet11.e79); end
-  def bw86; @bw86 ||= sheet7.bw86/(sheet12.c13*sheet11.e79); end
-  def bx86; @bx86 ||= sheet7.bx86/(sheet12.c13*sheet11.e79); end
-  def by86; @by86 ||= sheet7.by86/(sheet12.c13*sheet11.e79); end
-  def bz86; @bz86 ||= sheet7.bz86/(sheet12.c13*sheet11.e79); end
-  def ca86; @ca86 ||= sheet7.ca86/(sheet12.c13*sheet11.e79); end
-  def cc86; @cc86 ||= average(a('bs86','ca86')); end
-  def cd86; @cd86 ||= (sumproduct(a('bt86','ca86'),sheet12.a('d28','k28'))*5.0)+bs86; end
-  def cf86; @cf86 ||= sheet7.cf86/(sheet12.c13*sheet11.e79); end
-  def cg86; @cg86 ||= sheet7.cg86/(sheet12.c13*sheet11.e79); end
-  def ch86; @ch86 ||= sheet7.ch86/(sheet12.c13*sheet11.e79); end
-  def ci86; @ci86 ||= sheet7.ci86/(sheet12.c13*sheet11.e79); end
-  def cj86; @cj86 ||= sheet7.cj86/(sheet12.c13*sheet11.e79); end
-  def ck86; @ck86 ||= sheet7.ck86/(sheet12.c13*sheet11.e79); end
-  def cl86; @cl86 ||= sheet7.cl86/(sheet12.c13*sheet11.e79); end
-  def cm86; @cm86 ||= sheet7.cm86/(sheet12.c13*sheet11.e79); end
-  def cn86; @cn86 ||= sheet7.cn86/(sheet12.c13*sheet11.e79); end
-  def cp86; @cp86 ||= average(a('cf86','cn86')); end
-  def cq86; @cq86 ||= (sumproduct(a('cg86','cn86'),sheet12.a('d28','k28'))*5.0)+cf86; end
-  def cr86; @cr86 ||= excel_if(excel_comparison(abs(cd86-cq86-at86),"<",1.0),"ok","err"); end
-  def a87; "XII.a.HEV"; end
-  def b87; "Hybrid cars and buses"; end
-  def c87; "Transport"; end
-  def e87; @e87 ||= sheet7.e87/(sheet12.c13*sheet11.e79); end
-  def f87; @f87 ||= sheet7.f87/(sheet12.c13*sheet11.e79); end
-  def g87; @g87 ||= sheet7.g87/(sheet12.c13*sheet11.e79); end
-  def h87; @h87 ||= sheet7.h87/(sheet12.c13*sheet11.e79); end
-  def i87; @i87 ||= sheet7.i87/(sheet12.c13*sheet11.e79); end
-  def j87; @j87 ||= sheet7.j87/(sheet12.c13*sheet11.e79); end
-  def k87; @k87 ||= sheet7.k87/(sheet12.c13*sheet11.e79); end
-  def l87; @l87 ||= sheet7.l87/(sheet12.c13*sheet11.e79); end
-  def m87; @m87 ||= sheet7.m87/(sheet12.c13*sheet11.e79); end
-  def o87; @o87 ||= sheet7.o87/(sheet12.c13*sheet11.e79); end
-  def p87; @p87 ||= sheet7.p87/(sheet12.c13*sheet11.e79); end
-  def q87; @q87 ||= sheet7.q87/(sheet12.c13*sheet11.e79); end
-  def r87; @r87 ||= sheet7.r87/(sheet12.c13*sheet11.e79); end
-  def s87; @s87 ||= sheet7.s87/(sheet12.c13*sheet11.e79); end
-  def t87; @t87 ||= sheet7.t87/(sheet12.c13*sheet11.e79); end
-  def u87; @u87 ||= sheet7.u87/(sheet12.c13*sheet11.e79); end
-  def v87; @v87 ||= sheet7.v87/(sheet12.c13*sheet11.e79); end
-  def w87; @w87 ||= sheet7.w87/(sheet12.c13*sheet11.e79); end
-  def y87; @y87 ||= sheet7.y87/(sheet12.c13*sheet11.e79); end
-  def z87; @z87 ||= sheet7.z87/(sheet12.c13*sheet11.e79); end
-  def aa87; @aa87 ||= sheet7.aa87/(sheet12.c13*sheet11.e79); end
-  def ab87; @ab87 ||= sheet7.ab87/(sheet12.c13*sheet11.e79); end
-  def ac87; @ac87 ||= sheet7.ac87/(sheet12.c13*sheet11.e79); end
-  def ad87; @ad87 ||= sheet7.ad87/(sheet12.c13*sheet11.e79); end
-  def ae87; @ae87 ||= sheet7.ae87/(sheet12.c13*sheet11.e79); end
-  def af87; @af87 ||= sheet7.af87/(sheet12.c13*sheet11.e79); end
-  def ag87; @ag87 ||= sheet7.ag87/(sheet12.c13*sheet11.e79); end
-  def ai87; @ai87 ||= sheet7.ai87/(sheet12.c13*sheet11.e79); end
-  def aj87; @aj87 ||= sheet7.aj87/(sheet12.c13*sheet11.e79); end
-  def ak87; @ak87 ||= sheet7.ak87/(sheet12.c13*sheet11.e79); end
-  def al87; @al87 ||= sheet7.al87/(sheet12.c13*sheet11.e79); end
-  def am87; @am87 ||= sheet7.am87/(sheet12.c13*sheet11.e79); end
-  def an87; @an87 ||= sheet7.an87/(sheet12.c13*sheet11.e79); end
-  def ao87; @ao87 ||= sheet7.ao87/(sheet12.c13*sheet11.e79); end
-  def ap87; @ap87 ||= sheet7.ap87/(sheet12.c13*sheet11.e79); end
-  def aq87; @aq87 ||= sheet7.aq87/(sheet12.c13*sheet11.e79); end
-  def as87; @as87 ||= average(a('ai87','aq87')); end
-  def at87; @at87 ||= (sumproduct(a('aj87','aq87'),sheet12.a('d28','k28'))*5.0)+ai87; end
-  def av87; 0.0; end
-  def aw87; 5.0; end
-  def ay87; @ay87 ||= sheet7.ay87/(sheet12.c13*sheet11.e79); end
-  def az87; @az87 ||= sheet7.az87/(sheet12.c13*sheet11.e79); end
-  def ba87; @ba87 ||= sheet7.ba87/(sheet12.c13*sheet11.e79); end
-  def bb87; @bb87 ||= sheet7.bb87/(sheet12.c13*sheet11.e79); end
-  def bc87; @bc87 ||= sheet7.bc87/(sheet12.c13*sheet11.e79); end
-  def bd87; @bd87 ||= sheet7.bd87/(sheet12.c13*sheet11.e79); end
-  def be87; @be87 ||= sheet7.be87/(sheet12.c13*sheet11.e79); end
-  def bf87; @bf87 ||= sheet7.bf87/(sheet12.c13*sheet11.e79); end
-  def bg87; @bg87 ||= sheet7.bg87/(sheet12.c13*sheet11.e79); end
-  def bi87; @bi87 ||= sheet7.bi87/(sheet12.c13*sheet11.e79); end
-  def bj87; @bj87 ||= sheet7.bj87/(sheet12.c13*sheet11.e79); end
-  def bk87; @bk87 ||= sheet7.bk87/(sheet12.c13*sheet11.e79); end
-  def bl87; @bl87 ||= sheet7.bl87/(sheet12.c13*sheet11.e79); end
-  def bm87; @bm87 ||= sheet7.bm87/(sheet12.c13*sheet11.e79); end
-  def bn87; @bn87 ||= sheet7.bn87/(sheet12.c13*sheet11.e79); end
-  def bo87; @bo87 ||= sheet7.bo87/(sheet12.c13*sheet11.e79); end
-  def bp87; @bp87 ||= sheet7.bp87/(sheet12.c13*sheet11.e79); end
-  def bq87; @bq87 ||= sheet7.bq87/(sheet12.c13*sheet11.e79); end
-  def bs87; @bs87 ||= sheet7.bs87/(sheet12.c13*sheet11.e79); end
-  def bt87; @bt87 ||= sheet7.bt87/(sheet12.c13*sheet11.e79); end
-  def bu87; @bu87 ||= sheet7.bu87/(sheet12.c13*sheet11.e79); end
-  def bv87; @bv87 ||= sheet7.bv87/(sheet12.c13*sheet11.e79); end
-  def bw87; @bw87 ||= sheet7.bw87/(sheet12.c13*sheet11.e79); end
-  def bx87; @bx87 ||= sheet7.bx87/(sheet12.c13*sheet11.e79); end
-  def by87; @by87 ||= sheet7.by87/(sheet12.c13*sheet11.e79); end
-  def bz87; @bz87 ||= sheet7.bz87/(sheet12.c13*sheet11.e79); end
-  def ca87; @ca87 ||= sheet7.ca87/(sheet12.c13*sheet11.e79); end
-  def cc87; @cc87 ||= average(a('bs87','ca87')); end
-  def cd87; @cd87 ||= (sumproduct(a('bt87','ca87'),sheet12.a('d28','k28'))*5.0)+bs87; end
-  def cf87; @cf87 ||= sheet7.cf87/(sheet12.c13*sheet11.e79); end
-  def cg87; @cg87 ||= sheet7.cg87/(sheet12.c13*sheet11.e79); end
-  def ch87; @ch87 ||= sheet7.ch87/(sheet12.c13*sheet11.e79); end
-  def ci87; @ci87 ||= sheet7.ci87/(sheet12.c13*sheet11.e79); end
-  def cj87; @cj87 ||= sheet7.cj87/(sheet12.c13*sheet11.e79); end
-  def ck87; @ck87 ||= sheet7.ck87/(sheet12.c13*sheet11.e79); end
-  def cl87; @cl87 ||= sheet7.cl87/(sheet12.c13*sheet11.e79); end
-  def cm87; @cm87 ||= sheet7.cm87/(sheet12.c13*sheet11.e79); end
-  def cn87; @cn87 ||= sheet7.cn87/(sheet12.c13*sheet11.e79); end
-  def cp87; @cp87 ||= average(a('cf87','cn87')); end
-  def cq87; @cq87 ||= (sumproduct(a('cg87','cn87'),sheet12.a('d28','k28'))*5.0)+cf87; end
-  def cr87; @cr87 ||= excel_if(excel_comparison(abs(cd87-cq87-at87),"<",1.0),"ok","err"); end
-  def a88; "XII.a.EV"; end
-  def b88; "Electric cars and buses"; end
-  def c88; "Transport"; end
-  def e88; @e88 ||= sheet7.e88/(sheet12.c13*sheet11.e79); end
-  def f88; @f88 ||= sheet7.f88/(sheet12.c13*sheet11.e79); end
-  def g88; @g88 ||= sheet7.g88/(sheet12.c13*sheet11.e79); end
-  def h88; @h88 ||= sheet7.h88/(sheet12.c13*sheet11.e79); end
-  def i88; @i88 ||= sheet7.i88/(sheet12.c13*sheet11.e79); end
-  def j88; @j88 ||= sheet7.j88/(sheet12.c13*sheet11.e79); end
-  def k88; @k88 ||= sheet7.k88/(sheet12.c13*sheet11.e79); end
-  def l88; @l88 ||= sheet7.l88/(sheet12.c13*sheet11.e79); end
-  def m88; @m88 ||= sheet7.m88/(sheet12.c13*sheet11.e79); end
-  def o88; @o88 ||= sheet7.o88/(sheet12.c13*sheet11.e79); end
-  def p88; @p88 ||= sheet7.p88/(sheet12.c13*sheet11.e79); end
-  def q88; @q88 ||= sheet7.q88/(sheet12.c13*sheet11.e79); end
-  def r88; @r88 ||= sheet7.r88/(sheet12.c13*sheet11.e79); end
-  def s88; @s88 ||= sheet7.s88/(sheet12.c13*sheet11.e79); end
-  def t88; @t88 ||= sheet7.t88/(sheet12.c13*sheet11.e79); end
-  def u88; @u88 ||= sheet7.u88/(sheet12.c13*sheet11.e79); end
-  def v88; @v88 ||= sheet7.v88/(sheet12.c13*sheet11.e79); end
-  def w88; @w88 ||= sheet7.w88/(sheet12.c13*sheet11.e79); end
-  def y88; @y88 ||= sheet7.y88/(sheet12.c13*sheet11.e79); end
-  def z88; @z88 ||= sheet7.z88/(sheet12.c13*sheet11.e79); end
-  def aa88; @aa88 ||= sheet7.aa88/(sheet12.c13*sheet11.e79); end
-  def ab88; @ab88 ||= sheet7.ab88/(sheet12.c13*sheet11.e79); end
-  def ac88; @ac88 ||= sheet7.ac88/(sheet12.c13*sheet11.e79); end
-  def ad88; @ad88 ||= sheet7.ad88/(sheet12.c13*sheet11.e79); end
-  def ae88; @ae88 ||= sheet7.ae88/(sheet12.c13*sheet11.e79); end
-  def af88; @af88 ||= sheet7.af88/(sheet12.c13*sheet11.e79); end
-  def ag88; @ag88 ||= sheet7.ag88/(sheet12.c13*sheet11.e79); end
-  def ai88; @ai88 ||= sheet7.ai88/(sheet12.c13*sheet11.e79); end
-  def aj88; @aj88 ||= sheet7.aj88/(sheet12.c13*sheet11.e79); end
-  def ak88; @ak88 ||= sheet7.ak88/(sheet12.c13*sheet11.e79); end
-  def al88; @al88 ||= sheet7.al88/(sheet12.c13*sheet11.e79); end
-  def am88; @am88 ||= sheet7.am88/(sheet12.c13*sheet11.e79); end
-  def an88; @an88 ||= sheet7.an88/(sheet12.c13*sheet11.e79); end
-  def ao88; @ao88 ||= sheet7.ao88/(sheet12.c13*sheet11.e79); end
-  def ap88; @ap88 ||= sheet7.ap88/(sheet12.c13*sheet11.e79); end
-  def aq88; @aq88 ||= sheet7.aq88/(sheet12.c13*sheet11.e79); end
-  def as88; @as88 ||= average(a('ai88','aq88')); end
-  def at88; @at88 ||= (sumproduct(a('aj88','aq88'),sheet12.a('d28','k28'))*5.0)+ai88; end
-  def av88; 0.0; end
-  def aw88; 5.0; end
-  def ay88; @ay88 ||= sheet7.ay88/(sheet12.c13*sheet11.e79); end
-  def az88; @az88 ||= sheet7.az88/(sheet12.c13*sheet11.e79); end
-  def ba88; @ba88 ||= sheet7.ba88/(sheet12.c13*sheet11.e79); end
-  def bb88; @bb88 ||= sheet7.bb88/(sheet12.c13*sheet11.e79); end
-  def bc88; @bc88 ||= sheet7.bc88/(sheet12.c13*sheet11.e79); end
-  def bd88; @bd88 ||= sheet7.bd88/(sheet12.c13*sheet11.e79); end
-  def be88; @be88 ||= sheet7.be88/(sheet12.c13*sheet11.e79); end
-  def bf88; @bf88 ||= sheet7.bf88/(sheet12.c13*sheet11.e79); end
-  def bg88; @bg88 ||= sheet7.bg88/(sheet12.c13*sheet11.e79); end
-  def bi88; @bi88 ||= sheet7.bi88/(sheet12.c13*sheet11.e79); end
-  def bj88; @bj88 ||= sheet7.bj88/(sheet12.c13*sheet11.e79); end
-  def bk88; @bk88 ||= sheet7.bk88/(sheet12.c13*sheet11.e79); end
-  def bl88; @bl88 ||= sheet7.bl88/(sheet12.c13*sheet11.e79); end
-  def bm88; @bm88 ||= sheet7.bm88/(sheet12.c13*sheet11.e79); end
-  def bn88; @bn88 ||= sheet7.bn88/(sheet12.c13*sheet11.e79); end
-  def bo88; @bo88 ||= sheet7.bo88/(sheet12.c13*sheet11.e79); end
-  def bp88; @bp88 ||= sheet7.bp88/(sheet12.c13*sheet11.e79); end
-  def bq88; @bq88 ||= sheet7.bq88/(sheet12.c13*sheet11.e79); end
-  def bs88; @bs88 ||= sheet7.bs88/(sheet12.c13*sheet11.e79); end
-  def bt88; @bt88 ||= sheet7.bt88/(sheet12.c13*sheet11.e79); end
-  def bu88; @bu88 ||= sheet7.bu88/(sheet12.c13*sheet11.e79); end
-  def bv88; @bv88 ||= sheet7.bv88/(sheet12.c13*sheet11.e79); end
-  def bw88; @bw88 ||= sheet7.bw88/(sheet12.c13*sheet11.e79); end
-  def bx88; @bx88 ||= sheet7.bx88/(sheet12.c13*sheet11.e79); end
-  def by88; @by88 ||= sheet7.by88/(sheet12.c13*sheet11.e79); end
-  def bz88; @bz88 ||= sheet7.bz88/(sheet12.c13*sheet11.e79); end
-  def ca88; @ca88 ||= sheet7.ca88/(sheet12.c13*sheet11.e79); end
-  def cc88; @cc88 ||= average(a('bs88','ca88')); end
-  def cd88; @cd88 ||= (sumproduct(a('bt88','ca88'),sheet12.a('d28','k28'))*5.0)+bs88; end
-  def cf88; @cf88 ||= sheet7.cf88/(sheet12.c13*sheet11.e79); end
-  def cg88; @cg88 ||= sheet7.cg88/(sheet12.c13*sheet11.e79); end
-  def ch88; @ch88 ||= sheet7.ch88/(sheet12.c13*sheet11.e79); end
-  def ci88; @ci88 ||= sheet7.ci88/(sheet12.c13*sheet11.e79); end
-  def cj88; @cj88 ||= sheet7.cj88/(sheet12.c13*sheet11.e79); end
-  def ck88; @ck88 ||= sheet7.ck88/(sheet12.c13*sheet11.e79); end
-  def cl88; @cl88 ||= sheet7.cl88/(sheet12.c13*sheet11.e79); end
-  def cm88; @cm88 ||= sheet7.cm88/(sheet12.c13*sheet11.e79); end
-  def cn88; @cn88 ||= sheet7.cn88/(sheet12.c13*sheet11.e79); end
-  def cp88; @cp88 ||= average(a('cf88','cn88')); end
-  def cq88; @cq88 ||= (sumproduct(a('cg88','cn88'),sheet12.a('d28','k28'))*5.0)+cf88; end
-  def cr88; @cr88 ||= excel_if(excel_comparison(abs(cd88-cq88-at88),"<",1.0),"ok","err"); end
-  def a89; "XII.a.FCV"; end
-  def b89; "Fuel cell cars and buses"; end
-  def c89; "Transport"; end
-  def e89; @e89 ||= sheet7.e89/(sheet12.c13*sheet11.e79); end
-  def f89; @f89 ||= sheet7.f89/(sheet12.c13*sheet11.e79); end
-  def g89; @g89 ||= sheet7.g89/(sheet12.c13*sheet11.e79); end
-  def h89; @h89 ||= sheet7.h89/(sheet12.c13*sheet11.e79); end
-  def i89; @i89 ||= sheet7.i89/(sheet12.c13*sheet11.e79); end
-  def j89; @j89 ||= sheet7.j89/(sheet12.c13*sheet11.e79); end
-  def k89; @k89 ||= sheet7.k89/(sheet12.c13*sheet11.e79); end
-  def l89; @l89 ||= sheet7.l89/(sheet12.c13*sheet11.e79); end
-  def m89; @m89 ||= sheet7.m89/(sheet12.c13*sheet11.e79); end
-  def o89; @o89 ||= sheet7.o89/(sheet12.c13*sheet11.e79); end
-  def p89; @p89 ||= sheet7.p89/(sheet12.c13*sheet11.e79); end
-  def q89; @q89 ||= sheet7.q89/(sheet12.c13*sheet11.e79); end
-  def r89; @r89 ||= sheet7.r89/(sheet12.c13*sheet11.e79); end
-  def s89; @s89 ||= sheet7.s89/(sheet12.c13*sheet11.e79); end
-  def t89; @t89 ||= sheet7.t89/(sheet12.c13*sheet11.e79); end
-  def u89; @u89 ||= sheet7.u89/(sheet12.c13*sheet11.e79); end
-  def v89; @v89 ||= sheet7.v89/(sheet12.c13*sheet11.e79); end
-  def w89; @w89 ||= sheet7.w89/(sheet12.c13*sheet11.e79); end
-  def y89; @y89 ||= sheet7.y89/(sheet12.c13*sheet11.e79); end
-  def z89; @z89 ||= sheet7.z89/(sheet12.c13*sheet11.e79); end
-  def aa89; @aa89 ||= sheet7.aa89/(sheet12.c13*sheet11.e79); end
-  def ab89; @ab89 ||= sheet7.ab89/(sheet12.c13*sheet11.e79); end
-  def ac89; @ac89 ||= sheet7.ac89/(sheet12.c13*sheet11.e79); end
-  def ad89; @ad89 ||= sheet7.ad89/(sheet12.c13*sheet11.e79); end
-  def ae89; @ae89 ||= sheet7.ae89/(sheet12.c13*sheet11.e79); end
-  def af89; @af89 ||= sheet7.af89/(sheet12.c13*sheet11.e79); end
-  def ag89; @ag89 ||= sheet7.ag89/(sheet12.c13*sheet11.e79); end
-  def ai89; @ai89 ||= sheet7.ai89/(sheet12.c13*sheet11.e79); end
-  def aj89; @aj89 ||= sheet7.aj89/(sheet12.c13*sheet11.e79); end
-  def ak89; @ak89 ||= sheet7.ak89/(sheet12.c13*sheet11.e79); end
-  def al89; @al89 ||= sheet7.al89/(sheet12.c13*sheet11.e79); end
-  def am89; @am89 ||= sheet7.am89/(sheet12.c13*sheet11.e79); end
-  def an89; @an89 ||= sheet7.an89/(sheet12.c13*sheet11.e79); end
-  def ao89; @ao89 ||= sheet7.ao89/(sheet12.c13*sheet11.e79); end
-  def ap89; @ap89 ||= sheet7.ap89/(sheet12.c13*sheet11.e79); end
-  def aq89; @aq89 ||= sheet7.aq89/(sheet12.c13*sheet11.e79); end
-  def as89; @as89 ||= average(a('ai89','aq89')); end
-  def at89; @at89 ||= (sumproduct(a('aj89','aq89'),sheet12.a('d28','k28'))*5.0)+ai89; end
-  def av89; 0.0; end
-  def aw89; 5.0; end
-  def ay89; @ay89 ||= sheet7.ay89/(sheet12.c13*sheet11.e79); end
-  def az89; @az89 ||= sheet7.az89/(sheet12.c13*sheet11.e79); end
-  def ba89; @ba89 ||= sheet7.ba89/(sheet12.c13*sheet11.e79); end
-  def bb89; @bb89 ||= sheet7.bb89/(sheet12.c13*sheet11.e79); end
-  def bc89; @bc89 ||= sheet7.bc89/(sheet12.c13*sheet11.e79); end
-  def bd89; @bd89 ||= sheet7.bd89/(sheet12.c13*sheet11.e79); end
-  def be89; @be89 ||= sheet7.be89/(sheet12.c13*sheet11.e79); end
-  def bf89; @bf89 ||= sheet7.bf89/(sheet12.c13*sheet11.e79); end
-  def bg89; @bg89 ||= sheet7.bg89/(sheet12.c13*sheet11.e79); end
-  def bi89; @bi89 ||= sheet7.bi89/(sheet12.c13*sheet11.e79); end
-  def bj89; @bj89 ||= sheet7.bj89/(sheet12.c13*sheet11.e79); end
-  def bk89; @bk89 ||= sheet7.bk89/(sheet12.c13*sheet11.e79); end
-  def bl89; @bl89 ||= sheet7.bl89/(sheet12.c13*sheet11.e79); end
-  def bm89; @bm89 ||= sheet7.bm89/(sheet12.c13*sheet11.e79); end
-  def bn89; @bn89 ||= sheet7.bn89/(sheet12.c13*sheet11.e79); end
-  def bo89; @bo89 ||= sheet7.bo89/(sheet12.c13*sheet11.e79); end
-  def bp89; @bp89 ||= sheet7.bp89/(sheet12.c13*sheet11.e79); end
-  def bq89; @bq89 ||= sheet7.bq89/(sheet12.c13*sheet11.e79); end
-  def bs89; @bs89 ||= sheet7.bs89/(sheet12.c13*sheet11.e79); end
-  def bt89; @bt89 ||= sheet7.bt89/(sheet12.c13*sheet11.e79); end
-  def bu89; @bu89 ||= sheet7.bu89/(sheet12.c13*sheet11.e79); end
-  def bv89; @bv89 ||= sheet7.bv89/(sheet12.c13*sheet11.e79); end
-  def bw89; @bw89 ||= sheet7.bw89/(sheet12.c13*sheet11.e79); end
-  def bx89; @bx89 ||= sheet7.bx89/(sheet12.c13*sheet11.e79); end
-  def by89; @by89 ||= sheet7.by89/(sheet12.c13*sheet11.e79); end
-  def bz89; @bz89 ||= sheet7.bz89/(sheet12.c13*sheet11.e79); end
-  def ca89; @ca89 ||= sheet7.ca89/(sheet12.c13*sheet11.e79); end
-  def cc89; @cc89 ||= average(a('bs89','ca89')); end
-  def cd89; @cd89 ||= (sumproduct(a('bt89','ca89'),sheet12.a('d28','k28'))*5.0)+bs89; end
-  def cf89; @cf89 ||= sheet7.cf89/(sheet12.c13*sheet11.e79); end
-  def cg89; @cg89 ||= sheet7.cg89/(sheet12.c13*sheet11.e79); end
-  def ch89; @ch89 ||= sheet7.ch89/(sheet12.c13*sheet11.e79); end
-  def ci89; @ci89 ||= sheet7.ci89/(sheet12.c13*sheet11.e79); end
-  def cj89; @cj89 ||= sheet7.cj89/(sheet12.c13*sheet11.e79); end
-  def ck89; @ck89 ||= sheet7.ck89/(sheet12.c13*sheet11.e79); end
-  def cl89; @cl89 ||= sheet7.cl89/(sheet12.c13*sheet11.e79); end
-  def cm89; @cm89 ||= sheet7.cm89/(sheet12.c13*sheet11.e79); end
-  def cn89; @cn89 ||= sheet7.cn89/(sheet12.c13*sheet11.e79); end
-  def cp89; @cp89 ||= average(a('cf89','cn89')); end
-  def cq89; @cq89 ||= (sumproduct(a('cg89','cn89'),sheet12.a('d28','k28'))*5.0)+cf89; end
-  def cr89; @cr89 ||= excel_if(excel_comparison(abs(cd89-cq89-at89),"<",1.0),"ok","err"); end
-  def a90; "XII.a.Bike"; end
-  def b90; "Bikes"; end
-  def c90; "Transport"; end
-  def e90; @e90 ||= sheet7.e90/(sheet12.c13*sheet11.e79); end
-  def f90; @f90 ||= sheet7.f90/(sheet12.c13*sheet11.e79); end
-  def g90; @g90 ||= sheet7.g90/(sheet12.c13*sheet11.e79); end
-  def h90; @h90 ||= sheet7.h90/(sheet12.c13*sheet11.e79); end
-  def i90; @i90 ||= sheet7.i90/(sheet12.c13*sheet11.e79); end
-  def j90; @j90 ||= sheet7.j90/(sheet12.c13*sheet11.e79); end
-  def k90; @k90 ||= sheet7.k90/(sheet12.c13*sheet11.e79); end
-  def l90; @l90 ||= sheet7.l90/(sheet12.c13*sheet11.e79); end
-  def m90; @m90 ||= sheet7.m90/(sheet12.c13*sheet11.e79); end
-  def o90; @o90 ||= sheet7.o90/(sheet12.c13*sheet11.e79); end
-  def p90; @p90 ||= sheet7.p90/(sheet12.c13*sheet11.e79); end
-  def q90; @q90 ||= sheet7.q90/(sheet12.c13*sheet11.e79); end
-  def r90; @r90 ||= sheet7.r90/(sheet12.c13*sheet11.e79); end
-  def s90; @s90 ||= sheet7.s90/(sheet12.c13*sheet11.e79); end
-  def t90; @t90 ||= sheet7.t90/(sheet12.c13*sheet11.e79); end
-  def u90; @u90 ||= sheet7.u90/(sheet12.c13*sheet11.e79); end
-  def v90; @v90 ||= sheet7.v90/(sheet12.c13*sheet11.e79); end
-  def w90; @w90 ||= sheet7.w90/(sheet12.c13*sheet11.e79); end
-  def y90; @y90 ||= sheet7.y90/(sheet12.c13*sheet11.e79); end
-  def z90; @z90 ||= sheet7.z90/(sheet12.c13*sheet11.e79); end
-  def aa90; @aa90 ||= sheet7.aa90/(sheet12.c13*sheet11.e79); end
-  def ab90; @ab90 ||= sheet7.ab90/(sheet12.c13*sheet11.e79); end
-  def ac90; @ac90 ||= sheet7.ac90/(sheet12.c13*sheet11.e79); end
-  def ad90; @ad90 ||= sheet7.ad90/(sheet12.c13*sheet11.e79); end
-  def ae90; @ae90 ||= sheet7.ae90/(sheet12.c13*sheet11.e79); end
-  def af90; @af90 ||= sheet7.af90/(sheet12.c13*sheet11.e79); end
-  def ag90; @ag90 ||= sheet7.ag90/(sheet12.c13*sheet11.e79); end
-  def ai90; @ai90 ||= sheet7.ai90/(sheet12.c13*sheet11.e79); end
-  def aj90; @aj90 ||= sheet7.aj90/(sheet12.c13*sheet11.e79); end
-  def ak90; @ak90 ||= sheet7.ak90/(sheet12.c13*sheet11.e79); end
-  def al90; @al90 ||= sheet7.al90/(sheet12.c13*sheet11.e79); end
-  def am90; @am90 ||= sheet7.am90/(sheet12.c13*sheet11.e79); end
-  def an90; @an90 ||= sheet7.an90/(sheet12.c13*sheet11.e79); end
-  def ao90; @ao90 ||= sheet7.ao90/(sheet12.c13*sheet11.e79); end
-  def ap90; @ap90 ||= sheet7.ap90/(sheet12.c13*sheet11.e79); end
-  def aq90; @aq90 ||= sheet7.aq90/(sheet12.c13*sheet11.e79); end
-  def as90; @as90 ||= average(a('ai90','aq90')); end
-  def at90; @at90 ||= (sumproduct(a('aj90','aq90'),sheet12.a('d28','k28'))*5.0)+ai90; end
-  def av90; 0.0; end
-  def aw90; 5.0; end
-  def ay90; @ay90 ||= sheet7.ay90/(sheet12.c13*sheet11.e79); end
-  def az90; @az90 ||= sheet7.az90/(sheet12.c13*sheet11.e79); end
-  def ba90; @ba90 ||= sheet7.ba90/(sheet12.c13*sheet11.e79); end
-  def bb90; @bb90 ||= sheet7.bb90/(sheet12.c13*sheet11.e79); end
-  def bc90; @bc90 ||= sheet7.bc90/(sheet12.c13*sheet11.e79); end
-  def bd90; @bd90 ||= sheet7.bd90/(sheet12.c13*sheet11.e79); end
-  def be90; @be90 ||= sheet7.be90/(sheet12.c13*sheet11.e79); end
-  def bf90; @bf90 ||= sheet7.bf90/(sheet12.c13*sheet11.e79); end
-  def bg90; @bg90 ||= sheet7.bg90/(sheet12.c13*sheet11.e79); end
-  def bi90; @bi90 ||= sheet7.bi90/(sheet12.c13*sheet11.e79); end
-  def bj90; @bj90 ||= sheet7.bj90/(sheet12.c13*sheet11.e79); end
-  def bk90; @bk90 ||= sheet7.bk90/(sheet12.c13*sheet11.e79); end
-  def bl90; @bl90 ||= sheet7.bl90/(sheet12.c13*sheet11.e79); end
-  def bm90; @bm90 ||= sheet7.bm90/(sheet12.c13*sheet11.e79); end
-  def bn90; @bn90 ||= sheet7.bn90/(sheet12.c13*sheet11.e79); end
-  def bo90; @bo90 ||= sheet7.bo90/(sheet12.c13*sheet11.e79); end
-  def bp90; @bp90 ||= sheet7.bp90/(sheet12.c13*sheet11.e79); end
-  def bq90; @bq90 ||= sheet7.bq90/(sheet12.c13*sheet11.e79); end
-  def bs90; @bs90 ||= sheet7.bs90/(sheet12.c13*sheet11.e79); end
-  def bt90; @bt90 ||= sheet7.bt90/(sheet12.c13*sheet11.e79); end
-  def bu90; @bu90 ||= sheet7.bu90/(sheet12.c13*sheet11.e79); end
-  def bv90; @bv90 ||= sheet7.bv90/(sheet12.c13*sheet11.e79); end
-  def bw90; @bw90 ||= sheet7.bw90/(sheet12.c13*sheet11.e79); end
-  def bx90; @bx90 ||= sheet7.bx90/(sheet12.c13*sheet11.e79); end
-  def by90; @by90 ||= sheet7.by90/(sheet12.c13*sheet11.e79); end
-  def bz90; @bz90 ||= sheet7.bz90/(sheet12.c13*sheet11.e79); end
-  def ca90; @ca90 ||= sheet7.ca90/(sheet12.c13*sheet11.e79); end
-  def cc90; @cc90 ||= average(a('bs90','ca90')); end
-  def cd90; @cd90 ||= (sumproduct(a('bt90','ca90'),sheet12.a('d28','k28'))*5.0)+bs90; end
-  def cf90; @cf90 ||= sheet7.cf90/(sheet12.c13*sheet11.e79); end
-  def cg90; @cg90 ||= sheet7.cg90/(sheet12.c13*sheet11.e79); end
-  def ch90; @ch90 ||= sheet7.ch90/(sheet12.c13*sheet11.e79); end
-  def ci90; @ci90 ||= sheet7.ci90/(sheet12.c13*sheet11.e79); end
-  def cj90; @cj90 ||= sheet7.cj90/(sheet12.c13*sheet11.e79); end
-  def ck90; @ck90 ||= sheet7.ck90/(sheet12.c13*sheet11.e79); end
-  def cl90; @cl90 ||= sheet7.cl90/(sheet12.c13*sheet11.e79); end
-  def cm90; @cm90 ||= sheet7.cm90/(sheet12.c13*sheet11.e79); end
-  def cn90; @cn90 ||= sheet7.cn90/(sheet12.c13*sheet11.e79); end
-  def cp90; @cp90 ||= average(a('cf90','cn90')); end
-  def cq90; @cq90 ||= (sumproduct(a('cg90','cn90'),sheet12.a('d28','k28'))*5.0)+cf90; end
-  def cr90; @cr90 ||= excel_if(excel_comparison(abs(cd90-cq90-at90),"<",1.0),"ok","err"); end
-  def a91; "XII.a.Rail"; end
-  def b91; "Rail"; end
-  def c91; "Transport"; end
-  def e91; @e91 ||= sheet7.e91/(sheet12.c13*sheet11.e79); end
-  def f91; @f91 ||= sheet7.f91/(sheet12.c13*sheet11.e79); end
-  def g91; @g91 ||= sheet7.g91/(sheet12.c13*sheet11.e79); end
-  def h91; @h91 ||= sheet7.h91/(sheet12.c13*sheet11.e79); end
-  def i91; @i91 ||= sheet7.i91/(sheet12.c13*sheet11.e79); end
-  def j91; @j91 ||= sheet7.j91/(sheet12.c13*sheet11.e79); end
-  def k91; @k91 ||= sheet7.k91/(sheet12.c13*sheet11.e79); end
-  def l91; @l91 ||= sheet7.l91/(sheet12.c13*sheet11.e79); end
-  def m91; @m91 ||= sheet7.m91/(sheet12.c13*sheet11.e79); end
-  def o91; @o91 ||= sheet7.o91/(sheet12.c13*sheet11.e79); end
-  def p91; @p91 ||= sheet7.p91/(sheet12.c13*sheet11.e79); end
-  def q91; @q91 ||= sheet7.q91/(sheet12.c13*sheet11.e79); end
-  def r91; @r91 ||= sheet7.r91/(sheet12.c13*sheet11.e79); end
-  def s91; @s91 ||= sheet7.s91/(sheet12.c13*sheet11.e79); end
-  def t91; @t91 ||= sheet7.t91/(sheet12.c13*sheet11.e79); end
-  def u91; @u91 ||= sheet7.u91/(sheet12.c13*sheet11.e79); end
-  def v91; @v91 ||= sheet7.v91/(sheet12.c13*sheet11.e79); end
-  def w91; @w91 ||= sheet7.w91/(sheet12.c13*sheet11.e79); end
-  def y91; @y91 ||= sheet7.y91/(sheet12.c13*sheet11.e79); end
-  def z91; @z91 ||= sheet7.z91/(sheet12.c13*sheet11.e79); end
-  def aa91; @aa91 ||= sheet7.aa91/(sheet12.c13*sheet11.e79); end
-  def ab91; @ab91 ||= sheet7.ab91/(sheet12.c13*sheet11.e79); end
-  def ac91; @ac91 ||= sheet7.ac91/(sheet12.c13*sheet11.e79); end
-  def ad91; @ad91 ||= sheet7.ad91/(sheet12.c13*sheet11.e79); end
-  def ae91; @ae91 ||= sheet7.ae91/(sheet12.c13*sheet11.e79); end
-  def af91; @af91 ||= sheet7.af91/(sheet12.c13*sheet11.e79); end
-  def ag91; @ag91 ||= sheet7.ag91/(sheet12.c13*sheet11.e79); end
-  def ai91; @ai91 ||= sheet7.ai91/(sheet12.c13*sheet11.e79); end
-  def aj91; @aj91 ||= sheet7.aj91/(sheet12.c13*sheet11.e79); end
-  def ak91; @ak91 ||= sheet7.ak91/(sheet12.c13*sheet11.e79); end
-  def al91; @al91 ||= sheet7.al91/(sheet12.c13*sheet11.e79); end
-  def am91; @am91 ||= sheet7.am91/(sheet12.c13*sheet11.e79); end
-  def an91; @an91 ||= sheet7.an91/(sheet12.c13*sheet11.e79); end
-  def ao91; @ao91 ||= sheet7.ao91/(sheet12.c13*sheet11.e79); end
-  def ap91; @ap91 ||= sheet7.ap91/(sheet12.c13*sheet11.e79); end
-  def aq91; @aq91 ||= sheet7.aq91/(sheet12.c13*sheet11.e79); end
-  def as91; @as91 ||= average(a('ai91','aq91')); end
-  def at91; @at91 ||= (sumproduct(a('aj91','aq91'),sheet12.a('d28','k28'))*5.0)+ai91; end
-  def av91; 0.0; end
-  def aw91; 5.0; end
-  def ay91; @ay91 ||= sheet7.ay91/(sheet12.c13*sheet11.e79); end
-  def az91; @az91 ||= sheet7.az91/(sheet12.c13*sheet11.e79); end
-  def ba91; @ba91 ||= sheet7.ba91/(sheet12.c13*sheet11.e79); end
-  def bb91; @bb91 ||= sheet7.bb91/(sheet12.c13*sheet11.e79); end
-  def bc91; @bc91 ||= sheet7.bc91/(sheet12.c13*sheet11.e79); end
-  def bd91; @bd91 ||= sheet7.bd91/(sheet12.c13*sheet11.e79); end
-  def be91; @be91 ||= sheet7.be91/(sheet12.c13*sheet11.e79); end
-  def bf91; @bf91 ||= sheet7.bf91/(sheet12.c13*sheet11.e79); end
-  def bg91; @bg91 ||= sheet7.bg91/(sheet12.c13*sheet11.e79); end
-  def bi91; @bi91 ||= sheet7.bi91/(sheet12.c13*sheet11.e79); end
-  def bj91; @bj91 ||= sheet7.bj91/(sheet12.c13*sheet11.e79); end
-  def bk91; @bk91 ||= sheet7.bk91/(sheet12.c13*sheet11.e79); end
-  def bl91; @bl91 ||= sheet7.bl91/(sheet12.c13*sheet11.e79); end
-  def bm91; @bm91 ||= sheet7.bm91/(sheet12.c13*sheet11.e79); end
-  def bn91; @bn91 ||= sheet7.bn91/(sheet12.c13*sheet11.e79); end
-  def bo91; @bo91 ||= sheet7.bo91/(sheet12.c13*sheet11.e79); end
-  def bp91; @bp91 ||= sheet7.bp91/(sheet12.c13*sheet11.e79); end
-  def bq91; @bq91 ||= sheet7.bq91/(sheet12.c13*sheet11.e79); end
-  def bs91; @bs91 ||= sheet7.bs91/(sheet12.c13*sheet11.e79); end
-  def bt91; @bt91 ||= sheet7.bt91/(sheet12.c13*sheet11.e79); end
-  def bu91; @bu91 ||= sheet7.bu91/(sheet12.c13*sheet11.e79); end
-  def bv91; @bv91 ||= sheet7.bv91/(sheet12.c13*sheet11.e79); end
-  def bw91; @bw91 ||= sheet7.bw91/(sheet12.c13*sheet11.e79); end
-  def bx91; @bx91 ||= sheet7.bx91/(sheet12.c13*sheet11.e79); end
-  def by91; @by91 ||= sheet7.by91/(sheet12.c13*sheet11.e79); end
-  def bz91; @bz91 ||= sheet7.bz91/(sheet12.c13*sheet11.e79); end
-  def ca91; @ca91 ||= sheet7.ca91/(sheet12.c13*sheet11.e79); end
-  def cc91; @cc91 ||= average(a('bs91','ca91')); end
-  def cd91; @cd91 ||= (sumproduct(a('bt91','ca91'),sheet12.a('d28','k28'))*5.0)+bs91; end
-  def cf91; @cf91 ||= sheet7.cf91/(sheet12.c13*sheet11.e79); end
-  def cg91; @cg91 ||= sheet7.cg91/(sheet12.c13*sheet11.e79); end
-  def ch91; @ch91 ||= sheet7.ch91/(sheet12.c13*sheet11.e79); end
-  def ci91; @ci91 ||= sheet7.ci91/(sheet12.c13*sheet11.e79); end
-  def cj91; @cj91 ||= sheet7.cj91/(sheet12.c13*sheet11.e79); end
-  def ck91; @ck91 ||= sheet7.ck91/(sheet12.c13*sheet11.e79); end
-  def cl91; @cl91 ||= sheet7.cl91/(sheet12.c13*sheet11.e79); end
-  def cm91; @cm91 ||= sheet7.cm91/(sheet12.c13*sheet11.e79); end
-  def cn91; @cn91 ||= sheet7.cn91/(sheet12.c13*sheet11.e79); end
-  def cp91; @cp91 ||= average(a('cf91','cn91')); end
-  def cq91; @cq91 ||= (sumproduct(a('cg91','cn91'),sheet12.a('d28','k28'))*5.0)+cf91; end
-  def cr91; @cr91 ||= excel_if(excel_comparison(abs(cd91-cq91-at91),"<",1.0),"ok","err"); end
-  def a92; "XII.a.Air"; end
-  def b92; "Domestic aviation"; end
-  def c92; "Transport"; end
-  def e92; @e92 ||= sheet7.e92/(sheet12.c13*sheet11.e79); end
-  def f92; @f92 ||= sheet7.f92/(sheet12.c13*sheet11.e79); end
-  def g92; @g92 ||= sheet7.g92/(sheet12.c13*sheet11.e79); end
-  def h92; @h92 ||= sheet7.h92/(sheet12.c13*sheet11.e79); end
-  def i92; @i92 ||= sheet7.i92/(sheet12.c13*sheet11.e79); end
-  def j92; @j92 ||= sheet7.j92/(sheet12.c13*sheet11.e79); end
-  def k92; @k92 ||= sheet7.k92/(sheet12.c13*sheet11.e79); end
-  def l92; @l92 ||= sheet7.l92/(sheet12.c13*sheet11.e79); end
-  def m92; @m92 ||= sheet7.m92/(sheet12.c13*sheet11.e79); end
-  def o92; @o92 ||= sheet7.o92/(sheet12.c13*sheet11.e79); end
-  def p92; @p92 ||= sheet7.p92/(sheet12.c13*sheet11.e79); end
-  def q92; @q92 ||= sheet7.q92/(sheet12.c13*sheet11.e79); end
-  def r92; @r92 ||= sheet7.r92/(sheet12.c13*sheet11.e79); end
-  def s92; @s92 ||= sheet7.s92/(sheet12.c13*sheet11.e79); end
-  def t92; @t92 ||= sheet7.t92/(sheet12.c13*sheet11.e79); end
-  def u92; @u92 ||= sheet7.u92/(sheet12.c13*sheet11.e79); end
-  def v92; @v92 ||= sheet7.v92/(sheet12.c13*sheet11.e79); end
-  def w92; @w92 ||= sheet7.w92/(sheet12.c13*sheet11.e79); end
-  def y92; @y92 ||= sheet7.y92/(sheet12.c13*sheet11.e79); end
-  def z92; @z92 ||= sheet7.z92/(sheet12.c13*sheet11.e79); end
-  def aa92; @aa92 ||= sheet7.aa92/(sheet12.c13*sheet11.e79); end
-  def ab92; @ab92 ||= sheet7.ab92/(sheet12.c13*sheet11.e79); end
-  def ac92; @ac92 ||= sheet7.ac92/(sheet12.c13*sheet11.e79); end
-  def ad92; @ad92 ||= sheet7.ad92/(sheet12.c13*sheet11.e79); end
-  def ae92; @ae92 ||= sheet7.ae92/(sheet12.c13*sheet11.e79); end
-  def af92; @af92 ||= sheet7.af92/(sheet12.c13*sheet11.e79); end
-  def ag92; @ag92 ||= sheet7.ag92/(sheet12.c13*sheet11.e79); end
-  def ai92; @ai92 ||= sheet7.ai92/(sheet12.c13*sheet11.e79); end
-  def aj92; @aj92 ||= sheet7.aj92/(sheet12.c13*sheet11.e79); end
-  def ak92; @ak92 ||= sheet7.ak92/(sheet12.c13*sheet11.e79); end
-  def al92; @al92 ||= sheet7.al92/(sheet12.c13*sheet11.e79); end
-  def am92; @am92 ||= sheet7.am92/(sheet12.c13*sheet11.e79); end
-  def an92; @an92 ||= sheet7.an92/(sheet12.c13*sheet11.e79); end
-  def ao92; @ao92 ||= sheet7.ao92/(sheet12.c13*sheet11.e79); end
-  def ap92; @ap92 ||= sheet7.ap92/(sheet12.c13*sheet11.e79); end
-  def aq92; @aq92 ||= sheet7.aq92/(sheet12.c13*sheet11.e79); end
-  def as92; @as92 ||= average(a('ai92','aq92')); end
-  def at92; @at92 ||= (sumproduct(a('aj92','aq92'),sheet12.a('d28','k28'))*5.0)+ai92; end
-  def av92; 0.0; end
-  def aw92; 5.0; end
-  def ay92; @ay92 ||= sheet7.ay92/(sheet12.c13*sheet11.e79); end
-  def az92; @az92 ||= sheet7.az92/(sheet12.c13*sheet11.e79); end
-  def ba92; @ba92 ||= sheet7.ba92/(sheet12.c13*sheet11.e79); end
-  def bb92; @bb92 ||= sheet7.bb92/(sheet12.c13*sheet11.e79); end
-  def bc92; @bc92 ||= sheet7.bc92/(sheet12.c13*sheet11.e79); end
-  def bd92; @bd92 ||= sheet7.bd92/(sheet12.c13*sheet11.e79); end
-  def be92; @be92 ||= sheet7.be92/(sheet12.c13*sheet11.e79); end
-  def bf92; @bf92 ||= sheet7.bf92/(sheet12.c13*sheet11.e79); end
-  def bg92; @bg92 ||= sheet7.bg92/(sheet12.c13*sheet11.e79); end
-  def bi92; @bi92 ||= sheet7.bi92/(sheet12.c13*sheet11.e79); end
-  def bj92; @bj92 ||= sheet7.bj92/(sheet12.c13*sheet11.e79); end
-  def bk92; @bk92 ||= sheet7.bk92/(sheet12.c13*sheet11.e79); end
-  def bl92; @bl92 ||= sheet7.bl92/(sheet12.c13*sheet11.e79); end
-  def bm92; @bm92 ||= sheet7.bm92/(sheet12.c13*sheet11.e79); end
-  def bn92; @bn92 ||= sheet7.bn92/(sheet12.c13*sheet11.e79); end
-  def bo92; @bo92 ||= sheet7.bo92/(sheet12.c13*sheet11.e79); end
-  def bp92; @bp92 ||= sheet7.bp92/(sheet12.c13*sheet11.e79); end
-  def bq92; @bq92 ||= sheet7.bq92/(sheet12.c13*sheet11.e79); end
-  def bs92; @bs92 ||= sheet7.bs92/(sheet12.c13*sheet11.e79); end
-  def bt92; @bt92 ||= sheet7.bt92/(sheet12.c13*sheet11.e79); end
-  def bu92; @bu92 ||= sheet7.bu92/(sheet12.c13*sheet11.e79); end
-  def bv92; @bv92 ||= sheet7.bv92/(sheet12.c13*sheet11.e79); end
-  def bw92; @bw92 ||= sheet7.bw92/(sheet12.c13*sheet11.e79); end
-  def bx92; @bx92 ||= sheet7.bx92/(sheet12.c13*sheet11.e79); end
-  def by92; @by92 ||= sheet7.by92/(sheet12.c13*sheet11.e79); end
-  def bz92; @bz92 ||= sheet7.bz92/(sheet12.c13*sheet11.e79); end
-  def ca92; @ca92 ||= sheet7.ca92/(sheet12.c13*sheet11.e79); end
-  def cc92; @cc92 ||= average(a('bs92','ca92')); end
-  def cd92; @cd92 ||= (sumproduct(a('bt92','ca92'),sheet12.a('d28','k28'))*5.0)+bs92; end
-  def cf92; @cf92 ||= sheet7.cf92/(sheet12.c13*sheet11.e79); end
-  def cg92; @cg92 ||= sheet7.cg92/(sheet12.c13*sheet11.e79); end
-  def ch92; @ch92 ||= sheet7.ch92/(sheet12.c13*sheet11.e79); end
-  def ci92; @ci92 ||= sheet7.ci92/(sheet12.c13*sheet11.e79); end
-  def cj92; @cj92 ||= sheet7.cj92/(sheet12.c13*sheet11.e79); end
-  def ck92; @ck92 ||= sheet7.ck92/(sheet12.c13*sheet11.e79); end
-  def cl92; @cl92 ||= sheet7.cl92/(sheet12.c13*sheet11.e79); end
-  def cm92; @cm92 ||= sheet7.cm92/(sheet12.c13*sheet11.e79); end
-  def cn92; @cn92 ||= sheet7.cn92/(sheet12.c13*sheet11.e79); end
-  def cp92; @cp92 ||= average(a('cf92','cn92')); end
-  def cq92; @cq92 ||= (sumproduct(a('cg92','cn92'),sheet12.a('d28','k28'))*5.0)+cf92; end
-  def cr92; @cr92 ||= excel_if(excel_comparison(abs(cd92-cq92-at92),"<",1.0),"ok","err"); end
-  def a93; "XII.b"; end
-  def b93; "Domestic freight"; end
-  def c93; "Transport"; end
-  def e93; @e93 ||= sheet7.e93/(sheet12.c13*sheet11.e79); end
-  def f93; @f93 ||= sheet7.f93/(sheet12.c13*sheet11.e79); end
-  def g93; @g93 ||= sheet7.g93/(sheet12.c13*sheet11.e79); end
-  def h93; @h93 ||= sheet7.h93/(sheet12.c13*sheet11.e79); end
-  def i93; @i93 ||= sheet7.i93/(sheet12.c13*sheet11.e79); end
-  def j93; @j93 ||= sheet7.j93/(sheet12.c13*sheet11.e79); end
-  def k93; @k93 ||= sheet7.k93/(sheet12.c13*sheet11.e79); end
-  def l93; @l93 ||= sheet7.l93/(sheet12.c13*sheet11.e79); end
-  def m93; @m93 ||= sheet7.m93/(sheet12.c13*sheet11.e79); end
-  def o93; @o93 ||= sheet7.o93/(sheet12.c13*sheet11.e79); end
-  def p93; @p93 ||= sheet7.p93/(sheet12.c13*sheet11.e79); end
-  def q93; @q93 ||= sheet7.q93/(sheet12.c13*sheet11.e79); end
-  def r93; @r93 ||= sheet7.r93/(sheet12.c13*sheet11.e79); end
-  def s93; @s93 ||= sheet7.s93/(sheet12.c13*sheet11.e79); end
-  def t93; @t93 ||= sheet7.t93/(sheet12.c13*sheet11.e79); end
-  def u93; @u93 ||= sheet7.u93/(sheet12.c13*sheet11.e79); end
-  def v93; @v93 ||= sheet7.v93/(sheet12.c13*sheet11.e79); end
-  def w93; @w93 ||= sheet7.w93/(sheet12.c13*sheet11.e79); end
-  def y93; @y93 ||= sheet7.y93/(sheet12.c13*sheet11.e79); end
-  def z93; @z93 ||= sheet7.z93/(sheet12.c13*sheet11.e79); end
-  def aa93; @aa93 ||= sheet7.aa93/(sheet12.c13*sheet11.e79); end
-  def ab93; @ab93 ||= sheet7.ab93/(sheet12.c13*sheet11.e79); end
-  def ac93; @ac93 ||= sheet7.ac93/(sheet12.c13*sheet11.e79); end
-  def ad93; @ad93 ||= sheet7.ad93/(sheet12.c13*sheet11.e79); end
-  def ae93; @ae93 ||= sheet7.ae93/(sheet12.c13*sheet11.e79); end
-  def af93; @af93 ||= sheet7.af93/(sheet12.c13*sheet11.e79); end
-  def ag93; @ag93 ||= sheet7.ag93/(sheet12.c13*sheet11.e79); end
-  def ai93; @ai93 ||= sheet7.ai93/(sheet12.c13*sheet11.e79); end
-  def aj93; @aj93 ||= sheet7.aj93/(sheet12.c13*sheet11.e79); end
-  def ak93; @ak93 ||= sheet7.ak93/(sheet12.c13*sheet11.e79); end
-  def al93; @al93 ||= sheet7.al93/(sheet12.c13*sheet11.e79); end
-  def am93; @am93 ||= sheet7.am93/(sheet12.c13*sheet11.e79); end
-  def an93; @an93 ||= sheet7.an93/(sheet12.c13*sheet11.e79); end
-  def ao93; @ao93 ||= sheet7.ao93/(sheet12.c13*sheet11.e79); end
-  def ap93; @ap93 ||= sheet7.ap93/(sheet12.c13*sheet11.e79); end
-  def aq93; @aq93 ||= sheet7.aq93/(sheet12.c13*sheet11.e79); end
-  def as93; @as93 ||= average(a('ai93','aq93')); end
-  def at93; @at93 ||= (sumproduct(a('aj93','aq93'),sheet12.a('d28','k28'))*5.0)+ai93; end
-  def av93; 0.0; end
-  def aw93; 5.0; end
-  def ay93; @ay93 ||= sheet7.ay93/(sheet12.c13*sheet11.e79); end
-  def az93; @az93 ||= sheet7.az93/(sheet12.c13*sheet11.e79); end
-  def ba93; @ba93 ||= sheet7.ba93/(sheet12.c13*sheet11.e79); end
-  def bb93; @bb93 ||= sheet7.bb93/(sheet12.c13*sheet11.e79); end
-  def bc93; @bc93 ||= sheet7.bc93/(sheet12.c13*sheet11.e79); end
-  def bd93; @bd93 ||= sheet7.bd93/(sheet12.c13*sheet11.e79); end
-  def be93; @be93 ||= sheet7.be93/(sheet12.c13*sheet11.e79); end
-  def bf93; @bf93 ||= sheet7.bf93/(sheet12.c13*sheet11.e79); end
-  def bg93; @bg93 ||= sheet7.bg93/(sheet12.c13*sheet11.e79); end
-  def bi93; @bi93 ||= sheet7.bi93/(sheet12.c13*sheet11.e79); end
-  def bj93; @bj93 ||= sheet7.bj93/(sheet12.c13*sheet11.e79); end
-  def bk93; @bk93 ||= sheet7.bk93/(sheet12.c13*sheet11.e79); end
-  def bl93; @bl93 ||= sheet7.bl93/(sheet12.c13*sheet11.e79); end
-  def bm93; @bm93 ||= sheet7.bm93/(sheet12.c13*sheet11.e79); end
-  def bn93; @bn93 ||= sheet7.bn93/(sheet12.c13*sheet11.e79); end
-  def bo93; @bo93 ||= sheet7.bo93/(sheet12.c13*sheet11.e79); end
-  def bp93; @bp93 ||= sheet7.bp93/(sheet12.c13*sheet11.e79); end
-  def bq93; @bq93 ||= sheet7.bq93/(sheet12.c13*sheet11.e79); end
-  def bs93; @bs93 ||= sheet7.bs93/(sheet12.c13*sheet11.e79); end
-  def bt93; @bt93 ||= sheet7.bt93/(sheet12.c13*sheet11.e79); end
-  def bu93; @bu93 ||= sheet7.bu93/(sheet12.c13*sheet11.e79); end
-  def bv93; @bv93 ||= sheet7.bv93/(sheet12.c13*sheet11.e79); end
-  def bw93; @bw93 ||= sheet7.bw93/(sheet12.c13*sheet11.e79); end
-  def bx93; @bx93 ||= sheet7.bx93/(sheet12.c13*sheet11.e79); end
-  def by93; @by93 ||= sheet7.by93/(sheet12.c13*sheet11.e79); end
-  def bz93; @bz93 ||= sheet7.bz93/(sheet12.c13*sheet11.e79); end
-  def ca93; @ca93 ||= sheet7.ca93/(sheet12.c13*sheet11.e79); end
-  def cc93; @cc93 ||= average(a('bs93','ca93')); end
-  def cd93; @cd93 ||= (sumproduct(a('bt93','ca93'),sheet12.a('d28','k28'))*5.0)+bs93; end
-  def cf93; @cf93 ||= sheet7.cf93/(sheet12.c13*sheet11.e79); end
-  def cg93; @cg93 ||= sheet7.cg93/(sheet12.c13*sheet11.e79); end
-  def ch93; @ch93 ||= sheet7.ch93/(sheet12.c13*sheet11.e79); end
-  def ci93; @ci93 ||= sheet7.ci93/(sheet12.c13*sheet11.e79); end
-  def cj93; @cj93 ||= sheet7.cj93/(sheet12.c13*sheet11.e79); end
-  def ck93; @ck93 ||= sheet7.ck93/(sheet12.c13*sheet11.e79); end
-  def cl93; @cl93 ||= sheet7.cl93/(sheet12.c13*sheet11.e79); end
-  def cm93; @cm93 ||= sheet7.cm93/(sheet12.c13*sheet11.e79); end
-  def cn93; @cn93 ||= sheet7.cn93/(sheet12.c13*sheet11.e79); end
-  def cp93; @cp93 ||= average(a('cf93','cn93')); end
-  def cq93; @cq93 ||= (sumproduct(a('cg93','cn93'),sheet12.a('d28','k28'))*5.0)+cf93; end
-  def cr93; @cr93 ||= excel_if(excel_comparison(abs(cd93-cq93-at93),"<",1.0),"ok","err"); end
-  def a94; "XII.c"; end
-  def b94; "International aviation"; end
-  def c94; "Transport"; end
-  def e94; @e94 ||= sheet7.e94/(sheet12.c13*sheet11.e79); end
-  def f94; @f94 ||= sheet7.f94/(sheet12.c13*sheet11.e79); end
-  def g94; @g94 ||= sheet7.g94/(sheet12.c13*sheet11.e79); end
-  def h94; @h94 ||= sheet7.h94/(sheet12.c13*sheet11.e79); end
-  def i94; @i94 ||= sheet7.i94/(sheet12.c13*sheet11.e79); end
-  def j94; @j94 ||= sheet7.j94/(sheet12.c13*sheet11.e79); end
-  def k94; @k94 ||= sheet7.k94/(sheet12.c13*sheet11.e79); end
-  def l94; @l94 ||= sheet7.l94/(sheet12.c13*sheet11.e79); end
-  def m94; @m94 ||= sheet7.m94/(sheet12.c13*sheet11.e79); end
-  def o94; @o94 ||= sheet7.o94/(sheet12.c13*sheet11.e79); end
-  def p94; @p94 ||= sheet7.p94/(sheet12.c13*sheet11.e79); end
-  def q94; @q94 ||= sheet7.q94/(sheet12.c13*sheet11.e79); end
-  def r94; @r94 ||= sheet7.r94/(sheet12.c13*sheet11.e79); end
-  def s94; @s94 ||= sheet7.s94/(sheet12.c13*sheet11.e79); end
-  def t94; @t94 ||= sheet7.t94/(sheet12.c13*sheet11.e79); end
-  def u94; @u94 ||= sheet7.u94/(sheet12.c13*sheet11.e79); end
-  def v94; @v94 ||= sheet7.v94/(sheet12.c13*sheet11.e79); end
-  def w94; @w94 ||= sheet7.w94/(sheet12.c13*sheet11.e79); end
-  def y94; @y94 ||= sheet7.y94/(sheet12.c13*sheet11.e79); end
-  def z94; @z94 ||= sheet7.z94/(sheet12.c13*sheet11.e79); end
-  def aa94; @aa94 ||= sheet7.aa94/(sheet12.c13*sheet11.e79); end
-  def ab94; @ab94 ||= sheet7.ab94/(sheet12.c13*sheet11.e79); end
-  def ac94; @ac94 ||= sheet7.ac94/(sheet12.c13*sheet11.e79); end
-  def ad94; @ad94 ||= sheet7.ad94/(sheet12.c13*sheet11.e79); end
-  def ae94; @ae94 ||= sheet7.ae94/(sheet12.c13*sheet11.e79); end
-  def af94; @af94 ||= sheet7.af94/(sheet12.c13*sheet11.e79); end
-  def ag94; @ag94 ||= sheet7.ag94/(sheet12.c13*sheet11.e79); end
-  def ai94; @ai94 ||= sheet7.ai94/(sheet12.c13*sheet11.e79); end
-  def aj94; @aj94 ||= sheet7.aj94/(sheet12.c13*sheet11.e79); end
-  def ak94; @ak94 ||= sheet7.ak94/(sheet12.c13*sheet11.e79); end
-  def al94; @al94 ||= sheet7.al94/(sheet12.c13*sheet11.e79); end
-  def am94; @am94 ||= sheet7.am94/(sheet12.c13*sheet11.e79); end
-  def an94; @an94 ||= sheet7.an94/(sheet12.c13*sheet11.e79); end
-  def ao94; @ao94 ||= sheet7.ao94/(sheet12.c13*sheet11.e79); end
-  def ap94; @ap94 ||= sheet7.ap94/(sheet12.c13*sheet11.e79); end
-  def aq94; @aq94 ||= sheet7.aq94/(sheet12.c13*sheet11.e79); end
-  def as94; @as94 ||= average(a('ai94','aq94')); end
-  def at94; @at94 ||= (sumproduct(a('aj94','aq94'),sheet12.a('d28','k28'))*5.0)+ai94; end
-  def av94; 0.0; end
-  def aw94; 5.0; end
-  def ay94; @ay94 ||= sheet7.ay94/(sheet12.c13*sheet11.e79); end
-  def az94; @az94 ||= sheet7.az94/(sheet12.c13*sheet11.e79); end
-  def ba94; @ba94 ||= sheet7.ba94/(sheet12.c13*sheet11.e79); end
-  def bb94; @bb94 ||= sheet7.bb94/(sheet12.c13*sheet11.e79); end
-  def bc94; @bc94 ||= sheet7.bc94/(sheet12.c13*sheet11.e79); end
-  def bd94; @bd94 ||= sheet7.bd94/(sheet12.c13*sheet11.e79); end
-  def be94; @be94 ||= sheet7.be94/(sheet12.c13*sheet11.e79); end
-  def bf94; @bf94 ||= sheet7.bf94/(sheet12.c13*sheet11.e79); end
-  def bg94; @bg94 ||= sheet7.bg94/(sheet12.c13*sheet11.e79); end
-  def bi94; @bi94 ||= sheet7.bi94/(sheet12.c13*sheet11.e79); end
-  def bj94; @bj94 ||= sheet7.bj94/(sheet12.c13*sheet11.e79); end
-  def bk94; @bk94 ||= sheet7.bk94/(sheet12.c13*sheet11.e79); end
-  def bl94; @bl94 ||= sheet7.bl94/(sheet12.c13*sheet11.e79); end
-  def bm94; @bm94 ||= sheet7.bm94/(sheet12.c13*sheet11.e79); end
-  def bn94; @bn94 ||= sheet7.bn94/(sheet12.c13*sheet11.e79); end
-  def bo94; @bo94 ||= sheet7.bo94/(sheet12.c13*sheet11.e79); end
-  def bp94; @bp94 ||= sheet7.bp94/(sheet12.c13*sheet11.e79); end
-  def bq94; @bq94 ||= sheet7.bq94/(sheet12.c13*sheet11.e79); end
-  def bs94; @bs94 ||= sheet7.bs94/(sheet12.c13*sheet11.e79); end
-  def bt94; @bt94 ||= sheet7.bt94/(sheet12.c13*sheet11.e79); end
-  def bu94; @bu94 ||= sheet7.bu94/(sheet12.c13*sheet11.e79); end
-  def bv94; @bv94 ||= sheet7.bv94/(sheet12.c13*sheet11.e79); end
-  def bw94; @bw94 ||= sheet7.bw94/(sheet12.c13*sheet11.e79); end
-  def bx94; @bx94 ||= sheet7.bx94/(sheet12.c13*sheet11.e79); end
-  def by94; @by94 ||= sheet7.by94/(sheet12.c13*sheet11.e79); end
-  def bz94; @bz94 ||= sheet7.bz94/(sheet12.c13*sheet11.e79); end
-  def ca94; @ca94 ||= sheet7.ca94/(sheet12.c13*sheet11.e79); end
-  def cc94; @cc94 ||= average(a('bs94','ca94')); end
-  def cd94; @cd94 ||= (sumproduct(a('bt94','ca94'),sheet12.a('d28','k28'))*5.0)+bs94; end
-  def cf94; @cf94 ||= sheet7.cf94/(sheet12.c13*sheet11.e79); end
-  def cg94; @cg94 ||= sheet7.cg94/(sheet12.c13*sheet11.e79); end
-  def ch94; @ch94 ||= sheet7.ch94/(sheet12.c13*sheet11.e79); end
-  def ci94; @ci94 ||= sheet7.ci94/(sheet12.c13*sheet11.e79); end
-  def cj94; @cj94 ||= sheet7.cj94/(sheet12.c13*sheet11.e79); end
-  def ck94; @ck94 ||= sheet7.ck94/(sheet12.c13*sheet11.e79); end
-  def cl94; @cl94 ||= sheet7.cl94/(sheet12.c13*sheet11.e79); end
-  def cm94; @cm94 ||= sheet7.cm94/(sheet12.c13*sheet11.e79); end
-  def cn94; @cn94 ||= sheet7.cn94/(sheet12.c13*sheet11.e79); end
-  def cp94; @cp94 ||= average(a('cf94','cn94')); end
-  def cq94; @cq94 ||= (sumproduct(a('cg94','cn94'),sheet12.a('d28','k28'))*5.0)+cf94; end
-  def cr94; @cr94 ||= excel_if(excel_comparison(abs(cd94-cq94-at94),"<",1.0),"ok","err"); end
-  def a95; "XII.e"; end
-  def b95; "International shipping (maritime bunkers)"; end
-  def c95; "Transport"; end
-  def e95; @e95 ||= sheet7.e95/(sheet12.c13*sheet11.e79); end
-  def f95; @f95 ||= sheet7.f95/(sheet12.c13*sheet11.e79); end
-  def g95; @g95 ||= sheet7.g95/(sheet12.c13*sheet11.e79); end
-  def h95; @h95 ||= sheet7.h95/(sheet12.c13*sheet11.e79); end
-  def i95; @i95 ||= sheet7.i95/(sheet12.c13*sheet11.e79); end
-  def j95; @j95 ||= sheet7.j95/(sheet12.c13*sheet11.e79); end
-  def k95; @k95 ||= sheet7.k95/(sheet12.c13*sheet11.e79); end
-  def l95; @l95 ||= sheet7.l95/(sheet12.c13*sheet11.e79); end
-  def m95; @m95 ||= sheet7.m95/(sheet12.c13*sheet11.e79); end
-  def o95; @o95 ||= sheet7.o95/(sheet12.c13*sheet11.e79); end
-  def p95; @p95 ||= sheet7.p95/(sheet12.c13*sheet11.e79); end
-  def q95; @q95 ||= sheet7.q95/(sheet12.c13*sheet11.e79); end
-  def r95; @r95 ||= sheet7.r95/(sheet12.c13*sheet11.e79); end
-  def s95; @s95 ||= sheet7.s95/(sheet12.c13*sheet11.e79); end
-  def t95; @t95 ||= sheet7.t95/(sheet12.c13*sheet11.e79); end
-  def u95; @u95 ||= sheet7.u95/(sheet12.c13*sheet11.e79); end
-  def v95; @v95 ||= sheet7.v95/(sheet12.c13*sheet11.e79); end
-  def w95; @w95 ||= sheet7.w95/(sheet12.c13*sheet11.e79); end
-  def y95; @y95 ||= sheet7.y95/(sheet12.c13*sheet11.e79); end
-  def z95; @z95 ||= sheet7.z95/(sheet12.c13*sheet11.e79); end
-  def aa95; @aa95 ||= sheet7.aa95/(sheet12.c13*sheet11.e79); end
-  def ab95; @ab95 ||= sheet7.ab95/(sheet12.c13*sheet11.e79); end
-  def ac95; @ac95 ||= sheet7.ac95/(sheet12.c13*sheet11.e79); end
-  def ad95; @ad95 ||= sheet7.ad95/(sheet12.c13*sheet11.e79); end
-  def ae95; @ae95 ||= sheet7.ae95/(sheet12.c13*sheet11.e79); end
-  def af95; @af95 ||= sheet7.af95/(sheet12.c13*sheet11.e79); end
-  def ag95; @ag95 ||= sheet7.ag95/(sheet12.c13*sheet11.e79); end
-  def ai95; @ai95 ||= sheet7.ai95/(sheet12.c13*sheet11.e79); end
-  def aj95; @aj95 ||= sheet7.aj95/(sheet12.c13*sheet11.e79); end
-  def ak95; @ak95 ||= sheet7.ak95/(sheet12.c13*sheet11.e79); end
-  def al95; @al95 ||= sheet7.al95/(sheet12.c13*sheet11.e79); end
-  def am95; @am95 ||= sheet7.am95/(sheet12.c13*sheet11.e79); end
-  def an95; @an95 ||= sheet7.an95/(sheet12.c13*sheet11.e79); end
-  def ao95; @ao95 ||= sheet7.ao95/(sheet12.c13*sheet11.e79); end
-  def ap95; @ap95 ||= sheet7.ap95/(sheet12.c13*sheet11.e79); end
-  def aq95; @aq95 ||= sheet7.aq95/(sheet12.c13*sheet11.e79); end
-  def as95; @as95 ||= average(a('ai95','aq95')); end
-  def at95; @at95 ||= (sumproduct(a('aj95','aq95'),sheet12.a('d28','k28'))*5.0)+ai95; end
-  def av95; 0.0; end
-  def aw95; 5.0; end
-  def ay95; @ay95 ||= sheet7.ay95/(sheet12.c13*sheet11.e79); end
-  def az95; @az95 ||= sheet7.az95/(sheet12.c13*sheet11.e79); end
-  def ba95; @ba95 ||= sheet7.ba95/(sheet12.c13*sheet11.e79); end
-  def bb95; @bb95 ||= sheet7.bb95/(sheet12.c13*sheet11.e79); end
-  def bc95; @bc95 ||= sheet7.bc95/(sheet12.c13*sheet11.e79); end
-  def bd95; @bd95 ||= sheet7.bd95/(sheet12.c13*sheet11.e79); end
-  def be95; @be95 ||= sheet7.be95/(sheet12.c13*sheet11.e79); end
-  def bf95; @bf95 ||= sheet7.bf95/(sheet12.c13*sheet11.e79); end
-  def bg95; @bg95 ||= sheet7.bg95/(sheet12.c13*sheet11.e79); end
-  def bi95; @bi95 ||= sheet7.bi95/(sheet12.c13*sheet11.e79); end
-  def bj95; @bj95 ||= sheet7.bj95/(sheet12.c13*sheet11.e79); end
-  def bk95; @bk95 ||= sheet7.bk95/(sheet12.c13*sheet11.e79); end
-  def bl95; @bl95 ||= sheet7.bl95/(sheet12.c13*sheet11.e79); end
-  def bm95; @bm95 ||= sheet7.bm95/(sheet12.c13*sheet11.e79); end
-  def bn95; @bn95 ||= sheet7.bn95/(sheet12.c13*sheet11.e79); end
-  def bo95; @bo95 ||= sheet7.bo95/(sheet12.c13*sheet11.e79); end
-  def bp95; @bp95 ||= sheet7.bp95/(sheet12.c13*sheet11.e79); end
-  def bq95; @bq95 ||= sheet7.bq95/(sheet12.c13*sheet11.e79); end
-  def bs95; @bs95 ||= sheet7.bs95/(sheet12.c13*sheet11.e79); end
-  def bt95; @bt95 ||= sheet7.bt95/(sheet12.c13*sheet11.e79); end
-  def bu95; @bu95 ||= sheet7.bu95/(sheet12.c13*sheet11.e79); end
-  def bv95; @bv95 ||= sheet7.bv95/(sheet12.c13*sheet11.e79); end
-  def bw95; @bw95 ||= sheet7.bw95/(sheet12.c13*sheet11.e79); end
-  def bx95; @bx95 ||= sheet7.bx95/(sheet12.c13*sheet11.e79); end
-  def by95; @by95 ||= sheet7.by95/(sheet12.c13*sheet11.e79); end
-  def bz95; @bz95 ||= sheet7.bz95/(sheet12.c13*sheet11.e79); end
-  def ca95; @ca95 ||= sheet7.ca95/(sheet12.c13*sheet11.e79); end
-  def cc95; @cc95 ||= average(a('bs95','ca95')); end
-  def cd95; @cd95 ||= (sumproduct(a('bt95','ca95'),sheet12.a('d28','k28'))*5.0)+bs95; end
-  def cf95; @cf95 ||= sheet7.cf95/(sheet12.c13*sheet11.e79); end
-  def cg95; @cg95 ||= sheet7.cg95/(sheet12.c13*sheet11.e79); end
-  def ch95; @ch95 ||= sheet7.ch95/(sheet12.c13*sheet11.e79); end
-  def ci95; @ci95 ||= sheet7.ci95/(sheet12.c13*sheet11.e79); end
-  def cj95; @cj95 ||= sheet7.cj95/(sheet12.c13*sheet11.e79); end
-  def ck95; @ck95 ||= sheet7.ck95/(sheet12.c13*sheet11.e79); end
-  def cl95; @cl95 ||= sheet7.cl95/(sheet12.c13*sheet11.e79); end
-  def cm95; @cm95 ||= sheet7.cm95/(sheet12.c13*sheet11.e79); end
-  def cn95; @cn95 ||= sheet7.cn95/(sheet12.c13*sheet11.e79); end
-  def cp95; @cp95 ||= average(a('cf95','cn95')); end
-  def cq95; @cq95 ||= (sumproduct(a('cg95','cn95'),sheet12.a('d28','k28'))*5.0)+cf95; end
-  def cr95; @cr95 ||= excel_if(excel_comparison(abs(cd95-cq95-at95),"<",1.0),"ok","err"); end
-  def a96; "XIV.a"; end
-  def b96; "Geosequestration"; end
-  def c96; "Carbon Capture"; end
-  def e96; @e96 ||= sheet7.e96/(sheet12.c13*sheet11.e79); end
-  def f96; @f96 ||= sheet7.f96/(sheet12.c13*sheet11.e79); end
-  def g96; @g96 ||= sheet7.g96/(sheet12.c13*sheet11.e79); end
-  def h96; @h96 ||= sheet7.h96/(sheet12.c13*sheet11.e79); end
-  def i96; @i96 ||= sheet7.i96/(sheet12.c13*sheet11.e79); end
-  def j96; @j96 ||= sheet7.j96/(sheet12.c13*sheet11.e79); end
-  def k96; @k96 ||= sheet7.k96/(sheet12.c13*sheet11.e79); end
-  def l96; @l96 ||= sheet7.l96/(sheet12.c13*sheet11.e79); end
-  def m96; @m96 ||= sheet7.m96/(sheet12.c13*sheet11.e79); end
-  def o96; @o96 ||= sheet7.o96/(sheet12.c13*sheet11.e79); end
-  def p96; @p96 ||= sheet7.p96/(sheet12.c13*sheet11.e79); end
-  def q96; @q96 ||= sheet7.q96/(sheet12.c13*sheet11.e79); end
-  def r96; @r96 ||= sheet7.r96/(sheet12.c13*sheet11.e79); end
-  def s96; @s96 ||= sheet7.s96/(sheet12.c13*sheet11.e79); end
-  def t96; @t96 ||= sheet7.t96/(sheet12.c13*sheet11.e79); end
-  def u96; @u96 ||= sheet7.u96/(sheet12.c13*sheet11.e79); end
-  def v96; @v96 ||= sheet7.v96/(sheet12.c13*sheet11.e79); end
-  def w96; @w96 ||= sheet7.w96/(sheet12.c13*sheet11.e79); end
-  def y96; @y96 ||= sheet7.y96/(sheet12.c13*sheet11.e79); end
-  def z96; @z96 ||= sheet7.z96/(sheet12.c13*sheet11.e79); end
-  def aa96; @aa96 ||= sheet7.aa96/(sheet12.c13*sheet11.e79); end
-  def ab96; @ab96 ||= sheet7.ab96/(sheet12.c13*sheet11.e79); end
-  def ac96; @ac96 ||= sheet7.ac96/(sheet12.c13*sheet11.e79); end
-  def ad96; @ad96 ||= sheet7.ad96/(sheet12.c13*sheet11.e79); end
-  def ae96; @ae96 ||= sheet7.ae96/(sheet12.c13*sheet11.e79); end
-  def af96; @af96 ||= sheet7.af96/(sheet12.c13*sheet11.e79); end
-  def ag96; @ag96 ||= sheet7.ag96/(sheet12.c13*sheet11.e79); end
-  def ai96; @ai96 ||= sheet7.ai96/(sheet12.c13*sheet11.e79); end
-  def aj96; @aj96 ||= sheet7.aj96/(sheet12.c13*sheet11.e79); end
-  def ak96; @ak96 ||= sheet7.ak96/(sheet12.c13*sheet11.e79); end
-  def al96; @al96 ||= sheet7.al96/(sheet12.c13*sheet11.e79); end
-  def am96; @am96 ||= sheet7.am96/(sheet12.c13*sheet11.e79); end
-  def an96; @an96 ||= sheet7.an96/(sheet12.c13*sheet11.e79); end
-  def ao96; @ao96 ||= sheet7.ao96/(sheet12.c13*sheet11.e79); end
-  def ap96; @ap96 ||= sheet7.ap96/(sheet12.c13*sheet11.e79); end
-  def aq96; @aq96 ||= sheet7.aq96/(sheet12.c13*sheet11.e79); end
-  def as96; @as96 ||= average(a('ai96','aq96')); end
-  def at96; @at96 ||= (sumproduct(a('aj96','aq96'),sheet12.a('d28','k28'))*5.0)+ai96; end
-  def av96; 0.0; end
-  def aw96; 5.0; end
-  def ay96; @ay96 ||= sheet7.ay96/(sheet12.c13*sheet11.e79); end
-  def az96; @az96 ||= sheet7.az96/(sheet12.c13*sheet11.e79); end
-  def ba96; @ba96 ||= sheet7.ba96/(sheet12.c13*sheet11.e79); end
-  def bb96; @bb96 ||= sheet7.bb96/(sheet12.c13*sheet11.e79); end
-  def bc96; @bc96 ||= sheet7.bc96/(sheet12.c13*sheet11.e79); end
-  def bd96; @bd96 ||= sheet7.bd96/(sheet12.c13*sheet11.e79); end
-  def be96; @be96 ||= sheet7.be96/(sheet12.c13*sheet11.e79); end
-  def bf96; @bf96 ||= sheet7.bf96/(sheet12.c13*sheet11.e79); end
-  def bg96; @bg96 ||= sheet7.bg96/(sheet12.c13*sheet11.e79); end
-  def bi96; @bi96 ||= sheet7.bi96/(sheet12.c13*sheet11.e79); end
-  def bj96; @bj96 ||= sheet7.bj96/(sheet12.c13*sheet11.e79); end
-  def bk96; @bk96 ||= sheet7.bk96/(sheet12.c13*sheet11.e79); end
-  def bl96; @bl96 ||= sheet7.bl96/(sheet12.c13*sheet11.e79); end
-  def bm96; @bm96 ||= sheet7.bm96/(sheet12.c13*sheet11.e79); end
-  def bn96; @bn96 ||= sheet7.bn96/(sheet12.c13*sheet11.e79); end
-  def bo96; @bo96 ||= sheet7.bo96/(sheet12.c13*sheet11.e79); end
-  def bp96; @bp96 ||= sheet7.bp96/(sheet12.c13*sheet11.e79); end
-  def bq96; @bq96 ||= sheet7.bq96/(sheet12.c13*sheet11.e79); end
-  def bs96; @bs96 ||= sheet7.bs96/(sheet12.c13*sheet11.e79); end
-  def bt96; @bt96 ||= sheet7.bt96/(sheet12.c13*sheet11.e79); end
-  def bu96; @bu96 ||= sheet7.bu96/(sheet12.c13*sheet11.e79); end
-  def bv96; @bv96 ||= sheet7.bv96/(sheet12.c13*sheet11.e79); end
-  def bw96; @bw96 ||= sheet7.bw96/(sheet12.c13*sheet11.e79); end
-  def bx96; @bx96 ||= sheet7.bx96/(sheet12.c13*sheet11.e79); end
-  def by96; @by96 ||= sheet7.by96/(sheet12.c13*sheet11.e79); end
-  def bz96; @bz96 ||= sheet7.bz96/(sheet12.c13*sheet11.e79); end
-  def ca96; @ca96 ||= sheet7.ca96/(sheet12.c13*sheet11.e79); end
-  def cc96; @cc96 ||= average(a('bs96','ca96')); end
-  def cd96; @cd96 ||= (sumproduct(a('bt96','ca96'),sheet12.a('d28','k28'))*5.0)+bs96; end
-  def cf96; @cf96 ||= sheet7.cf96/(sheet12.c13*sheet11.e79); end
-  def cg96; @cg96 ||= sheet7.cg96/(sheet12.c13*sheet11.e79); end
-  def ch96; @ch96 ||= sheet7.ch96/(sheet12.c13*sheet11.e79); end
-  def ci96; @ci96 ||= sheet7.ci96/(sheet12.c13*sheet11.e79); end
-  def cj96; @cj96 ||= sheet7.cj96/(sheet12.c13*sheet11.e79); end
-  def ck96; @ck96 ||= sheet7.ck96/(sheet12.c13*sheet11.e79); end
-  def cl96; @cl96 ||= sheet7.cl96/(sheet12.c13*sheet11.e79); end
-  def cm96; @cm96 ||= sheet7.cm96/(sheet12.c13*sheet11.e79); end
-  def cn96; @cn96 ||= sheet7.cn96/(sheet12.c13*sheet11.e79); end
-  def cp96; @cp96 ||= average(a('cf96','cn96')); end
-  def cq96; @cq96 ||= (sumproduct(a('cg96','cn96'),sheet12.a('d28','k28'))*5.0)+cf96; end
-  def cr96; @cr96 ||= excel_if(excel_comparison(abs(cd96-cq96-at96),"<",1.0),"ok","err"); end
-  def a97; "XV.a"; end
-  def b97; "Petroleum refineries"; end
-  def c97; "Fossil Fuels"; end
-  def e97; @e97 ||= sheet7.e97/(sheet12.c13*sheet11.e79); end
-  def f97; @f97 ||= sheet7.f97/(sheet12.c13*sheet11.e79); end
-  def g97; @g97 ||= sheet7.g97/(sheet12.c13*sheet11.e79); end
-  def h97; @h97 ||= sheet7.h97/(sheet12.c13*sheet11.e79); end
-  def i97; @i97 ||= sheet7.i97/(sheet12.c13*sheet11.e79); end
-  def j97; @j97 ||= sheet7.j97/(sheet12.c13*sheet11.e79); end
-  def k97; @k97 ||= sheet7.k97/(sheet12.c13*sheet11.e79); end
-  def l97; @l97 ||= sheet7.l97/(sheet12.c13*sheet11.e79); end
-  def m97; @m97 ||= sheet7.m97/(sheet12.c13*sheet11.e79); end
-  def o97; @o97 ||= sheet7.o97/(sheet12.c13*sheet11.e79); end
-  def p97; @p97 ||= sheet7.p97/(sheet12.c13*sheet11.e79); end
-  def q97; @q97 ||= sheet7.q97/(sheet12.c13*sheet11.e79); end
-  def r97; @r97 ||= sheet7.r97/(sheet12.c13*sheet11.e79); end
-  def s97; @s97 ||= sheet7.s97/(sheet12.c13*sheet11.e79); end
-  def t97; @t97 ||= sheet7.t97/(sheet12.c13*sheet11.e79); end
-  def u97; @u97 ||= sheet7.u97/(sheet12.c13*sheet11.e79); end
-  def v97; @v97 ||= sheet7.v97/(sheet12.c13*sheet11.e79); end
-  def w97; @w97 ||= sheet7.w97/(sheet12.c13*sheet11.e79); end
-  def y97; @y97 ||= sheet7.y97/(sheet12.c13*sheet11.e79); end
-  def z97; @z97 ||= sheet7.z97/(sheet12.c13*sheet11.e79); end
-  def aa97; @aa97 ||= sheet7.aa97/(sheet12.c13*sheet11.e79); end
-  def ab97; @ab97 ||= sheet7.ab97/(sheet12.c13*sheet11.e79); end
-  def ac97; @ac97 ||= sheet7.ac97/(sheet12.c13*sheet11.e79); end
-  def ad97; @ad97 ||= sheet7.ad97/(sheet12.c13*sheet11.e79); end
-  def ae97; @ae97 ||= sheet7.ae97/(sheet12.c13*sheet11.e79); end
-  def af97; @af97 ||= sheet7.af97/(sheet12.c13*sheet11.e79); end
-  def ag97; @ag97 ||= sheet7.ag97/(sheet12.c13*sheet11.e79); end
-  def ai97; @ai97 ||= sheet7.ai97/(sheet12.c13*sheet11.e79); end
-  def aj97; @aj97 ||= sheet7.aj97/(sheet12.c13*sheet11.e79); end
-  def ak97; @ak97 ||= sheet7.ak97/(sheet12.c13*sheet11.e79); end
-  def al97; @al97 ||= sheet7.al97/(sheet12.c13*sheet11.e79); end
-  def am97; @am97 ||= sheet7.am97/(sheet12.c13*sheet11.e79); end
-  def an97; @an97 ||= sheet7.an97/(sheet12.c13*sheet11.e79); end
-  def ao97; @ao97 ||= sheet7.ao97/(sheet12.c13*sheet11.e79); end
-  def ap97; @ap97 ||= sheet7.ap97/(sheet12.c13*sheet11.e79); end
-  def aq97; @aq97 ||= sheet7.aq97/(sheet12.c13*sheet11.e79); end
-  def as97; @as97 ||= average(a('ai97','aq97')); end
-  def at97; @at97 ||= (sumproduct(a('aj97','aq97'),sheet12.a('d28','k28'))*5.0)+ai97; end
-  def av97; 0.0; end
-  def aw97; 5.0; end
-  def ay97; @ay97 ||= sheet7.ay97/(sheet12.c13*sheet11.e79); end
-  def az97; @az97 ||= sheet7.az97/(sheet12.c13*sheet11.e79); end
-  def ba97; @ba97 ||= sheet7.ba97/(sheet12.c13*sheet11.e79); end
-  def bb97; @bb97 ||= sheet7.bb97/(sheet12.c13*sheet11.e79); end
-  def bc97; @bc97 ||= sheet7.bc97/(sheet12.c13*sheet11.e79); end
-  def bd97; @bd97 ||= sheet7.bd97/(sheet12.c13*sheet11.e79); end
-  def be97; @be97 ||= sheet7.be97/(sheet12.c13*sheet11.e79); end
-  def bf97; @bf97 ||= sheet7.bf97/(sheet12.c13*sheet11.e79); end
-  def bg97; @bg97 ||= sheet7.bg97/(sheet12.c13*sheet11.e79); end
-  def bi97; @bi97 ||= sheet7.bi97/(sheet12.c13*sheet11.e79); end
-  def bj97; @bj97 ||= sheet7.bj97/(sheet12.c13*sheet11.e79); end
-  def bk97; @bk97 ||= sheet7.bk97/(sheet12.c13*sheet11.e79); end
-  def bl97; @bl97 ||= sheet7.bl97/(sheet12.c13*sheet11.e79); end
-  def bm97; @bm97 ||= sheet7.bm97/(sheet12.c13*sheet11.e79); end
-  def bn97; @bn97 ||= sheet7.bn97/(sheet12.c13*sheet11.e79); end
-  def bo97; @bo97 ||= sheet7.bo97/(sheet12.c13*sheet11.e79); end
-  def bp97; @bp97 ||= sheet7.bp97/(sheet12.c13*sheet11.e79); end
-  def bq97; @bq97 ||= sheet7.bq97/(sheet12.c13*sheet11.e79); end
-  def bs97; @bs97 ||= sheet7.bs97/(sheet12.c13*sheet11.e79); end
-  def bt97; @bt97 ||= sheet7.bt97/(sheet12.c13*sheet11.e79); end
-  def bu97; @bu97 ||= sheet7.bu97/(sheet12.c13*sheet11.e79); end
-  def bv97; @bv97 ||= sheet7.bv97/(sheet12.c13*sheet11.e79); end
-  def bw97; @bw97 ||= sheet7.bw97/(sheet12.c13*sheet11.e79); end
-  def bx97; @bx97 ||= sheet7.bx97/(sheet12.c13*sheet11.e79); end
-  def by97; @by97 ||= sheet7.by97/(sheet12.c13*sheet11.e79); end
-  def bz97; @bz97 ||= sheet7.bz97/(sheet12.c13*sheet11.e79); end
-  def ca97; @ca97 ||= sheet7.ca97/(sheet12.c13*sheet11.e79); end
-  def cc97; @cc97 ||= average(a('bs97','ca97')); end
-  def cd97; @cd97 ||= (sumproduct(a('bt97','ca97'),sheet12.a('d28','k28'))*5.0)+bs97; end
-  def cf97; @cf97 ||= sheet7.cf97/(sheet12.c13*sheet11.e79); end
-  def cg97; @cg97 ||= sheet7.cg97/(sheet12.c13*sheet11.e79); end
-  def ch97; @ch97 ||= sheet7.ch97/(sheet12.c13*sheet11.e79); end
-  def ci97; @ci97 ||= sheet7.ci97/(sheet12.c13*sheet11.e79); end
-  def cj97; @cj97 ||= sheet7.cj97/(sheet12.c13*sheet11.e79); end
-  def ck97; @ck97 ||= sheet7.ck97/(sheet12.c13*sheet11.e79); end
-  def cl97; @cl97 ||= sheet7.cl97/(sheet12.c13*sheet11.e79); end
-  def cm97; @cm97 ||= sheet7.cm97/(sheet12.c13*sheet11.e79); end
-  def cn97; @cn97 ||= sheet7.cn97/(sheet12.c13*sheet11.e79); end
-  def cp97; @cp97 ||= average(a('cf97','cn97')); end
-  def cq97; @cq97 ||= (sumproduct(a('cg97','cn97'),sheet12.a('d28','k28'))*5.0)+cf97; end
-  def cr97; @cr97 ||= excel_if(excel_comparison(abs(cd97-cq97-at97),"<",1.0),"ok","err"); end
-  def a98; "XV.b.Coal"; end
-  def b98; "Indigenous fossil-fuel production - Coal"; end
-  def c98; "Fossil Fuels"; end
-  def e98; @e98 ||= sheet7.e98/(sheet12.c13*sheet11.e79); end
-  def f98; @f98 ||= sheet7.f98/(sheet12.c13*sheet11.e79); end
-  def g98; @g98 ||= sheet7.g98/(sheet12.c13*sheet11.e79); end
-  def h98; @h98 ||= sheet7.h98/(sheet12.c13*sheet11.e79); end
-  def i98; @i98 ||= sheet7.i98/(sheet12.c13*sheet11.e79); end
-  def j98; @j98 ||= sheet7.j98/(sheet12.c13*sheet11.e79); end
-  def k98; @k98 ||= sheet7.k98/(sheet12.c13*sheet11.e79); end
-  def l98; @l98 ||= sheet7.l98/(sheet12.c13*sheet11.e79); end
-  def m98; @m98 ||= sheet7.m98/(sheet12.c13*sheet11.e79); end
-  def o98; @o98 ||= sheet7.o98/(sheet12.c13*sheet11.e79); end
-  def p98; @p98 ||= sheet7.p98/(sheet12.c13*sheet11.e79); end
-  def q98; @q98 ||= sheet7.q98/(sheet12.c13*sheet11.e79); end
-  def r98; @r98 ||= sheet7.r98/(sheet12.c13*sheet11.e79); end
-  def s98; @s98 ||= sheet7.s98/(sheet12.c13*sheet11.e79); end
-  def t98; @t98 ||= sheet7.t98/(sheet12.c13*sheet11.e79); end
-  def u98; @u98 ||= sheet7.u98/(sheet12.c13*sheet11.e79); end
-  def v98; @v98 ||= sheet7.v98/(sheet12.c13*sheet11.e79); end
-  def w98; @w98 ||= sheet7.w98/(sheet12.c13*sheet11.e79); end
-  def y98; @y98 ||= sheet7.y98/(sheet12.c13*sheet11.e79); end
-  def z98; @z98 ||= sheet7.z98/(sheet12.c13*sheet11.e79); end
-  def aa98; @aa98 ||= sheet7.aa98/(sheet12.c13*sheet11.e79); end
-  def ab98; @ab98 ||= sheet7.ab98/(sheet12.c13*sheet11.e79); end
-  def ac98; @ac98 ||= sheet7.ac98/(sheet12.c13*sheet11.e79); end
-  def ad98; @ad98 ||= sheet7.ad98/(sheet12.c13*sheet11.e79); end
-  def ae98; @ae98 ||= sheet7.ae98/(sheet12.c13*sheet11.e79); end
-  def af98; @af98 ||= sheet7.af98/(sheet12.c13*sheet11.e79); end
-  def ag98; @ag98 ||= sheet7.ag98/(sheet12.c13*sheet11.e79); end
-  def ai98; @ai98 ||= sheet7.ai98/(sheet12.c13*sheet11.e79); end
-  def aj98; @aj98 ||= sheet7.aj98/(sheet12.c13*sheet11.e79); end
-  def ak98; @ak98 ||= sheet7.ak98/(sheet12.c13*sheet11.e79); end
-  def al98; @al98 ||= sheet7.al98/(sheet12.c13*sheet11.e79); end
-  def am98; @am98 ||= sheet7.am98/(sheet12.c13*sheet11.e79); end
-  def an98; @an98 ||= sheet7.an98/(sheet12.c13*sheet11.e79); end
-  def ao98; @ao98 ||= sheet7.ao98/(sheet12.c13*sheet11.e79); end
-  def ap98; @ap98 ||= sheet7.ap98/(sheet12.c13*sheet11.e79); end
-  def aq98; @aq98 ||= sheet7.aq98/(sheet12.c13*sheet11.e79); end
-  def as98; @as98 ||= average(a('ai98','aq98')); end
-  def at98; @at98 ||= (sumproduct(a('aj98','aq98'),sheet12.a('d28','k28'))*5.0)+ai98; end
-  def av98; 0.0; end
-  def aw98; 5.0; end
-  def ay98; @ay98 ||= sheet7.ay98/(sheet12.c13*sheet11.e79); end
-  def az98; @az98 ||= sheet7.az98/(sheet12.c13*sheet11.e79); end
-  def ba98; @ba98 ||= sheet7.ba98/(sheet12.c13*sheet11.e79); end
-  def bb98; @bb98 ||= sheet7.bb98/(sheet12.c13*sheet11.e79); end
-  def bc98; @bc98 ||= sheet7.bc98/(sheet12.c13*sheet11.e79); end
-  def bd98; @bd98 ||= sheet7.bd98/(sheet12.c13*sheet11.e79); end
-  def be98; @be98 ||= sheet7.be98/(sheet12.c13*sheet11.e79); end
-  def bf98; @bf98 ||= sheet7.bf98/(sheet12.c13*sheet11.e79); end
-  def bg98; @bg98 ||= sheet7.bg98/(sheet12.c13*sheet11.e79); end
-  def bi98; @bi98 ||= sheet7.bi98/(sheet12.c13*sheet11.e79); end
-  def bj98; @bj98 ||= sheet7.bj98/(sheet12.c13*sheet11.e79); end
-  def bk98; @bk98 ||= sheet7.bk98/(sheet12.c13*sheet11.e79); end
-  def bl98; @bl98 ||= sheet7.bl98/(sheet12.c13*sheet11.e79); end
-  def bm98; @bm98 ||= sheet7.bm98/(sheet12.c13*sheet11.e79); end
-  def bn98; @bn98 ||= sheet7.bn98/(sheet12.c13*sheet11.e79); end
-  def bo98; @bo98 ||= sheet7.bo98/(sheet12.c13*sheet11.e79); end
-  def bp98; @bp98 ||= sheet7.bp98/(sheet12.c13*sheet11.e79); end
-  def bq98; @bq98 ||= sheet7.bq98/(sheet12.c13*sheet11.e79); end
-  def bs98; @bs98 ||= sheet7.bs98/(sheet12.c13*sheet11.e79); end
-  def bt98; @bt98 ||= sheet7.bt98/(sheet12.c13*sheet11.e79); end
-  def bu98; @bu98 ||= sheet7.bu98/(sheet12.c13*sheet11.e79); end
-  def bv98; @bv98 ||= sheet7.bv98/(sheet12.c13*sheet11.e79); end
-  def bw98; @bw98 ||= sheet7.bw98/(sheet12.c13*sheet11.e79); end
-  def bx98; @bx98 ||= sheet7.bx98/(sheet12.c13*sheet11.e79); end
-  def by98; @by98 ||= sheet7.by98/(sheet12.c13*sheet11.e79); end
-  def bz98; @bz98 ||= sheet7.bz98/(sheet12.c13*sheet11.e79); end
-  def ca98; @ca98 ||= sheet7.ca98/(sheet12.c13*sheet11.e79); end
-  def cc98; @cc98 ||= average(a('bs98','ca98')); end
-  def cd98; @cd98 ||= (sumproduct(a('bt98','ca98'),sheet12.a('d28','k28'))*5.0)+bs98; end
-  def cf98; @cf98 ||= sheet7.cf98/(sheet12.c13*sheet11.e79); end
-  def cg98; @cg98 ||= sheet7.cg98/(sheet12.c13*sheet11.e79); end
-  def ch98; @ch98 ||= sheet7.ch98/(sheet12.c13*sheet11.e79); end
-  def ci98; @ci98 ||= sheet7.ci98/(sheet12.c13*sheet11.e79); end
-  def cj98; @cj98 ||= sheet7.cj98/(sheet12.c13*sheet11.e79); end
-  def ck98; @ck98 ||= sheet7.ck98/(sheet12.c13*sheet11.e79); end
-  def cl98; @cl98 ||= sheet7.cl98/(sheet12.c13*sheet11.e79); end
-  def cm98; @cm98 ||= sheet7.cm98/(sheet12.c13*sheet11.e79); end
-  def cn98; @cn98 ||= sheet7.cn98/(sheet12.c13*sheet11.e79); end
-  def cp98; @cp98 ||= average(a('cf98','cn98')); end
-  def cq98; @cq98 ||= (sumproduct(a('cg98','cn98'),sheet12.a('d28','k28'))*5.0)+cf98; end
-  def cr98; @cr98 ||= excel_if(excel_comparison(abs(cd98-cq98-at98),"<",1.0),"ok","err"); end
-  def a99; "XV.b.Oil"; end
-  def b99; "Indigenous fossil-fuel production - Oil"; end
-  def c99; "Fossil Fuels"; end
-  def e99; @e99 ||= sheet7.e99/(sheet12.c13*sheet11.e79); end
-  def f99; @f99 ||= sheet7.f99/(sheet12.c13*sheet11.e79); end
-  def g99; @g99 ||= sheet7.g99/(sheet12.c13*sheet11.e79); end
-  def h99; @h99 ||= sheet7.h99/(sheet12.c13*sheet11.e79); end
-  def i99; @i99 ||= sheet7.i99/(sheet12.c13*sheet11.e79); end
-  def j99; @j99 ||= sheet7.j99/(sheet12.c13*sheet11.e79); end
-  def k99; @k99 ||= sheet7.k99/(sheet12.c13*sheet11.e79); end
-  def l99; @l99 ||= sheet7.l99/(sheet12.c13*sheet11.e79); end
-  def m99; @m99 ||= sheet7.m99/(sheet12.c13*sheet11.e79); end
-  def o99; @o99 ||= sheet7.o99/(sheet12.c13*sheet11.e79); end
-  def p99; @p99 ||= sheet7.p99/(sheet12.c13*sheet11.e79); end
-  def q99; @q99 ||= sheet7.q99/(sheet12.c13*sheet11.e79); end
-  def r99; @r99 ||= sheet7.r99/(sheet12.c13*sheet11.e79); end
-  def s99; @s99 ||= sheet7.s99/(sheet12.c13*sheet11.e79); end
-  def t99; @t99 ||= sheet7.t99/(sheet12.c13*sheet11.e79); end
-  def u99; @u99 ||= sheet7.u99/(sheet12.c13*sheet11.e79); end
-  def v99; @v99 ||= sheet7.v99/(sheet12.c13*sheet11.e79); end
-  def w99; @w99 ||= sheet7.w99/(sheet12.c13*sheet11.e79); end
-  def y99; @y99 ||= sheet7.y99/(sheet12.c13*sheet11.e79); end
-  def z99; @z99 ||= sheet7.z99/(sheet12.c13*sheet11.e79); end
-  def aa99; @aa99 ||= sheet7.aa99/(sheet12.c13*sheet11.e79); end
-  def ab99; @ab99 ||= sheet7.ab99/(sheet12.c13*sheet11.e79); end
-  def ac99; @ac99 ||= sheet7.ac99/(sheet12.c13*sheet11.e79); end
-  def ad99; @ad99 ||= sheet7.ad99/(sheet12.c13*sheet11.e79); end
-  def ae99; @ae99 ||= sheet7.ae99/(sheet12.c13*sheet11.e79); end
-  def af99; @af99 ||= sheet7.af99/(sheet12.c13*sheet11.e79); end
-  def ag99; @ag99 ||= sheet7.ag99/(sheet12.c13*sheet11.e79); end
-  def ai99; @ai99 ||= sheet7.ai99/(sheet12.c13*sheet11.e79); end
-  def aj99; @aj99 ||= sheet7.aj99/(sheet12.c13*sheet11.e79); end
-  def ak99; @ak99 ||= sheet7.ak99/(sheet12.c13*sheet11.e79); end
-  def al99; @al99 ||= sheet7.al99/(sheet12.c13*sheet11.e79); end
-  def am99; @am99 ||= sheet7.am99/(sheet12.c13*sheet11.e79); end
-  def an99; @an99 ||= sheet7.an99/(sheet12.c13*sheet11.e79); end
-  def ao99; @ao99 ||= sheet7.ao99/(sheet12.c13*sheet11.e79); end
-  def ap99; @ap99 ||= sheet7.ap99/(sheet12.c13*sheet11.e79); end
-  def aq99; @aq99 ||= sheet7.aq99/(sheet12.c13*sheet11.e79); end
-  def as99; @as99 ||= average(a('ai99','aq99')); end
-  def at99; @at99 ||= (sumproduct(a('aj99','aq99'),sheet12.a('d28','k28'))*5.0)+ai99; end
-  def av99; 0.0; end
-  def aw99; 5.0; end
-  def ay99; @ay99 ||= sheet7.ay99/(sheet12.c13*sheet11.e79); end
-  def az99; @az99 ||= sheet7.az99/(sheet12.c13*sheet11.e79); end
-  def ba99; @ba99 ||= sheet7.ba99/(sheet12.c13*sheet11.e79); end
-  def bb99; @bb99 ||= sheet7.bb99/(sheet12.c13*sheet11.e79); end
-  def bc99; @bc99 ||= sheet7.bc99/(sheet12.c13*sheet11.e79); end
-  def bd99; @bd99 ||= sheet7.bd99/(sheet12.c13*sheet11.e79); end
-  def be99; @be99 ||= sheet7.be99/(sheet12.c13*sheet11.e79); end
-  def bf99; @bf99 ||= sheet7.bf99/(sheet12.c13*sheet11.e79); end
-  def bg99; @bg99 ||= sheet7.bg99/(sheet12.c13*sheet11.e79); end
-  def bi99; @bi99 ||= sheet7.bi99/(sheet12.c13*sheet11.e79); end
-  def bj99; @bj99 ||= sheet7.bj99/(sheet12.c13*sheet11.e79); end
-  def bk99; @bk99 ||= sheet7.bk99/(sheet12.c13*sheet11.e79); end
-  def bl99; @bl99 ||= sheet7.bl99/(sheet12.c13*sheet11.e79); end
-  def bm99; @bm99 ||= sheet7.bm99/(sheet12.c13*sheet11.e79); end
-  def bn99; @bn99 ||= sheet7.bn99/(sheet12.c13*sheet11.e79); end
-  def bo99; @bo99 ||= sheet7.bo99/(sheet12.c13*sheet11.e79); end
-  def bp99; @bp99 ||= sheet7.bp99/(sheet12.c13*sheet11.e79); end
-  def bq99; @bq99 ||= sheet7.bq99/(sheet12.c13*sheet11.e79); end
-  def bs99; @bs99 ||= sheet7.bs99/(sheet12.c13*sheet11.e79); end
-  def bt99; @bt99 ||= sheet7.bt99/(sheet12.c13*sheet11.e79); end
-  def bu99; @bu99 ||= sheet7.bu99/(sheet12.c13*sheet11.e79); end
-  def bv99; @bv99 ||= sheet7.bv99/(sheet12.c13*sheet11.e79); end
-  def bw99; @bw99 ||= sheet7.bw99/(sheet12.c13*sheet11.e79); end
-  def bx99; @bx99 ||= sheet7.bx99/(sheet12.c13*sheet11.e79); end
-  def by99; @by99 ||= sheet7.by99/(sheet12.c13*sheet11.e79); end
-  def bz99; @bz99 ||= sheet7.bz99/(sheet12.c13*sheet11.e79); end
-  def ca99; @ca99 ||= sheet7.ca99/(sheet12.c13*sheet11.e79); end
-  def cc99; @cc99 ||= average(a('bs99','ca99')); end
-  def cd99; @cd99 ||= (sumproduct(a('bt99','ca99'),sheet12.a('d28','k28'))*5.0)+bs99; end
-  def cf99; @cf99 ||= sheet7.cf99/(sheet12.c13*sheet11.e79); end
-  def cg99; @cg99 ||= sheet7.cg99/(sheet12.c13*sheet11.e79); end
-  def ch99; @ch99 ||= sheet7.ch99/(sheet12.c13*sheet11.e79); end
-  def ci99; @ci99 ||= sheet7.ci99/(sheet12.c13*sheet11.e79); end
-  def cj99; @cj99 ||= sheet7.cj99/(sheet12.c13*sheet11.e79); end
-  def ck99; @ck99 ||= sheet7.ck99/(sheet12.c13*sheet11.e79); end
-  def cl99; @cl99 ||= sheet7.cl99/(sheet12.c13*sheet11.e79); end
-  def cm99; @cm99 ||= sheet7.cm99/(sheet12.c13*sheet11.e79); end
-  def cn99; @cn99 ||= sheet7.cn99/(sheet12.c13*sheet11.e79); end
-  def cp99; @cp99 ||= average(a('cf99','cn99')); end
-  def cq99; @cq99 ||= (sumproduct(a('cg99','cn99'),sheet12.a('d28','k28'))*5.0)+cf99; end
-  def cr99; @cr99 ||= excel_if(excel_comparison(abs(cd99-cq99-at99),"<",1.0),"ok","err"); end
-  def a100; "XV.b.Gas"; end
-  def b100; "Indigenous fossil-fuel production - Gas"; end
-  def c100; "Fossil Fuels"; end
-  def e100; @e100 ||= sheet7.e100/(sheet12.c13*sheet11.e79); end
-  def f100; @f100 ||= sheet7.f100/(sheet12.c13*sheet11.e79); end
-  def g100; @g100 ||= sheet7.g100/(sheet12.c13*sheet11.e79); end
-  def h100; @h100 ||= sheet7.h100/(sheet12.c13*sheet11.e79); end
-  def i100; @i100 ||= sheet7.i100/(sheet12.c13*sheet11.e79); end
-  def j100; @j100 ||= sheet7.j100/(sheet12.c13*sheet11.e79); end
-  def k100; @k100 ||= sheet7.k100/(sheet12.c13*sheet11.e79); end
-  def l100; @l100 ||= sheet7.l100/(sheet12.c13*sheet11.e79); end
-  def m100; @m100 ||= sheet7.m100/(sheet12.c13*sheet11.e79); end
-  def o100; @o100 ||= sheet7.o100/(sheet12.c13*sheet11.e79); end
-  def p100; @p100 ||= sheet7.p100/(sheet12.c13*sheet11.e79); end
-  def q100; @q100 ||= sheet7.q100/(sheet12.c13*sheet11.e79); end
-  def r100; @r100 ||= sheet7.r100/(sheet12.c13*sheet11.e79); end
-  def s100; @s100 ||= sheet7.s100/(sheet12.c13*sheet11.e79); end
-  def t100; @t100 ||= sheet7.t100/(sheet12.c13*sheet11.e79); end
-  def u100; @u100 ||= sheet7.u100/(sheet12.c13*sheet11.e79); end
-  def v100; @v100 ||= sheet7.v100/(sheet12.c13*sheet11.e79); end
-  def w100; @w100 ||= sheet7.w100/(sheet12.c13*sheet11.e79); end
-  def y100; @y100 ||= sheet7.y100/(sheet12.c13*sheet11.e79); end
-  def z100; @z100 ||= sheet7.z100/(sheet12.c13*sheet11.e79); end
-  def aa100; @aa100 ||= sheet7.aa100/(sheet12.c13*sheet11.e79); end
-  def ab100; @ab100 ||= sheet7.ab100/(sheet12.c13*sheet11.e79); end
-  def ac100; @ac100 ||= sheet7.ac100/(sheet12.c13*sheet11.e79); end
-  def ad100; @ad100 ||= sheet7.ad100/(sheet12.c13*sheet11.e79); end
-  def ae100; @ae100 ||= sheet7.ae100/(sheet12.c13*sheet11.e79); end
-  def af100; @af100 ||= sheet7.af100/(sheet12.c13*sheet11.e79); end
-  def ag100; @ag100 ||= sheet7.ag100/(sheet12.c13*sheet11.e79); end
-  def ai100; @ai100 ||= sheet7.ai100/(sheet12.c13*sheet11.e79); end
-  def aj100; @aj100 ||= sheet7.aj100/(sheet12.c13*sheet11.e79); end
-  def ak100; @ak100 ||= sheet7.ak100/(sheet12.c13*sheet11.e79); end
-  def al100; @al100 ||= sheet7.al100/(sheet12.c13*sheet11.e79); end
-  def am100; @am100 ||= sheet7.am100/(sheet12.c13*sheet11.e79); end
-  def an100; @an100 ||= sheet7.an100/(sheet12.c13*sheet11.e79); end
-  def ao100; @ao100 ||= sheet7.ao100/(sheet12.c13*sheet11.e79); end
-  def ap100; @ap100 ||= sheet7.ap100/(sheet12.c13*sheet11.e79); end
-  def aq100; @aq100 ||= sheet7.aq100/(sheet12.c13*sheet11.e79); end
-  def as100; @as100 ||= average(a('ai100','aq100')); end
-  def at100; @at100 ||= (sumproduct(a('aj100','aq100'),sheet12.a('d28','k28'))*5.0)+ai100; end
-  def av100; 0.0; end
-  def aw100; 5.0; end
-  def ay100; @ay100 ||= sheet7.ay100/(sheet12.c13*sheet11.e79); end
-  def az100; @az100 ||= sheet7.az100/(sheet12.c13*sheet11.e79); end
-  def ba100; @ba100 ||= sheet7.ba100/(sheet12.c13*sheet11.e79); end
-  def bb100; @bb100 ||= sheet7.bb100/(sheet12.c13*sheet11.e79); end
-  def bc100; @bc100 ||= sheet7.bc100/(sheet12.c13*sheet11.e79); end
-  def bd100; @bd100 ||= sheet7.bd100/(sheet12.c13*sheet11.e79); end
-  def be100; @be100 ||= sheet7.be100/(sheet12.c13*sheet11.e79); end
-  def bf100; @bf100 ||= sheet7.bf100/(sheet12.c13*sheet11.e79); end
-  def bg100; @bg100 ||= sheet7.bg100/(sheet12.c13*sheet11.e79); end
-  def bi100; @bi100 ||= sheet7.bi100/(sheet12.c13*sheet11.e79); end
-  def bj100; @bj100 ||= sheet7.bj100/(sheet12.c13*sheet11.e79); end
-  def bk100; @bk100 ||= sheet7.bk100/(sheet12.c13*sheet11.e79); end
-  def bl100; @bl100 ||= sheet7.bl100/(sheet12.c13*sheet11.e79); end
-  def bm100; @bm100 ||= sheet7.bm100/(sheet12.c13*sheet11.e79); end
-  def bn100; @bn100 ||= sheet7.bn100/(sheet12.c13*sheet11.e79); end
-  def bo100; @bo100 ||= sheet7.bo100/(sheet12.c13*sheet11.e79); end
-  def bp100; @bp100 ||= sheet7.bp100/(sheet12.c13*sheet11.e79); end
-  def bq100; @bq100 ||= sheet7.bq100/(sheet12.c13*sheet11.e79); end
-  def bs100; @bs100 ||= sheet7.bs100/(sheet12.c13*sheet11.e79); end
-  def bt100; @bt100 ||= sheet7.bt100/(sheet12.c13*sheet11.e79); end
-  def bu100; @bu100 ||= sheet7.bu100/(sheet12.c13*sheet11.e79); end
-  def bv100; @bv100 ||= sheet7.bv100/(sheet12.c13*sheet11.e79); end
-  def bw100; @bw100 ||= sheet7.bw100/(sheet12.c13*sheet11.e79); end
-  def bx100; @bx100 ||= sheet7.bx100/(sheet12.c13*sheet11.e79); end
-  def by100; @by100 ||= sheet7.by100/(sheet12.c13*sheet11.e79); end
-  def bz100; @bz100 ||= sheet7.bz100/(sheet12.c13*sheet11.e79); end
-  def ca100; @ca100 ||= sheet7.ca100/(sheet12.c13*sheet11.e79); end
-  def cc100; @cc100 ||= average(a('bs100','ca100')); end
-  def cd100; @cd100 ||= (sumproduct(a('bt100','ca100'),sheet12.a('d28','k28'))*5.0)+bs100; end
-  def cf100; @cf100 ||= sheet7.cf100/(sheet12.c13*sheet11.e79); end
-  def cg100; @cg100 ||= sheet7.cg100/(sheet12.c13*sheet11.e79); end
-  def ch100; @ch100 ||= sheet7.ch100/(sheet12.c13*sheet11.e79); end
-  def ci100; @ci100 ||= sheet7.ci100/(sheet12.c13*sheet11.e79); end
-  def cj100; @cj100 ||= sheet7.cj100/(sheet12.c13*sheet11.e79); end
-  def ck100; @ck100 ||= sheet7.ck100/(sheet12.c13*sheet11.e79); end
-  def cl100; @cl100 ||= sheet7.cl100/(sheet12.c13*sheet11.e79); end
-  def cm100; @cm100 ||= sheet7.cm100/(sheet12.c13*sheet11.e79); end
-  def cn100; @cn100 ||= sheet7.cn100/(sheet12.c13*sheet11.e79); end
-  def cp100; @cp100 ||= average(a('cf100','cn100')); end
-  def cq100; @cq100 ||= (sumproduct(a('cg100','cn100'),sheet12.a('d28','k28'))*5.0)+cf100; end
-  def cr100; @cr100 ||= excel_if(excel_comparison(abs(cd100-cq100-at100),"<",1.0),"ok","err"); end
-  def a101; "XVI.a"; end
-  def b101; "Fossil fuel transfers"; end
-  def c101; "Fossil Fuels"; end
-  def e101; @e101 ||= sheet7.e101/(sheet12.c13*sheet11.e79); end
-  def f101; @f101 ||= sheet7.f101/(sheet12.c13*sheet11.e79); end
-  def g101; @g101 ||= sheet7.g101/(sheet12.c13*sheet11.e79); end
-  def h101; @h101 ||= sheet7.h101/(sheet12.c13*sheet11.e79); end
-  def i101; @i101 ||= sheet7.i101/(sheet12.c13*sheet11.e79); end
-  def j101; @j101 ||= sheet7.j101/(sheet12.c13*sheet11.e79); end
-  def k101; @k101 ||= sheet7.k101/(sheet12.c13*sheet11.e79); end
-  def l101; @l101 ||= sheet7.l101/(sheet12.c13*sheet11.e79); end
-  def m101; @m101 ||= sheet7.m101/(sheet12.c13*sheet11.e79); end
-  def o101; @o101 ||= sheet7.o101/(sheet12.c13*sheet11.e79); end
-  def p101; @p101 ||= sheet7.p101/(sheet12.c13*sheet11.e79); end
-  def q101; @q101 ||= sheet7.q101/(sheet12.c13*sheet11.e79); end
-  def r101; @r101 ||= sheet7.r101/(sheet12.c13*sheet11.e79); end
-  def s101; @s101 ||= sheet7.s101/(sheet12.c13*sheet11.e79); end
-  def t101; @t101 ||= sheet7.t101/(sheet12.c13*sheet11.e79); end
-  def u101; @u101 ||= sheet7.u101/(sheet12.c13*sheet11.e79); end
-  def v101; @v101 ||= sheet7.v101/(sheet12.c13*sheet11.e79); end
-  def w101; @w101 ||= sheet7.w101/(sheet12.c13*sheet11.e79); end
-  def y101; @y101 ||= sheet7.y101/(sheet12.c13*sheet11.e79); end
-  def z101; @z101 ||= sheet7.z101/(sheet12.c13*sheet11.e79); end
-  def aa101; @aa101 ||= sheet7.aa101/(sheet12.c13*sheet11.e79); end
-  def ab101; @ab101 ||= sheet7.ab101/(sheet12.c13*sheet11.e79); end
-  def ac101; @ac101 ||= sheet7.ac101/(sheet12.c13*sheet11.e79); end
-  def ad101; @ad101 ||= sheet7.ad101/(sheet12.c13*sheet11.e79); end
-  def ae101; @ae101 ||= sheet7.ae101/(sheet12.c13*sheet11.e79); end
-  def af101; @af101 ||= sheet7.af101/(sheet12.c13*sheet11.e79); end
-  def ag101; @ag101 ||= sheet7.ag101/(sheet12.c13*sheet11.e79); end
-  def ai101; @ai101 ||= sheet7.ai101/(sheet12.c13*sheet11.e79); end
-  def aj101; @aj101 ||= sheet7.aj101/(sheet12.c13*sheet11.e79); end
-  def ak101; @ak101 ||= sheet7.ak101/(sheet12.c13*sheet11.e79); end
-  def al101; @al101 ||= sheet7.al101/(sheet12.c13*sheet11.e79); end
-  def am101; @am101 ||= sheet7.am101/(sheet12.c13*sheet11.e79); end
-  def an101; @an101 ||= sheet7.an101/(sheet12.c13*sheet11.e79); end
-  def ao101; @ao101 ||= sheet7.ao101/(sheet12.c13*sheet11.e79); end
-  def ap101; @ap101 ||= sheet7.ap101/(sheet12.c13*sheet11.e79); end
-  def aq101; @aq101 ||= sheet7.aq101/(sheet12.c13*sheet11.e79); end
-  def as101; @as101 ||= average(a('ai101','aq101')); end
-  def at101; @at101 ||= (sumproduct(a('aj101','aq101'),sheet12.a('d28','k28'))*5.0)+ai101; end
-  def av101; 0.0; end
-  def aw101; 5.0; end
-  def ay101; @ay101 ||= sheet7.ay101/(sheet12.c13*sheet11.e79); end
-  def az101; @az101 ||= sheet7.az101/(sheet12.c13*sheet11.e79); end
-  def ba101; @ba101 ||= sheet7.ba101/(sheet12.c13*sheet11.e79); end
-  def bb101; @bb101 ||= sheet7.bb101/(sheet12.c13*sheet11.e79); end
-  def bc101; @bc101 ||= sheet7.bc101/(sheet12.c13*sheet11.e79); end
-  def bd101; @bd101 ||= sheet7.bd101/(sheet12.c13*sheet11.e79); end
-  def be101; @be101 ||= sheet7.be101/(sheet12.c13*sheet11.e79); end
-  def bf101; @bf101 ||= sheet7.bf101/(sheet12.c13*sheet11.e79); end
-  def bg101; @bg101 ||= sheet7.bg101/(sheet12.c13*sheet11.e79); end
-  def bi101; @bi101 ||= sheet7.bi101/(sheet12.c13*sheet11.e79); end
-  def bj101; @bj101 ||= sheet7.bj101/(sheet12.c13*sheet11.e79); end
-  def bk101; @bk101 ||= sheet7.bk101/(sheet12.c13*sheet11.e79); end
-  def bl101; @bl101 ||= sheet7.bl101/(sheet12.c13*sheet11.e79); end
-  def bm101; @bm101 ||= sheet7.bm101/(sheet12.c13*sheet11.e79); end
-  def bn101; @bn101 ||= sheet7.bn101/(sheet12.c13*sheet11.e79); end
-  def bo101; @bo101 ||= sheet7.bo101/(sheet12.c13*sheet11.e79); end
-  def bp101; @bp101 ||= sheet7.bp101/(sheet12.c13*sheet11.e79); end
-  def bq101; @bq101 ||= sheet7.bq101/(sheet12.c13*sheet11.e79); end
-  def bs101; @bs101 ||= sheet7.bs101/(sheet12.c13*sheet11.e79); end
-  def bt101; @bt101 ||= sheet7.bt101/(sheet12.c13*sheet11.e79); end
-  def bu101; @bu101 ||= sheet7.bu101/(sheet12.c13*sheet11.e79); end
-  def bv101; @bv101 ||= sheet7.bv101/(sheet12.c13*sheet11.e79); end
-  def bw101; @bw101 ||= sheet7.bw101/(sheet12.c13*sheet11.e79); end
-  def bx101; @bx101 ||= sheet7.bx101/(sheet12.c13*sheet11.e79); end
-  def by101; @by101 ||= sheet7.by101/(sheet12.c13*sheet11.e79); end
-  def bz101; @bz101 ||= sheet7.bz101/(sheet12.c13*sheet11.e79); end
-  def ca101; @ca101 ||= sheet7.ca101/(sheet12.c13*sheet11.e79); end
-  def cc101; @cc101 ||= average(a('bs101','ca101')); end
-  def cd101; @cd101 ||= (sumproduct(a('bt101','ca101'),sheet12.a('d28','k28'))*5.0)+bs101; end
-  def cf101; @cf101 ||= sheet7.cf101/(sheet12.c13*sheet11.e79); end
-  def cg101; @cg101 ||= sheet7.cg101/(sheet12.c13*sheet11.e79); end
-  def ch101; @ch101 ||= sheet7.ch101/(sheet12.c13*sheet11.e79); end
-  def ci101; @ci101 ||= sheet7.ci101/(sheet12.c13*sheet11.e79); end
-  def cj101; @cj101 ||= sheet7.cj101/(sheet12.c13*sheet11.e79); end
-  def ck101; @ck101 ||= sheet7.ck101/(sheet12.c13*sheet11.e79); end
-  def cl101; @cl101 ||= sheet7.cl101/(sheet12.c13*sheet11.e79); end
-  def cm101; @cm101 ||= sheet7.cm101/(sheet12.c13*sheet11.e79); end
-  def cn101; @cn101 ||= sheet7.cn101/(sheet12.c13*sheet11.e79); end
-  def cp101; @cp101 ||= average(a('cf101','cn101')); end
-  def cq101; @cq101 ||= (sumproduct(a('cg101','cn101'),sheet12.a('d28','k28'))*5.0)+cf101; end
-  def cr101; @cr101 ||= excel_if(excel_comparison(abs(cd101-cq101-at101),"<",1.0),"ok","err"); end
-  def a102; "XVI.b.Coal"; end
-  def b102; "Balancing imports - Coal"; end
-  def c102; "Fossil Fuels"; end
-  def e102; @e102 ||= sheet7.e102/(sheet12.c13*sheet11.e79); end
-  def f102; @f102 ||= sheet7.f102/(sheet12.c13*sheet11.e79); end
-  def g102; @g102 ||= sheet7.g102/(sheet12.c13*sheet11.e79); end
-  def h102; @h102 ||= sheet7.h102/(sheet12.c13*sheet11.e79); end
-  def i102; @i102 ||= sheet7.i102/(sheet12.c13*sheet11.e79); end
-  def j102; @j102 ||= sheet7.j102/(sheet12.c13*sheet11.e79); end
-  def k102; @k102 ||= sheet7.k102/(sheet12.c13*sheet11.e79); end
-  def l102; @l102 ||= sheet7.l102/(sheet12.c13*sheet11.e79); end
-  def m102; @m102 ||= sheet7.m102/(sheet12.c13*sheet11.e79); end
-  def o102; @o102 ||= sheet7.o102/(sheet12.c13*sheet11.e79); end
-  def p102; @p102 ||= sheet7.p102/(sheet12.c13*sheet11.e79); end
-  def q102; @q102 ||= sheet7.q102/(sheet12.c13*sheet11.e79); end
-  def r102; @r102 ||= sheet7.r102/(sheet12.c13*sheet11.e79); end
-  def s102; @s102 ||= sheet7.s102/(sheet12.c13*sheet11.e79); end
-  def t102; @t102 ||= sheet7.t102/(sheet12.c13*sheet11.e79); end
-  def u102; @u102 ||= sheet7.u102/(sheet12.c13*sheet11.e79); end
-  def v102; @v102 ||= sheet7.v102/(sheet12.c13*sheet11.e79); end
-  def w102; @w102 ||= sheet7.w102/(sheet12.c13*sheet11.e79); end
-  def y102; @y102 ||= sheet7.y102/(sheet12.c13*sheet11.e79); end
-  def z102; @z102 ||= sheet7.z102/(sheet12.c13*sheet11.e79); end
-  def aa102; @aa102 ||= sheet7.aa102/(sheet12.c13*sheet11.e79); end
-  def ab102; @ab102 ||= sheet7.ab102/(sheet12.c13*sheet11.e79); end
-  def ac102; @ac102 ||= sheet7.ac102/(sheet12.c13*sheet11.e79); end
-  def ad102; @ad102 ||= sheet7.ad102/(sheet12.c13*sheet11.e79); end
-  def ae102; @ae102 ||= sheet7.ae102/(sheet12.c13*sheet11.e79); end
-  def af102; @af102 ||= sheet7.af102/(sheet12.c13*sheet11.e79); end
-  def ag102; @ag102 ||= sheet7.ag102/(sheet12.c13*sheet11.e79); end
-  def ai102; @ai102 ||= sheet7.ai102/(sheet12.c13*sheet11.e79); end
-  def aj102; @aj102 ||= sheet7.aj102/(sheet12.c13*sheet11.e79); end
-  def ak102; @ak102 ||= sheet7.ak102/(sheet12.c13*sheet11.e79); end
-  def al102; @al102 ||= sheet7.al102/(sheet12.c13*sheet11.e79); end
-  def am102; @am102 ||= sheet7.am102/(sheet12.c13*sheet11.e79); end
-  def an102; @an102 ||= sheet7.an102/(sheet12.c13*sheet11.e79); end
-  def ao102; @ao102 ||= sheet7.ao102/(sheet12.c13*sheet11.e79); end
-  def ap102; @ap102 ||= sheet7.ap102/(sheet12.c13*sheet11.e79); end
-  def aq102; @aq102 ||= sheet7.aq102/(sheet12.c13*sheet11.e79); end
-  def as102; @as102 ||= average(a('ai102','aq102')); end
-  def at102; @at102 ||= (sumproduct(a('aj102','aq102'),sheet12.a('d28','k28'))*5.0)+ai102; end
-  def av102; 0.0; end
-  def aw102; 5.0; end
-  def ay102; @ay102 ||= sheet7.ay102/(sheet12.c13*sheet11.e79); end
-  def az102; @az102 ||= sheet7.az102/(sheet12.c13*sheet11.e79); end
-  def ba102; @ba102 ||= sheet7.ba102/(sheet12.c13*sheet11.e79); end
-  def bb102; @bb102 ||= sheet7.bb102/(sheet12.c13*sheet11.e79); end
-  def bc102; @bc102 ||= sheet7.bc102/(sheet12.c13*sheet11.e79); end
-  def bd102; @bd102 ||= sheet7.bd102/(sheet12.c13*sheet11.e79); end
-  def be102; @be102 ||= sheet7.be102/(sheet12.c13*sheet11.e79); end
-  def bf102; @bf102 ||= sheet7.bf102/(sheet12.c13*sheet11.e79); end
-  def bg102; @bg102 ||= sheet7.bg102/(sheet12.c13*sheet11.e79); end
-  def bi102; @bi102 ||= sheet7.bi102/(sheet12.c13*sheet11.e79); end
-  def bj102; @bj102 ||= sheet7.bj102/(sheet12.c13*sheet11.e79); end
-  def bk102; @bk102 ||= sheet7.bk102/(sheet12.c13*sheet11.e79); end
-  def bl102; @bl102 ||= sheet7.bl102/(sheet12.c13*sheet11.e79); end
-  def bm102; @bm102 ||= sheet7.bm102/(sheet12.c13*sheet11.e79); end
-  def bn102; @bn102 ||= sheet7.bn102/(sheet12.c13*sheet11.e79); end
-  def bo102; @bo102 ||= sheet7.bo102/(sheet12.c13*sheet11.e79); end
-  def bp102; @bp102 ||= sheet7.bp102/(sheet12.c13*sheet11.e79); end
-  def bq102; @bq102 ||= sheet7.bq102/(sheet12.c13*sheet11.e79); end
-  def bs102; @bs102 ||= sheet7.bs102/(sheet12.c13*sheet11.e79); end
-  def bt102; @bt102 ||= sheet7.bt102/(sheet12.c13*sheet11.e79); end
-  def bu102; @bu102 ||= sheet7.bu102/(sheet12.c13*sheet11.e79); end
-  def bv102; @bv102 ||= sheet7.bv102/(sheet12.c13*sheet11.e79); end
-  def bw102; @bw102 ||= sheet7.bw102/(sheet12.c13*sheet11.e79); end
-  def bx102; @bx102 ||= sheet7.bx102/(sheet12.c13*sheet11.e79); end
-  def by102; @by102 ||= sheet7.by102/(sheet12.c13*sheet11.e79); end
-  def bz102; @bz102 ||= sheet7.bz102/(sheet12.c13*sheet11.e79); end
-  def ca102; @ca102 ||= sheet7.ca102/(sheet12.c13*sheet11.e79); end
-  def cc102; @cc102 ||= average(a('bs102','ca102')); end
-  def cd102; @cd102 ||= (sumproduct(a('bt102','ca102'),sheet12.a('d28','k28'))*5.0)+bs102; end
-  def cf102; @cf102 ||= sheet7.cf102/(sheet12.c13*sheet11.e79); end
-  def cg102; @cg102 ||= sheet7.cg102/(sheet12.c13*sheet11.e79); end
-  def ch102; @ch102 ||= sheet7.ch102/(sheet12.c13*sheet11.e79); end
-  def ci102; @ci102 ||= sheet7.ci102/(sheet12.c13*sheet11.e79); end
-  def cj102; @cj102 ||= sheet7.cj102/(sheet12.c13*sheet11.e79); end
-  def ck102; @ck102 ||= sheet7.ck102/(sheet12.c13*sheet11.e79); end
-  def cl102; @cl102 ||= sheet7.cl102/(sheet12.c13*sheet11.e79); end
-  def cm102; @cm102 ||= sheet7.cm102/(sheet12.c13*sheet11.e79); end
-  def cn102; @cn102 ||= sheet7.cn102/(sheet12.c13*sheet11.e79); end
-  def cp102; @cp102 ||= average(a('cf102','cn102')); end
-  def cq102; @cq102 ||= (sumproduct(a('cg102','cn102'),sheet12.a('d28','k28'))*5.0)+cf102; end
-  def cr102; @cr102 ||= excel_if(excel_comparison(abs(cd102-cq102-at102),"<",1.0),"ok","err"); end
-  def a103; "XVI.b.Oil"; end
-  def b103; "Balancing imports - Oil"; end
-  def c103; "Fossil Fuels"; end
-  def e103; @e103 ||= sheet7.e103/(sheet12.c13*sheet11.e79); end
-  def f103; @f103 ||= sheet7.f103/(sheet12.c13*sheet11.e79); end
-  def g103; @g103 ||= sheet7.g103/(sheet12.c13*sheet11.e79); end
-  def h103; @h103 ||= sheet7.h103/(sheet12.c13*sheet11.e79); end
-  def i103; @i103 ||= sheet7.i103/(sheet12.c13*sheet11.e79); end
-  def j103; @j103 ||= sheet7.j103/(sheet12.c13*sheet11.e79); end
-  def k103; @k103 ||= sheet7.k103/(sheet12.c13*sheet11.e79); end
-  def l103; @l103 ||= sheet7.l103/(sheet12.c13*sheet11.e79); end
-  def m103; @m103 ||= sheet7.m103/(sheet12.c13*sheet11.e79); end
-  def o103; @o103 ||= sheet7.o103/(sheet12.c13*sheet11.e79); end
-  def p103; @p103 ||= sheet7.p103/(sheet12.c13*sheet11.e79); end
-  def q103; @q103 ||= sheet7.q103/(sheet12.c13*sheet11.e79); end
-  def r103; @r103 ||= sheet7.r103/(sheet12.c13*sheet11.e79); end
-  def s103; @s103 ||= sheet7.s103/(sheet12.c13*sheet11.e79); end
-  def t103; @t103 ||= sheet7.t103/(sheet12.c13*sheet11.e79); end
-  def u103; @u103 ||= sheet7.u103/(sheet12.c13*sheet11.e79); end
-  def v103; @v103 ||= sheet7.v103/(sheet12.c13*sheet11.e79); end
-  def w103; @w103 ||= sheet7.w103/(sheet12.c13*sheet11.e79); end
-  def y103; @y103 ||= sheet7.y103/(sheet12.c13*sheet11.e79); end
-  def z103; @z103 ||= sheet7.z103/(sheet12.c13*sheet11.e79); end
-  def aa103; @aa103 ||= sheet7.aa103/(sheet12.c13*sheet11.e79); end
-  def ab103; @ab103 ||= sheet7.ab103/(sheet12.c13*sheet11.e79); end
-  def ac103; @ac103 ||= sheet7.ac103/(sheet12.c13*sheet11.e79); end
-  def ad103; @ad103 ||= sheet7.ad103/(sheet12.c13*sheet11.e79); end
-  def ae103; @ae103 ||= sheet7.ae103/(sheet12.c13*sheet11.e79); end
-  def af103; @af103 ||= sheet7.af103/(sheet12.c13*sheet11.e79); end
-  def ag103; @ag103 ||= sheet7.ag103/(sheet12.c13*sheet11.e79); end
-  def ai103; @ai103 ||= sheet7.ai103/(sheet12.c13*sheet11.e79); end
-  def aj103; @aj103 ||= sheet7.aj103/(sheet12.c13*sheet11.e79); end
-  def ak103; @ak103 ||= sheet7.ak103/(sheet12.c13*sheet11.e79); end
-  def al103; @al103 ||= sheet7.al103/(sheet12.c13*sheet11.e79); end
-  def am103; @am103 ||= sheet7.am103/(sheet12.c13*sheet11.e79); end
-  def an103; @an103 ||= sheet7.an103/(sheet12.c13*sheet11.e79); end
-  def ao103; @ao103 ||= sheet7.ao103/(sheet12.c13*sheet11.e79); end
-  def ap103; @ap103 ||= sheet7.ap103/(sheet12.c13*sheet11.e79); end
-  def aq103; @aq103 ||= sheet7.aq103/(sheet12.c13*sheet11.e79); end
-  def as103; @as103 ||= average(a('ai103','aq103')); end
-  def at103; @at103 ||= (sumproduct(a('aj103','aq103'),sheet12.a('d28','k28'))*5.0)+ai103; end
-  def av103; 0.0; end
-  def aw103; 5.0; end
-  def ay103; @ay103 ||= sheet7.ay103/(sheet12.c13*sheet11.e79); end
-  def az103; @az103 ||= sheet7.az103/(sheet12.c13*sheet11.e79); end
-  def ba103; @ba103 ||= sheet7.ba103/(sheet12.c13*sheet11.e79); end
-  def bb103; @bb103 ||= sheet7.bb103/(sheet12.c13*sheet11.e79); end
-  def bc103; @bc103 ||= sheet7.bc103/(sheet12.c13*sheet11.e79); end
-  def bd103; @bd103 ||= sheet7.bd103/(sheet12.c13*sheet11.e79); end
-  def be103; @be103 ||= sheet7.be103/(sheet12.c13*sheet11.e79); end
-  def bf103; @bf103 ||= sheet7.bf103/(sheet12.c13*sheet11.e79); end
-  def bg103; @bg103 ||= sheet7.bg103/(sheet12.c13*sheet11.e79); end
-  def bi103; @bi103 ||= sheet7.bi103/(sheet12.c13*sheet11.e79); end
-  def bj103; @bj103 ||= sheet7.bj103/(sheet12.c13*sheet11.e79); end
-  def bk103; @bk103 ||= sheet7.bk103/(sheet12.c13*sheet11.e79); end
-  def bl103; @bl103 ||= sheet7.bl103/(sheet12.c13*sheet11.e79); end
-  def bm103; @bm103 ||= sheet7.bm103/(sheet12.c13*sheet11.e79); end
-  def bn103; @bn103 ||= sheet7.bn103/(sheet12.c13*sheet11.e79); end
-  def bo103; @bo103 ||= sheet7.bo103/(sheet12.c13*sheet11.e79); end
-  def bp103; @bp103 ||= sheet7.bp103/(sheet12.c13*sheet11.e79); end
-  def bq103; @bq103 ||= sheet7.bq103/(sheet12.c13*sheet11.e79); end
-  def bs103; @bs103 ||= sheet7.bs103/(sheet12.c13*sheet11.e79); end
-  def bt103; @bt103 ||= sheet7.bt103/(sheet12.c13*sheet11.e79); end
-  def bu103; @bu103 ||= sheet7.bu103/(sheet12.c13*sheet11.e79); end
-  def bv103; @bv103 ||= sheet7.bv103/(sheet12.c13*sheet11.e79); end
-  def bw103; @bw103 ||= sheet7.bw103/(sheet12.c13*sheet11.e79); end
-  def bx103; @bx103 ||= sheet7.bx103/(sheet12.c13*sheet11.e79); end
-  def by103; @by103 ||= sheet7.by103/(sheet12.c13*sheet11.e79); end
-  def bz103; @bz103 ||= sheet7.bz103/(sheet12.c13*sheet11.e79); end
-  def ca103; @ca103 ||= sheet7.ca103/(sheet12.c13*sheet11.e79); end
-  def cc103; @cc103 ||= average(a('bs103','ca103')); end
-  def cd103; @cd103 ||= (sumproduct(a('bt103','ca103'),sheet12.a('d28','k28'))*5.0)+bs103; end
-  def cf103; @cf103 ||= sheet7.cf103/(sheet12.c13*sheet11.e79); end
-  def cg103; @cg103 ||= sheet7.cg103/(sheet12.c13*sheet11.e79); end
-  def ch103; @ch103 ||= sheet7.ch103/(sheet12.c13*sheet11.e79); end
-  def ci103; @ci103 ||= sheet7.ci103/(sheet12.c13*sheet11.e79); end
-  def cj103; @cj103 ||= sheet7.cj103/(sheet12.c13*sheet11.e79); end
-  def ck103; @ck103 ||= sheet7.ck103/(sheet12.c13*sheet11.e79); end
-  def cl103; @cl103 ||= sheet7.cl103/(sheet12.c13*sheet11.e79); end
-  def cm103; @cm103 ||= sheet7.cm103/(sheet12.c13*sheet11.e79); end
-  def cn103; @cn103 ||= sheet7.cn103/(sheet12.c13*sheet11.e79); end
-  def cp103; @cp103 ||= average(a('cf103','cn103')); end
-  def cq103; @cq103 ||= (sumproduct(a('cg103','cn103'),sheet12.a('d28','k28'))*5.0)+cf103; end
-  def cr103; @cr103 ||= excel_if(excel_comparison(abs(cd103-cq103-at103),"<",1.0),"ok","err"); end
-  def a104; "XVI.b.Gas"; end
-  def b104; "Balancing imports - Gas"; end
-  def c104; "Fossil Fuels"; end
-  def e104; @e104 ||= sheet7.e104/(sheet12.c13*sheet11.e79); end
-  def f104; @f104 ||= sheet7.f104/(sheet12.c13*sheet11.e79); end
-  def g104; @g104 ||= sheet7.g104/(sheet12.c13*sheet11.e79); end
-  def h104; @h104 ||= sheet7.h104/(sheet12.c13*sheet11.e79); end
-  def i104; @i104 ||= sheet7.i104/(sheet12.c13*sheet11.e79); end
-  def j104; @j104 ||= sheet7.j104/(sheet12.c13*sheet11.e79); end
-  def k104; @k104 ||= sheet7.k104/(sheet12.c13*sheet11.e79); end
-  def l104; @l104 ||= sheet7.l104/(sheet12.c13*sheet11.e79); end
-  def m104; @m104 ||= sheet7.m104/(sheet12.c13*sheet11.e79); end
-  def o104; @o104 ||= sheet7.o104/(sheet12.c13*sheet11.e79); end
-  def p104; @p104 ||= sheet7.p104/(sheet12.c13*sheet11.e79); end
-  def q104; @q104 ||= sheet7.q104/(sheet12.c13*sheet11.e79); end
-  def r104; @r104 ||= sheet7.r104/(sheet12.c13*sheet11.e79); end
-  def s104; @s104 ||= sheet7.s104/(sheet12.c13*sheet11.e79); end
-  def t104; @t104 ||= sheet7.t104/(sheet12.c13*sheet11.e79); end
-  def u104; @u104 ||= sheet7.u104/(sheet12.c13*sheet11.e79); end
-  def v104; @v104 ||= sheet7.v104/(sheet12.c13*sheet11.e79); end
-  def w104; @w104 ||= sheet7.w104/(sheet12.c13*sheet11.e79); end
-  def y104; @y104 ||= sheet7.y104/(sheet12.c13*sheet11.e79); end
-  def z104; @z104 ||= sheet7.z104/(sheet12.c13*sheet11.e79); end
-  def aa104; @aa104 ||= sheet7.aa104/(sheet12.c13*sheet11.e79); end
-  def ab104; @ab104 ||= sheet7.ab104/(sheet12.c13*sheet11.e79); end
-  def ac104; @ac104 ||= sheet7.ac104/(sheet12.c13*sheet11.e79); end
-  def ad104; @ad104 ||= sheet7.ad104/(sheet12.c13*sheet11.e79); end
-  def ae104; @ae104 ||= sheet7.ae104/(sheet12.c13*sheet11.e79); end
-  def af104; @af104 ||= sheet7.af104/(sheet12.c13*sheet11.e79); end
-  def ag104; @ag104 ||= sheet7.ag104/(sheet12.c13*sheet11.e79); end
-  def ai104; @ai104 ||= sheet7.ai104/(sheet12.c13*sheet11.e79); end
-  def aj104; @aj104 ||= sheet7.aj104/(sheet12.c13*sheet11.e79); end
-  def ak104; @ak104 ||= sheet7.ak104/(sheet12.c13*sheet11.e79); end
-  def al104; @al104 ||= sheet7.al104/(sheet12.c13*sheet11.e79); end
-  def am104; @am104 ||= sheet7.am104/(sheet12.c13*sheet11.e79); end
-  def an104; @an104 ||= sheet7.an104/(sheet12.c13*sheet11.e79); end
-  def ao104; @ao104 ||= sheet7.ao104/(sheet12.c13*sheet11.e79); end
-  def ap104; @ap104 ||= sheet7.ap104/(sheet12.c13*sheet11.e79); end
-  def aq104; @aq104 ||= sheet7.aq104/(sheet12.c13*sheet11.e79); end
-  def as104; @as104 ||= average(a('ai104','aq104')); end
-  def at104; @at104 ||= (sumproduct(a('aj104','aq104'),sheet12.a('d28','k28'))*5.0)+ai104; end
-  def av104; 0.0; end
-  def aw104; 5.0; end
-  def ay104; @ay104 ||= sheet7.ay104/(sheet12.c13*sheet11.e79); end
-  def az104; @az104 ||= sheet7.az104/(sheet12.c13*sheet11.e79); end
-  def ba104; @ba104 ||= sheet7.ba104/(sheet12.c13*sheet11.e79); end
-  def bb104; @bb104 ||= sheet7.bb104/(sheet12.c13*sheet11.e79); end
-  def bc104; @bc104 ||= sheet7.bc104/(sheet12.c13*sheet11.e79); end
-  def bd104; @bd104 ||= sheet7.bd104/(sheet12.c13*sheet11.e79); end
-  def be104; @be104 ||= sheet7.be104/(sheet12.c13*sheet11.e79); end
-  def bf104; @bf104 ||= sheet7.bf104/(sheet12.c13*sheet11.e79); end
-  def bg104; @bg104 ||= sheet7.bg104/(sheet12.c13*sheet11.e79); end
-  def bi104; @bi104 ||= sheet7.bi104/(sheet12.c13*sheet11.e79); end
-  def bj104; @bj104 ||= sheet7.bj104/(sheet12.c13*sheet11.e79); end
-  def bk104; @bk104 ||= sheet7.bk104/(sheet12.c13*sheet11.e79); end
-  def bl104; @bl104 ||= sheet7.bl104/(sheet12.c13*sheet11.e79); end
-  def bm104; @bm104 ||= sheet7.bm104/(sheet12.c13*sheet11.e79); end
-  def bn104; @bn104 ||= sheet7.bn104/(sheet12.c13*sheet11.e79); end
-  def bo104; @bo104 ||= sheet7.bo104/(sheet12.c13*sheet11.e79); end
-  def bp104; @bp104 ||= sheet7.bp104/(sheet12.c13*sheet11.e79); end
-  def bq104; @bq104 ||= sheet7.bq104/(sheet12.c13*sheet11.e79); end
-  def bs104; @bs104 ||= sheet7.bs104/(sheet12.c13*sheet11.e79); end
-  def bt104; @bt104 ||= sheet7.bt104/(sheet12.c13*sheet11.e79); end
-  def bu104; @bu104 ||= sheet7.bu104/(sheet12.c13*sheet11.e79); end
-  def bv104; @bv104 ||= sheet7.bv104/(sheet12.c13*sheet11.e79); end
-  def bw104; @bw104 ||= sheet7.bw104/(sheet12.c13*sheet11.e79); end
-  def bx104; @bx104 ||= sheet7.bx104/(sheet12.c13*sheet11.e79); end
-  def by104; @by104 ||= sheet7.by104/(sheet12.c13*sheet11.e79); end
-  def bz104; @bz104 ||= sheet7.bz104/(sheet12.c13*sheet11.e79); end
-  def ca104; @ca104 ||= sheet7.ca104/(sheet12.c13*sheet11.e79); end
-  def cc104; @cc104 ||= average(a('bs104','ca104')); end
-  def cd104; @cd104 ||= (sumproduct(a('bt104','ca104'),sheet12.a('d28','k28'))*5.0)+bs104; end
-  def cf104; @cf104 ||= sheet7.cf104/(sheet12.c13*sheet11.e79); end
-  def cg104; @cg104 ||= sheet7.cg104/(sheet12.c13*sheet11.e79); end
-  def ch104; @ch104 ||= sheet7.ch104/(sheet12.c13*sheet11.e79); end
-  def ci104; @ci104 ||= sheet7.ci104/(sheet12.c13*sheet11.e79); end
-  def cj104; @cj104 ||= sheet7.cj104/(sheet12.c13*sheet11.e79); end
-  def ck104; @ck104 ||= sheet7.ck104/(sheet12.c13*sheet11.e79); end
-  def cl104; @cl104 ||= sheet7.cl104/(sheet12.c13*sheet11.e79); end
-  def cm104; @cm104 ||= sheet7.cm104/(sheet12.c13*sheet11.e79); end
-  def cn104; @cn104 ||= sheet7.cn104/(sheet12.c13*sheet11.e79); end
-  def cp104; @cp104 ||= average(a('cf104','cn104')); end
-  def cq104; @cq104 ||= (sumproduct(a('cg104','cn104'),sheet12.a('d28','k28'))*5.0)+cf104; end
-  def cr104; @cr104 ||= excel_if(excel_comparison(abs(cd104-cq104-at104),"<",1.0),"ok","err"); end
-  def a105; "XVII.a"; end
-  def b105; "District heating effective demand"; end
-  def c105; "Heating"; end
-  def e105; @e105 ||= sheet7.e105/(sheet12.c13*sheet11.e79); end
-  def f105; @f105 ||= sheet7.f105/(sheet12.c13*sheet11.e79); end
-  def g105; @g105 ||= sheet7.g105/(sheet12.c13*sheet11.e79); end
-  def h105; @h105 ||= sheet7.h105/(sheet12.c13*sheet11.e79); end
-  def i105; @i105 ||= sheet7.i105/(sheet12.c13*sheet11.e79); end
-  def j105; @j105 ||= sheet7.j105/(sheet12.c13*sheet11.e79); end
-  def k105; @k105 ||= sheet7.k105/(sheet12.c13*sheet11.e79); end
-  def l105; @l105 ||= sheet7.l105/(sheet12.c13*sheet11.e79); end
-  def m105; @m105 ||= sheet7.m105/(sheet12.c13*sheet11.e79); end
-  def o105; @o105 ||= sheet7.o105/(sheet12.c13*sheet11.e79); end
-  def p105; @p105 ||= sheet7.p105/(sheet12.c13*sheet11.e79); end
-  def q105; @q105 ||= sheet7.q105/(sheet12.c13*sheet11.e79); end
-  def r105; @r105 ||= sheet7.r105/(sheet12.c13*sheet11.e79); end
-  def s105; @s105 ||= sheet7.s105/(sheet12.c13*sheet11.e79); end
-  def t105; @t105 ||= sheet7.t105/(sheet12.c13*sheet11.e79); end
-  def u105; @u105 ||= sheet7.u105/(sheet12.c13*sheet11.e79); end
-  def v105; @v105 ||= sheet7.v105/(sheet12.c13*sheet11.e79); end
-  def w105; @w105 ||= sheet7.w105/(sheet12.c13*sheet11.e79); end
-  def y105; @y105 ||= sheet7.y105/(sheet12.c13*sheet11.e79); end
-  def z105; @z105 ||= sheet7.z105/(sheet12.c13*sheet11.e79); end
-  def aa105; @aa105 ||= sheet7.aa105/(sheet12.c13*sheet11.e79); end
-  def ab105; @ab105 ||= sheet7.ab105/(sheet12.c13*sheet11.e79); end
-  def ac105; @ac105 ||= sheet7.ac105/(sheet12.c13*sheet11.e79); end
-  def ad105; @ad105 ||= sheet7.ad105/(sheet12.c13*sheet11.e79); end
-  def ae105; @ae105 ||= sheet7.ae105/(sheet12.c13*sheet11.e79); end
-  def af105; @af105 ||= sheet7.af105/(sheet12.c13*sheet11.e79); end
-  def ag105; @ag105 ||= sheet7.ag105/(sheet12.c13*sheet11.e79); end
-  def ai105; @ai105 ||= sheet7.ai105/(sheet12.c13*sheet11.e79); end
-  def aj105; @aj105 ||= sheet7.aj105/(sheet12.c13*sheet11.e79); end
-  def ak105; @ak105 ||= sheet7.ak105/(sheet12.c13*sheet11.e79); end
-  def al105; @al105 ||= sheet7.al105/(sheet12.c13*sheet11.e79); end
-  def am105; @am105 ||= sheet7.am105/(sheet12.c13*sheet11.e79); end
-  def an105; @an105 ||= sheet7.an105/(sheet12.c13*sheet11.e79); end
-  def ao105; @ao105 ||= sheet7.ao105/(sheet12.c13*sheet11.e79); end
-  def ap105; @ap105 ||= sheet7.ap105/(sheet12.c13*sheet11.e79); end
-  def aq105; @aq105 ||= sheet7.aq105/(sheet12.c13*sheet11.e79); end
-  def as105; @as105 ||= average(a('ai105','aq105')); end
-  def at105; @at105 ||= (sumproduct(a('aj105','aq105'),sheet12.a('d28','k28'))*5.0)+ai105; end
-  def av105; 0.0; end
-  def aw105; 5.0; end
-  def ay105; @ay105 ||= sheet7.ay105/(sheet12.c13*sheet11.e79); end
-  def az105; @az105 ||= sheet7.az105/(sheet12.c13*sheet11.e79); end
-  def ba105; @ba105 ||= sheet7.ba105/(sheet12.c13*sheet11.e79); end
-  def bb105; @bb105 ||= sheet7.bb105/(sheet12.c13*sheet11.e79); end
-  def bc105; @bc105 ||= sheet7.bc105/(sheet12.c13*sheet11.e79); end
-  def bd105; @bd105 ||= sheet7.bd105/(sheet12.c13*sheet11.e79); end
-  def be105; @be105 ||= sheet7.be105/(sheet12.c13*sheet11.e79); end
-  def bf105; @bf105 ||= sheet7.bf105/(sheet12.c13*sheet11.e79); end
-  def bg105; @bg105 ||= sheet7.bg105/(sheet12.c13*sheet11.e79); end
-  def bi105; @bi105 ||= sheet7.bi105/(sheet12.c13*sheet11.e79); end
-  def bj105; @bj105 ||= sheet7.bj105/(sheet12.c13*sheet11.e79); end
-  def bk105; @bk105 ||= sheet7.bk105/(sheet12.c13*sheet11.e79); end
-  def bl105; @bl105 ||= sheet7.bl105/(sheet12.c13*sheet11.e79); end
-  def bm105; @bm105 ||= sheet7.bm105/(sheet12.c13*sheet11.e79); end
-  def bn105; @bn105 ||= sheet7.bn105/(sheet12.c13*sheet11.e79); end
-  def bo105; @bo105 ||= sheet7.bo105/(sheet12.c13*sheet11.e79); end
-  def bp105; @bp105 ||= sheet7.bp105/(sheet12.c13*sheet11.e79); end
-  def bq105; @bq105 ||= sheet7.bq105/(sheet12.c13*sheet11.e79); end
-  def bs105; @bs105 ||= sheet7.bs105/(sheet12.c13*sheet11.e79); end
-  def bt105; @bt105 ||= sheet7.bt105/(sheet12.c13*sheet11.e79); end
-  def bu105; @bu105 ||= sheet7.bu105/(sheet12.c13*sheet11.e79); end
-  def bv105; @bv105 ||= sheet7.bv105/(sheet12.c13*sheet11.e79); end
-  def bw105; @bw105 ||= sheet7.bw105/(sheet12.c13*sheet11.e79); end
-  def bx105; @bx105 ||= sheet7.bx105/(sheet12.c13*sheet11.e79); end
-  def by105; @by105 ||= sheet7.by105/(sheet12.c13*sheet11.e79); end
-  def bz105; @bz105 ||= sheet7.bz105/(sheet12.c13*sheet11.e79); end
-  def ca105; @ca105 ||= sheet7.ca105/(sheet12.c13*sheet11.e79); end
-  def cc105; @cc105 ||= average(a('bs105','ca105')); end
-  def cd105; @cd105 ||= (sumproduct(a('bt105','ca105'),sheet12.a('d28','k28'))*5.0)+bs105; end
-  def cf105; @cf105 ||= sheet7.cf105/(sheet12.c13*sheet11.e79); end
-  def cg105; @cg105 ||= sheet7.cg105/(sheet12.c13*sheet11.e79); end
-  def ch105; @ch105 ||= sheet7.ch105/(sheet12.c13*sheet11.e79); end
-  def ci105; @ci105 ||= sheet7.ci105/(sheet12.c13*sheet11.e79); end
-  def cj105; @cj105 ||= sheet7.cj105/(sheet12.c13*sheet11.e79); end
-  def ck105; @ck105 ||= sheet7.ck105/(sheet12.c13*sheet11.e79); end
-  def cl105; @cl105 ||= sheet7.cl105/(sheet12.c13*sheet11.e79); end
-  def cm105; @cm105 ||= sheet7.cm105/(sheet12.c13*sheet11.e79); end
-  def cn105; @cn105 ||= sheet7.cn105/(sheet12.c13*sheet11.e79); end
-  def cp105; @cp105 ||= average(a('cf105','cn105')); end
-  def cq105; @cq105 ||= (sumproduct(a('cg105','cn105'),sheet12.a('d28','k28'))*5.0)+cf105; end
-  def cr105; @cr105 ||= excel_if(excel_comparison(abs(cd105-cq105-at105),"<",1.0),"ok","err"); end
-  def a106; "XVIII.a"; end
-  def b106; "Storage of captured CO2"; end
-  def c106; "Business"; end
-  def e106; @e106 ||= sheet7.e106/(sheet12.c13*sheet11.e79); end
-  def f106; @f106 ||= sheet7.f106/(sheet12.c13*sheet11.e79); end
-  def g106; @g106 ||= sheet7.g106/(sheet12.c13*sheet11.e79); end
-  def h106; @h106 ||= sheet7.h106/(sheet12.c13*sheet11.e79); end
-  def i106; @i106 ||= sheet7.i106/(sheet12.c13*sheet11.e79); end
-  def j106; @j106 ||= sheet7.j106/(sheet12.c13*sheet11.e79); end
-  def k106; @k106 ||= sheet7.k106/(sheet12.c13*sheet11.e79); end
-  def l106; @l106 ||= sheet7.l106/(sheet12.c13*sheet11.e79); end
-  def m106; @m106 ||= sheet7.m106/(sheet12.c13*sheet11.e79); end
-  def o106; @o106 ||= sheet7.o106/(sheet12.c13*sheet11.e79); end
-  def p106; @p106 ||= sheet7.p106/(sheet12.c13*sheet11.e79); end
-  def q106; @q106 ||= sheet7.q106/(sheet12.c13*sheet11.e79); end
-  def r106; @r106 ||= sheet7.r106/(sheet12.c13*sheet11.e79); end
-  def s106; @s106 ||= sheet7.s106/(sheet12.c13*sheet11.e79); end
-  def t106; @t106 ||= sheet7.t106/(sheet12.c13*sheet11.e79); end
-  def u106; @u106 ||= sheet7.u106/(sheet12.c13*sheet11.e79); end
-  def v106; @v106 ||= sheet7.v106/(sheet12.c13*sheet11.e79); end
-  def w106; @w106 ||= sheet7.w106/(sheet12.c13*sheet11.e79); end
-  def y106; @y106 ||= sheet7.y106/(sheet12.c13*sheet11.e79); end
-  def z106; @z106 ||= sheet7.z106/(sheet12.c13*sheet11.e79); end
-  def aa106; @aa106 ||= sheet7.aa106/(sheet12.c13*sheet11.e79); end
-  def ab106; @ab106 ||= sheet7.ab106/(sheet12.c13*sheet11.e79); end
-  def ac106; @ac106 ||= sheet7.ac106/(sheet12.c13*sheet11.e79); end
-  def ad106; @ad106 ||= sheet7.ad106/(sheet12.c13*sheet11.e79); end
-  def ae106; @ae106 ||= sheet7.ae106/(sheet12.c13*sheet11.e79); end
-  def af106; @af106 ||= sheet7.af106/(sheet12.c13*sheet11.e79); end
-  def ag106; @ag106 ||= sheet7.ag106/(sheet12.c13*sheet11.e79); end
-  def ai106; @ai106 ||= sheet7.ai106/(sheet12.c13*sheet11.e79); end
-  def aj106; @aj106 ||= sheet7.aj106/(sheet12.c13*sheet11.e79); end
-  def ak106; @ak106 ||= sheet7.ak106/(sheet12.c13*sheet11.e79); end
-  def al106; @al106 ||= sheet7.al106/(sheet12.c13*sheet11.e79); end
-  def am106; @am106 ||= sheet7.am106/(sheet12.c13*sheet11.e79); end
-  def an106; @an106 ||= sheet7.an106/(sheet12.c13*sheet11.e79); end
-  def ao106; @ao106 ||= sheet7.ao106/(sheet12.c13*sheet11.e79); end
-  def ap106; @ap106 ||= sheet7.ap106/(sheet12.c13*sheet11.e79); end
-  def aq106; @aq106 ||= sheet7.aq106/(sheet12.c13*sheet11.e79); end
-  def as106; @as106 ||= average(a('ai106','aq106')); end
-  def at106; @at106 ||= (sumproduct(a('aj106','aq106'),sheet12.a('d28','k28'))*5.0)+ai106; end
-  def av106; 0.0; end
-  def aw106; 5.0; end
-  def ay106; @ay106 ||= sheet7.ay106/(sheet12.c13*sheet11.e79); end
-  def az106; @az106 ||= sheet7.az106/(sheet12.c13*sheet11.e79); end
-  def ba106; @ba106 ||= sheet7.ba106/(sheet12.c13*sheet11.e79); end
-  def bb106; @bb106 ||= sheet7.bb106/(sheet12.c13*sheet11.e79); end
-  def bc106; @bc106 ||= sheet7.bc106/(sheet12.c13*sheet11.e79); end
-  def bd106; @bd106 ||= sheet7.bd106/(sheet12.c13*sheet11.e79); end
-  def be106; @be106 ||= sheet7.be106/(sheet12.c13*sheet11.e79); end
-  def bf106; @bf106 ||= sheet7.bf106/(sheet12.c13*sheet11.e79); end
-  def bg106; @bg106 ||= sheet7.bg106/(sheet12.c13*sheet11.e79); end
-  def bi106; @bi106 ||= sheet7.bi106/(sheet12.c13*sheet11.e79); end
-  def bj106; @bj106 ||= sheet7.bj106/(sheet12.c13*sheet11.e79); end
-  def bk106; @bk106 ||= sheet7.bk106/(sheet12.c13*sheet11.e79); end
-  def bl106; @bl106 ||= sheet7.bl106/(sheet12.c13*sheet11.e79); end
-  def bm106; @bm106 ||= sheet7.bm106/(sheet12.c13*sheet11.e79); end
-  def bn106; @bn106 ||= sheet7.bn106/(sheet12.c13*sheet11.e79); end
-  def bo106; @bo106 ||= sheet7.bo106/(sheet12.c13*sheet11.e79); end
-  def bp106; @bp106 ||= sheet7.bp106/(sheet12.c13*sheet11.e79); end
-  def bq106; @bq106 ||= sheet7.bq106/(sheet12.c13*sheet11.e79); end
-  def bs106; @bs106 ||= sheet7.bs106/(sheet12.c13*sheet11.e79); end
-  def bt106; @bt106 ||= sheet7.bt106/(sheet12.c13*sheet11.e79); end
-  def bu106; @bu106 ||= sheet7.bu106/(sheet12.c13*sheet11.e79); end
-  def bv106; @bv106 ||= sheet7.bv106/(sheet12.c13*sheet11.e79); end
-  def bw106; @bw106 ||= sheet7.bw106/(sheet12.c13*sheet11.e79); end
-  def bx106; @bx106 ||= sheet7.bx106/(sheet12.c13*sheet11.e79); end
-  def by106; @by106 ||= sheet7.by106/(sheet12.c13*sheet11.e79); end
-  def bz106; @bz106 ||= sheet7.bz106/(sheet12.c13*sheet11.e79); end
-  def ca106; @ca106 ||= sheet7.ca106/(sheet12.c13*sheet11.e79); end
-  def cc106; @cc106 ||= average(a('bs106','ca106')); end
-  def cd106; @cd106 ||= (sumproduct(a('bt106','ca106'),sheet12.a('d28','k28'))*5.0)+bs106; end
-  def cf106; @cf106 ||= sheet7.cf106/(sheet12.c13*sheet11.e79); end
-  def cg106; @cg106 ||= sheet7.cg106/(sheet12.c13*sheet11.e79); end
-  def ch106; @ch106 ||= sheet7.ch106/(sheet12.c13*sheet11.e79); end
-  def ci106; @ci106 ||= sheet7.ci106/(sheet12.c13*sheet11.e79); end
-  def cj106; @cj106 ||= sheet7.cj106/(sheet12.c13*sheet11.e79); end
-  def ck106; @ck106 ||= sheet7.ck106/(sheet12.c13*sheet11.e79); end
-  def cl106; @cl106 ||= sheet7.cl106/(sheet12.c13*sheet11.e79); end
-  def cm106; @cm106 ||= sheet7.cm106/(sheet12.c13*sheet11.e79); end
-  def cn106; @cn106 ||= sheet7.cn106/(sheet12.c13*sheet11.e79); end
-  def cp106; @cp106 ||= average(a('cf106','cn106')); end
-  def cq106; @cq106 ||= (sumproduct(a('cg106','cn106'),sheet12.a('d28','k28'))*5.0)+cf106; end
-  def cr106; @cr106 ||= excel_if(excel_comparison(abs(cd106-cq106-at106),"<",1.0),"ok","err"); end
-  def a107; "Total"; end
-  def b107; "Total"; end
-  def c107; "Total"; end
-  def e107; @e107 ||= sheet7.e107/(sheet12.c13*sheet11.e79); end
-  def f107; @f107 ||= sheet7.f107/(sheet12.c13*sheet11.e79); end
-  def g107; @g107 ||= sheet7.g107/(sheet12.c13*sheet11.e79); end
-  def h107; @h107 ||= sheet7.h107/(sheet12.c13*sheet11.e79); end
-  def i107; @i107 ||= sheet7.i107/(sheet12.c13*sheet11.e79); end
-  def j107; @j107 ||= sheet7.j107/(sheet12.c13*sheet11.e79); end
-  def k107; @k107 ||= sheet7.k107/(sheet12.c13*sheet11.e79); end
-  def l107; @l107 ||= sheet7.l107/(sheet12.c13*sheet11.e79); end
-  def m107; @m107 ||= sheet7.m107/(sheet12.c13*sheet11.e79); end
-  def o107; @o107 ||= sheet7.o107/(sheet12.c13*sheet11.e79); end
-  def p107; @p107 ||= sheet7.p107/(sheet12.c13*sheet11.e79); end
-  def q107; @q107 ||= sheet7.q107/(sheet12.c13*sheet11.e79); end
-  def r107; @r107 ||= sheet7.r107/(sheet12.c13*sheet11.e79); end
-  def s107; @s107 ||= sheet7.s107/(sheet12.c13*sheet11.e79); end
-  def t107; @t107 ||= sheet7.t107/(sheet12.c13*sheet11.e79); end
-  def u107; @u107 ||= sheet7.u107/(sheet12.c13*sheet11.e79); end
-  def v107; @v107 ||= sheet7.v107/(sheet12.c13*sheet11.e79); end
-  def w107; @w107 ||= sheet7.w107/(sheet12.c13*sheet11.e79); end
-  def y107; @y107 ||= sheet7.y107/(sheet12.c13*sheet11.e79); end
-  def z107; @z107 ||= sheet7.z107/(sheet12.c13*sheet11.e79); end
-  def aa107; @aa107 ||= sheet7.aa107/(sheet12.c13*sheet11.e79); end
-  def ab107; @ab107 ||= sheet7.ab107/(sheet12.c13*sheet11.e79); end
-  def ac107; @ac107 ||= sheet7.ac107/(sheet12.c13*sheet11.e79); end
-  def ad107; @ad107 ||= sheet7.ad107/(sheet12.c13*sheet11.e79); end
-  def ae107; @ae107 ||= sheet7.ae107/(sheet12.c13*sheet11.e79); end
-  def af107; @af107 ||= sheet7.af107/(sheet12.c13*sheet11.e79); end
-  def ag107; @ag107 ||= sheet7.ag107/(sheet12.c13*sheet11.e79); end
-  def ai107; @ai107 ||= sheet7.ai107/(sheet12.c13*sheet11.e79); end
-  def aj107; @aj107 ||= sheet7.aj107/(sheet12.c13*sheet11.e79); end
-  def ak107; @ak107 ||= sheet7.ak107/(sheet12.c13*sheet11.e79); end
-  def al107; @al107 ||= sheet7.al107/(sheet12.c13*sheet11.e79); end
-  def am107; @am107 ||= sheet7.am107/(sheet12.c13*sheet11.e79); end
-  def an107; @an107 ||= sheet7.an107/(sheet12.c13*sheet11.e79); end
-  def ao107; @ao107 ||= sheet7.ao107/(sheet12.c13*sheet11.e79); end
-  def ap107; @ap107 ||= sheet7.ap107/(sheet12.c13*sheet11.e79); end
-  def aq107; @aq107 ||= sheet7.aq107/(sheet12.c13*sheet11.e79); end
-  def as107; @as107 ||= average(a('ai107','aq107')); end
-  def at107; @at107 ||= (sumproduct(a('aj107','aq107'),sheet12.a('d28','k28'))*5.0)+ai107; end
-  def ay107; @ay107 ||= sheet7.ay107/(sheet12.c13*sheet11.e79); end
-  def az107; @az107 ||= sheet7.az107/(sheet12.c13*sheet11.e79); end
-  def ba107; @ba107 ||= sheet7.ba107/(sheet12.c13*sheet11.e79); end
-  def bb107; @bb107 ||= sheet7.bb107/(sheet12.c13*sheet11.e79); end
-  def bc107; @bc107 ||= sheet7.bc107/(sheet12.c13*sheet11.e79); end
-  def bd107; @bd107 ||= sheet7.bd107/(sheet12.c13*sheet11.e79); end
-  def be107; @be107 ||= sheet7.be107/(sheet12.c13*sheet11.e79); end
-  def bf107; @bf107 ||= sheet7.bf107/(sheet12.c13*sheet11.e79); end
-  def bg107; @bg107 ||= sheet7.bg107/(sheet12.c13*sheet11.e79); end
-  def bi107; @bi107 ||= sheet7.bi107/(sheet12.c13*sheet11.e79); end
-  def bj107; @bj107 ||= sheet7.bj107/(sheet12.c13*sheet11.e79); end
-  def bk107; @bk107 ||= sheet7.bk107/(sheet12.c13*sheet11.e79); end
-  def bl107; @bl107 ||= sheet7.bl107/(sheet12.c13*sheet11.e79); end
-  def bm107; @bm107 ||= sheet7.bm107/(sheet12.c13*sheet11.e79); end
-  def bn107; @bn107 ||= sheet7.bn107/(sheet12.c13*sheet11.e79); end
-  def bo107; @bo107 ||= sheet7.bo107/(sheet12.c13*sheet11.e79); end
-  def bp107; @bp107 ||= sheet7.bp107/(sheet12.c13*sheet11.e79); end
-  def bq107; @bq107 ||= sheet7.bq107/(sheet12.c13*sheet11.e79); end
-  def bs107; @bs107 ||= sheet7.bs107/(sheet12.c13*sheet11.e79); end
-  def bt107; @bt107 ||= sheet7.bt107/(sheet12.c13*sheet11.e79); end
-  def bu107; @bu107 ||= sheet7.bu107/(sheet12.c13*sheet11.e79); end
-  def bv107; @bv107 ||= sheet7.bv107/(sheet12.c13*sheet11.e79); end
-  def bw107; @bw107 ||= sheet7.bw107/(sheet12.c13*sheet11.e79); end
-  def bx107; @bx107 ||= sheet7.bx107/(sheet12.c13*sheet11.e79); end
-  def by107; @by107 ||= sheet7.by107/(sheet12.c13*sheet11.e79); end
-  def bz107; @bz107 ||= sheet7.bz107/(sheet12.c13*sheet11.e79); end
-  def ca107; @ca107 ||= sheet7.ca107/(sheet12.c13*sheet11.e79); end
-  def cc107; @cc107 ||= average(a('bs107','ca107')); end
-  def cd107; @cd107 ||= (sumproduct(a('bt107','ca107'),sheet12.a('d28','k28'))*5.0)+bs107; end
-  def cf107; @cf107 ||= sheet7.cf107/(sheet12.c13*sheet11.e79); end
-  def cg107; @cg107 ||= sheet7.cg107/(sheet12.c13*sheet11.e79); end
-  def ch107; @ch107 ||= sheet7.ch107/(sheet12.c13*sheet11.e79); end
-  def ci107; @ci107 ||= sheet7.ci107/(sheet12.c13*sheet11.e79); end
-  def cj107; @cj107 ||= sheet7.cj107/(sheet12.c13*sheet11.e79); end
-  def ck107; @ck107 ||= sheet7.ck107/(sheet12.c13*sheet11.e79); end
-  def cl107; @cl107 ||= sheet7.cl107/(sheet12.c13*sheet11.e79); end
-  def cm107; @cm107 ||= sheet7.cm107/(sheet12.c13*sheet11.e79); end
-  def cn107; @cn107 ||= sheet7.cn107/(sheet12.c13*sheet11.e79); end
-  def cp107; @cp107 ||= average(a('cf107','cn107')); end
-  def cq107; @cq107 ||= sum(a('cq57','cq106')); end
-  def cr107; @cr107 ||= excel_if(excel_comparison(abs(cd107-cq107-at107),"<",1.0),"ok","err"); end
-  def cf108; @cf108 ||= excel_if(excel_comparison(round(bs53-cf53-ai53,0.0),"==",0.0),"ok",bs53-cf53-ai53); end
-  def cg108; @cg108 ||= excel_if(excel_comparison(round(bt53-cg53-aj53,0.0),"==",0.0),"ok",bt53-cg53-aj53); end
-  def ch108; @ch108 ||= excel_if(excel_comparison(round(bu53-ch53-ak53,0.0),"==",0.0),"ok",bu53-ch53-ak53); end
-  def ci108; @ci108 ||= excel_if(excel_comparison(round(bv53-ci53-al53,0.0),"==",0.0),"ok",bv53-ci53-al53); end
-  def cj108; @cj108 ||= excel_if(excel_comparison(round(bw53-cj53-am53,0.0),"==",0.0),"ok",bw53-cj53-am53); end
-  def ck108; @ck108 ||= excel_if(excel_comparison(round(bx53-ck53-an53,0.0),"==",0.0),"ok",bx53-ck53-an53); end
-  def cl108; @cl108 ||= excel_if(excel_comparison(round(by53-cl53-ao53,0.0),"==",0.0),"ok",by53-cl53-ao53); end
-  def cm108; @cm108 ||= excel_if(excel_comparison(round(bz53-cm53-ap53,0.0),"==",0.0),"ok",bz53-cm53-ap53); end
-  def cn108; @cn108 ||= excel_if(excel_comparison(round(ca53-cn53-aq53,0.0),"==",0.0),"ok",ca53-cn53-aq53); end
-  def cp108; @cp108 ||= excel_if(excel_comparison(round(cc53-cp53-as53,0.0),"==",0.0),"ok",cc53-cp53-as53); end
-  def cq108; @cq108 ||= excel_if(excel_comparison(round(cd53-cq53-at53,0.0),"==",0.0),"ok",cd53-cq53-at53); end
-  def b110; "£/Capita/yr"; end
-  def e110; "C1.High"; end
-  def f110; "High estimate of capital costs"; end
-  def o110; "C2.High"; end
-  def p110; "High estimate of operating costs"; end
-  def y110; "C3.High"; end
-  def z110; "High estimate of fuel costs"; end
-  def ai110; "High estimate of total cost"; end
-  def as110; "Cashflow capital basis"; end
-  def av110; "Loan"; end
-  def ay110; "Finance cost for capital spent in that period"; end
-  def bi110; "Finance cost for outstanding capital"; end
-  def br110; "Total cost (ammortised capital)"; end
-  def cc110; "Amortised Capital"; end
-  def cf110; "Extra cost due to financing capital, compared with doing it out of cash"; end
-  def cp110; "Extra cost due to financing capital, compared with doing it out of cash"; end
-  def a111; "Code"; end
-  def b111; "Description"; end
-  def c111; "Category"; end
-  def e111; "2010"; end
-  def f111; "2015"; end
-  def g111; "2020"; end
-  def h111; "2025"; end
-  def i111; "2030"; end
-  def j111; "2035"; end
-  def k111; "2040"; end
-  def l111; "2045"; end
-  def m111; "2050"; end
-  def o111; "2010"; end
-  def p111; "2015"; end
-  def q111; "2020"; end
-  def r111; "2025"; end
-  def s111; "2030"; end
-  def t111; "2035"; end
-  def u111; "2040"; end
-  def v111; "2045"; end
-  def w111; "2050"; end
-  def y111; "2010"; end
-  def z111; "2015"; end
-  def aa111; "2020"; end
-  def ab111; "2025"; end
-  def ac111; "2030"; end
-  def ad111; "2035"; end
-  def ae111; "2040"; end
-  def af111; "2045"; end
-  def ag111; "2050"; end
-  def ai111; "2010"; end
-  def aj111; "2015"; end
-  def ak111; "2020"; end
-  def al111; "2025"; end
-  def am111; "2030"; end
-  def an111; "2035"; end
-  def ao111; "2040"; end
-  def ap111; "2045"; end
-  def aq111; "2050"; end
-  def as111; "Mean"; end
-  def at111; "NPV"; end
-  def av111; "Rate"; end
-  def aw111; "Years"; end
-  def ay111; 2010.0; end
-  def az111; 2015.0; end
-  def ba111; 2020.0; end
-  def bb111; 2025.0; end
-  def bc111; 2030.0; end
-  def bd111; 2035.0; end
-  def be111; 2040.0; end
-  def bf111; 2045.0; end
-  def bg111; 2050.0; end
-  def bi111; 2010.0; end
-  def bj111; 2015.0; end
-  def bk111; 2020.0; end
-  def bl111; 2025.0; end
-  def bm111; 2030.0; end
-  def bn111; 2035.0; end
-  def bo111; 2040.0; end
-  def bp111; 2045.0; end
-  def bq111; 2050.0; end
-  def bs111; "2010"; end
-  def bt111; "2015"; end
-  def bu111; "2020"; end
-  def bv111; "2025"; end
-  def bw111; "2030"; end
-  def bx111; "2035"; end
-  def by111; "2040"; end
-  def bz111; "2045"; end
-  def ca111; "2050"; end
-  def cc111; "Mean"; end
-  def cd111; "NPV"; end
-  def cf111; "2010"; end
-  def cg111; "2015"; end
-  def ch111; "2020"; end
-  def ci111; "2025"; end
-  def cj111; "2030"; end
-  def ck111; "2035"; end
-  def cl111; "2040"; end
-  def cm111; "2045"; end
-  def cn111; "2050"; end
-  def cp111; "Mean"; end
-  def cq111; "NPV"; end
-  def a112; "I.a"; end
-  def b112; "Conventional thermal plant"; end
-  def c112; "Power"; end
-  def e112; @e112 ||= sheet7.e112/(sheet12.c13*sheet11.e79); end
-  def f112; @f112 ||= sheet7.f112/(sheet12.c13*sheet11.e79); end
-  def g112; @g112 ||= sheet7.g112/(sheet12.c13*sheet11.e79); end
-  def h112; @h112 ||= sheet7.h112/(sheet12.c13*sheet11.e79); end
-  def i112; @i112 ||= sheet7.i112/(sheet12.c13*sheet11.e79); end
-  def j112; @j112 ||= sheet7.j112/(sheet12.c13*sheet11.e79); end
-  def k112; @k112 ||= sheet7.k112/(sheet12.c13*sheet11.e79); end
-  def l112; @l112 ||= sheet7.l112/(sheet12.c13*sheet11.e79); end
-  def m112; @m112 ||= sheet7.m112/(sheet12.c13*sheet11.e79); end
-  def o112; @o112 ||= sheet7.o112/(sheet12.c13*sheet11.e79); end
-  def p112; @p112 ||= sheet7.p112/(sheet12.c13*sheet11.e79); end
-  def q112; @q112 ||= sheet7.q112/(sheet12.c13*sheet11.e79); end
-  def r112; @r112 ||= sheet7.r112/(sheet12.c13*sheet11.e79); end
-  def s112; @s112 ||= sheet7.s112/(sheet12.c13*sheet11.e79); end
-  def t112; @t112 ||= sheet7.t112/(sheet12.c13*sheet11.e79); end
-  def u112; @u112 ||= sheet7.u112/(sheet12.c13*sheet11.e79); end
-  def v112; @v112 ||= sheet7.v112/(sheet12.c13*sheet11.e79); end
-  def w112; @w112 ||= sheet7.w112/(sheet12.c13*sheet11.e79); end
-  def y112; @y112 ||= sheet7.y112/(sheet12.c13*sheet11.e79); end
-  def z112; @z112 ||= sheet7.z112/(sheet12.c13*sheet11.e79); end
-  def aa112; @aa112 ||= sheet7.aa112/(sheet12.c13*sheet11.e79); end
-  def ab112; @ab112 ||= sheet7.ab112/(sheet12.c13*sheet11.e79); end
-  def ac112; @ac112 ||= sheet7.ac112/(sheet12.c13*sheet11.e79); end
-  def ad112; @ad112 ||= sheet7.ad112/(sheet12.c13*sheet11.e79); end
-  def ae112; @ae112 ||= sheet7.ae112/(sheet12.c13*sheet11.e79); end
-  def af112; @af112 ||= sheet7.af112/(sheet12.c13*sheet11.e79); end
-  def ag112; @ag112 ||= sheet7.ag112/(sheet12.c13*sheet11.e79); end
-  def ai112; @ai112 ||= sheet7.ai112/(sheet12.c13*sheet11.e79); end
-  def aj112; @aj112 ||= sheet7.aj112/(sheet12.c13*sheet11.e79); end
-  def ak112; @ak112 ||= sheet7.ak112/(sheet12.c13*sheet11.e79); end
-  def al112; @al112 ||= sheet7.al112/(sheet12.c13*sheet11.e79); end
-  def am112; @am112 ||= sheet7.am112/(sheet12.c13*sheet11.e79); end
-  def an112; @an112 ||= sheet7.an112/(sheet12.c13*sheet11.e79); end
-  def ao112; @ao112 ||= sheet7.ao112/(sheet12.c13*sheet11.e79); end
-  def ap112; @ap112 ||= sheet7.ap112/(sheet12.c13*sheet11.e79); end
-  def aq112; @aq112 ||= sheet7.aq112/(sheet12.c13*sheet11.e79); end
-  def as112; @as112 ||= average(a('ai112','aq112')); end
-  def at112; @at112 ||= (sumproduct(a('aj112','aq112'),sheet12.a('d28','k28'))*5.0)+ai112; end
-  def av112; 0.0; end
-  def aw112; 5.0; end
-  def ay112; @ay112 ||= sheet7.ay112/(sheet12.c13*sheet11.e79); end
-  def az112; @az112 ||= sheet7.az112/(sheet12.c13*sheet11.e79); end
-  def ba112; @ba112 ||= sheet7.ba112/(sheet12.c13*sheet11.e79); end
-  def bb112; @bb112 ||= sheet7.bb112/(sheet12.c13*sheet11.e79); end
-  def bc112; @bc112 ||= sheet7.bc112/(sheet12.c13*sheet11.e79); end
-  def bd112; @bd112 ||= sheet7.bd112/(sheet12.c13*sheet11.e79); end
-  def be112; @be112 ||= sheet7.be112/(sheet12.c13*sheet11.e79); end
-  def bf112; @bf112 ||= sheet7.bf112/(sheet12.c13*sheet11.e79); end
-  def bg112; @bg112 ||= sheet7.bg112/(sheet12.c13*sheet11.e79); end
-  def bi112; @bi112 ||= sheet7.bi112/(sheet12.c13*sheet11.e79); end
-  def bj112; @bj112 ||= sheet7.bj112/(sheet12.c13*sheet11.e79); end
-  def bk112; @bk112 ||= sheet7.bk112/(sheet12.c13*sheet11.e79); end
-  def bl112; @bl112 ||= sheet7.bl112/(sheet12.c13*sheet11.e79); end
-  def bm112; @bm112 ||= sheet7.bm112/(sheet12.c13*sheet11.e79); end
-  def bn112; @bn112 ||= sheet7.bn112/(sheet12.c13*sheet11.e79); end
-  def bo112; @bo112 ||= sheet7.bo112/(sheet12.c13*sheet11.e79); end
-  def bp112; @bp112 ||= sheet7.bp112/(sheet12.c13*sheet11.e79); end
-  def bq112; @bq112 ||= sheet7.bq112/(sheet12.c13*sheet11.e79); end
-  def bs112; @bs112 ||= sheet7.bs112/(sheet12.c13*sheet11.e79); end
-  def bt112; @bt112 ||= sheet7.bt112/(sheet12.c13*sheet11.e79); end
-  def bu112; @bu112 ||= sheet7.bu112/(sheet12.c13*sheet11.e79); end
-  def bv112; @bv112 ||= sheet7.bv112/(sheet12.c13*sheet11.e79); end
-  def bw112; @bw112 ||= sheet7.bw112/(sheet12.c13*sheet11.e79); end
-  def bx112; @bx112 ||= sheet7.bx112/(sheet12.c13*sheet11.e79); end
-  def by112; @by112 ||= sheet7.by112/(sheet12.c13*sheet11.e79); end
-  def bz112; @bz112 ||= sheet7.bz112/(sheet12.c13*sheet11.e79); end
-  def ca112; @ca112 ||= sheet7.ca112/(sheet12.c13*sheet11.e79); end
-  def cc112; @cc112 ||= average(a('bs112','ca112')); end
-  def cd112; @cd112 ||= (sumproduct(a('bt112','ca112'),sheet12.a('d28','k28'))*5.0)+bs112; end
-  def cf112; @cf112 ||= sheet7.cf112/(sheet12.c13*sheet11.e79); end
-  def cg112; @cg112 ||= sheet7.cg112/(sheet12.c13*sheet11.e79); end
-  def ch112; @ch112 ||= sheet7.ch112/(sheet12.c13*sheet11.e79); end
-  def ci112; @ci112 ||= sheet7.ci112/(sheet12.c13*sheet11.e79); end
-  def cj112; @cj112 ||= sheet7.cj112/(sheet12.c13*sheet11.e79); end
-  def ck112; @ck112 ||= sheet7.ck112/(sheet12.c13*sheet11.e79); end
-  def cl112; @cl112 ||= sheet7.cl112/(sheet12.c13*sheet11.e79); end
-  def cm112; @cm112 ||= sheet7.cm112/(sheet12.c13*sheet11.e79); end
-  def cn112; @cn112 ||= sheet7.cn112/(sheet12.c13*sheet11.e79); end
-  def cp112; @cp112 ||= average(a('cf112','cn112')); end
-  def cq112; @cq112 ||= (sumproduct(a('cg112','cn112'),sheet12.a('d28','k28'))*5.0)+cf112; end
-  def cr112; @cr112 ||= excel_if(excel_comparison(abs(cd112-cq112-at112),"<",1.0),"ok","err"); end
-  def a113; "I.b"; end
-  def b113; "Combustion + CCS"; end
-  def c113; "Power"; end
-  def e113; @e113 ||= sheet7.e113/(sheet12.c13*sheet11.e79); end
-  def f113; @f113 ||= sheet7.f113/(sheet12.c13*sheet11.e79); end
-  def g113; @g113 ||= sheet7.g113/(sheet12.c13*sheet11.e79); end
-  def h113; @h113 ||= sheet7.h113/(sheet12.c13*sheet11.e79); end
-  def i113; @i113 ||= sheet7.i113/(sheet12.c13*sheet11.e79); end
-  def j113; @j113 ||= sheet7.j113/(sheet12.c13*sheet11.e79); end
-  def k113; @k113 ||= sheet7.k113/(sheet12.c13*sheet11.e79); end
-  def l113; @l113 ||= sheet7.l113/(sheet12.c13*sheet11.e79); end
-  def m113; @m113 ||= sheet7.m113/(sheet12.c13*sheet11.e79); end
-  def o113; @o113 ||= sheet7.o113/(sheet12.c13*sheet11.e79); end
-  def p113; @p113 ||= sheet7.p113/(sheet12.c13*sheet11.e79); end
-  def q113; @q113 ||= sheet7.q113/(sheet12.c13*sheet11.e79); end
-  def r113; @r113 ||= sheet7.r113/(sheet12.c13*sheet11.e79); end
-  def s113; @s113 ||= sheet7.s113/(sheet12.c13*sheet11.e79); end
-  def t113; @t113 ||= sheet7.t113/(sheet12.c13*sheet11.e79); end
-  def u113; @u113 ||= sheet7.u113/(sheet12.c13*sheet11.e79); end
-  def v113; @v113 ||= sheet7.v113/(sheet12.c13*sheet11.e79); end
-  def w113; @w113 ||= sheet7.w113/(sheet12.c13*sheet11.e79); end
-  def y113; @y113 ||= sheet7.y113/(sheet12.c13*sheet11.e79); end
-  def z113; @z113 ||= sheet7.z113/(sheet12.c13*sheet11.e79); end
-  def aa113; @aa113 ||= sheet7.aa113/(sheet12.c13*sheet11.e79); end
-  def ab113; @ab113 ||= sheet7.ab113/(sheet12.c13*sheet11.e79); end
-  def ac113; @ac113 ||= sheet7.ac113/(sheet12.c13*sheet11.e79); end
-  def ad113; @ad113 ||= sheet7.ad113/(sheet12.c13*sheet11.e79); end
-  def ae113; @ae113 ||= sheet7.ae113/(sheet12.c13*sheet11.e79); end
-  def af113; @af113 ||= sheet7.af113/(sheet12.c13*sheet11.e79); end
-  def ag113; @ag113 ||= sheet7.ag113/(sheet12.c13*sheet11.e79); end
-  def ai113; @ai113 ||= sheet7.ai113/(sheet12.c13*sheet11.e79); end
-  def aj113; @aj113 ||= sheet7.aj113/(sheet12.c13*sheet11.e79); end
-  def ak113; @ak113 ||= sheet7.ak113/(sheet12.c13*sheet11.e79); end
-  def al113; @al113 ||= sheet7.al113/(sheet12.c13*sheet11.e79); end
-  def am113; @am113 ||= sheet7.am113/(sheet12.c13*sheet11.e79); end
-  def an113; @an113 ||= sheet7.an113/(sheet12.c13*sheet11.e79); end
-  def ao113; @ao113 ||= sheet7.ao113/(sheet12.c13*sheet11.e79); end
-  def ap113; @ap113 ||= sheet7.ap113/(sheet12.c13*sheet11.e79); end
-  def aq113; @aq113 ||= sheet7.aq113/(sheet12.c13*sheet11.e79); end
-  def as113; @as113 ||= average(a('ai113','aq113')); end
-  def at113; @at113 ||= (sumproduct(a('aj113','aq113'),sheet12.a('d28','k28'))*5.0)+ai113; end
-  def av113; 0.0; end
-  def aw113; 5.0; end
-  def ay113; @ay113 ||= sheet7.ay113/(sheet12.c13*sheet11.e79); end
-  def az113; @az113 ||= sheet7.az113/(sheet12.c13*sheet11.e79); end
-  def ba113; @ba113 ||= sheet7.ba113/(sheet12.c13*sheet11.e79); end
-  def bb113; @bb113 ||= sheet7.bb113/(sheet12.c13*sheet11.e79); end
-  def bc113; @bc113 ||= sheet7.bc113/(sheet12.c13*sheet11.e79); end
-  def bd113; @bd113 ||= sheet7.bd113/(sheet12.c13*sheet11.e79); end
-  def be113; @be113 ||= sheet7.be113/(sheet12.c13*sheet11.e79); end
-  def bf113; @bf113 ||= sheet7.bf113/(sheet12.c13*sheet11.e79); end
-  def bg113; @bg113 ||= sheet7.bg113/(sheet12.c13*sheet11.e79); end
-  def bi113; @bi113 ||= sheet7.bi113/(sheet12.c13*sheet11.e79); end
-  def bj113; @bj113 ||= sheet7.bj113/(sheet12.c13*sheet11.e79); end
-  def bk113; @bk113 ||= sheet7.bk113/(sheet12.c13*sheet11.e79); end
-  def bl113; @bl113 ||= sheet7.bl113/(sheet12.c13*sheet11.e79); end
-  def bm113; @bm113 ||= sheet7.bm113/(sheet12.c13*sheet11.e79); end
-  def bn113; @bn113 ||= sheet7.bn113/(sheet12.c13*sheet11.e79); end
-  def bo113; @bo113 ||= sheet7.bo113/(sheet12.c13*sheet11.e79); end
-  def bp113; @bp113 ||= sheet7.bp113/(sheet12.c13*sheet11.e79); end
-  def bq113; @bq113 ||= sheet7.bq113/(sheet12.c13*sheet11.e79); end
-  def bs113; @bs113 ||= sheet7.bs113/(sheet12.c13*sheet11.e79); end
-  def bt113; @bt113 ||= sheet7.bt113/(sheet12.c13*sheet11.e79); end
-  def bu113; @bu113 ||= sheet7.bu113/(sheet12.c13*sheet11.e79); end
-  def bv113; @bv113 ||= sheet7.bv113/(sheet12.c13*sheet11.e79); end
-  def bw113; @bw113 ||= sheet7.bw113/(sheet12.c13*sheet11.e79); end
-  def bx113; @bx113 ||= sheet7.bx113/(sheet12.c13*sheet11.e79); end
-  def by113; @by113 ||= sheet7.by113/(sheet12.c13*sheet11.e79); end
-  def bz113; @bz113 ||= sheet7.bz113/(sheet12.c13*sheet11.e79); end
-  def ca113; @ca113 ||= sheet7.ca113/(sheet12.c13*sheet11.e79); end
-  def cc113; @cc113 ||= average(a('bs113','ca113')); end
-  def cd113; @cd113 ||= (sumproduct(a('bt113','ca113'),sheet12.a('d28','k28'))*5.0)+bs113; end
-  def cf113; @cf113 ||= sheet7.cf113/(sheet12.c13*sheet11.e79); end
-  def cg113; @cg113 ||= sheet7.cg113/(sheet12.c13*sheet11.e79); end
-  def ch113; @ch113 ||= sheet7.ch113/(sheet12.c13*sheet11.e79); end
-  def ci113; @ci113 ||= sheet7.ci113/(sheet12.c13*sheet11.e79); end
-  def cj113; @cj113 ||= sheet7.cj113/(sheet12.c13*sheet11.e79); end
-  def ck113; @ck113 ||= sheet7.ck113/(sheet12.c13*sheet11.e79); end
-  def cl113; @cl113 ||= sheet7.cl113/(sheet12.c13*sheet11.e79); end
-  def cm113; @cm113 ||= sheet7.cm113/(sheet12.c13*sheet11.e79); end
-  def cn113; @cn113 ||= sheet7.cn113/(sheet12.c13*sheet11.e79); end
-  def cp113; @cp113 ||= average(a('cf113','cn113')); end
-  def cq113; @cq113 ||= (sumproduct(a('cg113','cn113'),sheet12.a('d28','k28'))*5.0)+cf113; end
-  def cr113; @cr113 ||= excel_if(excel_comparison(abs(cd113-cq113-at113),"<",1.0),"ok","err"); end
-  def a114; "II.a"; end
-  def b114; "Nuclear power"; end
-  def c114; "Power"; end
-  def e114; @e114 ||= sheet7.e114/(sheet12.c13*sheet11.e79); end
-  def f114; @f114 ||= sheet7.f114/(sheet12.c13*sheet11.e79); end
-  def g114; @g114 ||= sheet7.g114/(sheet12.c13*sheet11.e79); end
-  def h114; @h114 ||= sheet7.h114/(sheet12.c13*sheet11.e79); end
-  def i114; @i114 ||= sheet7.i114/(sheet12.c13*sheet11.e79); end
-  def j114; @j114 ||= sheet7.j114/(sheet12.c13*sheet11.e79); end
-  def k114; @k114 ||= sheet7.k114/(sheet12.c13*sheet11.e79); end
-  def l114; @l114 ||= sheet7.l114/(sheet12.c13*sheet11.e79); end
-  def m114; @m114 ||= sheet7.m114/(sheet12.c13*sheet11.e79); end
-  def o114; @o114 ||= sheet7.o114/(sheet12.c13*sheet11.e79); end
-  def p114; @p114 ||= sheet7.p114/(sheet12.c13*sheet11.e79); end
-  def q114; @q114 ||= sheet7.q114/(sheet12.c13*sheet11.e79); end
-  def r114; @r114 ||= sheet7.r114/(sheet12.c13*sheet11.e79); end
-  def s114; @s114 ||= sheet7.s114/(sheet12.c13*sheet11.e79); end
-  def t114; @t114 ||= sheet7.t114/(sheet12.c13*sheet11.e79); end
-  def u114; @u114 ||= sheet7.u114/(sheet12.c13*sheet11.e79); end
-  def v114; @v114 ||= sheet7.v114/(sheet12.c13*sheet11.e79); end
-  def w114; @w114 ||= sheet7.w114/(sheet12.c13*sheet11.e79); end
-  def y114; @y114 ||= sheet7.y114/(sheet12.c13*sheet11.e79); end
-  def z114; @z114 ||= sheet7.z114/(sheet12.c13*sheet11.e79); end
-  def aa114; @aa114 ||= sheet7.aa114/(sheet12.c13*sheet11.e79); end
-  def ab114; @ab114 ||= sheet7.ab114/(sheet12.c13*sheet11.e79); end
-  def ac114; @ac114 ||= sheet7.ac114/(sheet12.c13*sheet11.e79); end
-  def ad114; @ad114 ||= sheet7.ad114/(sheet12.c13*sheet11.e79); end
-  def ae114; @ae114 ||= sheet7.ae114/(sheet12.c13*sheet11.e79); end
-  def af114; @af114 ||= sheet7.af114/(sheet12.c13*sheet11.e79); end
-  def ag114; @ag114 ||= sheet7.ag114/(sheet12.c13*sheet11.e79); end
-  def ai114; @ai114 ||= sheet7.ai114/(sheet12.c13*sheet11.e79); end
-  def aj114; @aj114 ||= sheet7.aj114/(sheet12.c13*sheet11.e79); end
-  def ak114; @ak114 ||= sheet7.ak114/(sheet12.c13*sheet11.e79); end
-  def al114; @al114 ||= sheet7.al114/(sheet12.c13*sheet11.e79); end
-  def am114; @am114 ||= sheet7.am114/(sheet12.c13*sheet11.e79); end
-  def an114; @an114 ||= sheet7.an114/(sheet12.c13*sheet11.e79); end
-  def ao114; @ao114 ||= sheet7.ao114/(sheet12.c13*sheet11.e79); end
-  def ap114; @ap114 ||= sheet7.ap114/(sheet12.c13*sheet11.e79); end
-  def aq114; @aq114 ||= sheet7.aq114/(sheet12.c13*sheet11.e79); end
-  def as114; @as114 ||= average(a('ai114','aq114')); end
-  def at114; @at114 ||= (sumproduct(a('aj114','aq114'),sheet12.a('d28','k28'))*5.0)+ai114; end
-  def av114; 0.0; end
-  def aw114; 5.0; end
-  def ay114; @ay114 ||= sheet7.ay114/(sheet12.c13*sheet11.e79); end
-  def az114; @az114 ||= sheet7.az114/(sheet12.c13*sheet11.e79); end
-  def ba114; @ba114 ||= sheet7.ba114/(sheet12.c13*sheet11.e79); end
-  def bb114; @bb114 ||= sheet7.bb114/(sheet12.c13*sheet11.e79); end
-  def bc114; @bc114 ||= sheet7.bc114/(sheet12.c13*sheet11.e79); end
-  def bd114; @bd114 ||= sheet7.bd114/(sheet12.c13*sheet11.e79); end
-  def be114; @be114 ||= sheet7.be114/(sheet12.c13*sheet11.e79); end
-  def bf114; @bf114 ||= sheet7.bf114/(sheet12.c13*sheet11.e79); end
-  def bg114; @bg114 ||= sheet7.bg114/(sheet12.c13*sheet11.e79); end
-  def bi114; @bi114 ||= sheet7.bi114/(sheet12.c13*sheet11.e79); end
-  def bj114; @bj114 ||= sheet7.bj114/(sheet12.c13*sheet11.e79); end
-  def bk114; @bk114 ||= sheet7.bk114/(sheet12.c13*sheet11.e79); end
-  def bl114; @bl114 ||= sheet7.bl114/(sheet12.c13*sheet11.e79); end
-  def bm114; @bm114 ||= sheet7.bm114/(sheet12.c13*sheet11.e79); end
-  def bn114; @bn114 ||= sheet7.bn114/(sheet12.c13*sheet11.e79); end
-  def bo114; @bo114 ||= sheet7.bo114/(sheet12.c13*sheet11.e79); end
-  def bp114; @bp114 ||= sheet7.bp114/(sheet12.c13*sheet11.e79); end
-  def bq114; @bq114 ||= sheet7.bq114/(sheet12.c13*sheet11.e79); end
-  def bs114; @bs114 ||= sheet7.bs114/(sheet12.c13*sheet11.e79); end
-  def bt114; @bt114 ||= sheet7.bt114/(sheet12.c13*sheet11.e79); end
-  def bu114; @bu114 ||= sheet7.bu114/(sheet12.c13*sheet11.e79); end
-  def bv114; @bv114 ||= sheet7.bv114/(sheet12.c13*sheet11.e79); end
-  def bw114; @bw114 ||= sheet7.bw114/(sheet12.c13*sheet11.e79); end
-  def bx114; @bx114 ||= sheet7.bx114/(sheet12.c13*sheet11.e79); end
-  def by114; @by114 ||= sheet7.by114/(sheet12.c13*sheet11.e79); end
-  def bz114; @bz114 ||= sheet7.bz114/(sheet12.c13*sheet11.e79); end
-  def ca114; @ca114 ||= sheet7.ca114/(sheet12.c13*sheet11.e79); end
-  def cc114; @cc114 ||= average(a('bs114','ca114')); end
-  def cd114; @cd114 ||= (sumproduct(a('bt114','ca114'),sheet12.a('d28','k28'))*5.0)+bs114; end
-  def cf114; @cf114 ||= sheet7.cf114/(sheet12.c13*sheet11.e79); end
-  def cg114; @cg114 ||= sheet7.cg114/(sheet12.c13*sheet11.e79); end
-  def ch114; @ch114 ||= sheet7.ch114/(sheet12.c13*sheet11.e79); end
-  def ci114; @ci114 ||= sheet7.ci114/(sheet12.c13*sheet11.e79); end
-  def cj114; @cj114 ||= sheet7.cj114/(sheet12.c13*sheet11.e79); end
-  def ck114; @ck114 ||= sheet7.ck114/(sheet12.c13*sheet11.e79); end
-  def cl114; @cl114 ||= sheet7.cl114/(sheet12.c13*sheet11.e79); end
-  def cm114; @cm114 ||= sheet7.cm114/(sheet12.c13*sheet11.e79); end
-  def cn114; @cn114 ||= sheet7.cn114/(sheet12.c13*sheet11.e79); end
-  def cp114; @cp114 ||= average(a('cf114','cn114')); end
-  def cq114; @cq114 ||= (sumproduct(a('cg114','cn114'),sheet12.a('d28','k28'))*5.0)+cf114; end
-  def cr114; @cr114 ||= excel_if(excel_comparison(abs(cd114-cq114-at114),"<",1.0),"ok","err"); end
-  def a115; "III.a.1"; end
-  def b115; "Onshore wind"; end
-  def c115; "Power"; end
-  def e115; @e115 ||= sheet7.e115/(sheet12.c13*sheet11.e79); end
-  def f115; @f115 ||= sheet7.f115/(sheet12.c13*sheet11.e79); end
-  def g115; @g115 ||= sheet7.g115/(sheet12.c13*sheet11.e79); end
-  def h115; @h115 ||= sheet7.h115/(sheet12.c13*sheet11.e79); end
-  def i115; @i115 ||= sheet7.i115/(sheet12.c13*sheet11.e79); end
-  def j115; @j115 ||= sheet7.j115/(sheet12.c13*sheet11.e79); end
-  def k115; @k115 ||= sheet7.k115/(sheet12.c13*sheet11.e79); end
-  def l115; @l115 ||= sheet7.l115/(sheet12.c13*sheet11.e79); end
-  def m115; @m115 ||= sheet7.m115/(sheet12.c13*sheet11.e79); end
-  def o115; @o115 ||= sheet7.o115/(sheet12.c13*sheet11.e79); end
-  def p115; @p115 ||= sheet7.p115/(sheet12.c13*sheet11.e79); end
-  def q115; @q115 ||= sheet7.q115/(sheet12.c13*sheet11.e79); end
-  def r115; @r115 ||= sheet7.r115/(sheet12.c13*sheet11.e79); end
-  def s115; @s115 ||= sheet7.s115/(sheet12.c13*sheet11.e79); end
-  def t115; @t115 ||= sheet7.t115/(sheet12.c13*sheet11.e79); end
-  def u115; @u115 ||= sheet7.u115/(sheet12.c13*sheet11.e79); end
-  def v115; @v115 ||= sheet7.v115/(sheet12.c13*sheet11.e79); end
-  def w115; @w115 ||= sheet7.w115/(sheet12.c13*sheet11.e79); end
-  def y115; @y115 ||= sheet7.y115/(sheet12.c13*sheet11.e79); end
-  def z115; @z115 ||= sheet7.z115/(sheet12.c13*sheet11.e79); end
-  def aa115; @aa115 ||= sheet7.aa115/(sheet12.c13*sheet11.e79); end
-  def ab115; @ab115 ||= sheet7.ab115/(sheet12.c13*sheet11.e79); end
-  def ac115; @ac115 ||= sheet7.ac115/(sheet12.c13*sheet11.e79); end
-  def ad115; @ad115 ||= sheet7.ad115/(sheet12.c13*sheet11.e79); end
-  def ae115; @ae115 ||= sheet7.ae115/(sheet12.c13*sheet11.e79); end
-  def af115; @af115 ||= sheet7.af115/(sheet12.c13*sheet11.e79); end
-  def ag115; @ag115 ||= sheet7.ag115/(sheet12.c13*sheet11.e79); end
-  def ai115; @ai115 ||= sheet7.ai115/(sheet12.c13*sheet11.e79); end
-  def aj115; @aj115 ||= sheet7.aj115/(sheet12.c13*sheet11.e79); end
-  def ak115; @ak115 ||= sheet7.ak115/(sheet12.c13*sheet11.e79); end
-  def al115; @al115 ||= sheet7.al115/(sheet12.c13*sheet11.e79); end
-  def am115; @am115 ||= sheet7.am115/(sheet12.c13*sheet11.e79); end
-  def an115; @an115 ||= sheet7.an115/(sheet12.c13*sheet11.e79); end
-  def ao115; @ao115 ||= sheet7.ao115/(sheet12.c13*sheet11.e79); end
-  def ap115; @ap115 ||= sheet7.ap115/(sheet12.c13*sheet11.e79); end
-  def aq115; @aq115 ||= sheet7.aq115/(sheet12.c13*sheet11.e79); end
-  def as115; @as115 ||= average(a('ai115','aq115')); end
-  def at115; @at115 ||= (sumproduct(a('aj115','aq115'),sheet12.a('d28','k28'))*5.0)+ai115; end
-  def av115; 0.0; end
-  def aw115; 5.0; end
-  def ay115; @ay115 ||= sheet7.ay115/(sheet12.c13*sheet11.e79); end
-  def az115; @az115 ||= sheet7.az115/(sheet12.c13*sheet11.e79); end
-  def ba115; @ba115 ||= sheet7.ba115/(sheet12.c13*sheet11.e79); end
-  def bb115; @bb115 ||= sheet7.bb115/(sheet12.c13*sheet11.e79); end
-  def bc115; @bc115 ||= sheet7.bc115/(sheet12.c13*sheet11.e79); end
-  def bd115; @bd115 ||= sheet7.bd115/(sheet12.c13*sheet11.e79); end
-  def be115; @be115 ||= sheet7.be115/(sheet12.c13*sheet11.e79); end
-  def bf115; @bf115 ||= sheet7.bf115/(sheet12.c13*sheet11.e79); end
-  def bg115; @bg115 ||= sheet7.bg115/(sheet12.c13*sheet11.e79); end
-  def bi115; @bi115 ||= sheet7.bi115/(sheet12.c13*sheet11.e79); end
-  def bj115; @bj115 ||= sheet7.bj115/(sheet12.c13*sheet11.e79); end
-  def bk115; @bk115 ||= sheet7.bk115/(sheet12.c13*sheet11.e79); end
-  def bl115; @bl115 ||= sheet7.bl115/(sheet12.c13*sheet11.e79); end
-  def bm115; @bm115 ||= sheet7.bm115/(sheet12.c13*sheet11.e79); end
-  def bn115; @bn115 ||= sheet7.bn115/(sheet12.c13*sheet11.e79); end
-  def bo115; @bo115 ||= sheet7.bo115/(sheet12.c13*sheet11.e79); end
-  def bp115; @bp115 ||= sheet7.bp115/(sheet12.c13*sheet11.e79); end
-  def bq115; @bq115 ||= sheet7.bq115/(sheet12.c13*sheet11.e79); end
-  def bs115; @bs115 ||= sheet7.bs115/(sheet12.c13*sheet11.e79); end
-  def bt115; @bt115 ||= sheet7.bt115/(sheet12.c13*sheet11.e79); end
-  def bu115; @bu115 ||= sheet7.bu115/(sheet12.c13*sheet11.e79); end
-  def bv115; @bv115 ||= sheet7.bv115/(sheet12.c13*sheet11.e79); end
-  def bw115; @bw115 ||= sheet7.bw115/(sheet12.c13*sheet11.e79); end
-  def bx115; @bx115 ||= sheet7.bx115/(sheet12.c13*sheet11.e79); end
-  def by115; @by115 ||= sheet7.by115/(sheet12.c13*sheet11.e79); end
-  def bz115; @bz115 ||= sheet7.bz115/(sheet12.c13*sheet11.e79); end
-  def ca115; @ca115 ||= sheet7.ca115/(sheet12.c13*sheet11.e79); end
-  def cc115; @cc115 ||= average(a('bs115','ca115')); end
-  def cd115; @cd115 ||= (sumproduct(a('bt115','ca115'),sheet12.a('d28','k28'))*5.0)+bs115; end
-  def cf115; @cf115 ||= sheet7.cf115/(sheet12.c13*sheet11.e79); end
-  def cg115; @cg115 ||= sheet7.cg115/(sheet12.c13*sheet11.e79); end
-  def ch115; @ch115 ||= sheet7.ch115/(sheet12.c13*sheet11.e79); end
-  def ci115; @ci115 ||= sheet7.ci115/(sheet12.c13*sheet11.e79); end
-  def cj115; @cj115 ||= sheet7.cj115/(sheet12.c13*sheet11.e79); end
-  def ck115; @ck115 ||= sheet7.ck115/(sheet12.c13*sheet11.e79); end
-  def cl115; @cl115 ||= sheet7.cl115/(sheet12.c13*sheet11.e79); end
-  def cm115; @cm115 ||= sheet7.cm115/(sheet12.c13*sheet11.e79); end
-  def cn115; @cn115 ||= sheet7.cn115/(sheet12.c13*sheet11.e79); end
-  def cp115; @cp115 ||= average(a('cf115','cn115')); end
-  def cq115; @cq115 ||= (sumproduct(a('cg115','cn115'),sheet12.a('d28','k28'))*5.0)+cf115; end
-  def cr115; @cr115 ||= excel_if(excel_comparison(abs(cd115-cq115-at115),"<",1.0),"ok","err"); end
-  def a116; "III.a.2"; end
-  def b116; "Offshore wind"; end
-  def c116; "Power"; end
-  def e116; @e116 ||= sheet7.e116/(sheet12.c13*sheet11.e79); end
-  def f116; @f116 ||= sheet7.f116/(sheet12.c13*sheet11.e79); end
-  def g116; @g116 ||= sheet7.g116/(sheet12.c13*sheet11.e79); end
-  def h116; @h116 ||= sheet7.h116/(sheet12.c13*sheet11.e79); end
-  def i116; @i116 ||= sheet7.i116/(sheet12.c13*sheet11.e79); end
-  def j116; @j116 ||= sheet7.j116/(sheet12.c13*sheet11.e79); end
-  def k116; @k116 ||= sheet7.k116/(sheet12.c13*sheet11.e79); end
-  def l116; @l116 ||= sheet7.l116/(sheet12.c13*sheet11.e79); end
-  def m116; @m116 ||= sheet7.m116/(sheet12.c13*sheet11.e79); end
-  def o116; @o116 ||= sheet7.o116/(sheet12.c13*sheet11.e79); end
-  def p116; @p116 ||= sheet7.p116/(sheet12.c13*sheet11.e79); end
-  def q116; @q116 ||= sheet7.q116/(sheet12.c13*sheet11.e79); end
-  def r116; @r116 ||= sheet7.r116/(sheet12.c13*sheet11.e79); end
-  def s116; @s116 ||= sheet7.s116/(sheet12.c13*sheet11.e79); end
-  def t116; @t116 ||= sheet7.t116/(sheet12.c13*sheet11.e79); end
-  def u116; @u116 ||= sheet7.u116/(sheet12.c13*sheet11.e79); end
-  def v116; @v116 ||= sheet7.v116/(sheet12.c13*sheet11.e79); end
-  def w116; @w116 ||= sheet7.w116/(sheet12.c13*sheet11.e79); end
-  def y116; @y116 ||= sheet7.y116/(sheet12.c13*sheet11.e79); end
-  def z116; @z116 ||= sheet7.z116/(sheet12.c13*sheet11.e79); end
-  def aa116; @aa116 ||= sheet7.aa116/(sheet12.c13*sheet11.e79); end
-  def ab116; @ab116 ||= sheet7.ab116/(sheet12.c13*sheet11.e79); end
-  def ac116; @ac116 ||= sheet7.ac116/(sheet12.c13*sheet11.e79); end
-  def ad116; @ad116 ||= sheet7.ad116/(sheet12.c13*sheet11.e79); end
-  def ae116; @ae116 ||= sheet7.ae116/(sheet12.c13*sheet11.e79); end
-  def af116; @af116 ||= sheet7.af116/(sheet12.c13*sheet11.e79); end
-  def ag116; @ag116 ||= sheet7.ag116/(sheet12.c13*sheet11.e79); end
-  def ai116; @ai116 ||= sheet7.ai116/(sheet12.c13*sheet11.e79); end
-  def aj116; @aj116 ||= sheet7.aj116/(sheet12.c13*sheet11.e79); end
-  def ak116; @ak116 ||= sheet7.ak116/(sheet12.c13*sheet11.e79); end
-  def al116; @al116 ||= sheet7.al116/(sheet12.c13*sheet11.e79); end
-  def am116; @am116 ||= sheet7.am116/(sheet12.c13*sheet11.e79); end
-  def an116; @an116 ||= sheet7.an116/(sheet12.c13*sheet11.e79); end
-  def ao116; @ao116 ||= sheet7.ao116/(sheet12.c13*sheet11.e79); end
-  def ap116; @ap116 ||= sheet7.ap116/(sheet12.c13*sheet11.e79); end
-  def aq116; @aq116 ||= sheet7.aq116/(sheet12.c13*sheet11.e79); end
-  def as116; @as116 ||= average(a('ai116','aq116')); end
-  def at116; @at116 ||= (sumproduct(a('aj116','aq116'),sheet12.a('d28','k28'))*5.0)+ai116; end
-  def av116; 0.0; end
-  def aw116; 5.0; end
-  def ay116; @ay116 ||= sheet7.ay116/(sheet12.c13*sheet11.e79); end
-  def az116; @az116 ||= sheet7.az116/(sheet12.c13*sheet11.e79); end
-  def ba116; @ba116 ||= sheet7.ba116/(sheet12.c13*sheet11.e79); end
-  def bb116; @bb116 ||= sheet7.bb116/(sheet12.c13*sheet11.e79); end
-  def bc116; @bc116 ||= sheet7.bc116/(sheet12.c13*sheet11.e79); end
-  def bd116; @bd116 ||= sheet7.bd116/(sheet12.c13*sheet11.e79); end
-  def be116; @be116 ||= sheet7.be116/(sheet12.c13*sheet11.e79); end
-  def bf116; @bf116 ||= sheet7.bf116/(sheet12.c13*sheet11.e79); end
-  def bg116; @bg116 ||= sheet7.bg116/(sheet12.c13*sheet11.e79); end
-  def bi116; @bi116 ||= sheet7.bi116/(sheet12.c13*sheet11.e79); end
-  def bj116; @bj116 ||= sheet7.bj116/(sheet12.c13*sheet11.e79); end
-  def bk116; @bk116 ||= sheet7.bk116/(sheet12.c13*sheet11.e79); end
-  def bl116; @bl116 ||= sheet7.bl116/(sheet12.c13*sheet11.e79); end
-  def bm116; @bm116 ||= sheet7.bm116/(sheet12.c13*sheet11.e79); end
-  def bn116; @bn116 ||= sheet7.bn116/(sheet12.c13*sheet11.e79); end
-  def bo116; @bo116 ||= sheet7.bo116/(sheet12.c13*sheet11.e79); end
-  def bp116; @bp116 ||= sheet7.bp116/(sheet12.c13*sheet11.e79); end
-  def bq116; @bq116 ||= sheet7.bq116/(sheet12.c13*sheet11.e79); end
-  def bs116; @bs116 ||= sheet7.bs116/(sheet12.c13*sheet11.e79); end
-  def bt116; @bt116 ||= sheet7.bt116/(sheet12.c13*sheet11.e79); end
-  def bu116; @bu116 ||= sheet7.bu116/(sheet12.c13*sheet11.e79); end
-  def bv116; @bv116 ||= sheet7.bv116/(sheet12.c13*sheet11.e79); end
-  def bw116; @bw116 ||= sheet7.bw116/(sheet12.c13*sheet11.e79); end
-  def bx116; @bx116 ||= sheet7.bx116/(sheet12.c13*sheet11.e79); end
-  def by116; @by116 ||= sheet7.by116/(sheet12.c13*sheet11.e79); end
-  def bz116; @bz116 ||= sheet7.bz116/(sheet12.c13*sheet11.e79); end
-  def ca116; @ca116 ||= sheet7.ca116/(sheet12.c13*sheet11.e79); end
-  def cc116; @cc116 ||= average(a('bs116','ca116')); end
-  def cd116; @cd116 ||= (sumproduct(a('bt116','ca116'),sheet12.a('d28','k28'))*5.0)+bs116; end
-  def cf116; @cf116 ||= sheet7.cf116/(sheet12.c13*sheet11.e79); end
-  def cg116; @cg116 ||= sheet7.cg116/(sheet12.c13*sheet11.e79); end
-  def ch116; @ch116 ||= sheet7.ch116/(sheet12.c13*sheet11.e79); end
-  def ci116; @ci116 ||= sheet7.ci116/(sheet12.c13*sheet11.e79); end
-  def cj116; @cj116 ||= sheet7.cj116/(sheet12.c13*sheet11.e79); end
-  def ck116; @ck116 ||= sheet7.ck116/(sheet12.c13*sheet11.e79); end
-  def cl116; @cl116 ||= sheet7.cl116/(sheet12.c13*sheet11.e79); end
-  def cm116; @cm116 ||= sheet7.cm116/(sheet12.c13*sheet11.e79); end
-  def cn116; @cn116 ||= sheet7.cn116/(sheet12.c13*sheet11.e79); end
-  def cp116; @cp116 ||= average(a('cf116','cn116')); end
-  def cq116; @cq116 ||= (sumproduct(a('cg116','cn116'),sheet12.a('d28','k28'))*5.0)+cf116; end
-  def cr116; @cr116 ||= excel_if(excel_comparison(abs(cd116-cq116-at116),"<",1.0),"ok","err"); end
-  def a117; "III.b"; end
-  def b117; "Hydroelectric"; end
-  def c117; "Power"; end
-  def e117; @e117 ||= sheet7.e117/(sheet12.c13*sheet11.e79); end
-  def f117; @f117 ||= sheet7.f117/(sheet12.c13*sheet11.e79); end
-  def g117; @g117 ||= sheet7.g117/(sheet12.c13*sheet11.e79); end
-  def h117; @h117 ||= sheet7.h117/(sheet12.c13*sheet11.e79); end
-  def i117; @i117 ||= sheet7.i117/(sheet12.c13*sheet11.e79); end
-  def j117; @j117 ||= sheet7.j117/(sheet12.c13*sheet11.e79); end
-  def k117; @k117 ||= sheet7.k117/(sheet12.c13*sheet11.e79); end
-  def l117; @l117 ||= sheet7.l117/(sheet12.c13*sheet11.e79); end
-  def m117; @m117 ||= sheet7.m117/(sheet12.c13*sheet11.e79); end
-  def o117; @o117 ||= sheet7.o117/(sheet12.c13*sheet11.e79); end
-  def p117; @p117 ||= sheet7.p117/(sheet12.c13*sheet11.e79); end
-  def q117; @q117 ||= sheet7.q117/(sheet12.c13*sheet11.e79); end
-  def r117; @r117 ||= sheet7.r117/(sheet12.c13*sheet11.e79); end
-  def s117; @s117 ||= sheet7.s117/(sheet12.c13*sheet11.e79); end
-  def t117; @t117 ||= sheet7.t117/(sheet12.c13*sheet11.e79); end
-  def u117; @u117 ||= sheet7.u117/(sheet12.c13*sheet11.e79); end
-  def v117; @v117 ||= sheet7.v117/(sheet12.c13*sheet11.e79); end
-  def w117; @w117 ||= sheet7.w117/(sheet12.c13*sheet11.e79); end
-  def y117; @y117 ||= sheet7.y117/(sheet12.c13*sheet11.e79); end
-  def z117; @z117 ||= sheet7.z117/(sheet12.c13*sheet11.e79); end
-  def aa117; @aa117 ||= sheet7.aa117/(sheet12.c13*sheet11.e79); end
-  def ab117; @ab117 ||= sheet7.ab117/(sheet12.c13*sheet11.e79); end
-  def ac117; @ac117 ||= sheet7.ac117/(sheet12.c13*sheet11.e79); end
-  def ad117; @ad117 ||= sheet7.ad117/(sheet12.c13*sheet11.e79); end
-  def ae117; @ae117 ||= sheet7.ae117/(sheet12.c13*sheet11.e79); end
-  def af117; @af117 ||= sheet7.af117/(sheet12.c13*sheet11.e79); end
-  def ag117; @ag117 ||= sheet7.ag117/(sheet12.c13*sheet11.e79); end
-  def ai117; @ai117 ||= sheet7.ai117/(sheet12.c13*sheet11.e79); end
-  def aj117; @aj117 ||= sheet7.aj117/(sheet12.c13*sheet11.e79); end
-  def ak117; @ak117 ||= sheet7.ak117/(sheet12.c13*sheet11.e79); end
-  def al117; @al117 ||= sheet7.al117/(sheet12.c13*sheet11.e79); end
-  def am117; @am117 ||= sheet7.am117/(sheet12.c13*sheet11.e79); end
-  def an117; @an117 ||= sheet7.an117/(sheet12.c13*sheet11.e79); end
-  def ao117; @ao117 ||= sheet7.ao117/(sheet12.c13*sheet11.e79); end
-  def ap117; @ap117 ||= sheet7.ap117/(sheet12.c13*sheet11.e79); end
-  def aq117; @aq117 ||= sheet7.aq117/(sheet12.c13*sheet11.e79); end
-  def as117; @as117 ||= average(a('ai117','aq117')); end
-  def at117; @at117 ||= (sumproduct(a('aj117','aq117'),sheet12.a('d28','k28'))*5.0)+ai117; end
-  def av117; 0.0; end
-  def aw117; 5.0; end
-  def ay117; @ay117 ||= sheet7.ay117/(sheet12.c13*sheet11.e79); end
-  def az117; @az117 ||= sheet7.az117/(sheet12.c13*sheet11.e79); end
-  def ba117; @ba117 ||= sheet7.ba117/(sheet12.c13*sheet11.e79); end
-  def bb117; @bb117 ||= sheet7.bb117/(sheet12.c13*sheet11.e79); end
-  def bc117; @bc117 ||= sheet7.bc117/(sheet12.c13*sheet11.e79); end
-  def bd117; @bd117 ||= sheet7.bd117/(sheet12.c13*sheet11.e79); end
-  def be117; @be117 ||= sheet7.be117/(sheet12.c13*sheet11.e79); end
-  def bf117; @bf117 ||= sheet7.bf117/(sheet12.c13*sheet11.e79); end
-  def bg117; @bg117 ||= sheet7.bg117/(sheet12.c13*sheet11.e79); end
-  def bi117; @bi117 ||= sheet7.bi117/(sheet12.c13*sheet11.e79); end
-  def bj117; @bj117 ||= sheet7.bj117/(sheet12.c13*sheet11.e79); end
-  def bk117; @bk117 ||= sheet7.bk117/(sheet12.c13*sheet11.e79); end
-  def bl117; @bl117 ||= sheet7.bl117/(sheet12.c13*sheet11.e79); end
-  def bm117; @bm117 ||= sheet7.bm117/(sheet12.c13*sheet11.e79); end
-  def bn117; @bn117 ||= sheet7.bn117/(sheet12.c13*sheet11.e79); end
-  def bo117; @bo117 ||= sheet7.bo117/(sheet12.c13*sheet11.e79); end
-  def bp117; @bp117 ||= sheet7.bp117/(sheet12.c13*sheet11.e79); end
-  def bq117; @bq117 ||= sheet7.bq117/(sheet12.c13*sheet11.e79); end
-  def bs117; @bs117 ||= sheet7.bs117/(sheet12.c13*sheet11.e79); end
-  def bt117; @bt117 ||= sheet7.bt117/(sheet12.c13*sheet11.e79); end
-  def bu117; @bu117 ||= sheet7.bu117/(sheet12.c13*sheet11.e79); end
-  def bv117; @bv117 ||= sheet7.bv117/(sheet12.c13*sheet11.e79); end
-  def bw117; @bw117 ||= sheet7.bw117/(sheet12.c13*sheet11.e79); end
-  def bx117; @bx117 ||= sheet7.bx117/(sheet12.c13*sheet11.e79); end
-  def by117; @by117 ||= sheet7.by117/(sheet12.c13*sheet11.e79); end
-  def bz117; @bz117 ||= sheet7.bz117/(sheet12.c13*sheet11.e79); end
-  def ca117; @ca117 ||= sheet7.ca117/(sheet12.c13*sheet11.e79); end
-  def cc117; @cc117 ||= average(a('bs117','ca117')); end
-  def cd117; @cd117 ||= (sumproduct(a('bt117','ca117'),sheet12.a('d28','k28'))*5.0)+bs117; end
-  def cf117; @cf117 ||= sheet7.cf117/(sheet12.c13*sheet11.e79); end
-  def cg117; @cg117 ||= sheet7.cg117/(sheet12.c13*sheet11.e79); end
-  def ch117; @ch117 ||= sheet7.ch117/(sheet12.c13*sheet11.e79); end
-  def ci117; @ci117 ||= sheet7.ci117/(sheet12.c13*sheet11.e79); end
-  def cj117; @cj117 ||= sheet7.cj117/(sheet12.c13*sheet11.e79); end
-  def ck117; @ck117 ||= sheet7.ck117/(sheet12.c13*sheet11.e79); end
-  def cl117; @cl117 ||= sheet7.cl117/(sheet12.c13*sheet11.e79); end
-  def cm117; @cm117 ||= sheet7.cm117/(sheet12.c13*sheet11.e79); end
-  def cn117; @cn117 ||= sheet7.cn117/(sheet12.c13*sheet11.e79); end
-  def cp117; @cp117 ||= average(a('cf117','cn117')); end
-  def cq117; @cq117 ||= (sumproduct(a('cg117','cn117'),sheet12.a('d28','k28'))*5.0)+cf117; end
-  def cr117; @cr117 ||= excel_if(excel_comparison(abs(cd117-cq117-at117),"<",1.0),"ok","err"); end
-  def a118; "III.c"; end
-  def b118; "Wave and Tidal"; end
-  def c118; "Power"; end
-  def e118; @e118 ||= sheet7.e118/(sheet12.c13*sheet11.e79); end
-  def f118; @f118 ||= sheet7.f118/(sheet12.c13*sheet11.e79); end
-  def g118; @g118 ||= sheet7.g118/(sheet12.c13*sheet11.e79); end
-  def h118; @h118 ||= sheet7.h118/(sheet12.c13*sheet11.e79); end
-  def i118; @i118 ||= sheet7.i118/(sheet12.c13*sheet11.e79); end
-  def j118; @j118 ||= sheet7.j118/(sheet12.c13*sheet11.e79); end
-  def k118; @k118 ||= sheet7.k118/(sheet12.c13*sheet11.e79); end
-  def l118; @l118 ||= sheet7.l118/(sheet12.c13*sheet11.e79); end
-  def m118; @m118 ||= sheet7.m118/(sheet12.c13*sheet11.e79); end
-  def o118; @o118 ||= sheet7.o118/(sheet12.c13*sheet11.e79); end
-  def p118; @p118 ||= sheet7.p118/(sheet12.c13*sheet11.e79); end
-  def q118; @q118 ||= sheet7.q118/(sheet12.c13*sheet11.e79); end
-  def r118; @r118 ||= sheet7.r118/(sheet12.c13*sheet11.e79); end
-  def s118; @s118 ||= sheet7.s118/(sheet12.c13*sheet11.e79); end
-  def t118; @t118 ||= sheet7.t118/(sheet12.c13*sheet11.e79); end
-  def u118; @u118 ||= sheet7.u118/(sheet12.c13*sheet11.e79); end
-  def v118; @v118 ||= sheet7.v118/(sheet12.c13*sheet11.e79); end
-  def w118; @w118 ||= sheet7.w118/(sheet12.c13*sheet11.e79); end
-  def y118; @y118 ||= sheet7.y118/(sheet12.c13*sheet11.e79); end
-  def z118; @z118 ||= sheet7.z118/(sheet12.c13*sheet11.e79); end
-  def aa118; @aa118 ||= sheet7.aa118/(sheet12.c13*sheet11.e79); end
-  def ab118; @ab118 ||= sheet7.ab118/(sheet12.c13*sheet11.e79); end
-  def ac118; @ac118 ||= sheet7.ac118/(sheet12.c13*sheet11.e79); end
-  def ad118; @ad118 ||= sheet7.ad118/(sheet12.c13*sheet11.e79); end
-  def ae118; @ae118 ||= sheet7.ae118/(sheet12.c13*sheet11.e79); end
-  def af118; @af118 ||= sheet7.af118/(sheet12.c13*sheet11.e79); end
-  def ag118; @ag118 ||= sheet7.ag118/(sheet12.c13*sheet11.e79); end
-  def ai118; @ai118 ||= sheet7.ai118/(sheet12.c13*sheet11.e79); end
-  def aj118; @aj118 ||= sheet7.aj118/(sheet12.c13*sheet11.e79); end
-  def ak118; @ak118 ||= sheet7.ak118/(sheet12.c13*sheet11.e79); end
-  def al118; @al118 ||= sheet7.al118/(sheet12.c13*sheet11.e79); end
-  def am118; @am118 ||= sheet7.am118/(sheet12.c13*sheet11.e79); end
-  def an118; @an118 ||= sheet7.an118/(sheet12.c13*sheet11.e79); end
-  def ao118; @ao118 ||= sheet7.ao118/(sheet12.c13*sheet11.e79); end
-  def ap118; @ap118 ||= sheet7.ap118/(sheet12.c13*sheet11.e79); end
-  def aq118; @aq118 ||= sheet7.aq118/(sheet12.c13*sheet11.e79); end
-  def as118; @as118 ||= average(a('ai118','aq118')); end
-  def at118; @at118 ||= (sumproduct(a('aj118','aq118'),sheet12.a('d28','k28'))*5.0)+ai118; end
-  def av118; 0.0; end
-  def aw118; 5.0; end
-  def ay118; @ay118 ||= sheet7.ay118/(sheet12.c13*sheet11.e79); end
-  def az118; @az118 ||= sheet7.az118/(sheet12.c13*sheet11.e79); end
-  def ba118; @ba118 ||= sheet7.ba118/(sheet12.c13*sheet11.e79); end
-  def bb118; @bb118 ||= sheet7.bb118/(sheet12.c13*sheet11.e79); end
-  def bc118; @bc118 ||= sheet7.bc118/(sheet12.c13*sheet11.e79); end
-  def bd118; @bd118 ||= sheet7.bd118/(sheet12.c13*sheet11.e79); end
-  def be118; @be118 ||= sheet7.be118/(sheet12.c13*sheet11.e79); end
-  def bf118; @bf118 ||= sheet7.bf118/(sheet12.c13*sheet11.e79); end
-  def bg118; @bg118 ||= sheet7.bg118/(sheet12.c13*sheet11.e79); end
-  def bi118; @bi118 ||= sheet7.bi118/(sheet12.c13*sheet11.e79); end
-  def bj118; @bj118 ||= sheet7.bj118/(sheet12.c13*sheet11.e79); end
-  def bk118; @bk118 ||= sheet7.bk118/(sheet12.c13*sheet11.e79); end
-  def bl118; @bl118 ||= sheet7.bl118/(sheet12.c13*sheet11.e79); end
-  def bm118; @bm118 ||= sheet7.bm118/(sheet12.c13*sheet11.e79); end
-  def bn118; @bn118 ||= sheet7.bn118/(sheet12.c13*sheet11.e79); end
-  def bo118; @bo118 ||= sheet7.bo118/(sheet12.c13*sheet11.e79); end
-  def bp118; @bp118 ||= sheet7.bp118/(sheet12.c13*sheet11.e79); end
-  def bq118; @bq118 ||= sheet7.bq118/(sheet12.c13*sheet11.e79); end
-  def bs118; @bs118 ||= sheet7.bs118/(sheet12.c13*sheet11.e79); end
-  def bt118; @bt118 ||= sheet7.bt118/(sheet12.c13*sheet11.e79); end
-  def bu118; @bu118 ||= sheet7.bu118/(sheet12.c13*sheet11.e79); end
-  def bv118; @bv118 ||= sheet7.bv118/(sheet12.c13*sheet11.e79); end
-  def bw118; @bw118 ||= sheet7.bw118/(sheet12.c13*sheet11.e79); end
-  def bx118; @bx118 ||= sheet7.bx118/(sheet12.c13*sheet11.e79); end
-  def by118; @by118 ||= sheet7.by118/(sheet12.c13*sheet11.e79); end
-  def bz118; @bz118 ||= sheet7.bz118/(sheet12.c13*sheet11.e79); end
-  def ca118; @ca118 ||= sheet7.ca118/(sheet12.c13*sheet11.e79); end
-  def cc118; @cc118 ||= average(a('bs118','ca118')); end
-  def cd118; @cd118 ||= (sumproduct(a('bt118','ca118'),sheet12.a('d28','k28'))*5.0)+bs118; end
-  def cf118; @cf118 ||= sheet7.cf118/(sheet12.c13*sheet11.e79); end
-  def cg118; @cg118 ||= sheet7.cg118/(sheet12.c13*sheet11.e79); end
-  def ch118; @ch118 ||= sheet7.ch118/(sheet12.c13*sheet11.e79); end
-  def ci118; @ci118 ||= sheet7.ci118/(sheet12.c13*sheet11.e79); end
-  def cj118; @cj118 ||= sheet7.cj118/(sheet12.c13*sheet11.e79); end
-  def ck118; @ck118 ||= sheet7.ck118/(sheet12.c13*sheet11.e79); end
-  def cl118; @cl118 ||= sheet7.cl118/(sheet12.c13*sheet11.e79); end
-  def cm118; @cm118 ||= sheet7.cm118/(sheet12.c13*sheet11.e79); end
-  def cn118; @cn118 ||= sheet7.cn118/(sheet12.c13*sheet11.e79); end
-  def cp118; @cp118 ||= average(a('cf118','cn118')); end
-  def cq118; @cq118 ||= (sumproduct(a('cg118','cn118'),sheet12.a('d28','k28'))*5.0)+cf118; end
-  def cr118; @cr118 ||= excel_if(excel_comparison(abs(cd118-cq118-at118),"<",1.0),"ok","err"); end
-  def a119; "III.d"; end
-  def b119; "Geothermal"; end
-  def c119; "Power"; end
-  def e119; @e119 ||= sheet7.e119/(sheet12.c13*sheet11.e79); end
-  def f119; @f119 ||= sheet7.f119/(sheet12.c13*sheet11.e79); end
-  def g119; @g119 ||= sheet7.g119/(sheet12.c13*sheet11.e79); end
-  def h119; @h119 ||= sheet7.h119/(sheet12.c13*sheet11.e79); end
-  def i119; @i119 ||= sheet7.i119/(sheet12.c13*sheet11.e79); end
-  def j119; @j119 ||= sheet7.j119/(sheet12.c13*sheet11.e79); end
-  def k119; @k119 ||= sheet7.k119/(sheet12.c13*sheet11.e79); end
-  def l119; @l119 ||= sheet7.l119/(sheet12.c13*sheet11.e79); end
-  def m119; @m119 ||= sheet7.m119/(sheet12.c13*sheet11.e79); end
-  def o119; @o119 ||= sheet7.o119/(sheet12.c13*sheet11.e79); end
-  def p119; @p119 ||= sheet7.p119/(sheet12.c13*sheet11.e79); end
-  def q119; @q119 ||= sheet7.q119/(sheet12.c13*sheet11.e79); end
-  def r119; @r119 ||= sheet7.r119/(sheet12.c13*sheet11.e79); end
-  def s119; @s119 ||= sheet7.s119/(sheet12.c13*sheet11.e79); end
-  def t119; @t119 ||= sheet7.t119/(sheet12.c13*sheet11.e79); end
-  def u119; @u119 ||= sheet7.u119/(sheet12.c13*sheet11.e79); end
-  def v119; @v119 ||= sheet7.v119/(sheet12.c13*sheet11.e79); end
-  def w119; @w119 ||= sheet7.w119/(sheet12.c13*sheet11.e79); end
-  def y119; @y119 ||= sheet7.y119/(sheet12.c13*sheet11.e79); end
-  def z119; @z119 ||= sheet7.z119/(sheet12.c13*sheet11.e79); end
-  def aa119; @aa119 ||= sheet7.aa119/(sheet12.c13*sheet11.e79); end
-  def ab119; @ab119 ||= sheet7.ab119/(sheet12.c13*sheet11.e79); end
-  def ac119; @ac119 ||= sheet7.ac119/(sheet12.c13*sheet11.e79); end
-  def ad119; @ad119 ||= sheet7.ad119/(sheet12.c13*sheet11.e79); end
-  def ae119; @ae119 ||= sheet7.ae119/(sheet12.c13*sheet11.e79); end
-  def af119; @af119 ||= sheet7.af119/(sheet12.c13*sheet11.e79); end
-  def ag119; @ag119 ||= sheet7.ag119/(sheet12.c13*sheet11.e79); end
-  def ai119; @ai119 ||= sheet7.ai119/(sheet12.c13*sheet11.e79); end
-  def aj119; @aj119 ||= sheet7.aj119/(sheet12.c13*sheet11.e79); end
-  def ak119; @ak119 ||= sheet7.ak119/(sheet12.c13*sheet11.e79); end
-  def al119; @al119 ||= sheet7.al119/(sheet12.c13*sheet11.e79); end
-  def am119; @am119 ||= sheet7.am119/(sheet12.c13*sheet11.e79); end
-  def an119; @an119 ||= sheet7.an119/(sheet12.c13*sheet11.e79); end
-  def ao119; @ao119 ||= sheet7.ao119/(sheet12.c13*sheet11.e79); end
-  def ap119; @ap119 ||= sheet7.ap119/(sheet12.c13*sheet11.e79); end
-  def aq119; @aq119 ||= sheet7.aq119/(sheet12.c13*sheet11.e79); end
-  def as119; @as119 ||= average(a('ai119','aq119')); end
-  def at119; @at119 ||= (sumproduct(a('aj119','aq119'),sheet12.a('d28','k28'))*5.0)+ai119; end
-  def av119; 0.0; end
-  def aw119; 5.0; end
-  def ay119; @ay119 ||= sheet7.ay119/(sheet12.c13*sheet11.e79); end
-  def az119; @az119 ||= sheet7.az119/(sheet12.c13*sheet11.e79); end
-  def ba119; @ba119 ||= sheet7.ba119/(sheet12.c13*sheet11.e79); end
-  def bb119; @bb119 ||= sheet7.bb119/(sheet12.c13*sheet11.e79); end
-  def bc119; @bc119 ||= sheet7.bc119/(sheet12.c13*sheet11.e79); end
-  def bd119; @bd119 ||= sheet7.bd119/(sheet12.c13*sheet11.e79); end
-  def be119; @be119 ||= sheet7.be119/(sheet12.c13*sheet11.e79); end
-  def bf119; @bf119 ||= sheet7.bf119/(sheet12.c13*sheet11.e79); end
-  def bg119; @bg119 ||= sheet7.bg119/(sheet12.c13*sheet11.e79); end
-  def bi119; @bi119 ||= sheet7.bi119/(sheet12.c13*sheet11.e79); end
-  def bj119; @bj119 ||= sheet7.bj119/(sheet12.c13*sheet11.e79); end
-  def bk119; @bk119 ||= sheet7.bk119/(sheet12.c13*sheet11.e79); end
-  def bl119; @bl119 ||= sheet7.bl119/(sheet12.c13*sheet11.e79); end
-  def bm119; @bm119 ||= sheet7.bm119/(sheet12.c13*sheet11.e79); end
-  def bn119; @bn119 ||= sheet7.bn119/(sheet12.c13*sheet11.e79); end
-  def bo119; @bo119 ||= sheet7.bo119/(sheet12.c13*sheet11.e79); end
-  def bp119; @bp119 ||= sheet7.bp119/(sheet12.c13*sheet11.e79); end
-  def bq119; @bq119 ||= sheet7.bq119/(sheet12.c13*sheet11.e79); end
-  def bs119; @bs119 ||= sheet7.bs119/(sheet12.c13*sheet11.e79); end
-  def bt119; @bt119 ||= sheet7.bt119/(sheet12.c13*sheet11.e79); end
-  def bu119; @bu119 ||= sheet7.bu119/(sheet12.c13*sheet11.e79); end
-  def bv119; @bv119 ||= sheet7.bv119/(sheet12.c13*sheet11.e79); end
-  def bw119; @bw119 ||= sheet7.bw119/(sheet12.c13*sheet11.e79); end
-  def bx119; @bx119 ||= sheet7.bx119/(sheet12.c13*sheet11.e79); end
-  def by119; @by119 ||= sheet7.by119/(sheet12.c13*sheet11.e79); end
-  def bz119; @bz119 ||= sheet7.bz119/(sheet12.c13*sheet11.e79); end
-  def ca119; @ca119 ||= sheet7.ca119/(sheet12.c13*sheet11.e79); end
-  def cc119; @cc119 ||= average(a('bs119','ca119')); end
-  def cd119; @cd119 ||= (sumproduct(a('bt119','ca119'),sheet12.a('d28','k28'))*5.0)+bs119; end
-  def cf119; @cf119 ||= sheet7.cf119/(sheet12.c13*sheet11.e79); end
-  def cg119; @cg119 ||= sheet7.cg119/(sheet12.c13*sheet11.e79); end
-  def ch119; @ch119 ||= sheet7.ch119/(sheet12.c13*sheet11.e79); end
-  def ci119; @ci119 ||= sheet7.ci119/(sheet12.c13*sheet11.e79); end
-  def cj119; @cj119 ||= sheet7.cj119/(sheet12.c13*sheet11.e79); end
-  def ck119; @ck119 ||= sheet7.ck119/(sheet12.c13*sheet11.e79); end
-  def cl119; @cl119 ||= sheet7.cl119/(sheet12.c13*sheet11.e79); end
-  def cm119; @cm119 ||= sheet7.cm119/(sheet12.c13*sheet11.e79); end
-  def cn119; @cn119 ||= sheet7.cn119/(sheet12.c13*sheet11.e79); end
-  def cp119; @cp119 ||= average(a('cf119','cn119')); end
-  def cq119; @cq119 ||= (sumproduct(a('cg119','cn119'),sheet12.a('d28','k28'))*5.0)+cf119; end
-  def cr119; @cr119 ||= excel_if(excel_comparison(abs(cd119-cq119-at119),"<",1.0),"ok","err"); end
-  def a120; "IV.a"; end
-  def b120; "Distributed solar PV"; end
-  def c120; "Power"; end
-  def e120; @e120 ||= sheet7.e120/(sheet12.c13*sheet11.e79); end
-  def f120; @f120 ||= sheet7.f120/(sheet12.c13*sheet11.e79); end
-  def g120; @g120 ||= sheet7.g120/(sheet12.c13*sheet11.e79); end
-  def h120; @h120 ||= sheet7.h120/(sheet12.c13*sheet11.e79); end
-  def i120; @i120 ||= sheet7.i120/(sheet12.c13*sheet11.e79); end
-  def j120; @j120 ||= sheet7.j120/(sheet12.c13*sheet11.e79); end
-  def k120; @k120 ||= sheet7.k120/(sheet12.c13*sheet11.e79); end
-  def l120; @l120 ||= sheet7.l120/(sheet12.c13*sheet11.e79); end
-  def m120; @m120 ||= sheet7.m120/(sheet12.c13*sheet11.e79); end
-  def o120; @o120 ||= sheet7.o120/(sheet12.c13*sheet11.e79); end
-  def p120; @p120 ||= sheet7.p120/(sheet12.c13*sheet11.e79); end
-  def q120; @q120 ||= sheet7.q120/(sheet12.c13*sheet11.e79); end
-  def r120; @r120 ||= sheet7.r120/(sheet12.c13*sheet11.e79); end
-  def s120; @s120 ||= sheet7.s120/(sheet12.c13*sheet11.e79); end
-  def t120; @t120 ||= sheet7.t120/(sheet12.c13*sheet11.e79); end
-  def u120; @u120 ||= sheet7.u120/(sheet12.c13*sheet11.e79); end
-  def v120; @v120 ||= sheet7.v120/(sheet12.c13*sheet11.e79); end
-  def w120; @w120 ||= sheet7.w120/(sheet12.c13*sheet11.e79); end
-  def y120; @y120 ||= sheet7.y120/(sheet12.c13*sheet11.e79); end
-  def z120; @z120 ||= sheet7.z120/(sheet12.c13*sheet11.e79); end
-  def aa120; @aa120 ||= sheet7.aa120/(sheet12.c13*sheet11.e79); end
-  def ab120; @ab120 ||= sheet7.ab120/(sheet12.c13*sheet11.e79); end
-  def ac120; @ac120 ||= sheet7.ac120/(sheet12.c13*sheet11.e79); end
-  def ad120; @ad120 ||= sheet7.ad120/(sheet12.c13*sheet11.e79); end
-  def ae120; @ae120 ||= sheet7.ae120/(sheet12.c13*sheet11.e79); end
-  def af120; @af120 ||= sheet7.af120/(sheet12.c13*sheet11.e79); end
-  def ag120; @ag120 ||= sheet7.ag120/(sheet12.c13*sheet11.e79); end
-  def ai120; @ai120 ||= sheet7.ai120/(sheet12.c13*sheet11.e79); end
-  def aj120; @aj120 ||= sheet7.aj120/(sheet12.c13*sheet11.e79); end
-  def ak120; @ak120 ||= sheet7.ak120/(sheet12.c13*sheet11.e79); end
-  def al120; @al120 ||= sheet7.al120/(sheet12.c13*sheet11.e79); end
-  def am120; @am120 ||= sheet7.am120/(sheet12.c13*sheet11.e79); end
-  def an120; @an120 ||= sheet7.an120/(sheet12.c13*sheet11.e79); end
-  def ao120; @ao120 ||= sheet7.ao120/(sheet12.c13*sheet11.e79); end
-  def ap120; @ap120 ||= sheet7.ap120/(sheet12.c13*sheet11.e79); end
-  def aq120; @aq120 ||= sheet7.aq120/(sheet12.c13*sheet11.e79); end
-  def as120; @as120 ||= average(a('ai120','aq120')); end
-  def at120; @at120 ||= (sumproduct(a('aj120','aq120'),sheet12.a('d28','k28'))*5.0)+ai120; end
-  def av120; 0.0; end
-  def aw120; 5.0; end
-  def ay120; @ay120 ||= sheet7.ay120/(sheet12.c13*sheet11.e79); end
-  def az120; @az120 ||= sheet7.az120/(sheet12.c13*sheet11.e79); end
-  def ba120; @ba120 ||= sheet7.ba120/(sheet12.c13*sheet11.e79); end
-  def bb120; @bb120 ||= sheet7.bb120/(sheet12.c13*sheet11.e79); end
-  def bc120; @bc120 ||= sheet7.bc120/(sheet12.c13*sheet11.e79); end
-  def bd120; @bd120 ||= sheet7.bd120/(sheet12.c13*sheet11.e79); end
-  def be120; @be120 ||= sheet7.be120/(sheet12.c13*sheet11.e79); end
-  def bf120; @bf120 ||= sheet7.bf120/(sheet12.c13*sheet11.e79); end
-  def bg120; @bg120 ||= sheet7.bg120/(sheet12.c13*sheet11.e79); end
-  def bi120; @bi120 ||= sheet7.bi120/(sheet12.c13*sheet11.e79); end
-  def bj120; @bj120 ||= sheet7.bj120/(sheet12.c13*sheet11.e79); end
-  def bk120; @bk120 ||= sheet7.bk120/(sheet12.c13*sheet11.e79); end
-  def bl120; @bl120 ||= sheet7.bl120/(sheet12.c13*sheet11.e79); end
-  def bm120; @bm120 ||= sheet7.bm120/(sheet12.c13*sheet11.e79); end
-  def bn120; @bn120 ||= sheet7.bn120/(sheet12.c13*sheet11.e79); end
-  def bo120; @bo120 ||= sheet7.bo120/(sheet12.c13*sheet11.e79); end
-  def bp120; @bp120 ||= sheet7.bp120/(sheet12.c13*sheet11.e79); end
-  def bq120; @bq120 ||= sheet7.bq120/(sheet12.c13*sheet11.e79); end
-  def bs120; @bs120 ||= sheet7.bs120/(sheet12.c13*sheet11.e79); end
-  def bt120; @bt120 ||= sheet7.bt120/(sheet12.c13*sheet11.e79); end
-  def bu120; @bu120 ||= sheet7.bu120/(sheet12.c13*sheet11.e79); end
-  def bv120; @bv120 ||= sheet7.bv120/(sheet12.c13*sheet11.e79); end
-  def bw120; @bw120 ||= sheet7.bw120/(sheet12.c13*sheet11.e79); end
-  def bx120; @bx120 ||= sheet7.bx120/(sheet12.c13*sheet11.e79); end
-  def by120; @by120 ||= sheet7.by120/(sheet12.c13*sheet11.e79); end
-  def bz120; @bz120 ||= sheet7.bz120/(sheet12.c13*sheet11.e79); end
-  def ca120; @ca120 ||= sheet7.ca120/(sheet12.c13*sheet11.e79); end
-  def cc120; @cc120 ||= average(a('bs120','ca120')); end
-  def cd120; @cd120 ||= (sumproduct(a('bt120','ca120'),sheet12.a('d28','k28'))*5.0)+bs120; end
-  def cf120; @cf120 ||= sheet7.cf120/(sheet12.c13*sheet11.e79); end
-  def cg120; @cg120 ||= sheet7.cg120/(sheet12.c13*sheet11.e79); end
-  def ch120; @ch120 ||= sheet7.ch120/(sheet12.c13*sheet11.e79); end
-  def ci120; @ci120 ||= sheet7.ci120/(sheet12.c13*sheet11.e79); end
-  def cj120; @cj120 ||= sheet7.cj120/(sheet12.c13*sheet11.e79); end
-  def ck120; @ck120 ||= sheet7.ck120/(sheet12.c13*sheet11.e79); end
-  def cl120; @cl120 ||= sheet7.cl120/(sheet12.c13*sheet11.e79); end
-  def cm120; @cm120 ||= sheet7.cm120/(sheet12.c13*sheet11.e79); end
-  def cn120; @cn120 ||= sheet7.cn120/(sheet12.c13*sheet11.e79); end
-  def cp120; @cp120 ||= average(a('cf120','cn120')); end
-  def cq120; @cq120 ||= (sumproduct(a('cg120','cn120'),sheet12.a('d28','k28'))*5.0)+cf120; end
-  def cr120; @cr120 ||= excel_if(excel_comparison(abs(cd120-cq120-at120),"<",1.0),"ok","err"); end
-  def a121; "IV.b"; end
-  def b121; "Distributed solar thermal"; end
-  def c121; "Heating"; end
-  def e121; @e121 ||= sheet7.e121/(sheet12.c13*sheet11.e79); end
-  def f121; @f121 ||= sheet7.f121/(sheet12.c13*sheet11.e79); end
-  def g121; @g121 ||= sheet7.g121/(sheet12.c13*sheet11.e79); end
-  def h121; @h121 ||= sheet7.h121/(sheet12.c13*sheet11.e79); end
-  def i121; @i121 ||= sheet7.i121/(sheet12.c13*sheet11.e79); end
-  def j121; @j121 ||= sheet7.j121/(sheet12.c13*sheet11.e79); end
-  def k121; @k121 ||= sheet7.k121/(sheet12.c13*sheet11.e79); end
-  def l121; @l121 ||= sheet7.l121/(sheet12.c13*sheet11.e79); end
-  def m121; @m121 ||= sheet7.m121/(sheet12.c13*sheet11.e79); end
-  def o121; @o121 ||= sheet7.o121/(sheet12.c13*sheet11.e79); end
-  def p121; @p121 ||= sheet7.p121/(sheet12.c13*sheet11.e79); end
-  def q121; @q121 ||= sheet7.q121/(sheet12.c13*sheet11.e79); end
-  def r121; @r121 ||= sheet7.r121/(sheet12.c13*sheet11.e79); end
-  def s121; @s121 ||= sheet7.s121/(sheet12.c13*sheet11.e79); end
-  def t121; @t121 ||= sheet7.t121/(sheet12.c13*sheet11.e79); end
-  def u121; @u121 ||= sheet7.u121/(sheet12.c13*sheet11.e79); end
-  def v121; @v121 ||= sheet7.v121/(sheet12.c13*sheet11.e79); end
-  def w121; @w121 ||= sheet7.w121/(sheet12.c13*sheet11.e79); end
-  def y121; @y121 ||= sheet7.y121/(sheet12.c13*sheet11.e79); end
-  def z121; @z121 ||= sheet7.z121/(sheet12.c13*sheet11.e79); end
-  def aa121; @aa121 ||= sheet7.aa121/(sheet12.c13*sheet11.e79); end
-  def ab121; @ab121 ||= sheet7.ab121/(sheet12.c13*sheet11.e79); end
-  def ac121; @ac121 ||= sheet7.ac121/(sheet12.c13*sheet11.e79); end
-  def ad121; @ad121 ||= sheet7.ad121/(sheet12.c13*sheet11.e79); end
-  def ae121; @ae121 ||= sheet7.ae121/(sheet12.c13*sheet11.e79); end
-  def af121; @af121 ||= sheet7.af121/(sheet12.c13*sheet11.e79); end
-  def ag121; @ag121 ||= sheet7.ag121/(sheet12.c13*sheet11.e79); end
-  def ai121; @ai121 ||= sheet7.ai121/(sheet12.c13*sheet11.e79); end
-  def aj121; @aj121 ||= sheet7.aj121/(sheet12.c13*sheet11.e79); end
-  def ak121; @ak121 ||= sheet7.ak121/(sheet12.c13*sheet11.e79); end
-  def al121; @al121 ||= sheet7.al121/(sheet12.c13*sheet11.e79); end
-  def am121; @am121 ||= sheet7.am121/(sheet12.c13*sheet11.e79); end
-  def an121; @an121 ||= sheet7.an121/(sheet12.c13*sheet11.e79); end
-  def ao121; @ao121 ||= sheet7.ao121/(sheet12.c13*sheet11.e79); end
-  def ap121; @ap121 ||= sheet7.ap121/(sheet12.c13*sheet11.e79); end
-  def aq121; @aq121 ||= sheet7.aq121/(sheet12.c13*sheet11.e79); end
-  def as121; @as121 ||= average(a('ai121','aq121')); end
-  def at121; @at121 ||= (sumproduct(a('aj121','aq121'),sheet12.a('d28','k28'))*5.0)+ai121; end
-  def av121; 0.0; end
-  def aw121; 5.0; end
-  def ay121; @ay121 ||= sheet7.ay121/(sheet12.c13*sheet11.e79); end
-  def az121; @az121 ||= sheet7.az121/(sheet12.c13*sheet11.e79); end
-  def ba121; @ba121 ||= sheet7.ba121/(sheet12.c13*sheet11.e79); end
-  def bb121; @bb121 ||= sheet7.bb121/(sheet12.c13*sheet11.e79); end
-  def bc121; @bc121 ||= sheet7.bc121/(sheet12.c13*sheet11.e79); end
-  def bd121; @bd121 ||= sheet7.bd121/(sheet12.c13*sheet11.e79); end
-  def be121; @be121 ||= sheet7.be121/(sheet12.c13*sheet11.e79); end
-  def bf121; @bf121 ||= sheet7.bf121/(sheet12.c13*sheet11.e79); end
-  def bg121; @bg121 ||= sheet7.bg121/(sheet12.c13*sheet11.e79); end
-  def bi121; @bi121 ||= sheet7.bi121/(sheet12.c13*sheet11.e79); end
-  def bj121; @bj121 ||= sheet7.bj121/(sheet12.c13*sheet11.e79); end
-  def bk121; @bk121 ||= sheet7.bk121/(sheet12.c13*sheet11.e79); end
-  def bl121; @bl121 ||= sheet7.bl121/(sheet12.c13*sheet11.e79); end
-  def bm121; @bm121 ||= sheet7.bm121/(sheet12.c13*sheet11.e79); end
-  def bn121; @bn121 ||= sheet7.bn121/(sheet12.c13*sheet11.e79); end
-  def bo121; @bo121 ||= sheet7.bo121/(sheet12.c13*sheet11.e79); end
-  def bp121; @bp121 ||= sheet7.bp121/(sheet12.c13*sheet11.e79); end
-  def bq121; @bq121 ||= sheet7.bq121/(sheet12.c13*sheet11.e79); end
-  def bs121; @bs121 ||= sheet7.bs121/(sheet12.c13*sheet11.e79); end
-  def bt121; @bt121 ||= sheet7.bt121/(sheet12.c13*sheet11.e79); end
-  def bu121; @bu121 ||= sheet7.bu121/(sheet12.c13*sheet11.e79); end
-  def bv121; @bv121 ||= sheet7.bv121/(sheet12.c13*sheet11.e79); end
-  def bw121; @bw121 ||= sheet7.bw121/(sheet12.c13*sheet11.e79); end
-  def bx121; @bx121 ||= sheet7.bx121/(sheet12.c13*sheet11.e79); end
-  def by121; @by121 ||= sheet7.by121/(sheet12.c13*sheet11.e79); end
-  def bz121; @bz121 ||= sheet7.bz121/(sheet12.c13*sheet11.e79); end
-  def ca121; @ca121 ||= sheet7.ca121/(sheet12.c13*sheet11.e79); end
-  def cc121; @cc121 ||= average(a('bs121','ca121')); end
-  def cd121; @cd121 ||= (sumproduct(a('bt121','ca121'),sheet12.a('d28','k28'))*5.0)+bs121; end
-  def cf121; @cf121 ||= sheet7.cf121/(sheet12.c13*sheet11.e79); end
-  def cg121; @cg121 ||= sheet7.cg121/(sheet12.c13*sheet11.e79); end
-  def ch121; @ch121 ||= sheet7.ch121/(sheet12.c13*sheet11.e79); end
-  def ci121; @ci121 ||= sheet7.ci121/(sheet12.c13*sheet11.e79); end
-  def cj121; @cj121 ||= sheet7.cj121/(sheet12.c13*sheet11.e79); end
-  def ck121; @ck121 ||= sheet7.ck121/(sheet12.c13*sheet11.e79); end
-  def cl121; @cl121 ||= sheet7.cl121/(sheet12.c13*sheet11.e79); end
-  def cm121; @cm121 ||= sheet7.cm121/(sheet12.c13*sheet11.e79); end
-  def cn121; @cn121 ||= sheet7.cn121/(sheet12.c13*sheet11.e79); end
-  def cp121; @cp121 ||= average(a('cf121','cn121')); end
-  def cq121; @cq121 ||= (sumproduct(a('cg121','cn121'),sheet12.a('d28','k28'))*5.0)+cf121; end
-  def cr121; @cr121 ||= excel_if(excel_comparison(abs(cd121-cq121-at121),"<",1.0),"ok","err"); end
-  def a122; "IV.c"; end
-  def b122; "Micro wind"; end
-  def c122; "Power"; end
-  def e122; @e122 ||= sheet7.e122/(sheet12.c13*sheet11.e79); end
-  def f122; @f122 ||= sheet7.f122/(sheet12.c13*sheet11.e79); end
-  def g122; @g122 ||= sheet7.g122/(sheet12.c13*sheet11.e79); end
-  def h122; @h122 ||= sheet7.h122/(sheet12.c13*sheet11.e79); end
-  def i122; @i122 ||= sheet7.i122/(sheet12.c13*sheet11.e79); end
-  def j122; @j122 ||= sheet7.j122/(sheet12.c13*sheet11.e79); end
-  def k122; @k122 ||= sheet7.k122/(sheet12.c13*sheet11.e79); end
-  def l122; @l122 ||= sheet7.l122/(sheet12.c13*sheet11.e79); end
-  def m122; @m122 ||= sheet7.m122/(sheet12.c13*sheet11.e79); end
-  def o122; @o122 ||= sheet7.o122/(sheet12.c13*sheet11.e79); end
-  def p122; @p122 ||= sheet7.p122/(sheet12.c13*sheet11.e79); end
-  def q122; @q122 ||= sheet7.q122/(sheet12.c13*sheet11.e79); end
-  def r122; @r122 ||= sheet7.r122/(sheet12.c13*sheet11.e79); end
-  def s122; @s122 ||= sheet7.s122/(sheet12.c13*sheet11.e79); end
-  def t122; @t122 ||= sheet7.t122/(sheet12.c13*sheet11.e79); end
-  def u122; @u122 ||= sheet7.u122/(sheet12.c13*sheet11.e79); end
-  def v122; @v122 ||= sheet7.v122/(sheet12.c13*sheet11.e79); end
-  def w122; @w122 ||= sheet7.w122/(sheet12.c13*sheet11.e79); end
-  def y122; @y122 ||= sheet7.y122/(sheet12.c13*sheet11.e79); end
-  def z122; @z122 ||= sheet7.z122/(sheet12.c13*sheet11.e79); end
-  def aa122; @aa122 ||= sheet7.aa122/(sheet12.c13*sheet11.e79); end
-  def ab122; @ab122 ||= sheet7.ab122/(sheet12.c13*sheet11.e79); end
-  def ac122; @ac122 ||= sheet7.ac122/(sheet12.c13*sheet11.e79); end
-  def ad122; @ad122 ||= sheet7.ad122/(sheet12.c13*sheet11.e79); end
-  def ae122; @ae122 ||= sheet7.ae122/(sheet12.c13*sheet11.e79); end
-  def af122; @af122 ||= sheet7.af122/(sheet12.c13*sheet11.e79); end
-  def ag122; @ag122 ||= sheet7.ag122/(sheet12.c13*sheet11.e79); end
-  def ai122; @ai122 ||= sheet7.ai122/(sheet12.c13*sheet11.e79); end
-  def aj122; @aj122 ||= sheet7.aj122/(sheet12.c13*sheet11.e79); end
-  def ak122; @ak122 ||= sheet7.ak122/(sheet12.c13*sheet11.e79); end
-  def al122; @al122 ||= sheet7.al122/(sheet12.c13*sheet11.e79); end
-  def am122; @am122 ||= sheet7.am122/(sheet12.c13*sheet11.e79); end
-  def an122; @an122 ||= sheet7.an122/(sheet12.c13*sheet11.e79); end
-  def ao122; @ao122 ||= sheet7.ao122/(sheet12.c13*sheet11.e79); end
-  def ap122; @ap122 ||= sheet7.ap122/(sheet12.c13*sheet11.e79); end
-  def aq122; @aq122 ||= sheet7.aq122/(sheet12.c13*sheet11.e79); end
-  def as122; @as122 ||= average(a('ai122','aq122')); end
-  def at122; @at122 ||= (sumproduct(a('aj122','aq122'),sheet12.a('d28','k28'))*5.0)+ai122; end
-  def av122; 0.0; end
-  def aw122; 5.0; end
-  def ay122; @ay122 ||= sheet7.ay122/(sheet12.c13*sheet11.e79); end
-  def az122; @az122 ||= sheet7.az122/(sheet12.c13*sheet11.e79); end
-  def ba122; @ba122 ||= sheet7.ba122/(sheet12.c13*sheet11.e79); end
-  def bb122; @bb122 ||= sheet7.bb122/(sheet12.c13*sheet11.e79); end
-  def bc122; @bc122 ||= sheet7.bc122/(sheet12.c13*sheet11.e79); end
-  def bd122; @bd122 ||= sheet7.bd122/(sheet12.c13*sheet11.e79); end
-  def be122; @be122 ||= sheet7.be122/(sheet12.c13*sheet11.e79); end
-  def bf122; @bf122 ||= sheet7.bf122/(sheet12.c13*sheet11.e79); end
-  def bg122; @bg122 ||= sheet7.bg122/(sheet12.c13*sheet11.e79); end
-  def bi122; @bi122 ||= sheet7.bi122/(sheet12.c13*sheet11.e79); end
-  def bj122; @bj122 ||= sheet7.bj122/(sheet12.c13*sheet11.e79); end
-  def bk122; @bk122 ||= sheet7.bk122/(sheet12.c13*sheet11.e79); end
-  def bl122; @bl122 ||= sheet7.bl122/(sheet12.c13*sheet11.e79); end
-  def bm122; @bm122 ||= sheet7.bm122/(sheet12.c13*sheet11.e79); end
-  def bn122; @bn122 ||= sheet7.bn122/(sheet12.c13*sheet11.e79); end
-  def bo122; @bo122 ||= sheet7.bo122/(sheet12.c13*sheet11.e79); end
-  def bp122; @bp122 ||= sheet7.bp122/(sheet12.c13*sheet11.e79); end
-  def bq122; @bq122 ||= sheet7.bq122/(sheet12.c13*sheet11.e79); end
-  def bs122; @bs122 ||= sheet7.bs122/(sheet12.c13*sheet11.e79); end
-  def bt122; @bt122 ||= sheet7.bt122/(sheet12.c13*sheet11.e79); end
-  def bu122; @bu122 ||= sheet7.bu122/(sheet12.c13*sheet11.e79); end
-  def bv122; @bv122 ||= sheet7.bv122/(sheet12.c13*sheet11.e79); end
-  def bw122; @bw122 ||= sheet7.bw122/(sheet12.c13*sheet11.e79); end
-  def bx122; @bx122 ||= sheet7.bx122/(sheet12.c13*sheet11.e79); end
-  def by122; @by122 ||= sheet7.by122/(sheet12.c13*sheet11.e79); end
-  def bz122; @bz122 ||= sheet7.bz122/(sheet12.c13*sheet11.e79); end
-  def ca122; @ca122 ||= sheet7.ca122/(sheet12.c13*sheet11.e79); end
-  def cc122; @cc122 ||= average(a('bs122','ca122')); end
-  def cd122; @cd122 ||= (sumproduct(a('bt122','ca122'),sheet12.a('d28','k28'))*5.0)+bs122; end
-  def cf122; @cf122 ||= sheet7.cf122/(sheet12.c13*sheet11.e79); end
-  def cg122; @cg122 ||= sheet7.cg122/(sheet12.c13*sheet11.e79); end
-  def ch122; @ch122 ||= sheet7.ch122/(sheet12.c13*sheet11.e79); end
-  def ci122; @ci122 ||= sheet7.ci122/(sheet12.c13*sheet11.e79); end
-  def cj122; @cj122 ||= sheet7.cj122/(sheet12.c13*sheet11.e79); end
-  def ck122; @ck122 ||= sheet7.ck122/(sheet12.c13*sheet11.e79); end
-  def cl122; @cl122 ||= sheet7.cl122/(sheet12.c13*sheet11.e79); end
-  def cm122; @cm122 ||= sheet7.cm122/(sheet12.c13*sheet11.e79); end
-  def cn122; @cn122 ||= sheet7.cn122/(sheet12.c13*sheet11.e79); end
-  def cp122; @cp122 ||= average(a('cf122','cn122')); end
-  def cq122; @cq122 ||= (sumproduct(a('cg122','cn122'),sheet12.a('d28','k28'))*5.0)+cf122; end
-  def cr122; @cr122 ||= excel_if(excel_comparison(abs(cd122-cq122-at122),"<",1.0),"ok","err"); end
-  def a123; "V.a"; end
-  def b123; "Biomatter to fuel conversion"; end
-  def c123; "Biomass Supply"; end
-  def e123; @e123 ||= sheet7.e123/(sheet12.c13*sheet11.e79); end
-  def f123; @f123 ||= sheet7.f123/(sheet12.c13*sheet11.e79); end
-  def g123; @g123 ||= sheet7.g123/(sheet12.c13*sheet11.e79); end
-  def h123; @h123 ||= sheet7.h123/(sheet12.c13*sheet11.e79); end
-  def i123; @i123 ||= sheet7.i123/(sheet12.c13*sheet11.e79); end
-  def j123; @j123 ||= sheet7.j123/(sheet12.c13*sheet11.e79); end
-  def k123; @k123 ||= sheet7.k123/(sheet12.c13*sheet11.e79); end
-  def l123; @l123 ||= sheet7.l123/(sheet12.c13*sheet11.e79); end
-  def m123; @m123 ||= sheet7.m123/(sheet12.c13*sheet11.e79); end
-  def o123; @o123 ||= sheet7.o123/(sheet12.c13*sheet11.e79); end
-  def p123; @p123 ||= sheet7.p123/(sheet12.c13*sheet11.e79); end
-  def q123; @q123 ||= sheet7.q123/(sheet12.c13*sheet11.e79); end
-  def r123; @r123 ||= sheet7.r123/(sheet12.c13*sheet11.e79); end
-  def s123; @s123 ||= sheet7.s123/(sheet12.c13*sheet11.e79); end
-  def t123; @t123 ||= sheet7.t123/(sheet12.c13*sheet11.e79); end
-  def u123; @u123 ||= sheet7.u123/(sheet12.c13*sheet11.e79); end
-  def v123; @v123 ||= sheet7.v123/(sheet12.c13*sheet11.e79); end
-  def w123; @w123 ||= sheet7.w123/(sheet12.c13*sheet11.e79); end
-  def y123; @y123 ||= sheet7.y123/(sheet12.c13*sheet11.e79); end
-  def z123; @z123 ||= sheet7.z123/(sheet12.c13*sheet11.e79); end
-  def aa123; @aa123 ||= sheet7.aa123/(sheet12.c13*sheet11.e79); end
-  def ab123; @ab123 ||= sheet7.ab123/(sheet12.c13*sheet11.e79); end
-  def ac123; @ac123 ||= sheet7.ac123/(sheet12.c13*sheet11.e79); end
-  def ad123; @ad123 ||= sheet7.ad123/(sheet12.c13*sheet11.e79); end
-  def ae123; @ae123 ||= sheet7.ae123/(sheet12.c13*sheet11.e79); end
-  def af123; @af123 ||= sheet7.af123/(sheet12.c13*sheet11.e79); end
-  def ag123; @ag123 ||= sheet7.ag123/(sheet12.c13*sheet11.e79); end
-  def ai123; @ai123 ||= sheet7.ai123/(sheet12.c13*sheet11.e79); end
-  def aj123; @aj123 ||= sheet7.aj123/(sheet12.c13*sheet11.e79); end
-  def ak123; @ak123 ||= sheet7.ak123/(sheet12.c13*sheet11.e79); end
-  def al123; @al123 ||= sheet7.al123/(sheet12.c13*sheet11.e79); end
-  def am123; @am123 ||= sheet7.am123/(sheet12.c13*sheet11.e79); end
-  def an123; @an123 ||= sheet7.an123/(sheet12.c13*sheet11.e79); end
-  def ao123; @ao123 ||= sheet7.ao123/(sheet12.c13*sheet11.e79); end
-  def ap123; @ap123 ||= sheet7.ap123/(sheet12.c13*sheet11.e79); end
-  def aq123; @aq123 ||= sheet7.aq123/(sheet12.c13*sheet11.e79); end
-  def as123; @as123 ||= average(a('ai123','aq123')); end
-  def at123; @at123 ||= (sumproduct(a('aj123','aq123'),sheet12.a('d28','k28'))*5.0)+ai123; end
-  def av123; 0.0; end
-  def aw123; 5.0; end
-  def ay123; @ay123 ||= sheet7.ay123/(sheet12.c13*sheet11.e79); end
-  def az123; @az123 ||= sheet7.az123/(sheet12.c13*sheet11.e79); end
-  def ba123; @ba123 ||= sheet7.ba123/(sheet12.c13*sheet11.e79); end
-  def bb123; @bb123 ||= sheet7.bb123/(sheet12.c13*sheet11.e79); end
-  def bc123; @bc123 ||= sheet7.bc123/(sheet12.c13*sheet11.e79); end
-  def bd123; @bd123 ||= sheet7.bd123/(sheet12.c13*sheet11.e79); end
-  def be123; @be123 ||= sheet7.be123/(sheet12.c13*sheet11.e79); end
-  def bf123; @bf123 ||= sheet7.bf123/(sheet12.c13*sheet11.e79); end
-  def bg123; @bg123 ||= sheet7.bg123/(sheet12.c13*sheet11.e79); end
-  def bi123; @bi123 ||= sheet7.bi123/(sheet12.c13*sheet11.e79); end
-  def bj123; @bj123 ||= sheet7.bj123/(sheet12.c13*sheet11.e79); end
-  def bk123; @bk123 ||= sheet7.bk123/(sheet12.c13*sheet11.e79); end
-  def bl123; @bl123 ||= sheet7.bl123/(sheet12.c13*sheet11.e79); end
-  def bm123; @bm123 ||= sheet7.bm123/(sheet12.c13*sheet11.e79); end
-  def bn123; @bn123 ||= sheet7.bn123/(sheet12.c13*sheet11.e79); end
-  def bo123; @bo123 ||= sheet7.bo123/(sheet12.c13*sheet11.e79); end
-  def bp123; @bp123 ||= sheet7.bp123/(sheet12.c13*sheet11.e79); end
-  def bq123; @bq123 ||= sheet7.bq123/(sheet12.c13*sheet11.e79); end
-  def bs123; @bs123 ||= sheet7.bs123/(sheet12.c13*sheet11.e79); end
-  def bt123; @bt123 ||= sheet7.bt123/(sheet12.c13*sheet11.e79); end
-  def bu123; @bu123 ||= sheet7.bu123/(sheet12.c13*sheet11.e79); end
-  def bv123; @bv123 ||= sheet7.bv123/(sheet12.c13*sheet11.e79); end
-  def bw123; @bw123 ||= sheet7.bw123/(sheet12.c13*sheet11.e79); end
-  def bx123; @bx123 ||= sheet7.bx123/(sheet12.c13*sheet11.e79); end
-  def by123; @by123 ||= sheet7.by123/(sheet12.c13*sheet11.e79); end
-  def bz123; @bz123 ||= sheet7.bz123/(sheet12.c13*sheet11.e79); end
-  def ca123; @ca123 ||= sheet7.ca123/(sheet12.c13*sheet11.e79); end
-  def cc123; @cc123 ||= average(a('bs123','ca123')); end
-  def cd123; @cd123 ||= (sumproduct(a('bt123','ca123'),sheet12.a('d28','k28'))*5.0)+bs123; end
-  def cf123; @cf123 ||= sheet7.cf123/(sheet12.c13*sheet11.e79); end
-  def cg123; @cg123 ||= sheet7.cg123/(sheet12.c13*sheet11.e79); end
-  def ch123; @ch123 ||= sheet7.ch123/(sheet12.c13*sheet11.e79); end
-  def ci123; @ci123 ||= sheet7.ci123/(sheet12.c13*sheet11.e79); end
-  def cj123; @cj123 ||= sheet7.cj123/(sheet12.c13*sheet11.e79); end
-  def ck123; @ck123 ||= sheet7.ck123/(sheet12.c13*sheet11.e79); end
-  def cl123; @cl123 ||= sheet7.cl123/(sheet12.c13*sheet11.e79); end
-  def cm123; @cm123 ||= sheet7.cm123/(sheet12.c13*sheet11.e79); end
-  def cn123; @cn123 ||= sheet7.cn123/(sheet12.c13*sheet11.e79); end
-  def cp123; @cp123 ||= average(a('cf123','cn123')); end
-  def cq123; @cq123 ||= (sumproduct(a('cg123','cn123'),sheet12.a('d28','k28'))*5.0)+cf123; end
-  def cr123; @cr123 ||= excel_if(excel_comparison(abs(cd123-cq123-at123),"<",1.0),"ok","err"); end
-  def a124; "V.b"; end
-  def b124; "Bioenergy imports"; end
-  def c124; "Biomass Supply"; end
-  def e124; 0.0; end
-  def f124; 0.0; end
-  def g124; 0.0; end
-  def h124; 0.0; end
-  def i124; 0.0; end
-  def j124; 0.0; end
-  def k124; 0.0; end
-  def l124; 0.0; end
-  def m124; 0.0; end
-  def o124; 0.0; end
-  def p124; 0.0; end
-  def q124; 0.0; end
-  def r124; 0.0; end
-  def s124; 0.0; end
-  def t124; 0.0; end
-  def u124; 0.0; end
-  def v124; 0.0; end
-  def w124; 0.0; end
-  def y124; 4.441239710862838; end
-  def z124; 4.441239710862838; end
-  def aa124; 4.441239710862838; end
-  def ab124; 4.441239710862838; end
-  def ac124; 4.441239710862838; end
-  def ad124; 4.441239710862838; end
-  def ae124; 4.441239710862838; end
-  def af124; 4.441239710862838; end
-  def ag124; 4.441239710862838; end
-  def ai124; 4.441239710862838; end
-  def aj124; 4.441239710862838; end
-  def ak124; 4.441239710862838; end
-  def al124; 4.441239710862838; end
-  def am124; 4.441239710862838; end
-  def an124; 4.441239710862838; end
-  def ao124; 4.441239710862838; end
-  def ap124; 4.441239710862838; end
-  def aq124; 4.441239710862838; end
-  def as124; 4.441239710862838; end
-  def at124; 93.31505116926877; end
-  def av124; 0.0; end
-  def aw124; 5.0; end
-  def ay124; 0.0; end
-  def az124; 0.0; end
-  def ba124; 0.0; end
-  def bb124; 0.0; end
-  def bc124; 0.0; end
-  def bd124; 0.0; end
-  def be124; 0.0; end
-  def bf124; 0.0; end
-  def bg124; 0.0; end
-  def bi124; 0.0; end
-  def bj124; 0.0; end
-  def bk124; 0.0; end
-  def bl124; 0.0; end
-  def bm124; 0.0; end
-  def bn124; 0.0; end
-  def bo124; 0.0; end
-  def bp124; 0.0; end
-  def bq124; 0.0; end
-  def bs124; 4.441239710862838; end
-  def bt124; 4.441239710862838; end
-  def bu124; 4.441239710862838; end
-  def bv124; 4.441239710862838; end
-  def bw124; 4.441239710862838; end
-  def bx124; 4.441239710862838; end
-  def by124; 4.441239710862838; end
-  def bz124; 4.441239710862838; end
-  def ca124; 4.441239710862838; end
-  def cc124; 4.441239710862838; end
-  def cd124; 93.31505116926877; end
-  def cf124; 0.0; end
-  def cg124; 0.0; end
-  def ch124; 0.0; end
-  def ci124; 0.0; end
-  def cj124; 0.0; end
-  def ck124; 0.0; end
-  def cl124; 0.0; end
-  def cm124; 0.0; end
-  def cn124; 0.0; end
-  def cp124; 0.0; end
-  def cq124; 0.0; end
-  def cr124; "ok"; end
-  def a125; "VI.a.Bioenergy"; end
-  def b125; "Agriculture and land use"; end
-  def c125; "Biomass Supply"; end
-  def e125; @e125 ||= sheet7.e125/(sheet12.c13*sheet11.e79); end
-  def f125; @f125 ||= sheet7.f125/(sheet12.c13*sheet11.e79); end
-  def g125; @g125 ||= sheet7.g125/(sheet12.c13*sheet11.e79); end
-  def h125; @h125 ||= sheet7.h125/(sheet12.c13*sheet11.e79); end
-  def i125; @i125 ||= sheet7.i125/(sheet12.c13*sheet11.e79); end
-  def j125; @j125 ||= sheet7.j125/(sheet12.c13*sheet11.e79); end
-  def k125; @k125 ||= sheet7.k125/(sheet12.c13*sheet11.e79); end
-  def l125; @l125 ||= sheet7.l125/(sheet12.c13*sheet11.e79); end
-  def m125; @m125 ||= sheet7.m125/(sheet12.c13*sheet11.e79); end
-  def o125; @o125 ||= sheet7.o125/(sheet12.c13*sheet11.e79); end
-  def p125; @p125 ||= sheet7.p125/(sheet12.c13*sheet11.e79); end
-  def q125; @q125 ||= sheet7.q125/(sheet12.c13*sheet11.e79); end
-  def r125; @r125 ||= sheet7.r125/(sheet12.c13*sheet11.e79); end
-  def s125; @s125 ||= sheet7.s125/(sheet12.c13*sheet11.e79); end
-  def t125; @t125 ||= sheet7.t125/(sheet12.c13*sheet11.e79); end
-  def u125; @u125 ||= sheet7.u125/(sheet12.c13*sheet11.e79); end
-  def v125; @v125 ||= sheet7.v125/(sheet12.c13*sheet11.e79); end
-  def w125; @w125 ||= sheet7.w125/(sheet12.c13*sheet11.e79); end
-  def y125; @y125 ||= sheet7.y125/(sheet12.c13*sheet11.e79); end
-  def z125; @z125 ||= sheet7.z125/(sheet12.c13*sheet11.e79); end
-  def aa125; @aa125 ||= sheet7.aa125/(sheet12.c13*sheet11.e79); end
-  def ab125; @ab125 ||= sheet7.ab125/(sheet12.c13*sheet11.e79); end
-  def ac125; @ac125 ||= sheet7.ac125/(sheet12.c13*sheet11.e79); end
-  def ad125; @ad125 ||= sheet7.ad125/(sheet12.c13*sheet11.e79); end
-  def ae125; @ae125 ||= sheet7.ae125/(sheet12.c13*sheet11.e79); end
-  def af125; @af125 ||= sheet7.af125/(sheet12.c13*sheet11.e79); end
-  def ag125; @ag125 ||= sheet7.ag125/(sheet12.c13*sheet11.e79); end
-  def ai125; @ai125 ||= sheet7.ai125/(sheet12.c13*sheet11.e79); end
-  def aj125; @aj125 ||= sheet7.aj125/(sheet12.c13*sheet11.e79); end
-  def ak125; @ak125 ||= sheet7.ak125/(sheet12.c13*sheet11.e79); end
-  def al125; @al125 ||= sheet7.al125/(sheet12.c13*sheet11.e79); end
-  def am125; @am125 ||= sheet7.am125/(sheet12.c13*sheet11.e79); end
-  def an125; @an125 ||= sheet7.an125/(sheet12.c13*sheet11.e79); end
-  def ao125; @ao125 ||= sheet7.ao125/(sheet12.c13*sheet11.e79); end
-  def ap125; @ap125 ||= sheet7.ap125/(sheet12.c13*sheet11.e79); end
-  def aq125; @aq125 ||= sheet7.aq125/(sheet12.c13*sheet11.e79); end
-  def as125; @as125 ||= average(a('ai125','aq125')); end
-  def at125; @at125 ||= (sumproduct(a('aj125','aq125'),sheet12.a('d28','k28'))*5.0)+ai125; end
-  def av125; 0.0; end
-  def aw125; 5.0; end
-  def ay125; @ay125 ||= sheet7.ay125/(sheet12.c13*sheet11.e79); end
-  def az125; @az125 ||= sheet7.az125/(sheet12.c13*sheet11.e79); end
-  def ba125; @ba125 ||= sheet7.ba125/(sheet12.c13*sheet11.e79); end
-  def bb125; @bb125 ||= sheet7.bb125/(sheet12.c13*sheet11.e79); end
-  def bc125; @bc125 ||= sheet7.bc125/(sheet12.c13*sheet11.e79); end
-  def bd125; @bd125 ||= sheet7.bd125/(sheet12.c13*sheet11.e79); end
-  def be125; @be125 ||= sheet7.be125/(sheet12.c13*sheet11.e79); end
-  def bf125; @bf125 ||= sheet7.bf125/(sheet12.c13*sheet11.e79); end
-  def bg125; @bg125 ||= sheet7.bg125/(sheet12.c13*sheet11.e79); end
-  def bi125; @bi125 ||= sheet7.bi125/(sheet12.c13*sheet11.e79); end
-  def bj125; @bj125 ||= sheet7.bj125/(sheet12.c13*sheet11.e79); end
-  def bk125; @bk125 ||= sheet7.bk125/(sheet12.c13*sheet11.e79); end
-  def bl125; @bl125 ||= sheet7.bl125/(sheet12.c13*sheet11.e79); end
-  def bm125; @bm125 ||= sheet7.bm125/(sheet12.c13*sheet11.e79); end
-  def bn125; @bn125 ||= sheet7.bn125/(sheet12.c13*sheet11.e79); end
-  def bo125; @bo125 ||= sheet7.bo125/(sheet12.c13*sheet11.e79); end
-  def bp125; @bp125 ||= sheet7.bp125/(sheet12.c13*sheet11.e79); end
-  def bq125; @bq125 ||= sheet7.bq125/(sheet12.c13*sheet11.e79); end
-  def bs125; @bs125 ||= sheet7.bs125/(sheet12.c13*sheet11.e79); end
-  def bt125; @bt125 ||= sheet7.bt125/(sheet12.c13*sheet11.e79); end
-  def bu125; @bu125 ||= sheet7.bu125/(sheet12.c13*sheet11.e79); end
-  def bv125; @bv125 ||= sheet7.bv125/(sheet12.c13*sheet11.e79); end
-  def bw125; @bw125 ||= sheet7.bw125/(sheet12.c13*sheet11.e79); end
-  def bx125; @bx125 ||= sheet7.bx125/(sheet12.c13*sheet11.e79); end
-  def by125; @by125 ||= sheet7.by125/(sheet12.c13*sheet11.e79); end
-  def bz125; @bz125 ||= sheet7.bz125/(sheet12.c13*sheet11.e79); end
-  def ca125; @ca125 ||= sheet7.ca125/(sheet12.c13*sheet11.e79); end
-  def cc125; @cc125 ||= average(a('bs125','ca125')); end
-  def cd125; @cd125 ||= (sumproduct(a('bt125','ca125'),sheet12.a('d28','k28'))*5.0)+bs125; end
-  def cf125; @cf125 ||= sheet7.cf125/(sheet12.c13*sheet11.e79); end
-  def cg125; @cg125 ||= sheet7.cg125/(sheet12.c13*sheet11.e79); end
-  def ch125; @ch125 ||= sheet7.ch125/(sheet12.c13*sheet11.e79); end
-  def ci125; @ci125 ||= sheet7.ci125/(sheet12.c13*sheet11.e79); end
-  def cj125; @cj125 ||= sheet7.cj125/(sheet12.c13*sheet11.e79); end
-  def ck125; @ck125 ||= sheet7.ck125/(sheet12.c13*sheet11.e79); end
-  def cl125; @cl125 ||= sheet7.cl125/(sheet12.c13*sheet11.e79); end
-  def cm125; @cm125 ||= sheet7.cm125/(sheet12.c13*sheet11.e79); end
-  def cn125; @cn125 ||= sheet7.cn125/(sheet12.c13*sheet11.e79); end
-  def cp125; @cp125 ||= average(a('cf125','cn125')); end
-  def cq125; @cq125 ||= (sumproduct(a('cg125','cn125'),sheet12.a('d28','k28'))*5.0)+cf125; end
-  def cr125; @cr125 ||= excel_if(excel_comparison(abs(cd125-cq125-at125),"<",1.0),"ok","err"); end
-  def a126; "VI.a.Emissions"; end
-  def b126; "Agriculture and land use"; end
-  def c126; "Business"; end
-  def e126; @e126 ||= sheet7.e126/(sheet12.c13*sheet11.e79); end
-  def f126; @f126 ||= sheet7.f126/(sheet12.c13*sheet11.e79); end
-  def g126; @g126 ||= sheet7.g126/(sheet12.c13*sheet11.e79); end
-  def h126; @h126 ||= sheet7.h126/(sheet12.c13*sheet11.e79); end
-  def i126; @i126 ||= sheet7.i126/(sheet12.c13*sheet11.e79); end
-  def j126; @j126 ||= sheet7.j126/(sheet12.c13*sheet11.e79); end
-  def k126; @k126 ||= sheet7.k126/(sheet12.c13*sheet11.e79); end
-  def l126; @l126 ||= sheet7.l126/(sheet12.c13*sheet11.e79); end
-  def m126; @m126 ||= sheet7.m126/(sheet12.c13*sheet11.e79); end
-  def o126; @o126 ||= sheet7.o126/(sheet12.c13*sheet11.e79); end
-  def p126; @p126 ||= sheet7.p126/(sheet12.c13*sheet11.e79); end
-  def q126; @q126 ||= sheet7.q126/(sheet12.c13*sheet11.e79); end
-  def r126; @r126 ||= sheet7.r126/(sheet12.c13*sheet11.e79); end
-  def s126; @s126 ||= sheet7.s126/(sheet12.c13*sheet11.e79); end
-  def t126; @t126 ||= sheet7.t126/(sheet12.c13*sheet11.e79); end
-  def u126; @u126 ||= sheet7.u126/(sheet12.c13*sheet11.e79); end
-  def v126; @v126 ||= sheet7.v126/(sheet12.c13*sheet11.e79); end
-  def w126; @w126 ||= sheet7.w126/(sheet12.c13*sheet11.e79); end
-  def y126; @y126 ||= sheet7.y126/(sheet12.c13*sheet11.e79); end
-  def z126; @z126 ||= sheet7.z126/(sheet12.c13*sheet11.e79); end
-  def aa126; @aa126 ||= sheet7.aa126/(sheet12.c13*sheet11.e79); end
-  def ab126; @ab126 ||= sheet7.ab126/(sheet12.c13*sheet11.e79); end
-  def ac126; @ac126 ||= sheet7.ac126/(sheet12.c13*sheet11.e79); end
-  def ad126; @ad126 ||= sheet7.ad126/(sheet12.c13*sheet11.e79); end
-  def ae126; @ae126 ||= sheet7.ae126/(sheet12.c13*sheet11.e79); end
-  def af126; @af126 ||= sheet7.af126/(sheet12.c13*sheet11.e79); end
-  def ag126; @ag126 ||= sheet7.ag126/(sheet12.c13*sheet11.e79); end
-  def ai126; @ai126 ||= sheet7.ai126/(sheet12.c13*sheet11.e79); end
-  def aj126; @aj126 ||= sheet7.aj126/(sheet12.c13*sheet11.e79); end
-  def ak126; @ak126 ||= sheet7.ak126/(sheet12.c13*sheet11.e79); end
-  def al126; @al126 ||= sheet7.al126/(sheet12.c13*sheet11.e79); end
-  def am126; @am126 ||= sheet7.am126/(sheet12.c13*sheet11.e79); end
-  def an126; @an126 ||= sheet7.an126/(sheet12.c13*sheet11.e79); end
-  def ao126; @ao126 ||= sheet7.ao126/(sheet12.c13*sheet11.e79); end
-  def ap126; @ap126 ||= sheet7.ap126/(sheet12.c13*sheet11.e79); end
-  def aq126; @aq126 ||= sheet7.aq126/(sheet12.c13*sheet11.e79); end
-  def as126; @as126 ||= average(a('ai126','aq126')); end
-  def at126; @at126 ||= (sumproduct(a('aj126','aq126'),sheet12.a('d28','k28'))*5.0)+ai126; end
-  def av126; 0.0; end
-  def aw126; 5.0; end
-  def ay126; @ay126 ||= sheet7.ay126/(sheet12.c13*sheet11.e79); end
-  def az126; @az126 ||= sheet7.az126/(sheet12.c13*sheet11.e79); end
-  def ba126; @ba126 ||= sheet7.ba126/(sheet12.c13*sheet11.e79); end
-  def bb126; @bb126 ||= sheet7.bb126/(sheet12.c13*sheet11.e79); end
-  def bc126; @bc126 ||= sheet7.bc126/(sheet12.c13*sheet11.e79); end
-  def bd126; @bd126 ||= sheet7.bd126/(sheet12.c13*sheet11.e79); end
-  def be126; @be126 ||= sheet7.be126/(sheet12.c13*sheet11.e79); end
-  def bf126; @bf126 ||= sheet7.bf126/(sheet12.c13*sheet11.e79); end
-  def bg126; @bg126 ||= sheet7.bg126/(sheet12.c13*sheet11.e79); end
-  def bi126; @bi126 ||= sheet7.bi126/(sheet12.c13*sheet11.e79); end
-  def bj126; @bj126 ||= sheet7.bj126/(sheet12.c13*sheet11.e79); end
-  def bk126; @bk126 ||= sheet7.bk126/(sheet12.c13*sheet11.e79); end
-  def bl126; @bl126 ||= sheet7.bl126/(sheet12.c13*sheet11.e79); end
-  def bm126; @bm126 ||= sheet7.bm126/(sheet12.c13*sheet11.e79); end
-  def bn126; @bn126 ||= sheet7.bn126/(sheet12.c13*sheet11.e79); end
-  def bo126; @bo126 ||= sheet7.bo126/(sheet12.c13*sheet11.e79); end
-  def bp126; @bp126 ||= sheet7.bp126/(sheet12.c13*sheet11.e79); end
-  def bq126; @bq126 ||= sheet7.bq126/(sheet12.c13*sheet11.e79); end
-  def bs126; @bs126 ||= sheet7.bs126/(sheet12.c13*sheet11.e79); end
-  def bt126; @bt126 ||= sheet7.bt126/(sheet12.c13*sheet11.e79); end
-  def bu126; @bu126 ||= sheet7.bu126/(sheet12.c13*sheet11.e79); end
-  def bv126; @bv126 ||= sheet7.bv126/(sheet12.c13*sheet11.e79); end
-  def bw126; @bw126 ||= sheet7.bw126/(sheet12.c13*sheet11.e79); end
-  def bx126; @bx126 ||= sheet7.bx126/(sheet12.c13*sheet11.e79); end
-  def by126; @by126 ||= sheet7.by126/(sheet12.c13*sheet11.e79); end
-  def bz126; @bz126 ||= sheet7.bz126/(sheet12.c13*sheet11.e79); end
-  def ca126; @ca126 ||= sheet7.ca126/(sheet12.c13*sheet11.e79); end
-  def cc126; @cc126 ||= average(a('bs126','ca126')); end
-  def cd126; @cd126 ||= (sumproduct(a('bt126','ca126'),sheet12.a('d28','k28'))*5.0)+bs126; end
-  def cf126; @cf126 ||= sheet7.cf126/(sheet12.c13*sheet11.e79); end
-  def cg126; @cg126 ||= sheet7.cg126/(sheet12.c13*sheet11.e79); end
-  def ch126; @ch126 ||= sheet7.ch126/(sheet12.c13*sheet11.e79); end
-  def ci126; @ci126 ||= sheet7.ci126/(sheet12.c13*sheet11.e79); end
-  def cj126; @cj126 ||= sheet7.cj126/(sheet12.c13*sheet11.e79); end
-  def ck126; @ck126 ||= sheet7.ck126/(sheet12.c13*sheet11.e79); end
-  def cl126; @cl126 ||= sheet7.cl126/(sheet12.c13*sheet11.e79); end
-  def cm126; @cm126 ||= sheet7.cm126/(sheet12.c13*sheet11.e79); end
-  def cn126; @cn126 ||= sheet7.cn126/(sheet12.c13*sheet11.e79); end
-  def cp126; @cp126 ||= average(a('cf126','cn126')); end
-  def cq126; @cq126 ||= (sumproduct(a('cg126','cn126'),sheet12.a('d28','k28'))*5.0)+cf126; end
-  def cr126; @cr126 ||= excel_if(excel_comparison(abs(cd126-cq126-at126),"<",1.0),"ok","err"); end
-  def a127; "VI.b.Bioenergy"; end
-  def b127; "Energy from waste"; end
-  def c127; "Biomass Supply"; end
-  def e127; @e127 ||= sheet7.e127/(sheet12.c13*sheet11.e79); end
-  def f127; @f127 ||= sheet7.f127/(sheet12.c13*sheet11.e79); end
-  def g127; @g127 ||= sheet7.g127/(sheet12.c13*sheet11.e79); end
-  def h127; @h127 ||= sheet7.h127/(sheet12.c13*sheet11.e79); end
-  def i127; @i127 ||= sheet7.i127/(sheet12.c13*sheet11.e79); end
-  def j127; @j127 ||= sheet7.j127/(sheet12.c13*sheet11.e79); end
-  def k127; @k127 ||= sheet7.k127/(sheet12.c13*sheet11.e79); end
-  def l127; @l127 ||= sheet7.l127/(sheet12.c13*sheet11.e79); end
-  def m127; @m127 ||= sheet7.m127/(sheet12.c13*sheet11.e79); end
-  def o127; @o127 ||= sheet7.o127/(sheet12.c13*sheet11.e79); end
-  def p127; @p127 ||= sheet7.p127/(sheet12.c13*sheet11.e79); end
-  def q127; @q127 ||= sheet7.q127/(sheet12.c13*sheet11.e79); end
-  def r127; @r127 ||= sheet7.r127/(sheet12.c13*sheet11.e79); end
-  def s127; @s127 ||= sheet7.s127/(sheet12.c13*sheet11.e79); end
-  def t127; @t127 ||= sheet7.t127/(sheet12.c13*sheet11.e79); end
-  def u127; @u127 ||= sheet7.u127/(sheet12.c13*sheet11.e79); end
-  def v127; @v127 ||= sheet7.v127/(sheet12.c13*sheet11.e79); end
-  def w127; @w127 ||= sheet7.w127/(sheet12.c13*sheet11.e79); end
-  def y127; @y127 ||= sheet7.y127/(sheet12.c13*sheet11.e79); end
-  def z127; @z127 ||= sheet7.z127/(sheet12.c13*sheet11.e79); end
-  def aa127; @aa127 ||= sheet7.aa127/(sheet12.c13*sheet11.e79); end
-  def ab127; @ab127 ||= sheet7.ab127/(sheet12.c13*sheet11.e79); end
-  def ac127; @ac127 ||= sheet7.ac127/(sheet12.c13*sheet11.e79); end
-  def ad127; @ad127 ||= sheet7.ad127/(sheet12.c13*sheet11.e79); end
-  def ae127; @ae127 ||= sheet7.ae127/(sheet12.c13*sheet11.e79); end
-  def af127; @af127 ||= sheet7.af127/(sheet12.c13*sheet11.e79); end
-  def ag127; @ag127 ||= sheet7.ag127/(sheet12.c13*sheet11.e79); end
-  def ai127; @ai127 ||= sheet7.ai127/(sheet12.c13*sheet11.e79); end
-  def aj127; @aj127 ||= sheet7.aj127/(sheet12.c13*sheet11.e79); end
-  def ak127; @ak127 ||= sheet7.ak127/(sheet12.c13*sheet11.e79); end
-  def al127; @al127 ||= sheet7.al127/(sheet12.c13*sheet11.e79); end
-  def am127; @am127 ||= sheet7.am127/(sheet12.c13*sheet11.e79); end
-  def an127; @an127 ||= sheet7.an127/(sheet12.c13*sheet11.e79); end
-  def ao127; @ao127 ||= sheet7.ao127/(sheet12.c13*sheet11.e79); end
-  def ap127; @ap127 ||= sheet7.ap127/(sheet12.c13*sheet11.e79); end
-  def aq127; @aq127 ||= sheet7.aq127/(sheet12.c13*sheet11.e79); end
-  def as127; @as127 ||= average(a('ai127','aq127')); end
-  def at127; @at127 ||= (sumproduct(a('aj127','aq127'),sheet12.a('d28','k28'))*5.0)+ai127; end
-  def av127; 0.0; end
-  def aw127; 5.0; end
-  def ay127; @ay127 ||= sheet7.ay127/(sheet12.c13*sheet11.e79); end
-  def az127; @az127 ||= sheet7.az127/(sheet12.c13*sheet11.e79); end
-  def ba127; @ba127 ||= sheet7.ba127/(sheet12.c13*sheet11.e79); end
-  def bb127; @bb127 ||= sheet7.bb127/(sheet12.c13*sheet11.e79); end
-  def bc127; @bc127 ||= sheet7.bc127/(sheet12.c13*sheet11.e79); end
-  def bd127; @bd127 ||= sheet7.bd127/(sheet12.c13*sheet11.e79); end
-  def be127; @be127 ||= sheet7.be127/(sheet12.c13*sheet11.e79); end
-  def bf127; @bf127 ||= sheet7.bf127/(sheet12.c13*sheet11.e79); end
-  def bg127; @bg127 ||= sheet7.bg127/(sheet12.c13*sheet11.e79); end
-  def bi127; @bi127 ||= sheet7.bi127/(sheet12.c13*sheet11.e79); end
-  def bj127; @bj127 ||= sheet7.bj127/(sheet12.c13*sheet11.e79); end
-  def bk127; @bk127 ||= sheet7.bk127/(sheet12.c13*sheet11.e79); end
-  def bl127; @bl127 ||= sheet7.bl127/(sheet12.c13*sheet11.e79); end
-  def bm127; @bm127 ||= sheet7.bm127/(sheet12.c13*sheet11.e79); end
-  def bn127; @bn127 ||= sheet7.bn127/(sheet12.c13*sheet11.e79); end
-  def bo127; @bo127 ||= sheet7.bo127/(sheet12.c13*sheet11.e79); end
-  def bp127; @bp127 ||= sheet7.bp127/(sheet12.c13*sheet11.e79); end
-  def bq127; @bq127 ||= sheet7.bq127/(sheet12.c13*sheet11.e79); end
-  def bs127; @bs127 ||= sheet7.bs127/(sheet12.c13*sheet11.e79); end
-  def bt127; @bt127 ||= sheet7.bt127/(sheet12.c13*sheet11.e79); end
-  def bu127; @bu127 ||= sheet7.bu127/(sheet12.c13*sheet11.e79); end
-  def bv127; @bv127 ||= sheet7.bv127/(sheet12.c13*sheet11.e79); end
-  def bw127; @bw127 ||= sheet7.bw127/(sheet12.c13*sheet11.e79); end
-  def bx127; @bx127 ||= sheet7.bx127/(sheet12.c13*sheet11.e79); end
-  def by127; @by127 ||= sheet7.by127/(sheet12.c13*sheet11.e79); end
-  def bz127; @bz127 ||= sheet7.bz127/(sheet12.c13*sheet11.e79); end
-  def ca127; @ca127 ||= sheet7.ca127/(sheet12.c13*sheet11.e79); end
-  def cc127; @cc127 ||= average(a('bs127','ca127')); end
-  def cd127; @cd127 ||= (sumproduct(a('bt127','ca127'),sheet12.a('d28','k28'))*5.0)+bs127; end
-  def cf127; @cf127 ||= sheet7.cf127/(sheet12.c13*sheet11.e79); end
-  def cg127; @cg127 ||= sheet7.cg127/(sheet12.c13*sheet11.e79); end
-  def ch127; @ch127 ||= sheet7.ch127/(sheet12.c13*sheet11.e79); end
-  def ci127; @ci127 ||= sheet7.ci127/(sheet12.c13*sheet11.e79); end
-  def cj127; @cj127 ||= sheet7.cj127/(sheet12.c13*sheet11.e79); end
-  def ck127; @ck127 ||= sheet7.ck127/(sheet12.c13*sheet11.e79); end
-  def cl127; @cl127 ||= sheet7.cl127/(sheet12.c13*sheet11.e79); end
-  def cm127; @cm127 ||= sheet7.cm127/(sheet12.c13*sheet11.e79); end
-  def cn127; @cn127 ||= sheet7.cn127/(sheet12.c13*sheet11.e79); end
-  def cp127; @cp127 ||= average(a('cf127','cn127')); end
-  def cq127; @cq127 ||= (sumproduct(a('cg127','cn127'),sheet12.a('d28','k28'))*5.0)+cf127; end
-  def cr127; @cr127 ||= excel_if(excel_comparison(abs(cd127-cq127-at127),"<",1.0),"ok","err"); end
-  def a128; "VI.b.Waste"; end
-  def b128; "Waste arising"; end
-  def c128; "Business"; end
-  def e128; @e128 ||= sheet7.e128/(sheet12.c13*sheet11.e79); end
-  def f128; @f128 ||= sheet7.f128/(sheet12.c13*sheet11.e79); end
-  def g128; @g128 ||= sheet7.g128/(sheet12.c13*sheet11.e79); end
-  def h128; @h128 ||= sheet7.h128/(sheet12.c13*sheet11.e79); end
-  def i128; @i128 ||= sheet7.i128/(sheet12.c13*sheet11.e79); end
-  def j128; @j128 ||= sheet7.j128/(sheet12.c13*sheet11.e79); end
-  def k128; @k128 ||= sheet7.k128/(sheet12.c13*sheet11.e79); end
-  def l128; @l128 ||= sheet7.l128/(sheet12.c13*sheet11.e79); end
-  def m128; @m128 ||= sheet7.m128/(sheet12.c13*sheet11.e79); end
-  def o128; @o128 ||= sheet7.o128/(sheet12.c13*sheet11.e79); end
-  def p128; @p128 ||= sheet7.p128/(sheet12.c13*sheet11.e79); end
-  def q128; @q128 ||= sheet7.q128/(sheet12.c13*sheet11.e79); end
-  def r128; @r128 ||= sheet7.r128/(sheet12.c13*sheet11.e79); end
-  def s128; @s128 ||= sheet7.s128/(sheet12.c13*sheet11.e79); end
-  def t128; @t128 ||= sheet7.t128/(sheet12.c13*sheet11.e79); end
-  def u128; @u128 ||= sheet7.u128/(sheet12.c13*sheet11.e79); end
-  def v128; @v128 ||= sheet7.v128/(sheet12.c13*sheet11.e79); end
-  def w128; @w128 ||= sheet7.w128/(sheet12.c13*sheet11.e79); end
-  def y128; @y128 ||= sheet7.y128/(sheet12.c13*sheet11.e79); end
-  def z128; @z128 ||= sheet7.z128/(sheet12.c13*sheet11.e79); end
-  def aa128; @aa128 ||= sheet7.aa128/(sheet12.c13*sheet11.e79); end
-  def ab128; @ab128 ||= sheet7.ab128/(sheet12.c13*sheet11.e79); end
-  def ac128; @ac128 ||= sheet7.ac128/(sheet12.c13*sheet11.e79); end
-  def ad128; @ad128 ||= sheet7.ad128/(sheet12.c13*sheet11.e79); end
-  def ae128; @ae128 ||= sheet7.ae128/(sheet12.c13*sheet11.e79); end
-  def af128; @af128 ||= sheet7.af128/(sheet12.c13*sheet11.e79); end
-  def ag128; @ag128 ||= sheet7.ag128/(sheet12.c13*sheet11.e79); end
-  def ai128; @ai128 ||= sheet7.ai128/(sheet12.c13*sheet11.e79); end
-  def aj128; @aj128 ||= sheet7.aj128/(sheet12.c13*sheet11.e79); end
-  def ak128; @ak128 ||= sheet7.ak128/(sheet12.c13*sheet11.e79); end
-  def al128; @al128 ||= sheet7.al128/(sheet12.c13*sheet11.e79); end
-  def am128; @am128 ||= sheet7.am128/(sheet12.c13*sheet11.e79); end
-  def an128; @an128 ||= sheet7.an128/(sheet12.c13*sheet11.e79); end
-  def ao128; @ao128 ||= sheet7.ao128/(sheet12.c13*sheet11.e79); end
-  def ap128; @ap128 ||= sheet7.ap128/(sheet12.c13*sheet11.e79); end
-  def aq128; @aq128 ||= sheet7.aq128/(sheet12.c13*sheet11.e79); end
-  def as128; @as128 ||= average(a('ai128','aq128')); end
-  def at128; @at128 ||= (sumproduct(a('aj128','aq128'),sheet12.a('d28','k28'))*5.0)+ai128; end
-  def av128; 0.0; end
-  def aw128; 5.0; end
-  def ay128; @ay128 ||= sheet7.ay128/(sheet12.c13*sheet11.e79); end
-  def az128; @az128 ||= sheet7.az128/(sheet12.c13*sheet11.e79); end
-  def ba128; @ba128 ||= sheet7.ba128/(sheet12.c13*sheet11.e79); end
-  def bb128; @bb128 ||= sheet7.bb128/(sheet12.c13*sheet11.e79); end
-  def bc128; @bc128 ||= sheet7.bc128/(sheet12.c13*sheet11.e79); end
-  def bd128; @bd128 ||= sheet7.bd128/(sheet12.c13*sheet11.e79); end
-  def be128; @be128 ||= sheet7.be128/(sheet12.c13*sheet11.e79); end
-  def bf128; @bf128 ||= sheet7.bf128/(sheet12.c13*sheet11.e79); end
-  def bg128; @bg128 ||= sheet7.bg128/(sheet12.c13*sheet11.e79); end
-  def bi128; @bi128 ||= sheet7.bi128/(sheet12.c13*sheet11.e79); end
-  def bj128; @bj128 ||= sheet7.bj128/(sheet12.c13*sheet11.e79); end
-  def bk128; @bk128 ||= sheet7.bk128/(sheet12.c13*sheet11.e79); end
-  def bl128; @bl128 ||= sheet7.bl128/(sheet12.c13*sheet11.e79); end
-  def bm128; @bm128 ||= sheet7.bm128/(sheet12.c13*sheet11.e79); end
-  def bn128; @bn128 ||= sheet7.bn128/(sheet12.c13*sheet11.e79); end
-  def bo128; @bo128 ||= sheet7.bo128/(sheet12.c13*sheet11.e79); end
-  def bp128; @bp128 ||= sheet7.bp128/(sheet12.c13*sheet11.e79); end
-  def bq128; @bq128 ||= sheet7.bq128/(sheet12.c13*sheet11.e79); end
-  def bs128; @bs128 ||= sheet7.bs128/(sheet12.c13*sheet11.e79); end
-  def bt128; @bt128 ||= sheet7.bt128/(sheet12.c13*sheet11.e79); end
-  def bu128; @bu128 ||= sheet7.bu128/(sheet12.c13*sheet11.e79); end
-  def bv128; @bv128 ||= sheet7.bv128/(sheet12.c13*sheet11.e79); end
-  def bw128; @bw128 ||= sheet7.bw128/(sheet12.c13*sheet11.e79); end
-  def bx128; @bx128 ||= sheet7.bx128/(sheet12.c13*sheet11.e79); end
-  def by128; @by128 ||= sheet7.by128/(sheet12.c13*sheet11.e79); end
-  def bz128; @bz128 ||= sheet7.bz128/(sheet12.c13*sheet11.e79); end
-  def ca128; @ca128 ||= sheet7.ca128/(sheet12.c13*sheet11.e79); end
-  def cc128; @cc128 ||= average(a('bs128','ca128')); end
-  def cd128; @cd128 ||= (sumproduct(a('bt128','ca128'),sheet12.a('d28','k28'))*5.0)+bs128; end
-  def cf128; @cf128 ||= sheet7.cf128/(sheet12.c13*sheet11.e79); end
-  def cg128; @cg128 ||= sheet7.cg128/(sheet12.c13*sheet11.e79); end
-  def ch128; @ch128 ||= sheet7.ch128/(sheet12.c13*sheet11.e79); end
-  def ci128; @ci128 ||= sheet7.ci128/(sheet12.c13*sheet11.e79); end
-  def cj128; @cj128 ||= sheet7.cj128/(sheet12.c13*sheet11.e79); end
-  def ck128; @ck128 ||= sheet7.ck128/(sheet12.c13*sheet11.e79); end
-  def cl128; @cl128 ||= sheet7.cl128/(sheet12.c13*sheet11.e79); end
-  def cm128; @cm128 ||= sheet7.cm128/(sheet12.c13*sheet11.e79); end
-  def cn128; @cn128 ||= sheet7.cn128/(sheet12.c13*sheet11.e79); end
-  def cp128; @cp128 ||= average(a('cf128','cn128')); end
-  def cq128; @cq128 ||= (sumproduct(a('cg128','cn128'),sheet12.a('d28','k28'))*5.0)+cf128; end
-  def cr128; @cr128 ||= excel_if(excel_comparison(abs(cd128-cq128-at128),"<",1.0),"ok","err"); end
-  def a129; "VI.c"; end
-  def b129; "Marine algae"; end
-  def c129; "Biomass Supply"; end
-  def e129; @e129 ||= sheet7.e129/(sheet12.c13*sheet11.e79); end
-  def f129; @f129 ||= sheet7.f129/(sheet12.c13*sheet11.e79); end
-  def g129; @g129 ||= sheet7.g129/(sheet12.c13*sheet11.e79); end
-  def h129; @h129 ||= sheet7.h129/(sheet12.c13*sheet11.e79); end
-  def i129; @i129 ||= sheet7.i129/(sheet12.c13*sheet11.e79); end
-  def j129; @j129 ||= sheet7.j129/(sheet12.c13*sheet11.e79); end
-  def k129; @k129 ||= sheet7.k129/(sheet12.c13*sheet11.e79); end
-  def l129; @l129 ||= sheet7.l129/(sheet12.c13*sheet11.e79); end
-  def m129; @m129 ||= sheet7.m129/(sheet12.c13*sheet11.e79); end
-  def o129; @o129 ||= sheet7.o129/(sheet12.c13*sheet11.e79); end
-  def p129; @p129 ||= sheet7.p129/(sheet12.c13*sheet11.e79); end
-  def q129; @q129 ||= sheet7.q129/(sheet12.c13*sheet11.e79); end
-  def r129; @r129 ||= sheet7.r129/(sheet12.c13*sheet11.e79); end
-  def s129; @s129 ||= sheet7.s129/(sheet12.c13*sheet11.e79); end
-  def t129; @t129 ||= sheet7.t129/(sheet12.c13*sheet11.e79); end
-  def u129; @u129 ||= sheet7.u129/(sheet12.c13*sheet11.e79); end
-  def v129; @v129 ||= sheet7.v129/(sheet12.c13*sheet11.e79); end
-  def w129; @w129 ||= sheet7.w129/(sheet12.c13*sheet11.e79); end
-  def y129; @y129 ||= sheet7.y129/(sheet12.c13*sheet11.e79); end
-  def z129; @z129 ||= sheet7.z129/(sheet12.c13*sheet11.e79); end
-  def aa129; @aa129 ||= sheet7.aa129/(sheet12.c13*sheet11.e79); end
-  def ab129; @ab129 ||= sheet7.ab129/(sheet12.c13*sheet11.e79); end
-  def ac129; @ac129 ||= sheet7.ac129/(sheet12.c13*sheet11.e79); end
-  def ad129; @ad129 ||= sheet7.ad129/(sheet12.c13*sheet11.e79); end
-  def ae129; @ae129 ||= sheet7.ae129/(sheet12.c13*sheet11.e79); end
-  def af129; @af129 ||= sheet7.af129/(sheet12.c13*sheet11.e79); end
-  def ag129; @ag129 ||= sheet7.ag129/(sheet12.c13*sheet11.e79); end
-  def ai129; @ai129 ||= sheet7.ai129/(sheet12.c13*sheet11.e79); end
-  def aj129; @aj129 ||= sheet7.aj129/(sheet12.c13*sheet11.e79); end
-  def ak129; @ak129 ||= sheet7.ak129/(sheet12.c13*sheet11.e79); end
-  def al129; @al129 ||= sheet7.al129/(sheet12.c13*sheet11.e79); end
-  def am129; @am129 ||= sheet7.am129/(sheet12.c13*sheet11.e79); end
-  def an129; @an129 ||= sheet7.an129/(sheet12.c13*sheet11.e79); end
-  def ao129; @ao129 ||= sheet7.ao129/(sheet12.c13*sheet11.e79); end
-  def ap129; @ap129 ||= sheet7.ap129/(sheet12.c13*sheet11.e79); end
-  def aq129; @aq129 ||= sheet7.aq129/(sheet12.c13*sheet11.e79); end
-  def as129; @as129 ||= average(a('ai129','aq129')); end
-  def at129; @at129 ||= (sumproduct(a('aj129','aq129'),sheet12.a('d28','k28'))*5.0)+ai129; end
-  def av129; 0.0; end
-  def aw129; 5.0; end
-  def ay129; @ay129 ||= sheet7.ay129/(sheet12.c13*sheet11.e79); end
-  def az129; @az129 ||= sheet7.az129/(sheet12.c13*sheet11.e79); end
-  def ba129; @ba129 ||= sheet7.ba129/(sheet12.c13*sheet11.e79); end
-  def bb129; @bb129 ||= sheet7.bb129/(sheet12.c13*sheet11.e79); end
-  def bc129; @bc129 ||= sheet7.bc129/(sheet12.c13*sheet11.e79); end
-  def bd129; @bd129 ||= sheet7.bd129/(sheet12.c13*sheet11.e79); end
-  def be129; @be129 ||= sheet7.be129/(sheet12.c13*sheet11.e79); end
-  def bf129; @bf129 ||= sheet7.bf129/(sheet12.c13*sheet11.e79); end
-  def bg129; @bg129 ||= sheet7.bg129/(sheet12.c13*sheet11.e79); end
-  def bi129; @bi129 ||= sheet7.bi129/(sheet12.c13*sheet11.e79); end
-  def bj129; @bj129 ||= sheet7.bj129/(sheet12.c13*sheet11.e79); end
-  def bk129; @bk129 ||= sheet7.bk129/(sheet12.c13*sheet11.e79); end
-  def bl129; @bl129 ||= sheet7.bl129/(sheet12.c13*sheet11.e79); end
-  def bm129; @bm129 ||= sheet7.bm129/(sheet12.c13*sheet11.e79); end
-  def bn129; @bn129 ||= sheet7.bn129/(sheet12.c13*sheet11.e79); end
-  def bo129; @bo129 ||= sheet7.bo129/(sheet12.c13*sheet11.e79); end
-  def bp129; @bp129 ||= sheet7.bp129/(sheet12.c13*sheet11.e79); end
-  def bq129; @bq129 ||= sheet7.bq129/(sheet12.c13*sheet11.e79); end
-  def bs129; @bs129 ||= sheet7.bs129/(sheet12.c13*sheet11.e79); end
-  def bt129; @bt129 ||= sheet7.bt129/(sheet12.c13*sheet11.e79); end
-  def bu129; @bu129 ||= sheet7.bu129/(sheet12.c13*sheet11.e79); end
-  def bv129; @bv129 ||= sheet7.bv129/(sheet12.c13*sheet11.e79); end
-  def bw129; @bw129 ||= sheet7.bw129/(sheet12.c13*sheet11.e79); end
-  def bx129; @bx129 ||= sheet7.bx129/(sheet12.c13*sheet11.e79); end
-  def by129; @by129 ||= sheet7.by129/(sheet12.c13*sheet11.e79); end
-  def bz129; @bz129 ||= sheet7.bz129/(sheet12.c13*sheet11.e79); end
-  def ca129; @ca129 ||= sheet7.ca129/(sheet12.c13*sheet11.e79); end
-  def cc129; @cc129 ||= average(a('bs129','ca129')); end
-  def cd129; @cd129 ||= (sumproduct(a('bt129','ca129'),sheet12.a('d28','k28'))*5.0)+bs129; end
-  def cf129; @cf129 ||= sheet7.cf129/(sheet12.c13*sheet11.e79); end
-  def cg129; @cg129 ||= sheet7.cg129/(sheet12.c13*sheet11.e79); end
-  def ch129; @ch129 ||= sheet7.ch129/(sheet12.c13*sheet11.e79); end
-  def ci129; @ci129 ||= sheet7.ci129/(sheet12.c13*sheet11.e79); end
-  def cj129; @cj129 ||= sheet7.cj129/(sheet12.c13*sheet11.e79); end
-  def ck129; @ck129 ||= sheet7.ck129/(sheet12.c13*sheet11.e79); end
-  def cl129; @cl129 ||= sheet7.cl129/(sheet12.c13*sheet11.e79); end
-  def cm129; @cm129 ||= sheet7.cm129/(sheet12.c13*sheet11.e79); end
-  def cn129; @cn129 ||= sheet7.cn129/(sheet12.c13*sheet11.e79); end
-  def cp129; @cp129 ||= average(a('cf129','cn129')); end
-  def cq129; @cq129 ||= (sumproduct(a('cg129','cn129'),sheet12.a('d28','k28'))*5.0)+cf129; end
-  def cr129; @cr129 ||= excel_if(excel_comparison(abs(cd129-cq129-at129),"<",1.0),"ok","err"); end
-  def a130; "VII.a.Imports"; end
-  def b130; "Electricity imports"; end
-  def c130; "Power"; end
-  def e130; @e130 ||= sheet7.e130/(sheet12.c13*sheet11.e79); end
-  def f130; @f130 ||= sheet7.f130/(sheet12.c13*sheet11.e79); end
-  def g130; @g130 ||= sheet7.g130/(sheet12.c13*sheet11.e79); end
-  def h130; @h130 ||= sheet7.h130/(sheet12.c13*sheet11.e79); end
-  def i130; @i130 ||= sheet7.i130/(sheet12.c13*sheet11.e79); end
-  def j130; @j130 ||= sheet7.j130/(sheet12.c13*sheet11.e79); end
-  def k130; @k130 ||= sheet7.k130/(sheet12.c13*sheet11.e79); end
-  def l130; @l130 ||= sheet7.l130/(sheet12.c13*sheet11.e79); end
-  def m130; @m130 ||= sheet7.m130/(sheet12.c13*sheet11.e79); end
-  def o130; @o130 ||= sheet7.o130/(sheet12.c13*sheet11.e79); end
-  def p130; @p130 ||= sheet7.p130/(sheet12.c13*sheet11.e79); end
-  def q130; @q130 ||= sheet7.q130/(sheet12.c13*sheet11.e79); end
-  def r130; @r130 ||= sheet7.r130/(sheet12.c13*sheet11.e79); end
-  def s130; @s130 ||= sheet7.s130/(sheet12.c13*sheet11.e79); end
-  def t130; @t130 ||= sheet7.t130/(sheet12.c13*sheet11.e79); end
-  def u130; @u130 ||= sheet7.u130/(sheet12.c13*sheet11.e79); end
-  def v130; @v130 ||= sheet7.v130/(sheet12.c13*sheet11.e79); end
-  def w130; @w130 ||= sheet7.w130/(sheet12.c13*sheet11.e79); end
-  def y130; @y130 ||= sheet7.y130/(sheet12.c13*sheet11.e79); end
-  def z130; @z130 ||= sheet7.z130/(sheet12.c13*sheet11.e79); end
-  def aa130; @aa130 ||= sheet7.aa130/(sheet12.c13*sheet11.e79); end
-  def ab130; @ab130 ||= sheet7.ab130/(sheet12.c13*sheet11.e79); end
-  def ac130; @ac130 ||= sheet7.ac130/(sheet12.c13*sheet11.e79); end
-  def ad130; @ad130 ||= sheet7.ad130/(sheet12.c13*sheet11.e79); end
-  def ae130; @ae130 ||= sheet7.ae130/(sheet12.c13*sheet11.e79); end
-  def af130; @af130 ||= sheet7.af130/(sheet12.c13*sheet11.e79); end
-  def ag130; @ag130 ||= sheet7.ag130/(sheet12.c13*sheet11.e79); end
-  def ai130; @ai130 ||= sheet7.ai130/(sheet12.c13*sheet11.e79); end
-  def aj130; @aj130 ||= sheet7.aj130/(sheet12.c13*sheet11.e79); end
-  def ak130; @ak130 ||= sheet7.ak130/(sheet12.c13*sheet11.e79); end
-  def al130; @al130 ||= sheet7.al130/(sheet12.c13*sheet11.e79); end
-  def am130; @am130 ||= sheet7.am130/(sheet12.c13*sheet11.e79); end
-  def an130; @an130 ||= sheet7.an130/(sheet12.c13*sheet11.e79); end
-  def ao130; @ao130 ||= sheet7.ao130/(sheet12.c13*sheet11.e79); end
-  def ap130; @ap130 ||= sheet7.ap130/(sheet12.c13*sheet11.e79); end
-  def aq130; @aq130 ||= sheet7.aq130/(sheet12.c13*sheet11.e79); end
-  def as130; @as130 ||= average(a('ai130','aq130')); end
-  def at130; @at130 ||= (sumproduct(a('aj130','aq130'),sheet12.a('d28','k28'))*5.0)+ai130; end
-  def av130; 0.0; end
-  def aw130; 5.0; end
-  def ay130; @ay130 ||= sheet7.ay130/(sheet12.c13*sheet11.e79); end
-  def az130; @az130 ||= sheet7.az130/(sheet12.c13*sheet11.e79); end
-  def ba130; @ba130 ||= sheet7.ba130/(sheet12.c13*sheet11.e79); end
-  def bb130; @bb130 ||= sheet7.bb130/(sheet12.c13*sheet11.e79); end
-  def bc130; @bc130 ||= sheet7.bc130/(sheet12.c13*sheet11.e79); end
-  def bd130; @bd130 ||= sheet7.bd130/(sheet12.c13*sheet11.e79); end
-  def be130; @be130 ||= sheet7.be130/(sheet12.c13*sheet11.e79); end
-  def bf130; @bf130 ||= sheet7.bf130/(sheet12.c13*sheet11.e79); end
-  def bg130; @bg130 ||= sheet7.bg130/(sheet12.c13*sheet11.e79); end
-  def bi130; @bi130 ||= sheet7.bi130/(sheet12.c13*sheet11.e79); end
-  def bj130; @bj130 ||= sheet7.bj130/(sheet12.c13*sheet11.e79); end
-  def bk130; @bk130 ||= sheet7.bk130/(sheet12.c13*sheet11.e79); end
-  def bl130; @bl130 ||= sheet7.bl130/(sheet12.c13*sheet11.e79); end
-  def bm130; @bm130 ||= sheet7.bm130/(sheet12.c13*sheet11.e79); end
-  def bn130; @bn130 ||= sheet7.bn130/(sheet12.c13*sheet11.e79); end
-  def bo130; @bo130 ||= sheet7.bo130/(sheet12.c13*sheet11.e79); end
-  def bp130; @bp130 ||= sheet7.bp130/(sheet12.c13*sheet11.e79); end
-  def bq130; @bq130 ||= sheet7.bq130/(sheet12.c13*sheet11.e79); end
-  def bs130; @bs130 ||= sheet7.bs130/(sheet12.c13*sheet11.e79); end
-  def bt130; @bt130 ||= sheet7.bt130/(sheet12.c13*sheet11.e79); end
-  def bu130; @bu130 ||= sheet7.bu130/(sheet12.c13*sheet11.e79); end
-  def bv130; @bv130 ||= sheet7.bv130/(sheet12.c13*sheet11.e79); end
-  def bw130; @bw130 ||= sheet7.bw130/(sheet12.c13*sheet11.e79); end
-  def bx130; @bx130 ||= sheet7.bx130/(sheet12.c13*sheet11.e79); end
-  def by130; @by130 ||= sheet7.by130/(sheet12.c13*sheet11.e79); end
-  def bz130; @bz130 ||= sheet7.bz130/(sheet12.c13*sheet11.e79); end
-  def ca130; @ca130 ||= sheet7.ca130/(sheet12.c13*sheet11.e79); end
-  def cc130; @cc130 ||= average(a('bs130','ca130')); end
-  def cd130; @cd130 ||= (sumproduct(a('bt130','ca130'),sheet12.a('d28','k28'))*5.0)+bs130; end
-  def cf130; @cf130 ||= sheet7.cf130/(sheet12.c13*sheet11.e79); end
-  def cg130; @cg130 ||= sheet7.cg130/(sheet12.c13*sheet11.e79); end
-  def ch130; @ch130 ||= sheet7.ch130/(sheet12.c13*sheet11.e79); end
-  def ci130; @ci130 ||= sheet7.ci130/(sheet12.c13*sheet11.e79); end
-  def cj130; @cj130 ||= sheet7.cj130/(sheet12.c13*sheet11.e79); end
-  def ck130; @ck130 ||= sheet7.ck130/(sheet12.c13*sheet11.e79); end
-  def cl130; @cl130 ||= sheet7.cl130/(sheet12.c13*sheet11.e79); end
-  def cm130; @cm130 ||= sheet7.cm130/(sheet12.c13*sheet11.e79); end
-  def cn130; @cn130 ||= sheet7.cn130/(sheet12.c13*sheet11.e79); end
-  def cp130; @cp130 ||= average(a('cf130','cn130')); end
-  def cq130; @cq130 ||= (sumproduct(a('cg130','cn130'),sheet12.a('d28','k28'))*5.0)+cf130; end
-  def cr130; @cr130 ||= excel_if(excel_comparison(abs(cd130-cq130-at130),"<",1.0),"ok","err"); end
-  def a131; "VII.a.Exports"; end
-  def b131; "Electricity Exports"; end
-  def c131; "Power"; end
-  def e131; @e131 ||= sheet7.e131/(sheet12.c13*sheet11.e79); end
-  def f131; @f131 ||= sheet7.f131/(sheet12.c13*sheet11.e79); end
-  def g131; @g131 ||= sheet7.g131/(sheet12.c13*sheet11.e79); end
-  def h131; @h131 ||= sheet7.h131/(sheet12.c13*sheet11.e79); end
-  def i131; @i131 ||= sheet7.i131/(sheet12.c13*sheet11.e79); end
-  def j131; @j131 ||= sheet7.j131/(sheet12.c13*sheet11.e79); end
-  def k131; @k131 ||= sheet7.k131/(sheet12.c13*sheet11.e79); end
-  def l131; @l131 ||= sheet7.l131/(sheet12.c13*sheet11.e79); end
-  def m131; @m131 ||= sheet7.m131/(sheet12.c13*sheet11.e79); end
-  def o131; @o131 ||= sheet7.o131/(sheet12.c13*sheet11.e79); end
-  def p131; @p131 ||= sheet7.p131/(sheet12.c13*sheet11.e79); end
-  def q131; @q131 ||= sheet7.q131/(sheet12.c13*sheet11.e79); end
-  def r131; @r131 ||= sheet7.r131/(sheet12.c13*sheet11.e79); end
-  def s131; @s131 ||= sheet7.s131/(sheet12.c13*sheet11.e79); end
-  def t131; @t131 ||= sheet7.t131/(sheet12.c13*sheet11.e79); end
-  def u131; @u131 ||= sheet7.u131/(sheet12.c13*sheet11.e79); end
-  def v131; @v131 ||= sheet7.v131/(sheet12.c13*sheet11.e79); end
-  def w131; @w131 ||= sheet7.w131/(sheet12.c13*sheet11.e79); end
-  def y131; @y131 ||= sheet7.y131/(sheet12.c13*sheet11.e79); end
-  def z131; @z131 ||= sheet7.z131/(sheet12.c13*sheet11.e79); end
-  def aa131; @aa131 ||= sheet7.aa131/(sheet12.c13*sheet11.e79); end
-  def ab131; @ab131 ||= sheet7.ab131/(sheet12.c13*sheet11.e79); end
-  def ac131; @ac131 ||= sheet7.ac131/(sheet12.c13*sheet11.e79); end
-  def ad131; @ad131 ||= sheet7.ad131/(sheet12.c13*sheet11.e79); end
-  def ae131; @ae131 ||= sheet7.ae131/(sheet12.c13*sheet11.e79); end
-  def af131; @af131 ||= sheet7.af131/(sheet12.c13*sheet11.e79); end
-  def ag131; @ag131 ||= sheet7.ag131/(sheet12.c13*sheet11.e79); end
-  def ai131; @ai131 ||= sheet7.ai131/(sheet12.c13*sheet11.e79); end
-  def aj131; @aj131 ||= sheet7.aj131/(sheet12.c13*sheet11.e79); end
-  def ak131; @ak131 ||= sheet7.ak131/(sheet12.c13*sheet11.e79); end
-  def al131; @al131 ||= sheet7.al131/(sheet12.c13*sheet11.e79); end
-  def am131; @am131 ||= sheet7.am131/(sheet12.c13*sheet11.e79); end
-  def an131; @an131 ||= sheet7.an131/(sheet12.c13*sheet11.e79); end
-  def ao131; @ao131 ||= sheet7.ao131/(sheet12.c13*sheet11.e79); end
-  def ap131; @ap131 ||= sheet7.ap131/(sheet12.c13*sheet11.e79); end
-  def aq131; @aq131 ||= sheet7.aq131/(sheet12.c13*sheet11.e79); end
-  def as131; @as131 ||= average(a('ai131','aq131')); end
-  def at131; @at131 ||= (sumproduct(a('aj131','aq131'),sheet12.a('d28','k28'))*5.0)+ai131; end
-  def av131; 0.0; end
-  def aw131; 5.0; end
-  def ay131; @ay131 ||= sheet7.ay131/(sheet12.c13*sheet11.e79); end
-  def az131; @az131 ||= sheet7.az131/(sheet12.c13*sheet11.e79); end
-  def ba131; @ba131 ||= sheet7.ba131/(sheet12.c13*sheet11.e79); end
-  def bb131; @bb131 ||= sheet7.bb131/(sheet12.c13*sheet11.e79); end
-  def bc131; @bc131 ||= sheet7.bc131/(sheet12.c13*sheet11.e79); end
-  def bd131; @bd131 ||= sheet7.bd131/(sheet12.c13*sheet11.e79); end
-  def be131; @be131 ||= sheet7.be131/(sheet12.c13*sheet11.e79); end
-  def bf131; @bf131 ||= sheet7.bf131/(sheet12.c13*sheet11.e79); end
-  def bg131; @bg131 ||= sheet7.bg131/(sheet12.c13*sheet11.e79); end
-  def bi131; @bi131 ||= sheet7.bi131/(sheet12.c13*sheet11.e79); end
-  def bj131; @bj131 ||= sheet7.bj131/(sheet12.c13*sheet11.e79); end
-  def bk131; @bk131 ||= sheet7.bk131/(sheet12.c13*sheet11.e79); end
-  def bl131; @bl131 ||= sheet7.bl131/(sheet12.c13*sheet11.e79); end
-  def bm131; @bm131 ||= sheet7.bm131/(sheet12.c13*sheet11.e79); end
-  def bn131; @bn131 ||= sheet7.bn131/(sheet12.c13*sheet11.e79); end
-  def bo131; @bo131 ||= sheet7.bo131/(sheet12.c13*sheet11.e79); end
-  def bp131; @bp131 ||= sheet7.bp131/(sheet12.c13*sheet11.e79); end
-  def bq131; @bq131 ||= sheet7.bq131/(sheet12.c13*sheet11.e79); end
-  def bs131; @bs131 ||= sheet7.bs131/(sheet12.c13*sheet11.e79); end
-  def bt131; @bt131 ||= sheet7.bt131/(sheet12.c13*sheet11.e79); end
-  def bu131; @bu131 ||= sheet7.bu131/(sheet12.c13*sheet11.e79); end
-  def bv131; @bv131 ||= sheet7.bv131/(sheet12.c13*sheet11.e79); end
-  def bw131; @bw131 ||= sheet7.bw131/(sheet12.c13*sheet11.e79); end
-  def bx131; @bx131 ||= sheet7.bx131/(sheet12.c13*sheet11.e79); end
-  def by131; @by131 ||= sheet7.by131/(sheet12.c13*sheet11.e79); end
-  def bz131; @bz131 ||= sheet7.bz131/(sheet12.c13*sheet11.e79); end
-  def ca131; @ca131 ||= sheet7.ca131/(sheet12.c13*sheet11.e79); end
-  def cc131; @cc131 ||= average(a('bs131','ca131')); end
-  def cd131; @cd131 ||= (sumproduct(a('bt131','ca131'),sheet12.a('d28','k28'))*5.0)+bs131; end
-  def cf131; @cf131 ||= sheet7.cf131/(sheet12.c13*sheet11.e79); end
-  def cg131; @cg131 ||= sheet7.cg131/(sheet12.c13*sheet11.e79); end
-  def ch131; @ch131 ||= sheet7.ch131/(sheet12.c13*sheet11.e79); end
-  def ci131; @ci131 ||= sheet7.ci131/(sheet12.c13*sheet11.e79); end
-  def cj131; @cj131 ||= sheet7.cj131/(sheet12.c13*sheet11.e79); end
-  def ck131; @ck131 ||= sheet7.ck131/(sheet12.c13*sheet11.e79); end
-  def cl131; @cl131 ||= sheet7.cl131/(sheet12.c13*sheet11.e79); end
-  def cm131; @cm131 ||= sheet7.cm131/(sheet12.c13*sheet11.e79); end
-  def cn131; @cn131 ||= sheet7.cn131/(sheet12.c13*sheet11.e79); end
-  def cp131; @cp131 ||= average(a('cf131','cn131')); end
-  def cq131; @cq131 ||= (sumproduct(a('cg131','cn131'),sheet12.a('d28','k28'))*5.0)+cf131; end
-  def cr131; @cr131 ||= excel_if(excel_comparison(abs(cd131-cq131-at131),"<",1.0),"ok","err"); end
-  def a132; "VII.b"; end
-  def b132; "Electricity grid distribution"; end
-  def c132; "Power"; end
-  def e132; @e132 ||= sheet7.e132/(sheet12.c13*sheet11.e79); end
-  def f132; @f132 ||= sheet7.f132/(sheet12.c13*sheet11.e79); end
-  def g132; @g132 ||= sheet7.g132/(sheet12.c13*sheet11.e79); end
-  def h132; @h132 ||= sheet7.h132/(sheet12.c13*sheet11.e79); end
-  def i132; @i132 ||= sheet7.i132/(sheet12.c13*sheet11.e79); end
-  def j132; @j132 ||= sheet7.j132/(sheet12.c13*sheet11.e79); end
-  def k132; @k132 ||= sheet7.k132/(sheet12.c13*sheet11.e79); end
-  def l132; @l132 ||= sheet7.l132/(sheet12.c13*sheet11.e79); end
-  def m132; @m132 ||= sheet7.m132/(sheet12.c13*sheet11.e79); end
-  def o132; @o132 ||= sheet7.o132/(sheet12.c13*sheet11.e79); end
-  def p132; @p132 ||= sheet7.p132/(sheet12.c13*sheet11.e79); end
-  def q132; @q132 ||= sheet7.q132/(sheet12.c13*sheet11.e79); end
-  def r132; @r132 ||= sheet7.r132/(sheet12.c13*sheet11.e79); end
-  def s132; @s132 ||= sheet7.s132/(sheet12.c13*sheet11.e79); end
-  def t132; @t132 ||= sheet7.t132/(sheet12.c13*sheet11.e79); end
-  def u132; @u132 ||= sheet7.u132/(sheet12.c13*sheet11.e79); end
-  def v132; @v132 ||= sheet7.v132/(sheet12.c13*sheet11.e79); end
-  def w132; @w132 ||= sheet7.w132/(sheet12.c13*sheet11.e79); end
-  def y132; @y132 ||= sheet7.y132/(sheet12.c13*sheet11.e79); end
-  def z132; @z132 ||= sheet7.z132/(sheet12.c13*sheet11.e79); end
-  def aa132; @aa132 ||= sheet7.aa132/(sheet12.c13*sheet11.e79); end
-  def ab132; @ab132 ||= sheet7.ab132/(sheet12.c13*sheet11.e79); end
-  def ac132; @ac132 ||= sheet7.ac132/(sheet12.c13*sheet11.e79); end
-  def ad132; @ad132 ||= sheet7.ad132/(sheet12.c13*sheet11.e79); end
-  def ae132; @ae132 ||= sheet7.ae132/(sheet12.c13*sheet11.e79); end
-  def af132; @af132 ||= sheet7.af132/(sheet12.c13*sheet11.e79); end
-  def ag132; @ag132 ||= sheet7.ag132/(sheet12.c13*sheet11.e79); end
-  def ai132; @ai132 ||= sheet7.ai132/(sheet12.c13*sheet11.e79); end
-  def aj132; @aj132 ||= sheet7.aj132/(sheet12.c13*sheet11.e79); end
-  def ak132; @ak132 ||= sheet7.ak132/(sheet12.c13*sheet11.e79); end
-  def al132; @al132 ||= sheet7.al132/(sheet12.c13*sheet11.e79); end
-  def am132; @am132 ||= sheet7.am132/(sheet12.c13*sheet11.e79); end
-  def an132; @an132 ||= sheet7.an132/(sheet12.c13*sheet11.e79); end
-  def ao132; @ao132 ||= sheet7.ao132/(sheet12.c13*sheet11.e79); end
-  def ap132; @ap132 ||= sheet7.ap132/(sheet12.c13*sheet11.e79); end
-  def aq132; @aq132 ||= sheet7.aq132/(sheet12.c13*sheet11.e79); end
-  def as132; @as132 ||= average(a('ai132','aq132')); end
-  def at132; @at132 ||= (sumproduct(a('aj132','aq132'),sheet12.a('d28','k28'))*5.0)+ai132; end
-  def av132; 0.0; end
-  def aw132; 5.0; end
-  def ay132; @ay132 ||= sheet7.ay132/(sheet12.c13*sheet11.e79); end
-  def az132; @az132 ||= sheet7.az132/(sheet12.c13*sheet11.e79); end
-  def ba132; @ba132 ||= sheet7.ba132/(sheet12.c13*sheet11.e79); end
-  def bb132; @bb132 ||= sheet7.bb132/(sheet12.c13*sheet11.e79); end
-  def bc132; @bc132 ||= sheet7.bc132/(sheet12.c13*sheet11.e79); end
-  def bd132; @bd132 ||= sheet7.bd132/(sheet12.c13*sheet11.e79); end
-  def be132; @be132 ||= sheet7.be132/(sheet12.c13*sheet11.e79); end
-  def bf132; @bf132 ||= sheet7.bf132/(sheet12.c13*sheet11.e79); end
-  def bg132; @bg132 ||= sheet7.bg132/(sheet12.c13*sheet11.e79); end
-  def bi132; @bi132 ||= sheet7.bi132/(sheet12.c13*sheet11.e79); end
-  def bj132; @bj132 ||= sheet7.bj132/(sheet12.c13*sheet11.e79); end
-  def bk132; @bk132 ||= sheet7.bk132/(sheet12.c13*sheet11.e79); end
-  def bl132; @bl132 ||= sheet7.bl132/(sheet12.c13*sheet11.e79); end
-  def bm132; @bm132 ||= sheet7.bm132/(sheet12.c13*sheet11.e79); end
-  def bn132; @bn132 ||= sheet7.bn132/(sheet12.c13*sheet11.e79); end
-  def bo132; @bo132 ||= sheet7.bo132/(sheet12.c13*sheet11.e79); end
-  def bp132; @bp132 ||= sheet7.bp132/(sheet12.c13*sheet11.e79); end
-  def bq132; @bq132 ||= sheet7.bq132/(sheet12.c13*sheet11.e79); end
-  def bs132; @bs132 ||= sheet7.bs132/(sheet12.c13*sheet11.e79); end
-  def bt132; @bt132 ||= sheet7.bt132/(sheet12.c13*sheet11.e79); end
-  def bu132; @bu132 ||= sheet7.bu132/(sheet12.c13*sheet11.e79); end
-  def bv132; @bv132 ||= sheet7.bv132/(sheet12.c13*sheet11.e79); end
-  def bw132; @bw132 ||= sheet7.bw132/(sheet12.c13*sheet11.e79); end
-  def bx132; @bx132 ||= sheet7.bx132/(sheet12.c13*sheet11.e79); end
-  def by132; @by132 ||= sheet7.by132/(sheet12.c13*sheet11.e79); end
-  def bz132; @bz132 ||= sheet7.bz132/(sheet12.c13*sheet11.e79); end
-  def ca132; @ca132 ||= sheet7.ca132/(sheet12.c13*sheet11.e79); end
-  def cc132; @cc132 ||= average(a('bs132','ca132')); end
-  def cd132; @cd132 ||= (sumproduct(a('bt132','ca132'),sheet12.a('d28','k28'))*5.0)+bs132; end
-  def cf132; @cf132 ||= sheet7.cf132/(sheet12.c13*sheet11.e79); end
-  def cg132; @cg132 ||= sheet7.cg132/(sheet12.c13*sheet11.e79); end
-  def ch132; @ch132 ||= sheet7.ch132/(sheet12.c13*sheet11.e79); end
-  def ci132; @ci132 ||= sheet7.ci132/(sheet12.c13*sheet11.e79); end
-  def cj132; @cj132 ||= sheet7.cj132/(sheet12.c13*sheet11.e79); end
-  def ck132; @ck132 ||= sheet7.ck132/(sheet12.c13*sheet11.e79); end
-  def cl132; @cl132 ||= sheet7.cl132/(sheet12.c13*sheet11.e79); end
-  def cm132; @cm132 ||= sheet7.cm132/(sheet12.c13*sheet11.e79); end
-  def cn132; @cn132 ||= sheet7.cn132/(sheet12.c13*sheet11.e79); end
-  def cp132; @cp132 ||= average(a('cf132','cn132')); end
-  def cq132; @cq132 ||= (sumproduct(a('cg132','cn132'),sheet12.a('d28','k28'))*5.0)+cf132; end
-  def cr132; @cr132 ||= excel_if(excel_comparison(abs(cd132-cq132-at132),"<",1.0),"ok","err"); end
-  def a133; "VII.c"; end
-  def b133; "Storage, demand shifting, backup"; end
-  def c133; "Power"; end
-  def e133; @e133 ||= sheet7.e133/(sheet12.c13*sheet11.e79); end
-  def f133; @f133 ||= sheet7.f133/(sheet12.c13*sheet11.e79); end
-  def g133; @g133 ||= sheet7.g133/(sheet12.c13*sheet11.e79); end
-  def h133; @h133 ||= sheet7.h133/(sheet12.c13*sheet11.e79); end
-  def i133; @i133 ||= sheet7.i133/(sheet12.c13*sheet11.e79); end
-  def j133; @j133 ||= sheet7.j133/(sheet12.c13*sheet11.e79); end
-  def k133; @k133 ||= sheet7.k133/(sheet12.c13*sheet11.e79); end
-  def l133; @l133 ||= sheet7.l133/(sheet12.c13*sheet11.e79); end
-  def m133; @m133 ||= sheet7.m133/(sheet12.c13*sheet11.e79); end
-  def o133; @o133 ||= sheet7.o133/(sheet12.c13*sheet11.e79); end
-  def p133; @p133 ||= sheet7.p133/(sheet12.c13*sheet11.e79); end
-  def q133; @q133 ||= sheet7.q133/(sheet12.c13*sheet11.e79); end
-  def r133; @r133 ||= sheet7.r133/(sheet12.c13*sheet11.e79); end
-  def s133; @s133 ||= sheet7.s133/(sheet12.c13*sheet11.e79); end
-  def t133; @t133 ||= sheet7.t133/(sheet12.c13*sheet11.e79); end
-  def u133; @u133 ||= sheet7.u133/(sheet12.c13*sheet11.e79); end
-  def v133; @v133 ||= sheet7.v133/(sheet12.c13*sheet11.e79); end
-  def w133; @w133 ||= sheet7.w133/(sheet12.c13*sheet11.e79); end
-  def y133; @y133 ||= sheet7.y133/(sheet12.c13*sheet11.e79); end
-  def z133; @z133 ||= sheet7.z133/(sheet12.c13*sheet11.e79); end
-  def aa133; @aa133 ||= sheet7.aa133/(sheet12.c13*sheet11.e79); end
-  def ab133; @ab133 ||= sheet7.ab133/(sheet12.c13*sheet11.e79); end
-  def ac133; @ac133 ||= sheet7.ac133/(sheet12.c13*sheet11.e79); end
-  def ad133; @ad133 ||= sheet7.ad133/(sheet12.c13*sheet11.e79); end
-  def ae133; @ae133 ||= sheet7.ae133/(sheet12.c13*sheet11.e79); end
-  def af133; @af133 ||= sheet7.af133/(sheet12.c13*sheet11.e79); end
-  def ag133; @ag133 ||= sheet7.ag133/(sheet12.c13*sheet11.e79); end
-  def ai133; @ai133 ||= sheet7.ai133/(sheet12.c13*sheet11.e79); end
-  def aj133; @aj133 ||= sheet7.aj133/(sheet12.c13*sheet11.e79); end
-  def ak133; @ak133 ||= sheet7.ak133/(sheet12.c13*sheet11.e79); end
-  def al133; @al133 ||= sheet7.al133/(sheet12.c13*sheet11.e79); end
-  def am133; @am133 ||= sheet7.am133/(sheet12.c13*sheet11.e79); end
-  def an133; @an133 ||= sheet7.an133/(sheet12.c13*sheet11.e79); end
-  def ao133; @ao133 ||= sheet7.ao133/(sheet12.c13*sheet11.e79); end
-  def ap133; @ap133 ||= sheet7.ap133/(sheet12.c13*sheet11.e79); end
-  def aq133; @aq133 ||= sheet7.aq133/(sheet12.c13*sheet11.e79); end
-  def as133; @as133 ||= average(a('ai133','aq133')); end
-  def at133; @at133 ||= (sumproduct(a('aj133','aq133'),sheet12.a('d28','k28'))*5.0)+ai133; end
-  def av133; 0.0; end
-  def aw133; 5.0; end
-  def ay133; @ay133 ||= sheet7.ay133/(sheet12.c13*sheet11.e79); end
-  def az133; @az133 ||= sheet7.az133/(sheet12.c13*sheet11.e79); end
-  def ba133; @ba133 ||= sheet7.ba133/(sheet12.c13*sheet11.e79); end
-  def bb133; @bb133 ||= sheet7.bb133/(sheet12.c13*sheet11.e79); end
-  def bc133; @bc133 ||= sheet7.bc133/(sheet12.c13*sheet11.e79); end
-  def bd133; @bd133 ||= sheet7.bd133/(sheet12.c13*sheet11.e79); end
-  def be133; @be133 ||= sheet7.be133/(sheet12.c13*sheet11.e79); end
-  def bf133; @bf133 ||= sheet7.bf133/(sheet12.c13*sheet11.e79); end
-  def bg133; @bg133 ||= sheet7.bg133/(sheet12.c13*sheet11.e79); end
-  def bi133; @bi133 ||= sheet7.bi133/(sheet12.c13*sheet11.e79); end
-  def bj133; @bj133 ||= sheet7.bj133/(sheet12.c13*sheet11.e79); end
-  def bk133; @bk133 ||= sheet7.bk133/(sheet12.c13*sheet11.e79); end
-  def bl133; @bl133 ||= sheet7.bl133/(sheet12.c13*sheet11.e79); end
-  def bm133; @bm133 ||= sheet7.bm133/(sheet12.c13*sheet11.e79); end
-  def bn133; @bn133 ||= sheet7.bn133/(sheet12.c13*sheet11.e79); end
-  def bo133; @bo133 ||= sheet7.bo133/(sheet12.c13*sheet11.e79); end
-  def bp133; @bp133 ||= sheet7.bp133/(sheet12.c13*sheet11.e79); end
-  def bq133; @bq133 ||= sheet7.bq133/(sheet12.c13*sheet11.e79); end
-  def bs133; @bs133 ||= sheet7.bs133/(sheet12.c13*sheet11.e79); end
-  def bt133; @bt133 ||= sheet7.bt133/(sheet12.c13*sheet11.e79); end
-  def bu133; @bu133 ||= sheet7.bu133/(sheet12.c13*sheet11.e79); end
-  def bv133; @bv133 ||= sheet7.bv133/(sheet12.c13*sheet11.e79); end
-  def bw133; @bw133 ||= sheet7.bw133/(sheet12.c13*sheet11.e79); end
-  def bx133; @bx133 ||= sheet7.bx133/(sheet12.c13*sheet11.e79); end
-  def by133; @by133 ||= sheet7.by133/(sheet12.c13*sheet11.e79); end
-  def bz133; @bz133 ||= sheet7.bz133/(sheet12.c13*sheet11.e79); end
-  def ca133; @ca133 ||= sheet7.ca133/(sheet12.c13*sheet11.e79); end
-  def cc133; @cc133 ||= average(a('bs133','ca133')); end
-  def cd133; @cd133 ||= (sumproduct(a('bt133','ca133'),sheet12.a('d28','k28'))*5.0)+bs133; end
-  def cf133; @cf133 ||= sheet7.cf133/(sheet12.c13*sheet11.e79); end
-  def cg133; @cg133 ||= sheet7.cg133/(sheet12.c13*sheet11.e79); end
-  def ch133; @ch133 ||= sheet7.ch133/(sheet12.c13*sheet11.e79); end
-  def ci133; @ci133 ||= sheet7.ci133/(sheet12.c13*sheet11.e79); end
-  def cj133; @cj133 ||= sheet7.cj133/(sheet12.c13*sheet11.e79); end
-  def ck133; @ck133 ||= sheet7.ck133/(sheet12.c13*sheet11.e79); end
-  def cl133; @cl133 ||= sheet7.cl133/(sheet12.c13*sheet11.e79); end
-  def cm133; @cm133 ||= sheet7.cm133/(sheet12.c13*sheet11.e79); end
-  def cn133; @cn133 ||= sheet7.cn133/(sheet12.c13*sheet11.e79); end
-  def cp133; @cp133 ||= average(a('cf133','cn133')); end
-  def cq133; @cq133 ||= (sumproduct(a('cg133','cn133'),sheet12.a('d28','k28'))*5.0)+cf133; end
-  def cr133; @cr133 ||= excel_if(excel_comparison(abs(cd133-cq133-at133),"<",1.0),"ok","err"); end
-  def a134; "VIII.a"; end
-  def b134; "H2 Production"; end
-  def c134; "Transport"; end
-  def e134; @e134 ||= sheet7.e134/(sheet12.c13*sheet11.e79); end
-  def f134; @f134 ||= sheet7.f134/(sheet12.c13*sheet11.e79); end
-  def g134; @g134 ||= sheet7.g134/(sheet12.c13*sheet11.e79); end
-  def h134; @h134 ||= sheet7.h134/(sheet12.c13*sheet11.e79); end
-  def i134; @i134 ||= sheet7.i134/(sheet12.c13*sheet11.e79); end
-  def j134; @j134 ||= sheet7.j134/(sheet12.c13*sheet11.e79); end
-  def k134; @k134 ||= sheet7.k134/(sheet12.c13*sheet11.e79); end
-  def l134; @l134 ||= sheet7.l134/(sheet12.c13*sheet11.e79); end
-  def m134; @m134 ||= sheet7.m134/(sheet12.c13*sheet11.e79); end
-  def o134; @o134 ||= sheet7.o134/(sheet12.c13*sheet11.e79); end
-  def p134; @p134 ||= sheet7.p134/(sheet12.c13*sheet11.e79); end
-  def q134; @q134 ||= sheet7.q134/(sheet12.c13*sheet11.e79); end
-  def r134; @r134 ||= sheet7.r134/(sheet12.c13*sheet11.e79); end
-  def s134; @s134 ||= sheet7.s134/(sheet12.c13*sheet11.e79); end
-  def t134; @t134 ||= sheet7.t134/(sheet12.c13*sheet11.e79); end
-  def u134; @u134 ||= sheet7.u134/(sheet12.c13*sheet11.e79); end
-  def v134; @v134 ||= sheet7.v134/(sheet12.c13*sheet11.e79); end
-  def w134; @w134 ||= sheet7.w134/(sheet12.c13*sheet11.e79); end
-  def y134; @y134 ||= sheet7.y134/(sheet12.c13*sheet11.e79); end
-  def z134; @z134 ||= sheet7.z134/(sheet12.c13*sheet11.e79); end
-  def aa134; @aa134 ||= sheet7.aa134/(sheet12.c13*sheet11.e79); end
-  def ab134; @ab134 ||= sheet7.ab134/(sheet12.c13*sheet11.e79); end
-  def ac134; @ac134 ||= sheet7.ac134/(sheet12.c13*sheet11.e79); end
-  def ad134; @ad134 ||= sheet7.ad134/(sheet12.c13*sheet11.e79); end
-  def ae134; @ae134 ||= sheet7.ae134/(sheet12.c13*sheet11.e79); end
-  def af134; @af134 ||= sheet7.af134/(sheet12.c13*sheet11.e79); end
-  def ag134; @ag134 ||= sheet7.ag134/(sheet12.c13*sheet11.e79); end
-  def ai134; @ai134 ||= sheet7.ai134/(sheet12.c13*sheet11.e79); end
-  def aj134; @aj134 ||= sheet7.aj134/(sheet12.c13*sheet11.e79); end
-  def ak134; @ak134 ||= sheet7.ak134/(sheet12.c13*sheet11.e79); end
-  def al134; @al134 ||= sheet7.al134/(sheet12.c13*sheet11.e79); end
-  def am134; @am134 ||= sheet7.am134/(sheet12.c13*sheet11.e79); end
-  def an134; @an134 ||= sheet7.an134/(sheet12.c13*sheet11.e79); end
-  def ao134; @ao134 ||= sheet7.ao134/(sheet12.c13*sheet11.e79); end
-  def ap134; @ap134 ||= sheet7.ap134/(sheet12.c13*sheet11.e79); end
-  def aq134; @aq134 ||= sheet7.aq134/(sheet12.c13*sheet11.e79); end
-  def as134; @as134 ||= average(a('ai134','aq134')); end
-  def at134; @at134 ||= (sumproduct(a('aj134','aq134'),sheet12.a('d28','k28'))*5.0)+ai134; end
-  def av134; 0.0; end
-  def aw134; 5.0; end
-  def ay134; @ay134 ||= sheet7.ay134/(sheet12.c13*sheet11.e79); end
-  def az134; @az134 ||= sheet7.az134/(sheet12.c13*sheet11.e79); end
-  def ba134; @ba134 ||= sheet7.ba134/(sheet12.c13*sheet11.e79); end
-  def bb134; @bb134 ||= sheet7.bb134/(sheet12.c13*sheet11.e79); end
-  def bc134; @bc134 ||= sheet7.bc134/(sheet12.c13*sheet11.e79); end
-  def bd134; @bd134 ||= sheet7.bd134/(sheet12.c13*sheet11.e79); end
-  def be134; @be134 ||= sheet7.be134/(sheet12.c13*sheet11.e79); end
-  def bf134; @bf134 ||= sheet7.bf134/(sheet12.c13*sheet11.e79); end
-  def bg134; @bg134 ||= sheet7.bg134/(sheet12.c13*sheet11.e79); end
-  def bi134; @bi134 ||= sheet7.bi134/(sheet12.c13*sheet11.e79); end
-  def bj134; @bj134 ||= sheet7.bj134/(sheet12.c13*sheet11.e79); end
-  def bk134; @bk134 ||= sheet7.bk134/(sheet12.c13*sheet11.e79); end
-  def bl134; @bl134 ||= sheet7.bl134/(sheet12.c13*sheet11.e79); end
-  def bm134; @bm134 ||= sheet7.bm134/(sheet12.c13*sheet11.e79); end
-  def bn134; @bn134 ||= sheet7.bn134/(sheet12.c13*sheet11.e79); end
-  def bo134; @bo134 ||= sheet7.bo134/(sheet12.c13*sheet11.e79); end
-  def bp134; @bp134 ||= sheet7.bp134/(sheet12.c13*sheet11.e79); end
-  def bq134; @bq134 ||= sheet7.bq134/(sheet12.c13*sheet11.e79); end
-  def bs134; @bs134 ||= sheet7.bs134/(sheet12.c13*sheet11.e79); end
-  def bt134; @bt134 ||= sheet7.bt134/(sheet12.c13*sheet11.e79); end
-  def bu134; @bu134 ||= sheet7.bu134/(sheet12.c13*sheet11.e79); end
-  def bv134; @bv134 ||= sheet7.bv134/(sheet12.c13*sheet11.e79); end
-  def bw134; @bw134 ||= sheet7.bw134/(sheet12.c13*sheet11.e79); end
-  def bx134; @bx134 ||= sheet7.bx134/(sheet12.c13*sheet11.e79); end
-  def by134; @by134 ||= sheet7.by134/(sheet12.c13*sheet11.e79); end
-  def bz134; @bz134 ||= sheet7.bz134/(sheet12.c13*sheet11.e79); end
-  def ca134; @ca134 ||= sheet7.ca134/(sheet12.c13*sheet11.e79); end
-  def cc134; @cc134 ||= average(a('bs134','ca134')); end
-  def cd134; @cd134 ||= (sumproduct(a('bt134','ca134'),sheet12.a('d28','k28'))*5.0)+bs134; end
-  def cf134; @cf134 ||= sheet7.cf134/(sheet12.c13*sheet11.e79); end
-  def cg134; @cg134 ||= sheet7.cg134/(sheet12.c13*sheet11.e79); end
-  def ch134; @ch134 ||= sheet7.ch134/(sheet12.c13*sheet11.e79); end
-  def ci134; @ci134 ||= sheet7.ci134/(sheet12.c13*sheet11.e79); end
-  def cj134; @cj134 ||= sheet7.cj134/(sheet12.c13*sheet11.e79); end
-  def ck134; @ck134 ||= sheet7.ck134/(sheet12.c13*sheet11.e79); end
-  def cl134; @cl134 ||= sheet7.cl134/(sheet12.c13*sheet11.e79); end
-  def cm134; @cm134 ||= sheet7.cm134/(sheet12.c13*sheet11.e79); end
-  def cn134; @cn134 ||= sheet7.cn134/(sheet12.c13*sheet11.e79); end
-  def cp134; @cp134 ||= average(a('cf134','cn134')); end
-  def cq134; @cq134 ||= (sumproduct(a('cg134','cn134'),sheet12.a('d28','k28'))*5.0)+cf134; end
-  def cr134; @cr134 ||= excel_if(excel_comparison(abs(cd134-cq134-at134),"<",1.0),"ok","err"); end
-  def a135; "IX.a.Heating"; end
-  def b135; "Domestic heating"; end
-  def c135; "Heating"; end
-  def e135; 146.43400246555598; end
-  def f135; @f135 ||= sheet7.f135/(sheet12.c13*sheet11.e79); end
-  def g135; @g135 ||= sheet7.g135/(sheet12.c13*sheet11.e79); end
-  def h135; @h135 ||= sheet7.h135/(sheet12.c13*sheet11.e79); end
-  def i135; @i135 ||= sheet7.i135/(sheet12.c13*sheet11.e79); end
-  def j135; @j135 ||= sheet7.j135/(sheet12.c13*sheet11.e79); end
-  def k135; @k135 ||= sheet7.k135/(sheet12.c13*sheet11.e79); end
-  def l135; @l135 ||= sheet7.l135/(sheet12.c13*sheet11.e79); end
-  def m135; @m135 ||= sheet7.m135/(sheet12.c13*sheet11.e79); end
-  def o135; 73.58345393397906; end
-  def p135; @p135 ||= sheet7.p135/(sheet12.c13*sheet11.e79); end
-  def q135; @q135 ||= sheet7.q135/(sheet12.c13*sheet11.e79); end
-  def r135; @r135 ||= sheet7.r135/(sheet12.c13*sheet11.e79); end
-  def s135; @s135 ||= sheet7.s135/(sheet12.c13*sheet11.e79); end
-  def t135; @t135 ||= sheet7.t135/(sheet12.c13*sheet11.e79); end
-  def u135; @u135 ||= sheet7.u135/(sheet12.c13*sheet11.e79); end
-  def v135; @v135 ||= sheet7.v135/(sheet12.c13*sheet11.e79); end
-  def w135; @w135 ||= sheet7.w135/(sheet12.c13*sheet11.e79); end
-  def y135; 0.0; end
-  def z135; @z135 ||= sheet7.z135/(sheet12.c13*sheet11.e79); end
-  def aa135; @aa135 ||= sheet7.aa135/(sheet12.c13*sheet11.e79); end
-  def ab135; @ab135 ||= sheet7.ab135/(sheet12.c13*sheet11.e79); end
-  def ac135; @ac135 ||= sheet7.ac135/(sheet12.c13*sheet11.e79); end
-  def ad135; @ad135 ||= sheet7.ad135/(sheet12.c13*sheet11.e79); end
-  def ae135; @ae135 ||= sheet7.ae135/(sheet12.c13*sheet11.e79); end
-  def af135; @af135 ||= sheet7.af135/(sheet12.c13*sheet11.e79); end
-  def ag135; @ag135 ||= sheet7.ag135/(sheet12.c13*sheet11.e79); end
-  def ai135; 220.01745639953504; end
-  def aj135; @aj135 ||= sheet7.aj135/(sheet12.c13*sheet11.e79); end
-  def ak135; @ak135 ||= sheet7.ak135/(sheet12.c13*sheet11.e79); end
-  def al135; @al135 ||= sheet7.al135/(sheet12.c13*sheet11.e79); end
-  def am135; @am135 ||= sheet7.am135/(sheet12.c13*sheet11.e79); end
-  def an135; @an135 ||= sheet7.an135/(sheet12.c13*sheet11.e79); end
-  def ao135; @ao135 ||= sheet7.ao135/(sheet12.c13*sheet11.e79); end
-  def ap135; @ap135 ||= sheet7.ap135/(sheet12.c13*sheet11.e79); end
-  def aq135; @aq135 ||= sheet7.aq135/(sheet12.c13*sheet11.e79); end
-  def as135; @as135 ||= average(a('ai135','aq135')); end
-  def at135; @at135 ||= (sumproduct(a('aj135','aq135'),sheet12.a('d28','k28'))*5.0)+ai135; end
-  def av135; 0.0; end
-  def aw135; 5.0; end
-  def ay135; 57.75669410664427; end
-  def az135; @az135 ||= sheet7.az135/(sheet12.c13*sheet11.e79); end
-  def ba135; @ba135 ||= sheet7.ba135/(sheet12.c13*sheet11.e79); end
-  def bb135; @bb135 ||= sheet7.bb135/(sheet12.c13*sheet11.e79); end
-  def bc135; @bc135 ||= sheet7.bc135/(sheet12.c13*sheet11.e79); end
-  def bd135; @bd135 ||= sheet7.bd135/(sheet12.c13*sheet11.e79); end
-  def be135; @be135 ||= sheet7.be135/(sheet12.c13*sheet11.e79); end
-  def bf135; @bf135 ||= sheet7.bf135/(sheet12.c13*sheet11.e79); end
-  def bg135; @bg135 ||= sheet7.bg135/(sheet12.c13*sheet11.e79); end
-  def bi135; 57.75669410664427; end
-  def bj135; @bj135 ||= sheet7.bj135/(sheet12.c13*sheet11.e79); end
-  def bk135; @bk135 ||= sheet7.bk135/(sheet12.c13*sheet11.e79); end
-  def bl135; @bl135 ||= sheet7.bl135/(sheet12.c13*sheet11.e79); end
-  def bm135; @bm135 ||= sheet7.bm135/(sheet12.c13*sheet11.e79); end
-  def bn135; @bn135 ||= sheet7.bn135/(sheet12.c13*sheet11.e79); end
-  def bo135; @bo135 ||= sheet7.bo135/(sheet12.c13*sheet11.e79); end
-  def bp135; @bp135 ||= sheet7.bp135/(sheet12.c13*sheet11.e79); end
-  def bq135; @bq135 ||= sheet7.bq135/(sheet12.c13*sheet11.e79); end
-  def bs135; 131.34014804062332; end
-  def bt135; @bt135 ||= sheet7.bt135/(sheet12.c13*sheet11.e79); end
-  def bu135; @bu135 ||= sheet7.bu135/(sheet12.c13*sheet11.e79); end
-  def bv135; @bv135 ||= sheet7.bv135/(sheet12.c13*sheet11.e79); end
-  def bw135; @bw135 ||= sheet7.bw135/(sheet12.c13*sheet11.e79); end
-  def bx135; @bx135 ||= sheet7.bx135/(sheet12.c13*sheet11.e79); end
-  def by135; @by135 ||= sheet7.by135/(sheet12.c13*sheet11.e79); end
-  def bz135; @bz135 ||= sheet7.bz135/(sheet12.c13*sheet11.e79); end
-  def ca135; @ca135 ||= sheet7.ca135/(sheet12.c13*sheet11.e79); end
-  def cc135; @cc135 ||= average(a('bs135','ca135')); end
-  def cd135; @cd135 ||= (sumproduct(a('bt135','ca135'),sheet12.a('d28','k28'))*5.0)+bs135; end
-  def cf135; -88.67730835891172; end
-  def cg135; @cg135 ||= sheet7.cg135/(sheet12.c13*sheet11.e79); end
-  def ch135; @ch135 ||= sheet7.ch135/(sheet12.c13*sheet11.e79); end
-  def ci135; @ci135 ||= sheet7.ci135/(sheet12.c13*sheet11.e79); end
-  def cj135; @cj135 ||= sheet7.cj135/(sheet12.c13*sheet11.e79); end
-  def ck135; @ck135 ||= sheet7.ck135/(sheet12.c13*sheet11.e79); end
-  def cl135; @cl135 ||= sheet7.cl135/(sheet12.c13*sheet11.e79); end
-  def cm135; @cm135 ||= sheet7.cm135/(sheet12.c13*sheet11.e79); end
-  def cn135; @cn135 ||= sheet7.cn135/(sheet12.c13*sheet11.e79); end
-  def cp135; @cp135 ||= average(a('cf135','cn135')); end
-  def cq135; @cq135 ||= (sumproduct(a('cg135','cn135'),sheet12.a('d28','k28'))*5.0)+cf135; end
-  def cr135; @cr135 ||= excel_if(excel_comparison(abs(cd135-cq135-at135),"<",1.0),"ok","err"); end
-  def a136; "IX.a.Insulation"; end
-  def b136; "Domestic insulation"; end
-  def c136; "Heating"; end
-  def e136; @e136 ||= sheet7.e136/(sheet12.c13*sheet11.e79); end
-  def f136; @f136 ||= sheet7.f136/(sheet12.c13*sheet11.e79); end
-  def g136; @g136 ||= sheet7.g136/(sheet12.c13*sheet11.e79); end
-  def h136; @h136 ||= sheet7.h136/(sheet12.c13*sheet11.e79); end
-  def i136; @i136 ||= sheet7.i136/(sheet12.c13*sheet11.e79); end
-  def j136; @j136 ||= sheet7.j136/(sheet12.c13*sheet11.e79); end
-  def k136; @k136 ||= sheet7.k136/(sheet12.c13*sheet11.e79); end
-  def l136; @l136 ||= sheet7.l136/(sheet12.c13*sheet11.e79); end
-  def m136; @m136 ||= sheet7.m136/(sheet12.c13*sheet11.e79); end
-  def o136; @o136 ||= sheet7.o136/(sheet12.c13*sheet11.e79); end
-  def p136; @p136 ||= sheet7.p136/(sheet12.c13*sheet11.e79); end
-  def q136; @q136 ||= sheet7.q136/(sheet12.c13*sheet11.e79); end
-  def r136; @r136 ||= sheet7.r136/(sheet12.c13*sheet11.e79); end
-  def s136; @s136 ||= sheet7.s136/(sheet12.c13*sheet11.e79); end
-  def t136; @t136 ||= sheet7.t136/(sheet12.c13*sheet11.e79); end
-  def u136; @u136 ||= sheet7.u136/(sheet12.c13*sheet11.e79); end
-  def v136; @v136 ||= sheet7.v136/(sheet12.c13*sheet11.e79); end
-  def w136; @w136 ||= sheet7.w136/(sheet12.c13*sheet11.e79); end
-  def y136; @y136 ||= sheet7.y136/(sheet12.c13*sheet11.e79); end
-  def z136; @z136 ||= sheet7.z136/(sheet12.c13*sheet11.e79); end
-  def aa136; @aa136 ||= sheet7.aa136/(sheet12.c13*sheet11.e79); end
-  def ab136; @ab136 ||= sheet7.ab136/(sheet12.c13*sheet11.e79); end
-  def ac136; @ac136 ||= sheet7.ac136/(sheet12.c13*sheet11.e79); end
-  def ad136; @ad136 ||= sheet7.ad136/(sheet12.c13*sheet11.e79); end
-  def ae136; @ae136 ||= sheet7.ae136/(sheet12.c13*sheet11.e79); end
-  def af136; @af136 ||= sheet7.af136/(sheet12.c13*sheet11.e79); end
-  def ag136; @ag136 ||= sheet7.ag136/(sheet12.c13*sheet11.e79); end
-  def ai136; @ai136 ||= sheet7.ai136/(sheet12.c13*sheet11.e79); end
-  def aj136; @aj136 ||= sheet7.aj136/(sheet12.c13*sheet11.e79); end
-  def ak136; @ak136 ||= sheet7.ak136/(sheet12.c13*sheet11.e79); end
-  def al136; @al136 ||= sheet7.al136/(sheet12.c13*sheet11.e79); end
-  def am136; @am136 ||= sheet7.am136/(sheet12.c13*sheet11.e79); end
-  def an136; @an136 ||= sheet7.an136/(sheet12.c13*sheet11.e79); end
-  def ao136; @ao136 ||= sheet7.ao136/(sheet12.c13*sheet11.e79); end
-  def ap136; @ap136 ||= sheet7.ap136/(sheet12.c13*sheet11.e79); end
-  def aq136; @aq136 ||= sheet7.aq136/(sheet12.c13*sheet11.e79); end
-  def as136; @as136 ||= average(a('ai136','aq136')); end
-  def at136; @at136 ||= (sumproduct(a('aj136','aq136'),sheet12.a('d28','k28'))*5.0)+ai136; end
-  def av136; 0.0; end
-  def aw136; 5.0; end
-  def ay136; @ay136 ||= sheet7.ay136/(sheet12.c13*sheet11.e79); end
-  def az136; @az136 ||= sheet7.az136/(sheet12.c13*sheet11.e79); end
-  def ba136; @ba136 ||= sheet7.ba136/(sheet12.c13*sheet11.e79); end
-  def bb136; @bb136 ||= sheet7.bb136/(sheet12.c13*sheet11.e79); end
-  def bc136; @bc136 ||= sheet7.bc136/(sheet12.c13*sheet11.e79); end
-  def bd136; @bd136 ||= sheet7.bd136/(sheet12.c13*sheet11.e79); end
-  def be136; @be136 ||= sheet7.be136/(sheet12.c13*sheet11.e79); end
-  def bf136; @bf136 ||= sheet7.bf136/(sheet12.c13*sheet11.e79); end
-  def bg136; @bg136 ||= sheet7.bg136/(sheet12.c13*sheet11.e79); end
-  def bi136; @bi136 ||= sheet7.bi136/(sheet12.c13*sheet11.e79); end
-  def bj136; @bj136 ||= sheet7.bj136/(sheet12.c13*sheet11.e79); end
-  def bk136; @bk136 ||= sheet7.bk136/(sheet12.c13*sheet11.e79); end
-  def bl136; @bl136 ||= sheet7.bl136/(sheet12.c13*sheet11.e79); end
-  def bm136; @bm136 ||= sheet7.bm136/(sheet12.c13*sheet11.e79); end
-  def bn136; @bn136 ||= sheet7.bn136/(sheet12.c13*sheet11.e79); end
-  def bo136; @bo136 ||= sheet7.bo136/(sheet12.c13*sheet11.e79); end
-  def bp136; @bp136 ||= sheet7.bp136/(sheet12.c13*sheet11.e79); end
-  def bq136; @bq136 ||= sheet7.bq136/(sheet12.c13*sheet11.e79); end
-  def bs136; @bs136 ||= sheet7.bs136/(sheet12.c13*sheet11.e79); end
-  def bt136; @bt136 ||= sheet7.bt136/(sheet12.c13*sheet11.e79); end
-  def bu136; @bu136 ||= sheet7.bu136/(sheet12.c13*sheet11.e79); end
-  def bv136; @bv136 ||= sheet7.bv136/(sheet12.c13*sheet11.e79); end
-  def bw136; @bw136 ||= sheet7.bw136/(sheet12.c13*sheet11.e79); end
-  def bx136; @bx136 ||= sheet7.bx136/(sheet12.c13*sheet11.e79); end
-  def by136; @by136 ||= sheet7.by136/(sheet12.c13*sheet11.e79); end
-  def bz136; @bz136 ||= sheet7.bz136/(sheet12.c13*sheet11.e79); end
-  def ca136; @ca136 ||= sheet7.ca136/(sheet12.c13*sheet11.e79); end
-  def cc136; @cc136 ||= average(a('bs136','ca136')); end
-  def cd136; @cd136 ||= (sumproduct(a('bt136','ca136'),sheet12.a('d28','k28'))*5.0)+bs136; end
-  def cf136; @cf136 ||= sheet7.cf136/(sheet12.c13*sheet11.e79); end
-  def cg136; @cg136 ||= sheet7.cg136/(sheet12.c13*sheet11.e79); end
-  def ch136; @ch136 ||= sheet7.ch136/(sheet12.c13*sheet11.e79); end
-  def ci136; @ci136 ||= sheet7.ci136/(sheet12.c13*sheet11.e79); end
-  def cj136; @cj136 ||= sheet7.cj136/(sheet12.c13*sheet11.e79); end
-  def ck136; @ck136 ||= sheet7.ck136/(sheet12.c13*sheet11.e79); end
-  def cl136; @cl136 ||= sheet7.cl136/(sheet12.c13*sheet11.e79); end
-  def cm136; @cm136 ||= sheet7.cm136/(sheet12.c13*sheet11.e79); end
-  def cn136; @cn136 ||= sheet7.cn136/(sheet12.c13*sheet11.e79); end
-  def cp136; @cp136 ||= average(a('cf136','cn136')); end
-  def cq136; @cq136 ||= (sumproduct(a('cg136','cn136'),sheet12.a('d28','k28'))*5.0)+cf136; end
-  def cr136; @cr136 ||= excel_if(excel_comparison(abs(cd136-cq136-at136),"<",1.0),"ok","err"); end
-  def a137; "IX.c"; end
-  def b137; "Commercial heating and cooling"; end
-  def c137; "Heating"; end
-  def e137; @e137 ||= sheet7.e137/(sheet12.c13*sheet11.e79); end
-  def f137; @f137 ||= sheet7.f137/(sheet12.c13*sheet11.e79); end
-  def g137; @g137 ||= sheet7.g137/(sheet12.c13*sheet11.e79); end
-  def h137; @h137 ||= sheet7.h137/(sheet12.c13*sheet11.e79); end
-  def i137; @i137 ||= sheet7.i137/(sheet12.c13*sheet11.e79); end
-  def j137; @j137 ||= sheet7.j137/(sheet12.c13*sheet11.e79); end
-  def k137; @k137 ||= sheet7.k137/(sheet12.c13*sheet11.e79); end
-  def l137; @l137 ||= sheet7.l137/(sheet12.c13*sheet11.e79); end
-  def m137; @m137 ||= sheet7.m137/(sheet12.c13*sheet11.e79); end
-  def o137; @o137 ||= sheet7.o137/(sheet12.c13*sheet11.e79); end
-  def p137; @p137 ||= sheet7.p137/(sheet12.c13*sheet11.e79); end
-  def q137; @q137 ||= sheet7.q137/(sheet12.c13*sheet11.e79); end
-  def r137; @r137 ||= sheet7.r137/(sheet12.c13*sheet11.e79); end
-  def s137; @s137 ||= sheet7.s137/(sheet12.c13*sheet11.e79); end
-  def t137; @t137 ||= sheet7.t137/(sheet12.c13*sheet11.e79); end
-  def u137; @u137 ||= sheet7.u137/(sheet12.c13*sheet11.e79); end
-  def v137; @v137 ||= sheet7.v137/(sheet12.c13*sheet11.e79); end
-  def w137; @w137 ||= sheet7.w137/(sheet12.c13*sheet11.e79); end
-  def y137; @y137 ||= sheet7.y137/(sheet12.c13*sheet11.e79); end
-  def z137; @z137 ||= sheet7.z137/(sheet12.c13*sheet11.e79); end
-  def aa137; @aa137 ||= sheet7.aa137/(sheet12.c13*sheet11.e79); end
-  def ab137; @ab137 ||= sheet7.ab137/(sheet12.c13*sheet11.e79); end
-  def ac137; @ac137 ||= sheet7.ac137/(sheet12.c13*sheet11.e79); end
-  def ad137; @ad137 ||= sheet7.ad137/(sheet12.c13*sheet11.e79); end
-  def ae137; @ae137 ||= sheet7.ae137/(sheet12.c13*sheet11.e79); end
-  def af137; @af137 ||= sheet7.af137/(sheet12.c13*sheet11.e79); end
-  def ag137; @ag137 ||= sheet7.ag137/(sheet12.c13*sheet11.e79); end
-  def ai137; @ai137 ||= sheet7.ai137/(sheet12.c13*sheet11.e79); end
-  def aj137; @aj137 ||= sheet7.aj137/(sheet12.c13*sheet11.e79); end
-  def ak137; @ak137 ||= sheet7.ak137/(sheet12.c13*sheet11.e79); end
-  def al137; @al137 ||= sheet7.al137/(sheet12.c13*sheet11.e79); end
-  def am137; @am137 ||= sheet7.am137/(sheet12.c13*sheet11.e79); end
-  def an137; @an137 ||= sheet7.an137/(sheet12.c13*sheet11.e79); end
-  def ao137; @ao137 ||= sheet7.ao137/(sheet12.c13*sheet11.e79); end
-  def ap137; @ap137 ||= sheet7.ap137/(sheet12.c13*sheet11.e79); end
-  def aq137; @aq137 ||= sheet7.aq137/(sheet12.c13*sheet11.e79); end
-  def as137; @as137 ||= average(a('ai137','aq137')); end
-  def at137; @at137 ||= (sumproduct(a('aj137','aq137'),sheet12.a('d28','k28'))*5.0)+ai137; end
-  def av137; 0.0; end
-  def aw137; 5.0; end
-  def ay137; @ay137 ||= sheet7.ay137/(sheet12.c13*sheet11.e79); end
-  def az137; @az137 ||= sheet7.az137/(sheet12.c13*sheet11.e79); end
-  def ba137; @ba137 ||= sheet7.ba137/(sheet12.c13*sheet11.e79); end
-  def bb137; @bb137 ||= sheet7.bb137/(sheet12.c13*sheet11.e79); end
-  def bc137; @bc137 ||= sheet7.bc137/(sheet12.c13*sheet11.e79); end
-  def bd137; @bd137 ||= sheet7.bd137/(sheet12.c13*sheet11.e79); end
-  def be137; @be137 ||= sheet7.be137/(sheet12.c13*sheet11.e79); end
-  def bf137; @bf137 ||= sheet7.bf137/(sheet12.c13*sheet11.e79); end
-  def bg137; @bg137 ||= sheet7.bg137/(sheet12.c13*sheet11.e79); end
-  def bi137; @bi137 ||= sheet7.bi137/(sheet12.c13*sheet11.e79); end
-  def bj137; @bj137 ||= sheet7.bj137/(sheet12.c13*sheet11.e79); end
-  def bk137; @bk137 ||= sheet7.bk137/(sheet12.c13*sheet11.e79); end
-  def bl137; @bl137 ||= sheet7.bl137/(sheet12.c13*sheet11.e79); end
-  def bm137; @bm137 ||= sheet7.bm137/(sheet12.c13*sheet11.e79); end
-  def bn137; @bn137 ||= sheet7.bn137/(sheet12.c13*sheet11.e79); end
-  def bo137; @bo137 ||= sheet7.bo137/(sheet12.c13*sheet11.e79); end
-  def bp137; @bp137 ||= sheet7.bp137/(sheet12.c13*sheet11.e79); end
-  def bq137; @bq137 ||= sheet7.bq137/(sheet12.c13*sheet11.e79); end
-  def bs137; @bs137 ||= sheet7.bs137/(sheet12.c13*sheet11.e79); end
-  def bt137; @bt137 ||= sheet7.bt137/(sheet12.c13*sheet11.e79); end
-  def bu137; @bu137 ||= sheet7.bu137/(sheet12.c13*sheet11.e79); end
-  def bv137; @bv137 ||= sheet7.bv137/(sheet12.c13*sheet11.e79); end
-  def bw137; @bw137 ||= sheet7.bw137/(sheet12.c13*sheet11.e79); end
-  def bx137; @bx137 ||= sheet7.bx137/(sheet12.c13*sheet11.e79); end
-  def by137; @by137 ||= sheet7.by137/(sheet12.c13*sheet11.e79); end
-  def bz137; @bz137 ||= sheet7.bz137/(sheet12.c13*sheet11.e79); end
-  def ca137; @ca137 ||= sheet7.ca137/(sheet12.c13*sheet11.e79); end
-  def cc137; @cc137 ||= average(a('bs137','ca137')); end
-  def cd137; @cd137 ||= (sumproduct(a('bt137','ca137'),sheet12.a('d28','k28'))*5.0)+bs137; end
-  def cf137; @cf137 ||= sheet7.cf137/(sheet12.c13*sheet11.e79); end
-  def cg137; @cg137 ||= sheet7.cg137/(sheet12.c13*sheet11.e79); end
-  def ch137; @ch137 ||= sheet7.ch137/(sheet12.c13*sheet11.e79); end
-  def ci137; @ci137 ||= sheet7.ci137/(sheet12.c13*sheet11.e79); end
-  def cj137; @cj137 ||= sheet7.cj137/(sheet12.c13*sheet11.e79); end
-  def ck137; @ck137 ||= sheet7.ck137/(sheet12.c13*sheet11.e79); end
-  def cl137; @cl137 ||= sheet7.cl137/(sheet12.c13*sheet11.e79); end
-  def cm137; @cm137 ||= sheet7.cm137/(sheet12.c13*sheet11.e79); end
-  def cn137; @cn137 ||= sheet7.cn137/(sheet12.c13*sheet11.e79); end
-  def cp137; @cp137 ||= average(a('cf137','cn137')); end
-  def cq137; @cq137 ||= (sumproduct(a('cg137','cn137'),sheet12.a('d28','k28'))*5.0)+cf137; end
-  def cr137; @cr137 ||= excel_if(excel_comparison(abs(cd137-cq137-at137),"<",1.0),"ok","err"); end
-  def a138; "X.a"; end
-  def b138; "Domestic lighting, appliances, and cooking"; end
-  def c138; "Residential"; end
-  def e138; @e138 ||= sheet7.e138/(sheet12.c13*sheet11.e79); end
-  def f138; @f138 ||= sheet7.f138/(sheet12.c13*sheet11.e79); end
-  def g138; @g138 ||= sheet7.g138/(sheet12.c13*sheet11.e79); end
-  def h138; @h138 ||= sheet7.h138/(sheet12.c13*sheet11.e79); end
-  def i138; @i138 ||= sheet7.i138/(sheet12.c13*sheet11.e79); end
-  def j138; @j138 ||= sheet7.j138/(sheet12.c13*sheet11.e79); end
-  def k138; @k138 ||= sheet7.k138/(sheet12.c13*sheet11.e79); end
-  def l138; @l138 ||= sheet7.l138/(sheet12.c13*sheet11.e79); end
-  def m138; @m138 ||= sheet7.m138/(sheet12.c13*sheet11.e79); end
-  def o138; @o138 ||= sheet7.o138/(sheet12.c13*sheet11.e79); end
-  def p138; @p138 ||= sheet7.p138/(sheet12.c13*sheet11.e79); end
-  def q138; @q138 ||= sheet7.q138/(sheet12.c13*sheet11.e79); end
-  def r138; @r138 ||= sheet7.r138/(sheet12.c13*sheet11.e79); end
-  def s138; @s138 ||= sheet7.s138/(sheet12.c13*sheet11.e79); end
-  def t138; @t138 ||= sheet7.t138/(sheet12.c13*sheet11.e79); end
-  def u138; @u138 ||= sheet7.u138/(sheet12.c13*sheet11.e79); end
-  def v138; @v138 ||= sheet7.v138/(sheet12.c13*sheet11.e79); end
-  def w138; @w138 ||= sheet7.w138/(sheet12.c13*sheet11.e79); end
-  def y138; @y138 ||= sheet7.y138/(sheet12.c13*sheet11.e79); end
-  def z138; @z138 ||= sheet7.z138/(sheet12.c13*sheet11.e79); end
-  def aa138; @aa138 ||= sheet7.aa138/(sheet12.c13*sheet11.e79); end
-  def ab138; @ab138 ||= sheet7.ab138/(sheet12.c13*sheet11.e79); end
-  def ac138; @ac138 ||= sheet7.ac138/(sheet12.c13*sheet11.e79); end
-  def ad138; @ad138 ||= sheet7.ad138/(sheet12.c13*sheet11.e79); end
-  def ae138; @ae138 ||= sheet7.ae138/(sheet12.c13*sheet11.e79); end
-  def af138; @af138 ||= sheet7.af138/(sheet12.c13*sheet11.e79); end
-  def ag138; @ag138 ||= sheet7.ag138/(sheet12.c13*sheet11.e79); end
-  def ai138; @ai138 ||= sheet7.ai138/(sheet12.c13*sheet11.e79); end
-  def aj138; @aj138 ||= sheet7.aj138/(sheet12.c13*sheet11.e79); end
-  def ak138; @ak138 ||= sheet7.ak138/(sheet12.c13*sheet11.e79); end
-  def al138; @al138 ||= sheet7.al138/(sheet12.c13*sheet11.e79); end
-  def am138; @am138 ||= sheet7.am138/(sheet12.c13*sheet11.e79); end
-  def an138; @an138 ||= sheet7.an138/(sheet12.c13*sheet11.e79); end
-  def ao138; @ao138 ||= sheet7.ao138/(sheet12.c13*sheet11.e79); end
-  def ap138; @ap138 ||= sheet7.ap138/(sheet12.c13*sheet11.e79); end
-  def aq138; @aq138 ||= sheet7.aq138/(sheet12.c13*sheet11.e79); end
-  def as138; @as138 ||= average(a('ai138','aq138')); end
-  def at138; @at138 ||= (sumproduct(a('aj138','aq138'),sheet12.a('d28','k28'))*5.0)+ai138; end
-  def av138; 0.0; end
-  def aw138; 5.0; end
-  def ay138; @ay138 ||= sheet7.ay138/(sheet12.c13*sheet11.e79); end
-  def az138; @az138 ||= sheet7.az138/(sheet12.c13*sheet11.e79); end
-  def ba138; @ba138 ||= sheet7.ba138/(sheet12.c13*sheet11.e79); end
-  def bb138; @bb138 ||= sheet7.bb138/(sheet12.c13*sheet11.e79); end
-  def bc138; @bc138 ||= sheet7.bc138/(sheet12.c13*sheet11.e79); end
-  def bd138; @bd138 ||= sheet7.bd138/(sheet12.c13*sheet11.e79); end
-  def be138; @be138 ||= sheet7.be138/(sheet12.c13*sheet11.e79); end
-  def bf138; @bf138 ||= sheet7.bf138/(sheet12.c13*sheet11.e79); end
-  def bg138; @bg138 ||= sheet7.bg138/(sheet12.c13*sheet11.e79); end
-  def bi138; @bi138 ||= sheet7.bi138/(sheet12.c13*sheet11.e79); end
-  def bj138; @bj138 ||= sheet7.bj138/(sheet12.c13*sheet11.e79); end
-  def bk138; @bk138 ||= sheet7.bk138/(sheet12.c13*sheet11.e79); end
-  def bl138; @bl138 ||= sheet7.bl138/(sheet12.c13*sheet11.e79); end
-  def bm138; @bm138 ||= sheet7.bm138/(sheet12.c13*sheet11.e79); end
-  def bn138; @bn138 ||= sheet7.bn138/(sheet12.c13*sheet11.e79); end
-  def bo138; @bo138 ||= sheet7.bo138/(sheet12.c13*sheet11.e79); end
-  def bp138; @bp138 ||= sheet7.bp138/(sheet12.c13*sheet11.e79); end
-  def bq138; @bq138 ||= sheet7.bq138/(sheet12.c13*sheet11.e79); end
-  def bs138; @bs138 ||= sheet7.bs138/(sheet12.c13*sheet11.e79); end
-  def bt138; @bt138 ||= sheet7.bt138/(sheet12.c13*sheet11.e79); end
-  def bu138; @bu138 ||= sheet7.bu138/(sheet12.c13*sheet11.e79); end
-  def bv138; @bv138 ||= sheet7.bv138/(sheet12.c13*sheet11.e79); end
-  def bw138; @bw138 ||= sheet7.bw138/(sheet12.c13*sheet11.e79); end
-  def bx138; @bx138 ||= sheet7.bx138/(sheet12.c13*sheet11.e79); end
-  def by138; @by138 ||= sheet7.by138/(sheet12.c13*sheet11.e79); end
-  def bz138; @bz138 ||= sheet7.bz138/(sheet12.c13*sheet11.e79); end
-  def ca138; @ca138 ||= sheet7.ca138/(sheet12.c13*sheet11.e79); end
-  def cc138; @cc138 ||= average(a('bs138','ca138')); end
-  def cd138; @cd138 ||= (sumproduct(a('bt138','ca138'),sheet12.a('d28','k28'))*5.0)+bs138; end
-  def cf138; @cf138 ||= sheet7.cf138/(sheet12.c13*sheet11.e79); end
-  def cg138; @cg138 ||= sheet7.cg138/(sheet12.c13*sheet11.e79); end
-  def ch138; @ch138 ||= sheet7.ch138/(sheet12.c13*sheet11.e79); end
-  def ci138; @ci138 ||= sheet7.ci138/(sheet12.c13*sheet11.e79); end
-  def cj138; @cj138 ||= sheet7.cj138/(sheet12.c13*sheet11.e79); end
-  def ck138; @ck138 ||= sheet7.ck138/(sheet12.c13*sheet11.e79); end
-  def cl138; @cl138 ||= sheet7.cl138/(sheet12.c13*sheet11.e79); end
-  def cm138; @cm138 ||= sheet7.cm138/(sheet12.c13*sheet11.e79); end
-  def cn138; @cn138 ||= sheet7.cn138/(sheet12.c13*sheet11.e79); end
-  def cp138; @cp138 ||= average(a('cf138','cn138')); end
-  def cq138; @cq138 ||= (sumproduct(a('cg138','cn138'),sheet12.a('d28','k28'))*5.0)+cf138; end
-  def cr138; @cr138 ||= excel_if(excel_comparison(abs(cd138-cq138-at138),"<",1.0),"ok","err"); end
-  def a139; "X.b"; end
-  def b139; "Commercial lighting, appliances, and catering"; end
-  def c139; "Business"; end
-  def e139; @e139 ||= sheet7.e139/(sheet12.c13*sheet11.e79); end
-  def f139; @f139 ||= sheet7.f139/(sheet12.c13*sheet11.e79); end
-  def g139; @g139 ||= sheet7.g139/(sheet12.c13*sheet11.e79); end
-  def h139; @h139 ||= sheet7.h139/(sheet12.c13*sheet11.e79); end
-  def i139; @i139 ||= sheet7.i139/(sheet12.c13*sheet11.e79); end
-  def j139; @j139 ||= sheet7.j139/(sheet12.c13*sheet11.e79); end
-  def k139; @k139 ||= sheet7.k139/(sheet12.c13*sheet11.e79); end
-  def l139; @l139 ||= sheet7.l139/(sheet12.c13*sheet11.e79); end
-  def m139; @m139 ||= sheet7.m139/(sheet12.c13*sheet11.e79); end
-  def o139; @o139 ||= sheet7.o139/(sheet12.c13*sheet11.e79); end
-  def p139; @p139 ||= sheet7.p139/(sheet12.c13*sheet11.e79); end
-  def q139; @q139 ||= sheet7.q139/(sheet12.c13*sheet11.e79); end
-  def r139; @r139 ||= sheet7.r139/(sheet12.c13*sheet11.e79); end
-  def s139; @s139 ||= sheet7.s139/(sheet12.c13*sheet11.e79); end
-  def t139; @t139 ||= sheet7.t139/(sheet12.c13*sheet11.e79); end
-  def u139; @u139 ||= sheet7.u139/(sheet12.c13*sheet11.e79); end
-  def v139; @v139 ||= sheet7.v139/(sheet12.c13*sheet11.e79); end
-  def w139; @w139 ||= sheet7.w139/(sheet12.c13*sheet11.e79); end
-  def y139; @y139 ||= sheet7.y139/(sheet12.c13*sheet11.e79); end
-  def z139; @z139 ||= sheet7.z139/(sheet12.c13*sheet11.e79); end
-  def aa139; @aa139 ||= sheet7.aa139/(sheet12.c13*sheet11.e79); end
-  def ab139; @ab139 ||= sheet7.ab139/(sheet12.c13*sheet11.e79); end
-  def ac139; @ac139 ||= sheet7.ac139/(sheet12.c13*sheet11.e79); end
-  def ad139; @ad139 ||= sheet7.ad139/(sheet12.c13*sheet11.e79); end
-  def ae139; @ae139 ||= sheet7.ae139/(sheet12.c13*sheet11.e79); end
-  def af139; @af139 ||= sheet7.af139/(sheet12.c13*sheet11.e79); end
-  def ag139; @ag139 ||= sheet7.ag139/(sheet12.c13*sheet11.e79); end
-  def ai139; @ai139 ||= sheet7.ai139/(sheet12.c13*sheet11.e79); end
-  def aj139; @aj139 ||= sheet7.aj139/(sheet12.c13*sheet11.e79); end
-  def ak139; @ak139 ||= sheet7.ak139/(sheet12.c13*sheet11.e79); end
-  def al139; @al139 ||= sheet7.al139/(sheet12.c13*sheet11.e79); end
-  def am139; @am139 ||= sheet7.am139/(sheet12.c13*sheet11.e79); end
-  def an139; @an139 ||= sheet7.an139/(sheet12.c13*sheet11.e79); end
-  def ao139; @ao139 ||= sheet7.ao139/(sheet12.c13*sheet11.e79); end
-  def ap139; @ap139 ||= sheet7.ap139/(sheet12.c13*sheet11.e79); end
-  def aq139; @aq139 ||= sheet7.aq139/(sheet12.c13*sheet11.e79); end
-  def as139; @as139 ||= average(a('ai139','aq139')); end
-  def at139; @at139 ||= (sumproduct(a('aj139','aq139'),sheet12.a('d28','k28'))*5.0)+ai139; end
-  def av139; 0.0; end
-  def aw139; 5.0; end
-  def ay139; @ay139 ||= sheet7.ay139/(sheet12.c13*sheet11.e79); end
-  def az139; @az139 ||= sheet7.az139/(sheet12.c13*sheet11.e79); end
-  def ba139; @ba139 ||= sheet7.ba139/(sheet12.c13*sheet11.e79); end
-  def bb139; @bb139 ||= sheet7.bb139/(sheet12.c13*sheet11.e79); end
-  def bc139; @bc139 ||= sheet7.bc139/(sheet12.c13*sheet11.e79); end
-  def bd139; @bd139 ||= sheet7.bd139/(sheet12.c13*sheet11.e79); end
-  def be139; @be139 ||= sheet7.be139/(sheet12.c13*sheet11.e79); end
-  def bf139; @bf139 ||= sheet7.bf139/(sheet12.c13*sheet11.e79); end
-  def bg139; @bg139 ||= sheet7.bg139/(sheet12.c13*sheet11.e79); end
-  def bi139; @bi139 ||= sheet7.bi139/(sheet12.c13*sheet11.e79); end
-  def bj139; @bj139 ||= sheet7.bj139/(sheet12.c13*sheet11.e79); end
-  def bk139; @bk139 ||= sheet7.bk139/(sheet12.c13*sheet11.e79); end
-  def bl139; @bl139 ||= sheet7.bl139/(sheet12.c13*sheet11.e79); end
-  def bm139; @bm139 ||= sheet7.bm139/(sheet12.c13*sheet11.e79); end
-  def bn139; @bn139 ||= sheet7.bn139/(sheet12.c13*sheet11.e79); end
-  def bo139; @bo139 ||= sheet7.bo139/(sheet12.c13*sheet11.e79); end
-  def bp139; @bp139 ||= sheet7.bp139/(sheet12.c13*sheet11.e79); end
-  def bq139; @bq139 ||= sheet7.bq139/(sheet12.c13*sheet11.e79); end
-  def bs139; @bs139 ||= sheet7.bs139/(sheet12.c13*sheet11.e79); end
-  def bt139; @bt139 ||= sheet7.bt139/(sheet12.c13*sheet11.e79); end
-  def bu139; @bu139 ||= sheet7.bu139/(sheet12.c13*sheet11.e79); end
-  def bv139; @bv139 ||= sheet7.bv139/(sheet12.c13*sheet11.e79); end
-  def bw139; @bw139 ||= sheet7.bw139/(sheet12.c13*sheet11.e79); end
-  def bx139; @bx139 ||= sheet7.bx139/(sheet12.c13*sheet11.e79); end
-  def by139; @by139 ||= sheet7.by139/(sheet12.c13*sheet11.e79); end
-  def bz139; @bz139 ||= sheet7.bz139/(sheet12.c13*sheet11.e79); end
-  def ca139; @ca139 ||= sheet7.ca139/(sheet12.c13*sheet11.e79); end
-  def cc139; @cc139 ||= average(a('bs139','ca139')); end
-  def cd139; @cd139 ||= (sumproduct(a('bt139','ca139'),sheet12.a('d28','k28'))*5.0)+bs139; end
-  def cf139; @cf139 ||= sheet7.cf139/(sheet12.c13*sheet11.e79); end
-  def cg139; @cg139 ||= sheet7.cg139/(sheet12.c13*sheet11.e79); end
-  def ch139; @ch139 ||= sheet7.ch139/(sheet12.c13*sheet11.e79); end
-  def ci139; @ci139 ||= sheet7.ci139/(sheet12.c13*sheet11.e79); end
-  def cj139; @cj139 ||= sheet7.cj139/(sheet12.c13*sheet11.e79); end
-  def ck139; @ck139 ||= sheet7.ck139/(sheet12.c13*sheet11.e79); end
-  def cl139; @cl139 ||= sheet7.cl139/(sheet12.c13*sheet11.e79); end
-  def cm139; @cm139 ||= sheet7.cm139/(sheet12.c13*sheet11.e79); end
-  def cn139; @cn139 ||= sheet7.cn139/(sheet12.c13*sheet11.e79); end
-  def cp139; @cp139 ||= average(a('cf139','cn139')); end
-  def cq139; @cq139 ||= (sumproduct(a('cg139','cn139'),sheet12.a('d28','k28'))*5.0)+cf139; end
-  def cr139; @cr139 ||= excel_if(excel_comparison(abs(cd139-cq139-at139),"<",1.0),"ok","err"); end
-  def a140; "XI.a"; end
-  def b140; "Industrial processes"; end
-  def c140; "Business"; end
-  def e140; @e140 ||= sheet7.e140/(sheet12.c13*sheet11.e79); end
-  def f140; @f140 ||= sheet7.f140/(sheet12.c13*sheet11.e79); end
-  def g140; @g140 ||= sheet7.g140/(sheet12.c13*sheet11.e79); end
-  def h140; @h140 ||= sheet7.h140/(sheet12.c13*sheet11.e79); end
-  def i140; @i140 ||= sheet7.i140/(sheet12.c13*sheet11.e79); end
-  def j140; @j140 ||= sheet7.j140/(sheet12.c13*sheet11.e79); end
-  def k140; @k140 ||= sheet7.k140/(sheet12.c13*sheet11.e79); end
-  def l140; @l140 ||= sheet7.l140/(sheet12.c13*sheet11.e79); end
-  def m140; @m140 ||= sheet7.m140/(sheet12.c13*sheet11.e79); end
-  def o140; @o140 ||= sheet7.o140/(sheet12.c13*sheet11.e79); end
-  def p140; @p140 ||= sheet7.p140/(sheet12.c13*sheet11.e79); end
-  def q140; @q140 ||= sheet7.q140/(sheet12.c13*sheet11.e79); end
-  def r140; @r140 ||= sheet7.r140/(sheet12.c13*sheet11.e79); end
-  def s140; @s140 ||= sheet7.s140/(sheet12.c13*sheet11.e79); end
-  def t140; @t140 ||= sheet7.t140/(sheet12.c13*sheet11.e79); end
-  def u140; @u140 ||= sheet7.u140/(sheet12.c13*sheet11.e79); end
-  def v140; @v140 ||= sheet7.v140/(sheet12.c13*sheet11.e79); end
-  def w140; @w140 ||= sheet7.w140/(sheet12.c13*sheet11.e79); end
-  def y140; @y140 ||= sheet7.y140/(sheet12.c13*sheet11.e79); end
-  def z140; @z140 ||= sheet7.z140/(sheet12.c13*sheet11.e79); end
-  def aa140; @aa140 ||= sheet7.aa140/(sheet12.c13*sheet11.e79); end
-  def ab140; @ab140 ||= sheet7.ab140/(sheet12.c13*sheet11.e79); end
-  def ac140; @ac140 ||= sheet7.ac140/(sheet12.c13*sheet11.e79); end
-  def ad140; @ad140 ||= sheet7.ad140/(sheet12.c13*sheet11.e79); end
-  def ae140; @ae140 ||= sheet7.ae140/(sheet12.c13*sheet11.e79); end
-  def af140; @af140 ||= sheet7.af140/(sheet12.c13*sheet11.e79); end
-  def ag140; @ag140 ||= sheet7.ag140/(sheet12.c13*sheet11.e79); end
-  def ai140; @ai140 ||= sheet7.ai140/(sheet12.c13*sheet11.e79); end
-  def aj140; @aj140 ||= sheet7.aj140/(sheet12.c13*sheet11.e79); end
-  def ak140; @ak140 ||= sheet7.ak140/(sheet12.c13*sheet11.e79); end
-  def al140; @al140 ||= sheet7.al140/(sheet12.c13*sheet11.e79); end
-  def am140; @am140 ||= sheet7.am140/(sheet12.c13*sheet11.e79); end
-  def an140; @an140 ||= sheet7.an140/(sheet12.c13*sheet11.e79); end
-  def ao140; @ao140 ||= sheet7.ao140/(sheet12.c13*sheet11.e79); end
-  def ap140; @ap140 ||= sheet7.ap140/(sheet12.c13*sheet11.e79); end
-  def aq140; @aq140 ||= sheet7.aq140/(sheet12.c13*sheet11.e79); end
-  def as140; @as140 ||= average(a('ai140','aq140')); end
-  def at140; @at140 ||= (sumproduct(a('aj140','aq140'),sheet12.a('d28','k28'))*5.0)+ai140; end
-  def av140; 0.0; end
-  def aw140; 5.0; end
-  def ay140; @ay140 ||= sheet7.ay140/(sheet12.c13*sheet11.e79); end
-  def az140; @az140 ||= sheet7.az140/(sheet12.c13*sheet11.e79); end
-  def ba140; @ba140 ||= sheet7.ba140/(sheet12.c13*sheet11.e79); end
-  def bb140; @bb140 ||= sheet7.bb140/(sheet12.c13*sheet11.e79); end
-  def bc140; @bc140 ||= sheet7.bc140/(sheet12.c13*sheet11.e79); end
-  def bd140; @bd140 ||= sheet7.bd140/(sheet12.c13*sheet11.e79); end
-  def be140; @be140 ||= sheet7.be140/(sheet12.c13*sheet11.e79); end
-  def bf140; @bf140 ||= sheet7.bf140/(sheet12.c13*sheet11.e79); end
-  def bg140; @bg140 ||= sheet7.bg140/(sheet12.c13*sheet11.e79); end
-  def bi140; @bi140 ||= sheet7.bi140/(sheet12.c13*sheet11.e79); end
-  def bj140; @bj140 ||= sheet7.bj140/(sheet12.c13*sheet11.e79); end
-  def bk140; @bk140 ||= sheet7.bk140/(sheet12.c13*sheet11.e79); end
-  def bl140; @bl140 ||= sheet7.bl140/(sheet12.c13*sheet11.e79); end
-  def bm140; @bm140 ||= sheet7.bm140/(sheet12.c13*sheet11.e79); end
-  def bn140; @bn140 ||= sheet7.bn140/(sheet12.c13*sheet11.e79); end
-  def bo140; @bo140 ||= sheet7.bo140/(sheet12.c13*sheet11.e79); end
-  def bp140; @bp140 ||= sheet7.bp140/(sheet12.c13*sheet11.e79); end
-  def bq140; @bq140 ||= sheet7.bq140/(sheet12.c13*sheet11.e79); end
-  def bs140; @bs140 ||= sheet7.bs140/(sheet12.c13*sheet11.e79); end
-  def bt140; @bt140 ||= sheet7.bt140/(sheet12.c13*sheet11.e79); end
-  def bu140; @bu140 ||= sheet7.bu140/(sheet12.c13*sheet11.e79); end
-  def bv140; @bv140 ||= sheet7.bv140/(sheet12.c13*sheet11.e79); end
-  def bw140; @bw140 ||= sheet7.bw140/(sheet12.c13*sheet11.e79); end
-  def bx140; @bx140 ||= sheet7.bx140/(sheet12.c13*sheet11.e79); end
-  def by140; @by140 ||= sheet7.by140/(sheet12.c13*sheet11.e79); end
-  def bz140; @bz140 ||= sheet7.bz140/(sheet12.c13*sheet11.e79); end
-  def ca140; @ca140 ||= sheet7.ca140/(sheet12.c13*sheet11.e79); end
-  def cc140; @cc140 ||= average(a('bs140','ca140')); end
-  def cd140; @cd140 ||= (sumproduct(a('bt140','ca140'),sheet12.a('d28','k28'))*5.0)+bs140; end
-  def cf140; @cf140 ||= sheet7.cf140/(sheet12.c13*sheet11.e79); end
-  def cg140; @cg140 ||= sheet7.cg140/(sheet12.c13*sheet11.e79); end
-  def ch140; @ch140 ||= sheet7.ch140/(sheet12.c13*sheet11.e79); end
-  def ci140; @ci140 ||= sheet7.ci140/(sheet12.c13*sheet11.e79); end
-  def cj140; @cj140 ||= sheet7.cj140/(sheet12.c13*sheet11.e79); end
-  def ck140; @ck140 ||= sheet7.ck140/(sheet12.c13*sheet11.e79); end
-  def cl140; @cl140 ||= sheet7.cl140/(sheet12.c13*sheet11.e79); end
-  def cm140; @cm140 ||= sheet7.cm140/(sheet12.c13*sheet11.e79); end
-  def cn140; @cn140 ||= sheet7.cn140/(sheet12.c13*sheet11.e79); end
-  def cp140; @cp140 ||= average(a('cf140','cn140')); end
-  def cq140; @cq140 ||= (sumproduct(a('cg140','cn140'),sheet12.a('d28','k28'))*5.0)+cf140; end
-  def cr140; @cr140 ||= excel_if(excel_comparison(abs(cd140-cq140-at140),"<",1.0),"ok","err"); end
-  def a141; "XII.a.ICE"; end
-  def b141; "Conventional cars and buses"; end
-  def c141; "Transport"; end
-  def e141; @e141 ||= sheet7.e141/(sheet12.c13*sheet11.e79); end
-  def f141; @f141 ||= sheet7.f141/(sheet12.c13*sheet11.e79); end
-  def g141; @g141 ||= sheet7.g141/(sheet12.c13*sheet11.e79); end
-  def h141; @h141 ||= sheet7.h141/(sheet12.c13*sheet11.e79); end
-  def i141; @i141 ||= sheet7.i141/(sheet12.c13*sheet11.e79); end
-  def j141; @j141 ||= sheet7.j141/(sheet12.c13*sheet11.e79); end
-  def k141; @k141 ||= sheet7.k141/(sheet12.c13*sheet11.e79); end
-  def l141; @l141 ||= sheet7.l141/(sheet12.c13*sheet11.e79); end
-  def m141; @m141 ||= sheet7.m141/(sheet12.c13*sheet11.e79); end
-  def o141; @o141 ||= sheet7.o141/(sheet12.c13*sheet11.e79); end
-  def p141; @p141 ||= sheet7.p141/(sheet12.c13*sheet11.e79); end
-  def q141; @q141 ||= sheet7.q141/(sheet12.c13*sheet11.e79); end
-  def r141; @r141 ||= sheet7.r141/(sheet12.c13*sheet11.e79); end
-  def s141; @s141 ||= sheet7.s141/(sheet12.c13*sheet11.e79); end
-  def t141; @t141 ||= sheet7.t141/(sheet12.c13*sheet11.e79); end
-  def u141; @u141 ||= sheet7.u141/(sheet12.c13*sheet11.e79); end
-  def v141; @v141 ||= sheet7.v141/(sheet12.c13*sheet11.e79); end
-  def w141; @w141 ||= sheet7.w141/(sheet12.c13*sheet11.e79); end
-  def y141; @y141 ||= sheet7.y141/(sheet12.c13*sheet11.e79); end
-  def z141; @z141 ||= sheet7.z141/(sheet12.c13*sheet11.e79); end
-  def aa141; @aa141 ||= sheet7.aa141/(sheet12.c13*sheet11.e79); end
-  def ab141; @ab141 ||= sheet7.ab141/(sheet12.c13*sheet11.e79); end
-  def ac141; @ac141 ||= sheet7.ac141/(sheet12.c13*sheet11.e79); end
-  def ad141; @ad141 ||= sheet7.ad141/(sheet12.c13*sheet11.e79); end
-  def ae141; @ae141 ||= sheet7.ae141/(sheet12.c13*sheet11.e79); end
-  def af141; @af141 ||= sheet7.af141/(sheet12.c13*sheet11.e79); end
-  def ag141; @ag141 ||= sheet7.ag141/(sheet12.c13*sheet11.e79); end
-  def ai141; @ai141 ||= sheet7.ai141/(sheet12.c13*sheet11.e79); end
-  def aj141; @aj141 ||= sheet7.aj141/(sheet12.c13*sheet11.e79); end
-  def ak141; @ak141 ||= sheet7.ak141/(sheet12.c13*sheet11.e79); end
-  def al141; @al141 ||= sheet7.al141/(sheet12.c13*sheet11.e79); end
-  def am141; @am141 ||= sheet7.am141/(sheet12.c13*sheet11.e79); end
-  def an141; @an141 ||= sheet7.an141/(sheet12.c13*sheet11.e79); end
-  def ao141; @ao141 ||= sheet7.ao141/(sheet12.c13*sheet11.e79); end
-  def ap141; @ap141 ||= sheet7.ap141/(sheet12.c13*sheet11.e79); end
-  def aq141; @aq141 ||= sheet7.aq141/(sheet12.c13*sheet11.e79); end
-  def as141; @as141 ||= average(a('ai141','aq141')); end
-  def at141; @at141 ||= (sumproduct(a('aj141','aq141'),sheet12.a('d28','k28'))*5.0)+ai141; end
-  def av141; 0.0; end
-  def aw141; 5.0; end
-  def ay141; @ay141 ||= sheet7.ay141/(sheet12.c13*sheet11.e79); end
-  def az141; @az141 ||= sheet7.az141/(sheet12.c13*sheet11.e79); end
-  def ba141; @ba141 ||= sheet7.ba141/(sheet12.c13*sheet11.e79); end
-  def bb141; @bb141 ||= sheet7.bb141/(sheet12.c13*sheet11.e79); end
-  def bc141; @bc141 ||= sheet7.bc141/(sheet12.c13*sheet11.e79); end
-  def bd141; @bd141 ||= sheet7.bd141/(sheet12.c13*sheet11.e79); end
-  def be141; @be141 ||= sheet7.be141/(sheet12.c13*sheet11.e79); end
-  def bf141; @bf141 ||= sheet7.bf141/(sheet12.c13*sheet11.e79); end
-  def bg141; @bg141 ||= sheet7.bg141/(sheet12.c13*sheet11.e79); end
-  def bi141; @bi141 ||= sheet7.bi141/(sheet12.c13*sheet11.e79); end
-  def bj141; @bj141 ||= sheet7.bj141/(sheet12.c13*sheet11.e79); end
-  def bk141; @bk141 ||= sheet7.bk141/(sheet12.c13*sheet11.e79); end
-  def bl141; @bl141 ||= sheet7.bl141/(sheet12.c13*sheet11.e79); end
-  def bm141; @bm141 ||= sheet7.bm141/(sheet12.c13*sheet11.e79); end
-  def bn141; @bn141 ||= sheet7.bn141/(sheet12.c13*sheet11.e79); end
-  def bo141; @bo141 ||= sheet7.bo141/(sheet12.c13*sheet11.e79); end
-  def bp141; @bp141 ||= sheet7.bp141/(sheet12.c13*sheet11.e79); end
-  def bq141; @bq141 ||= sheet7.bq141/(sheet12.c13*sheet11.e79); end
-  def bs141; @bs141 ||= sheet7.bs141/(sheet12.c13*sheet11.e79); end
-  def bt141; @bt141 ||= sheet7.bt141/(sheet12.c13*sheet11.e79); end
-  def bu141; @bu141 ||= sheet7.bu141/(sheet12.c13*sheet11.e79); end
-  def bv141; @bv141 ||= sheet7.bv141/(sheet12.c13*sheet11.e79); end
-  def bw141; @bw141 ||= sheet7.bw141/(sheet12.c13*sheet11.e79); end
-  def bx141; @bx141 ||= sheet7.bx141/(sheet12.c13*sheet11.e79); end
-  def by141; @by141 ||= sheet7.by141/(sheet12.c13*sheet11.e79); end
-  def bz141; @bz141 ||= sheet7.bz141/(sheet12.c13*sheet11.e79); end
-  def ca141; @ca141 ||= sheet7.ca141/(sheet12.c13*sheet11.e79); end
-  def cc141; @cc141 ||= average(a('bs141','ca141')); end
-  def cd141; @cd141 ||= (sumproduct(a('bt141','ca141'),sheet12.a('d28','k28'))*5.0)+bs141; end
-  def cf141; @cf141 ||= sheet7.cf141/(sheet12.c13*sheet11.e79); end
-  def cg141; @cg141 ||= sheet7.cg141/(sheet12.c13*sheet11.e79); end
-  def ch141; @ch141 ||= sheet7.ch141/(sheet12.c13*sheet11.e79); end
-  def ci141; @ci141 ||= sheet7.ci141/(sheet12.c13*sheet11.e79); end
-  def cj141; @cj141 ||= sheet7.cj141/(sheet12.c13*sheet11.e79); end
-  def ck141; @ck141 ||= sheet7.ck141/(sheet12.c13*sheet11.e79); end
-  def cl141; @cl141 ||= sheet7.cl141/(sheet12.c13*sheet11.e79); end
-  def cm141; @cm141 ||= sheet7.cm141/(sheet12.c13*sheet11.e79); end
-  def cn141; @cn141 ||= sheet7.cn141/(sheet12.c13*sheet11.e79); end
-  def cp141; @cp141 ||= average(a('cf141','cn141')); end
-  def cq141; @cq141 ||= (sumproduct(a('cg141','cn141'),sheet12.a('d28','k28'))*5.0)+cf141; end
-  def cr141; @cr141 ||= excel_if(excel_comparison(abs(cd141-cq141-at141),"<",1.0),"ok","err"); end
-  def a142; "XII.a.HEV"; end
-  def b142; "Hybrid cars and buses"; end
-  def c142; "Transport"; end
-  def e142; @e142 ||= sheet7.e142/(sheet12.c13*sheet11.e79); end
-  def f142; @f142 ||= sheet7.f142/(sheet12.c13*sheet11.e79); end
-  def g142; @g142 ||= sheet7.g142/(sheet12.c13*sheet11.e79); end
-  def h142; @h142 ||= sheet7.h142/(sheet12.c13*sheet11.e79); end
-  def i142; @i142 ||= sheet7.i142/(sheet12.c13*sheet11.e79); end
-  def j142; @j142 ||= sheet7.j142/(sheet12.c13*sheet11.e79); end
-  def k142; @k142 ||= sheet7.k142/(sheet12.c13*sheet11.e79); end
-  def l142; @l142 ||= sheet7.l142/(sheet12.c13*sheet11.e79); end
-  def m142; @m142 ||= sheet7.m142/(sheet12.c13*sheet11.e79); end
-  def o142; @o142 ||= sheet7.o142/(sheet12.c13*sheet11.e79); end
-  def p142; @p142 ||= sheet7.p142/(sheet12.c13*sheet11.e79); end
-  def q142; @q142 ||= sheet7.q142/(sheet12.c13*sheet11.e79); end
-  def r142; @r142 ||= sheet7.r142/(sheet12.c13*sheet11.e79); end
-  def s142; @s142 ||= sheet7.s142/(sheet12.c13*sheet11.e79); end
-  def t142; @t142 ||= sheet7.t142/(sheet12.c13*sheet11.e79); end
-  def u142; @u142 ||= sheet7.u142/(sheet12.c13*sheet11.e79); end
-  def v142; @v142 ||= sheet7.v142/(sheet12.c13*sheet11.e79); end
-  def w142; @w142 ||= sheet7.w142/(sheet12.c13*sheet11.e79); end
-  def y142; @y142 ||= sheet7.y142/(sheet12.c13*sheet11.e79); end
-  def z142; @z142 ||= sheet7.z142/(sheet12.c13*sheet11.e79); end
-  def aa142; @aa142 ||= sheet7.aa142/(sheet12.c13*sheet11.e79); end
-  def ab142; @ab142 ||= sheet7.ab142/(sheet12.c13*sheet11.e79); end
-  def ac142; @ac142 ||= sheet7.ac142/(sheet12.c13*sheet11.e79); end
-  def ad142; @ad142 ||= sheet7.ad142/(sheet12.c13*sheet11.e79); end
-  def ae142; @ae142 ||= sheet7.ae142/(sheet12.c13*sheet11.e79); end
-  def af142; @af142 ||= sheet7.af142/(sheet12.c13*sheet11.e79); end
-  def ag142; @ag142 ||= sheet7.ag142/(sheet12.c13*sheet11.e79); end
-  def ai142; @ai142 ||= sheet7.ai142/(sheet12.c13*sheet11.e79); end
-  def aj142; @aj142 ||= sheet7.aj142/(sheet12.c13*sheet11.e79); end
-  def ak142; @ak142 ||= sheet7.ak142/(sheet12.c13*sheet11.e79); end
-  def al142; @al142 ||= sheet7.al142/(sheet12.c13*sheet11.e79); end
-  def am142; @am142 ||= sheet7.am142/(sheet12.c13*sheet11.e79); end
-  def an142; @an142 ||= sheet7.an142/(sheet12.c13*sheet11.e79); end
-  def ao142; @ao142 ||= sheet7.ao142/(sheet12.c13*sheet11.e79); end
-  def ap142; @ap142 ||= sheet7.ap142/(sheet12.c13*sheet11.e79); end
-  def aq142; @aq142 ||= sheet7.aq142/(sheet12.c13*sheet11.e79); end
-  def as142; @as142 ||= average(a('ai142','aq142')); end
-  def at142; @at142 ||= (sumproduct(a('aj142','aq142'),sheet12.a('d28','k28'))*5.0)+ai142; end
-  def av142; 0.0; end
-  def aw142; 5.0; end
-  def ay142; @ay142 ||= sheet7.ay142/(sheet12.c13*sheet11.e79); end
-  def az142; @az142 ||= sheet7.az142/(sheet12.c13*sheet11.e79); end
-  def ba142; @ba142 ||= sheet7.ba142/(sheet12.c13*sheet11.e79); end
-  def bb142; @bb142 ||= sheet7.bb142/(sheet12.c13*sheet11.e79); end
-  def bc142; @bc142 ||= sheet7.bc142/(sheet12.c13*sheet11.e79); end
-  def bd142; @bd142 ||= sheet7.bd142/(sheet12.c13*sheet11.e79); end
-  def be142; @be142 ||= sheet7.be142/(sheet12.c13*sheet11.e79); end
-  def bf142; @bf142 ||= sheet7.bf142/(sheet12.c13*sheet11.e79); end
-  def bg142; @bg142 ||= sheet7.bg142/(sheet12.c13*sheet11.e79); end
-  def bi142; @bi142 ||= sheet7.bi142/(sheet12.c13*sheet11.e79); end
-  def bj142; @bj142 ||= sheet7.bj142/(sheet12.c13*sheet11.e79); end
-  def bk142; @bk142 ||= sheet7.bk142/(sheet12.c13*sheet11.e79); end
-  def bl142; @bl142 ||= sheet7.bl142/(sheet12.c13*sheet11.e79); end
-  def bm142; @bm142 ||= sheet7.bm142/(sheet12.c13*sheet11.e79); end
-  def bn142; @bn142 ||= sheet7.bn142/(sheet12.c13*sheet11.e79); end
-  def bo142; @bo142 ||= sheet7.bo142/(sheet12.c13*sheet11.e79); end
-  def bp142; @bp142 ||= sheet7.bp142/(sheet12.c13*sheet11.e79); end
-  def bq142; @bq142 ||= sheet7.bq142/(sheet12.c13*sheet11.e79); end
-  def bs142; @bs142 ||= sheet7.bs142/(sheet12.c13*sheet11.e79); end
-  def bt142; @bt142 ||= sheet7.bt142/(sheet12.c13*sheet11.e79); end
-  def bu142; @bu142 ||= sheet7.bu142/(sheet12.c13*sheet11.e79); end
-  def bv142; @bv142 ||= sheet7.bv142/(sheet12.c13*sheet11.e79); end
-  def bw142; @bw142 ||= sheet7.bw142/(sheet12.c13*sheet11.e79); end
-  def bx142; @bx142 ||= sheet7.bx142/(sheet12.c13*sheet11.e79); end
-  def by142; @by142 ||= sheet7.by142/(sheet12.c13*sheet11.e79); end
-  def bz142; @bz142 ||= sheet7.bz142/(sheet12.c13*sheet11.e79); end
-  def ca142; @ca142 ||= sheet7.ca142/(sheet12.c13*sheet11.e79); end
-  def cc142; @cc142 ||= average(a('bs142','ca142')); end
-  def cd142; @cd142 ||= (sumproduct(a('bt142','ca142'),sheet12.a('d28','k28'))*5.0)+bs142; end
-  def cf142; @cf142 ||= sheet7.cf142/(sheet12.c13*sheet11.e79); end
-  def cg142; @cg142 ||= sheet7.cg142/(sheet12.c13*sheet11.e79); end
-  def ch142; @ch142 ||= sheet7.ch142/(sheet12.c13*sheet11.e79); end
-  def ci142; @ci142 ||= sheet7.ci142/(sheet12.c13*sheet11.e79); end
-  def cj142; @cj142 ||= sheet7.cj142/(sheet12.c13*sheet11.e79); end
-  def ck142; @ck142 ||= sheet7.ck142/(sheet12.c13*sheet11.e79); end
-  def cl142; @cl142 ||= sheet7.cl142/(sheet12.c13*sheet11.e79); end
-  def cm142; @cm142 ||= sheet7.cm142/(sheet12.c13*sheet11.e79); end
-  def cn142; @cn142 ||= sheet7.cn142/(sheet12.c13*sheet11.e79); end
-  def cp142; @cp142 ||= average(a('cf142','cn142')); end
-  def cq142; @cq142 ||= (sumproduct(a('cg142','cn142'),sheet12.a('d28','k28'))*5.0)+cf142; end
-  def cr142; @cr142 ||= excel_if(excel_comparison(abs(cd142-cq142-at142),"<",1.0),"ok","err"); end
-  def a143; "XII.a.EV"; end
-  def b143; "Electric cars and buses"; end
-  def c143; "Transport"; end
-  def e143; @e143 ||= sheet7.e143/(sheet12.c13*sheet11.e79); end
-  def f143; @f143 ||= sheet7.f143/(sheet12.c13*sheet11.e79); end
-  def g143; @g143 ||= sheet7.g143/(sheet12.c13*sheet11.e79); end
-  def h143; @h143 ||= sheet7.h143/(sheet12.c13*sheet11.e79); end
-  def i143; @i143 ||= sheet7.i143/(sheet12.c13*sheet11.e79); end
-  def j143; @j143 ||= sheet7.j143/(sheet12.c13*sheet11.e79); end
-  def k143; @k143 ||= sheet7.k143/(sheet12.c13*sheet11.e79); end
-  def l143; @l143 ||= sheet7.l143/(sheet12.c13*sheet11.e79); end
-  def m143; @m143 ||= sheet7.m143/(sheet12.c13*sheet11.e79); end
-  def o143; @o143 ||= sheet7.o143/(sheet12.c13*sheet11.e79); end
-  def p143; @p143 ||= sheet7.p143/(sheet12.c13*sheet11.e79); end
-  def q143; @q143 ||= sheet7.q143/(sheet12.c13*sheet11.e79); end
-  def r143; @r143 ||= sheet7.r143/(sheet12.c13*sheet11.e79); end
-  def s143; @s143 ||= sheet7.s143/(sheet12.c13*sheet11.e79); end
-  def t143; @t143 ||= sheet7.t143/(sheet12.c13*sheet11.e79); end
-  def u143; @u143 ||= sheet7.u143/(sheet12.c13*sheet11.e79); end
-  def v143; @v143 ||= sheet7.v143/(sheet12.c13*sheet11.e79); end
-  def w143; @w143 ||= sheet7.w143/(sheet12.c13*sheet11.e79); end
-  def y143; @y143 ||= sheet7.y143/(sheet12.c13*sheet11.e79); end
-  def z143; @z143 ||= sheet7.z143/(sheet12.c13*sheet11.e79); end
-  def aa143; @aa143 ||= sheet7.aa143/(sheet12.c13*sheet11.e79); end
-  def ab143; @ab143 ||= sheet7.ab143/(sheet12.c13*sheet11.e79); end
-  def ac143; @ac143 ||= sheet7.ac143/(sheet12.c13*sheet11.e79); end
-  def ad143; @ad143 ||= sheet7.ad143/(sheet12.c13*sheet11.e79); end
-  def ae143; @ae143 ||= sheet7.ae143/(sheet12.c13*sheet11.e79); end
-  def af143; @af143 ||= sheet7.af143/(sheet12.c13*sheet11.e79); end
-  def ag143; @ag143 ||= sheet7.ag143/(sheet12.c13*sheet11.e79); end
-  def ai143; @ai143 ||= sheet7.ai143/(sheet12.c13*sheet11.e79); end
-  def aj143; @aj143 ||= sheet7.aj143/(sheet12.c13*sheet11.e79); end
-  def ak143; @ak143 ||= sheet7.ak143/(sheet12.c13*sheet11.e79); end
-  def al143; @al143 ||= sheet7.al143/(sheet12.c13*sheet11.e79); end
-  def am143; @am143 ||= sheet7.am143/(sheet12.c13*sheet11.e79); end
-  def an143; @an143 ||= sheet7.an143/(sheet12.c13*sheet11.e79); end
-  def ao143; @ao143 ||= sheet7.ao143/(sheet12.c13*sheet11.e79); end
-  def ap143; @ap143 ||= sheet7.ap143/(sheet12.c13*sheet11.e79); end
-  def aq143; @aq143 ||= sheet7.aq143/(sheet12.c13*sheet11.e79); end
-  def as143; @as143 ||= average(a('ai143','aq143')); end
-  def at143; @at143 ||= (sumproduct(a('aj143','aq143'),sheet12.a('d28','k28'))*5.0)+ai143; end
-  def av143; 0.0; end
-  def aw143; 5.0; end
-  def ay143; @ay143 ||= sheet7.ay143/(sheet12.c13*sheet11.e79); end
-  def az143; @az143 ||= sheet7.az143/(sheet12.c13*sheet11.e79); end
-  def ba143; @ba143 ||= sheet7.ba143/(sheet12.c13*sheet11.e79); end
-  def bb143; @bb143 ||= sheet7.bb143/(sheet12.c13*sheet11.e79); end
-  def bc143; @bc143 ||= sheet7.bc143/(sheet12.c13*sheet11.e79); end
-  def bd143; @bd143 ||= sheet7.bd143/(sheet12.c13*sheet11.e79); end
-  def be143; @be143 ||= sheet7.be143/(sheet12.c13*sheet11.e79); end
-  def bf143; @bf143 ||= sheet7.bf143/(sheet12.c13*sheet11.e79); end
-  def bg143; @bg143 ||= sheet7.bg143/(sheet12.c13*sheet11.e79); end
-  def bi143; @bi143 ||= sheet7.bi143/(sheet12.c13*sheet11.e79); end
-  def bj143; @bj143 ||= sheet7.bj143/(sheet12.c13*sheet11.e79); end
-  def bk143; @bk143 ||= sheet7.bk143/(sheet12.c13*sheet11.e79); end
-  def bl143; @bl143 ||= sheet7.bl143/(sheet12.c13*sheet11.e79); end
-  def bm143; @bm143 ||= sheet7.bm143/(sheet12.c13*sheet11.e79); end
-  def bn143; @bn143 ||= sheet7.bn143/(sheet12.c13*sheet11.e79); end
-  def bo143; @bo143 ||= sheet7.bo143/(sheet12.c13*sheet11.e79); end
-  def bp143; @bp143 ||= sheet7.bp143/(sheet12.c13*sheet11.e79); end
-  def bq143; @bq143 ||= sheet7.bq143/(sheet12.c13*sheet11.e79); end
-  def bs143; @bs143 ||= sheet7.bs143/(sheet12.c13*sheet11.e79); end
-  def bt143; @bt143 ||= sheet7.bt143/(sheet12.c13*sheet11.e79); end
-  def bu143; @bu143 ||= sheet7.bu143/(sheet12.c13*sheet11.e79); end
-  def bv143; @bv143 ||= sheet7.bv143/(sheet12.c13*sheet11.e79); end
-  def bw143; @bw143 ||= sheet7.bw143/(sheet12.c13*sheet11.e79); end
-  def bx143; @bx143 ||= sheet7.bx143/(sheet12.c13*sheet11.e79); end
-  def by143; @by143 ||= sheet7.by143/(sheet12.c13*sheet11.e79); end
-  def bz143; @bz143 ||= sheet7.bz143/(sheet12.c13*sheet11.e79); end
-  def ca143; @ca143 ||= sheet7.ca143/(sheet12.c13*sheet11.e79); end
-  def cc143; @cc143 ||= average(a('bs143','ca143')); end
-  def cd143; @cd143 ||= (sumproduct(a('bt143','ca143'),sheet12.a('d28','k28'))*5.0)+bs143; end
-  def cf143; @cf143 ||= sheet7.cf143/(sheet12.c13*sheet11.e79); end
-  def cg143; @cg143 ||= sheet7.cg143/(sheet12.c13*sheet11.e79); end
-  def ch143; @ch143 ||= sheet7.ch143/(sheet12.c13*sheet11.e79); end
-  def ci143; @ci143 ||= sheet7.ci143/(sheet12.c13*sheet11.e79); end
-  def cj143; @cj143 ||= sheet7.cj143/(sheet12.c13*sheet11.e79); end
-  def ck143; @ck143 ||= sheet7.ck143/(sheet12.c13*sheet11.e79); end
-  def cl143; @cl143 ||= sheet7.cl143/(sheet12.c13*sheet11.e79); end
-  def cm143; @cm143 ||= sheet7.cm143/(sheet12.c13*sheet11.e79); end
-  def cn143; @cn143 ||= sheet7.cn143/(sheet12.c13*sheet11.e79); end
-  def cp143; @cp143 ||= average(a('cf143','cn143')); end
-  def cq143; @cq143 ||= (sumproduct(a('cg143','cn143'),sheet12.a('d28','k28'))*5.0)+cf143; end
-  def cr143; @cr143 ||= excel_if(excel_comparison(abs(cd143-cq143-at143),"<",1.0),"ok","err"); end
-  def a144; "XII.a.FCV"; end
-  def b144; "Fuel cell cars and buses"; end
-  def c144; "Transport"; end
-  def e144; @e144 ||= sheet7.e144/(sheet12.c13*sheet11.e79); end
-  def f144; @f144 ||= sheet7.f144/(sheet12.c13*sheet11.e79); end
-  def g144; @g144 ||= sheet7.g144/(sheet12.c13*sheet11.e79); end
-  def h144; @h144 ||= sheet7.h144/(sheet12.c13*sheet11.e79); end
-  def i144; @i144 ||= sheet7.i144/(sheet12.c13*sheet11.e79); end
-  def j144; @j144 ||= sheet7.j144/(sheet12.c13*sheet11.e79); end
-  def k144; @k144 ||= sheet7.k144/(sheet12.c13*sheet11.e79); end
-  def l144; @l144 ||= sheet7.l144/(sheet12.c13*sheet11.e79); end
-  def m144; @m144 ||= sheet7.m144/(sheet12.c13*sheet11.e79); end
-  def o144; @o144 ||= sheet7.o144/(sheet12.c13*sheet11.e79); end
-  def p144; @p144 ||= sheet7.p144/(sheet12.c13*sheet11.e79); end
-  def q144; @q144 ||= sheet7.q144/(sheet12.c13*sheet11.e79); end
-  def r144; @r144 ||= sheet7.r144/(sheet12.c13*sheet11.e79); end
-  def s144; @s144 ||= sheet7.s144/(sheet12.c13*sheet11.e79); end
-  def t144; @t144 ||= sheet7.t144/(sheet12.c13*sheet11.e79); end
-  def u144; @u144 ||= sheet7.u144/(sheet12.c13*sheet11.e79); end
-  def v144; @v144 ||= sheet7.v144/(sheet12.c13*sheet11.e79); end
-  def w144; @w144 ||= sheet7.w144/(sheet12.c13*sheet11.e79); end
-  def y144; @y144 ||= sheet7.y144/(sheet12.c13*sheet11.e79); end
-  def z144; @z144 ||= sheet7.z144/(sheet12.c13*sheet11.e79); end
-  def aa144; @aa144 ||= sheet7.aa144/(sheet12.c13*sheet11.e79); end
-  def ab144; @ab144 ||= sheet7.ab144/(sheet12.c13*sheet11.e79); end
-  def ac144; @ac144 ||= sheet7.ac144/(sheet12.c13*sheet11.e79); end
-  def ad144; @ad144 ||= sheet7.ad144/(sheet12.c13*sheet11.e79); end
-  def ae144; @ae144 ||= sheet7.ae144/(sheet12.c13*sheet11.e79); end
-  def af144; @af144 ||= sheet7.af144/(sheet12.c13*sheet11.e79); end
-  def ag144; @ag144 ||= sheet7.ag144/(sheet12.c13*sheet11.e79); end
-  def ai144; @ai144 ||= sheet7.ai144/(sheet12.c13*sheet11.e79); end
-  def aj144; @aj144 ||= sheet7.aj144/(sheet12.c13*sheet11.e79); end
-  def ak144; @ak144 ||= sheet7.ak144/(sheet12.c13*sheet11.e79); end
-  def al144; @al144 ||= sheet7.al144/(sheet12.c13*sheet11.e79); end
-  def am144; @am144 ||= sheet7.am144/(sheet12.c13*sheet11.e79); end
-  def an144; @an144 ||= sheet7.an144/(sheet12.c13*sheet11.e79); end
-  def ao144; @ao144 ||= sheet7.ao144/(sheet12.c13*sheet11.e79); end
-  def ap144; @ap144 ||= sheet7.ap144/(sheet12.c13*sheet11.e79); end
-  def aq144; @aq144 ||= sheet7.aq144/(sheet12.c13*sheet11.e79); end
-  def as144; @as144 ||= average(a('ai144','aq144')); end
-  def at144; @at144 ||= (sumproduct(a('aj144','aq144'),sheet12.a('d28','k28'))*5.0)+ai144; end
-  def av144; 0.0; end
-  def aw144; 5.0; end
-  def ay144; @ay144 ||= sheet7.ay144/(sheet12.c13*sheet11.e79); end
-  def az144; @az144 ||= sheet7.az144/(sheet12.c13*sheet11.e79); end
-  def ba144; @ba144 ||= sheet7.ba144/(sheet12.c13*sheet11.e79); end
-  def bb144; @bb144 ||= sheet7.bb144/(sheet12.c13*sheet11.e79); end
-  def bc144; @bc144 ||= sheet7.bc144/(sheet12.c13*sheet11.e79); end
-  def bd144; @bd144 ||= sheet7.bd144/(sheet12.c13*sheet11.e79); end
-  def be144; @be144 ||= sheet7.be144/(sheet12.c13*sheet11.e79); end
-  def bf144; @bf144 ||= sheet7.bf144/(sheet12.c13*sheet11.e79); end
-  def bg144; @bg144 ||= sheet7.bg144/(sheet12.c13*sheet11.e79); end
-  def bi144; @bi144 ||= sheet7.bi144/(sheet12.c13*sheet11.e79); end
-  def bj144; @bj144 ||= sheet7.bj144/(sheet12.c13*sheet11.e79); end
-  def bk144; @bk144 ||= sheet7.bk144/(sheet12.c13*sheet11.e79); end
-  def bl144; @bl144 ||= sheet7.bl144/(sheet12.c13*sheet11.e79); end
-  def bm144; @bm144 ||= sheet7.bm144/(sheet12.c13*sheet11.e79); end
-  def bn144; @bn144 ||= sheet7.bn144/(sheet12.c13*sheet11.e79); end
-  def bo144; @bo144 ||= sheet7.bo144/(sheet12.c13*sheet11.e79); end
-  def bp144; @bp144 ||= sheet7.bp144/(sheet12.c13*sheet11.e79); end
-  def bq144; @bq144 ||= sheet7.bq144/(sheet12.c13*sheet11.e79); end
-  def bs144; @bs144 ||= sheet7.bs144/(sheet12.c13*sheet11.e79); end
-  def bt144; @bt144 ||= sheet7.bt144/(sheet12.c13*sheet11.e79); end
-  def bu144; @bu144 ||= sheet7.bu144/(sheet12.c13*sheet11.e79); end
-  def bv144; @bv144 ||= sheet7.bv144/(sheet12.c13*sheet11.e79); end
-  def bw144; @bw144 ||= sheet7.bw144/(sheet12.c13*sheet11.e79); end
-  def bx144; @bx144 ||= sheet7.bx144/(sheet12.c13*sheet11.e79); end
-  def by144; @by144 ||= sheet7.by144/(sheet12.c13*sheet11.e79); end
-  def bz144; @bz144 ||= sheet7.bz144/(sheet12.c13*sheet11.e79); end
-  def ca144; @ca144 ||= sheet7.ca144/(sheet12.c13*sheet11.e79); end
-  def cc144; @cc144 ||= average(a('bs144','ca144')); end
-  def cd144; @cd144 ||= (sumproduct(a('bt144','ca144'),sheet12.a('d28','k28'))*5.0)+bs144; end
-  def cf144; @cf144 ||= sheet7.cf144/(sheet12.c13*sheet11.e79); end
-  def cg144; @cg144 ||= sheet7.cg144/(sheet12.c13*sheet11.e79); end
-  def ch144; @ch144 ||= sheet7.ch144/(sheet12.c13*sheet11.e79); end
-  def ci144; @ci144 ||= sheet7.ci144/(sheet12.c13*sheet11.e79); end
-  def cj144; @cj144 ||= sheet7.cj144/(sheet12.c13*sheet11.e79); end
-  def ck144; @ck144 ||= sheet7.ck144/(sheet12.c13*sheet11.e79); end
-  def cl144; @cl144 ||= sheet7.cl144/(sheet12.c13*sheet11.e79); end
-  def cm144; @cm144 ||= sheet7.cm144/(sheet12.c13*sheet11.e79); end
-  def cn144; @cn144 ||= sheet7.cn144/(sheet12.c13*sheet11.e79); end
-  def cp144; @cp144 ||= average(a('cf144','cn144')); end
-  def cq144; @cq144 ||= (sumproduct(a('cg144','cn144'),sheet12.a('d28','k28'))*5.0)+cf144; end
-  def cr144; @cr144 ||= excel_if(excel_comparison(abs(cd144-cq144-at144),"<",1.0),"ok","err"); end
-  def a145; "XII.a.Bike"; end
-  def b145; "Bikes"; end
-  def c145; "Transport"; end
-  def e145; @e145 ||= sheet7.e145/(sheet12.c13*sheet11.e79); end
-  def f145; @f145 ||= sheet7.f145/(sheet12.c13*sheet11.e79); end
-  def g145; @g145 ||= sheet7.g145/(sheet12.c13*sheet11.e79); end
-  def h145; @h145 ||= sheet7.h145/(sheet12.c13*sheet11.e79); end
-  def i145; @i145 ||= sheet7.i145/(sheet12.c13*sheet11.e79); end
-  def j145; @j145 ||= sheet7.j145/(sheet12.c13*sheet11.e79); end
-  def k145; @k145 ||= sheet7.k145/(sheet12.c13*sheet11.e79); end
-  def l145; @l145 ||= sheet7.l145/(sheet12.c13*sheet11.e79); end
-  def m145; @m145 ||= sheet7.m145/(sheet12.c13*sheet11.e79); end
-  def o145; @o145 ||= sheet7.o145/(sheet12.c13*sheet11.e79); end
-  def p145; @p145 ||= sheet7.p145/(sheet12.c13*sheet11.e79); end
-  def q145; @q145 ||= sheet7.q145/(sheet12.c13*sheet11.e79); end
-  def r145; @r145 ||= sheet7.r145/(sheet12.c13*sheet11.e79); end
-  def s145; @s145 ||= sheet7.s145/(sheet12.c13*sheet11.e79); end
-  def t145; @t145 ||= sheet7.t145/(sheet12.c13*sheet11.e79); end
-  def u145; @u145 ||= sheet7.u145/(sheet12.c13*sheet11.e79); end
-  def v145; @v145 ||= sheet7.v145/(sheet12.c13*sheet11.e79); end
-  def w145; @w145 ||= sheet7.w145/(sheet12.c13*sheet11.e79); end
-  def y145; @y145 ||= sheet7.y145/(sheet12.c13*sheet11.e79); end
-  def z145; @z145 ||= sheet7.z145/(sheet12.c13*sheet11.e79); end
-  def aa145; @aa145 ||= sheet7.aa145/(sheet12.c13*sheet11.e79); end
-  def ab145; @ab145 ||= sheet7.ab145/(sheet12.c13*sheet11.e79); end
-  def ac145; @ac145 ||= sheet7.ac145/(sheet12.c13*sheet11.e79); end
-  def ad145; @ad145 ||= sheet7.ad145/(sheet12.c13*sheet11.e79); end
-  def ae145; @ae145 ||= sheet7.ae145/(sheet12.c13*sheet11.e79); end
-  def af145; @af145 ||= sheet7.af145/(sheet12.c13*sheet11.e79); end
-  def ag145; @ag145 ||= sheet7.ag145/(sheet12.c13*sheet11.e79); end
-  def ai145; @ai145 ||= sheet7.ai145/(sheet12.c13*sheet11.e79); end
-  def aj145; @aj145 ||= sheet7.aj145/(sheet12.c13*sheet11.e79); end
-  def ak145; @ak145 ||= sheet7.ak145/(sheet12.c13*sheet11.e79); end
-  def al145; @al145 ||= sheet7.al145/(sheet12.c13*sheet11.e79); end
-  def am145; @am145 ||= sheet7.am145/(sheet12.c13*sheet11.e79); end
-  def an145; @an145 ||= sheet7.an145/(sheet12.c13*sheet11.e79); end
-  def ao145; @ao145 ||= sheet7.ao145/(sheet12.c13*sheet11.e79); end
-  def ap145; @ap145 ||= sheet7.ap145/(sheet12.c13*sheet11.e79); end
-  def aq145; @aq145 ||= sheet7.aq145/(sheet12.c13*sheet11.e79); end
-  def as145; @as145 ||= average(a('ai145','aq145')); end
-  def at145; @at145 ||= (sumproduct(a('aj145','aq145'),sheet12.a('d28','k28'))*5.0)+ai145; end
-  def av145; 0.0; end
-  def aw145; 5.0; end
-  def ay145; @ay145 ||= sheet7.ay145/(sheet12.c13*sheet11.e79); end
-  def az145; @az145 ||= sheet7.az145/(sheet12.c13*sheet11.e79); end
-  def ba145; @ba145 ||= sheet7.ba145/(sheet12.c13*sheet11.e79); end
-  def bb145; @bb145 ||= sheet7.bb145/(sheet12.c13*sheet11.e79); end
-  def bc145; @bc145 ||= sheet7.bc145/(sheet12.c13*sheet11.e79); end
-  def bd145; @bd145 ||= sheet7.bd145/(sheet12.c13*sheet11.e79); end
-  def be145; @be145 ||= sheet7.be145/(sheet12.c13*sheet11.e79); end
-  def bf145; @bf145 ||= sheet7.bf145/(sheet12.c13*sheet11.e79); end
-  def bg145; @bg145 ||= sheet7.bg145/(sheet12.c13*sheet11.e79); end
-  def bi145; @bi145 ||= sheet7.bi145/(sheet12.c13*sheet11.e79); end
-  def bj145; @bj145 ||= sheet7.bj145/(sheet12.c13*sheet11.e79); end
-  def bk145; @bk145 ||= sheet7.bk145/(sheet12.c13*sheet11.e79); end
-  def bl145; @bl145 ||= sheet7.bl145/(sheet12.c13*sheet11.e79); end
-  def bm145; @bm145 ||= sheet7.bm145/(sheet12.c13*sheet11.e79); end
-  def bn145; @bn145 ||= sheet7.bn145/(sheet12.c13*sheet11.e79); end
-  def bo145; @bo145 ||= sheet7.bo145/(sheet12.c13*sheet11.e79); end
-  def bp145; @bp145 ||= sheet7.bp145/(sheet12.c13*sheet11.e79); end
-  def bq145; @bq145 ||= sheet7.bq145/(sheet12.c13*sheet11.e79); end
-  def bs145; @bs145 ||= sheet7.bs145/(sheet12.c13*sheet11.e79); end
-  def bt145; @bt145 ||= sheet7.bt145/(sheet12.c13*sheet11.e79); end
-  def bu145; @bu145 ||= sheet7.bu145/(sheet12.c13*sheet11.e79); end
-  def bv145; @bv145 ||= sheet7.bv145/(sheet12.c13*sheet11.e79); end
-  def bw145; @bw145 ||= sheet7.bw145/(sheet12.c13*sheet11.e79); end
-  def bx145; @bx145 ||= sheet7.bx145/(sheet12.c13*sheet11.e79); end
-  def by145; @by145 ||= sheet7.by145/(sheet12.c13*sheet11.e79); end
-  def bz145; @bz145 ||= sheet7.bz145/(sheet12.c13*sheet11.e79); end
-  def ca145; @ca145 ||= sheet7.ca145/(sheet12.c13*sheet11.e79); end
-  def cc145; @cc145 ||= average(a('bs145','ca145')); end
-  def cd145; @cd145 ||= (sumproduct(a('bt145','ca145'),sheet12.a('d28','k28'))*5.0)+bs145; end
-  def cf145; @cf145 ||= sheet7.cf145/(sheet12.c13*sheet11.e79); end
-  def cg145; @cg145 ||= sheet7.cg145/(sheet12.c13*sheet11.e79); end
-  def ch145; @ch145 ||= sheet7.ch145/(sheet12.c13*sheet11.e79); end
-  def ci145; @ci145 ||= sheet7.ci145/(sheet12.c13*sheet11.e79); end
-  def cj145; @cj145 ||= sheet7.cj145/(sheet12.c13*sheet11.e79); end
-  def ck145; @ck145 ||= sheet7.ck145/(sheet12.c13*sheet11.e79); end
-  def cl145; @cl145 ||= sheet7.cl145/(sheet12.c13*sheet11.e79); end
-  def cm145; @cm145 ||= sheet7.cm145/(sheet12.c13*sheet11.e79); end
-  def cn145; @cn145 ||= sheet7.cn145/(sheet12.c13*sheet11.e79); end
-  def cp145; @cp145 ||= average(a('cf145','cn145')); end
-  def cq145; @cq145 ||= (sumproduct(a('cg145','cn145'),sheet12.a('d28','k28'))*5.0)+cf145; end
-  def cr145; @cr145 ||= excel_if(excel_comparison(abs(cd145-cq145-at145),"<",1.0),"ok","err"); end
-  def a146; "XII.a.Rail"; end
-  def b146; "Rail"; end
-  def c146; "Transport"; end
-  def e146; @e146 ||= sheet7.e146/(sheet12.c13*sheet11.e79); end
-  def f146; @f146 ||= sheet7.f146/(sheet12.c13*sheet11.e79); end
-  def g146; @g146 ||= sheet7.g146/(sheet12.c13*sheet11.e79); end
-  def h146; @h146 ||= sheet7.h146/(sheet12.c13*sheet11.e79); end
-  def i146; @i146 ||= sheet7.i146/(sheet12.c13*sheet11.e79); end
-  def j146; @j146 ||= sheet7.j146/(sheet12.c13*sheet11.e79); end
-  def k146; @k146 ||= sheet7.k146/(sheet12.c13*sheet11.e79); end
-  def l146; @l146 ||= sheet7.l146/(sheet12.c13*sheet11.e79); end
-  def m146; @m146 ||= sheet7.m146/(sheet12.c13*sheet11.e79); end
-  def o146; @o146 ||= sheet7.o146/(sheet12.c13*sheet11.e79); end
-  def p146; @p146 ||= sheet7.p146/(sheet12.c13*sheet11.e79); end
-  def q146; @q146 ||= sheet7.q146/(sheet12.c13*sheet11.e79); end
-  def r146; @r146 ||= sheet7.r146/(sheet12.c13*sheet11.e79); end
-  def s146; @s146 ||= sheet7.s146/(sheet12.c13*sheet11.e79); end
-  def t146; @t146 ||= sheet7.t146/(sheet12.c13*sheet11.e79); end
-  def u146; @u146 ||= sheet7.u146/(sheet12.c13*sheet11.e79); end
-  def v146; @v146 ||= sheet7.v146/(sheet12.c13*sheet11.e79); end
-  def w146; @w146 ||= sheet7.w146/(sheet12.c13*sheet11.e79); end
-  def y146; @y146 ||= sheet7.y146/(sheet12.c13*sheet11.e79); end
-  def z146; @z146 ||= sheet7.z146/(sheet12.c13*sheet11.e79); end
-  def aa146; @aa146 ||= sheet7.aa146/(sheet12.c13*sheet11.e79); end
-  def ab146; @ab146 ||= sheet7.ab146/(sheet12.c13*sheet11.e79); end
-  def ac146; @ac146 ||= sheet7.ac146/(sheet12.c13*sheet11.e79); end
-  def ad146; @ad146 ||= sheet7.ad146/(sheet12.c13*sheet11.e79); end
-  def ae146; @ae146 ||= sheet7.ae146/(sheet12.c13*sheet11.e79); end
-  def af146; @af146 ||= sheet7.af146/(sheet12.c13*sheet11.e79); end
-  def ag146; @ag146 ||= sheet7.ag146/(sheet12.c13*sheet11.e79); end
-  def ai146; @ai146 ||= sheet7.ai146/(sheet12.c13*sheet11.e79); end
-  def aj146; @aj146 ||= sheet7.aj146/(sheet12.c13*sheet11.e79); end
-  def ak146; @ak146 ||= sheet7.ak146/(sheet12.c13*sheet11.e79); end
-  def al146; @al146 ||= sheet7.al146/(sheet12.c13*sheet11.e79); end
-  def am146; @am146 ||= sheet7.am146/(sheet12.c13*sheet11.e79); end
-  def an146; @an146 ||= sheet7.an146/(sheet12.c13*sheet11.e79); end
-  def ao146; @ao146 ||= sheet7.ao146/(sheet12.c13*sheet11.e79); end
-  def ap146; @ap146 ||= sheet7.ap146/(sheet12.c13*sheet11.e79); end
-  def aq146; @aq146 ||= sheet7.aq146/(sheet12.c13*sheet11.e79); end
-  def as146; @as146 ||= average(a('ai146','aq146')); end
-  def at146; @at146 ||= (sumproduct(a('aj146','aq146'),sheet12.a('d28','k28'))*5.0)+ai146; end
-  def av146; 0.0; end
-  def aw146; 5.0; end
-  def ay146; @ay146 ||= sheet7.ay146/(sheet12.c13*sheet11.e79); end
-  def az146; @az146 ||= sheet7.az146/(sheet12.c13*sheet11.e79); end
-  def ba146; @ba146 ||= sheet7.ba146/(sheet12.c13*sheet11.e79); end
-  def bb146; @bb146 ||= sheet7.bb146/(sheet12.c13*sheet11.e79); end
-  def bc146; @bc146 ||= sheet7.bc146/(sheet12.c13*sheet11.e79); end
-  def bd146; @bd146 ||= sheet7.bd146/(sheet12.c13*sheet11.e79); end
-  def be146; @be146 ||= sheet7.be146/(sheet12.c13*sheet11.e79); end
-  def bf146; @bf146 ||= sheet7.bf146/(sheet12.c13*sheet11.e79); end
-  def bg146; @bg146 ||= sheet7.bg146/(sheet12.c13*sheet11.e79); end
-  def bi146; @bi146 ||= sheet7.bi146/(sheet12.c13*sheet11.e79); end
-  def bj146; @bj146 ||= sheet7.bj146/(sheet12.c13*sheet11.e79); end
-  def bk146; @bk146 ||= sheet7.bk146/(sheet12.c13*sheet11.e79); end
-  def bl146; @bl146 ||= sheet7.bl146/(sheet12.c13*sheet11.e79); end
-  def bm146; @bm146 ||= sheet7.bm146/(sheet12.c13*sheet11.e79); end
-  def bn146; @bn146 ||= sheet7.bn146/(sheet12.c13*sheet11.e79); end
-  def bo146; @bo146 ||= sheet7.bo146/(sheet12.c13*sheet11.e79); end
-  def bp146; @bp146 ||= sheet7.bp146/(sheet12.c13*sheet11.e79); end
-  def bq146; @bq146 ||= sheet7.bq146/(sheet12.c13*sheet11.e79); end
-  def bs146; @bs146 ||= sheet7.bs146/(sheet12.c13*sheet11.e79); end
-  def bt146; @bt146 ||= sheet7.bt146/(sheet12.c13*sheet11.e79); end
-  def bu146; @bu146 ||= sheet7.bu146/(sheet12.c13*sheet11.e79); end
-  def bv146; @bv146 ||= sheet7.bv146/(sheet12.c13*sheet11.e79); end
-  def bw146; @bw146 ||= sheet7.bw146/(sheet12.c13*sheet11.e79); end
-  def bx146; @bx146 ||= sheet7.bx146/(sheet12.c13*sheet11.e79); end
-  def by146; @by146 ||= sheet7.by146/(sheet12.c13*sheet11.e79); end
-  def bz146; @bz146 ||= sheet7.bz146/(sheet12.c13*sheet11.e79); end
-  def ca146; @ca146 ||= sheet7.ca146/(sheet12.c13*sheet11.e79); end
-  def cc146; @cc146 ||= average(a('bs146','ca146')); end
-  def cd146; @cd146 ||= (sumproduct(a('bt146','ca146'),sheet12.a('d28','k28'))*5.0)+bs146; end
-  def cf146; @cf146 ||= sheet7.cf146/(sheet12.c13*sheet11.e79); end
-  def cg146; @cg146 ||= sheet7.cg146/(sheet12.c13*sheet11.e79); end
-  def ch146; @ch146 ||= sheet7.ch146/(sheet12.c13*sheet11.e79); end
-  def ci146; @ci146 ||= sheet7.ci146/(sheet12.c13*sheet11.e79); end
-  def cj146; @cj146 ||= sheet7.cj146/(sheet12.c13*sheet11.e79); end
-  def ck146; @ck146 ||= sheet7.ck146/(sheet12.c13*sheet11.e79); end
-  def cl146; @cl146 ||= sheet7.cl146/(sheet12.c13*sheet11.e79); end
-  def cm146; @cm146 ||= sheet7.cm146/(sheet12.c13*sheet11.e79); end
-  def cn146; @cn146 ||= sheet7.cn146/(sheet12.c13*sheet11.e79); end
-  def cp146; @cp146 ||= average(a('cf146','cn146')); end
-  def cq146; @cq146 ||= (sumproduct(a('cg146','cn146'),sheet12.a('d28','k28'))*5.0)+cf146; end
-  def cr146; @cr146 ||= excel_if(excel_comparison(abs(cd146-cq146-at146),"<",1.0),"ok","err"); end
-  def a147; "XII.a.Air"; end
-  def b147; "Domestic aviation"; end
-  def c147; "Transport"; end
-  def e147; @e147 ||= sheet7.e147/(sheet12.c13*sheet11.e79); end
-  def f147; @f147 ||= sheet7.f147/(sheet12.c13*sheet11.e79); end
-  def g147; @g147 ||= sheet7.g147/(sheet12.c13*sheet11.e79); end
-  def h147; @h147 ||= sheet7.h147/(sheet12.c13*sheet11.e79); end
-  def i147; @i147 ||= sheet7.i147/(sheet12.c13*sheet11.e79); end
-  def j147; @j147 ||= sheet7.j147/(sheet12.c13*sheet11.e79); end
-  def k147; @k147 ||= sheet7.k147/(sheet12.c13*sheet11.e79); end
-  def l147; @l147 ||= sheet7.l147/(sheet12.c13*sheet11.e79); end
-  def m147; @m147 ||= sheet7.m147/(sheet12.c13*sheet11.e79); end
-  def o147; @o147 ||= sheet7.o147/(sheet12.c13*sheet11.e79); end
-  def p147; @p147 ||= sheet7.p147/(sheet12.c13*sheet11.e79); end
-  def q147; @q147 ||= sheet7.q147/(sheet12.c13*sheet11.e79); end
-  def r147; @r147 ||= sheet7.r147/(sheet12.c13*sheet11.e79); end
-  def s147; @s147 ||= sheet7.s147/(sheet12.c13*sheet11.e79); end
-  def t147; @t147 ||= sheet7.t147/(sheet12.c13*sheet11.e79); end
-  def u147; @u147 ||= sheet7.u147/(sheet12.c13*sheet11.e79); end
-  def v147; @v147 ||= sheet7.v147/(sheet12.c13*sheet11.e79); end
-  def w147; @w147 ||= sheet7.w147/(sheet12.c13*sheet11.e79); end
-  def y147; @y147 ||= sheet7.y147/(sheet12.c13*sheet11.e79); end
-  def z147; @z147 ||= sheet7.z147/(sheet12.c13*sheet11.e79); end
-  def aa147; @aa147 ||= sheet7.aa147/(sheet12.c13*sheet11.e79); end
-  def ab147; @ab147 ||= sheet7.ab147/(sheet12.c13*sheet11.e79); end
-  def ac147; @ac147 ||= sheet7.ac147/(sheet12.c13*sheet11.e79); end
-  def ad147; @ad147 ||= sheet7.ad147/(sheet12.c13*sheet11.e79); end
-  def ae147; @ae147 ||= sheet7.ae147/(sheet12.c13*sheet11.e79); end
-  def af147; @af147 ||= sheet7.af147/(sheet12.c13*sheet11.e79); end
-  def ag147; @ag147 ||= sheet7.ag147/(sheet12.c13*sheet11.e79); end
-  def ai147; @ai147 ||= sheet7.ai147/(sheet12.c13*sheet11.e79); end
-  def aj147; @aj147 ||= sheet7.aj147/(sheet12.c13*sheet11.e79); end
-  def ak147; @ak147 ||= sheet7.ak147/(sheet12.c13*sheet11.e79); end
-  def al147; @al147 ||= sheet7.al147/(sheet12.c13*sheet11.e79); end
-  def am147; @am147 ||= sheet7.am147/(sheet12.c13*sheet11.e79); end
-  def an147; @an147 ||= sheet7.an147/(sheet12.c13*sheet11.e79); end
-  def ao147; @ao147 ||= sheet7.ao147/(sheet12.c13*sheet11.e79); end
-  def ap147; @ap147 ||= sheet7.ap147/(sheet12.c13*sheet11.e79); end
-  def aq147; @aq147 ||= sheet7.aq147/(sheet12.c13*sheet11.e79); end
-  def as147; @as147 ||= average(a('ai147','aq147')); end
-  def at147; @at147 ||= (sumproduct(a('aj147','aq147'),sheet12.a('d28','k28'))*5.0)+ai147; end
-  def av147; 0.0; end
-  def aw147; 5.0; end
-  def ay147; @ay147 ||= sheet7.ay147/(sheet12.c13*sheet11.e79); end
-  def az147; @az147 ||= sheet7.az147/(sheet12.c13*sheet11.e79); end
-  def ba147; @ba147 ||= sheet7.ba147/(sheet12.c13*sheet11.e79); end
-  def bb147; @bb147 ||= sheet7.bb147/(sheet12.c13*sheet11.e79); end
-  def bc147; @bc147 ||= sheet7.bc147/(sheet12.c13*sheet11.e79); end
-  def bd147; @bd147 ||= sheet7.bd147/(sheet12.c13*sheet11.e79); end
-  def be147; @be147 ||= sheet7.be147/(sheet12.c13*sheet11.e79); end
-  def bf147; @bf147 ||= sheet7.bf147/(sheet12.c13*sheet11.e79); end
-  def bg147; @bg147 ||= sheet7.bg147/(sheet12.c13*sheet11.e79); end
-  def bi147; @bi147 ||= sheet7.bi147/(sheet12.c13*sheet11.e79); end
-  def bj147; @bj147 ||= sheet7.bj147/(sheet12.c13*sheet11.e79); end
-  def bk147; @bk147 ||= sheet7.bk147/(sheet12.c13*sheet11.e79); end
-  def bl147; @bl147 ||= sheet7.bl147/(sheet12.c13*sheet11.e79); end
-  def bm147; @bm147 ||= sheet7.bm147/(sheet12.c13*sheet11.e79); end
-  def bn147; @bn147 ||= sheet7.bn147/(sheet12.c13*sheet11.e79); end
-  def bo147; @bo147 ||= sheet7.bo147/(sheet12.c13*sheet11.e79); end
-  def bp147; @bp147 ||= sheet7.bp147/(sheet12.c13*sheet11.e79); end
-  def bq147; @bq147 ||= sheet7.bq147/(sheet12.c13*sheet11.e79); end
-  def bs147; @bs147 ||= sheet7.bs147/(sheet12.c13*sheet11.e79); end
-  def bt147; @bt147 ||= sheet7.bt147/(sheet12.c13*sheet11.e79); end
-  def bu147; @bu147 ||= sheet7.bu147/(sheet12.c13*sheet11.e79); end
-  def bv147; @bv147 ||= sheet7.bv147/(sheet12.c13*sheet11.e79); end
-  def bw147; @bw147 ||= sheet7.bw147/(sheet12.c13*sheet11.e79); end
-  def bx147; @bx147 ||= sheet7.bx147/(sheet12.c13*sheet11.e79); end
-  def by147; @by147 ||= sheet7.by147/(sheet12.c13*sheet11.e79); end
-  def bz147; @bz147 ||= sheet7.bz147/(sheet12.c13*sheet11.e79); end
-  def ca147; @ca147 ||= sheet7.ca147/(sheet12.c13*sheet11.e79); end
-  def cc147; @cc147 ||= average(a('bs147','ca147')); end
-  def cd147; @cd147 ||= (sumproduct(a('bt147','ca147'),sheet12.a('d28','k28'))*5.0)+bs147; end
-  def cf147; @cf147 ||= sheet7.cf147/(sheet12.c13*sheet11.e79); end
-  def cg147; @cg147 ||= sheet7.cg147/(sheet12.c13*sheet11.e79); end
-  def ch147; @ch147 ||= sheet7.ch147/(sheet12.c13*sheet11.e79); end
-  def ci147; @ci147 ||= sheet7.ci147/(sheet12.c13*sheet11.e79); end
-  def cj147; @cj147 ||= sheet7.cj147/(sheet12.c13*sheet11.e79); end
-  def ck147; @ck147 ||= sheet7.ck147/(sheet12.c13*sheet11.e79); end
-  def cl147; @cl147 ||= sheet7.cl147/(sheet12.c13*sheet11.e79); end
-  def cm147; @cm147 ||= sheet7.cm147/(sheet12.c13*sheet11.e79); end
-  def cn147; @cn147 ||= sheet7.cn147/(sheet12.c13*sheet11.e79); end
-  def cp147; @cp147 ||= average(a('cf147','cn147')); end
-  def cq147; @cq147 ||= (sumproduct(a('cg147','cn147'),sheet12.a('d28','k28'))*5.0)+cf147; end
-  def cr147; @cr147 ||= excel_if(excel_comparison(abs(cd147-cq147-at147),"<",1.0),"ok","err"); end
-  def a148; "XII.b"; end
-  def b148; "Domestic freight"; end
-  def c148; "Transport"; end
-  def e148; @e148 ||= sheet7.e148/(sheet12.c13*sheet11.e79); end
-  def f148; @f148 ||= sheet7.f148/(sheet12.c13*sheet11.e79); end
-  def g148; @g148 ||= sheet7.g148/(sheet12.c13*sheet11.e79); end
-  def h148; @h148 ||= sheet7.h148/(sheet12.c13*sheet11.e79); end
-  def i148; @i148 ||= sheet7.i148/(sheet12.c13*sheet11.e79); end
-  def j148; @j148 ||= sheet7.j148/(sheet12.c13*sheet11.e79); end
-  def k148; @k148 ||= sheet7.k148/(sheet12.c13*sheet11.e79); end
-  def l148; @l148 ||= sheet7.l148/(sheet12.c13*sheet11.e79); end
-  def m148; @m148 ||= sheet7.m148/(sheet12.c13*sheet11.e79); end
-  def o148; @o148 ||= sheet7.o148/(sheet12.c13*sheet11.e79); end
-  def p148; @p148 ||= sheet7.p148/(sheet12.c13*sheet11.e79); end
-  def q148; @q148 ||= sheet7.q148/(sheet12.c13*sheet11.e79); end
-  def r148; @r148 ||= sheet7.r148/(sheet12.c13*sheet11.e79); end
-  def s148; @s148 ||= sheet7.s148/(sheet12.c13*sheet11.e79); end
-  def t148; @t148 ||= sheet7.t148/(sheet12.c13*sheet11.e79); end
-  def u148; @u148 ||= sheet7.u148/(sheet12.c13*sheet11.e79); end
-  def v148; @v148 ||= sheet7.v148/(sheet12.c13*sheet11.e79); end
-  def w148; @w148 ||= sheet7.w148/(sheet12.c13*sheet11.e79); end
-  def y148; @y148 ||= sheet7.y148/(sheet12.c13*sheet11.e79); end
-  def z148; @z148 ||= sheet7.z148/(sheet12.c13*sheet11.e79); end
-  def aa148; @aa148 ||= sheet7.aa148/(sheet12.c13*sheet11.e79); end
-  def ab148; @ab148 ||= sheet7.ab148/(sheet12.c13*sheet11.e79); end
-  def ac148; @ac148 ||= sheet7.ac148/(sheet12.c13*sheet11.e79); end
-  def ad148; @ad148 ||= sheet7.ad148/(sheet12.c13*sheet11.e79); end
-  def ae148; @ae148 ||= sheet7.ae148/(sheet12.c13*sheet11.e79); end
-  def af148; @af148 ||= sheet7.af148/(sheet12.c13*sheet11.e79); end
-  def ag148; @ag148 ||= sheet7.ag148/(sheet12.c13*sheet11.e79); end
-  def ai148; @ai148 ||= sheet7.ai148/(sheet12.c13*sheet11.e79); end
-  def aj148; @aj148 ||= sheet7.aj148/(sheet12.c13*sheet11.e79); end
-  def ak148; @ak148 ||= sheet7.ak148/(sheet12.c13*sheet11.e79); end
-  def al148; @al148 ||= sheet7.al148/(sheet12.c13*sheet11.e79); end
-  def am148; @am148 ||= sheet7.am148/(sheet12.c13*sheet11.e79); end
-  def an148; @an148 ||= sheet7.an148/(sheet12.c13*sheet11.e79); end
-  def ao148; @ao148 ||= sheet7.ao148/(sheet12.c13*sheet11.e79); end
-  def ap148; @ap148 ||= sheet7.ap148/(sheet12.c13*sheet11.e79); end
-  def aq148; @aq148 ||= sheet7.aq148/(sheet12.c13*sheet11.e79); end
-  def as148; @as148 ||= average(a('ai148','aq148')); end
-  def at148; @at148 ||= (sumproduct(a('aj148','aq148'),sheet12.a('d28','k28'))*5.0)+ai148; end
-  def av148; 0.0; end
-  def aw148; 5.0; end
-  def ay148; @ay148 ||= sheet7.ay148/(sheet12.c13*sheet11.e79); end
-  def az148; @az148 ||= sheet7.az148/(sheet12.c13*sheet11.e79); end
-  def ba148; @ba148 ||= sheet7.ba148/(sheet12.c13*sheet11.e79); end
-  def bb148; @bb148 ||= sheet7.bb148/(sheet12.c13*sheet11.e79); end
-  def bc148; @bc148 ||= sheet7.bc148/(sheet12.c13*sheet11.e79); end
-  def bd148; @bd148 ||= sheet7.bd148/(sheet12.c13*sheet11.e79); end
-  def be148; @be148 ||= sheet7.be148/(sheet12.c13*sheet11.e79); end
-  def bf148; @bf148 ||= sheet7.bf148/(sheet12.c13*sheet11.e79); end
-  def bg148; @bg148 ||= sheet7.bg148/(sheet12.c13*sheet11.e79); end
-  def bi148; @bi148 ||= sheet7.bi148/(sheet12.c13*sheet11.e79); end
-  def bj148; @bj148 ||= sheet7.bj148/(sheet12.c13*sheet11.e79); end
-  def bk148; @bk148 ||= sheet7.bk148/(sheet12.c13*sheet11.e79); end
-  def bl148; @bl148 ||= sheet7.bl148/(sheet12.c13*sheet11.e79); end
-  def bm148; @bm148 ||= sheet7.bm148/(sheet12.c13*sheet11.e79); end
-  def bn148; @bn148 ||= sheet7.bn148/(sheet12.c13*sheet11.e79); end
-  def bo148; @bo148 ||= sheet7.bo148/(sheet12.c13*sheet11.e79); end
-  def bp148; @bp148 ||= sheet7.bp148/(sheet12.c13*sheet11.e79); end
-  def bq148; @bq148 ||= sheet7.bq148/(sheet12.c13*sheet11.e79); end
-  def bs148; @bs148 ||= sheet7.bs148/(sheet12.c13*sheet11.e79); end
-  def bt148; @bt148 ||= sheet7.bt148/(sheet12.c13*sheet11.e79); end
-  def bu148; @bu148 ||= sheet7.bu148/(sheet12.c13*sheet11.e79); end
-  def bv148; @bv148 ||= sheet7.bv148/(sheet12.c13*sheet11.e79); end
-  def bw148; @bw148 ||= sheet7.bw148/(sheet12.c13*sheet11.e79); end
-  def bx148; @bx148 ||= sheet7.bx148/(sheet12.c13*sheet11.e79); end
-  def by148; @by148 ||= sheet7.by148/(sheet12.c13*sheet11.e79); end
-  def bz148; @bz148 ||= sheet7.bz148/(sheet12.c13*sheet11.e79); end
-  def ca148; @ca148 ||= sheet7.ca148/(sheet12.c13*sheet11.e79); end
-  def cc148; @cc148 ||= average(a('bs148','ca148')); end
-  def cd148; @cd148 ||= (sumproduct(a('bt148','ca148'),sheet12.a('d28','k28'))*5.0)+bs148; end
-  def cf148; @cf148 ||= sheet7.cf148/(sheet12.c13*sheet11.e79); end
-  def cg148; @cg148 ||= sheet7.cg148/(sheet12.c13*sheet11.e79); end
-  def ch148; @ch148 ||= sheet7.ch148/(sheet12.c13*sheet11.e79); end
-  def ci148; @ci148 ||= sheet7.ci148/(sheet12.c13*sheet11.e79); end
-  def cj148; @cj148 ||= sheet7.cj148/(sheet12.c13*sheet11.e79); end
-  def ck148; @ck148 ||= sheet7.ck148/(sheet12.c13*sheet11.e79); end
-  def cl148; @cl148 ||= sheet7.cl148/(sheet12.c13*sheet11.e79); end
-  def cm148; @cm148 ||= sheet7.cm148/(sheet12.c13*sheet11.e79); end
-  def cn148; @cn148 ||= sheet7.cn148/(sheet12.c13*sheet11.e79); end
-  def cp148; @cp148 ||= average(a('cf148','cn148')); end
-  def cq148; @cq148 ||= (sumproduct(a('cg148','cn148'),sheet12.a('d28','k28'))*5.0)+cf148; end
-  def cr148; @cr148 ||= excel_if(excel_comparison(abs(cd148-cq148-at148),"<",1.0),"ok","err"); end
-  def a149; "XII.c"; end
-  def b149; "International aviation"; end
-  def c149; "Transport"; end
-  def e149; @e149 ||= sheet7.e149/(sheet12.c13*sheet11.e79); end
-  def f149; @f149 ||= sheet7.f149/(sheet12.c13*sheet11.e79); end
-  def g149; @g149 ||= sheet7.g149/(sheet12.c13*sheet11.e79); end
-  def h149; @h149 ||= sheet7.h149/(sheet12.c13*sheet11.e79); end
-  def i149; @i149 ||= sheet7.i149/(sheet12.c13*sheet11.e79); end
-  def j149; @j149 ||= sheet7.j149/(sheet12.c13*sheet11.e79); end
-  def k149; @k149 ||= sheet7.k149/(sheet12.c13*sheet11.e79); end
-  def l149; @l149 ||= sheet7.l149/(sheet12.c13*sheet11.e79); end
-  def m149; @m149 ||= sheet7.m149/(sheet12.c13*sheet11.e79); end
-  def o149; @o149 ||= sheet7.o149/(sheet12.c13*sheet11.e79); end
-  def p149; @p149 ||= sheet7.p149/(sheet12.c13*sheet11.e79); end
-  def q149; @q149 ||= sheet7.q149/(sheet12.c13*sheet11.e79); end
-  def r149; @r149 ||= sheet7.r149/(sheet12.c13*sheet11.e79); end
-  def s149; @s149 ||= sheet7.s149/(sheet12.c13*sheet11.e79); end
-  def t149; @t149 ||= sheet7.t149/(sheet12.c13*sheet11.e79); end
-  def u149; @u149 ||= sheet7.u149/(sheet12.c13*sheet11.e79); end
-  def v149; @v149 ||= sheet7.v149/(sheet12.c13*sheet11.e79); end
-  def w149; @w149 ||= sheet7.w149/(sheet12.c13*sheet11.e79); end
-  def y149; @y149 ||= sheet7.y149/(sheet12.c13*sheet11.e79); end
-  def z149; @z149 ||= sheet7.z149/(sheet12.c13*sheet11.e79); end
-  def aa149; @aa149 ||= sheet7.aa149/(sheet12.c13*sheet11.e79); end
-  def ab149; @ab149 ||= sheet7.ab149/(sheet12.c13*sheet11.e79); end
-  def ac149; @ac149 ||= sheet7.ac149/(sheet12.c13*sheet11.e79); end
-  def ad149; @ad149 ||= sheet7.ad149/(sheet12.c13*sheet11.e79); end
-  def ae149; @ae149 ||= sheet7.ae149/(sheet12.c13*sheet11.e79); end
-  def af149; @af149 ||= sheet7.af149/(sheet12.c13*sheet11.e79); end
-  def ag149; @ag149 ||= sheet7.ag149/(sheet12.c13*sheet11.e79); end
-  def ai149; @ai149 ||= sheet7.ai149/(sheet12.c13*sheet11.e79); end
-  def aj149; @aj149 ||= sheet7.aj149/(sheet12.c13*sheet11.e79); end
-  def ak149; @ak149 ||= sheet7.ak149/(sheet12.c13*sheet11.e79); end
-  def al149; @al149 ||= sheet7.al149/(sheet12.c13*sheet11.e79); end
-  def am149; @am149 ||= sheet7.am149/(sheet12.c13*sheet11.e79); end
-  def an149; @an149 ||= sheet7.an149/(sheet12.c13*sheet11.e79); end
-  def ao149; @ao149 ||= sheet7.ao149/(sheet12.c13*sheet11.e79); end
-  def ap149; @ap149 ||= sheet7.ap149/(sheet12.c13*sheet11.e79); end
-  def aq149; @aq149 ||= sheet7.aq149/(sheet12.c13*sheet11.e79); end
-  def as149; @as149 ||= average(a('ai149','aq149')); end
-  def at149; @at149 ||= (sumproduct(a('aj149','aq149'),sheet12.a('d28','k28'))*5.0)+ai149; end
-  def av149; 0.0; end
-  def aw149; 5.0; end
-  def ay149; @ay149 ||= sheet7.ay149/(sheet12.c13*sheet11.e79); end
-  def az149; @az149 ||= sheet7.az149/(sheet12.c13*sheet11.e79); end
-  def ba149; @ba149 ||= sheet7.ba149/(sheet12.c13*sheet11.e79); end
-  def bb149; @bb149 ||= sheet7.bb149/(sheet12.c13*sheet11.e79); end
-  def bc149; @bc149 ||= sheet7.bc149/(sheet12.c13*sheet11.e79); end
-  def bd149; @bd149 ||= sheet7.bd149/(sheet12.c13*sheet11.e79); end
-  def be149; @be149 ||= sheet7.be149/(sheet12.c13*sheet11.e79); end
-  def bf149; @bf149 ||= sheet7.bf149/(sheet12.c13*sheet11.e79); end
-  def bg149; @bg149 ||= sheet7.bg149/(sheet12.c13*sheet11.e79); end
-  def bi149; @bi149 ||= sheet7.bi149/(sheet12.c13*sheet11.e79); end
-  def bj149; @bj149 ||= sheet7.bj149/(sheet12.c13*sheet11.e79); end
-  def bk149; @bk149 ||= sheet7.bk149/(sheet12.c13*sheet11.e79); end
-  def bl149; @bl149 ||= sheet7.bl149/(sheet12.c13*sheet11.e79); end
-  def bm149; @bm149 ||= sheet7.bm149/(sheet12.c13*sheet11.e79); end
-  def bn149; @bn149 ||= sheet7.bn149/(sheet12.c13*sheet11.e79); end
-  def bo149; @bo149 ||= sheet7.bo149/(sheet12.c13*sheet11.e79); end
-  def bp149; @bp149 ||= sheet7.bp149/(sheet12.c13*sheet11.e79); end
-  def bq149; @bq149 ||= sheet7.bq149/(sheet12.c13*sheet11.e79); end
-  def bs149; @bs149 ||= sheet7.bs149/(sheet12.c13*sheet11.e79); end
-  def bt149; @bt149 ||= sheet7.bt149/(sheet12.c13*sheet11.e79); end
-  def bu149; @bu149 ||= sheet7.bu149/(sheet12.c13*sheet11.e79); end
-  def bv149; @bv149 ||= sheet7.bv149/(sheet12.c13*sheet11.e79); end
-  def bw149; @bw149 ||= sheet7.bw149/(sheet12.c13*sheet11.e79); end
-  def bx149; @bx149 ||= sheet7.bx149/(sheet12.c13*sheet11.e79); end
-  def by149; @by149 ||= sheet7.by149/(sheet12.c13*sheet11.e79); end
-  def bz149; @bz149 ||= sheet7.bz149/(sheet12.c13*sheet11.e79); end
-  def ca149; @ca149 ||= sheet7.ca149/(sheet12.c13*sheet11.e79); end
-  def cc149; @cc149 ||= average(a('bs149','ca149')); end
-  def cd149; @cd149 ||= (sumproduct(a('bt149','ca149'),sheet12.a('d28','k28'))*5.0)+bs149; end
-  def cf149; @cf149 ||= sheet7.cf149/(sheet12.c13*sheet11.e79); end
-  def cg149; @cg149 ||= sheet7.cg149/(sheet12.c13*sheet11.e79); end
-  def ch149; @ch149 ||= sheet7.ch149/(sheet12.c13*sheet11.e79); end
-  def ci149; @ci149 ||= sheet7.ci149/(sheet12.c13*sheet11.e79); end
-  def cj149; @cj149 ||= sheet7.cj149/(sheet12.c13*sheet11.e79); end
-  def ck149; @ck149 ||= sheet7.ck149/(sheet12.c13*sheet11.e79); end
-  def cl149; @cl149 ||= sheet7.cl149/(sheet12.c13*sheet11.e79); end
-  def cm149; @cm149 ||= sheet7.cm149/(sheet12.c13*sheet11.e79); end
-  def cn149; @cn149 ||= sheet7.cn149/(sheet12.c13*sheet11.e79); end
-  def cp149; @cp149 ||= average(a('cf149','cn149')); end
-  def cq149; @cq149 ||= (sumproduct(a('cg149','cn149'),sheet12.a('d28','k28'))*5.0)+cf149; end
-  def cr149; @cr149 ||= excel_if(excel_comparison(abs(cd149-cq149-at149),"<",1.0),"ok","err"); end
-  def a150; "XII.e"; end
-  def b150; "International shipping (maritime bunkers)"; end
-  def c150; "Transport"; end
-  def e150; @e150 ||= sheet7.e150/(sheet12.c13*sheet11.e79); end
-  def f150; @f150 ||= sheet7.f150/(sheet12.c13*sheet11.e79); end
-  def g150; @g150 ||= sheet7.g150/(sheet12.c13*sheet11.e79); end
-  def h150; @h150 ||= sheet7.h150/(sheet12.c13*sheet11.e79); end
-  def i150; @i150 ||= sheet7.i150/(sheet12.c13*sheet11.e79); end
-  def j150; @j150 ||= sheet7.j150/(sheet12.c13*sheet11.e79); end
-  def k150; @k150 ||= sheet7.k150/(sheet12.c13*sheet11.e79); end
-  def l150; @l150 ||= sheet7.l150/(sheet12.c13*sheet11.e79); end
-  def m150; @m150 ||= sheet7.m150/(sheet12.c13*sheet11.e79); end
-  def o150; @o150 ||= sheet7.o150/(sheet12.c13*sheet11.e79); end
-  def p150; @p150 ||= sheet7.p150/(sheet12.c13*sheet11.e79); end
-  def q150; @q150 ||= sheet7.q150/(sheet12.c13*sheet11.e79); end
-  def r150; @r150 ||= sheet7.r150/(sheet12.c13*sheet11.e79); end
-  def s150; @s150 ||= sheet7.s150/(sheet12.c13*sheet11.e79); end
-  def t150; @t150 ||= sheet7.t150/(sheet12.c13*sheet11.e79); end
-  def u150; @u150 ||= sheet7.u150/(sheet12.c13*sheet11.e79); end
-  def v150; @v150 ||= sheet7.v150/(sheet12.c13*sheet11.e79); end
-  def w150; @w150 ||= sheet7.w150/(sheet12.c13*sheet11.e79); end
-  def y150; @y150 ||= sheet7.y150/(sheet12.c13*sheet11.e79); end
-  def z150; @z150 ||= sheet7.z150/(sheet12.c13*sheet11.e79); end
-  def aa150; @aa150 ||= sheet7.aa150/(sheet12.c13*sheet11.e79); end
-  def ab150; @ab150 ||= sheet7.ab150/(sheet12.c13*sheet11.e79); end
-  def ac150; @ac150 ||= sheet7.ac150/(sheet12.c13*sheet11.e79); end
-  def ad150; @ad150 ||= sheet7.ad150/(sheet12.c13*sheet11.e79); end
-  def ae150; @ae150 ||= sheet7.ae150/(sheet12.c13*sheet11.e79); end
-  def af150; @af150 ||= sheet7.af150/(sheet12.c13*sheet11.e79); end
-  def ag150; @ag150 ||= sheet7.ag150/(sheet12.c13*sheet11.e79); end
-  def ai150; @ai150 ||= sheet7.ai150/(sheet12.c13*sheet11.e79); end
-  def aj150; @aj150 ||= sheet7.aj150/(sheet12.c13*sheet11.e79); end
-  def ak150; @ak150 ||= sheet7.ak150/(sheet12.c13*sheet11.e79); end
-  def al150; @al150 ||= sheet7.al150/(sheet12.c13*sheet11.e79); end
-  def am150; @am150 ||= sheet7.am150/(sheet12.c13*sheet11.e79); end
-  def an150; @an150 ||= sheet7.an150/(sheet12.c13*sheet11.e79); end
-  def ao150; @ao150 ||= sheet7.ao150/(sheet12.c13*sheet11.e79); end
-  def ap150; @ap150 ||= sheet7.ap150/(sheet12.c13*sheet11.e79); end
-  def aq150; @aq150 ||= sheet7.aq150/(sheet12.c13*sheet11.e79); end
-  def as150; @as150 ||= average(a('ai150','aq150')); end
-  def at150; @at150 ||= (sumproduct(a('aj150','aq150'),sheet12.a('d28','k28'))*5.0)+ai150; end
-  def av150; 0.0; end
-  def aw150; 5.0; end
-  def ay150; @ay150 ||= sheet7.ay150/(sheet12.c13*sheet11.e79); end
-  def az150; @az150 ||= sheet7.az150/(sheet12.c13*sheet11.e79); end
-  def ba150; @ba150 ||= sheet7.ba150/(sheet12.c13*sheet11.e79); end
-  def bb150; @bb150 ||= sheet7.bb150/(sheet12.c13*sheet11.e79); end
-  def bc150; @bc150 ||= sheet7.bc150/(sheet12.c13*sheet11.e79); end
-  def bd150; @bd150 ||= sheet7.bd150/(sheet12.c13*sheet11.e79); end
-  def be150; @be150 ||= sheet7.be150/(sheet12.c13*sheet11.e79); end
-  def bf150; @bf150 ||= sheet7.bf150/(sheet12.c13*sheet11.e79); end
-  def bg150; @bg150 ||= sheet7.bg150/(sheet12.c13*sheet11.e79); end
-  def bi150; @bi150 ||= sheet7.bi150/(sheet12.c13*sheet11.e79); end
-  def bj150; @bj150 ||= sheet7.bj150/(sheet12.c13*sheet11.e79); end
-  def bk150; @bk150 ||= sheet7.bk150/(sheet12.c13*sheet11.e79); end
-  def bl150; @bl150 ||= sheet7.bl150/(sheet12.c13*sheet11.e79); end
-  def bm150; @bm150 ||= sheet7.bm150/(sheet12.c13*sheet11.e79); end
-  def bn150; @bn150 ||= sheet7.bn150/(sheet12.c13*sheet11.e79); end
-  def bo150; @bo150 ||= sheet7.bo150/(sheet12.c13*sheet11.e79); end
-  def bp150; @bp150 ||= sheet7.bp150/(sheet12.c13*sheet11.e79); end
-  def bq150; @bq150 ||= sheet7.bq150/(sheet12.c13*sheet11.e79); end
-  def bs150; @bs150 ||= sheet7.bs150/(sheet12.c13*sheet11.e79); end
-  def bt150; @bt150 ||= sheet7.bt150/(sheet12.c13*sheet11.e79); end
-  def bu150; @bu150 ||= sheet7.bu150/(sheet12.c13*sheet11.e79); end
-  def bv150; @bv150 ||= sheet7.bv150/(sheet12.c13*sheet11.e79); end
-  def bw150; @bw150 ||= sheet7.bw150/(sheet12.c13*sheet11.e79); end
-  def bx150; @bx150 ||= sheet7.bx150/(sheet12.c13*sheet11.e79); end
-  def by150; @by150 ||= sheet7.by150/(sheet12.c13*sheet11.e79); end
-  def bz150; @bz150 ||= sheet7.bz150/(sheet12.c13*sheet11.e79); end
-  def ca150; @ca150 ||= sheet7.ca150/(sheet12.c13*sheet11.e79); end
-  def cc150; @cc150 ||= average(a('bs150','ca150')); end
-  def cd150; @cd150 ||= (sumproduct(a('bt150','ca150'),sheet12.a('d28','k28'))*5.0)+bs150; end
-  def cf150; @cf150 ||= sheet7.cf150/(sheet12.c13*sheet11.e79); end
-  def cg150; @cg150 ||= sheet7.cg150/(sheet12.c13*sheet11.e79); end
-  def ch150; @ch150 ||= sheet7.ch150/(sheet12.c13*sheet11.e79); end
-  def ci150; @ci150 ||= sheet7.ci150/(sheet12.c13*sheet11.e79); end
-  def cj150; @cj150 ||= sheet7.cj150/(sheet12.c13*sheet11.e79); end
-  def ck150; @ck150 ||= sheet7.ck150/(sheet12.c13*sheet11.e79); end
-  def cl150; @cl150 ||= sheet7.cl150/(sheet12.c13*sheet11.e79); end
-  def cm150; @cm150 ||= sheet7.cm150/(sheet12.c13*sheet11.e79); end
-  def cn150; @cn150 ||= sheet7.cn150/(sheet12.c13*sheet11.e79); end
-  def cp150; @cp150 ||= average(a('cf150','cn150')); end
-  def cq150; @cq150 ||= (sumproduct(a('cg150','cn150'),sheet12.a('d28','k28'))*5.0)+cf150; end
-  def cr150; @cr150 ||= excel_if(excel_comparison(abs(cd150-cq150-at150),"<",1.0),"ok","err"); end
-  def a151; "XIV.a"; end
-  def b151; "Geosequestration"; end
-  def c151; "Carbon Capture"; end
-  def e151; @e151 ||= sheet7.e151/(sheet12.c13*sheet11.e79); end
-  def f151; @f151 ||= sheet7.f151/(sheet12.c13*sheet11.e79); end
-  def g151; @g151 ||= sheet7.g151/(sheet12.c13*sheet11.e79); end
-  def h151; @h151 ||= sheet7.h151/(sheet12.c13*sheet11.e79); end
-  def i151; @i151 ||= sheet7.i151/(sheet12.c13*sheet11.e79); end
-  def j151; @j151 ||= sheet7.j151/(sheet12.c13*sheet11.e79); end
-  def k151; @k151 ||= sheet7.k151/(sheet12.c13*sheet11.e79); end
-  def l151; @l151 ||= sheet7.l151/(sheet12.c13*sheet11.e79); end
-  def m151; @m151 ||= sheet7.m151/(sheet12.c13*sheet11.e79); end
-  def o151; @o151 ||= sheet7.o151/(sheet12.c13*sheet11.e79); end
-  def p151; @p151 ||= sheet7.p151/(sheet12.c13*sheet11.e79); end
-  def q151; @q151 ||= sheet7.q151/(sheet12.c13*sheet11.e79); end
-  def r151; @r151 ||= sheet7.r151/(sheet12.c13*sheet11.e79); end
-  def s151; @s151 ||= sheet7.s151/(sheet12.c13*sheet11.e79); end
-  def t151; @t151 ||= sheet7.t151/(sheet12.c13*sheet11.e79); end
-  def u151; @u151 ||= sheet7.u151/(sheet12.c13*sheet11.e79); end
-  def v151; @v151 ||= sheet7.v151/(sheet12.c13*sheet11.e79); end
-  def w151; @w151 ||= sheet7.w151/(sheet12.c13*sheet11.e79); end
-  def y151; @y151 ||= sheet7.y151/(sheet12.c13*sheet11.e79); end
-  def z151; @z151 ||= sheet7.z151/(sheet12.c13*sheet11.e79); end
-  def aa151; @aa151 ||= sheet7.aa151/(sheet12.c13*sheet11.e79); end
-  def ab151; @ab151 ||= sheet7.ab151/(sheet12.c13*sheet11.e79); end
-  def ac151; @ac151 ||= sheet7.ac151/(sheet12.c13*sheet11.e79); end
-  def ad151; @ad151 ||= sheet7.ad151/(sheet12.c13*sheet11.e79); end
-  def ae151; @ae151 ||= sheet7.ae151/(sheet12.c13*sheet11.e79); end
-  def af151; @af151 ||= sheet7.af151/(sheet12.c13*sheet11.e79); end
-  def ag151; @ag151 ||= sheet7.ag151/(sheet12.c13*sheet11.e79); end
-  def ai151; @ai151 ||= sheet7.ai151/(sheet12.c13*sheet11.e79); end
-  def aj151; @aj151 ||= sheet7.aj151/(sheet12.c13*sheet11.e79); end
-  def ak151; @ak151 ||= sheet7.ak151/(sheet12.c13*sheet11.e79); end
-  def al151; @al151 ||= sheet7.al151/(sheet12.c13*sheet11.e79); end
-  def am151; @am151 ||= sheet7.am151/(sheet12.c13*sheet11.e79); end
-  def an151; @an151 ||= sheet7.an151/(sheet12.c13*sheet11.e79); end
-  def ao151; @ao151 ||= sheet7.ao151/(sheet12.c13*sheet11.e79); end
-  def ap151; @ap151 ||= sheet7.ap151/(sheet12.c13*sheet11.e79); end
-  def aq151; @aq151 ||= sheet7.aq151/(sheet12.c13*sheet11.e79); end
-  def as151; @as151 ||= average(a('ai151','aq151')); end
-  def at151; @at151 ||= (sumproduct(a('aj151','aq151'),sheet12.a('d28','k28'))*5.0)+ai151; end
-  def av151; 0.0; end
-  def aw151; 5.0; end
-  def ay151; @ay151 ||= sheet7.ay151/(sheet12.c13*sheet11.e79); end
-  def az151; @az151 ||= sheet7.az151/(sheet12.c13*sheet11.e79); end
-  def ba151; @ba151 ||= sheet7.ba151/(sheet12.c13*sheet11.e79); end
-  def bb151; @bb151 ||= sheet7.bb151/(sheet12.c13*sheet11.e79); end
-  def bc151; @bc151 ||= sheet7.bc151/(sheet12.c13*sheet11.e79); end
-  def bd151; @bd151 ||= sheet7.bd151/(sheet12.c13*sheet11.e79); end
-  def be151; @be151 ||= sheet7.be151/(sheet12.c13*sheet11.e79); end
-  def bf151; @bf151 ||= sheet7.bf151/(sheet12.c13*sheet11.e79); end
-  def bg151; @bg151 ||= sheet7.bg151/(sheet12.c13*sheet11.e79); end
-  def bi151; @bi151 ||= sheet7.bi151/(sheet12.c13*sheet11.e79); end
-  def bj151; @bj151 ||= sheet7.bj151/(sheet12.c13*sheet11.e79); end
-  def bk151; @bk151 ||= sheet7.bk151/(sheet12.c13*sheet11.e79); end
-  def bl151; @bl151 ||= sheet7.bl151/(sheet12.c13*sheet11.e79); end
-  def bm151; @bm151 ||= sheet7.bm151/(sheet12.c13*sheet11.e79); end
-  def bn151; @bn151 ||= sheet7.bn151/(sheet12.c13*sheet11.e79); end
-  def bo151; @bo151 ||= sheet7.bo151/(sheet12.c13*sheet11.e79); end
-  def bp151; @bp151 ||= sheet7.bp151/(sheet12.c13*sheet11.e79); end
-  def bq151; @bq151 ||= sheet7.bq151/(sheet12.c13*sheet11.e79); end
-  def bs151; @bs151 ||= sheet7.bs151/(sheet12.c13*sheet11.e79); end
-  def bt151; @bt151 ||= sheet7.bt151/(sheet12.c13*sheet11.e79); end
-  def bu151; @bu151 ||= sheet7.bu151/(sheet12.c13*sheet11.e79); end
-  def bv151; @bv151 ||= sheet7.bv151/(sheet12.c13*sheet11.e79); end
-  def bw151; @bw151 ||= sheet7.bw151/(sheet12.c13*sheet11.e79); end
-  def bx151; @bx151 ||= sheet7.bx151/(sheet12.c13*sheet11.e79); end
-  def by151; @by151 ||= sheet7.by151/(sheet12.c13*sheet11.e79); end
-  def bz151; @bz151 ||= sheet7.bz151/(sheet12.c13*sheet11.e79); end
-  def ca151; @ca151 ||= sheet7.ca151/(sheet12.c13*sheet11.e79); end
-  def cc151; @cc151 ||= average(a('bs151','ca151')); end
-  def cd151; @cd151 ||= (sumproduct(a('bt151','ca151'),sheet12.a('d28','k28'))*5.0)+bs151; end
-  def cf151; @cf151 ||= sheet7.cf151/(sheet12.c13*sheet11.e79); end
-  def cg151; @cg151 ||= sheet7.cg151/(sheet12.c13*sheet11.e79); end
-  def ch151; @ch151 ||= sheet7.ch151/(sheet12.c13*sheet11.e79); end
-  def ci151; @ci151 ||= sheet7.ci151/(sheet12.c13*sheet11.e79); end
-  def cj151; @cj151 ||= sheet7.cj151/(sheet12.c13*sheet11.e79); end
-  def ck151; @ck151 ||= sheet7.ck151/(sheet12.c13*sheet11.e79); end
-  def cl151; @cl151 ||= sheet7.cl151/(sheet12.c13*sheet11.e79); end
-  def cm151; @cm151 ||= sheet7.cm151/(sheet12.c13*sheet11.e79); end
-  def cn151; @cn151 ||= sheet7.cn151/(sheet12.c13*sheet11.e79); end
-  def cp151; @cp151 ||= average(a('cf151','cn151')); end
-  def cq151; @cq151 ||= (sumproduct(a('cg151','cn151'),sheet12.a('d28','k28'))*5.0)+cf151; end
-  def cr151; @cr151 ||= excel_if(excel_comparison(abs(cd151-cq151-at151),"<",1.0),"ok","err"); end
-  def a152; "XV.a"; end
-  def b152; "Petroleum refineries"; end
-  def c152; "Fossil Fuels"; end
-  def e152; @e152 ||= sheet7.e152/(sheet12.c13*sheet11.e79); end
-  def f152; @f152 ||= sheet7.f152/(sheet12.c13*sheet11.e79); end
-  def g152; @g152 ||= sheet7.g152/(sheet12.c13*sheet11.e79); end
-  def h152; @h152 ||= sheet7.h152/(sheet12.c13*sheet11.e79); end
-  def i152; @i152 ||= sheet7.i152/(sheet12.c13*sheet11.e79); end
-  def j152; @j152 ||= sheet7.j152/(sheet12.c13*sheet11.e79); end
-  def k152; @k152 ||= sheet7.k152/(sheet12.c13*sheet11.e79); end
-  def l152; @l152 ||= sheet7.l152/(sheet12.c13*sheet11.e79); end
-  def m152; @m152 ||= sheet7.m152/(sheet12.c13*sheet11.e79); end
-  def o152; @o152 ||= sheet7.o152/(sheet12.c13*sheet11.e79); end
-  def p152; @p152 ||= sheet7.p152/(sheet12.c13*sheet11.e79); end
-  def q152; @q152 ||= sheet7.q152/(sheet12.c13*sheet11.e79); end
-  def r152; @r152 ||= sheet7.r152/(sheet12.c13*sheet11.e79); end
-  def s152; @s152 ||= sheet7.s152/(sheet12.c13*sheet11.e79); end
-  def t152; @t152 ||= sheet7.t152/(sheet12.c13*sheet11.e79); end
-  def u152; @u152 ||= sheet7.u152/(sheet12.c13*sheet11.e79); end
-  def v152; @v152 ||= sheet7.v152/(sheet12.c13*sheet11.e79); end
-  def w152; @w152 ||= sheet7.w152/(sheet12.c13*sheet11.e79); end
-  def y152; @y152 ||= sheet7.y152/(sheet12.c13*sheet11.e79); end
-  def z152; @z152 ||= sheet7.z152/(sheet12.c13*sheet11.e79); end
-  def aa152; @aa152 ||= sheet7.aa152/(sheet12.c13*sheet11.e79); end
-  def ab152; @ab152 ||= sheet7.ab152/(sheet12.c13*sheet11.e79); end
-  def ac152; @ac152 ||= sheet7.ac152/(sheet12.c13*sheet11.e79); end
-  def ad152; @ad152 ||= sheet7.ad152/(sheet12.c13*sheet11.e79); end
-  def ae152; @ae152 ||= sheet7.ae152/(sheet12.c13*sheet11.e79); end
-  def af152; @af152 ||= sheet7.af152/(sheet12.c13*sheet11.e79); end
-  def ag152; @ag152 ||= sheet7.ag152/(sheet12.c13*sheet11.e79); end
-  def ai152; @ai152 ||= sheet7.ai152/(sheet12.c13*sheet11.e79); end
-  def aj152; @aj152 ||= sheet7.aj152/(sheet12.c13*sheet11.e79); end
-  def ak152; @ak152 ||= sheet7.ak152/(sheet12.c13*sheet11.e79); end
-  def al152; @al152 ||= sheet7.al152/(sheet12.c13*sheet11.e79); end
-  def am152; @am152 ||= sheet7.am152/(sheet12.c13*sheet11.e79); end
-  def an152; @an152 ||= sheet7.an152/(sheet12.c13*sheet11.e79); end
-  def ao152; @ao152 ||= sheet7.ao152/(sheet12.c13*sheet11.e79); end
-  def ap152; @ap152 ||= sheet7.ap152/(sheet12.c13*sheet11.e79); end
-  def aq152; @aq152 ||= sheet7.aq152/(sheet12.c13*sheet11.e79); end
-  def as152; @as152 ||= average(a('ai152','aq152')); end
-  def at152; @at152 ||= (sumproduct(a('aj152','aq152'),sheet12.a('d28','k28'))*5.0)+ai152; end
-  def av152; 0.0; end
-  def aw152; 5.0; end
-  def ay152; @ay152 ||= sheet7.ay152/(sheet12.c13*sheet11.e79); end
-  def az152; @az152 ||= sheet7.az152/(sheet12.c13*sheet11.e79); end
-  def ba152; @ba152 ||= sheet7.ba152/(sheet12.c13*sheet11.e79); end
-  def bb152; @bb152 ||= sheet7.bb152/(sheet12.c13*sheet11.e79); end
-  def bc152; @bc152 ||= sheet7.bc152/(sheet12.c13*sheet11.e79); end
-  def bd152; @bd152 ||= sheet7.bd152/(sheet12.c13*sheet11.e79); end
-  def be152; @be152 ||= sheet7.be152/(sheet12.c13*sheet11.e79); end
-  def bf152; @bf152 ||= sheet7.bf152/(sheet12.c13*sheet11.e79); end
-  def bg152; @bg152 ||= sheet7.bg152/(sheet12.c13*sheet11.e79); end
-  def bi152; @bi152 ||= sheet7.bi152/(sheet12.c13*sheet11.e79); end
-  def bj152; @bj152 ||= sheet7.bj152/(sheet12.c13*sheet11.e79); end
-  def bk152; @bk152 ||= sheet7.bk152/(sheet12.c13*sheet11.e79); end
-  def bl152; @bl152 ||= sheet7.bl152/(sheet12.c13*sheet11.e79); end
-  def bm152; @bm152 ||= sheet7.bm152/(sheet12.c13*sheet11.e79); end
-  def bn152; @bn152 ||= sheet7.bn152/(sheet12.c13*sheet11.e79); end
-  def bo152; @bo152 ||= sheet7.bo152/(sheet12.c13*sheet11.e79); end
-  def bp152; @bp152 ||= sheet7.bp152/(sheet12.c13*sheet11.e79); end
-  def bq152; @bq152 ||= sheet7.bq152/(sheet12.c13*sheet11.e79); end
-  def bs152; @bs152 ||= sheet7.bs152/(sheet12.c13*sheet11.e79); end
-  def bt152; @bt152 ||= sheet7.bt152/(sheet12.c13*sheet11.e79); end
-  def bu152; @bu152 ||= sheet7.bu152/(sheet12.c13*sheet11.e79); end
-  def bv152; @bv152 ||= sheet7.bv152/(sheet12.c13*sheet11.e79); end
-  def bw152; @bw152 ||= sheet7.bw152/(sheet12.c13*sheet11.e79); end
-  def bx152; @bx152 ||= sheet7.bx152/(sheet12.c13*sheet11.e79); end
-  def by152; @by152 ||= sheet7.by152/(sheet12.c13*sheet11.e79); end
-  def bz152; @bz152 ||= sheet7.bz152/(sheet12.c13*sheet11.e79); end
-  def ca152; @ca152 ||= sheet7.ca152/(sheet12.c13*sheet11.e79); end
-  def cc152; @cc152 ||= average(a('bs152','ca152')); end
-  def cd152; @cd152 ||= (sumproduct(a('bt152','ca152'),sheet12.a('d28','k28'))*5.0)+bs152; end
-  def cf152; @cf152 ||= sheet7.cf152/(sheet12.c13*sheet11.e79); end
-  def cg152; @cg152 ||= sheet7.cg152/(sheet12.c13*sheet11.e79); end
-  def ch152; @ch152 ||= sheet7.ch152/(sheet12.c13*sheet11.e79); end
-  def ci152; @ci152 ||= sheet7.ci152/(sheet12.c13*sheet11.e79); end
-  def cj152; @cj152 ||= sheet7.cj152/(sheet12.c13*sheet11.e79); end
-  def ck152; @ck152 ||= sheet7.ck152/(sheet12.c13*sheet11.e79); end
-  def cl152; @cl152 ||= sheet7.cl152/(sheet12.c13*sheet11.e79); end
-  def cm152; @cm152 ||= sheet7.cm152/(sheet12.c13*sheet11.e79); end
-  def cn152; @cn152 ||= sheet7.cn152/(sheet12.c13*sheet11.e79); end
-  def cp152; @cp152 ||= average(a('cf152','cn152')); end
-  def cq152; @cq152 ||= (sumproduct(a('cg152','cn152'),sheet12.a('d28','k28'))*5.0)+cf152; end
-  def cr152; @cr152 ||= excel_if(excel_comparison(abs(cd152-cq152-at152),"<",1.0),"ok","err"); end
-  def a153; "XV.b.Coal"; end
-  def b153; "Indigenous fossil-fuel production - Coal"; end
-  def c153; "Fossil Fuels"; end
-  def e153; @e153 ||= sheet7.e153/(sheet12.c13*sheet11.e79); end
-  def f153; @f153 ||= sheet7.f153/(sheet12.c13*sheet11.e79); end
-  def g153; @g153 ||= sheet7.g153/(sheet12.c13*sheet11.e79); end
-  def h153; @h153 ||= sheet7.h153/(sheet12.c13*sheet11.e79); end
-  def i153; @i153 ||= sheet7.i153/(sheet12.c13*sheet11.e79); end
-  def j153; @j153 ||= sheet7.j153/(sheet12.c13*sheet11.e79); end
-  def k153; @k153 ||= sheet7.k153/(sheet12.c13*sheet11.e79); end
-  def l153; @l153 ||= sheet7.l153/(sheet12.c13*sheet11.e79); end
-  def m153; @m153 ||= sheet7.m153/(sheet12.c13*sheet11.e79); end
-  def o153; @o153 ||= sheet7.o153/(sheet12.c13*sheet11.e79); end
-  def p153; @p153 ||= sheet7.p153/(sheet12.c13*sheet11.e79); end
-  def q153; @q153 ||= sheet7.q153/(sheet12.c13*sheet11.e79); end
-  def r153; @r153 ||= sheet7.r153/(sheet12.c13*sheet11.e79); end
-  def s153; @s153 ||= sheet7.s153/(sheet12.c13*sheet11.e79); end
-  def t153; @t153 ||= sheet7.t153/(sheet12.c13*sheet11.e79); end
-  def u153; @u153 ||= sheet7.u153/(sheet12.c13*sheet11.e79); end
-  def v153; @v153 ||= sheet7.v153/(sheet12.c13*sheet11.e79); end
-  def w153; @w153 ||= sheet7.w153/(sheet12.c13*sheet11.e79); end
-  def y153; @y153 ||= sheet7.y153/(sheet12.c13*sheet11.e79); end
-  def z153; @z153 ||= sheet7.z153/(sheet12.c13*sheet11.e79); end
-  def aa153; @aa153 ||= sheet7.aa153/(sheet12.c13*sheet11.e79); end
-  def ab153; @ab153 ||= sheet7.ab153/(sheet12.c13*sheet11.e79); end
-  def ac153; @ac153 ||= sheet7.ac153/(sheet12.c13*sheet11.e79); end
-  def ad153; @ad153 ||= sheet7.ad153/(sheet12.c13*sheet11.e79); end
-  def ae153; @ae153 ||= sheet7.ae153/(sheet12.c13*sheet11.e79); end
-  def af153; @af153 ||= sheet7.af153/(sheet12.c13*sheet11.e79); end
-  def ag153; @ag153 ||= sheet7.ag153/(sheet12.c13*sheet11.e79); end
-  def ai153; @ai153 ||= sheet7.ai153/(sheet12.c13*sheet11.e79); end
-  def aj153; @aj153 ||= sheet7.aj153/(sheet12.c13*sheet11.e79); end
-  def ak153; @ak153 ||= sheet7.ak153/(sheet12.c13*sheet11.e79); end
-  def al153; @al153 ||= sheet7.al153/(sheet12.c13*sheet11.e79); end
-  def am153; @am153 ||= sheet7.am153/(sheet12.c13*sheet11.e79); end
-  def an153; @an153 ||= sheet7.an153/(sheet12.c13*sheet11.e79); end
-  def ao153; @ao153 ||= sheet7.ao153/(sheet12.c13*sheet11.e79); end
-  def ap153; @ap153 ||= sheet7.ap153/(sheet12.c13*sheet11.e79); end
-  def aq153; @aq153 ||= sheet7.aq153/(sheet12.c13*sheet11.e79); end
-  def as153; @as153 ||= average(a('ai153','aq153')); end
-  def at153; @at153 ||= (sumproduct(a('aj153','aq153'),sheet12.a('d28','k28'))*5.0)+ai153; end
-  def av153; 0.0; end
-  def aw153; 5.0; end
-  def ay153; @ay153 ||= sheet7.ay153/(sheet12.c13*sheet11.e79); end
-  def az153; @az153 ||= sheet7.az153/(sheet12.c13*sheet11.e79); end
-  def ba153; @ba153 ||= sheet7.ba153/(sheet12.c13*sheet11.e79); end
-  def bb153; @bb153 ||= sheet7.bb153/(sheet12.c13*sheet11.e79); end
-  def bc153; @bc153 ||= sheet7.bc153/(sheet12.c13*sheet11.e79); end
-  def bd153; @bd153 ||= sheet7.bd153/(sheet12.c13*sheet11.e79); end
-  def be153; @be153 ||= sheet7.be153/(sheet12.c13*sheet11.e79); end
-  def bf153; @bf153 ||= sheet7.bf153/(sheet12.c13*sheet11.e79); end
-  def bg153; @bg153 ||= sheet7.bg153/(sheet12.c13*sheet11.e79); end
-  def bi153; @bi153 ||= sheet7.bi153/(sheet12.c13*sheet11.e79); end
-  def bj153; @bj153 ||= sheet7.bj153/(sheet12.c13*sheet11.e79); end
-  def bk153; @bk153 ||= sheet7.bk153/(sheet12.c13*sheet11.e79); end
-  def bl153; @bl153 ||= sheet7.bl153/(sheet12.c13*sheet11.e79); end
-  def bm153; @bm153 ||= sheet7.bm153/(sheet12.c13*sheet11.e79); end
-  def bn153; @bn153 ||= sheet7.bn153/(sheet12.c13*sheet11.e79); end
-  def bo153; @bo153 ||= sheet7.bo153/(sheet12.c13*sheet11.e79); end
-  def bp153; @bp153 ||= sheet7.bp153/(sheet12.c13*sheet11.e79); end
-  def bq153; @bq153 ||= sheet7.bq153/(sheet12.c13*sheet11.e79); end
-  def bs153; @bs153 ||= sheet7.bs153/(sheet12.c13*sheet11.e79); end
-  def bt153; @bt153 ||= sheet7.bt153/(sheet12.c13*sheet11.e79); end
-  def bu153; @bu153 ||= sheet7.bu153/(sheet12.c13*sheet11.e79); end
-  def bv153; @bv153 ||= sheet7.bv153/(sheet12.c13*sheet11.e79); end
-  def bw153; @bw153 ||= sheet7.bw153/(sheet12.c13*sheet11.e79); end
-  def bx153; @bx153 ||= sheet7.bx153/(sheet12.c13*sheet11.e79); end
-  def by153; @by153 ||= sheet7.by153/(sheet12.c13*sheet11.e79); end
-  def bz153; @bz153 ||= sheet7.bz153/(sheet12.c13*sheet11.e79); end
-  def ca153; @ca153 ||= sheet7.ca153/(sheet12.c13*sheet11.e79); end
-  def cc153; @cc153 ||= average(a('bs153','ca153')); end
-  def cd153; @cd153 ||= (sumproduct(a('bt153','ca153'),sheet12.a('d28','k28'))*5.0)+bs153; end
-  def cf153; @cf153 ||= sheet7.cf153/(sheet12.c13*sheet11.e79); end
-  def cg153; @cg153 ||= sheet7.cg153/(sheet12.c13*sheet11.e79); end
-  def ch153; @ch153 ||= sheet7.ch153/(sheet12.c13*sheet11.e79); end
-  def ci153; @ci153 ||= sheet7.ci153/(sheet12.c13*sheet11.e79); end
-  def cj153; @cj153 ||= sheet7.cj153/(sheet12.c13*sheet11.e79); end
-  def ck153; @ck153 ||= sheet7.ck153/(sheet12.c13*sheet11.e79); end
-  def cl153; @cl153 ||= sheet7.cl153/(sheet12.c13*sheet11.e79); end
-  def cm153; @cm153 ||= sheet7.cm153/(sheet12.c13*sheet11.e79); end
-  def cn153; @cn153 ||= sheet7.cn153/(sheet12.c13*sheet11.e79); end
-  def cp153; @cp153 ||= average(a('cf153','cn153')); end
-  def cq153; @cq153 ||= (sumproduct(a('cg153','cn153'),sheet12.a('d28','k28'))*5.0)+cf153; end
-  def cr153; @cr153 ||= excel_if(excel_comparison(abs(cd153-cq153-at153),"<",1.0),"ok","err"); end
-  def a154; "XV.b.Oil"; end
-  def b154; "Indigenous fossil-fuel production - Oil"; end
-  def c154; "Fossil Fuels"; end
-  def e154; @e154 ||= sheet7.e154/(sheet12.c13*sheet11.e79); end
-  def f154; @f154 ||= sheet7.f154/(sheet12.c13*sheet11.e79); end
-  def g154; @g154 ||= sheet7.g154/(sheet12.c13*sheet11.e79); end
-  def h154; @h154 ||= sheet7.h154/(sheet12.c13*sheet11.e79); end
-  def i154; @i154 ||= sheet7.i154/(sheet12.c13*sheet11.e79); end
-  def j154; @j154 ||= sheet7.j154/(sheet12.c13*sheet11.e79); end
-  def k154; @k154 ||= sheet7.k154/(sheet12.c13*sheet11.e79); end
-  def l154; @l154 ||= sheet7.l154/(sheet12.c13*sheet11.e79); end
-  def m154; @m154 ||= sheet7.m154/(sheet12.c13*sheet11.e79); end
-  def o154; @o154 ||= sheet7.o154/(sheet12.c13*sheet11.e79); end
-  def p154; @p154 ||= sheet7.p154/(sheet12.c13*sheet11.e79); end
-  def q154; @q154 ||= sheet7.q154/(sheet12.c13*sheet11.e79); end
-  def r154; @r154 ||= sheet7.r154/(sheet12.c13*sheet11.e79); end
-  def s154; @s154 ||= sheet7.s154/(sheet12.c13*sheet11.e79); end
-  def t154; @t154 ||= sheet7.t154/(sheet12.c13*sheet11.e79); end
-  def u154; @u154 ||= sheet7.u154/(sheet12.c13*sheet11.e79); end
-  def v154; @v154 ||= sheet7.v154/(sheet12.c13*sheet11.e79); end
-  def w154; @w154 ||= sheet7.w154/(sheet12.c13*sheet11.e79); end
-  def y154; @y154 ||= sheet7.y154/(sheet12.c13*sheet11.e79); end
-  def z154; @z154 ||= sheet7.z154/(sheet12.c13*sheet11.e79); end
-  def aa154; @aa154 ||= sheet7.aa154/(sheet12.c13*sheet11.e79); end
-  def ab154; @ab154 ||= sheet7.ab154/(sheet12.c13*sheet11.e79); end
-  def ac154; @ac154 ||= sheet7.ac154/(sheet12.c13*sheet11.e79); end
-  def ad154; @ad154 ||= sheet7.ad154/(sheet12.c13*sheet11.e79); end
-  def ae154; @ae154 ||= sheet7.ae154/(sheet12.c13*sheet11.e79); end
-  def af154; @af154 ||= sheet7.af154/(sheet12.c13*sheet11.e79); end
-  def ag154; @ag154 ||= sheet7.ag154/(sheet12.c13*sheet11.e79); end
-  def ai154; @ai154 ||= sheet7.ai154/(sheet12.c13*sheet11.e79); end
-  def aj154; @aj154 ||= sheet7.aj154/(sheet12.c13*sheet11.e79); end
-  def ak154; @ak154 ||= sheet7.ak154/(sheet12.c13*sheet11.e79); end
-  def al154; @al154 ||= sheet7.al154/(sheet12.c13*sheet11.e79); end
-  def am154; @am154 ||= sheet7.am154/(sheet12.c13*sheet11.e79); end
-  def an154; @an154 ||= sheet7.an154/(sheet12.c13*sheet11.e79); end
-  def ao154; @ao154 ||= sheet7.ao154/(sheet12.c13*sheet11.e79); end
-  def ap154; @ap154 ||= sheet7.ap154/(sheet12.c13*sheet11.e79); end
-  def aq154; @aq154 ||= sheet7.aq154/(sheet12.c13*sheet11.e79); end
-  def as154; @as154 ||= average(a('ai154','aq154')); end
-  def at154; @at154 ||= (sumproduct(a('aj154','aq154'),sheet12.a('d28','k28'))*5.0)+ai154; end
-  def av154; 0.0; end
-  def aw154; 5.0; end
-  def ay154; @ay154 ||= sheet7.ay154/(sheet12.c13*sheet11.e79); end
-  def az154; @az154 ||= sheet7.az154/(sheet12.c13*sheet11.e79); end
-  def ba154; @ba154 ||= sheet7.ba154/(sheet12.c13*sheet11.e79); end
-  def bb154; @bb154 ||= sheet7.bb154/(sheet12.c13*sheet11.e79); end
-  def bc154; @bc154 ||= sheet7.bc154/(sheet12.c13*sheet11.e79); end
-  def bd154; @bd154 ||= sheet7.bd154/(sheet12.c13*sheet11.e79); end
-  def be154; @be154 ||= sheet7.be154/(sheet12.c13*sheet11.e79); end
-  def bf154; @bf154 ||= sheet7.bf154/(sheet12.c13*sheet11.e79); end
-  def bg154; @bg154 ||= sheet7.bg154/(sheet12.c13*sheet11.e79); end
-  def bi154; @bi154 ||= sheet7.bi154/(sheet12.c13*sheet11.e79); end
-  def bj154; @bj154 ||= sheet7.bj154/(sheet12.c13*sheet11.e79); end
-  def bk154; @bk154 ||= sheet7.bk154/(sheet12.c13*sheet11.e79); end
-  def bl154; @bl154 ||= sheet7.bl154/(sheet12.c13*sheet11.e79); end
-  def bm154; @bm154 ||= sheet7.bm154/(sheet12.c13*sheet11.e79); end
-  def bn154; @bn154 ||= sheet7.bn154/(sheet12.c13*sheet11.e79); end
-  def bo154; @bo154 ||= sheet7.bo154/(sheet12.c13*sheet11.e79); end
-  def bp154; @bp154 ||= sheet7.bp154/(sheet12.c13*sheet11.e79); end
-  def bq154; @bq154 ||= sheet7.bq154/(sheet12.c13*sheet11.e79); end
-  def bs154; @bs154 ||= sheet7.bs154/(sheet12.c13*sheet11.e79); end
-  def bt154; @bt154 ||= sheet7.bt154/(sheet12.c13*sheet11.e79); end
-  def bu154; @bu154 ||= sheet7.bu154/(sheet12.c13*sheet11.e79); end
-  def bv154; @bv154 ||= sheet7.bv154/(sheet12.c13*sheet11.e79); end
-  def bw154; @bw154 ||= sheet7.bw154/(sheet12.c13*sheet11.e79); end
-  def bx154; @bx154 ||= sheet7.bx154/(sheet12.c13*sheet11.e79); end
-  def by154; @by154 ||= sheet7.by154/(sheet12.c13*sheet11.e79); end
-  def bz154; @bz154 ||= sheet7.bz154/(sheet12.c13*sheet11.e79); end
-  def ca154; @ca154 ||= sheet7.ca154/(sheet12.c13*sheet11.e79); end
-  def cc154; @cc154 ||= average(a('bs154','ca154')); end
-  def cd154; @cd154 ||= (sumproduct(a('bt154','ca154'),sheet12.a('d28','k28'))*5.0)+bs154; end
-  def cf154; @cf154 ||= sheet7.cf154/(sheet12.c13*sheet11.e79); end
-  def cg154; @cg154 ||= sheet7.cg154/(sheet12.c13*sheet11.e79); end
-  def ch154; @ch154 ||= sheet7.ch154/(sheet12.c13*sheet11.e79); end
-  def ci154; @ci154 ||= sheet7.ci154/(sheet12.c13*sheet11.e79); end
-  def cj154; @cj154 ||= sheet7.cj154/(sheet12.c13*sheet11.e79); end
-  def ck154; @ck154 ||= sheet7.ck154/(sheet12.c13*sheet11.e79); end
-  def cl154; @cl154 ||= sheet7.cl154/(sheet12.c13*sheet11.e79); end
-  def cm154; @cm154 ||= sheet7.cm154/(sheet12.c13*sheet11.e79); end
-  def cn154; @cn154 ||= sheet7.cn154/(sheet12.c13*sheet11.e79); end
-  def cp154; @cp154 ||= average(a('cf154','cn154')); end
-  def cq154; @cq154 ||= (sumproduct(a('cg154','cn154'),sheet12.a('d28','k28'))*5.0)+cf154; end
-  def cr154; @cr154 ||= excel_if(excel_comparison(abs(cd154-cq154-at154),"<",1.0),"ok","err"); end
-  def a155; "XV.b.Gas"; end
-  def b155; "Indigenous fossil-fuel production - Gas"; end
-  def c155; "Fossil Fuels"; end
-  def e155; @e155 ||= sheet7.e155/(sheet12.c13*sheet11.e79); end
-  def f155; @f155 ||= sheet7.f155/(sheet12.c13*sheet11.e79); end
-  def g155; @g155 ||= sheet7.g155/(sheet12.c13*sheet11.e79); end
-  def h155; @h155 ||= sheet7.h155/(sheet12.c13*sheet11.e79); end
-  def i155; @i155 ||= sheet7.i155/(sheet12.c13*sheet11.e79); end
-  def j155; @j155 ||= sheet7.j155/(sheet12.c13*sheet11.e79); end
-  def k155; @k155 ||= sheet7.k155/(sheet12.c13*sheet11.e79); end
-  def l155; @l155 ||= sheet7.l155/(sheet12.c13*sheet11.e79); end
-  def m155; @m155 ||= sheet7.m155/(sheet12.c13*sheet11.e79); end
-  def o155; @o155 ||= sheet7.o155/(sheet12.c13*sheet11.e79); end
-  def p155; @p155 ||= sheet7.p155/(sheet12.c13*sheet11.e79); end
-  def q155; @q155 ||= sheet7.q155/(sheet12.c13*sheet11.e79); end
-  def r155; @r155 ||= sheet7.r155/(sheet12.c13*sheet11.e79); end
-  def s155; @s155 ||= sheet7.s155/(sheet12.c13*sheet11.e79); end
-  def t155; @t155 ||= sheet7.t155/(sheet12.c13*sheet11.e79); end
-  def u155; @u155 ||= sheet7.u155/(sheet12.c13*sheet11.e79); end
-  def v155; @v155 ||= sheet7.v155/(sheet12.c13*sheet11.e79); end
-  def w155; @w155 ||= sheet7.w155/(sheet12.c13*sheet11.e79); end
-  def y155; @y155 ||= sheet7.y155/(sheet12.c13*sheet11.e79); end
-  def z155; @z155 ||= sheet7.z155/(sheet12.c13*sheet11.e79); end
-  def aa155; @aa155 ||= sheet7.aa155/(sheet12.c13*sheet11.e79); end
-  def ab155; @ab155 ||= sheet7.ab155/(sheet12.c13*sheet11.e79); end
-  def ac155; @ac155 ||= sheet7.ac155/(sheet12.c13*sheet11.e79); end
-  def ad155; @ad155 ||= sheet7.ad155/(sheet12.c13*sheet11.e79); end
-  def ae155; @ae155 ||= sheet7.ae155/(sheet12.c13*sheet11.e79); end
-  def af155; @af155 ||= sheet7.af155/(sheet12.c13*sheet11.e79); end
-  def ag155; @ag155 ||= sheet7.ag155/(sheet12.c13*sheet11.e79); end
-  def ai155; @ai155 ||= sheet7.ai155/(sheet12.c13*sheet11.e79); end
-  def aj155; @aj155 ||= sheet7.aj155/(sheet12.c13*sheet11.e79); end
-  def ak155; @ak155 ||= sheet7.ak155/(sheet12.c13*sheet11.e79); end
-  def al155; @al155 ||= sheet7.al155/(sheet12.c13*sheet11.e79); end
-  def am155; @am155 ||= sheet7.am155/(sheet12.c13*sheet11.e79); end
-  def an155; @an155 ||= sheet7.an155/(sheet12.c13*sheet11.e79); end
-  def ao155; @ao155 ||= sheet7.ao155/(sheet12.c13*sheet11.e79); end
-  def ap155; @ap155 ||= sheet7.ap155/(sheet12.c13*sheet11.e79); end
-  def aq155; @aq155 ||= sheet7.aq155/(sheet12.c13*sheet11.e79); end
-  def as155; @as155 ||= average(a('ai155','aq155')); end
-  def at155; @at155 ||= (sumproduct(a('aj155','aq155'),sheet12.a('d28','k28'))*5.0)+ai155; end
-  def av155; 0.0; end
-  def aw155; 5.0; end
-  def ay155; @ay155 ||= sheet7.ay155/(sheet12.c13*sheet11.e79); end
-  def az155; @az155 ||= sheet7.az155/(sheet12.c13*sheet11.e79); end
-  def ba155; @ba155 ||= sheet7.ba155/(sheet12.c13*sheet11.e79); end
-  def bb155; @bb155 ||= sheet7.bb155/(sheet12.c13*sheet11.e79); end
-  def bc155; @bc155 ||= sheet7.bc155/(sheet12.c13*sheet11.e79); end
-  def bd155; @bd155 ||= sheet7.bd155/(sheet12.c13*sheet11.e79); end
-  def be155; @be155 ||= sheet7.be155/(sheet12.c13*sheet11.e79); end
-  def bf155; @bf155 ||= sheet7.bf155/(sheet12.c13*sheet11.e79); end
-  def bg155; @bg155 ||= sheet7.bg155/(sheet12.c13*sheet11.e79); end
-  def bi155; @bi155 ||= sheet7.bi155/(sheet12.c13*sheet11.e79); end
-  def bj155; @bj155 ||= sheet7.bj155/(sheet12.c13*sheet11.e79); end
-  def bk155; @bk155 ||= sheet7.bk155/(sheet12.c13*sheet11.e79); end
-  def bl155; @bl155 ||= sheet7.bl155/(sheet12.c13*sheet11.e79); end
-  def bm155; @bm155 ||= sheet7.bm155/(sheet12.c13*sheet11.e79); end
-  def bn155; @bn155 ||= sheet7.bn155/(sheet12.c13*sheet11.e79); end
-  def bo155; @bo155 ||= sheet7.bo155/(sheet12.c13*sheet11.e79); end
-  def bp155; @bp155 ||= sheet7.bp155/(sheet12.c13*sheet11.e79); end
-  def bq155; @bq155 ||= sheet7.bq155/(sheet12.c13*sheet11.e79); end
-  def bs155; @bs155 ||= sheet7.bs155/(sheet12.c13*sheet11.e79); end
-  def bt155; @bt155 ||= sheet7.bt155/(sheet12.c13*sheet11.e79); end
-  def bu155; @bu155 ||= sheet7.bu155/(sheet12.c13*sheet11.e79); end
-  def bv155; @bv155 ||= sheet7.bv155/(sheet12.c13*sheet11.e79); end
-  def bw155; @bw155 ||= sheet7.bw155/(sheet12.c13*sheet11.e79); end
-  def bx155; @bx155 ||= sheet7.bx155/(sheet12.c13*sheet11.e79); end
-  def by155; @by155 ||= sheet7.by155/(sheet12.c13*sheet11.e79); end
-  def bz155; @bz155 ||= sheet7.bz155/(sheet12.c13*sheet11.e79); end
-  def ca155; @ca155 ||= sheet7.ca155/(sheet12.c13*sheet11.e79); end
-  def cc155; @cc155 ||= average(a('bs155','ca155')); end
-  def cd155; @cd155 ||= (sumproduct(a('bt155','ca155'),sheet12.a('d28','k28'))*5.0)+bs155; end
-  def cf155; @cf155 ||= sheet7.cf155/(sheet12.c13*sheet11.e79); end
-  def cg155; @cg155 ||= sheet7.cg155/(sheet12.c13*sheet11.e79); end
-  def ch155; @ch155 ||= sheet7.ch155/(sheet12.c13*sheet11.e79); end
-  def ci155; @ci155 ||= sheet7.ci155/(sheet12.c13*sheet11.e79); end
-  def cj155; @cj155 ||= sheet7.cj155/(sheet12.c13*sheet11.e79); end
-  def ck155; @ck155 ||= sheet7.ck155/(sheet12.c13*sheet11.e79); end
-  def cl155; @cl155 ||= sheet7.cl155/(sheet12.c13*sheet11.e79); end
-  def cm155; @cm155 ||= sheet7.cm155/(sheet12.c13*sheet11.e79); end
-  def cn155; @cn155 ||= sheet7.cn155/(sheet12.c13*sheet11.e79); end
-  def cp155; @cp155 ||= average(a('cf155','cn155')); end
-  def cq155; @cq155 ||= (sumproduct(a('cg155','cn155'),sheet12.a('d28','k28'))*5.0)+cf155; end
-  def cr155; @cr155 ||= excel_if(excel_comparison(abs(cd155-cq155-at155),"<",1.0),"ok","err"); end
-  def a156; "XVI.a"; end
-  def b156; "Fossil fuel transfers"; end
-  def c156; "Fossil Fuels"; end
-  def e156; @e156 ||= sheet7.e156/(sheet12.c13*sheet11.e79); end
-  def f156; @f156 ||= sheet7.f156/(sheet12.c13*sheet11.e79); end
-  def g156; @g156 ||= sheet7.g156/(sheet12.c13*sheet11.e79); end
-  def h156; @h156 ||= sheet7.h156/(sheet12.c13*sheet11.e79); end
-  def i156; @i156 ||= sheet7.i156/(sheet12.c13*sheet11.e79); end
-  def j156; @j156 ||= sheet7.j156/(sheet12.c13*sheet11.e79); end
-  def k156; @k156 ||= sheet7.k156/(sheet12.c13*sheet11.e79); end
-  def l156; @l156 ||= sheet7.l156/(sheet12.c13*sheet11.e79); end
-  def m156; @m156 ||= sheet7.m156/(sheet12.c13*sheet11.e79); end
-  def o156; @o156 ||= sheet7.o156/(sheet12.c13*sheet11.e79); end
-  def p156; @p156 ||= sheet7.p156/(sheet12.c13*sheet11.e79); end
-  def q156; @q156 ||= sheet7.q156/(sheet12.c13*sheet11.e79); end
-  def r156; @r156 ||= sheet7.r156/(sheet12.c13*sheet11.e79); end
-  def s156; @s156 ||= sheet7.s156/(sheet12.c13*sheet11.e79); end
-  def t156; @t156 ||= sheet7.t156/(sheet12.c13*sheet11.e79); end
-  def u156; @u156 ||= sheet7.u156/(sheet12.c13*sheet11.e79); end
-  def v156; @v156 ||= sheet7.v156/(sheet12.c13*sheet11.e79); end
-  def w156; @w156 ||= sheet7.w156/(sheet12.c13*sheet11.e79); end
-  def y156; @y156 ||= sheet7.y156/(sheet12.c13*sheet11.e79); end
-  def z156; @z156 ||= sheet7.z156/(sheet12.c13*sheet11.e79); end
-  def aa156; @aa156 ||= sheet7.aa156/(sheet12.c13*sheet11.e79); end
-  def ab156; @ab156 ||= sheet7.ab156/(sheet12.c13*sheet11.e79); end
-  def ac156; @ac156 ||= sheet7.ac156/(sheet12.c13*sheet11.e79); end
-  def ad156; @ad156 ||= sheet7.ad156/(sheet12.c13*sheet11.e79); end
-  def ae156; @ae156 ||= sheet7.ae156/(sheet12.c13*sheet11.e79); end
-  def af156; @af156 ||= sheet7.af156/(sheet12.c13*sheet11.e79); end
-  def ag156; @ag156 ||= sheet7.ag156/(sheet12.c13*sheet11.e79); end
-  def ai156; @ai156 ||= sheet7.ai156/(sheet12.c13*sheet11.e79); end
-  def aj156; @aj156 ||= sheet7.aj156/(sheet12.c13*sheet11.e79); end
-  def ak156; @ak156 ||= sheet7.ak156/(sheet12.c13*sheet11.e79); end
-  def al156; @al156 ||= sheet7.al156/(sheet12.c13*sheet11.e79); end
-  def am156; @am156 ||= sheet7.am156/(sheet12.c13*sheet11.e79); end
-  def an156; @an156 ||= sheet7.an156/(sheet12.c13*sheet11.e79); end
-  def ao156; @ao156 ||= sheet7.ao156/(sheet12.c13*sheet11.e79); end
-  def ap156; @ap156 ||= sheet7.ap156/(sheet12.c13*sheet11.e79); end
-  def aq156; @aq156 ||= sheet7.aq156/(sheet12.c13*sheet11.e79); end
-  def as156; @as156 ||= average(a('ai156','aq156')); end
-  def at156; @at156 ||= (sumproduct(a('aj156','aq156'),sheet12.a('d28','k28'))*5.0)+ai156; end
-  def av156; 0.0; end
-  def aw156; 5.0; end
-  def ay156; @ay156 ||= sheet7.ay156/(sheet12.c13*sheet11.e79); end
-  def az156; @az156 ||= sheet7.az156/(sheet12.c13*sheet11.e79); end
-  def ba156; @ba156 ||= sheet7.ba156/(sheet12.c13*sheet11.e79); end
-  def bb156; @bb156 ||= sheet7.bb156/(sheet12.c13*sheet11.e79); end
-  def bc156; @bc156 ||= sheet7.bc156/(sheet12.c13*sheet11.e79); end
-  def bd156; @bd156 ||= sheet7.bd156/(sheet12.c13*sheet11.e79); end
-  def be156; @be156 ||= sheet7.be156/(sheet12.c13*sheet11.e79); end
-  def bf156; @bf156 ||= sheet7.bf156/(sheet12.c13*sheet11.e79); end
-  def bg156; @bg156 ||= sheet7.bg156/(sheet12.c13*sheet11.e79); end
-  def bi156; @bi156 ||= sheet7.bi156/(sheet12.c13*sheet11.e79); end
-  def bj156; @bj156 ||= sheet7.bj156/(sheet12.c13*sheet11.e79); end
-  def bk156; @bk156 ||= sheet7.bk156/(sheet12.c13*sheet11.e79); end
-  def bl156; @bl156 ||= sheet7.bl156/(sheet12.c13*sheet11.e79); end
-  def bm156; @bm156 ||= sheet7.bm156/(sheet12.c13*sheet11.e79); end
-  def bn156; @bn156 ||= sheet7.bn156/(sheet12.c13*sheet11.e79); end
-  def bo156; @bo156 ||= sheet7.bo156/(sheet12.c13*sheet11.e79); end
-  def bp156; @bp156 ||= sheet7.bp156/(sheet12.c13*sheet11.e79); end
-  def bq156; @bq156 ||= sheet7.bq156/(sheet12.c13*sheet11.e79); end
-  def bs156; @bs156 ||= sheet7.bs156/(sheet12.c13*sheet11.e79); end
-  def bt156; @bt156 ||= sheet7.bt156/(sheet12.c13*sheet11.e79); end
-  def bu156; @bu156 ||= sheet7.bu156/(sheet12.c13*sheet11.e79); end
-  def bv156; @bv156 ||= sheet7.bv156/(sheet12.c13*sheet11.e79); end
-  def bw156; @bw156 ||= sheet7.bw156/(sheet12.c13*sheet11.e79); end
-  def bx156; @bx156 ||= sheet7.bx156/(sheet12.c13*sheet11.e79); end
-  def by156; @by156 ||= sheet7.by156/(sheet12.c13*sheet11.e79); end
-  def bz156; @bz156 ||= sheet7.bz156/(sheet12.c13*sheet11.e79); end
-  def ca156; @ca156 ||= sheet7.ca156/(sheet12.c13*sheet11.e79); end
-  def cc156; @cc156 ||= average(a('bs156','ca156')); end
-  def cd156; @cd156 ||= (sumproduct(a('bt156','ca156'),sheet12.a('d28','k28'))*5.0)+bs156; end
-  def cf156; @cf156 ||= sheet7.cf156/(sheet12.c13*sheet11.e79); end
-  def cg156; @cg156 ||= sheet7.cg156/(sheet12.c13*sheet11.e79); end
-  def ch156; @ch156 ||= sheet7.ch156/(sheet12.c13*sheet11.e79); end
-  def ci156; @ci156 ||= sheet7.ci156/(sheet12.c13*sheet11.e79); end
-  def cj156; @cj156 ||= sheet7.cj156/(sheet12.c13*sheet11.e79); end
-  def ck156; @ck156 ||= sheet7.ck156/(sheet12.c13*sheet11.e79); end
-  def cl156; @cl156 ||= sheet7.cl156/(sheet12.c13*sheet11.e79); end
-  def cm156; @cm156 ||= sheet7.cm156/(sheet12.c13*sheet11.e79); end
-  def cn156; @cn156 ||= sheet7.cn156/(sheet12.c13*sheet11.e79); end
-  def cp156; @cp156 ||= average(a('cf156','cn156')); end
-  def cq156; @cq156 ||= (sumproduct(a('cg156','cn156'),sheet12.a('d28','k28'))*5.0)+cf156; end
-  def cr156; @cr156 ||= excel_if(excel_comparison(abs(cd156-cq156-at156),"<",1.0),"ok","err"); end
-  def a157; "XVI.b.Coal"; end
-  def b157; "Balancing imports - Coal"; end
-  def c157; "Fossil Fuels"; end
-  def e157; @e157 ||= sheet7.e157/(sheet12.c13*sheet11.e79); end
-  def f157; @f157 ||= sheet7.f157/(sheet12.c13*sheet11.e79); end
-  def g157; @g157 ||= sheet7.g157/(sheet12.c13*sheet11.e79); end
-  def h157; @h157 ||= sheet7.h157/(sheet12.c13*sheet11.e79); end
-  def i157; @i157 ||= sheet7.i157/(sheet12.c13*sheet11.e79); end
-  def j157; @j157 ||= sheet7.j157/(sheet12.c13*sheet11.e79); end
-  def k157; @k157 ||= sheet7.k157/(sheet12.c13*sheet11.e79); end
-  def l157; @l157 ||= sheet7.l157/(sheet12.c13*sheet11.e79); end
-  def m157; @m157 ||= sheet7.m157/(sheet12.c13*sheet11.e79); end
-  def o157; @o157 ||= sheet7.o157/(sheet12.c13*sheet11.e79); end
-  def p157; @p157 ||= sheet7.p157/(sheet12.c13*sheet11.e79); end
-  def q157; @q157 ||= sheet7.q157/(sheet12.c13*sheet11.e79); end
-  def r157; @r157 ||= sheet7.r157/(sheet12.c13*sheet11.e79); end
-  def s157; @s157 ||= sheet7.s157/(sheet12.c13*sheet11.e79); end
-  def t157; @t157 ||= sheet7.t157/(sheet12.c13*sheet11.e79); end
-  def u157; @u157 ||= sheet7.u157/(sheet12.c13*sheet11.e79); end
-  def v157; @v157 ||= sheet7.v157/(sheet12.c13*sheet11.e79); end
-  def w157; @w157 ||= sheet7.w157/(sheet12.c13*sheet11.e79); end
-  def y157; @y157 ||= sheet7.y157/(sheet12.c13*sheet11.e79); end
-  def z157; @z157 ||= sheet7.z157/(sheet12.c13*sheet11.e79); end
-  def aa157; @aa157 ||= sheet7.aa157/(sheet12.c13*sheet11.e79); end
-  def ab157; @ab157 ||= sheet7.ab157/(sheet12.c13*sheet11.e79); end
-  def ac157; @ac157 ||= sheet7.ac157/(sheet12.c13*sheet11.e79); end
-  def ad157; @ad157 ||= sheet7.ad157/(sheet12.c13*sheet11.e79); end
-  def ae157; @ae157 ||= sheet7.ae157/(sheet12.c13*sheet11.e79); end
-  def af157; @af157 ||= sheet7.af157/(sheet12.c13*sheet11.e79); end
-  def ag157; @ag157 ||= sheet7.ag157/(sheet12.c13*sheet11.e79); end
-  def ai157; @ai157 ||= sheet7.ai157/(sheet12.c13*sheet11.e79); end
-  def aj157; @aj157 ||= sheet7.aj157/(sheet12.c13*sheet11.e79); end
-  def ak157; @ak157 ||= sheet7.ak157/(sheet12.c13*sheet11.e79); end
-  def al157; @al157 ||= sheet7.al157/(sheet12.c13*sheet11.e79); end
-  def am157; @am157 ||= sheet7.am157/(sheet12.c13*sheet11.e79); end
-  def an157; @an157 ||= sheet7.an157/(sheet12.c13*sheet11.e79); end
-  def ao157; @ao157 ||= sheet7.ao157/(sheet12.c13*sheet11.e79); end
-  def ap157; @ap157 ||= sheet7.ap157/(sheet12.c13*sheet11.e79); end
-  def aq157; @aq157 ||= sheet7.aq157/(sheet12.c13*sheet11.e79); end
-  def as157; @as157 ||= average(a('ai157','aq157')); end
-  def at157; @at157 ||= (sumproduct(a('aj157','aq157'),sheet12.a('d28','k28'))*5.0)+ai157; end
-  def av157; 0.0; end
-  def aw157; 5.0; end
-  def ay157; @ay157 ||= sheet7.ay157/(sheet12.c13*sheet11.e79); end
-  def az157; @az157 ||= sheet7.az157/(sheet12.c13*sheet11.e79); end
-  def ba157; @ba157 ||= sheet7.ba157/(sheet12.c13*sheet11.e79); end
-  def bb157; @bb157 ||= sheet7.bb157/(sheet12.c13*sheet11.e79); end
-  def bc157; @bc157 ||= sheet7.bc157/(sheet12.c13*sheet11.e79); end
-  def bd157; @bd157 ||= sheet7.bd157/(sheet12.c13*sheet11.e79); end
-  def be157; @be157 ||= sheet7.be157/(sheet12.c13*sheet11.e79); end
-  def bf157; @bf157 ||= sheet7.bf157/(sheet12.c13*sheet11.e79); end
-  def bg157; @bg157 ||= sheet7.bg157/(sheet12.c13*sheet11.e79); end
-  def bi157; @bi157 ||= sheet7.bi157/(sheet12.c13*sheet11.e79); end
-  def bj157; @bj157 ||= sheet7.bj157/(sheet12.c13*sheet11.e79); end
-  def bk157; @bk157 ||= sheet7.bk157/(sheet12.c13*sheet11.e79); end
-  def bl157; @bl157 ||= sheet7.bl157/(sheet12.c13*sheet11.e79); end
-  def bm157; @bm157 ||= sheet7.bm157/(sheet12.c13*sheet11.e79); end
-  def bn157; @bn157 ||= sheet7.bn157/(sheet12.c13*sheet11.e79); end
-  def bo157; @bo157 ||= sheet7.bo157/(sheet12.c13*sheet11.e79); end
-  def bp157; @bp157 ||= sheet7.bp157/(sheet12.c13*sheet11.e79); end
-  def bq157; @bq157 ||= sheet7.bq157/(sheet12.c13*sheet11.e79); end
-  def bs157; @bs157 ||= sheet7.bs157/(sheet12.c13*sheet11.e79); end
-  def bt157; @bt157 ||= sheet7.bt157/(sheet12.c13*sheet11.e79); end
-  def bu157; @bu157 ||= sheet7.bu157/(sheet12.c13*sheet11.e79); end
-  def bv157; @bv157 ||= sheet7.bv157/(sheet12.c13*sheet11.e79); end
-  def bw157; @bw157 ||= sheet7.bw157/(sheet12.c13*sheet11.e79); end
-  def bx157; @bx157 ||= sheet7.bx157/(sheet12.c13*sheet11.e79); end
-  def by157; @by157 ||= sheet7.by157/(sheet12.c13*sheet11.e79); end
-  def bz157; @bz157 ||= sheet7.bz157/(sheet12.c13*sheet11.e79); end
-  def ca157; @ca157 ||= sheet7.ca157/(sheet12.c13*sheet11.e79); end
-  def cc157; @cc157 ||= average(a('bs157','ca157')); end
-  def cd157; @cd157 ||= (sumproduct(a('bt157','ca157'),sheet12.a('d28','k28'))*5.0)+bs157; end
-  def cf157; @cf157 ||= sheet7.cf157/(sheet12.c13*sheet11.e79); end
-  def cg157; @cg157 ||= sheet7.cg157/(sheet12.c13*sheet11.e79); end
-  def ch157; @ch157 ||= sheet7.ch157/(sheet12.c13*sheet11.e79); end
-  def ci157; @ci157 ||= sheet7.ci157/(sheet12.c13*sheet11.e79); end
-  def cj157; @cj157 ||= sheet7.cj157/(sheet12.c13*sheet11.e79); end
-  def ck157; @ck157 ||= sheet7.ck157/(sheet12.c13*sheet11.e79); end
-  def cl157; @cl157 ||= sheet7.cl157/(sheet12.c13*sheet11.e79); end
-  def cm157; @cm157 ||= sheet7.cm157/(sheet12.c13*sheet11.e79); end
-  def cn157; @cn157 ||= sheet7.cn157/(sheet12.c13*sheet11.e79); end
-  def cp157; @cp157 ||= average(a('cf157','cn157')); end
-  def cq157; @cq157 ||= (sumproduct(a('cg157','cn157'),sheet12.a('d28','k28'))*5.0)+cf157; end
-  def cr157; @cr157 ||= excel_if(excel_comparison(abs(cd157-cq157-at157),"<",1.0),"ok","err"); end
-  def a158; "XVI.b.Oil"; end
-  def b158; "Balancing imports - Oil"; end
-  def c158; "Fossil Fuels"; end
-  def e158; @e158 ||= sheet7.e158/(sheet12.c13*sheet11.e79); end
-  def f158; @f158 ||= sheet7.f158/(sheet12.c13*sheet11.e79); end
-  def g158; @g158 ||= sheet7.g158/(sheet12.c13*sheet11.e79); end
-  def h158; @h158 ||= sheet7.h158/(sheet12.c13*sheet11.e79); end
-  def i158; @i158 ||= sheet7.i158/(sheet12.c13*sheet11.e79); end
-  def j158; @j158 ||= sheet7.j158/(sheet12.c13*sheet11.e79); end
-  def k158; @k158 ||= sheet7.k158/(sheet12.c13*sheet11.e79); end
-  def l158; @l158 ||= sheet7.l158/(sheet12.c13*sheet11.e79); end
-  def m158; @m158 ||= sheet7.m158/(sheet12.c13*sheet11.e79); end
-  def o158; @o158 ||= sheet7.o158/(sheet12.c13*sheet11.e79); end
-  def p158; @p158 ||= sheet7.p158/(sheet12.c13*sheet11.e79); end
-  def q158; @q158 ||= sheet7.q158/(sheet12.c13*sheet11.e79); end
-  def r158; @r158 ||= sheet7.r158/(sheet12.c13*sheet11.e79); end
-  def s158; @s158 ||= sheet7.s158/(sheet12.c13*sheet11.e79); end
-  def t158; @t158 ||= sheet7.t158/(sheet12.c13*sheet11.e79); end
-  def u158; @u158 ||= sheet7.u158/(sheet12.c13*sheet11.e79); end
-  def v158; @v158 ||= sheet7.v158/(sheet12.c13*sheet11.e79); end
-  def w158; @w158 ||= sheet7.w158/(sheet12.c13*sheet11.e79); end
-  def y158; @y158 ||= sheet7.y158/(sheet12.c13*sheet11.e79); end
-  def z158; @z158 ||= sheet7.z158/(sheet12.c13*sheet11.e79); end
-  def aa158; @aa158 ||= sheet7.aa158/(sheet12.c13*sheet11.e79); end
-  def ab158; @ab158 ||= sheet7.ab158/(sheet12.c13*sheet11.e79); end
-  def ac158; @ac158 ||= sheet7.ac158/(sheet12.c13*sheet11.e79); end
-  def ad158; @ad158 ||= sheet7.ad158/(sheet12.c13*sheet11.e79); end
-  def ae158; @ae158 ||= sheet7.ae158/(sheet12.c13*sheet11.e79); end
-  def af158; @af158 ||= sheet7.af158/(sheet12.c13*sheet11.e79); end
-  def ag158; @ag158 ||= sheet7.ag158/(sheet12.c13*sheet11.e79); end
-  def ai158; @ai158 ||= sheet7.ai158/(sheet12.c13*sheet11.e79); end
-  def aj158; @aj158 ||= sheet7.aj158/(sheet12.c13*sheet11.e79); end
-  def ak158; @ak158 ||= sheet7.ak158/(sheet12.c13*sheet11.e79); end
-  def al158; @al158 ||= sheet7.al158/(sheet12.c13*sheet11.e79); end
-  def am158; @am158 ||= sheet7.am158/(sheet12.c13*sheet11.e79); end
-  def an158; @an158 ||= sheet7.an158/(sheet12.c13*sheet11.e79); end
-  def ao158; @ao158 ||= sheet7.ao158/(sheet12.c13*sheet11.e79); end
-  def ap158; @ap158 ||= sheet7.ap158/(sheet12.c13*sheet11.e79); end
-  def aq158; @aq158 ||= sheet7.aq158/(sheet12.c13*sheet11.e79); end
-  def as158; @as158 ||= average(a('ai158','aq158')); end
-  def at158; @at158 ||= (sumproduct(a('aj158','aq158'),sheet12.a('d28','k28'))*5.0)+ai158; end
-  def av158; 0.0; end
-  def aw158; 5.0; end
-  def ay158; @ay158 ||= sheet7.ay158/(sheet12.c13*sheet11.e79); end
-  def az158; @az158 ||= sheet7.az158/(sheet12.c13*sheet11.e79); end
-  def ba158; @ba158 ||= sheet7.ba158/(sheet12.c13*sheet11.e79); end
-  def bb158; @bb158 ||= sheet7.bb158/(sheet12.c13*sheet11.e79); end
-  def bc158; @bc158 ||= sheet7.bc158/(sheet12.c13*sheet11.e79); end
-  def bd158; @bd158 ||= sheet7.bd158/(sheet12.c13*sheet11.e79); end
-  def be158; @be158 ||= sheet7.be158/(sheet12.c13*sheet11.e79); end
-  def bf158; @bf158 ||= sheet7.bf158/(sheet12.c13*sheet11.e79); end
-  def bg158; @bg158 ||= sheet7.bg158/(sheet12.c13*sheet11.e79); end
-  def bi158; @bi158 ||= sheet7.bi158/(sheet12.c13*sheet11.e79); end
-  def bj158; @bj158 ||= sheet7.bj158/(sheet12.c13*sheet11.e79); end
-  def bk158; @bk158 ||= sheet7.bk158/(sheet12.c13*sheet11.e79); end
-  def bl158; @bl158 ||= sheet7.bl158/(sheet12.c13*sheet11.e79); end
-  def bm158; @bm158 ||= sheet7.bm158/(sheet12.c13*sheet11.e79); end
-  def bn158; @bn158 ||= sheet7.bn158/(sheet12.c13*sheet11.e79); end
-  def bo158; @bo158 ||= sheet7.bo158/(sheet12.c13*sheet11.e79); end
-  def bp158; @bp158 ||= sheet7.bp158/(sheet12.c13*sheet11.e79); end
-  def bq158; @bq158 ||= sheet7.bq158/(sheet12.c13*sheet11.e79); end
-  def bs158; @bs158 ||= sheet7.bs158/(sheet12.c13*sheet11.e79); end
-  def bt158; @bt158 ||= sheet7.bt158/(sheet12.c13*sheet11.e79); end
-  def bu158; @bu158 ||= sheet7.bu158/(sheet12.c13*sheet11.e79); end
-  def bv158; @bv158 ||= sheet7.bv158/(sheet12.c13*sheet11.e79); end
-  def bw158; @bw158 ||= sheet7.bw158/(sheet12.c13*sheet11.e79); end
-  def bx158; @bx158 ||= sheet7.bx158/(sheet12.c13*sheet11.e79); end
-  def by158; @by158 ||= sheet7.by158/(sheet12.c13*sheet11.e79); end
-  def bz158; @bz158 ||= sheet7.bz158/(sheet12.c13*sheet11.e79); end
-  def ca158; @ca158 ||= sheet7.ca158/(sheet12.c13*sheet11.e79); end
-  def cc158; @cc158 ||= average(a('bs158','ca158')); end
-  def cd158; @cd158 ||= (sumproduct(a('bt158','ca158'),sheet12.a('d28','k28'))*5.0)+bs158; end
-  def cf158; @cf158 ||= sheet7.cf158/(sheet12.c13*sheet11.e79); end
-  def cg158; @cg158 ||= sheet7.cg158/(sheet12.c13*sheet11.e79); end
-  def ch158; @ch158 ||= sheet7.ch158/(sheet12.c13*sheet11.e79); end
-  def ci158; @ci158 ||= sheet7.ci158/(sheet12.c13*sheet11.e79); end
-  def cj158; @cj158 ||= sheet7.cj158/(sheet12.c13*sheet11.e79); end
-  def ck158; @ck158 ||= sheet7.ck158/(sheet12.c13*sheet11.e79); end
-  def cl158; @cl158 ||= sheet7.cl158/(sheet12.c13*sheet11.e79); end
-  def cm158; @cm158 ||= sheet7.cm158/(sheet12.c13*sheet11.e79); end
-  def cn158; @cn158 ||= sheet7.cn158/(sheet12.c13*sheet11.e79); end
-  def cp158; @cp158 ||= average(a('cf158','cn158')); end
-  def cq158; @cq158 ||= (sumproduct(a('cg158','cn158'),sheet12.a('d28','k28'))*5.0)+cf158; end
-  def cr158; @cr158 ||= excel_if(excel_comparison(abs(cd158-cq158-at158),"<",1.0),"ok","err"); end
-  def a159; "XVI.b.Gas"; end
-  def b159; "Balancing imports - Gas"; end
-  def c159; "Fossil Fuels"; end
-  def e159; @e159 ||= sheet7.e159/(sheet12.c13*sheet11.e79); end
-  def f159; @f159 ||= sheet7.f159/(sheet12.c13*sheet11.e79); end
-  def g159; @g159 ||= sheet7.g159/(sheet12.c13*sheet11.e79); end
-  def h159; @h159 ||= sheet7.h159/(sheet12.c13*sheet11.e79); end
-  def i159; @i159 ||= sheet7.i159/(sheet12.c13*sheet11.e79); end
-  def j159; @j159 ||= sheet7.j159/(sheet12.c13*sheet11.e79); end
-  def k159; @k159 ||= sheet7.k159/(sheet12.c13*sheet11.e79); end
-  def l159; @l159 ||= sheet7.l159/(sheet12.c13*sheet11.e79); end
-  def m159; @m159 ||= sheet7.m159/(sheet12.c13*sheet11.e79); end
-  def o159; @o159 ||= sheet7.o159/(sheet12.c13*sheet11.e79); end
-  def p159; @p159 ||= sheet7.p159/(sheet12.c13*sheet11.e79); end
-  def q159; @q159 ||= sheet7.q159/(sheet12.c13*sheet11.e79); end
-  def r159; @r159 ||= sheet7.r159/(sheet12.c13*sheet11.e79); end
-  def s159; @s159 ||= sheet7.s159/(sheet12.c13*sheet11.e79); end
-  def t159; @t159 ||= sheet7.t159/(sheet12.c13*sheet11.e79); end
-  def u159; @u159 ||= sheet7.u159/(sheet12.c13*sheet11.e79); end
-  def v159; @v159 ||= sheet7.v159/(sheet12.c13*sheet11.e79); end
-  def w159; @w159 ||= sheet7.w159/(sheet12.c13*sheet11.e79); end
-  def y159; @y159 ||= sheet7.y159/(sheet12.c13*sheet11.e79); end
-  def z159; @z159 ||= sheet7.z159/(sheet12.c13*sheet11.e79); end
-  def aa159; @aa159 ||= sheet7.aa159/(sheet12.c13*sheet11.e79); end
-  def ab159; @ab159 ||= sheet7.ab159/(sheet12.c13*sheet11.e79); end
-  def ac159; @ac159 ||= sheet7.ac159/(sheet12.c13*sheet11.e79); end
-  def ad159; @ad159 ||= sheet7.ad159/(sheet12.c13*sheet11.e79); end
-  def ae159; @ae159 ||= sheet7.ae159/(sheet12.c13*sheet11.e79); end
-  def af159; @af159 ||= sheet7.af159/(sheet12.c13*sheet11.e79); end
-  def ag159; @ag159 ||= sheet7.ag159/(sheet12.c13*sheet11.e79); end
-  def ai159; @ai159 ||= sheet7.ai159/(sheet12.c13*sheet11.e79); end
-  def aj159; @aj159 ||= sheet7.aj159/(sheet12.c13*sheet11.e79); end
-  def ak159; @ak159 ||= sheet7.ak159/(sheet12.c13*sheet11.e79); end
-  def al159; @al159 ||= sheet7.al159/(sheet12.c13*sheet11.e79); end
-  def am159; @am159 ||= sheet7.am159/(sheet12.c13*sheet11.e79); end
-  def an159; @an159 ||= sheet7.an159/(sheet12.c13*sheet11.e79); end
-  def ao159; @ao159 ||= sheet7.ao159/(sheet12.c13*sheet11.e79); end
-  def ap159; @ap159 ||= sheet7.ap159/(sheet12.c13*sheet11.e79); end
-  def aq159; @aq159 ||= sheet7.aq159/(sheet12.c13*sheet11.e79); end
-  def as159; @as159 ||= average(a('ai159','aq159')); end
-  def at159; @at159 ||= (sumproduct(a('aj159','aq159'),sheet12.a('d28','k28'))*5.0)+ai159; end
-  def av159; 0.0; end
-  def aw159; 5.0; end
-  def ay159; @ay159 ||= sheet7.ay159/(sheet12.c13*sheet11.e79); end
-  def az159; @az159 ||= sheet7.az159/(sheet12.c13*sheet11.e79); end
-  def ba159; @ba159 ||= sheet7.ba159/(sheet12.c13*sheet11.e79); end
-  def bb159; @bb159 ||= sheet7.bb159/(sheet12.c13*sheet11.e79); end
-  def bc159; @bc159 ||= sheet7.bc159/(sheet12.c13*sheet11.e79); end
-  def bd159; @bd159 ||= sheet7.bd159/(sheet12.c13*sheet11.e79); end
-  def be159; @be159 ||= sheet7.be159/(sheet12.c13*sheet11.e79); end
-  def bf159; @bf159 ||= sheet7.bf159/(sheet12.c13*sheet11.e79); end
-  def bg159; @bg159 ||= sheet7.bg159/(sheet12.c13*sheet11.e79); end
-  def bi159; @bi159 ||= sheet7.bi159/(sheet12.c13*sheet11.e79); end
-  def bj159; @bj159 ||= sheet7.bj159/(sheet12.c13*sheet11.e79); end
-  def bk159; @bk159 ||= sheet7.bk159/(sheet12.c13*sheet11.e79); end
-  def bl159; @bl159 ||= sheet7.bl159/(sheet12.c13*sheet11.e79); end
-  def bm159; @bm159 ||= sheet7.bm159/(sheet12.c13*sheet11.e79); end
-  def bn159; @bn159 ||= sheet7.bn159/(sheet12.c13*sheet11.e79); end
-  def bo159; @bo159 ||= sheet7.bo159/(sheet12.c13*sheet11.e79); end
-  def bp159; @bp159 ||= sheet7.bp159/(sheet12.c13*sheet11.e79); end
-  def bq159; @bq159 ||= sheet7.bq159/(sheet12.c13*sheet11.e79); end
-  def bs159; @bs159 ||= sheet7.bs159/(sheet12.c13*sheet11.e79); end
-  def bt159; @bt159 ||= sheet7.bt159/(sheet12.c13*sheet11.e79); end
-  def bu159; @bu159 ||= sheet7.bu159/(sheet12.c13*sheet11.e79); end
-  def bv159; @bv159 ||= sheet7.bv159/(sheet12.c13*sheet11.e79); end
-  def bw159; @bw159 ||= sheet7.bw159/(sheet12.c13*sheet11.e79); end
-  def bx159; @bx159 ||= sheet7.bx159/(sheet12.c13*sheet11.e79); end
-  def by159; @by159 ||= sheet7.by159/(sheet12.c13*sheet11.e79); end
-  def bz159; @bz159 ||= sheet7.bz159/(sheet12.c13*sheet11.e79); end
-  def ca159; @ca159 ||= sheet7.ca159/(sheet12.c13*sheet11.e79); end
-  def cc159; @cc159 ||= average(a('bs159','ca159')); end
-  def cd159; @cd159 ||= (sumproduct(a('bt159','ca159'),sheet12.a('d28','k28'))*5.0)+bs159; end
-  def cf159; @cf159 ||= sheet7.cf159/(sheet12.c13*sheet11.e79); end
-  def cg159; @cg159 ||= sheet7.cg159/(sheet12.c13*sheet11.e79); end
-  def ch159; @ch159 ||= sheet7.ch159/(sheet12.c13*sheet11.e79); end
-  def ci159; @ci159 ||= sheet7.ci159/(sheet12.c13*sheet11.e79); end
-  def cj159; @cj159 ||= sheet7.cj159/(sheet12.c13*sheet11.e79); end
-  def ck159; @ck159 ||= sheet7.ck159/(sheet12.c13*sheet11.e79); end
-  def cl159; @cl159 ||= sheet7.cl159/(sheet12.c13*sheet11.e79); end
-  def cm159; @cm159 ||= sheet7.cm159/(sheet12.c13*sheet11.e79); end
-  def cn159; @cn159 ||= sheet7.cn159/(sheet12.c13*sheet11.e79); end
-  def cp159; @cp159 ||= average(a('cf159','cn159')); end
-  def cq159; @cq159 ||= (sumproduct(a('cg159','cn159'),sheet12.a('d28','k28'))*5.0)+cf159; end
-  def cr159; @cr159 ||= excel_if(excel_comparison(abs(cd159-cq159-at159),"<",1.0),"ok","err"); end
-  def a160; "XVII.a"; end
-  def b160; "District heating effective demand"; end
-  def c160; "Heating"; end
-  def e160; @e160 ||= sheet7.e160/(sheet12.c13*sheet11.e79); end
-  def f160; @f160 ||= sheet7.f160/(sheet12.c13*sheet11.e79); end
-  def g160; @g160 ||= sheet7.g160/(sheet12.c13*sheet11.e79); end
-  def h160; @h160 ||= sheet7.h160/(sheet12.c13*sheet11.e79); end
-  def i160; @i160 ||= sheet7.i160/(sheet12.c13*sheet11.e79); end
-  def j160; @j160 ||= sheet7.j160/(sheet12.c13*sheet11.e79); end
-  def k160; @k160 ||= sheet7.k160/(sheet12.c13*sheet11.e79); end
-  def l160; @l160 ||= sheet7.l160/(sheet12.c13*sheet11.e79); end
-  def m160; @m160 ||= sheet7.m160/(sheet12.c13*sheet11.e79); end
-  def o160; @o160 ||= sheet7.o160/(sheet12.c13*sheet11.e79); end
-  def p160; @p160 ||= sheet7.p160/(sheet12.c13*sheet11.e79); end
-  def q160; @q160 ||= sheet7.q160/(sheet12.c13*sheet11.e79); end
-  def r160; @r160 ||= sheet7.r160/(sheet12.c13*sheet11.e79); end
-  def s160; @s160 ||= sheet7.s160/(sheet12.c13*sheet11.e79); end
-  def t160; @t160 ||= sheet7.t160/(sheet12.c13*sheet11.e79); end
-  def u160; @u160 ||= sheet7.u160/(sheet12.c13*sheet11.e79); end
-  def v160; @v160 ||= sheet7.v160/(sheet12.c13*sheet11.e79); end
-  def w160; @w160 ||= sheet7.w160/(sheet12.c13*sheet11.e79); end
-  def y160; @y160 ||= sheet7.y160/(sheet12.c13*sheet11.e79); end
-  def z160; @z160 ||= sheet7.z160/(sheet12.c13*sheet11.e79); end
-  def aa160; @aa160 ||= sheet7.aa160/(sheet12.c13*sheet11.e79); end
-  def ab160; @ab160 ||= sheet7.ab160/(sheet12.c13*sheet11.e79); end
-  def ac160; @ac160 ||= sheet7.ac160/(sheet12.c13*sheet11.e79); end
-  def ad160; @ad160 ||= sheet7.ad160/(sheet12.c13*sheet11.e79); end
-  def ae160; @ae160 ||= sheet7.ae160/(sheet12.c13*sheet11.e79); end
-  def af160; @af160 ||= sheet7.af160/(sheet12.c13*sheet11.e79); end
-  def ag160; @ag160 ||= sheet7.ag160/(sheet12.c13*sheet11.e79); end
-  def ai160; @ai160 ||= sheet7.ai160/(sheet12.c13*sheet11.e79); end
-  def aj160; @aj160 ||= sheet7.aj160/(sheet12.c13*sheet11.e79); end
-  def ak160; @ak160 ||= sheet7.ak160/(sheet12.c13*sheet11.e79); end
-  def al160; @al160 ||= sheet7.al160/(sheet12.c13*sheet11.e79); end
-  def am160; @am160 ||= sheet7.am160/(sheet12.c13*sheet11.e79); end
-  def an160; @an160 ||= sheet7.an160/(sheet12.c13*sheet11.e79); end
-  def ao160; @ao160 ||= sheet7.ao160/(sheet12.c13*sheet11.e79); end
-  def ap160; @ap160 ||= sheet7.ap160/(sheet12.c13*sheet11.e79); end
-  def aq160; @aq160 ||= sheet7.aq160/(sheet12.c13*sheet11.e79); end
-  def as160; @as160 ||= average(a('ai160','aq160')); end
-  def at160; @at160 ||= (sumproduct(a('aj160','aq160'),sheet12.a('d28','k28'))*5.0)+ai160; end
-  def av160; 0.0; end
-  def aw160; 5.0; end
-  def ay160; @ay160 ||= sheet7.ay160/(sheet12.c13*sheet11.e79); end
-  def az160; @az160 ||= sheet7.az160/(sheet12.c13*sheet11.e79); end
-  def ba160; @ba160 ||= sheet7.ba160/(sheet12.c13*sheet11.e79); end
-  def bb160; @bb160 ||= sheet7.bb160/(sheet12.c13*sheet11.e79); end
-  def bc160; @bc160 ||= sheet7.bc160/(sheet12.c13*sheet11.e79); end
-  def bd160; @bd160 ||= sheet7.bd160/(sheet12.c13*sheet11.e79); end
-  def be160; @be160 ||= sheet7.be160/(sheet12.c13*sheet11.e79); end
-  def bf160; @bf160 ||= sheet7.bf160/(sheet12.c13*sheet11.e79); end
-  def bg160; @bg160 ||= sheet7.bg160/(sheet12.c13*sheet11.e79); end
-  def bi160; @bi160 ||= sheet7.bi160/(sheet12.c13*sheet11.e79); end
-  def bj160; @bj160 ||= sheet7.bj160/(sheet12.c13*sheet11.e79); end
-  def bk160; @bk160 ||= sheet7.bk160/(sheet12.c13*sheet11.e79); end
-  def bl160; @bl160 ||= sheet7.bl160/(sheet12.c13*sheet11.e79); end
-  def bm160; @bm160 ||= sheet7.bm160/(sheet12.c13*sheet11.e79); end
-  def bn160; @bn160 ||= sheet7.bn160/(sheet12.c13*sheet11.e79); end
-  def bo160; @bo160 ||= sheet7.bo160/(sheet12.c13*sheet11.e79); end
-  def bp160; @bp160 ||= sheet7.bp160/(sheet12.c13*sheet11.e79); end
-  def bq160; @bq160 ||= sheet7.bq160/(sheet12.c13*sheet11.e79); end
-  def bs160; @bs160 ||= sheet7.bs160/(sheet12.c13*sheet11.e79); end
-  def bt160; @bt160 ||= sheet7.bt160/(sheet12.c13*sheet11.e79); end
-  def bu160; @bu160 ||= sheet7.bu160/(sheet12.c13*sheet11.e79); end
-  def bv160; @bv160 ||= sheet7.bv160/(sheet12.c13*sheet11.e79); end
-  def bw160; @bw160 ||= sheet7.bw160/(sheet12.c13*sheet11.e79); end
-  def bx160; @bx160 ||= sheet7.bx160/(sheet12.c13*sheet11.e79); end
-  def by160; @by160 ||= sheet7.by160/(sheet12.c13*sheet11.e79); end
-  def bz160; @bz160 ||= sheet7.bz160/(sheet12.c13*sheet11.e79); end
-  def ca160; @ca160 ||= sheet7.ca160/(sheet12.c13*sheet11.e79); end
-  def cc160; @cc160 ||= average(a('bs160','ca160')); end
-  def cd160; @cd160 ||= (sumproduct(a('bt160','ca160'),sheet12.a('d28','k28'))*5.0)+bs160; end
-  def cf160; @cf160 ||= sheet7.cf160/(sheet12.c13*sheet11.e79); end
-  def cg160; @cg160 ||= sheet7.cg160/(sheet12.c13*sheet11.e79); end
-  def ch160; @ch160 ||= sheet7.ch160/(sheet12.c13*sheet11.e79); end
-  def ci160; @ci160 ||= sheet7.ci160/(sheet12.c13*sheet11.e79); end
-  def cj160; @cj160 ||= sheet7.cj160/(sheet12.c13*sheet11.e79); end
-  def ck160; @ck160 ||= sheet7.ck160/(sheet12.c13*sheet11.e79); end
-  def cl160; @cl160 ||= sheet7.cl160/(sheet12.c13*sheet11.e79); end
-  def cm160; @cm160 ||= sheet7.cm160/(sheet12.c13*sheet11.e79); end
-  def cn160; @cn160 ||= sheet7.cn160/(sheet12.c13*sheet11.e79); end
-  def cp160; @cp160 ||= average(a('cf160','cn160')); end
-  def cq160; @cq160 ||= (sumproduct(a('cg160','cn160'),sheet12.a('d28','k28'))*5.0)+cf160; end
-  def cr160; @cr160 ||= excel_if(excel_comparison(abs(cd160-cq160-at160),"<",1.0),"ok","err"); end
-  def a161; "XVIII.a"; end
-  def b161; "Storage of captured CO2"; end
-  def c161; "Business"; end
-  def e161; @e161 ||= sheet7.e161/(sheet12.c13*sheet11.e79); end
-  def f161; @f161 ||= sheet7.f161/(sheet12.c13*sheet11.e79); end
-  def g161; @g161 ||= sheet7.g161/(sheet12.c13*sheet11.e79); end
-  def h161; @h161 ||= sheet7.h161/(sheet12.c13*sheet11.e79); end
-  def i161; @i161 ||= sheet7.i161/(sheet12.c13*sheet11.e79); end
-  def j161; @j161 ||= sheet7.j161/(sheet12.c13*sheet11.e79); end
-  def k161; @k161 ||= sheet7.k161/(sheet12.c13*sheet11.e79); end
-  def l161; @l161 ||= sheet7.l161/(sheet12.c13*sheet11.e79); end
-  def m161; @m161 ||= sheet7.m161/(sheet12.c13*sheet11.e79); end
-  def o161; @o161 ||= sheet7.o161/(sheet12.c13*sheet11.e79); end
-  def p161; @p161 ||= sheet7.p161/(sheet12.c13*sheet11.e79); end
-  def q161; @q161 ||= sheet7.q161/(sheet12.c13*sheet11.e79); end
-  def r161; @r161 ||= sheet7.r161/(sheet12.c13*sheet11.e79); end
-  def s161; @s161 ||= sheet7.s161/(sheet12.c13*sheet11.e79); end
-  def t161; @t161 ||= sheet7.t161/(sheet12.c13*sheet11.e79); end
-  def u161; @u161 ||= sheet7.u161/(sheet12.c13*sheet11.e79); end
-  def v161; @v161 ||= sheet7.v161/(sheet12.c13*sheet11.e79); end
-  def w161; @w161 ||= sheet7.w161/(sheet12.c13*sheet11.e79); end
-  def y161; @y161 ||= sheet7.y161/(sheet12.c13*sheet11.e79); end
-  def z161; @z161 ||= sheet7.z161/(sheet12.c13*sheet11.e79); end
-  def aa161; @aa161 ||= sheet7.aa161/(sheet12.c13*sheet11.e79); end
-  def ab161; @ab161 ||= sheet7.ab161/(sheet12.c13*sheet11.e79); end
-  def ac161; @ac161 ||= sheet7.ac161/(sheet12.c13*sheet11.e79); end
-  def ad161; @ad161 ||= sheet7.ad161/(sheet12.c13*sheet11.e79); end
-  def ae161; @ae161 ||= sheet7.ae161/(sheet12.c13*sheet11.e79); end
-  def af161; @af161 ||= sheet7.af161/(sheet12.c13*sheet11.e79); end
-  def ag161; @ag161 ||= sheet7.ag161/(sheet12.c13*sheet11.e79); end
-  def ai161; @ai161 ||= sheet7.ai161/(sheet12.c13*sheet11.e79); end
-  def aj161; @aj161 ||= sheet7.aj161/(sheet12.c13*sheet11.e79); end
-  def ak161; @ak161 ||= sheet7.ak161/(sheet12.c13*sheet11.e79); end
-  def al161; @al161 ||= sheet7.al161/(sheet12.c13*sheet11.e79); end
-  def am161; @am161 ||= sheet7.am161/(sheet12.c13*sheet11.e79); end
-  def an161; @an161 ||= sheet7.an161/(sheet12.c13*sheet11.e79); end
-  def ao161; @ao161 ||= sheet7.ao161/(sheet12.c13*sheet11.e79); end
-  def ap161; @ap161 ||= sheet7.ap161/(sheet12.c13*sheet11.e79); end
-  def aq161; @aq161 ||= sheet7.aq161/(sheet12.c13*sheet11.e79); end
-  def as161; @as161 ||= average(a('ai161','aq161')); end
-  def at161; @at161 ||= (sumproduct(a('aj161','aq161'),sheet12.a('d28','k28'))*5.0)+ai161; end
-  def av161; 0.0; end
-  def aw161; 5.0; end
-  def ay161; @ay161 ||= sheet7.ay161/(sheet12.c13*sheet11.e79); end
-  def az161; @az161 ||= sheet7.az161/(sheet12.c13*sheet11.e79); end
-  def ba161; @ba161 ||= sheet7.ba161/(sheet12.c13*sheet11.e79); end
-  def bb161; @bb161 ||= sheet7.bb161/(sheet12.c13*sheet11.e79); end
-  def bc161; @bc161 ||= sheet7.bc161/(sheet12.c13*sheet11.e79); end
-  def bd161; @bd161 ||= sheet7.bd161/(sheet12.c13*sheet11.e79); end
-  def be161; @be161 ||= sheet7.be161/(sheet12.c13*sheet11.e79); end
-  def bf161; @bf161 ||= sheet7.bf161/(sheet12.c13*sheet11.e79); end
-  def bg161; @bg161 ||= sheet7.bg161/(sheet12.c13*sheet11.e79); end
-  def bi161; @bi161 ||= sheet7.bi161/(sheet12.c13*sheet11.e79); end
-  def bj161; @bj161 ||= sheet7.bj161/(sheet12.c13*sheet11.e79); end
-  def bk161; @bk161 ||= sheet7.bk161/(sheet12.c13*sheet11.e79); end
-  def bl161; @bl161 ||= sheet7.bl161/(sheet12.c13*sheet11.e79); end
-  def bm161; @bm161 ||= sheet7.bm161/(sheet12.c13*sheet11.e79); end
-  def bn161; @bn161 ||= sheet7.bn161/(sheet12.c13*sheet11.e79); end
-  def bo161; @bo161 ||= sheet7.bo161/(sheet12.c13*sheet11.e79); end
-  def bp161; @bp161 ||= sheet7.bp161/(sheet12.c13*sheet11.e79); end
-  def bq161; @bq161 ||= sheet7.bq161/(sheet12.c13*sheet11.e79); end
-  def bs161; @bs161 ||= sheet7.bs161/(sheet12.c13*sheet11.e79); end
-  def bt161; @bt161 ||= sheet7.bt161/(sheet12.c13*sheet11.e79); end
-  def bu161; @bu161 ||= sheet7.bu161/(sheet12.c13*sheet11.e79); end
-  def bv161; @bv161 ||= sheet7.bv161/(sheet12.c13*sheet11.e79); end
-  def bw161; @bw161 ||= sheet7.bw161/(sheet12.c13*sheet11.e79); end
-  def bx161; @bx161 ||= sheet7.bx161/(sheet12.c13*sheet11.e79); end
-  def by161; @by161 ||= sheet7.by161/(sheet12.c13*sheet11.e79); end
-  def bz161; @bz161 ||= sheet7.bz161/(sheet12.c13*sheet11.e79); end
-  def ca161; @ca161 ||= sheet7.ca161/(sheet12.c13*sheet11.e79); end
-  def cc161; @cc161 ||= average(a('bs161','ca161')); end
-  def cd161; @cd161 ||= (sumproduct(a('bt161','ca161'),sheet12.a('d28','k28'))*5.0)+bs161; end
-  def cf161; @cf161 ||= sheet7.cf161/(sheet12.c13*sheet11.e79); end
-  def cg161; @cg161 ||= sheet7.cg161/(sheet12.c13*sheet11.e79); end
-  def ch161; @ch161 ||= sheet7.ch161/(sheet12.c13*sheet11.e79); end
-  def ci161; @ci161 ||= sheet7.ci161/(sheet12.c13*sheet11.e79); end
-  def cj161; @cj161 ||= sheet7.cj161/(sheet12.c13*sheet11.e79); end
-  def ck161; @ck161 ||= sheet7.ck161/(sheet12.c13*sheet11.e79); end
-  def cl161; @cl161 ||= sheet7.cl161/(sheet12.c13*sheet11.e79); end
-  def cm161; @cm161 ||= sheet7.cm161/(sheet12.c13*sheet11.e79); end
-  def cn161; @cn161 ||= sheet7.cn161/(sheet12.c13*sheet11.e79); end
-  def cp161; @cp161 ||= average(a('cf161','cn161')); end
-  def cq161; @cq161 ||= (sumproduct(a('cg161','cn161'),sheet12.a('d28','k28'))*5.0)+cf161; end
-  def cr161; @cr161 ||= excel_if(excel_comparison(abs(cd161-cq161-at161),"<",1.0),"ok","err"); end
-  def a162; "Total"; end
-  def b162; "Total"; end
-  def c162; "Total"; end
-  def e162; @e162 ||= sheet7.e162/(sheet12.c13*sheet11.e79); end
-  def f162; @f162 ||= sheet7.f162/(sheet12.c13*sheet11.e79); end
-  def g162; @g162 ||= sheet7.g162/(sheet12.c13*sheet11.e79); end
-  def h162; @h162 ||= sheet7.h162/(sheet12.c13*sheet11.e79); end
-  def i162; @i162 ||= sheet7.i162/(sheet12.c13*sheet11.e79); end
-  def j162; @j162 ||= sheet7.j162/(sheet12.c13*sheet11.e79); end
-  def k162; @k162 ||= sheet7.k162/(sheet12.c13*sheet11.e79); end
-  def l162; @l162 ||= sheet7.l162/(sheet12.c13*sheet11.e79); end
-  def m162; @m162 ||= sheet7.m162/(sheet12.c13*sheet11.e79); end
-  def o162; @o162 ||= sheet7.o162/(sheet12.c13*sheet11.e79); end
-  def p162; @p162 ||= sheet7.p162/(sheet12.c13*sheet11.e79); end
-  def q162; @q162 ||= sheet7.q162/(sheet12.c13*sheet11.e79); end
-  def r162; @r162 ||= sheet7.r162/(sheet12.c13*sheet11.e79); end
-  def s162; @s162 ||= sheet7.s162/(sheet12.c13*sheet11.e79); end
-  def t162; @t162 ||= sheet7.t162/(sheet12.c13*sheet11.e79); end
-  def u162; @u162 ||= sheet7.u162/(sheet12.c13*sheet11.e79); end
-  def v162; @v162 ||= sheet7.v162/(sheet12.c13*sheet11.e79); end
-  def w162; @w162 ||= sheet7.w162/(sheet12.c13*sheet11.e79); end
-  def y162; @y162 ||= sheet7.y162/(sheet12.c13*sheet11.e79); end
-  def z162; @z162 ||= sheet7.z162/(sheet12.c13*sheet11.e79); end
-  def aa162; @aa162 ||= sheet7.aa162/(sheet12.c13*sheet11.e79); end
-  def ab162; @ab162 ||= sheet7.ab162/(sheet12.c13*sheet11.e79); end
-  def ac162; @ac162 ||= sheet7.ac162/(sheet12.c13*sheet11.e79); end
-  def ad162; @ad162 ||= sheet7.ad162/(sheet12.c13*sheet11.e79); end
-  def ae162; @ae162 ||= sheet7.ae162/(sheet12.c13*sheet11.e79); end
-  def af162; @af162 ||= sheet7.af162/(sheet12.c13*sheet11.e79); end
-  def ag162; @ag162 ||= sheet7.ag162/(sheet12.c13*sheet11.e79); end
-  def ai162; @ai162 ||= sheet7.ai162/(sheet12.c13*sheet11.e79); end
-  def aj162; @aj162 ||= sheet7.aj162/(sheet12.c13*sheet11.e79); end
-  def ak162; @ak162 ||= sheet7.ak162/(sheet12.c13*sheet11.e79); end
-  def al162; @al162 ||= sheet7.al162/(sheet12.c13*sheet11.e79); end
-  def am162; @am162 ||= sheet7.am162/(sheet12.c13*sheet11.e79); end
-  def an162; @an162 ||= sheet7.an162/(sheet12.c13*sheet11.e79); end
-  def ao162; @ao162 ||= sheet7.ao162/(sheet12.c13*sheet11.e79); end
-  def ap162; @ap162 ||= sheet7.ap162/(sheet12.c13*sheet11.e79); end
-  def aq162; @aq162 ||= sheet7.aq162/(sheet12.c13*sheet11.e79); end
-  def as162; @as162 ||= average(a('ai162','aq162')); end
-  def at162; @at162 ||= (sumproduct(a('aj162','aq162'),sheet12.a('d28','k28'))*5.0)+ai162; end
-  def ay162; @ay162 ||= sheet7.ay162/(sheet12.c13*sheet11.e79); end
-  def az162; @az162 ||= sheet7.az162/(sheet12.c13*sheet11.e79); end
-  def ba162; @ba162 ||= sheet7.ba162/(sheet12.c13*sheet11.e79); end
-  def bb162; @bb162 ||= sheet7.bb162/(sheet12.c13*sheet11.e79); end
-  def bc162; @bc162 ||= sheet7.bc162/(sheet12.c13*sheet11.e79); end
-  def bd162; @bd162 ||= sheet7.bd162/(sheet12.c13*sheet11.e79); end
-  def be162; @be162 ||= sheet7.be162/(sheet12.c13*sheet11.e79); end
-  def bf162; @bf162 ||= sheet7.bf162/(sheet12.c13*sheet11.e79); end
-  def bg162; @bg162 ||= sheet7.bg162/(sheet12.c13*sheet11.e79); end
-  def bi162; @bi162 ||= sheet7.bi162/(sheet12.c13*sheet11.e79); end
-  def bj162; @bj162 ||= sheet7.bj162/(sheet12.c13*sheet11.e79); end
-  def bk162; @bk162 ||= sheet7.bk162/(sheet12.c13*sheet11.e79); end
-  def bl162; @bl162 ||= sheet7.bl162/(sheet12.c13*sheet11.e79); end
-  def bm162; @bm162 ||= sheet7.bm162/(sheet12.c13*sheet11.e79); end
-  def bn162; @bn162 ||= sheet7.bn162/(sheet12.c13*sheet11.e79); end
-  def bo162; @bo162 ||= sheet7.bo162/(sheet12.c13*sheet11.e79); end
-  def bp162; @bp162 ||= sheet7.bp162/(sheet12.c13*sheet11.e79); end
-  def bq162; @bq162 ||= sheet7.bq162/(sheet12.c13*sheet11.e79); end
-  def bs162; @bs162 ||= sheet7.bs162/(sheet12.c13*sheet11.e79); end
-  def bt162; @bt162 ||= sheet7.bt162/(sheet12.c13*sheet11.e79); end
-  def bu162; @bu162 ||= sheet7.bu162/(sheet12.c13*sheet11.e79); end
-  def bv162; @bv162 ||= sheet7.bv162/(sheet12.c13*sheet11.e79); end
-  def bw162; @bw162 ||= sheet7.bw162/(sheet12.c13*sheet11.e79); end
-  def bx162; @bx162 ||= sheet7.bx162/(sheet12.c13*sheet11.e79); end
-  def by162; @by162 ||= sheet7.by162/(sheet12.c13*sheet11.e79); end
-  def bz162; @bz162 ||= sheet7.bz162/(sheet12.c13*sheet11.e79); end
-  def ca162; @ca162 ||= sheet7.ca162/(sheet12.c13*sheet11.e79); end
-  def cc162; @cc162 ||= average(a('bs162','ca162')); end
-  def cd162; @cd162 ||= (sumproduct(a('bt162','ca162'),sheet12.a('d28','k28'))*5.0)+bs162; end
-  def cf162; @cf162 ||= sheet7.cf162/(sheet12.c13*sheet11.e79); end
-  def cg162; @cg162 ||= sheet7.cg162/(sheet12.c13*sheet11.e79); end
-  def ch162; @ch162 ||= sheet7.ch162/(sheet12.c13*sheet11.e79); end
-  def ci162; @ci162 ||= sheet7.ci162/(sheet12.c13*sheet11.e79); end
-  def cj162; @cj162 ||= sheet7.cj162/(sheet12.c13*sheet11.e79); end
-  def ck162; @ck162 ||= sheet7.ck162/(sheet12.c13*sheet11.e79); end
-  def cl162; @cl162 ||= sheet7.cl162/(sheet12.c13*sheet11.e79); end
-  def cm162; @cm162 ||= sheet7.cm162/(sheet12.c13*sheet11.e79); end
-  def cn162; @cn162 ||= sheet7.cn162/(sheet12.c13*sheet11.e79); end
-  def cp162; @cp162 ||= average(a('cf162','cn162')); end
-  def cq162; @cq162 ||= sum(a('cq112','cq161')); end
-  def cr162; @cr162 ||= excel_if(excel_comparison(abs(cd162-cq162-at162),"<",1.0),"ok","err"); end
-  def cf163; @cf163 ||= excel_if(excel_comparison(round(bs162-cf162-ai162,0.0),"==",0.0),"ok",bs162-cf162-ai162); end
-  def cg163; @cg163 ||= excel_if(excel_comparison(round(bt162-cg162-aj162,0.0),"==",0.0),"ok",bt162-cg162-aj162); end
-  def ch163; @ch163 ||= excel_if(excel_comparison(round(bu162-ch162-ak162,0.0),"==",0.0),"ok",bu162-ch162-ak162); end
-  def ci163; @ci163 ||= excel_if(excel_comparison(round(bv162-ci162-al162,0.0),"==",0.0),"ok",bv162-ci162-al162); end
-  def cj163; @cj163 ||= excel_if(excel_comparison(round(bw162-cj162-am162,0.0),"==",0.0),"ok",bw162-cj162-am162); end
-  def ck163; @ck163 ||= excel_if(excel_comparison(round(bx162-ck162-an162,0.0),"==",0.0),"ok",bx162-ck162-an162); end
-  def cl163; @cl163 ||= excel_if(excel_comparison(round(by162-cl162-ao162,0.0),"==",0.0),"ok",by162-cl162-ao162); end
-  def cm163; @cm163 ||= excel_if(excel_comparison(round(bz162-cm162-ap162,0.0),"==",0.0),"ok",bz162-cm162-ap162); end
-  def cn163; @cn163 ||= excel_if(excel_comparison(round(ca162-cn162-aq162,0.0),"==",0.0),"ok",ca162-cn162-aq162); end
-  def cp163; @cp163 ||= excel_if(excel_comparison(round(cc162-cp162-as162,0.0),"==",0.0),"ok",cc162-cp162-as162); end
-  def cq163; @cq163 ||= excel_if(excel_comparison(round(cd162-cq162-at162,0.0),"==",0.0),"ok",cd162-cq162-at162); end
+  def b2; "Flows through the energy system (for producing an energy flow diagram)"; end
+  def q2; "Cross check of flows through the energy system (based on the idea that energy is transformed, but not destroyed)"; end
+  def n4; "TWh"; end
+  def s4; "Values flowing from the transformation"; end
+  def ad4; "Values flowing to the transformation"; end
+  def ao4; "Check that flows in equal flows out"; end
+  def c5; "From"; end
+  def d5; "To"; end
+  def e5; 2007.0; end
+  def f5; 2010.0; end
+  def g5; 2015.0; end
+  def h5; 2020.0; end
+  def i5; 2025.0; end
+  def j5; 2030.0; end
+  def k5; 2035.0; end
+  def l5; 2040.0; end
+  def m5; 2045.0; end
+  def n5; 2050.0; end
+  def r5; "Transformation"; end
+  def s5; 2007.0; end
+  def t5; 2010.0; end
+  def u5; 2015.0; end
+  def v5; 2020.0; end
+  def w5; 2025.0; end
+  def x5; 2030.0; end
+  def y5; 2035.0; end
+  def z5; 2040.0; end
+  def aa5; 2045.0; end
+  def ab5; 2050.0; end
+  def ad5; 2007.0; end
+  def ae5; 2010.0; end
+  def af5; 2015.0; end
+  def ag5; 2020.0; end
+  def ah5; 2025.0; end
+  def ai5; 2030.0; end
+  def aj5; 2035.0; end
+  def ak5; 2040.0; end
+  def al5; 2045.0; end
+  def am5; 2050.0; end
+  def ao5; 2007.0; end
+  def ap5; 2010.0; end
+  def aq5; 2015.0; end
+  def ar5; 2020.0; end
+  def as5; 2025.0; end
+  def at5; 2030.0; end
+  def au5; 2035.0; end
+  def av5; 2040.0; end
+  def aw5; 2045.0; end
+  def ax5; 2050.0; end
+  def c6; "Coal reserves"; end
+  def d6; "Coal"; end
+  def e6; @e6 ||= -sheet49.f214; end
+  def f6; @f6 ||= -sheet49.g214; end
+  def g6; @g6 ||= -sheet49.h214; end
+  def h6; @h6 ||= -sheet49.i214; end
+  def i6; @i6 ||= -sheet49.j214; end
+  def j6; @j6 ||= -sheet49.k214; end
+  def k6; @k6 ||= -sheet49.l214; end
+  def l6; @l6 ||= -sheet49.m214; end
+  def m6; @m6 ||= -sheet49.n214; end
+  def n6; @n6 ||= -sheet49.o214; end
+  def r6; "Agricultural 'waste'"; end
+  def s6; @s6 ||= sumif(a('c6','c95'),r6,a('e6','e95')); end
+  def t6; @t6 ||= sumif(a('c6','c95'),r6,a('f6','f95')); end
+  def u6; @u6 ||= sumif(a('c6','c95'),r6,a('g6','g95')); end
+  def v6; @v6 ||= sumif(a('c6','c95'),r6,a('h6','h95')); end
+  def w6; @w6 ||= sumif(a('c6','c95'),r6,a('i6','i95')); end
+  def x6; @x6 ||= sumif(a('c6','c95'),r6,a('j6','j95')); end
+  def y6; @y6 ||= sumif(a('c6','c95'),r6,a('k6','k95')); end
+  def z6; @z6 ||= sumif(a('c6','c95'),r6,a('l6','l95')); end
+  def aa6; @aa6 ||= sumif(a('c6','c95'),r6,a('m6','m95')); end
+  def ab6; @ab6 ||= sumif(a('c6','c95'),r6,a('n6','n95')); end
+  def ad6; @ad6 ||= sumif(a('d6','d95'),r6,a('e6','e95')); end
+  def ae6; @ae6 ||= sumif(a('d6','d95'),r6,a('f6','f95')); end
+  def af6; @af6 ||= sumif(a('d6','d95'),r6,a('g6','g95')); end
+  def ag6; @ag6 ||= sumif(a('d6','d95'),r6,a('h6','h95')); end
+  def ah6; @ah6 ||= sumif(a('d6','d95'),r6,a('i6','i95')); end
+  def ai6; @ai6 ||= sumif(a('d6','d95'),r6,a('j6','j95')); end
+  def aj6; @aj6 ||= sumif(a('d6','d95'),r6,a('k6','k95')); end
+  def ak6; @ak6 ||= sumif(a('d6','d95'),r6,a('l6','l95')); end
+  def al6; @al6 ||= sumif(a('d6','d95'),r6,a('m6','m95')); end
+  def am6; @am6 ||= sumif(a('d6','d95'),r6,a('n6','n95')); end
+  def c7; "Coal imports"; end
+  def d7; "Coal"; end
+  def e7; @e7 ||= max(-sheet51.f9,0.0); end
+  def f7; @f7 ||= max(-sheet51.g9,0.0); end
+  def g7; @g7 ||= max(-sheet51.h9,0.0); end
+  def h7; @h7 ||= max(-sheet51.i9,0.0); end
+  def i7; @i7 ||= max(-sheet51.j9,0.0); end
+  def j7; @j7 ||= max(-sheet51.k9,0.0); end
+  def k7; @k7 ||= max(-sheet51.l9,0.0); end
+  def l7; @l7 ||= max(-sheet51.m9,0.0); end
+  def m7; @m7 ||= max(-sheet51.n9,0.0); end
+  def n7; @n7 ||= max(-sheet51.o9,0.0); end
+  def r7; "Agriculture"; end
+  def s7; @s7 ||= sumif(a('c6','c95'),r7,a('e6','e95')); end
+  def t7; @t7 ||= sumif(a('c6','c95'),r7,a('f6','f95')); end
+  def u7; @u7 ||= sumif(a('c6','c95'),r7,a('g6','g95')); end
+  def v7; @v7 ||= sumif(a('c6','c95'),r7,a('h6','h95')); end
+  def w7; @w7 ||= sumif(a('c6','c95'),r7,a('i6','i95')); end
+  def x7; @x7 ||= sumif(a('c6','c95'),r7,a('j6','j95')); end
+  def y7; @y7 ||= sumif(a('c6','c95'),r7,a('k6','k95')); end
+  def z7; @z7 ||= sumif(a('c6','c95'),r7,a('l6','l95')); end
+  def aa7; @aa7 ||= sumif(a('c6','c95'),r7,a('m6','m95')); end
+  def ab7; @ab7 ||= sumif(a('c6','c95'),r7,a('n6','n95')); end
+  def ad7; @ad7 ||= sumif(a('d6','d95'),r7,a('e6','e95')); end
+  def ae7; @ae7 ||= sumif(a('d6','d95'),r7,a('f6','f95')); end
+  def af7; @af7 ||= sumif(a('d6','d95'),r7,a('g6','g95')); end
+  def ag7; @ag7 ||= sumif(a('d6','d95'),r7,a('h6','h95')); end
+  def ah7; @ah7 ||= sumif(a('d6','d95'),r7,a('i6','i95')); end
+  def ai7; @ai7 ||= sumif(a('d6','d95'),r7,a('j6','j95')); end
+  def aj7; @aj7 ||= sumif(a('d6','d95'),r7,a('k6','k95')); end
+  def ak7; @ak7 ||= sumif(a('d6','d95'),r7,a('l6','l95')); end
+  def al7; @al7 ||= sumif(a('d6','d95'),r7,a('m6','m95')); end
+  def am7; @am7 ||= sumif(a('d6','d95'),r7,a('n6','n95')); end
+  def c8; "Oil reserves"; end
+  def d8; "Oil"; end
+  def e8; @e8 ||= -sheet49.f215; end
+  def f8; @f8 ||= -sheet49.g215; end
+  def g8; @g8 ||= -sheet49.h215; end
+  def h8; @h8 ||= -sheet49.i215; end
+  def i8; @i8 ||= -sheet49.j215; end
+  def j8; @j8 ||= -sheet49.k215; end
+  def k8; @k8 ||= -sheet49.l215; end
+  def l8; @l8 ||= -sheet49.m215; end
+  def m8; @m8 ||= -sheet49.n215; end
+  def n8; @n8 ||= -sheet49.o215; end
+  def r8; "Bio-conversion"; end
+  def s8; @s8 ||= sumif(a('c6','c95'),r8,a('e6','e95')); end
+  def t8; @t8 ||= sumif(a('c6','c95'),r8,a('f6','f95')); end
+  def u8; @u8 ||= sumif(a('c6','c95'),r8,a('g6','g95')); end
+  def v8; @v8 ||= sumif(a('c6','c95'),r8,a('h6','h95')); end
+  def w8; @w8 ||= sumif(a('c6','c95'),r8,a('i6','i95')); end
+  def x8; @x8 ||= sumif(a('c6','c95'),r8,a('j6','j95')); end
+  def y8; @y8 ||= sumif(a('c6','c95'),r8,a('k6','k95')); end
+  def z8; @z8 ||= sumif(a('c6','c95'),r8,a('l6','l95')); end
+  def aa8; @aa8 ||= sumif(a('c6','c95'),r8,a('m6','m95')); end
+  def ab8; @ab8 ||= sumif(a('c6','c95'),r8,a('n6','n95')); end
+  def ad8; @ad8 ||= sumif(a('d6','d95'),r8,a('e6','e95')); end
+  def ae8; @ae8 ||= sumif(a('d6','d95'),r8,a('f6','f95')); end
+  def af8; @af8 ||= sumif(a('d6','d95'),r8,a('g6','g95')); end
+  def ag8; @ag8 ||= sumif(a('d6','d95'),r8,a('h6','h95')); end
+  def ah8; @ah8 ||= sumif(a('d6','d95'),r8,a('i6','i95')); end
+  def ai8; @ai8 ||= sumif(a('d6','d95'),r8,a('j6','j95')); end
+  def aj8; @aj8 ||= sumif(a('d6','d95'),r8,a('k6','k95')); end
+  def ak8; @ak8 ||= sumif(a('d6','d95'),r8,a('l6','l95')); end
+  def al8; @al8 ||= sumif(a('d6','d95'),r8,a('m6','m95')); end
+  def am8; @am8 ||= sumif(a('d6','d95'),r8,a('n6','n95')); end
+  def ao8; @ao8 ||= s8-ad8; end
+  def ap8; @ap8 ||= t8-ae8; end
+  def aq8; @aq8 ||= u8-af8; end
+  def ar8; @ar8 ||= v8-ag8; end
+  def as8; @as8 ||= w8-ah8; end
+  def at8; @at8 ||= x8-ai8; end
+  def au8; @au8 ||= y8-aj8; end
+  def av8; @av8 ||= z8-ak8; end
+  def aw8; @aw8 ||= aa8-al8; end
+  def ax8; @ax8 ||= ab8-am8; end
+  def c9; "Oil imports"; end
+  def d9; "Oil"; end
+  def e9; @e9 ||= max(-sheet51.f10,0.0); end
+  def f9; @f9 ||= max(-sheet51.g10,0.0); end
+  def g9; @g9 ||= max(-sheet51.h10,0.0); end
+  def h9; @h9 ||= max(-sheet51.i10,0.0); end
+  def i9; @i9 ||= max(-sheet51.j10,0.0); end
+  def j9; @j9 ||= max(-sheet51.k10,0.0); end
+  def k9; @k9 ||= max(-sheet51.l10,0.0); end
+  def l9; @l9 ||= max(-sheet51.m10,0.0); end
+  def m9; @m9 ||= max(-sheet51.n10,0.0); end
+  def n9; @n9 ||= max(-sheet51.o10,0.0); end
+  def r9; "Biofuel imports"; end
+  def s9; @s9 ||= sumif(a('c6','c95'),r9,a('e6','e95')); end
+  def t9; @t9 ||= sumif(a('c6','c95'),r9,a('f6','f95')); end
+  def u9; @u9 ||= sumif(a('c6','c95'),r9,a('g6','g95')); end
+  def v9; @v9 ||= sumif(a('c6','c95'),r9,a('h6','h95')); end
+  def w9; @w9 ||= sumif(a('c6','c95'),r9,a('i6','i95')); end
+  def x9; @x9 ||= sumif(a('c6','c95'),r9,a('j6','j95')); end
+  def y9; @y9 ||= sumif(a('c6','c95'),r9,a('k6','k95')); end
+  def z9; @z9 ||= sumif(a('c6','c95'),r9,a('l6','l95')); end
+  def aa9; @aa9 ||= sumif(a('c6','c95'),r9,a('m6','m95')); end
+  def ab9; @ab9 ||= sumif(a('c6','c95'),r9,a('n6','n95')); end
+  def ad9; @ad9 ||= sumif(a('d6','d95'),r9,a('e6','e95')); end
+  def ae9; @ae9 ||= sumif(a('d6','d95'),r9,a('f6','f95')); end
+  def af9; @af9 ||= sumif(a('d6','d95'),r9,a('g6','g95')); end
+  def ag9; @ag9 ||= sumif(a('d6','d95'),r9,a('h6','h95')); end
+  def ah9; @ah9 ||= sumif(a('d6','d95'),r9,a('i6','i95')); end
+  def ai9; @ai9 ||= sumif(a('d6','d95'),r9,a('j6','j95')); end
+  def aj9; @aj9 ||= sumif(a('d6','d95'),r9,a('k6','k95')); end
+  def ak9; @ak9 ||= sumif(a('d6','d95'),r9,a('l6','l95')); end
+  def al9; @al9 ||= sumif(a('d6','d95'),r9,a('m6','m95')); end
+  def am9; @am9 ||= sumif(a('d6','d95'),r9,a('n6','n95')); end
+  def c10; "Gas reserves"; end
+  def d10; "Natural Gas"; end
+  def e10; @e10 ||= -sheet49.f216; end
+  def f10; @f10 ||= -sheet49.g216; end
+  def g10; @g10 ||= -sheet49.h216; end
+  def h10; @h10 ||= -sheet49.i216; end
+  def i10; @i10 ||= -sheet49.j216; end
+  def j10; @j10 ||= -sheet49.k216; end
+  def k10; @k10 ||= -sheet49.l216; end
+  def l10; @l10 ||= -sheet49.m216; end
+  def m10; @m10 ||= -sheet49.n216; end
+  def n10; @n10 ||= -sheet49.o216; end
+  def r10; "Biomass imports"; end
+  def s10; @s10 ||= sumif(a('c6','c95'),r10,a('e6','e95')); end
+  def t10; @t10 ||= sumif(a('c6','c95'),r10,a('f6','f95')); end
+  def u10; @u10 ||= sumif(a('c6','c95'),r10,a('g6','g95')); end
+  def v10; @v10 ||= sumif(a('c6','c95'),r10,a('h6','h95')); end
+  def w10; @w10 ||= sumif(a('c6','c95'),r10,a('i6','i95')); end
+  def x10; @x10 ||= sumif(a('c6','c95'),r10,a('j6','j95')); end
+  def y10; @y10 ||= sumif(a('c6','c95'),r10,a('k6','k95')); end
+  def z10; @z10 ||= sumif(a('c6','c95'),r10,a('l6','l95')); end
+  def aa10; @aa10 ||= sumif(a('c6','c95'),r10,a('m6','m95')); end
+  def ab10; @ab10 ||= sumif(a('c6','c95'),r10,a('n6','n95')); end
+  def ad10; @ad10 ||= sumif(a('d6','d95'),r10,a('e6','e95')); end
+  def ae10; @ae10 ||= sumif(a('d6','d95'),r10,a('f6','f95')); end
+  def af10; @af10 ||= sumif(a('d6','d95'),r10,a('g6','g95')); end
+  def ag10; @ag10 ||= sumif(a('d6','d95'),r10,a('h6','h95')); end
+  def ah10; @ah10 ||= sumif(a('d6','d95'),r10,a('i6','i95')); end
+  def ai10; @ai10 ||= sumif(a('d6','d95'),r10,a('j6','j95')); end
+  def aj10; @aj10 ||= sumif(a('d6','d95'),r10,a('k6','k95')); end
+  def ak10; @ak10 ||= sumif(a('d6','d95'),r10,a('l6','l95')); end
+  def al10; @al10 ||= sumif(a('d6','d95'),r10,a('m6','m95')); end
+  def am10; @am10 ||= sumif(a('d6','d95'),r10,a('n6','n95')); end
+  def c11; "Gas imports"; end
+  def d11; "Natural Gas"; end
+  def e11; @e11 ||= max(-sheet51.f11,0.0); end
+  def f11; @f11 ||= max(-sheet51.g11,0.0); end
+  def g11; @g11 ||= max(-sheet51.h11,0.0); end
+  def h11; @h11 ||= max(-sheet51.i11,0.0); end
+  def i11; @i11 ||= max(-sheet51.j11,0.0); end
+  def j11; @j11 ||= max(-sheet51.k11,0.0); end
+  def k11; @k11 ||= max(-sheet51.l11,0.0); end
+  def l11; @l11 ||= max(-sheet51.m11,0.0); end
+  def m11; @m11 ||= max(-sheet51.n11,0.0); end
+  def n11; @n11 ||= max(-sheet51.o11,0.0); end
+  def r11; "CHP"; end
+  def s11; @s11 ||= sumif(a('c6','c95'),r11,a('e6','e95')); end
+  def t11; @t11 ||= sumif(a('c6','c95'),r11,a('f6','f95')); end
+  def u11; @u11 ||= sumif(a('c6','c95'),r11,a('g6','g95')); end
+  def v11; @v11 ||= sumif(a('c6','c95'),r11,a('h6','h95')); end
+  def w11; @w11 ||= sumif(a('c6','c95'),r11,a('i6','i95')); end
+  def x11; @x11 ||= sumif(a('c6','c95'),r11,a('j6','j95')); end
+  def y11; @y11 ||= sumif(a('c6','c95'),r11,a('k6','k95')); end
+  def z11; @z11 ||= sumif(a('c6','c95'),r11,a('l6','l95')); end
+  def aa11; @aa11 ||= sumif(a('c6','c95'),r11,a('m6','m95')); end
+  def ab11; @ab11 ||= sumif(a('c6','c95'),r11,a('n6','n95')); end
+  def ad11; @ad11 ||= sumif(a('d6','d95'),r11,a('e6','e95')); end
+  def ae11; @ae11 ||= sumif(a('d6','d95'),r11,a('f6','f95')); end
+  def af11; @af11 ||= sumif(a('d6','d95'),r11,a('g6','g95')); end
+  def ag11; @ag11 ||= sumif(a('d6','d95'),r11,a('h6','h95')); end
+  def ah11; @ah11 ||= sumif(a('d6','d95'),r11,a('i6','i95')); end
+  def ai11; @ai11 ||= sumif(a('d6','d95'),r11,a('j6','j95')); end
+  def aj11; @aj11 ||= sumif(a('d6','d95'),r11,a('k6','k95')); end
+  def ak11; @ak11 ||= sumif(a('d6','d95'),r11,a('l6','l95')); end
+  def al11; @al11 ||= sumif(a('d6','d95'),r11,a('m6','m95')); end
+  def am11; @am11 ||= sumif(a('d6','d95'),r11,a('n6','n95')); end
+  def ao11; @ao11 ||= s11-ad11; end
+  def ap11; @ap11 ||= t11-ae11; end
+  def aq11; @aq11 ||= u11-af11; end
+  def ar11; @ar11 ||= v11-ag11; end
+  def as11; @as11 ||= w11-ah11; end
+  def at11; @at11 ||= x11-ai11; end
+  def au11; @au11 ||= y11-aj11; end
+  def av11; @av11 ||= z11-ak11; end
+  def aw11; @aw11 ||= aa11-al11; end
+  def ax11; @ax11 ||= ab11-am11; end
+  def c12; "UK land based bioenergy"; end
+  def d12; "Bio-conversion"; end
+  def e12; @e12 ||= -sheet31.f532; end
+  def f12; @f12 ||= -sheet31.g532; end
+  def g12; @g12 ||= -sheet31.h532; end
+  def h12; @h12 ||= -sheet31.i532; end
+  def i12; @i12 ||= -sheet31.j532; end
+  def j12; @j12 ||= -sheet31.k532; end
+  def k12; @k12 ||= -sheet31.l532; end
+  def l12; @l12 ||= -sheet31.m532; end
+  def m12; @m12 ||= -sheet31.n532; end
+  def n12; @n12 ||= -sheet31.o532; end
+  def r12; "Coal"; end
+  def s12; @s12 ||= sumif(a('c6','c95'),r12,a('e6','e95')); end
+  def t12; @t12 ||= sumif(a('c6','c95'),r12,a('f6','f95')); end
+  def u12; @u12 ||= sumif(a('c6','c95'),r12,a('g6','g95')); end
+  def v12; @v12 ||= sumif(a('c6','c95'),r12,a('h6','h95')); end
+  def w12; @w12 ||= sumif(a('c6','c95'),r12,a('i6','i95')); end
+  def x12; @x12 ||= sumif(a('c6','c95'),r12,a('j6','j95')); end
+  def y12; @y12 ||= sumif(a('c6','c95'),r12,a('k6','k95')); end
+  def z12; @z12 ||= sumif(a('c6','c95'),r12,a('l6','l95')); end
+  def aa12; @aa12 ||= sumif(a('c6','c95'),r12,a('m6','m95')); end
+  def ab12; @ab12 ||= sumif(a('c6','c95'),r12,a('n6','n95')); end
+  def ad12; @ad12 ||= sumif(a('d6','d95'),r12,a('e6','e95')); end
+  def ae12; @ae12 ||= sumif(a('d6','d95'),r12,a('f6','f95')); end
+  def af12; @af12 ||= sumif(a('d6','d95'),r12,a('g6','g95')); end
+  def ag12; @ag12 ||= sumif(a('d6','d95'),r12,a('h6','h95')); end
+  def ah12; @ah12 ||= sumif(a('d6','d95'),r12,a('i6','i95')); end
+  def ai12; @ai12 ||= sumif(a('d6','d95'),r12,a('j6','j95')); end
+  def aj12; @aj12 ||= sumif(a('d6','d95'),r12,a('k6','k95')); end
+  def ak12; @ak12 ||= sumif(a('d6','d95'),r12,a('l6','l95')); end
+  def al12; @al12 ||= sumif(a('d6','d95'),r12,a('m6','m95')); end
+  def am12; @am12 ||= sumif(a('d6','d95'),r12,a('n6','n95')); end
+  def ao12; @ao12 ||= s12-ad12; end
+  def ap12; @ap12 ||= t12-ae12; end
+  def aq12; @aq12 ||= u12-af12; end
+  def ar12; @ar12 ||= v12-ag12; end
+  def as12; @as12 ||= w12-ah12; end
+  def at12; @at12 ||= x12-ai12; end
+  def au12; @au12 ||= y12-aj12; end
+  def av12; @av12 ||= z12-ak12; end
+  def aw12; @aw12 ||= aa12-al12; end
+  def ax12; @ax12 ||= ab12-am12; end
+  def c13; "Marine algae"; end
+  def d13; "Bio-conversion"; end
+  def e13; @e13 ||= sheet33.f73; end
+  def f13; @f13 ||= sheet33.g73; end
+  def g13; @g13 ||= sheet33.h73; end
+  def h13; @h13 ||= sheet33.i73; end
+  def i13; @i13 ||= sheet33.j73; end
+  def j13; @j13 ||= sheet33.k73; end
+  def k13; @k13 ||= sheet33.l73; end
+  def l13; @l13 ||= sheet33.m73; end
+  def m13; @m13 ||= sheet33.n73; end
+  def n13; @n13 ||= sheet33.o73; end
+  def r13; "Coal imports"; end
+  def s13; @s13 ||= sumif(a('c6','c95'),r13,a('e6','e95')); end
+  def t13; @t13 ||= sumif(a('c6','c95'),r13,a('f6','f95')); end
+  def u13; @u13 ||= sumif(a('c6','c95'),r13,a('g6','g95')); end
+  def v13; @v13 ||= sumif(a('c6','c95'),r13,a('h6','h95')); end
+  def w13; @w13 ||= sumif(a('c6','c95'),r13,a('i6','i95')); end
+  def x13; @x13 ||= sumif(a('c6','c95'),r13,a('j6','j95')); end
+  def y13; @y13 ||= sumif(a('c6','c95'),r13,a('k6','k95')); end
+  def z13; @z13 ||= sumif(a('c6','c95'),r13,a('l6','l95')); end
+  def aa13; @aa13 ||= sumif(a('c6','c95'),r13,a('m6','m95')); end
+  def ab13; @ab13 ||= sumif(a('c6','c95'),r13,a('n6','n95')); end
+  def ad13; @ad13 ||= sumif(a('d6','d95'),r13,a('e6','e95')); end
+  def ae13; @ae13 ||= sumif(a('d6','d95'),r13,a('f6','f95')); end
+  def af13; @af13 ||= sumif(a('d6','d95'),r13,a('g6','g95')); end
+  def ag13; @ag13 ||= sumif(a('d6','d95'),r13,a('h6','h95')); end
+  def ah13; @ah13 ||= sumif(a('d6','d95'),r13,a('i6','i95')); end
+  def ai13; @ai13 ||= sumif(a('d6','d95'),r13,a('j6','j95')); end
+  def aj13; @aj13 ||= sumif(a('d6','d95'),r13,a('k6','k95')); end
+  def ak13; @ak13 ||= sumif(a('d6','d95'),r13,a('l6','l95')); end
+  def al13; @al13 ||= sumif(a('d6','d95'),r13,a('m6','m95')); end
+  def am13; @am13 ||= sumif(a('d6','d95'),r13,a('n6','n95')); end
+  def c14; "Agricultural 'waste'"; end
+  def d14; "Bio-conversion"; end
+  def e14; @e14 ||= -sheet31.f533; end
+  def f14; @f14 ||= -sheet31.g533; end
+  def g14; @g14 ||= -sheet31.h533; end
+  def h14; @h14 ||= -sheet31.i533; end
+  def i14; @i14 ||= -sheet31.j533; end
+  def j14; @j14 ||= -sheet31.k533; end
+  def k14; @k14 ||= -sheet31.l533; end
+  def l14; @l14 ||= -sheet31.m533; end
+  def m14; @m14 ||= -sheet31.n533; end
+  def n14; @n14 ||= -sheet31.o533; end
+  def r14; "Coal reserves"; end
+  def s14; @s14 ||= sumif(a('c6','c95'),r14,a('e6','e95')); end
+  def t14; @t14 ||= sumif(a('c6','c95'),r14,a('f6','f95')); end
+  def u14; @u14 ||= sumif(a('c6','c95'),r14,a('g6','g95')); end
+  def v14; @v14 ||= sumif(a('c6','c95'),r14,a('h6','h95')); end
+  def w14; @w14 ||= sumif(a('c6','c95'),r14,a('i6','i95')); end
+  def x14; @x14 ||= sumif(a('c6','c95'),r14,a('j6','j95')); end
+  def y14; @y14 ||= sumif(a('c6','c95'),r14,a('k6','k95')); end
+  def z14; @z14 ||= sumif(a('c6','c95'),r14,a('l6','l95')); end
+  def aa14; @aa14 ||= sumif(a('c6','c95'),r14,a('m6','m95')); end
+  def ab14; @ab14 ||= sumif(a('c6','c95'),r14,a('n6','n95')); end
+  def ad14; @ad14 ||= sumif(a('d6','d95'),r14,a('e6','e95')); end
+  def ae14; @ae14 ||= sumif(a('d6','d95'),r14,a('f6','f95')); end
+  def af14; @af14 ||= sumif(a('d6','d95'),r14,a('g6','g95')); end
+  def ag14; @ag14 ||= sumif(a('d6','d95'),r14,a('h6','h95')); end
+  def ah14; @ah14 ||= sumif(a('d6','d95'),r14,a('i6','i95')); end
+  def ai14; @ai14 ||= sumif(a('d6','d95'),r14,a('j6','j95')); end
+  def aj14; @aj14 ||= sumif(a('d6','d95'),r14,a('k6','k95')); end
+  def ak14; @ak14 ||= sumif(a('d6','d95'),r14,a('l6','l95')); end
+  def al14; @al14 ||= sumif(a('d6','d95'),r14,a('m6','m95')); end
+  def am14; @am14 ||= sumif(a('d6','d95'),r14,a('n6','n95')); end
+  def c15; "Other waste"; end
+  def d15; "Bio-conversion"; end
+  def e15; @e15 ||= -(sheet32.f528+sheet32.f529); end
+  def f15; @f15 ||= -(sheet32.g528+sheet32.g529); end
+  def g15; @g15 ||= -(sheet32.h528+sheet32.h529); end
+  def h15; @h15 ||= -(sheet32.i528+sheet32.i529); end
+  def i15; @i15 ||= -(sheet32.j528+sheet32.j529); end
+  def j15; @j15 ||= -(sheet32.k528+sheet32.k529); end
+  def k15; @k15 ||= -(sheet32.l528+sheet32.l529); end
+  def l15; @l15 ||= -(sheet32.m528+sheet32.m529); end
+  def m15; @m15 ||= -(sheet32.n528+sheet32.n529); end
+  def n15; @n15 ||= -(sheet32.o528+sheet32.o529); end
+  def r15; "District heating"; end
+  def s15; @s15 ||= sumif(a('c6','c95'),r15,a('e6','e95')); end
+  def t15; @t15 ||= sumif(a('c6','c95'),r15,a('f6','f95')); end
+  def u15; @u15 ||= sumif(a('c6','c95'),r15,a('g6','g95')); end
+  def v15; @v15 ||= sumif(a('c6','c95'),r15,a('h6','h95')); end
+  def w15; @w15 ||= sumif(a('c6','c95'),r15,a('i6','i95')); end
+  def x15; @x15 ||= sumif(a('c6','c95'),r15,a('j6','j95')); end
+  def y15; @y15 ||= sumif(a('c6','c95'),r15,a('k6','k95')); end
+  def z15; @z15 ||= sumif(a('c6','c95'),r15,a('l6','l95')); end
+  def aa15; @aa15 ||= sumif(a('c6','c95'),r15,a('m6','m95')); end
+  def ab15; @ab15 ||= sumif(a('c6','c95'),r15,a('n6','n95')); end
+  def ad15; @ad15 ||= sumif(a('d6','d95'),r15,a('e6','e95')); end
+  def ae15; @ae15 ||= sumif(a('d6','d95'),r15,a('f6','f95')); end
+  def af15; @af15 ||= sumif(a('d6','d95'),r15,a('g6','g95')); end
+  def ag15; @ag15 ||= sumif(a('d6','d95'),r15,a('h6','h95')); end
+  def ah15; @ah15 ||= sumif(a('d6','d95'),r15,a('i6','i95')); end
+  def ai15; @ai15 ||= sumif(a('d6','d95'),r15,a('j6','j95')); end
+  def aj15; @aj15 ||= sumif(a('d6','d95'),r15,a('k6','k95')); end
+  def ak15; @ak15 ||= sumif(a('d6','d95'),r15,a('l6','l95')); end
+  def al15; @al15 ||= sumif(a('d6','d95'),r15,a('m6','m95')); end
+  def am15; @am15 ||= sumif(a('d6','d95'),r15,a('n6','n95')); end
+  def ao15; @ao15 ||= s15-ad15; end
+  def ap15; @ap15 ||= t15-ae15; end
+  def aq15; @aq15 ||= u15-af15; end
+  def ar15; @ar15 ||= v15-ag15; end
+  def as15; @as15 ||= w15-ah15; end
+  def at15; @at15 ||= x15-ai15; end
+  def au15; @au15 ||= y15-aj15; end
+  def av15; @av15 ||= z15-ak15; end
+  def aw15; @aw15 ||= aa15-al15; end
+  def ax15; @ax15 ||= ab15-am15; end
+  def c16; "Other waste"; end
+  def d16; "Solid"; end
+  def e16; @e16 ||= sheet32.f529; end
+  def f16; @f16 ||= sheet32.g529; end
+  def g16; @g16 ||= sheet32.h529; end
+  def h16; @h16 ||= sheet32.i529; end
+  def i16; @i16 ||= sheet32.j529; end
+  def j16; @j16 ||= sheet32.k529; end
+  def k16; @k16 ||= sheet32.l529; end
+  def l16; @l16 ||= sheet32.m529; end
+  def m16; @m16 ||= sheet32.n529; end
+  def n16; @n16 ||= sheet32.o529; end
+  def r16; "Domestic aviation"; end
+  def s16; @s16 ||= sumif(a('c6','c95'),r16,a('e6','e95')); end
+  def t16; @t16 ||= sumif(a('c6','c95'),r16,a('f6','f95')); end
+  def u16; @u16 ||= sumif(a('c6','c95'),r16,a('g6','g95')); end
+  def v16; @v16 ||= sumif(a('c6','c95'),r16,a('h6','h95')); end
+  def w16; @w16 ||= sumif(a('c6','c95'),r16,a('i6','i95')); end
+  def x16; @x16 ||= sumif(a('c6','c95'),r16,a('j6','j95')); end
+  def y16; @y16 ||= sumif(a('c6','c95'),r16,a('k6','k95')); end
+  def z16; @z16 ||= sumif(a('c6','c95'),r16,a('l6','l95')); end
+  def aa16; @aa16 ||= sumif(a('c6','c95'),r16,a('m6','m95')); end
+  def ab16; @ab16 ||= sumif(a('c6','c95'),r16,a('n6','n95')); end
+  def ad16; @ad16 ||= sumif(a('d6','d95'),r16,a('e6','e95')); end
+  def ae16; @ae16 ||= sumif(a('d6','d95'),r16,a('f6','f95')); end
+  def af16; @af16 ||= sumif(a('d6','d95'),r16,a('g6','g95')); end
+  def ag16; @ag16 ||= sumif(a('d6','d95'),r16,a('h6','h95')); end
+  def ah16; @ah16 ||= sumif(a('d6','d95'),r16,a('i6','i95')); end
+  def ai16; @ai16 ||= sumif(a('d6','d95'),r16,a('j6','j95')); end
+  def aj16; @aj16 ||= sumif(a('d6','d95'),r16,a('k6','k95')); end
+  def ak16; @ak16 ||= sumif(a('d6','d95'),r16,a('l6','l95')); end
+  def al16; @al16 ||= sumif(a('d6','d95'),r16,a('m6','m95')); end
+  def am16; @am16 ||= sumif(a('d6','d95'),r16,a('n6','n95')); end
+  def c17; "Biomass imports"; end
+  def d17; "Solid"; end
+  def e17; @e17 ||= max(sheet30.f107,0.0); end
+  def f17; @f17 ||= max(sheet30.g107,0.0); end
+  def g17; @g17 ||= max(sheet30.h107,0.0); end
+  def h17; @h17 ||= max(sheet30.i107,0.0); end
+  def i17; @i17 ||= max(sheet30.j107,0.0); end
+  def j17; @j17 ||= max(sheet30.k107,0.0); end
+  def k17; @k17 ||= max(sheet30.l107,0.0); end
+  def l17; @l17 ||= max(sheet30.m107,0.0); end
+  def m17; @m17 ||= max(sheet30.n107,0.0); end
+  def n17; @n17 ||= max(sheet30.o107,0.0); end
+  def r17; "Electricity grid"; end
+  def s17; @s17 ||= sumif(a('c6','c95'),r17,a('e6','e95')); end
+  def t17; @t17 ||= sumif(a('c6','c95'),r17,a('f6','f95')); end
+  def u17; @u17 ||= sumif(a('c6','c95'),r17,a('g6','g95')); end
+  def v17; @v17 ||= sumif(a('c6','c95'),r17,a('h6','h95')); end
+  def w17; @w17 ||= sumif(a('c6','c95'),r17,a('i6','i95')); end
+  def x17; @x17 ||= sumif(a('c6','c95'),r17,a('j6','j95')); end
+  def y17; @y17 ||= sumif(a('c6','c95'),r17,a('k6','k95')); end
+  def z17; @z17 ||= sumif(a('c6','c95'),r17,a('l6','l95')); end
+  def aa17; @aa17 ||= sumif(a('c6','c95'),r17,a('m6','m95')); end
+  def ab17; @ab17 ||= sumif(a('c6','c95'),r17,a('n6','n95')); end
+  def ad17; @ad17 ||= sumif(a('d6','d95'),r17,a('e6','e95')); end
+  def ae17; @ae17 ||= sumif(a('d6','d95'),r17,a('f6','f95')); end
+  def af17; @af17 ||= sumif(a('d6','d95'),r17,a('g6','g95')); end
+  def ag17; @ag17 ||= sumif(a('d6','d95'),r17,a('h6','h95')); end
+  def ah17; @ah17 ||= sumif(a('d6','d95'),r17,a('i6','i95')); end
+  def ai17; @ai17 ||= sumif(a('d6','d95'),r17,a('j6','j95')); end
+  def aj17; @aj17 ||= sumif(a('d6','d95'),r17,a('k6','k95')); end
+  def ak17; @ak17 ||= sumif(a('d6','d95'),r17,a('l6','l95')); end
+  def al17; @al17 ||= sumif(a('d6','d95'),r17,a('m6','m95')); end
+  def am17; @am17 ||= sumif(a('d6','d95'),r17,a('n6','n95')); end
+  def ao17; @ao17 ||= s17-ad17; end
+  def ap17; @ap17 ||= t17-ae17; end
+  def aq17; @aq17 ||= u17-af17; end
+  def ar17; @ar17 ||= v17-ag17; end
+  def as17; @as17 ||= w17-ah17; end
+  def at17; @at17 ||= x17-ai17; end
+  def au17; @au17 ||= y17-aj17; end
+  def av17; @av17 ||= z17-ak17; end
+  def aw17; @aw17 ||= aa17-al17; end
+  def ax17; @ax17 ||= ab17-am17; end
+  def c18; "Biofuel imports"; end
+  def d18; "Liquid"; end
+  def e18; @e18 ||= max(sheet30.f108,0.0); end
+  def f18; @f18 ||= max(sheet30.g108,0.0); end
+  def g18; @g18 ||= max(sheet30.h108,0.0); end
+  def h18; @h18 ||= max(sheet30.i108,0.0); end
+  def i18; @i18 ||= max(sheet30.j108,0.0); end
+  def j18; @j18 ||= max(sheet30.k108,0.0); end
+  def k18; @k18 ||= max(sheet30.l108,0.0); end
+  def l18; @l18 ||= max(sheet30.m108,0.0); end
+  def m18; @m18 ||= max(sheet30.n108,0.0); end
+  def n18; @n18 ||= max(sheet30.o108,0.0); end
+  def r18; "Electricity imports"; end
+  def s18; @s18 ||= sumif(a('c6','c95'),r18,a('e6','e95')); end
+  def t18; @t18 ||= sumif(a('c6','c95'),r18,a('f6','f95')); end
+  def u18; @u18 ||= sumif(a('c6','c95'),r18,a('g6','g95')); end
+  def v18; @v18 ||= sumif(a('c6','c95'),r18,a('h6','h95')); end
+  def w18; @w18 ||= sumif(a('c6','c95'),r18,a('i6','i95')); end
+  def x18; @x18 ||= sumif(a('c6','c95'),r18,a('j6','j95')); end
+  def y18; @y18 ||= sumif(a('c6','c95'),r18,a('k6','k95')); end
+  def z18; @z18 ||= sumif(a('c6','c95'),r18,a('l6','l95')); end
+  def aa18; @aa18 ||= sumif(a('c6','c95'),r18,a('m6','m95')); end
+  def ab18; @ab18 ||= sumif(a('c6','c95'),r18,a('n6','n95')); end
+  def ad18; @ad18 ||= sumif(a('d6','d95'),r18,a('e6','e95')); end
+  def ae18; @ae18 ||= sumif(a('d6','d95'),r18,a('f6','f95')); end
+  def af18; @af18 ||= sumif(a('d6','d95'),r18,a('g6','g95')); end
+  def ag18; @ag18 ||= sumif(a('d6','d95'),r18,a('h6','h95')); end
+  def ah18; @ah18 ||= sumif(a('d6','d95'),r18,a('i6','i95')); end
+  def ai18; @ai18 ||= sumif(a('d6','d95'),r18,a('j6','j95')); end
+  def aj18; @aj18 ||= sumif(a('d6','d95'),r18,a('k6','k95')); end
+  def ak18; @ak18 ||= sumif(a('d6','d95'),r18,a('l6','l95')); end
+  def al18; @al18 ||= sumif(a('d6','d95'),r18,a('m6','m95')); end
+  def am18; @am18 ||= sumif(a('d6','d95'),r18,a('n6','n95')); end
+  def c19; "Coal"; end
+  def d19; "Solid"; end
+  def e19; @e19 ||= e6+e7; end
+  def f19; @f19 ||= f6+f7; end
+  def g19; @g19 ||= g6+g7; end
+  def h19; @h19 ||= h6+h7; end
+  def i19; @i19 ||= i6+i7; end
+  def j19; @j19 ||= j6+j7; end
+  def k19; @k19 ||= k6+k7; end
+  def l19; @l19 ||= l6+l7; end
+  def m19; @m19 ||= m6+m7; end
+  def n19; @n19 ||= n6+n7; end
+  def r19; "Gas"; end
+  def s19; @s19 ||= sumif(a('c6','c95'),r19,a('e6','e95')); end
+  def t19; @t19 ||= sumif(a('c6','c95'),r19,a('f6','f95')); end
+  def u19; @u19 ||= sumif(a('c6','c95'),r19,a('g6','g95')); end
+  def v19; @v19 ||= sumif(a('c6','c95'),r19,a('h6','h95')); end
+  def w19; @w19 ||= sumif(a('c6','c95'),r19,a('i6','i95')); end
+  def x19; @x19 ||= sumif(a('c6','c95'),r19,a('j6','j95')); end
+  def y19; @y19 ||= sumif(a('c6','c95'),r19,a('k6','k95')); end
+  def z19; @z19 ||= sumif(a('c6','c95'),r19,a('l6','l95')); end
+  def aa19; @aa19 ||= sumif(a('c6','c95'),r19,a('m6','m95')); end
+  def ab19; @ab19 ||= sumif(a('c6','c95'),r19,a('n6','n95')); end
+  def ad19; @ad19 ||= sumif(a('d6','d95'),r19,a('e6','e95')); end
+  def ae19; @ae19 ||= sumif(a('d6','d95'),r19,a('f6','f95')); end
+  def af19; @af19 ||= sumif(a('d6','d95'),r19,a('g6','g95')); end
+  def ag19; @ag19 ||= sumif(a('d6','d95'),r19,a('h6','h95')); end
+  def ah19; @ah19 ||= sumif(a('d6','d95'),r19,a('i6','i95')); end
+  def ai19; @ai19 ||= sumif(a('d6','d95'),r19,a('j6','j95')); end
+  def aj19; @aj19 ||= sumif(a('d6','d95'),r19,a('k6','k95')); end
+  def ak19; @ak19 ||= sumif(a('d6','d95'),r19,a('l6','l95')); end
+  def al19; @al19 ||= sumif(a('d6','d95'),r19,a('m6','m95')); end
+  def am19; @am19 ||= sumif(a('d6','d95'),r19,a('n6','n95')); end
+  def ao19; @ao19 ||= s19-ad19; end
+  def ap19; @ap19 ||= t19-ae19; end
+  def aq19; @aq19 ||= u19-af19; end
+  def ar19; @ar19 ||= v19-ag19; end
+  def as19; @as19 ||= w19-ah19; end
+  def at19; @at19 ||= x19-ai19; end
+  def au19; @au19 ||= y19-aj19; end
+  def av19; @av19 ||= z19-ak19; end
+  def aw19; @aw19 ||= aa19-al19; end
+  def ax19; @ax19 ||= ab19-am19; end
+  def c20; "Oil"; end
+  def d20; "Liquid"; end
+  def e20; @e20 ||= e8+e9; end
+  def f20; @f20 ||= f8+f9; end
+  def g20; @g20 ||= g8+g9; end
+  def h20; @h20 ||= h8+h9; end
+  def i20; @i20 ||= i8+i9; end
+  def j20; @j20 ||= j8+j9; end
+  def k20; @k20 ||= k8+k9; end
+  def l20; @l20 ||= l8+l9; end
+  def m20; @m20 ||= m8+m9; end
+  def n20; @n20 ||= n8+n9; end
+  def r20; "Gas imports"; end
+  def s20; @s20 ||= sumif(a('c6','c95'),r20,a('e6','e95')); end
+  def t20; @t20 ||= sumif(a('c6','c95'),r20,a('f6','f95')); end
+  def u20; @u20 ||= sumif(a('c6','c95'),r20,a('g6','g95')); end
+  def v20; @v20 ||= sumif(a('c6','c95'),r20,a('h6','h95')); end
+  def w20; @w20 ||= sumif(a('c6','c95'),r20,a('i6','i95')); end
+  def x20; @x20 ||= sumif(a('c6','c95'),r20,a('j6','j95')); end
+  def y20; @y20 ||= sumif(a('c6','c95'),r20,a('k6','k95')); end
+  def z20; @z20 ||= sumif(a('c6','c95'),r20,a('l6','l95')); end
+  def aa20; @aa20 ||= sumif(a('c6','c95'),r20,a('m6','m95')); end
+  def ab20; @ab20 ||= sumif(a('c6','c95'),r20,a('n6','n95')); end
+  def ad20; @ad20 ||= sumif(a('d6','d95'),r20,a('e6','e95')); end
+  def ae20; @ae20 ||= sumif(a('d6','d95'),r20,a('f6','f95')); end
+  def af20; @af20 ||= sumif(a('d6','d95'),r20,a('g6','g95')); end
+  def ag20; @ag20 ||= sumif(a('d6','d95'),r20,a('h6','h95')); end
+  def ah20; @ah20 ||= sumif(a('d6','d95'),r20,a('i6','i95')); end
+  def ai20; @ai20 ||= sumif(a('d6','d95'),r20,a('j6','j95')); end
+  def aj20; @aj20 ||= sumif(a('d6','d95'),r20,a('k6','k95')); end
+  def ak20; @ak20 ||= sumif(a('d6','d95'),r20,a('l6','l95')); end
+  def al20; @al20 ||= sumif(a('d6','d95'),r20,a('m6','m95')); end
+  def am20; @am20 ||= sumif(a('d6','d95'),r20,a('n6','n95')); end
+  def c21; "Natural Gas"; end
+  def d21; "Gas"; end
+  def e21; @e21 ||= e10+e11; end
+  def f21; @f21 ||= f10+f11; end
+  def g21; @g21 ||= g10+g11; end
+  def h21; @h21 ||= h10+h11; end
+  def i21; @i21 ||= i10+i11; end
+  def j21; @j21 ||= j10+j11; end
+  def k21; @k21 ||= k10+k11; end
+  def l21; @l21 ||= l10+l11; end
+  def m21; @m21 ||= m10+m11; end
+  def n21; @n21 ||= n10+n11; end
+  def r21; "Gas reserves"; end
+  def s21; @s21 ||= sumif(a('c6','c95'),r21,a('e6','e95')); end
+  def t21; @t21 ||= sumif(a('c6','c95'),r21,a('f6','f95')); end
+  def u21; @u21 ||= sumif(a('c6','c95'),r21,a('g6','g95')); end
+  def v21; @v21 ||= sumif(a('c6','c95'),r21,a('h6','h95')); end
+  def w21; @w21 ||= sumif(a('c6','c95'),r21,a('i6','i95')); end
+  def x21; @x21 ||= sumif(a('c6','c95'),r21,a('j6','j95')); end
+  def y21; @y21 ||= sumif(a('c6','c95'),r21,a('k6','k95')); end
+  def z21; @z21 ||= sumif(a('c6','c95'),r21,a('l6','l95')); end
+  def aa21; @aa21 ||= sumif(a('c6','c95'),r21,a('m6','m95')); end
+  def ab21; @ab21 ||= sumif(a('c6','c95'),r21,a('n6','n95')); end
+  def ad21; @ad21 ||= sumif(a('d6','d95'),r21,a('e6','e95')); end
+  def ae21; @ae21 ||= sumif(a('d6','d95'),r21,a('f6','f95')); end
+  def af21; @af21 ||= sumif(a('d6','d95'),r21,a('g6','g95')); end
+  def ag21; @ag21 ||= sumif(a('d6','d95'),r21,a('h6','h95')); end
+  def ah21; @ah21 ||= sumif(a('d6','d95'),r21,a('i6','i95')); end
+  def ai21; @ai21 ||= sumif(a('d6','d95'),r21,a('j6','j95')); end
+  def aj21; @aj21 ||= sumif(a('d6','d95'),r21,a('k6','k95')); end
+  def ak21; @ak21 ||= sumif(a('d6','d95'),r21,a('l6','l95')); end
+  def al21; @al21 ||= sumif(a('d6','d95'),r21,a('m6','m95')); end
+  def am21; @am21 ||= sumif(a('d6','d95'),r21,a('n6','n95')); end
+  def c22; "Solar"; end
+  def d22; "Solar PV"; end
+  def e22; @e22 ||= -sheet26.f110; end
+  def f22; @f22 ||= -sheet26.g110; end
+  def g22; @g22 ||= -sheet26.h110; end
+  def h22; @h22 ||= -sheet26.i110; end
+  def i22; @i22 ||= -sheet26.j110; end
+  def j22; @j22 ||= -sheet26.k110; end
+  def k22; @k22 ||= -sheet26.l110; end
+  def l22; @l22 ||= -sheet26.m110; end
+  def m22; @m22 ||= -sheet26.n110; end
+  def n22; @n22 ||= -sheet26.o110; end
+  def r22; "Geosequestration"; end
+  def s22; @s22 ||= sumif(a('c6','c95'),r22,a('e6','e95')); end
+  def t22; @t22 ||= sumif(a('c6','c95'),r22,a('f6','f95')); end
+  def u22; @u22 ||= sumif(a('c6','c95'),r22,a('g6','g95')); end
+  def v22; @v22 ||= sumif(a('c6','c95'),r22,a('h6','h95')); end
+  def w22; @w22 ||= sumif(a('c6','c95'),r22,a('i6','i95')); end
+  def x22; @x22 ||= sumif(a('c6','c95'),r22,a('j6','j95')); end
+  def y22; @y22 ||= sumif(a('c6','c95'),r22,a('k6','k95')); end
+  def z22; @z22 ||= sumif(a('c6','c95'),r22,a('l6','l95')); end
+  def aa22; @aa22 ||= sumif(a('c6','c95'),r22,a('m6','m95')); end
+  def ab22; @ab22 ||= sumif(a('c6','c95'),r22,a('n6','n95')); end
+  def ad22; @ad22 ||= sumif(a('d6','d95'),r22,a('e6','e95')); end
+  def ae22; @ae22 ||= sumif(a('d6','d95'),r22,a('f6','f95')); end
+  def af22; @af22 ||= sumif(a('d6','d95'),r22,a('g6','g95')); end
+  def ag22; @ag22 ||= sumif(a('d6','d95'),r22,a('h6','h95')); end
+  def ah22; @ah22 ||= sumif(a('d6','d95'),r22,a('i6','i95')); end
+  def ai22; @ai22 ||= sumif(a('d6','d95'),r22,a('j6','j95')); end
+  def aj22; @aj22 ||= sumif(a('d6','d95'),r22,a('k6','k95')); end
+  def ak22; @ak22 ||= sumif(a('d6','d95'),r22,a('l6','l95')); end
+  def al22; @al22 ||= sumif(a('d6','d95'),r22,a('m6','m95')); end
+  def am22; @am22 ||= sumif(a('d6','d95'),r22,a('n6','n95')); end
+  def c23; "Solar PV"; end
+  def d23; "Electricity grid"; end
+  def e23; @e23 ||= sheet26.f109; end
+  def f23; @f23 ||= sheet26.g109; end
+  def g23; @g23 ||= sheet26.h109; end
+  def h23; @h23 ||= sheet26.i109; end
+  def i23; @i23 ||= sheet26.j109; end
+  def j23; @j23 ||= sheet26.k109; end
+  def k23; @k23 ||= sheet26.l109; end
+  def l23; @l23 ||= sheet26.m109; end
+  def m23; @m23 ||= sheet26.n109; end
+  def n23; @n23 ||= sheet26.o109; end
+  def r23; "Geothermal"; end
+  def s23; @s23 ||= sumif(a('c6','c95'),r23,a('e6','e95')); end
+  def t23; @t23 ||= sumif(a('c6','c95'),r23,a('f6','f95')); end
+  def u23; @u23 ||= sumif(a('c6','c95'),r23,a('g6','g95')); end
+  def v23; @v23 ||= sumif(a('c6','c95'),r23,a('h6','h95')); end
+  def w23; @w23 ||= sumif(a('c6','c95'),r23,a('i6','i95')); end
+  def x23; @x23 ||= sumif(a('c6','c95'),r23,a('j6','j95')); end
+  def y23; @y23 ||= sumif(a('c6','c95'),r23,a('k6','k95')); end
+  def z23; @z23 ||= sumif(a('c6','c95'),r23,a('l6','l95')); end
+  def aa23; @aa23 ||= sumif(a('c6','c95'),r23,a('m6','m95')); end
+  def ab23; @ab23 ||= sumif(a('c6','c95'),r23,a('n6','n95')); end
+  def ad23; @ad23 ||= sumif(a('d6','d95'),r23,a('e6','e95')); end
+  def ae23; @ae23 ||= sumif(a('d6','d95'),r23,a('f6','f95')); end
+  def af23; @af23 ||= sumif(a('d6','d95'),r23,a('g6','g95')); end
+  def ag23; @ag23 ||= sumif(a('d6','d95'),r23,a('h6','h95')); end
+  def ah23; @ah23 ||= sumif(a('d6','d95'),r23,a('i6','i95')); end
+  def ai23; @ai23 ||= sumif(a('d6','d95'),r23,a('j6','j95')); end
+  def aj23; @aj23 ||= sumif(a('d6','d95'),r23,a('k6','k95')); end
+  def ak23; @ak23 ||= sumif(a('d6','d95'),r23,a('l6','l95')); end
+  def al23; @al23 ||= sumif(a('d6','d95'),r23,a('m6','m95')); end
+  def am23; @am23 ||= sumif(a('d6','d95'),r23,a('n6','n95')); end
+  def c24; "Solar"; end
+  def d24; "Solar Thermal"; end
+  def e24; @e24 ||= -sheet27.f102; end
+  def f24; @f24 ||= -sheet27.g102; end
+  def g24; @g24 ||= -sheet27.h102; end
+  def h24; @h24 ||= -sheet27.i102; end
+  def i24; @i24 ||= -sheet27.j102; end
+  def j24; @j24 ||= -sheet27.k102; end
+  def k24; @k24 ||= -sheet27.l102; end
+  def l24; @l24 ||= -sheet27.m102; end
+  def m24; @m24 ||= -sheet27.n102; end
+  def n24; @n24 ||= -sheet27.o102; end
+  def r24; "H2"; end
+  def s24; @s24 ||= sumif(a('c6','c95'),r24,a('e6','e95')); end
+  def t24; @t24 ||= sumif(a('c6','c95'),r24,a('f6','f95')); end
+  def u24; @u24 ||= sumif(a('c6','c95'),r24,a('g6','g95')); end
+  def v24; @v24 ||= sumif(a('c6','c95'),r24,a('h6','h95')); end
+  def w24; @w24 ||= sumif(a('c6','c95'),r24,a('i6','i95')); end
+  def x24; @x24 ||= sumif(a('c6','c95'),r24,a('j6','j95')); end
+  def y24; @y24 ||= sumif(a('c6','c95'),r24,a('k6','k95')); end
+  def z24; @z24 ||= sumif(a('c6','c95'),r24,a('l6','l95')); end
+  def aa24; @aa24 ||= sumif(a('c6','c95'),r24,a('m6','m95')); end
+  def ab24; @ab24 ||= sumif(a('c6','c95'),r24,a('n6','n95')); end
+  def ad24; @ad24 ||= sumif(a('d6','d95'),r24,a('e6','e95')); end
+  def ae24; @ae24 ||= sumif(a('d6','d95'),r24,a('f6','f95')); end
+  def af24; @af24 ||= sumif(a('d6','d95'),r24,a('g6','g95')); end
+  def ag24; @ag24 ||= sumif(a('d6','d95'),r24,a('h6','h95')); end
+  def ah24; @ah24 ||= sumif(a('d6','d95'),r24,a('i6','i95')); end
+  def ai24; @ai24 ||= sumif(a('d6','d95'),r24,a('j6','j95')); end
+  def aj24; @aj24 ||= sumif(a('d6','d95'),r24,a('k6','k95')); end
+  def ak24; @ak24 ||= sumif(a('d6','d95'),r24,a('l6','l95')); end
+  def al24; @al24 ||= sumif(a('d6','d95'),r24,a('m6','m95')); end
+  def am24; @am24 ||= sumif(a('d6','d95'),r24,a('n6','n95')); end
+  def ao24; @ao24 ||= s24-ad24; end
+  def ap24; @ap24 ||= t24-ae24; end
+  def aq24; @aq24 ||= u24-af24; end
+  def ar24; @ar24 ||= v24-ag24; end
+  def as24; @as24 ||= w24-ah24; end
+  def at24; @at24 ||= x24-ai24; end
+  def au24; @au24 ||= y24-aj24; end
+  def av24; @av24 ||= z24-ak24; end
+  def aw24; @aw24 ||= aa24-al24; end
+  def ax24; @ax24 ||= ab24-am24; end
+  def c25; "Bio-conversion"; end
+  def d25; "Solid"; end
+  def e25; @e25 ||= sheet29.f385; end
+  def f25; @f25 ||= sheet29.g385; end
+  def g25; @g25 ||= sheet29.h385; end
+  def h25; @h25 ||= sheet29.i385; end
+  def i25; @i25 ||= sheet29.j385; end
+  def j25; @j25 ||= sheet29.k385; end
+  def k25; @k25 ||= sheet29.l385; end
+  def l25; @l25 ||= sheet29.m385; end
+  def m25; @m25 ||= sheet29.n385; end
+  def n25; @n25 ||= sheet29.o385; end
+  def r25; "H2 conversion"; end
+  def s25; @s25 ||= sumif(a('c6','c95'),r25,a('e6','e95')); end
+  def t25; @t25 ||= sumif(a('c6','c95'),r25,a('f6','f95')); end
+  def u25; @u25 ||= sumif(a('c6','c95'),r25,a('g6','g95')); end
+  def v25; @v25 ||= sumif(a('c6','c95'),r25,a('h6','h95')); end
+  def w25; @w25 ||= sumif(a('c6','c95'),r25,a('i6','i95')); end
+  def x25; @x25 ||= sumif(a('c6','c95'),r25,a('j6','j95')); end
+  def y25; @y25 ||= sumif(a('c6','c95'),r25,a('k6','k95')); end
+  def z25; @z25 ||= sumif(a('c6','c95'),r25,a('l6','l95')); end
+  def aa25; @aa25 ||= sumif(a('c6','c95'),r25,a('m6','m95')); end
+  def ab25; @ab25 ||= sumif(a('c6','c95'),r25,a('n6','n95')); end
+  def ad25; @ad25 ||= sumif(a('d6','d95'),r25,a('e6','e95')); end
+  def ae25; @ae25 ||= sumif(a('d6','d95'),r25,a('f6','f95')); end
+  def af25; @af25 ||= sumif(a('d6','d95'),r25,a('g6','g95')); end
+  def ag25; @ag25 ||= sumif(a('d6','d95'),r25,a('h6','h95')); end
+  def ah25; @ah25 ||= sumif(a('d6','d95'),r25,a('i6','i95')); end
+  def ai25; @ai25 ||= sumif(a('d6','d95'),r25,a('j6','j95')); end
+  def aj25; @aj25 ||= sumif(a('d6','d95'),r25,a('k6','k95')); end
+  def ak25; @ak25 ||= sumif(a('d6','d95'),r25,a('l6','l95')); end
+  def al25; @al25 ||= sumif(a('d6','d95'),r25,a('m6','m95')); end
+  def am25; @am25 ||= sumif(a('d6','d95'),r25,a('n6','n95')); end
+  def ao25; @ao25 ||= s25-ad25; end
+  def ap25; @ap25 ||= t25-ae25; end
+  def aq25; @aq25 ||= u25-af25; end
+  def ar25; @ar25 ||= v25-ag25; end
+  def as25; @as25 ||= w25-ah25; end
+  def at25; @at25 ||= x25-ai25; end
+  def au25; @au25 ||= y25-aj25; end
+  def av25; @av25 ||= z25-ak25; end
+  def aw25; @aw25 ||= aa25-al25; end
+  def ax25; @ax25 ||= ab25-am25; end
+  def c26; "Bio-conversion"; end
+  def d26; "Liquid"; end
+  def e26; @e26 ||= sheet29.f386; end
+  def f26; @f26 ||= sheet29.g386; end
+  def g26; @g26 ||= sheet29.h386; end
+  def h26; @h26 ||= sheet29.i386; end
+  def i26; @i26 ||= sheet29.j386; end
+  def j26; @j26 ||= sheet29.k386; end
+  def k26; @k26 ||= sheet29.l386; end
+  def l26; @l26 ||= sheet29.m386; end
+  def m26; @m26 ||= sheet29.n386; end
+  def n26; @n26 ||= sheet29.o386; end
+  def r26; "Heating and cooling - commercial"; end
+  def s26; @s26 ||= sumif(a('c6','c95'),r26,a('e6','e95')); end
+  def t26; @t26 ||= sumif(a('c6','c95'),r26,a('f6','f95')); end
+  def u26; @u26 ||= sumif(a('c6','c95'),r26,a('g6','g95')); end
+  def v26; @v26 ||= sumif(a('c6','c95'),r26,a('h6','h95')); end
+  def w26; @w26 ||= sumif(a('c6','c95'),r26,a('i6','i95')); end
+  def x26; @x26 ||= sumif(a('c6','c95'),r26,a('j6','j95')); end
+  def y26; @y26 ||= sumif(a('c6','c95'),r26,a('k6','k95')); end
+  def z26; @z26 ||= sumif(a('c6','c95'),r26,a('l6','l95')); end
+  def aa26; @aa26 ||= sumif(a('c6','c95'),r26,a('m6','m95')); end
+  def ab26; @ab26 ||= sumif(a('c6','c95'),r26,a('n6','n95')); end
+  def ad26; @ad26 ||= sumif(a('d6','d95'),r26,a('e6','e95')); end
+  def ae26; @ae26 ||= sumif(a('d6','d95'),r26,a('f6','f95')); end
+  def af26; @af26 ||= sumif(a('d6','d95'),r26,a('g6','g95')); end
+  def ag26; @ag26 ||= sumif(a('d6','d95'),r26,a('h6','h95')); end
+  def ah26; @ah26 ||= sumif(a('d6','d95'),r26,a('i6','i95')); end
+  def ai26; @ai26 ||= sumif(a('d6','d95'),r26,a('j6','j95')); end
+  def aj26; @aj26 ||= sumif(a('d6','d95'),r26,a('k6','k95')); end
+  def ak26; @ak26 ||= sumif(a('d6','d95'),r26,a('l6','l95')); end
+  def al26; @al26 ||= sumif(a('d6','d95'),r26,a('m6','m95')); end
+  def am26; @am26 ||= sumif(a('d6','d95'),r26,a('n6','n95')); end
+  def c27; "Bio-conversion"; end
+  def d27; "Gas"; end
+  def e27; @e27 ||= sheet29.f387; end
+  def f27; @f27 ||= sheet29.g387; end
+  def g27; @g27 ||= sheet29.h387; end
+  def h27; @h27 ||= sheet29.i387; end
+  def i27; @i27 ||= sheet29.j387; end
+  def j27; @j27 ||= sheet29.k387; end
+  def k27; @k27 ||= sheet29.l387; end
+  def l27; @l27 ||= sheet29.m387; end
+  def m27; @m27 ||= sheet29.n387; end
+  def n27; @n27 ||= sheet29.o387; end
+  def r27; "Heating and cooling - homes"; end
+  def s27; @s27 ||= sumif(a('c6','c95'),r27,a('e6','e95')); end
+  def t27; @t27 ||= sumif(a('c6','c95'),r27,a('f6','f95')); end
+  def u27; @u27 ||= sumif(a('c6','c95'),r27,a('g6','g95')); end
+  def v27; @v27 ||= sumif(a('c6','c95'),r27,a('h6','h95')); end
+  def w27; @w27 ||= sumif(a('c6','c95'),r27,a('i6','i95')); end
+  def x27; @x27 ||= sumif(a('c6','c95'),r27,a('j6','j95')); end
+  def y27; @y27 ||= sumif(a('c6','c95'),r27,a('k6','k95')); end
+  def z27; @z27 ||= sumif(a('c6','c95'),r27,a('l6','l95')); end
+  def aa27; @aa27 ||= sumif(a('c6','c95'),r27,a('m6','m95')); end
+  def ab27; @ab27 ||= sumif(a('c6','c95'),r27,a('n6','n95')); end
+  def ad27; @ad27 ||= sumif(a('d6','d95'),r27,a('e6','e95')); end
+  def ae27; @ae27 ||= sumif(a('d6','d95'),r27,a('f6','f95')); end
+  def af27; @af27 ||= sumif(a('d6','d95'),r27,a('g6','g95')); end
+  def ag27; @ag27 ||= sumif(a('d6','d95'),r27,a('h6','h95')); end
+  def ah27; @ah27 ||= sumif(a('d6','d95'),r27,a('i6','i95')); end
+  def ai27; @ai27 ||= sumif(a('d6','d95'),r27,a('j6','j95')); end
+  def aj27; @aj27 ||= sumif(a('d6','d95'),r27,a('k6','k95')); end
+  def ak27; @ak27 ||= sumif(a('d6','d95'),r27,a('l6','l95')); end
+  def al27; @al27 ||= sumif(a('d6','d95'),r27,a('m6','m95')); end
+  def am27; @am27 ||= sumif(a('d6','d95'),r27,a('n6','n95')); end
+  def c28; "Bio-conversion"; end
+  def d28; "Losses"; end
+  def e28; @e28 ||= sheet29.f393; end
+  def f28; @f28 ||= sheet29.g393; end
+  def g28; @g28 ||= sheet29.h393; end
+  def h28; @h28 ||= sheet29.i393; end
+  def i28; @i28 ||= sheet29.j393; end
+  def j28; @j28 ||= sheet29.k393; end
+  def k28; @k28 ||= sheet29.l393; end
+  def l28; @l28 ||= sheet29.m393; end
+  def m28; @m28 ||= sheet29.n393; end
+  def n28; @n28 ||= sheet29.o393; end
+  def r28; "Hydro"; end
+  def s28; @s28 ||= sumif(a('c6','c95'),r28,a('e6','e95')); end
+  def t28; @t28 ||= sumif(a('c6','c95'),r28,a('f6','f95')); end
+  def u28; @u28 ||= sumif(a('c6','c95'),r28,a('g6','g95')); end
+  def v28; @v28 ||= sumif(a('c6','c95'),r28,a('h6','h95')); end
+  def w28; @w28 ||= sumif(a('c6','c95'),r28,a('i6','i95')); end
+  def x28; @x28 ||= sumif(a('c6','c95'),r28,a('j6','j95')); end
+  def y28; @y28 ||= sumif(a('c6','c95'),r28,a('k6','k95')); end
+  def z28; @z28 ||= sumif(a('c6','c95'),r28,a('l6','l95')); end
+  def aa28; @aa28 ||= sumif(a('c6','c95'),r28,a('m6','m95')); end
+  def ab28; @ab28 ||= sumif(a('c6','c95'),r28,a('n6','n95')); end
+  def ad28; @ad28 ||= sumif(a('d6','d95'),r28,a('e6','e95')); end
+  def ae28; @ae28 ||= sumif(a('d6','d95'),r28,a('f6','f95')); end
+  def af28; @af28 ||= sumif(a('d6','d95'),r28,a('g6','g95')); end
+  def ag28; @ag28 ||= sumif(a('d6','d95'),r28,a('h6','h95')); end
+  def ah28; @ah28 ||= sumif(a('d6','d95'),r28,a('i6','i95')); end
+  def ai28; @ai28 ||= sumif(a('d6','d95'),r28,a('j6','j95')); end
+  def aj28; @aj28 ||= sumif(a('d6','d95'),r28,a('k6','k95')); end
+  def ak28; @ak28 ||= sumif(a('d6','d95'),r28,a('l6','l95')); end
+  def al28; @al28 ||= sumif(a('d6','d95'),r28,a('m6','m95')); end
+  def am28; @am28 ||= sumif(a('d6','d95'),r28,a('n6','n95')); end
+  def c29; "Solid"; end
+  def d29; "Over generation / exports"; end
+  def e29; @e29 ||= max(sheet56.as109,0.0); end
+  def f29; @f29 ||= max(sheet57.as109,0.0); end
+  def g29; @g29 ||= max(sheet58.as109,0.0); end
+  def h29; @h29 ||= max(sheet59.as109,0.0); end
+  def i29; @i29 ||= max(sheet60.as109,0.0); end
+  def j29; @j29 ||= max(sheet61.as109,0.0); end
+  def k29; @k29 ||= max(sheet62.as109,0.0); end
+  def l29; @l29 ||= max(sheet63.as109,0.0); end
+  def m29; @m29 ||= max(sheet64.as109,0.0); end
+  def n29; @n29 ||= max(sheet65.as109,0.0); end
+  def r29; "Industry"; end
+  def s29; @s29 ||= sumif(a('c6','c95'),r29,a('e6','e95')); end
+  def t29; @t29 ||= sumif(a('c6','c95'),r29,a('f6','f95')); end
+  def u29; @u29 ||= sumif(a('c6','c95'),r29,a('g6','g95')); end
+  def v29; @v29 ||= sumif(a('c6','c95'),r29,a('h6','h95')); end
+  def w29; @w29 ||= sumif(a('c6','c95'),r29,a('i6','i95')); end
+  def x29; @x29 ||= sumif(a('c6','c95'),r29,a('j6','j95')); end
+  def y29; @y29 ||= sumif(a('c6','c95'),r29,a('k6','k95')); end
+  def z29; @z29 ||= sumif(a('c6','c95'),r29,a('l6','l95')); end
+  def aa29; @aa29 ||= sumif(a('c6','c95'),r29,a('m6','m95')); end
+  def ab29; @ab29 ||= sumif(a('c6','c95'),r29,a('n6','n95')); end
+  def ad29; @ad29 ||= sumif(a('d6','d95'),r29,a('e6','e95')); end
+  def ae29; @ae29 ||= sumif(a('d6','d95'),r29,a('f6','f95')); end
+  def af29; @af29 ||= sumif(a('d6','d95'),r29,a('g6','g95')); end
+  def ag29; @ag29 ||= sumif(a('d6','d95'),r29,a('h6','h95')); end
+  def ah29; @ah29 ||= sumif(a('d6','d95'),r29,a('i6','i95')); end
+  def ai29; @ai29 ||= sumif(a('d6','d95'),r29,a('j6','j95')); end
+  def aj29; @aj29 ||= sumif(a('d6','d95'),r29,a('k6','k95')); end
+  def ak29; @ak29 ||= sumif(a('d6','d95'),r29,a('l6','l95')); end
+  def al29; @al29 ||= sumif(a('d6','d95'),r29,a('m6','m95')); end
+  def am29; @am29 ||= sumif(a('d6','d95'),r29,a('n6','n95')); end
+  def c30; "Liquid"; end
+  def d30; "Over generation / exports"; end
+  def e30; @e30 ||= max(sheet56.ar109+sheet56.at109,0.0); end
+  def f30; @f30 ||= max(sheet57.ar109+sheet57.at109,0.0); end
+  def g30; @g30 ||= max(sheet58.ar109+sheet58.at109,0.0); end
+  def h30; @h30 ||= max(sheet59.ar109+sheet59.at109,0.0); end
+  def i30; @i30 ||= max(sheet60.ar109+sheet60.at109,0.0); end
+  def j30; @j30 ||= max(sheet61.ar109+sheet61.at109,0.0); end
+  def k30; @k30 ||= max(sheet62.ar109+sheet62.at109,0.0); end
+  def l30; @l30 ||= max(sheet63.ar109+sheet63.at109,0.0); end
+  def m30; @m30 ||= max(sheet64.ar109+sheet64.at109,0.0); end
+  def n30; @n30 ||= max(sheet65.ar109+sheet65.at109,0.0); end
+  def r30; "International aviation"; end
+  def s30; @s30 ||= sumif(a('c6','c95'),r30,a('e6','e95')); end
+  def t30; @t30 ||= sumif(a('c6','c95'),r30,a('f6','f95')); end
+  def u30; @u30 ||= sumif(a('c6','c95'),r30,a('g6','g95')); end
+  def v30; @v30 ||= sumif(a('c6','c95'),r30,a('h6','h95')); end
+  def w30; @w30 ||= sumif(a('c6','c95'),r30,a('i6','i95')); end
+  def x30; @x30 ||= sumif(a('c6','c95'),r30,a('j6','j95')); end
+  def y30; @y30 ||= sumif(a('c6','c95'),r30,a('k6','k95')); end
+  def z30; @z30 ||= sumif(a('c6','c95'),r30,a('l6','l95')); end
+  def aa30; @aa30 ||= sumif(a('c6','c95'),r30,a('m6','m95')); end
+  def ab30; @ab30 ||= sumif(a('c6','c95'),r30,a('n6','n95')); end
+  def ad30; @ad30 ||= sumif(a('d6','d95'),r30,a('e6','e95')); end
+  def ae30; @ae30 ||= sumif(a('d6','d95'),r30,a('f6','f95')); end
+  def af30; @af30 ||= sumif(a('d6','d95'),r30,a('g6','g95')); end
+  def ag30; @ag30 ||= sumif(a('d6','d95'),r30,a('h6','h95')); end
+  def ah30; @ah30 ||= sumif(a('d6','d95'),r30,a('i6','i95')); end
+  def ai30; @ai30 ||= sumif(a('d6','d95'),r30,a('j6','j95')); end
+  def aj30; @aj30 ||= sumif(a('d6','d95'),r30,a('k6','k95')); end
+  def ak30; @ak30 ||= sumif(a('d6','d95'),r30,a('l6','l95')); end
+  def al30; @al30 ||= sumif(a('d6','d95'),r30,a('m6','m95')); end
+  def am30; @am30 ||= sumif(a('d6','d95'),r30,a('n6','n95')); end
+  def c31; "Gas"; end
+  def d31; "Over generation / exports"; end
+  def e31; @e31 ||= max(sheet56.au109,0.0); end
+  def f31; @f31 ||= max(sheet57.au109,0.0); end
+  def g31; @g31 ||= max(sheet58.au109,0.0); end
+  def h31; @h31 ||= max(sheet59.au109,0.0); end
+  def i31; @i31 ||= max(sheet60.au109,0.0); end
+  def j31; @j31 ||= max(sheet61.au109,0.0); end
+  def k31; @k31 ||= max(sheet62.au109,0.0); end
+  def l31; @l31 ||= max(sheet63.au109,0.0); end
+  def m31; @m31 ||= max(sheet64.au109,0.0); end
+  def n31; @n31 ||= max(sheet65.au109,0.0); end
+  def r31; "International shipping"; end
+  def s31; @s31 ||= sumif(a('c6','c95'),r31,a('e6','e95')); end
+  def t31; @t31 ||= sumif(a('c6','c95'),r31,a('f6','f95')); end
+  def u31; @u31 ||= sumif(a('c6','c95'),r31,a('g6','g95')); end
+  def v31; @v31 ||= sumif(a('c6','c95'),r31,a('h6','h95')); end
+  def w31; @w31 ||= sumif(a('c6','c95'),r31,a('i6','i95')); end
+  def x31; @x31 ||= sumif(a('c6','c95'),r31,a('j6','j95')); end
+  def y31; @y31 ||= sumif(a('c6','c95'),r31,a('k6','k95')); end
+  def z31; @z31 ||= sumif(a('c6','c95'),r31,a('l6','l95')); end
+  def aa31; @aa31 ||= sumif(a('c6','c95'),r31,a('m6','m95')); end
+  def ab31; @ab31 ||= sumif(a('c6','c95'),r31,a('n6','n95')); end
+  def ad31; @ad31 ||= sumif(a('d6','d95'),r31,a('e6','e95')); end
+  def ae31; @ae31 ||= sumif(a('d6','d95'),r31,a('f6','f95')); end
+  def af31; @af31 ||= sumif(a('d6','d95'),r31,a('g6','g95')); end
+  def ag31; @ag31 ||= sumif(a('d6','d95'),r31,a('h6','h95')); end
+  def ah31; @ah31 ||= sumif(a('d6','d95'),r31,a('i6','i95')); end
+  def ai31; @ai31 ||= sumif(a('d6','d95'),r31,a('j6','j95')); end
+  def aj31; @aj31 ||= sumif(a('d6','d95'),r31,a('k6','k95')); end
+  def ak31; @ak31 ||= sumif(a('d6','d95'),r31,a('l6','l95')); end
+  def al31; @al31 ||= sumif(a('d6','d95'),r31,a('m6','m95')); end
+  def am31; @am31 ||= sumif(a('d6','d95'),r31,a('n6','n95')); end
+  def c32; "Solid"; end
+  def d32; "Thermal generation"; end
+  def e32; @e32 ||= -sheet18.f324-sheet19.f302; end
+  def f32; @f32 ||= -sheet18.g324-sheet19.g302; end
+  def g32; @g32 ||= -sheet18.h324-sheet19.h302; end
+  def h32; @h32 ||= -sheet18.i324-sheet19.i302; end
+  def i32; @i32 ||= -sheet18.j324-sheet19.j302; end
+  def j32; @j32 ||= -sheet18.k324-sheet19.k302; end
+  def k32; @k32 ||= -sheet18.l324-sheet19.l302; end
+  def l32; @l32 ||= -sheet18.m324-sheet19.m302; end
+  def m32; @m32 ||= -sheet18.n324-sheet19.n302; end
+  def n32; @n32 ||= -sheet18.o324-sheet19.o302; end
+  def r32; "Lighting & appliances - commercial"; end
+  def s32; @s32 ||= sumif(a('c6','c95'),r32,a('e6','e95')); end
+  def t32; @t32 ||= sumif(a('c6','c95'),r32,a('f6','f95')); end
+  def u32; @u32 ||= sumif(a('c6','c95'),r32,a('g6','g95')); end
+  def v32; @v32 ||= sumif(a('c6','c95'),r32,a('h6','h95')); end
+  def w32; @w32 ||= sumif(a('c6','c95'),r32,a('i6','i95')); end
+  def x32; @x32 ||= sumif(a('c6','c95'),r32,a('j6','j95')); end
+  def y32; @y32 ||= sumif(a('c6','c95'),r32,a('k6','k95')); end
+  def z32; @z32 ||= sumif(a('c6','c95'),r32,a('l6','l95')); end
+  def aa32; @aa32 ||= sumif(a('c6','c95'),r32,a('m6','m95')); end
+  def ab32; @ab32 ||= sumif(a('c6','c95'),r32,a('n6','n95')); end
+  def ad32; @ad32 ||= sumif(a('d6','d95'),r32,a('e6','e95')); end
+  def ae32; @ae32 ||= sumif(a('d6','d95'),r32,a('f6','f95')); end
+  def af32; @af32 ||= sumif(a('d6','d95'),r32,a('g6','g95')); end
+  def ag32; @ag32 ||= sumif(a('d6','d95'),r32,a('h6','h95')); end
+  def ah32; @ah32 ||= sumif(a('d6','d95'),r32,a('i6','i95')); end
+  def ai32; @ai32 ||= sumif(a('d6','d95'),r32,a('j6','j95')); end
+  def aj32; @aj32 ||= sumif(a('d6','d95'),r32,a('k6','k95')); end
+  def ak32; @ak32 ||= sumif(a('d6','d95'),r32,a('l6','l95')); end
+  def al32; @al32 ||= sumif(a('d6','d95'),r32,a('m6','m95')); end
+  def am32; @am32 ||= sumif(a('d6','d95'),r32,a('n6','n95')); end
+  def c33; "Liquid"; end
+  def d33; "Thermal generation"; end
+  def e33; @e33 ||= -sheet18.f325; end
+  def f33; @f33 ||= -sheet18.g325; end
+  def g33; @g33 ||= -sheet18.h325; end
+  def h33; @h33 ||= -sheet18.i325; end
+  def i33; @i33 ||= -sheet18.j325; end
+  def j33; @j33 ||= -sheet18.k325; end
+  def k33; @k33 ||= -sheet18.l325; end
+  def l33; @l33 ||= -sheet18.m325; end
+  def m33; @m33 ||= -sheet18.n325; end
+  def n33; @n33 ||= -sheet18.o325; end
+  def r33; "Lighting & appliances - homes"; end
+  def s33; @s33 ||= sumif(a('c6','c95'),r33,a('e6','e95')); end
+  def t33; @t33 ||= sumif(a('c6','c95'),r33,a('f6','f95')); end
+  def u33; @u33 ||= sumif(a('c6','c95'),r33,a('g6','g95')); end
+  def v33; @v33 ||= sumif(a('c6','c95'),r33,a('h6','h95')); end
+  def w33; @w33 ||= sumif(a('c6','c95'),r33,a('i6','i95')); end
+  def x33; @x33 ||= sumif(a('c6','c95'),r33,a('j6','j95')); end
+  def y33; @y33 ||= sumif(a('c6','c95'),r33,a('k6','k95')); end
+  def z33; @z33 ||= sumif(a('c6','c95'),r33,a('l6','l95')); end
+  def aa33; @aa33 ||= sumif(a('c6','c95'),r33,a('m6','m95')); end
+  def ab33; @ab33 ||= sumif(a('c6','c95'),r33,a('n6','n95')); end
+  def ad33; @ad33 ||= sumif(a('d6','d95'),r33,a('e6','e95')); end
+  def ae33; @ae33 ||= sumif(a('d6','d95'),r33,a('f6','f95')); end
+  def af33; @af33 ||= sumif(a('d6','d95'),r33,a('g6','g95')); end
+  def ag33; @ag33 ||= sumif(a('d6','d95'),r33,a('h6','h95')); end
+  def ah33; @ah33 ||= sumif(a('d6','d95'),r33,a('i6','i95')); end
+  def ai33; @ai33 ||= sumif(a('d6','d95'),r33,a('j6','j95')); end
+  def aj33; @aj33 ||= sumif(a('d6','d95'),r33,a('k6','k95')); end
+  def ak33; @ak33 ||= sumif(a('d6','d95'),r33,a('l6','l95')); end
+  def al33; @al33 ||= sumif(a('d6','d95'),r33,a('m6','m95')); end
+  def am33; @am33 ||= sumif(a('d6','d95'),r33,a('n6','n95')); end
+  def c34; "Gas"; end
+  def d34; "Thermal generation"; end
+  def e34; @e34 ||= -sheet18.f326-sheet19.f303; end
+  def f34; @f34 ||= -sheet18.g326-sheet19.g303; end
+  def g34; @g34 ||= -sheet18.h326-sheet19.h303; end
+  def h34; @h34 ||= -sheet18.i326-sheet19.i303; end
+  def i34; @i34 ||= -sheet18.j326-sheet19.j303; end
+  def j34; @j34 ||= -sheet18.k326-sheet19.k303; end
+  def k34; @k34 ||= -sheet18.l326-sheet19.l303; end
+  def l34; @l34 ||= -sheet18.m326-sheet19.m303; end
+  def m34; @m34 ||= -sheet18.n326-sheet19.n303; end
+  def n34; @n34 ||= -sheet18.o326-sheet19.o303; end
+  def r34; "Liquid"; end
+  def s34; @s34 ||= sumif(a('c6','c95'),r34,a('e6','e95')); end
+  def t34; @t34 ||= sumif(a('c6','c95'),r34,a('f6','f95')); end
+  def u34; @u34 ||= sumif(a('c6','c95'),r34,a('g6','g95')); end
+  def v34; @v34 ||= sumif(a('c6','c95'),r34,a('h6','h95')); end
+  def w34; @w34 ||= sumif(a('c6','c95'),r34,a('i6','i95')); end
+  def x34; @x34 ||= sumif(a('c6','c95'),r34,a('j6','j95')); end
+  def y34; @y34 ||= sumif(a('c6','c95'),r34,a('k6','k95')); end
+  def z34; @z34 ||= sumif(a('c6','c95'),r34,a('l6','l95')); end
+  def aa34; @aa34 ||= sumif(a('c6','c95'),r34,a('m6','m95')); end
+  def ab34; @ab34 ||= sumif(a('c6','c95'),r34,a('n6','n95')); end
+  def ad34; @ad34 ||= sumif(a('d6','d95'),r34,a('e6','e95')); end
+  def ae34; @ae34 ||= sumif(a('d6','d95'),r34,a('f6','f95')); end
+  def af34; @af34 ||= sumif(a('d6','d95'),r34,a('g6','g95')); end
+  def ag34; @ag34 ||= sumif(a('d6','d95'),r34,a('h6','h95')); end
+  def ah34; @ah34 ||= sumif(a('d6','d95'),r34,a('i6','i95')); end
+  def ai34; @ai34 ||= sumif(a('d6','d95'),r34,a('j6','j95')); end
+  def aj34; @aj34 ||= sumif(a('d6','d95'),r34,a('k6','k95')); end
+  def ak34; @ak34 ||= sumif(a('d6','d95'),r34,a('l6','l95')); end
+  def al34; @al34 ||= sumif(a('d6','d95'),r34,a('m6','m95')); end
+  def am34; @am34 ||= sumif(a('d6','d95'),r34,a('n6','n95')); end
+  def ao34; @ao34 ||= s34-ad34; end
+  def ap34; @ap34 ||= t34-ae34; end
+  def aq34; @aq34 ||= u34-af34; end
+  def ar34; @ar34 ||= v34-ag34; end
+  def as34; @as34 ||= w34-ah34; end
+  def at34; @at34 ||= x34-ai34; end
+  def au34; @au34 ||= y34-aj34; end
+  def av34; @av34 ||= z34-ak34; end
+  def aw34; @aw34 ||= aa34-al34; end
+  def ax34; @ax34 ||= ab34-am34; end
+  def c35; "Nuclear"; end
+  def d35; "Thermal generation"; end
+  def e35; 163.91620313701554; end
+  def f35; @f35 ||= -sheet20.g166; end
+  def g35; @g35 ||= -sheet20.h166; end
+  def h35; @h35 ||= -sheet20.i166; end
+  def i35; @i35 ||= -sheet20.j166; end
+  def j35; @j35 ||= -sheet20.k166; end
+  def k35; @k35 ||= -sheet20.l166; end
+  def l35; @l35 ||= -sheet20.m166; end
+  def m35; @m35 ||= -sheet20.n166; end
+  def n35; @n35 ||= -sheet20.o166; end
+  def r35; "Losses"; end
+  def s35; @s35 ||= sumif(a('c6','c95'),r35,a('e6','e95')); end
+  def t35; @t35 ||= sumif(a('c6','c95'),r35,a('f6','f95')); end
+  def u35; @u35 ||= sumif(a('c6','c95'),r35,a('g6','g95')); end
+  def v35; @v35 ||= sumif(a('c6','c95'),r35,a('h6','h95')); end
+  def w35; @w35 ||= sumif(a('c6','c95'),r35,a('i6','i95')); end
+  def x35; @x35 ||= sumif(a('c6','c95'),r35,a('j6','j95')); end
+  def y35; @y35 ||= sumif(a('c6','c95'),r35,a('k6','k95')); end
+  def z35; @z35 ||= sumif(a('c6','c95'),r35,a('l6','l95')); end
+  def aa35; @aa35 ||= sumif(a('c6','c95'),r35,a('m6','m95')); end
+  def ab35; @ab35 ||= sumif(a('c6','c95'),r35,a('n6','n95')); end
+  def ad35; @ad35 ||= sumif(a('d6','d95'),r35,a('e6','e95')); end
+  def ae35; @ae35 ||= sumif(a('d6','d95'),r35,a('f6','f95')); end
+  def af35; @af35 ||= sumif(a('d6','d95'),r35,a('g6','g95')); end
+  def ag35; @ag35 ||= sumif(a('d6','d95'),r35,a('h6','h95')); end
+  def ah35; @ah35 ||= sumif(a('d6','d95'),r35,a('i6','i95')); end
+  def ai35; @ai35 ||= sumif(a('d6','d95'),r35,a('j6','j95')); end
+  def aj35; @aj35 ||= sumif(a('d6','d95'),r35,a('k6','k95')); end
+  def ak35; @ak35 ||= sumif(a('d6','d95'),r35,a('l6','l95')); end
+  def al35; @al35 ||= sumif(a('d6','d95'),r35,a('m6','m95')); end
+  def am35; @am35 ||= sumif(a('d6','d95'),r35,a('n6','n95')); end
+  def c36; "Thermal generation"; end
+  def d36; "District heating"; end
+  def e36; @e36 ||= sheet52.f77; end
+  def f36; @f36 ||= sheet52.g77; end
+  def g36; @g36 ||= sheet52.h77; end
+  def h36; @h36 ||= sheet52.i77; end
+  def i36; @i36 ||= sheet52.j77; end
+  def j36; @j36 ||= sheet52.k77; end
+  def k36; @k36 ||= sheet52.l77; end
+  def l36; @l36 ||= sheet52.m77; end
+  def m36; @m36 ||= sheet52.n77; end
+  def n36; @n36 ||= sheet52.o77; end
+  def r36; "Marine algae"; end
+  def s36; @s36 ||= sumif(a('c6','c95'),r36,a('e6','e95')); end
+  def t36; @t36 ||= sumif(a('c6','c95'),r36,a('f6','f95')); end
+  def u36; @u36 ||= sumif(a('c6','c95'),r36,a('g6','g95')); end
+  def v36; @v36 ||= sumif(a('c6','c95'),r36,a('h6','h95')); end
+  def w36; @w36 ||= sumif(a('c6','c95'),r36,a('i6','i95')); end
+  def x36; @x36 ||= sumif(a('c6','c95'),r36,a('j6','j95')); end
+  def y36; @y36 ||= sumif(a('c6','c95'),r36,a('k6','k95')); end
+  def z36; @z36 ||= sumif(a('c6','c95'),r36,a('l6','l95')); end
+  def aa36; @aa36 ||= sumif(a('c6','c95'),r36,a('m6','m95')); end
+  def ab36; @ab36 ||= sumif(a('c6','c95'),r36,a('n6','n95')); end
+  def ad36; @ad36 ||= sumif(a('d6','d95'),r36,a('e6','e95')); end
+  def ae36; @ae36 ||= sumif(a('d6','d95'),r36,a('f6','f95')); end
+  def af36; @af36 ||= sumif(a('d6','d95'),r36,a('g6','g95')); end
+  def ag36; @ag36 ||= sumif(a('d6','d95'),r36,a('h6','h95')); end
+  def ah36; @ah36 ||= sumif(a('d6','d95'),r36,a('i6','i95')); end
+  def ai36; @ai36 ||= sumif(a('d6','d95'),r36,a('j6','j95')); end
+  def aj36; @aj36 ||= sumif(a('d6','d95'),r36,a('k6','k95')); end
+  def ak36; @ak36 ||= sumif(a('d6','d95'),r36,a('l6','l95')); end
+  def al36; @al36 ||= sumif(a('d6','d95'),r36,a('m6','m95')); end
+  def am36; @am36 ||= sumif(a('d6','d95'),r36,a('n6','n95')); end
+  def c37; "Thermal generation"; end
+  def d37; "Electricity grid"; end
+  def e37; @e37 ||= sheet18.f323+sheet19.f301+sheet20.f165+sheet52.f78; end
+  def f37; @f37 ||= sheet18.g323+sheet19.g301+sheet20.g165+sheet52.g78; end
+  def g37; @g37 ||= sheet18.h323+sheet19.h301+sheet20.h165+sheet52.h78; end
+  def h37; @h37 ||= sheet18.i323+sheet19.i301+sheet20.i165+sheet52.i78; end
+  def i37; @i37 ||= sheet18.j323+sheet19.j301+sheet20.j165+sheet52.j78; end
+  def j37; @j37 ||= sheet18.k323+sheet19.k301+sheet20.k165+sheet52.k78; end
+  def k37; @k37 ||= sheet18.l323+sheet19.l301+sheet20.l165+sheet52.l78; end
+  def l37; @l37 ||= sheet18.m323+sheet19.m301+sheet20.m165+sheet52.m78; end
+  def m37; @m37 ||= sheet18.n323+sheet19.n301+sheet20.n165+sheet52.n78; end
+  def n37; @n37 ||= sheet18.o323+sheet19.o301+sheet20.o165+sheet52.o78; end
+  def r37; "National navigation"; end
+  def s37; @s37 ||= sumif(a('c6','c95'),r37,a('e6','e95')); end
+  def t37; @t37 ||= sumif(a('c6','c95'),r37,a('f6','f95')); end
+  def u37; @u37 ||= sumif(a('c6','c95'),r37,a('g6','g95')); end
+  def v37; @v37 ||= sumif(a('c6','c95'),r37,a('h6','h95')); end
+  def w37; @w37 ||= sumif(a('c6','c95'),r37,a('i6','i95')); end
+  def x37; @x37 ||= sumif(a('c6','c95'),r37,a('j6','j95')); end
+  def y37; @y37 ||= sumif(a('c6','c95'),r37,a('k6','k95')); end
+  def z37; @z37 ||= sumif(a('c6','c95'),r37,a('l6','l95')); end
+  def aa37; @aa37 ||= sumif(a('c6','c95'),r37,a('m6','m95')); end
+  def ab37; @ab37 ||= sumif(a('c6','c95'),r37,a('n6','n95')); end
+  def ad37; @ad37 ||= sumif(a('d6','d95'),r37,a('e6','e95')); end
+  def ae37; @ae37 ||= sumif(a('d6','d95'),r37,a('f6','f95')); end
+  def af37; @af37 ||= sumif(a('d6','d95'),r37,a('g6','g95')); end
+  def ag37; @ag37 ||= sumif(a('d6','d95'),r37,a('h6','h95')); end
+  def ah37; @ah37 ||= sumif(a('d6','d95'),r37,a('i6','i95')); end
+  def ai37; @ai37 ||= sumif(a('d6','d95'),r37,a('j6','j95')); end
+  def aj37; @aj37 ||= sumif(a('d6','d95'),r37,a('k6','k95')); end
+  def ak37; @ak37 ||= sumif(a('d6','d95'),r37,a('l6','l95')); end
+  def al37; @al37 ||= sumif(a('d6','d95'),r37,a('m6','m95')); end
+  def am37; @am37 ||= sumif(a('d6','d95'),r37,a('n6','n95')); end
+  def c38; "Thermal generation"; end
+  def d38; "Losses"; end
+  def e38; @e38 ||= sheet18.f327+sheet19.f304+sheet20.f167+sheet52.f79+sheet18.f328+sheet19.f305+sheet20.f168; end
+  def f38; @f38 ||= sheet18.g327+sheet19.g304+sheet20.g167+sheet52.g79+sheet18.g328+sheet19.g305+sheet20.g168; end
+  def g38; @g38 ||= sheet18.h327+sheet19.h304+sheet20.h167+sheet52.h79+sheet18.h328+sheet19.h305+sheet20.h168; end
+  def h38; @h38 ||= sheet18.i327+sheet19.i304+sheet20.i167+sheet52.i79+sheet18.i328+sheet19.i305+sheet20.i168; end
+  def i38; @i38 ||= sheet18.j327+sheet19.j304+sheet20.j167+sheet52.j79+sheet18.j328+sheet19.j305+sheet20.j168; end
+  def j38; @j38 ||= sheet18.k327+sheet19.k304+sheet20.k167+sheet52.k79+sheet18.k328+sheet19.k305+sheet20.k168; end
+  def k38; @k38 ||= sheet18.l327+sheet19.l304+sheet20.l167+sheet52.l79+sheet18.l328+sheet19.l305+sheet20.l168; end
+  def l38; @l38 ||= sheet18.m327+sheet19.m304+sheet20.m167+sheet52.m79+sheet18.m328+sheet19.m305+sheet20.m168; end
+  def m38; @m38 ||= sheet18.n327+sheet19.n304+sheet20.n167+sheet52.n79+sheet18.n328+sheet19.n305+sheet20.n168; end
+  def n38; @n38 ||= sheet18.o327+sheet19.o304+sheet20.o167+sheet52.o79+sheet18.o328+sheet19.o305+sheet20.o168; end
+  def r38; "Natural Gas"; end
+  def s38; @s38 ||= sumif(a('c6','c95'),r38,a('e6','e95')); end
+  def t38; @t38 ||= sumif(a('c6','c95'),r38,a('f6','f95')); end
+  def u38; @u38 ||= sumif(a('c6','c95'),r38,a('g6','g95')); end
+  def v38; @v38 ||= sumif(a('c6','c95'),r38,a('h6','h95')); end
+  def w38; @w38 ||= sumif(a('c6','c95'),r38,a('i6','i95')); end
+  def x38; @x38 ||= sumif(a('c6','c95'),r38,a('j6','j95')); end
+  def y38; @y38 ||= sumif(a('c6','c95'),r38,a('k6','k95')); end
+  def z38; @z38 ||= sumif(a('c6','c95'),r38,a('l6','l95')); end
+  def aa38; @aa38 ||= sumif(a('c6','c95'),r38,a('m6','m95')); end
+  def ab38; @ab38 ||= sumif(a('c6','c95'),r38,a('n6','n95')); end
+  def ad38; @ad38 ||= sumif(a('d6','d95'),r38,a('e6','e95')); end
+  def ae38; @ae38 ||= sumif(a('d6','d95'),r38,a('f6','f95')); end
+  def af38; @af38 ||= sumif(a('d6','d95'),r38,a('g6','g95')); end
+  def ag38; @ag38 ||= sumif(a('d6','d95'),r38,a('h6','h95')); end
+  def ah38; @ah38 ||= sumif(a('d6','d95'),r38,a('i6','i95')); end
+  def ai38; @ai38 ||= sumif(a('d6','d95'),r38,a('j6','j95')); end
+  def aj38; @aj38 ||= sumif(a('d6','d95'),r38,a('k6','k95')); end
+  def ak38; @ak38 ||= sumif(a('d6','d95'),r38,a('l6','l95')); end
+  def al38; @al38 ||= sumif(a('d6','d95'),r38,a('m6','m95')); end
+  def am38; @am38 ||= sumif(a('d6','d95'),r38,a('n6','n95')); end
+  def ao38; @ao38 ||= s38-ad38; end
+  def ap38; @ap38 ||= t38-ae38; end
+  def aq38; @aq38 ||= u38-af38; end
+  def ar38; @ar38 ||= v38-ag38; end
+  def as38; @as38 ||= w38-ah38; end
+  def at38; @at38 ||= x38-ai38; end
+  def au38; @au38 ||= y38-aj38; end
+  def av38; @av38 ||= z38-ak38; end
+  def aw38; @aw38 ||= aa38-al38; end
+  def ax38; @ax38 ||= ab38-am38; end
+  def c39; "Solid"; end
+  def d39; "CHP"; end
+  def e39; @e39 ||= -sheet38.f1131-sheet39.f707; end
+  def f39; @f39 ||= -sheet38.g1131-sheet39.g707; end
+  def g39; @g39 ||= -sheet38.h1131-sheet39.h707; end
+  def h39; @h39 ||= -sheet38.i1131-sheet39.i707; end
+  def i39; @i39 ||= -sheet38.j1131-sheet39.j707; end
+  def j39; @j39 ||= -sheet38.k1131-sheet39.k707; end
+  def k39; @k39 ||= -sheet38.l1131-sheet39.l707; end
+  def l39; @l39 ||= -sheet38.m1131-sheet39.m707; end
+  def m39; @m39 ||= -sheet38.n1131-sheet39.n707; end
+  def n39; @n39 ||= -sheet38.o1131-sheet39.o707; end
+  def r39; "Nuclear"; end
+  def s39; @s39 ||= sumif(a('c6','c95'),r39,a('e6','e95')); end
+  def t39; @t39 ||= sumif(a('c6','c95'),r39,a('f6','f95')); end
+  def u39; @u39 ||= sumif(a('c6','c95'),r39,a('g6','g95')); end
+  def v39; @v39 ||= sumif(a('c6','c95'),r39,a('h6','h95')); end
+  def w39; @w39 ||= sumif(a('c6','c95'),r39,a('i6','i95')); end
+  def x39; @x39 ||= sumif(a('c6','c95'),r39,a('j6','j95')); end
+  def y39; @y39 ||= sumif(a('c6','c95'),r39,a('k6','k95')); end
+  def z39; @z39 ||= sumif(a('c6','c95'),r39,a('l6','l95')); end
+  def aa39; @aa39 ||= sumif(a('c6','c95'),r39,a('m6','m95')); end
+  def ab39; @ab39 ||= sumif(a('c6','c95'),r39,a('n6','n95')); end
+  def ad39; @ad39 ||= sumif(a('d6','d95'),r39,a('e6','e95')); end
+  def ae39; @ae39 ||= sumif(a('d6','d95'),r39,a('f6','f95')); end
+  def af39; @af39 ||= sumif(a('d6','d95'),r39,a('g6','g95')); end
+  def ag39; @ag39 ||= sumif(a('d6','d95'),r39,a('h6','h95')); end
+  def ah39; @ah39 ||= sumif(a('d6','d95'),r39,a('i6','i95')); end
+  def ai39; @ai39 ||= sumif(a('d6','d95'),r39,a('j6','j95')); end
+  def aj39; @aj39 ||= sumif(a('d6','d95'),r39,a('k6','k95')); end
+  def ak39; @ak39 ||= sumif(a('d6','d95'),r39,a('l6','l95')); end
+  def al39; @al39 ||= sumif(a('d6','d95'),r39,a('m6','m95')); end
+  def am39; @am39 ||= sumif(a('d6','d95'),r39,a('n6','n95')); end
+  def c40; "Liquid"; end
+  def d40; "CHP"; end
+  def e40; @e40 ||= -sheet38.f1132-sheet39.f708; end
+  def f40; @f40 ||= -sheet38.g1132-sheet39.g708; end
+  def g40; @g40 ||= -sheet38.h1132-sheet39.h708; end
+  def h40; @h40 ||= -sheet38.i1132-sheet39.i708; end
+  def i40; @i40 ||= -sheet38.j1132-sheet39.j708; end
+  def j40; @j40 ||= -sheet38.k1132-sheet39.k708; end
+  def k40; @k40 ||= -sheet38.l1132-sheet39.l708; end
+  def l40; @l40 ||= -sheet38.m1132-sheet39.m708; end
+  def m40; @m40 ||= -sheet38.n1132-sheet39.n708; end
+  def n40; @n40 ||= -sheet38.o1132-sheet39.o708; end
+  def r40; "Oil"; end
+  def s40; @s40 ||= sumif(a('c6','c95'),r40,a('e6','e95')); end
+  def t40; @t40 ||= sumif(a('c6','c95'),r40,a('f6','f95')); end
+  def u40; @u40 ||= sumif(a('c6','c95'),r40,a('g6','g95')); end
+  def v40; @v40 ||= sumif(a('c6','c95'),r40,a('h6','h95')); end
+  def w40; @w40 ||= sumif(a('c6','c95'),r40,a('i6','i95')); end
+  def x40; @x40 ||= sumif(a('c6','c95'),r40,a('j6','j95')); end
+  def y40; @y40 ||= sumif(a('c6','c95'),r40,a('k6','k95')); end
+  def z40; @z40 ||= sumif(a('c6','c95'),r40,a('l6','l95')); end
+  def aa40; @aa40 ||= sumif(a('c6','c95'),r40,a('m6','m95')); end
+  def ab40; @ab40 ||= sumif(a('c6','c95'),r40,a('n6','n95')); end
+  def ad40; @ad40 ||= sumif(a('d6','d95'),r40,a('e6','e95')); end
+  def ae40; @ae40 ||= sumif(a('d6','d95'),r40,a('f6','f95')); end
+  def af40; @af40 ||= sumif(a('d6','d95'),r40,a('g6','g95')); end
+  def ag40; @ag40 ||= sumif(a('d6','d95'),r40,a('h6','h95')); end
+  def ah40; @ah40 ||= sumif(a('d6','d95'),r40,a('i6','i95')); end
+  def ai40; @ai40 ||= sumif(a('d6','d95'),r40,a('j6','j95')); end
+  def aj40; @aj40 ||= sumif(a('d6','d95'),r40,a('k6','k95')); end
+  def ak40; @ak40 ||= sumif(a('d6','d95'),r40,a('l6','l95')); end
+  def al40; @al40 ||= sumif(a('d6','d95'),r40,a('m6','m95')); end
+  def am40; @am40 ||= sumif(a('d6','d95'),r40,a('n6','n95')); end
+  def ao40; @ao40 ||= s40-ad40; end
+  def ap40; @ap40 ||= t40-ae40; end
+  def aq40; @aq40 ||= u40-af40; end
+  def ar40; @ar40 ||= v40-ag40; end
+  def as40; @as40 ||= w40-ah40; end
+  def at40; @at40 ||= x40-ai40; end
+  def au40; @au40 ||= y40-aj40; end
+  def av40; @av40 ||= z40-ak40; end
+  def aw40; @aw40 ||= aa40-al40; end
+  def ax40; @ax40 ||= ab40-am40; end
+  def c41; "Gas"; end
+  def d41; "CHP"; end
+  def e41; @e41 ||= -sheet38.f1133-sheet39.f709; end
+  def f41; @f41 ||= -sheet38.g1133-sheet39.g709; end
+  def g41; @g41 ||= -sheet38.h1133-sheet39.h709; end
+  def h41; @h41 ||= -sheet38.i1133-sheet39.i709; end
+  def i41; @i41 ||= -sheet38.j1133-sheet39.j709; end
+  def j41; @j41 ||= -sheet38.k1133-sheet39.k709; end
+  def k41; @k41 ||= -sheet38.l1133-sheet39.l709; end
+  def l41; @l41 ||= -sheet38.m1133-sheet39.m709; end
+  def m41; @m41 ||= -sheet38.n1133-sheet39.n709; end
+  def n41; @n41 ||= -sheet38.o1133-sheet39.o709; end
+  def r41; "Oil imports"; end
+  def s41; @s41 ||= sumif(a('c6','c95'),r41,a('e6','e95')); end
+  def t41; @t41 ||= sumif(a('c6','c95'),r41,a('f6','f95')); end
+  def u41; @u41 ||= sumif(a('c6','c95'),r41,a('g6','g95')); end
+  def v41; @v41 ||= sumif(a('c6','c95'),r41,a('h6','h95')); end
+  def w41; @w41 ||= sumif(a('c6','c95'),r41,a('i6','i95')); end
+  def x41; @x41 ||= sumif(a('c6','c95'),r41,a('j6','j95')); end
+  def y41; @y41 ||= sumif(a('c6','c95'),r41,a('k6','k95')); end
+  def z41; @z41 ||= sumif(a('c6','c95'),r41,a('l6','l95')); end
+  def aa41; @aa41 ||= sumif(a('c6','c95'),r41,a('m6','m95')); end
+  def ab41; @ab41 ||= sumif(a('c6','c95'),r41,a('n6','n95')); end
+  def ad41; @ad41 ||= sumif(a('d6','d95'),r41,a('e6','e95')); end
+  def ae41; @ae41 ||= sumif(a('d6','d95'),r41,a('f6','f95')); end
+  def af41; @af41 ||= sumif(a('d6','d95'),r41,a('g6','g95')); end
+  def ag41; @ag41 ||= sumif(a('d6','d95'),r41,a('h6','h95')); end
+  def ah41; @ah41 ||= sumif(a('d6','d95'),r41,a('i6','i95')); end
+  def ai41; @ai41 ||= sumif(a('d6','d95'),r41,a('j6','j95')); end
+  def aj41; @aj41 ||= sumif(a('d6','d95'),r41,a('k6','k95')); end
+  def ak41; @ak41 ||= sumif(a('d6','d95'),r41,a('l6','l95')); end
+  def al41; @al41 ||= sumif(a('d6','d95'),r41,a('m6','m95')); end
+  def am41; @am41 ||= sumif(a('d6','d95'),r41,a('n6','n95')); end
+  def c42; "CHP"; end
+  def d42; "Electricity grid"; end
+  def e42; @e42 ||= sheet38.f1130+sheet39.f706; end
+  def f42; @f42 ||= sheet38.g1130+sheet39.g706; end
+  def g42; @g42 ||= sheet38.h1130+sheet39.h706; end
+  def h42; @h42 ||= sheet38.i1130+sheet39.i706; end
+  def i42; @i42 ||= sheet38.j1130+sheet39.j706; end
+  def j42; @j42 ||= sheet38.k1130+sheet39.k706; end
+  def k42; @k42 ||= sheet38.l1130+sheet39.l706; end
+  def l42; @l42 ||= sheet38.m1130+sheet39.m706; end
+  def m42; @m42 ||= sheet38.n1130+sheet39.n706; end
+  def n42; @n42 ||= sheet38.o1130+sheet39.o706; end
+  def r42; "Oil reserves"; end
+  def s42; @s42 ||= sumif(a('c6','c95'),r42,a('e6','e95')); end
+  def t42; @t42 ||= sumif(a('c6','c95'),r42,a('f6','f95')); end
+  def u42; @u42 ||= sumif(a('c6','c95'),r42,a('g6','g95')); end
+  def v42; @v42 ||= sumif(a('c6','c95'),r42,a('h6','h95')); end
+  def w42; @w42 ||= sumif(a('c6','c95'),r42,a('i6','i95')); end
+  def x42; @x42 ||= sumif(a('c6','c95'),r42,a('j6','j95')); end
+  def y42; @y42 ||= sumif(a('c6','c95'),r42,a('k6','k95')); end
+  def z42; @z42 ||= sumif(a('c6','c95'),r42,a('l6','l95')); end
+  def aa42; @aa42 ||= sumif(a('c6','c95'),r42,a('m6','m95')); end
+  def ab42; @ab42 ||= sumif(a('c6','c95'),r42,a('n6','n95')); end
+  def ad42; @ad42 ||= sumif(a('d6','d95'),r42,a('e6','e95')); end
+  def ae42; @ae42 ||= sumif(a('d6','d95'),r42,a('f6','f95')); end
+  def af42; @af42 ||= sumif(a('d6','d95'),r42,a('g6','g95')); end
+  def ag42; @ag42 ||= sumif(a('d6','d95'),r42,a('h6','h95')); end
+  def ah42; @ah42 ||= sumif(a('d6','d95'),r42,a('i6','i95')); end
+  def ai42; @ai42 ||= sumif(a('d6','d95'),r42,a('j6','j95')); end
+  def aj42; @aj42 ||= sumif(a('d6','d95'),r42,a('k6','k95')); end
+  def ak42; @ak42 ||= sumif(a('d6','d95'),r42,a('l6','l95')); end
+  def al42; @al42 ||= sumif(a('d6','d95'),r42,a('m6','m95')); end
+  def am42; @am42 ||= sumif(a('d6','d95'),r42,a('n6','n95')); end
+  def c43; "CHP"; end
+  def d43; "Losses"; end
+  def e43; @e43 ||= sheet38.f1138+sheet39.f713; end
+  def f43; @f43 ||= sheet38.g1138+sheet39.g713; end
+  def g43; @g43 ||= sheet38.h1138+sheet39.h713; end
+  def h43; @h43 ||= sheet38.i1138+sheet39.i713; end
+  def i43; @i43 ||= sheet38.j1138+sheet39.j713; end
+  def j43; @j43 ||= sheet38.k1138+sheet39.k713; end
+  def k43; @k43 ||= sheet38.l1138+sheet39.l713; end
+  def l43; @l43 ||= sheet38.m1138+sheet39.m713; end
+  def m43; @m43 ||= sheet38.n1138+sheet39.n713; end
+  def n43; @n43 ||= sheet38.o1138+sheet39.o713; end
+  def r43; "Other waste"; end
+  def s43; @s43 ||= sumif(a('c6','c95'),r43,a('e6','e95')); end
+  def t43; @t43 ||= sumif(a('c6','c95'),r43,a('f6','f95')); end
+  def u43; @u43 ||= sumif(a('c6','c95'),r43,a('g6','g95')); end
+  def v43; @v43 ||= sumif(a('c6','c95'),r43,a('h6','h95')); end
+  def w43; @w43 ||= sumif(a('c6','c95'),r43,a('i6','i95')); end
+  def x43; @x43 ||= sumif(a('c6','c95'),r43,a('j6','j95')); end
+  def y43; @y43 ||= sumif(a('c6','c95'),r43,a('k6','k95')); end
+  def z43; @z43 ||= sumif(a('c6','c95'),r43,a('l6','l95')); end
+  def aa43; @aa43 ||= sumif(a('c6','c95'),r43,a('m6','m95')); end
+  def ab43; @ab43 ||= sumif(a('c6','c95'),r43,a('n6','n95')); end
+  def ad43; @ad43 ||= sumif(a('d6','d95'),r43,a('e6','e95')); end
+  def ae43; @ae43 ||= sumif(a('d6','d95'),r43,a('f6','f95')); end
+  def af43; @af43 ||= sumif(a('d6','d95'),r43,a('g6','g95')); end
+  def ag43; @ag43 ||= sumif(a('d6','d95'),r43,a('h6','h95')); end
+  def ah43; @ah43 ||= sumif(a('d6','d95'),r43,a('i6','i95')); end
+  def ai43; @ai43 ||= sumif(a('d6','d95'),r43,a('j6','j95')); end
+  def aj43; @aj43 ||= sumif(a('d6','d95'),r43,a('k6','k95')); end
+  def ak43; @ak43 ||= sumif(a('d6','d95'),r43,a('l6','l95')); end
+  def al43; @al43 ||= sumif(a('d6','d95'),r43,a('m6','m95')); end
+  def am43; @am43 ||= sumif(a('d6','d95'),r43,a('n6','n95')); end
+  def c44; "Electricity imports"; end
+  def d44; "Electricity grid"; end
+  def e44; @e44 ||= -sheet34.f174; end
+  def f44; @f44 ||= -sheet34.g174; end
+  def g44; @g44 ||= -sheet34.h174; end
+  def h44; @h44 ||= -sheet34.i174; end
+  def i44; @i44 ||= -sheet34.j174; end
+  def j44; @j44 ||= -sheet34.k174; end
+  def k44; @k44 ||= -sheet34.l174; end
+  def l44; @l44 ||= -sheet34.m174; end
+  def m44; @m44 ||= -sheet34.n174; end
+  def n44; @n44 ||= -sheet34.o174; end
+  def r44; "Over generation / exports"; end
+  def s44; @s44 ||= sumif(a('c6','c95'),r44,a('e6','e95')); end
+  def t44; @t44 ||= sumif(a('c6','c95'),r44,a('f6','f95')); end
+  def u44; @u44 ||= sumif(a('c6','c95'),r44,a('g6','g95')); end
+  def v44; @v44 ||= sumif(a('c6','c95'),r44,a('h6','h95')); end
+  def w44; @w44 ||= sumif(a('c6','c95'),r44,a('i6','i95')); end
+  def x44; @x44 ||= sumif(a('c6','c95'),r44,a('j6','j95')); end
+  def y44; @y44 ||= sumif(a('c6','c95'),r44,a('k6','k95')); end
+  def z44; @z44 ||= sumif(a('c6','c95'),r44,a('l6','l95')); end
+  def aa44; @aa44 ||= sumif(a('c6','c95'),r44,a('m6','m95')); end
+  def ab44; @ab44 ||= sumif(a('c6','c95'),r44,a('n6','n95')); end
+  def ad44; @ad44 ||= sumif(a('d6','d95'),r44,a('e6','e95')); end
+  def ae44; @ae44 ||= sumif(a('d6','d95'),r44,a('f6','f95')); end
+  def af44; @af44 ||= sumif(a('d6','d95'),r44,a('g6','g95')); end
+  def ag44; @ag44 ||= sumif(a('d6','d95'),r44,a('h6','h95')); end
+  def ah44; @ah44 ||= sumif(a('d6','d95'),r44,a('i6','i95')); end
+  def ai44; @ai44 ||= sumif(a('d6','d95'),r44,a('j6','j95')); end
+  def aj44; @aj44 ||= sumif(a('d6','d95'),r44,a('k6','k95')); end
+  def ak44; @ak44 ||= sumif(a('d6','d95'),r44,a('l6','l95')); end
+  def al44; @al44 ||= sumif(a('d6','d95'),r44,a('m6','m95')); end
+  def am44; @am44 ||= sumif(a('d6','d95'),r44,a('n6','n95')); end
+  def c45; "Wind"; end
+  def d45; "Electricity grid"; end
+  def e45; @e45 ||= sheet21.f124+sheet22.f145+sheet28.f104; end
+  def f45; @f45 ||= sheet21.g124+sheet22.g145+sheet28.g104; end
+  def g45; @g45 ||= sheet21.h124+sheet22.h145+sheet28.h104; end
+  def h45; @h45 ||= sheet21.i124+sheet22.i145+sheet28.i104; end
+  def i45; @i45 ||= sheet21.j124+sheet22.j145+sheet28.j104; end
+  def j45; @j45 ||= sheet21.k124+sheet22.k145+sheet28.k104; end
+  def k45; @k45 ||= sheet21.l124+sheet22.l145+sheet28.l104; end
+  def l45; @l45 ||= sheet21.m124+sheet22.m145+sheet28.m104; end
+  def m45; @m45 ||= sheet21.n124+sheet22.n145+sheet28.n104; end
+  def n45; @n45 ||= sheet21.o124+sheet22.o145+sheet28.o104; end
+  def r45; "Pumped heat"; end
+  def s45; @s45 ||= sumif(a('c6','c95'),r45,a('e6','e95')); end
+  def t45; @t45 ||= sumif(a('c6','c95'),r45,a('f6','f95')); end
+  def u45; @u45 ||= sumif(a('c6','c95'),r45,a('g6','g95')); end
+  def v45; @v45 ||= sumif(a('c6','c95'),r45,a('h6','h95')); end
+  def w45; @w45 ||= sumif(a('c6','c95'),r45,a('i6','i95')); end
+  def x45; @x45 ||= sumif(a('c6','c95'),r45,a('j6','j95')); end
+  def y45; @y45 ||= sumif(a('c6','c95'),r45,a('k6','k95')); end
+  def z45; @z45 ||= sumif(a('c6','c95'),r45,a('l6','l95')); end
+  def aa45; @aa45 ||= sumif(a('c6','c95'),r45,a('m6','m95')); end
+  def ab45; @ab45 ||= sumif(a('c6','c95'),r45,a('n6','n95')); end
+  def ad45; @ad45 ||= sumif(a('d6','d95'),r45,a('e6','e95')); end
+  def ae45; @ae45 ||= sumif(a('d6','d95'),r45,a('f6','f95')); end
+  def af45; @af45 ||= sumif(a('d6','d95'),r45,a('g6','g95')); end
+  def ag45; @ag45 ||= sumif(a('d6','d95'),r45,a('h6','h95')); end
+  def ah45; @ah45 ||= sumif(a('d6','d95'),r45,a('i6','i95')); end
+  def ai45; @ai45 ||= sumif(a('d6','d95'),r45,a('j6','j95')); end
+  def aj45; @aj45 ||= sumif(a('d6','d95'),r45,a('k6','k95')); end
+  def ak45; @ak45 ||= sumif(a('d6','d95'),r45,a('l6','l95')); end
+  def al45; @al45 ||= sumif(a('d6','d95'),r45,a('m6','m95')); end
+  def am45; @am45 ||= sumif(a('d6','d95'),r45,a('n6','n95')); end
+  def c46; "Tidal"; end
+  def d46; "Electricity grid"; end
+  def e46; @e46 ||= sheet24.f238+sheet24.f230; end
+  def f46; @f46 ||= sheet24.g238+sheet24.g230; end
+  def g46; @g46 ||= sheet24.h238+sheet24.h230; end
+  def h46; @h46 ||= sheet24.i238+sheet24.i230; end
+  def i46; @i46 ||= sheet24.j238+sheet24.j230; end
+  def j46; @j46 ||= sheet24.k238+sheet24.k230; end
+  def k46; @k46 ||= sheet24.l238+sheet24.l230; end
+  def l46; @l46 ||= sheet24.m238+sheet24.m230; end
+  def m46; @m46 ||= sheet24.n238+sheet24.n230; end
+  def n46; @n46 ||= sheet24.o238+sheet24.o230; end
+  def r46; "Rail transport"; end
+  def s46; @s46 ||= sumif(a('c6','c95'),r46,a('e6','e95')); end
+  def t46; @t46 ||= sumif(a('c6','c95'),r46,a('f6','f95')); end
+  def u46; @u46 ||= sumif(a('c6','c95'),r46,a('g6','g95')); end
+  def v46; @v46 ||= sumif(a('c6','c95'),r46,a('h6','h95')); end
+  def w46; @w46 ||= sumif(a('c6','c95'),r46,a('i6','i95')); end
+  def x46; @x46 ||= sumif(a('c6','c95'),r46,a('j6','j95')); end
+  def y46; @y46 ||= sumif(a('c6','c95'),r46,a('k6','k95')); end
+  def z46; @z46 ||= sumif(a('c6','c95'),r46,a('l6','l95')); end
+  def aa46; @aa46 ||= sumif(a('c6','c95'),r46,a('m6','m95')); end
+  def ab46; @ab46 ||= sumif(a('c6','c95'),r46,a('n6','n95')); end
+  def ad46; @ad46 ||= sumif(a('d6','d95'),r46,a('e6','e95')); end
+  def ae46; @ae46 ||= sumif(a('d6','d95'),r46,a('f6','f95')); end
+  def af46; @af46 ||= sumif(a('d6','d95'),r46,a('g6','g95')); end
+  def ag46; @ag46 ||= sumif(a('d6','d95'),r46,a('h6','h95')); end
+  def ah46; @ah46 ||= sumif(a('d6','d95'),r46,a('i6','i95')); end
+  def ai46; @ai46 ||= sumif(a('d6','d95'),r46,a('j6','j95')); end
+  def aj46; @aj46 ||= sumif(a('d6','d95'),r46,a('k6','k95')); end
+  def ak46; @ak46 ||= sumif(a('d6','d95'),r46,a('l6','l95')); end
+  def al46; @al46 ||= sumif(a('d6','d95'),r46,a('m6','m95')); end
+  def am46; @am46 ||= sumif(a('d6','d95'),r46,a('n6','n95')); end
+  def c47; "Wave"; end
+  def d47; "Electricity grid"; end
+  def e47; @e47 ||= sheet24.f222; end
+  def f47; @f47 ||= sheet24.g222; end
+  def g47; @g47 ||= sheet24.h222; end
+  def h47; @h47 ||= sheet24.i222; end
+  def i47; @i47 ||= sheet24.j222; end
+  def j47; @j47 ||= sheet24.k222; end
+  def k47; @k47 ||= sheet24.l222; end
+  def l47; @l47 ||= sheet24.m222; end
+  def m47; @m47 ||= sheet24.n222; end
+  def n47; @n47 ||= sheet24.o222; end
+  def r47; "Road transport"; end
+  def s47; @s47 ||= sumif(a('c6','c95'),r47,a('e6','e95')); end
+  def t47; @t47 ||= sumif(a('c6','c95'),r47,a('f6','f95')); end
+  def u47; @u47 ||= sumif(a('c6','c95'),r47,a('g6','g95')); end
+  def v47; @v47 ||= sumif(a('c6','c95'),r47,a('h6','h95')); end
+  def w47; @w47 ||= sumif(a('c6','c95'),r47,a('i6','i95')); end
+  def x47; @x47 ||= sumif(a('c6','c95'),r47,a('j6','j95')); end
+  def y47; @y47 ||= sumif(a('c6','c95'),r47,a('k6','k95')); end
+  def z47; @z47 ||= sumif(a('c6','c95'),r47,a('l6','l95')); end
+  def aa47; @aa47 ||= sumif(a('c6','c95'),r47,a('m6','m95')); end
+  def ab47; @ab47 ||= sumif(a('c6','c95'),r47,a('n6','n95')); end
+  def ad47; @ad47 ||= sumif(a('d6','d95'),r47,a('e6','e95')); end
+  def ae47; @ae47 ||= sumif(a('d6','d95'),r47,a('f6','f95')); end
+  def af47; @af47 ||= sumif(a('d6','d95'),r47,a('g6','g95')); end
+  def ag47; @ag47 ||= sumif(a('d6','d95'),r47,a('h6','h95')); end
+  def ah47; @ah47 ||= sumif(a('d6','d95'),r47,a('i6','i95')); end
+  def ai47; @ai47 ||= sumif(a('d6','d95'),r47,a('j6','j95')); end
+  def aj47; @aj47 ||= sumif(a('d6','d95'),r47,a('k6','k95')); end
+  def ak47; @ak47 ||= sumif(a('d6','d95'),r47,a('l6','l95')); end
+  def al47; @al47 ||= sumif(a('d6','d95'),r47,a('m6','m95')); end
+  def am47; @am47 ||= sumif(a('d6','d95'),r47,a('n6','n95')); end
+  def c48; "Geothermal"; end
+  def d48; "Electricity grid"; end
+  def e48; @e48 ||= sheet25.f104; end
+  def f48; @f48 ||= sheet25.g104; end
+  def g48; @g48 ||= sheet25.h104; end
+  def h48; @h48 ||= sheet25.i104; end
+  def i48; @i48 ||= sheet25.j104; end
+  def j48; @j48 ||= sheet25.k104; end
+  def k48; @k48 ||= sheet25.l104; end
+  def l48; @l48 ||= sheet25.m104; end
+  def m48; @m48 ||= sheet25.n104; end
+  def n48; @n48 ||= sheet25.o104; end
+  def r48; "Solar"; end
+  def s48; @s48 ||= sumif(a('c6','c95'),r48,a('e6','e95')); end
+  def t48; @t48 ||= sumif(a('c6','c95'),r48,a('f6','f95')); end
+  def u48; @u48 ||= sumif(a('c6','c95'),r48,a('g6','g95')); end
+  def v48; @v48 ||= sumif(a('c6','c95'),r48,a('h6','h95')); end
+  def w48; @w48 ||= sumif(a('c6','c95'),r48,a('i6','i95')); end
+  def x48; @x48 ||= sumif(a('c6','c95'),r48,a('j6','j95')); end
+  def y48; @y48 ||= sumif(a('c6','c95'),r48,a('k6','k95')); end
+  def z48; @z48 ||= sumif(a('c6','c95'),r48,a('l6','l95')); end
+  def aa48; @aa48 ||= sumif(a('c6','c95'),r48,a('m6','m95')); end
+  def ab48; @ab48 ||= sumif(a('c6','c95'),r48,a('n6','n95')); end
+  def ad48; @ad48 ||= sumif(a('d6','d95'),r48,a('e6','e95')); end
+  def ae48; @ae48 ||= sumif(a('d6','d95'),r48,a('f6','f95')); end
+  def af48; @af48 ||= sumif(a('d6','d95'),r48,a('g6','g95')); end
+  def ag48; @ag48 ||= sumif(a('d6','d95'),r48,a('h6','h95')); end
+  def ah48; @ah48 ||= sumif(a('d6','d95'),r48,a('i6','i95')); end
+  def ai48; @ai48 ||= sumif(a('d6','d95'),r48,a('j6','j95')); end
+  def aj48; @aj48 ||= sumif(a('d6','d95'),r48,a('k6','k95')); end
+  def ak48; @ak48 ||= sumif(a('d6','d95'),r48,a('l6','l95')); end
+  def al48; @al48 ||= sumif(a('d6','d95'),r48,a('m6','m95')); end
+  def am48; @am48 ||= sumif(a('d6','d95'),r48,a('n6','n95')); end
+  def c49; "Hydro"; end
+  def d49; "Electricity grid"; end
+  def e49; @e49 ||= sheet23.f111; end
+  def f49; @f49 ||= sheet23.g111; end
+  def g49; @g49 ||= sheet23.h111; end
+  def h49; @h49 ||= sheet23.i111; end
+  def i49; @i49 ||= sheet23.j111; end
+  def j49; @j49 ||= sheet23.k111; end
+  def k49; @k49 ||= sheet23.l111; end
+  def l49; @l49 ||= sheet23.m111; end
+  def m49; @m49 ||= sheet23.n111; end
+  def n49; @n49 ||= sheet23.o111; end
+  def r49; "Solar PV"; end
+  def s49; @s49 ||= sumif(a('c6','c95'),r49,a('e6','e95')); end
+  def t49; @t49 ||= sumif(a('c6','c95'),r49,a('f6','f95')); end
+  def u49; @u49 ||= sumif(a('c6','c95'),r49,a('g6','g95')); end
+  def v49; @v49 ||= sumif(a('c6','c95'),r49,a('h6','h95')); end
+  def w49; @w49 ||= sumif(a('c6','c95'),r49,a('i6','i95')); end
+  def x49; @x49 ||= sumif(a('c6','c95'),r49,a('j6','j95')); end
+  def y49; @y49 ||= sumif(a('c6','c95'),r49,a('k6','k95')); end
+  def z49; @z49 ||= sumif(a('c6','c95'),r49,a('l6','l95')); end
+  def aa49; @aa49 ||= sumif(a('c6','c95'),r49,a('m6','m95')); end
+  def ab49; @ab49 ||= sumif(a('c6','c95'),r49,a('n6','n95')); end
+  def ad49; @ad49 ||= sumif(a('d6','d95'),r49,a('e6','e95')); end
+  def ae49; @ae49 ||= sumif(a('d6','d95'),r49,a('f6','f95')); end
+  def af49; @af49 ||= sumif(a('d6','d95'),r49,a('g6','g95')); end
+  def ag49; @ag49 ||= sumif(a('d6','d95'),r49,a('h6','h95')); end
+  def ah49; @ah49 ||= sumif(a('d6','d95'),r49,a('i6','i95')); end
+  def ai49; @ai49 ||= sumif(a('d6','d95'),r49,a('j6','j95')); end
+  def aj49; @aj49 ||= sumif(a('d6','d95'),r49,a('k6','k95')); end
+  def ak49; @ak49 ||= sumif(a('d6','d95'),r49,a('l6','l95')); end
+  def al49; @al49 ||= sumif(a('d6','d95'),r49,a('m6','m95')); end
+  def am49; @am49 ||= sumif(a('d6','d95'),r49,a('n6','n95')); end
+  def ao49; @ao49 ||= s49-ad49; end
+  def ap49; @ap49 ||= t49-ae49; end
+  def aq49; @aq49 ||= u49-af49; end
+  def ar49; @ar49 ||= v49-ag49; end
+  def as49; @as49 ||= w49-ah49; end
+  def at49; @at49 ||= x49-ai49; end
+  def au49; @au49 ||= y49-aj49; end
+  def av49; @av49 ||= z49-ak49; end
+  def aw49; @aw49 ||= aa49-al49; end
+  def ax49; @ax49 ||= ab49-am49; end
+  def c50; "Electricity grid"; end
+  def d50; "H2 conversion"; end
+  def e50; @e50 ||= -sheet37.f210; end
+  def f50; @f50 ||= -sheet37.g210; end
+  def g50; @g50 ||= -sheet37.h210; end
+  def h50; @h50 ||= -sheet37.i210; end
+  def i50; @i50 ||= -sheet37.j210; end
+  def j50; @j50 ||= -sheet37.k210; end
+  def k50; @k50 ||= -sheet37.l210; end
+  def l50; @l50 ||= -sheet37.m210; end
+  def m50; @m50 ||= -sheet37.n210; end
+  def n50; @n50 ||= -sheet37.o210; end
+  def r50; "Solar Thermal"; end
+  def s50; @s50 ||= sumif(a('c6','c95'),r50,a('e6','e95')); end
+  def t50; @t50 ||= sumif(a('c6','c95'),r50,a('f6','f95')); end
+  def u50; @u50 ||= sumif(a('c6','c95'),r50,a('g6','g95')); end
+  def v50; @v50 ||= sumif(a('c6','c95'),r50,a('h6','h95')); end
+  def w50; @w50 ||= sumif(a('c6','c95'),r50,a('i6','i95')); end
+  def x50; @x50 ||= sumif(a('c6','c95'),r50,a('j6','j95')); end
+  def y50; @y50 ||= sumif(a('c6','c95'),r50,a('k6','k95')); end
+  def z50; @z50 ||= sumif(a('c6','c95'),r50,a('l6','l95')); end
+  def aa50; @aa50 ||= sumif(a('c6','c95'),r50,a('m6','m95')); end
+  def ab50; @ab50 ||= sumif(a('c6','c95'),r50,a('n6','n95')); end
+  def ad50; @ad50 ||= sumif(a('d6','d95'),r50,a('e6','e95')); end
+  def ae50; @ae50 ||= sumif(a('d6','d95'),r50,a('f6','f95')); end
+  def af50; @af50 ||= sumif(a('d6','d95'),r50,a('g6','g95')); end
+  def ag50; @ag50 ||= sumif(a('d6','d95'),r50,a('h6','h95')); end
+  def ah50; @ah50 ||= sumif(a('d6','d95'),r50,a('i6','i95')); end
+  def ai50; @ai50 ||= sumif(a('d6','d95'),r50,a('j6','j95')); end
+  def aj50; @aj50 ||= sumif(a('d6','d95'),r50,a('k6','k95')); end
+  def ak50; @ak50 ||= sumif(a('d6','d95'),r50,a('l6','l95')); end
+  def al50; @al50 ||= sumif(a('d6','d95'),r50,a('m6','m95')); end
+  def am50; @am50 ||= sumif(a('d6','d95'),r50,a('n6','n95')); end
+  def ao50; @ao50 ||= s50-ad50; end
+  def ap50; @ap50 ||= t50-ae50; end
+  def aq50; @aq50 ||= u50-af50; end
+  def ar50; @ar50 ||= v50-ag50; end
+  def as50; @as50 ||= w50-ah50; end
+  def at50; @at50 ||= x50-ai50; end
+  def au50; @au50 ||= y50-aj50; end
+  def av50; @av50 ||= z50-ak50; end
+  def aw50; @aw50 ||= aa50-al50; end
+  def ax50; @ax50 ||= ab50-am50; end
+  def c51; "Electricity grid"; end
+  def d51; "Over generation / exports"; end
+  def e51; @e51 ||= max(sheet56.aq109+e44,0.0); end
+  def f51; @f51 ||= max(sheet57.aq109+f44,0.0); end
+  def g51; @g51 ||= max(sheet58.aq109+g44,0.0); end
+  def h51; @h51 ||= max(sheet59.aq109+h44,0.0); end
+  def i51; @i51 ||= max(sheet60.aq109+i44,0.0); end
+  def j51; @j51 ||= max(sheet61.aq109+j44,0.0); end
+  def k51; @k51 ||= max(sheet62.aq109+k44,0.0); end
+  def l51; @l51 ||= max(sheet63.aq109+l44,0.0); end
+  def m51; @m51 ||= max(sheet64.aq109+m44,0.0); end
+  def n51; @n51 ||= max(sheet65.aq109+n44,0.0); end
+  def r51; "Solid"; end
+  def s51; @s51 ||= sumif(a('c6','c95'),r51,a('e6','e95')); end
+  def t51; @t51 ||= sumif(a('c6','c95'),r51,a('f6','f95')); end
+  def u51; @u51 ||= sumif(a('c6','c95'),r51,a('g6','g95')); end
+  def v51; @v51 ||= sumif(a('c6','c95'),r51,a('h6','h95')); end
+  def w51; @w51 ||= sumif(a('c6','c95'),r51,a('i6','i95')); end
+  def x51; @x51 ||= sumif(a('c6','c95'),r51,a('j6','j95')); end
+  def y51; @y51 ||= sumif(a('c6','c95'),r51,a('k6','k95')); end
+  def z51; @z51 ||= sumif(a('c6','c95'),r51,a('l6','l95')); end
+  def aa51; @aa51 ||= sumif(a('c6','c95'),r51,a('m6','m95')); end
+  def ab51; @ab51 ||= sumif(a('c6','c95'),r51,a('n6','n95')); end
+  def ad51; @ad51 ||= sumif(a('d6','d95'),r51,a('e6','e95')); end
+  def ae51; @ae51 ||= sumif(a('d6','d95'),r51,a('f6','f95')); end
+  def af51; @af51 ||= sumif(a('d6','d95'),r51,a('g6','g95')); end
+  def ag51; @ag51 ||= sumif(a('d6','d95'),r51,a('h6','h95')); end
+  def ah51; @ah51 ||= sumif(a('d6','d95'),r51,a('i6','i95')); end
+  def ai51; @ai51 ||= sumif(a('d6','d95'),r51,a('j6','j95')); end
+  def aj51; @aj51 ||= sumif(a('d6','d95'),r51,a('k6','k95')); end
+  def ak51; @ak51 ||= sumif(a('d6','d95'),r51,a('l6','l95')); end
+  def al51; @al51 ||= sumif(a('d6','d95'),r51,a('m6','m95')); end
+  def am51; @am51 ||= sumif(a('d6','d95'),r51,a('n6','n95')); end
+  def ao51; @ao51 ||= s51-ad51; end
+  def ap51; @ap51 ||= t51-ae51; end
+  def aq51; @aq51 ||= u51-af51; end
+  def ar51; @ar51 ||= v51-ag51; end
+  def as51; @as51 ||= w51-ah51; end
+  def at51; @at51 ||= x51-ai51; end
+  def au51; @au51 ||= y51-aj51; end
+  def av51; @av51 ||= z51-ak51; end
+  def aw51; @aw51 ||= aa51-al51; end
+  def ax51; @ax51 ||= ab51-am51; end
+  def c52; "Electricity grid"; end
+  def d52; "Losses"; end
+  def e52; @e52 ||= sheet35.f117; end
+  def f52; @f52 ||= sheet35.g117; end
+  def g52; @g52 ||= sheet35.h117; end
+  def h52; @h52 ||= sheet35.i117; end
+  def i52; @i52 ||= sheet35.j117; end
+  def j52; @j52 ||= sheet35.k117; end
+  def k52; @k52 ||= sheet35.l117; end
+  def l52; @l52 ||= sheet35.m117; end
+  def m52; @m52 ||= sheet35.n117; end
+  def n52; @n52 ||= sheet35.o117; end
+  def r52; "Thermal generation"; end
+  def s52; @s52 ||= sumif(a('c6','c95'),r52,a('e6','e95')); end
+  def t52; @t52 ||= sumif(a('c6','c95'),r52,a('f6','f95')); end
+  def u52; @u52 ||= sumif(a('c6','c95'),r52,a('g6','g95')); end
+  def v52; @v52 ||= sumif(a('c6','c95'),r52,a('h6','h95')); end
+  def w52; @w52 ||= sumif(a('c6','c95'),r52,a('i6','i95')); end
+  def x52; @x52 ||= sumif(a('c6','c95'),r52,a('j6','j95')); end
+  def y52; @y52 ||= sumif(a('c6','c95'),r52,a('k6','k95')); end
+  def z52; @z52 ||= sumif(a('c6','c95'),r52,a('l6','l95')); end
+  def aa52; @aa52 ||= sumif(a('c6','c95'),r52,a('m6','m95')); end
+  def ab52; @ab52 ||= sumif(a('c6','c95'),r52,a('n6','n95')); end
+  def ad52; @ad52 ||= sumif(a('d6','d95'),r52,a('e6','e95')); end
+  def ae52; @ae52 ||= sumif(a('d6','d95'),r52,a('f6','f95')); end
+  def af52; @af52 ||= sumif(a('d6','d95'),r52,a('g6','g95')); end
+  def ag52; @ag52 ||= sumif(a('d6','d95'),r52,a('h6','h95')); end
+  def ah52; @ah52 ||= sumif(a('d6','d95'),r52,a('i6','i95')); end
+  def ai52; @ai52 ||= sumif(a('d6','d95'),r52,a('j6','j95')); end
+  def aj52; @aj52 ||= sumif(a('d6','d95'),r52,a('k6','k95')); end
+  def ak52; @ak52 ||= sumif(a('d6','d95'),r52,a('l6','l95')); end
+  def al52; @al52 ||= sumif(a('d6','d95'),r52,a('m6','m95')); end
+  def am52; @am52 ||= sumif(a('d6','d95'),r52,a('n6','n95')); end
+  def ao52; @ao52 ||= s52-ad52; end
+  def ap52; @ap52 ||= t52-ae52; end
+  def aq52; @aq52 ||= u52-af52; end
+  def ar52; @ar52 ||= v52-ag52; end
+  def as52; @as52 ||= w52-ah52; end
+  def at52; @at52 ||= x52-ai52; end
+  def au52; @au52 ||= y52-aj52; end
+  def av52; @av52 ||= z52-ak52; end
+  def aw52; @aw52 ||= aa52-al52; end
+  def ax52; @ax52 ||= ab52-am52; end
+  def c53; "Gas"; end
+  def d53; "H2 conversion"; end
+  def e53; @e53 ||= -sheet37.f211; end
+  def f53; @f53 ||= -sheet37.g211; end
+  def g53; @g53 ||= -sheet37.h211; end
+  def h53; @h53 ||= -sheet37.i211; end
+  def i53; @i53 ||= -sheet37.j211; end
+  def j53; @j53 ||= -sheet37.k211; end
+  def k53; @k53 ||= -sheet37.l211; end
+  def l53; @l53 ||= -sheet37.m211; end
+  def m53; @m53 ||= -sheet37.n211; end
+  def n53; @n53 ||= -sheet37.o211; end
+  def r53; "Tidal"; end
+  def s53; @s53 ||= sumif(a('c6','c95'),r53,a('e6','e95')); end
+  def t53; @t53 ||= sumif(a('c6','c95'),r53,a('f6','f95')); end
+  def u53; @u53 ||= sumif(a('c6','c95'),r53,a('g6','g95')); end
+  def v53; @v53 ||= sumif(a('c6','c95'),r53,a('h6','h95')); end
+  def w53; @w53 ||= sumif(a('c6','c95'),r53,a('i6','i95')); end
+  def x53; @x53 ||= sumif(a('c6','c95'),r53,a('j6','j95')); end
+  def y53; @y53 ||= sumif(a('c6','c95'),r53,a('k6','k95')); end
+  def z53; @z53 ||= sumif(a('c6','c95'),r53,a('l6','l95')); end
+  def aa53; @aa53 ||= sumif(a('c6','c95'),r53,a('m6','m95')); end
+  def ab53; @ab53 ||= sumif(a('c6','c95'),r53,a('n6','n95')); end
+  def ad53; @ad53 ||= sumif(a('d6','d95'),r53,a('e6','e95')); end
+  def ae53; @ae53 ||= sumif(a('d6','d95'),r53,a('f6','f95')); end
+  def af53; @af53 ||= sumif(a('d6','d95'),r53,a('g6','g95')); end
+  def ag53; @ag53 ||= sumif(a('d6','d95'),r53,a('h6','h95')); end
+  def ah53; @ah53 ||= sumif(a('d6','d95'),r53,a('i6','i95')); end
+  def ai53; @ai53 ||= sumif(a('d6','d95'),r53,a('j6','j95')); end
+  def aj53; @aj53 ||= sumif(a('d6','d95'),r53,a('k6','k95')); end
+  def ak53; @ak53 ||= sumif(a('d6','d95'),r53,a('l6','l95')); end
+  def al53; @al53 ||= sumif(a('d6','d95'),r53,a('m6','m95')); end
+  def am53; @am53 ||= sumif(a('d6','d95'),r53,a('n6','n95')); end
+  def c54; "H2 conversion"; end
+  def d54; "H2"; end
+  def e54; @e54 ||= sheet37.f212; end
+  def f54; @f54 ||= sheet37.g212; end
+  def g54; @g54 ||= sheet37.h212; end
+  def h54; @h54 ||= sheet37.i212; end
+  def i54; @i54 ||= sheet37.j212; end
+  def j54; @j54 ||= sheet37.k212; end
+  def k54; @k54 ||= sheet37.l212; end
+  def l54; @l54 ||= sheet37.m212; end
+  def m54; @m54 ||= sheet37.n212; end
+  def n54; @n54 ||= sheet37.o212; end
+  def r54; "UK land based bioenergy"; end
+  def s54; @s54 ||= sumif(a('c6','c95'),r54,a('e6','e95')); end
+  def t54; @t54 ||= sumif(a('c6','c95'),r54,a('f6','f95')); end
+  def u54; @u54 ||= sumif(a('c6','c95'),r54,a('g6','g95')); end
+  def v54; @v54 ||= sumif(a('c6','c95'),r54,a('h6','h95')); end
+  def w54; @w54 ||= sumif(a('c6','c95'),r54,a('i6','i95')); end
+  def x54; @x54 ||= sumif(a('c6','c95'),r54,a('j6','j95')); end
+  def y54; @y54 ||= sumif(a('c6','c95'),r54,a('k6','k95')); end
+  def z54; @z54 ||= sumif(a('c6','c95'),r54,a('l6','l95')); end
+  def aa54; @aa54 ||= sumif(a('c6','c95'),r54,a('m6','m95')); end
+  def ab54; @ab54 ||= sumif(a('c6','c95'),r54,a('n6','n95')); end
+  def ad54; @ad54 ||= sumif(a('d6','d95'),r54,a('e6','e95')); end
+  def ae54; @ae54 ||= sumif(a('d6','d95'),r54,a('f6','f95')); end
+  def af54; @af54 ||= sumif(a('d6','d95'),r54,a('g6','g95')); end
+  def ag54; @ag54 ||= sumif(a('d6','d95'),r54,a('h6','h95')); end
+  def ah54; @ah54 ||= sumif(a('d6','d95'),r54,a('i6','i95')); end
+  def ai54; @ai54 ||= sumif(a('d6','d95'),r54,a('j6','j95')); end
+  def aj54; @aj54 ||= sumif(a('d6','d95'),r54,a('k6','k95')); end
+  def ak54; @ak54 ||= sumif(a('d6','d95'),r54,a('l6','l95')); end
+  def al54; @al54 ||= sumif(a('d6','d95'),r54,a('m6','m95')); end
+  def am54; @am54 ||= sumif(a('d6','d95'),r54,a('n6','n95')); end
+  def c55; "H2 conversion"; end
+  def d55; "Losses"; end
+  def e55; @e55 ||= sheet37.f213; end
+  def f55; @f55 ||= sheet37.g213; end
+  def g55; @g55 ||= sheet37.h213; end
+  def h55; @h55 ||= sheet37.i213; end
+  def i55; @i55 ||= sheet37.j213; end
+  def j55; @j55 ||= sheet37.k213; end
+  def k55; @k55 ||= sheet37.l213; end
+  def l55; @l55 ||= sheet37.m213; end
+  def m55; @m55 ||= sheet37.n213; end
+  def n55; @n55 ||= sheet37.o213; end
+  def r55; "Wave"; end
+  def s55; @s55 ||= sumif(a('c6','c95'),r55,a('e6','e95')); end
+  def t55; @t55 ||= sumif(a('c6','c95'),r55,a('f6','f95')); end
+  def u55; @u55 ||= sumif(a('c6','c95'),r55,a('g6','g95')); end
+  def v55; @v55 ||= sumif(a('c6','c95'),r55,a('h6','h95')); end
+  def w55; @w55 ||= sumif(a('c6','c95'),r55,a('i6','i95')); end
+  def x55; @x55 ||= sumif(a('c6','c95'),r55,a('j6','j95')); end
+  def y55; @y55 ||= sumif(a('c6','c95'),r55,a('k6','k95')); end
+  def z55; @z55 ||= sumif(a('c6','c95'),r55,a('l6','l95')); end
+  def aa55; @aa55 ||= sumif(a('c6','c95'),r55,a('m6','m95')); end
+  def ab55; @ab55 ||= sumif(a('c6','c95'),r55,a('n6','n95')); end
+  def ad55; @ad55 ||= sumif(a('d6','d95'),r55,a('e6','e95')); end
+  def ae55; @ae55 ||= sumif(a('d6','d95'),r55,a('f6','f95')); end
+  def af55; @af55 ||= sumif(a('d6','d95'),r55,a('g6','g95')); end
+  def ag55; @ag55 ||= sumif(a('d6','d95'),r55,a('h6','h95')); end
+  def ah55; @ah55 ||= sumif(a('d6','d95'),r55,a('i6','i95')); end
+  def ai55; @ai55 ||= sumif(a('d6','d95'),r55,a('j6','j95')); end
+  def aj55; @aj55 ||= sumif(a('d6','d95'),r55,a('k6','k95')); end
+  def ak55; @ak55 ||= sumif(a('d6','d95'),r55,a('l6','l95')); end
+  def al55; @al55 ||= sumif(a('d6','d95'),r55,a('m6','m95')); end
+  def am55; @am55 ||= sumif(a('d6','d95'),r55,a('n6','n95')); end
+  def c56; "Solar Thermal"; end
+  def d56; "Heating and cooling - homes"; end
+  def e56; @e56 ||= sheet27.f101; end
+  def f56; @f56 ||= sheet27.g101; end
+  def g56; @g56 ||= sheet27.h101; end
+  def h56; @h56 ||= sheet27.i101; end
+  def i56; @i56 ||= sheet27.j101; end
+  def j56; @j56 ||= sheet27.k101; end
+  def k56; @k56 ||= sheet27.l101; end
+  def l56; @l56 ||= sheet27.m101; end
+  def m56; @m56 ||= sheet27.n101; end
+  def n56; @n56 ||= sheet27.o101; end
+  def r56; "Wind"; end
+  def s56; @s56 ||= sumif(a('c6','c95'),r56,a('e6','e95')); end
+  def t56; @t56 ||= sumif(a('c6','c95'),r56,a('f6','f95')); end
+  def u56; @u56 ||= sumif(a('c6','c95'),r56,a('g6','g95')); end
+  def v56; @v56 ||= sumif(a('c6','c95'),r56,a('h6','h95')); end
+  def w56; @w56 ||= sumif(a('c6','c95'),r56,a('i6','i95')); end
+  def x56; @x56 ||= sumif(a('c6','c95'),r56,a('j6','j95')); end
+  def y56; @y56 ||= sumif(a('c6','c95'),r56,a('k6','k95')); end
+  def z56; @z56 ||= sumif(a('c6','c95'),r56,a('l6','l95')); end
+  def aa56; @aa56 ||= sumif(a('c6','c95'),r56,a('m6','m95')); end
+  def ab56; @ab56 ||= sumif(a('c6','c95'),r56,a('n6','n95')); end
+  def ad56; @ad56 ||= sumif(a('d6','d95'),r56,a('e6','e95')); end
+  def ae56; @ae56 ||= sumif(a('d6','d95'),r56,a('f6','f95')); end
+  def af56; @af56 ||= sumif(a('d6','d95'),r56,a('g6','g95')); end
+  def ag56; @ag56 ||= sumif(a('d6','d95'),r56,a('h6','h95')); end
+  def ah56; @ah56 ||= sumif(a('d6','d95'),r56,a('i6','i95')); end
+  def ai56; @ai56 ||= sumif(a('d6','d95'),r56,a('j6','j95')); end
+  def aj56; @aj56 ||= sumif(a('d6','d95'),r56,a('k6','k95')); end
+  def ak56; @ak56 ||= sumif(a('d6','d95'),r56,a('l6','l95')); end
+  def al56; @al56 ||= sumif(a('d6','d95'),r56,a('m6','m95')); end
+  def am56; @am56 ||= sumif(a('d6','d95'),r56,a('n6','n95')); end
+  def c57; "H2"; end
+  def d57; "Road transport"; end
+  def e57; @e57 ||= -sheet43.f747; end
+  def f57; @f57 ||= -sheet43.g747; end
+  def g57; @g57 ||= -sheet43.h747; end
+  def h57; @h57 ||= -sheet43.i747; end
+  def i57; @i57 ||= -sheet43.j747; end
+  def j57; @j57 ||= -sheet43.k747; end
+  def k57; @k57 ||= -sheet43.l747; end
+  def l57; @l57 ||= -sheet43.m747; end
+  def m57; @m57 ||= -sheet43.n747; end
+  def n57; @n57 ||= -sheet43.o747; end
+  def c58; "Pumped heat"; end
+  def d58; "Heating and cooling - homes"; end
+  def e58; @e58 ||= -sheet38.f1151; end
+  def f58; @f58 ||= -sheet38.g1151; end
+  def g58; @g58 ||= -sheet38.h1151; end
+  def h58; @h58 ||= -sheet38.i1151; end
+  def i58; @i58 ||= -sheet38.j1151; end
+  def j58; @j58 ||= -sheet38.k1151; end
+  def k58; @k58 ||= -sheet38.l1151; end
+  def l58; @l58 ||= -sheet38.m1151; end
+  def m58; @m58 ||= -sheet38.n1151; end
+  def n58; @n58 ||= -sheet38.o1151; end
+  def c59; "Pumped heat"; end
+  def d59; "Heating and cooling - commercial"; end
+  def e59; @e59 ||= -sheet39.f725; end
+  def f59; @f59 ||= -sheet39.g725; end
+  def g59; @g59 ||= -sheet39.h725; end
+  def h59; @h59 ||= -sheet39.i725; end
+  def i59; @i59 ||= -sheet39.j725; end
+  def j59; @j59 ||= -sheet39.k725; end
+  def k59; @k59 ||= -sheet39.l725; end
+  def l59; @l59 ||= -sheet39.m725; end
+  def m59; @m59 ||= -sheet39.n725; end
+  def n59; @n59 ||= -sheet39.o725; end
+  def c60; "CHP"; end
+  def d60; "Heating and cooling - homes"; end
+  def e60; @e60 ||= sheet38.f1137; end
+  def f60; @f60 ||= sheet38.g1137; end
+  def g60; @g60 ||= sheet38.h1137; end
+  def h60; @h60 ||= sheet38.i1137; end
+  def i60; @i60 ||= sheet38.j1137; end
+  def j60; @j60 ||= sheet38.k1137; end
+  def k60; @k60 ||= sheet38.l1137; end
+  def l60; @l60 ||= sheet38.m1137; end
+  def m60; @m60 ||= sheet38.n1137; end
+  def n60; @n60 ||= sheet38.o1137; end
+  def c61; "CHP"; end
+  def d61; "Heating and cooling - commercial"; end
+  def e61; @e61 ||= sheet39.f712; end
+  def f61; @f61 ||= sheet39.g712; end
+  def g61; @g61 ||= sheet39.h712; end
+  def h61; @h61 ||= sheet39.i712; end
+  def i61; @i61 ||= sheet39.j712; end
+  def j61; @j61 ||= sheet39.k712; end
+  def k61; @k61 ||= sheet39.l712; end
+  def l61; @l61 ||= sheet39.m712; end
+  def m61; @m61 ||= sheet39.n712; end
+  def n61; @n61 ||= sheet39.o712; end
+  def c62; "District heating"; end
+  def d62; "Heating and cooling - homes"; end
+  def e62; @e62 ||= -sheet38.f1149; end
+  def f62; @f62 ||= -sheet38.g1149; end
+  def g62; @g62 ||= -sheet38.h1149; end
+  def h62; @h62 ||= -sheet38.i1149; end
+  def i62; @i62 ||= -sheet38.j1149; end
+  def j62; @j62 ||= -sheet38.k1149; end
+  def k62; @k62 ||= -sheet38.l1149; end
+  def l62; @l62 ||= -sheet38.m1149; end
+  def m62; @m62 ||= -sheet38.n1149; end
+  def n62; @n62 ||= -sheet38.o1149; end
+  def c63; "District heating"; end
+  def d63; "Heating and cooling - commercial"; end
+  def e63; @e63 ||= -sheet39.f724; end
+  def f63; @f63 ||= -sheet39.g724; end
+  def g63; @g63 ||= -sheet39.h724; end
+  def h63; @h63 ||= -sheet39.i724; end
+  def i63; @i63 ||= -sheet39.j724; end
+  def j63; @j63 ||= -sheet39.k724; end
+  def k63; @k63 ||= -sheet39.l724; end
+  def l63; @l63 ||= -sheet39.m724; end
+  def m63; @m63 ||= -sheet39.n724; end
+  def n63; @n63 ||= -sheet39.o724; end
+  def c64; "District heating"; end
+  def d64; "Industry"; end
+  def e64; @e64 ||= -sheet42.f434-sheet48.f176; end
+  def f64; @f64 ||= -sheet42.g434-sheet48.g176; end
+  def g64; @g64 ||= -sheet42.h434-sheet48.h176; end
+  def h64; @h64 ||= -sheet42.i434-sheet48.i176; end
+  def i64; @i64 ||= -sheet42.j434-sheet48.j176; end
+  def j64; @j64 ||= -sheet42.k434-sheet48.k176; end
+  def k64; @k64 ||= -sheet42.l434-sheet48.l176; end
+  def l64; @l64 ||= -sheet42.m434-sheet48.m176; end
+  def m64; @m64 ||= -sheet42.n434-sheet48.n176; end
+  def n64; @n64 ||= -sheet42.o434-sheet48.o176; end
+  def c65; "Electricity grid"; end
+  def d65; "Heating and cooling - homes"; end
+  def e65; @e65 ||= -sheet38.f1115; end
+  def f65; @f65 ||= -sheet38.g1115; end
+  def g65; @g65 ||= -sheet38.h1115; end
+  def h65; @h65 ||= -sheet38.i1115; end
+  def i65; @i65 ||= -sheet38.j1115; end
+  def j65; @j65 ||= -sheet38.k1115; end
+  def k65; @k65 ||= -sheet38.l1115; end
+  def l65; @l65 ||= -sheet38.m1115; end
+  def m65; @m65 ||= -sheet38.n1115; end
+  def n65; @n65 ||= -sheet38.o1115; end
+  def c66; "Solid"; end
+  def d66; "Heating and cooling - homes"; end
+  def e66; @e66 ||= -sheet38.f1117; end
+  def f66; @f66 ||= -sheet38.g1117; end
+  def g66; @g66 ||= -sheet38.h1117; end
+  def h66; @h66 ||= -sheet38.i1117; end
+  def i66; @i66 ||= -sheet38.j1117; end
+  def j66; @j66 ||= -sheet38.k1117; end
+  def k66; @k66 ||= -sheet38.l1117; end
+  def l66; @l66 ||= -sheet38.m1117; end
+  def m66; @m66 ||= -sheet38.n1117; end
+  def n66; @n66 ||= -sheet38.o1117; end
+  def c67; "Liquid"; end
+  def d67; "Heating and cooling - homes"; end
+  def e67; @e67 ||= -sheet38.f1118; end
+  def f67; @f67 ||= -sheet38.g1118; end
+  def g67; @g67 ||= -sheet38.h1118; end
+  def h67; @h67 ||= -sheet38.i1118; end
+  def i67; @i67 ||= -sheet38.j1118; end
+  def j67; @j67 ||= -sheet38.k1118; end
+  def k67; @k67 ||= -sheet38.l1118; end
+  def l67; @l67 ||= -sheet38.m1118; end
+  def m67; @m67 ||= -sheet38.n1118; end
+  def n67; @n67 ||= -sheet38.o1118; end
+  def c68; "Gas"; end
+  def d68; "Heating and cooling - homes"; end
+  def e68; @e68 ||= -sheet38.f1119; end
+  def f68; @f68 ||= -sheet38.g1119; end
+  def g68; @g68 ||= -sheet38.h1119; end
+  def h68; @h68 ||= -sheet38.i1119; end
+  def i68; @i68 ||= -sheet38.j1119; end
+  def j68; @j68 ||= -sheet38.k1119; end
+  def k68; @k68 ||= -sheet38.l1119; end
+  def l68; @l68 ||= -sheet38.m1119; end
+  def m68; @m68 ||= -sheet38.n1119; end
+  def n68; @n68 ||= -sheet38.o1119; end
+  def c69; "Electricity grid"; end
+  def d69; "Heating and cooling - commercial"; end
+  def e69; @e69 ||= -sheet39.f691; end
+  def f69; @f69 ||= -sheet39.g691; end
+  def g69; @g69 ||= -sheet39.h691; end
+  def h69; @h69 ||= -sheet39.i691; end
+  def i69; @i69 ||= -sheet39.j691; end
+  def j69; @j69 ||= -sheet39.k691; end
+  def k69; @k69 ||= -sheet39.l691; end
+  def l69; @l69 ||= -sheet39.m691; end
+  def m69; @m69 ||= -sheet39.n691; end
+  def n69; @n69 ||= -sheet39.o691; end
+  def c70; "Solid"; end
+  def d70; "Heating and cooling - commercial"; end
+  def e70; @e70 ||= -sheet39.f693; end
+  def f70; @f70 ||= -sheet39.g693; end
+  def g70; @g70 ||= -sheet39.h693; end
+  def h70; @h70 ||= -sheet39.i693; end
+  def i70; @i70 ||= -sheet39.j693; end
+  def j70; @j70 ||= -sheet39.k693; end
+  def k70; @k70 ||= -sheet39.l693; end
+  def l70; @l70 ||= -sheet39.m693; end
+  def m70; @m70 ||= -sheet39.n693; end
+  def n70; @n70 ||= -sheet39.o693; end
+  def c71; "Liquid"; end
+  def d71; "Heating and cooling - commercial"; end
+  def e71; @e71 ||= -sheet39.f694; end
+  def f71; @f71 ||= -sheet39.g694; end
+  def g71; @g71 ||= -sheet39.h694; end
+  def h71; @h71 ||= -sheet39.i694; end
+  def i71; @i71 ||= -sheet39.j694; end
+  def j71; @j71 ||= -sheet39.k694; end
+  def k71; @k71 ||= -sheet39.l694; end
+  def l71; @l71 ||= -sheet39.m694; end
+  def m71; @m71 ||= -sheet39.n694; end
+  def n71; @n71 ||= -sheet39.o694; end
+  def c72; "Gas"; end
+  def d72; "Heating and cooling - commercial"; end
+  def e72; @e72 ||= -sheet39.f695; end
+  def f72; @f72 ||= -sheet39.g695; end
+  def g72; @g72 ||= -sheet39.h695; end
+  def h72; @h72 ||= -sheet39.i695; end
+  def i72; @i72 ||= -sheet39.j695; end
+  def j72; @j72 ||= -sheet39.k695; end
+  def k72; @k72 ||= -sheet39.l695; end
+  def l72; @l72 ||= -sheet39.m695; end
+  def m72; @m72 ||= -sheet39.n695; end
+  def n72; @n72 ||= -sheet39.o695; end
+  def c73; "Electricity grid"; end
+  def d73; "Lighting & appliances - homes"; end
+  def e73; @e73 ||= -sheet40.f183-sheet27.f103; end
+  def f73; @f73 ||= -sheet40.g183-sheet27.g103; end
+  def g73; @g73 ||= -sheet40.h183-sheet27.h103; end
+  def h73; @h73 ||= -sheet40.i183-sheet27.i103; end
+  def i73; @i73 ||= -sheet40.j183-sheet27.j103; end
+  def j73; @j73 ||= -sheet40.k183-sheet27.k103; end
+  def k73; @k73 ||= -sheet40.l183-sheet27.l103; end
+  def l73; @l73 ||= -sheet40.m183-sheet27.m103; end
+  def m73; @m73 ||= -sheet40.n183-sheet27.n103; end
+  def n73; @n73 ||= -sheet40.o183-sheet27.o103; end
+  def c74; "Gas"; end
+  def d74; "Lighting & appliances - homes"; end
+  def e74; @e74 ||= -sheet40.f184; end
+  def f74; @f74 ||= -sheet40.g184; end
+  def g74; @g74 ||= -sheet40.h184; end
+  def h74; @h74 ||= -sheet40.i184; end
+  def i74; @i74 ||= -sheet40.j184; end
+  def j74; @j74 ||= -sheet40.k184; end
+  def k74; @k74 ||= -sheet40.l184; end
+  def l74; @l74 ||= -sheet40.m184; end
+  def m74; @m74 ||= -sheet40.n184; end
+  def n74; @n74 ||= -sheet40.o184; end
+  def c75; "Electricity grid"; end
+  def d75; "Lighting & appliances - commercial"; end
+  def e75; @e75 ||= -sheet41.f155; end
+  def f75; @f75 ||= -sheet41.g155; end
+  def g75; @g75 ||= -sheet41.h155; end
+  def h75; @h75 ||= -sheet41.i155; end
+  def i75; @i75 ||= -sheet41.j155; end
+  def j75; @j75 ||= -sheet41.k155; end
+  def k75; @k75 ||= -sheet41.l155; end
+  def l75; @l75 ||= -sheet41.m155; end
+  def m75; @m75 ||= -sheet41.n155; end
+  def n75; @n75 ||= -sheet41.o155; end
+  def c76; "Gas"; end
+  def d76; "Lighting & appliances - commercial"; end
+  def e76; @e76 ||= -sheet41.f156; end
+  def f76; @f76 ||= -sheet41.g156; end
+  def g76; @g76 ||= -sheet41.h156; end
+  def h76; @h76 ||= -sheet41.i156; end
+  def i76; @i76 ||= -sheet41.j156; end
+  def j76; @j76 ||= -sheet41.k156; end
+  def k76; @k76 ||= -sheet41.l156; end
+  def l76; @l76 ||= -sheet41.m156; end
+  def m76; @m76 ||= -sheet41.n156; end
+  def n76; @n76 ||= -sheet41.o156; end
+  def c77; "Electricity grid"; end
+  def d77; "Industry"; end
+  def e77; @e77 ||= -sheet42.f430-sheet48.f173-sheet49.f208; end
+  def f77; @f77 ||= -sheet42.g430-sheet48.g173-sheet49.g208; end
+  def g77; @g77 ||= -sheet42.h430-sheet48.h173-sheet49.h208; end
+  def h77; @h77 ||= -sheet42.i430-sheet48.i173-sheet49.i208; end
+  def i77; @i77 ||= -sheet42.j430-sheet48.j173-sheet49.j208; end
+  def j77; @j77 ||= -sheet42.k430-sheet48.k173-sheet49.k208; end
+  def k77; @k77 ||= -sheet42.l430-sheet48.l173-sheet49.l208; end
+  def l77; @l77 ||= -sheet42.m430-sheet48.m173-sheet49.m208; end
+  def m77; @m77 ||= -sheet42.n430-sheet48.n173-sheet49.n208; end
+  def n77; @n77 ||= -sheet42.o430-sheet48.o173-sheet49.o208; end
+  def c78; "Solid"; end
+  def d78; "Industry"; end
+  def e78; @e78 ||= -sheet42.f431-sheet49.f209; end
+  def f78; @f78 ||= -sheet42.g431-sheet49.g209; end
+  def g78; @g78 ||= -sheet42.h431-sheet49.h209; end
+  def h78; @h78 ||= -sheet42.i431-sheet49.i209; end
+  def i78; @i78 ||= -sheet42.j431-sheet49.j209; end
+  def j78; @j78 ||= -sheet42.k431-sheet49.k209; end
+  def k78; @k78 ||= -sheet42.l431-sheet49.l209; end
+  def l78; @l78 ||= -sheet42.m431-sheet49.m209; end
+  def m78; @m78 ||= -sheet42.n431-sheet49.n209; end
+  def n78; @n78 ||= -sheet42.o431-sheet49.o209; end
+  def c79; "Liquid"; end
+  def d79; "Industry"; end
+  def e79; @e79 ||= -sheet42.f432-sheet48.f174; end
+  def f79; @f79 ||= -sheet42.g432-sheet48.g174; end
+  def g79; @g79 ||= -sheet42.h432-sheet48.h174; end
+  def h79; @h79 ||= -sheet42.i432-sheet48.i174; end
+  def i79; @i79 ||= -sheet42.j432-sheet48.j174; end
+  def j79; @j79 ||= -sheet42.k432-sheet48.k174; end
+  def k79; @k79 ||= -sheet42.l432-sheet48.l174; end
+  def l79; @l79 ||= -sheet42.m432-sheet48.m174; end
+  def m79; @m79 ||= -sheet42.n432-sheet48.n174; end
+  def n79; @n79 ||= -sheet42.o432-sheet48.o174; end
+  def c80; "Gas"; end
+  def d80; "Industry"; end
+  def e80; @e80 ||= -sheet42.f433-sheet48.f175-sheet49.f210; end
+  def f80; @f80 ||= -sheet42.g433-sheet48.g175-sheet49.g210; end
+  def g80; @g80 ||= -sheet42.h433-sheet48.h175-sheet49.h210; end
+  def h80; @h80 ||= -sheet42.i433-sheet48.i175-sheet49.i210; end
+  def i80; @i80 ||= -sheet42.j433-sheet48.j175-sheet49.j210; end
+  def j80; @j80 ||= -sheet42.k433-sheet48.k175-sheet49.k210; end
+  def k80; @k80 ||= -sheet42.l433-sheet48.l175-sheet49.l210; end
+  def l80; @l80 ||= -sheet42.m433-sheet48.m175-sheet49.m210; end
+  def m80; @m80 ||= -sheet42.n433-sheet48.n175-sheet49.n210; end
+  def n80; @n80 ||= -sheet42.o433-sheet48.o175-sheet49.o210; end
+  def c81; "Electricity grid"; end
+  def d81; "Agriculture"; end
+  def e81; @e81 ||= -sheet31.f523; end
+  def f81; @f81 ||= -sheet31.g523; end
+  def g81; @g81 ||= -sheet31.h523; end
+  def h81; @h81 ||= -sheet31.i523; end
+  def i81; @i81 ||= -sheet31.j523; end
+  def j81; @j81 ||= -sheet31.k523; end
+  def k81; @k81 ||= -sheet31.l523; end
+  def l81; @l81 ||= -sheet31.m523; end
+  def m81; @m81 ||= -sheet31.n523; end
+  def n81; @n81 ||= -sheet31.o523; end
+  def c82; "Solid"; end
+  def d82; "Agriculture"; end
+  def e82; @e82 ||= -sheet31.f524; end
+  def f82; @f82 ||= -sheet31.g524; end
+  def g82; @g82 ||= -sheet31.h524; end
+  def h82; @h82 ||= -sheet31.i524; end
+  def i82; @i82 ||= -sheet31.j524; end
+  def j82; @j82 ||= -sheet31.k524; end
+  def k82; @k82 ||= -sheet31.l524; end
+  def l82; @l82 ||= -sheet31.m524; end
+  def m82; @m82 ||= -sheet31.n524; end
+  def n82; @n82 ||= -sheet31.o524; end
+  def c83; "Liquid"; end
+  def d83; "Agriculture"; end
+  def e83; @e83 ||= -sheet31.f525; end
+  def f83; @f83 ||= -sheet31.g525; end
+  def g83; @g83 ||= -sheet31.h525; end
+  def h83; @h83 ||= -sheet31.i525; end
+  def i83; @i83 ||= -sheet31.j525; end
+  def j83; @j83 ||= -sheet31.k525; end
+  def k83; @k83 ||= -sheet31.l525; end
+  def l83; @l83 ||= -sheet31.m525; end
+  def m83; @m83 ||= -sheet31.n525; end
+  def n83; @n83 ||= -sheet31.o525; end
+  def c84; "Gas"; end
+  def d84; "Agriculture"; end
+  def e84; @e84 ||= -sheet31.f526; end
+  def f84; @f84 ||= -sheet31.g526; end
+  def g84; @g84 ||= -sheet31.h526; end
+  def h84; @h84 ||= -sheet31.i526; end
+  def i84; @i84 ||= -sheet31.j526; end
+  def j84; @j84 ||= -sheet31.k526; end
+  def k84; @k84 ||= -sheet31.l526; end
+  def l84; @l84 ||= -sheet31.m526; end
+  def m84; @m84 ||= -sheet31.n526; end
+  def n84; @n84 ||= -sheet31.o526; end
+  def c85; "Electricity grid"; end
+  def d85; "Road transport"; end
+  def e85; @e85 ||= -sheet43.f746-sheet44.f359; end
+  def f85; @f85 ||= -sheet43.g746-sheet44.g359; end
+  def g85; @g85 ||= -sheet43.h746-sheet44.h359; end
+  def h85; @h85 ||= -sheet43.i746-sheet44.i359; end
+  def i85; @i85 ||= -sheet43.j746-sheet44.j359; end
+  def j85; @j85 ||= -sheet43.k746-sheet44.k359; end
+  def k85; @k85 ||= -sheet43.l746-sheet44.l359; end
+  def l85; @l85 ||= -sheet43.m746-sheet44.m359; end
+  def m85; @m85 ||= -sheet43.n746-sheet44.n359; end
+  def n85; @n85 ||= -sheet43.o746-sheet44.o359; end
+  def c86; "Liquid"; end
+  def d86; "Road transport"; end
+  def e86; @e86 ||= -sheet43.f745-sheet44.f360; end
+  def f86; @f86 ||= -sheet43.g745-sheet44.g360; end
+  def g86; @g86 ||= -sheet43.h745-sheet44.h360; end
+  def h86; @h86 ||= -sheet43.i745-sheet44.i360; end
+  def i86; @i86 ||= -sheet43.j745-sheet44.j360; end
+  def j86; @j86 ||= -sheet43.k745-sheet44.k360; end
+  def k86; @k86 ||= -sheet43.l745-sheet44.l360; end
+  def l86; @l86 ||= -sheet43.m745-sheet44.m360; end
+  def m86; @m86 ||= -sheet43.n745-sheet44.n360; end
+  def n86; @n86 ||= -sheet43.o745-sheet44.o360; end
+  def c87; "Electricity grid"; end
+  def d87; "Rail transport"; end
+  def e87; @e87 ||= -sheet43.f755-sheet44.f367; end
+  def f87; @f87 ||= -sheet43.g755-sheet44.g367; end
+  def g87; @g87 ||= -sheet43.h755-sheet44.h367; end
+  def h87; @h87 ||= -sheet43.i755-sheet44.i367; end
+  def i87; @i87 ||= -sheet43.j755-sheet44.j367; end
+  def j87; @j87 ||= -sheet43.k755-sheet44.k367; end
+  def k87; @k87 ||= -sheet43.l755-sheet44.l367; end
+  def l87; @l87 ||= -sheet43.m755-sheet44.m367; end
+  def m87; @m87 ||= -sheet43.n755-sheet44.n367; end
+  def n87; @n87 ||= -sheet43.o755-sheet44.o367; end
+  def c88; "Liquid"; end
+  def d88; "Rail transport"; end
+  def e88; @e88 ||= -sheet43.f754-sheet44.f368; end
+  def f88; @f88 ||= -sheet43.g754-sheet44.g368; end
+  def g88; @g88 ||= -sheet43.h754-sheet44.h368; end
+  def h88; @h88 ||= -sheet43.i754-sheet44.i368; end
+  def i88; @i88 ||= -sheet43.j754-sheet44.j368; end
+  def j88; @j88 ||= -sheet43.k754-sheet44.k368; end
+  def k88; @k88 ||= -sheet43.l754-sheet44.l368; end
+  def l88; @l88 ||= -sheet43.m754-sheet44.m368; end
+  def m88; @m88 ||= -sheet43.n754-sheet44.n368; end
+  def n88; @n88 ||= -sheet43.o754-sheet44.o368; end
+  def c89; "Liquid"; end
+  def d89; "Domestic aviation"; end
+  def e89; @e89 ||= -sheet43.f763; end
+  def f89; @f89 ||= -sheet43.g763; end
+  def g89; @g89 ||= -sheet43.h763; end
+  def h89; @h89 ||= -sheet43.i763; end
+  def i89; @i89 ||= -sheet43.j763; end
+  def j89; @j89 ||= -sheet43.k763; end
+  def k89; @k89 ||= -sheet43.l763; end
+  def l89; @l89 ||= -sheet43.m763; end
+  def m89; @m89 ||= -sheet43.n763; end
+  def n89; @n89 ||= -sheet43.o763; end
+  def c90; "Liquid"; end
+  def d90; "National navigation"; end
+  def e90; @e90 ||= -sheet44.f375; end
+  def f90; @f90 ||= -sheet44.g375; end
+  def g90; @g90 ||= -sheet44.h375; end
+  def h90; @h90 ||= -sheet44.i375; end
+  def i90; @i90 ||= -sheet44.j375; end
+  def j90; @j90 ||= -sheet44.k375; end
+  def k90; @k90 ||= -sheet44.l375; end
+  def l90; @l90 ||= -sheet44.m375; end
+  def m90; @m90 ||= -sheet44.n375; end
+  def n90; @n90 ||= -sheet44.o375; end
+  def c91; "Liquid"; end
+  def d91; "International aviation"; end
+  def e91; @e91 ||= -sheet45.f102; end
+  def f91; @f91 ||= -sheet45.g102; end
+  def g91; @g91 ||= -sheet45.h102; end
+  def h91; @h91 ||= -sheet45.i102; end
+  def i91; @i91 ||= -sheet45.j102; end
+  def j91; @j91 ||= -sheet45.k102; end
+  def k91; @k91 ||= -sheet45.l102; end
+  def l91; @l91 ||= -sheet45.m102; end
+  def m91; @m91 ||= -sheet45.n102; end
+  def n91; @n91 ||= -sheet45.o102; end
+  def c92; "Liquid"; end
+  def d92; "International shipping"; end
+  def e92; @e92 ||= -sheet46.f91; end
+  def f92; @f92 ||= -sheet46.g91; end
+  def g92; @g92 ||= -sheet46.h91; end
+  def h92; @h92 ||= -sheet46.i91; end
+  def i92; @i92 ||= -sheet46.j91; end
+  def j92; @j92 ||= -sheet46.k91; end
+  def k92; @k92 ||= -sheet46.l91; end
+  def l92; @l92 ||= -sheet46.m91; end
+  def m92; @m92 ||= -sheet46.n91; end
+  def n92; @n92 ||= -sheet46.o91; end
+  def c93; "Electricity grid"; end
+  def d93; "Geosequestration"; end
+  def e93; @e93 ||= -sheet47.f168; end
+  def f93; @f93 ||= -sheet47.g168; end
+  def g93; @g93 ||= -sheet47.h168; end
+  def h93; @h93 ||= -sheet47.i168; end
+  def i93; @i93 ||= -sheet47.j168; end
+  def j93; @j93 ||= -sheet47.k168; end
+  def k93; @k93 ||= -sheet47.l168; end
+  def l93; @l93 ||= -sheet47.m168; end
+  def m93; @m93 ||= -sheet47.n168; end
+  def n93; @n93 ||= -sheet47.o168; end
+  def c94; "Gas"; end
+  def d94; "Losses"; end
+  def e94; @e94 ||= sheet50.f114; end
+  def f94; @f94 ||= sheet50.g114; end
+  def g94; @g94 ||= sheet50.h114; end
+  def h94; @h94 ||= sheet50.i114; end
+  def i94; @i94 ||= sheet50.j114; end
+  def j94; @j94 ||= sheet50.k114; end
+  def k94; @k94 ||= sheet50.l114; end
+  def l94; @l94 ||= sheet50.m114; end
+  def m94; @m94 ||= sheet50.n114; end
+  def n94; @n94 ||= sheet50.o114; end
 end
 

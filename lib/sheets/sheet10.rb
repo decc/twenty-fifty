@@ -1,5 +1,5 @@
 # coding: utf-8
-# Other AQ Sources
+# AQ Outputs
 class Sheet10 < Spreadsheet
 end
 
