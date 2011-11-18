@@ -34,5 +34,5 @@
 //= require costs_sensitivity
 //= require story
 //= require simple_sankey
-
+//= require share
 

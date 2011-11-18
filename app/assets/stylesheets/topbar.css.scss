@@ -3,11 +3,10 @@
   height: 30px;
   margin: 0 0 15px 0;
   padding: 0;  
-
-  #help {
+  
+  #help, #share {
     position: absolute;
     top: 5px;
-    left: 5px;
     width: 50px;
     height: 22px;
     padding-top: 3px;
@@ -24,6 +23,14 @@
     }
   }
 
+  #help {
+    left: 5px;
+  }
+
+  #share {
+    right: 5px;
+  }
+
   #viewdropdown {
     position: absolute;
     z-index: 10;
@@ -35,11 +42,11 @@
     position: absolute;
     z-index: 10;    
     top: 5px;
-    right: 5px;    
+    right: 58px;    
   }
   
   #messages {
-    margin: 5px 160px 0 211px;
+    margin: 5px 213px 0 211px;
     width: auto;
   }
   
