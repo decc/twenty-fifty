@@ -52,6 +52,9 @@ choicesForCode = (newCode) ->
   for choice in newCode.split('')
     letter_to_float_map[choice]
 
+getChoices = () ->
+  choices
+
 getSector = () ->
   parseInt(sector)
     
@@ -260,6 +263,7 @@ pathwayDescriptions = (pathway_code,default_description = null) ->
 
 window.twentyfifty.setup = setup
 window.twentyfifty.code = codeForChoices
+window.twentyfifty.getChoices = getChoices
 window.twentyfifty.getSector = getSector
 window.twentyfifty.switchSector = switchSector
 window.twentyfifty.getComparator = getComparator

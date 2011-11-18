@@ -3,10 +3,19 @@
 
 #results
   #share
-    %p 
-      If you want to save or share your pathway, just use this url: 
-      %a{:id => 'url'}
-    %form
-      %input
-    %p On modern browsers, this url is the same as the one you will see in the address bar as you use the calculator. On older browsers, such as Internet Explorer 6 and 7, it will not be.
-    .clear
+    #url
+      %p 
+        If you want to save or share your pathway, just use this url: 
+        %a{:id => 'url'}
+      %form
+        %input
+      %p On modern browsers, this url is the same as the one you will see in the address bar as you use the calculator. On older browsers, such as Internet Explorer 6 and 7, it will not be.
+    #excel
+      %p
+        You may want to explore your pathway in more detail, taking a look at all the assumptions behind our modelling, by downloading
+        = link_to 'the underlying excel spreadsheet.', "http://2050-wiki.greenonblack.com"
+      %p
+        If you do, then you can recreate the pathway you have chosen in this tool by copying the numbers from the box below and pasting them in cells XX to XX on the 'Control' sheet of the workbook.
+        %form
+          %textarea
+
