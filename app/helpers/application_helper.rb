@@ -18,6 +18,25 @@ module ApplicationHelper
     }
   end
   
+  def help_page
+    { 
+      # "index" => "Home page", 
+      # "history" => "Your progress", 
+      # "structured" => "Multiple choice", 
+      # "quick_choice" => "Quick choice", 
+      "primary_energy_chart"=>"All energy", 
+      "electricity"=>"Electricity",
+      "energy_security" => "Energy security",
+      "sankey"=>"Energy flows", 
+      "map"=>"Area", 
+      "costs_in_context"=>"Costs in context",
+      "costs_compared_overview"=>"Costs compared",
+      "costs_sensitivity" => "Cost sensitivity",
+      # "cost_over_time" => 'Costs: over time', 
+      "story"=>"Story"
+    }[action_name]
+  end
+
   def saved_pathways 
     {
     "Doesn't tackle climate change (All level 1)" => "1011111111111111011111100111111011110110110111011011",

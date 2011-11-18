@@ -4,11 +4,31 @@
   margin: 0 0 15px 0;
   padding: 0;  
 
+  #help {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 50px;
+    height: 22px;
+    padding-top: 3px;
+    border: solid #ccc 1px;
+    text-align: center;
+    a {
+      color: #000;
+      display: block;
+      width: 100%;
+      text-decoration: none;      
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+
   #viewdropdown {
     position: absolute;
     z-index: 10;
     top: 5px;
-    left: 5px;
+    left: 58px;
   }
   
   #savedpathwaydropdown {
@@ -19,7 +39,7 @@
   }
   
   #messages {
-    margin: 5px 160px 0 160px;
+    margin: 5px 160px 0 211px;
     width: auto;
   }
   
