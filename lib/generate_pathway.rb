@@ -277,7 +277,6 @@ def calculate_pathway(queue,results,next_pathway)
     puts "Calculated #{pathway[:_id]} in #{pathway[:calculated_at]-next_pathway[:calculating]}s"
     results.save(pathway)
     queue.remove(_id: next_pathway['_id'])
-    GC.start
   rescue Exception => e
     queue.update({'_id' => next_pathway['_id']},{'$unset' => {"calculating" => 1}})
     puts e
