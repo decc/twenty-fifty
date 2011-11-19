@@ -1,7 +1,6 @@
 class SankeyDisplay
   
   name_conversions =
-    "Ngas":"Natural gas"
     "UK land based bioenergy":"Forests & biocrops"
     "Bio-conversion":"Biomass processing"
     "H2 conversion":"Hydrogen production"
@@ -61,7 +60,7 @@ class SankeyDisplay
     
     @s.stack(1,["Coal"],"Coal reserves")
     @s.stack(1,["Oil"],"Oil reserves")
-    @s.stack(1,["Ngas"],"Gas reserves")
+    @s.stack(1,["Natural Gas"],"Gas reserves")
     @s.stack(1,["Bio-conversion"],"UK land based bioenergy")
     
     @s.stack(2,["Solar Thermal", "Solar PV"],"Solar")
@@ -118,7 +117,7 @@ class SankeyDisplay
       "Oil imports":"#A99268", 
 
       "Gas reserves":"#DDD4C4", 
-      "Ngas":"#DDD4C4", 
+      "Natural Gas":"#DDD4C4", 
       "Gas imports":"#DDD4C4", 
 
       "Solar":"#F6FF00", 

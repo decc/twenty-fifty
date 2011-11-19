@@ -53,7 +53,12 @@ class GeneratePathway
   end
   
   def sankey_table
-    pathway[:sankey] = intermediate_output_sheet.a('h370','j460').to_grid
+    s = [] 
+    (6..94).each do |row|
+      s << [flow_sheet.send("c#{row}"),flow_sheet.send("n#{row}"),flow_sheet.send("d#{row}")]
+      puts s
+    end
+    pathway[:sankey] = s
   end
   
   def electricity_tables
@@ -69,10 +74,10 @@ class GeneratePathway
   
   def map_table
     m = {}
-    m['wave'] = intermediate_output_sheet.q355
-    [333..339,343..346,350..351,359..364].each do |range|
+    m['wave'] = land_use_sheet.q28
+    [6..12,16..19,23..24,32..37].each do |range|
       range.to_a.each do |row|
-        m[intermediate_output_sheet.send("c#{row}")] = intermediate_output_sheet.send("q#{row}")
+        m[land_use_sheet.send("c#{row}")] = land_use_sheet.send("q#{row}")
       end
     end
     pathway['map'] = m
@@ -94,7 +99,7 @@ class GeneratePathway
       'Community scale gas CHP',
       'Community scale solid-fuel CHP',
       'District heating from power stations'].each_with_index do |name,i| 
-        r[name] = heating_sheet.send("f#{579+i}")
+        r[name] = heating_sheet.send("f#{580+i}")
       end
     h['residential'] = r
     
@@ -208,7 +213,6 @@ class GeneratePathway
     pathway['imports'] = i
   end
   
-  
   def control_sheet
     excel.sheet1
   end
@@ -218,16 +222,24 @@ class GeneratePathway
   end
   
   def heating_sheet
-    excel.sheet35
+    excel.sheet38
   end
   
   def heating_commercial_sheet
-    excel.sheet36
+    excel.sheet39
   end
   
   def cost_sheet
+    excel.sheet7
+  end 
+
+  def flow_sheet
     excel.sheet5
-  end  
+  end
+    
+  def land_use_sheet
+    excel.sheet4
+  end
     
 end
 
@@ -266,6 +278,7 @@ def calculate_pathway(queue,results,next_pathway)
     puts "Calculated #{pathway[:_id]} in #{pathway[:calculated_at]-next_pathway[:calculating]}s"
     results.save(pathway)
     queue.remove(_id: next_pathway['_id'])
+    GC.start
   rescue Exception => e
     queue.update({'_id' => next_pathway['_id']},{'$unset' => {"calculating" => 1}})
     puts e
