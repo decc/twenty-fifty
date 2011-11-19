@@ -77,28 +77,28 @@ class Sheet4 < Spreadsheet
   def q10; @q10 ||= sheet28.o114; end
   def c11; "VI.a.Biocrop"; end
   def d11; "Area of biocrops"; end
-  def h11; @h11 ||= sheet31.f564; end
-  def i11; @i11 ||= sheet31.g564; end
-  def j11; @j11 ||= sheet31.h564; end
-  def k11; @k11 ||= sheet31.i564; end
-  def l11; @l11 ||= sheet31.j564; end
-  def m11; @m11 ||= sheet31.k564; end
-  def n11; @n11 ||= sheet31.l564; end
-  def o11; @o11 ||= sheet31.m564; end
-  def p11; @p11 ||= sheet31.n564; end
-  def q11; @q11 ||= sheet31.o564; end
+  def h11; @h11 ||= sheet31.f578; end
+  def i11; @i11 ||= sheet31.g578; end
+  def j11; @j11 ||= sheet31.h578; end
+  def k11; @k11 ||= sheet31.i578; end
+  def l11; @l11 ||= sheet31.j578; end
+  def m11; @m11 ||= sheet31.k578; end
+  def n11; @n11 ||= sheet31.l578; end
+  def o11; @o11 ||= sheet31.m578; end
+  def p11; @p11 ||= sheet31.n578; end
+  def q11; @q11 ||= sheet31.o578; end
   def c12; "VI.a.Forestry"; end
   def d12; "Area of forest"; end
-  def h12; @h12 ||= sheet31.f569; end
-  def i12; @i12 ||= sheet31.g569; end
-  def j12; @j12 ||= sheet31.h569; end
-  def k12; @k12 ||= sheet31.i569; end
-  def l12; @l12 ||= sheet31.j569; end
-  def m12; @m12 ||= sheet31.k569; end
-  def n12; @n12 ||= sheet31.l569; end
-  def o12; @o12 ||= sheet31.m569; end
-  def p12; @p12 ||= sheet31.n569; end
-  def q12; @q12 ||= sheet31.o569; end
+  def h12; @h12 ||= sheet31.f583; end
+  def i12; @i12 ||= sheet31.g583; end
+  def j12; @j12 ||= sheet31.h583; end
+  def k12; @k12 ||= sheet31.i583; end
+  def l12; @l12 ||= sheet31.j583; end
+  def m12; @m12 ||= sheet31.k583; end
+  def n12; @n12 ||= sheet31.l583; end
+  def o12; @o12 ||= sheet31.m583; end
+  def p12; @p12 ||= sheet31.n583; end
+  def q12; @q12 ||= sheet31.o583; end
   def c14; "B.04"; end
   def d14; "UK Sea area"; end
   def h14; 2007.0; end

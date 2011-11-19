@@ -2791,16 +2791,16 @@ class Sheet3 < Spreadsheet
   def q306; @q306 ||= -sheet37.o210; end
   def c307; "VI.a"; end
   def d307; "Agriculture and land use"; end
-  def h307; @h307 ||= -sheet31.f523; end
-  def i307; @i307 ||= -sheet31.g523; end
-  def j307; @j307 ||= -sheet31.h523; end
-  def k307; @k307 ||= -sheet31.i523; end
-  def l307; @l307 ||= -sheet31.j523; end
-  def m307; @m307 ||= -sheet31.k523; end
-  def n307; @n307 ||= -sheet31.l523; end
-  def o307; @o307 ||= -sheet31.m523; end
-  def p307; @p307 ||= -sheet31.n523; end
-  def q307; @q307 ||= -sheet31.o523; end
+  def h307; @h307 ||= -sheet31.f537; end
+  def i307; @i307 ||= -sheet31.g537; end
+  def j307; @j307 ||= -sheet31.h537; end
+  def k307; @k307 ||= -sheet31.i537; end
+  def l307; @l307 ||= -sheet31.j537; end
+  def m307; @m307 ||= -sheet31.k537; end
+  def n307; @n307 ||= -sheet31.l537; end
+  def o307; @o307 ||= -sheet31.m537; end
+  def p307; @p307 ||= -sheet31.n537; end
+  def q307; @q307 ||= -sheet31.o537; end
   def c308; "IV.b"; end
   def d308; "Solar thermal"; end
   def h308; @h308 ||= -sheet27.f103; end
@@ -3658,16 +3658,16 @@ class Sheet3 < Spreadsheet
   def i446; @i446 ||= -sheet42.o433-sheet48.o175-sheet49.o210; end
   def j446; "Industry"; end
   def h447; "Electricity grid"; end
-  def i447; @i447 ||= -sheet31.o523; end
+  def i447; @i447 ||= -sheet31.o537; end
   def j447; "Agriculture"; end
   def h448; "Solid"; end
-  def i448; @i448 ||= -sheet31.o524; end
+  def i448; @i448 ||= -sheet31.o538; end
   def j448; "Agriculture"; end
   def h449; "Liquid"; end
-  def i449; @i449 ||= -sheet31.o525; end
+  def i449; @i449 ||= -sheet31.o539; end
   def j449; "Agriculture"; end
   def h450; "Gas"; end
-  def i450; @i450 ||= -sheet31.o526; end
+  def i450; @i450 ||= -sheet31.o540; end
   def j450; "Agriculture"; end
   def h451; "Electricity grid"; end
   def i451; @i451 ||= -sheet43.o746-sheet44.o359; end

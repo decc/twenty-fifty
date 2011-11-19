@@ -270,16 +270,16 @@ class Sheet5 < Spreadsheet
   def ax11; @ax11 ||= ab11-am11; end
   def c12; "UK land based bioenergy"; end
   def d12; "Bio-conversion"; end
-  def e12; @e12 ||= -sheet31.f532; end
-  def f12; @f12 ||= -sheet31.g532; end
-  def g12; @g12 ||= -sheet31.h532; end
-  def h12; @h12 ||= -sheet31.i532; end
-  def i12; @i12 ||= -sheet31.j532; end
-  def j12; @j12 ||= -sheet31.k532; end
-  def k12; @k12 ||= -sheet31.l532; end
-  def l12; @l12 ||= -sheet31.m532; end
-  def m12; @m12 ||= -sheet31.n532; end
-  def n12; @n12 ||= -sheet31.o532; end
+  def e12; @e12 ||= -sheet31.f546; end
+  def f12; @f12 ||= -sheet31.g546; end
+  def g12; @g12 ||= -sheet31.h546; end
+  def h12; @h12 ||= -sheet31.i546; end
+  def i12; @i12 ||= -sheet31.j546; end
+  def j12; @j12 ||= -sheet31.k546; end
+  def k12; @k12 ||= -sheet31.l546; end
+  def l12; @l12 ||= -sheet31.m546; end
+  def m12; @m12 ||= -sheet31.n546; end
+  def n12; @n12 ||= -sheet31.o546; end
   def r12; "Coal"; end
   def s12; @s12 ||= sumif(a('c6','c95'),r12,a('e6','e95')); end
   def t12; @t12 ||= sumif(a('c6','c95'),r12,a('f6','f95')); end
@@ -346,16 +346,16 @@ class Sheet5 < Spreadsheet
   def am13; @am13 ||= sumif(a('d6','d95'),r13,a('n6','n95')); end
   def c14; "Agricultural 'waste'"; end
   def d14; "Bio-conversion"; end
-  def e14; @e14 ||= -sheet31.f533; end
-  def f14; @f14 ||= -sheet31.g533; end
-  def g14; @g14 ||= -sheet31.h533; end
-  def h14; @h14 ||= -sheet31.i533; end
-  def i14; @i14 ||= -sheet31.j533; end
-  def j14; @j14 ||= -sheet31.k533; end
-  def k14; @k14 ||= -sheet31.l533; end
-  def l14; @l14 ||= -sheet31.m533; end
-  def m14; @m14 ||= -sheet31.n533; end
-  def n14; @n14 ||= -sheet31.o533; end
+  def e14; @e14 ||= -sheet31.f547; end
+  def f14; @f14 ||= -sheet31.g547; end
+  def g14; @g14 ||= -sheet31.h547; end
+  def h14; @h14 ||= -sheet31.i547; end
+  def i14; @i14 ||= -sheet31.j547; end
+  def j14; @j14 ||= -sheet31.k547; end
+  def k14; @k14 ||= -sheet31.l547; end
+  def l14; @l14 ||= -sheet31.m547; end
+  def m14; @m14 ||= -sheet31.n547; end
+  def n14; @n14 ||= -sheet31.o547; end
   def r14; "Coal reserves"; end
   def s14; @s14 ||= sumif(a('c6','c95'),r14,a('e6','e95')); end
   def t14; @t14 ||= sumif(a('c6','c95'),r14,a('f6','f95')); end
@@ -2173,52 +2173,52 @@ class Sheet5 < Spreadsheet
   def n80; @n80 ||= -sheet42.o433-sheet48.o175-sheet49.o210; end
   def c81; "Electricity grid"; end
   def d81; "Agriculture"; end
-  def e81; @e81 ||= -sheet31.f523; end
-  def f81; @f81 ||= -sheet31.g523; end
-  def g81; @g81 ||= -sheet31.h523; end
-  def h81; @h81 ||= -sheet31.i523; end
-  def i81; @i81 ||= -sheet31.j523; end
-  def j81; @j81 ||= -sheet31.k523; end
-  def k81; @k81 ||= -sheet31.l523; end
-  def l81; @l81 ||= -sheet31.m523; end
-  def m81; @m81 ||= -sheet31.n523; end
-  def n81; @n81 ||= -sheet31.o523; end
+  def e81; @e81 ||= -sheet31.f537; end
+  def f81; @f81 ||= -sheet31.g537; end
+  def g81; @g81 ||= -sheet31.h537; end
+  def h81; @h81 ||= -sheet31.i537; end
+  def i81; @i81 ||= -sheet31.j537; end
+  def j81; @j81 ||= -sheet31.k537; end
+  def k81; @k81 ||= -sheet31.l537; end
+  def l81; @l81 ||= -sheet31.m537; end
+  def m81; @m81 ||= -sheet31.n537; end
+  def n81; @n81 ||= -sheet31.o537; end
   def c82; "Solid"; end
   def d82; "Agriculture"; end
-  def e82; @e82 ||= -sheet31.f524; end
-  def f82; @f82 ||= -sheet31.g524; end
-  def g82; @g82 ||= -sheet31.h524; end
-  def h82; @h82 ||= -sheet31.i524; end
-  def i82; @i82 ||= -sheet31.j524; end
-  def j82; @j82 ||= -sheet31.k524; end
-  def k82; @k82 ||= -sheet31.l524; end
-  def l82; @l82 ||= -sheet31.m524; end
-  def m82; @m82 ||= -sheet31.n524; end
-  def n82; @n82 ||= -sheet31.o524; end
+  def e82; @e82 ||= -sheet31.f538; end
+  def f82; @f82 ||= -sheet31.g538; end
+  def g82; @g82 ||= -sheet31.h538; end
+  def h82; @h82 ||= -sheet31.i538; end
+  def i82; @i82 ||= -sheet31.j538; end
+  def j82; @j82 ||= -sheet31.k538; end
+  def k82; @k82 ||= -sheet31.l538; end
+  def l82; @l82 ||= -sheet31.m538; end
+  def m82; @m82 ||= -sheet31.n538; end
+  def n82; @n82 ||= -sheet31.o538; end
   def c83; "Liquid"; end
   def d83; "Agriculture"; end
-  def e83; @e83 ||= -sheet31.f525; end
-  def f83; @f83 ||= -sheet31.g525; end
-  def g83; @g83 ||= -sheet31.h525; end
-  def h83; @h83 ||= -sheet31.i525; end
-  def i83; @i83 ||= -sheet31.j525; end
-  def j83; @j83 ||= -sheet31.k525; end
-  def k83; @k83 ||= -sheet31.l525; end
-  def l83; @l83 ||= -sheet31.m525; end
-  def m83; @m83 ||= -sheet31.n525; end
-  def n83; @n83 ||= -sheet31.o525; end
+  def e83; @e83 ||= -sheet31.f539; end
+  def f83; @f83 ||= -sheet31.g539; end
+  def g83; @g83 ||= -sheet31.h539; end
+  def h83; @h83 ||= -sheet31.i539; end
+  def i83; @i83 ||= -sheet31.j539; end
+  def j83; @j83 ||= -sheet31.k539; end
+  def k83; @k83 ||= -sheet31.l539; end
+  def l83; @l83 ||= -sheet31.m539; end
+  def m83; @m83 ||= -sheet31.n539; end
+  def n83; @n83 ||= -sheet31.o539; end
   def c84; "Gas"; end
   def d84; "Agriculture"; end
-  def e84; @e84 ||= -sheet31.f526; end
-  def f84; @f84 ||= -sheet31.g526; end
-  def g84; @g84 ||= -sheet31.h526; end
-  def h84; @h84 ||= -sheet31.i526; end
-  def i84; @i84 ||= -sheet31.j526; end
-  def j84; @j84 ||= -sheet31.k526; end
-  def k84; @k84 ||= -sheet31.l526; end
-  def l84; @l84 ||= -sheet31.m526; end
-  def m84; @m84 ||= -sheet31.n526; end
-  def n84; @n84 ||= -sheet31.o526; end
+  def e84; @e84 ||= -sheet31.f540; end
+  def f84; @f84 ||= -sheet31.g540; end
+  def g84; @g84 ||= -sheet31.h540; end
+  def h84; @h84 ||= -sheet31.i540; end
+  def i84; @i84 ||= -sheet31.j540; end
+  def j84; @j84 ||= -sheet31.k540; end
+  def k84; @k84 ||= -sheet31.l540; end
+  def l84; @l84 ||= -sheet31.m540; end
+  def m84; @m84 ||= -sheet31.n540; end
+  def n84; @n84 ||= -sheet31.o540; end
   def c85; "Electricity grid"; end
   def d85; "Road transport"; end
   def e85; @e85 ||= -sheet43.f746-sheet44.f359; end
