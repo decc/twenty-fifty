@@ -56,7 +56,6 @@ class GeneratePathway
     s = [] 
     (6..94).each do |row|
       s << [flow_sheet.send("c#{row}"),flow_sheet.send("n#{row}"),flow_sheet.send("d#{row}")]
-      puts s
     end
     pathway[:sankey] = s
   end
