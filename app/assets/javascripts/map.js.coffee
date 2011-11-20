@@ -235,7 +235,7 @@ class Map
      # Start capturing anything subsequently drawn
      @r.setStart()
      y = 35
-     x = 955
+     x = 1055
      values = []
      for name in ['I.a','I.b','II.a','III.d','VII.c','VI.b']
        values.push({name: name, value: map[name]})
