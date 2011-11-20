@@ -11,7 +11,7 @@ def create_series_of_blocks(level,colour)
   end
 end
 
-create_series_of_blocks 2, "#FFF63C"
-create_series_of_blocks 3, "#F1932B"
-create_series_of_blocks 4, "#E5251D"
+create_series_of_blocks 2, "#EFDD60"
+create_series_of_blocks 3, "#FFAE55"
+create_series_of_blocks 4, "#F44545"
 #create_series_of_blocks 'g', "#AAAAAA"
