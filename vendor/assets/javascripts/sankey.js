@@ -280,10 +280,11 @@
       return this.size;
     };
     FlowLine.prototype.innerColor = function() {
-      var c;
-      c = Raphael.rgb2hsb(this.colour);
-      c.b = c.b + 0.5;
-      return c;
+      // var c;
+      // c = Raphael.rgb2hsb(this.colour);
+      // c.b = c.b + 0.5;
+      // return c;
+      return this.colour;
     };
     FlowLine.prototype.draw = function(r) {
       this.outer_line = r.path(this.path()).attr({
