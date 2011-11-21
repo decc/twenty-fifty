@@ -175,7 +175,7 @@ class SankeyDisplay
     # Fix some of the colours
     @s.nudge_colours_callback = () ->
       # console.log @boxes["Electricity grid"].left_lines
-      @recolour(@boxes["Losses"].left_lines,"#AAAAAA")
+      @recolour(@boxes["Losses"].left_lines,"#ddd")
       @recolour(@boxes["District heating"].left_lines,"#FF0000")
       @recolour(@boxes["Electricity grid"].left_lines,"#0000FF")
     
