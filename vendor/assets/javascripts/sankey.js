@@ -1,5 +1,9 @@
-// Source: https://github.com/tamc/Sankey
 (function() {
+  /*
+  Source, bug reports, examples: https://github.com/tamc/Sankey
+  Copyright: Thomas Counsell 2010, 2011
+  Licence: MIT Open Source licence http://www.opensource.org/licenses/mit-license.php
+  */
   var FlowLine, Sankey, TransformationBox;
   var __hasProp = Object.prototype.hasOwnProperty, __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
   Sankey = (function() {
@@ -75,6 +79,9 @@
     };
     Sankey.prototype.convert_box_value_labels_callback = function(flow) {
       return this.convert_flow_labels_callback(flow);
+    };
+    Sankey.prototype.convert_box_description_labels_callback = function(name) {
+      return name;
     };
     Sankey.prototype.convert_bubble_values_callback = function(size) {
       return size;
@@ -403,7 +410,7 @@
       this.name = name;
       this.hover_end = __bind(this.hover_end, this);
       this.hover_start = __bind(this.hover_start, this);
-      this.label_text = name;
+      this.label_text = this.sankey.convert_box_description_labels_callback(name);
       this.line_colour = "orange";
       this.left_lines = [];
       this.right_lines = [];
@@ -474,11 +481,9 @@
       _results = [];
       for (_j = 0, _len2 = right_lines.length; _j < _len2; _j++) {
         line = right_lines[_j];
-                if ((_ref = line.colour) != null) {
-          _ref;
-        } else {
+        if ((_ref = line.colour) == null) {
           line.colour = this.line_colour;
-        };
+        }
         line.ox = this.x + box_width;
         line.oy = ry + (line.size / 2);
         _results.push(ry = ry + line.size);
