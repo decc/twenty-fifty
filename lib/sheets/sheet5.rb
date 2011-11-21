@@ -990,16 +990,16 @@ class Sheet5 < Spreadsheet
   def am31; @am31 ||= sumif(a('d6','d95'),r31,a('n6','n95')); end
   def c32; "Solid"; end
   def d32; "Thermal generation"; end
-  def e32; @e32 ||= -sheet18.f324-sheet19.f302; end
-  def f32; @f32 ||= -sheet18.g324-sheet19.g302; end
-  def g32; @g32 ||= -sheet18.h324-sheet19.h302; end
-  def h32; @h32 ||= -sheet18.i324-sheet19.i302; end
-  def i32; @i32 ||= -sheet18.j324-sheet19.j302; end
-  def j32; @j32 ||= -sheet18.k324-sheet19.k302; end
-  def k32; @k32 ||= -sheet18.l324-sheet19.l302; end
-  def l32; @l32 ||= -sheet18.m324-sheet19.m302; end
-  def m32; @m32 ||= -sheet18.n324-sheet19.n302; end
-  def n32; @n32 ||= -sheet18.o324-sheet19.o302; end
+  def e32; @e32 ||= -sheet18.f324-sheet19.f303; end
+  def f32; @f32 ||= -sheet18.g324-sheet19.g303; end
+  def g32; @g32 ||= -sheet18.h324-sheet19.h303; end
+  def h32; @h32 ||= -sheet18.i324-sheet19.i303; end
+  def i32; @i32 ||= -sheet18.j324-sheet19.j303; end
+  def j32; @j32 ||= -sheet18.k324-sheet19.k303; end
+  def k32; @k32 ||= -sheet18.l324-sheet19.l303; end
+  def l32; @l32 ||= -sheet18.m324-sheet19.m303; end
+  def m32; @m32 ||= -sheet18.n324-sheet19.n303; end
+  def n32; @n32 ||= -sheet18.o324-sheet19.o303; end
   def r32; "Lighting & appliances - commercial"; end
   def s32; @s32 ||= sumif(a('c6','c95'),r32,a('e6','e95')); end
   def t32; @t32 ||= sumif(a('c6','c95'),r32,a('f6','f95')); end
@@ -1056,16 +1056,16 @@ class Sheet5 < Spreadsheet
   def am33; @am33 ||= sumif(a('d6','d95'),r33,a('n6','n95')); end
   def c34; "Gas"; end
   def d34; "Thermal generation"; end
-  def e34; @e34 ||= -sheet18.f326-sheet19.f303; end
-  def f34; @f34 ||= -sheet18.g326-sheet19.g303; end
-  def g34; @g34 ||= -sheet18.h326-sheet19.h303; end
-  def h34; @h34 ||= -sheet18.i326-sheet19.i303; end
-  def i34; @i34 ||= -sheet18.j326-sheet19.j303; end
-  def j34; @j34 ||= -sheet18.k326-sheet19.k303; end
-  def k34; @k34 ||= -sheet18.l326-sheet19.l303; end
-  def l34; @l34 ||= -sheet18.m326-sheet19.m303; end
-  def m34; @m34 ||= -sheet18.n326-sheet19.n303; end
-  def n34; @n34 ||= -sheet18.o326-sheet19.o303; end
+  def e34; @e34 ||= -sheet18.f326-sheet19.f304; end
+  def f34; @f34 ||= -sheet18.g326-sheet19.g304; end
+  def g34; @g34 ||= -sheet18.h326-sheet19.h304; end
+  def h34; @h34 ||= -sheet18.i326-sheet19.i304; end
+  def i34; @i34 ||= -sheet18.j326-sheet19.j304; end
+  def j34; @j34 ||= -sheet18.k326-sheet19.k304; end
+  def k34; @k34 ||= -sheet18.l326-sheet19.l304; end
+  def l34; @l34 ||= -sheet18.m326-sheet19.m304; end
+  def m34; @m34 ||= -sheet18.n326-sheet19.n304; end
+  def n34; @n34 ||= -sheet18.o326-sheet19.o304; end
   def r34; "Liquid"; end
   def s34; @s34 ||= sumif(a('c6','c95'),r34,a('e6','e95')); end
   def t34; @t34 ||= sumif(a('c6','c95'),r34,a('f6','f95')); end
@@ -1165,16 +1165,16 @@ class Sheet5 < Spreadsheet
   def am36; @am36 ||= sumif(a('d6','d95'),r36,a('n6','n95')); end
   def c37; "Thermal generation"; end
   def d37; "Electricity grid"; end
-  def e37; @e37 ||= sheet18.f323+sheet19.f301+sheet20.f165+sheet52.f78; end
-  def f37; @f37 ||= sheet18.g323+sheet19.g301+sheet20.g165+sheet52.g78; end
-  def g37; @g37 ||= sheet18.h323+sheet19.h301+sheet20.h165+sheet52.h78; end
-  def h37; @h37 ||= sheet18.i323+sheet19.i301+sheet20.i165+sheet52.i78; end
-  def i37; @i37 ||= sheet18.j323+sheet19.j301+sheet20.j165+sheet52.j78; end
-  def j37; @j37 ||= sheet18.k323+sheet19.k301+sheet20.k165+sheet52.k78; end
-  def k37; @k37 ||= sheet18.l323+sheet19.l301+sheet20.l165+sheet52.l78; end
-  def l37; @l37 ||= sheet18.m323+sheet19.m301+sheet20.m165+sheet52.m78; end
-  def m37; @m37 ||= sheet18.n323+sheet19.n301+sheet20.n165+sheet52.n78; end
-  def n37; @n37 ||= sheet18.o323+sheet19.o301+sheet20.o165+sheet52.o78; end
+  def e37; @e37 ||= sheet18.f323+sheet19.f302+sheet20.f165+sheet52.f78; end
+  def f37; @f37 ||= sheet18.g323+sheet19.g302+sheet20.g165+sheet52.g78; end
+  def g37; @g37 ||= sheet18.h323+sheet19.h302+sheet20.h165+sheet52.h78; end
+  def h37; @h37 ||= sheet18.i323+sheet19.i302+sheet20.i165+sheet52.i78; end
+  def i37; @i37 ||= sheet18.j323+sheet19.j302+sheet20.j165+sheet52.j78; end
+  def j37; @j37 ||= sheet18.k323+sheet19.k302+sheet20.k165+sheet52.k78; end
+  def k37; @k37 ||= sheet18.l323+sheet19.l302+sheet20.l165+sheet52.l78; end
+  def l37; @l37 ||= sheet18.m323+sheet19.m302+sheet20.m165+sheet52.m78; end
+  def m37; @m37 ||= sheet18.n323+sheet19.n302+sheet20.n165+sheet52.n78; end
+  def n37; @n37 ||= sheet18.o323+sheet19.o302+sheet20.o165+sheet52.o78; end
   def r37; "National navigation"; end
   def s37; @s37 ||= sumif(a('c6','c95'),r37,a('e6','e95')); end
   def t37; @t37 ||= sumif(a('c6','c95'),r37,a('f6','f95')); end
@@ -1198,16 +1198,16 @@ class Sheet5 < Spreadsheet
   def am37; @am37 ||= sumif(a('d6','d95'),r37,a('n6','n95')); end
   def c38; "Thermal generation"; end
   def d38; "Losses"; end
-  def e38; @e38 ||= sheet18.f327+sheet19.f304+sheet20.f167+sheet52.f79+sheet18.f328+sheet19.f305+sheet20.f168; end
-  def f38; @f38 ||= sheet18.g327+sheet19.g304+sheet20.g167+sheet52.g79+sheet18.g328+sheet19.g305+sheet20.g168; end
-  def g38; @g38 ||= sheet18.h327+sheet19.h304+sheet20.h167+sheet52.h79+sheet18.h328+sheet19.h305+sheet20.h168; end
-  def h38; @h38 ||= sheet18.i327+sheet19.i304+sheet20.i167+sheet52.i79+sheet18.i328+sheet19.i305+sheet20.i168; end
-  def i38; @i38 ||= sheet18.j327+sheet19.j304+sheet20.j167+sheet52.j79+sheet18.j328+sheet19.j305+sheet20.j168; end
-  def j38; @j38 ||= sheet18.k327+sheet19.k304+sheet20.k167+sheet52.k79+sheet18.k328+sheet19.k305+sheet20.k168; end
-  def k38; @k38 ||= sheet18.l327+sheet19.l304+sheet20.l167+sheet52.l79+sheet18.l328+sheet19.l305+sheet20.l168; end
-  def l38; @l38 ||= sheet18.m327+sheet19.m304+sheet20.m167+sheet52.m79+sheet18.m328+sheet19.m305+sheet20.m168; end
-  def m38; @m38 ||= sheet18.n327+sheet19.n304+sheet20.n167+sheet52.n79+sheet18.n328+sheet19.n305+sheet20.n168; end
-  def n38; @n38 ||= sheet18.o327+sheet19.o304+sheet20.o167+sheet52.o79+sheet18.o328+sheet19.o305+sheet20.o168; end
+  def e38; @e38 ||= sheet18.f327+sheet19.f305+sheet20.f167+sheet52.f79+sheet18.f328+sheet19.f306+sheet20.f168; end
+  def f38; @f38 ||= sheet18.g327+sheet19.g305+sheet20.g167+sheet52.g79+sheet18.g328+sheet19.g306+sheet20.g168; end
+  def g38; @g38 ||= sheet18.h327+sheet19.h305+sheet20.h167+sheet52.h79+sheet18.h328+sheet19.h306+sheet20.h168; end
+  def h38; @h38 ||= sheet18.i327+sheet19.i305+sheet20.i167+sheet52.i79+sheet18.i328+sheet19.i306+sheet20.i168; end
+  def i38; @i38 ||= sheet18.j327+sheet19.j305+sheet20.j167+sheet52.j79+sheet18.j328+sheet19.j306+sheet20.j168; end
+  def j38; @j38 ||= sheet18.k327+sheet19.k305+sheet20.k167+sheet52.k79+sheet18.k328+sheet19.k306+sheet20.k168; end
+  def k38; @k38 ||= sheet18.l327+sheet19.l305+sheet20.l167+sheet52.l79+sheet18.l328+sheet19.l306+sheet20.l168; end
+  def l38; @l38 ||= sheet18.m327+sheet19.m305+sheet20.m167+sheet52.m79+sheet18.m328+sheet19.m306+sheet20.m168; end
+  def m38; @m38 ||= sheet18.n327+sheet19.n305+sheet20.n167+sheet52.n79+sheet18.n328+sheet19.n306+sheet20.n168; end
+  def n38; @n38 ||= sheet18.o327+sheet19.o305+sheet20.o167+sheet52.o79+sheet18.o328+sheet19.o306+sheet20.o168; end
   def r38; "Natural Gas"; end
   def s38; @s38 ||= sumif(a('c6','c95'),r38,a('e6','e95')); end
   def t38; @t38 ||= sumif(a('c6','c95'),r38,a('f6','f95')); end

@@ -250,15 +250,15 @@ class Sheet4 < Spreadsheet
   def c33; "I.b"; end
   def d33; "1.2 GW CCS power stations"; end
   def h33; 0.0; end
-  def i33; @i33 ||= sheet19.g336; end
-  def j33; @j33 ||= sheet19.h336; end
-  def k33; @k33 ||= sheet19.i336; end
-  def l33; @l33 ||= sheet19.j336; end
-  def m33; @m33 ||= sheet19.k336; end
-  def n33; @n33 ||= sheet19.l336; end
-  def o33; @o33 ||= sheet19.m336; end
-  def p33; @p33 ||= sheet19.n336; end
-  def q33; @q33 ||= sheet19.o336; end
+  def i33; @i33 ||= sheet19.g337; end
+  def j33; @j33 ||= sheet19.h337; end
+  def k33; @k33 ||= sheet19.i337; end
+  def l33; @l33 ||= sheet19.j337; end
+  def m33; @m33 ||= sheet19.k337; end
+  def n33; @n33 ||= sheet19.l337; end
+  def o33; @o33 ||= sheet19.m337; end
+  def p33; @p33 ||= sheet19.n337; end
+  def q33; @q33 ||= sheet19.o337; end
   def c34; "II.a"; end
   def d34; "3 GW nuclear power station complexes"; end
   def h34; 3.6666666666666665; end

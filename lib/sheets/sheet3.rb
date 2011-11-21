@@ -1165,15 +1165,15 @@ class Sheet3 < Spreadsheet
   def c121; "I.b"; end
   def d121; "Carbon Capture Storage (CCS)"; end
   def h121; 0.0; end
-  def i121; @i121 ||= iferror(sheet19.g334,0.0); end
-  def j121; @j121 ||= iferror(sheet19.h334,0.0); end
-  def k121; @k121 ||= iferror(sheet19.i334,0.0); end
-  def l121; @l121 ||= iferror(sheet19.j334,0.0); end
-  def m121; @m121 ||= iferror(sheet19.k334,0.0); end
-  def n121; @n121 ||= iferror(sheet19.l334,0.0); end
-  def o121; @o121 ||= iferror(sheet19.m334,0.0); end
-  def p121; @p121 ||= iferror(sheet19.n334,0.0); end
-  def q121; @q121 ||= iferror(sheet19.o334,0.0); end
+  def i121; @i121 ||= iferror(sheet19.g335,0.0); end
+  def j121; @j121 ||= iferror(sheet19.h335,0.0); end
+  def k121; @k121 ||= iferror(sheet19.i335,0.0); end
+  def l121; @l121 ||= iferror(sheet19.j335,0.0); end
+  def m121; @m121 ||= iferror(sheet19.k335,0.0); end
+  def n121; @n121 ||= iferror(sheet19.l335,0.0); end
+  def o121; @o121 ||= iferror(sheet19.m335,0.0); end
+  def p121; @p121 ||= iferror(sheet19.n335,0.0); end
+  def q121; @q121 ||= iferror(sheet19.o335,0.0); end
   def c122; "II.a"; end
   def d122; "Nuclear power"; end
   def h122; 11.0; end
@@ -2385,14 +2385,14 @@ class Sheet3 < Spreadsheet
   def c262; "CCS in Power"; end
   def h262; 0.0; end
   def i262; 0.0; end
-  def j262; @j262 ||= sheet19.h317; end
-  def k262; @k262 ||= sheet19.i317; end
-  def l262; @l262 ||= sheet19.j317; end
-  def m262; @m262 ||= sheet19.k317; end
-  def n262; @n262 ||= sheet19.l317; end
-  def o262; @o262 ||= sheet19.m317; end
-  def p262; @p262 ||= sheet19.n317; end
-  def q262; @q262 ||= sheet19.o317; end
+  def j262; @j262 ||= sheet19.h318; end
+  def k262; @k262 ||= sheet19.i318; end
+  def l262; @l262 ||= sheet19.j318; end
+  def m262; @m262 ||= sheet19.k318; end
+  def n262; @n262 ||= sheet19.l318; end
+  def o262; @o262 ||= sheet19.m318; end
+  def p262; @p262 ||= sheet19.n318; end
+  def q262; @q262 ||= sheet19.o318; end
   def c263; "Bioenergy in Gas Power"; end
   def h263; @h263 ||= -h245*h249*sheet16.g85; end
   def i263; @i263 ||= -i245*i249*sheet16.g85; end
@@ -3316,7 +3316,7 @@ class Sheet3 < Spreadsheet
   def t396; 72.90673211164959; end
   def u396; -72.90673211164959; end
   def h397; "Solid"; end
-  def i397; @i397 ||= -sheet18.o324-sheet19.o302; end
+  def i397; @i397 ||= -sheet18.o324-sheet19.o303; end
   def j397; "Thermal generation"; end
   def n397; "Lighting & appliances - homes"; end
   def o397; @o397 ||= sumif(a('h370','h460'),n397,a('i370','i460')); end
@@ -3338,7 +3338,7 @@ class Sheet3 < Spreadsheet
   def t398; 552.1736401050266; end
   def u398; 0.0; end
   def h399; "Gas"; end
-  def i399; @i399 ||= -sheet18.o326-sheet19.o303; end
+  def i399; @i399 ||= -sheet18.o326-sheet19.o304; end
   def j399; "Thermal generation"; end
   def n399; "Losses"; end
   def o399; @o399 ||= sumif(a('h370','h460'),n399,a('i370','i460')); end
@@ -3371,7 +3371,7 @@ class Sheet3 < Spreadsheet
   def t401; 28.046644936214143; end
   def u401; -28.046644936214143; end
   def h402; "Thermal generation"; end
-  def i402; @i402 ||= sheet18.o323+sheet19.o301+sheet20.o165+sheet52.o78; end
+  def i402; @i402 ||= sheet18.o323+sheet19.o302+sheet20.o165+sheet52.o78; end
   def j402; "Electricity grid"; end
   def n402; "Ngas"; end
   def o402; @o402 ||= sumif(a('h370','h460'),n402,a('i370','i460')); end
@@ -3382,7 +3382,7 @@ class Sheet3 < Spreadsheet
   def t402; 297.14903018646385; end
   def u402; 0.0; end
   def h403; "Thermal generation"; end
-  def i403; @i403 ||= sheet52.o79+sheet18.o327+sheet18.o328+sheet19.o304+sheet19.o305+sheet20.o167+sheet20.o168; end
+  def i403; @i403 ||= sheet52.o79+sheet18.o327+sheet18.o328+sheet19.o305+sheet19.o306+sheet20.o167+sheet20.o168; end
   def j403; "Losses"; end
   def n403; "Nuclear"; end
   def o403; @o403 ||= sumif(a('h370','h460'),n403,a('i370','i460')); end

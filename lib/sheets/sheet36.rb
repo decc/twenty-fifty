@@ -176,15 +176,15 @@ class Sheet36 < Spreadsheet
   def n49; @n49 ||= iferror(sheet18.n363,0.0); end
   def o49; @o49 ||= iferror(sheet18.o363,0.0); end
   def c50; "I.b"; end
-  def g50; @g50 ||= iferror(sheet19.g334,0.0); end
-  def h50; @h50 ||= iferror(sheet19.h334,0.0); end
-  def i50; @i50 ||= iferror(sheet19.i334,0.0); end
-  def j50; @j50 ||= iferror(sheet19.j334,0.0); end
-  def k50; @k50 ||= iferror(sheet19.k334,0.0); end
-  def l50; @l50 ||= iferror(sheet19.l334,0.0); end
-  def m50; @m50 ||= iferror(sheet19.m334,0.0); end
-  def n50; @n50 ||= iferror(sheet19.n334,0.0); end
-  def o50; @o50 ||= iferror(sheet19.o334,0.0); end
+  def g50; @g50 ||= iferror(sheet19.g335,0.0); end
+  def h50; @h50 ||= iferror(sheet19.h335,0.0); end
+  def i50; @i50 ||= iferror(sheet19.i335,0.0); end
+  def j50; @j50 ||= iferror(sheet19.j335,0.0); end
+  def k50; @k50 ||= iferror(sheet19.k335,0.0); end
+  def l50; @l50 ||= iferror(sheet19.l335,0.0); end
+  def m50; @m50 ||= iferror(sheet19.m335,0.0); end
+  def n50; @n50 ||= iferror(sheet19.n335,0.0); end
+  def o50; @o50 ||= iferror(sheet19.o335,0.0); end
   def c51; "II.a"; end
   def g51; @g51 ||= iferror(sheet20.g177,0.0); end
   def h51; @h51 ||= iferror(sheet20.h177,0.0); end
@@ -219,15 +219,15 @@ class Sheet36 < Spreadsheet
   def n59; @n59 ||= iferror(sheet18.n364,0.0); end
   def o59; @o59 ||= iferror(sheet18.o364,0.0); end
   def c60; "I.b"; end
-  def g60; @g60 ||= iferror(sheet19.g335,0.0); end
-  def h60; @h60 ||= iferror(sheet19.h335,0.0); end
-  def i60; @i60 ||= iferror(sheet19.i335,0.0); end
-  def j60; @j60 ||= iferror(sheet19.j335,0.0); end
-  def k60; @k60 ||= iferror(sheet19.k335,0.0); end
-  def l60; @l60 ||= iferror(sheet19.l335,0.0); end
-  def m60; @m60 ||= iferror(sheet19.m335,0.0); end
-  def n60; @n60 ||= iferror(sheet19.n335,0.0); end
-  def o60; @o60 ||= iferror(sheet19.o335,0.0); end
+  def g60; @g60 ||= iferror(sheet19.g336,0.0); end
+  def h60; @h60 ||= iferror(sheet19.h336,0.0); end
+  def i60; @i60 ||= iferror(sheet19.i336,0.0); end
+  def j60; @j60 ||= iferror(sheet19.j336,0.0); end
+  def k60; @k60 ||= iferror(sheet19.k336,0.0); end
+  def l60; @l60 ||= iferror(sheet19.l336,0.0); end
+  def m60; @m60 ||= iferror(sheet19.m336,0.0); end
+  def n60; @n60 ||= iferror(sheet19.n336,0.0); end
+  def o60; @o60 ||= iferror(sheet19.o336,0.0); end
   def c61; "II.a"; end
   def g61; @g61 ||= iferror(sheet20.g178,0.0); end
   def h61; @h61 ||= iferror(sheet20.h178,0.0); end
