@@ -29,6 +29,13 @@ class SankeyDisplay
       @s.setData(data)
       @s.draw()
       @drawn = true
+    max_y = @s.boxes['Losses'].b()
+    console.log max_y
+    if $('#sankey').height() < max_y
+      $('#sankey').height(max_y)
+      @s.r.setSize($('#sankey').width(),max_y)
+      #@s.redraw()
+
 
   createSankey: () =>
     return false if @s?
@@ -172,12 +179,14 @@ class SankeyDisplay
       @recolour(@boxes["District heating"].left_lines,"#FF0000")
       @recolour(@boxes["Electricity grid"].left_lines,"#0000FF")
     
-    @s.y_space = 20
+    pixels_per_TWh = $('#sankey').height() / 6000
+
+    @s.y_space = Math.round(100 * pixels_per_TWh)
     @s.right_margin = 250
     @s.left_margin = 150
     
     @s.convert_flow_values_callback = (flow) ->
-      return flow * 0.1 # Pixels per TWh
+      return flow * pixels_per_TWh # Pixels per TWh
     
     @s.convert_flow_labels_callback = (flow) ->
       return Math.round(flow)
