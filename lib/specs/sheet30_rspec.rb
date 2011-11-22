@@ -56,36 +56,36 @@ describe 'Sheet30' do
     sheet30.g16.should be_within(86.43817157760316).of(-864.3817157760316)
   end
 
-  it 'cell h16 should equal -810.0500310133236' do
-    sheet30.h16.should be_within(81.00500310133236).of(-810.0500310133236)
+  it 'cell h16 should equal -811.2500310133237' do
+    sheet30.h16.should be_within(81.12500310133237).of(-811.2500310133237)
   end
 
-  it 'cell i16 should equal -761.8074240087412' do
-    sheet30.i16.should be_within(76.18074240087412).of(-761.8074240087412)
+  it 'cell i16 should equal -766.6074240087412' do
+    sheet30.i16.should be_within(76.66074240087413).of(-766.6074240087412)
   end
 
-  it 'cell j16 should equal -659.5444737444257' do
-    sheet30.j16.should be_within(65.95444737444257).of(-659.5444737444257)
+  it 'cell j16 should equal -665.5444737444257' do
+    sheet30.j16.should be_within(66.55444737444257).of(-665.5444737444257)
   end
 
-  it 'cell k16 should equal -567.096765370084' do
-    sheet30.k16.should be_within(56.7096765370084).of(-567.096765370084)
+  it 'cell k16 should equal -573.4967653700838' do
+    sheet30.k16.should be_within(57.349676537008385).of(-573.4967653700838)
   end
 
-  it 'cell l16 should equal -553.9612015460273' do
-    sheet30.l16.should be_within(55.39612015460273).of(-553.9612015460273)
+  it 'cell l16 should equal -561.5612015460273' do
+    sheet30.l16.should be_within(56.15612015460273).of(-561.5612015460273)
   end
 
-  it 'cell m16 should equal -534.9298591011312' do
-    sheet30.m16.should be_within(53.49298591011313).of(-534.9298591011312)
+  it 'cell m16 should equal -542.9298591011312' do
+    sheet30.m16.should be_within(54.292985910113124).of(-542.9298591011312)
   end
 
-  it 'cell n16 should equal -505.4692095478309' do
-    sheet30.n16.should be_within(50.5469209547831).of(-505.4692095478309)
+  it 'cell n16 should equal -514.2692095478309' do
+    sheet30.n16.should be_within(51.42692095478309).of(-514.2692095478309)
   end
 
-  it 'cell o16 should equal -468.58308426764455' do
-    sheet30.o16.should be_within(46.85830842676446).of(-468.58308426764455)
+  it 'cell o16 should equal -476.98308426764453' do
+    sheet30.o16.should be_within(47.698308426764456).of(-476.98308426764453)
   end
 
   it 'cell f17 should equal -957.7633591564106' do

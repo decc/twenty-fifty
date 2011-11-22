@@ -675,7 +675,6 @@ class Sheet1 < Spreadsheet
   def br27; "Up to 140 TWh/yr of imported bioenergy in 2050"; end
   def bs27; "Up to 280 TWh/yr of imported bioenergy in 2050"; end
   def a28; "Demand"; end
-  def e28; 0.0; end
   def bd28; "Bioenergy contextual data"; end
   def a29; "Transport"; end
   def b29; "UK Transport"; end
@@ -803,7 +802,7 @@ class Sheet1 < Spreadsheet
   def b34; "International Transport"; end
   def c34; "XII.c"; end
   def d34; "International aviation"; end
-  def e34; 2.0; end
+  def e34; 1.0; end
   def f34; 4.0; end
   def h34; "Annual improvement in plane fuel efficiency of 0.8%. CCC “likely” scenario"; end
   def i34; "Annual improvement in plane fuel efficiency of 1%. CCC “optimistic” scenario"; end
@@ -1379,7 +1378,6 @@ class Sheet1 < Spreadsheet
   def br53; "Energy used for commercial cooking is 100% electric"; end
   def bs53; "Energy used for commercial cooking is 100% electric"; end
   def a54; "Electricity Balancing & Other"; end
-  def e54; 0.0; end
   def a55; "Geosequestration"; end
   def c55; "XIV.a"; end
   def d55; "Geosequestration"; end

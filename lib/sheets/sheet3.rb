@@ -1981,42 +1981,42 @@ class Sheet3 < Spreadsheet
   def c215; "V.a"; end
   def d215; "V.03"; end
   def e215; "Solid hydrocarbons"; end
-  def h215; @h215 ||= iferror(sheet29.f385,"na"); end
-  def i215; @i215 ||= iferror(sheet29.g385,"na"); end
-  def j215; @j215 ||= iferror(sheet29.h385,"na"); end
-  def k215; @k215 ||= iferror(sheet29.i385,"na"); end
-  def l215; @l215 ||= iferror(sheet29.j385,"na"); end
-  def m215; @m215 ||= iferror(sheet29.k385,"na"); end
-  def n215; @n215 ||= iferror(sheet29.l385,"na"); end
-  def o215; @o215 ||= iferror(sheet29.m385,"na"); end
-  def p215; @p215 ||= iferror(sheet29.n385,"na"); end
-  def q215; @q215 ||= iferror(sheet29.o385,"na"); end
+  def h215; @h215 ||= iferror(sheet29.f384,"na"); end
+  def i215; @i215 ||= iferror(sheet29.g384,"na"); end
+  def j215; @j215 ||= iferror(sheet29.h384,"na"); end
+  def k215; @k215 ||= iferror(sheet29.i384,"na"); end
+  def l215; @l215 ||= iferror(sheet29.j384,"na"); end
+  def m215; @m215 ||= iferror(sheet29.k384,"na"); end
+  def n215; @n215 ||= iferror(sheet29.l384,"na"); end
+  def o215; @o215 ||= iferror(sheet29.m384,"na"); end
+  def p215; @p215 ||= iferror(sheet29.n384,"na"); end
+  def q215; @q215 ||= iferror(sheet29.o384,"na"); end
   def c216; "V.a"; end
   def d216; "V.04"; end
   def e216; "Liquid hydrocarbons"; end
-  def h216; @h216 ||= iferror(sheet29.f386,"na"); end
-  def i216; @i216 ||= iferror(sheet29.g386,"na"); end
-  def j216; @j216 ||= iferror(sheet29.h386,"na"); end
-  def k216; @k216 ||= iferror(sheet29.i386,"na"); end
-  def l216; @l216 ||= iferror(sheet29.j386,"na"); end
-  def m216; @m216 ||= iferror(sheet29.k386,"na"); end
-  def n216; @n216 ||= iferror(sheet29.l386,"na"); end
-  def o216; @o216 ||= iferror(sheet29.m386,"na"); end
-  def p216; @p216 ||= iferror(sheet29.n386,"na"); end
-  def q216; @q216 ||= iferror(sheet29.o386,"na"); end
+  def h216; @h216 ||= iferror(sheet29.f385,"na"); end
+  def i216; @i216 ||= iferror(sheet29.g385,"na"); end
+  def j216; @j216 ||= iferror(sheet29.h385,"na"); end
+  def k216; @k216 ||= iferror(sheet29.i385,"na"); end
+  def l216; @l216 ||= iferror(sheet29.j385,"na"); end
+  def m216; @m216 ||= iferror(sheet29.k385,"na"); end
+  def n216; @n216 ||= iferror(sheet29.l385,"na"); end
+  def o216; @o216 ||= iferror(sheet29.m385,"na"); end
+  def p216; @p216 ||= iferror(sheet29.n385,"na"); end
+  def q216; @q216 ||= iferror(sheet29.o385,"na"); end
   def c217; "V.a"; end
   def d217; "V.05"; end
   def e217; "Gaseous hydrocarbons"; end
-  def h217; @h217 ||= iferror(sheet29.f387,"na"); end
-  def i217; @i217 ||= iferror(sheet29.g387,"na"); end
-  def j217; @j217 ||= iferror(sheet29.h387,"na"); end
-  def k217; @k217 ||= iferror(sheet29.i387,"na"); end
-  def l217; @l217 ||= iferror(sheet29.j387,"na"); end
-  def m217; @m217 ||= iferror(sheet29.k387,"na"); end
-  def n217; @n217 ||= iferror(sheet29.l387,"na"); end
-  def o217; @o217 ||= iferror(sheet29.m387,"na"); end
-  def p217; @p217 ||= iferror(sheet29.n387,"na"); end
-  def q217; @q217 ||= iferror(sheet29.o387,"na"); end
+  def h217; @h217 ||= iferror(sheet29.f386,"na"); end
+  def i217; @i217 ||= iferror(sheet29.g386,"na"); end
+  def j217; @j217 ||= iferror(sheet29.h386,"na"); end
+  def k217; @k217 ||= iferror(sheet29.i386,"na"); end
+  def l217; @l217 ||= iferror(sheet29.j386,"na"); end
+  def m217; @m217 ||= iferror(sheet29.k386,"na"); end
+  def n217; @n217 ||= iferror(sheet29.l386,"na"); end
+  def o217; @o217 ||= iferror(sheet29.m386,"na"); end
+  def p217; @p217 ||= iferror(sheet29.n386,"na"); end
+  def q217; @q217 ||= iferror(sheet29.o386,"na"); end
   def c219; "Imports"; end
   def c220; "V.b"; end
   def d220; "V.03"; end
@@ -3239,7 +3239,7 @@ class Sheet3 < Spreadsheet
   def t389; 2.2094560370498355; end
   def u389; 0.0; end
   def h390; "Bio-conversion"; end
-  def i390; @i390 ||= sheet29.o385; end
+  def i390; @i390 ||= sheet29.o384; end
   def j390; "Solid"; end
   def n390; "Heating and cooling - commercial"; end
   def o390; @o390 ||= sumif(a('h370','h460'),n390,a('i370','i460')); end
@@ -3250,7 +3250,7 @@ class Sheet3 < Spreadsheet
   def t390; 100.66839811374751; end
   def u390; -100.66839811374751; end
   def h391; "Bio-conversion"; end
-  def i391; @i391 ||= sheet29.o386; end
+  def i391; @i391 ||= sheet29.o385; end
   def j391; "Liquid"; end
   def n391; "Heating and cooling - homes"; end
   def o391; @o391 ||= sumif(a('h370','h460'),n391,a('i370','i460')); end
@@ -3261,7 +3261,7 @@ class Sheet3 < Spreadsheet
   def t391; 272.59644437905297; end
   def u391; -272.59644437905297; end
   def h392; "Bio-conversion"; end
-  def i392; @i392 ||= sheet29.o387; end
+  def i392; @i392 ||= sheet29.o386; end
   def j392; "Gas"; end
   def n392; "Hydro"; end
   def o392; @o392 ||= sumif(a('h370','h460'),n392,a('i370','i460')); end
@@ -3272,7 +3272,7 @@ class Sheet3 < Spreadsheet
   def t392; 0.0; end
   def u392; 5.329728000000001; end
   def h393; "Bio-conversion"; end
-  def i393; @i393 ||= sheet29.o393; end
+  def i393; @i393 ||= sheet29.o392; end
   def j393; "Losses"; end
   def n393; "Industry"; end
   def o393; @o393 ||= sumif(a('h370','h460'),n393,a('i370','i460')); end
@@ -3688,10 +3688,10 @@ class Sheet3 < Spreadsheet
   def i456; @i456 ||= -sheet44.o375; end
   def j456; "National navigation"; end
   def h457; "Liquid"; end
-  def i457; @i457 ||= -sheet45.o102; end
+  def i457; @i457 ||= -sheet45.o106; end
   def j457; "International aviation"; end
   def h458; "Liquid"; end
-  def i458; @i458 ||= -sheet46.o91; end
+  def i458; @i458 ||= -sheet46.o95; end
   def j458; "International shipping"; end
   def h459; "Electricity grid"; end
   def i459; @i459 ||= -sheet47.o168; end

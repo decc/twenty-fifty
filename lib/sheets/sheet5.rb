@@ -749,16 +749,16 @@ class Sheet5 < Spreadsheet
   def ax24; @ax24 ||= ab24-am24; end
   def c25; "Bio-conversion"; end
   def d25; "Solid"; end
-  def e25; @e25 ||= sheet29.f385; end
-  def f25; @f25 ||= sheet29.g385; end
-  def g25; @g25 ||= sheet29.h385; end
-  def h25; @h25 ||= sheet29.i385; end
-  def i25; @i25 ||= sheet29.j385; end
-  def j25; @j25 ||= sheet29.k385; end
-  def k25; @k25 ||= sheet29.l385; end
-  def l25; @l25 ||= sheet29.m385; end
-  def m25; @m25 ||= sheet29.n385; end
-  def n25; @n25 ||= sheet29.o385; end
+  def e25; @e25 ||= sheet29.f384; end
+  def f25; @f25 ||= sheet29.g384; end
+  def g25; @g25 ||= sheet29.h384; end
+  def h25; @h25 ||= sheet29.i384; end
+  def i25; @i25 ||= sheet29.j384; end
+  def j25; @j25 ||= sheet29.k384; end
+  def k25; @k25 ||= sheet29.l384; end
+  def l25; @l25 ||= sheet29.m384; end
+  def m25; @m25 ||= sheet29.n384; end
+  def n25; @n25 ||= sheet29.o384; end
   def r25; "H2 conversion"; end
   def s25; @s25 ||= sumif(a('c6','c95'),r25,a('e6','e95')); end
   def t25; @t25 ||= sumif(a('c6','c95'),r25,a('f6','f95')); end
@@ -792,16 +792,16 @@ class Sheet5 < Spreadsheet
   def ax25; @ax25 ||= ab25-am25; end
   def c26; "Bio-conversion"; end
   def d26; "Liquid"; end
-  def e26; @e26 ||= sheet29.f386; end
-  def f26; @f26 ||= sheet29.g386; end
-  def g26; @g26 ||= sheet29.h386; end
-  def h26; @h26 ||= sheet29.i386; end
-  def i26; @i26 ||= sheet29.j386; end
-  def j26; @j26 ||= sheet29.k386; end
-  def k26; @k26 ||= sheet29.l386; end
-  def l26; @l26 ||= sheet29.m386; end
-  def m26; @m26 ||= sheet29.n386; end
-  def n26; @n26 ||= sheet29.o386; end
+  def e26; @e26 ||= sheet29.f385; end
+  def f26; @f26 ||= sheet29.g385; end
+  def g26; @g26 ||= sheet29.h385; end
+  def h26; @h26 ||= sheet29.i385; end
+  def i26; @i26 ||= sheet29.j385; end
+  def j26; @j26 ||= sheet29.k385; end
+  def k26; @k26 ||= sheet29.l385; end
+  def l26; @l26 ||= sheet29.m385; end
+  def m26; @m26 ||= sheet29.n385; end
+  def n26; @n26 ||= sheet29.o385; end
   def r26; "Heating and cooling - commercial"; end
   def s26; @s26 ||= sumif(a('c6','c95'),r26,a('e6','e95')); end
   def t26; @t26 ||= sumif(a('c6','c95'),r26,a('f6','f95')); end
@@ -825,16 +825,16 @@ class Sheet5 < Spreadsheet
   def am26; @am26 ||= sumif(a('d6','d95'),r26,a('n6','n95')); end
   def c27; "Bio-conversion"; end
   def d27; "Gas"; end
-  def e27; @e27 ||= sheet29.f387; end
-  def f27; @f27 ||= sheet29.g387; end
-  def g27; @g27 ||= sheet29.h387; end
-  def h27; @h27 ||= sheet29.i387; end
-  def i27; @i27 ||= sheet29.j387; end
-  def j27; @j27 ||= sheet29.k387; end
-  def k27; @k27 ||= sheet29.l387; end
-  def l27; @l27 ||= sheet29.m387; end
-  def m27; @m27 ||= sheet29.n387; end
-  def n27; @n27 ||= sheet29.o387; end
+  def e27; @e27 ||= sheet29.f386; end
+  def f27; @f27 ||= sheet29.g386; end
+  def g27; @g27 ||= sheet29.h386; end
+  def h27; @h27 ||= sheet29.i386; end
+  def i27; @i27 ||= sheet29.j386; end
+  def j27; @j27 ||= sheet29.k386; end
+  def k27; @k27 ||= sheet29.l386; end
+  def l27; @l27 ||= sheet29.m386; end
+  def m27; @m27 ||= sheet29.n386; end
+  def n27; @n27 ||= sheet29.o386; end
   def r27; "Heating and cooling - homes"; end
   def s27; @s27 ||= sumif(a('c6','c95'),r27,a('e6','e95')); end
   def t27; @t27 ||= sumif(a('c6','c95'),r27,a('f6','f95')); end
@@ -858,16 +858,16 @@ class Sheet5 < Spreadsheet
   def am27; @am27 ||= sumif(a('d6','d95'),r27,a('n6','n95')); end
   def c28; "Bio-conversion"; end
   def d28; "Losses"; end
-  def e28; @e28 ||= sheet29.f393; end
-  def f28; @f28 ||= sheet29.g393; end
-  def g28; @g28 ||= sheet29.h393; end
-  def h28; @h28 ||= sheet29.i393; end
-  def i28; @i28 ||= sheet29.j393; end
-  def j28; @j28 ||= sheet29.k393; end
-  def k28; @k28 ||= sheet29.l393; end
-  def l28; @l28 ||= sheet29.m393; end
-  def m28; @m28 ||= sheet29.n393; end
-  def n28; @n28 ||= sheet29.o393; end
+  def e28; @e28 ||= sheet29.f392; end
+  def f28; @f28 ||= sheet29.g392; end
+  def g28; @g28 ||= sheet29.h392; end
+  def h28; @h28 ||= sheet29.i392; end
+  def i28; @i28 ||= sheet29.j392; end
+  def j28; @j28 ||= sheet29.k392; end
+  def k28; @k28 ||= sheet29.l392; end
+  def l28; @l28 ||= sheet29.m392; end
+  def m28; @m28 ||= sheet29.n392; end
+  def n28; @n28 ||= sheet29.o392; end
   def r28; "Hydro"; end
   def s28; @s28 ||= sumif(a('c6','c95'),r28,a('e6','e95')); end
   def t28; @t28 ||= sumif(a('c6','c95'),r28,a('f6','f95')); end
@@ -2293,28 +2293,28 @@ class Sheet5 < Spreadsheet
   def n90; @n90 ||= -sheet44.o375; end
   def c91; "Liquid"; end
   def d91; "International aviation"; end
-  def e91; @e91 ||= -sheet45.f102; end
-  def f91; @f91 ||= -sheet45.g102; end
-  def g91; @g91 ||= -sheet45.h102; end
-  def h91; @h91 ||= -sheet45.i102; end
-  def i91; @i91 ||= -sheet45.j102; end
-  def j91; @j91 ||= -sheet45.k102; end
-  def k91; @k91 ||= -sheet45.l102; end
-  def l91; @l91 ||= -sheet45.m102; end
-  def m91; @m91 ||= -sheet45.n102; end
-  def n91; @n91 ||= -sheet45.o102; end
+  def e91; @e91 ||= -sheet45.f106; end
+  def f91; @f91 ||= -sheet45.g106; end
+  def g91; @g91 ||= -sheet45.h106; end
+  def h91; @h91 ||= -sheet45.i106; end
+  def i91; @i91 ||= -sheet45.j106; end
+  def j91; @j91 ||= -sheet45.k106; end
+  def k91; @k91 ||= -sheet45.l106; end
+  def l91; @l91 ||= -sheet45.m106; end
+  def m91; @m91 ||= -sheet45.n106; end
+  def n91; @n91 ||= -sheet45.o106; end
   def c92; "Liquid"; end
   def d92; "International shipping"; end
-  def e92; @e92 ||= -sheet46.f91; end
-  def f92; @f92 ||= -sheet46.g91; end
-  def g92; @g92 ||= -sheet46.h91; end
-  def h92; @h92 ||= -sheet46.i91; end
-  def i92; @i92 ||= -sheet46.j91; end
-  def j92; @j92 ||= -sheet46.k91; end
-  def k92; @k92 ||= -sheet46.l91; end
-  def l92; @l92 ||= -sheet46.m91; end
-  def m92; @m92 ||= -sheet46.n91; end
-  def n92; @n92 ||= -sheet46.o91; end
+  def e92; @e92 ||= -sheet46.f95; end
+  def f92; @f92 ||= -sheet46.g95; end
+  def g92; @g92 ||= -sheet46.h95; end
+  def h92; @h92 ||= -sheet46.i95; end
+  def i92; @i92 ||= -sheet46.j95; end
+  def j92; @j92 ||= -sheet46.k95; end
+  def k92; @k92 ||= -sheet46.l95; end
+  def l92; @l92 ||= -sheet46.m95; end
+  def m92; @m92 ||= -sheet46.n95; end
+  def n92; @n92 ||= -sheet46.o95; end
   def c93; "Electricity grid"; end
   def d93; "Geosequestration"; end
   def e93; @e93 ||= -sheet47.f168; end
