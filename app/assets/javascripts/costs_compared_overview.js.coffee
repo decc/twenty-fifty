@@ -95,8 +95,17 @@ class CostsComparedOverview
       @boxes_by_category[category].labels.toFront()
       @hover(@boxes_by_category[category].boxes,category)
       @hover(@boxes_by_category[category].labels,category)
-      @boxes_by_category[category].top_label_box = @r.rect(@x(0),0,100,h*0.75,5).attr({'fill':'#fff','stroke':color.low}).hide()
-      @boxes_by_category[category].top_label = @r.text(@x(0)+50,h*0.75/2,category).attr({'text-anchor':'middle','font-weight':'bold'}).hide()
+      if category == "Fossil fuels"
+       lb = @r.text(@x(0)+175,h*0.75/2,"Fossil fuels for use in buildings, transport, electricity generation and industry").attr({'text-anchor':'middle','font-weight':'bold'})
+      else if category == "Bioenergy"
+       lb = @r.text(@x(0)+175,h*0.75/2,"Bioenergy for use in buildings, transport, electricity generation and industry").attr({'text-anchor':'middle','font-weight':'bold'})
+      else
+       lb = @r.text(@x(0)+50,h*0.75/2,category).attr({'text-anchor':'middle','font-weight':'bold'})
+      
+      @boxes_by_category[category].top_label_box = @r.rect(@x(0),0,lb.getBBox().width+15,h*0.75,5).attr({'fill':'#fff','stroke':color.low}).hide()
+      @boxes_by_category[category].top_label = lb
+      lb.toFront()
+      lb.hide()
     
     for code in twentyfifty.comparator_pathways
       twentyfifty.loadSecondaryPathway(code,@updateBar)
@@ -144,7 +153,8 @@ class CostsComparedOverview
       if cost.low > 1
         b[category].low_label.attr({x:@x(_x + cost.low/2),text:"#{Math.round(cost.low)}"})
       if _id == 'chosen'
-        @boxes_by_category[category].top_label_box.attr({x:@x(_x+cost.low/2)-50})
+        lb = @boxes_by_category[category].top_label_box
+        lb.attr({x:@x(_x+cost.low/2)-(lb.attr('width')/2)})
         @boxes_by_category[category].top_label.attr({x:@x(_x+cost.low/2)})
       _x += cost.low
     for category in categories
