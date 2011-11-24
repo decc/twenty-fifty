@@ -11,7 +11,7 @@ class Story
     @choices = twentyfifty.choices
     element = $('#demand_story')
     element.empty()
-    
+
     @stories_for_choices element, "Homes in 2050", 32,33,37,38
     @heating_choice_table element, @pathway.heating.residential
   
@@ -35,7 +35,7 @@ class Story
     element.empty()
     @electricity_generation_capacity_table element
     element.append("<h4>Greenhouse gases</h4>")
-    element.append("<p>2050 emissions will be #{@pathway.ghg.percent_reduction_from_1990}% below 1990 levels.")
+    element.append("<p>2050 emissions will be #{@pathway.ghg.percent_reduction_from_1990}% below 1990 levels.</p>")
     element.append("<p>International aviation and shipping emissions are not included in the UK's 2050 target but are included here to enable emissions from all sectors to be considered.</p>")
     @stories_for_choices element, null, 50
     element.append("<h4>Energy security</h4>")
@@ -56,15 +56,16 @@ class Story
       #       %td.percent= vector[2]
     
   stories_for_choices: (element,title,rows...) ->
-    element.append("<h4>#{title}</h4><p>") if title?
+    element.append("<h4>#{title}</h4>") if title?
+    text = []
     for row in rows
       choice = choices[row] - 1
       if choice % 1 == 0.0
-        element.append("#{@long_descriptions[row][choice]}. ")
+        text.push(@long_descriptions[row][choice])
       else
-        element.append("Between #{@long_descriptions[row][Math.floor(choice)]} and #{@long_descriptions[row][Math.ceil(choice)]}. ")
+        text.push("Between #{@long_descriptions[row][Math.floor(choice)]} and #{@long_descriptions[row][Math.ceil(choice)]}")
       
-    element.append("</p>")
+    element.append("<p>#{text.join(". ")}.</p>")
   
   heating_choice_table: (element,heat) ->
     html = []
