@@ -17,6 +17,7 @@ class GeneratePathway
     cost_components_table
     map_table
     energy_imports 
+    air_quality
     pathway
   end
   
@@ -211,6 +212,12 @@ class GeneratePathway
     end
     pathway['imports'] = i
   end
+
+  def air_quality
+    pathway['air_quality'] = {}
+    pathway['air_quality']['low'] = air_quality_sheet.e6
+    pathway['air_quality']['high'] = air_quality_sheet.e5
+  end
   
   def control_sheet
     excel.sheet1
@@ -218,6 +225,10 @@ class GeneratePathway
   
   def intermediate_output_sheet
     excel.sheet3
+  end
+
+  def air_quality_sheet
+    excel.sheet10
   end
   
   def heating_sheet

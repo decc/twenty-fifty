@@ -1,19 +1,15 @@
 module ApplicationHelper
   def view_names
     { 
-      # "index" => "Home page", 
-      # "history" => "Your progress", 
-      # "structured" => "Multiple choice", 
-      # "quick_choice" => "Quick choice", 
       "primary_energy_chart"=>"All energy", 
       "electricity"=>"Electricity",
       "energy_security" => "Energy security",
       "sankey"=>"Energy flows", 
       "map"=>"Area", 
+      "air_quality" => "Air quality",
       "costs_in_context"=>"Costs in context",
       "costs_compared_overview"=>"Costs compared",
       "costs_sensitivity" => "Cost sensitivity",
-      # "cost_over_time" => 'Costs: over time', 
       "story"=>"Story"
     }
   end

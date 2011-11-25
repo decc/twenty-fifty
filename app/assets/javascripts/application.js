@@ -28,6 +28,7 @@
 //= require energy_security
 //= require map
 //= require sankey_display
+//= require air_quality
 //= require costs_in_context
 //= require costs_compared_overview
 //= require costs_compared_within_sector

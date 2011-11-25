@@ -1,0 +1,18 @@
+%script{ :type => 'text/javascript' }
+  twentyfifty.setup(twentyfifty.AirQuality)
+
+#results.airquality
+  %h1 The impact of your pathway on air quality
+  
+  #airqualitymessage.airqualitymessage
+
+  #airquality
+
+  .airqualitymessage
+    The hatched area represents the uncertainty over the likely level of innovation in tackling air pollution.
+    We would welcome your feedback on the
+    = link_to "methodology used to calculate the impact of your pathway on air quality.", "http://2050-calculator-tool-wiki.decc.gov.uk/pages/80"
+    You can also download the excel version of the 2050 pathways calcualtor to see the different types of air pollution and the relative importance of different sources.
+
+
+= render 'classic_controls'
