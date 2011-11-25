@@ -215,8 +215,8 @@ class GeneratePathway
 
   def air_quality
     pathway['air_quality'] = {}
-    pathway['air_quality']['low'] = air_quality_sheet.e6
-    pathway['air_quality']['high'] = air_quality_sheet.e5
+    pathway['air_quality']['low'] = air_quality_sheet.f6
+    pathway['air_quality']['high'] = air_quality_sheet.f5
   end
   
   def control_sheet

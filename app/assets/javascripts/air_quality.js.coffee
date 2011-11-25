@@ -9,7 +9,7 @@ class AirQuality
     @h = e.height()
     @w = e.width()
     @r = new Raphael('airquality',@w,@h)
-    @x = d3.scale.linear().domain([0, 150]).range([300,@w-30]).nice()
+    @x = d3.scale.linear().domain([0, 250]).range([300,@w-30]).nice()
     @y = d3.scale.ordinal().domain(['2010','comparator','chosen']).rangeRoundBands([25,@h-20],0.25)
     comparator_id = twentyfifty.getComparator() || twentyfifty.default_comparator_code
   
@@ -62,7 +62,7 @@ class AirQuality
     text.push " lower" if pathway.air_quality.low <= 100
     text.push " in 2050 compared to 2010."
     if pathway.air_quality.high > 100
-      text.push " Given the scope for adverse implications for air quality, if the UK were to adopt this pathway the Governemtn would develop a policy framweork that supported the innovation required to be at the bottom end of the range"
+      text.push " Given the scope for adverse implications for air quality, if the UK were to adopt this pathway the Government  would develop a policy framweork that supported the innovation required to be at the bottom end of the range"
     $('#airqualitymessage').html(text.join(''))
 
 
