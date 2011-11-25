@@ -1241,16 +1241,16 @@ class Sheet5 < Spreadsheet
   def ax38; @ax38 ||= ab38-am38; end
   def c39; "Solid"; end
   def d39; "CHP"; end
-  def e39; @e39 ||= -sheet38.f1131-sheet39.f707; end
-  def f39; @f39 ||= -sheet38.g1131-sheet39.g707; end
-  def g39; @g39 ||= -sheet38.h1131-sheet39.h707; end
-  def h39; @h39 ||= -sheet38.i1131-sheet39.i707; end
-  def i39; @i39 ||= -sheet38.j1131-sheet39.j707; end
-  def j39; @j39 ||= -sheet38.k1131-sheet39.k707; end
-  def k39; @k39 ||= -sheet38.l1131-sheet39.l707; end
-  def l39; @l39 ||= -sheet38.m1131-sheet39.m707; end
-  def m39; @m39 ||= -sheet38.n1131-sheet39.n707; end
-  def n39; @n39 ||= -sheet38.o1131-sheet39.o707; end
+  def e39; @e39 ||= -sheet38.f1173-sheet39.f721; end
+  def f39; @f39 ||= -sheet38.g1173-sheet39.g721; end
+  def g39; @g39 ||= -sheet38.h1173-sheet39.h721; end
+  def h39; @h39 ||= -sheet38.i1173-sheet39.i721; end
+  def i39; @i39 ||= -sheet38.j1173-sheet39.j721; end
+  def j39; @j39 ||= -sheet38.k1173-sheet39.k721; end
+  def k39; @k39 ||= -sheet38.l1173-sheet39.l721; end
+  def l39; @l39 ||= -sheet38.m1173-sheet39.m721; end
+  def m39; @m39 ||= -sheet38.n1173-sheet39.n721; end
+  def n39; @n39 ||= -sheet38.o1173-sheet39.o721; end
   def r39; "Nuclear"; end
   def s39; @s39 ||= sumif(a('c6','c95'),r39,a('e6','e95')); end
   def t39; @t39 ||= sumif(a('c6','c95'),r39,a('f6','f95')); end
@@ -1274,16 +1274,16 @@ class Sheet5 < Spreadsheet
   def am39; @am39 ||= sumif(a('d6','d95'),r39,a('n6','n95')); end
   def c40; "Liquid"; end
   def d40; "CHP"; end
-  def e40; @e40 ||= -sheet38.f1132-sheet39.f708; end
-  def f40; @f40 ||= -sheet38.g1132-sheet39.g708; end
-  def g40; @g40 ||= -sheet38.h1132-sheet39.h708; end
-  def h40; @h40 ||= -sheet38.i1132-sheet39.i708; end
-  def i40; @i40 ||= -sheet38.j1132-sheet39.j708; end
-  def j40; @j40 ||= -sheet38.k1132-sheet39.k708; end
-  def k40; @k40 ||= -sheet38.l1132-sheet39.l708; end
-  def l40; @l40 ||= -sheet38.m1132-sheet39.m708; end
-  def m40; @m40 ||= -sheet38.n1132-sheet39.n708; end
-  def n40; @n40 ||= -sheet38.o1132-sheet39.o708; end
+  def e40; @e40 ||= -sheet38.f1174-sheet39.f722; end
+  def f40; @f40 ||= -sheet38.g1174-sheet39.g722; end
+  def g40; @g40 ||= -sheet38.h1174-sheet39.h722; end
+  def h40; @h40 ||= -sheet38.i1174-sheet39.i722; end
+  def i40; @i40 ||= -sheet38.j1174-sheet39.j722; end
+  def j40; @j40 ||= -sheet38.k1174-sheet39.k722; end
+  def k40; @k40 ||= -sheet38.l1174-sheet39.l722; end
+  def l40; @l40 ||= -sheet38.m1174-sheet39.m722; end
+  def m40; @m40 ||= -sheet38.n1174-sheet39.n722; end
+  def n40; @n40 ||= -sheet38.o1174-sheet39.o722; end
   def r40; "Oil"; end
   def s40; @s40 ||= sumif(a('c6','c95'),r40,a('e6','e95')); end
   def t40; @t40 ||= sumif(a('c6','c95'),r40,a('f6','f95')); end
@@ -1317,16 +1317,16 @@ class Sheet5 < Spreadsheet
   def ax40; @ax40 ||= ab40-am40; end
   def c41; "Gas"; end
   def d41; "CHP"; end
-  def e41; @e41 ||= -sheet38.f1133-sheet39.f709; end
-  def f41; @f41 ||= -sheet38.g1133-sheet39.g709; end
-  def g41; @g41 ||= -sheet38.h1133-sheet39.h709; end
-  def h41; @h41 ||= -sheet38.i1133-sheet39.i709; end
-  def i41; @i41 ||= -sheet38.j1133-sheet39.j709; end
-  def j41; @j41 ||= -sheet38.k1133-sheet39.k709; end
-  def k41; @k41 ||= -sheet38.l1133-sheet39.l709; end
-  def l41; @l41 ||= -sheet38.m1133-sheet39.m709; end
-  def m41; @m41 ||= -sheet38.n1133-sheet39.n709; end
-  def n41; @n41 ||= -sheet38.o1133-sheet39.o709; end
+  def e41; @e41 ||= -sheet38.f1175-sheet39.f723; end
+  def f41; @f41 ||= -sheet38.g1175-sheet39.g723; end
+  def g41; @g41 ||= -sheet38.h1175-sheet39.h723; end
+  def h41; @h41 ||= -sheet38.i1175-sheet39.i723; end
+  def i41; @i41 ||= -sheet38.j1175-sheet39.j723; end
+  def j41; @j41 ||= -sheet38.k1175-sheet39.k723; end
+  def k41; @k41 ||= -sheet38.l1175-sheet39.l723; end
+  def l41; @l41 ||= -sheet38.m1175-sheet39.m723; end
+  def m41; @m41 ||= -sheet38.n1175-sheet39.n723; end
+  def n41; @n41 ||= -sheet38.o1175-sheet39.o723; end
   def r41; "Oil imports"; end
   def s41; @s41 ||= sumif(a('c6','c95'),r41,a('e6','e95')); end
   def t41; @t41 ||= sumif(a('c6','c95'),r41,a('f6','f95')); end
@@ -1350,16 +1350,16 @@ class Sheet5 < Spreadsheet
   def am41; @am41 ||= sumif(a('d6','d95'),r41,a('n6','n95')); end
   def c42; "CHP"; end
   def d42; "Electricity grid"; end
-  def e42; @e42 ||= sheet38.f1130+sheet39.f706; end
-  def f42; @f42 ||= sheet38.g1130+sheet39.g706; end
-  def g42; @g42 ||= sheet38.h1130+sheet39.h706; end
-  def h42; @h42 ||= sheet38.i1130+sheet39.i706; end
-  def i42; @i42 ||= sheet38.j1130+sheet39.j706; end
-  def j42; @j42 ||= sheet38.k1130+sheet39.k706; end
-  def k42; @k42 ||= sheet38.l1130+sheet39.l706; end
-  def l42; @l42 ||= sheet38.m1130+sheet39.m706; end
-  def m42; @m42 ||= sheet38.n1130+sheet39.n706; end
-  def n42; @n42 ||= sheet38.o1130+sheet39.o706; end
+  def e42; @e42 ||= sheet38.f1172+sheet39.f720; end
+  def f42; @f42 ||= sheet38.g1172+sheet39.g720; end
+  def g42; @g42 ||= sheet38.h1172+sheet39.h720; end
+  def h42; @h42 ||= sheet38.i1172+sheet39.i720; end
+  def i42; @i42 ||= sheet38.j1172+sheet39.j720; end
+  def j42; @j42 ||= sheet38.k1172+sheet39.k720; end
+  def k42; @k42 ||= sheet38.l1172+sheet39.l720; end
+  def l42; @l42 ||= sheet38.m1172+sheet39.m720; end
+  def m42; @m42 ||= sheet38.n1172+sheet39.n720; end
+  def n42; @n42 ||= sheet38.o1172+sheet39.o720; end
   def r42; "Oil reserves"; end
   def s42; @s42 ||= sumif(a('c6','c95'),r42,a('e6','e95')); end
   def t42; @t42 ||= sumif(a('c6','c95'),r42,a('f6','f95')); end
@@ -1383,16 +1383,16 @@ class Sheet5 < Spreadsheet
   def am42; @am42 ||= sumif(a('d6','d95'),r42,a('n6','n95')); end
   def c43; "CHP"; end
   def d43; "Losses"; end
-  def e43; @e43 ||= sheet38.f1138+sheet39.f713; end
-  def f43; @f43 ||= sheet38.g1138+sheet39.g713; end
-  def g43; @g43 ||= sheet38.h1138+sheet39.h713; end
-  def h43; @h43 ||= sheet38.i1138+sheet39.i713; end
-  def i43; @i43 ||= sheet38.j1138+sheet39.j713; end
-  def j43; @j43 ||= sheet38.k1138+sheet39.k713; end
-  def k43; @k43 ||= sheet38.l1138+sheet39.l713; end
-  def l43; @l43 ||= sheet38.m1138+sheet39.m713; end
-  def m43; @m43 ||= sheet38.n1138+sheet39.n713; end
-  def n43; @n43 ||= sheet38.o1138+sheet39.o713; end
+  def e43; @e43 ||= sheet38.f1180+sheet39.f727; end
+  def f43; @f43 ||= sheet38.g1180+sheet39.g727; end
+  def g43; @g43 ||= sheet38.h1180+sheet39.h727; end
+  def h43; @h43 ||= sheet38.i1180+sheet39.i727; end
+  def i43; @i43 ||= sheet38.j1180+sheet39.j727; end
+  def j43; @j43 ||= sheet38.k1180+sheet39.k727; end
+  def k43; @k43 ||= sheet38.l1180+sheet39.l727; end
+  def l43; @l43 ||= sheet38.m1180+sheet39.m727; end
+  def m43; @m43 ||= sheet38.n1180+sheet39.n727; end
+  def n43; @n43 ||= sheet38.o1180+sheet39.o727; end
   def r43; "Other waste"; end
   def s43; @s43 ||= sumif(a('c6','c95'),r43,a('e6','e95')); end
   def t43; @t43 ||= sumif(a('c6','c95'),r43,a('f6','f95')); end
@@ -1897,184 +1897,184 @@ class Sheet5 < Spreadsheet
   def n57; @n57 ||= -sheet43.o747; end
   def c58; "Pumped heat"; end
   def d58; "Heating and cooling - homes"; end
-  def e58; @e58 ||= -sheet38.f1151; end
-  def f58; @f58 ||= -sheet38.g1151; end
-  def g58; @g58 ||= -sheet38.h1151; end
-  def h58; @h58 ||= -sheet38.i1151; end
-  def i58; @i58 ||= -sheet38.j1151; end
-  def j58; @j58 ||= -sheet38.k1151; end
-  def k58; @k58 ||= -sheet38.l1151; end
-  def l58; @l58 ||= -sheet38.m1151; end
-  def m58; @m58 ||= -sheet38.n1151; end
-  def n58; @n58 ||= -sheet38.o1151; end
+  def e58; @e58 ||= -sheet38.f1193; end
+  def f58; @f58 ||= -sheet38.g1193; end
+  def g58; @g58 ||= -sheet38.h1193; end
+  def h58; @h58 ||= -sheet38.i1193; end
+  def i58; @i58 ||= -sheet38.j1193; end
+  def j58; @j58 ||= -sheet38.k1193; end
+  def k58; @k58 ||= -sheet38.l1193; end
+  def l58; @l58 ||= -sheet38.m1193; end
+  def m58; @m58 ||= -sheet38.n1193; end
+  def n58; @n58 ||= -sheet38.o1193; end
   def c59; "Pumped heat"; end
   def d59; "Heating and cooling - commercial"; end
-  def e59; @e59 ||= -sheet39.f725; end
-  def f59; @f59 ||= -sheet39.g725; end
-  def g59; @g59 ||= -sheet39.h725; end
-  def h59; @h59 ||= -sheet39.i725; end
-  def i59; @i59 ||= -sheet39.j725; end
-  def j59; @j59 ||= -sheet39.k725; end
-  def k59; @k59 ||= -sheet39.l725; end
-  def l59; @l59 ||= -sheet39.m725; end
-  def m59; @m59 ||= -sheet39.n725; end
-  def n59; @n59 ||= -sheet39.o725; end
+  def e59; @e59 ||= -sheet39.f739; end
+  def f59; @f59 ||= -sheet39.g739; end
+  def g59; @g59 ||= -sheet39.h739; end
+  def h59; @h59 ||= -sheet39.i739; end
+  def i59; @i59 ||= -sheet39.j739; end
+  def j59; @j59 ||= -sheet39.k739; end
+  def k59; @k59 ||= -sheet39.l739; end
+  def l59; @l59 ||= -sheet39.m739; end
+  def m59; @m59 ||= -sheet39.n739; end
+  def n59; @n59 ||= -sheet39.o739; end
   def c60; "CHP"; end
   def d60; "Heating and cooling - homes"; end
-  def e60; @e60 ||= sheet38.f1137; end
-  def f60; @f60 ||= sheet38.g1137; end
-  def g60; @g60 ||= sheet38.h1137; end
-  def h60; @h60 ||= sheet38.i1137; end
-  def i60; @i60 ||= sheet38.j1137; end
-  def j60; @j60 ||= sheet38.k1137; end
-  def k60; @k60 ||= sheet38.l1137; end
-  def l60; @l60 ||= sheet38.m1137; end
-  def m60; @m60 ||= sheet38.n1137; end
-  def n60; @n60 ||= sheet38.o1137; end
+  def e60; @e60 ||= sheet38.f1179; end
+  def f60; @f60 ||= sheet38.g1179; end
+  def g60; @g60 ||= sheet38.h1179; end
+  def h60; @h60 ||= sheet38.i1179; end
+  def i60; @i60 ||= sheet38.j1179; end
+  def j60; @j60 ||= sheet38.k1179; end
+  def k60; @k60 ||= sheet38.l1179; end
+  def l60; @l60 ||= sheet38.m1179; end
+  def m60; @m60 ||= sheet38.n1179; end
+  def n60; @n60 ||= sheet38.o1179; end
   def c61; "CHP"; end
   def d61; "Heating and cooling - commercial"; end
-  def e61; @e61 ||= sheet39.f712; end
-  def f61; @f61 ||= sheet39.g712; end
-  def g61; @g61 ||= sheet39.h712; end
-  def h61; @h61 ||= sheet39.i712; end
-  def i61; @i61 ||= sheet39.j712; end
-  def j61; @j61 ||= sheet39.k712; end
-  def k61; @k61 ||= sheet39.l712; end
-  def l61; @l61 ||= sheet39.m712; end
-  def m61; @m61 ||= sheet39.n712; end
-  def n61; @n61 ||= sheet39.o712; end
+  def e61; @e61 ||= sheet39.f726; end
+  def f61; @f61 ||= sheet39.g726; end
+  def g61; @g61 ||= sheet39.h726; end
+  def h61; @h61 ||= sheet39.i726; end
+  def i61; @i61 ||= sheet39.j726; end
+  def j61; @j61 ||= sheet39.k726; end
+  def k61; @k61 ||= sheet39.l726; end
+  def l61; @l61 ||= sheet39.m726; end
+  def m61; @m61 ||= sheet39.n726; end
+  def n61; @n61 ||= sheet39.o726; end
   def c62; "District heating"; end
   def d62; "Heating and cooling - homes"; end
-  def e62; @e62 ||= -sheet38.f1149; end
-  def f62; @f62 ||= -sheet38.g1149; end
-  def g62; @g62 ||= -sheet38.h1149; end
-  def h62; @h62 ||= -sheet38.i1149; end
-  def i62; @i62 ||= -sheet38.j1149; end
-  def j62; @j62 ||= -sheet38.k1149; end
-  def k62; @k62 ||= -sheet38.l1149; end
-  def l62; @l62 ||= -sheet38.m1149; end
-  def m62; @m62 ||= -sheet38.n1149; end
-  def n62; @n62 ||= -sheet38.o1149; end
+  def e62; @e62 ||= -sheet38.f1191; end
+  def f62; @f62 ||= -sheet38.g1191; end
+  def g62; @g62 ||= -sheet38.h1191; end
+  def h62; @h62 ||= -sheet38.i1191; end
+  def i62; @i62 ||= -sheet38.j1191; end
+  def j62; @j62 ||= -sheet38.k1191; end
+  def k62; @k62 ||= -sheet38.l1191; end
+  def l62; @l62 ||= -sheet38.m1191; end
+  def m62; @m62 ||= -sheet38.n1191; end
+  def n62; @n62 ||= -sheet38.o1191; end
   def c63; "District heating"; end
   def d63; "Heating and cooling - commercial"; end
-  def e63; @e63 ||= -sheet39.f724; end
-  def f63; @f63 ||= -sheet39.g724; end
-  def g63; @g63 ||= -sheet39.h724; end
-  def h63; @h63 ||= -sheet39.i724; end
-  def i63; @i63 ||= -sheet39.j724; end
-  def j63; @j63 ||= -sheet39.k724; end
-  def k63; @k63 ||= -sheet39.l724; end
-  def l63; @l63 ||= -sheet39.m724; end
-  def m63; @m63 ||= -sheet39.n724; end
-  def n63; @n63 ||= -sheet39.o724; end
+  def e63; @e63 ||= -sheet39.f738; end
+  def f63; @f63 ||= -sheet39.g738; end
+  def g63; @g63 ||= -sheet39.h738; end
+  def h63; @h63 ||= -sheet39.i738; end
+  def i63; @i63 ||= -sheet39.j738; end
+  def j63; @j63 ||= -sheet39.k738; end
+  def k63; @k63 ||= -sheet39.l738; end
+  def l63; @l63 ||= -sheet39.m738; end
+  def m63; @m63 ||= -sheet39.n738; end
+  def n63; @n63 ||= -sheet39.o738; end
   def c64; "District heating"; end
   def d64; "Industry"; end
-  def e64; @e64 ||= -sheet42.f434-sheet48.f176; end
-  def f64; @f64 ||= -sheet42.g434-sheet48.g176; end
-  def g64; @g64 ||= -sheet42.h434-sheet48.h176; end
-  def h64; @h64 ||= -sheet42.i434-sheet48.i176; end
-  def i64; @i64 ||= -sheet42.j434-sheet48.j176; end
-  def j64; @j64 ||= -sheet42.k434-sheet48.k176; end
-  def k64; @k64 ||= -sheet42.l434-sheet48.l176; end
-  def l64; @l64 ||= -sheet42.m434-sheet48.m176; end
-  def m64; @m64 ||= -sheet42.n434-sheet48.n176; end
-  def n64; @n64 ||= -sheet42.o434-sheet48.o176; end
+  def e64; @e64 ||= -sheet42.f442-sheet48.f176; end
+  def f64; @f64 ||= -sheet42.g442-sheet48.g176; end
+  def g64; @g64 ||= -sheet42.h442-sheet48.h176; end
+  def h64; @h64 ||= -sheet42.i442-sheet48.i176; end
+  def i64; @i64 ||= -sheet42.j442-sheet48.j176; end
+  def j64; @j64 ||= -sheet42.k442-sheet48.k176; end
+  def k64; @k64 ||= -sheet42.l442-sheet48.l176; end
+  def l64; @l64 ||= -sheet42.m442-sheet48.m176; end
+  def m64; @m64 ||= -sheet42.n442-sheet48.n176; end
+  def n64; @n64 ||= -sheet42.o442-sheet48.o176; end
   def c65; "Electricity grid"; end
   def d65; "Heating and cooling - homes"; end
-  def e65; @e65 ||= -sheet38.f1115; end
-  def f65; @f65 ||= -sheet38.g1115; end
-  def g65; @g65 ||= -sheet38.h1115; end
-  def h65; @h65 ||= -sheet38.i1115; end
-  def i65; @i65 ||= -sheet38.j1115; end
-  def j65; @j65 ||= -sheet38.k1115; end
-  def k65; @k65 ||= -sheet38.l1115; end
-  def l65; @l65 ||= -sheet38.m1115; end
-  def m65; @m65 ||= -sheet38.n1115; end
-  def n65; @n65 ||= -sheet38.o1115; end
+  def e65; @e65 ||= -sheet38.f1157; end
+  def f65; @f65 ||= -sheet38.g1157; end
+  def g65; @g65 ||= -sheet38.h1157; end
+  def h65; @h65 ||= -sheet38.i1157; end
+  def i65; @i65 ||= -sheet38.j1157; end
+  def j65; @j65 ||= -sheet38.k1157; end
+  def k65; @k65 ||= -sheet38.l1157; end
+  def l65; @l65 ||= -sheet38.m1157; end
+  def m65; @m65 ||= -sheet38.n1157; end
+  def n65; @n65 ||= -sheet38.o1157; end
   def c66; "Solid"; end
   def d66; "Heating and cooling - homes"; end
-  def e66; @e66 ||= -sheet38.f1117; end
-  def f66; @f66 ||= -sheet38.g1117; end
-  def g66; @g66 ||= -sheet38.h1117; end
-  def h66; @h66 ||= -sheet38.i1117; end
-  def i66; @i66 ||= -sheet38.j1117; end
-  def j66; @j66 ||= -sheet38.k1117; end
-  def k66; @k66 ||= -sheet38.l1117; end
-  def l66; @l66 ||= -sheet38.m1117; end
-  def m66; @m66 ||= -sheet38.n1117; end
-  def n66; @n66 ||= -sheet38.o1117; end
+  def e66; @e66 ||= -sheet38.f1159; end
+  def f66; @f66 ||= -sheet38.g1159; end
+  def g66; @g66 ||= -sheet38.h1159; end
+  def h66; @h66 ||= -sheet38.i1159; end
+  def i66; @i66 ||= -sheet38.j1159; end
+  def j66; @j66 ||= -sheet38.k1159; end
+  def k66; @k66 ||= -sheet38.l1159; end
+  def l66; @l66 ||= -sheet38.m1159; end
+  def m66; @m66 ||= -sheet38.n1159; end
+  def n66; @n66 ||= -sheet38.o1159; end
   def c67; "Liquid"; end
   def d67; "Heating and cooling - homes"; end
-  def e67; @e67 ||= -sheet38.f1118; end
-  def f67; @f67 ||= -sheet38.g1118; end
-  def g67; @g67 ||= -sheet38.h1118; end
-  def h67; @h67 ||= -sheet38.i1118; end
-  def i67; @i67 ||= -sheet38.j1118; end
-  def j67; @j67 ||= -sheet38.k1118; end
-  def k67; @k67 ||= -sheet38.l1118; end
-  def l67; @l67 ||= -sheet38.m1118; end
-  def m67; @m67 ||= -sheet38.n1118; end
-  def n67; @n67 ||= -sheet38.o1118; end
+  def e67; @e67 ||= -sheet38.f1160; end
+  def f67; @f67 ||= -sheet38.g1160; end
+  def g67; @g67 ||= -sheet38.h1160; end
+  def h67; @h67 ||= -sheet38.i1160; end
+  def i67; @i67 ||= -sheet38.j1160; end
+  def j67; @j67 ||= -sheet38.k1160; end
+  def k67; @k67 ||= -sheet38.l1160; end
+  def l67; @l67 ||= -sheet38.m1160; end
+  def m67; @m67 ||= -sheet38.n1160; end
+  def n67; @n67 ||= -sheet38.o1160; end
   def c68; "Gas"; end
   def d68; "Heating and cooling - homes"; end
-  def e68; @e68 ||= -sheet38.f1119; end
-  def f68; @f68 ||= -sheet38.g1119; end
-  def g68; @g68 ||= -sheet38.h1119; end
-  def h68; @h68 ||= -sheet38.i1119; end
-  def i68; @i68 ||= -sheet38.j1119; end
-  def j68; @j68 ||= -sheet38.k1119; end
-  def k68; @k68 ||= -sheet38.l1119; end
-  def l68; @l68 ||= -sheet38.m1119; end
-  def m68; @m68 ||= -sheet38.n1119; end
-  def n68; @n68 ||= -sheet38.o1119; end
+  def e68; @e68 ||= -sheet38.f1161; end
+  def f68; @f68 ||= -sheet38.g1161; end
+  def g68; @g68 ||= -sheet38.h1161; end
+  def h68; @h68 ||= -sheet38.i1161; end
+  def i68; @i68 ||= -sheet38.j1161; end
+  def j68; @j68 ||= -sheet38.k1161; end
+  def k68; @k68 ||= -sheet38.l1161; end
+  def l68; @l68 ||= -sheet38.m1161; end
+  def m68; @m68 ||= -sheet38.n1161; end
+  def n68; @n68 ||= -sheet38.o1161; end
   def c69; "Electricity grid"; end
   def d69; "Heating and cooling - commercial"; end
-  def e69; @e69 ||= -sheet39.f691; end
-  def f69; @f69 ||= -sheet39.g691; end
-  def g69; @g69 ||= -sheet39.h691; end
-  def h69; @h69 ||= -sheet39.i691; end
-  def i69; @i69 ||= -sheet39.j691; end
-  def j69; @j69 ||= -sheet39.k691; end
-  def k69; @k69 ||= -sheet39.l691; end
-  def l69; @l69 ||= -sheet39.m691; end
-  def m69; @m69 ||= -sheet39.n691; end
-  def n69; @n69 ||= -sheet39.o691; end
+  def e69; @e69 ||= -sheet39.f705; end
+  def f69; @f69 ||= -sheet39.g705; end
+  def g69; @g69 ||= -sheet39.h705; end
+  def h69; @h69 ||= -sheet39.i705; end
+  def i69; @i69 ||= -sheet39.j705; end
+  def j69; @j69 ||= -sheet39.k705; end
+  def k69; @k69 ||= -sheet39.l705; end
+  def l69; @l69 ||= -sheet39.m705; end
+  def m69; @m69 ||= -sheet39.n705; end
+  def n69; @n69 ||= -sheet39.o705; end
   def c70; "Solid"; end
   def d70; "Heating and cooling - commercial"; end
-  def e70; @e70 ||= -sheet39.f693; end
-  def f70; @f70 ||= -sheet39.g693; end
-  def g70; @g70 ||= -sheet39.h693; end
-  def h70; @h70 ||= -sheet39.i693; end
-  def i70; @i70 ||= -sheet39.j693; end
-  def j70; @j70 ||= -sheet39.k693; end
-  def k70; @k70 ||= -sheet39.l693; end
-  def l70; @l70 ||= -sheet39.m693; end
-  def m70; @m70 ||= -sheet39.n693; end
-  def n70; @n70 ||= -sheet39.o693; end
+  def e70; @e70 ||= -sheet39.f707; end
+  def f70; @f70 ||= -sheet39.g707; end
+  def g70; @g70 ||= -sheet39.h707; end
+  def h70; @h70 ||= -sheet39.i707; end
+  def i70; @i70 ||= -sheet39.j707; end
+  def j70; @j70 ||= -sheet39.k707; end
+  def k70; @k70 ||= -sheet39.l707; end
+  def l70; @l70 ||= -sheet39.m707; end
+  def m70; @m70 ||= -sheet39.n707; end
+  def n70; @n70 ||= -sheet39.o707; end
   def c71; "Liquid"; end
   def d71; "Heating and cooling - commercial"; end
-  def e71; @e71 ||= -sheet39.f694; end
-  def f71; @f71 ||= -sheet39.g694; end
-  def g71; @g71 ||= -sheet39.h694; end
-  def h71; @h71 ||= -sheet39.i694; end
-  def i71; @i71 ||= -sheet39.j694; end
-  def j71; @j71 ||= -sheet39.k694; end
-  def k71; @k71 ||= -sheet39.l694; end
-  def l71; @l71 ||= -sheet39.m694; end
-  def m71; @m71 ||= -sheet39.n694; end
-  def n71; @n71 ||= -sheet39.o694; end
+  def e71; @e71 ||= -sheet39.f708; end
+  def f71; @f71 ||= -sheet39.g708; end
+  def g71; @g71 ||= -sheet39.h708; end
+  def h71; @h71 ||= -sheet39.i708; end
+  def i71; @i71 ||= -sheet39.j708; end
+  def j71; @j71 ||= -sheet39.k708; end
+  def k71; @k71 ||= -sheet39.l708; end
+  def l71; @l71 ||= -sheet39.m708; end
+  def m71; @m71 ||= -sheet39.n708; end
+  def n71; @n71 ||= -sheet39.o708; end
   def c72; "Gas"; end
   def d72; "Heating and cooling - commercial"; end
-  def e72; @e72 ||= -sheet39.f695; end
-  def f72; @f72 ||= -sheet39.g695; end
-  def g72; @g72 ||= -sheet39.h695; end
-  def h72; @h72 ||= -sheet39.i695; end
-  def i72; @i72 ||= -sheet39.j695; end
-  def j72; @j72 ||= -sheet39.k695; end
-  def k72; @k72 ||= -sheet39.l695; end
-  def l72; @l72 ||= -sheet39.m695; end
-  def m72; @m72 ||= -sheet39.n695; end
-  def n72; @n72 ||= -sheet39.o695; end
+  def e72; @e72 ||= -sheet39.f709; end
+  def f72; @f72 ||= -sheet39.g709; end
+  def g72; @g72 ||= -sheet39.h709; end
+  def h72; @h72 ||= -sheet39.i709; end
+  def i72; @i72 ||= -sheet39.j709; end
+  def j72; @j72 ||= -sheet39.k709; end
+  def k72; @k72 ||= -sheet39.l709; end
+  def l72; @l72 ||= -sheet39.m709; end
+  def m72; @m72 ||= -sheet39.n709; end
+  def n72; @n72 ||= -sheet39.o709; end
   def c73; "Electricity grid"; end
   def d73; "Lighting & appliances - homes"; end
   def e73; @e73 ||= -sheet40.f183-sheet27.f103; end
@@ -2125,52 +2125,52 @@ class Sheet5 < Spreadsheet
   def n76; @n76 ||= -sheet41.o156; end
   def c77; "Electricity grid"; end
   def d77; "Industry"; end
-  def e77; @e77 ||= -sheet42.f430-sheet48.f173-sheet49.f208; end
-  def f77; @f77 ||= -sheet42.g430-sheet48.g173-sheet49.g208; end
-  def g77; @g77 ||= -sheet42.h430-sheet48.h173-sheet49.h208; end
-  def h77; @h77 ||= -sheet42.i430-sheet48.i173-sheet49.i208; end
-  def i77; @i77 ||= -sheet42.j430-sheet48.j173-sheet49.j208; end
-  def j77; @j77 ||= -sheet42.k430-sheet48.k173-sheet49.k208; end
-  def k77; @k77 ||= -sheet42.l430-sheet48.l173-sheet49.l208; end
-  def l77; @l77 ||= -sheet42.m430-sheet48.m173-sheet49.m208; end
-  def m77; @m77 ||= -sheet42.n430-sheet48.n173-sheet49.n208; end
-  def n77; @n77 ||= -sheet42.o430-sheet48.o173-sheet49.o208; end
+  def e77; @e77 ||= -sheet42.f438-sheet48.f173-sheet49.f208; end
+  def f77; @f77 ||= -sheet42.g438-sheet48.g173-sheet49.g208; end
+  def g77; @g77 ||= -sheet42.h438-sheet48.h173-sheet49.h208; end
+  def h77; @h77 ||= -sheet42.i438-sheet48.i173-sheet49.i208; end
+  def i77; @i77 ||= -sheet42.j438-sheet48.j173-sheet49.j208; end
+  def j77; @j77 ||= -sheet42.k438-sheet48.k173-sheet49.k208; end
+  def k77; @k77 ||= -sheet42.l438-sheet48.l173-sheet49.l208; end
+  def l77; @l77 ||= -sheet42.m438-sheet48.m173-sheet49.m208; end
+  def m77; @m77 ||= -sheet42.n438-sheet48.n173-sheet49.n208; end
+  def n77; @n77 ||= -sheet42.o438-sheet48.o173-sheet49.o208; end
   def c78; "Solid"; end
   def d78; "Industry"; end
-  def e78; @e78 ||= -sheet42.f431-sheet49.f209; end
-  def f78; @f78 ||= -sheet42.g431-sheet49.g209; end
-  def g78; @g78 ||= -sheet42.h431-sheet49.h209; end
-  def h78; @h78 ||= -sheet42.i431-sheet49.i209; end
-  def i78; @i78 ||= -sheet42.j431-sheet49.j209; end
-  def j78; @j78 ||= -sheet42.k431-sheet49.k209; end
-  def k78; @k78 ||= -sheet42.l431-sheet49.l209; end
-  def l78; @l78 ||= -sheet42.m431-sheet49.m209; end
-  def m78; @m78 ||= -sheet42.n431-sheet49.n209; end
-  def n78; @n78 ||= -sheet42.o431-sheet49.o209; end
+  def e78; @e78 ||= -sheet42.f439-sheet49.f209; end
+  def f78; @f78 ||= -sheet42.g439-sheet49.g209; end
+  def g78; @g78 ||= -sheet42.h439-sheet49.h209; end
+  def h78; @h78 ||= -sheet42.i439-sheet49.i209; end
+  def i78; @i78 ||= -sheet42.j439-sheet49.j209; end
+  def j78; @j78 ||= -sheet42.k439-sheet49.k209; end
+  def k78; @k78 ||= -sheet42.l439-sheet49.l209; end
+  def l78; @l78 ||= -sheet42.m439-sheet49.m209; end
+  def m78; @m78 ||= -sheet42.n439-sheet49.n209; end
+  def n78; @n78 ||= -sheet42.o439-sheet49.o209; end
   def c79; "Liquid"; end
   def d79; "Industry"; end
-  def e79; @e79 ||= -sheet42.f432-sheet48.f174; end
-  def f79; @f79 ||= -sheet42.g432-sheet48.g174; end
-  def g79; @g79 ||= -sheet42.h432-sheet48.h174; end
-  def h79; @h79 ||= -sheet42.i432-sheet48.i174; end
-  def i79; @i79 ||= -sheet42.j432-sheet48.j174; end
-  def j79; @j79 ||= -sheet42.k432-sheet48.k174; end
-  def k79; @k79 ||= -sheet42.l432-sheet48.l174; end
-  def l79; @l79 ||= -sheet42.m432-sheet48.m174; end
-  def m79; @m79 ||= -sheet42.n432-sheet48.n174; end
-  def n79; @n79 ||= -sheet42.o432-sheet48.o174; end
+  def e79; @e79 ||= -sheet42.f440-sheet48.f174; end
+  def f79; @f79 ||= -sheet42.g440-sheet48.g174; end
+  def g79; @g79 ||= -sheet42.h440-sheet48.h174; end
+  def h79; @h79 ||= -sheet42.i440-sheet48.i174; end
+  def i79; @i79 ||= -sheet42.j440-sheet48.j174; end
+  def j79; @j79 ||= -sheet42.k440-sheet48.k174; end
+  def k79; @k79 ||= -sheet42.l440-sheet48.l174; end
+  def l79; @l79 ||= -sheet42.m440-sheet48.m174; end
+  def m79; @m79 ||= -sheet42.n440-sheet48.n174; end
+  def n79; @n79 ||= -sheet42.o440-sheet48.o174; end
   def c80; "Gas"; end
   def d80; "Industry"; end
-  def e80; @e80 ||= -sheet42.f433-sheet48.f175-sheet49.f210; end
-  def f80; @f80 ||= -sheet42.g433-sheet48.g175-sheet49.g210; end
-  def g80; @g80 ||= -sheet42.h433-sheet48.h175-sheet49.h210; end
-  def h80; @h80 ||= -sheet42.i433-sheet48.i175-sheet49.i210; end
-  def i80; @i80 ||= -sheet42.j433-sheet48.j175-sheet49.j210; end
-  def j80; @j80 ||= -sheet42.k433-sheet48.k175-sheet49.k210; end
-  def k80; @k80 ||= -sheet42.l433-sheet48.l175-sheet49.l210; end
-  def l80; @l80 ||= -sheet42.m433-sheet48.m175-sheet49.m210; end
-  def m80; @m80 ||= -sheet42.n433-sheet48.n175-sheet49.n210; end
-  def n80; @n80 ||= -sheet42.o433-sheet48.o175-sheet49.o210; end
+  def e80; @e80 ||= -sheet42.f441-sheet48.f175-sheet49.f210; end
+  def f80; @f80 ||= -sheet42.g441-sheet48.g175-sheet49.g210; end
+  def g80; @g80 ||= -sheet42.h441-sheet48.h175-sheet49.h210; end
+  def h80; @h80 ||= -sheet42.i441-sheet48.i175-sheet49.i210; end
+  def i80; @i80 ||= -sheet42.j441-sheet48.j175-sheet49.j210; end
+  def j80; @j80 ||= -sheet42.k441-sheet48.k175-sheet49.k210; end
+  def k80; @k80 ||= -sheet42.l441-sheet48.l175-sheet49.l210; end
+  def l80; @l80 ||= -sheet42.m441-sheet48.m175-sheet49.m210; end
+  def m80; @m80 ||= -sheet42.n441-sheet48.n175-sheet49.n210; end
+  def n80; @n80 ||= -sheet42.o441-sheet48.o175-sheet49.o210; end
   def c81; "Electricity grid"; end
   def d81; "Agriculture"; end
   def e81; @e81 ||= -sheet31.f537; end

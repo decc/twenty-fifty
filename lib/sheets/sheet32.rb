@@ -648,6 +648,15 @@ class Sheet32 < Spreadsheet
   def f177; 0.215; end
   def e193; @e193 ||= f388/(f425*f389); end
   def e194; @e194 ||= f391/(f425*f390); end
+  def g204; 0.0355980053654342; end
+  def o204; 0.0355980053654342; end
+  def g209; 0.14024347826087; end
+  def o209; 0.14024347826087; end
+  def g214; 0.0; end
+  def o214; 0.0; end
+  def g219; 0.013022608695652199; end
+  def o219; 0.013022608695652199; end
+  def f224; 9.63; end
   def h231; 2010.0; end
   def i231; 2015.0; end
   def j231; 2020.0; end
@@ -2182,6 +2191,18 @@ class Sheet32 < Spreadsheet
   def m543; @m543 ||= m405; end
   def n543; @n543 ||= n405; end
   def o543; @o543 ||= o405; end
+  def c549; "AQ.01"; end
+  def g549; @g549 ||= g204*(g388*g389*(1.0-g390))*f172; end
+  def o549; @o549 ||= o204*(o388*o389*(1.0-o390))*f172; end
+  def c550; "AQ.02"; end
+  def g550; @g550 ||= g209*(g388*g389*(1.0-g390))*f172; end
+  def o550; @o550 ||= o209*(o388*o389*(1.0-o390))*f172; end
+  def c551; "AQ.03"; end
+  def g551; @g551 ||= g214*(g388*g389*(1.0-g390))*f172; end
+  def o551; @o551 ||= o214*(o388*o389*(1.0-o390))*f172; end
+  def c552; "AQ.04"; end
+  def g552; @g552 ||= g219*(g388*g389*(1.0-g390))*f172+f224*g542/f542; end
+  def o552; @o552 ||= o219*(o388*o389*(1.0-o390))*f172+f224*o542/f542; end
   def c560; "B.03"; end
   def f560; @f560 ||= f442; end
   def g560; @g560 ||= g442; end

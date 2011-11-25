@@ -406,6 +406,45 @@ class Sheet44 < Spreadsheet
   def m96; 186000.0; end
   def n96; 186000.0; end
   def o96; 186000.0; end
+  def g107; 0.28400000000000003; end
+  def o107; 0.025; end
+  def g108; 0.0; end
+  def o108; 0.0; end
+  def g109; 0.0590098865270735; end
+  def o109; 0.0334827129986074; end
+  def g110; 0.031061955743424498; end
+  def o110; 0.032565313566841; end
+  def g111; 0.232276077116459; end
+  def o111; 0.101877930768909; end
+  def g116; 13.588; end
+  def o116; 3.6; end
+  def g117; 0.0; end
+  def o117; 0.0; end
+  def g118; 1.80721470650903; end
+  def o118; 0.183284792986919; end
+  def g119; 0.0; end
+  def o119; 0.0; end
+  def g120; 5.2743658010897; end
+  def o120; 4.62673832077086; end
+  def g125; 0.08894736842105261; end
+  def o125; 0.00157894736842105; end
+  def g126; 0.0; end
+  def o126; 0.0; end
+  def g127; 0.00157894736842105; end
+  def o127; 0.00157894736842105; end
+  def g128; 0.0; end
+  def o128; 0.0; end
+  def g129; 2.20284079971256; end
+  def o129; 0.31258747663168; end
+  def g134; 1.33613333333333; end
+  def g135; 0.0; end
+  def o135; 0.0; end
+  def g136; 0.0488435458091166; end
+  def o136; 0.00104963654318112; end
+  def g137; 0.0; end
+  def o137; 0.0; end
+  def g138; 0.23554965625494498; end
+  def o138; 0.220402181598452; end
   def c142; 30.0; end
   def c144; 7.0; end
   def g158; 4500.0; end
@@ -1426,5 +1465,51 @@ class Sheet44 < Spreadsheet
   def m437; @m437 ||= m340; end
   def n437; @n437 ||= n340; end
   def o437; @o437 ||= o340; end
+  def g441; @g441 ||= g216; end
+  def o441; @o441 ||= o216; end
+  def g442; @g442 ||= g218; end
+  def o442; @o442 ||= o218; end
+  def g443; @g443 ||= g223; end
+  def o443; @o443 ||= o223; end
+  def g444; @g444 ||= g228; end
+  def o444; @o444 ||= o228; end
+  def g445; @g445 ||= g231; end
+  def o445; @o445 ||= o231; end
+  def c461; "AQ.01"; end
+  def g461; @g461 ||= sumproduct(a('g443','g444'),a('g109','g110')); end
+  def o461; @o461 ||= sumproduct(a('o443','o444'),a('o109','o110')); end
+  def c462; "AQ.02"; end
+  def g462; @g462 ||= sumproduct(a('g443','g444'),a('g118','g119')); end
+  def o462; @o462 ||= sumproduct(a('o443','o444'),a('o118','o119')); end
+  def c463; "AQ.03"; end
+  def g463; @g463 ||= sumproduct(a('g443','g444'),a('g127','g128')); end
+  def o463; @o463 ||= sumproduct(a('o443','o444'),a('o127','o128')); end
+  def c464; "AQ.04"; end
+  def g464; @g464 ||= sumproduct(a('g443','g444'),a('g136','g137')); end
+  def o464; @o464 ||= sumproduct(a('o443','o444'),a('o136','o137')); end
+  def c470; "AQ.01"; end
+  def g470; @g470 ||= sumproduct(a('g441','g442'),a('g107','g108')); end
+  def o470; @o470 ||= sumproduct(a('o441','o442'),a('o107','o108')); end
+  def c471; "AQ.02"; end
+  def g471; @g471 ||= sumproduct(a('g441','g442'),a('g116','g117')); end
+  def o471; @o471 ||= sumproduct(a('o441','o442'),a('o116','o117')); end
+  def c472; "AQ.03"; end
+  def g472; @g472 ||= sumproduct(a('g441','g442'),a('g125','g126')); end
+  def o472; @o472 ||= sumproduct(a('o441','o442'),a('o125','o126')); end
+  def c473; "AQ.04"; end
+  def g473; @g473 ||= sumproduct(a('g441','g442'),a('g134','g135')); end
+  def o473; @o473 ||= sumproduct(a('o441','o442'),a('o135','o136')); end
+  def c479; "AQ.01"; end
+  def g479; @g479 ||= g445*g111; end
+  def o479; @o479 ||= o445*o111; end
+  def c480; "AQ.02"; end
+  def g480; @g480 ||= g445*g120; end
+  def o480; @o480 ||= o445*o120; end
+  def c481; "AQ.03"; end
+  def g481; @g481 ||= g445*g129; end
+  def o481; @o481 ||= o445*o129; end
+  def c482; "AQ.04"; end
+  def g482; @g482 ||= g445*g138; end
+  def o482; @o482 ||= o445*o138; end
 end
 

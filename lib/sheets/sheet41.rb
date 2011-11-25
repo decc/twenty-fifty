@@ -99,6 +99,14 @@ class Sheet41 < Spreadsheet
   def c34; 2.0; end
   def g34; 1.0; end
   def h34; 0.0; end
+  def g51; 0.0018; end
+  def o51; 0.0018; end
+  def g56; 0.252; end
+  def o56; 0.252; end
+  def g61; 0.0; end
+  def o61; 0.0; end
+  def g66; 0.036000000000000004; end
+  def o66; 0.036000000000000004; end
   def c76; 1.0; end
   def d76; 0.0; end
   def e76; 0.0; end
@@ -360,6 +368,18 @@ class Sheet41 < Spreadsheet
   def m167; @m167 ||= m123; end
   def n167; @n167 ||= n123; end
   def o167; @o167 ||= o123; end
+  def c173; "AQ.01"; end
+  def g173; @g173 ||= g51*g117*(1.0-sheet3.i255*(1.0-sheet16.f37)); end
+  def o173; @o173 ||= o51*o117*(1.0-sheet3.q255*(1.0-sheet16.f37)); end
+  def c174; "AQ.02"; end
+  def g174; @g174 ||= g56*g117*(1.0-sheet3.i255*(1.0-sheet16.f37)); end
+  def o174; @o174 ||= o56*o117*(1.0-sheet3.q255*(1.0-sheet16.f37)); end
+  def c175; "AQ.03"; end
+  def g175; @g175 ||= g61*g117*(1.0-sheet3.i255*(1.0-sheet16.f37)); end
+  def o175; @o175 ||= o61*o117*(1.0-sheet3.q255*(1.0-sheet16.f37)); end
+  def c176; "AQ.04"; end
+  def g176; @g176 ||= g66*g117*(1.0-sheet3.i255*(1.0-sheet16.f37)); end
+  def o176; @o176 ||= o66*o117*(1.0-sheet3.q255*(1.0-sheet16.f37)); end
   def c196; "C1.High"; end
   def g196; @g196 ||= g135; end
   def h196; @h196 ||= h135; end

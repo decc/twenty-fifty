@@ -73,6 +73,22 @@ class Sheet48 < Spreadsheet
   def m35; 0.0007612593237425803; end
   def n35; 0.0007612593237425803; end
   def o35; 0.0007612593237425803; end
+  def g45; 0.0244962643106448; end
+  def o45; 0.0252199188018229; end
+  def g46; 0.0027499086722332297; end
+  def o46; 0.00274990867223321; end
+  def g51; 0.0244962643106448; end
+  def o51; 0.0252199188018229; end
+  def g52; 0.218482635071091; end
+  def o52; 0.20786444360189602; end
+  def g57; 1.32990785896196; end
+  def o57; 0.859534332319073; end
+  def g58; 0.0; end
+  def o58; 0.0; end
+  def g63; 0.009964179501533159; end
+  def o63; 0.00985113686749491; end
+  def g64; 0.00800046529886797; end
+  def o64; 0.00800046529886797; end
   def d66; 30.0; end
   def g79; 1908.2671743860744; end
   def h79; 1908.2671743860744; end
@@ -563,5 +579,25 @@ class Sheet48 < Spreadsheet
   def m216; @m216 ||= m165; end
   def n216; @n216 ||= n165; end
   def o216; @o216 ||= o165; end
+  def g220; @g220 ||= sumproduct(a('g45','g46'),a('g133','g134')); end
+  def o220; @o220 ||= sumproduct(a('o45','o46'),a('o133','o134')); end
+  def g221; @g221 ||= sumproduct(a('g51','g52'),a('g133','g134')); end
+  def o221; @o221 ||= sumproduct(a('o51','o52'),a('o133','o134')); end
+  def g222; @g222 ||= sumproduct(a('g57','g58'),a('g133','g134')); end
+  def o222; @o222 ||= sumproduct(a('o57','o58'),a('o133','o134')); end
+  def g223; @g223 ||= sumproduct(a('g63','g64'),a('g133','g134')); end
+  def o223; @o223 ||= sumproduct(a('o63','o64'),a('o133','o134')); end
+  def c228; "AQ.01"; end
+  def g228; @g228 ||= g220; end
+  def o228; @o228 ||= o220; end
+  def c229; "AQ.02"; end
+  def g229; @g229 ||= g221; end
+  def o229; @o229 ||= o221; end
+  def c230; "AQ.03"; end
+  def g230; @g230 ||= g222; end
+  def o230; @o230 ||= o222; end
+  def c231; "AQ.04"; end
+  def g231; @g231 ||= g223; end
+  def o231; @o231 ||= o223; end
 end
 

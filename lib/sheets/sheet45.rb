@@ -3,45 +3,45 @@
 class Sheet45 < Spreadsheet
   def e8; @e8 ||= sheet1.e34; end
   def f16; 152.8; end
-  def g16; 133.78349816119407; end
-  def h16; 151.53063705323754; end
-  def i16; 171.51980664374776; end
-  def j16; 182.10062062901775; end
-  def k16; 191.20798036880257; end
-  def l16; 202.74661081600038; end
-  def m16; 207.40460043712343; end
-  def n16; 209.1994233169827; end
-  def o16; 200.76272318152877; end
+  def g16; 125.0236041697801; end
+  def h16; 141.92775040162394; end
+  def i16; 160.72464692710642; end
+  def j16; 170.5797951758127; end
+  def k16; 178.72784123896676; end
+  def l16; 190.58889075870331; end
+  def m16; 194.9306323392334; end
+  def n16; 196.4187558423291; end
+  def o16; 188.58168305622323; end
   def f17; 152.8; end
-  def g17; 133.78349816119407; end
-  def h17; 150.33063705323755; end
-  def i17; 166.71980664374775; end
-  def j17; 176.10062062901775; end
-  def k17; 184.80798036880256; end
-  def l17; 195.1466108160004; end
-  def m17; 199.40460043712343; end
-  def n17; 200.39942331698268; end
-  def o17; 192.36272318152876; end
+  def g17; 125.0236041697801; end
+  def h17; 140.74149436588328; end
+  def i17; 156.0464495359152; end
+  def j17; 164.62114120026155; end
+  def k17; 172.57474115395715; end
+  def l17; 183.29290340759368; end
+  def m17; 187.37425193302607; end
+  def n17; 188.23979542606804; end
+  def o17; 180.29455975473147; end
   def f18; 152.8; end
-  def g18; 133.78349816119407; end
-  def h18; 150.33063705323755; end
-  def i18; 163.51980664374776; end
-  def j18; 168.50062062901776; end
-  def k18; 172.40798036880255; end
-  def l18; 179.1466108160004; end
-  def m18; 180.60460043712342; end
-  def n18; 181.59942331698267; end
-  def o18; 174.76272318152877; end
+  def g18; 125.0236041697801; end
+  def h18; 140.74149436588328; end
+  def i18; 152.979039324277; end
+  def j18; 157.35629245527085; end
+  def k18; 160.86576277460836; end
+  def l18; 168.23288043601593; end
+  def m18; 169.39644036937418; end
+  def n18; 170.41430117363882; end
+  def o18; 163.77342887570703; end
   def f19; 152.8; end
-  def g19; 133.78349816119407; end
-  def h19; 149.93063705323755; end
-  def i19; 162.71980664374775; end
-  def j19; 167.30062062901774; end
-  def k19; 168.00798036880255; end
-  def l19; 166.7466108160004; end
-  def m19; 153.0046004371234; end
-  def n19; 149.59942331698267; end
-  def o19; 141.56272318152878; end
+  def g19; 125.0255611993506; end
+  def h19; 140.43447064822013; end
+  def i19; 152.08499508893127; end
+  def j19; 156.3594388399908; end
+  def k19; 156.88646088388506; end
+  def l19; 157.09710975651626; end
+  def m19; 143.73016730483914; end
+  def n19; 139.43914213433317; end
+  def o19; 130.75289868996683; end
   def f20; @f20 ||= (index(a('f16','f19'),rounddown(e8,0.0))*(1.0-mod(e8,1.0)))+(index(a('f16','f19'),roundup(e8,0.0))*mod(e8,1.0)); end
   def g20; @g20 ||= (index(a('g16','g19'),rounddown(e8,0.0))*(1.0-mod(e8,1.0)))+(index(a('g16','g19'),roundup(e8,0.0))*mod(e8,1.0)); end
   def h20; @h20 ||= (index(a('h16','h19'),rounddown(e8,0.0))*(1.0-mod(e8,1.0)))+(index(a('h16','h19'),roundup(e8,0.0))*mod(e8,1.0)); end
@@ -61,33 +61,35 @@ class Sheet45 < Spreadsheet
   def z32; 0.0; end
   def aa32; 0.0; end
   def ab32; 0.0; end
+  def g33; 0.00738307948117895; end
+  def o33; 0.00738307948117895; end
   def t33; 0.0; end
-  def u33; -9.512424863801385; end
-  def v33; -9.512424863801272; end
-  def w33; -21.13280827204163; end
-  def x33; -31.30064375425189; end
-  def y33; -37.03438556752843; end
-  def z33; -44.373575088522294; end
-  def aa33; -49.12736830098418; end
-  def ab33; -56.547310087631175; end
+  def u33; -9.841737977773253; end
+  def v33; -9.841737977773253; end
+  def w33; -20.704102330757635; end
+  def x33; -31.914985771882307; end
+  def y33; -38.83985303734355; end
+  def z33; -48.15675921512032; end
+  def aa33; -52.415344999123086; end
+  def ab33; -58.515869605981145; end
   def t34; 0.0; end
-  def u34; -9.512424863801385; end
-  def v34; 11.966045034078974; end
-  def w34; 15.367621284013646; end
-  def x34; 18.486935026379776; end
-  def y34; 18.028757109371792; end
-  def z34; 17.748727501967526; end
-  def aa34; 14.432378866385745; end
-  def ab34; 11.639868967989498; end
+  def u34; -9.841737977773253; end
+  def v34; 12.588200884162589; end
+  def w34; 16.380137783653165; end
+  def x34; 19.682263860019916; end
+  def y34; 18.848854861759854; end
+  def z34; 18.696989888333963; end
+  def aa34; 15.592418202451617; end
+  def ab34; 11.617389793241388; end
   def t35; 0.0; end
-  def u35; 396.7915917116741; end
-  def v35; 157.76037197989837; end
-  def w35; 90.48112752399437; end
-  def x35; 36.44461751168571; end
-  def y35; 233.6885414217201; end
-  def z35; 136.39614637344283; end
-  def aa35; 284.8842615237281; end
-  def ab35; 118.25560122578176; end
+  def u35; 331.2838322616455; end
+  def v35; 173.1207852414589; end
+  def w35; 112.16438459302108; end
+  def x35; 48.3721074199117; end
+  def y35; 248.43334346974356; end
+  def z35; 161.32322196640598; end
+  def aa35; 299.8141368744191; end
+  def ab35; 139.89430130941858; end
   def t37; @t37 ||= (index(a('t32','t35'),rounddown(e8,0.0))*(1.0-mod(e8,1.0)))+(index(a('t32','t35'),roundup(e8,0.0))*mod(e8,1.0)); end
   def u37; @u37 ||= (index(a('u32','u35'),rounddown(e8,0.0))*(1.0-mod(e8,1.0)))+(index(a('u32','u35'),roundup(e8,0.0))*mod(e8,1.0)); end
   def v37; @v37 ||= (index(a('v32','v35'),rounddown(e8,0.0))*(1.0-mod(e8,1.0)))+(index(a('v32','v35'),roundup(e8,0.0))*mod(e8,1.0)); end
@@ -97,16 +99,23 @@ class Sheet45 < Spreadsheet
   def z37; @z37 ||= (index(a('z32','z35'),rounddown(e8,0.0))*(1.0-mod(e8,1.0)))+(index(a('z32','z35'),roundup(e8,0.0))*mod(e8,1.0)); end
   def aa37; @aa37 ||= (index(a('aa32','aa35'),rounddown(e8,0.0))*(1.0-mod(e8,1.0)))+(index(a('aa32','aa35'),roundup(e8,0.0))*mod(e8,1.0)); end
   def ab37; @ab37 ||= (index(a('ab32','ab35'),rounddown(e8,0.0))*(1.0-mod(e8,1.0)))+(index(a('ab32','ab35'),roundup(e8,0.0))*mod(e8,1.0)); end
+  def g38; 1.07792216077182; end
+  def o38; 1.07792216077182; end
+  def g43; 0.0638960072850081; end
+  def o43; 0.0638960072850081; end
+  def g48; 0.09951280576093981; end
+  def o48; 0.09951280576093981; end
+  def g53; 0.07141075726053328; end
+  def o53; 0.07141075726053328; end
   def g64; @g64 ||= g65*q64; end
-  def h64; @h64 ||= h65*q64; end
-  def i64; @i64 ||= i65*q64; end
-  def j64; @j64 ||= j65*q64; end
-  def k64; @k64 ||= k65*q64; end
-  def l64; @l64 ||= l65*q64; end
-  def m64; @m64 ||= m65*q64; end
-  def n64; @n64 ||= n65*q64; end
-  def o64; @o64 ||= o65*q64; end
-  def q64; 0.5; end
+  def h64; @h64 ||= h65; end
+  def i64; @i64 ||= i65; end
+  def j64; @j64 ||= j65; end
+  def k64; @k64 ||= k65; end
+  def l64; @l64 ||= l65; end
+  def m64; @m64 ||= m65; end
+  def n64; @n64 ||= n65; end
+  def o64; @o64 ||= o65; end
   def g65; @g65 ||= t37*sheet14.e73; end
   def h65; @h65 ||= u37*sheet14.e73; end
   def i65; @i65 ||= v37*sheet14.e73; end
@@ -117,15 +126,14 @@ class Sheet45 < Spreadsheet
   def n65; @n65 ||= aa37*sheet14.e73; end
   def o65; @o65 ||= ab37*sheet14.e73; end
   def g66; @g66 ||= g65*q66; end
-  def h66; @h66 ||= h65*q66; end
-  def i66; @i66 ||= i65*q66; end
-  def j66; @j66 ||= j65*q66; end
-  def k66; @k66 ||= k65*q66; end
-  def l66; @l66 ||= l65*q66; end
-  def m66; @m66 ||= m65*q66; end
-  def n66; @n66 ||= n65*q66; end
-  def o66; @o66 ||= o65*q66; end
-  def q66; 1.0; end
+  def h66; @h66 ||= h65; end
+  def i66; @i66 ||= i65; end
+  def j66; @j66 ||= j65; end
+  def k66; @k66 ||= k65; end
+  def l66; @l66 ||= l65; end
+  def m66; @m66 ||= m65; end
+  def n66; @n66 ||= n65; end
+  def o66; @o66 ||= o65; end
   def f80; @f80 ||= f20; end
   def g80; @g80 ||= g20; end
   def h80; @h80 ||= h20; end
@@ -166,15 +174,15 @@ class Sheet45 < Spreadsheet
   def m85; @m85 ||= m80*sheet16.f84; end
   def n85; @n85 ||= n80*sheet16.f84; end
   def o85; @o85 ||= o80*sheet16.f84; end
-  def g88; 133.78349816119407; end
-  def h88; 151.53063705323754; end
-  def i88; 171.51980664374776; end
-  def j88; 182.10062062901775; end
-  def k88; 191.20798036880257; end
-  def l88; 202.74661081600038; end
-  def m88; 207.40460043712343; end
-  def n88; 209.1994233169827; end
-  def o88; 200.76272318152877; end
+  def g88; 125.0236041697801; end
+  def h88; 141.92775040162394; end
+  def i88; 160.72464692710642; end
+  def j88; 170.5797951758127; end
+  def k88; 178.72784123896676; end
+  def l88; 190.58889075870331; end
+  def m88; 194.9306323392334; end
+  def n88; 196.4187558423291; end
+  def o88; 188.58168305622323; end
   def g89; @g89 ||= g88-g80; end
   def h89; @h89 ||= h88-h80; end
   def i89; @i89 ||= i88-i80; end
@@ -193,15 +201,15 @@ class Sheet45 < Spreadsheet
   def m90; @m90 ||= m89*sheet49.m122; end
   def n90; @n90 ||= n89*sheet49.n122; end
   def o90; @o90 ||= o89*sheet49.o122; end
-  def g92; 33.44587454029852; end
-  def h92; 37.882659263309385; end
-  def i92; 42.87995166093694; end
-  def j92; 45.52515515725444; end
-  def k92; 47.80199509220064; end
-  def l92; 50.686652704000096; end
-  def m92; 51.85115010928086; end
-  def n92; 52.29985582924567; end
-  def o92; 50.19068079538219; end
+  def g92; 31.255901042445025; end
+  def h92; 35.481937600405985; end
+  def i92; 40.181161731776605; end
+  def j92; 42.644948793953176; end
+  def k92; 44.68196030974169; end
+  def l92; 47.64722268967583; end
+  def m92; 48.73265808480835; end
+  def n92; 49.10468896058227; end
+  def o92; 47.14542076405581; end
   def g93; @g93 ||= g92-g83; end
   def h93; @h93 ||= h92-h83; end
   def i93; @i93 ||= i92-i83; end
@@ -326,5 +334,17 @@ class Sheet45 < Spreadsheet
   def m139; @m139 ||= m98; end
   def n139; @n139 ||= n98; end
   def o139; @o139 ||= o98; end
+  def c147; "AQ.01"; end
+  def g147; @g147 ||= g80*g33*g53; end
+  def o147; @o147 ||= o80*o33*o53; end
+  def c148; "AQ.02"; end
+  def g148; @g148 ||= g80*g38*g53; end
+  def o148; @o148 ||= o80*o38*o53; end
+  def c149; "AQ.03"; end
+  def g149; @g149 ||= g80*g43*g53; end
+  def o149; @o149 ||= o80*o43*o53; end
+  def c150; "AQ.04"; end
+  def g150; @g150 ||= g80*g48*g53; end
+  def o150; @o150 ||= o80*o48*o53; end
 end
 

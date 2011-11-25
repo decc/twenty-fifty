@@ -1624,5 +1624,69 @@ describe 'Sheet48' do
     sheet48.o216.should be_within(57.98508343478417).of(579.8508343478417)
   end
 
+  it 'cell g220 should equal 1.3047717772434937' do
+    sheet48.g220.should be_within(0.13047717772434939).of(1.3047717772434937)
+  end
+
+  it 'cell o220 should equal 1.029161251160474' do
+    sheet48.o220.should be_within(0.1029161251160474).of(1.029161251160474)
+  end
+
+  it 'cell g221 should equal 1.8134191044845127' do
+    sheet48.g221.should be_within(0.18134191044845127).of(1.8134191044845127)
+  end
+
+  it 'cell o221 should equal 1.3997260371913627' do
+    sheet48.o221.should be_within(0.13997260371913628).of(1.3997260371913627)
+  end
+
+  it 'cell g222 should equal 70.4843633620785' do
+    sheet48.g222.should be_within(7.04843633620785).of(70.4843633620785)
+  end
+
+  it 'cell o222 should equal 34.906108382771286' do
+    sheet48.o222.should be_within(3.490610838277129).of(34.906108382771286)
+  end
+
+  it 'cell g223 should equal 0.5469590971397534' do
+    sheet48.g223.should be_within(0.054695909713975345).of(0.5469590971397534)
+  end
+
+  it 'cell o223 should equal 0.41451330249735113' do
+    sheet48.o223.should be_within(0.041451330249735116).of(0.41451330249735113)
+  end
+
+  it 'cell g228 should equal 1.3047717772434937' do
+    sheet48.g228.should be_within(0.13047717772434939).of(1.3047717772434937)
+  end
+
+  it 'cell o228 should equal 1.029161251160474' do
+    sheet48.o228.should be_within(0.1029161251160474).of(1.029161251160474)
+  end
+
+  it 'cell g229 should equal 1.8134191044845127' do
+    sheet48.g229.should be_within(0.18134191044845127).of(1.8134191044845127)
+  end
+
+  it 'cell o229 should equal 1.3997260371913627' do
+    sheet48.o229.should be_within(0.13997260371913628).of(1.3997260371913627)
+  end
+
+  it 'cell g230 should equal 70.4843633620785' do
+    sheet48.g230.should be_within(7.04843633620785).of(70.4843633620785)
+  end
+
+  it 'cell o230 should equal 34.906108382771286' do
+    sheet48.o230.should be_within(3.490610838277129).of(34.906108382771286)
+  end
+
+  it 'cell g231 should equal 0.5469590971397534' do
+    sheet48.g231.should be_within(0.054695909713975345).of(0.5469590971397534)
+  end
+
+  it 'cell o231 should equal 0.41451330249735113' do
+    sheet48.o231.should be_within(0.041451330249735116).of(0.41451330249735113)
+  end
+
 end
 

@@ -418,5 +418,8 @@ class Sheet50 < Spreadsheet
   def m145; @m145 ||= m100; end
   def n145; @n145 ||= n100; end
   def o145; @o145 ||= o100; end
+  def c151; "AQ.04"; end
+  def i151; 40.25767047121473; end
+  def o151; @o151 ||= i151*(o64/i64); end
 end
 

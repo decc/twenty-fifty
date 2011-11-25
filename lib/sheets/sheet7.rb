@@ -102,7 +102,7 @@ class Sheet7 < Spreadsheet
   def cq2; "NPV"; end
   def a3; "I.a"; end
   def b3; "Conventional thermal plant"; end
-  def c3; "Power"; end
+  def c3; "Electricity"; end
   def e3; @e3 ||= sheet9.e3/(sheet15.c7*sheet14.e78); end
   def f3; @f3 ||= sheet9.f3/(sheet15.c8*sheet14.e78); end
   def g3; @g3 ||= sheet9.g3/(sheet15.c9*sheet14.e78); end
@@ -186,7 +186,7 @@ class Sheet7 < Spreadsheet
   def cr3; @cr3 ||= excel_if(excel_comparison(abs(cd3-cq3-at3),"<",1.0),"ok","err"); end
   def a4; "I.b"; end
   def b4; "Combustion + CCS"; end
-  def c4; "Power"; end
+  def c4; "Electricity"; end
   def e4; @e4 ||= sheet9.e4/(sheet15.c7*sheet14.e78); end
   def f4; @f4 ||= sheet9.f4/(sheet15.c8*sheet14.e78); end
   def g4; @g4 ||= sheet9.g4/(sheet15.c9*sheet14.e78); end
@@ -270,7 +270,7 @@ class Sheet7 < Spreadsheet
   def cr4; @cr4 ||= excel_if(excel_comparison(abs(cd4-cq4-at4),"<",1.0),"ok","err"); end
   def a5; "II.a"; end
   def b5; "Nuclear power"; end
-  def c5; "Power"; end
+  def c5; "Electricity"; end
   def e5; @e5 ||= sheet9.e5/(sheet15.c7*sheet14.e78); end
   def f5; @f5 ||= sheet9.f5/(sheet15.c8*sheet14.e78); end
   def g5; @g5 ||= sheet9.g5/(sheet15.c9*sheet14.e78); end
@@ -354,7 +354,7 @@ class Sheet7 < Spreadsheet
   def cr5; @cr5 ||= excel_if(excel_comparison(abs(cd5-cq5-at5),"<",1.0),"ok","err"); end
   def a6; "III.a.1"; end
   def b6; "Onshore wind"; end
-  def c6; "Power"; end
+  def c6; "Electricity"; end
   def e6; @e6 ||= sheet9.e6/(sheet15.c7*sheet14.e78); end
   def f6; @f6 ||= sheet9.f6/(sheet15.c8*sheet14.e78); end
   def g6; @g6 ||= sheet9.g6/(sheet15.c9*sheet14.e78); end
@@ -438,7 +438,7 @@ class Sheet7 < Spreadsheet
   def cr6; @cr6 ||= excel_if(excel_comparison(abs(cd6-cq6-at6),"<",1.0),"ok","err"); end
   def a7; "III.a.2"; end
   def b7; "Offshore wind"; end
-  def c7; "Power"; end
+  def c7; "Electricity"; end
   def e7; @e7 ||= sheet9.e7/(sheet15.c7*sheet14.e78); end
   def f7; @f7 ||= sheet9.f7/(sheet15.c8*sheet14.e78); end
   def g7; @g7 ||= sheet9.g7/(sheet15.c9*sheet14.e78); end
@@ -522,7 +522,7 @@ class Sheet7 < Spreadsheet
   def cr7; @cr7 ||= excel_if(excel_comparison(abs(cd7-cq7-at7),"<",1.0),"ok","err"); end
   def a8; "III.b"; end
   def b8; "Hydroelectric"; end
-  def c8; "Power"; end
+  def c8; "Electricity"; end
   def e8; @e8 ||= sheet9.e8/(sheet15.c7*sheet14.e78); end
   def f8; @f8 ||= sheet9.f8/(sheet15.c8*sheet14.e78); end
   def g8; @g8 ||= sheet9.g8/(sheet15.c9*sheet14.e78); end
@@ -606,7 +606,7 @@ class Sheet7 < Spreadsheet
   def cr8; @cr8 ||= excel_if(excel_comparison(abs(cd8-cq8-at8),"<",1.0),"ok","err"); end
   def a9; "III.c"; end
   def b9; "Wave and Tidal"; end
-  def c9; "Power"; end
+  def c9; "Electricity"; end
   def e9; @e9 ||= sheet9.e9/(sheet15.c7*sheet14.e78); end
   def f9; @f9 ||= sheet9.f9/(sheet15.c8*sheet14.e78); end
   def g9; @g9 ||= sheet9.g9/(sheet15.c9*sheet14.e78); end
@@ -690,7 +690,7 @@ class Sheet7 < Spreadsheet
   def cr9; @cr9 ||= excel_if(excel_comparison(abs(cd9-cq9-at9),"<",1.0),"ok","err"); end
   def a10; "III.d"; end
   def b10; "Geothermal"; end
-  def c10; "Power"; end
+  def c10; "Electricity"; end
   def e10; @e10 ||= sheet9.e10/(sheet15.c7*sheet14.e78); end
   def f10; @f10 ||= sheet9.f10/(sheet15.c8*sheet14.e78); end
   def g10; @g10 ||= sheet9.g10/(sheet15.c9*sheet14.e78); end
@@ -774,7 +774,7 @@ class Sheet7 < Spreadsheet
   def cr10; @cr10 ||= excel_if(excel_comparison(abs(cd10-cq10-at10),"<",1.0),"ok","err"); end
   def a11; "IV.a"; end
   def b11; "Distributed solar PV"; end
-  def c11; "Power"; end
+  def c11; "Electricity"; end
   def e11; @e11 ||= sheet9.e11/(sheet15.c7*sheet14.e78); end
   def f11; @f11 ||= sheet9.f11/(sheet15.c8*sheet14.e78); end
   def g11; @g11 ||= sheet9.g11/(sheet15.c9*sheet14.e78); end
@@ -858,7 +858,7 @@ class Sheet7 < Spreadsheet
   def cr11; @cr11 ||= excel_if(excel_comparison(abs(cd11-cq11-at11),"<",1.0),"ok","err"); end
   def a12; "IV.b"; end
   def b12; "Distributed solar thermal"; end
-  def c12; "Heating"; end
+  def c12; "Buildings"; end
   def e12; @e12 ||= sheet9.e12/(sheet15.c7*sheet14.e78); end
   def f12; @f12 ||= sheet9.f12/(sheet15.c8*sheet14.e78); end
   def g12; @g12 ||= sheet9.g12/(sheet15.c9*sheet14.e78); end
@@ -942,7 +942,7 @@ class Sheet7 < Spreadsheet
   def cr12; @cr12 ||= excel_if(excel_comparison(abs(cd12-cq12-at12),"<",1.0),"ok","err"); end
   def a13; "IV.c"; end
   def b13; "Micro wind"; end
-  def c13; "Power"; end
+  def c13; "Electricity"; end
   def e13; @e13 ||= sheet9.e13/(sheet15.c7*sheet14.e78); end
   def f13; @f13 ||= sheet9.f13/(sheet15.c8*sheet14.e78); end
   def g13; @g13 ||= sheet9.g13/(sheet15.c9*sheet14.e78); end
@@ -1026,7 +1026,7 @@ class Sheet7 < Spreadsheet
   def cr13; @cr13 ||= excel_if(excel_comparison(abs(cd13-cq13-at13),"<",1.0),"ok","err"); end
   def a14; "V.a"; end
   def b14; "Biomatter to fuel conversion"; end
-  def c14; "Biomass Supply"; end
+  def c14; "Bioenergy"; end
   def e14; @e14 ||= sheet9.e14/(sheet15.c7*sheet14.e78); end
   def f14; @f14 ||= sheet9.f14/(sheet15.c8*sheet14.e78); end
   def g14; @g14 ||= sheet9.g14/(sheet15.c9*sheet14.e78); end
@@ -1110,7 +1110,7 @@ class Sheet7 < Spreadsheet
   def cr14; @cr14 ||= excel_if(excel_comparison(abs(cd14-cq14-at14),"<",1.0),"ok","err"); end
   def a15; "V.b"; end
   def b15; "Bioenergy imports"; end
-  def c15; "Biomass Supply"; end
+  def c15; "Bioenergy"; end
   def e15; 0.0; end
   def f15; 0.0; end
   def g15; 0.0; end
@@ -1194,7 +1194,7 @@ class Sheet7 < Spreadsheet
   def cr15; "ok"; end
   def a16; "VI.a.Bioenergy"; end
   def b16; "Agriculture and land use"; end
-  def c16; "Biomass Supply"; end
+  def c16; "Bioenergy"; end
   def e16; @e16 ||= sheet9.e16/(sheet15.c7*sheet14.e78); end
   def f16; @f16 ||= sheet9.f16/(sheet15.c8*sheet14.e78); end
   def g16; @g16 ||= sheet9.g16/(sheet15.c9*sheet14.e78); end
@@ -1278,7 +1278,7 @@ class Sheet7 < Spreadsheet
   def cr16; @cr16 ||= excel_if(excel_comparison(abs(cd16-cq16-at16),"<",1.0),"ok","err"); end
   def a17; "VI.a.Emissions"; end
   def b17; "Agriculture and land use"; end
-  def c17; "Business"; end
+  def c17; "Bioenergy"; end
   def e17; @e17 ||= sheet9.e17/(sheet15.c7*sheet14.e78); end
   def f17; @f17 ||= sheet9.f17/(sheet15.c8*sheet14.e78); end
   def g17; @g17 ||= sheet9.g17/(sheet15.c9*sheet14.e78); end
@@ -1362,7 +1362,7 @@ class Sheet7 < Spreadsheet
   def cr17; @cr17 ||= excel_if(excel_comparison(abs(cd17-cq17-at17),"<",1.0),"ok","err"); end
   def a18; "VI.b.Bioenergy"; end
   def b18; "Energy from waste"; end
-  def c18; "Biomass Supply"; end
+  def c18; "Bioenergy"; end
   def e18; @e18 ||= sheet9.e18/(sheet15.c7*sheet14.e78); end
   def f18; @f18 ||= sheet9.f18/(sheet15.c8*sheet14.e78); end
   def g18; @g18 ||= sheet9.g18/(sheet15.c9*sheet14.e78); end
@@ -1446,7 +1446,7 @@ class Sheet7 < Spreadsheet
   def cr18; @cr18 ||= excel_if(excel_comparison(abs(cd18-cq18-at18),"<",1.0),"ok","err"); end
   def a19; "VI.b.Waste"; end
   def b19; "Waste arising"; end
-  def c19; "Business"; end
+  def c19; "Bioenergy"; end
   def e19; @e19 ||= sheet9.e19/(sheet15.c7*sheet14.e78); end
   def f19; @f19 ||= sheet9.f19/(sheet15.c8*sheet14.e78); end
   def g19; @g19 ||= sheet9.g19/(sheet15.c9*sheet14.e78); end
@@ -1530,7 +1530,7 @@ class Sheet7 < Spreadsheet
   def cr19; @cr19 ||= excel_if(excel_comparison(abs(cd19-cq19-at19),"<",1.0),"ok","err"); end
   def a20; "VI.c"; end
   def b20; "Marine algae"; end
-  def c20; "Biomass Supply"; end
+  def c20; "Bioenergy"; end
   def e20; @e20 ||= sheet9.e20/(sheet15.c7*sheet14.e78); end
   def f20; @f20 ||= sheet9.f20/(sheet15.c8*sheet14.e78); end
   def g20; @g20 ||= sheet9.g20/(sheet15.c9*sheet14.e78); end
@@ -1614,7 +1614,7 @@ class Sheet7 < Spreadsheet
   def cr20; @cr20 ||= excel_if(excel_comparison(abs(cd20-cq20-at20),"<",1.0),"ok","err"); end
   def a21; "VII.a.Imports"; end
   def b21; "Electricity imports"; end
-  def c21; "Power"; end
+  def c21; "Electricity"; end
   def e21; @e21 ||= sheet9.e21/(sheet15.c7*sheet14.e78); end
   def f21; @f21 ||= sheet9.f21/(sheet15.c8*sheet14.e78); end
   def g21; @g21 ||= sheet9.g21/(sheet15.c9*sheet14.e78); end
@@ -1698,7 +1698,7 @@ class Sheet7 < Spreadsheet
   def cr21; @cr21 ||= excel_if(excel_comparison(abs(cd21-cq21-at21),"<",1.0),"ok","err"); end
   def a22; "VII.a.Exports"; end
   def b22; "Electricity Exports"; end
-  def c22; "Power"; end
+  def c22; "Electricity"; end
   def e22; @e22 ||= sheet9.e22/(sheet15.c7*sheet14.e78); end
   def f22; @f22 ||= sheet9.f22/(sheet15.c8*sheet14.e78); end
   def g22; @g22 ||= sheet9.g22/(sheet15.c9*sheet14.e78); end
@@ -1782,7 +1782,7 @@ class Sheet7 < Spreadsheet
   def cr22; @cr22 ||= excel_if(excel_comparison(abs(cd22-cq22-at22),"<",1.0),"ok","err"); end
   def a23; "VII.b"; end
   def b23; "Electricity grid distribution"; end
-  def c23; "Power"; end
+  def c23; "Electricity"; end
   def e23; @e23 ||= sheet9.e23/(sheet15.c7*sheet14.e78); end
   def f23; @f23 ||= sheet9.f23/(sheet15.c8*sheet14.e78); end
   def g23; @g23 ||= sheet9.g23/(sheet15.c9*sheet14.e78); end
@@ -1866,7 +1866,7 @@ class Sheet7 < Spreadsheet
   def cr23; @cr23 ||= excel_if(excel_comparison(abs(cd23-cq23-at23),"<",1.0),"ok","err"); end
   def a24; "VII.c"; end
   def b24; "Storage, demand shifting, backup"; end
-  def c24; "Power"; end
+  def c24; "Electricity"; end
   def e24; @e24 ||= sheet9.e24/(sheet15.c7*sheet14.e78); end
   def f24; @f24 ||= sheet9.f24/(sheet15.c8*sheet14.e78); end
   def g24; @g24 ||= sheet9.g24/(sheet15.c9*sheet14.e78); end
@@ -2034,7 +2034,7 @@ class Sheet7 < Spreadsheet
   def cr25; @cr25 ||= excel_if(excel_comparison(abs(cd25-cq25-at25),"<",1.0),"ok","err"); end
   def a26; "IX.a.Heating"; end
   def b26; "Domestic heating"; end
-  def c26; "Heating"; end
+  def c26; "Buildings"; end
   def e26; 135.69350562330595; end
   def f26; @f26 ||= sheet9.f26/(sheet15.c8*sheet14.e78); end
   def g26; @g26 ||= sheet9.g26/(sheet15.c9*sheet14.e78); end
@@ -2118,7 +2118,7 @@ class Sheet7 < Spreadsheet
   def cr26; @cr26 ||= excel_if(excel_comparison(abs(cd26-cq26-at26),"<",1.0),"ok","err"); end
   def a27; "IX.a.Insulation"; end
   def b27; "Domestic insulation"; end
-  def c27; "Heating"; end
+  def c27; "Buildings"; end
   def e27; @e27 ||= sheet9.e27/(sheet15.c7*sheet14.e78); end
   def f27; @f27 ||= sheet9.f27/(sheet15.c8*sheet14.e78); end
   def g27; @g27 ||= sheet9.g27/(sheet15.c9*sheet14.e78); end
@@ -2202,7 +2202,7 @@ class Sheet7 < Spreadsheet
   def cr27; @cr27 ||= excel_if(excel_comparison(abs(cd27-cq27-at27),"<",1.0),"ok","err"); end
   def a28; "IX.c"; end
   def b28; "Commercial heating and cooling"; end
-  def c28; "Heating"; end
+  def c28; "Buildings"; end
   def e28; @e28 ||= sheet9.e28/(sheet15.c7*sheet14.e78); end
   def f28; @f28 ||= sheet9.f28/(sheet15.c8*sheet14.e78); end
   def g28; @g28 ||= sheet9.g28/(sheet15.c9*sheet14.e78); end
@@ -2286,7 +2286,7 @@ class Sheet7 < Spreadsheet
   def cr28; @cr28 ||= excel_if(excel_comparison(abs(cd28-cq28-at28),"<",1.0),"ok","err"); end
   def a29; "X.a"; end
   def b29; "Domestic lighting, appliances, and cooking"; end
-  def c29; "Residential"; end
+  def c29; "Buildings"; end
   def e29; @e29 ||= sheet9.e29/(sheet15.c7*sheet14.e78); end
   def f29; @f29 ||= sheet9.f29/(sheet15.c8*sheet14.e78); end
   def g29; @g29 ||= sheet9.g29/(sheet15.c9*sheet14.e78); end
@@ -2370,7 +2370,7 @@ class Sheet7 < Spreadsheet
   def cr29; @cr29 ||= excel_if(excel_comparison(abs(cd29-cq29-at29),"<",1.0),"ok","err"); end
   def a30; "X.b"; end
   def b30; "Commercial lighting, appliances, and catering"; end
-  def c30; "Business"; end
+  def c30; "Buildings"; end
   def e30; @e30 ||= sheet9.e30/(sheet15.c7*sheet14.e78); end
   def f30; @f30 ||= sheet9.f30/(sheet15.c8*sheet14.e78); end
   def g30; @g30 ||= sheet9.g30/(sheet15.c9*sheet14.e78); end
@@ -2454,7 +2454,7 @@ class Sheet7 < Spreadsheet
   def cr30; @cr30 ||= excel_if(excel_comparison(abs(cd30-cq30-at30),"<",1.0),"ok","err"); end
   def a31; "XI.a"; end
   def b31; "Industrial processes"; end
-  def c31; "Business"; end
+  def c31; "Industry"; end
   def e31; @e31 ||= sheet9.e31/(sheet15.c7*sheet14.e78); end
   def f31; @f31 ||= sheet9.f31/(sheet15.c8*sheet14.e78); end
   def g31; @g31 ||= sheet9.g31/(sheet15.c9*sheet14.e78); end
@@ -3378,7 +3378,7 @@ class Sheet7 < Spreadsheet
   def cr41; @cr41 ||= excel_if(excel_comparison(abs(cd41-cq41-at41),"<",1.0),"ok","err"); end
   def a42; "XIV.a"; end
   def b42; "Geosequestration"; end
-  def c42; "Carbon Capture"; end
+  def c42; "Other"; end
   def e42; @e42 ||= sheet9.e42/(sheet15.c7*sheet14.e78); end
   def f42; @f42 ||= sheet9.f42/(sheet15.c8*sheet14.e78); end
   def g42; @g42 ||= sheet9.g42/(sheet15.c9*sheet14.e78); end
@@ -3462,7 +3462,7 @@ class Sheet7 < Spreadsheet
   def cr42; @cr42 ||= excel_if(excel_comparison(abs(cd42-cq42-at42),"<",1.0),"ok","err"); end
   def a43; "XV.a"; end
   def b43; "Petroleum refineries"; end
-  def c43; "Fossil Fuels"; end
+  def c43; "Industry"; end
   def e43; @e43 ||= sheet9.e43/(sheet15.c7*sheet14.e78); end
   def f43; @f43 ||= sheet9.f43/(sheet15.c8*sheet14.e78); end
   def g43; @g43 ||= sheet9.g43/(sheet15.c9*sheet14.e78); end
@@ -4134,7 +4134,7 @@ class Sheet7 < Spreadsheet
   def cr50; @cr50 ||= excel_if(excel_comparison(abs(cd50-cq50-at50),"<",1.0),"ok","err"); end
   def a51; "XVII.a"; end
   def b51; "District heating effective demand"; end
-  def c51; "Heating"; end
+  def c51; "Buildings"; end
   def e51; @e51 ||= sheet9.e51/(sheet15.c7*sheet14.e78); end
   def f51; @f51 ||= sheet9.f51/(sheet15.c8*sheet14.e78); end
   def g51; @g51 ||= sheet9.g51/(sheet15.c9*sheet14.e78); end
@@ -4218,7 +4218,7 @@ class Sheet7 < Spreadsheet
   def cr51; @cr51 ||= excel_if(excel_comparison(abs(cd51-cq51-at51),"<",1.0),"ok","err"); end
   def a52; "XVIII.a"; end
   def b52; "Storage of captured CO2"; end
-  def c52; "Business"; end
+  def c52; "Other"; end
   def e52; @e52 ||= sheet9.e52/(sheet15.c7*sheet14.e78); end
   def f52; @f52 ||= sheet9.f52/(sheet15.c8*sheet14.e78); end
   def g52; @g52 ||= sheet9.g52/(sheet15.c9*sheet14.e78); end
@@ -4483,7 +4483,7 @@ class Sheet7 < Spreadsheet
   def cq56; "NPV"; end
   def a57; "I.a"; end
   def b57; "Conventional thermal plant"; end
-  def c57; "Power"; end
+  def c57; "Electricity"; end
   def e57; @e57 ||= sheet9.e57/(sheet15.c7*sheet14.e78); end
   def f57; @f57 ||= sheet9.f57/(sheet15.c8*sheet14.e78); end
   def g57; @g57 ||= sheet9.g57/(sheet15.c9*sheet14.e78); end
@@ -4567,7 +4567,7 @@ class Sheet7 < Spreadsheet
   def cr57; @cr57 ||= excel_if(excel_comparison(abs(cd57-cq57-at57),"<",1.0),"ok","err"); end
   def a58; "I.b"; end
   def b58; "Combustion + CCS"; end
-  def c58; "Power"; end
+  def c58; "Electricity"; end
   def e58; @e58 ||= sheet9.e58/(sheet15.c7*sheet14.e78); end
   def f58; @f58 ||= sheet9.f58/(sheet15.c8*sheet14.e78); end
   def g58; @g58 ||= sheet9.g58/(sheet15.c9*sheet14.e78); end
@@ -4651,7 +4651,7 @@ class Sheet7 < Spreadsheet
   def cr58; @cr58 ||= excel_if(excel_comparison(abs(cd58-cq58-at58),"<",1.0),"ok","err"); end
   def a59; "II.a"; end
   def b59; "Nuclear power"; end
-  def c59; "Power"; end
+  def c59; "Electricity"; end
   def e59; @e59 ||= sheet9.e59/(sheet15.c7*sheet14.e78); end
   def f59; @f59 ||= sheet9.f59/(sheet15.c8*sheet14.e78); end
   def g59; @g59 ||= sheet9.g59/(sheet15.c9*sheet14.e78); end
@@ -4735,7 +4735,7 @@ class Sheet7 < Spreadsheet
   def cr59; @cr59 ||= excel_if(excel_comparison(abs(cd59-cq59-at59),"<",1.0),"ok","err"); end
   def a60; "III.a.1"; end
   def b60; "Onshore wind"; end
-  def c60; "Power"; end
+  def c60; "Electricity"; end
   def e60; @e60 ||= sheet9.e60/(sheet15.c7*sheet14.e78); end
   def f60; @f60 ||= sheet9.f60/(sheet15.c8*sheet14.e78); end
   def g60; @g60 ||= sheet9.g60/(sheet15.c9*sheet14.e78); end
@@ -4819,7 +4819,7 @@ class Sheet7 < Spreadsheet
   def cr60; @cr60 ||= excel_if(excel_comparison(abs(cd60-cq60-at60),"<",1.0),"ok","err"); end
   def a61; "III.a.2"; end
   def b61; "Offshore wind"; end
-  def c61; "Power"; end
+  def c61; "Electricity"; end
   def e61; @e61 ||= sheet9.e61/(sheet15.c7*sheet14.e78); end
   def f61; @f61 ||= sheet9.f61/(sheet15.c8*sheet14.e78); end
   def g61; @g61 ||= sheet9.g61/(sheet15.c9*sheet14.e78); end
@@ -4903,7 +4903,7 @@ class Sheet7 < Spreadsheet
   def cr61; @cr61 ||= excel_if(excel_comparison(abs(cd61-cq61-at61),"<",1.0),"ok","err"); end
   def a62; "III.b"; end
   def b62; "Hydroelectric"; end
-  def c62; "Power"; end
+  def c62; "Electricity"; end
   def e62; @e62 ||= sheet9.e62/(sheet15.c7*sheet14.e78); end
   def f62; @f62 ||= sheet9.f62/(sheet15.c8*sheet14.e78); end
   def g62; @g62 ||= sheet9.g62/(sheet15.c9*sheet14.e78); end
@@ -4987,7 +4987,7 @@ class Sheet7 < Spreadsheet
   def cr62; @cr62 ||= excel_if(excel_comparison(abs(cd62-cq62-at62),"<",1.0),"ok","err"); end
   def a63; "III.c"; end
   def b63; "Wave and Tidal"; end
-  def c63; "Power"; end
+  def c63; "Electricity"; end
   def e63; @e63 ||= sheet9.e63/(sheet15.c7*sheet14.e78); end
   def f63; @f63 ||= sheet9.f63/(sheet15.c8*sheet14.e78); end
   def g63; @g63 ||= sheet9.g63/(sheet15.c9*sheet14.e78); end
@@ -5071,7 +5071,7 @@ class Sheet7 < Spreadsheet
   def cr63; @cr63 ||= excel_if(excel_comparison(abs(cd63-cq63-at63),"<",1.0),"ok","err"); end
   def a64; "III.d"; end
   def b64; "Geothermal"; end
-  def c64; "Power"; end
+  def c64; "Electricity"; end
   def e64; @e64 ||= sheet9.e64/(sheet15.c7*sheet14.e78); end
   def f64; @f64 ||= sheet9.f64/(sheet15.c8*sheet14.e78); end
   def g64; @g64 ||= sheet9.g64/(sheet15.c9*sheet14.e78); end
@@ -5155,7 +5155,7 @@ class Sheet7 < Spreadsheet
   def cr64; @cr64 ||= excel_if(excel_comparison(abs(cd64-cq64-at64),"<",1.0),"ok","err"); end
   def a65; "IV.a"; end
   def b65; "Distributed solar PV"; end
-  def c65; "Power"; end
+  def c65; "Electricity"; end
   def e65; @e65 ||= sheet9.e65/(sheet15.c7*sheet14.e78); end
   def f65; @f65 ||= sheet9.f65/(sheet15.c8*sheet14.e78); end
   def g65; @g65 ||= sheet9.g65/(sheet15.c9*sheet14.e78); end
@@ -5239,7 +5239,7 @@ class Sheet7 < Spreadsheet
   def cr65; @cr65 ||= excel_if(excel_comparison(abs(cd65-cq65-at65),"<",1.0),"ok","err"); end
   def a66; "IV.b"; end
   def b66; "Distributed solar thermal"; end
-  def c66; "Heating"; end
+  def c66; "Buildings"; end
   def e66; @e66 ||= sheet9.e66/(sheet15.c7*sheet14.e78); end
   def f66; @f66 ||= sheet9.f66/(sheet15.c8*sheet14.e78); end
   def g66; @g66 ||= sheet9.g66/(sheet15.c9*sheet14.e78); end
@@ -5323,7 +5323,7 @@ class Sheet7 < Spreadsheet
   def cr66; @cr66 ||= excel_if(excel_comparison(abs(cd66-cq66-at66),"<",1.0),"ok","err"); end
   def a67; "IV.c"; end
   def b67; "Micro wind"; end
-  def c67; "Power"; end
+  def c67; "Electricity"; end
   def e67; @e67 ||= sheet9.e67/(sheet15.c7*sheet14.e78); end
   def f67; @f67 ||= sheet9.f67/(sheet15.c8*sheet14.e78); end
   def g67; @g67 ||= sheet9.g67/(sheet15.c9*sheet14.e78); end
@@ -5407,7 +5407,7 @@ class Sheet7 < Spreadsheet
   def cr67; @cr67 ||= excel_if(excel_comparison(abs(cd67-cq67-at67),"<",1.0),"ok","err"); end
   def a68; "V.a"; end
   def b68; "Biomatter to fuel conversion"; end
-  def c68; "Biomass Supply"; end
+  def c68; "Bioenergy"; end
   def e68; @e68 ||= sheet9.e68/(sheet15.c7*sheet14.e78); end
   def f68; @f68 ||= sheet9.f68/(sheet15.c8*sheet14.e78); end
   def g68; @g68 ||= sheet9.g68/(sheet15.c9*sheet14.e78); end
@@ -5491,7 +5491,7 @@ class Sheet7 < Spreadsheet
   def cr68; @cr68 ||= excel_if(excel_comparison(abs(cd68-cq68-at68),"<",1.0),"ok","err"); end
   def a69; "V.b"; end
   def b69; "Bioenergy imports"; end
-  def c69; "Biomass Supply"; end
+  def c69; "Bioenergy"; end
   def e69; 0.0; end
   def f69; 0.0; end
   def g69; 0.0; end
@@ -5575,7 +5575,7 @@ class Sheet7 < Spreadsheet
   def cr69; "ok"; end
   def a70; "VI.a.Bioenergy"; end
   def b70; "Agriculture and land use"; end
-  def c70; "Biomass Supply"; end
+  def c70; "Bioenergy"; end
   def e70; @e70 ||= sheet9.e70/(sheet15.c7*sheet14.e78); end
   def f70; @f70 ||= sheet9.f70/(sheet15.c8*sheet14.e78); end
   def g70; @g70 ||= sheet9.g70/(sheet15.c9*sheet14.e78); end
@@ -5659,7 +5659,7 @@ class Sheet7 < Spreadsheet
   def cr70; @cr70 ||= excel_if(excel_comparison(abs(cd70-cq70-at70),"<",1.0),"ok","err"); end
   def a71; "VI.a.Emissions"; end
   def b71; "Agriculture and land use"; end
-  def c71; "Business"; end
+  def c71; "Bioenergy"; end
   def e71; @e71 ||= sheet9.e71/(sheet15.c7*sheet14.e78); end
   def f71; @f71 ||= sheet9.f71/(sheet15.c8*sheet14.e78); end
   def g71; @g71 ||= sheet9.g71/(sheet15.c9*sheet14.e78); end
@@ -5743,7 +5743,7 @@ class Sheet7 < Spreadsheet
   def cr71; @cr71 ||= excel_if(excel_comparison(abs(cd71-cq71-at71),"<",1.0),"ok","err"); end
   def a72; "VI.b.Bioenergy"; end
   def b72; "Energy from waste"; end
-  def c72; "Biomass Supply"; end
+  def c72; "Bioenergy"; end
   def e72; @e72 ||= sheet9.e72/(sheet15.c7*sheet14.e78); end
   def f72; @f72 ||= sheet9.f72/(sheet15.c8*sheet14.e78); end
   def g72; @g72 ||= sheet9.g72/(sheet15.c9*sheet14.e78); end
@@ -5827,7 +5827,7 @@ class Sheet7 < Spreadsheet
   def cr72; @cr72 ||= excel_if(excel_comparison(abs(cd72-cq72-at72),"<",1.0),"ok","err"); end
   def a73; "VI.b.Waste"; end
   def b73; "Waste arising"; end
-  def c73; "Business"; end
+  def c73; "Bioenergy"; end
   def e73; @e73 ||= sheet9.e73/(sheet15.c7*sheet14.e78); end
   def f73; @f73 ||= sheet9.f73/(sheet15.c8*sheet14.e78); end
   def g73; @g73 ||= sheet9.g73/(sheet15.c9*sheet14.e78); end
@@ -5911,7 +5911,7 @@ class Sheet7 < Spreadsheet
   def cr73; @cr73 ||= excel_if(excel_comparison(abs(cd73-cq73-at73),"<",1.0),"ok","err"); end
   def a74; "VI.c"; end
   def b74; "Marine algae"; end
-  def c74; "Biomass Supply"; end
+  def c74; "Bioenergy"; end
   def e74; @e74 ||= sheet9.e74/(sheet15.c7*sheet14.e78); end
   def f74; @f74 ||= sheet9.f74/(sheet15.c8*sheet14.e78); end
   def g74; @g74 ||= sheet9.g74/(sheet15.c9*sheet14.e78); end
@@ -5995,7 +5995,7 @@ class Sheet7 < Spreadsheet
   def cr74; @cr74 ||= excel_if(excel_comparison(abs(cd74-cq74-at74),"<",1.0),"ok","err"); end
   def a75; "VII.a.Imports"; end
   def b75; "Electricity imports"; end
-  def c75; "Power"; end
+  def c75; "Electricity"; end
   def e75; @e75 ||= sheet9.e75/(sheet15.c7*sheet14.e78); end
   def f75; @f75 ||= sheet9.f75/(sheet15.c8*sheet14.e78); end
   def g75; @g75 ||= sheet9.g75/(sheet15.c9*sheet14.e78); end
@@ -6079,7 +6079,7 @@ class Sheet7 < Spreadsheet
   def cr75; @cr75 ||= excel_if(excel_comparison(abs(cd75-cq75-at75),"<",1.0),"ok","err"); end
   def a76; "VII.a.Exports"; end
   def b76; "Electricity Exports"; end
-  def c76; "Power"; end
+  def c76; "Electricity"; end
   def e76; @e76 ||= sheet9.e76/(sheet15.c7*sheet14.e78); end
   def f76; @f76 ||= sheet9.f76/(sheet15.c8*sheet14.e78); end
   def g76; @g76 ||= sheet9.g76/(sheet15.c9*sheet14.e78); end
@@ -6163,7 +6163,7 @@ class Sheet7 < Spreadsheet
   def cr76; @cr76 ||= excel_if(excel_comparison(abs(cd76-cq76-at76),"<",1.0),"ok","err"); end
   def a77; "VII.b"; end
   def b77; "Electricity grid distribution"; end
-  def c77; "Power"; end
+  def c77; "Electricity"; end
   def e77; @e77 ||= sheet9.e77/(sheet15.c7*sheet14.e78); end
   def f77; @f77 ||= sheet9.f77/(sheet15.c8*sheet14.e78); end
   def g77; @g77 ||= sheet9.g77/(sheet15.c9*sheet14.e78); end
@@ -6247,7 +6247,7 @@ class Sheet7 < Spreadsheet
   def cr77; @cr77 ||= excel_if(excel_comparison(abs(cd77-cq77-at77),"<",1.0),"ok","err"); end
   def a78; "VII.c"; end
   def b78; "Storage, demand shifting, backup"; end
-  def c78; "Power"; end
+  def c78; "Electricity"; end
   def e78; @e78 ||= sheet9.e78/(sheet15.c7*sheet14.e78); end
   def f78; @f78 ||= sheet9.f78/(sheet15.c8*sheet14.e78); end
   def g78; @g78 ||= sheet9.g78/(sheet15.c9*sheet14.e78); end
@@ -6415,7 +6415,7 @@ class Sheet7 < Spreadsheet
   def cr79; @cr79 ||= excel_if(excel_comparison(abs(cd79-cq79-at79),"<",1.0),"ok","err"); end
   def a80; "IX.a.Heating"; end
   def b80; "Domestic heating"; end
-  def c80; "Heating"; end
+  def c80; "Buildings"; end
   def e80; 149.0328812205539; end
   def f80; @f80 ||= sheet9.f80/(sheet15.c8*sheet14.e78); end
   def g80; @g80 ||= sheet9.g80/(sheet15.c9*sheet14.e78); end
@@ -6499,7 +6499,7 @@ class Sheet7 < Spreadsheet
   def cr80; @cr80 ||= excel_if(excel_comparison(abs(cd80-cq80-at80),"<",1.0),"ok","err"); end
   def a81; "IX.a.Insulation"; end
   def b81; "Domestic insulation"; end
-  def c81; "Heating"; end
+  def c81; "Buildings"; end
   def e81; @e81 ||= sheet9.e81/(sheet15.c7*sheet14.e78); end
   def f81; @f81 ||= sheet9.f81/(sheet15.c8*sheet14.e78); end
   def g81; @g81 ||= sheet9.g81/(sheet15.c9*sheet14.e78); end
@@ -6583,7 +6583,7 @@ class Sheet7 < Spreadsheet
   def cr81; @cr81 ||= excel_if(excel_comparison(abs(cd81-cq81-at81),"<",1.0),"ok","err"); end
   def a82; "IX.c"; end
   def b82; "Commercial heating and cooling"; end
-  def c82; "Heating"; end
+  def c82; "Buildings"; end
   def e82; @e82 ||= sheet9.e82/(sheet15.c7*sheet14.e78); end
   def f82; @f82 ||= sheet9.f82/(sheet15.c8*sheet14.e78); end
   def g82; @g82 ||= sheet9.g82/(sheet15.c9*sheet14.e78); end
@@ -6667,7 +6667,7 @@ class Sheet7 < Spreadsheet
   def cr82; @cr82 ||= excel_if(excel_comparison(abs(cd82-cq82-at82),"<",1.0),"ok","err"); end
   def a83; "X.a"; end
   def b83; "Domestic lighting, appliances, and cooking"; end
-  def c83; "Residential"; end
+  def c83; "Buildings"; end
   def e83; @e83 ||= sheet9.e83/(sheet15.c7*sheet14.e78); end
   def f83; @f83 ||= sheet9.f83/(sheet15.c8*sheet14.e78); end
   def g83; @g83 ||= sheet9.g83/(sheet15.c9*sheet14.e78); end
@@ -6751,7 +6751,7 @@ class Sheet7 < Spreadsheet
   def cr83; @cr83 ||= excel_if(excel_comparison(abs(cd83-cq83-at83),"<",1.0),"ok","err"); end
   def a84; "X.b"; end
   def b84; "Commercial lighting, appliances, and catering"; end
-  def c84; "Business"; end
+  def c84; "Buildings"; end
   def e84; @e84 ||= sheet9.e84/(sheet15.c7*sheet14.e78); end
   def f84; @f84 ||= sheet9.f84/(sheet15.c8*sheet14.e78); end
   def g84; @g84 ||= sheet9.g84/(sheet15.c9*sheet14.e78); end
@@ -6835,7 +6835,7 @@ class Sheet7 < Spreadsheet
   def cr84; @cr84 ||= excel_if(excel_comparison(abs(cd84-cq84-at84),"<",1.0),"ok","err"); end
   def a85; "XI.a"; end
   def b85; "Industrial processes"; end
-  def c85; "Business"; end
+  def c85; "Industry"; end
   def e85; @e85 ||= sheet9.e85/(sheet15.c7*sheet14.e78); end
   def f85; @f85 ||= sheet9.f85/(sheet15.c8*sheet14.e78); end
   def g85; @g85 ||= sheet9.g85/(sheet15.c9*sheet14.e78); end
@@ -7759,7 +7759,7 @@ class Sheet7 < Spreadsheet
   def cr95; @cr95 ||= excel_if(excel_comparison(abs(cd95-cq95-at95),"<",1.0),"ok","err"); end
   def a96; "XIV.a"; end
   def b96; "Geosequestration"; end
-  def c96; "Carbon Capture"; end
+  def c96; "Other"; end
   def e96; @e96 ||= sheet9.e96/(sheet15.c7*sheet14.e78); end
   def f96; @f96 ||= sheet9.f96/(sheet15.c8*sheet14.e78); end
   def g96; @g96 ||= sheet9.g96/(sheet15.c9*sheet14.e78); end
@@ -7843,7 +7843,7 @@ class Sheet7 < Spreadsheet
   def cr96; @cr96 ||= excel_if(excel_comparison(abs(cd96-cq96-at96),"<",1.0),"ok","err"); end
   def a97; "XV.a"; end
   def b97; "Petroleum refineries"; end
-  def c97; "Fossil Fuels"; end
+  def c97; "Industry"; end
   def e97; @e97 ||= sheet9.e97/(sheet15.c7*sheet14.e78); end
   def f97; @f97 ||= sheet9.f97/(sheet15.c8*sheet14.e78); end
   def g97; @g97 ||= sheet9.g97/(sheet15.c9*sheet14.e78); end
@@ -8515,7 +8515,7 @@ class Sheet7 < Spreadsheet
   def cr104; @cr104 ||= excel_if(excel_comparison(abs(cd104-cq104-at104),"<",1.0),"ok","err"); end
   def a105; "XVII.a"; end
   def b105; "District heating effective demand"; end
-  def c105; "Heating"; end
+  def c105; "Buildings"; end
   def e105; @e105 ||= sheet9.e105/(sheet15.c7*sheet14.e78); end
   def f105; @f105 ||= sheet9.f105/(sheet15.c8*sheet14.e78); end
   def g105; @g105 ||= sheet9.g105/(sheet15.c9*sheet14.e78); end
@@ -8599,7 +8599,7 @@ class Sheet7 < Spreadsheet
   def cr105; @cr105 ||= excel_if(excel_comparison(abs(cd105-cq105-at105),"<",1.0),"ok","err"); end
   def a106; "XVIII.a"; end
   def b106; "Storage of captured CO2"; end
-  def c106; "Business"; end
+  def c106; "Other"; end
   def e106; @e106 ||= sheet9.e106/(sheet15.c7*sheet14.e78); end
   def f106; @f106 ||= sheet9.f106/(sheet15.c8*sheet14.e78); end
   def g106; @g106 ||= sheet9.g106/(sheet15.c9*sheet14.e78); end
@@ -8875,7 +8875,7 @@ class Sheet7 < Spreadsheet
   def cq111; "NPV"; end
   def a112; "I.a"; end
   def b112; "Conventional thermal plant"; end
-  def c112; "Power"; end
+  def c112; "Electricity"; end
   def e112; @e112 ||= sheet9.e112/(sheet15.c7*sheet14.e78); end
   def f112; @f112 ||= sheet9.f112/(sheet15.c8*sheet14.e78); end
   def g112; @g112 ||= sheet9.g112/(sheet15.c9*sheet14.e78); end
@@ -8959,7 +8959,7 @@ class Sheet7 < Spreadsheet
   def cr112; @cr112 ||= excel_if(excel_comparison(abs(cd112-cq112-at112),"<",1.0),"ok","err"); end
   def a113; "I.b"; end
   def b113; "Combustion + CCS"; end
-  def c113; "Power"; end
+  def c113; "Electricity"; end
   def e113; @e113 ||= sheet9.e113/(sheet15.c7*sheet14.e78); end
   def f113; @f113 ||= sheet9.f113/(sheet15.c8*sheet14.e78); end
   def g113; @g113 ||= sheet9.g113/(sheet15.c9*sheet14.e78); end
@@ -9043,7 +9043,7 @@ class Sheet7 < Spreadsheet
   def cr113; @cr113 ||= excel_if(excel_comparison(abs(cd113-cq113-at113),"<",1.0),"ok","err"); end
   def a114; "II.a"; end
   def b114; "Nuclear power"; end
-  def c114; "Power"; end
+  def c114; "Electricity"; end
   def e114; @e114 ||= sheet9.e114/(sheet15.c7*sheet14.e78); end
   def f114; @f114 ||= sheet9.f114/(sheet15.c8*sheet14.e78); end
   def g114; @g114 ||= sheet9.g114/(sheet15.c9*sheet14.e78); end
@@ -9127,7 +9127,7 @@ class Sheet7 < Spreadsheet
   def cr114; @cr114 ||= excel_if(excel_comparison(abs(cd114-cq114-at114),"<",1.0),"ok","err"); end
   def a115; "III.a.1"; end
   def b115; "Onshore wind"; end
-  def c115; "Power"; end
+  def c115; "Electricity"; end
   def e115; @e115 ||= sheet9.e115/(sheet15.c7*sheet14.e78); end
   def f115; @f115 ||= sheet9.f115/(sheet15.c8*sheet14.e78); end
   def g115; @g115 ||= sheet9.g115/(sheet15.c9*sheet14.e78); end
@@ -9211,7 +9211,7 @@ class Sheet7 < Spreadsheet
   def cr115; @cr115 ||= excel_if(excel_comparison(abs(cd115-cq115-at115),"<",1.0),"ok","err"); end
   def a116; "III.a.2"; end
   def b116; "Offshore wind"; end
-  def c116; "Power"; end
+  def c116; "Electricity"; end
   def e116; @e116 ||= sheet9.e116/(sheet15.c7*sheet14.e78); end
   def f116; @f116 ||= sheet9.f116/(sheet15.c8*sheet14.e78); end
   def g116; @g116 ||= sheet9.g116/(sheet15.c9*sheet14.e78); end
@@ -9295,7 +9295,7 @@ class Sheet7 < Spreadsheet
   def cr116; @cr116 ||= excel_if(excel_comparison(abs(cd116-cq116-at116),"<",1.0),"ok","err"); end
   def a117; "III.b"; end
   def b117; "Hydroelectric"; end
-  def c117; "Power"; end
+  def c117; "Electricity"; end
   def e117; @e117 ||= sheet9.e117/(sheet15.c7*sheet14.e78); end
   def f117; @f117 ||= sheet9.f117/(sheet15.c8*sheet14.e78); end
   def g117; @g117 ||= sheet9.g117/(sheet15.c9*sheet14.e78); end
@@ -9379,7 +9379,7 @@ class Sheet7 < Spreadsheet
   def cr117; @cr117 ||= excel_if(excel_comparison(abs(cd117-cq117-at117),"<",1.0),"ok","err"); end
   def a118; "III.c"; end
   def b118; "Wave and Tidal"; end
-  def c118; "Power"; end
+  def c118; "Electricity"; end
   def e118; @e118 ||= sheet9.e118/(sheet15.c7*sheet14.e78); end
   def f118; @f118 ||= sheet9.f118/(sheet15.c8*sheet14.e78); end
   def g118; @g118 ||= sheet9.g118/(sheet15.c9*sheet14.e78); end
@@ -9463,7 +9463,7 @@ class Sheet7 < Spreadsheet
   def cr118; @cr118 ||= excel_if(excel_comparison(abs(cd118-cq118-at118),"<",1.0),"ok","err"); end
   def a119; "III.d"; end
   def b119; "Geothermal"; end
-  def c119; "Power"; end
+  def c119; "Electricity"; end
   def e119; @e119 ||= sheet9.e119/(sheet15.c7*sheet14.e78); end
   def f119; @f119 ||= sheet9.f119/(sheet15.c8*sheet14.e78); end
   def g119; @g119 ||= sheet9.g119/(sheet15.c9*sheet14.e78); end
@@ -9547,7 +9547,7 @@ class Sheet7 < Spreadsheet
   def cr119; @cr119 ||= excel_if(excel_comparison(abs(cd119-cq119-at119),"<",1.0),"ok","err"); end
   def a120; "IV.a"; end
   def b120; "Distributed solar PV"; end
-  def c120; "Power"; end
+  def c120; "Electricity"; end
   def e120; @e120 ||= sheet9.e120/(sheet15.c7*sheet14.e78); end
   def f120; @f120 ||= sheet9.f120/(sheet15.c8*sheet14.e78); end
   def g120; @g120 ||= sheet9.g120/(sheet15.c9*sheet14.e78); end
@@ -9631,7 +9631,7 @@ class Sheet7 < Spreadsheet
   def cr120; @cr120 ||= excel_if(excel_comparison(abs(cd120-cq120-at120),"<",1.0),"ok","err"); end
   def a121; "IV.b"; end
   def b121; "Distributed solar thermal"; end
-  def c121; "Heating"; end
+  def c121; "Buildings"; end
   def e121; @e121 ||= sheet9.e121/(sheet15.c7*sheet14.e78); end
   def f121; @f121 ||= sheet9.f121/(sheet15.c8*sheet14.e78); end
   def g121; @g121 ||= sheet9.g121/(sheet15.c9*sheet14.e78); end
@@ -9715,7 +9715,7 @@ class Sheet7 < Spreadsheet
   def cr121; @cr121 ||= excel_if(excel_comparison(abs(cd121-cq121-at121),"<",1.0),"ok","err"); end
   def a122; "IV.c"; end
   def b122; "Micro wind"; end
-  def c122; "Power"; end
+  def c122; "Electricity"; end
   def e122; @e122 ||= sheet9.e122/(sheet15.c7*sheet14.e78); end
   def f122; @f122 ||= sheet9.f122/(sheet15.c8*sheet14.e78); end
   def g122; @g122 ||= sheet9.g122/(sheet15.c9*sheet14.e78); end
@@ -9799,7 +9799,7 @@ class Sheet7 < Spreadsheet
   def cr122; @cr122 ||= excel_if(excel_comparison(abs(cd122-cq122-at122),"<",1.0),"ok","err"); end
   def a123; "V.a"; end
   def b123; "Biomatter to fuel conversion"; end
-  def c123; "Biomass Supply"; end
+  def c123; "Bioenergy"; end
   def e123; @e123 ||= sheet9.e123/(sheet15.c7*sheet14.e78); end
   def f123; @f123 ||= sheet9.f123/(sheet15.c8*sheet14.e78); end
   def g123; @g123 ||= sheet9.g123/(sheet15.c9*sheet14.e78); end
@@ -9883,7 +9883,7 @@ class Sheet7 < Spreadsheet
   def cr123; @cr123 ||= excel_if(excel_comparison(abs(cd123-cq123-at123),"<",1.0),"ok","err"); end
   def a124; "V.b"; end
   def b124; "Bioenergy imports"; end
-  def c124; "Biomass Supply"; end
+  def c124; "Bioenergy"; end
   def e124; 0.0; end
   def f124; 0.0; end
   def g124; 0.0; end
@@ -9967,7 +9967,7 @@ class Sheet7 < Spreadsheet
   def cr124; "ok"; end
   def a125; "VI.a.Bioenergy"; end
   def b125; "Agriculture and land use"; end
-  def c125; "Biomass Supply"; end
+  def c125; "Bioenergy"; end
   def e125; @e125 ||= sheet9.e125/(sheet15.c7*sheet14.e78); end
   def f125; @f125 ||= sheet9.f125/(sheet15.c8*sheet14.e78); end
   def g125; @g125 ||= sheet9.g125/(sheet15.c9*sheet14.e78); end
@@ -10051,7 +10051,7 @@ class Sheet7 < Spreadsheet
   def cr125; @cr125 ||= excel_if(excel_comparison(abs(cd125-cq125-at125),"<",1.0),"ok","err"); end
   def a126; "VI.a.Emissions"; end
   def b126; "Agriculture and land use"; end
-  def c126; "Business"; end
+  def c126; "Bioenergy"; end
   def e126; @e126 ||= sheet9.e126/(sheet15.c7*sheet14.e78); end
   def f126; @f126 ||= sheet9.f126/(sheet15.c8*sheet14.e78); end
   def g126; @g126 ||= sheet9.g126/(sheet15.c9*sheet14.e78); end
@@ -10135,7 +10135,7 @@ class Sheet7 < Spreadsheet
   def cr126; @cr126 ||= excel_if(excel_comparison(abs(cd126-cq126-at126),"<",1.0),"ok","err"); end
   def a127; "VI.b.Bioenergy"; end
   def b127; "Energy from waste"; end
-  def c127; "Biomass Supply"; end
+  def c127; "Bioenergy"; end
   def e127; @e127 ||= sheet9.e127/(sheet15.c7*sheet14.e78); end
   def f127; @f127 ||= sheet9.f127/(sheet15.c8*sheet14.e78); end
   def g127; @g127 ||= sheet9.g127/(sheet15.c9*sheet14.e78); end
@@ -10219,7 +10219,7 @@ class Sheet7 < Spreadsheet
   def cr127; @cr127 ||= excel_if(excel_comparison(abs(cd127-cq127-at127),"<",1.0),"ok","err"); end
   def a128; "VI.b.Waste"; end
   def b128; "Waste arising"; end
-  def c128; "Business"; end
+  def c128; "Bioenergy"; end
   def e128; @e128 ||= sheet9.e128/(sheet15.c7*sheet14.e78); end
   def f128; @f128 ||= sheet9.f128/(sheet15.c8*sheet14.e78); end
   def g128; @g128 ||= sheet9.g128/(sheet15.c9*sheet14.e78); end
@@ -10303,7 +10303,7 @@ class Sheet7 < Spreadsheet
   def cr128; @cr128 ||= excel_if(excel_comparison(abs(cd128-cq128-at128),"<",1.0),"ok","err"); end
   def a129; "VI.c"; end
   def b129; "Marine algae"; end
-  def c129; "Biomass Supply"; end
+  def c129; "Bioenergy"; end
   def e129; @e129 ||= sheet9.e129/(sheet15.c7*sheet14.e78); end
   def f129; @f129 ||= sheet9.f129/(sheet15.c8*sheet14.e78); end
   def g129; @g129 ||= sheet9.g129/(sheet15.c9*sheet14.e78); end
@@ -10387,7 +10387,7 @@ class Sheet7 < Spreadsheet
   def cr129; @cr129 ||= excel_if(excel_comparison(abs(cd129-cq129-at129),"<",1.0),"ok","err"); end
   def a130; "VII.a.Imports"; end
   def b130; "Electricity imports"; end
-  def c130; "Power"; end
+  def c130; "Electricity"; end
   def e130; @e130 ||= sheet9.e130/(sheet15.c7*sheet14.e78); end
   def f130; @f130 ||= sheet9.f130/(sheet15.c8*sheet14.e78); end
   def g130; @g130 ||= sheet9.g130/(sheet15.c9*sheet14.e78); end
@@ -10471,7 +10471,7 @@ class Sheet7 < Spreadsheet
   def cr130; @cr130 ||= excel_if(excel_comparison(abs(cd130-cq130-at130),"<",1.0),"ok","err"); end
   def a131; "VII.a.Exports"; end
   def b131; "Electricity Exports"; end
-  def c131; "Power"; end
+  def c131; "Electricity"; end
   def e131; @e131 ||= sheet9.e131/(sheet15.c7*sheet14.e78); end
   def f131; @f131 ||= sheet9.f131/(sheet15.c8*sheet14.e78); end
   def g131; @g131 ||= sheet9.g131/(sheet15.c9*sheet14.e78); end
@@ -10555,7 +10555,7 @@ class Sheet7 < Spreadsheet
   def cr131; @cr131 ||= excel_if(excel_comparison(abs(cd131-cq131-at131),"<",1.0),"ok","err"); end
   def a132; "VII.b"; end
   def b132; "Electricity grid distribution"; end
-  def c132; "Power"; end
+  def c132; "Electricity"; end
   def e132; @e132 ||= sheet9.e132/(sheet15.c7*sheet14.e78); end
   def f132; @f132 ||= sheet9.f132/(sheet15.c8*sheet14.e78); end
   def g132; @g132 ||= sheet9.g132/(sheet15.c9*sheet14.e78); end
@@ -10639,7 +10639,7 @@ class Sheet7 < Spreadsheet
   def cr132; @cr132 ||= excel_if(excel_comparison(abs(cd132-cq132-at132),"<",1.0),"ok","err"); end
   def a133; "VII.c"; end
   def b133; "Storage, demand shifting, backup"; end
-  def c133; "Power"; end
+  def c133; "Electricity"; end
   def e133; @e133 ||= sheet9.e133/(sheet15.c7*sheet14.e78); end
   def f133; @f133 ||= sheet9.f133/(sheet15.c8*sheet14.e78); end
   def g133; @g133 ||= sheet9.g133/(sheet15.c9*sheet14.e78); end
@@ -10807,7 +10807,7 @@ class Sheet7 < Spreadsheet
   def cr134; @cr134 ||= excel_if(excel_comparison(abs(cd134-cq134-at134),"<",1.0),"ok","err"); end
   def a135; "IX.a.Heating"; end
   def b135; "Domestic heating"; end
-  def c135; "Heating"; end
+  def c135; "Buildings"; end
   def e135; 173.80600732972863; end
   def f135; @f135 ||= sheet9.f135/(sheet15.c8*sheet14.e78); end
   def g135; @g135 ||= sheet9.g135/(sheet15.c9*sheet14.e78); end
@@ -10891,7 +10891,7 @@ class Sheet7 < Spreadsheet
   def cr135; @cr135 ||= excel_if(excel_comparison(abs(cd135-cq135-at135),"<",1.0),"ok","err"); end
   def a136; "IX.a.Insulation"; end
   def b136; "Domestic insulation"; end
-  def c136; "Heating"; end
+  def c136; "Buildings"; end
   def e136; @e136 ||= sheet9.e136/(sheet15.c7*sheet14.e78); end
   def f136; @f136 ||= sheet9.f136/(sheet15.c8*sheet14.e78); end
   def g136; @g136 ||= sheet9.g136/(sheet15.c9*sheet14.e78); end
@@ -10975,7 +10975,7 @@ class Sheet7 < Spreadsheet
   def cr136; @cr136 ||= excel_if(excel_comparison(abs(cd136-cq136-at136),"<",1.0),"ok","err"); end
   def a137; "IX.c"; end
   def b137; "Commercial heating and cooling"; end
-  def c137; "Heating"; end
+  def c137; "Buildings"; end
   def e137; @e137 ||= sheet9.e137/(sheet15.c7*sheet14.e78); end
   def f137; @f137 ||= sheet9.f137/(sheet15.c8*sheet14.e78); end
   def g137; @g137 ||= sheet9.g137/(sheet15.c9*sheet14.e78); end
@@ -11059,7 +11059,7 @@ class Sheet7 < Spreadsheet
   def cr137; @cr137 ||= excel_if(excel_comparison(abs(cd137-cq137-at137),"<",1.0),"ok","err"); end
   def a138; "X.a"; end
   def b138; "Domestic lighting, appliances, and cooking"; end
-  def c138; "Residential"; end
+  def c138; "Buildings"; end
   def e138; @e138 ||= sheet9.e138/(sheet15.c7*sheet14.e78); end
   def f138; @f138 ||= sheet9.f138/(sheet15.c8*sheet14.e78); end
   def g138; @g138 ||= sheet9.g138/(sheet15.c9*sheet14.e78); end
@@ -11143,7 +11143,7 @@ class Sheet7 < Spreadsheet
   def cr138; @cr138 ||= excel_if(excel_comparison(abs(cd138-cq138-at138),"<",1.0),"ok","err"); end
   def a139; "X.b"; end
   def b139; "Commercial lighting, appliances, and catering"; end
-  def c139; "Business"; end
+  def c139; "Buildings"; end
   def e139; @e139 ||= sheet9.e139/(sheet15.c7*sheet14.e78); end
   def f139; @f139 ||= sheet9.f139/(sheet15.c8*sheet14.e78); end
   def g139; @g139 ||= sheet9.g139/(sheet15.c9*sheet14.e78); end
@@ -11227,7 +11227,7 @@ class Sheet7 < Spreadsheet
   def cr139; @cr139 ||= excel_if(excel_comparison(abs(cd139-cq139-at139),"<",1.0),"ok","err"); end
   def a140; "XI.a"; end
   def b140; "Industrial processes"; end
-  def c140; "Business"; end
+  def c140; "Industry"; end
   def e140; @e140 ||= sheet9.e140/(sheet15.c7*sheet14.e78); end
   def f140; @f140 ||= sheet9.f140/(sheet15.c8*sheet14.e78); end
   def g140; @g140 ||= sheet9.g140/(sheet15.c9*sheet14.e78); end
@@ -12151,7 +12151,7 @@ class Sheet7 < Spreadsheet
   def cr150; @cr150 ||= excel_if(excel_comparison(abs(cd150-cq150-at150),"<",1.0),"ok","err"); end
   def a151; "XIV.a"; end
   def b151; "Geosequestration"; end
-  def c151; "Carbon Capture"; end
+  def c151; "Other"; end
   def e151; @e151 ||= sheet9.e151/(sheet15.c7*sheet14.e78); end
   def f151; @f151 ||= sheet9.f151/(sheet15.c8*sheet14.e78); end
   def g151; @g151 ||= sheet9.g151/(sheet15.c9*sheet14.e78); end
@@ -12235,7 +12235,7 @@ class Sheet7 < Spreadsheet
   def cr151; @cr151 ||= excel_if(excel_comparison(abs(cd151-cq151-at151),"<",1.0),"ok","err"); end
   def a152; "XV.a"; end
   def b152; "Petroleum refineries"; end
-  def c152; "Fossil Fuels"; end
+  def c152; "Industry"; end
   def e152; @e152 ||= sheet9.e152/(sheet15.c7*sheet14.e78); end
   def f152; @f152 ||= sheet9.f152/(sheet15.c8*sheet14.e78); end
   def g152; @g152 ||= sheet9.g152/(sheet15.c9*sheet14.e78); end
@@ -12907,7 +12907,7 @@ class Sheet7 < Spreadsheet
   def cr159; @cr159 ||= excel_if(excel_comparison(abs(cd159-cq159-at159),"<",1.0),"ok","err"); end
   def a160; "XVII.a"; end
   def b160; "District heating effective demand"; end
-  def c160; "Heating"; end
+  def c160; "Buildings"; end
   def e160; @e160 ||= sheet9.e160/(sheet15.c7*sheet14.e78); end
   def f160; @f160 ||= sheet9.f160/(sheet15.c8*sheet14.e78); end
   def g160; @g160 ||= sheet9.g160/(sheet15.c9*sheet14.e78); end
@@ -12991,7 +12991,7 @@ class Sheet7 < Spreadsheet
   def cr160; @cr160 ||= excel_if(excel_comparison(abs(cd160-cq160-at160),"<",1.0),"ok","err"); end
   def a161; "XVIII.a"; end
   def b161; "Storage of captured CO2"; end
-  def c161; "Business"; end
+  def c161; "Other"; end
   def e161; @e161 ||= sheet9.e161/(sheet15.c7*sheet14.e78); end
   def f161; @f161 ||= sheet9.f161/(sheet15.c8*sheet14.e78); end
   def g161; @g161 ||= sheet9.g161/(sheet15.c9*sheet14.e78); end
@@ -13155,5 +13155,2451 @@ class Sheet7 < Spreadsheet
   def cp162; @cp162 ||= average(a('cf162','cn162')); end
   def cq162; @cq162 ||= sum(a('cq112','cq161')); end
   def cr162; @cr162 ||= excel_if(excel_comparison(abs(cd162-cq162-at162),"<",1.0),"ok","err"); end
+  def c164; "£m"; end
+  def e164; "C1.Low"; end
+  def f164; "Low estimate of capital costs"; end
+  def o164; "C2.Low"; end
+  def p164; "Low estimate of operating costs"; end
+  def y164; "C3.Low"; end
+  def z164; "Low estimate of fuel costs"; end
+  def ai164; "Low estimate of total cost"; end
+  def as164; "Cashflow capital basis"; end
+  def av164; "Loan"; end
+  def ay164; "Repayments for capital spent in that period"; end
+  def bi164; "Repayments for outstanding capital"; end
+  def bs164; "Total cost (ammortised capital)"; end
+  def cc164; "Amortised Capital"; end
+  def cf164; "Extra cost due to financing capital, compared with doing it out of cash"; end
+  def cp164; "Extra cost due to financing capital, compared with doing it out of cash"; end
+  def c165; "Category"; end
+  def e165; "2010"; end
+  def f165; "2015"; end
+  def g165; "2020"; end
+  def h165; "2025"; end
+  def i165; "2030"; end
+  def j165; "2035"; end
+  def k165; "2040"; end
+  def l165; "2045"; end
+  def m165; "2050"; end
+  def o165; "2010"; end
+  def p165; "2015"; end
+  def q165; "2020"; end
+  def r165; "2025"; end
+  def s165; "2030"; end
+  def t165; "2035"; end
+  def u165; "2040"; end
+  def v165; "2045"; end
+  def w165; "2050"; end
+  def y165; "2010"; end
+  def z165; "2015"; end
+  def aa165; "2020"; end
+  def ab165; "2025"; end
+  def ac165; "2030"; end
+  def ad165; "2035"; end
+  def ae165; "2040"; end
+  def af165; "2045"; end
+  def ag165; "2050"; end
+  def ai165; "2010"; end
+  def aj165; "2015"; end
+  def ak165; "2020"; end
+  def al165; "2025"; end
+  def am165; "2030"; end
+  def an165; "2035"; end
+  def ao165; "2040"; end
+  def ap165; "2045"; end
+  def aq165; "2050"; end
+  def as165; "Mean"; end
+  def at165; "NPV"; end
+  def av165; "Rate"; end
+  def aw165; "Years"; end
+  def ay165; 2010.0; end
+  def az165; 2015.0; end
+  def ba165; 2020.0; end
+  def bb165; 2025.0; end
+  def bc165; 2030.0; end
+  def bd165; 2035.0; end
+  def be165; 2040.0; end
+  def bf165; 2045.0; end
+  def bg165; 2050.0; end
+  def bi165; 2010.0; end
+  def bj165; 2015.0; end
+  def bk165; 2020.0; end
+  def bl165; 2025.0; end
+  def bm165; 2030.0; end
+  def bn165; 2035.0; end
+  def bo165; 2040.0; end
+  def bp165; 2045.0; end
+  def bq165; 2050.0; end
+  def bs165; "2010"; end
+  def bt165; "2015"; end
+  def bu165; "2020"; end
+  def bv165; "2025"; end
+  def bw165; "2030"; end
+  def bx165; "2035"; end
+  def by165; "2040"; end
+  def bz165; "2045"; end
+  def ca165; "2050"; end
+  def cc165; "Mean"; end
+  def cd165; "NPV"; end
+  def cf165; "2010"; end
+  def cg165; "2015"; end
+  def ch165; "2020"; end
+  def ci165; "2025"; end
+  def cj165; "2030"; end
+  def ck165; "2035"; end
+  def cl165; "2040"; end
+  def cm165; "2045"; end
+  def cn165; "2050"; end
+  def cp165; "Mean"; end
+  def cq165; "NPV"; end
+  def c166; "Fossil Fuels"; end
+  def e166; @e166 ||= sumif(a('c3','c52'),c166,a('e3','e52')); end
+  def f166; @f166 ||= sumif(a('c3','c52'),c166,a('f3','f52')); end
+  def g166; @g166 ||= sumif(a('c3','c52'),c166,a('g3','g52')); end
+  def h166; @h166 ||= sumif(a('c3','c52'),c166,a('h3','h52')); end
+  def i166; @i166 ||= sumif(a('c3','c52'),c166,a('i3','i52')); end
+  def j166; @j166 ||= sumif(a('c3','c52'),c166,a('j3','j52')); end
+  def k166; @k166 ||= sumif(a('c3','c52'),c166,a('k3','k52')); end
+  def l166; @l166 ||= sumif(a('c3','c52'),c166,a('l3','l52')); end
+  def m166; @m166 ||= sumif(a('c3','c52'),c166,a('m3','m52')); end
+  def o166; @o166 ||= sumif(a('c3','c52'),c166,a('o3','o52')); end
+  def p166; @p166 ||= sumif(a('c3','c52'),c166,a('p3','p52')); end
+  def q166; @q166 ||= sumif(a('c3','c52'),c166,a('q3','q52')); end
+  def r166; @r166 ||= sumif(a('c3','c52'),c166,a('r3','r52')); end
+  def s166; @s166 ||= sumif(a('c3','c52'),c166,a('s3','s52')); end
+  def t166; @t166 ||= sumif(a('c3','c52'),c166,a('t3','t52')); end
+  def u166; @u166 ||= sumif(a('c3','c52'),c166,a('u3','u52')); end
+  def v166; @v166 ||= sumif(a('c3','c52'),c166,a('v3','v52')); end
+  def w166; @w166 ||= sumif(a('c3','c52'),c166,a('w3','w52')); end
+  def y166; @y166 ||= sumif(a('c3','c52'),c166,a('y3','y52')); end
+  def z166; @z166 ||= sumif(a('c3','c52'),c166,a('z3','z52')); end
+  def aa166; @aa166 ||= sumif(a('c3','c52'),c166,a('aa3','aa52')); end
+  def ab166; @ab166 ||= sumif(a('c3','c52'),c166,a('ab3','ab52')); end
+  def ac166; @ac166 ||= sumif(a('c3','c52'),c166,a('ac3','ac52')); end
+  def ad166; @ad166 ||= sumif(a('c3','c52'),c166,a('ad3','ad52')); end
+  def ae166; @ae166 ||= sumif(a('c3','c52'),c166,a('ae3','ae52')); end
+  def af166; @af166 ||= sumif(a('c3','c52'),c166,a('af3','af52')); end
+  def ag166; @ag166 ||= sumif(a('c3','c52'),c166,a('ag3','ag52')); end
+  def ai166; @ai166 ||= sumif(a('c3','c52'),c166,a('ai3','ai52')); end
+  def aj166; @aj166 ||= sumif(a('c3','c52'),c166,a('aj3','aj52')); end
+  def ak166; @ak166 ||= sumif(a('c3','c52'),c166,a('ak3','ak52')); end
+  def al166; @al166 ||= sumif(a('c3','c52'),c166,a('al3','al52')); end
+  def am166; @am166 ||= sumif(a('c3','c52'),c166,a('am3','am52')); end
+  def an166; @an166 ||= sumif(a('c3','c52'),c166,a('an3','an52')); end
+  def ao166; @ao166 ||= sumif(a('c3','c52'),c166,a('ao3','ao52')); end
+  def ap166; @ap166 ||= sumif(a('c3','c52'),c166,a('ap3','ap52')); end
+  def aq166; @aq166 ||= sumif(a('c3','c52'),c166,a('aq3','aq52')); end
+  def as166; @as166 ||= sumif(a('c3','c52'),c166,a('as3','as52')); end
+  def at166; @at166 ||= sumif(a('c3','c52'),c166,a('at3','at52')); end
+  def ay166; @ay166 ||= sumif(a('c3','c52'),c166,a('ay3','ay52')); end
+  def az166; @az166 ||= sumif(a('c3','c52'),c166,a('az3','az52')); end
+  def ba166; @ba166 ||= sumif(a('c3','c52'),c166,a('ba3','ba52')); end
+  def bb166; @bb166 ||= sumif(a('c3','c52'),c166,a('bb3','bb52')); end
+  def bc166; @bc166 ||= sumif(a('c3','c52'),c166,a('bc3','bc52')); end
+  def bd166; @bd166 ||= sumif(a('c3','c52'),c166,a('bd3','bd52')); end
+  def be166; @be166 ||= sumif(a('c3','c52'),c166,a('be3','be52')); end
+  def bf166; @bf166 ||= sumif(a('c3','c52'),c166,a('bf3','bf52')); end
+  def bg166; @bg166 ||= sumif(a('c3','c52'),c166,a('bg3','bg52')); end
+  def bi166; @bi166 ||= sumif(a('c3','c52'),c166,a('bi3','bi52')); end
+  def bj166; @bj166 ||= sumif(a('c3','c52'),c166,a('bj3','bj52')); end
+  def bk166; @bk166 ||= sumif(a('c3','c52'),c166,a('bk3','bk52')); end
+  def bl166; @bl166 ||= sumif(a('c3','c52'),c166,a('bl3','bl52')); end
+  def bm166; @bm166 ||= sumif(a('c3','c52'),c166,a('bm3','bm52')); end
+  def bn166; @bn166 ||= sumif(a('c3','c52'),c166,a('bn3','bn52')); end
+  def bo166; @bo166 ||= sumif(a('c3','c52'),c166,a('bo3','bo52')); end
+  def bp166; @bp166 ||= sumif(a('c3','c52'),c166,a('bp3','bp52')); end
+  def bq166; @bq166 ||= sumif(a('c3','c52'),c166,a('bq3','bq52')); end
+  def bs166; @bs166 ||= sumif(a('c3','c52'),c166,a('bs3','bs52')); end
+  def bt166; @bt166 ||= sumif(a('c3','c52'),c166,a('bt3','bt52')); end
+  def bu166; @bu166 ||= sumif(a('c3','c52'),c166,a('bu3','bu52')); end
+  def bv166; @bv166 ||= sumif(a('c3','c52'),c166,a('bv3','bv52')); end
+  def bw166; @bw166 ||= sumif(a('c3','c52'),c166,a('bw3','bw52')); end
+  def bx166; @bx166 ||= sumif(a('c3','c52'),c166,a('bx3','bx52')); end
+  def by166; @by166 ||= sumif(a('c3','c52'),c166,a('by3','by52')); end
+  def bz166; @bz166 ||= sumif(a('c3','c52'),c166,a('bz3','bz52')); end
+  def ca166; @ca166 ||= sumif(a('c3','c52'),c166,a('ca3','ca52')); end
+  def cc166; @cc166 ||= sumif(a('c3','c52'),c166,a('cc3','cc52')); end
+  def cd166; @cd166 ||= sumif(a('c3','c52'),c166,a('cd3','cd52')); end
+  def cf166; @cf166 ||= sumif(a('c3','c52'),c166,a('cf3','cf52')); end
+  def cg166; @cg166 ||= sumif(a('c3','c52'),c166,a('cg3','cg52')); end
+  def ch166; @ch166 ||= sumif(a('c3','c52'),c166,a('ch3','ch52')); end
+  def ci166; @ci166 ||= sumif(a('c3','c52'),c166,a('ci3','ci52')); end
+  def cj166; @cj166 ||= sumif(a('c3','c52'),c166,a('cj3','cj52')); end
+  def ck166; @ck166 ||= sumif(a('c3','c52'),c166,a('ck3','ck52')); end
+  def cl166; @cl166 ||= sumif(a('c3','c52'),c166,a('cl3','cl52')); end
+  def cm166; @cm166 ||= sumif(a('c3','c52'),c166,a('cm3','cm52')); end
+  def cn166; @cn166 ||= sumif(a('c3','c52'),c166,a('cn3','cn52')); end
+  def cp166; @cp166 ||= sumif(a('c3','c52'),c166,a('cp3','cp52')); end
+  def cq166; @cq166 ||= sumif(a('c3','c52'),c166,a('cq3','cq52')); end
+  def cr166; @cr166 ||= excel_if(excel_comparison(abs(cd166-cq166-at166),"<",1.0),"ok","err"); end
+  def c167; "Bioenergy"; end
+  def e167; @e167 ||= sumif(a('c3','c52'),c167,a('e3','e52')); end
+  def f167; @f167 ||= sumif(a('c3','c52'),c167,a('f3','f52')); end
+  def g167; @g167 ||= sumif(a('c3','c52'),c167,a('g3','g52')); end
+  def h167; @h167 ||= sumif(a('c3','c52'),c167,a('h3','h52')); end
+  def i167; @i167 ||= sumif(a('c3','c52'),c167,a('i3','i52')); end
+  def j167; @j167 ||= sumif(a('c3','c52'),c167,a('j3','j52')); end
+  def k167; @k167 ||= sumif(a('c3','c52'),c167,a('k3','k52')); end
+  def l167; @l167 ||= sumif(a('c3','c52'),c167,a('l3','l52')); end
+  def m167; @m167 ||= sumif(a('c3','c52'),c167,a('m3','m52')); end
+  def o167; @o167 ||= sumif(a('c3','c52'),c167,a('o3','o52')); end
+  def p167; @p167 ||= sumif(a('c3','c52'),c167,a('p3','p52')); end
+  def q167; @q167 ||= sumif(a('c3','c52'),c167,a('q3','q52')); end
+  def r167; @r167 ||= sumif(a('c3','c52'),c167,a('r3','r52')); end
+  def s167; @s167 ||= sumif(a('c3','c52'),c167,a('s3','s52')); end
+  def t167; @t167 ||= sumif(a('c3','c52'),c167,a('t3','t52')); end
+  def u167; @u167 ||= sumif(a('c3','c52'),c167,a('u3','u52')); end
+  def v167; @v167 ||= sumif(a('c3','c52'),c167,a('v3','v52')); end
+  def w167; @w167 ||= sumif(a('c3','c52'),c167,a('w3','w52')); end
+  def y167; @y167 ||= sumif(a('c3','c52'),c167,a('y3','y52')); end
+  def z167; @z167 ||= sumif(a('c3','c52'),c167,a('z3','z52')); end
+  def aa167; @aa167 ||= sumif(a('c3','c52'),c167,a('aa3','aa52')); end
+  def ab167; @ab167 ||= sumif(a('c3','c52'),c167,a('ab3','ab52')); end
+  def ac167; @ac167 ||= sumif(a('c3','c52'),c167,a('ac3','ac52')); end
+  def ad167; @ad167 ||= sumif(a('c3','c52'),c167,a('ad3','ad52')); end
+  def ae167; @ae167 ||= sumif(a('c3','c52'),c167,a('ae3','ae52')); end
+  def af167; @af167 ||= sumif(a('c3','c52'),c167,a('af3','af52')); end
+  def ag167; @ag167 ||= sumif(a('c3','c52'),c167,a('ag3','ag52')); end
+  def ai167; @ai167 ||= sumif(a('c3','c52'),c167,a('ai3','ai52')); end
+  def aj167; @aj167 ||= sumif(a('c3','c52'),c167,a('aj3','aj52')); end
+  def ak167; @ak167 ||= sumif(a('c3','c52'),c167,a('ak3','ak52')); end
+  def al167; @al167 ||= sumif(a('c3','c52'),c167,a('al3','al52')); end
+  def am167; @am167 ||= sumif(a('c3','c52'),c167,a('am3','am52')); end
+  def an167; @an167 ||= sumif(a('c3','c52'),c167,a('an3','an52')); end
+  def ao167; @ao167 ||= sumif(a('c3','c52'),c167,a('ao3','ao52')); end
+  def ap167; @ap167 ||= sumif(a('c3','c52'),c167,a('ap3','ap52')); end
+  def aq167; @aq167 ||= sumif(a('c3','c52'),c167,a('aq3','aq52')); end
+  def as167; @as167 ||= sumif(a('c3','c52'),c167,a('as3','as52')); end
+  def at167; @at167 ||= sumif(a('c3','c52'),c167,a('at3','at52')); end
+  def ay167; @ay167 ||= sumif(a('c3','c52'),c167,a('ay3','ay52')); end
+  def az167; @az167 ||= sumif(a('c3','c52'),c167,a('az3','az52')); end
+  def ba167; @ba167 ||= sumif(a('c3','c52'),c167,a('ba3','ba52')); end
+  def bb167; @bb167 ||= sumif(a('c3','c52'),c167,a('bb3','bb52')); end
+  def bc167; @bc167 ||= sumif(a('c3','c52'),c167,a('bc3','bc52')); end
+  def bd167; @bd167 ||= sumif(a('c3','c52'),c167,a('bd3','bd52')); end
+  def be167; @be167 ||= sumif(a('c3','c52'),c167,a('be3','be52')); end
+  def bf167; @bf167 ||= sumif(a('c3','c52'),c167,a('bf3','bf52')); end
+  def bg167; @bg167 ||= sumif(a('c3','c52'),c167,a('bg3','bg52')); end
+  def bi167; @bi167 ||= sumif(a('c3','c52'),c167,a('bi3','bi52')); end
+  def bj167; @bj167 ||= sumif(a('c3','c52'),c167,a('bj3','bj52')); end
+  def bk167; @bk167 ||= sumif(a('c3','c52'),c167,a('bk3','bk52')); end
+  def bl167; @bl167 ||= sumif(a('c3','c52'),c167,a('bl3','bl52')); end
+  def bm167; @bm167 ||= sumif(a('c3','c52'),c167,a('bm3','bm52')); end
+  def bn167; @bn167 ||= sumif(a('c3','c52'),c167,a('bn3','bn52')); end
+  def bo167; @bo167 ||= sumif(a('c3','c52'),c167,a('bo3','bo52')); end
+  def bp167; @bp167 ||= sumif(a('c3','c52'),c167,a('bp3','bp52')); end
+  def bq167; @bq167 ||= sumif(a('c3','c52'),c167,a('bq3','bq52')); end
+  def bs167; @bs167 ||= sumif(a('c3','c52'),c167,a('bs3','bs52')); end
+  def bt167; @bt167 ||= sumif(a('c3','c52'),c167,a('bt3','bt52')); end
+  def bu167; @bu167 ||= sumif(a('c3','c52'),c167,a('bu3','bu52')); end
+  def bv167; @bv167 ||= sumif(a('c3','c52'),c167,a('bv3','bv52')); end
+  def bw167; @bw167 ||= sumif(a('c3','c52'),c167,a('bw3','bw52')); end
+  def bx167; @bx167 ||= sumif(a('c3','c52'),c167,a('bx3','bx52')); end
+  def by167; @by167 ||= sumif(a('c3','c52'),c167,a('by3','by52')); end
+  def bz167; @bz167 ||= sumif(a('c3','c52'),c167,a('bz3','bz52')); end
+  def ca167; @ca167 ||= sumif(a('c3','c52'),c167,a('ca3','ca52')); end
+  def cc167; @cc167 ||= sumif(a('c3','c52'),c167,a('cc3','cc52')); end
+  def cd167; @cd167 ||= sumif(a('c3','c52'),c167,a('cd3','cd52')); end
+  def cf167; @cf167 ||= sumif(a('c3','c52'),c167,a('cf3','cf52')); end
+  def cg167; @cg167 ||= sumif(a('c3','c52'),c167,a('cg3','cg52')); end
+  def ch167; @ch167 ||= sumif(a('c3','c52'),c167,a('ch3','ch52')); end
+  def ci167; @ci167 ||= sumif(a('c3','c52'),c167,a('ci3','ci52')); end
+  def cj167; @cj167 ||= sumif(a('c3','c52'),c167,a('cj3','cj52')); end
+  def ck167; @ck167 ||= sumif(a('c3','c52'),c167,a('ck3','ck52')); end
+  def cl167; @cl167 ||= sumif(a('c3','c52'),c167,a('cl3','cl52')); end
+  def cm167; @cm167 ||= sumif(a('c3','c52'),c167,a('cm3','cm52')); end
+  def cn167; @cn167 ||= sumif(a('c3','c52'),c167,a('cn3','cn52')); end
+  def cp167; @cp167 ||= sumif(a('c3','c52'),c167,a('cp3','cp52')); end
+  def cq167; @cq167 ||= sumif(a('c3','c52'),c167,a('cq3','cq52')); end
+  def cr167; @cr167 ||= excel_if(excel_comparison(abs(cd167-cq167-at167),"<",1.0),"ok","err"); end
+  def c168; "Electricity"; end
+  def e168; @e168 ||= sumif(a('c3','c52'),c168,a('e3','e52')); end
+  def f168; @f168 ||= sumif(a('c3','c52'),c168,a('f3','f52')); end
+  def g168; @g168 ||= sumif(a('c3','c52'),c168,a('g3','g52')); end
+  def h168; @h168 ||= sumif(a('c3','c52'),c168,a('h3','h52')); end
+  def i168; @i168 ||= sumif(a('c3','c52'),c168,a('i3','i52')); end
+  def j168; @j168 ||= sumif(a('c3','c52'),c168,a('j3','j52')); end
+  def k168; @k168 ||= sumif(a('c3','c52'),c168,a('k3','k52')); end
+  def l168; @l168 ||= sumif(a('c3','c52'),c168,a('l3','l52')); end
+  def m168; @m168 ||= sumif(a('c3','c52'),c168,a('m3','m52')); end
+  def o168; @o168 ||= sumif(a('c3','c52'),c168,a('o3','o52')); end
+  def p168; @p168 ||= sumif(a('c3','c52'),c168,a('p3','p52')); end
+  def q168; @q168 ||= sumif(a('c3','c52'),c168,a('q3','q52')); end
+  def r168; @r168 ||= sumif(a('c3','c52'),c168,a('r3','r52')); end
+  def s168; @s168 ||= sumif(a('c3','c52'),c168,a('s3','s52')); end
+  def t168; @t168 ||= sumif(a('c3','c52'),c168,a('t3','t52')); end
+  def u168; @u168 ||= sumif(a('c3','c52'),c168,a('u3','u52')); end
+  def v168; @v168 ||= sumif(a('c3','c52'),c168,a('v3','v52')); end
+  def w168; @w168 ||= sumif(a('c3','c52'),c168,a('w3','w52')); end
+  def y168; @y168 ||= sumif(a('c3','c52'),c168,a('y3','y52')); end
+  def z168; @z168 ||= sumif(a('c3','c52'),c168,a('z3','z52')); end
+  def aa168; @aa168 ||= sumif(a('c3','c52'),c168,a('aa3','aa52')); end
+  def ab168; @ab168 ||= sumif(a('c3','c52'),c168,a('ab3','ab52')); end
+  def ac168; @ac168 ||= sumif(a('c3','c52'),c168,a('ac3','ac52')); end
+  def ad168; @ad168 ||= sumif(a('c3','c52'),c168,a('ad3','ad52')); end
+  def ae168; @ae168 ||= sumif(a('c3','c52'),c168,a('ae3','ae52')); end
+  def af168; @af168 ||= sumif(a('c3','c52'),c168,a('af3','af52')); end
+  def ag168; @ag168 ||= sumif(a('c3','c52'),c168,a('ag3','ag52')); end
+  def ai168; @ai168 ||= sumif(a('c3','c52'),c168,a('ai3','ai52')); end
+  def aj168; @aj168 ||= sumif(a('c3','c52'),c168,a('aj3','aj52')); end
+  def ak168; @ak168 ||= sumif(a('c3','c52'),c168,a('ak3','ak52')); end
+  def al168; @al168 ||= sumif(a('c3','c52'),c168,a('al3','al52')); end
+  def am168; @am168 ||= sumif(a('c3','c52'),c168,a('am3','am52')); end
+  def an168; @an168 ||= sumif(a('c3','c52'),c168,a('an3','an52')); end
+  def ao168; @ao168 ||= sumif(a('c3','c52'),c168,a('ao3','ao52')); end
+  def ap168; @ap168 ||= sumif(a('c3','c52'),c168,a('ap3','ap52')); end
+  def aq168; @aq168 ||= sumif(a('c3','c52'),c168,a('aq3','aq52')); end
+  def as168; @as168 ||= sumif(a('c3','c52'),c168,a('as3','as52')); end
+  def at168; @at168 ||= sumif(a('c3','c52'),c168,a('at3','at52')); end
+  def ay168; @ay168 ||= sumif(a('c3','c52'),c168,a('ay3','ay52')); end
+  def az168; @az168 ||= sumif(a('c3','c52'),c168,a('az3','az52')); end
+  def ba168; @ba168 ||= sumif(a('c3','c52'),c168,a('ba3','ba52')); end
+  def bb168; @bb168 ||= sumif(a('c3','c52'),c168,a('bb3','bb52')); end
+  def bc168; @bc168 ||= sumif(a('c3','c52'),c168,a('bc3','bc52')); end
+  def bd168; @bd168 ||= sumif(a('c3','c52'),c168,a('bd3','bd52')); end
+  def be168; @be168 ||= sumif(a('c3','c52'),c168,a('be3','be52')); end
+  def bf168; @bf168 ||= sumif(a('c3','c52'),c168,a('bf3','bf52')); end
+  def bg168; @bg168 ||= sumif(a('c3','c52'),c168,a('bg3','bg52')); end
+  def bi168; @bi168 ||= sumif(a('c3','c52'),c168,a('bi3','bi52')); end
+  def bj168; @bj168 ||= sumif(a('c3','c52'),c168,a('bj3','bj52')); end
+  def bk168; @bk168 ||= sumif(a('c3','c52'),c168,a('bk3','bk52')); end
+  def bl168; @bl168 ||= sumif(a('c3','c52'),c168,a('bl3','bl52')); end
+  def bm168; @bm168 ||= sumif(a('c3','c52'),c168,a('bm3','bm52')); end
+  def bn168; @bn168 ||= sumif(a('c3','c52'),c168,a('bn3','bn52')); end
+  def bo168; @bo168 ||= sumif(a('c3','c52'),c168,a('bo3','bo52')); end
+  def bp168; @bp168 ||= sumif(a('c3','c52'),c168,a('bp3','bp52')); end
+  def bq168; @bq168 ||= sumif(a('c3','c52'),c168,a('bq3','bq52')); end
+  def bs168; @bs168 ||= sumif(a('c3','c52'),c168,a('bs3','bs52')); end
+  def bt168; @bt168 ||= sumif(a('c3','c52'),c168,a('bt3','bt52')); end
+  def bu168; @bu168 ||= sumif(a('c3','c52'),c168,a('bu3','bu52')); end
+  def bv168; @bv168 ||= sumif(a('c3','c52'),c168,a('bv3','bv52')); end
+  def bw168; @bw168 ||= sumif(a('c3','c52'),c168,a('bw3','bw52')); end
+  def bx168; @bx168 ||= sumif(a('c3','c52'),c168,a('bx3','bx52')); end
+  def by168; @by168 ||= sumif(a('c3','c52'),c168,a('by3','by52')); end
+  def bz168; @bz168 ||= sumif(a('c3','c52'),c168,a('bz3','bz52')); end
+  def ca168; @ca168 ||= sumif(a('c3','c52'),c168,a('ca3','ca52')); end
+  def cc168; @cc168 ||= sumif(a('c3','c52'),c168,a('cc3','cc52')); end
+  def cd168; @cd168 ||= sumif(a('c3','c52'),c168,a('cd3','cd52')); end
+  def cf168; @cf168 ||= sumif(a('c3','c52'),c168,a('cf3','cf52')); end
+  def cg168; @cg168 ||= sumif(a('c3','c52'),c168,a('cg3','cg52')); end
+  def ch168; @ch168 ||= sumif(a('c3','c52'),c168,a('ch3','ch52')); end
+  def ci168; @ci168 ||= sumif(a('c3','c52'),c168,a('ci3','ci52')); end
+  def cj168; @cj168 ||= sumif(a('c3','c52'),c168,a('cj3','cj52')); end
+  def ck168; @ck168 ||= sumif(a('c3','c52'),c168,a('ck3','ck52')); end
+  def cl168; @cl168 ||= sumif(a('c3','c52'),c168,a('cl3','cl52')); end
+  def cm168; @cm168 ||= sumif(a('c3','c52'),c168,a('cm3','cm52')); end
+  def cn168; @cn168 ||= sumif(a('c3','c52'),c168,a('cn3','cn52')); end
+  def cp168; @cp168 ||= sumif(a('c3','c52'),c168,a('cp3','cp52')); end
+  def cq168; @cq168 ||= sumif(a('c3','c52'),c168,a('cq3','cq52')); end
+  def cr168; @cr168 ||= excel_if(excel_comparison(abs(cd168-cq168-at168),"<",1.0),"ok","err"); end
+  def c169; "Buildings"; end
+  def e169; @e169 ||= sumif(a('c3','c52'),c169,a('e3','e52')); end
+  def f169; @f169 ||= sumif(a('c3','c52'),c169,a('f3','f52')); end
+  def g169; @g169 ||= sumif(a('c3','c52'),c169,a('g3','g52')); end
+  def h169; @h169 ||= sumif(a('c3','c52'),c169,a('h3','h52')); end
+  def i169; @i169 ||= sumif(a('c3','c52'),c169,a('i3','i52')); end
+  def j169; @j169 ||= sumif(a('c3','c52'),c169,a('j3','j52')); end
+  def k169; @k169 ||= sumif(a('c3','c52'),c169,a('k3','k52')); end
+  def l169; @l169 ||= sumif(a('c3','c52'),c169,a('l3','l52')); end
+  def m169; @m169 ||= sumif(a('c3','c52'),c169,a('m3','m52')); end
+  def o169; @o169 ||= sumif(a('c3','c52'),c169,a('o3','o52')); end
+  def p169; @p169 ||= sumif(a('c3','c52'),c169,a('p3','p52')); end
+  def q169; @q169 ||= sumif(a('c3','c52'),c169,a('q3','q52')); end
+  def r169; @r169 ||= sumif(a('c3','c52'),c169,a('r3','r52')); end
+  def s169; @s169 ||= sumif(a('c3','c52'),c169,a('s3','s52')); end
+  def t169; @t169 ||= sumif(a('c3','c52'),c169,a('t3','t52')); end
+  def u169; @u169 ||= sumif(a('c3','c52'),c169,a('u3','u52')); end
+  def v169; @v169 ||= sumif(a('c3','c52'),c169,a('v3','v52')); end
+  def w169; @w169 ||= sumif(a('c3','c52'),c169,a('w3','w52')); end
+  def y169; @y169 ||= sumif(a('c3','c52'),c169,a('y3','y52')); end
+  def z169; @z169 ||= sumif(a('c3','c52'),c169,a('z3','z52')); end
+  def aa169; @aa169 ||= sumif(a('c3','c52'),c169,a('aa3','aa52')); end
+  def ab169; @ab169 ||= sumif(a('c3','c52'),c169,a('ab3','ab52')); end
+  def ac169; @ac169 ||= sumif(a('c3','c52'),c169,a('ac3','ac52')); end
+  def ad169; @ad169 ||= sumif(a('c3','c52'),c169,a('ad3','ad52')); end
+  def ae169; @ae169 ||= sumif(a('c3','c52'),c169,a('ae3','ae52')); end
+  def af169; @af169 ||= sumif(a('c3','c52'),c169,a('af3','af52')); end
+  def ag169; @ag169 ||= sumif(a('c3','c52'),c169,a('ag3','ag52')); end
+  def ai169; @ai169 ||= sumif(a('c3','c52'),c169,a('ai3','ai52')); end
+  def aj169; @aj169 ||= sumif(a('c3','c52'),c169,a('aj3','aj52')); end
+  def ak169; @ak169 ||= sumif(a('c3','c52'),c169,a('ak3','ak52')); end
+  def al169; @al169 ||= sumif(a('c3','c52'),c169,a('al3','al52')); end
+  def am169; @am169 ||= sumif(a('c3','c52'),c169,a('am3','am52')); end
+  def an169; @an169 ||= sumif(a('c3','c52'),c169,a('an3','an52')); end
+  def ao169; @ao169 ||= sumif(a('c3','c52'),c169,a('ao3','ao52')); end
+  def ap169; @ap169 ||= sumif(a('c3','c52'),c169,a('ap3','ap52')); end
+  def aq169; @aq169 ||= sumif(a('c3','c52'),c169,a('aq3','aq52')); end
+  def as169; @as169 ||= sumif(a('c3','c52'),c169,a('as3','as52')); end
+  def at169; @at169 ||= sumif(a('c3','c52'),c169,a('at3','at52')); end
+  def ay169; @ay169 ||= sumif(a('c3','c52'),c169,a('ay3','ay52')); end
+  def az169; @az169 ||= sumif(a('c3','c52'),c169,a('az3','az52')); end
+  def ba169; @ba169 ||= sumif(a('c3','c52'),c169,a('ba3','ba52')); end
+  def bb169; @bb169 ||= sumif(a('c3','c52'),c169,a('bb3','bb52')); end
+  def bc169; @bc169 ||= sumif(a('c3','c52'),c169,a('bc3','bc52')); end
+  def bd169; @bd169 ||= sumif(a('c3','c52'),c169,a('bd3','bd52')); end
+  def be169; @be169 ||= sumif(a('c3','c52'),c169,a('be3','be52')); end
+  def bf169; @bf169 ||= sumif(a('c3','c52'),c169,a('bf3','bf52')); end
+  def bg169; @bg169 ||= sumif(a('c3','c52'),c169,a('bg3','bg52')); end
+  def bi169; @bi169 ||= sumif(a('c3','c52'),c169,a('bi3','bi52')); end
+  def bj169; @bj169 ||= sumif(a('c3','c52'),c169,a('bj3','bj52')); end
+  def bk169; @bk169 ||= sumif(a('c3','c52'),c169,a('bk3','bk52')); end
+  def bl169; @bl169 ||= sumif(a('c3','c52'),c169,a('bl3','bl52')); end
+  def bm169; @bm169 ||= sumif(a('c3','c52'),c169,a('bm3','bm52')); end
+  def bn169; @bn169 ||= sumif(a('c3','c52'),c169,a('bn3','bn52')); end
+  def bo169; @bo169 ||= sumif(a('c3','c52'),c169,a('bo3','bo52')); end
+  def bp169; @bp169 ||= sumif(a('c3','c52'),c169,a('bp3','bp52')); end
+  def bq169; @bq169 ||= sumif(a('c3','c52'),c169,a('bq3','bq52')); end
+  def bs169; @bs169 ||= sumif(a('c3','c52'),c169,a('bs3','bs52')); end
+  def bt169; @bt169 ||= sumif(a('c3','c52'),c169,a('bt3','bt52')); end
+  def bu169; @bu169 ||= sumif(a('c3','c52'),c169,a('bu3','bu52')); end
+  def bv169; @bv169 ||= sumif(a('c3','c52'),c169,a('bv3','bv52')); end
+  def bw169; @bw169 ||= sumif(a('c3','c52'),c169,a('bw3','bw52')); end
+  def bx169; @bx169 ||= sumif(a('c3','c52'),c169,a('bx3','bx52')); end
+  def by169; @by169 ||= sumif(a('c3','c52'),c169,a('by3','by52')); end
+  def bz169; @bz169 ||= sumif(a('c3','c52'),c169,a('bz3','bz52')); end
+  def ca169; @ca169 ||= sumif(a('c3','c52'),c169,a('ca3','ca52')); end
+  def cc169; @cc169 ||= sumif(a('c3','c52'),c169,a('cc3','cc52')); end
+  def cd169; @cd169 ||= sumif(a('c3','c52'),c169,a('cd3','cd52')); end
+  def cf169; @cf169 ||= sumif(a('c3','c52'),c169,a('cf3','cf52')); end
+  def cg169; @cg169 ||= sumif(a('c3','c52'),c169,a('cg3','cg52')); end
+  def ch169; @ch169 ||= sumif(a('c3','c52'),c169,a('ch3','ch52')); end
+  def ci169; @ci169 ||= sumif(a('c3','c52'),c169,a('ci3','ci52')); end
+  def cj169; @cj169 ||= sumif(a('c3','c52'),c169,a('cj3','cj52')); end
+  def ck169; @ck169 ||= sumif(a('c3','c52'),c169,a('ck3','ck52')); end
+  def cl169; @cl169 ||= sumif(a('c3','c52'),c169,a('cl3','cl52')); end
+  def cm169; @cm169 ||= sumif(a('c3','c52'),c169,a('cm3','cm52')); end
+  def cn169; @cn169 ||= sumif(a('c3','c52'),c169,a('cn3','cn52')); end
+  def cp169; @cp169 ||= sumif(a('c3','c52'),c169,a('cp3','cp52')); end
+  def cq169; @cq169 ||= sumif(a('c3','c52'),c169,a('cq3','cq52')); end
+  def cr169; @cr169 ||= excel_if(excel_comparison(abs(cd169-cq169-at169),"<",1.0),"ok","err"); end
+  def c170; "Transport"; end
+  def e170; @e170 ||= sumif(a('c3','c52'),c170,a('e3','e52')); end
+  def f170; @f170 ||= sumif(a('c3','c52'),c170,a('f3','f52')); end
+  def g170; @g170 ||= sumif(a('c3','c52'),c170,a('g3','g52')); end
+  def h170; @h170 ||= sumif(a('c3','c52'),c170,a('h3','h52')); end
+  def i170; @i170 ||= sumif(a('c3','c52'),c170,a('i3','i52')); end
+  def j170; @j170 ||= sumif(a('c3','c52'),c170,a('j3','j52')); end
+  def k170; @k170 ||= sumif(a('c3','c52'),c170,a('k3','k52')); end
+  def l170; @l170 ||= sumif(a('c3','c52'),c170,a('l3','l52')); end
+  def m170; @m170 ||= sumif(a('c3','c52'),c170,a('m3','m52')); end
+  def o170; @o170 ||= sumif(a('c3','c52'),c170,a('o3','o52')); end
+  def p170; @p170 ||= sumif(a('c3','c52'),c170,a('p3','p52')); end
+  def q170; @q170 ||= sumif(a('c3','c52'),c170,a('q3','q52')); end
+  def r170; @r170 ||= sumif(a('c3','c52'),c170,a('r3','r52')); end
+  def s170; @s170 ||= sumif(a('c3','c52'),c170,a('s3','s52')); end
+  def t170; @t170 ||= sumif(a('c3','c52'),c170,a('t3','t52')); end
+  def u170; @u170 ||= sumif(a('c3','c52'),c170,a('u3','u52')); end
+  def v170; @v170 ||= sumif(a('c3','c52'),c170,a('v3','v52')); end
+  def w170; @w170 ||= sumif(a('c3','c52'),c170,a('w3','w52')); end
+  def y170; @y170 ||= sumif(a('c3','c52'),c170,a('y3','y52')); end
+  def z170; @z170 ||= sumif(a('c3','c52'),c170,a('z3','z52')); end
+  def aa170; @aa170 ||= sumif(a('c3','c52'),c170,a('aa3','aa52')); end
+  def ab170; @ab170 ||= sumif(a('c3','c52'),c170,a('ab3','ab52')); end
+  def ac170; @ac170 ||= sumif(a('c3','c52'),c170,a('ac3','ac52')); end
+  def ad170; @ad170 ||= sumif(a('c3','c52'),c170,a('ad3','ad52')); end
+  def ae170; @ae170 ||= sumif(a('c3','c52'),c170,a('ae3','ae52')); end
+  def af170; @af170 ||= sumif(a('c3','c52'),c170,a('af3','af52')); end
+  def ag170; @ag170 ||= sumif(a('c3','c52'),c170,a('ag3','ag52')); end
+  def ai170; @ai170 ||= sumif(a('c3','c52'),c170,a('ai3','ai52')); end
+  def aj170; @aj170 ||= sumif(a('c3','c52'),c170,a('aj3','aj52')); end
+  def ak170; @ak170 ||= sumif(a('c3','c52'),c170,a('ak3','ak52')); end
+  def al170; @al170 ||= sumif(a('c3','c52'),c170,a('al3','al52')); end
+  def am170; @am170 ||= sumif(a('c3','c52'),c170,a('am3','am52')); end
+  def an170; @an170 ||= sumif(a('c3','c52'),c170,a('an3','an52')); end
+  def ao170; @ao170 ||= sumif(a('c3','c52'),c170,a('ao3','ao52')); end
+  def ap170; @ap170 ||= sumif(a('c3','c52'),c170,a('ap3','ap52')); end
+  def aq170; @aq170 ||= sumif(a('c3','c52'),c170,a('aq3','aq52')); end
+  def as170; @as170 ||= sumif(a('c3','c52'),c170,a('as3','as52')); end
+  def at170; @at170 ||= sumif(a('c3','c52'),c170,a('at3','at52')); end
+  def ay170; @ay170 ||= sumif(a('c3','c52'),c170,a('ay3','ay52')); end
+  def az170; @az170 ||= sumif(a('c3','c52'),c170,a('az3','az52')); end
+  def ba170; @ba170 ||= sumif(a('c3','c52'),c170,a('ba3','ba52')); end
+  def bb170; @bb170 ||= sumif(a('c3','c52'),c170,a('bb3','bb52')); end
+  def bc170; @bc170 ||= sumif(a('c3','c52'),c170,a('bc3','bc52')); end
+  def bd170; @bd170 ||= sumif(a('c3','c52'),c170,a('bd3','bd52')); end
+  def be170; @be170 ||= sumif(a('c3','c52'),c170,a('be3','be52')); end
+  def bf170; @bf170 ||= sumif(a('c3','c52'),c170,a('bf3','bf52')); end
+  def bg170; @bg170 ||= sumif(a('c3','c52'),c170,a('bg3','bg52')); end
+  def bi170; @bi170 ||= sumif(a('c3','c52'),c170,a('bi3','bi52')); end
+  def bj170; @bj170 ||= sumif(a('c3','c52'),c170,a('bj3','bj52')); end
+  def bk170; @bk170 ||= sumif(a('c3','c52'),c170,a('bk3','bk52')); end
+  def bl170; @bl170 ||= sumif(a('c3','c52'),c170,a('bl3','bl52')); end
+  def bm170; @bm170 ||= sumif(a('c3','c52'),c170,a('bm3','bm52')); end
+  def bn170; @bn170 ||= sumif(a('c3','c52'),c170,a('bn3','bn52')); end
+  def bo170; @bo170 ||= sumif(a('c3','c52'),c170,a('bo3','bo52')); end
+  def bp170; @bp170 ||= sumif(a('c3','c52'),c170,a('bp3','bp52')); end
+  def bq170; @bq170 ||= sumif(a('c3','c52'),c170,a('bq3','bq52')); end
+  def bs170; @bs170 ||= sumif(a('c3','c52'),c170,a('bs3','bs52')); end
+  def bt170; @bt170 ||= sumif(a('c3','c52'),c170,a('bt3','bt52')); end
+  def bu170; @bu170 ||= sumif(a('c3','c52'),c170,a('bu3','bu52')); end
+  def bv170; @bv170 ||= sumif(a('c3','c52'),c170,a('bv3','bv52')); end
+  def bw170; @bw170 ||= sumif(a('c3','c52'),c170,a('bw3','bw52')); end
+  def bx170; @bx170 ||= sumif(a('c3','c52'),c170,a('bx3','bx52')); end
+  def by170; @by170 ||= sumif(a('c3','c52'),c170,a('by3','by52')); end
+  def bz170; @bz170 ||= sumif(a('c3','c52'),c170,a('bz3','bz52')); end
+  def ca170; @ca170 ||= sumif(a('c3','c52'),c170,a('ca3','ca52')); end
+  def cc170; @cc170 ||= sumif(a('c3','c52'),c170,a('cc3','cc52')); end
+  def cd170; @cd170 ||= sumif(a('c3','c52'),c170,a('cd3','cd52')); end
+  def cf170; @cf170 ||= sumif(a('c3','c52'),c170,a('cf3','cf52')); end
+  def cg170; @cg170 ||= sumif(a('c3','c52'),c170,a('cg3','cg52')); end
+  def ch170; @ch170 ||= sumif(a('c3','c52'),c170,a('ch3','ch52')); end
+  def ci170; @ci170 ||= sumif(a('c3','c52'),c170,a('ci3','ci52')); end
+  def cj170; @cj170 ||= sumif(a('c3','c52'),c170,a('cj3','cj52')); end
+  def ck170; @ck170 ||= sumif(a('c3','c52'),c170,a('ck3','ck52')); end
+  def cl170; @cl170 ||= sumif(a('c3','c52'),c170,a('cl3','cl52')); end
+  def cm170; @cm170 ||= sumif(a('c3','c52'),c170,a('cm3','cm52')); end
+  def cn170; @cn170 ||= sumif(a('c3','c52'),c170,a('cn3','cn52')); end
+  def cp170; @cp170 ||= sumif(a('c3','c52'),c170,a('cp3','cp52')); end
+  def cq170; @cq170 ||= sumif(a('c3','c52'),c170,a('cq3','cq52')); end
+  def cr170; @cr170 ||= excel_if(excel_comparison(abs(cd170-cq170-at170),"<",1.0),"ok","err"); end
+  def c171; "Industry"; end
+  def e171; @e171 ||= sumif(a('c3','c52'),c171,a('e3','e52')); end
+  def f171; @f171 ||= sumif(a('c3','c52'),c171,a('f3','f52')); end
+  def g171; @g171 ||= sumif(a('c3','c52'),c171,a('g3','g52')); end
+  def h171; @h171 ||= sumif(a('c3','c52'),c171,a('h3','h52')); end
+  def i171; @i171 ||= sumif(a('c3','c52'),c171,a('i3','i52')); end
+  def j171; @j171 ||= sumif(a('c3','c52'),c171,a('j3','j52')); end
+  def k171; @k171 ||= sumif(a('c3','c52'),c171,a('k3','k52')); end
+  def l171; @l171 ||= sumif(a('c3','c52'),c171,a('l3','l52')); end
+  def m171; @m171 ||= sumif(a('c3','c52'),c171,a('m3','m52')); end
+  def o171; @o171 ||= sumif(a('c3','c52'),c171,a('o3','o52')); end
+  def p171; @p171 ||= sumif(a('c3','c52'),c171,a('p3','p52')); end
+  def q171; @q171 ||= sumif(a('c3','c52'),c171,a('q3','q52')); end
+  def r171; @r171 ||= sumif(a('c3','c52'),c171,a('r3','r52')); end
+  def s171; @s171 ||= sumif(a('c3','c52'),c171,a('s3','s52')); end
+  def t171; @t171 ||= sumif(a('c3','c52'),c171,a('t3','t52')); end
+  def u171; @u171 ||= sumif(a('c3','c52'),c171,a('u3','u52')); end
+  def v171; @v171 ||= sumif(a('c3','c52'),c171,a('v3','v52')); end
+  def w171; @w171 ||= sumif(a('c3','c52'),c171,a('w3','w52')); end
+  def y171; @y171 ||= sumif(a('c3','c52'),c171,a('y3','y52')); end
+  def z171; @z171 ||= sumif(a('c3','c52'),c171,a('z3','z52')); end
+  def aa171; @aa171 ||= sumif(a('c3','c52'),c171,a('aa3','aa52')); end
+  def ab171; @ab171 ||= sumif(a('c3','c52'),c171,a('ab3','ab52')); end
+  def ac171; @ac171 ||= sumif(a('c3','c52'),c171,a('ac3','ac52')); end
+  def ad171; @ad171 ||= sumif(a('c3','c52'),c171,a('ad3','ad52')); end
+  def ae171; @ae171 ||= sumif(a('c3','c52'),c171,a('ae3','ae52')); end
+  def af171; @af171 ||= sumif(a('c3','c52'),c171,a('af3','af52')); end
+  def ag171; @ag171 ||= sumif(a('c3','c52'),c171,a('ag3','ag52')); end
+  def ai171; @ai171 ||= sumif(a('c3','c52'),c171,a('ai3','ai52')); end
+  def aj171; @aj171 ||= sumif(a('c3','c52'),c171,a('aj3','aj52')); end
+  def ak171; @ak171 ||= sumif(a('c3','c52'),c171,a('ak3','ak52')); end
+  def al171; @al171 ||= sumif(a('c3','c52'),c171,a('al3','al52')); end
+  def am171; @am171 ||= sumif(a('c3','c52'),c171,a('am3','am52')); end
+  def an171; @an171 ||= sumif(a('c3','c52'),c171,a('an3','an52')); end
+  def ao171; @ao171 ||= sumif(a('c3','c52'),c171,a('ao3','ao52')); end
+  def ap171; @ap171 ||= sumif(a('c3','c52'),c171,a('ap3','ap52')); end
+  def aq171; @aq171 ||= sumif(a('c3','c52'),c171,a('aq3','aq52')); end
+  def as171; @as171 ||= sumif(a('c3','c52'),c171,a('as3','as52')); end
+  def at171; @at171 ||= sumif(a('c3','c52'),c171,a('at3','at52')); end
+  def ay171; @ay171 ||= sumif(a('c3','c52'),c171,a('ay3','ay52')); end
+  def az171; @az171 ||= sumif(a('c3','c52'),c171,a('az3','az52')); end
+  def ba171; @ba171 ||= sumif(a('c3','c52'),c171,a('ba3','ba52')); end
+  def bb171; @bb171 ||= sumif(a('c3','c52'),c171,a('bb3','bb52')); end
+  def bc171; @bc171 ||= sumif(a('c3','c52'),c171,a('bc3','bc52')); end
+  def bd171; @bd171 ||= sumif(a('c3','c52'),c171,a('bd3','bd52')); end
+  def be171; @be171 ||= sumif(a('c3','c52'),c171,a('be3','be52')); end
+  def bf171; @bf171 ||= sumif(a('c3','c52'),c171,a('bf3','bf52')); end
+  def bg171; @bg171 ||= sumif(a('c3','c52'),c171,a('bg3','bg52')); end
+  def bi171; @bi171 ||= sumif(a('c3','c52'),c171,a('bi3','bi52')); end
+  def bj171; @bj171 ||= sumif(a('c3','c52'),c171,a('bj3','bj52')); end
+  def bk171; @bk171 ||= sumif(a('c3','c52'),c171,a('bk3','bk52')); end
+  def bl171; @bl171 ||= sumif(a('c3','c52'),c171,a('bl3','bl52')); end
+  def bm171; @bm171 ||= sumif(a('c3','c52'),c171,a('bm3','bm52')); end
+  def bn171; @bn171 ||= sumif(a('c3','c52'),c171,a('bn3','bn52')); end
+  def bo171; @bo171 ||= sumif(a('c3','c52'),c171,a('bo3','bo52')); end
+  def bp171; @bp171 ||= sumif(a('c3','c52'),c171,a('bp3','bp52')); end
+  def bq171; @bq171 ||= sumif(a('c3','c52'),c171,a('bq3','bq52')); end
+  def bs171; @bs171 ||= sumif(a('c3','c52'),c171,a('bs3','bs52')); end
+  def bt171; @bt171 ||= sumif(a('c3','c52'),c171,a('bt3','bt52')); end
+  def bu171; @bu171 ||= sumif(a('c3','c52'),c171,a('bu3','bu52')); end
+  def bv171; @bv171 ||= sumif(a('c3','c52'),c171,a('bv3','bv52')); end
+  def bw171; @bw171 ||= sumif(a('c3','c52'),c171,a('bw3','bw52')); end
+  def bx171; @bx171 ||= sumif(a('c3','c52'),c171,a('bx3','bx52')); end
+  def by171; @by171 ||= sumif(a('c3','c52'),c171,a('by3','by52')); end
+  def bz171; @bz171 ||= sumif(a('c3','c52'),c171,a('bz3','bz52')); end
+  def ca171; @ca171 ||= sumif(a('c3','c52'),c171,a('ca3','ca52')); end
+  def cc171; @cc171 ||= sumif(a('c3','c52'),c171,a('cc3','cc52')); end
+  def cd171; @cd171 ||= sumif(a('c3','c52'),c171,a('cd3','cd52')); end
+  def cf171; @cf171 ||= sumif(a('c3','c52'),c171,a('cf3','cf52')); end
+  def cg171; @cg171 ||= sumif(a('c3','c52'),c171,a('cg3','cg52')); end
+  def ch171; @ch171 ||= sumif(a('c3','c52'),c171,a('ch3','ch52')); end
+  def ci171; @ci171 ||= sumif(a('c3','c52'),c171,a('ci3','ci52')); end
+  def cj171; @cj171 ||= sumif(a('c3','c52'),c171,a('cj3','cj52')); end
+  def ck171; @ck171 ||= sumif(a('c3','c52'),c171,a('ck3','ck52')); end
+  def cl171; @cl171 ||= sumif(a('c3','c52'),c171,a('cl3','cl52')); end
+  def cm171; @cm171 ||= sumif(a('c3','c52'),c171,a('cm3','cm52')); end
+  def cn171; @cn171 ||= sumif(a('c3','c52'),c171,a('cn3','cn52')); end
+  def cp171; @cp171 ||= sumif(a('c3','c52'),c171,a('cp3','cp52')); end
+  def cq171; @cq171 ||= sumif(a('c3','c52'),c171,a('cq3','cq52')); end
+  def cr171; @cr171 ||= excel_if(excel_comparison(abs(cd171-cq171-at171),"<",1.0),"ok","err"); end
+  def c172; "Other"; end
+  def e172; @e172 ||= sumif(a('c3','c52'),c172,a('e3','e52')); end
+  def f172; @f172 ||= sumif(a('c3','c52'),c172,a('f3','f52')); end
+  def g172; @g172 ||= sumif(a('c3','c52'),c172,a('g3','g52')); end
+  def h172; @h172 ||= sumif(a('c3','c52'),c172,a('h3','h52')); end
+  def i172; @i172 ||= sumif(a('c3','c52'),c172,a('i3','i52')); end
+  def j172; @j172 ||= sumif(a('c3','c52'),c172,a('j3','j52')); end
+  def k172; @k172 ||= sumif(a('c3','c52'),c172,a('k3','k52')); end
+  def l172; @l172 ||= sumif(a('c3','c52'),c172,a('l3','l52')); end
+  def m172; @m172 ||= sumif(a('c3','c52'),c172,a('m3','m52')); end
+  def o172; @o172 ||= sumif(a('c3','c52'),c172,a('o3','o52')); end
+  def p172; @p172 ||= sumif(a('c3','c52'),c172,a('p3','p52')); end
+  def q172; @q172 ||= sumif(a('c3','c52'),c172,a('q3','q52')); end
+  def r172; @r172 ||= sumif(a('c3','c52'),c172,a('r3','r52')); end
+  def s172; @s172 ||= sumif(a('c3','c52'),c172,a('s3','s52')); end
+  def t172; @t172 ||= sumif(a('c3','c52'),c172,a('t3','t52')); end
+  def u172; @u172 ||= sumif(a('c3','c52'),c172,a('u3','u52')); end
+  def v172; @v172 ||= sumif(a('c3','c52'),c172,a('v3','v52')); end
+  def w172; @w172 ||= sumif(a('c3','c52'),c172,a('w3','w52')); end
+  def y172; @y172 ||= sumif(a('c3','c52'),c172,a('y3','y52')); end
+  def z172; @z172 ||= sumif(a('c3','c52'),c172,a('z3','z52')); end
+  def aa172; @aa172 ||= sumif(a('c3','c52'),c172,a('aa3','aa52')); end
+  def ab172; @ab172 ||= sumif(a('c3','c52'),c172,a('ab3','ab52')); end
+  def ac172; @ac172 ||= sumif(a('c3','c52'),c172,a('ac3','ac52')); end
+  def ad172; @ad172 ||= sumif(a('c3','c52'),c172,a('ad3','ad52')); end
+  def ae172; @ae172 ||= sumif(a('c3','c52'),c172,a('ae3','ae52')); end
+  def af172; @af172 ||= sumif(a('c3','c52'),c172,a('af3','af52')); end
+  def ag172; @ag172 ||= sumif(a('c3','c52'),c172,a('ag3','ag52')); end
+  def ai172; @ai172 ||= sumif(a('c3','c52'),c172,a('ai3','ai52')); end
+  def aj172; @aj172 ||= sumif(a('c3','c52'),c172,a('aj3','aj52')); end
+  def ak172; @ak172 ||= sumif(a('c3','c52'),c172,a('ak3','ak52')); end
+  def al172; @al172 ||= sumif(a('c3','c52'),c172,a('al3','al52')); end
+  def am172; @am172 ||= sumif(a('c3','c52'),c172,a('am3','am52')); end
+  def an172; @an172 ||= sumif(a('c3','c52'),c172,a('an3','an52')); end
+  def ao172; @ao172 ||= sumif(a('c3','c52'),c172,a('ao3','ao52')); end
+  def ap172; @ap172 ||= sumif(a('c3','c52'),c172,a('ap3','ap52')); end
+  def aq172; @aq172 ||= sumif(a('c3','c52'),c172,a('aq3','aq52')); end
+  def as172; @as172 ||= sumif(a('c3','c52'),c172,a('as3','as52')); end
+  def at172; @at172 ||= sumif(a('c3','c52'),c172,a('at3','at52')); end
+  def ay172; @ay172 ||= sumif(a('c3','c52'),c172,a('ay3','ay52')); end
+  def az172; @az172 ||= sumif(a('c3','c52'),c172,a('az3','az52')); end
+  def ba172; @ba172 ||= sumif(a('c3','c52'),c172,a('ba3','ba52')); end
+  def bb172; @bb172 ||= sumif(a('c3','c52'),c172,a('bb3','bb52')); end
+  def bc172; @bc172 ||= sumif(a('c3','c52'),c172,a('bc3','bc52')); end
+  def bd172; @bd172 ||= sumif(a('c3','c52'),c172,a('bd3','bd52')); end
+  def be172; @be172 ||= sumif(a('c3','c52'),c172,a('be3','be52')); end
+  def bf172; @bf172 ||= sumif(a('c3','c52'),c172,a('bf3','bf52')); end
+  def bg172; @bg172 ||= sumif(a('c3','c52'),c172,a('bg3','bg52')); end
+  def bi172; @bi172 ||= sumif(a('c3','c52'),c172,a('bi3','bi52')); end
+  def bj172; @bj172 ||= sumif(a('c3','c52'),c172,a('bj3','bj52')); end
+  def bk172; @bk172 ||= sumif(a('c3','c52'),c172,a('bk3','bk52')); end
+  def bl172; @bl172 ||= sumif(a('c3','c52'),c172,a('bl3','bl52')); end
+  def bm172; @bm172 ||= sumif(a('c3','c52'),c172,a('bm3','bm52')); end
+  def bn172; @bn172 ||= sumif(a('c3','c52'),c172,a('bn3','bn52')); end
+  def bo172; @bo172 ||= sumif(a('c3','c52'),c172,a('bo3','bo52')); end
+  def bp172; @bp172 ||= sumif(a('c3','c52'),c172,a('bp3','bp52')); end
+  def bq172; @bq172 ||= sumif(a('c3','c52'),c172,a('bq3','bq52')); end
+  def bs172; @bs172 ||= sumif(a('c3','c52'),c172,a('bs3','bs52')); end
+  def bt172; @bt172 ||= sumif(a('c3','c52'),c172,a('bt3','bt52')); end
+  def bu172; @bu172 ||= sumif(a('c3','c52'),c172,a('bu3','bu52')); end
+  def bv172; @bv172 ||= sumif(a('c3','c52'),c172,a('bv3','bv52')); end
+  def bw172; @bw172 ||= sumif(a('c3','c52'),c172,a('bw3','bw52')); end
+  def bx172; @bx172 ||= sumif(a('c3','c52'),c172,a('bx3','bx52')); end
+  def by172; @by172 ||= sumif(a('c3','c52'),c172,a('by3','by52')); end
+  def bz172; @bz172 ||= sumif(a('c3','c52'),c172,a('bz3','bz52')); end
+  def ca172; @ca172 ||= sumif(a('c3','c52'),c172,a('ca3','ca52')); end
+  def cc172; @cc172 ||= sumif(a('c3','c52'),c172,a('cc3','cc52')); end
+  def cd172; @cd172 ||= sumif(a('c3','c52'),c172,a('cd3','cd52')); end
+  def cf172; @cf172 ||= sumif(a('c3','c52'),c172,a('cf3','cf52')); end
+  def cg172; @cg172 ||= sumif(a('c3','c52'),c172,a('cg3','cg52')); end
+  def ch172; @ch172 ||= sumif(a('c3','c52'),c172,a('ch3','ch52')); end
+  def ci172; @ci172 ||= sumif(a('c3','c52'),c172,a('ci3','ci52')); end
+  def cj172; @cj172 ||= sumif(a('c3','c52'),c172,a('cj3','cj52')); end
+  def ck172; @ck172 ||= sumif(a('c3','c52'),c172,a('ck3','ck52')); end
+  def cl172; @cl172 ||= sumif(a('c3','c52'),c172,a('cl3','cl52')); end
+  def cm172; @cm172 ||= sumif(a('c3','c52'),c172,a('cm3','cm52')); end
+  def cn172; @cn172 ||= sumif(a('c3','c52'),c172,a('cn3','cn52')); end
+  def cp172; @cp172 ||= sumif(a('c3','c52'),c172,a('cp3','cp52')); end
+  def cq172; @cq172 ||= sumif(a('c3','c52'),c172,a('cq3','cq52')); end
+  def cr172; @cr172 ||= excel_if(excel_comparison(abs(cd172-cq172-at172),"<",1.0),"ok","err"); end
+  def c173; "Total"; end
+  def e173; @e173 ||= sum(a('e166','e172')); end
+  def f173; @f173 ||= sum(a('f166','f172')); end
+  def g173; @g173 ||= sum(a('g166','g172')); end
+  def h173; @h173 ||= sum(a('h166','h172')); end
+  def i173; @i173 ||= sum(a('i166','i172')); end
+  def j173; @j173 ||= sum(a('j166','j172')); end
+  def k173; @k173 ||= sum(a('k166','k172')); end
+  def l173; @l173 ||= sum(a('l166','l172')); end
+  def m173; @m173 ||= sum(a('m166','m172')); end
+  def o173; @o173 ||= sum(a('o166','o172')); end
+  def p173; @p173 ||= sum(a('p166','p172')); end
+  def q173; @q173 ||= sum(a('q166','q172')); end
+  def r173; @r173 ||= sum(a('r166','r172')); end
+  def s173; @s173 ||= sum(a('s166','s172')); end
+  def t173; @t173 ||= sum(a('t166','t172')); end
+  def u173; @u173 ||= sum(a('u166','u172')); end
+  def v173; @v173 ||= sum(a('v166','v172')); end
+  def w173; @w173 ||= sum(a('w166','w172')); end
+  def y173; @y173 ||= sum(a('y166','y172')); end
+  def z173; @z173 ||= sum(a('z166','z172')); end
+  def aa173; @aa173 ||= sum(a('aa166','aa172')); end
+  def ab173; @ab173 ||= sum(a('ab166','ab172')); end
+  def ac173; @ac173 ||= sum(a('ac166','ac172')); end
+  def ad173; @ad173 ||= sum(a('ad166','ad172')); end
+  def ae173; @ae173 ||= sum(a('ae166','ae172')); end
+  def af173; @af173 ||= sum(a('af166','af172')); end
+  def ag173; @ag173 ||= sum(a('ag166','ag172')); end
+  def ai173; @ai173 ||= sum(a('ai166','ai172')); end
+  def aj173; @aj173 ||= sum(a('aj166','aj172')); end
+  def ak173; @ak173 ||= sum(a('ak166','ak172')); end
+  def al173; @al173 ||= sum(a('al166','al172')); end
+  def am173; @am173 ||= sum(a('am166','am172')); end
+  def an173; @an173 ||= sum(a('an166','an172')); end
+  def ao173; @ao173 ||= sum(a('ao166','ao172')); end
+  def ap173; @ap173 ||= sum(a('ap166','ap172')); end
+  def aq173; @aq173 ||= sum(a('aq166','aq172')); end
+  def as173; @as173 ||= sum(a('as166','as172')); end
+  def at173; @at173 ||= sum(a('at166','at172')); end
+  def ay173; @ay173 ||= sum(a('ay166','ay172')); end
+  def az173; @az173 ||= sum(a('az166','az172')); end
+  def ba173; @ba173 ||= sum(a('ba166','ba172')); end
+  def bb173; @bb173 ||= sum(a('bb166','bb172')); end
+  def bc173; @bc173 ||= sum(a('bc166','bc172')); end
+  def bd173; @bd173 ||= sum(a('bd166','bd172')); end
+  def be173; @be173 ||= sum(a('be166','be172')); end
+  def bf173; @bf173 ||= sum(a('bf166','bf172')); end
+  def bg173; @bg173 ||= sum(a('bg166','bg172')); end
+  def bi173; @bi173 ||= sum(a('bi166','bi172')); end
+  def bj173; @bj173 ||= sum(a('bj166','bj172')); end
+  def bk173; @bk173 ||= sum(a('bk166','bk172')); end
+  def bl173; @bl173 ||= sum(a('bl166','bl172')); end
+  def bm173; @bm173 ||= sum(a('bm166','bm172')); end
+  def bn173; @bn173 ||= sum(a('bn166','bn172')); end
+  def bo173; @bo173 ||= sum(a('bo166','bo172')); end
+  def bp173; @bp173 ||= sum(a('bp166','bp172')); end
+  def bq173; @bq173 ||= sum(a('bq166','bq172')); end
+  def bs173; @bs173 ||= sum(a('bs166','bs172')); end
+  def bt173; @bt173 ||= sum(a('bt166','bt172')); end
+  def bu173; @bu173 ||= sum(a('bu166','bu172')); end
+  def bv173; @bv173 ||= sum(a('bv166','bv172')); end
+  def bw173; @bw173 ||= sum(a('bw166','bw172')); end
+  def bx173; @bx173 ||= sum(a('bx166','bx172')); end
+  def by173; @by173 ||= sum(a('by166','by172')); end
+  def bz173; @bz173 ||= sum(a('bz166','bz172')); end
+  def ca173; @ca173 ||= sum(a('ca166','ca172')); end
+  def cc173; @cc173 ||= sum(a('cc166','cc172')); end
+  def cd173; @cd173 ||= sum(a('cd166','cd172')); end
+  def cf173; @cf173 ||= sum(a('cf166','cf172')); end
+  def cg173; @cg173 ||= sum(a('cg166','cg172')); end
+  def ch173; @ch173 ||= sum(a('ch166','ch172')); end
+  def ci173; @ci173 ||= sum(a('ci166','ci172')); end
+  def cj173; @cj173 ||= sum(a('cj166','cj172')); end
+  def ck173; @ck173 ||= sum(a('ck166','ck172')); end
+  def cl173; @cl173 ||= sum(a('cl166','cl172')); end
+  def cm173; @cm173 ||= sum(a('cm166','cm172')); end
+  def cn173; @cn173 ||= sum(a('cn166','cn172')); end
+  def cp173; @cp173 ||= sum(a('cp166','cp172')); end
+  def cq173; @cq173 ||= sum(a('cq166','cq172')); end
+  def cr173; @cr173 ||= excel_if(excel_comparison(abs(cd173-cq173-at173),"<",1.0),"ok","err"); end
+  def e174; @e174 ||= excel_if(excel_comparison(e173,"==",e53),"ok",e173-e53); end
+  def f174; @f174 ||= excel_if(excel_comparison(f173,"==",f53),"ok",f173-f53); end
+  def g174; @g174 ||= excel_if(excel_comparison(g173,"==",g53),"ok",g173-g53); end
+  def h174; @h174 ||= excel_if(excel_comparison(h173,"==",h53),"ok",h173-h53); end
+  def i174; @i174 ||= excel_if(excel_comparison(i173,"==",i53),"ok",i173-i53); end
+  def j174; @j174 ||= excel_if(excel_comparison(j173,"==",j53),"ok",j173-j53); end
+  def k174; @k174 ||= excel_if(excel_comparison(k173,"==",k53),"ok",k173-k53); end
+  def l174; @l174 ||= excel_if(excel_comparison(l173,"==",l53),"ok",l173-l53); end
+  def m174; @m174 ||= excel_if(excel_comparison(m173,"==",m53),"ok",m173-m53); end
+  def o174; @o174 ||= excel_if(excel_comparison(o173,"==",o53),"ok",o173-o53); end
+  def p174; @p174 ||= excel_if(excel_comparison(p173,"==",p53),"ok",p173-p53); end
+  def q174; @q174 ||= excel_if(excel_comparison(q173,"==",q53),"ok",q173-q53); end
+  def r174; @r174 ||= excel_if(excel_comparison(r173,"==",r53),"ok",r173-r53); end
+  def s174; @s174 ||= excel_if(excel_comparison(s173,"==",s53),"ok",s173-s53); end
+  def t174; @t174 ||= excel_if(excel_comparison(t173,"==",t53),"ok",t173-t53); end
+  def u174; @u174 ||= excel_if(excel_comparison(u173,"==",u53),"ok",u173-u53); end
+  def v174; @v174 ||= excel_if(excel_comparison(v173,"==",v53),"ok",v173-v53); end
+  def w174; @w174 ||= excel_if(excel_comparison(w173,"==",w53),"ok",w173-w53); end
+  def y174; @y174 ||= excel_if(excel_comparison(y173,"==",y53),"ok",y173-y53); end
+  def z174; @z174 ||= excel_if(excel_comparison(z173,"==",z53),"ok",z173-z53); end
+  def aa174; @aa174 ||= excel_if(excel_comparison(aa173,"==",aa53),"ok",aa173-aa53); end
+  def ab174; @ab174 ||= excel_if(excel_comparison(ab173,"==",ab53),"ok",ab173-ab53); end
+  def ac174; @ac174 ||= excel_if(excel_comparison(ac173,"==",ac53),"ok",ac173-ac53); end
+  def ad174; @ad174 ||= excel_if(excel_comparison(ad173,"==",ad53),"ok",ad173-ad53); end
+  def ae174; @ae174 ||= excel_if(excel_comparison(ae173,"==",ae53),"ok",ae173-ae53); end
+  def af174; @af174 ||= excel_if(excel_comparison(af173,"==",af53),"ok",af173-af53); end
+  def ag174; @ag174 ||= excel_if(excel_comparison(ag173,"==",ag53),"ok",ag173-ag53); end
+  def ai174; @ai174 ||= excel_if(excel_comparison(ai173,"==",ai53),"ok",ai173-ai53); end
+  def aj174; @aj174 ||= excel_if(excel_comparison(aj173,"==",aj53),"ok",aj173-aj53); end
+  def ak174; @ak174 ||= excel_if(excel_comparison(ak173,"==",ak53),"ok",ak173-ak53); end
+  def al174; @al174 ||= excel_if(excel_comparison(al173,"==",al53),"ok",al173-al53); end
+  def am174; @am174 ||= excel_if(excel_comparison(am173,"==",am53),"ok",am173-am53); end
+  def an174; @an174 ||= excel_if(excel_comparison(an173,"==",an53),"ok",an173-an53); end
+  def ao174; @ao174 ||= excel_if(excel_comparison(ao173,"==",ao53),"ok",ao173-ao53); end
+  def ap174; @ap174 ||= excel_if(excel_comparison(ap173,"==",ap53),"ok",ap173-ap53); end
+  def aq174; @aq174 ||= excel_if(excel_comparison(aq173,"==",aq53),"ok",aq173-aq53); end
+  def as174; @as174 ||= excel_if(excel_comparison(as173,"==",as53),"ok",as173-as53); end
+  def at174; @at174 ||= excel_if(excel_comparison(at173,"==",at53),"ok",at173-at53); end
+  def ay174; @ay174 ||= excel_if(excel_comparison(ay173,"==",ay53),"ok",ay173-ay53); end
+  def az174; @az174 ||= excel_if(excel_comparison(az173,"==",az53),"ok",az173-az53); end
+  def ba174; @ba174 ||= excel_if(excel_comparison(ba173,"==",ba53),"ok",ba173-ba53); end
+  def bb174; @bb174 ||= excel_if(excel_comparison(bb173,"==",bb53),"ok",bb173-bb53); end
+  def bc174; @bc174 ||= excel_if(excel_comparison(bc173,"==",bc53),"ok",bc173-bc53); end
+  def bd174; @bd174 ||= excel_if(excel_comparison(bd173,"==",bd53),"ok",bd173-bd53); end
+  def be174; @be174 ||= excel_if(excel_comparison(be173,"==",be53),"ok",be173-be53); end
+  def bf174; @bf174 ||= excel_if(excel_comparison(bf173,"==",bf53),"ok",bf173-bf53); end
+  def bg174; @bg174 ||= excel_if(excel_comparison(bg173,"==",bg53),"ok",bg173-bg53); end
+  def bi174; @bi174 ||= excel_if(excel_comparison(bi173,"==",bi53),"ok",bi173-bi53); end
+  def bj174; @bj174 ||= excel_if(excel_comparison(bj173,"==",bj53),"ok",bj173-bj53); end
+  def bk174; @bk174 ||= excel_if(excel_comparison(bk173,"==",bk53),"ok",bk173-bk53); end
+  def bl174; @bl174 ||= excel_if(excel_comparison(bl173,"==",bl53),"ok",bl173-bl53); end
+  def bm174; @bm174 ||= excel_if(excel_comparison(bm173,"==",bm53),"ok",bm173-bm53); end
+  def bn174; @bn174 ||= excel_if(excel_comparison(bn173,"==",bn53),"ok",bn173-bn53); end
+  def bo174; @bo174 ||= excel_if(excel_comparison(bo173,"==",bo53),"ok",bo173-bo53); end
+  def bp174; @bp174 ||= excel_if(excel_comparison(bp173,"==",bp53),"ok",bp173-bp53); end
+  def bq174; @bq174 ||= excel_if(excel_comparison(bq173,"==",bq53),"ok",bq173-bq53); end
+  def bs174; @bs174 ||= excel_if(excel_comparison(bs173,"==",bs53),"ok",bs173-bs53); end
+  def bt174; @bt174 ||= excel_if(excel_comparison(bt173,"==",bt53),"ok",bt173-bt53); end
+  def bu174; @bu174 ||= excel_if(excel_comparison(bu173,"==",bu53),"ok",bu173-bu53); end
+  def bv174; @bv174 ||= excel_if(excel_comparison(bv173,"==",bv53),"ok",bv173-bv53); end
+  def bw174; @bw174 ||= excel_if(excel_comparison(bw173,"==",bw53),"ok",bw173-bw53); end
+  def bx174; @bx174 ||= excel_if(excel_comparison(bx173,"==",bx53),"ok",bx173-bx53); end
+  def by174; @by174 ||= excel_if(excel_comparison(by173,"==",by53),"ok",by173-by53); end
+  def bz174; @bz174 ||= excel_if(excel_comparison(bz173,"==",bz53),"ok",bz173-bz53); end
+  def ca174; @ca174 ||= excel_if(excel_comparison(ca173,"==",ca53),"ok",ca173-ca53); end
+  def cc174; @cc174 ||= excel_if(excel_comparison(cc173,"==",cc53),"ok",cc173-cc53); end
+  def cd174; @cd174 ||= excel_if(excel_comparison(cd173,"==",cd53),"ok",cd173-cd53); end
+  def cf174; @cf174 ||= excel_if(excel_comparison(cf173,"==",cf53),"ok",cf173-cf53); end
+  def cg174; @cg174 ||= excel_if(excel_comparison(cg173,"==",cg53),"ok",cg173-cg53); end
+  def ch174; @ch174 ||= excel_if(excel_comparison(ch173,"==",ch53),"ok",ch173-ch53); end
+  def ci174; @ci174 ||= excel_if(excel_comparison(ci173,"==",ci53),"ok",ci173-ci53); end
+  def cj174; @cj174 ||= excel_if(excel_comparison(cj173,"==",cj53),"ok",cj173-cj53); end
+  def ck174; @ck174 ||= excel_if(excel_comparison(ck173,"==",ck53),"ok",ck173-ck53); end
+  def cl174; @cl174 ||= excel_if(excel_comparison(cl173,"==",cl53),"ok",cl173-cl53); end
+  def cm174; @cm174 ||= excel_if(excel_comparison(cm173,"==",cm53),"ok",cm173-cm53); end
+  def cn174; @cn174 ||= excel_if(excel_comparison(cn173,"==",cn53),"ok",cn173-cn53); end
+  def cp174; @cp174 ||= excel_if(excel_comparison(cp173,"==",cp53),"ok",cp173-cp53); end
+  def cq174; @cq174 ||= excel_if(excel_comparison(cq173,"==",cq53),"ok",cq173-cq53); end
+  def c176; "£m"; end
+  def e176; "C1.Point"; end
+  def f176; "Point estimate of capital costs"; end
+  def o176; "C2.Point"; end
+  def p176; "Point estimate of operating costs"; end
+  def y176; "C3.Point"; end
+  def z176; "Point estimate of fuel costs"; end
+  def ai176; "Point estimate of total cost"; end
+  def as176; "Cashflow capital basis"; end
+  def av176; "Loan"; end
+  def ay176; "Repayments for capital spent in that period"; end
+  def bi176; "Repayments for outstanding capital"; end
+  def br176; "Total cost (ammortised capital)"; end
+  def cc176; "Amortised Capital"; end
+  def cf176; "Extra cost due to financing capital, compared with doing it out of cash"; end
+  def cp176; "Extra cost due to financing capital, compared with doing it out of cash"; end
+  def c177; "Category"; end
+  def e177; "2010"; end
+  def f177; "2015"; end
+  def g177; "2020"; end
+  def h177; "2025"; end
+  def i177; "2030"; end
+  def j177; "2035"; end
+  def k177; "2040"; end
+  def l177; "2045"; end
+  def m177; "2050"; end
+  def o177; "2010"; end
+  def p177; "2015"; end
+  def q177; "2020"; end
+  def r177; "2025"; end
+  def s177; "2030"; end
+  def t177; "2035"; end
+  def u177; "2040"; end
+  def v177; "2045"; end
+  def w177; "2050"; end
+  def y177; "2010"; end
+  def z177; "2015"; end
+  def aa177; "2020"; end
+  def ab177; "2025"; end
+  def ac177; "2030"; end
+  def ad177; "2035"; end
+  def ae177; "2040"; end
+  def af177; "2045"; end
+  def ag177; "2050"; end
+  def ai177; "2010"; end
+  def aj177; "2015"; end
+  def ak177; "2020"; end
+  def al177; "2025"; end
+  def am177; "2030"; end
+  def an177; "2035"; end
+  def ao177; "2040"; end
+  def ap177; "2045"; end
+  def aq177; "2050"; end
+  def as177; "Mean"; end
+  def at177; "NPV"; end
+  def av177; "Rate"; end
+  def aw177; "Years"; end
+  def ay177; 2010.0; end
+  def az177; 2015.0; end
+  def ba177; 2020.0; end
+  def bb177; 2025.0; end
+  def bc177; 2030.0; end
+  def bd177; 2035.0; end
+  def be177; 2040.0; end
+  def bf177; 2045.0; end
+  def bg177; 2050.0; end
+  def bi177; 2010.0; end
+  def bj177; 2015.0; end
+  def bk177; 2020.0; end
+  def bl177; 2025.0; end
+  def bm177; 2030.0; end
+  def bn177; 2035.0; end
+  def bo177; 2040.0; end
+  def bp177; 2045.0; end
+  def bq177; 2050.0; end
+  def bs177; "2010"; end
+  def bt177; "2015"; end
+  def bu177; "2020"; end
+  def bv177; "2025"; end
+  def bw177; "2030"; end
+  def bx177; "2035"; end
+  def by177; "2040"; end
+  def bz177; "2045"; end
+  def ca177; "2050"; end
+  def cc177; "Mean"; end
+  def cd177; "NPV"; end
+  def cf177; "2010"; end
+  def cg177; "2015"; end
+  def ch177; "2020"; end
+  def ci177; "2025"; end
+  def cj177; "2030"; end
+  def ck177; "2035"; end
+  def cl177; "2040"; end
+  def cm177; "2045"; end
+  def cn177; "2050"; end
+  def cp177; "Mean"; end
+  def cq177; "NPV"; end
+  def c178; "Fossil Fuels"; end
+  def e178; @e178 ||= sumif(a('c57','c106'),c178,a('e57','e106')); end
+  def f178; @f178 ||= sumif(a('c57','c106'),c178,a('f57','f106')); end
+  def g178; @g178 ||= sumif(a('c57','c106'),c178,a('g57','g106')); end
+  def h178; @h178 ||= sumif(a('c57','c106'),c178,a('h57','h106')); end
+  def i178; @i178 ||= sumif(a('c57','c106'),c178,a('i57','i106')); end
+  def j178; @j178 ||= sumif(a('c57','c106'),c178,a('j57','j106')); end
+  def k178; @k178 ||= sumif(a('c57','c106'),c178,a('k57','k106')); end
+  def l178; @l178 ||= sumif(a('c57','c106'),c178,a('l57','l106')); end
+  def m178; @m178 ||= sumif(a('c57','c106'),c178,a('m57','m106')); end
+  def o178; @o178 ||= sumif(a('c57','c106'),c178,a('o57','o106')); end
+  def p178; @p178 ||= sumif(a('c57','c106'),c178,a('p57','p106')); end
+  def q178; @q178 ||= sumif(a('c57','c106'),c178,a('q57','q106')); end
+  def r178; @r178 ||= sumif(a('c57','c106'),c178,a('r57','r106')); end
+  def s178; @s178 ||= sumif(a('c57','c106'),c178,a('s57','s106')); end
+  def t178; @t178 ||= sumif(a('c57','c106'),c178,a('t57','t106')); end
+  def u178; @u178 ||= sumif(a('c57','c106'),c178,a('u57','u106')); end
+  def v178; @v178 ||= sumif(a('c57','c106'),c178,a('v57','v106')); end
+  def w178; @w178 ||= sumif(a('c57','c106'),c178,a('w57','w106')); end
+  def y178; @y178 ||= sumif(a('c57','c106'),c178,a('y57','y106')); end
+  def z178; @z178 ||= sumif(a('c57','c106'),c178,a('z57','z106')); end
+  def aa178; @aa178 ||= sumif(a('c57','c106'),c178,a('aa57','aa106')); end
+  def ab178; @ab178 ||= sumif(a('c57','c106'),c178,a('ab57','ab106')); end
+  def ac178; @ac178 ||= sumif(a('c57','c106'),c178,a('ac57','ac106')); end
+  def ad178; @ad178 ||= sumif(a('c57','c106'),c178,a('ad57','ad106')); end
+  def ae178; @ae178 ||= sumif(a('c57','c106'),c178,a('ae57','ae106')); end
+  def af178; @af178 ||= sumif(a('c57','c106'),c178,a('af57','af106')); end
+  def ag178; @ag178 ||= sumif(a('c57','c106'),c178,a('ag57','ag106')); end
+  def ai178; @ai178 ||= sumif(a('c57','c106'),c178,a('ai57','ai106')); end
+  def aj178; @aj178 ||= sumif(a('c57','c106'),c178,a('aj57','aj106')); end
+  def ak178; @ak178 ||= sumif(a('c57','c106'),c178,a('ak57','ak106')); end
+  def al178; @al178 ||= sumif(a('c57','c106'),c178,a('al57','al106')); end
+  def am178; @am178 ||= sumif(a('c57','c106'),c178,a('am57','am106')); end
+  def an178; @an178 ||= sumif(a('c57','c106'),c178,a('an57','an106')); end
+  def ao178; @ao178 ||= sumif(a('c57','c106'),c178,a('ao57','ao106')); end
+  def ap178; @ap178 ||= sumif(a('c57','c106'),c178,a('ap57','ap106')); end
+  def aq178; @aq178 ||= sumif(a('c57','c106'),c178,a('aq57','aq106')); end
+  def as178; @as178 ||= sumif(a('c57','c106'),c178,a('as57','as106')); end
+  def at178; @at178 ||= sumif(a('c57','c106'),c178,a('at57','at106')); end
+  def ay178; @ay178 ||= sumif(a('c57','c106'),c178,a('ay57','ay106')); end
+  def az178; @az178 ||= sumif(a('c57','c106'),c178,a('az57','az106')); end
+  def ba178; @ba178 ||= sumif(a('c57','c106'),c178,a('ba57','ba106')); end
+  def bb178; @bb178 ||= sumif(a('c57','c106'),c178,a('bb57','bb106')); end
+  def bc178; @bc178 ||= sumif(a('c57','c106'),c178,a('bc57','bc106')); end
+  def bd178; @bd178 ||= sumif(a('c57','c106'),c178,a('bd57','bd106')); end
+  def be178; @be178 ||= sumif(a('c57','c106'),c178,a('be57','be106')); end
+  def bf178; @bf178 ||= sumif(a('c57','c106'),c178,a('bf57','bf106')); end
+  def bg178; @bg178 ||= sumif(a('c57','c106'),c178,a('bg57','bg106')); end
+  def bi178; @bi178 ||= sumif(a('c57','c106'),c178,a('bi57','bi106')); end
+  def bj178; @bj178 ||= sumif(a('c57','c106'),c178,a('bj57','bj106')); end
+  def bk178; @bk178 ||= sumif(a('c57','c106'),c178,a('bk57','bk106')); end
+  def bl178; @bl178 ||= sumif(a('c57','c106'),c178,a('bl57','bl106')); end
+  def bm178; @bm178 ||= sumif(a('c57','c106'),c178,a('bm57','bm106')); end
+  def bn178; @bn178 ||= sumif(a('c57','c106'),c178,a('bn57','bn106')); end
+  def bo178; @bo178 ||= sumif(a('c57','c106'),c178,a('bo57','bo106')); end
+  def bp178; @bp178 ||= sumif(a('c57','c106'),c178,a('bp57','bp106')); end
+  def bq178; @bq178 ||= sumif(a('c57','c106'),c178,a('bq57','bq106')); end
+  def bs178; @bs178 ||= sumif(a('c57','c106'),c178,a('bs57','bs106')); end
+  def bt178; @bt178 ||= sumif(a('c57','c106'),c178,a('bt57','bt106')); end
+  def bu178; @bu178 ||= sumif(a('c57','c106'),c178,a('bu57','bu106')); end
+  def bv178; @bv178 ||= sumif(a('c57','c106'),c178,a('bv57','bv106')); end
+  def bw178; @bw178 ||= sumif(a('c57','c106'),c178,a('bw57','bw106')); end
+  def bx178; @bx178 ||= sumif(a('c57','c106'),c178,a('bx57','bx106')); end
+  def by178; @by178 ||= sumif(a('c57','c106'),c178,a('by57','by106')); end
+  def bz178; @bz178 ||= sumif(a('c57','c106'),c178,a('bz57','bz106')); end
+  def ca178; @ca178 ||= sumif(a('c57','c106'),c178,a('ca57','ca106')); end
+  def cc178; @cc178 ||= sumif(a('c57','c106'),c178,a('cc57','cc106')); end
+  def cd178; @cd178 ||= sumif(a('c57','c106'),c178,a('cd57','cd106')); end
+  def cf178; @cf178 ||= sumif(a('c57','c106'),c178,a('cf57','cf106')); end
+  def cg178; @cg178 ||= sumif(a('c57','c106'),c178,a('cg57','cg106')); end
+  def ch178; @ch178 ||= sumif(a('c57','c106'),c178,a('ch57','ch106')); end
+  def ci178; @ci178 ||= sumif(a('c57','c106'),c178,a('ci57','ci106')); end
+  def cj178; @cj178 ||= sumif(a('c57','c106'),c178,a('cj57','cj106')); end
+  def ck178; @ck178 ||= sumif(a('c57','c106'),c178,a('ck57','ck106')); end
+  def cl178; @cl178 ||= sumif(a('c57','c106'),c178,a('cl57','cl106')); end
+  def cm178; @cm178 ||= sumif(a('c57','c106'),c178,a('cm57','cm106')); end
+  def cn178; @cn178 ||= sumif(a('c57','c106'),c178,a('cn57','cn106')); end
+  def cp178; @cp178 ||= sumif(a('c57','c106'),c178,a('cp57','cp106')); end
+  def cq178; @cq178 ||= sumif(a('c57','c106'),c178,a('cq57','cq106')); end
+  def cr178; @cr178 ||= excel_if(excel_comparison(abs(cd178-cq178-at178),"<",1.0),"ok","err"); end
+  def c179; "Bioenergy"; end
+  def e179; @e179 ||= sumif(a('c57','c106'),c179,a('e57','e106')); end
+  def f179; @f179 ||= sumif(a('c57','c106'),c179,a('f57','f106')); end
+  def g179; @g179 ||= sumif(a('c57','c106'),c179,a('g57','g106')); end
+  def h179; @h179 ||= sumif(a('c57','c106'),c179,a('h57','h106')); end
+  def i179; @i179 ||= sumif(a('c57','c106'),c179,a('i57','i106')); end
+  def j179; @j179 ||= sumif(a('c57','c106'),c179,a('j57','j106')); end
+  def k179; @k179 ||= sumif(a('c57','c106'),c179,a('k57','k106')); end
+  def l179; @l179 ||= sumif(a('c57','c106'),c179,a('l57','l106')); end
+  def m179; @m179 ||= sumif(a('c57','c106'),c179,a('m57','m106')); end
+  def o179; @o179 ||= sumif(a('c57','c106'),c179,a('o57','o106')); end
+  def p179; @p179 ||= sumif(a('c57','c106'),c179,a('p57','p106')); end
+  def q179; @q179 ||= sumif(a('c57','c106'),c179,a('q57','q106')); end
+  def r179; @r179 ||= sumif(a('c57','c106'),c179,a('r57','r106')); end
+  def s179; @s179 ||= sumif(a('c57','c106'),c179,a('s57','s106')); end
+  def t179; @t179 ||= sumif(a('c57','c106'),c179,a('t57','t106')); end
+  def u179; @u179 ||= sumif(a('c57','c106'),c179,a('u57','u106')); end
+  def v179; @v179 ||= sumif(a('c57','c106'),c179,a('v57','v106')); end
+  def w179; @w179 ||= sumif(a('c57','c106'),c179,a('w57','w106')); end
+  def y179; @y179 ||= sumif(a('c57','c106'),c179,a('y57','y106')); end
+  def z179; @z179 ||= sumif(a('c57','c106'),c179,a('z57','z106')); end
+  def aa179; @aa179 ||= sumif(a('c57','c106'),c179,a('aa57','aa106')); end
+  def ab179; @ab179 ||= sumif(a('c57','c106'),c179,a('ab57','ab106')); end
+  def ac179; @ac179 ||= sumif(a('c57','c106'),c179,a('ac57','ac106')); end
+  def ad179; @ad179 ||= sumif(a('c57','c106'),c179,a('ad57','ad106')); end
+  def ae179; @ae179 ||= sumif(a('c57','c106'),c179,a('ae57','ae106')); end
+  def af179; @af179 ||= sumif(a('c57','c106'),c179,a('af57','af106')); end
+  def ag179; @ag179 ||= sumif(a('c57','c106'),c179,a('ag57','ag106')); end
+  def ai179; @ai179 ||= sumif(a('c57','c106'),c179,a('ai57','ai106')); end
+  def aj179; @aj179 ||= sumif(a('c57','c106'),c179,a('aj57','aj106')); end
+  def ak179; @ak179 ||= sumif(a('c57','c106'),c179,a('ak57','ak106')); end
+  def al179; @al179 ||= sumif(a('c57','c106'),c179,a('al57','al106')); end
+  def am179; @am179 ||= sumif(a('c57','c106'),c179,a('am57','am106')); end
+  def an179; @an179 ||= sumif(a('c57','c106'),c179,a('an57','an106')); end
+  def ao179; @ao179 ||= sumif(a('c57','c106'),c179,a('ao57','ao106')); end
+  def ap179; @ap179 ||= sumif(a('c57','c106'),c179,a('ap57','ap106')); end
+  def aq179; @aq179 ||= sumif(a('c57','c106'),c179,a('aq57','aq106')); end
+  def as179; @as179 ||= sumif(a('c57','c106'),c179,a('as57','as106')); end
+  def at179; @at179 ||= sumif(a('c57','c106'),c179,a('at57','at106')); end
+  def ay179; @ay179 ||= sumif(a('c57','c106'),c179,a('ay57','ay106')); end
+  def az179; @az179 ||= sumif(a('c57','c106'),c179,a('az57','az106')); end
+  def ba179; @ba179 ||= sumif(a('c57','c106'),c179,a('ba57','ba106')); end
+  def bb179; @bb179 ||= sumif(a('c57','c106'),c179,a('bb57','bb106')); end
+  def bc179; @bc179 ||= sumif(a('c57','c106'),c179,a('bc57','bc106')); end
+  def bd179; @bd179 ||= sumif(a('c57','c106'),c179,a('bd57','bd106')); end
+  def be179; @be179 ||= sumif(a('c57','c106'),c179,a('be57','be106')); end
+  def bf179; @bf179 ||= sumif(a('c57','c106'),c179,a('bf57','bf106')); end
+  def bg179; @bg179 ||= sumif(a('c57','c106'),c179,a('bg57','bg106')); end
+  def bi179; @bi179 ||= sumif(a('c57','c106'),c179,a('bi57','bi106')); end
+  def bj179; @bj179 ||= sumif(a('c57','c106'),c179,a('bj57','bj106')); end
+  def bk179; @bk179 ||= sumif(a('c57','c106'),c179,a('bk57','bk106')); end
+  def bl179; @bl179 ||= sumif(a('c57','c106'),c179,a('bl57','bl106')); end
+  def bm179; @bm179 ||= sumif(a('c57','c106'),c179,a('bm57','bm106')); end
+  def bn179; @bn179 ||= sumif(a('c57','c106'),c179,a('bn57','bn106')); end
+  def bo179; @bo179 ||= sumif(a('c57','c106'),c179,a('bo57','bo106')); end
+  def bp179; @bp179 ||= sumif(a('c57','c106'),c179,a('bp57','bp106')); end
+  def bq179; @bq179 ||= sumif(a('c57','c106'),c179,a('bq57','bq106')); end
+  def bs179; @bs179 ||= sumif(a('c57','c106'),c179,a('bs57','bs106')); end
+  def bt179; @bt179 ||= sumif(a('c57','c106'),c179,a('bt57','bt106')); end
+  def bu179; @bu179 ||= sumif(a('c57','c106'),c179,a('bu57','bu106')); end
+  def bv179; @bv179 ||= sumif(a('c57','c106'),c179,a('bv57','bv106')); end
+  def bw179; @bw179 ||= sumif(a('c57','c106'),c179,a('bw57','bw106')); end
+  def bx179; @bx179 ||= sumif(a('c57','c106'),c179,a('bx57','bx106')); end
+  def by179; @by179 ||= sumif(a('c57','c106'),c179,a('by57','by106')); end
+  def bz179; @bz179 ||= sumif(a('c57','c106'),c179,a('bz57','bz106')); end
+  def ca179; @ca179 ||= sumif(a('c57','c106'),c179,a('ca57','ca106')); end
+  def cc179; @cc179 ||= sumif(a('c57','c106'),c179,a('cc57','cc106')); end
+  def cd179; @cd179 ||= sumif(a('c57','c106'),c179,a('cd57','cd106')); end
+  def cf179; @cf179 ||= sumif(a('c57','c106'),c179,a('cf57','cf106')); end
+  def cg179; @cg179 ||= sumif(a('c57','c106'),c179,a('cg57','cg106')); end
+  def ch179; @ch179 ||= sumif(a('c57','c106'),c179,a('ch57','ch106')); end
+  def ci179; @ci179 ||= sumif(a('c57','c106'),c179,a('ci57','ci106')); end
+  def cj179; @cj179 ||= sumif(a('c57','c106'),c179,a('cj57','cj106')); end
+  def ck179; @ck179 ||= sumif(a('c57','c106'),c179,a('ck57','ck106')); end
+  def cl179; @cl179 ||= sumif(a('c57','c106'),c179,a('cl57','cl106')); end
+  def cm179; @cm179 ||= sumif(a('c57','c106'),c179,a('cm57','cm106')); end
+  def cn179; @cn179 ||= sumif(a('c57','c106'),c179,a('cn57','cn106')); end
+  def cp179; @cp179 ||= sumif(a('c57','c106'),c179,a('cp57','cp106')); end
+  def cq179; @cq179 ||= sumif(a('c57','c106'),c179,a('cq57','cq106')); end
+  def cr179; @cr179 ||= excel_if(excel_comparison(abs(cd179-cq179-at179),"<",1.0),"ok","err"); end
+  def c180; "Electricity"; end
+  def e180; @e180 ||= sumif(a('c57','c106'),c180,a('e57','e106')); end
+  def f180; @f180 ||= sumif(a('c57','c106'),c180,a('f57','f106')); end
+  def g180; @g180 ||= sumif(a('c57','c106'),c180,a('g57','g106')); end
+  def h180; @h180 ||= sumif(a('c57','c106'),c180,a('h57','h106')); end
+  def i180; @i180 ||= sumif(a('c57','c106'),c180,a('i57','i106')); end
+  def j180; @j180 ||= sumif(a('c57','c106'),c180,a('j57','j106')); end
+  def k180; @k180 ||= sumif(a('c57','c106'),c180,a('k57','k106')); end
+  def l180; @l180 ||= sumif(a('c57','c106'),c180,a('l57','l106')); end
+  def m180; @m180 ||= sumif(a('c57','c106'),c180,a('m57','m106')); end
+  def o180; @o180 ||= sumif(a('c57','c106'),c180,a('o57','o106')); end
+  def p180; @p180 ||= sumif(a('c57','c106'),c180,a('p57','p106')); end
+  def q180; @q180 ||= sumif(a('c57','c106'),c180,a('q57','q106')); end
+  def r180; @r180 ||= sumif(a('c57','c106'),c180,a('r57','r106')); end
+  def s180; @s180 ||= sumif(a('c57','c106'),c180,a('s57','s106')); end
+  def t180; @t180 ||= sumif(a('c57','c106'),c180,a('t57','t106')); end
+  def u180; @u180 ||= sumif(a('c57','c106'),c180,a('u57','u106')); end
+  def v180; @v180 ||= sumif(a('c57','c106'),c180,a('v57','v106')); end
+  def w180; @w180 ||= sumif(a('c57','c106'),c180,a('w57','w106')); end
+  def y180; @y180 ||= sumif(a('c57','c106'),c180,a('y57','y106')); end
+  def z180; @z180 ||= sumif(a('c57','c106'),c180,a('z57','z106')); end
+  def aa180; @aa180 ||= sumif(a('c57','c106'),c180,a('aa57','aa106')); end
+  def ab180; @ab180 ||= sumif(a('c57','c106'),c180,a('ab57','ab106')); end
+  def ac180; @ac180 ||= sumif(a('c57','c106'),c180,a('ac57','ac106')); end
+  def ad180; @ad180 ||= sumif(a('c57','c106'),c180,a('ad57','ad106')); end
+  def ae180; @ae180 ||= sumif(a('c57','c106'),c180,a('ae57','ae106')); end
+  def af180; @af180 ||= sumif(a('c57','c106'),c180,a('af57','af106')); end
+  def ag180; @ag180 ||= sumif(a('c57','c106'),c180,a('ag57','ag106')); end
+  def ai180; @ai180 ||= sumif(a('c57','c106'),c180,a('ai57','ai106')); end
+  def aj180; @aj180 ||= sumif(a('c57','c106'),c180,a('aj57','aj106')); end
+  def ak180; @ak180 ||= sumif(a('c57','c106'),c180,a('ak57','ak106')); end
+  def al180; @al180 ||= sumif(a('c57','c106'),c180,a('al57','al106')); end
+  def am180; @am180 ||= sumif(a('c57','c106'),c180,a('am57','am106')); end
+  def an180; @an180 ||= sumif(a('c57','c106'),c180,a('an57','an106')); end
+  def ao180; @ao180 ||= sumif(a('c57','c106'),c180,a('ao57','ao106')); end
+  def ap180; @ap180 ||= sumif(a('c57','c106'),c180,a('ap57','ap106')); end
+  def aq180; @aq180 ||= sumif(a('c57','c106'),c180,a('aq57','aq106')); end
+  def as180; @as180 ||= sumif(a('c57','c106'),c180,a('as57','as106')); end
+  def at180; @at180 ||= sumif(a('c57','c106'),c180,a('at57','at106')); end
+  def ay180; @ay180 ||= sumif(a('c57','c106'),c180,a('ay57','ay106')); end
+  def az180; @az180 ||= sumif(a('c57','c106'),c180,a('az57','az106')); end
+  def ba180; @ba180 ||= sumif(a('c57','c106'),c180,a('ba57','ba106')); end
+  def bb180; @bb180 ||= sumif(a('c57','c106'),c180,a('bb57','bb106')); end
+  def bc180; @bc180 ||= sumif(a('c57','c106'),c180,a('bc57','bc106')); end
+  def bd180; @bd180 ||= sumif(a('c57','c106'),c180,a('bd57','bd106')); end
+  def be180; @be180 ||= sumif(a('c57','c106'),c180,a('be57','be106')); end
+  def bf180; @bf180 ||= sumif(a('c57','c106'),c180,a('bf57','bf106')); end
+  def bg180; @bg180 ||= sumif(a('c57','c106'),c180,a('bg57','bg106')); end
+  def bi180; @bi180 ||= sumif(a('c57','c106'),c180,a('bi57','bi106')); end
+  def bj180; @bj180 ||= sumif(a('c57','c106'),c180,a('bj57','bj106')); end
+  def bk180; @bk180 ||= sumif(a('c57','c106'),c180,a('bk57','bk106')); end
+  def bl180; @bl180 ||= sumif(a('c57','c106'),c180,a('bl57','bl106')); end
+  def bm180; @bm180 ||= sumif(a('c57','c106'),c180,a('bm57','bm106')); end
+  def bn180; @bn180 ||= sumif(a('c57','c106'),c180,a('bn57','bn106')); end
+  def bo180; @bo180 ||= sumif(a('c57','c106'),c180,a('bo57','bo106')); end
+  def bp180; @bp180 ||= sumif(a('c57','c106'),c180,a('bp57','bp106')); end
+  def bq180; @bq180 ||= sumif(a('c57','c106'),c180,a('bq57','bq106')); end
+  def bs180; @bs180 ||= sumif(a('c57','c106'),c180,a('bs57','bs106')); end
+  def bt180; @bt180 ||= sumif(a('c57','c106'),c180,a('bt57','bt106')); end
+  def bu180; @bu180 ||= sumif(a('c57','c106'),c180,a('bu57','bu106')); end
+  def bv180; @bv180 ||= sumif(a('c57','c106'),c180,a('bv57','bv106')); end
+  def bw180; @bw180 ||= sumif(a('c57','c106'),c180,a('bw57','bw106')); end
+  def bx180; @bx180 ||= sumif(a('c57','c106'),c180,a('bx57','bx106')); end
+  def by180; @by180 ||= sumif(a('c57','c106'),c180,a('by57','by106')); end
+  def bz180; @bz180 ||= sumif(a('c57','c106'),c180,a('bz57','bz106')); end
+  def ca180; @ca180 ||= sumif(a('c57','c106'),c180,a('ca57','ca106')); end
+  def cc180; @cc180 ||= sumif(a('c57','c106'),c180,a('cc57','cc106')); end
+  def cd180; @cd180 ||= sumif(a('c57','c106'),c180,a('cd57','cd106')); end
+  def cf180; @cf180 ||= sumif(a('c57','c106'),c180,a('cf57','cf106')); end
+  def cg180; @cg180 ||= sumif(a('c57','c106'),c180,a('cg57','cg106')); end
+  def ch180; @ch180 ||= sumif(a('c57','c106'),c180,a('ch57','ch106')); end
+  def ci180; @ci180 ||= sumif(a('c57','c106'),c180,a('ci57','ci106')); end
+  def cj180; @cj180 ||= sumif(a('c57','c106'),c180,a('cj57','cj106')); end
+  def ck180; @ck180 ||= sumif(a('c57','c106'),c180,a('ck57','ck106')); end
+  def cl180; @cl180 ||= sumif(a('c57','c106'),c180,a('cl57','cl106')); end
+  def cm180; @cm180 ||= sumif(a('c57','c106'),c180,a('cm57','cm106')); end
+  def cn180; @cn180 ||= sumif(a('c57','c106'),c180,a('cn57','cn106')); end
+  def cp180; @cp180 ||= sumif(a('c57','c106'),c180,a('cp57','cp106')); end
+  def cq180; @cq180 ||= sumif(a('c57','c106'),c180,a('cq57','cq106')); end
+  def cr180; @cr180 ||= excel_if(excel_comparison(abs(cd180-cq180-at180),"<",1.0),"ok","err"); end
+  def c181; "Buildings"; end
+  def e181; @e181 ||= sumif(a('c57','c106'),c181,a('e57','e106')); end
+  def f181; @f181 ||= sumif(a('c57','c106'),c181,a('f57','f106')); end
+  def g181; @g181 ||= sumif(a('c57','c106'),c181,a('g57','g106')); end
+  def h181; @h181 ||= sumif(a('c57','c106'),c181,a('h57','h106')); end
+  def i181; @i181 ||= sumif(a('c57','c106'),c181,a('i57','i106')); end
+  def j181; @j181 ||= sumif(a('c57','c106'),c181,a('j57','j106')); end
+  def k181; @k181 ||= sumif(a('c57','c106'),c181,a('k57','k106')); end
+  def l181; @l181 ||= sumif(a('c57','c106'),c181,a('l57','l106')); end
+  def m181; @m181 ||= sumif(a('c57','c106'),c181,a('m57','m106')); end
+  def o181; @o181 ||= sumif(a('c57','c106'),c181,a('o57','o106')); end
+  def p181; @p181 ||= sumif(a('c57','c106'),c181,a('p57','p106')); end
+  def q181; @q181 ||= sumif(a('c57','c106'),c181,a('q57','q106')); end
+  def r181; @r181 ||= sumif(a('c57','c106'),c181,a('r57','r106')); end
+  def s181; @s181 ||= sumif(a('c57','c106'),c181,a('s57','s106')); end
+  def t181; @t181 ||= sumif(a('c57','c106'),c181,a('t57','t106')); end
+  def u181; @u181 ||= sumif(a('c57','c106'),c181,a('u57','u106')); end
+  def v181; @v181 ||= sumif(a('c57','c106'),c181,a('v57','v106')); end
+  def w181; @w181 ||= sumif(a('c57','c106'),c181,a('w57','w106')); end
+  def y181; @y181 ||= sumif(a('c57','c106'),c181,a('y57','y106')); end
+  def z181; @z181 ||= sumif(a('c57','c106'),c181,a('z57','z106')); end
+  def aa181; @aa181 ||= sumif(a('c57','c106'),c181,a('aa57','aa106')); end
+  def ab181; @ab181 ||= sumif(a('c57','c106'),c181,a('ab57','ab106')); end
+  def ac181; @ac181 ||= sumif(a('c57','c106'),c181,a('ac57','ac106')); end
+  def ad181; @ad181 ||= sumif(a('c57','c106'),c181,a('ad57','ad106')); end
+  def ae181; @ae181 ||= sumif(a('c57','c106'),c181,a('ae57','ae106')); end
+  def af181; @af181 ||= sumif(a('c57','c106'),c181,a('af57','af106')); end
+  def ag181; @ag181 ||= sumif(a('c57','c106'),c181,a('ag57','ag106')); end
+  def ai181; @ai181 ||= sumif(a('c57','c106'),c181,a('ai57','ai106')); end
+  def aj181; @aj181 ||= sumif(a('c57','c106'),c181,a('aj57','aj106')); end
+  def ak181; @ak181 ||= sumif(a('c57','c106'),c181,a('ak57','ak106')); end
+  def al181; @al181 ||= sumif(a('c57','c106'),c181,a('al57','al106')); end
+  def am181; @am181 ||= sumif(a('c57','c106'),c181,a('am57','am106')); end
+  def an181; @an181 ||= sumif(a('c57','c106'),c181,a('an57','an106')); end
+  def ao181; @ao181 ||= sumif(a('c57','c106'),c181,a('ao57','ao106')); end
+  def ap181; @ap181 ||= sumif(a('c57','c106'),c181,a('ap57','ap106')); end
+  def aq181; @aq181 ||= sumif(a('c57','c106'),c181,a('aq57','aq106')); end
+  def as181; @as181 ||= sumif(a('c57','c106'),c181,a('as57','as106')); end
+  def at181; @at181 ||= sumif(a('c57','c106'),c181,a('at57','at106')); end
+  def ay181; @ay181 ||= sumif(a('c57','c106'),c181,a('ay57','ay106')); end
+  def az181; @az181 ||= sumif(a('c57','c106'),c181,a('az57','az106')); end
+  def ba181; @ba181 ||= sumif(a('c57','c106'),c181,a('ba57','ba106')); end
+  def bb181; @bb181 ||= sumif(a('c57','c106'),c181,a('bb57','bb106')); end
+  def bc181; @bc181 ||= sumif(a('c57','c106'),c181,a('bc57','bc106')); end
+  def bd181; @bd181 ||= sumif(a('c57','c106'),c181,a('bd57','bd106')); end
+  def be181; @be181 ||= sumif(a('c57','c106'),c181,a('be57','be106')); end
+  def bf181; @bf181 ||= sumif(a('c57','c106'),c181,a('bf57','bf106')); end
+  def bg181; @bg181 ||= sumif(a('c57','c106'),c181,a('bg57','bg106')); end
+  def bi181; @bi181 ||= sumif(a('c57','c106'),c181,a('bi57','bi106')); end
+  def bj181; @bj181 ||= sumif(a('c57','c106'),c181,a('bj57','bj106')); end
+  def bk181; @bk181 ||= sumif(a('c57','c106'),c181,a('bk57','bk106')); end
+  def bl181; @bl181 ||= sumif(a('c57','c106'),c181,a('bl57','bl106')); end
+  def bm181; @bm181 ||= sumif(a('c57','c106'),c181,a('bm57','bm106')); end
+  def bn181; @bn181 ||= sumif(a('c57','c106'),c181,a('bn57','bn106')); end
+  def bo181; @bo181 ||= sumif(a('c57','c106'),c181,a('bo57','bo106')); end
+  def bp181; @bp181 ||= sumif(a('c57','c106'),c181,a('bp57','bp106')); end
+  def bq181; @bq181 ||= sumif(a('c57','c106'),c181,a('bq57','bq106')); end
+  def bs181; @bs181 ||= sumif(a('c57','c106'),c181,a('bs57','bs106')); end
+  def bt181; @bt181 ||= sumif(a('c57','c106'),c181,a('bt57','bt106')); end
+  def bu181; @bu181 ||= sumif(a('c57','c106'),c181,a('bu57','bu106')); end
+  def bv181; @bv181 ||= sumif(a('c57','c106'),c181,a('bv57','bv106')); end
+  def bw181; @bw181 ||= sumif(a('c57','c106'),c181,a('bw57','bw106')); end
+  def bx181; @bx181 ||= sumif(a('c57','c106'),c181,a('bx57','bx106')); end
+  def by181; @by181 ||= sumif(a('c57','c106'),c181,a('by57','by106')); end
+  def bz181; @bz181 ||= sumif(a('c57','c106'),c181,a('bz57','bz106')); end
+  def ca181; @ca181 ||= sumif(a('c57','c106'),c181,a('ca57','ca106')); end
+  def cc181; @cc181 ||= sumif(a('c57','c106'),c181,a('cc57','cc106')); end
+  def cd181; @cd181 ||= sumif(a('c57','c106'),c181,a('cd57','cd106')); end
+  def cf181; @cf181 ||= sumif(a('c57','c106'),c181,a('cf57','cf106')); end
+  def cg181; @cg181 ||= sumif(a('c57','c106'),c181,a('cg57','cg106')); end
+  def ch181; @ch181 ||= sumif(a('c57','c106'),c181,a('ch57','ch106')); end
+  def ci181; @ci181 ||= sumif(a('c57','c106'),c181,a('ci57','ci106')); end
+  def cj181; @cj181 ||= sumif(a('c57','c106'),c181,a('cj57','cj106')); end
+  def ck181; @ck181 ||= sumif(a('c57','c106'),c181,a('ck57','ck106')); end
+  def cl181; @cl181 ||= sumif(a('c57','c106'),c181,a('cl57','cl106')); end
+  def cm181; @cm181 ||= sumif(a('c57','c106'),c181,a('cm57','cm106')); end
+  def cn181; @cn181 ||= sumif(a('c57','c106'),c181,a('cn57','cn106')); end
+  def cp181; @cp181 ||= sumif(a('c57','c106'),c181,a('cp57','cp106')); end
+  def cq181; @cq181 ||= sumif(a('c57','c106'),c181,a('cq57','cq106')); end
+  def cr181; @cr181 ||= excel_if(excel_comparison(abs(cd181-cq181-at181),"<",1.0),"ok","err"); end
+  def c182; "Transport"; end
+  def e182; @e182 ||= sumif(a('c57','c106'),c182,a('e57','e106')); end
+  def f182; @f182 ||= sumif(a('c57','c106'),c182,a('f57','f106')); end
+  def g182; @g182 ||= sumif(a('c57','c106'),c182,a('g57','g106')); end
+  def h182; @h182 ||= sumif(a('c57','c106'),c182,a('h57','h106')); end
+  def i182; @i182 ||= sumif(a('c57','c106'),c182,a('i57','i106')); end
+  def j182; @j182 ||= sumif(a('c57','c106'),c182,a('j57','j106')); end
+  def k182; @k182 ||= sumif(a('c57','c106'),c182,a('k57','k106')); end
+  def l182; @l182 ||= sumif(a('c57','c106'),c182,a('l57','l106')); end
+  def m182; @m182 ||= sumif(a('c57','c106'),c182,a('m57','m106')); end
+  def o182; @o182 ||= sumif(a('c57','c106'),c182,a('o57','o106')); end
+  def p182; @p182 ||= sumif(a('c57','c106'),c182,a('p57','p106')); end
+  def q182; @q182 ||= sumif(a('c57','c106'),c182,a('q57','q106')); end
+  def r182; @r182 ||= sumif(a('c57','c106'),c182,a('r57','r106')); end
+  def s182; @s182 ||= sumif(a('c57','c106'),c182,a('s57','s106')); end
+  def t182; @t182 ||= sumif(a('c57','c106'),c182,a('t57','t106')); end
+  def u182; @u182 ||= sumif(a('c57','c106'),c182,a('u57','u106')); end
+  def v182; @v182 ||= sumif(a('c57','c106'),c182,a('v57','v106')); end
+  def w182; @w182 ||= sumif(a('c57','c106'),c182,a('w57','w106')); end
+  def y182; @y182 ||= sumif(a('c57','c106'),c182,a('y57','y106')); end
+  def z182; @z182 ||= sumif(a('c57','c106'),c182,a('z57','z106')); end
+  def aa182; @aa182 ||= sumif(a('c57','c106'),c182,a('aa57','aa106')); end
+  def ab182; @ab182 ||= sumif(a('c57','c106'),c182,a('ab57','ab106')); end
+  def ac182; @ac182 ||= sumif(a('c57','c106'),c182,a('ac57','ac106')); end
+  def ad182; @ad182 ||= sumif(a('c57','c106'),c182,a('ad57','ad106')); end
+  def ae182; @ae182 ||= sumif(a('c57','c106'),c182,a('ae57','ae106')); end
+  def af182; @af182 ||= sumif(a('c57','c106'),c182,a('af57','af106')); end
+  def ag182; @ag182 ||= sumif(a('c57','c106'),c182,a('ag57','ag106')); end
+  def ai182; @ai182 ||= sumif(a('c57','c106'),c182,a('ai57','ai106')); end
+  def aj182; @aj182 ||= sumif(a('c57','c106'),c182,a('aj57','aj106')); end
+  def ak182; @ak182 ||= sumif(a('c57','c106'),c182,a('ak57','ak106')); end
+  def al182; @al182 ||= sumif(a('c57','c106'),c182,a('al57','al106')); end
+  def am182; @am182 ||= sumif(a('c57','c106'),c182,a('am57','am106')); end
+  def an182; @an182 ||= sumif(a('c57','c106'),c182,a('an57','an106')); end
+  def ao182; @ao182 ||= sumif(a('c57','c106'),c182,a('ao57','ao106')); end
+  def ap182; @ap182 ||= sumif(a('c57','c106'),c182,a('ap57','ap106')); end
+  def aq182; @aq182 ||= sumif(a('c57','c106'),c182,a('aq57','aq106')); end
+  def as182; @as182 ||= sumif(a('c57','c106'),c182,a('as57','as106')); end
+  def at182; @at182 ||= sumif(a('c57','c106'),c182,a('at57','at106')); end
+  def ay182; @ay182 ||= sumif(a('c57','c106'),c182,a('ay57','ay106')); end
+  def az182; @az182 ||= sumif(a('c57','c106'),c182,a('az57','az106')); end
+  def ba182; @ba182 ||= sumif(a('c57','c106'),c182,a('ba57','ba106')); end
+  def bb182; @bb182 ||= sumif(a('c57','c106'),c182,a('bb57','bb106')); end
+  def bc182; @bc182 ||= sumif(a('c57','c106'),c182,a('bc57','bc106')); end
+  def bd182; @bd182 ||= sumif(a('c57','c106'),c182,a('bd57','bd106')); end
+  def be182; @be182 ||= sumif(a('c57','c106'),c182,a('be57','be106')); end
+  def bf182; @bf182 ||= sumif(a('c57','c106'),c182,a('bf57','bf106')); end
+  def bg182; @bg182 ||= sumif(a('c57','c106'),c182,a('bg57','bg106')); end
+  def bi182; @bi182 ||= sumif(a('c57','c106'),c182,a('bi57','bi106')); end
+  def bj182; @bj182 ||= sumif(a('c57','c106'),c182,a('bj57','bj106')); end
+  def bk182; @bk182 ||= sumif(a('c57','c106'),c182,a('bk57','bk106')); end
+  def bl182; @bl182 ||= sumif(a('c57','c106'),c182,a('bl57','bl106')); end
+  def bm182; @bm182 ||= sumif(a('c57','c106'),c182,a('bm57','bm106')); end
+  def bn182; @bn182 ||= sumif(a('c57','c106'),c182,a('bn57','bn106')); end
+  def bo182; @bo182 ||= sumif(a('c57','c106'),c182,a('bo57','bo106')); end
+  def bp182; @bp182 ||= sumif(a('c57','c106'),c182,a('bp57','bp106')); end
+  def bq182; @bq182 ||= sumif(a('c57','c106'),c182,a('bq57','bq106')); end
+  def bs182; @bs182 ||= sumif(a('c57','c106'),c182,a('bs57','bs106')); end
+  def bt182; @bt182 ||= sumif(a('c57','c106'),c182,a('bt57','bt106')); end
+  def bu182; @bu182 ||= sumif(a('c57','c106'),c182,a('bu57','bu106')); end
+  def bv182; @bv182 ||= sumif(a('c57','c106'),c182,a('bv57','bv106')); end
+  def bw182; @bw182 ||= sumif(a('c57','c106'),c182,a('bw57','bw106')); end
+  def bx182; @bx182 ||= sumif(a('c57','c106'),c182,a('bx57','bx106')); end
+  def by182; @by182 ||= sumif(a('c57','c106'),c182,a('by57','by106')); end
+  def bz182; @bz182 ||= sumif(a('c57','c106'),c182,a('bz57','bz106')); end
+  def ca182; @ca182 ||= sumif(a('c57','c106'),c182,a('ca57','ca106')); end
+  def cc182; @cc182 ||= sumif(a('c57','c106'),c182,a('cc57','cc106')); end
+  def cd182; @cd182 ||= sumif(a('c57','c106'),c182,a('cd57','cd106')); end
+  def cf182; @cf182 ||= sumif(a('c57','c106'),c182,a('cf57','cf106')); end
+  def cg182; @cg182 ||= sumif(a('c57','c106'),c182,a('cg57','cg106')); end
+  def ch182; @ch182 ||= sumif(a('c57','c106'),c182,a('ch57','ch106')); end
+  def ci182; @ci182 ||= sumif(a('c57','c106'),c182,a('ci57','ci106')); end
+  def cj182; @cj182 ||= sumif(a('c57','c106'),c182,a('cj57','cj106')); end
+  def ck182; @ck182 ||= sumif(a('c57','c106'),c182,a('ck57','ck106')); end
+  def cl182; @cl182 ||= sumif(a('c57','c106'),c182,a('cl57','cl106')); end
+  def cm182; @cm182 ||= sumif(a('c57','c106'),c182,a('cm57','cm106')); end
+  def cn182; @cn182 ||= sumif(a('c57','c106'),c182,a('cn57','cn106')); end
+  def cp182; @cp182 ||= sumif(a('c57','c106'),c182,a('cp57','cp106')); end
+  def cq182; @cq182 ||= sumif(a('c57','c106'),c182,a('cq57','cq106')); end
+  def cr182; @cr182 ||= excel_if(excel_comparison(abs(cd182-cq182-at182),"<",1.0),"ok","err"); end
+  def c183; "Industry"; end
+  def e183; @e183 ||= sumif(a('c57','c106'),c183,a('e57','e106')); end
+  def f183; @f183 ||= sumif(a('c57','c106'),c183,a('f57','f106')); end
+  def g183; @g183 ||= sumif(a('c57','c106'),c183,a('g57','g106')); end
+  def h183; @h183 ||= sumif(a('c57','c106'),c183,a('h57','h106')); end
+  def i183; @i183 ||= sumif(a('c57','c106'),c183,a('i57','i106')); end
+  def j183; @j183 ||= sumif(a('c57','c106'),c183,a('j57','j106')); end
+  def k183; @k183 ||= sumif(a('c57','c106'),c183,a('k57','k106')); end
+  def l183; @l183 ||= sumif(a('c57','c106'),c183,a('l57','l106')); end
+  def m183; @m183 ||= sumif(a('c57','c106'),c183,a('m57','m106')); end
+  def o183; @o183 ||= sumif(a('c57','c106'),c183,a('o57','o106')); end
+  def p183; @p183 ||= sumif(a('c57','c106'),c183,a('p57','p106')); end
+  def q183; @q183 ||= sumif(a('c57','c106'),c183,a('q57','q106')); end
+  def r183; @r183 ||= sumif(a('c57','c106'),c183,a('r57','r106')); end
+  def s183; @s183 ||= sumif(a('c57','c106'),c183,a('s57','s106')); end
+  def t183; @t183 ||= sumif(a('c57','c106'),c183,a('t57','t106')); end
+  def u183; @u183 ||= sumif(a('c57','c106'),c183,a('u57','u106')); end
+  def v183; @v183 ||= sumif(a('c57','c106'),c183,a('v57','v106')); end
+  def w183; @w183 ||= sumif(a('c57','c106'),c183,a('w57','w106')); end
+  def y183; @y183 ||= sumif(a('c57','c106'),c183,a('y57','y106')); end
+  def z183; @z183 ||= sumif(a('c57','c106'),c183,a('z57','z106')); end
+  def aa183; @aa183 ||= sumif(a('c57','c106'),c183,a('aa57','aa106')); end
+  def ab183; @ab183 ||= sumif(a('c57','c106'),c183,a('ab57','ab106')); end
+  def ac183; @ac183 ||= sumif(a('c57','c106'),c183,a('ac57','ac106')); end
+  def ad183; @ad183 ||= sumif(a('c57','c106'),c183,a('ad57','ad106')); end
+  def ae183; @ae183 ||= sumif(a('c57','c106'),c183,a('ae57','ae106')); end
+  def af183; @af183 ||= sumif(a('c57','c106'),c183,a('af57','af106')); end
+  def ag183; @ag183 ||= sumif(a('c57','c106'),c183,a('ag57','ag106')); end
+  def ai183; @ai183 ||= sumif(a('c57','c106'),c183,a('ai57','ai106')); end
+  def aj183; @aj183 ||= sumif(a('c57','c106'),c183,a('aj57','aj106')); end
+  def ak183; @ak183 ||= sumif(a('c57','c106'),c183,a('ak57','ak106')); end
+  def al183; @al183 ||= sumif(a('c57','c106'),c183,a('al57','al106')); end
+  def am183; @am183 ||= sumif(a('c57','c106'),c183,a('am57','am106')); end
+  def an183; @an183 ||= sumif(a('c57','c106'),c183,a('an57','an106')); end
+  def ao183; @ao183 ||= sumif(a('c57','c106'),c183,a('ao57','ao106')); end
+  def ap183; @ap183 ||= sumif(a('c57','c106'),c183,a('ap57','ap106')); end
+  def aq183; @aq183 ||= sumif(a('c57','c106'),c183,a('aq57','aq106')); end
+  def as183; @as183 ||= sumif(a('c57','c106'),c183,a('as57','as106')); end
+  def at183; @at183 ||= sumif(a('c57','c106'),c183,a('at57','at106')); end
+  def ay183; @ay183 ||= sumif(a('c57','c106'),c183,a('ay57','ay106')); end
+  def az183; @az183 ||= sumif(a('c57','c106'),c183,a('az57','az106')); end
+  def ba183; @ba183 ||= sumif(a('c57','c106'),c183,a('ba57','ba106')); end
+  def bb183; @bb183 ||= sumif(a('c57','c106'),c183,a('bb57','bb106')); end
+  def bc183; @bc183 ||= sumif(a('c57','c106'),c183,a('bc57','bc106')); end
+  def bd183; @bd183 ||= sumif(a('c57','c106'),c183,a('bd57','bd106')); end
+  def be183; @be183 ||= sumif(a('c57','c106'),c183,a('be57','be106')); end
+  def bf183; @bf183 ||= sumif(a('c57','c106'),c183,a('bf57','bf106')); end
+  def bg183; @bg183 ||= sumif(a('c57','c106'),c183,a('bg57','bg106')); end
+  def bi183; @bi183 ||= sumif(a('c57','c106'),c183,a('bi57','bi106')); end
+  def bj183; @bj183 ||= sumif(a('c57','c106'),c183,a('bj57','bj106')); end
+  def bk183; @bk183 ||= sumif(a('c57','c106'),c183,a('bk57','bk106')); end
+  def bl183; @bl183 ||= sumif(a('c57','c106'),c183,a('bl57','bl106')); end
+  def bm183; @bm183 ||= sumif(a('c57','c106'),c183,a('bm57','bm106')); end
+  def bn183; @bn183 ||= sumif(a('c57','c106'),c183,a('bn57','bn106')); end
+  def bo183; @bo183 ||= sumif(a('c57','c106'),c183,a('bo57','bo106')); end
+  def bp183; @bp183 ||= sumif(a('c57','c106'),c183,a('bp57','bp106')); end
+  def bq183; @bq183 ||= sumif(a('c57','c106'),c183,a('bq57','bq106')); end
+  def bs183; @bs183 ||= sumif(a('c57','c106'),c183,a('bs57','bs106')); end
+  def bt183; @bt183 ||= sumif(a('c57','c106'),c183,a('bt57','bt106')); end
+  def bu183; @bu183 ||= sumif(a('c57','c106'),c183,a('bu57','bu106')); end
+  def bv183; @bv183 ||= sumif(a('c57','c106'),c183,a('bv57','bv106')); end
+  def bw183; @bw183 ||= sumif(a('c57','c106'),c183,a('bw57','bw106')); end
+  def bx183; @bx183 ||= sumif(a('c57','c106'),c183,a('bx57','bx106')); end
+  def by183; @by183 ||= sumif(a('c57','c106'),c183,a('by57','by106')); end
+  def bz183; @bz183 ||= sumif(a('c57','c106'),c183,a('bz57','bz106')); end
+  def ca183; @ca183 ||= sumif(a('c57','c106'),c183,a('ca57','ca106')); end
+  def cc183; @cc183 ||= sumif(a('c57','c106'),c183,a('cc57','cc106')); end
+  def cd183; @cd183 ||= sumif(a('c57','c106'),c183,a('cd57','cd106')); end
+  def cf183; @cf183 ||= sumif(a('c57','c106'),c183,a('cf57','cf106')); end
+  def cg183; @cg183 ||= sumif(a('c57','c106'),c183,a('cg57','cg106')); end
+  def ch183; @ch183 ||= sumif(a('c57','c106'),c183,a('ch57','ch106')); end
+  def ci183; @ci183 ||= sumif(a('c57','c106'),c183,a('ci57','ci106')); end
+  def cj183; @cj183 ||= sumif(a('c57','c106'),c183,a('cj57','cj106')); end
+  def ck183; @ck183 ||= sumif(a('c57','c106'),c183,a('ck57','ck106')); end
+  def cl183; @cl183 ||= sumif(a('c57','c106'),c183,a('cl57','cl106')); end
+  def cm183; @cm183 ||= sumif(a('c57','c106'),c183,a('cm57','cm106')); end
+  def cn183; @cn183 ||= sumif(a('c57','c106'),c183,a('cn57','cn106')); end
+  def cp183; @cp183 ||= sumif(a('c57','c106'),c183,a('cp57','cp106')); end
+  def cq183; @cq183 ||= sumif(a('c57','c106'),c183,a('cq57','cq106')); end
+  def cr183; @cr183 ||= excel_if(excel_comparison(abs(cd183-cq183-at183),"<",1.0),"ok","err"); end
+  def c184; "Other"; end
+  def e184; @e184 ||= sumif(a('c57','c106'),c184,a('e57','e106')); end
+  def f184; @f184 ||= sumif(a('c57','c106'),c184,a('f57','f106')); end
+  def g184; @g184 ||= sumif(a('c57','c106'),c184,a('g57','g106')); end
+  def h184; @h184 ||= sumif(a('c57','c106'),c184,a('h57','h106')); end
+  def i184; @i184 ||= sumif(a('c57','c106'),c184,a('i57','i106')); end
+  def j184; @j184 ||= sumif(a('c57','c106'),c184,a('j57','j106')); end
+  def k184; @k184 ||= sumif(a('c57','c106'),c184,a('k57','k106')); end
+  def l184; @l184 ||= sumif(a('c57','c106'),c184,a('l57','l106')); end
+  def m184; @m184 ||= sumif(a('c57','c106'),c184,a('m57','m106')); end
+  def o184; @o184 ||= sumif(a('c57','c106'),c184,a('o57','o106')); end
+  def p184; @p184 ||= sumif(a('c57','c106'),c184,a('p57','p106')); end
+  def q184; @q184 ||= sumif(a('c57','c106'),c184,a('q57','q106')); end
+  def r184; @r184 ||= sumif(a('c57','c106'),c184,a('r57','r106')); end
+  def s184; @s184 ||= sumif(a('c57','c106'),c184,a('s57','s106')); end
+  def t184; @t184 ||= sumif(a('c57','c106'),c184,a('t57','t106')); end
+  def u184; @u184 ||= sumif(a('c57','c106'),c184,a('u57','u106')); end
+  def v184; @v184 ||= sumif(a('c57','c106'),c184,a('v57','v106')); end
+  def w184; @w184 ||= sumif(a('c57','c106'),c184,a('w57','w106')); end
+  def y184; @y184 ||= sumif(a('c57','c106'),c184,a('y57','y106')); end
+  def z184; @z184 ||= sumif(a('c57','c106'),c184,a('z57','z106')); end
+  def aa184; @aa184 ||= sumif(a('c57','c106'),c184,a('aa57','aa106')); end
+  def ab184; @ab184 ||= sumif(a('c57','c106'),c184,a('ab57','ab106')); end
+  def ac184; @ac184 ||= sumif(a('c57','c106'),c184,a('ac57','ac106')); end
+  def ad184; @ad184 ||= sumif(a('c57','c106'),c184,a('ad57','ad106')); end
+  def ae184; @ae184 ||= sumif(a('c57','c106'),c184,a('ae57','ae106')); end
+  def af184; @af184 ||= sumif(a('c57','c106'),c184,a('af57','af106')); end
+  def ag184; @ag184 ||= sumif(a('c57','c106'),c184,a('ag57','ag106')); end
+  def ai184; @ai184 ||= sumif(a('c57','c106'),c184,a('ai57','ai106')); end
+  def aj184; @aj184 ||= sumif(a('c57','c106'),c184,a('aj57','aj106')); end
+  def ak184; @ak184 ||= sumif(a('c57','c106'),c184,a('ak57','ak106')); end
+  def al184; @al184 ||= sumif(a('c57','c106'),c184,a('al57','al106')); end
+  def am184; @am184 ||= sumif(a('c57','c106'),c184,a('am57','am106')); end
+  def an184; @an184 ||= sumif(a('c57','c106'),c184,a('an57','an106')); end
+  def ao184; @ao184 ||= sumif(a('c57','c106'),c184,a('ao57','ao106')); end
+  def ap184; @ap184 ||= sumif(a('c57','c106'),c184,a('ap57','ap106')); end
+  def aq184; @aq184 ||= sumif(a('c57','c106'),c184,a('aq57','aq106')); end
+  def as184; @as184 ||= sumif(a('c57','c106'),c184,a('as57','as106')); end
+  def at184; @at184 ||= sumif(a('c57','c106'),c184,a('at57','at106')); end
+  def ay184; @ay184 ||= sumif(a('c57','c106'),c184,a('ay57','ay106')); end
+  def az184; @az184 ||= sumif(a('c57','c106'),c184,a('az57','az106')); end
+  def ba184; @ba184 ||= sumif(a('c57','c106'),c184,a('ba57','ba106')); end
+  def bb184; @bb184 ||= sumif(a('c57','c106'),c184,a('bb57','bb106')); end
+  def bc184; @bc184 ||= sumif(a('c57','c106'),c184,a('bc57','bc106')); end
+  def bd184; @bd184 ||= sumif(a('c57','c106'),c184,a('bd57','bd106')); end
+  def be184; @be184 ||= sumif(a('c57','c106'),c184,a('be57','be106')); end
+  def bf184; @bf184 ||= sumif(a('c57','c106'),c184,a('bf57','bf106')); end
+  def bg184; @bg184 ||= sumif(a('c57','c106'),c184,a('bg57','bg106')); end
+  def bi184; @bi184 ||= sumif(a('c57','c106'),c184,a('bi57','bi106')); end
+  def bj184; @bj184 ||= sumif(a('c57','c106'),c184,a('bj57','bj106')); end
+  def bk184; @bk184 ||= sumif(a('c57','c106'),c184,a('bk57','bk106')); end
+  def bl184; @bl184 ||= sumif(a('c57','c106'),c184,a('bl57','bl106')); end
+  def bm184; @bm184 ||= sumif(a('c57','c106'),c184,a('bm57','bm106')); end
+  def bn184; @bn184 ||= sumif(a('c57','c106'),c184,a('bn57','bn106')); end
+  def bo184; @bo184 ||= sumif(a('c57','c106'),c184,a('bo57','bo106')); end
+  def bp184; @bp184 ||= sumif(a('c57','c106'),c184,a('bp57','bp106')); end
+  def bq184; @bq184 ||= sumif(a('c57','c106'),c184,a('bq57','bq106')); end
+  def bs184; @bs184 ||= sumif(a('c57','c106'),c184,a('bs57','bs106')); end
+  def bt184; @bt184 ||= sumif(a('c57','c106'),c184,a('bt57','bt106')); end
+  def bu184; @bu184 ||= sumif(a('c57','c106'),c184,a('bu57','bu106')); end
+  def bv184; @bv184 ||= sumif(a('c57','c106'),c184,a('bv57','bv106')); end
+  def bw184; @bw184 ||= sumif(a('c57','c106'),c184,a('bw57','bw106')); end
+  def bx184; @bx184 ||= sumif(a('c57','c106'),c184,a('bx57','bx106')); end
+  def by184; @by184 ||= sumif(a('c57','c106'),c184,a('by57','by106')); end
+  def bz184; @bz184 ||= sumif(a('c57','c106'),c184,a('bz57','bz106')); end
+  def ca184; @ca184 ||= sumif(a('c57','c106'),c184,a('ca57','ca106')); end
+  def cc184; @cc184 ||= sumif(a('c57','c106'),c184,a('cc57','cc106')); end
+  def cd184; @cd184 ||= sumif(a('c57','c106'),c184,a('cd57','cd106')); end
+  def cf184; @cf184 ||= sumif(a('c57','c106'),c184,a('cf57','cf106')); end
+  def cg184; @cg184 ||= sumif(a('c57','c106'),c184,a('cg57','cg106')); end
+  def ch184; @ch184 ||= sumif(a('c57','c106'),c184,a('ch57','ch106')); end
+  def ci184; @ci184 ||= sumif(a('c57','c106'),c184,a('ci57','ci106')); end
+  def cj184; @cj184 ||= sumif(a('c57','c106'),c184,a('cj57','cj106')); end
+  def ck184; @ck184 ||= sumif(a('c57','c106'),c184,a('ck57','ck106')); end
+  def cl184; @cl184 ||= sumif(a('c57','c106'),c184,a('cl57','cl106')); end
+  def cm184; @cm184 ||= sumif(a('c57','c106'),c184,a('cm57','cm106')); end
+  def cn184; @cn184 ||= sumif(a('c57','c106'),c184,a('cn57','cn106')); end
+  def cp184; @cp184 ||= sumif(a('c57','c106'),c184,a('cp57','cp106')); end
+  def cq184; @cq184 ||= sumif(a('c57','c106'),c184,a('cq57','cq106')); end
+  def cr184; @cr184 ||= excel_if(excel_comparison(abs(cd184-cq184-at184),"<",1.0),"ok","err"); end
+  def c185; "Total"; end
+  def e185; @e185 ||= sum(a('e178','e184')); end
+  def f185; @f185 ||= sum(a('f178','f184')); end
+  def g185; @g185 ||= sum(a('g178','g184')); end
+  def h185; @h185 ||= sum(a('h178','h184')); end
+  def i185; @i185 ||= sum(a('i178','i184')); end
+  def j185; @j185 ||= sum(a('j178','j184')); end
+  def k185; @k185 ||= sum(a('k178','k184')); end
+  def l185; @l185 ||= sum(a('l178','l184')); end
+  def m185; @m185 ||= sum(a('m178','m184')); end
+  def o185; @o185 ||= sum(a('o178','o184')); end
+  def p185; @p185 ||= sum(a('p178','p184')); end
+  def q185; @q185 ||= sum(a('q178','q184')); end
+  def r185; @r185 ||= sum(a('r178','r184')); end
+  def s185; @s185 ||= sum(a('s178','s184')); end
+  def t185; @t185 ||= sum(a('t178','t184')); end
+  def u185; @u185 ||= sum(a('u178','u184')); end
+  def v185; @v185 ||= sum(a('v178','v184')); end
+  def w185; @w185 ||= sum(a('w178','w184')); end
+  def y185; @y185 ||= sum(a('y178','y184')); end
+  def z185; @z185 ||= sum(a('z178','z184')); end
+  def aa185; @aa185 ||= sum(a('aa178','aa184')); end
+  def ab185; @ab185 ||= sum(a('ab178','ab184')); end
+  def ac185; @ac185 ||= sum(a('ac178','ac184')); end
+  def ad185; @ad185 ||= sum(a('ad178','ad184')); end
+  def ae185; @ae185 ||= sum(a('ae178','ae184')); end
+  def af185; @af185 ||= sum(a('af178','af184')); end
+  def ag185; @ag185 ||= sum(a('ag178','ag184')); end
+  def ai185; @ai185 ||= sum(a('ai178','ai184')); end
+  def aj185; @aj185 ||= sum(a('aj178','aj184')); end
+  def ak185; @ak185 ||= sum(a('ak178','ak184')); end
+  def al185; @al185 ||= sum(a('al178','al184')); end
+  def am185; @am185 ||= sum(a('am178','am184')); end
+  def an185; @an185 ||= sum(a('an178','an184')); end
+  def ao185; @ao185 ||= sum(a('ao178','ao184')); end
+  def ap185; @ap185 ||= sum(a('ap178','ap184')); end
+  def aq185; @aq185 ||= sum(a('aq178','aq184')); end
+  def as185; @as185 ||= sum(a('as178','as184')); end
+  def at185; @at185 ||= sum(a('at178','at184')); end
+  def ay185; @ay185 ||= sum(a('ay178','ay184')); end
+  def az185; @az185 ||= sum(a('az178','az184')); end
+  def ba185; @ba185 ||= sum(a('ba178','ba184')); end
+  def bb185; @bb185 ||= sum(a('bb178','bb184')); end
+  def bc185; @bc185 ||= sum(a('bc178','bc184')); end
+  def bd185; @bd185 ||= sum(a('bd178','bd184')); end
+  def be185; @be185 ||= sum(a('be178','be184')); end
+  def bf185; @bf185 ||= sum(a('bf178','bf184')); end
+  def bg185; @bg185 ||= sum(a('bg178','bg184')); end
+  def bi185; @bi185 ||= sum(a('bi178','bi184')); end
+  def bj185; @bj185 ||= sum(a('bj178','bj184')); end
+  def bk185; @bk185 ||= sum(a('bk178','bk184')); end
+  def bl185; @bl185 ||= sum(a('bl178','bl184')); end
+  def bm185; @bm185 ||= sum(a('bm178','bm184')); end
+  def bn185; @bn185 ||= sum(a('bn178','bn184')); end
+  def bo185; @bo185 ||= sum(a('bo178','bo184')); end
+  def bp185; @bp185 ||= sum(a('bp178','bp184')); end
+  def bq185; @bq185 ||= sum(a('bq178','bq184')); end
+  def bs185; @bs185 ||= sum(a('bs178','bs184')); end
+  def bt185; @bt185 ||= sum(a('bt178','bt184')); end
+  def bu185; @bu185 ||= sum(a('bu178','bu184')); end
+  def bv185; @bv185 ||= sum(a('bv178','bv184')); end
+  def bw185; @bw185 ||= sum(a('bw178','bw184')); end
+  def bx185; @bx185 ||= sum(a('bx178','bx184')); end
+  def by185; @by185 ||= sum(a('by178','by184')); end
+  def bz185; @bz185 ||= sum(a('bz178','bz184')); end
+  def ca185; @ca185 ||= sum(a('ca178','ca184')); end
+  def cc185; @cc185 ||= sum(a('cc178','cc184')); end
+  def cd185; @cd185 ||= sum(a('cd178','cd184')); end
+  def cf185; @cf185 ||= sum(a('cf178','cf184')); end
+  def cg185; @cg185 ||= sum(a('cg178','cg184')); end
+  def ch185; @ch185 ||= sum(a('ch178','ch184')); end
+  def ci185; @ci185 ||= sum(a('ci178','ci184')); end
+  def cj185; @cj185 ||= sum(a('cj178','cj184')); end
+  def ck185; @ck185 ||= sum(a('ck178','ck184')); end
+  def cl185; @cl185 ||= sum(a('cl178','cl184')); end
+  def cm185; @cm185 ||= sum(a('cm178','cm184')); end
+  def cn185; @cn185 ||= sum(a('cn178','cn184')); end
+  def cp185; @cp185 ||= sum(a('cp178','cp184')); end
+  def cq185; @cq185 ||= sum(a('cq178','cq184')); end
+  def cr185; @cr185 ||= excel_if(excel_comparison(abs(cd185-cq185-at185),"<",1.0),"ok","err"); end
+  def e186; @e186 ||= excel_if(excel_comparison(e185,"==",e107),"ok",e185-e107); end
+  def f186; @f186 ||= excel_if(excel_comparison(f185,"==",f107),"ok",f185-f107); end
+  def g186; @g186 ||= excel_if(excel_comparison(g185,"==",g107),"ok",g185-g107); end
+  def h186; @h186 ||= excel_if(excel_comparison(h185,"==",h107),"ok",h185-h107); end
+  def i186; @i186 ||= excel_if(excel_comparison(i185,"==",i107),"ok",i185-i107); end
+  def j186; @j186 ||= excel_if(excel_comparison(j185,"==",j107),"ok",j185-j107); end
+  def k186; @k186 ||= excel_if(excel_comparison(k185,"==",k107),"ok",k185-k107); end
+  def l186; @l186 ||= excel_if(excel_comparison(l185,"==",l107),"ok",l185-l107); end
+  def m186; @m186 ||= excel_if(excel_comparison(m185,"==",m107),"ok",m185-m107); end
+  def o186; @o186 ||= excel_if(excel_comparison(o185,"==",o107),"ok",o185-o107); end
+  def p186; @p186 ||= excel_if(excel_comparison(p185,"==",p107),"ok",p185-p107); end
+  def q186; @q186 ||= excel_if(excel_comparison(q185,"==",q107),"ok",q185-q107); end
+  def r186; @r186 ||= excel_if(excel_comparison(r185,"==",r107),"ok",r185-r107); end
+  def s186; @s186 ||= excel_if(excel_comparison(s185,"==",s107),"ok",s185-s107); end
+  def t186; @t186 ||= excel_if(excel_comparison(t185,"==",t107),"ok",t185-t107); end
+  def u186; @u186 ||= excel_if(excel_comparison(u185,"==",u107),"ok",u185-u107); end
+  def v186; @v186 ||= excel_if(excel_comparison(v185,"==",v107),"ok",v185-v107); end
+  def w186; @w186 ||= excel_if(excel_comparison(w185,"==",w107),"ok",w185-w107); end
+  def y186; @y186 ||= excel_if(excel_comparison(y185,"==",y107),"ok",y185-y107); end
+  def z186; @z186 ||= excel_if(excel_comparison(z185,"==",z107),"ok",z185-z107); end
+  def aa186; @aa186 ||= excel_if(excel_comparison(aa185,"==",aa107),"ok",aa185-aa107); end
+  def ab186; @ab186 ||= excel_if(excel_comparison(ab185,"==",ab107),"ok",ab185-ab107); end
+  def ac186; @ac186 ||= excel_if(excel_comparison(ac185,"==",ac107),"ok",ac185-ac107); end
+  def ad186; @ad186 ||= excel_if(excel_comparison(ad185,"==",ad107),"ok",ad185-ad107); end
+  def ae186; @ae186 ||= excel_if(excel_comparison(ae185,"==",ae107),"ok",ae185-ae107); end
+  def af186; @af186 ||= excel_if(excel_comparison(af185,"==",af107),"ok",af185-af107); end
+  def ag186; @ag186 ||= excel_if(excel_comparison(ag185,"==",ag107),"ok",ag185-ag107); end
+  def ai186; @ai186 ||= excel_if(excel_comparison(ai185,"==",ai107),"ok",ai185-ai107); end
+  def aj186; @aj186 ||= excel_if(excel_comparison(aj185,"==",aj107),"ok",aj185-aj107); end
+  def ak186; @ak186 ||= excel_if(excel_comparison(ak185,"==",ak107),"ok",ak185-ak107); end
+  def al186; @al186 ||= excel_if(excel_comparison(al185,"==",al107),"ok",al185-al107); end
+  def am186; @am186 ||= excel_if(excel_comparison(am185,"==",am107),"ok",am185-am107); end
+  def an186; @an186 ||= excel_if(excel_comparison(an185,"==",an107),"ok",an185-an107); end
+  def ao186; @ao186 ||= excel_if(excel_comparison(ao185,"==",ao107),"ok",ao185-ao107); end
+  def ap186; @ap186 ||= excel_if(excel_comparison(ap185,"==",ap107),"ok",ap185-ap107); end
+  def aq186; @aq186 ||= excel_if(excel_comparison(aq185,"==",aq107),"ok",aq185-aq107); end
+  def as186; @as186 ||= excel_if(excel_comparison(as185,"==",as107),"ok",as185-as65); end
+  def at186; @at186 ||= excel_if(excel_comparison(at185,"==",at107),"ok",at185-at65); end
+  def ay186; @ay186 ||= excel_if(excel_comparison(ay185,"==",ay107),"ok",ay185-ay107); end
+  def az186; @az186 ||= excel_if(excel_comparison(az185,"==",az107),"ok",az185-az107); end
+  def ba186; @ba186 ||= excel_if(excel_comparison(ba185,"==",ba107),"ok",ba185-ba107); end
+  def bb186; @bb186 ||= excel_if(excel_comparison(bb185,"==",bb107),"ok",bb185-bb107); end
+  def bc186; @bc186 ||= excel_if(excel_comparison(bc185,"==",bc107),"ok",bc185-bc107); end
+  def bd186; @bd186 ||= excel_if(excel_comparison(bd185,"==",bd107),"ok",bd185-bd107); end
+  def be186; @be186 ||= excel_if(excel_comparison(be185,"==",be107),"ok",be185-be107); end
+  def bf186; @bf186 ||= excel_if(excel_comparison(bf185,"==",bf107),"ok",bf185-bf107); end
+  def bg186; @bg186 ||= excel_if(excel_comparison(bg185,"==",bg107),"ok",bg185-bg107); end
+  def bi186; @bi186 ||= excel_if(excel_comparison(bi185,"==",bi107),"ok",bi185-bi107); end
+  def bj186; @bj186 ||= excel_if(excel_comparison(bj185,"==",bj107),"ok",bj185-bj107); end
+  def bk186; @bk186 ||= excel_if(excel_comparison(bk185,"==",bk107),"ok",bk185-bk107); end
+  def bl186; @bl186 ||= excel_if(excel_comparison(bl185,"==",bl107),"ok",bl185-bl107); end
+  def bm186; @bm186 ||= excel_if(excel_comparison(bm185,"==",bm107),"ok",bm185-bm107); end
+  def bn186; @bn186 ||= excel_if(excel_comparison(bn185,"==",bn107),"ok",bn185-bn107); end
+  def bo186; @bo186 ||= excel_if(excel_comparison(bo185,"==",bo107),"ok",bo185-bo107); end
+  def bp186; @bp186 ||= excel_if(excel_comparison(bp185,"==",bp107),"ok",bp185-bp107); end
+  def bq186; @bq186 ||= excel_if(excel_comparison(bq185,"==",bq107),"ok",bq185-bq107); end
+  def bs186; @bs186 ||= excel_if(excel_comparison(bs185,"==",bs107),"ok",bs185-bs107); end
+  def bt186; @bt186 ||= excel_if(excel_comparison(bt185,"==",bt107),"ok",bt185-bt107); end
+  def bu186; @bu186 ||= excel_if(excel_comparison(bu185,"==",bu107),"ok",bu185-bu107); end
+  def bv186; @bv186 ||= excel_if(excel_comparison(bv185,"==",bv107),"ok",bv185-bv107); end
+  def bw186; @bw186 ||= excel_if(excel_comparison(bw185,"==",bw107),"ok",bw185-bw107); end
+  def bx186; @bx186 ||= excel_if(excel_comparison(bx185,"==",bx107),"ok",bx185-bx107); end
+  def by186; @by186 ||= excel_if(excel_comparison(by185,"==",by107),"ok",by185-by107); end
+  def bz186; @bz186 ||= excel_if(excel_comparison(bz185,"==",bz107),"ok",bz185-bz107); end
+  def ca186; @ca186 ||= excel_if(excel_comparison(ca185,"==",ca107),"ok",ca185-ca107); end
+  def cc186; @cc186 ||= excel_if(excel_comparison(cc185,"==",cc107),"ok",cc185-cc65); end
+  def cd186; @cd186 ||= excel_if(excel_comparison(cd185,"==",cd107),"ok",cd185-cd65); end
+  def cf186; @cf186 ||= excel_if(excel_comparison(cf185,"==",cf107),"ok",cf185-cf107); end
+  def cg186; @cg186 ||= excel_if(excel_comparison(cg185,"==",cg107),"ok",cg185-cg107); end
+  def ch186; @ch186 ||= excel_if(excel_comparison(ch185,"==",ch107),"ok",ch185-ch107); end
+  def ci186; @ci186 ||= excel_if(excel_comparison(ci185,"==",ci107),"ok",ci185-ci107); end
+  def cj186; @cj186 ||= excel_if(excel_comparison(cj185,"==",cj107),"ok",cj185-cj107); end
+  def ck186; @ck186 ||= excel_if(excel_comparison(ck185,"==",ck107),"ok",ck185-ck107); end
+  def cl186; @cl186 ||= excel_if(excel_comparison(cl185,"==",cl107),"ok",cl185-cl107); end
+  def cm186; @cm186 ||= excel_if(excel_comparison(cm185,"==",cm107),"ok",cm185-cm107); end
+  def cn186; @cn186 ||= excel_if(excel_comparison(cn185,"==",cn107),"ok",cn185-cn107); end
+  def cp186; @cp186 ||= excel_if(excel_comparison(cp185,"==",cp107),"ok",cp185-cp65); end
+  def cq186; @cq186 ||= excel_if(excel_comparison(cq185,"==",cq107),"ok",cq185-cq65); end
+  def c188; "£m"; end
+  def e188; "C1.High"; end
+  def f188; "High estimate of capital costs"; end
+  def o188; "C2.High"; end
+  def p188; "High estimate of operating costs"; end
+  def y188; "C3.High"; end
+  def z188; "High estimate of fuel costs"; end
+  def ai188; "High estimate of total cost"; end
+  def as188; "Cashflow capital basis"; end
+  def av188; "Loan"; end
+  def ay188; "Repayments for capital spent in that period"; end
+  def bi188; "Repayments for outstanding capital"; end
+  def br188; "Total cost (ammortised capital)"; end
+  def ca188; @ca188 ||= ((average(a('bs185','ca185')))/cd132)*1000000.0; end
+  def cc188; "Amortised Capital"; end
+  def cf188; "Extra cost due to financing capital, compared with doing it out of cash"; end
+  def cp188; "Extra cost due to financing capital, compared with doing it out of cash"; end
+  def c189; "Category"; end
+  def e189; "2010"; end
+  def f189; "2015"; end
+  def g189; "2020"; end
+  def h189; "2025"; end
+  def i189; "2030"; end
+  def j189; "2035"; end
+  def k189; "2040"; end
+  def l189; "2045"; end
+  def m189; "2050"; end
+  def o189; "2010"; end
+  def p189; "2015"; end
+  def q189; "2020"; end
+  def r189; "2025"; end
+  def s189; "2030"; end
+  def t189; "2035"; end
+  def u189; "2040"; end
+  def v189; "2045"; end
+  def w189; "2050"; end
+  def y189; "2010"; end
+  def z189; "2015"; end
+  def aa189; "2020"; end
+  def ab189; "2025"; end
+  def ac189; "2030"; end
+  def ad189; "2035"; end
+  def ae189; "2040"; end
+  def af189; "2045"; end
+  def ag189; "2050"; end
+  def ai189; "2010"; end
+  def aj189; "2015"; end
+  def ak189; "2020"; end
+  def al189; "2025"; end
+  def am189; "2030"; end
+  def an189; "2035"; end
+  def ao189; "2040"; end
+  def ap189; "2045"; end
+  def aq189; "2050"; end
+  def as189; "Mean"; end
+  def at189; "NPV"; end
+  def av189; "Rate"; end
+  def aw189; "Years"; end
+  def ay189; 2010.0; end
+  def az189; 2015.0; end
+  def ba189; 2020.0; end
+  def bb189; 2025.0; end
+  def bc189; 2030.0; end
+  def bd189; 2035.0; end
+  def be189; 2040.0; end
+  def bf189; 2045.0; end
+  def bg189; 2050.0; end
+  def bi189; 2010.0; end
+  def bj189; 2015.0; end
+  def bk189; 2020.0; end
+  def bl189; 2025.0; end
+  def bm189; 2030.0; end
+  def bn189; 2035.0; end
+  def bo189; 2040.0; end
+  def bp189; 2045.0; end
+  def bq189; 2050.0; end
+  def bs189; "2010"; end
+  def bt189; "2015"; end
+  def bu189; "2020"; end
+  def bv189; "2025"; end
+  def bw189; "2030"; end
+  def bx189; "2035"; end
+  def by189; "2040"; end
+  def bz189; "2045"; end
+  def ca189; "2050"; end
+  def cc189; "Mean"; end
+  def cd189; "NPV"; end
+  def cf189; "2010"; end
+  def cg189; "2015"; end
+  def ch189; "2020"; end
+  def ci189; "2025"; end
+  def cj189; "2030"; end
+  def ck189; "2035"; end
+  def cl189; "2040"; end
+  def cm189; "2045"; end
+  def cn189; "2050"; end
+  def cp189; "Mean"; end
+  def cq189; "NPV"; end
+  def c190; "Fossil Fuels"; end
+  def e190; @e190 ||= sumif(a('c112','c161'),c190,a('e112','e161')); end
+  def f190; @f190 ||= sumif(a('c112','c161'),c190,a('f112','f161')); end
+  def g190; @g190 ||= sumif(a('c112','c161'),c190,a('g112','g161')); end
+  def h190; @h190 ||= sumif(a('c112','c161'),c190,a('h112','h161')); end
+  def i190; @i190 ||= sumif(a('c112','c161'),c190,a('i112','i161')); end
+  def j190; @j190 ||= sumif(a('c112','c161'),c190,a('j112','j161')); end
+  def k190; @k190 ||= sumif(a('c112','c161'),c190,a('k112','k161')); end
+  def l190; @l190 ||= sumif(a('c112','c161'),c190,a('l112','l161')); end
+  def m190; @m190 ||= sumif(a('c112','c161'),c190,a('m112','m161')); end
+  def o190; @o190 ||= sumif(a('c112','c161'),c190,a('o112','o161')); end
+  def p190; @p190 ||= sumif(a('c112','c161'),c190,a('p112','p161')); end
+  def q190; @q190 ||= sumif(a('c112','c161'),c190,a('q112','q161')); end
+  def r190; @r190 ||= sumif(a('c112','c161'),c190,a('r112','r161')); end
+  def s190; @s190 ||= sumif(a('c112','c161'),c190,a('s112','s161')); end
+  def t190; @t190 ||= sumif(a('c112','c161'),c190,a('t112','t161')); end
+  def u190; @u190 ||= sumif(a('c112','c161'),c190,a('u112','u161')); end
+  def v190; @v190 ||= sumif(a('c112','c161'),c190,a('v112','v161')); end
+  def w190; @w190 ||= sumif(a('c112','c161'),c190,a('w112','w161')); end
+  def y190; @y190 ||= sumif(a('c112','c161'),c190,a('y112','y161')); end
+  def z190; @z190 ||= sumif(a('c112','c161'),c190,a('z112','z161')); end
+  def aa190; @aa190 ||= sumif(a('c112','c161'),c190,a('aa112','aa161')); end
+  def ab190; @ab190 ||= sumif(a('c112','c161'),c190,a('ab112','ab161')); end
+  def ac190; @ac190 ||= sumif(a('c112','c161'),c190,a('ac112','ac161')); end
+  def ad190; @ad190 ||= sumif(a('c112','c161'),c190,a('ad112','ad161')); end
+  def ae190; @ae190 ||= sumif(a('c112','c161'),c190,a('ae112','ae161')); end
+  def af190; @af190 ||= sumif(a('c112','c161'),c190,a('af112','af161')); end
+  def ag190; @ag190 ||= sumif(a('c112','c161'),c190,a('ag112','ag161')); end
+  def ai190; @ai190 ||= sumif(a('c112','c161'),c190,a('ai112','ai161')); end
+  def aj190; @aj190 ||= sumif(a('c112','c161'),c190,a('aj112','aj161')); end
+  def ak190; @ak190 ||= sumif(a('c112','c161'),c190,a('ak112','ak161')); end
+  def al190; @al190 ||= sumif(a('c112','c161'),c190,a('al112','al161')); end
+  def am190; @am190 ||= sumif(a('c112','c161'),c190,a('am112','am161')); end
+  def an190; @an190 ||= sumif(a('c112','c161'),c190,a('an112','an161')); end
+  def ao190; @ao190 ||= sumif(a('c112','c161'),c190,a('ao112','ao161')); end
+  def ap190; @ap190 ||= sumif(a('c112','c161'),c190,a('ap112','ap161')); end
+  def aq190; @aq190 ||= sumif(a('c112','c161'),c190,a('aq112','aq161')); end
+  def as190; @as190 ||= sumif(a('c112','c161'),c190,a('as112','as161')); end
+  def at190; @at190 ||= sumif(a('c112','c161'),c190,a('at112','at161')); end
+  def ay190; @ay190 ||= sumif(a('c112','c161'),c190,a('ay112','ay161')); end
+  def az190; @az190 ||= sumif(a('c112','c161'),c190,a('az112','az161')); end
+  def ba190; @ba190 ||= sumif(a('c112','c161'),c190,a('ba112','ba161')); end
+  def bb190; @bb190 ||= sumif(a('c112','c161'),c190,a('bb112','bb161')); end
+  def bc190; @bc190 ||= sumif(a('c112','c161'),c190,a('bc112','bc161')); end
+  def bd190; @bd190 ||= sumif(a('c112','c161'),c190,a('bd112','bd161')); end
+  def be190; @be190 ||= sumif(a('c112','c161'),c190,a('be112','be161')); end
+  def bf190; @bf190 ||= sumif(a('c112','c161'),c190,a('bf112','bf161')); end
+  def bg190; @bg190 ||= sumif(a('c112','c161'),c190,a('bg112','bg161')); end
+  def bi190; @bi190 ||= sumif(a('c112','c161'),c190,a('bi112','bi161')); end
+  def bj190; @bj190 ||= sumif(a('c112','c161'),c190,a('bj112','bj161')); end
+  def bk190; @bk190 ||= sumif(a('c112','c161'),c190,a('bk112','bk161')); end
+  def bl190; @bl190 ||= sumif(a('c112','c161'),c190,a('bl112','bl161')); end
+  def bm190; @bm190 ||= sumif(a('c112','c161'),c190,a('bm112','bm161')); end
+  def bn190; @bn190 ||= sumif(a('c112','c161'),c190,a('bn112','bn161')); end
+  def bo190; @bo190 ||= sumif(a('c112','c161'),c190,a('bo112','bo161')); end
+  def bp190; @bp190 ||= sumif(a('c112','c161'),c190,a('bp112','bp161')); end
+  def bq190; @bq190 ||= sumif(a('c112','c161'),c190,a('bq112','bq161')); end
+  def bs190; @bs190 ||= sumif(a('c112','c161'),c190,a('bs112','bs161')); end
+  def bt190; @bt190 ||= sumif(a('c112','c161'),c190,a('bt112','bt161')); end
+  def bu190; @bu190 ||= sumif(a('c112','c161'),c190,a('bu112','bu161')); end
+  def bv190; @bv190 ||= sumif(a('c112','c161'),c190,a('bv112','bv161')); end
+  def bw190; @bw190 ||= sumif(a('c112','c161'),c190,a('bw112','bw161')); end
+  def bx190; @bx190 ||= sumif(a('c112','c161'),c190,a('bx112','bx161')); end
+  def by190; @by190 ||= sumif(a('c112','c161'),c190,a('by112','by161')); end
+  def bz190; @bz190 ||= sumif(a('c112','c161'),c190,a('bz112','bz161')); end
+  def ca190; @ca190 ||= sumif(a('c112','c161'),c190,a('ca112','ca161')); end
+  def cc190; @cc190 ||= sumif(a('c112','c161'),c190,a('cc112','cc161')); end
+  def cd190; @cd190 ||= sumif(a('c112','c161'),c190,a('cd112','cd161')); end
+  def cf190; @cf190 ||= sumif(a('c112','c161'),c190,a('cf112','cf161')); end
+  def cg190; @cg190 ||= sumif(a('c112','c161'),c190,a('cg112','cg161')); end
+  def ch190; @ch190 ||= sumif(a('c112','c161'),c190,a('ch112','ch161')); end
+  def ci190; @ci190 ||= sumif(a('c112','c161'),c190,a('ci112','ci161')); end
+  def cj190; @cj190 ||= sumif(a('c112','c161'),c190,a('cj112','cj161')); end
+  def ck190; @ck190 ||= sumif(a('c112','c161'),c190,a('ck112','ck161')); end
+  def cl190; @cl190 ||= sumif(a('c112','c161'),c190,a('cl112','cl161')); end
+  def cm190; @cm190 ||= sumif(a('c112','c161'),c190,a('cm112','cm161')); end
+  def cn190; @cn190 ||= sumif(a('c112','c161'),c190,a('cn112','cn161')); end
+  def cp190; @cp190 ||= sumif(a('c112','c161'),c190,a('cp112','cp161')); end
+  def cq190; @cq190 ||= sumif(a('c112','c161'),c190,a('cq112','cq161')); end
+  def cr190; @cr190 ||= excel_if(excel_comparison(abs(cd190-cq190-at190),"<",1.0),"ok","err"); end
+  def c191; "Bioenergy"; end
+  def e191; @e191 ||= sumif(a('c112','c161'),c191,a('e112','e161')); end
+  def f191; @f191 ||= sumif(a('c112','c161'),c191,a('f112','f161')); end
+  def g191; @g191 ||= sumif(a('c112','c161'),c191,a('g112','g161')); end
+  def h191; @h191 ||= sumif(a('c112','c161'),c191,a('h112','h161')); end
+  def i191; @i191 ||= sumif(a('c112','c161'),c191,a('i112','i161')); end
+  def j191; @j191 ||= sumif(a('c112','c161'),c191,a('j112','j161')); end
+  def k191; @k191 ||= sumif(a('c112','c161'),c191,a('k112','k161')); end
+  def l191; @l191 ||= sumif(a('c112','c161'),c191,a('l112','l161')); end
+  def m191; @m191 ||= sumif(a('c112','c161'),c191,a('m112','m161')); end
+  def o191; @o191 ||= sumif(a('c112','c161'),c191,a('o112','o161')); end
+  def p191; @p191 ||= sumif(a('c112','c161'),c191,a('p112','p161')); end
+  def q191; @q191 ||= sumif(a('c112','c161'),c191,a('q112','q161')); end
+  def r191; @r191 ||= sumif(a('c112','c161'),c191,a('r112','r161')); end
+  def s191; @s191 ||= sumif(a('c112','c161'),c191,a('s112','s161')); end
+  def t191; @t191 ||= sumif(a('c112','c161'),c191,a('t112','t161')); end
+  def u191; @u191 ||= sumif(a('c112','c161'),c191,a('u112','u161')); end
+  def v191; @v191 ||= sumif(a('c112','c161'),c191,a('v112','v161')); end
+  def w191; @w191 ||= sumif(a('c112','c161'),c191,a('w112','w161')); end
+  def y191; @y191 ||= sumif(a('c112','c161'),c191,a('y112','y161')); end
+  def z191; @z191 ||= sumif(a('c112','c161'),c191,a('z112','z161')); end
+  def aa191; @aa191 ||= sumif(a('c112','c161'),c191,a('aa112','aa161')); end
+  def ab191; @ab191 ||= sumif(a('c112','c161'),c191,a('ab112','ab161')); end
+  def ac191; @ac191 ||= sumif(a('c112','c161'),c191,a('ac112','ac161')); end
+  def ad191; @ad191 ||= sumif(a('c112','c161'),c191,a('ad112','ad161')); end
+  def ae191; @ae191 ||= sumif(a('c112','c161'),c191,a('ae112','ae161')); end
+  def af191; @af191 ||= sumif(a('c112','c161'),c191,a('af112','af161')); end
+  def ag191; @ag191 ||= sumif(a('c112','c161'),c191,a('ag112','ag161')); end
+  def ai191; @ai191 ||= sumif(a('c112','c161'),c191,a('ai112','ai161')); end
+  def aj191; @aj191 ||= sumif(a('c112','c161'),c191,a('aj112','aj161')); end
+  def ak191; @ak191 ||= sumif(a('c112','c161'),c191,a('ak112','ak161')); end
+  def al191; @al191 ||= sumif(a('c112','c161'),c191,a('al112','al161')); end
+  def am191; @am191 ||= sumif(a('c112','c161'),c191,a('am112','am161')); end
+  def an191; @an191 ||= sumif(a('c112','c161'),c191,a('an112','an161')); end
+  def ao191; @ao191 ||= sumif(a('c112','c161'),c191,a('ao112','ao161')); end
+  def ap191; @ap191 ||= sumif(a('c112','c161'),c191,a('ap112','ap161')); end
+  def aq191; @aq191 ||= sumif(a('c112','c161'),c191,a('aq112','aq161')); end
+  def as191; @as191 ||= sumif(a('c112','c161'),c191,a('as112','as161')); end
+  def at191; @at191 ||= sumif(a('c112','c161'),c191,a('at112','at161')); end
+  def ay191; @ay191 ||= sumif(a('c112','c161'),c191,a('ay112','ay161')); end
+  def az191; @az191 ||= sumif(a('c112','c161'),c191,a('az112','az161')); end
+  def ba191; @ba191 ||= sumif(a('c112','c161'),c191,a('ba112','ba161')); end
+  def bb191; @bb191 ||= sumif(a('c112','c161'),c191,a('bb112','bb161')); end
+  def bc191; @bc191 ||= sumif(a('c112','c161'),c191,a('bc112','bc161')); end
+  def bd191; @bd191 ||= sumif(a('c112','c161'),c191,a('bd112','bd161')); end
+  def be191; @be191 ||= sumif(a('c112','c161'),c191,a('be112','be161')); end
+  def bf191; @bf191 ||= sumif(a('c112','c161'),c191,a('bf112','bf161')); end
+  def bg191; @bg191 ||= sumif(a('c112','c161'),c191,a('bg112','bg161')); end
+  def bi191; @bi191 ||= sumif(a('c112','c161'),c191,a('bi112','bi161')); end
+  def bj191; @bj191 ||= sumif(a('c112','c161'),c191,a('bj112','bj161')); end
+  def bk191; @bk191 ||= sumif(a('c112','c161'),c191,a('bk112','bk161')); end
+  def bl191; @bl191 ||= sumif(a('c112','c161'),c191,a('bl112','bl161')); end
+  def bm191; @bm191 ||= sumif(a('c112','c161'),c191,a('bm112','bm161')); end
+  def bn191; @bn191 ||= sumif(a('c112','c161'),c191,a('bn112','bn161')); end
+  def bo191; @bo191 ||= sumif(a('c112','c161'),c191,a('bo112','bo161')); end
+  def bp191; @bp191 ||= sumif(a('c112','c161'),c191,a('bp112','bp161')); end
+  def bq191; @bq191 ||= sumif(a('c112','c161'),c191,a('bq112','bq161')); end
+  def bs191; @bs191 ||= sumif(a('c112','c161'),c191,a('bs112','bs161')); end
+  def bt191; @bt191 ||= sumif(a('c112','c161'),c191,a('bt112','bt161')); end
+  def bu191; @bu191 ||= sumif(a('c112','c161'),c191,a('bu112','bu161')); end
+  def bv191; @bv191 ||= sumif(a('c112','c161'),c191,a('bv112','bv161')); end
+  def bw191; @bw191 ||= sumif(a('c112','c161'),c191,a('bw112','bw161')); end
+  def bx191; @bx191 ||= sumif(a('c112','c161'),c191,a('bx112','bx161')); end
+  def by191; @by191 ||= sumif(a('c112','c161'),c191,a('by112','by161')); end
+  def bz191; @bz191 ||= sumif(a('c112','c161'),c191,a('bz112','bz161')); end
+  def ca191; @ca191 ||= sumif(a('c112','c161'),c191,a('ca112','ca161')); end
+  def cc191; @cc191 ||= sumif(a('c112','c161'),c191,a('cc112','cc161')); end
+  def cd191; @cd191 ||= sumif(a('c112','c161'),c191,a('cd112','cd161')); end
+  def cf191; @cf191 ||= sumif(a('c112','c161'),c191,a('cf112','cf161')); end
+  def cg191; @cg191 ||= sumif(a('c112','c161'),c191,a('cg112','cg161')); end
+  def ch191; @ch191 ||= sumif(a('c112','c161'),c191,a('ch112','ch161')); end
+  def ci191; @ci191 ||= sumif(a('c112','c161'),c191,a('ci112','ci161')); end
+  def cj191; @cj191 ||= sumif(a('c112','c161'),c191,a('cj112','cj161')); end
+  def ck191; @ck191 ||= sumif(a('c112','c161'),c191,a('ck112','ck161')); end
+  def cl191; @cl191 ||= sumif(a('c112','c161'),c191,a('cl112','cl161')); end
+  def cm191; @cm191 ||= sumif(a('c112','c161'),c191,a('cm112','cm161')); end
+  def cn191; @cn191 ||= sumif(a('c112','c161'),c191,a('cn112','cn161')); end
+  def cp191; @cp191 ||= sumif(a('c112','c161'),c191,a('cp112','cp161')); end
+  def cq191; @cq191 ||= sumif(a('c112','c161'),c191,a('cq112','cq161')); end
+  def cr191; @cr191 ||= excel_if(excel_comparison(abs(cd191-cq191-at191),"<",1.0),"ok","err"); end
+  def c192; "Electricity"; end
+  def e192; @e192 ||= sumif(a('c112','c161'),c192,a('e112','e161')); end
+  def f192; @f192 ||= sumif(a('c112','c161'),c192,a('f112','f161')); end
+  def g192; @g192 ||= sumif(a('c112','c161'),c192,a('g112','g161')); end
+  def h192; @h192 ||= sumif(a('c112','c161'),c192,a('h112','h161')); end
+  def i192; @i192 ||= sumif(a('c112','c161'),c192,a('i112','i161')); end
+  def j192; @j192 ||= sumif(a('c112','c161'),c192,a('j112','j161')); end
+  def k192; @k192 ||= sumif(a('c112','c161'),c192,a('k112','k161')); end
+  def l192; @l192 ||= sumif(a('c112','c161'),c192,a('l112','l161')); end
+  def m192; @m192 ||= sumif(a('c112','c161'),c192,a('m112','m161')); end
+  def o192; @o192 ||= sumif(a('c112','c161'),c192,a('o112','o161')); end
+  def p192; @p192 ||= sumif(a('c112','c161'),c192,a('p112','p161')); end
+  def q192; @q192 ||= sumif(a('c112','c161'),c192,a('q112','q161')); end
+  def r192; @r192 ||= sumif(a('c112','c161'),c192,a('r112','r161')); end
+  def s192; @s192 ||= sumif(a('c112','c161'),c192,a('s112','s161')); end
+  def t192; @t192 ||= sumif(a('c112','c161'),c192,a('t112','t161')); end
+  def u192; @u192 ||= sumif(a('c112','c161'),c192,a('u112','u161')); end
+  def v192; @v192 ||= sumif(a('c112','c161'),c192,a('v112','v161')); end
+  def w192; @w192 ||= sumif(a('c112','c161'),c192,a('w112','w161')); end
+  def y192; @y192 ||= sumif(a('c112','c161'),c192,a('y112','y161')); end
+  def z192; @z192 ||= sumif(a('c112','c161'),c192,a('z112','z161')); end
+  def aa192; @aa192 ||= sumif(a('c112','c161'),c192,a('aa112','aa161')); end
+  def ab192; @ab192 ||= sumif(a('c112','c161'),c192,a('ab112','ab161')); end
+  def ac192; @ac192 ||= sumif(a('c112','c161'),c192,a('ac112','ac161')); end
+  def ad192; @ad192 ||= sumif(a('c112','c161'),c192,a('ad112','ad161')); end
+  def ae192; @ae192 ||= sumif(a('c112','c161'),c192,a('ae112','ae161')); end
+  def af192; @af192 ||= sumif(a('c112','c161'),c192,a('af112','af161')); end
+  def ag192; @ag192 ||= sumif(a('c112','c161'),c192,a('ag112','ag161')); end
+  def ai192; @ai192 ||= sumif(a('c112','c161'),c192,a('ai112','ai161')); end
+  def aj192; @aj192 ||= sumif(a('c112','c161'),c192,a('aj112','aj161')); end
+  def ak192; @ak192 ||= sumif(a('c112','c161'),c192,a('ak112','ak161')); end
+  def al192; @al192 ||= sumif(a('c112','c161'),c192,a('al112','al161')); end
+  def am192; @am192 ||= sumif(a('c112','c161'),c192,a('am112','am161')); end
+  def an192; @an192 ||= sumif(a('c112','c161'),c192,a('an112','an161')); end
+  def ao192; @ao192 ||= sumif(a('c112','c161'),c192,a('ao112','ao161')); end
+  def ap192; @ap192 ||= sumif(a('c112','c161'),c192,a('ap112','ap161')); end
+  def aq192; @aq192 ||= sumif(a('c112','c161'),c192,a('aq112','aq161')); end
+  def as192; @as192 ||= sumif(a('c112','c161'),c192,a('as112','as161')); end
+  def at192; @at192 ||= sumif(a('c112','c161'),c192,a('at112','at161')); end
+  def ay192; @ay192 ||= sumif(a('c112','c161'),c192,a('ay112','ay161')); end
+  def az192; @az192 ||= sumif(a('c112','c161'),c192,a('az112','az161')); end
+  def ba192; @ba192 ||= sumif(a('c112','c161'),c192,a('ba112','ba161')); end
+  def bb192; @bb192 ||= sumif(a('c112','c161'),c192,a('bb112','bb161')); end
+  def bc192; @bc192 ||= sumif(a('c112','c161'),c192,a('bc112','bc161')); end
+  def bd192; @bd192 ||= sumif(a('c112','c161'),c192,a('bd112','bd161')); end
+  def be192; @be192 ||= sumif(a('c112','c161'),c192,a('be112','be161')); end
+  def bf192; @bf192 ||= sumif(a('c112','c161'),c192,a('bf112','bf161')); end
+  def bg192; @bg192 ||= sumif(a('c112','c161'),c192,a('bg112','bg161')); end
+  def bi192; @bi192 ||= sumif(a('c112','c161'),c192,a('bi112','bi161')); end
+  def bj192; @bj192 ||= sumif(a('c112','c161'),c192,a('bj112','bj161')); end
+  def bk192; @bk192 ||= sumif(a('c112','c161'),c192,a('bk112','bk161')); end
+  def bl192; @bl192 ||= sumif(a('c112','c161'),c192,a('bl112','bl161')); end
+  def bm192; @bm192 ||= sumif(a('c112','c161'),c192,a('bm112','bm161')); end
+  def bn192; @bn192 ||= sumif(a('c112','c161'),c192,a('bn112','bn161')); end
+  def bo192; @bo192 ||= sumif(a('c112','c161'),c192,a('bo112','bo161')); end
+  def bp192; @bp192 ||= sumif(a('c112','c161'),c192,a('bp112','bp161')); end
+  def bq192; @bq192 ||= sumif(a('c112','c161'),c192,a('bq112','bq161')); end
+  def bs192; @bs192 ||= sumif(a('c112','c161'),c192,a('bs112','bs161')); end
+  def bt192; @bt192 ||= sumif(a('c112','c161'),c192,a('bt112','bt161')); end
+  def bu192; @bu192 ||= sumif(a('c112','c161'),c192,a('bu112','bu161')); end
+  def bv192; @bv192 ||= sumif(a('c112','c161'),c192,a('bv112','bv161')); end
+  def bw192; @bw192 ||= sumif(a('c112','c161'),c192,a('bw112','bw161')); end
+  def bx192; @bx192 ||= sumif(a('c112','c161'),c192,a('bx112','bx161')); end
+  def by192; @by192 ||= sumif(a('c112','c161'),c192,a('by112','by161')); end
+  def bz192; @bz192 ||= sumif(a('c112','c161'),c192,a('bz112','bz161')); end
+  def ca192; @ca192 ||= sumif(a('c112','c161'),c192,a('ca112','ca161')); end
+  def cc192; @cc192 ||= sumif(a('c112','c161'),c192,a('cc112','cc161')); end
+  def cd192; @cd192 ||= sumif(a('c112','c161'),c192,a('cd112','cd161')); end
+  def cf192; @cf192 ||= sumif(a('c112','c161'),c192,a('cf112','cf161')); end
+  def cg192; @cg192 ||= sumif(a('c112','c161'),c192,a('cg112','cg161')); end
+  def ch192; @ch192 ||= sumif(a('c112','c161'),c192,a('ch112','ch161')); end
+  def ci192; @ci192 ||= sumif(a('c112','c161'),c192,a('ci112','ci161')); end
+  def cj192; @cj192 ||= sumif(a('c112','c161'),c192,a('cj112','cj161')); end
+  def ck192; @ck192 ||= sumif(a('c112','c161'),c192,a('ck112','ck161')); end
+  def cl192; @cl192 ||= sumif(a('c112','c161'),c192,a('cl112','cl161')); end
+  def cm192; @cm192 ||= sumif(a('c112','c161'),c192,a('cm112','cm161')); end
+  def cn192; @cn192 ||= sumif(a('c112','c161'),c192,a('cn112','cn161')); end
+  def cp192; @cp192 ||= sumif(a('c112','c161'),c192,a('cp112','cp161')); end
+  def cq192; @cq192 ||= sumif(a('c112','c161'),c192,a('cq112','cq161')); end
+  def cr192; @cr192 ||= excel_if(excel_comparison(abs(cd192-cq192-at192),"<",1.0),"ok","err"); end
+  def c193; "Buildings"; end
+  def e193; @e193 ||= sumif(a('c112','c161'),c193,a('e112','e161')); end
+  def f193; @f193 ||= sumif(a('c112','c161'),c193,a('f112','f161')); end
+  def g193; @g193 ||= sumif(a('c112','c161'),c193,a('g112','g161')); end
+  def h193; @h193 ||= sumif(a('c112','c161'),c193,a('h112','h161')); end
+  def i193; @i193 ||= sumif(a('c112','c161'),c193,a('i112','i161')); end
+  def j193; @j193 ||= sumif(a('c112','c161'),c193,a('j112','j161')); end
+  def k193; @k193 ||= sumif(a('c112','c161'),c193,a('k112','k161')); end
+  def l193; @l193 ||= sumif(a('c112','c161'),c193,a('l112','l161')); end
+  def m193; @m193 ||= sumif(a('c112','c161'),c193,a('m112','m161')); end
+  def o193; @o193 ||= sumif(a('c112','c161'),c193,a('o112','o161')); end
+  def p193; @p193 ||= sumif(a('c112','c161'),c193,a('p112','p161')); end
+  def q193; @q193 ||= sumif(a('c112','c161'),c193,a('q112','q161')); end
+  def r193; @r193 ||= sumif(a('c112','c161'),c193,a('r112','r161')); end
+  def s193; @s193 ||= sumif(a('c112','c161'),c193,a('s112','s161')); end
+  def t193; @t193 ||= sumif(a('c112','c161'),c193,a('t112','t161')); end
+  def u193; @u193 ||= sumif(a('c112','c161'),c193,a('u112','u161')); end
+  def v193; @v193 ||= sumif(a('c112','c161'),c193,a('v112','v161')); end
+  def w193; @w193 ||= sumif(a('c112','c161'),c193,a('w112','w161')); end
+  def y193; @y193 ||= sumif(a('c112','c161'),c193,a('y112','y161')); end
+  def z193; @z193 ||= sumif(a('c112','c161'),c193,a('z112','z161')); end
+  def aa193; @aa193 ||= sumif(a('c112','c161'),c193,a('aa112','aa161')); end
+  def ab193; @ab193 ||= sumif(a('c112','c161'),c193,a('ab112','ab161')); end
+  def ac193; @ac193 ||= sumif(a('c112','c161'),c193,a('ac112','ac161')); end
+  def ad193; @ad193 ||= sumif(a('c112','c161'),c193,a('ad112','ad161')); end
+  def ae193; @ae193 ||= sumif(a('c112','c161'),c193,a('ae112','ae161')); end
+  def af193; @af193 ||= sumif(a('c112','c161'),c193,a('af112','af161')); end
+  def ag193; @ag193 ||= sumif(a('c112','c161'),c193,a('ag112','ag161')); end
+  def ai193; @ai193 ||= sumif(a('c112','c161'),c193,a('ai112','ai161')); end
+  def aj193; @aj193 ||= sumif(a('c112','c161'),c193,a('aj112','aj161')); end
+  def ak193; @ak193 ||= sumif(a('c112','c161'),c193,a('ak112','ak161')); end
+  def al193; @al193 ||= sumif(a('c112','c161'),c193,a('al112','al161')); end
+  def am193; @am193 ||= sumif(a('c112','c161'),c193,a('am112','am161')); end
+  def an193; @an193 ||= sumif(a('c112','c161'),c193,a('an112','an161')); end
+  def ao193; @ao193 ||= sumif(a('c112','c161'),c193,a('ao112','ao161')); end
+  def ap193; @ap193 ||= sumif(a('c112','c161'),c193,a('ap112','ap161')); end
+  def aq193; @aq193 ||= sumif(a('c112','c161'),c193,a('aq112','aq161')); end
+  def as193; @as193 ||= sumif(a('c112','c161'),c193,a('as112','as161')); end
+  def at193; @at193 ||= sumif(a('c112','c161'),c193,a('at112','at161')); end
+  def ay193; @ay193 ||= sumif(a('c112','c161'),c193,a('ay112','ay161')); end
+  def az193; @az193 ||= sumif(a('c112','c161'),c193,a('az112','az161')); end
+  def ba193; @ba193 ||= sumif(a('c112','c161'),c193,a('ba112','ba161')); end
+  def bb193; @bb193 ||= sumif(a('c112','c161'),c193,a('bb112','bb161')); end
+  def bc193; @bc193 ||= sumif(a('c112','c161'),c193,a('bc112','bc161')); end
+  def bd193; @bd193 ||= sumif(a('c112','c161'),c193,a('bd112','bd161')); end
+  def be193; @be193 ||= sumif(a('c112','c161'),c193,a('be112','be161')); end
+  def bf193; @bf193 ||= sumif(a('c112','c161'),c193,a('bf112','bf161')); end
+  def bg193; @bg193 ||= sumif(a('c112','c161'),c193,a('bg112','bg161')); end
+  def bi193; @bi193 ||= sumif(a('c112','c161'),c193,a('bi112','bi161')); end
+  def bj193; @bj193 ||= sumif(a('c112','c161'),c193,a('bj112','bj161')); end
+  def bk193; @bk193 ||= sumif(a('c112','c161'),c193,a('bk112','bk161')); end
+  def bl193; @bl193 ||= sumif(a('c112','c161'),c193,a('bl112','bl161')); end
+  def bm193; @bm193 ||= sumif(a('c112','c161'),c193,a('bm112','bm161')); end
+  def bn193; @bn193 ||= sumif(a('c112','c161'),c193,a('bn112','bn161')); end
+  def bo193; @bo193 ||= sumif(a('c112','c161'),c193,a('bo112','bo161')); end
+  def bp193; @bp193 ||= sumif(a('c112','c161'),c193,a('bp112','bp161')); end
+  def bq193; @bq193 ||= sumif(a('c112','c161'),c193,a('bq112','bq161')); end
+  def bs193; @bs193 ||= sumif(a('c112','c161'),c193,a('bs112','bs161')); end
+  def bt193; @bt193 ||= sumif(a('c112','c161'),c193,a('bt112','bt161')); end
+  def bu193; @bu193 ||= sumif(a('c112','c161'),c193,a('bu112','bu161')); end
+  def bv193; @bv193 ||= sumif(a('c112','c161'),c193,a('bv112','bv161')); end
+  def bw193; @bw193 ||= sumif(a('c112','c161'),c193,a('bw112','bw161')); end
+  def bx193; @bx193 ||= sumif(a('c112','c161'),c193,a('bx112','bx161')); end
+  def by193; @by193 ||= sumif(a('c112','c161'),c193,a('by112','by161')); end
+  def bz193; @bz193 ||= sumif(a('c112','c161'),c193,a('bz112','bz161')); end
+  def ca193; @ca193 ||= sumif(a('c112','c161'),c193,a('ca112','ca161')); end
+  def cc193; @cc193 ||= sumif(a('c112','c161'),c193,a('cc112','cc161')); end
+  def cd193; @cd193 ||= sumif(a('c112','c161'),c193,a('cd112','cd161')); end
+  def cf193; @cf193 ||= sumif(a('c112','c161'),c193,a('cf112','cf161')); end
+  def cg193; @cg193 ||= sumif(a('c112','c161'),c193,a('cg112','cg161')); end
+  def ch193; @ch193 ||= sumif(a('c112','c161'),c193,a('ch112','ch161')); end
+  def ci193; @ci193 ||= sumif(a('c112','c161'),c193,a('ci112','ci161')); end
+  def cj193; @cj193 ||= sumif(a('c112','c161'),c193,a('cj112','cj161')); end
+  def ck193; @ck193 ||= sumif(a('c112','c161'),c193,a('ck112','ck161')); end
+  def cl193; @cl193 ||= sumif(a('c112','c161'),c193,a('cl112','cl161')); end
+  def cm193; @cm193 ||= sumif(a('c112','c161'),c193,a('cm112','cm161')); end
+  def cn193; @cn193 ||= sumif(a('c112','c161'),c193,a('cn112','cn161')); end
+  def cp193; @cp193 ||= sumif(a('c112','c161'),c193,a('cp112','cp161')); end
+  def cq193; @cq193 ||= sumif(a('c112','c161'),c193,a('cq112','cq161')); end
+  def cr193; @cr193 ||= excel_if(excel_comparison(abs(cd193-cq193-at193),"<",1.0),"ok","err"); end
+  def c194; "Transport"; end
+  def e194; @e194 ||= sumif(a('c112','c161'),c194,a('e112','e161')); end
+  def f194; @f194 ||= sumif(a('c112','c161'),c194,a('f112','f161')); end
+  def g194; @g194 ||= sumif(a('c112','c161'),c194,a('g112','g161')); end
+  def h194; @h194 ||= sumif(a('c112','c161'),c194,a('h112','h161')); end
+  def i194; @i194 ||= sumif(a('c112','c161'),c194,a('i112','i161')); end
+  def j194; @j194 ||= sumif(a('c112','c161'),c194,a('j112','j161')); end
+  def k194; @k194 ||= sumif(a('c112','c161'),c194,a('k112','k161')); end
+  def l194; @l194 ||= sumif(a('c112','c161'),c194,a('l112','l161')); end
+  def m194; @m194 ||= sumif(a('c112','c161'),c194,a('m112','m161')); end
+  def o194; @o194 ||= sumif(a('c112','c161'),c194,a('o112','o161')); end
+  def p194; @p194 ||= sumif(a('c112','c161'),c194,a('p112','p161')); end
+  def q194; @q194 ||= sumif(a('c112','c161'),c194,a('q112','q161')); end
+  def r194; @r194 ||= sumif(a('c112','c161'),c194,a('r112','r161')); end
+  def s194; @s194 ||= sumif(a('c112','c161'),c194,a('s112','s161')); end
+  def t194; @t194 ||= sumif(a('c112','c161'),c194,a('t112','t161')); end
+  def u194; @u194 ||= sumif(a('c112','c161'),c194,a('u112','u161')); end
+  def v194; @v194 ||= sumif(a('c112','c161'),c194,a('v112','v161')); end
+  def w194; @w194 ||= sumif(a('c112','c161'),c194,a('w112','w161')); end
+  def y194; @y194 ||= sumif(a('c112','c161'),c194,a('y112','y161')); end
+  def z194; @z194 ||= sumif(a('c112','c161'),c194,a('z112','z161')); end
+  def aa194; @aa194 ||= sumif(a('c112','c161'),c194,a('aa112','aa161')); end
+  def ab194; @ab194 ||= sumif(a('c112','c161'),c194,a('ab112','ab161')); end
+  def ac194; @ac194 ||= sumif(a('c112','c161'),c194,a('ac112','ac161')); end
+  def ad194; @ad194 ||= sumif(a('c112','c161'),c194,a('ad112','ad161')); end
+  def ae194; @ae194 ||= sumif(a('c112','c161'),c194,a('ae112','ae161')); end
+  def af194; @af194 ||= sumif(a('c112','c161'),c194,a('af112','af161')); end
+  def ag194; @ag194 ||= sumif(a('c112','c161'),c194,a('ag112','ag161')); end
+  def ai194; @ai194 ||= sumif(a('c112','c161'),c194,a('ai112','ai161')); end
+  def aj194; @aj194 ||= sumif(a('c112','c161'),c194,a('aj112','aj161')); end
+  def ak194; @ak194 ||= sumif(a('c112','c161'),c194,a('ak112','ak161')); end
+  def al194; @al194 ||= sumif(a('c112','c161'),c194,a('al112','al161')); end
+  def am194; @am194 ||= sumif(a('c112','c161'),c194,a('am112','am161')); end
+  def an194; @an194 ||= sumif(a('c112','c161'),c194,a('an112','an161')); end
+  def ao194; @ao194 ||= sumif(a('c112','c161'),c194,a('ao112','ao161')); end
+  def ap194; @ap194 ||= sumif(a('c112','c161'),c194,a('ap112','ap161')); end
+  def aq194; @aq194 ||= sumif(a('c112','c161'),c194,a('aq112','aq161')); end
+  def as194; @as194 ||= sumif(a('c112','c161'),c194,a('as112','as161')); end
+  def at194; @at194 ||= sumif(a('c112','c161'),c194,a('at112','at161')); end
+  def ay194; @ay194 ||= sumif(a('c112','c161'),c194,a('ay112','ay161')); end
+  def az194; @az194 ||= sumif(a('c112','c161'),c194,a('az112','az161')); end
+  def ba194; @ba194 ||= sumif(a('c112','c161'),c194,a('ba112','ba161')); end
+  def bb194; @bb194 ||= sumif(a('c112','c161'),c194,a('bb112','bb161')); end
+  def bc194; @bc194 ||= sumif(a('c112','c161'),c194,a('bc112','bc161')); end
+  def bd194; @bd194 ||= sumif(a('c112','c161'),c194,a('bd112','bd161')); end
+  def be194; @be194 ||= sumif(a('c112','c161'),c194,a('be112','be161')); end
+  def bf194; @bf194 ||= sumif(a('c112','c161'),c194,a('bf112','bf161')); end
+  def bg194; @bg194 ||= sumif(a('c112','c161'),c194,a('bg112','bg161')); end
+  def bi194; @bi194 ||= sumif(a('c112','c161'),c194,a('bi112','bi161')); end
+  def bj194; @bj194 ||= sumif(a('c112','c161'),c194,a('bj112','bj161')); end
+  def bk194; @bk194 ||= sumif(a('c112','c161'),c194,a('bk112','bk161')); end
+  def bl194; @bl194 ||= sumif(a('c112','c161'),c194,a('bl112','bl161')); end
+  def bm194; @bm194 ||= sumif(a('c112','c161'),c194,a('bm112','bm161')); end
+  def bn194; @bn194 ||= sumif(a('c112','c161'),c194,a('bn112','bn161')); end
+  def bo194; @bo194 ||= sumif(a('c112','c161'),c194,a('bo112','bo161')); end
+  def bp194; @bp194 ||= sumif(a('c112','c161'),c194,a('bp112','bp161')); end
+  def bq194; @bq194 ||= sumif(a('c112','c161'),c194,a('bq112','bq161')); end
+  def bs194; @bs194 ||= sumif(a('c112','c161'),c194,a('bs112','bs161')); end
+  def bt194; @bt194 ||= sumif(a('c112','c161'),c194,a('bt112','bt161')); end
+  def bu194; @bu194 ||= sumif(a('c112','c161'),c194,a('bu112','bu161')); end
+  def bv194; @bv194 ||= sumif(a('c112','c161'),c194,a('bv112','bv161')); end
+  def bw194; @bw194 ||= sumif(a('c112','c161'),c194,a('bw112','bw161')); end
+  def bx194; @bx194 ||= sumif(a('c112','c161'),c194,a('bx112','bx161')); end
+  def by194; @by194 ||= sumif(a('c112','c161'),c194,a('by112','by161')); end
+  def bz194; @bz194 ||= sumif(a('c112','c161'),c194,a('bz112','bz161')); end
+  def ca194; @ca194 ||= sumif(a('c112','c161'),c194,a('ca112','ca161')); end
+  def cc194; @cc194 ||= sumif(a('c112','c161'),c194,a('cc112','cc161')); end
+  def cd194; @cd194 ||= sumif(a('c112','c161'),c194,a('cd112','cd161')); end
+  def cf194; @cf194 ||= sumif(a('c112','c161'),c194,a('cf112','cf161')); end
+  def cg194; @cg194 ||= sumif(a('c112','c161'),c194,a('cg112','cg161')); end
+  def ch194; @ch194 ||= sumif(a('c112','c161'),c194,a('ch112','ch161')); end
+  def ci194; @ci194 ||= sumif(a('c112','c161'),c194,a('ci112','ci161')); end
+  def cj194; @cj194 ||= sumif(a('c112','c161'),c194,a('cj112','cj161')); end
+  def ck194; @ck194 ||= sumif(a('c112','c161'),c194,a('ck112','ck161')); end
+  def cl194; @cl194 ||= sumif(a('c112','c161'),c194,a('cl112','cl161')); end
+  def cm194; @cm194 ||= sumif(a('c112','c161'),c194,a('cm112','cm161')); end
+  def cn194; @cn194 ||= sumif(a('c112','c161'),c194,a('cn112','cn161')); end
+  def cp194; @cp194 ||= sumif(a('c112','c161'),c194,a('cp112','cp161')); end
+  def cq194; @cq194 ||= sumif(a('c112','c161'),c194,a('cq112','cq161')); end
+  def cr194; @cr194 ||= excel_if(excel_comparison(abs(cd194-cq194-at194),"<",1.0),"ok","err"); end
+  def c195; "Industry"; end
+  def e195; @e195 ||= sumif(a('c112','c161'),c195,a('e112','e161')); end
+  def f195; @f195 ||= sumif(a('c112','c161'),c195,a('f112','f161')); end
+  def g195; @g195 ||= sumif(a('c112','c161'),c195,a('g112','g161')); end
+  def h195; @h195 ||= sumif(a('c112','c161'),c195,a('h112','h161')); end
+  def i195; @i195 ||= sumif(a('c112','c161'),c195,a('i112','i161')); end
+  def j195; @j195 ||= sumif(a('c112','c161'),c195,a('j112','j161')); end
+  def k195; @k195 ||= sumif(a('c112','c161'),c195,a('k112','k161')); end
+  def l195; @l195 ||= sumif(a('c112','c161'),c195,a('l112','l161')); end
+  def m195; @m195 ||= sumif(a('c112','c161'),c195,a('m112','m161')); end
+  def o195; @o195 ||= sumif(a('c112','c161'),c195,a('o112','o161')); end
+  def p195; @p195 ||= sumif(a('c112','c161'),c195,a('p112','p161')); end
+  def q195; @q195 ||= sumif(a('c112','c161'),c195,a('q112','q161')); end
+  def r195; @r195 ||= sumif(a('c112','c161'),c195,a('r112','r161')); end
+  def s195; @s195 ||= sumif(a('c112','c161'),c195,a('s112','s161')); end
+  def t195; @t195 ||= sumif(a('c112','c161'),c195,a('t112','t161')); end
+  def u195; @u195 ||= sumif(a('c112','c161'),c195,a('u112','u161')); end
+  def v195; @v195 ||= sumif(a('c112','c161'),c195,a('v112','v161')); end
+  def w195; @w195 ||= sumif(a('c112','c161'),c195,a('w112','w161')); end
+  def y195; @y195 ||= sumif(a('c112','c161'),c195,a('y112','y161')); end
+  def z195; @z195 ||= sumif(a('c112','c161'),c195,a('z112','z161')); end
+  def aa195; @aa195 ||= sumif(a('c112','c161'),c195,a('aa112','aa161')); end
+  def ab195; @ab195 ||= sumif(a('c112','c161'),c195,a('ab112','ab161')); end
+  def ac195; @ac195 ||= sumif(a('c112','c161'),c195,a('ac112','ac161')); end
+  def ad195; @ad195 ||= sumif(a('c112','c161'),c195,a('ad112','ad161')); end
+  def ae195; @ae195 ||= sumif(a('c112','c161'),c195,a('ae112','ae161')); end
+  def af195; @af195 ||= sumif(a('c112','c161'),c195,a('af112','af161')); end
+  def ag195; @ag195 ||= sumif(a('c112','c161'),c195,a('ag112','ag161')); end
+  def ai195; @ai195 ||= sumif(a('c112','c161'),c195,a('ai112','ai161')); end
+  def aj195; @aj195 ||= sumif(a('c112','c161'),c195,a('aj112','aj161')); end
+  def ak195; @ak195 ||= sumif(a('c112','c161'),c195,a('ak112','ak161')); end
+  def al195; @al195 ||= sumif(a('c112','c161'),c195,a('al112','al161')); end
+  def am195; @am195 ||= sumif(a('c112','c161'),c195,a('am112','am161')); end
+  def an195; @an195 ||= sumif(a('c112','c161'),c195,a('an112','an161')); end
+  def ao195; @ao195 ||= sumif(a('c112','c161'),c195,a('ao112','ao161')); end
+  def ap195; @ap195 ||= sumif(a('c112','c161'),c195,a('ap112','ap161')); end
+  def aq195; @aq195 ||= sumif(a('c112','c161'),c195,a('aq112','aq161')); end
+  def as195; @as195 ||= sumif(a('c112','c161'),c195,a('as112','as161')); end
+  def at195; @at195 ||= sumif(a('c112','c161'),c195,a('at112','at161')); end
+  def ay195; @ay195 ||= sumif(a('c112','c161'),c195,a('ay112','ay161')); end
+  def az195; @az195 ||= sumif(a('c112','c161'),c195,a('az112','az161')); end
+  def ba195; @ba195 ||= sumif(a('c112','c161'),c195,a('ba112','ba161')); end
+  def bb195; @bb195 ||= sumif(a('c112','c161'),c195,a('bb112','bb161')); end
+  def bc195; @bc195 ||= sumif(a('c112','c161'),c195,a('bc112','bc161')); end
+  def bd195; @bd195 ||= sumif(a('c112','c161'),c195,a('bd112','bd161')); end
+  def be195; @be195 ||= sumif(a('c112','c161'),c195,a('be112','be161')); end
+  def bf195; @bf195 ||= sumif(a('c112','c161'),c195,a('bf112','bf161')); end
+  def bg195; @bg195 ||= sumif(a('c112','c161'),c195,a('bg112','bg161')); end
+  def bi195; @bi195 ||= sumif(a('c112','c161'),c195,a('bi112','bi161')); end
+  def bj195; @bj195 ||= sumif(a('c112','c161'),c195,a('bj112','bj161')); end
+  def bk195; @bk195 ||= sumif(a('c112','c161'),c195,a('bk112','bk161')); end
+  def bl195; @bl195 ||= sumif(a('c112','c161'),c195,a('bl112','bl161')); end
+  def bm195; @bm195 ||= sumif(a('c112','c161'),c195,a('bm112','bm161')); end
+  def bn195; @bn195 ||= sumif(a('c112','c161'),c195,a('bn112','bn161')); end
+  def bo195; @bo195 ||= sumif(a('c112','c161'),c195,a('bo112','bo161')); end
+  def bp195; @bp195 ||= sumif(a('c112','c161'),c195,a('bp112','bp161')); end
+  def bq195; @bq195 ||= sumif(a('c112','c161'),c195,a('bq112','bq161')); end
+  def bs195; @bs195 ||= sumif(a('c112','c161'),c195,a('bs112','bs161')); end
+  def bt195; @bt195 ||= sumif(a('c112','c161'),c195,a('bt112','bt161')); end
+  def bu195; @bu195 ||= sumif(a('c112','c161'),c195,a('bu112','bu161')); end
+  def bv195; @bv195 ||= sumif(a('c112','c161'),c195,a('bv112','bv161')); end
+  def bw195; @bw195 ||= sumif(a('c112','c161'),c195,a('bw112','bw161')); end
+  def bx195; @bx195 ||= sumif(a('c112','c161'),c195,a('bx112','bx161')); end
+  def by195; @by195 ||= sumif(a('c112','c161'),c195,a('by112','by161')); end
+  def bz195; @bz195 ||= sumif(a('c112','c161'),c195,a('bz112','bz161')); end
+  def ca195; @ca195 ||= sumif(a('c112','c161'),c195,a('ca112','ca161')); end
+  def cc195; @cc195 ||= sumif(a('c112','c161'),c195,a('cc112','cc161')); end
+  def cd195; @cd195 ||= sumif(a('c112','c161'),c195,a('cd112','cd161')); end
+  def cf195; @cf195 ||= sumif(a('c112','c161'),c195,a('cf112','cf161')); end
+  def cg195; @cg195 ||= sumif(a('c112','c161'),c195,a('cg112','cg161')); end
+  def ch195; @ch195 ||= sumif(a('c112','c161'),c195,a('ch112','ch161')); end
+  def ci195; @ci195 ||= sumif(a('c112','c161'),c195,a('ci112','ci161')); end
+  def cj195; @cj195 ||= sumif(a('c112','c161'),c195,a('cj112','cj161')); end
+  def ck195; @ck195 ||= sumif(a('c112','c161'),c195,a('ck112','ck161')); end
+  def cl195; @cl195 ||= sumif(a('c112','c161'),c195,a('cl112','cl161')); end
+  def cm195; @cm195 ||= sumif(a('c112','c161'),c195,a('cm112','cm161')); end
+  def cn195; @cn195 ||= sumif(a('c112','c161'),c195,a('cn112','cn161')); end
+  def cp195; @cp195 ||= sumif(a('c112','c161'),c195,a('cp112','cp161')); end
+  def cq195; @cq195 ||= sumif(a('c112','c161'),c195,a('cq112','cq161')); end
+  def cr195; @cr195 ||= excel_if(excel_comparison(abs(cd195-cq195-at195),"<",1.0),"ok","err"); end
+  def c196; "Other"; end
+  def e196; @e196 ||= sumif(a('c112','c161'),c196,a('e112','e161')); end
+  def f196; @f196 ||= sumif(a('c112','c161'),c196,a('f112','f161')); end
+  def g196; @g196 ||= sumif(a('c112','c161'),c196,a('g112','g161')); end
+  def h196; @h196 ||= sumif(a('c112','c161'),c196,a('h112','h161')); end
+  def i196; @i196 ||= sumif(a('c112','c161'),c196,a('i112','i161')); end
+  def j196; @j196 ||= sumif(a('c112','c161'),c196,a('j112','j161')); end
+  def k196; @k196 ||= sumif(a('c112','c161'),c196,a('k112','k161')); end
+  def l196; @l196 ||= sumif(a('c112','c161'),c196,a('l112','l161')); end
+  def m196; @m196 ||= sumif(a('c112','c161'),c196,a('m112','m161')); end
+  def o196; @o196 ||= sumif(a('c112','c161'),c196,a('o112','o161')); end
+  def p196; @p196 ||= sumif(a('c112','c161'),c196,a('p112','p161')); end
+  def q196; @q196 ||= sumif(a('c112','c161'),c196,a('q112','q161')); end
+  def r196; @r196 ||= sumif(a('c112','c161'),c196,a('r112','r161')); end
+  def s196; @s196 ||= sumif(a('c112','c161'),c196,a('s112','s161')); end
+  def t196; @t196 ||= sumif(a('c112','c161'),c196,a('t112','t161')); end
+  def u196; @u196 ||= sumif(a('c112','c161'),c196,a('u112','u161')); end
+  def v196; @v196 ||= sumif(a('c112','c161'),c196,a('v112','v161')); end
+  def w196; @w196 ||= sumif(a('c112','c161'),c196,a('w112','w161')); end
+  def y196; @y196 ||= sumif(a('c112','c161'),c196,a('y112','y161')); end
+  def z196; @z196 ||= sumif(a('c112','c161'),c196,a('z112','z161')); end
+  def aa196; @aa196 ||= sumif(a('c112','c161'),c196,a('aa112','aa161')); end
+  def ab196; @ab196 ||= sumif(a('c112','c161'),c196,a('ab112','ab161')); end
+  def ac196; @ac196 ||= sumif(a('c112','c161'),c196,a('ac112','ac161')); end
+  def ad196; @ad196 ||= sumif(a('c112','c161'),c196,a('ad112','ad161')); end
+  def ae196; @ae196 ||= sumif(a('c112','c161'),c196,a('ae112','ae161')); end
+  def af196; @af196 ||= sumif(a('c112','c161'),c196,a('af112','af161')); end
+  def ag196; @ag196 ||= sumif(a('c112','c161'),c196,a('ag112','ag161')); end
+  def ai196; @ai196 ||= sumif(a('c112','c161'),c196,a('ai112','ai161')); end
+  def aj196; @aj196 ||= sumif(a('c112','c161'),c196,a('aj112','aj161')); end
+  def ak196; @ak196 ||= sumif(a('c112','c161'),c196,a('ak112','ak161')); end
+  def al196; @al196 ||= sumif(a('c112','c161'),c196,a('al112','al161')); end
+  def am196; @am196 ||= sumif(a('c112','c161'),c196,a('am112','am161')); end
+  def an196; @an196 ||= sumif(a('c112','c161'),c196,a('an112','an161')); end
+  def ao196; @ao196 ||= sumif(a('c112','c161'),c196,a('ao112','ao161')); end
+  def ap196; @ap196 ||= sumif(a('c112','c161'),c196,a('ap112','ap161')); end
+  def aq196; @aq196 ||= sumif(a('c112','c161'),c196,a('aq112','aq161')); end
+  def as196; @as196 ||= sumif(a('c112','c161'),c196,a('as112','as161')); end
+  def at196; @at196 ||= sumif(a('c112','c161'),c196,a('at112','at161')); end
+  def ay196; @ay196 ||= sumif(a('c112','c161'),c196,a('ay112','ay161')); end
+  def az196; @az196 ||= sumif(a('c112','c161'),c196,a('az112','az161')); end
+  def ba196; @ba196 ||= sumif(a('c112','c161'),c196,a('ba112','ba161')); end
+  def bb196; @bb196 ||= sumif(a('c112','c161'),c196,a('bb112','bb161')); end
+  def bc196; @bc196 ||= sumif(a('c112','c161'),c196,a('bc112','bc161')); end
+  def bd196; @bd196 ||= sumif(a('c112','c161'),c196,a('bd112','bd161')); end
+  def be196; @be196 ||= sumif(a('c112','c161'),c196,a('be112','be161')); end
+  def bf196; @bf196 ||= sumif(a('c112','c161'),c196,a('bf112','bf161')); end
+  def bg196; @bg196 ||= sumif(a('c112','c161'),c196,a('bg112','bg161')); end
+  def bi196; @bi196 ||= sumif(a('c112','c161'),c196,a('bi112','bi161')); end
+  def bj196; @bj196 ||= sumif(a('c112','c161'),c196,a('bj112','bj161')); end
+  def bk196; @bk196 ||= sumif(a('c112','c161'),c196,a('bk112','bk161')); end
+  def bl196; @bl196 ||= sumif(a('c112','c161'),c196,a('bl112','bl161')); end
+  def bm196; @bm196 ||= sumif(a('c112','c161'),c196,a('bm112','bm161')); end
+  def bn196; @bn196 ||= sumif(a('c112','c161'),c196,a('bn112','bn161')); end
+  def bo196; @bo196 ||= sumif(a('c112','c161'),c196,a('bo112','bo161')); end
+  def bp196; @bp196 ||= sumif(a('c112','c161'),c196,a('bp112','bp161')); end
+  def bq196; @bq196 ||= sumif(a('c112','c161'),c196,a('bq112','bq161')); end
+  def bs196; @bs196 ||= sumif(a('c112','c161'),c196,a('bs112','bs161')); end
+  def bt196; @bt196 ||= sumif(a('c112','c161'),c196,a('bt112','bt161')); end
+  def bu196; @bu196 ||= sumif(a('c112','c161'),c196,a('bu112','bu161')); end
+  def bv196; @bv196 ||= sumif(a('c112','c161'),c196,a('bv112','bv161')); end
+  def bw196; @bw196 ||= sumif(a('c112','c161'),c196,a('bw112','bw161')); end
+  def bx196; @bx196 ||= sumif(a('c112','c161'),c196,a('bx112','bx161')); end
+  def by196; @by196 ||= sumif(a('c112','c161'),c196,a('by112','by161')); end
+  def bz196; @bz196 ||= sumif(a('c112','c161'),c196,a('bz112','bz161')); end
+  def ca196; @ca196 ||= sumif(a('c112','c161'),c196,a('ca112','ca161')); end
+  def cc196; @cc196 ||= sumif(a('c112','c161'),c196,a('cc112','cc161')); end
+  def cd196; @cd196 ||= sumif(a('c112','c161'),c196,a('cd112','cd161')); end
+  def cf196; @cf196 ||= sumif(a('c112','c161'),c196,a('cf112','cf161')); end
+  def cg196; @cg196 ||= sumif(a('c112','c161'),c196,a('cg112','cg161')); end
+  def ch196; @ch196 ||= sumif(a('c112','c161'),c196,a('ch112','ch161')); end
+  def ci196; @ci196 ||= sumif(a('c112','c161'),c196,a('ci112','ci161')); end
+  def cj196; @cj196 ||= sumif(a('c112','c161'),c196,a('cj112','cj161')); end
+  def ck196; @ck196 ||= sumif(a('c112','c161'),c196,a('ck112','ck161')); end
+  def cl196; @cl196 ||= sumif(a('c112','c161'),c196,a('cl112','cl161')); end
+  def cm196; @cm196 ||= sumif(a('c112','c161'),c196,a('cm112','cm161')); end
+  def cn196; @cn196 ||= sumif(a('c112','c161'),c196,a('cn112','cn161')); end
+  def cp196; @cp196 ||= sumif(a('c112','c161'),c196,a('cp112','cp161')); end
+  def cq196; @cq196 ||= sumif(a('c112','c161'),c196,a('cq112','cq161')); end
+  def cr196; @cr196 ||= excel_if(excel_comparison(abs(cd196-cq196-at196),"<",1.0),"ok","err"); end
+  def c197; "Total"; end
+  def e197; @e197 ||= sum(a('e190','e196')); end
+  def f197; @f197 ||= sum(a('f190','f196')); end
+  def g197; @g197 ||= sum(a('g190','g196')); end
+  def h197; @h197 ||= sum(a('h190','h196')); end
+  def i197; @i197 ||= sum(a('i190','i196')); end
+  def j197; @j197 ||= sum(a('j190','j196')); end
+  def k197; @k197 ||= sum(a('k190','k196')); end
+  def l197; @l197 ||= sum(a('l190','l196')); end
+  def m197; @m197 ||= sum(a('m190','m196')); end
+  def o197; @o197 ||= sum(a('o190','o196')); end
+  def p197; @p197 ||= sum(a('p190','p196')); end
+  def q197; @q197 ||= sum(a('q190','q196')); end
+  def r197; @r197 ||= sum(a('r190','r196')); end
+  def s197; @s197 ||= sum(a('s190','s196')); end
+  def t197; @t197 ||= sum(a('t190','t196')); end
+  def u197; @u197 ||= sum(a('u190','u196')); end
+  def v197; @v197 ||= sum(a('v190','v196')); end
+  def w197; @w197 ||= sum(a('w190','w196')); end
+  def y197; @y197 ||= sum(a('y190','y196')); end
+  def z197; @z197 ||= sum(a('z190','z196')); end
+  def aa197; @aa197 ||= sum(a('aa190','aa196')); end
+  def ab197; @ab197 ||= sum(a('ab190','ab196')); end
+  def ac197; @ac197 ||= sum(a('ac190','ac196')); end
+  def ad197; @ad197 ||= sum(a('ad190','ad196')); end
+  def ae197; @ae197 ||= sum(a('ae190','ae196')); end
+  def af197; @af197 ||= sum(a('af190','af196')); end
+  def ag197; @ag197 ||= sum(a('ag190','ag196')); end
+  def ai197; @ai197 ||= sum(a('ai190','ai196')); end
+  def aj197; @aj197 ||= sum(a('aj190','aj196')); end
+  def ak197; @ak197 ||= sum(a('ak190','ak196')); end
+  def al197; @al197 ||= sum(a('al190','al196')); end
+  def am197; @am197 ||= sum(a('am190','am196')); end
+  def an197; @an197 ||= sum(a('an190','an196')); end
+  def ao197; @ao197 ||= sum(a('ao190','ao196')); end
+  def ap197; @ap197 ||= sum(a('ap190','ap196')); end
+  def aq197; @aq197 ||= sum(a('aq190','aq196')); end
+  def as197; @as197 ||= sum(a('as190','as196')); end
+  def at197; @at197 ||= sum(a('at190','at196')); end
+  def ay197; @ay197 ||= sum(a('ay190','ay196')); end
+  def az197; @az197 ||= sum(a('az190','az196')); end
+  def ba197; @ba197 ||= sum(a('ba190','ba196')); end
+  def bb197; @bb197 ||= sum(a('bb190','bb196')); end
+  def bc197; @bc197 ||= sum(a('bc190','bc196')); end
+  def bd197; @bd197 ||= sum(a('bd190','bd196')); end
+  def be197; @be197 ||= sum(a('be190','be196')); end
+  def bf197; @bf197 ||= sum(a('bf190','bf196')); end
+  def bg197; @bg197 ||= sum(a('bg190','bg196')); end
+  def bi197; @bi197 ||= sum(a('bi190','bi196')); end
+  def bj197; @bj197 ||= sum(a('bj190','bj196')); end
+  def bk197; @bk197 ||= sum(a('bk190','bk196')); end
+  def bl197; @bl197 ||= sum(a('bl190','bl196')); end
+  def bm197; @bm197 ||= sum(a('bm190','bm196')); end
+  def bn197; @bn197 ||= sum(a('bn190','bn196')); end
+  def bo197; @bo197 ||= sum(a('bo190','bo196')); end
+  def bp197; @bp197 ||= sum(a('bp190','bp196')); end
+  def bq197; @bq197 ||= sum(a('bq190','bq196')); end
+  def bs197; @bs197 ||= sum(a('bs190','bs196')); end
+  def bt197; @bt197 ||= sum(a('bt190','bt196')); end
+  def bu197; @bu197 ||= sum(a('bu190','bu196')); end
+  def bv197; @bv197 ||= sum(a('bv190','bv196')); end
+  def bw197; @bw197 ||= sum(a('bw190','bw196')); end
+  def bx197; @bx197 ||= sum(a('bx190','bx196')); end
+  def by197; @by197 ||= sum(a('by190','by196')); end
+  def bz197; @bz197 ||= sum(a('bz190','bz196')); end
+  def ca197; @ca197 ||= sum(a('ca190','ca196')); end
+  def cc197; @cc197 ||= sum(a('cc190','cc196')); end
+  def cd197; @cd197 ||= sum(a('cd190','cd196')); end
+  def cf197; @cf197 ||= sum(a('cf190','cf196')); end
+  def cg197; @cg197 ||= sum(a('cg190','cg196')); end
+  def ch197; @ch197 ||= sum(a('ch190','ch196')); end
+  def ci197; @ci197 ||= sum(a('ci190','ci196')); end
+  def cj197; @cj197 ||= sum(a('cj190','cj196')); end
+  def ck197; @ck197 ||= sum(a('ck190','ck196')); end
+  def cl197; @cl197 ||= sum(a('cl190','cl196')); end
+  def cm197; @cm197 ||= sum(a('cm190','cm196')); end
+  def cn197; @cn197 ||= sum(a('cn190','cn196')); end
+  def cp197; @cp197 ||= sum(a('cp190','cp196')); end
+  def cq197; @cq197 ||= sum(a('cq190','cq196')); end
+  def cr197; @cr197 ||= excel_if(excel_comparison(abs(cd197-cq197-at197),"<",1.0),"ok","err"); end
+  def e198; @e198 ||= excel_if(excel_comparison(e197,"==",e162),"ok",e197-e162); end
+  def f198; @f198 ||= excel_if(excel_comparison(f197,"==",f162),"ok",f197-f162); end
+  def g198; @g198 ||= excel_if(excel_comparison(g197,"==",g162),"ok",g197-g162); end
+  def h198; @h198 ||= excel_if(excel_comparison(h197,"==",h162),"ok",h197-h162); end
+  def i198; @i198 ||= excel_if(excel_comparison(i197,"==",i162),"ok",i197-i162); end
+  def j198; @j198 ||= excel_if(excel_comparison(j197,"==",j162),"ok",j197-j162); end
+  def k198; @k198 ||= excel_if(excel_comparison(k197,"==",k162),"ok",k197-k162); end
+  def l198; @l198 ||= excel_if(excel_comparison(l197,"==",l162),"ok",l197-l162); end
+  def m198; @m198 ||= excel_if(excel_comparison(m197,"==",m162),"ok",m197-m162); end
+  def o198; @o198 ||= excel_if(excel_comparison(o197,"==",o162),"ok",o197-o162); end
+  def p198; @p198 ||= excel_if(excel_comparison(p197,"==",p162),"ok",p197-p162); end
+  def q198; @q198 ||= excel_if(excel_comparison(q197,"==",q162),"ok",q197-q162); end
+  def r198; @r198 ||= excel_if(excel_comparison(r197,"==",r162),"ok",r197-r162); end
+  def s198; @s198 ||= excel_if(excel_comparison(s197,"==",s162),"ok",s197-s162); end
+  def t198; @t198 ||= excel_if(excel_comparison(t197,"==",t162),"ok",t197-t162); end
+  def u198; @u198 ||= excel_if(excel_comparison(u197,"==",u162),"ok",u197-u162); end
+  def v198; @v198 ||= excel_if(excel_comparison(v197,"==",v162),"ok",v197-v162); end
+  def w198; @w198 ||= excel_if(excel_comparison(w197,"==",w162),"ok",w197-w162); end
+  def y198; @y198 ||= excel_if(excel_comparison(y197,"==",y162),"ok",y197-y162); end
+  def z198; @z198 ||= excel_if(excel_comparison(z197,"==",z162),"ok",z197-z162); end
+  def aa198; @aa198 ||= excel_if(excel_comparison(aa197,"==",aa162),"ok",aa197-aa162); end
+  def ab198; @ab198 ||= excel_if(excel_comparison(ab197,"==",ab162),"ok",ab197-ab162); end
+  def ac198; @ac198 ||= excel_if(excel_comparison(ac197,"==",ac162),"ok",ac197-ac162); end
+  def ad198; @ad198 ||= excel_if(excel_comparison(ad197,"==",ad162),"ok",ad197-ad162); end
+  def ae198; @ae198 ||= excel_if(excel_comparison(ae197,"==",ae162),"ok",ae197-ae162); end
+  def af198; @af198 ||= excel_if(excel_comparison(af197,"==",af162),"ok",af197-af162); end
+  def ag198; @ag198 ||= excel_if(excel_comparison(ag197,"==",ag162),"ok",ag197-ag162); end
+  def ai198; @ai198 ||= excel_if(excel_comparison(ai197,"==",ai162),"ok",ai197-ai162); end
+  def aj198; @aj198 ||= excel_if(excel_comparison(aj197,"==",aj162),"ok",aj197-aj162); end
+  def ak198; @ak198 ||= excel_if(excel_comparison(ak197,"==",ak162),"ok",ak197-ak162); end
+  def al198; @al198 ||= excel_if(excel_comparison(al197,"==",al162),"ok",al197-al162); end
+  def am198; @am198 ||= excel_if(excel_comparison(am197,"==",am162),"ok",am197-am162); end
+  def an198; @an198 ||= excel_if(excel_comparison(an197,"==",an162),"ok",an197-an162); end
+  def ao198; @ao198 ||= excel_if(excel_comparison(ao197,"==",ao162),"ok",ao197-ao162); end
+  def ap198; @ap198 ||= excel_if(excel_comparison(ap197,"==",ap162),"ok",ap197-ap162); end
+  def aq198; @aq198 ||= excel_if(excel_comparison(aq197,"==",aq162),"ok",aq197-aq162); end
+  def as198; @as198 ||= excel_if(excel_comparison(as197,"==",as162),"ok",as197-as162); end
+  def at198; @at198 ||= excel_if(excel_comparison(at197,"==",at162),"ok",at197-at162); end
+  def ay198; @ay198 ||= excel_if(excel_comparison(ay197,"==",ay162),"ok",ay197-ay162); end
+  def az198; @az198 ||= excel_if(excel_comparison(az197,"==",az162),"ok",az197-az162); end
+  def ba198; @ba198 ||= excel_if(excel_comparison(ba197,"==",ba162),"ok",ba197-ba162); end
+  def bb198; @bb198 ||= excel_if(excel_comparison(bb197,"==",bb162),"ok",bb197-bb162); end
+  def bc198; @bc198 ||= excel_if(excel_comparison(bc197,"==",bc162),"ok",bc197-bc162); end
+  def bd198; @bd198 ||= excel_if(excel_comparison(bd197,"==",bd162),"ok",bd197-bd162); end
+  def be198; @be198 ||= excel_if(excel_comparison(be197,"==",be162),"ok",be197-be162); end
+  def bf198; @bf198 ||= excel_if(excel_comparison(bf197,"==",bf162),"ok",bf197-bf162); end
+  def bg198; @bg198 ||= excel_if(excel_comparison(bg197,"==",bg162),"ok",bg197-bg162); end
+  def bi198; @bi198 ||= excel_if(excel_comparison(bi197,"==",bi162),"ok",bi197-bi162); end
+  def bj198; @bj198 ||= excel_if(excel_comparison(bj197,"==",bj162),"ok",bj197-bj162); end
+  def bk198; @bk198 ||= excel_if(excel_comparison(bk197,"==",bk162),"ok",bk197-bk162); end
+  def bl198; @bl198 ||= excel_if(excel_comparison(bl197,"==",bl162),"ok",bl197-bl162); end
+  def bm198; @bm198 ||= excel_if(excel_comparison(bm197,"==",bm162),"ok",bm197-bm162); end
+  def bn198; @bn198 ||= excel_if(excel_comparison(bn197,"==",bn162),"ok",bn197-bn162); end
+  def bo198; @bo198 ||= excel_if(excel_comparison(bo197,"==",bo162),"ok",bo197-bo162); end
+  def bp198; @bp198 ||= excel_if(excel_comparison(bp197,"==",bp162),"ok",bp197-bp162); end
+  def bq198; @bq198 ||= excel_if(excel_comparison(bq197,"==",bq162),"ok",bq197-bq162); end
+  def bs198; @bs198 ||= excel_if(excel_comparison(bs197,"==",bs162),"ok",bs197-bs162); end
+  def bt198; @bt198 ||= excel_if(excel_comparison(bt197,"==",bt162),"ok",bt197-bt162); end
+  def bu198; @bu198 ||= excel_if(excel_comparison(bu197,"==",bu162),"ok",bu197-bu162); end
+  def bv198; @bv198 ||= excel_if(excel_comparison(bv197,"==",bv162),"ok",bv197-bv162); end
+  def bw198; @bw198 ||= excel_if(excel_comparison(bw197,"==",bw162),"ok",bw197-bw162); end
+  def bx198; @bx198 ||= excel_if(excel_comparison(bx197,"==",bx162),"ok",bx197-bx162); end
+  def by198; @by198 ||= excel_if(excel_comparison(by197,"==",by162),"ok",by197-by162); end
+  def bz198; @bz198 ||= excel_if(excel_comparison(bz197,"==",bz162),"ok",bz197-bz162); end
+  def ca198; @ca198 ||= excel_if(excel_comparison(ca197,"==",ca162),"ok",ca197-ca162); end
+  def cc198; @cc198 ||= excel_if(excel_comparison(cc197,"==",cc162),"ok",cc197-cc162); end
+  def cd198; @cd198 ||= excel_if(excel_comparison(cd197,"==",cd162),"ok",cd197-cd162); end
+  def cf198; @cf198 ||= excel_if(excel_comparison(cf197,"==",cf162),"ok",cf197-cf162); end
+  def cg198; @cg198 ||= excel_if(excel_comparison(cg197,"==",cg162),"ok",cg197-cg162); end
+  def ch198; @ch198 ||= excel_if(excel_comparison(ch197,"==",ch162),"ok",ch197-ch162); end
+  def ci198; @ci198 ||= excel_if(excel_comparison(ci197,"==",ci162),"ok",ci197-ci162); end
+  def cj198; @cj198 ||= excel_if(excel_comparison(cj197,"==",cj162),"ok",cj197-cj162); end
+  def ck198; @ck198 ||= excel_if(excel_comparison(ck197,"==",ck162),"ok",ck197-ck162); end
+  def cl198; @cl198 ||= excel_if(excel_comparison(cl197,"==",cl162),"ok",cl197-cl162); end
+  def cm198; @cm198 ||= excel_if(excel_comparison(cm197,"==",cm162),"ok",cm197-cm162); end
+  def cn198; @cn198 ||= excel_if(excel_comparison(cn197,"==",cn162),"ok",cn197-cn162); end
+  def cp198; @cp198 ||= excel_if(excel_comparison(cp197,"==",cp162),"ok",cp197-cp162); end
+  def cq198; @cq198 ||= excel_if(excel_comparison(cq197,"==",cq162),"ok",cq197-cq162); end
 end
 

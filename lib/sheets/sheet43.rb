@@ -746,6 +746,94 @@ class Sheet43 < Spreadsheet
   def m165; 4.288; end
   def n165; 4.288; end
   def o165; 4.288; end
+  def g170; 0.0610330986802303; end
+  def o170; 0.0443425483278461; end
+  def g171; 0.0421068817943651; end
+  def o171; 0.0445683091105841; end
+  def g172; 0.0329753381174178; end
+  def o172; 0.0420536761488789; end
+  def g173; 0.0329753381174178; end
+  def o173; 0.0420536761488789; end
+  def g174; 0.0574219364865132; end
+  def o174; 0.0316860093269713; end
+  def g175; 0.045063138171333894; end
+  def o175; 0.031998033495916005; end
+  def g176; 0.0293763238987781; end
+  def o176; 0.0295852122695515; end
+  def g177; 0.0293763238987781; end
+  def o177; 0.0295852122695515; end
+  def g178; 0.201345243167017; end
+  def o178; 0.025; end
+  def g179; 0.0; end
+  def o179; 0.0; end
+  def g180; 0.00902990680754686; end
+  def o180; 0.00902990680754686; end
+  def g185; 0.47524807715538003; end
+  def o185; 0.22501788760597; end
+  def g186; 0.460892385352151; end
+  def o186; 0.31502829684454503; end
+  def g187; 0.0; end
+  def o187; 0.0; end
+  def g188; 0.0; end
+  def o188; 0.0; end
+  def g189; 1.94801756007383; end
+  def o189; 0.26468512736988004; end
+  def g190; 1.24107584756718; end
+  def o190; 0.319851713565802; end
+  def g191; 0.0; end
+  def o191; 0.0; end
+  def g192; 0.0; end
+  def o192; 0.0; end
+  def g193; 7.6166301057291905; end
+  def o193; 2.2118915299361803; end
+  def g194; 0.0; end
+  def o194; 0.0; end
+  def g195; 0.8458118959140519; end
+  def o195; 0.8458118959140519; end
+  def g200; 0.00155258373515147; end
+  def o200; 0.0015599513990586999; end
+  def g201; 0.00155258373515147; end
+  def o201; 0.0015599513990586999; end
+  def g202; 0.0; end
+  def o202; 0.0; end
+  def g203; 0.0; end
+  def o203; 0.0; end
+  def g204; 0.00157894736842105; end
+  def o204; 0.00157894736842105; end
+  def g205; 0.00157894736842105; end
+  def o205; 0.00157894736842105; end
+  def g206; 0.0; end
+  def o206; 0.0; end
+  def g207; 0.0; end
+  def o207; 0.0; end
+  def g208; 0.08894736842105261; end
+  def o208; 0.00157894736842105; end
+  def g209; 0.0; end
+  def o209; 0.0; end
+  def g210; 0.0636888078778714; end
+  def o210; 0.0636888078778714; end
+  def g215; 0.180130890649904; end
+  def o215; 0.0944088628031859; end
+  def g216; 0.521136155494754; end
+  def o216; 0.134032026214314; end
+  def g217; 0.0; end
+  def o217; 0.0; end
+  def g218; 0.0; end
+  def o218; 0.0; end
+  def g219; 0.058423176032189106; end
+  def o219; 0.00223568998794989; end
+  def g220; 0.007428985523635959; end
+  def o220; 0.0021747664935209098; end
+  def g221; 0.0; end
+  def o221; 0.0; end
+  def g222; 0.0; end
+  def o222; 0.0; end
+  def g223; 0.7665639144901181; end
+  def o223; 0.21781076330412402; end
+  def g224; 0.0; end
+  def o224; 0.0; end
+  def g230; 0.29659430379083046; end
+  def o230; 0.29659430379083046; end
   def e243; 5.0; end
   def e244; 12.0; end
   def e245; 12.0; end
@@ -1293,15 +1381,15 @@ class Sheet43 < Spreadsheet
   def m344; 20.0; end
   def n344; 20.0; end
   def o344; 20.0; end
-  def g345; 43.75; end
-  def h345; 43.75; end
-  def i345; 43.75; end
-  def j345; 43.75; end
-  def k345; 43.75; end
-  def l345; 43.75; end
-  def m345; 43.75; end
-  def n345; 43.75; end
-  def o345; 43.75; end
+  def g345; 41.99999999999999; end
+  def h345; 41.99999999999999; end
+  def i345; 41.99999999999999; end
+  def j345; 41.99999999999999; end
+  def k345; 41.99999999999999; end
+  def l345; 41.99999999999999; end
+  def m345; 41.99999999999999; end
+  def n345; 41.99999999999999; end
+  def o345; 41.99999999999999; end
   def g346; 59.44; end
   def h346; 59.44; end
   def i346; 59.44; end
@@ -1401,22 +1489,22 @@ class Sheet43 < Spreadsheet
   def m359; 14.763075202012748; end
   def n359; 14.505151101006373; end
   def o359; 14.247226999999999; end
-  def g360; 32.8004052261424; end
-  def h360; 30.786040197874602; end
-  def i360; 28.7716751696068; end
-  def j360; 26.757310141339; end
-  def k360; 24.7429451130712; end
-  def l360; 22.7285800848034; end
-  def m360; 20.7142150565356; end
-  def n360; 18.6998500282678; end
+  def g360; 31.0504052261424; end
+  def h360; 29.2547901978746; end
+  def i360; 27.459175169606798; end
+  def j360; 25.663560141338998; end
+  def k360; 23.867945113071197; end
+  def l360; 22.072330084803397; end
+  def m360; 20.276715056535597; end
+  def n360; 18.481100028267797; end
   def o360; 16.685485; end
-  def h361; 42.15456367402668; end
-  def i361; 39.41020429202287; end
-  def j361; 36.665844910019054; end
-  def k361; 33.92148552801524; end
-  def l361; 31.177126146011425; end
-  def m361; 28.43276676400761; end
-  def n361; 25.688407382003795; end
+  def h361; 35.435506; end
+  def i361; 33.651011999999994; end
+  def j361; 31.866517999999996; end
+  def k361; 30.082023999999997; end
+  def l361; 28.29753; end
+  def m361; 26.513036; end
+  def n361; 24.728542; end
   def o361; 22.944048; end
   def g362; 110.0; end
   def h362; 98.438186125; end
@@ -1453,14 +1541,14 @@ class Sheet43 < Spreadsheet
   def m365; 245.2939438045733; end
   def n365; 212.5683924022867; end
   def g366; 1052.8654813374299; end
-  def h366; 944.6655286702511; end
-  def i366; 836.4655760030723; end
-  def j366; 728.2656233358936; end
-  def k366; 620.0656706687148; end
-  def l366; 511.86571800153604; end
-  def m366; 403.6657653343573; end
-  def n366; 295.4658126671785; end
-  def o366; 187.26585999999998; end
+  def h366; 988.4451609787636; end
+  def i366; 924.0248406200974; end
+  def j366; 859.6045202614312; end
+  def k366; 795.1841999027649; end
+  def l366; 730.7638795440987; end
+  def m366; 666.3435591854325; end
+  def n366; 601.9232388267662; end
+  def o366; 537.5029184681005; end
   def h367; 119.55970343749999; end
   def i367; 115.02240687499999; end
   def j367; 110.48511031249998; end
@@ -1504,14 +1592,14 @@ class Sheet43 < Spreadsheet
   def m374; 13.875; end
   def n374; 13.6875; end
   def o374; 13.5; end
-  def g375; 25.249999999999996; end
-  def h375; 23.859374999999996; end
-  def i375; 22.468749999999996; end
-  def j375; 21.078124999999996; end
-  def k375; 19.687499999999996; end
-  def l375; 18.296874999999996; end
-  def m375; 16.906249999999996; end
-  def n375; 15.515624999999996; end
+  def g375; 23.195999999999998; end
+  def h375; 22.062124999999998; end
+  def i375; 20.92825; end
+  def j375; 19.794375; end
+  def k375; 18.6605; end
+  def l375; 17.526625; end
+  def m375; 16.39275; end
+  def n375; 15.258875; end
   def o375; 14.124999999999998; end
   def g376; 28.999999999999996; end
   def h376; 27.140624999999996; end
@@ -4531,5 +4619,41 @@ class Sheet43 < Spreadsheet
   def m894; @m894 ||= m666; end
   def n894; @n894 ||= n666; end
   def o894; @o894 ||= o666; end
+  def c911; "AQ.01"; end
+  def g911; @g911 ||= sumproduct(a('g673','g680'),a('g170','g177')); end
+  def o911; @o911 ||= sumproduct(a('o673','o680'),a('o170','o177')); end
+  def c912; "AQ.02"; end
+  def g912; @g912 ||= sumproduct(a('g673','g680'),a('g185','g192')); end
+  def o912; @o912 ||= sumproduct(a('o673','o680'),a('o185','o192')); end
+  def c913; "AQ.03"; end
+  def g913; @g913 ||= sumproduct(a('g673','g680'),a('g200','g207')); end
+  def o913; @o913 ||= sumproduct(a('o673','o680'),a('o200','o207')); end
+  def c914; "AQ.04"; end
+  def g914; @g914 ||= sumproduct(a('g673','g680'),a('g215','g222')); end
+  def o914; @o914 ||= sumproduct(a('o673','o680'),a('o215','o222')); end
+  def c920; "AQ.01"; end
+  def g920; @g920 ||= sumproduct(a('g681','g682'),a('g178','g179')); end
+  def o920; @o920 ||= sumproduct(a('o681','o682'),a('o178','o179')); end
+  def c921; "AQ.02"; end
+  def g921; @g921 ||= sumproduct(a('g681','g682'),a('g193','g194')); end
+  def o921; @o921 ||= sumproduct(a('o681','o682'),a('o193','o194')); end
+  def c922; "AQ.03"; end
+  def g922; @g922 ||= sumproduct(a('g681','g682'),a('g208','g209')); end
+  def o922; @o922 ||= sumproduct(a('o681','o682'),a('o208','o209')); end
+  def c923; "AQ.04"; end
+  def g923; @g923 ||= sumproduct(a('g681','g682'),a('g223','g224')); end
+  def o923; @o923 ||= sumproduct(a('o681','o682'),a('o223','o224')); end
+  def c929; "AQ.01"; end
+  def g929; @g929 ||= g683*g230*g180; end
+  def o929; @o929 ||= o683*o230*o180; end
+  def c930; "AQ.02"; end
+  def g930; @g930 ||= g683*g230*g195; end
+  def o930; @o930 ||= o683*o230*o195; end
+  def c931; "AQ.03"; end
+  def g931; @g931 ||= g683*g230*g210; end
+  def o931; @o931 ||= o683*o230*o210; end
+  def c932; "AQ.04"; end
+  def g932; @g932 ||= g683*g230*g1249; end
+  def o932; @o932 ||= o683*o230*o1249; end
 end
 

@@ -2815,28 +2815,28 @@ class Sheet3 < Spreadsheet
   def q308; @q308 ||= -sheet27.o103; end
   def c309; "IX.a"; end
   def d309; "Domestic space heating and hot water"; end
-  def h309; @h309 ||= -sheet38.f1144; end
-  def i309; @i309 ||= -sheet38.g1144; end
-  def j309; @j309 ||= -sheet38.h1144; end
-  def k309; @k309 ||= -sheet38.i1144; end
-  def l309; @l309 ||= -sheet38.j1144; end
-  def m309; @m309 ||= -sheet38.k1144; end
-  def n309; @n309 ||= -sheet38.l1144; end
-  def o309; @o309 ||= -sheet38.m1144; end
-  def p309; @p309 ||= -sheet38.n1144; end
-  def q309; @q309 ||= -sheet38.o1144; end
+  def h309; @h309 ||= -sheet38.f1186; end
+  def i309; @i309 ||= -sheet38.g1186; end
+  def j309; @j309 ||= -sheet38.h1186; end
+  def k309; @k309 ||= -sheet38.i1186; end
+  def l309; @l309 ||= -sheet38.j1186; end
+  def m309; @m309 ||= -sheet38.k1186; end
+  def n309; @n309 ||= -sheet38.l1186; end
+  def o309; @o309 ||= -sheet38.m1186; end
+  def p309; @p309 ||= -sheet38.n1186; end
+  def q309; @q309 ||= -sheet38.o1186; end
   def c310; "IX.c"; end
   def d310; "Commercial heating and cooling"; end
-  def h310; @h310 ||= -sheet39.f719; end
-  def i310; @i310 ||= -sheet39.g719; end
-  def j310; @j310 ||= -sheet39.h719; end
-  def k310; @k310 ||= -sheet39.i719; end
-  def l310; @l310 ||= -sheet39.j719; end
-  def m310; @m310 ||= -sheet39.k719; end
-  def n310; @n310 ||= -sheet39.l719; end
-  def o310; @o310 ||= -sheet39.m719; end
-  def p310; @p310 ||= -sheet39.n719; end
-  def q310; @q310 ||= -sheet39.o719; end
+  def h310; @h310 ||= -sheet39.f733; end
+  def i310; @i310 ||= -sheet39.g733; end
+  def j310; @j310 ||= -sheet39.h733; end
+  def k310; @k310 ||= -sheet39.i733; end
+  def l310; @l310 ||= -sheet39.j733; end
+  def m310; @m310 ||= -sheet39.k733; end
+  def n310; @n310 ||= -sheet39.l733; end
+  def o310; @o310 ||= -sheet39.m733; end
+  def p310; @p310 ||= -sheet39.n733; end
+  def q310; @q310 ||= -sheet39.o733; end
   def c311; "X.a"; end
   def d311; "Domestic lighting, appliances, and cooking"; end
   def h311; @h311 ||= -sheet40.f183; end
@@ -2864,15 +2864,15 @@ class Sheet3 < Spreadsheet
   def c313; "XI.a"; end
   def d313; "Industrial processes"; end
   def h313; 114.37233546157294; end
-  def i313; @i313 ||= -sheet42.g430; end
-  def j313; @j313 ||= -sheet42.h430; end
-  def k313; @k313 ||= -sheet42.i430; end
-  def l313; @l313 ||= -sheet42.j430; end
-  def m313; @m313 ||= -sheet42.k430; end
-  def n313; @n313 ||= -sheet42.l430; end
-  def o313; @o313 ||= -sheet42.m430; end
-  def p313; @p313 ||= -sheet42.n430; end
-  def q313; @q313 ||= -sheet42.o430; end
+  def i313; @i313 ||= -sheet42.g438; end
+  def j313; @j313 ||= -sheet42.h438; end
+  def k313; @k313 ||= -sheet42.i438; end
+  def l313; @l313 ||= -sheet42.j438; end
+  def m313; @m313 ||= -sheet42.k438; end
+  def n313; @n313 ||= -sheet42.l438; end
+  def o313; @o313 ||= -sheet42.m438; end
+  def p313; @p313 ||= -sheet42.n438; end
+  def q313; @q313 ||= -sheet42.o438; end
   def c314; "XII.a"; end
   def d314; "Domestic passenger transport"; end
   def h314; @h314 ||= -sheet43.f737; end
@@ -3393,7 +3393,7 @@ class Sheet3 < Spreadsheet
   def t403; 0.0; end
   def u403; 419.9888000000001; end
   def h404; "Solid"; end
-  def i404; @i404 ||= -sheet38.o1131-sheet39.o707; end
+  def i404; @i404 ||= -sheet38.o1173-sheet39.o721; end
   def j404; "CHP"; end
   def n404; "Oil"; end
   def o404; @o404 ||= sumif(a('h370','h460'),n404,a('i370','i460')); end
@@ -3404,7 +3404,7 @@ class Sheet3 < Spreadsheet
   def t404; 481.5771354262274; end
   def u404; 0.0; end
   def h405; "Liquid"; end
-  def i405; @i405 ||= -sheet38.o1132-sheet39.o708; end
+  def i405; @i405 ||= -sheet38.o1174-sheet39.o722; end
   def j405; "CHP"; end
   def n405; "Oil imports"; end
   def o405; @o405 ||= sumif(a('h370','h460'),n405,a('i370','i460')); end
@@ -3415,7 +3415,7 @@ class Sheet3 < Spreadsheet
   def t405; 0.0; end
   def u405; 373.87377542238823; end
   def h406; "Gas"; end
-  def i406; @i406 ||= -sheet38.o1133-sheet39.o709; end
+  def i406; @i406 ||= -sheet38.o1175-sheet39.o723; end
   def j406; "CHP"; end
   def n406; "Oil reserves"; end
   def o406; @o406 ||= sumif(a('h370','h460'),n406,a('i370','i460')); end
@@ -3426,7 +3426,7 @@ class Sheet3 < Spreadsheet
   def t406; 0.0; end
   def u406; 107.70336000383915; end
   def h407; "CHP"; end
-  def i407; @i407 ||= sheet38.o1130+sheet39.o706; end
+  def i407; @i407 ||= sheet38.o1172+sheet39.o720; end
   def j407; "Electricity grid"; end
   def n407; "Other waste"; end
   def o407; @o407 ||= sumif(a('h370','h460'),n407,a('i370','i460')); end
@@ -3437,7 +3437,7 @@ class Sheet3 < Spreadsheet
   def t407; 0.0; end
   def u407; 59.072098478484804; end
   def h408; "CHP"; end
-  def i408; @i408 ||= sheet38.o1138+sheet39.o713; end
+  def i408; @i408 ||= sheet38.o1180+sheet39.o727; end
   def j408; "Losses"; end
   def n408; "Over generation / exports"; end
   def o408; @o408 ||= sumif(a('h370','h460'),n408,a('i370','i460')); end
@@ -3580,58 +3580,58 @@ class Sheet3 < Spreadsheet
   def t420; 0.0; end
   def u420; 97.39043532000001; end
   def h421; "Solar Thermal"; end
-  def i421; @i421 ||= -sheet38.o1150; end
+  def i421; @i421 ||= -sheet38.o1192; end
   def j421; "Heating and cooling - homes"; end
   def h422; "H2"; end
   def i422; @i422 ||= -sheet43.o709; end
   def j422; "Road transport"; end
   def h423; "Pumped heat"; end
-  def i423; @i423 ||= -sheet38.o1151; end
+  def i423; @i423 ||= -sheet38.o1193; end
   def j423; "Heating and cooling - homes"; end
   def h424; "Pumped heat"; end
-  def i424; @i424 ||= -sheet39.o725; end
+  def i424; @i424 ||= -sheet39.o739; end
   def j424; "Heating and cooling - commercial"; end
   def h425; "CHP"; end
-  def i425; @i425 ||= sheet38.o1137; end
+  def i425; @i425 ||= sheet38.o1179; end
   def j425; "Heating and cooling - homes"; end
   def h426; "CHP"; end
-  def i426; @i426 ||= sheet39.o712; end
+  def i426; @i426 ||= sheet39.o726; end
   def j426; "Heating and cooling - commercial"; end
   def h427; "District heating"; end
-  def i427; @i427 ||= -sheet38.o1149; end
+  def i427; @i427 ||= -sheet38.o1191; end
   def j427; "Heating and cooling - homes"; end
   def h428; "District heating"; end
-  def i428; @i428 ||= -sheet39.o724; end
+  def i428; @i428 ||= -sheet39.o738; end
   def j428; "Heating and cooling - commercial"; end
   def h429; "District heating"; end
-  def i429; @i429 ||= -sheet42.o434-sheet48.o176; end
+  def i429; @i429 ||= -sheet42.o442-sheet48.o176; end
   def j429; "Industry"; end
   def h430; "District heating"; end
   def i430; @i430 ||= i401-sum(a('i427','i429')); end
   def j430; "Losses"; end
   def h431; "Electricity grid"; end
-  def i431; @i431 ||= -sheet38.o1115-sheet27.o103; end
+  def i431; @i431 ||= -sheet38.o1157-sheet27.o103; end
   def j431; "Heating and cooling - homes"; end
   def h432; "Solid"; end
-  def i432; @i432 ||= -sheet38.o1117; end
+  def i432; @i432 ||= -sheet38.o1159; end
   def j432; "Heating and cooling - homes"; end
   def h433; "Liquid"; end
-  def i433; @i433 ||= -sheet38.o1118; end
+  def i433; @i433 ||= -sheet38.o1160; end
   def j433; "Heating and cooling - homes"; end
   def h434; "Gas"; end
-  def i434; @i434 ||= -sheet38.o1119; end
+  def i434; @i434 ||= -sheet38.o1161; end
   def j434; "Heating and cooling - homes"; end
   def h435; "Electricity grid"; end
-  def i435; @i435 ||= -sheet39.o691; end
+  def i435; @i435 ||= -sheet39.o705; end
   def j435; "Heating and cooling - commercial"; end
   def h436; "Solid"; end
-  def i436; @i436 ||= -sheet39.o693; end
+  def i436; @i436 ||= -sheet39.o707; end
   def j436; "Heating and cooling - commercial"; end
   def h437; "Liquid"; end
-  def i437; @i437 ||= -sheet39.o694; end
+  def i437; @i437 ||= -sheet39.o708; end
   def j437; "Heating and cooling - commercial"; end
   def h438; "Gas"; end
-  def i438; @i438 ||= -sheet39.o695; end
+  def i438; @i438 ||= -sheet39.o709; end
   def j438; "Heating and cooling - commercial"; end
   def h439; "Electricity grid"; end
   def i439; @i439 ||= -sheet40.o183; end
@@ -3646,16 +3646,16 @@ class Sheet3 < Spreadsheet
   def i442; @i442 ||= -sheet41.o156; end
   def j442; "Lighting & appliances - commercial"; end
   def h443; "Electricity grid"; end
-  def i443; @i443 ||= -sheet42.o430-sheet48.o173-sheet49.o208; end
+  def i443; @i443 ||= -sheet42.o438-sheet48.o173-sheet49.o208; end
   def j443; "Industry"; end
   def h444; "Solid"; end
-  def i444; @i444 ||= -sheet42.o431-sheet49.o209; end
+  def i444; @i444 ||= -sheet42.o439-sheet49.o209; end
   def j444; "Industry"; end
   def h445; "Liquid"; end
-  def i445; @i445 ||= -sheet42.o432-sheet48.o174; end
+  def i445; @i445 ||= -sheet42.o440-sheet48.o174; end
   def j445; "Industry"; end
   def h446; "Gas"; end
-  def i446; @i446 ||= -sheet42.o433-sheet48.o175-sheet49.o210; end
+  def i446; @i446 ||= -sheet42.o441-sheet48.o175-sheet49.o210; end
   def j446; "Industry"; end
   def h447; "Electricity grid"; end
   def i447; @i447 ||= -sheet31.o537; end

@@ -77,6 +77,14 @@ class Sheet37 < Spreadsheet
   def m25; 0.6688; end
   def n25; 0.8172; end
   def o25; 1.0; end
+  def g30; 0.0; end
+  def o30; 0.0; end
+  def g35; 0.566064647833606; end
+  def o35; 0.566064647833606; end
+  def g40; 0.0; end
+  def o40; 0.0; end
+  def g45; 0.00800046529886797; end
+  def o45; 0.00800046529886797; end
   def d50; 8.766; end
   def e50; 0.16666666666666666; end
   def f50; 1.0; end
@@ -965,6 +973,18 @@ class Sheet37 < Spreadsheet
   def m224; @m224 ||= m133; end
   def n224; @n224 ||= n133; end
   def o224; @o224 ||= o133; end
+  def c230; "AQ.01"; end
+  def g230; @g230 ||= g30*g127; end
+  def o230; @o230 ||= o30*o127; end
+  def c231; "AQ.02"; end
+  def g231; @g231 ||= g35*g127; end
+  def o231; @o231 ||= o35*o127; end
+  def c232; "AQ.03"; end
+  def g232; @g232 ||= g40*g127; end
+  def o232; @o232 ||= o40*o127; end
+  def c233; "AQ.04"; end
+  def g233; @g233 ||= g45*g127; end
+  def o233; @o233 ||= o45*o127; end
   def c249; "C1.High"; end
   def g249; @g249 ||= g163; end
   def h249; @h249 ||= h163; end

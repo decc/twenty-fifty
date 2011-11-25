@@ -167,6 +167,30 @@ class Sheet18 < Spreadsheet
   def j83; 0.8599271238174099; end
   def f89; 2.0; end
   def f92; 0.5; end
+  def g97; 0.00934023768868583; end
+  def o97; 0.00525450380511433; end
+  def g98; 0.16860599999999998; end
+  def o98; 0.0245; end
+  def g99; 0.0382842830163395; end
+  def o99; 0.0382842830163395; end
+  def g100; 0.0031205569828688497; end
+  def o100; 0.0031198025331499297; end
+  def g105; 0.5999423789764929; end
+  def o105; 0.235703444480068; end
+  def g106; 0.354042; end
+  def o106; 0.307; end
+  def g107; 0.963401106167265; end
+  def o107; 0.963401106167265; end
+  def g108; 0.12888828925475598; end
+  def o108; 0.127021050053592; end
+  def g113; 0.395950138188897; end
+  def o113; 0.223122706636693; end
+  def g114; 0.0422439859978518; end
+  def o114; 0.0422439859978518; end
+  def g115; 0.342019453643933; end
+  def o115; 0.198324753836353; end
+  def g116; 0.0023472134053897998; end
+  def o116; 0.00235561870541564; end
   def g152; 2010.0; end
   def h152; 2015.0; end
   def i152; 2020.0; end
@@ -632,6 +656,20 @@ class Sheet18 < Spreadsheet
   def m260; @m260 ||= m226*sheet16.f84+m245*sheet16.f83+m255*sheet16.f85; end
   def n260; @n260 ||= n226*sheet16.f84+n245*sheet16.f83+n255*sheet16.f85; end
   def o260; @o260 ||= o226*sheet16.f84+o245*sheet16.f83+o255*sheet16.f85; end
+  def g263; @g263 ||= g245-g264; end
+  def o263; @o263 ||= o245-o264; end
+  def g264; @g264 ||= g245*sheet3.i253; end
+  def o264; @o264 ||= o245*sheet3.q253; end
+  def g265; 8.534858112; end
+  def o265; 0.0; end
+  def g266; @g266 ||= -g326; end
+  def o266; @o266 ||= -o326; end
+  def g270; @g270 ||= sumproduct(a('g263','g266'),a('g97','g100')); end
+  def o270; @o270 ||= sumproduct(a('o263','o266'),a('o97','o100')); end
+  def g271; @g271 ||= sumproduct(a('g263','g266'),a('g105','g108')); end
+  def o271; @o271 ||= sumproduct(a('o263','o266'),a('o105','o108')); end
+  def g272; @g272 ||= sumproduct(a('g263','g266'),a('g113','g116')); end
+  def o272; @o272 ||= sumproduct(a('o263','o266'),a('o113','o116')); end
   def f279; 4.1; end
   def g279; 4.0568; end
   def h279; 0.0; end
@@ -901,6 +939,15 @@ class Sheet18 < Spreadsheet
   def m339; @m339 ||= m260; end
   def n339; @n339 ||= n260; end
   def o339; @o339 ||= o260; end
+  def c345; "AQ.01"; end
+  def g345; @g345 ||= g270; end
+  def o345; @o345 ||= o270; end
+  def c346; "AQ.02"; end
+  def g346; @g346 ||= g271; end
+  def o346; @o346 ||= o271; end
+  def c347; "AQ.03"; end
+  def g347; @g347 ||= g272; end
+  def o347; @o347 ||= o272; end
   def c363; "B.02"; end
   def f363; @f363 ||= f280; end
   def g363; @g363 ||= g280; end

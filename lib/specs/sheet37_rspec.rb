@@ -2396,6 +2396,38 @@ describe 'Sheet37' do
     sheet37.o224.should be_within(1.0e-08).of(0.0)
   end
 
+  it 'cell g230 should equal 0.0' do
+    sheet37.g230.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell o230 should equal 0.0' do
+    sheet37.o230.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell g231 should equal 0.0' do
+    sheet37.g231.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell o231 should equal 0.0' do
+    sheet37.o231.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell g232 should equal 0.0' do
+    sheet37.g232.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell o232 should equal 0.0' do
+    sheet37.o232.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell g233 should equal 0.0' do
+    sheet37.g233.should be_within(1.0e-08).of(0.0)
+  end
+
+  it 'cell o233 should equal 0.0' do
+    sheet37.o233.should be_within(1.0e-08).of(0.0)
+  end
+
   it 'cell g249 should equal 0.0' do
     sheet37.g249.should be_within(1.0e-08).of(0.0)
   end
