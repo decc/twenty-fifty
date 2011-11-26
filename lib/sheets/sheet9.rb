@@ -1111,87 +1111,87 @@ class Sheet9 < Spreadsheet
   def a15; "V.b"; end
   def b15; "Bioenergy imports"; end
   def c15; "Bioenergy"; end
-  def e15; 0.0; end
-  def f15; 0.0; end
-  def g15; 0.0; end
-  def h15; 0.0; end
-  def i15; 0.0; end
-  def j15; 0.0; end
-  def k15; 0.0; end
-  def l15; 0.0; end
-  def m15; 0.0; end
-  def o15; 0.0; end
-  def p15; 0.0; end
-  def q15; 0.0; end
-  def r15; 0.0; end
-  def s15; 0.0; end
-  def t15; 0.0; end
-  def u15; 0.0; end
-  def v15; 0.0; end
-  def w15; 0.0; end
-  def y15; 56.0; end
-  def z15; 56.0; end
-  def aa15; 56.0; end
-  def ab15; 56.0; end
-  def ac15; 56.0; end
-  def ad15; 56.0; end
-  def ae15; 56.0; end
-  def af15; 56.0; end
-  def ag15; 56.0; end
-  def ai15; 56.0; end
-  def aj15; 56.0; end
-  def ak15; 56.0; end
-  def al15; 56.0; end
-  def am15; 56.0; end
-  def an15; 56.0; end
-  def ao15; 56.0; end
-  def ap15; 56.0; end
-  def aq15; 56.0; end
-  def as15; 56.0; end
-  def at15; 1176.6180629020405; end
+  def e15; @e15 ||= iferror(index(sheet30.a('g136','g140'),na),0.0); end
+  def f15; @f15 ||= iferror(index(sheet30.a('h136','h140'),na),0.0); end
+  def g15; @g15 ||= iferror(index(sheet30.a('i136','i140'),na),0.0); end
+  def h15; @h15 ||= iferror(index(sheet30.a('j136','j140'),na),0.0); end
+  def i15; @i15 ||= iferror(index(sheet30.a('k136','k140'),na),0.0); end
+  def j15; @j15 ||= iferror(index(sheet30.a('l136','l140'),na),0.0); end
+  def k15; @k15 ||= iferror(index(sheet30.a('m136','m140'),na),0.0); end
+  def l15; @l15 ||= iferror(index(sheet30.a('n136','n140'),na),0.0); end
+  def m15; @m15 ||= iferror(index(sheet30.a('o136','o140'),na),0.0); end
+  def o15; @o15 ||= iferror(index(sheet30.a('g136','g140'),na),0.0); end
+  def p15; @p15 ||= iferror(index(sheet30.a('h136','h140'),na),0.0); end
+  def q15; @q15 ||= iferror(index(sheet30.a('i136','i140'),na),0.0); end
+  def r15; @r15 ||= iferror(index(sheet30.a('j136','j140'),na),0.0); end
+  def s15; @s15 ||= iferror(index(sheet30.a('k136','k140'),na),0.0); end
+  def t15; @t15 ||= iferror(index(sheet30.a('l136','l140'),na),0.0); end
+  def u15; @u15 ||= iferror(index(sheet30.a('m136','m140'),na),0.0); end
+  def v15; @v15 ||= iferror(index(sheet30.a('n136','n140'),na),0.0); end
+  def w15; @w15 ||= iferror(index(sheet30.a('o136','o140'),na),0.0); end
+  def y15; @y15 ||= iferror(sheet30.g138,0.0); end
+  def z15; @z15 ||= iferror(sheet30.h138,0.0); end
+  def aa15; @aa15 ||= iferror(sheet30.i138,0.0); end
+  def ab15; @ab15 ||= iferror(sheet30.j138,0.0); end
+  def ac15; @ac15 ||= iferror(sheet30.k138,0.0); end
+  def ad15; @ad15 ||= iferror(sheet30.l138,0.0); end
+  def ae15; @ae15 ||= iferror(sheet30.m138,0.0); end
+  def af15; @af15 ||= iferror(sheet30.n138,0.0); end
+  def ag15; @ag15 ||= iferror(sheet30.o138,0.0); end
+  def ai15; @ai15 ||= sum(e15,o15,y15); end
+  def aj15; @aj15 ||= sum(f15,p15,z15); end
+  def ak15; @ak15 ||= sum(g15,q15,aa15); end
+  def al15; @al15 ||= sum(h15,r15,ab15); end
+  def am15; @am15 ||= sum(i15,s15,ac15); end
+  def an15; @an15 ||= sum(j15,t15,ad15); end
+  def ao15; @ao15 ||= sum(k15,u15,ae15); end
+  def ap15; @ap15 ||= sum(l15,v15,af15); end
+  def aq15; @aq15 ||= sum(m15,w15,ag15); end
+  def as15; @as15 ||= average(sheet9.a('ai15','aq15')); end
+  def at15; @at15 ||= (sumproduct(a('aj15','aq15'),sheet15.a('d28','k28'))*5.0)+ai15; end
   def av15; 0.0; end
   def aw15; 5.0; end
-  def ay15; 0.0; end
-  def az15; 0.0; end
-  def ba15; 0.0; end
-  def bb15; 0.0; end
-  def bc15; 0.0; end
-  def bd15; 0.0; end
-  def be15; 0.0; end
-  def bf15; 0.0; end
-  def bg15; 0.0; end
-  def bi15; 0.0; end
-  def bj15; 0.0; end
-  def bk15; 0.0; end
-  def bl15; 0.0; end
-  def bm15; 0.0; end
-  def bn15; 0.0; end
-  def bo15; 0.0; end
-  def bp15; 0.0; end
-  def bq15; 0.0; end
-  def bs15; 56.0; end
-  def bt15; 56.0; end
-  def bu15; 56.0; end
-  def bv15; 56.0; end
-  def bw15; 56.0; end
-  def bx15; 56.0; end
-  def by15; 56.0; end
-  def bz15; 56.0; end
-  def ca15; 56.0; end
-  def cc15; 56.0; end
-  def cd15; 1176.6180629020405; end
-  def cf15; 0.0; end
-  def cg15; 0.0; end
-  def ch15; 0.0; end
-  def ci15; 0.0; end
-  def cj15; 0.0; end
-  def ck15; 0.0; end
-  def cl15; 0.0; end
-  def cm15; 0.0; end
-  def cn15; 0.0; end
-  def cp15; 0.0; end
-  def cq15; 0.0; end
-  def cr15; "ok"; end
+  def ay15; @ay15 ||= -pmt(av15,aw15,e15*3.0); end
+  def az15; @az15 ||= -pmt(av15,aw15,f15*5.0); end
+  def ba15; @ba15 ||= -pmt(av15,aw15,g15*5.0); end
+  def bb15; @bb15 ||= -pmt(av15,aw15,h15*5.0); end
+  def bc15; @bc15 ||= -pmt(av15,aw15,i15*5.0); end
+  def bd15; @bd15 ||= -pmt(av15,aw15,j15*5.0); end
+  def be15; @be15 ||= -pmt(av15,aw15,k15*5.0); end
+  def bf15; @bf15 ||= -pmt(av15,aw15,l15*5.0); end
+  def bg15; @bg15 ||= -pmt(av15,aw15,m15*5.0); end
+  def bi15; @bi15 ||= ay15; end
+  def bj15; @bj15 ||= az15+excel_if(excel_comparison(bj2-bi2,"<",aw15),ay15,0.0); end
+  def bk15; @bk15 ||= ba15+excel_if(excel_comparison(bk2-bi2,"<",aw15),ay15,0.0)+excel_if(excel_comparison(bk2-bj2,"<",aw15),az15,0.0); end
+  def bl15; @bl15 ||= bb15+excel_if(excel_comparison(bl2-bi2,"<",aw15),ay15,0.0)+excel_if(excel_comparison(bl2-bj2,"<",aw15),az15,0.0)+excel_if(excel_comparison(bl2-bk2,"<",aw15),ba15,0.0); end
+  def bm15; @bm15 ||= bc15+excel_if(excel_comparison(bm2-bi2,"<",aw15),ay15,0.0)+excel_if(excel_comparison(bm2-bj2,"<",aw15),az15,0.0)+excel_if(excel_comparison(bm2-bk2,"<",aw15),ba15,0.0)+excel_if(excel_comparison(bm2-bl2,"<",aw15),bb15,0.0); end
+  def bn15; @bn15 ||= bd15+excel_if(excel_comparison(bn2-bi2,"<",aw15),ay15,0.0)+excel_if(excel_comparison(bn2-bj2,"<",aw15),az15,0.0)+excel_if(excel_comparison(bn2-bk2,"<",aw15),ba15,0.0)+excel_if(excel_comparison(bn2-bl2,"<",aw15),bb15,0.0)+excel_if(excel_comparison(bn2-bm2,"<",aw15),bc15,0.0); end
+  def bo15; @bo15 ||= be15+excel_if(excel_comparison(bo2-bi2,"<",aw15),ay15,0.0)+excel_if(excel_comparison(bo2-bj2,"<",aw15),az15,0.0)+excel_if(excel_comparison(bo2-bk2,"<",aw15),ba15,0.0)+excel_if(excel_comparison(bo2-bl2,"<",aw15),bb15,0.0)+excel_if(excel_comparison(bo2-bm2,"<",aw15),bc15,0.0)+excel_if(excel_comparison(bo2-bn2,"<",aw15),bd15,0.0); end
+  def bp15; @bp15 ||= bf15+excel_if(excel_comparison(bp2-bi2,"<",aw15),ay15,0.0)+excel_if(excel_comparison(bp2-bj2,"<",aw15),az15,0.0)+excel_if(excel_comparison(bp2-bk2,"<",aw15),ba15,0.0)+excel_if(excel_comparison(bp2-bl2,"<",aw15),bb15,0.0)+excel_if(excel_comparison(bp2-bm2,"<",aw15),bc15,0.0)+excel_if(excel_comparison(bp2-bn2,"<",aw15),bd15,0.0)+excel_if(excel_comparison(bp2-bm2,"<",aw15),bc15,0.0)+excel_if(excel_comparison(bp2-bo2,"<",aw15),be15,0.0); end
+  def bq15; @bq15 ||= bg15+excel_if(excel_comparison(bq2-bi2,"<",aw15),ay15,0.0)+excel_if(excel_comparison(bq2-bj2,"<",aw15),az15,0.0)+excel_if(excel_comparison(bq2-bk2,"<",aw15),ba15,0.0)+excel_if(excel_comparison(bq2-bl2,"<",aw15),bb15,0.0)+excel_if(excel_comparison(bq2-bm2,"<",aw15),bc15,0.0)+excel_if(excel_comparison(bq2-bn2,"<",aw15),bd15,0.0)+excel_if(excel_comparison(bq2-bm2,"<",aw15),bc15,0.0)+excel_if(excel_comparison(bq2-bo2,"<",aw15),be15,0.0)+excel_if(excel_comparison(bq2-bp2,"<",aw15),bf15,0.0); end
+  def bs15; @bs15 ||= o15+y15+bi15; end
+  def bt15; @bt15 ||= p15+z15+bj15; end
+  def bu15; @bu15 ||= q15+aa15+bk15; end
+  def bv15; @bv15 ||= r15+ab15+bl15; end
+  def bw15; @bw15 ||= s15+ac15+bm15; end
+  def bx15; @bx15 ||= t15+ad15+bn15; end
+  def by15; @by15 ||= u15+ae15+bo15; end
+  def bz15; @bz15 ||= v15+af15+bp15; end
+  def ca15; @ca15 ||= w15+ag15+bq15; end
+  def cc15; @cc15 ||= average(sheet9.a('bs15','ca15')); end
+  def cd15; @cd15 ||= (sumproduct(a('bt15','ca15'),sheet15.a('d28','k28'))*5.0)+bs15; end
+  def cf15; @cf15 ||= bi15-e15; end
+  def cg15; @cg15 ||= bj15-f15; end
+  def ch15; @ch15 ||= bk15-g15; end
+  def ci15; @ci15 ||= bl15-h15; end
+  def cj15; @cj15 ||= bm15-i15; end
+  def ck15; @ck15 ||= bn15-j15; end
+  def cl15; @cl15 ||= bo15-k15; end
+  def cm15; @cm15 ||= bp15-l15; end
+  def cn15; @cn15 ||= bq15-m15; end
+  def cp15; @cp15 ||= average(sheet9.a('cf15','cn15')); end
+  def cq15; @cq15 ||= (sumproduct(a('cg15','cn15'),sheet15.a('d28','k28'))*5.0)+cf15; end
+  def cr15; @cr15 ||= excel_if(excel_comparison(abs(cd15-cq15-at15),"<",1.0),"ok","err"); end
   def a16; "VI.a.Bioenergy"; end
   def b16; "Agriculture and land use"; end
   def c16; "Bioenergy"; end
@@ -5494,87 +5494,87 @@ class Sheet9 < Spreadsheet
   def a69; "V.b"; end
   def b69; "Bioenergy imports"; end
   def c69; "Bioenergy"; end
-  def e69; 0.0; end
-  def f69; 0.0; end
-  def g69; 0.0; end
-  def h69; 0.0; end
-  def i69; 0.0; end
-  def j69; 0.0; end
-  def k69; 0.0; end
-  def l69; 0.0; end
-  def m69; 0.0; end
-  def o69; 0.0; end
-  def p69; 0.0; end
-  def q69; 0.0; end
-  def r69; 0.0; end
-  def s69; 0.0; end
-  def t69; 0.0; end
-  def u69; 0.0; end
-  def v69; 0.0; end
-  def w69; 0.0; end
-  def y69; 136.43145788001243; end
-  def z69; 134.2313490829966; end
-  def aa69; 135.75536213863847; end
-  def ab69; 136.20414982903327; end
-  def ac69; 135.75536213863847; end
-  def ad69; 136.20414982903327; end
-  def ae69; 136.65293751942804; end
-  def af69; 137.10172520982283; end
-  def ag69; 150.7926639726453; end
-  def ai69; 136.43145788001243; end
-  def aj69; 134.2313490829966; end
-  def ak69; 135.75536213863847; end
-  def al69; 136.20414982903327; end
-  def am69; 135.75536213863847; end
-  def an69; 136.20414982903327; end
-  def ao69; 136.65293751942804; end
-  def ap69; 137.10172520982283; end
-  def aq69; 150.7926639726453; end
-  def as69; 137.68101751113875; end
-  def at69; 2872.5101258539826; end
+  def e69; @e69 ||= iferror(index(sheet30.a('g136','g140'),na),0.0); end
+  def f69; @f69 ||= iferror(index(sheet30.a('h136','h140'),na),0.0); end
+  def g69; @g69 ||= iferror(index(sheet30.a('i136','i140'),na),0.0); end
+  def h69; @h69 ||= iferror(index(sheet30.a('j136','j140'),na),0.0); end
+  def i69; @i69 ||= iferror(index(sheet30.a('k136','k140'),na),0.0); end
+  def j69; @j69 ||= iferror(index(sheet30.a('l136','l140'),na),0.0); end
+  def k69; @k69 ||= iferror(index(sheet30.a('m136','m140'),na),0.0); end
+  def l69; @l69 ||= iferror(index(sheet30.a('n136','n140'),na),0.0); end
+  def m69; @m69 ||= iferror(index(sheet30.a('o136','o140'),na),0.0); end
+  def o69; @o69 ||= iferror(index(sheet30.a('g136','g140'),na),0.0); end
+  def p69; @p69 ||= iferror(index(sheet30.a('h136','h140'),na),0.0); end
+  def q69; @q69 ||= iferror(index(sheet30.a('i136','i140'),na),0.0); end
+  def r69; @r69 ||= iferror(index(sheet30.a('j136','j140'),na),0.0); end
+  def s69; @s69 ||= iferror(index(sheet30.a('k136','k140'),na),0.0); end
+  def t69; @t69 ||= iferror(index(sheet30.a('l136','l140'),na),0.0); end
+  def u69; @u69 ||= iferror(index(sheet30.a('m136','m140'),na),0.0); end
+  def v69; @v69 ||= iferror(index(sheet30.a('n136','n140'),na),0.0); end
+  def w69; @w69 ||= iferror(index(sheet30.a('o136','o140'),na),0.0); end
+  def y69; @y69 ||= iferror(sheet30.g137,0.0); end
+  def z69; @z69 ||= iferror(sheet30.h137,0.0); end
+  def aa69; @aa69 ||= iferror(sheet30.i137,0.0); end
+  def ab69; @ab69 ||= iferror(sheet30.j137,0.0); end
+  def ac69; @ac69 ||= iferror(sheet30.k137,0.0); end
+  def ad69; @ad69 ||= iferror(sheet30.l137,0.0); end
+  def ae69; @ae69 ||= iferror(sheet30.m137,0.0); end
+  def af69; @af69 ||= iferror(sheet30.n137,0.0); end
+  def ag69; @ag69 ||= iferror(sheet30.o137,0.0); end
+  def ai69; @ai69 ||= sum(e69,o69,y69); end
+  def aj69; @aj69 ||= sum(f69,p69,z69); end
+  def ak69; @ak69 ||= sum(g69,q69,aa69); end
+  def al69; @al69 ||= sum(h69,r69,ab69); end
+  def am69; @am69 ||= sum(i69,s69,ac69); end
+  def an69; @an69 ||= sum(j69,t69,ad69); end
+  def ao69; @ao69 ||= sum(k69,u69,ae69); end
+  def ap69; @ap69 ||= sum(l69,v69,af69); end
+  def aq69; @aq69 ||= sum(m69,w69,ag69); end
+  def as69; @as69 ||= average(sheet9.a('ai69','aq69')); end
+  def at69; @at69 ||= (sumproduct(a('aj69','aq69'),sheet15.a('d28','k28'))*5.0)+ai69; end
   def av69; 0.07; end
   def aw69; 15.0; end
-  def ay69; 0.0; end
-  def az69; 0.0; end
-  def ba69; 0.0; end
-  def bb69; 0.0; end
-  def bc69; 0.0; end
-  def bd69; 0.0; end
-  def be69; 0.0; end
-  def bf69; 0.0; end
-  def bg69; 0.0; end
-  def bi69; 0.0; end
-  def bj69; 0.0; end
-  def bk69; 0.0; end
-  def bl69; 0.0; end
-  def bm69; 0.0; end
-  def bn69; 0.0; end
-  def bo69; 0.0; end
-  def bp69; 0.0; end
-  def bq69; 0.0; end
-  def bs69; 136.43145788001243; end
-  def bt69; 134.2313490829966; end
-  def bu69; 135.75536213863847; end
-  def bv69; 136.20414982903327; end
-  def bw69; 135.75536213863847; end
-  def bx69; 136.20414982903327; end
-  def by69; 136.65293751942804; end
-  def bz69; 137.10172520982283; end
-  def ca69; 150.7926639726453; end
-  def cc69; 137.68101751113875; end
-  def cd69; 2872.5101258539826; end
-  def cf69; 0.0; end
-  def cg69; 0.0; end
-  def ch69; 0.0; end
-  def ci69; 0.0; end
-  def cj69; 0.0; end
-  def ck69; 0.0; end
-  def cl69; 0.0; end
-  def cm69; 0.0; end
-  def cn69; 0.0; end
-  def cp69; 0.0; end
-  def cq69; 0.0; end
-  def cr69; "ok"; end
+  def ay69; @ay69 ||= -pmt(av69,aw69,e69*3.0); end
+  def az69; @az69 ||= -pmt(av69,aw69,f69*5.0); end
+  def ba69; @ba69 ||= -pmt(av69,aw69,g69*5.0); end
+  def bb69; @bb69 ||= -pmt(av69,aw69,h69*5.0); end
+  def bc69; @bc69 ||= -pmt(av69,aw69,i69*5.0); end
+  def bd69; @bd69 ||= -pmt(av69,aw69,j69*5.0); end
+  def be69; @be69 ||= -pmt(av69,aw69,k69*5.0); end
+  def bf69; @bf69 ||= -pmt(av69,aw69,l69*5.0); end
+  def bg69; @bg69 ||= -pmt(av69,aw69,m69*5.0); end
+  def bi69; @bi69 ||= ay69; end
+  def bj69; @bj69 ||= az69+excel_if(excel_comparison(bj2-bi2,"<",aw69),ay69,0.0); end
+  def bk69; @bk69 ||= ba69+excel_if(excel_comparison(bk2-bi2,"<",aw69),ay69,0.0)+excel_if(excel_comparison(bk2-bj2,"<",aw69),az69,0.0); end
+  def bl69; @bl69 ||= bb69+excel_if(excel_comparison(bl2-bi2,"<",aw69),ay69,0.0)+excel_if(excel_comparison(bl2-bj2,"<",aw69),az69,0.0)+excel_if(excel_comparison(bl2-bk2,"<",aw69),ba69,0.0); end
+  def bm69; @bm69 ||= bc69+excel_if(excel_comparison(bm2-bi2,"<",aw69),ay69,0.0)+excel_if(excel_comparison(bm2-bj2,"<",aw69),az69,0.0)+excel_if(excel_comparison(bm2-bk2,"<",aw69),ba69,0.0)+excel_if(excel_comparison(bm2-bl2,"<",aw69),bb69,0.0); end
+  def bn69; @bn69 ||= bd69+excel_if(excel_comparison(bn2-bi2,"<",aw69),ay69,0.0)+excel_if(excel_comparison(bn2-bj2,"<",aw69),az69,0.0)+excel_if(excel_comparison(bn2-bk2,"<",aw69),ba69,0.0)+excel_if(excel_comparison(bn2-bl2,"<",aw69),bb69,0.0)+excel_if(excel_comparison(bn2-bm2,"<",aw69),bc69,0.0); end
+  def bo69; @bo69 ||= be69+excel_if(excel_comparison(bo2-bi2,"<",aw69),ay69,0.0)+excel_if(excel_comparison(bo2-bj2,"<",aw69),az69,0.0)+excel_if(excel_comparison(bo2-bk2,"<",aw69),ba69,0.0)+excel_if(excel_comparison(bo2-bl2,"<",aw69),bb69,0.0)+excel_if(excel_comparison(bo2-bm2,"<",aw69),bc69,0.0)+excel_if(excel_comparison(bo2-bn2,"<",aw69),bd69,0.0); end
+  def bp69; @bp69 ||= bf69+excel_if(excel_comparison(bp2-bi2,"<",aw69),ay69,0.0)+excel_if(excel_comparison(bp2-bj2,"<",aw69),az69,0.0)+excel_if(excel_comparison(bp2-bk2,"<",aw69),ba69,0.0)+excel_if(excel_comparison(bp2-bl2,"<",aw69),bb69,0.0)+excel_if(excel_comparison(bp2-bm2,"<",aw69),bc69,0.0)+excel_if(excel_comparison(bp2-bn2,"<",aw69),bd69,0.0)+excel_if(excel_comparison(bp2-bm2,"<",aw69),bc69,0.0)+excel_if(excel_comparison(bp2-bo2,"<",aw69),be69,0.0); end
+  def bq69; @bq69 ||= bg69+excel_if(excel_comparison(bq2-bi2,"<",aw69),ay69,0.0)+excel_if(excel_comparison(bq2-bj2,"<",aw69),az69,0.0)+excel_if(excel_comparison(bq2-bk2,"<",aw69),ba69,0.0)+excel_if(excel_comparison(bq2-bl2,"<",aw69),bb69,0.0)+excel_if(excel_comparison(bq2-bm2,"<",aw69),bc69,0.0)+excel_if(excel_comparison(bq2-bn2,"<",aw69),bd69,0.0)+excel_if(excel_comparison(bq2-bm2,"<",aw69),bc69,0.0)+excel_if(excel_comparison(bq2-bo2,"<",aw69),be69,0.0)+excel_if(excel_comparison(bq2-bp2,"<",aw69),bf69,0.0); end
+  def bs69; @bs69 ||= o69+y69+bi69; end
+  def bt69; @bt69 ||= p69+z69+bj69; end
+  def bu69; @bu69 ||= q69+aa69+bk69; end
+  def bv69; @bv69 ||= r69+ab69+bl69; end
+  def bw69; @bw69 ||= s69+ac69+bm69; end
+  def bx69; @bx69 ||= t69+ad69+bn69; end
+  def by69; @by69 ||= u69+ae69+bo69; end
+  def bz69; @bz69 ||= v69+af69+bp69; end
+  def ca69; @ca69 ||= w69+ag69+bq69; end
+  def cc69; @cc69 ||= average(sheet9.a('bs69','ca69')); end
+  def cd69; @cd69 ||= (sumproduct(a('bt69','ca69'),sheet15.a('d28','k28'))*5.0)+bs69; end
+  def cf69; @cf69 ||= bi69-e69; end
+  def cg69; @cg69 ||= bj69-f69; end
+  def ch69; @ch69 ||= bk69-g69; end
+  def ci69; @ci69 ||= bl69-h69; end
+  def cj69; @cj69 ||= bm69-i69; end
+  def ck69; @ck69 ||= bn69-j69; end
+  def cl69; @cl69 ||= bo69-k69; end
+  def cm69; @cm69 ||= bp69-l69; end
+  def cn69; @cn69 ||= bq69-m69; end
+  def cp69; @cp69 ||= average(sheet9.a('cf69','cn69')); end
+  def cq69; @cq69 ||= (sumproduct(a('cg69','cn69'),sheet15.a('d28','k28'))*5.0)+cf69; end
+  def cr69; @cr69 ||= excel_if(excel_comparison(abs(cd69-cq69-at69),"<",1.0),"ok","err"); end
   def a70; "VI.a.Bioenergy"; end
   def b70; "Agriculture and land use"; end
   def c70; "Bioenergy"; end
@@ -9888,87 +9888,87 @@ class Sheet9 < Spreadsheet
   def a124; "V.b"; end
   def b124; "Bioenergy imports"; end
   def c124; "Bioenergy"; end
-  def e124; 0.0; end
-  def f124; 0.0; end
-  def g124; 0.0; end
-  def h124; 0.0; end
-  def i124; 0.0; end
-  def j124; 0.0; end
-  def k124; 0.0; end
-  def l124; 0.0; end
-  def m124; 0.0; end
-  def o124; 0.0; end
-  def p124; 0.0; end
-  def q124; 0.0; end
-  def r124; 0.0; end
-  def s124; 0.0; end
-  def t124; 0.0; end
-  def u124; 0.0; end
-  def v124; 0.0; end
-  def w124; 0.0; end
-  def y124; 328.0; end
-  def z124; 328.0; end
-  def aa124; 328.0; end
-  def ab124; 328.0; end
-  def ac124; 328.0; end
-  def ad124; 328.0; end
-  def ae124; 328.0; end
-  def af124; 328.0; end
-  def ag124; 328.0; end
-  def ai124; 328.0; end
-  def aj124; 328.0; end
-  def ak124; 328.0; end
-  def al124; 328.0; end
-  def am124; 328.0; end
-  def an124; 328.0; end
-  def ao124; 328.0; end
-  def ap124; 328.0; end
-  def aq124; 328.0; end
-  def as124; 328.0; end
-  def at124; 6891.620082711951; end
+  def e124; @e124 ||= iferror(index(sheet30.a('g136','g140'),na),0.0); end
+  def f124; @f124 ||= iferror(index(sheet30.a('h136','h140'),na),0.0); end
+  def g124; @g124 ||= iferror(index(sheet30.a('i136','i140'),na),0.0); end
+  def h124; @h124 ||= iferror(index(sheet30.a('j136','j140'),na),0.0); end
+  def i124; @i124 ||= iferror(index(sheet30.a('k136','k140'),na),0.0); end
+  def j124; @j124 ||= iferror(index(sheet30.a('l136','l140'),na),0.0); end
+  def k124; @k124 ||= iferror(index(sheet30.a('m136','m140'),na),0.0); end
+  def l124; @l124 ||= iferror(index(sheet30.a('n136','n140'),na),0.0); end
+  def m124; @m124 ||= iferror(index(sheet30.a('o136','o140'),na),0.0); end
+  def o124; @o124 ||= iferror(index(sheet30.a('g136','g140'),na),0.0); end
+  def p124; @p124 ||= iferror(index(sheet30.a('h136','h140'),na),0.0); end
+  def q124; @q124 ||= iferror(index(sheet30.a('i136','i140'),na),0.0); end
+  def r124; @r124 ||= iferror(index(sheet30.a('j136','j140'),na),0.0); end
+  def s124; @s124 ||= iferror(index(sheet30.a('k136','k140'),na),0.0); end
+  def t124; @t124 ||= iferror(index(sheet30.a('l136','l140'),na),0.0); end
+  def u124; @u124 ||= iferror(index(sheet30.a('m136','m140'),na),0.0); end
+  def v124; @v124 ||= iferror(index(sheet30.a('n136','n140'),na),0.0); end
+  def w124; @w124 ||= iferror(index(sheet30.a('o136','o140'),na),0.0); end
+  def y124; @y124 ||= iferror(sheet30.g136,0.0); end
+  def z124; @z124 ||= iferror(sheet30.h136,0.0); end
+  def aa124; @aa124 ||= iferror(sheet30.i136,0.0); end
+  def ab124; @ab124 ||= iferror(sheet30.j136,0.0); end
+  def ac124; @ac124 ||= iferror(sheet30.k136,0.0); end
+  def ad124; @ad124 ||= iferror(sheet30.l136,0.0); end
+  def ae124; @ae124 ||= iferror(sheet30.m136,0.0); end
+  def af124; @af124 ||= iferror(sheet30.n136,0.0); end
+  def ag124; @ag124 ||= iferror(sheet30.o136,0.0); end
+  def ai124; @ai124 ||= sum(e124,o124,y124); end
+  def aj124; @aj124 ||= sum(f124,p124,z124); end
+  def ak124; @ak124 ||= sum(g124,q124,aa124); end
+  def al124; @al124 ||= sum(h124,r124,ab124); end
+  def am124; @am124 ||= sum(i124,s124,ac124); end
+  def an124; @an124 ||= sum(j124,t124,ad124); end
+  def ao124; @ao124 ||= sum(k124,u124,ae124); end
+  def ap124; @ap124 ||= sum(l124,v124,af124); end
+  def aq124; @aq124 ||= sum(m124,w124,ag124); end
+  def as124; @as124 ||= average(sheet9.a('ai124','aq124')); end
+  def at124; @at124 ||= (sumproduct(a('aj124','aq124'),sheet15.a('d28','k28'))*5.0)+ai124; end
   def av124; 0.1; end
   def aw124; 15.0; end
-  def ay124; 0.0; end
-  def az124; 0.0; end
-  def ba124; 0.0; end
-  def bb124; 0.0; end
-  def bc124; 0.0; end
-  def bd124; 0.0; end
-  def be124; 0.0; end
-  def bf124; 0.0; end
-  def bg124; 0.0; end
-  def bi124; 0.0; end
-  def bj124; 0.0; end
-  def bk124; 0.0; end
-  def bl124; 0.0; end
-  def bm124; 0.0; end
-  def bn124; 0.0; end
-  def bo124; 0.0; end
-  def bp124; 0.0; end
-  def bq124; 0.0; end
-  def bs124; 328.0; end
-  def bt124; 328.0; end
-  def bu124; 328.0; end
-  def bv124; 328.0; end
-  def bw124; 328.0; end
-  def bx124; 328.0; end
-  def by124; 328.0; end
-  def bz124; 328.0; end
-  def ca124; 328.0; end
-  def cc124; 328.0; end
-  def cd124; 6891.620082711951; end
-  def cf124; 0.0; end
-  def cg124; 0.0; end
-  def ch124; 0.0; end
-  def ci124; 0.0; end
-  def cj124; 0.0; end
-  def ck124; 0.0; end
-  def cl124; 0.0; end
-  def cm124; 0.0; end
-  def cn124; 0.0; end
-  def cp124; 0.0; end
-  def cq124; 0.0; end
-  def cr124; "ok"; end
+  def ay124; @ay124 ||= -pmt(av124,aw124,e124*3.0); end
+  def az124; @az124 ||= -pmt(av124,aw124,f124*5.0); end
+  def ba124; @ba124 ||= -pmt(av124,aw124,g124*5.0); end
+  def bb124; @bb124 ||= -pmt(av124,aw124,h124*5.0); end
+  def bc124; @bc124 ||= -pmt(av124,aw124,i124*5.0); end
+  def bd124; @bd124 ||= -pmt(av124,aw124,j124*5.0); end
+  def be124; @be124 ||= -pmt(av124,aw124,k124*5.0); end
+  def bf124; @bf124 ||= -pmt(av124,aw124,l124*5.0); end
+  def bg124; @bg124 ||= -pmt(av124,aw124,m124*5.0); end
+  def bi124; @bi124 ||= ay124; end
+  def bj124; @bj124 ||= az124+excel_if(excel_comparison(bj2-bi2,"<",aw124),ay124,0.0); end
+  def bk124; @bk124 ||= ba124+excel_if(excel_comparison(bk2-bi2,"<",aw124),ay124,0.0)+excel_if(excel_comparison(bk2-bj2,"<",aw124),az124,0.0); end
+  def bl124; @bl124 ||= bb124+excel_if(excel_comparison(bl2-bi2,"<",aw124),ay124,0.0)+excel_if(excel_comparison(bl2-bj2,"<",aw124),az124,0.0)+excel_if(excel_comparison(bl2-bk2,"<",aw124),ba124,0.0); end
+  def bm124; @bm124 ||= bc124+excel_if(excel_comparison(bm2-bi2,"<",aw124),ay124,0.0)+excel_if(excel_comparison(bm2-bj2,"<",aw124),az124,0.0)+excel_if(excel_comparison(bm2-bk2,"<",aw124),ba124,0.0)+excel_if(excel_comparison(bm2-bl2,"<",aw124),bb124,0.0); end
+  def bn124; @bn124 ||= bd124+excel_if(excel_comparison(bn2-bi2,"<",aw124),ay124,0.0)+excel_if(excel_comparison(bn2-bj2,"<",aw124),az124,0.0)+excel_if(excel_comparison(bn2-bk2,"<",aw124),ba124,0.0)+excel_if(excel_comparison(bn2-bl2,"<",aw124),bb124,0.0)+excel_if(excel_comparison(bn2-bm2,"<",aw124),bc124,0.0); end
+  def bo124; @bo124 ||= be124+excel_if(excel_comparison(bo2-bi2,"<",aw124),ay124,0.0)+excel_if(excel_comparison(bo2-bj2,"<",aw124),az124,0.0)+excel_if(excel_comparison(bo2-bk2,"<",aw124),ba124,0.0)+excel_if(excel_comparison(bo2-bl2,"<",aw124),bb124,0.0)+excel_if(excel_comparison(bo2-bm2,"<",aw124),bc124,0.0)+excel_if(excel_comparison(bo2-bn2,"<",aw124),bd124,0.0); end
+  def bp124; @bp124 ||= bf124+excel_if(excel_comparison(bp2-bi2,"<",aw124),ay124,0.0)+excel_if(excel_comparison(bp2-bj2,"<",aw124),az124,0.0)+excel_if(excel_comparison(bp2-bk2,"<",aw124),ba124,0.0)+excel_if(excel_comparison(bp2-bl2,"<",aw124),bb124,0.0)+excel_if(excel_comparison(bp2-bm2,"<",aw124),bc124,0.0)+excel_if(excel_comparison(bp2-bn2,"<",aw124),bd124,0.0)+excel_if(excel_comparison(bp2-bm2,"<",aw124),bc124,0.0)+excel_if(excel_comparison(bp2-bo2,"<",aw124),be124,0.0); end
+  def bq124; @bq124 ||= bg124+excel_if(excel_comparison(bq2-bi2,"<",aw124),ay124,0.0)+excel_if(excel_comparison(bq2-bj2,"<",aw124),az124,0.0)+excel_if(excel_comparison(bq2-bk2,"<",aw124),ba124,0.0)+excel_if(excel_comparison(bq2-bl2,"<",aw124),bb124,0.0)+excel_if(excel_comparison(bq2-bm2,"<",aw124),bc124,0.0)+excel_if(excel_comparison(bq2-bn2,"<",aw124),bd124,0.0)+excel_if(excel_comparison(bq2-bm2,"<",aw124),bc124,0.0)+excel_if(excel_comparison(bq2-bo2,"<",aw124),be124,0.0)+excel_if(excel_comparison(bq2-bp2,"<",aw124),bf124,0.0); end
+  def bs124; @bs124 ||= o124+y124+bi124; end
+  def bt124; @bt124 ||= p124+z124+bj124; end
+  def bu124; @bu124 ||= q124+aa124+bk124; end
+  def bv124; @bv124 ||= r124+ab124+bl124; end
+  def bw124; @bw124 ||= s124+ac124+bm124; end
+  def bx124; @bx124 ||= t124+ad124+bn124; end
+  def by124; @by124 ||= u124+ae124+bo124; end
+  def bz124; @bz124 ||= v124+af124+bp124; end
+  def ca124; @ca124 ||= w124+ag124+bq124; end
+  def cc124; @cc124 ||= average(sheet9.a('bs124','ca124')); end
+  def cd124; @cd124 ||= (sumproduct(a('bt124','ca124'),sheet15.a('d28','k28'))*5.0)+bs124; end
+  def cf124; @cf124 ||= bi124-e124; end
+  def cg124; @cg124 ||= bj124-f124; end
+  def ch124; @ch124 ||= bk124-g124; end
+  def ci124; @ci124 ||= bl124-h124; end
+  def cj124; @cj124 ||= bm124-i124; end
+  def ck124; @ck124 ||= bn124-j124; end
+  def cl124; @cl124 ||= bo124-k124; end
+  def cm124; @cm124 ||= bp124-l124; end
+  def cn124; @cn124 ||= bq124-m124; end
+  def cp124; @cp124 ||= average(sheet9.a('cf124','cn124')); end
+  def cq124; @cq124 ||= (sumproduct(a('cg124','cn124'),sheet15.a('d28','k28'))*5.0)+cf124; end
+  def cr124; @cr124 ||= excel_if(excel_comparison(abs(cd124-cq124-at124),"<",1.0),"ok","err"); end
   def a125; "VI.a.Bioenergy"; end
   def b125; "Agriculture and land use"; end
   def c125; "Bioenergy"; end

@@ -179,7 +179,7 @@ class Sheet39 < Spreadsheet
   def t54; 12.0; end
   def e56; 0.9; end
   def f56; 0.001; end
-  def g56; 0.001; end
+  def g56; 0.2; end
   def h56; 0.001; end
   def i56; 0.001; end
   def j56; 0.001; end
@@ -212,7 +212,7 @@ class Sheet39 < Spreadsheet
   def m61; 0.2; end
   def t61; 0.16; end
   def f62; 0.6; end
-  def g62; 0.55; end
+  def g62; 0.6; end
   def i62; 0.5; end
   def k62; 0.6; end
   def l62; 0.58; end
@@ -220,7 +220,7 @@ class Sheet39 < Spreadsheet
   def o62; 0.25; end
   def s62; 0.14; end
   def f63; 0.3; end
-  def g63; 0.3; end
+  def g63; 0.2; end
   def h63; 0.0; end
   def i63; 0.3; end
   def j63; 0.2; end
@@ -236,7 +236,6 @@ class Sheet39 < Spreadsheet
   def q64; 0.01; end
   def r64; 0.01; end
   def t64; 0.01; end
-  def g65; 0.15; end
   def m65; 0.33; end
   def o65; 0.13; end
   def p65; 0.3; end

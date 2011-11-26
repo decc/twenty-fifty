@@ -245,6 +245,7 @@ class Sheet38 < Spreadsheet
   def s75; 14.0; end
   def t75; 12.0; end
   def e77; 0.9; end
+  def g77; 0.2; end
   def e78; 0.1; end
   def f78; 0.1; end
   def h78; 0.1; end
@@ -264,7 +265,7 @@ class Sheet38 < Spreadsheet
   def m82; 0.2; end
   def t82; 0.16; end
   def f83; 0.6; end
-  def g83; 0.55; end
+  def g83; 0.6; end
   def i83; 0.5; end
   def k83; 0.6; end
   def l83; 0.58; end
@@ -272,7 +273,7 @@ class Sheet38 < Spreadsheet
   def o83; 0.25; end
   def s83; 0.14; end
   def f84; 0.3; end
-  def g84; 0.3; end
+  def g84; 0.2; end
   def h84; 0.0; end
   def i84; 0.3; end
   def j84; 0.2; end
@@ -288,7 +289,6 @@ class Sheet38 < Spreadsheet
   def q85; 0.01; end
   def r85; 0.01; end
   def t85; 0.01; end
-  def g86; 0.15; end
   def m86; 0.33; end
   def o86; 0.13; end
   def p86; 0.3; end

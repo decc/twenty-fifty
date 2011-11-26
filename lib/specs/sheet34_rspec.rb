@@ -12,8 +12,8 @@ describe 'Sheet34' do
     sheet34.f15.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell g15 should equal 1.1368683772161603e-13' do
-    sheet34.g15.should be_within(1.0e-08).of(1.1368683772161603e-13)
+  it 'cell g15 should equal 0.0' do
+    sheet34.g15.should be_within(1.0e-08).of(0.0)
   end
 
   it 'cell h15 should equal 0.0' do
@@ -44,8 +44,8 @@ describe 'Sheet34' do
     sheet34.n15.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell o15 should equal 0.0' do
-    sheet34.o15.should be_within(1.0e-08).of(0.0)
+  it 'cell o15 should equal 14.060220030542155' do
+    sheet34.o15.should be_within(1.4060220030542157).of(14.060220030542155)
   end
 
   it 'cell f20 should equal 2.5' do
@@ -60,32 +60,32 @@ describe 'Sheet34' do
     sheet34.h20.should be_within(0.4).of(4.0)
   end
 
-  it 'cell i20 should equal 4.0' do
-    sheet34.i20.should be_within(0.4).of(4.0)
+  it 'cell i20 should equal 6.0' do
+    sheet34.i20.should be_within(0.6000000000000001).of(6.0)
   end
 
-  it 'cell j20 should equal 4.0' do
-    sheet34.j20.should be_within(0.4).of(4.0)
+  it 'cell j20 should equal 8.0' do
+    sheet34.j20.should be_within(0.8).of(8.0)
   end
 
-  it 'cell k20 should equal 4.0' do
-    sheet34.k20.should be_within(0.4).of(4.0)
+  it 'cell k20 should equal 10.0' do
+    sheet34.k20.should be_within(1.0).of(10.0)
   end
 
-  it 'cell l20 should equal 4.0' do
-    sheet34.l20.should be_within(0.4).of(4.0)
+  it 'cell l20 should equal 10.0' do
+    sheet34.l20.should be_within(1.0).of(10.0)
   end
 
-  it 'cell m20 should equal 4.0' do
-    sheet34.m20.should be_within(0.4).of(4.0)
+  it 'cell m20 should equal 10.0' do
+    sheet34.m20.should be_within(1.0).of(10.0)
   end
 
-  it 'cell n20 should equal 4.0' do
-    sheet34.n20.should be_within(0.4).of(4.0)
+  it 'cell n20 should equal 10.0' do
+    sheet34.n20.should be_within(1.0).of(10.0)
   end
 
-  it 'cell o20 should equal 4.0' do
-    sheet34.o20.should be_within(0.4).of(4.0)
+  it 'cell o20 should equal 10.0' do
+    sheet34.o20.should be_within(1.0).of(10.0)
   end
 
   it 'cell f33 should equal 0.0' do
@@ -172,8 +172,8 @@ describe 'Sheet34' do
     sheet34.f114.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell g114 should equal 1.2969066589278577e-14' do
-    sheet34.g114.should be_within(1.0e-08).of(1.2969066589278577e-14)
+  it 'cell g114 should equal 0.0' do
+    sheet34.g114.should be_within(1.0e-08).of(0.0)
   end
 
   it 'cell h114 should equal 0.0' do
@@ -204,8 +204,8 @@ describe 'Sheet34' do
     sheet34.n114.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell o114 should equal 0.0' do
-    sheet34.o114.should be_within(1.0e-08).of(0.0)
+  it 'cell o114 should equal 1.6039493532445988' do
+    sheet34.o114.should be_within(0.1603949353244599).of(1.6039493532445988)
   end
 
   it 'cell f115 should equal 0.0' do
@@ -260,32 +260,32 @@ describe 'Sheet34' do
     sheet34.h116.should be_within(0.4).of(-4.0)
   end
 
-  it 'cell i116 should equal -4.0' do
-    sheet34.i116.should be_within(0.4).of(-4.0)
+  it 'cell i116 should equal -6.0' do
+    sheet34.i116.should be_within(0.6000000000000001).of(-6.0)
   end
 
-  it 'cell j116 should equal -4.0' do
-    sheet34.j116.should be_within(0.4).of(-4.0)
+  it 'cell j116 should equal -8.0' do
+    sheet34.j116.should be_within(0.8).of(-8.0)
   end
 
-  it 'cell k116 should equal -4.0' do
-    sheet34.k116.should be_within(0.4).of(-4.0)
+  it 'cell k116 should equal -10.0' do
+    sheet34.k116.should be_within(1.0).of(-10.0)
   end
 
-  it 'cell l116 should equal -4.0' do
-    sheet34.l116.should be_within(0.4).of(-4.0)
+  it 'cell l116 should equal -10.0' do
+    sheet34.l116.should be_within(1.0).of(-10.0)
   end
 
-  it 'cell m116 should equal -4.0' do
-    sheet34.m116.should be_within(0.4).of(-4.0)
+  it 'cell m116 should equal -10.0' do
+    sheet34.m116.should be_within(1.0).of(-10.0)
   end
 
-  it 'cell n116 should equal -4.0' do
-    sheet34.n116.should be_within(0.4).of(-4.0)
+  it 'cell n116 should equal -10.0' do
+    sheet34.n116.should be_within(1.0).of(-10.0)
   end
 
-  it 'cell o116 should equal -4.0' do
-    sheet34.o116.should be_within(0.4).of(-4.0)
+  it 'cell o116 should equal -10.0' do
+    sheet34.o116.should be_within(1.0).of(-10.0)
   end
 
   it 'cell f117 should equal 0.0' do
@@ -700,8 +700,8 @@ describe 'Sheet34' do
     sheet34.o139.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell g142 should equal 1.1368683772161603e-13' do
-    sheet34.g142.should be_within(1.0e-08).of(1.1368683772161603e-13)
+  it 'cell g142 should equal 0.0' do
+    sheet34.g142.should be_within(1.0e-08).of(0.0)
   end
 
   it 'cell h142 should equal 0.0' do
@@ -732,8 +732,8 @@ describe 'Sheet34' do
     sheet34.n142.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell o142 should equal 0.0' do
-    sheet34.o142.should be_within(1.0e-08).of(0.0)
+  it 'cell o142 should equal 14.060220030542155' do
+    sheet34.o142.should be_within(1.4060220030542157).of(14.060220030542155)
   end
 
   it 'cell f145 should equal 0.0' do
@@ -956,8 +956,8 @@ describe 'Sheet34' do
     sheet34.o152.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell g153 should equal -1.9554136088117957e-11' do
-    sheet34.g153.should be_within(1.0e-08).of(-1.9554136088117957e-11)
+  it 'cell g153 should equal 0.0' do
+    sheet34.g153.should be_within(1.0e-08).of(0.0)
   end
 
   it 'cell h153 should equal 0.0' do
@@ -988,8 +988,8 @@ describe 'Sheet34' do
     sheet34.n153.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell o153 should equal 0.0' do
-    sheet34.o153.should be_within(1.0e-08).of(0.0)
+  it 'cell o153 should equal -2418.3578452532506' do
+    sheet34.o153.should be_within(241.83578452532507).of(-2418.3578452532506)
   end
 
   it 'cell g157 should equal 0.0' do
@@ -1064,8 +1064,8 @@ describe 'Sheet34' do
     sheet34.o158.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell g159 should equal -8.321876521222292e-12' do
-    sheet34.g159.should be_within(1.0e-08).of(-8.321876521222292e-12)
+  it 'cell g159 should equal 0.0' do
+    sheet34.g159.should be_within(1.0e-08).of(0.0)
   end
 
   it 'cell h159 should equal 0.0' do
@@ -1096,8 +1096,8 @@ describe 'Sheet34' do
     sheet34.n159.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell o159 should equal 0.0' do
-    sheet34.o159.should be_within(1.0e-08).of(0.0)
+  it 'cell o159 should equal -1029.2081062356856' do
+    sheet34.o159.should be_within(102.92081062356857).of(-1029.2081062356856)
   end
 
   it 'cell g163 should equal 0.0' do
@@ -1172,8 +1172,8 @@ describe 'Sheet34' do
     sheet34.o164.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell g165 should equal -2.2737367544323206e-12' do
-    sheet34.g165.should be_within(1.0e-08).of(-2.2737367544323206e-12)
+  it 'cell g165 should equal 0.0' do
+    sheet34.g165.should be_within(1.0e-08).of(0.0)
   end
 
   it 'cell h165 should equal 0.0' do
@@ -1204,8 +1204,8 @@ describe 'Sheet34' do
     sheet34.n165.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell o165 should equal 0.0' do
-    sheet34.o165.should be_within(1.0e-08).of(0.0)
+  it 'cell o165 should equal -281.2044006108431' do
+    sheet34.o165.should be_within(28.12044006108431).of(-281.2044006108431)
   end
 
   it 'cell f173 should equal 0.0' do
@@ -1656,8 +1656,8 @@ describe 'Sheet34' do
     sheet34.o203.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell g204 should equal -1.9554136088117957e-11' do
-    sheet34.g204.should be_within(1.0e-08).of(-1.9554136088117957e-11)
+  it 'cell g204 should equal 0.0' do
+    sheet34.g204.should be_within(1.0e-08).of(0.0)
   end
 
   it 'cell h204 should equal 0.0' do
@@ -1688,8 +1688,8 @@ describe 'Sheet34' do
     sheet34.n204.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell o204 should equal 0.0' do
-    sheet34.o204.should be_within(1.0e-08).of(0.0)
+  it 'cell o204 should equal -2418.3578452532506' do
+    sheet34.o204.should be_within(241.83578452532507).of(-2418.3578452532506)
   end
 
   it 'cell g205 should equal 0.0' do
@@ -1764,8 +1764,8 @@ describe 'Sheet34' do
     sheet34.o206.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell g207 should equal -8.321876521222292e-12' do
-    sheet34.g207.should be_within(1.0e-08).of(-8.321876521222292e-12)
+  it 'cell g207 should equal 0.0' do
+    sheet34.g207.should be_within(1.0e-08).of(0.0)
   end
 
   it 'cell h207 should equal 0.0' do
@@ -1796,8 +1796,8 @@ describe 'Sheet34' do
     sheet34.n207.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell o207 should equal 0.0' do
-    sheet34.o207.should be_within(1.0e-08).of(0.0)
+  it 'cell o207 should equal -1029.2081062356856' do
+    sheet34.o207.should be_within(102.92081062356857).of(-1029.2081062356856)
   end
 
   it 'cell g208 should equal 0.0' do
@@ -1872,8 +1872,8 @@ describe 'Sheet34' do
     sheet34.o209.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell g210 should equal -2.2737367544323206e-12' do
-    sheet34.g210.should be_within(1.0e-08).of(-2.2737367544323206e-12)
+  it 'cell g210 should equal 0.0' do
+    sheet34.g210.should be_within(1.0e-08).of(0.0)
   end
 
   it 'cell h210 should equal 0.0' do
@@ -1904,8 +1904,8 @@ describe 'Sheet34' do
     sheet34.n210.should be_within(1.0e-08).of(0.0)
   end
 
-  it 'cell o210 should equal 0.0' do
-    sheet34.o210.should be_within(1.0e-08).of(0.0)
+  it 'cell o210 should equal -281.2044006108431' do
+    sheet34.o210.should be_within(28.12044006108431).of(-281.2044006108431)
   end
 
 end
