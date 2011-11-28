@@ -17,6 +17,7 @@ class GeneratePathway
     cost_components_table
     map_table
     energy_imports 
+    energy_diversity
     air_quality
     pathway
   end
@@ -208,9 +209,28 @@ class GeneratePathway
       imported = imported > 0 ? imported.round : 0
       total = intermediate_output_sheet.send("q#{vector[2]}").to_f
       proportion = total > 0 ? "#{((imported/total) * 100).round}%" : "0%"
-      i[vector[0]] = { quantity: imported, proportion: proportion }
+      i[vector[0]] = { '2050' => {quantity: imported, proportion: proportion} }
+      imported = intermediate_output_sheet.send("f#{vector[1]}").to_f
+      imported = imported > 0 ? imported.round : 0
+      total = intermediate_output_sheet.send("f#{vector[2]}").to_f
+      proportion = total > 0 ? "#{((imported/total) * 100).round}%" : "0%"
+      i[vector[0]]['2007'] = { quantity: imported, proportion: proportion }
     end
     pathway['imports'] = i
+  end
+
+
+  def energy_diversity
+    d = {}
+    total_2007 = intermediate_output_sheet.send("f296").to_f
+    total_2050 = intermediate_output_sheet.send("q296").to_f
+    (283..295).each do |row|
+      d[intermediate_output_sheet.send("d#{row}")] = { 
+        '2007' => "#{((intermediate_output_sheet.send("h#{row}").to_f / total_2007)*100).round}%",
+        '2050' => "#{((intermediate_output_sheet.send("q#{row}").to_f / total_2050)*100).round}%"
+      }
+    end
+    pathway['diversity'] = d
   end
 
   def air_quality

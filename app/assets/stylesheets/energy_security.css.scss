@@ -11,11 +11,15 @@
 }
 
 .energysecurity {
-  td.value, td.description {
-    width: 30%;
+  td.value {
+    width: 17%;
   }
   td.value, th.value {
     text-align: right;
+  }
+  th.year {
+    text-align: center;
+    border-bottom: solid 1px #000;
   }
 }
 
