@@ -2,13 +2,13 @@ class CostsComparedWithinSector
   
   categories = [
     "Fossil fuels"
-    "Bioenergy"   
-    "Electricity" 
-    "Buildings"   
-    "Transport"   
+    "Bioenergy"
+    "Electricity"
+    "Buildings"
+    "Transport"
     "Industry"
-    "Finance"    
-    "Other"       
+    "Finance"
+    "Other"
   ]
   
   cost_component_colors = {
@@ -60,7 +60,7 @@ class CostsComparedWithinSector
     "Power Carbon Capture":                           {low: "#EA8BCC",range: "url(/assets/hatches/hatch-EA8BCC.png)"}
     "Industry Carbon Capture":                        {low: "#a55194",range: "url(/assets/hatches/hatch-a55194.png)"}
     "Finance cost":                                   {low: "#8c564b",range: "url(/assets/hatches/hatch-8c564b.png)"}
-  }                                                          
+  }
   
   constructor: () ->
     # Nowt
@@ -90,8 +90,8 @@ class CostsComparedWithinSector
     @r.text(30,@y("chosen")+9,"Your pathway").attr({'text-anchor':'start','font-weight':'bold'})
     @r.text(30,@y("chosen")+27,"Your can click on the chart to make a more\ndetailed comparison of specific costs").attr({'text-anchor':'start'})
     for code in twentyfifty.comparator_pathways
-      @r.text(30,@y(code)+9,twentyfifty.pathwayName(code,code)).attr({'text-anchor':'start','font-weight':'bold', href: twentyfifty.url({action:'primary_energy_chart',code:code})})
-      @r.text(30,@y(code)+27,twentyfifty.pathwayDescriptions(code,"")).attr({'text-anchor':'start'})
+      @r.text(30,@y(code)+9,twentyfifty.pathwayName(code,code)).attr({'text-anchor':'start','font-weight':'bold', href: twentyfifty.pathwayWikiPages(code)})
+      @r.text(30,@y(code)+27,twentyfifty.pathwayDescriptions(code,"")).attr({'text-anchor':'start',href: twentyfifty.pathwayWikiPages(code)})
   
     # Initally empty boxes
     @boxes = {}
