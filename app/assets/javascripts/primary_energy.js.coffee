@@ -9,14 +9,14 @@ class PrimaryEnergy
       subtitle: { text: "TWh/yr of final energy"},
       yAxis: { title: null, min: 0, max: 4000 },
       series: []
-    });
+    })
     @primary_energy_chart = new Highcharts.Chart({ 
       chart: { renderTo: 'supply_chart' }, 
       title: { text: 'UK energy supply' },
       subtitle: { text: "TWh/yr of primary energy"},
       yAxis: { title: null, min: 0, max: 4000 },
       series: []
-    });
+    })
     @emissions_chart = new Highcharts.Chart({
       chart: { 
         renderTo: 'emissions_chart'
@@ -33,7 +33,7 @@ class PrimaryEnergy
       },
       
       series: []
-    });
+    })
     
   updateResults: (@pathway) ->
     @createCharts() unless @emissions_chart? && @final_energy_chart? && @primary_energy_chart?
