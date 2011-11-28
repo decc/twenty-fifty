@@ -282,7 +282,6 @@
     FlowLine.prototype.innerColor = function() {
       var c;
       c = Raphael.rgb2hsb(this.colour);
-      console.log(this.colour, Raphael.hsb2rgb(c.h, c.s, c.b + 0.1).hex);
       if (c.h !== 0 && c.s !== 0) {
         if (c.b > 0.5) {
           c.b = c.b - 0.15;
