@@ -11,7 +11,7 @@ If you update the 2050Model.xlsx excel model, then you need to recreate the ruby
 You can update the model by:
 1. Ensuring your 2050Model.xlsx is saved in the lib/ directory
 2. rake dev:update_ruby_from_excel 
-3. Checking that lib/excel_model.rb still refers to the correct cells in the sheet (note, for instance, that re-saving the excel model will sometimes result in the sheet order in the underlying file to be changed)
+3. Checking that lib/generate_pathway.rb still refers to the correct cells in the sheet (note, for instance, that re-saving the excel model will sometimes result in the sheet order in the underlying file to be changed)
 
 REPORTING A BUG
 

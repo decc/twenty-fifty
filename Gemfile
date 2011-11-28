@@ -23,4 +23,5 @@ gem 'heroku'
 
 group :development do
   gem 'rspec'
+  gem 'nokogiri'
 end

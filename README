@@ -10,10 +10,10 @@ mongodb
 
 INSTALATION
 
-Otherwise:
 1. bundle install
-2. foreman start --env config/development.env # or --env config/production.env
-3. Navigate to http://0.0.0.0:5000 in your web browser
+2. Edit config/development.env to point to your mongo database
+3. foreman start --env config/development.env # or --env config/production.env
+4. Navigate to http://0.0.0.0:5000 in your web browser
 
 If that doesn't work, the most common reason is that your ruby 1.9 has been installed with a different name (ruby1.9.2; ruby192). Edit the command names at the top of the setup.sh file to reflect that fact and try again. You may also need to be an administrator to install the required ruby gems, in which case edit the 'gem' command at the top of setup.sh to say 'sudo gem'. 
 

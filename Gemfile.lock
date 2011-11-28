@@ -151,6 +151,7 @@ DEPENDENCIES
   haml
   heroku
   mongo
+  nokogiri
   rails (= 3.1.1)
   rspec
   rubyfromexcel (= 0.0.17)
