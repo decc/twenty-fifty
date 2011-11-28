@@ -99,7 +99,7 @@ class GeneratePathway
       'Community scale gas CHP',
       'Community scale solid-fuel CHP',
       'District heating from power stations'].each_with_index do |name,i| 
-        r[name] = heating_sheet.send("f#{580+i}")
+        r[name] = heating_sheet.send("f#{596+i}")
       end
     h['residential'] = r
     
@@ -117,7 +117,7 @@ class GeneratePathway
       'Community scale gas CHP',
       'Community scale solid-fuel CHP',
       'District heating from power stations'].each_with_index do |name,i| 
-        c[name] = heating_commercial_sheet.send("n#{330+i}")
+        c[name] = heating_commercial_sheet.send("n#{317+i}")
       end
     h['commercial'] = c
     pathway[:heating] = h
