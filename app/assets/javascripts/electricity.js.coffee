@@ -2,6 +2,8 @@ class Electricity
     
   updateResults: (@pathway) ->
     @createCharts() unless @emissions_chart? && @demand_chart? && @supply_chart?
+
+    # Emissions from electricity
     titles = ["Fuel Combustion", "Bioenergy credit", "Carbon capture"]
     i = 0
     for name in titles
@@ -11,14 +13,24 @@ class Electricity
       else
         @emissions_chart.addSeries({name:name,data:data},false)
       i++
-    # Net emissions line
+
+    # Set this in the context of UK total
+    data = @pathway['ghg']["Total"]
+    if @emissions_chart.series[i]?
+      @emissions_chart.series[i].setData(data,false)
+    else
+      @emissions_chart.addSeries({type: 'line', name: 'Total emissions from all sources',data:data, lineColor: '#000', color: '#000',lineWidth:2,dashStyle:'Dot', shadow: false},false)
+    i++
+
+    # Add a total for electricity emissions
     data = @pathway['electricity']['emissions']['Total']
     if @emissions_chart.series[i]?
       @emissions_chart.series[i].setData(data,false)
     else
-      @emissions_chart.addSeries({type: 'line', name: 'Total net emissions',data:data, lineColor: '#000', color: '#000',lineWidth:2, shadow: true},false)
+      @emissions_chart.addSeries({type: 'line', name: 'Total net emissions from electricity',data:data, lineColor: '#000', color: '#000',lineWidth:2, shadow: true},false)
     i++
       
+    # Demand for electricity
     titles = ['Industry','Transport','Heating and cooling','Lighting & appliances']
     i = 0
     for name in titles
@@ -27,9 +39,17 @@ class Electricity
         @demand_chart.series[i].setData(data,false)
       else
         @demand_chart.addSeries({name:name,data:data},false)
-      i++  
+      i++
     
+    # Set this in the context of UK total
+    data = @pathway['final_energy_demand']['Total Use']
+    if @demand_chart.series[i]?
+      @demand_chart.series[i].setData(data,false)
+    else
+      @demand_chart.addSeries({type: 'line', name: 'Total demand for all forms of energy',data:data, lineColor: '#000', color: '#000',lineWidth:2,dashStyle:'Dot', shadow: false},false)
+    i++
     
+    # Supply of electricity
     titles = ["Unabated thermal generation", "Carbon Capture Storage (CCS)", "Nuclear power", "Onshore wind", "Offshore wind", "Hydroelectric power stations", "Tidal and Wave", "Geothermal electricity", "Solar PV", "Non-thermal renewable generation", "Electricity imports"]
     i = 0
     for name in titles
@@ -40,6 +60,14 @@ class Electricity
         @supply_chart.addSeries({name:name,data:data},false)
       i++
 
+    # Set this in the context of UK total
+    data = @pathway['final_energy_demand']['Total Use']
+    if @supply_chart.series[i]?
+      @supply_chart.series[i].setData(data,false)
+    else
+      @supply_chart.addSeries({type: 'line', name: 'Total demand for all forms of energy',data:data, lineColor: '#000', color: '#000',lineWidth:2,dashStyle:'Dot', shadow: false},false)
+    i++
+    
     @emissions_chart.redraw()
     @demand_chart.redraw()
     @supply_chart.redraw()
