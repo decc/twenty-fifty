@@ -15,6 +15,17 @@
 //    width: 95%;
   }  
 }
+#cost_override_warning {
+  position: absolute;
+  top: 55px;
+  left: 25px;
+  width: 200px;
+  display: none;
+  border: solid 1px #000;
+  background-color: yellow;
+  font-size: smaller;
+  padding: 5px;
+}
 
 #cost_caveats {
   position: absolute;

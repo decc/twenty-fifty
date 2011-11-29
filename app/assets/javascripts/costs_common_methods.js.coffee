@@ -99,6 +99,13 @@ group_costs_of_pathway = (pathway) ->
   pathway.categorised_costs = categorised_costs
   pathway
 
+cost_override_in_place_warning = () ->
+  for own name, ignore of cost_categories
+    o = jQuery.jStorage.get(name,undefined)
+    if o? && o != 'point'
+      $('#cost_override_warning').show()
+      break
+
 adjust_costs_of_pathway = (pathway) ->
   total = { low: 0, range: 0, high: 0, finance_max:0}
   for own name,values of pathway.cost_components
@@ -217,3 +224,4 @@ window.twentyfifty.group_costs_of_pathway = group_costs_of_pathway
 window.twentyfifty.adjust_costs_of_pathway = adjust_costs_of_pathway
 window.twentyfifty.calculateIncrementalCost = calculateIncrementalCost
 window.twentyfifty.costs_in_category = costs_in_category
+window.twentyfifty.cost_override_in_place_warning = cost_override_in_place_warning

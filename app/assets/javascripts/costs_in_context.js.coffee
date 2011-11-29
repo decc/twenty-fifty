@@ -7,6 +7,8 @@ class CostsInContext
     return false if @drawn?
     @drawn = true
 
+    twentyfifty.cost_override_in_place_warning()
+
     all_pathways = ["chosen"].concat(twentyfifty.comparator_pathways)
     comparator_pathways = twentyfifty.comparator_pathways
             
