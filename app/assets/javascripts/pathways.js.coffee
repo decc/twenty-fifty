@@ -257,8 +257,12 @@ pathway_descriptions =
   "10111111111111110111111001111110111101101101110110111": "Imported natural gas for electricity and heat\nDoes not tackle climate change",
   "10111111111111110111111004444440444404203304440420111": "Maximum demand"
   "40444444444444440443444001111110111101101101110110111": "Maximum supply"
-  "30223122221311110223221003424430144402202202440120431": "All vehicles and heaters are electric\nNuclear, offshore wind and geoequestration"
   "j0h2cd2221121f1b032211p004314110433304202304320420121": "An illustration of the kind of pathway that\nthe Markal cost optimising model suggests"
+  "10113433314443110243111004424440343304202304430420441": "Overachieves the 80% target in order to\nreduce emissions earlier than 2050" #FOTE
+  "10h2pdppp12332130233122004414430343304102304430410231": "Focus on offshore renewables, solar, \ngeothermal and electricity imports." #CPRE
+  "20222144411341110343321003422440423404203203340420141": "A focus on marine renewables and algae\nbioenergy, some nuclear and CCS" # Mark Brinkley
+  "h0h2gg1211cj1j110322222003313230234102102203440320121": "Generation spread across a wide range\nof sources. Moderate demand reduction" # National Grid
+  "g0f2oj11t1rgqj1j0343111003324240244104201304430420231": "A range of energy sources, prioritising\nUK self-reliance" # Atkins
   
 
 pathwayName = (pathway_code,default_name = null) ->
