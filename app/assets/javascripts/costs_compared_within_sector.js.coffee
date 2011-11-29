@@ -175,30 +175,42 @@ class CostsComparedWithinSector
     categorised_costs = pathway.categorised_costs[categories[twentyfifty.getSector()]]
     b = @boxes[_id]
     _x = 0
+    # Values
     for own category, cost of categorised_costs
       unless category == "high" || category == "low" || category == "range"
         low = cost.low_adjusted
-        # if category == "Conventional thermal plant"
-        #   # console.log category, low
         if low >= 0
           b[category].low.attr({x: @x(_x), width: @x(low) - @x(0)})
+          if Math.round(low) == 0
+            b[category].low_label.attr({x:@x(_x + low/2),text:""})
+          else
+            b[category].low_label.attr({x:@x(_x + low/2),text:"#{Math.round(low)}"})
+          _x += low
         else
-          b[category].low.attr({x: @x(_x+low), width: @x(-low) - @x(0)})
-        if low > 1
-          b[category].low_label.attr({x:@x(_x + low/2),text:"#{Math.round(low)}"})
+          # b[category].low.attr({x: @x(_x+low), width: @x(-low) - @x(0)})
+          b[category].low.attr({x: @x(0), width: @x(0) - @x(0)})
+          b[category].low_label.attr({x: @x(0), text: ""})
+
         if _id == 'chosen'
           @boxes_by_category[category].top_label_box.attr({x:@x(_x+low/2)-100})
           @boxes_by_category[category].top_label.attr({x:@x(_x+low/2)})
-        _x += low
+
+    # Ranges
     for own category, cost of categorised_costs
       unless category == "high" || category == "low" || category == "range"
         range = cost.range_adjusted
-        if range >= 0
+        low = cost.low_adjusted
+        if low >= 0
           b[category].range.attr({x: @x(_x), width: @x(range) - @x(0)})
+          if Math.round(range) == 0
+            b[category].range_label.attr({x:@x(_x + range/2),text:""})
+          else
+            b[category].range_label.attr({x:@x(_x + range/2),text:"#{Math.round(range)}"})
+          _x += range
         else
-          b[category].range.attr({x: @x(_x+range), width: @x(-range) - @x(0)})
-        if range > 1
-          b[category].range_label.attr({x:@x(_x + range/2),text:"#{Math.round(range)}"})      
-        _x += range
+          # b[category].range.attr({x: @x(_x+range), width: @x(-range) - @x(0)})
+          b[category].range.attr({x: @x(0), width: @x(0) - @x(0)})
+          b[category].range_label.attr({x:@x(0),text:""})
+
   
 window.twentyfifty.CostsComparedWithinSector = CostsComparedWithinSector
