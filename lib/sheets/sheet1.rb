@@ -642,13 +642,13 @@ class Sheet1 < Spreadsheet
   def bq30; "Individuals travel 7% further than today, cars and vans are 80% of 2050 passenger mileage"; end
   def br30; "Individuals travel 7% further than today; cars and vans 74% of 2050 passenger mileage"; end
   def bs30; "In 2050, individuals travel the same distance as today. Signficant shift to public transport."; end
-  def d31; "Shift to electric or fuel cell vehicles"; end
+  def d31; "Shift to zero emission transport"; end
   def e31; 3.0; end
   def f31; 4.0; end
-  def h31; "By 2050, conventional fuelled cars and vans cover 80% of mileage "; end
-  def i31; "By 2050, plug-in, electric & fuel cell cars & vans cover 65% of passenger distance"; end
-  def j31; "By 2050, plug-in, electric & fuel cell cars & vans cover 80% of passenger mileage"; end
-  def k31; "By 2050, all car & van travel is electrified; 20% use fuel-cell range extenders"; end
+  def h31; "By 2050, 20% plug in hybrid electric cars; 2.5% zero emission cars."; end
+  def i31; "By 2050, 35% conventional petrol or diesel engine cars; 54% plug-in hybrid vehicles; 11%  zero emission vehicles; all buses hybrids; 73% of passenger railway is electrifi"; end
+  def j31; "By 2050, 20% conventional combustion engine cars, with 32% in plug-in hybrid vehicles and 48% in zero emission vehicles: 22% of bus travel fully electric or fuel cell electric "; end
+  def k31; "By 2050 100%  electric motor or hydrogen fuel cell; all passenger trains electrified; 50% bus  electrified "; end
   def m31; 1.0; end
   def n31; 4.0; end
   def o31; 1.0; end
@@ -661,17 +661,17 @@ class Sheet1 < Spreadsheet
   def y31; 4.0; end
   def aa31; 4.0; end
   def ab31; 4.0; end
-  def bp31; "By 2050, conventional fuelled cars and vans cover 80% of mileage "; end
-  def bq31; "By 2050, plug-in, electric & fuel cell cars & vans cover 65% of passenger distance"; end
-  def br31; "By 2050, plug-in, electric & fuel cell cars & vans cover 80% of passenger mileage"; end
-  def bs31; "By 2050, all car & van travel is electrified; 20% use fuel-cell range extenders"; end
-  def d32; "Preference for fuel cells or for batteries"; end
+  def bp31; "By 2050, 20% plug in hybrid electric cars; 2.5% zero emission cars."; end
+  def bq31; "By 2050, 35% conventional petrol or diesel engine cars; 54% plug-in hybrid vehicles; 11%  zero emission vehicles; all buses hybrids; 73% of passenger railway is electrifi"; end
+  def br31; "By 2050, 20% conventional combustion engine cars, with 32% in plug-in hybrid vehicles and 48% in zero emission vehicles: 22% of bus travel fully electric or fuel cell electric "; end
+  def bs31; "By 2050 100%  electric motor or hydrogen fuel cell; all passenger trains electrified; 50% bus  electrified "; end
+  def d32; "Choice of electric or hydrogen cars and vans"; end
   def e32; 1.0; end
   def f32; 4.0; end
-  def h32; "Batteries only: no fuel cells"; end
-  def i32; "80% batteries; 20% fuel cells"; end
-  def j32; "20% batteries; 80% fuel cells"; end
-  def k32; "No batteries; Fuel cells only"; end
+  def h32; "By 2050, 100% electric"; end
+  def i32; "by 2050, 80% electric,  20% hydrogen fuel cell"; end
+  def j32; "By 2050, 20% electric, 80% hydrogen fuel cell"; end
+  def k32; "By 2050, 100% hydrogen fuel cells"; end
   def m32; 1.0; end
   def n32; 2.0; end
   def o32; 2.0; end
@@ -684,10 +684,10 @@ class Sheet1 < Spreadsheet
   def y32; 2.0; end
   def aa32; 1.0; end
   def ab32; 2.0; end
-  def bp32; "Batteries only: no fuel cells"; end
-  def bq32; "80% batteries; 20% fuel cells"; end
-  def br32; "20% batteries; 80% fuel cells"; end
-  def bs32; "No batteries; Fuel cells only"; end
+  def bp32; "By 2050, 100% electric"; end
+  def bq32; "by 2050, 80% electric,  20% hydrogen fuel cell"; end
+  def br32; "By 2050, 20% electric, 80% hydrogen fuel cell"; end
+  def bs32; "By 2050, 100% hydrogen fuel cells"; end
   def c33; "XII.b"; end
   def d33; "Domestic freight"; end
   def e33; 3.0; end
@@ -753,10 +753,10 @@ class Sheet1 < Spreadsheet
   def d35; "International shipping"; end
   def e35; 3.0; end
   def f35; 4.0; end
-  def h35; "Moves in line with IMO global shipping forecast, emissions 3 times todays levels"; end
-  def i35; "Fuel use is 105 TWh from 42 TWh in 2007"; end
-  def j35; "Fuel use is 101 TWh from 42 TWh in 2007"; end
-  def k35; "Fuel use is 91 TWh from 42 TWh in 2007"; end
+  def h35; "no improvements from energy efficiency; between 2007 and 2050 emissions increase by 139%"; end
+  def i35; "1/3 of technical feasible reductions realised; between 2007 and 2050 emissions increase by 78%"; end
+  def j35; "2/3 of technical feasible reductions realised; between 2007 and 2050 emissions increase by 16%"; end
+  def k35; "maximum technical feasible reductions realised; between 2007 and 2050 emissions decrease by 46%"; end
   def m35; 1.0; end
   def n35; 4.0; end
   def o35; 1.0; end
@@ -779,10 +779,10 @@ class Sheet1 < Spreadsheet
   def bj35; @bj35 ||= -sheet59.w9/bj33; end
   def bk35; @bk35 ||= -sheet61.w9/bk33; end
   def bl35; @bl35 ||= -sheet65.w9/bl33; end
-  def bp35; "Moves in line with IMO global shipping forecast, emissions 3 times todays levels"; end
-  def bq35; "Fuel use is 105 TWh from 42 TWh in 2007"; end
-  def br35; "Fuel use is 101 TWh from 42 TWh in 2007"; end
-  def bs35; "Fuel use is 91 TWh from 42 TWh in 2007"; end
+  def bp35; "no improvements from energy efficiency; between 2007 and 2050 emissions increase by 139%"; end
+  def bq35; "1/3 of technical feasible reductions realised; between 2007 and 2050 emissions increase by 78%"; end
+  def br35; "2/3 of technical feasible reductions realised; between 2007 and 2050 emissions increase by 16%"; end
+  def bs35; "maximum technical feasible reductions realised; between 2007 and 2050 emissions decrease by 46%"; end
   def a36; "Households"; end
   def b36; "Residential Heating"; end
   def c36; "IX.a"; end
