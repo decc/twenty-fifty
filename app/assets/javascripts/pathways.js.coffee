@@ -252,15 +252,18 @@ pathway_wiki_pages =
   "g0f2oj11t1rgqj1j0343111003324240244104201304430420231": "92" # Atkins
 
 pathway_descriptions = 
-  "10111111111111110111111001111110111101101101110110111": "Imported natural gas for electricity and heat\nDoes not tackle climate change",
+  "10111111111111110111111001111110111101101101110110111": "Imported natural gas for electricity and heat\nImported oil for vehicles."
   "10111111111111110111111004444440444404203304440420111": "Maximum demand"
   "40444444444444440443444001111110111101101101110110111": "Maximum supply"
-  "j0h2cd2221121f1b032211p004314110433304202304320420121": "An illustration of the kind of pathway that\nthe Markal cost optimising model suggests"
-  "10113433314443110243111004424440343304202304430420441": "Overachieves the 80% target in order to\nreduce emissions earlier than 2050" #FOTE
-  "10h2pdppp12332130233122004414430343304102304430410231": "Focus on offshore renewables, solar, \ngeothermal and electricity imports." #CPRE
-  "20222144411341110343321003422440423404203203340420141": "A focus on marine renewables and algae\nbioenergy, some nuclear and CCS" # Mark Brinkley
-  "h0h2gg1211cj1j110322222003313230234102102203440320121": "Generation spread across a wide range\nof sources. Moderate demand reduction" # National Grid
-  "g0f2oj11t1rgqj1j0343111003324240244104201304430420231": "A range of energy sources, prioritising\nUK self-reliance" # Atkins
+  "j0h2cd2221121f1b032211p004314110433304202304320420121": "Cost-optimising model based. Mix of supply\nsources. Ambitious demand reduction."
+  "10113433314443110243111004424440343304202304430420441": "Generation from wind, marine renewables and\nhydro. Ambitious demand reduction" #FOTE
+  "10h2pdppp12332130233122004414430343304102304430410231": "Offshore renewables, solar, geothermal and\nelectricity imports. Ambitious demand reduction." #CPRE
+  "20222144411341110343321003422440423404203203340420141": "Marine renewable, geothermal and algae\nsupply. Some nuclear and CCS." # Mark Brinkley
+  "h0h2gg1211cj1j110322222003313230234102102203440320121": "Wide range of generation sources. Moderate\ndemand reduction. Considerable bioenergy." # National Grid
+  "g0f2oj11t1rgqj1j0343111003324240244104201304430420231": "Energy from a range of sources. Emphasis\non UK self-reliance." # Atkins
+  "e0d3jrg221ci12110222112004423220444404202304440420141": "Renewables largest supply component. Very\nambitious demand reduction. Lots of storage."
+  "r013ce1111111111042233B002322220233302202102330220121": "Lots of nuclear. Moderate energy demand\nreduction. Minimal renewables."
+  "f023df111111111f0322123003223220333203102303430310221": "Lots of CCS and biomass co-firing.\nAmbitious demand reduction"
   
 
 pathwayName = (pathway_code,default_name = null) ->
