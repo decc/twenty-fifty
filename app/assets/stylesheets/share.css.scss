@@ -1,20 +1,15 @@
 #share {
- p {
+ div {
   margin: 0 10% 0 10%;
   width: 80%;
 } 
- input {
-    margin-left: 10%;
-    margin-right: 10%;
-    width: 80%;
-  }
- textarea {
-   text-align: right;
-   margin-left: 10%;
-   width: 30px;
-   height: 700px;
- }
  #excel {
    margin-top: 50px;
-  }
+   textarea {
+     text-align: right;
+     margin-left: 10%;
+     width: 32px;
+     height: 700px;
+   }
+ }
 }
