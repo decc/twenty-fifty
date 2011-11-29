@@ -94,10 +94,10 @@ class CostsSensitivity
   updateComparator: (@comparator) =>
     twentyfifty.adjust_costs_of_pathway(@comparator) unless @comparator.total_cost_low_adjusted?
     @updateBar(@top_comparator_chart,@comparator.total_cost_low_adjusted,@comparator.total_cost_range_adjusted)
-    @top_comparator_chart.name.attr({ text:twentyfifty.pathwayName(@comparator._id,@comparator._id), href: twentyfifty.url({action:'primary_energy_chart',code:@comparator._id})})
-    @top_comparator_chart.description.attr({ text: twentyfifty.pathwayDescriptions(@comparator._id,"") })
+    @top_comparator_chart.name.attr({ text:twentyfifty.pathwayName(@comparator._id,@comparator._id), href: twentyfifty.pathwayWikiPages(@comparator._id)})
+    @top_comparator_chart.description.attr({ text: twentyfifty.pathwayDescriptions(@comparator._id,""),href: twentyfifty.pathwayWikiPages(@comparator._id) })
     if @pathway?
-      @updateIncrement()    
+      @updateIncrement()
       @updateComponents(false,true)
     
   updateToBarForNewCost: () ->
