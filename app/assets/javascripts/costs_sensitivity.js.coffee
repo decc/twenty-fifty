@@ -1,5 +1,7 @@
 class CostsSensitivity
 
+  bottom_area_start = 219
+    
   cost_component_names = ["Conventional thermal plant","Combustion + CCS","Nuclear power","Onshore wind","Offshore wind","Hydroelectric","Wave and Tidal","Geothermal","Distributed solar PV","Distributed solar thermal","Micro wind","Biomatter to fuel conversion","Bioenergy imports","Agriculture and land use","Energy from waste","Waste arising","Marine algae","Electricity imports","Electricity Exports","Electricity grid distribution","Storage, demand shifting, backup","H2 Production","Domestic heating","Domestic insulation","Commercial heating and cooling","Domestic lighting, appliances, and cooking","Commercial lighting, appliances, and catering","Industrial processes","Conventional cars and buses","Hybrid cars and buses","Electric cars and buses","Fuel cell cars and buses","Bikes","Rail","Domestic aviation","Domestic freight","International aviation","International shipping (maritime bunkers)","Geosequestration","Petroleum refineries","Fossil fuel transfers","District heating effective demand","Storage of captured CO2","Coal","Oil","Gas","Finance cost"]
   
   cost_wiki_links = {
@@ -96,6 +98,7 @@ class CostsSensitivity
     @updateBar(@top_comparator_chart,@comparator.total_cost_low_adjusted,@comparator.total_cost_range_adjusted)
     @top_comparator_chart.name.attr({ text:twentyfifty.pathwayName(@comparator._id,@comparator._id), href: twentyfifty.pathwayWikiPages(@comparator._id)})
     @top_comparator_chart.description.attr({ text: twentyfifty.pathwayDescriptions(@comparator._id,""),href: twentyfifty.pathwayWikiPages(@comparator._id) })
+    @key_label.attr({text:"The cost in '#{twentyfifty.pathwayName(@comparator._id,@comparator._id)}'"})
     if @pathway?
       @updateIncrement()
       @updateComponents(false,true)
@@ -161,7 +164,7 @@ class CostsSensitivity
     p = @pathway.cost_components
     bar_offset = @bar_offset
     cost_component_names.sort( (a,b) -> p[b].high_adjusted - p[a].high_adjusted)
-    @bottom_y = y = d3.scale.ordinal().domain(cost_component_names).rangeRoundBands([200,@h],0.25)
+    @bottom_y = y = d3.scale.ordinal().domain(cost_component_names).rangeRoundBands([bottom_area_start,@h],0.25)
     for name in cost_component_names
       component = @components[name]
       py = y(name)
@@ -269,7 +272,7 @@ class CostsSensitivity
     increment = r.setFinish()
     increment.hide()
 
-    @bottom_y = y = d3.scale.ordinal().domain(cost_component_names).rangeRoundBands([200,h],0.25)
+    @bottom_y = y = d3.scale.ordinal().domain(cost_component_names).rangeRoundBands([bottom_area_start,h],0.25)
     
     # Draw our bars
     bar_height = (y.rangeBand()-2)/2
@@ -339,10 +342,19 @@ class CostsSensitivity
       r.path(["M", x(tick), 40, "L", x(tick),h]).attr({stroke:'#fff'})
     
     # The sensitivity stuff
-    r.text(30,205,"The biggest costs").attr({'text-anchor':'start','font-weight':'bold'})
-    r.text(250,205,"The black lines indicate the range for each cost estimate").attr({'text-anchor':'start','font-weight':'bold'})
-    r.text(x(8000),205,"Use these links to try different cost scenarios").attr({'text-anchor':'middle','font-weight':'bold'})
-    r.text(w-30,205,"(reset)").attr({'text-anchor':'end',cursor:'pointer'}).click( () =>
+    r.text(30,205,"The biggest costs in your pathway").attr({'text-anchor':'start','font-weight':'bold'})
+    r.path( ["M",32,212,"L",32,300]).attr( {stroke:'#000','arrow-end':"classic-wide-long"})
+    r.rect(250,205,30,bar_height).attr({'fill':p_low_fill_color,'stroke':'none'})
+    r.text(285,208,"The cost in your pathway").attr({'text-anchor':'start','font-weight':'normal'})
+    r.rect(250,215,30,bar_height).attr({'fill':c_low_fill_color,'stroke':'none'})
+    @key_label = r.text(285,218,"The cost in your comparator").attr({'text-anchor':'start','font-weight':'normal'})
+    r.path( ["M",250,228,"L",280,228]).attr( {stroke:'#000','arrow-end':"classic-wide-long",'arrow-start':'classic-wide-short'})
+    r.text(285,228,"The range of cost estimates").attr({'text-anchor':'start','font-weight':'normal'})
+    r.text(x(7500),220,"Try different cost scenarios").attr({'text-anchor':'middle','font-weight':'bold'})
+    r.text(x(6500),233,"Cheap")
+    r.path( ["M",x(7000),233,"L",x(8000)-2,233]).attr( {stroke:'#000','arrow-end':"classic-wide-long"})
+    r.text(x(8500),233,"Expensive")
+    r.text(w-30,233,"(reset)").attr({'text-anchor':'end',cursor:'pointer'}).click( () =>
       for name in cost_component_names
         jQuery.jStorage.set(name,'point')
       twentyfifty.adjust_costs_of_pathway(@pathway)
