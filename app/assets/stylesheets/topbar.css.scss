@@ -97,7 +97,18 @@
      top: 7px;
      right: 8px;
    }
-     
+
+   .divider {
+    padding-left: 5px;
+    padding-top: 10px;
+    border-top: solid 1px #ccc;
+   }
+   
+   a.development {
+    padding-left: 10px;
+    color: #999;
+   }    
+
    a {
      display: block;
      color: #000;

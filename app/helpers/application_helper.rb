@@ -6,11 +6,11 @@ module ApplicationHelper
       "energy_security" => "Energy security",
       "sankey"=>"Energy flows", 
       "map"=>"Area", 
+      "story"=>"Story",
       "air_quality" => "Air quality",
       "costs_in_context"=>"Costs in context",
       "costs_compared_overview"=>"Costs compared",
-      "costs_sensitivity" => "Cost sensitivity",
-      "story"=>"Story"
+      "costs_sensitivity" => "Cost sensitivity"
     }
   end
   
