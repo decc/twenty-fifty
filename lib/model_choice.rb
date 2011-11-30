@@ -21,8 +21,8 @@ class ModelChoice
     4 => 4,
     5 => 5,
     6 => 6,
-    7 => 6,
-    8 => 6,
+    7 => 'TidalStream',
+    8 => 'TidalRange',
     9 => 7,
     10 => 8,
     11 => 9,
@@ -39,7 +39,7 @@ class ModelChoice
     22 => 20,
     25 => 23,
     26 => 24,
-    27 => 'missing',
+    27 => 'FuelCellsOrBatteries',
     28 => 25,
     29 => 26,
     30 => 27,
@@ -58,8 +58,6 @@ class ModelChoice
     48 => 35,
     50 => 47,
     51 => 48 
-
-
   }
 
   def doc
