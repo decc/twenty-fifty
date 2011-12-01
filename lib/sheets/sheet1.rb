@@ -294,7 +294,7 @@ class Sheet1 < Spreadsheet
   def x15; 1.2; end
   def y15; 1.0; end
   def aa15; 2.0; end
-  def ab15; 4.0; end
+  def ab15; 2.0; end
   def bd15; "storage options"; end
   def bp15; "No significant solar PV capacity is installed"; end
   def bq15; "4m2 of photovoltaic panels per person in 2050, supplying ~60 TWh/yr of electricity"; end
@@ -319,7 +319,7 @@ class Sheet1 < Spreadsheet
   def x16; 1.9; end
   def y16; 3.0; end
   def aa16; 3.0; end
-  def ab16; 4.0; end
+  def ab16; 2.0; end
   def bc16; "Energy balancing and bio-energy"; end
   def bp16; "As today, a negligible proportion of buildings have solar thermal in 2050"; end
   def bq16; "~30% of suitable buildings get ~30% of their hot water from solar thermal"; end
@@ -344,7 +344,7 @@ class Sheet1 < Spreadsheet
   def x17; 1.0; end
   def y17; 4.0; end
   def aa17; 3.0; end
-  def ab17; 4.0; end
+  def ab17; 2.0; end
   def bp17; "No deployment of geothermal electricity generation"; end
   def bq17; "Supply of geothermal electricity grows slowly to 7 TWh/yr in 2035 and is sustained"; end
   def br17; "Supply of geothermal electricity grows quickly reaching 21 TWh/yr by 2030 and is sustained"; end
@@ -494,11 +494,11 @@ class Sheet1 < Spreadsheet
   def c24; "VI.b"; end
   def d24; "Volume of waste and recycling"; end
   def e24; 2.0; end
-  def f24; "C"; end
-  def h24; "Overall quantity of waste grows by 60%; quantity of waste to landfill remains the same"; end
-  def i24; "Quantity of waste increases by 30%; almost 10-fold reduction in quantity to landfill"; end
-  def j24; "Quantity of waste stable; 'zero' landfill, most waste recycled"; end
-  def k24; "Same as C"; end
+  def f24; "D"; end
+  def h24; "Quantity of waste increases 50%; Small increase in rates of recycling and EFW."; end
+  def i24; "Quantity of waste increases 20%; Increase in rates of recycling and EFW."; end
+  def j24; "Quantity of waste increases 33%; Significant increase in rates of recycling and EFW through innovation."; end
+  def k24; "Quantity of waste decreases 20%; Significant increase in rate of recycling."; end
   def m24; 1.0; end
   def n24; 1.0; end
   def o24; 3.0; end
@@ -517,10 +517,10 @@ class Sheet1 < Spreadsheet
   def bj24; @bj24 ||= sumifs(sheet59.a('g109','bl109'),sheet59.a('g5','bl5'),bd24); end
   def bk24; @bk24 ||= sumifs(sheet61.a('g109','bl109'),sheet61.a('g5','bl5'),bd24); end
   def bl24; @bl24 ||= sumifs(sheet65.a('g109','bl109'),sheet65.a('g5','bl5'),bd24); end
-  def bp24; "Overall quantity of waste grows by 60%; quantity of waste to landfill remains the same"; end
-  def bq24; "Quantity of waste increases by 30%; almost 10-fold reduction in quantity to landfill"; end
-  def br24; "Quantity of waste stable; 'zero' landfill, most waste recycled"; end
-  def bs24; "Quantity of waste stable; 'zero' landfill, most waste recycled"; end
+  def bp24; "Overall quantity of waste increases 50% to 2050; 21% increase in recycling rate and 44% increase in rate of energy from waste. 24% of waste is sent to landfill"; end
+  def bq24; "Overall quantity of waste increases almost 20% by 2050; recycling and energy from waste rates increase by 36% and 89% respectively. 11% of waste is sent to landfill."; end
+  def br24; "Overall quantity of waste increases 33%; waste is handled through high-tech and industry-led approaches; by 2050, recycling and energy from waste rates increase by 36% and 89% respectively. Only 2% is sent to landfill."; end
+  def bs24; "Quantity of waste decreases 20% by 2050; recycling and energy from waste increase by 70% and 7% respectively; by 2050, 3% of waste sent to landfill."; end
   def c25; "VI.c"; end
   def d25; "Marine algae"; end
   def e25; 2.0; end
@@ -646,9 +646,9 @@ class Sheet1 < Spreadsheet
   def e31; 3.0; end
   def f31; 4.0; end
   def h31; "By 2050, 20% plug in hybrid electric cars; 2.5% zero emission cars."; end
-  def i31; "By 2050, 35% conventional petrol or diesel engine cars; 54% plug-in hybrid vehicles; 11%  zero emission vehicles; all buses hybrids; 73% of passenger railway is electrifi"; end
-  def j31; "By 2050, 20% conventional combustion engine cars, with 32% in plug-in hybrid vehicles and 48% in zero emission vehicles: 22% of bus travel fully electric or fuel cell electric "; end
-  def k31; "By 2050 100%  electric motor or hydrogen fuel cell; all passenger trains electrified; 50% bus  electrified "; end
+  def i31; "By 2050, 54% plug-in hybrid vehicles; 11%  zero emission vehicles, all buses hybrids."; end
+  def j31; "By 2050, 32% plug-in hybrid vehicles; 48% zero emission vehicles; 22% buses electric."; end
+  def k31; "By 2050 100%  zero emission vehiclesl; all passenger trains electrified; 50% bus electrified "; end
   def m31; 1.0; end
   def n31; 4.0; end
   def o31; 1.0; end
@@ -665,12 +665,12 @@ class Sheet1 < Spreadsheet
   def bq31; "By 2050, 35% conventional petrol or diesel engine cars; 54% plug-in hybrid vehicles; 11%  zero emission vehicles; all buses hybrids; 73% of passenger railway is electrifi"; end
   def br31; "By 2050, 20% conventional combustion engine cars, with 32% in plug-in hybrid vehicles and 48% in zero emission vehicles: 22% of bus travel fully electric or fuel cell electric "; end
   def bs31; "By 2050 100%  electric motor or hydrogen fuel cell; all passenger trains electrified; 50% bus  electrified "; end
-  def d32; "Choice of electric or hydrogen cars and vans"; end
+  def d32; "Choice of fuel cells or batteries"; end
   def e32; 1.0; end
   def f32; 4.0; end
-  def h32; "By 2050, 100% electric"; end
-  def i32; "by 2050, 80% electric,  20% hydrogen fuel cell"; end
-  def j32; "By 2050, 20% electric, 80% hydrogen fuel cell"; end
+  def h32; "By 2050, 100% battery powered."; end
+  def i32; "By 2050, 80% battery;  20% hydrogen fuel cell"; end
+  def j32; "By 2050, 20% battery; 80% hydrogen fuel cell"; end
   def k32; "By 2050, 100% hydrogen fuel cells"; end
   def m32; 1.0; end
   def n32; 2.0; end
@@ -723,10 +723,10 @@ class Sheet1 < Spreadsheet
   def d34; "International aviation"; end
   def e34; 2.0; end
   def f34; 4.0; end
-  def h34; "Annual improvement in plane fuel efficiency of 0.8%. CCC “likely” scenario"; end
-  def i34; "Annual improvement in plane fuel efficiency of 1%. CCC “optimistic” scenario"; end
-  def j34; "Same as level 2"; end
-  def k34; "Annual improvement in plane fuel efficiency of 1.5%. CCC “speculative” scenario"; end
+  def h34; "By 2050, 130% passengers increase; 50% more fuel use"; end
+  def i34; "By 2050, 130% passengers increase; 45% more fuel use"; end
+  def j34; "By 2050, 130% passengers increase; 31% more fuel use"; end
+  def k34; "By 2050, 85% passengers increase; 5% more fuel use"; end
   def m34; 1.0; end
   def n34; 4.0; end
   def o34; 1.0; end
@@ -745,10 +745,10 @@ class Sheet1 < Spreadsheet
   def bj34; @bj34 ||= sheet59.w99/bj33; end
   def bk34; @bk34 ||= sheet61.w99/bk33; end
   def bl34; @bl34 ||= sheet65.w99/bl33; end
-  def bp34; "Annual improvement in plane fuel efficiency of 0.8%, similar to the Climate Change Committee's “likely” scenario"; end
-  def bq34; "Annual improvement in plane fuel efficiency of 1%, similar to the Climate Change Committee's “optimistic” scenario"; end
-  def br34; "Annual improvement in plane fuel efficiency of 1%, similar to the Climate Change Committee's “optimistic” scenario"; end
-  def bs34; "Annual improvement in plane fuel efficiency of 1.5%, similar to the Climate Change Committee's “speculative” scenario"; end
+  def bp34; "By 2050, international aviation has 130% more passengers but uses only 50% more fuel"; end
+  def bq34; "By 2050, international aviation has 130% more passengers but uses only 45% more fuel"; end
+  def br34; "By 2050, international aviation has 130% more passengers but uses only 31% more fuel"; end
+  def bs34; "By 2050, international aviation has 85% more passengers but uses only 5% more fuel"; end
   def c35; "XII.e"; end
   def d35; "International shipping"; end
   def e35; 3.0; end
@@ -788,11 +788,6 @@ class Sheet1 < Spreadsheet
   def c36; "IX.a"; end
   def d36; "Domestic space heating and hot water"; end
   def e36; 0.0; end
-  def v36; 0.0; end
-  def x36; 0.0; end
-  def y36; 0.0; end
-  def aa36; 0.0; end
-  def ab36; 0.0; end
   def ar36; "I"; end
   def as36; @as36 ||= sheet17.c7; end
   def aw36; @aw36 ||= sumifs(sheet56.a('dh6','dh110'),sheet56.a('c6','c110'),ar36); end
@@ -938,11 +933,6 @@ class Sheet1 < Spreadsheet
   def c41; "X.a"; end
   def d41; "Domestic lighting, appliances, and cooking"; end
   def e41; 0.0; end
-  def v41; 0.0; end
-  def x41; 0.0; end
-  def y41; 0.0; end
-  def aa41; 0.0; end
-  def ab41; 0.0; end
   def ar41; "X"; end
   def as41; @as41 ||= sheet17.c16; end
   def aw41; @aw41 ||= sumifs(sheet56.a('dh6','dh110'),sheet56.a('c6','c110'),ar41); end
