@@ -88,7 +88,7 @@ class CostsInContext
       #@r.path(["M", @x(tick), 40, "L", @x(tick),@h]).attr({stroke:'#fff'})
 
     #@drawIndicator(26000,"GDP/capita in 2010")
-    #@drawIndicator(3000,"Aproximate energy system cost in 2007")
+    @drawIndicator(3700,"Aproximate energy system cost today")
     #@drawIndicator(34656,"Forecast mean GDP/capita 2010-2050")
     #@drawIndicator(57000,"GDP/capita in 2050")
     
@@ -97,9 +97,9 @@ class CostsInContext
     
   drawIndicator: (value,text) ->
     x = @x(value)
-    #@r.path(["M",x-5,12,"L",x+5,12,x,17,"Z"]).attr({fill:'#aaa',stroke:'none'})
-    @r.text(x,5,text).attr({'text-anchor':'end',fill:'#aaa'})    
-    @r.path(["M", x, 3, "L", x,@h]).attr({stroke:'#aaa','stroke-dasharray':'.'})
+    @r.text(x,10,text).attr({'text-anchor':'end',fill:'#aaa'})
+    @r.path(["M", x, 8, "L", x,@h-15]).attr({stroke:'#000','stroke-dasharray':'.'})
+    @r.text(x,@h-20,'3,700').attr({'text-anchor':'end',fill:'#aaa'})
   
   updateResults: (pathway) ->
     @updateBar(pathway,'chosen')
