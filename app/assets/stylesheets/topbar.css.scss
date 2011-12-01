@@ -50,6 +50,15 @@
     width: auto;
   }
   
+  #message.warning {
+    background-image: url('/assets/hatches/hatch-fff928.png');
+    text-align: center;
+    a {
+      display: inline;
+      background: white;
+    }
+  }
+
   #calculating, #message {
     width: 100%;
     height: 22px;

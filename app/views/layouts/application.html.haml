@@ -12,7 +12,15 @@
       = render 'layouts/view_dropdown'
       #messages
         #calculating Calculating
-        #message= link_to "This is the beta version of the 2050 Pathways calculator. Help us to make it better.","http://www.decc.gov.uk/2050"
+        - if %w{costs_in_context costs_compared_overview costs_sensitivity costs_compared_within_sector}.include?(action_name)
+          #message.warning
+            = link_to "This cost analysis is under development. Help us to make it better.","http://2050-calculator-tool-wiki.decc.gov.uk"
+        - elsif %w{air_quality}.include?(action_name)
+          #message.warning
+            = link_to "This air quality analysis is under development. Help us to make it better.","http://2050-calculator-tool-wiki.decc.gov.uk"
+        - else 
+          #message
+            = link_to "This is the DECC 2050 Pathways calculator. Click to find out more.","http://www.decc.gov.uk/2050"
       = render 'layouts/saved_pathways_dropdown'
       #share= link_to_function "Share", "twentyfifty.switchView('share')"
     = yield 
