@@ -298,7 +298,7 @@ class CostsSensitivity
       component = {}
 
       # Label
-      url = "http://http://2050-calculator-tool-wiki.decc.gov.uk#{cost_wiki_links[name] || "/"}"
+      url = "http://2050-calculator-tool-wiki.decc.gov.uk#{cost_wiki_links[name] || "/"}"
       component.name = r.text(245,ly,name).attr({'text-anchor':'end',href:url})
       
       # This pathway
