@@ -46,7 +46,7 @@ class CostsComparedOverview
     # The y axis labels
     @r.rect(25,@y("chosen"),@x(7000)-25,@y.rangeBand()).attr({'fill':'#FCFF9B','stroke':'none'})
     @r.text(30,@y("chosen")+9,"Your pathway").attr({'text-anchor':'start','font-weight':'bold'})
-    @r.text(30,@y("chosen")+27,"Your can click on the chart to make a more\ndetailed comparison of specific costs").attr({'text-anchor':'start'})
+    @r.text(30,@y("chosen")+27,"You can click on the chart to make a more\ndetailed comparison of specific costs").attr({'text-anchor':'start'})
     for code in twentyfifty.comparator_pathways
       @r.text(30,@y(code)+9,twentyfifty.pathwayName(code,code)).attr({'text-anchor':'start','font-weight':'bold', href: twentyfifty.pathwayWikiPages(code)})
       @r.text(30,@y(code)+27,twentyfifty.pathwayDescriptions(code,"")).attr({'text-anchor':'start',href: twentyfifty.pathwayWikiPages(code)})
