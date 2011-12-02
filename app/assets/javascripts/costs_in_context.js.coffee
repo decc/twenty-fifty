@@ -118,7 +118,7 @@ class CostsInContext
     else if _id == (twentyfifty.getComparator() || twentyfifty.default_comparator_code )# Draw the incremental scale
       @comparator = pathway
       # The top x axis label
-      @r.text(@x(total_cost),10,"The extra cost to society of your pathway above that of the '#{twentyfifty.pathwayName(_id,"comparison")}' pathway (mean undiscounted real pounds per person per year 2010-2050)").attr({'text-anchor':'start','font-weight':'bold','fill':'#f00'})
+      @r.text(@x(total_cost),10,"The extra cost to society above that of the '#{twentyfifty.pathwayName(_id,"comparison")}' pathway (mean £/person/year 2010-2050)").attr({'text-anchor':'start','font-weight':'bold','fill':'#f00'})
       @r.path(["M",@x(total_cost),@h-35,"L",@x(total_cost),30,"L",@w-30,30]).attr({'stroke':'#f00','stroke-width':2})
       format = @x.tickFormat(10)
       for tick in @x.ticks(10)
