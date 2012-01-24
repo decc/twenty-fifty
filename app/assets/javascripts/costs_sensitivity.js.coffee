@@ -79,6 +79,7 @@ class CostsSensitivity
   c_range_fill_color = 'url(/assets/hatches/hatch-f00.png)'
     
   constructor: () ->
+    # Nothing
 
   documentReady: () ->
     @drawChart()
@@ -245,14 +246,14 @@ class CostsSensitivity
     # This pathway
     r.rect(25,y('p'),x(10000)-25,bar_height).attr({'fill':'#FCFF9B','stroke':'none'})
     r.text(30,y("p")+9,"Your pathway").attr({'text-anchor':'start','font-weight':'bold'})
-    r.text(30,y("p")+27,"Your can use the chart below to see how\nsensitive it is to different cost assumptions").attr({'text-anchor':'start'})
+    r.text(30,y("p")+27,"You can use the chart below to see how\nsensitive it is to different cost assumptions").attr({'text-anchor':'start'})
     @top_pathway_chart =
       low:    r.rect(x(0),y('p'),0,bar_height).attr({'fill':p_low_fill_color,'stroke':'none'})
       range:  r.rect(x(0),y('p'),0,bar_height).attr({'fill':p_range_fill_color,'stroke':'none'})
 
     # Comparator pathway
     r.rect(x(0),y('c'),x(10000)-x(0),bar_height).attr({'fill':'#ddd','stroke':'none'})
-    @top_comparator_chart = 
+    @top_comparator_chart =
       name:         r.text(30,y('c')+9,"").attr({'text-anchor':'start','font-weight':'bold'})
       description:  r.text(30,y('c')+27,"").attr({'text-anchor':'start'})
       low:          r.rect(x(0),y('c'),0,bar_height).attr({'fill':c_low_fill_color,'stroke':'none'})
@@ -333,7 +334,7 @@ class CostsSensitivity
         
       components[name] = component
           
-    @components = components  
+    @components = components
  
     # The vertical lines
     format = x.tickFormat(10)
