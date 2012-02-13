@@ -648,7 +648,7 @@ class Sheet1 < Spreadsheet
   def h31; "By 2050, 20% plug in hybrid electric cars; 2.5% zero emission cars."; end
   def i31; "By 2050, 54% plug-in hybrid vehicles; 11%  zero emission vehicles, all buses hybrids."; end
   def j31; "By 2050, 32% plug-in hybrid vehicles; 48% zero emission vehicles; 22% buses electric."; end
-  def k31; "By 2050 100%  zero emission vehiclesl; all passenger trains electrified; 50% bus electrified "; end
+  def k31; "By 2050 100% zero emission vehicles; all passenger trains electrified; 50% bus electrified "; end
   def m31; 1.0; end
   def n31; 4.0; end
   def o31; 1.0; end
