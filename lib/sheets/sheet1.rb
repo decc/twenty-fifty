@@ -836,10 +836,10 @@ class Sheet1 < Spreadsheet
   def d38; "Home insulation"; end
   def e38; 3.0; end
   def f38; 4.0; end
-  def h38; "Over 7m homes insulated, average thermal leakiness falls by 25%"; end
-  def i38; "Over 8m homes insulated, average thermal leakiness falls by 33%"; end
-  def j38; "Over 18m homes insulated, average thermal leakiness falls by 42%"; end
-  def k38; "Over 24m homes insulated, average thermal leakiness decreases by 50% "; end
+  def h38; "Over 7M homes insulated, average thermal leakiness falls by 25%"; end
+  def i38; "Over 8M homes insulated, average thermal leakiness falls by 33%"; end
+  def j38; "Over 18M homes insulated, average thermal leakiness falls by 42%"; end
+  def k38; "Over 24M homes insulated, average thermal leakiness decreases by 50% "; end
   def m38; 1.0; end
   def n38; 4.0; end
   def o38; 1.0; end
