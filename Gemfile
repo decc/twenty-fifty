@@ -15,7 +15,7 @@ end
 # gem 'jquery-rails'
 
 gem 'haml'
-gem 'rubyfromexcel', '0.0.21'
+gem 'rubyfromexcel', '0.0.22'
 #gem 'rubyfromexcel', :path => "/Users/tamc/Documents/github/rubyfromexcel"
 
 gem 'foreman'
