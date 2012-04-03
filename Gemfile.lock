@@ -108,9 +108,9 @@ GEM
     rspec-expectations (2.7.0)
       diff-lcs (~> 1.1.2)
     rspec-mocks (2.7.0)
-    rubyfromexcel (0.0.21)
+    rubyfromexcel (0.0.22)
       nokogiri (>= 1.4.1)
-      rubypeg (>= 0.0.2)
+      rubypeg (>= 0.0.4)
       rubyscriptwriter (>= 0.0.1)
     rubypeg (0.0.4)
       rubyscriptwriter
@@ -154,7 +154,7 @@ DEPENDENCIES
   nokogiri
   rails (= 3.1.1)
   rspec
-  rubyfromexcel (= 0.0.21)
+  rubyfromexcel (= 0.0.22)
   sass-rails (~> 3.1.4)
   thin
   uglifier (>= 1.0.3)
