@@ -3,6 +3,7 @@ gem 'rails', '3.1.1'
 gem 'mongo'
 gem 'bson_ext'
 gem 'thin'
+gem 'ffi'
 
 # Gems used only for assets and not required
 # in production environments by default.
