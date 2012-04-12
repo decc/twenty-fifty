@@ -7,4 +7,6 @@ tmp/
 *.swo
 *.swp
 *~
-
+lib/2050
+public/assets
+public/pathways
