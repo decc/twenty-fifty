@@ -3,19 +3,12 @@ class PathwaysController < ApplicationController
   before_filter :redirect_if_version_1_named_pathway
   before_filter :redirect_if_version_1_pathway
   before_filter :redirect_if_version_2_pathway
+  
+  caches_page :data
 
   def data
-    conn = Mongo::Connection.from_uri(ENV['MONGO_URI'])
-    db   = conn.db(ENV['MONGO_DB'])
-    p = db.collection('pathways').find_one(_id:params[:id])
-    if p
-      expires_in 1.minute, :public => true
-    else
-      response.cache_control.replace(:no_cache => true)
-      response.headers['Expires'] = "-1"
-      response.headers['Pragam'] = "no-cache"
-      db.collection('pathways_to_be_calculated').insert({_id:params[:id]})
-    end
+    p = GeneratePathwayC.new.calculate_pathway(params[:id])
+    expires_in 1.hour, :public => true
     render :json => p
   end
 
