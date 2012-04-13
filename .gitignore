@@ -11,3 +11,6 @@ lib/2050
 lib/2050Model
 public/assets
 public/pathways
+*.o
+*.out
+*.dylib
