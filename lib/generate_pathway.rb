@@ -162,7 +162,12 @@ class GeneratePathway
       finance_high  = cost_sheet.send("cp#{high_start_row+i}")
       finance_range = finance_high - finance_low
       
-      t[name] = {low:low,point:point,high:high,range:range,finance_low:finance_low,finance_point:finance_point,finance_high:finance_high,finance_range:finance_range}
+      costs = {low:low,point:point,high:high,range:range,finance_low:finance_low,finance_point:finance_point,finance_high:finance_high,finance_range:finance_range}
+      if t.has_key?(name)
+        t[name] = sum(t[name],costs)
+      else
+        t[name] = costs
+      end
     end
     
     # Merge some of the points
