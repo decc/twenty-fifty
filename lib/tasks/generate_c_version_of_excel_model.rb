@@ -19,7 +19,9 @@ command.cells_to_keep = {
   'IX.c' => (0.upto(12).to_a.map { |i| "n#{317+i}" })
 }
 
-command.actually_compile_c_code = true
+command.actually_compile_code = true
 command.actually_run_tests = true
+
+command.run_in_memory = true
 
 command.go!

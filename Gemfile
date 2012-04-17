@@ -19,7 +19,7 @@ gem 'foreman'
 gem 'heroku'
 
 group :development do
-  gem 'excel_to_code'
+  gem 'excel_to_code', '0.0.2'
   gem 'rubyfromexcel', '0.0.22'
   #gem 'rubyfromexcel', :path => "/Users/tamc/Documents/github/rubyfromexcel"
   gem 'rspec'

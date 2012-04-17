@@ -43,7 +43,7 @@ GEM
     diff-lcs (1.1.3)
     erubis (2.7.0)
     eventmachine (0.12.10)
-    excel_to_code (0.0.1)
+    excel_to_code (0.0.2)
       nokogiri (>= 1.5.0)
       rspec (>= 2.7.0)
     execjs (1.2.9)
@@ -146,7 +146,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.1.1)
-  excel_to_code
+  excel_to_code (= 0.0.2)
   ffi
   foreman
   haml
