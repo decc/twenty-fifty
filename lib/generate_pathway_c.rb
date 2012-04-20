@@ -118,7 +118,7 @@ class GeneratePathwayC
       'Community scale gas CHP',
       'Community scale solid-fuel CHP',
       'District heating from power stations'].each_with_index do |name,i|
-        r[name] = r("ix_c_n#{317+i}")
+        c[name] = r("ix_c_n#{317+i}")
       end
     h['commercial'] = c
     pathway[:heating] = h
