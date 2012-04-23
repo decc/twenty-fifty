@@ -1,5 +1,3 @@
-require 'decc_2050_model_result'
-
 class PathwaysController < ApplicationController
   
   before_filter :redirect_if_version_1_named_pathway
