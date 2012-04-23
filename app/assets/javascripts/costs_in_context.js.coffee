@@ -55,7 +55,7 @@ class CostsInContext
       low =   @r.rect(x,y,0,h).attr({'fill':'#008000','stroke':'none'})
       range = @r.rect(x,y,0,h).attr({'fill':'url(/assets/hatches/hatch-green.png)','stroke':'none'})
       low_label = @r.text(x+10,y+h/2,"").attr({'fill':'#000','text-anchor':'start'})
-      range_label = @r.text(x,y+h/2,"").attr({'fill':'#000','text-anchor':'start','fill':'#f00'})
+      range_label = @r.text(x,y+h/2,"").attr({'text-anchor':'start','fill':'#f00'})
       message = @r.text(x,y+h/2,"").attr({'fill':'#000','text-anchor':'start'})
       overlay = @r.rect(x,y,0,h).attr({'fill':'#fff','stroke':'none', cursor:'pointer','fill-opacity':0.0})
       @bars[code] = { low: low, range: range, low_label: low_label, range_label: range_label, message: message, overlay: overlay}
