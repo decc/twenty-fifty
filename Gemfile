@@ -18,10 +18,8 @@ gem 'haml'
 gem 'foreman'
 gem 'heroku'
 
+gem 'decc_2050_model'
+
 group :development do
-  gem 'excel_to_code', '0.0.3'
-  gem 'rubyfromexcel', '0.0.22'
-  #gem 'rubyfromexcel', :path => "/Users/tamc/Documents/github/rubyfromexcel"
   gem 'rspec'
-  gem 'nokogiri'
 end

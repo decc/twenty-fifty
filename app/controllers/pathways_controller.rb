@@ -1,3 +1,5 @@
+require 'decc_2050_model_result'
+
 class PathwaysController < ApplicationController
   
   before_filter :redirect_if_version_1_named_pathway
@@ -7,7 +9,7 @@ class PathwaysController < ApplicationController
   caches_page :data
 
   def data
-    p = GeneratePathwayC.new.calculate_pathway(params[:id])
+    p = Decc2050ModelResult.calculate_pathway(params[:id])
     expires_in 1.hour, :public => true
     render :json => p
   end
