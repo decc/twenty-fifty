@@ -132,7 +132,7 @@ class Map
      for name in ['III.a.2','III.c.TidalStream','III.c.TidalRange','VI.c']
        @sea_boxes[name] = r.down_labeled_square(x,y,labels[name],0,colours[name])
        
-     r.path("M244,695 q0,-200 -200,-200").attr({'stroke':'black','stroke':'#ccc'})
+     r.path("M244,695 q0,-200 -200,-200").attr({'stroke':'#ccc'})
      r.text(44,510,"Imports").attr({'fill':'#ccc','font-weight':'bold','text-anchor':'start'})
      
      
