@@ -3,15 +3,21 @@ class PathwaysController < ApplicationController
   before_filter :redirect_if_version_1_named_pathway
   before_filter :redirect_if_version_1_pathway
   before_filter :redirect_if_version_2_pathway
+  before_filter :set_last_modified_headers, :except => [:data]
   
-  caches_page :data
-
   def data
-    p = Decc2050ModelResult.calculate_pathway(params[:id])
-    expires_in 1.hour, :public => true
-    render :json => p
+    if stale?(:last_modified => Decc2050Model.last_modified_date)
+      p = Decc2050ModelResult.calculate_pathway(params[:id])
+      render :json => p
+      expires_in 1.day, :public => true
+    end
   end
-
+    
+  def set_last_modified_headers
+    fresh_when(:last_modified => Time.utc(2012,04,27))
+    expires_in 1.day, :public => true
+  end
+  
   def redirect_if_version_1_named_pathway
     return true unless params[:id]
     return true unless params[:id] =~ /^[a-z1]$/
