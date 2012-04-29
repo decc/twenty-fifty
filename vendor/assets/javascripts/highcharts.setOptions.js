@@ -3,7 +3,7 @@ Highcharts.setOptions({
     borderColor: '#ffffff',
     zoomType: 'xy',
     defaultSeriesType: 'area',
-    animation: false,
+    animation: true,
     spacingTop: 5,
     spacingBottom: 10,
     spacingLeft: 3,
