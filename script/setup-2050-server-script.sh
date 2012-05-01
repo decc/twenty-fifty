@@ -13,7 +13,7 @@ sudo apt-get upgrade -y
 sudo apt-get install -y ruby1.9.3
 
 ## THE CODE
-git clone -b cModel git://github.com/decc/twenty-fifty.git
+git clone git://github.com/decc/twenty-fifty.git
 
 # Bundler
 sudo gem install --no-ri --no-rdoc bundler
@@ -22,7 +22,6 @@ bundle
 bundle exec rake assets:precompile  
 
 # THE SERVER
-public_hostname=$(wget -qO- instance-data/latest/meta-data/public-hostname)
 
 sudo gem install --no-ri --no-rdoc passenger
 sudo passenger-install-apache2-module --auto
@@ -32,7 +31,7 @@ sudo sh -c 'echo "PassengerRuby /usr/bin/ruby1.9.1" >> /etc/apache2/mods-availab
 sudo a2enmod passenger
 
 sudo sh -c 'echo "<VirtualHost *:80>" > /etc/apache2/sites-available/twenty-fifty'
-sudo sh -c 'echo "ServerName $public_hostname" >> /etc/apache2/sites-available/twenty-fifty'
+sudo sh -c 'echo "ServerName 2050-calculator-tool.decc.gov.uk" >> /etc/apache2/sites-available/twenty-fifty'
 sudo sh -c 'echo "DocumentRoot /home/ubuntu/twenty-fifty/public" >> /etc/apache2/sites-available/twenty-fifty'
 sudo sh -c 'echo "<Directory /home/ubuntu/twenty-fifty/public>" >> /etc/apache2/sites-available/twenty-fifty'
 sudo sh -c 'echo "  AllowOverride all" >> /etc/apache2/sites-available/twenty-fifty'
