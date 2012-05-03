@@ -108,7 +108,7 @@ startDemo = (choice) ->
 
 stopDemo = (choice) ->
   clearInterval(demoTimer) if demoTimer?
-  go(choice,demoOriginalLevel) if demoOriginalLevel?
+  go(choice,demoOriginalLevel) if demoOriginalLevel? && demoOriginalLevel != choices[choice]
 
 switchView = (new_action) ->
   action = new_action
@@ -192,8 +192,6 @@ window.onpopstate = (event) ->
     old_choices = choices.slice(0)
     choices = event.state
     loadMainPathway(false)
-
-
 
 updateControls = (old_choices,@choices) ->
   controls = $('#classic_controls')
