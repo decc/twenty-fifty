@@ -18,7 +18,7 @@ gem 'haml'
 gem 'foreman'
 gem 'heroku'
 
-gem 'decc_2050_model'
+gem 'decc_2050_model', ">= 0.0.7"
 
 group :development do
   gem 'rspec'
