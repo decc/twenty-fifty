@@ -22,7 +22,7 @@ Otherwise:
 
 1. cd twenty_fifty
 2. rails server
-3. Navigate to http://0.0.0.0:5000 in your web browser
+3. Navigate to http://0.0.0.0:3000 in your web browser
 
 # HACKING
 You are welcome to improve this code. Please read the LICENCE file and then the HACKING file contains some hints and tips on changing the code and a process for sending in patches and bug reports.
