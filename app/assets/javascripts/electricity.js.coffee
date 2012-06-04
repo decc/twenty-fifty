@@ -50,7 +50,7 @@ class Electricity
     i++
     
     # Supply of electricity
-    titles = ["Unabated thermal generation", "Carbon Capture Storage (CCS)", "Nuclear power", "Onshore wind", "Offshore wind", "Hydroelectric power stations", "Tidal and Wave", "Geothermal electricity", "Solar PV", "Non-thermal renewable generation", "Electricity imports"]
+    titles = ["Unabated thermal generation", "Carbon Capture Storage (CCS)", "Nuclear power", "Onshore wind", "Offshore wind", "Hydroelectric power stations", "Tidal and Wave", "Geothermal electricity", "Solar PV", "Electricity imports"]
     i = 0
     for name in titles
       data = @pathway['electricity']['supply'][name]
