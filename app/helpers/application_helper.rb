@@ -34,7 +34,7 @@ module ApplicationHelper
     "Doesn't tackle climate change (All level 1)" => "10111111111111110111111001111110111101101101110110111",
     "Maximum demand"                              => "10111111111111110111111004444440444404203304440420111",    
     "Maximum supply"                              => "40444444444444440443444001111110111101101101110110111",
-    "Analogous to Markal 3.26"                    => "j0h2cd2221121f1b032211p004314110433304202304320420121",
+    "Analogous to Markal 3.26"                    => "i0g2dd2pp1121f1i032211p004314110433304202304320420121",
     "Higher renewables, more energy efficiency"   => "e0d3jrg221ci12110222112004423220444404202304440420141",
     "Higher nuclear, less energy efficiency"      => "r013ce1111111111042233B002322220233302202102330220121",
     "Higher CCS, more bioenergy"                  => "f023df111111111f0322123003223220333203102303430310221",
