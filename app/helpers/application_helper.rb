@@ -38,7 +38,7 @@ module ApplicationHelper
     "Higher renewables, more energy efficiency"   => "e0d3jrg221ci12110222112004423220444404202304440420141",
     "Higher nuclear, less energy efficiency"      => "r013ce1111111111042233B002322220233302202102330220121",
     "Higher CCS, more bioenergy"                  => "f023df111111111f0322123003223220333203102303430310221",
-    "Friends of the Earth"                        => "10113333312223110243111004424440343304202304430420141",
+    "Friends of the Earth"                        => "10h4nn4431w23y110243111004424440343304202304430420441",
     "Campaign to Protect Rural England"           => "10h2pdppp12332130233122004414430343304102304430410231",
     "Mark Brinkley"                               => "20222144411341110343321003422440423404203203340420141",
     "National Grid"                               => "h0h2gg1211cj1j110322222003313230234102102203440320121",
