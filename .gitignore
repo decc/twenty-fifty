@@ -14,3 +14,4 @@ public/pathways
 *.o
 *.out
 *.dylib
+doc/api
