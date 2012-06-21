@@ -24,7 +24,7 @@ class Story
   
     element = $('#supply_story')
     element.empty()
-    @stories_for_choices element, "Thermal power stations in 2050",0,2,3,7,10
+    @stories_for_choices element, "Thermal power stations in 2050",0,2,3,9
     
     @stories_for_choices element, "Wind in 2050",4,5,14
     @stories_for_choices element, "Solar in 2050",10,11,15
