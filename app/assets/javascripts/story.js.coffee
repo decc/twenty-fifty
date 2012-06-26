@@ -24,12 +24,11 @@ class Story
   
     element = $('#supply_story')
     element.empty()
-    @stories_for_choices element, "Thermal power stations in 2050",0,2,3,9
-    
+    @stories_for_choices element, "Thermal power stations in 2050",0,2,3,9,12
     @stories_for_choices element, "Wind in 2050",4,5,14
+    @stories_for_choices element, "Water: wave, tide and hydro in 2050",6,7,8,13
     @stories_for_choices element, "Solar in 2050",10,11,15
-    @stories_for_choices element, "Other renewable electricity in 2050",6,7,8,12,13
-    @stories_for_choices element, "Bioenergy in 2050",22,17,18,19,20,21
+    @stories_for_choices element, "Bioenergy, farming and waste in 2050",22,17,18,19,20,21
     
     element = $('#ghg_story')
     element.empty()
