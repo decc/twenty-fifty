@@ -14,9 +14,15 @@ class Share
 
 
 loadFromExcel = () ->
-  choices = $('#excel textarea').val().split(/\r\n|\r|\n/)
-  twentyfifty.setChoices(choices)
+  pasted_choices = $('#excel textarea').val().split(/\r\n|\r|\n/)
+  pasted_choices = for c in pasted_choices
+    if c == ""
+      "0"
+    else
+      c
+  twentyfifty.setChoices(pasted_choices)
   twentyfifty.switchView('primary_energy_chart')
+  return false
 
 window.twentyfifty.Share = Share
 window.twentyfifty.loadFromExcel = loadFromExcel
