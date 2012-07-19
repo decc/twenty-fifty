@@ -8,6 +8,30 @@ UPDATING THE UNDERLYING EXCEL MODEL
 The calculating engine of this tool is contained in the decc_2050_model gem. Find out more about that at:
 http://github.com/decc/decc_2050_model
 
+UPDATING THE EXAMPLE PATHWAYS
+
+The example pathways are listed in:
+
+    app/helpers/application_helper.rb
+
+UPDATING THE ONE PAGE NOTES
+
+The one page notes are separate pdf files in:
+
+    app/assets/images/onepage
+
+If the order of the controls is changed, or a new control is added, then the mapping in the underlying decc_2050_model code also needs to be changed:
+
+  In this code:  
+
+    http://github.com/decc/decc_2050_model
+
+  Look in this file:
+
+    lib/decc_2050_model/model_choice.rb
+
+  And change the NUMBER_TO_DOC_MAP. The left hand number is a counter, based on the row number in the Excel Control worksheet. 0 is the first row of the controls (Nuclear power). The right hand number or text is the filename of the relevant one page note pdf in app/assets/images/onepage
+
 REPORTING A BUG
 
 Please report bugs using the tool at:

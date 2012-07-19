@@ -1,17 +1,3 @@
-comparator_pathways = [
-  "i0g2dd2pp1121f1i032211p004314110433304202304320420121"
-  "e0d3jrg221ci12110222112004423220444404202304440420141"
-  "r013ce1111111111042233B002322220233302202102330220121"
-  "f023df111111111f0322123003223220333203102303430310221"
-  "10h4nn4431w23y110243111004424440343304202304430420441"
-  "10h2pdppp12332130233122004414430343304102304430410231"
-  "20222144411341110343321003422440423404203203340420141"
-  "h0h2gg1211cj1j110322222003313230234102102203440320121"
-  "g0f2oj11t1rgqj1j0343111003324240244104201304430420231"
-  "10111111111111110111111001111110111101101101110110111"
-]
-
-default_comparator_code = "10111111111111110111111001111110111101101101110110111"
 
 cost_categories =
   "Conventional thermal plant":"Electricity"
@@ -218,8 +204,6 @@ calculateIncrementalCost = (pt,pc) ->
         cc += cvalues.low_adjusted
   {tc: tc, tt: tt, cc: cc, ct: ct}
 
-window.twentyfifty.comparator_pathways = comparator_pathways
-window.twentyfifty.default_comparator_code = default_comparator_code
 window.twentyfifty.group_costs_of_pathway = group_costs_of_pathway
 window.twentyfifty.adjust_costs_of_pathway = adjust_costs_of_pathway
 window.twentyfifty.calculateIncrementalCost = calculateIncrementalCost
