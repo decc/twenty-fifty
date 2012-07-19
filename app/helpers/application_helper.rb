@@ -29,76 +29,122 @@ module ApplicationHelper
     }[action_name]
   end
 
+  # FIXME: This data should be in the underlying excel
+  def example_pathways
+    @example_pathways ||= [
+      { 
+        name: "Doesn't tackle climate change (All level 1)",
+        code: "10111111111111110111111001111110111101101101110110111",
+        description: "Imported natural gas for electricity and heat\nImported oil for vehicles.",
+        wiki: "75",
+        cost_comparator: 10
+      },
+      { 
+        name: "Maximum demand",
+        code: "10111111111111110111111004444440444404203304440420111",    
+        description: "Maximum demand",
+        cost_comparator: false
+      },
+      {
+        name: "Maximum supply",
+        code: "40444444444444440443444001111110111101101101110110111",
+        description: "Maximum supply",
+        cost_comparator: false
+      },
+      {
+        name: "Analogous to Markal 3.26",
+        code: "i0g2dd2pp1121f1i032211p004314110433304202304320420121",
+        description: "Cost-optimising model based. Mix of supply\nsources. Ambitious demand reduction.",
+        wiki: "112",
+        cost_comparator: 0
+      },
+      {
+        name: "Higher renewables, more energy efficiency",
+        code: "e0d3jrg221ci12110222112004423220444404202304440420141",
+        description: "Renewables largest supply component. Very\nambitious demand reduction. Lots of storage.",
+        wiki: "109",
+        cost_comparator: 1
+      },
+      {
+        name: "Higher nuclear, less energy efficiency",
+        code: "r013ce1111111111042233B002322220233302202102330220121",
+        description: "Lots of nuclear. Moderate energy demand\nreduction. Minimal renewables.",
+        wiki: "110",
+        cost_comparator: 2
+      },
+      {
+        name: "Higher CCS, more bioenergy",
+        code: "f023df111111111f0322123003223220333203102303430310221",
+        description: "Lots of CCS and biomass co-firing.\nAmbitious demand reduction",
+        wiki: "111",
+        cost_comparator: 3
+      },
+      {
+        name: "Friends of the Earth",
+        code: "10h4nn4431w23y110243111004424440343304202304430420441",
+        description: "Generation from wind, marine renewables and\nhydro. Ambitious demand reduction",
+        wiki: "95",
+        cost_comparator: 4
+      },
+      {
+        name: "Campaign to Protect Rural England",
+        code: "10h2pdppp12332130233122004414430343304102304430410231",
+        description: "Offshore renewables, solar, geothermal and\nelectricity imports. Ambitious demand reduction.",
+        wiki: "96",
+        cost_comparator: 5
+      },
+      {
+        name: "Mark Brinkley",
+        code: "20222144411341110343321003422440423404203203340420141",
+        description: "Marine renewable, geothermal and algae\nsupply. Some nuclear and CCS.",
+        wiki: "94",
+        cost_comparator: 7
+      },
+      {
+        name: "National Grid",
+        code: "h0h2gg1211cj1j110322222003313230234102102203440320121",
+        description: "Wide range of generation sources. Moderate\ndemand reduction. Considerable bioenergy.",
+        wiki: "97",
+        cost_comparator: 8
+      },
+      {
+        name: "Atkins",
+        code: "g0f2oj11t1rgqj1j0343111003324240244104201304430420231",
+        description: "Energy from a range of sources. Emphasis\non UK self-reliance.",
+        wiki: "92",
+        cost_comparator: 9
+      }
+    ]
+  end 
+
   def pathway_names
-    saved_pathways.invert
+    Hash[*example_pathways.map { |e| [e[:code],e[:name]] }.flatten]
   end
 
   def pathway_wiki_pages
-    {
-      "10111111111111110111111001111110111101101101110110111" => "75",
-      "e0d3jrg221ci12110222112004423220444404202304440420141" => "109",
-      "r013ce1111111111042233B002322220233302202102330220121" => "110",
-      "f023df111111111f0322123003223220333203102303430310221" => "111",
-      "i0g2dd2pp1121f1i032211p004314110433304202304320420121" => "112", # Markal
-      "10h4nn4431w23y110243111004424440343304202304430420441" => "95", # FOTE
-      "10h2pdppp12332130233122004414430343304102304430410231" => "96", # CPRE
-      "20222144411341110343321003422440423404203203340420141" => "94", # Mark Brinkley
-      "h0h2gg1211cj1j110322222003313230234102102203440320121" => "97", # National Grid
-      "g0f2oj11t1rgqj1j0343111003324240244104201304430420231" => "92" # Atkins
-    }
+    Hash[*example_pathways.map { |e| [e[:code],e[:wiki]] }.flatten]
   end
 
   def cost_comparator_pathways
-    [
-      "i0g2dd2pp1121f1i032211p004314110433304202304320420121",
-      "e0d3jrg221ci12110222112004423220444404202304440420141",
-      "r013ce1111111111042233B002322220233302202102330220121",
-      "f023df111111111f0322123003223220333203102303430310221",
-      "10h4nn4431w23y110243111004424440343304202304430420441",
-      "10h2pdppp12332130233122004414430343304102304430410231",
-      "20222144411341110343321003422440423404203203340420141",
-      "h0h2gg1211cj1j110322222003313230234102102203440320121",
-      "g0f2oj11t1rgqj1j0343111003324240244104201304430420231",
-      "10111111111111110111111001111110111101101101110110111"
-    ]
+    example_pathways.find_all do |e|
+      e[:cost_comparator]
+    end.sort_by do |e|
+      e[:cost_comparator]
+    end.map do |e|
+      e[:code]
+    end
   end
 
   def default_cost_comparator_pathway
-    "10111111111111110111111001111110111101101101110110111"
+    example_pathways.first[:code]
   end
 
   def pathway_descriptions
-    {
-      "10111111111111110111111001111110111101101101110110111" => "Imported natural gas for electricity and heat\nImported oil for vehicles.",
-      "10111111111111110111111004444440444404203304440420111" => "Maximum demand",
-      "40444444444444440443444001111110111101101101110110111" => "Maximum supply",
-      "i0g2dd2pp1121f1i032211p004314110433304202304320420121" => "Cost-optimising model based. Mix of supply\nsources. Ambitious demand reduction.", # Markal
-      "10h4nn4431w23y110243111004424440343304202304430420441" => "Generation from wind, marine renewables and\nhydro. Ambitious demand reduction", #FOTE
-      "10h2pdppp12332130233122004414430343304102304430410231" => "Offshore renewables, solar, geothermal and\nelectricity imports. Ambitious demand reduction.", #CPRE
-      "20222144411341110343321003422440423404203203340420141" => "Marine renewable, geothermal and algae\nsupply. Some nuclear and CCS.", # Mark Brinkley
-      "h0h2gg1211cj1j110322222003313230234102102203440320121" => "Wide range of generation sources. Moderate\ndemand reduction. Considerable bioenergy.", # National Grid
-      "g0f2oj11t1rgqj1j0343111003324240244104201304430420231" => "Energy from a range of sources. Emphasis\non UK self-reliance.", # Atkins
-      "e0d3jrg221ci12110222112004423220444404202304440420141" => "Renewables largest supply component. Very\nambitious demand reduction. Lots of storage.",
-      "r013ce1111111111042233B002322220233302202102330220121" => "Lots of nuclear. Moderate energy demand\nreduction. Minimal renewables.",
-      "f023df111111111f0322123003223220333203102303430310221" => "Lots of CCS and biomass co-firing.\nAmbitious demand reduction"
-    }
+    Hash[*example_pathways.map { |e| [e[:code],e[:description]] }.flatten]
   end
 
   def saved_pathways 
-    {
-    "Doesn't tackle climate change (All level 1)" => "10111111111111110111111001111110111101101101110110111",
-    "Maximum demand"                              => "10111111111111110111111004444440444404203304440420111",    
-    "Maximum supply"                              => "40444444444444440443444001111110111101101101110110111",
-    "Analogous to Markal 3.26"                    => "i0g2dd2pp1121f1i032211p004314110433304202304320420121",
-    "Higher renewables, more energy efficiency"   => "e0d3jrg221ci12110222112004423220444404202304440420141",
-    "Higher nuclear, less energy efficiency"      => "r013ce1111111111042233B002322220233302202102330220121",
-    "Higher CCS, more bioenergy"                  => "f023df111111111f0322123003223220333203102303430310221",
-    "Friends of the Earth"                        => "10h4nn4431w23y110243111004424440343304202304430420441",
-    "Campaign to Protect Rural England"           => "10h2pdppp12332130233122004414430343304102304430410231",
-    "Mark Brinkley"                               => "20222144411341110343321003422440423404203203340420141",
-    "National Grid"                               => "h0h2gg1211cj1j110322222003313230234102102203440320121",
-    "Atkins"                                      => "g0f2oj11t1rgqj1j0343111003324240244104201304430420231",
-    }
+    Hash[*example_pathways.map { |e| [e[:name],e[:code]] }.flatten]
   end
 
 end
