@@ -1,3 +1,42 @@
+costsComparedOverviewHTML = """
+<div class='costscomparedoverview'>
+  <div id='cost_override_warning'>NB Some costs not on default values</div>
+  <h1>
+    The cost of your pathway, compared with other pathways.
+    This is not your energy bill.
+  </h1>
+  <div id='cost_caveats'>
+  We would like your help to develop this tool. Please
+  <a href="http://2050-calculator-tool-wiki.decc.gov.uk">click here</a>
+  to find out more about our methodology and suggest improvements.
+  Before viewing the cost implications of your choices, please note that:
+  <ol>
+    <li>
+      The Calculator expresses pathway costs as 'average pounds per person per year'. This is not the same as your energy bill. It is the cost of everything the UK buys that makes, converts, saves or uses energy: from kettles and insulation foam to trains and power stations. You can choose to see the results in different units when using the
+      <a href="http://www.decc.gov.uk/2050">excel version of the Calculator.</a>
+    </li>
+    <li>The Calculator does not choose any options automatically, regardless of their cost.</li>
+    <li>
+      The Calculator uses forecasts from credible sources of how technology and fuel costs might rise or fall over time. You vary these forecasts using the
+      <a href="#" onclick="twentyfifty.switchView('costs_sensitivity'); return false;">cost sensitivity</a>
+      implication from the menu on the top left. The full set of data points is available on the
+      <a href="http://2050-calculator-tool-wiki.decc.gov.uk">wiki.</a>
+    </li>
+    <li>The cost of not tackling climate change is not included in the Calculator. The Stern review estimated that failing to tackle climate change could reduce global GDP by up to 20%. This is the equivalent of up to &pound;6,500 per person per year on average, on top of the cost of the energy system.</li>
+    <li>Some other important effects have been excluded from the Calculator. The costs of travelling less or with different modes of transport, having colder homes or fewer goods, and changing the appearance of our houses or landscape are not included. Nor are profits, taxes, subsidies or economies of scale driven by pathway choices. The Calculator includes only the physical costs of constructing, operating and fuelling equipment.</li>
+    <li>Costs are just one feature for comparing 2050 pathways. The Calculator provides information on other impacts, as well as some illustrative pathways to compare your choices with.</li>
+  </ol>
+  <div id='understand'>
+    <a href="#" onclick="$.jStorage.set('CostCaveatShown',true);$('#cost_caveats').hide(); return false;">Click to continue using the calculator</a>
+  </div>
+</div>
+  <div id='costscomparedoverview'></div>
+  <div id='essentialnotes'>
+    Note: The cost of failing to tackle climate change is not included. Some pathways, including the 'All at Level 1' pathway shown here, fail to tackle climate change. The Stern review estimated that failing to tackle climate change could reduce global GDP by up to 20% (equivalent to up to &pound;6500 per person per year on top of the cost of the energy system included in the chart above). Nor are the costs of travelling less, being colder, or consuming less included.
+    <a href="#" onclick="$.jStorage.deleteKey('CostCaveatShown');$('#cost_caveats').show(); return false;">Show the caveats again</a>
+  </div>
+</div>
+"""
 class CostsComparedOverview
   
   categories = [
@@ -22,12 +61,16 @@ class CostsComparedOverview
     "Other"       : {low: "#a55194",range: "url(/assets/hatches/hatch-a55194.png)"}
 
   constructor: () ->
-    # Nowt
+    @ready = false
     
-  documentReady: () ->
-    return false if @drawn?
-    @drawn = true
+  setup: () ->
+    return false if @ready
+    @ready = true
+
+    $('#results').append(costsComparedOverviewHTML)
     
+    twentyfifty.cost_override_in_place_warning()
+
     all_pathways = ["chosen"].concat(twentyfifty.comparator_pathways)
       
     e = $('#costscomparedoverview')
@@ -57,22 +100,22 @@ class CostsComparedOverview
     for category in categories
       @boxes_by_category[category] = { boxes: @r.set(), labels: @r.set(), top_label: null, top_label_box: null}
       
-    urls = {}
-    for category,i in categories
-      urls[category] = twentyfifty.url({action:'costs_compared_within_sector',sector:i})
-      
     x = @x(0)
     h = @y.rangeBand()
     
+    clickFunction = (category) ->
+      () -> window.twentyfifty.switchSector(categories.indexOf(category))
+
+
     for code in (["chosen"].concat(twentyfifty.comparator_pathways))
       b = {}
       y = @y(code)
       for own category, colors of category_colors
         b[category] =
-          low: @r.rect(x,y,0,h).attr({'fill':colors.low,'stroke':'none',href:urls[category]})
-          low_label: @r.text(x,y+h/2,"").attr({'fill':'#000','text-anchor':'middle'})
-          range: @r.rect(x,y,0,h).attr({'fill':colors.range,'stroke':'none',href:urls[category]})
-          range_label: @r.text(x,y+h/2,"").attr({'fill':'#000','text-anchor':'middle'}) 
+          low: @r.rect(x,y,0,h).attr({'fill':colors.low,'stroke':'none', cursor: "pointer"}).click(clickFunction(category))
+          low_label: @r.text(x,y+h/2,"").attr({'fill':'#000','text-anchor':'middle', cursor: "pointer"}).click(clickFunction(category))
+          range: @r.rect(x,y,0,h).attr({'fill':colors.range,'stroke':'none', cursor: "pointer"}).click(clickFunction(category))
+          range_label: @r.text(x,y+h/2,"").attr({'fill':'#000','text-anchor':'middle', cursor: "pointer"}).click(clickFunction(category))
           
         c = @boxes_by_category[category]
         c.boxes.push b[category].low, b[category].range
@@ -132,7 +175,12 @@ class CostsComparedOverview
       else
         @boxes_by_category[c].boxes.attr({'fill-opacity':1.0})
 
+  teardown: () ->
+    $("#results").empty()
+    @ready = false
+
   updateResults: (pathway) ->
+    @setup() unless @ready
     @updateBar(pathway,'chosen')
     
   updateBar: (pathway,_id = pathway._id) =>
@@ -154,6 +202,7 @@ class CostsComparedOverview
         b[category].low_label.attr({x:@x(_x + cost.low/2),text:"#{Math.round(cost.low)}"})
       if _id == 'chosen'
         lb = @boxes_by_category[category].top_label_box
+        console.log(lb.attr('width'))
         lb.attr({x:@x(_x+cost.low/2)-(lb.attr('width')/2)})
         @boxes_by_category[category].top_label.attr({x:@x(_x+cost.low/2)})
       _x += cost.low
@@ -161,7 +210,7 @@ class CostsComparedOverview
       cost = categorised_costs[category]
       b[category].range.attr({x: @x(_x), width: @x(cost.range) - @x(0)})
       if cost.range > 1
-        b[category].range_label.attr({x:@x(_x + cost.range/2),text:"#{Math.round(cost.range)}"})      
+        b[category].range_label.attr({x:@x(_x + cost.range/2),text:"#{Math.round(cost.range)}"})
       _x += cost.range
   
-window.twentyfifty.CostsComparedOverview = CostsComparedOverview
+window.twentyfifty.views['costs_compared_overview'] = new CostsComparedOverview

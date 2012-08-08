@@ -1,24 +1,2 @@
-%script{ :type => 'text/javascript' }
-  twentyfifty.setup(twentyfifty.CostsComparedWithinSector)
-
-#results.costscomparedwithinsector
-  %ul#sectorchoice.dropdown
-    %li
-      = link_to_function raw("Choose sector" + image_tag('dropdown-arrow.png')), "$('ul#view_sectorchoice').toggle()"
-      %ul#view_sectorchoice.choices
-        - ["Fossil fuels", "Bioenergy" , "Electricity" , "Buildings" , "Transport" , "Industry", "Finance" , "Other"].each_with_index do |sector,i|
-          %li= link_to_function sector, "twentyfifty.switchSector(#{i})"
-
-  %h1
-    The cost of 
-    %span#sectorname a sector
-    within your and other pathways. 
-    This is not an energy bill.
-  
-  = render 'cost_caveats'
-
-  #costscomparedwithinsector
-  
-  = render 'essential_notes'
-      
+#results
 = render 'classic_controls'

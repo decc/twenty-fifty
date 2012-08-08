@@ -1,13 +1,18 @@
 class Story
 
   constructor: () ->
-    @long_descriptions = twentyfifty.longDescriptions
+    @ready = false
   
-  documentReady: () ->
-    # Nothing
+  setup: () ->
+    $("#results").append("<div id='stories'><div id='demand_story' class='story'></div><div id='supply_story' class='story'></div><div id='ghg_story' class='story'></div><div class='clear'></div></div>")
+    @ready = true
   
+  teardown: () ->
+    $("#results").empty()
+    @ready = false
   
   updateResults: (@pathway) ->
+    @setup() unless @ready
     @choices = twentyfifty.choices
     element = $('#demand_story')
     element.empty()
@@ -60,9 +65,9 @@ class Story
     for row in rows
       choice = choices[row] - 1
       if choice % 1 == 0.0
-        text.push(@long_descriptions[row][choice])
+        text.push(window.twentyfifty.longDescriptions[row][choice])
       else
-        text.push("Between #{@long_descriptions[row][Math.floor(choice)]} and #{@long_descriptions[row][Math.ceil(choice)]}")
+        text.push("Between #{window.twentyfifty.longDescriptions[row][Math.floor(choice)]} and #{window.twentyfifty.longDescriptions[row][Math.ceil(choice)]}")
       
     element.append("<p>#{text.join(". ")}.</p>")
   
@@ -95,4 +100,4 @@ class Story
     element.append(html.join(''))
       
 
-window.twentyfifty.Story = Story
+window.twentyfifty.views['story'] = new Story

@@ -2,11 +2,17 @@ class EnergySecurity
 
   constructor: () ->
     @long_descriptions = twentyfifty.longDescriptions
-  
-  documentReady: () ->
-    # Nothing
-  
+
+  setup: () ->
+    @ready = true
+    $('#results').append("<div id='energysecurity'><div id='balancing' class='column'></div><div id='imports' class='column'></div><div id='diversity' class='column'></div><div class='clear'></div></div>")
+
+  teardown: () ->
+    @ready = false
+    $('#results').empty()
+
   updateResults: (@pathway) ->
+    @setup() unless @ready
     @updateBalancingSection()
     @updateImportsSection()
     @updatedDiversitySection()
@@ -65,6 +71,6 @@ class EnergySecurity
     #   element.append("<tr><td class='description'>#{i}</td><td class='value'>#{value}</td></tr>")
     # element.append("</table>")
 
-window.twentyfifty.EnergySecurity = EnergySecurity
+window.twentyfifty.views['energy_security'] = new EnergySecurity
 
 

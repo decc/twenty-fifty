@@ -1,5 +1,63 @@
 class CostsSensitivity
 
+  costsSensitivityHTML = """
+<div class='costssensitivity'>
+  <ul class='dropdown' id='comparatorchoice'>
+    <li>
+      <a href="#" onclick="$('ul#view_comparatorchoice').toggle(); return false;">Choose comparison<img alt="Dropdown-arrow" src="/assets/dropdown-arrow.png" /></a>
+      <ul class='choices' id='view_comparatorchoice'>
+        <li><a href="#" onclick="twentyfifty.switchCompator('10111111111111110111111001111110111101101101110110111');$('ul#view_comparatorchoice').toggle(); return false;">Doesn't tackle climate change (All level 1)</a></li>
+        <li><a href="#" onclick="twentyfifty.switchCompator('10111111111111110111111004444440444404203304440420111');$('ul#view_comparatorchoice').toggle(); return false;">Maximum demand</a></li>
+        <li><a href="#" onclick="twentyfifty.switchCompator('40444444444444440443444001111110111101101101110110111');$('ul#view_comparatorchoice').toggle(); return false;">Maximum supply</a></li>
+        <li><a href="#" onclick="twentyfifty.switchCompator('i0g2dd2pp1121f1i032211p004314110433304202304320420121');$('ul#view_comparatorchoice').toggle(); return false;">Analogous to Markal 3.26</a></li>
+        <li><a href="#" onclick="twentyfifty.switchCompator('e0d3jrg221ci12110222112004423220444404202304440420141');$('ul#view_comparatorchoice').toggle(); return false;">Higher renewables, more energy efficiency</a></li>
+        <li><a href="#" onclick="twentyfifty.switchCompator('r013ce1111111111042233B002322220233302202102330220121');$('ul#view_comparatorchoice').toggle(); return false;">Higher nuclear, less energy efficiency</a></li>
+        <li><a href="#" onclick="twentyfifty.switchCompator('f023df111111111f0322123003223220333203102303430310221');$('ul#view_comparatorchoice').toggle(); return false;">Higher CCS, more bioenergy</a></li>
+        <li><a href="#" onclick="twentyfifty.switchCompator('10h4nn4431w23y110243111004424440343304202304430420441');$('ul#view_comparatorchoice').toggle(); return false;">Friends of the Earth</a></li>
+        <li><a href="#" onclick="twentyfifty.switchCompator('10h2pdppp12332130233122004414430343304102304430410231');$('ul#view_comparatorchoice').toggle(); return false;">Campaign to Protect Rural England</a></li>
+        <li><a href="#" onclick="twentyfifty.switchCompator('20222144411341110343321003422440423404203203340420141');$('ul#view_comparatorchoice').toggle(); return false;">Mark Brinkley</a></li>
+        <li><a href="#" onclick="twentyfifty.switchCompator('h0h2gg1211cj1j110322222003313230234102102203440320121');$('ul#view_comparatorchoice').toggle(); return false;">National Grid</a></li>
+        <li><a href="#" onclick="twentyfifty.switchCompator('g0f2oj11t1rgqj1j0343111003324240244104201304430420231');$('ul#view_comparatorchoice').toggle(); return false;">Atkins</a></li>
+      </ul>
+    </li>
+  </ul>
+  <h1>
+    The cost of your pathway compared with another, allowing simple variation in cost estimates.
+  </h1>
+  <div id='cost_caveats'>
+  We would like your help to develop this tool. Please
+  <a href="http://2050-calculator-tool-wiki.decc.gov.uk">click here</a>
+  to find out more about our methodology and suggest improvements.
+  Before viewing the cost implications of your choices, please note that:
+  <ol>
+    <li>
+      The Calculator expresses pathway costs as 'average pounds per person per year'. This is not the same as your energy bill. It is the cost of everything the UK buys that makes, converts, saves or uses energy: from kettles and insulation foam to trains and power stations. You can choose to see the results in different units when using the
+      <a href="http://www.decc.gov.uk/2050">excel version of the Calculator.</a>
+    </li>
+    <li>The Calculator does not choose any options automatically, regardless of their cost.</li>
+    <li>
+      The Calculator uses forecasts from credible sources of how technology and fuel costs might rise or fall over time. You vary these forecasts using the
+      <a href="#" onclick="twentyfifty.switchView('costs_sensitivity'); return false;">cost sensitivity</a>
+      implication from the menu on the top left. The full set of data points is available on the
+      <a href="http://2050-calculator-tool-wiki.decc.gov.uk">wiki.</a>
+    </li>
+    <li>The cost of not tackling climate change is not included in the Calculator. The Stern review estimated that failing to tackle climate change could reduce global GDP by up to 20%. This is the equivalent of up to &pound;6,500 per person per year on average, on top of the cost of the energy system.</li>
+    <li>Some other important effects have been excluded from the Calculator. The costs of travelling less or with different modes of transport, having colder homes or fewer goods, and changing the appearance of our houses or landscape are not included. Nor are profits, taxes, subsidies or economies of scale driven by pathway choices. The Calculator includes only the physical costs of constructing, operating and fuelling equipment.</li>
+    <li>Costs are just one feature for comparing 2050 pathways. The Calculator provides information on other impacts, as well as some illustrative pathways to compare your choices with.</li>
+  </ol>
+  <div id='understand'>
+    <a href="#" onclick="$.jStorage.set('CostCaveatShown',true);$('#cost_caveats').hide(); return false;">Click to continue using the calculator</a>
+  </div>
+</div>
+  <div id='costssensitivity'></div>
+  <div id='essentialnotes'>
+    Note: The cost of failing to tackle climate change is not included. Some pathways, including the 'All at Level 1' pathway shown here, fail to tackle climate change. The Stern review estimated that failing to tackle climate change could reduce global GDP by up to 20% (equivalent to up to &pound;6500 per person per year on top of the cost of the energy system included in the chart above). Nor are the costs of travelling less, being colder, or consuming less included.
+    <a href="#" onclick="$.jStorage.deleteKey('CostCaveatShown');$('#cost_caveats').show(); return false;">Show the caveats again</a>
+  </div>
+</div>
+dd
+  """
+
   bottom_area_start = 219
     
   cost_component_names = ["Conventional thermal plant","Combustion + CCS","Nuclear power","Onshore wind","Offshore wind","Hydroelectric","Wave and Tidal","Geothermal","Distributed solar PV","Distributed solar thermal","Micro wind","Biomatter to fuel conversion","Bioenergy imports","Agriculture and land use","Energy from waste","Waste arising","Marine algae","Electricity imports","Electricity Exports","Electricity grid distribution","Storage, demand shifting, backup","H2 Production","Domestic heating","Domestic insulation","Commercial heating and cooling","Domestic lighting, appliances, and cooking","Commercial lighting, appliances, and catering","Industrial processes","Conventional cars and buses","Hybrid cars and buses","Electric cars and buses","Fuel cell cars and buses","Bikes","Rail","Domestic aviation","Domestic freight","International aviation","International shipping (maritime bunkers)","Geosequestration","Petroleum refineries","Fossil fuel transfers","District heating effective demand","Storage of captured CO2","Coal","Oil","Gas","Finance cost"]
@@ -81,13 +139,23 @@ class CostsSensitivity
   c_range_fill_color = 'url(/assets/hatches/hatch-f00.png)'
     
   constructor: () ->
-    # Nothing
+    @ready = false
 
-  documentReady: () ->
+  setup: () ->
+    return false if @ready
+    @ready = true
+    
+    $("#results").append(costsSensitivityHTML)
+
     @drawChart()
     @switchComparator(twentyfifty.getComparator() || twentyfifty.default_comparator_code)
+
+  teardown: () ->
+    $('#results').empty()
+    @ready = false
     
   updateResults: (@pathway) =>
+    @setup() unless @ready
     twentyfifty.adjust_costs_of_pathway(@pathway) unless @pathway.total_cost_low_adjusted?
     @sortComponents()
     @updateBar(@top_pathway_chart,@pathway.total_cost_low_adjusted,@pathway.total_cost_range_adjusted)
@@ -379,4 +447,4 @@ class CostsSensitivity
     element.hover((() -> @attr({'stroke-opacity': 1.0})), (() -> @attr({'stroke-opacity':0.0})))
     element.attr({cursor:'pointer'})
   
-window.twentyfifty.CostsSensitivity = CostsSensitivity
+window.twentyfifty.views['costs_sensitivity'] = new CostsSensitivity

@@ -1,7 +1,45 @@
 class Electricity
+
+  setup: () ->
+    target = $('#results')
+    target.append("<div id='demand_chart' class='chart'></div>")
+      .append("<div id='supply_chart' class='chart'></div>")
+      .append("<div id='emissions_chart' class='chart'></div>")
+
+    @demand_chart = new Highcharts.Chart({
+      chart: { renderTo: 'demand_chart' }, 
+      title: { text: 'UK electricity demand' },
+      subtitle: { text: "TWh/yr of electricity"},
+      yAxis: { title: null, min: 0, max: 4000 },
+      series: []
+    });
+    @supply_chart = new Highcharts.Chart({ 
+      chart: { renderTo: 'supply_chart' }, 
+      title: { text: 'UK electricity supply' }, 
+      subtitle: { text: "TWh/yr of electricity"},
+      yAxis: { title: null, min: 0, max: 4000 },
+      series: []
+    });
+    @emissions_chart = new Highcharts.Chart({
+      chart: { renderTo: 'emissions_chart' }, 
+      title: { text: 'UK greenhouse gas emissions from electricity' },
+      subtitle: { text: "MtCO<sub>2</sub>e/yr"},   
+      yAxis: { title: null, min: -500, max: 1000 },
+      tooltip: {
+        formatter: () ->
+          "<b>#{this.series.name}</b><br/>#{this.x}: #{Highcharts.numberFormat(this.y, 0, ',')} MtCO2e/yr"
+      },
+      series: []
+    })
+
+  teardown: () ->
+    $('#results').empty()
+    @final_energy_chart = null
+    @primary_energy_chart = null
+    @emissions_chart = null
     
   updateResults: (@pathway) ->
-    @createCharts() unless @emissions_chart? && @demand_chart? && @supply_chart?
+    @setup() unless @emissions_chart? && @demand_chart? && @supply_chart?
 
     # Emissions from electricity
     titles = ["Fuel Combustion", "Bioenergy credit", "Carbon capture"]
@@ -72,31 +110,4 @@ class Electricity
     @demand_chart.redraw()
     @supply_chart.redraw()
     
-  documentReady: () ->
-    @demand_chart = new Highcharts.Chart({
-      chart: { renderTo: 'demand_chart' }, 
-      title: { text: 'UK electricity demand' },
-      subtitle: { text: "TWh/yr of electricity"},
-      yAxis: { title: null, min: 0, max: 4000 },
-      series: []
-    });
-    @supply_chart = new Highcharts.Chart({ 
-      chart: { renderTo: 'supply_chart' }, 
-      title: { text: 'UK electricity supply' }, 
-      subtitle: { text: "TWh/yr of electricity"},
-      yAxis: { title: null, min: 0, max: 4000 },
-      series: []
-    });
-    @emissions_chart = new Highcharts.Chart({
-      chart: { renderTo: 'emissions_chart' }, 
-      title: { text: 'UK greenhouse gas emissions from electricity' },
-      subtitle: { text: "MtCO<sub>2</sub>e/yr"},   
-      yAxis: { title: null, min: -500, max: 1000 },
-      tooltip: {
-        formatter: () ->
-          "<b>#{this.series.name}</b><br/>#{this.x}: #{Highcharts.numberFormat(this.y, 0, ',')} MtCO2e/yr"
-      },
-      series: []
-    });
-        
-window.twentyfifty.Electricity = Electricity
+window.twentyfifty.views['electricity'] = new Electricity

@@ -99,12 +99,14 @@ class Map
    }
   
    constructor: () ->
-     # $(document).ready(@createMap)
+     @ready = false
     
-   documentReady: () =>
-     return if @wave?
+   setup: () ->
+     @ready = true
+      
      # The drawing area
-     
+     $('#results').append("<div id='map'></div>")
+
      r = Raphael(display_in_element,display_width,display_height) # Define the drawing area
      
      @r = r
@@ -167,9 +169,13 @@ class Map
          y = y + y_step
      y = y + 30
   
+  teardown: () ->
+    $('#results').empty()
+    @ready = false
+
    updateResults: (data) ->
      # Setup
-     @createMap() unless @wave?
+     @setup() unless @ready
      map = data.map
      
      # Wave data
@@ -248,5 +254,4 @@ class Map
          y = @point_stack(x,y,value.value,colours[value.name],"#{Math.round(value.value)} x #{labels[value.name]}",size)
      @points = @r.setFinish()
       
-      
-window.twentyfifty.Map = Map
+window.twentyfifty.views['map'] = new Map

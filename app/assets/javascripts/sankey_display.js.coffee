@@ -16,11 +16,8 @@ class SankeyDisplay
   
   constructor: () ->
   
-  documentReady: () =>
-    # Nothing
-  
   updateResults: (pathway) ->
-    @createSankey() unless @s?
+    @setup() unless @s?
     data = pathway.sankey
     if @drawn == true
       @s.updateData(data)
@@ -36,9 +33,14 @@ class SankeyDisplay
       @s.r.setSize($('#sankey').width(),max_y)
       #@s.redraw()
 
+  teardown: () ->
+    $('#results').empty()
+    @s = null
 
-  createSankey: () =>
+  setup: () ->
     return false if @s?
+    $('#results').append("<div id='sankey'></div>")
+
     @s = new Sankey()
     
     @s.stack(0,[
@@ -194,4 +196,4 @@ class SankeyDisplay
     @s.convert_box_value_labels_callback = (flow) ->
       return (""+Math.round(flow)+" TWh/y")
 
-window.twentyfifty['SankeyDisplay'] = SankeyDisplay
+window.twentyfifty.views['sankey'] = new SankeyDisplay

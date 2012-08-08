@@ -1,5 +1,7 @@
 window.twentyfifty = {};
 
+views = {}
+
 controller = null
 choices = null
 action = null
@@ -13,21 +15,19 @@ cache = {}
 callbacks = {}
 timers = {}
 requested = {}
+
 mainPathwayTimer = null
 preLoadHoverTimer = null
 
-setup = (e) ->
-  setVariablesFromURL()
-  preLoadPathway(codeForChoices())
-  execute = new e
-  $(document).ready(documentReady)
-
 documentReady = () ->
+  setVariablesFromURL()
+  execute = views[action]
   unless $.jStorage.get('CostCaveatShown') == true
-    $('#cost_caveats').show();
-  execute.documentReady()
+    $('#cost_caveats').show()
   loadMainPathway()
   $("a[title]").tooltip({delay: 0, position: 'top left', offset:[3,3],tip:'#tooltip'});
+
+$(document).ready(documentReady)
 
 setVariablesFromURL = () ->
   url_elements = window.location.pathname.split( '/' )
@@ -60,7 +60,10 @@ getSector = () ->
     
 switchSector = (new_sector) ->
   sector = new_sector
-  window.location = url()
+  history.pushState(choices, codeForChoices(), url()) if history['pushState']?
+  switchView('costs_compared_within_sector')
+  execute.teardown()
+  execute.updateResults(cache[codeForChoices()])
 
 getComparator = () ->
   comparator
@@ -111,18 +114,23 @@ stopDemo = (choice) ->
   go(choice,demoOriginalLevel) if demoOriginalLevel? && demoOriginalLevel != choices[choice]
 
 switchView = (new_action) ->
+  $('ul#view_choices').hide()
+  return false if action == new_action
+  execute.teardown()
   action = new_action
-  window.location = url()
+  history.pushState(choices, codeForChoices(), url()) if history['pushState']?
+  execute = views[action]
+  execute.updateResults(cache[codeForChoices()])
   
 switchPathway = (new_code) ->
   old_choices = choices.slice(0)
   choices = choicesForCode(new_code)
-  loadMainPathway() 
+  loadMainPathway()
 
 setChoices = (new_choices) ->
   old_choices = choices.slice(0)
   choices = new_choices
-  loadMainPathway() 
+  loadMainPathway()
 
 preLoadPathway = (preload_code) ->
   return false if cache[preload_code]? # Already loaded
@@ -139,8 +147,8 @@ loadMainPathway = (pushState = true) ->
   # Update the controls, if neccesarry
   updateControls(old_choices,choices)
   
-  main_code = codeForChoices()
   # Change the url if we can
+  main_code = codeForChoices()
   history.pushState(choices,main_code,url()) if pushState && history['pushState']?
   
   # Stop any previous timers
@@ -188,10 +196,14 @@ loadSecondaryPathway = (secondary_code,callback) ->
     fetch()
   
 window.onpopstate = (event) ->
-  if event.state
-    old_choices = choices.slice(0)
-    choices = event.state
-    loadMainPathway(false)
+  return false unless event.state
+  url_elements = window.location.pathname.split( '/' )
+  setChoices(choicesForCode(url_elements[2]))
+  switchView(url_elements[3])
+  if action == 'costs_compared_within_sector'
+    switchSector(url_elements[4])
+  if url_elements[4] == 'comparator'
+    switchComparator(url_elements[5])
 
 updateControls = (old_choices,@choices) ->
   controls = $('#classic_controls')
@@ -232,7 +244,6 @@ pathwayDescriptions = (pathway_code,default_description = null) ->
 pathwayWikiPages = (pathway_code,default_page = null) ->
   "http://2050-calculator-tool-wiki.decc.gov.uk/pages/#{window.twentyfifty.pathway_wiki_pages_hash[pathway_code] || default_page}"
 
-window.twentyfifty.setup = setup
 window.twentyfifty.code = codeForChoices
 window.twentyfifty.getChoices = getChoices
 window.twentyfifty.setChoices = setChoices
@@ -253,4 +264,6 @@ window.twentyfifty.pathwayDescriptions = pathwayDescriptions
 window.twentyfifty.pathwayWikiPages = pathwayWikiPages
 window.twentyfifty.startDemo = startDemo
 window.twentyfifty.stopDemo = stopDemo
+
+window.twentyfifty.views = views
 

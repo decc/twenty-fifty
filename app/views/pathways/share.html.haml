@@ -1,26 +1,2 @@
-:javascript
-  twentyfifty.setup(twentyfifty.Share)
-
 #results
-  #share
-    #url
-      %h1 Sharing this pathway with others
-      %p 
-        If you want to save or share your pathway, bookmark this page, or take note of its url*:
-        %a{:id => 'pathwayurl'}
-      %p
-        To share, just send someone the url, or click this share button:
-        = render 'add_this'
-      %p * On modern browsers, this url is the same as the one you will see in the address bar as you use the calculator. On older browsers, such as Internet Explorer 6 and 7, it will not be.
-
-    #excel
-      %h1 Sharing this pathway with the excel version of the 2050 pathways calculator
-      %p
-        You may want to explore your pathway in more detail, taking a look at all the assumptions behind our modelling, by downloading
-        = link_to 'the underlying excel spreadsheet.', "http://www.decc.gov.uk/2050"
-      %p
-        If you do, then you can recreate the pathway you have chosen in this tool by copying the numbers from the box below and pasting them in cells E5 to E57 on the 'Control' sheet of the workbook. You can also copy a pathway from that range in the excel model, paste it in the box below and click the 'Go to this pathway' button at the bottom of the page.
-        %form
-          %textarea
-          = button_to_function "Go to this pathway", "twentyfifty.loadFromExcel()"
-
+= render 'classic_controls'
