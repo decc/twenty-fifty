@@ -134,8 +134,9 @@ class CostsComparedWithinSector
       @boxes_by_category[category].labels.toFront()
       @hover(@boxes_by_category[category].boxes,category)
       @hover(@boxes_by_category[category].labels,category)
-      @boxes_by_category[category].top_label_box = @r.rect(@x(0),0,200,h*0.75,5).attr({'fill':'#fff','stroke':cost_component_colors[category].low}).hide()
-      @boxes_by_category[category].top_label = @r.text(@x(0)+100,h*0.75/2,category).attr({'text-anchor':'middle','font-weight':'bold'}).hide()
+      lb = @boxes_by_category[category].top_label = @r.text(@x(0)+100,h*0.75/2,category).attr({'text-anchor':'middle','font-weight':'bold'}).hide()
+      @boxes_by_category[category].top_label_box = @r.rect(@x(0),0,lb.getBBox().width+15,h*0.75,5).attr({'fill':'#fff','stroke':cost_component_colors[category].low}).hide()
+      lb.toFront()
     
     for code in twentyfifty.comparator_pathways
       twentyfifty.loadSecondaryPathway(code,@updateBar)
@@ -180,6 +181,10 @@ class CostsComparedWithinSector
     for own category, cost of categorised_costs
       unless category == "high" || category == "low" || category == "range"
         low = cost.low_adjusted
+        if _id == 'chosen'
+          lb = @boxes_by_category[category].top_label_box
+          lb.attr({x:@x(_x+low/2)-(lb.attr('width')/2)})
+          @boxes_by_category[category].top_label.attr({x:@x(_x+low/2)})
         if low >= 0
           b[category].low.attr({x: @x(_x), width: @x(low) - @x(0)})
           if Math.round(low) == 0
@@ -192,9 +197,6 @@ class CostsComparedWithinSector
           b[category].low.attr({x: @x(0), width: @x(0) - @x(0)})
           b[category].low_label.attr({x: @x(0), text: ""})
 
-        if _id == 'chosen'
-          @boxes_by_category[category].top_label_box.attr({x:@x(_x+low/2)-100})
-          @boxes_by_category[category].top_label.attr({x:@x(_x+low/2)})
 
     # Ranges
     for own category, cost of categorised_costs
