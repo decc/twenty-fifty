@@ -14,6 +14,7 @@ class CostsComparedWithinSector
   cost_component_colors = {
     "Conventional thermal plant":                     {low: "#a55194",range: "url(/assets/hatches/hatch-a55194.png)"}
     "Combustion + CCS":                               {low: "#8c564b",range: "url(/assets/hatches/hatch-8c564b.png)"}
+    "Storage of captured CO2":                        {low: "#8c564b",range: "url(/assets/hatches/hatch-8c564b.png)"}
     "Nuclear power":                                  {low: "#2ca02c",range: "url(/assets/hatches/hatch-2ca02c.png)"}
     "Onshore wind":                                   {low: "#1f77b4",range: "url(/assets/hatches/hatch-1f77b4.png)"}
     "Offshore wind":                                  {low: "#ff7f0e",range: "url(/assets/hatches/hatch-ff7f0e.png)"}
