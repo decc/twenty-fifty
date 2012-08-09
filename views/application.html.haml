@@ -1,0 +1,69 @@
+!!!
+%html
+  %head
+    %title 2050 Pathways Calculator
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+    :javascript
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-17161700-2']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    :javascript
+      window.twentyfifty.pathway_wiki_pages_hash = #{pathway_wiki_pages.to_json};
+      window.twentyfifty.pathway_descriptions_hash = #{pathway_descriptions.to_json};
+      window.twentyfifty.pathway_names_hash = #{pathway_names.to_json};
+      window.twentyfifty.comparator_pathways = #{cost_comparator_pathways.to_json};
+      window.twentyfifty.default_comparator_code = #{default_cost_comparator_pathway.to_json};
+      window.twentyfifty.longDescriptions = #{raw ModelStructure.instance.long_descriptions.to_json};
+  %body
+    #topbar
+      #help= link_to "Help", "http://2050-calculator-tool-wiki.decc.gov.uk/pages/#{help_page}"
+      %ul#viewdropdown.dropdown
+        %li
+          = link_to_function raw("See implications" + image_tag('dropdown-arrow.png')), "$('ul#view_choices').toggle()"
+          %ul#view_choices.choices
+            - view_names.to_a.slice(0..5).each do |action,title|
+              %li= link_to_function title, "twentyfifty.switchView('#{action}')"
+            %li
+              = link_to "Under development:", "http://2050-calculator-tool-wiki.decc.gov.uk", :class => 'divider'
+            - view_names.to_a.slice(6..-1).each do |action,title|
+              %li= link_to_function title, "twentyfifty.switchView('#{action}')", :class => 'development'
+
+      #messages
+        #calculating Calculating
+        #message
+          = link_to "This is the DECC 2050 Pathways calculator. Click to find out more.","http://www.decc.gov.uk/2050"
+      %ul#savedpathwaydropdown.dropdown
+        %li
+          = link_to_function raw("Example Pathways" + image_tag('dropdown-arrow.png')), "$('ul#savedpathway_choices').toggle()"
+          %ul#savedpathway_choices.choices
+            - saved_pathways.each do |name,code|
+              %li= link_to_function name, "twentyfifty.switchPathway('#{code}');$('ul#savedpathway_choices').toggle()"
+      #share= link_to_function "Share", "twentyfifty.switchView('share')"
+    #results
+    #classic_controls
+      #demand
+        %table
+          - structure.demand_choices.each do |choice|
+            = classic_table_row_for_choice choice
+      #supply
+        %table
+          - structure.supply_choices.each do |choice|
+            = classic_table_row_for_choice choice
+      #other
+        %table
+          = classic_table_row_for_choice structure.geosequestration_choice
+
+        %table
+          = classic_table_row_for_choice structure.balancing_choice
+    #tooltip
+    #footer
+      Based on excel #{ModelStructure.instance.reported_calculator_version.to_s.downcase}. The source code for this site is available under an open source licence from 
+      = link_to "http://github.com/decc/twenty-fifty", "http://github.com/decc/twenty-fifty"
