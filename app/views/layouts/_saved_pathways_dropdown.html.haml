@@ -1,6 +1,0 @@
-%ul#savedpathwaydropdown.dropdown
-  %li
-    = link_to_function raw("Example Pathways" + image_tag('dropdown-arrow.png')), "$('ul#savedpathway_choices').toggle()"
-    %ul#savedpathway_choices.choices
-      - saved_pathways.each do |name,code|
-        %li= link_to_function name, "twentyfifty.switchPathway('#{code}');$('ul#savedpathway_choices').toggle()"

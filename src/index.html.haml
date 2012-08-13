@@ -4,7 +4,6 @@
     %title 2050 Pathways Calculator
     = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
-    = csrf_meta_tags
     :javascript
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-17161700-2']);
@@ -21,32 +20,41 @@
       window.twentyfifty.pathway_names_hash = #{pathway_names.to_json};
       window.twentyfifty.comparator_pathways = #{cost_comparator_pathways.to_json};
       window.twentyfifty.default_comparator_code = #{default_cost_comparator_pathway.to_json};
-      window.twentyfifty.longDescriptions = #{raw ModelStructure.instance.long_descriptions.to_json};
+      window.twentyfifty.longDescriptions = #{ModelStructure.instance.long_descriptions.to_json};
   %body
     #topbar
-      #help= link_to "Help", "http://2050-calculator-tool-wiki.decc.gov.uk/pages/#{help_page}"
+      #help
+        %a{ :href => "http://2050-calculator-tool-wiki.decc.gov.uk/pages/#{help_page}"} Help
       %ul#viewdropdown.dropdown
         %li
-          = link_to_function raw("See implications" + image_tag('dropdown-arrow.png')), "$('ul#view_choices').toggle()"
+          %a{ href:'#', onclick:"$('ul#view_choices').toggle()"} 
+            See implications
+            %img{ scr:'/assets/dropdown-arrow.png' }
           %ul#view_choices.choices
             - view_names.to_a.slice(0..5).each do |action,title|
-              %li= link_to_function title, "twentyfifty.switchView('#{action}')"
+              %li
+                %a{href:'#', onclick:"twentyfifty.switchView('#{action}')"}= title 
             %li
-              = link_to "Under development:", "http://2050-calculator-tool-wiki.decc.gov.uk", :class => 'divider'
+              %a{ href:"http://2050-calculator-tool-wiki.decc.gov.uk", :class => 'divider'} Under development:
             - view_names.to_a.slice(6..-1).each do |action,title|
-              %li= link_to_function title, "twentyfifty.switchView('#{action}')", :class => 'development'
+              %li
+                %a{href:'#', onclick:"twentyfifty.switchView('#{action}')", :class => 'development'}= title 
 
       #messages
         #calculating Calculating
         #message
-          = link_to "This is the DECC 2050 Pathways calculator. Click to find out more.","http://www.decc.gov.uk/2050"
+          %a{href:"http://www.decc.gov.uk/2050"} This is the DECC 2050 Pathways calculator. Click to find out more.
       %ul#savedpathwaydropdown.dropdown
         %li
-          = link_to_function raw("Example Pathways" + image_tag('dropdown-arrow.png')), "$('ul#savedpathway_choices').toggle()"
+          %a{href:'#', onclick:"$('ul#savedpathway_choices').toggle()"}
+            Example Pathways
+            %img{src: '/assets/dropdown-arrow.png'}
           %ul#savedpathway_choices.choices
             - saved_pathways.each do |name,code|
-              %li= link_to_function name, "twentyfifty.switchPathway('#{code}');$('ul#savedpathway_choices').toggle()"
-      #share= link_to_function "Share", "twentyfifty.switchView('share')"
+              %li
+                %a{href:"#", onclick:"twentyfifty.switchPathway('#{code}');$('ul#savedpathway_choices').toggle()"}= name
+      #share
+        %a{href:'#', onclick:"twentyfifty.switchView('share')"} Share
     #results
     #classic_controls
       #demand
@@ -66,4 +74,4 @@
     #tooltip
     #footer
       Based on excel #{ModelStructure.instance.reported_calculator_version.to_s.downcase}. The source code for this site is available under an open source licence from 
-      = link_to "http://github.com/decc/twenty-fifty", "http://github.com/decc/twenty-fifty"
+      %a{href: "http://github.com/decc/twenty-fifty"}http://github.com/decc/twenty-fifty

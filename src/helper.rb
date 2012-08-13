@@ -3,13 +3,21 @@ module Helper
   def structure
     ModelStructure.instance
   end
+
+  def stylesheet_link_tag(*args)
+    "<link href='/assets/application.css' media='screen' rel='stylesheet' type='text/css' />"
+  end
+
+  def javascript_include_tag(*args)
+    "<script src='/assets/application.js' type='text/javascript'></script>"
+  end
   
   def classic_table_row_for_choice(choice)
     row = ["<td class='name'><a href='/assets/onepage/#{choice.doc}' target='_new' onmouseover='twentyfifty.startDemo(#{choice.number}); return true;' onmouseout='twentyfifty.stopDemo(#{choice.number});return true;'>#{choice.name}</a></td>"]
     choice.levels.each.with_index do |level,i|
-      row << "<td class='choice'>#{link_to_function(level,"twentyfifty.go(#{choice.number},#{i+1})",:id => "c#{choice.number}l#{i+1}", :title => choice.descriptions[i], :onMouseOver => "twentyfifty.preLoad(#{choice.number},#{i+1})") }"
+      row << "<td class='choice'><a href='#' onclick='twentyfifty.go(#{choice.number},#{i+1})' id='c#{choice.number}l#{i+1}' title='#{choice.descriptions[i]}' onMouseOver='twentyfifty.preLoad(#{choice.number},#{i+1})'>#{level}</a></td>"
     end
-    raw "<tr class='#{choice.incremental_or_alternative}' id='r#{choice.number}'>#{row.join('')}</tr>"
+    "<tr class='#{choice.incremental_or_alternative}' id='r#{choice.number}'>#{row.join('')}</tr>"
   end
 
   def view_names
@@ -27,7 +35,9 @@ module Helper
     }
   end
   
+  # FIXME: This doesn't work in the new regime!
   def help_page
+    return 'TBD' # Temporary bodge
     { 
       "primary_energy_chart"=>"83", 
       "electricity"=>"84",
