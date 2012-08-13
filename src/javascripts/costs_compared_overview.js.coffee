@@ -202,7 +202,6 @@ class CostsComparedOverview
         b[category].low_label.attr({x:@x(_x + cost.low/2),text:"#{Math.round(cost.low)}"})
       if _id == 'chosen'
         lb = @boxes_by_category[category].top_label_box
-        console.log(lb.attr('width'))
         lb.attr({x:@x(_x+cost.low/2)-(lb.attr('width')/2)})
         @boxes_by_category[category].top_label.attr({x:@x(_x+cost.low/2)})
       _x += cost.low
