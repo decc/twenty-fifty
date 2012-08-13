@@ -1,11 +1,9 @@
 require 'sinatra'
 require 'decc_2050_model'
 require 'json'
-require './helper'
 
 # Overall Sinatra configuration, see http://www.sinatrarb.com/ for detail
 enable :lock # The C 2050 model is not thread safe
-helpers Helper # This has the methods needed to dynamically create the view
 
 get '/' do 
   redirect to("/pathways/1111111111111111111111111111111111111111111111111111/primary_energy_chart")
@@ -118,8 +116,18 @@ get '/pathways/:id/data' do |id|
 end
 
 # The last catch all, just renders the main page
-get '*' do 
-  haml :'application.html'
- # send_file 'public/index.html'
+
+# This has the methods needed to dynamically create the view
+if development?
+  require './src/helper'
+  helpers(Helper)
+  set :views, settings.root + '/src'
 end
-  
+
+get '*' do 
+  if development?
+    haml :'index.html'
+  else
+    send_file 'public/index.html'
+  end
+end
