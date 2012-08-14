@@ -119,6 +119,8 @@ end
 
 # This has the methods needed to dynamically create the view
 if development?
+  require 'haml'
+
   set :views, settings.root + '/src'
 
   get '*' do
