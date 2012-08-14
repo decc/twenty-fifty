@@ -42,10 +42,8 @@ module Helper
       "costs_sensitivity" => "Cost sensitivity"
     }
   end
-  
-  # FIXME: This doesn't work in the new regime!
-  def help_page
-    return 'TBD' # Temporary bodge
+
+  def help_pages
     { 
       "primary_energy_chart"=>"83", 
       "electricity"=>"84",
@@ -57,7 +55,7 @@ module Helper
       "costs_sensitivity" => "90",
       "story"=>"91",
       "air_quality" => "TBD"
-    }[action_name]
+    }
   end
 
   # FIXME: This data should be in the underlying excel

@@ -21,10 +21,11 @@
       window.twentyfifty.comparator_pathways = #{cost_comparator_pathways.to_json};
       window.twentyfifty.default_comparator_code = #{default_cost_comparator_pathway.to_json};
       window.twentyfifty.longDescriptions = #{ModelStructure.instance.long_descriptions.to_json};
+      window.twentyfifty.helpPages = #{help_pages.to_json};
   %body
     #topbar
       #help
-        %a{ :href => "http://2050-calculator-tool-wiki.decc.gov.uk/pages/#{help_page}"} Help
+        %a#helpLink{ :href => 'http://2050-calculator-tool-wiki.decc.gsi.gov.uk'} Help
       %ul#viewdropdown.dropdown
         %li
           %a{ href:'#', onclick:"$('ul#view_choices').toggle()"} 

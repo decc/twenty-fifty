@@ -22,6 +22,7 @@ preLoadHoverTimer = null
 documentReady = () ->
   setVariablesFromURL()
   execute = views[action]
+  setHelpUrl()
   unless $.jStorage.get('CostCaveatShown') == true
     $('#cost_caveats').show()
   loadMainPathway()
@@ -113,15 +114,30 @@ stopDemo = (choice) ->
   clearInterval(demoTimer) if demoTimer?
   go(choice,demoOriginalLevel) if demoOriginalLevel? && demoOriginalLevel != choices[choice]
 
+# If you want to programatically change the view, use this method
+#   new_action: the name of the new action. Choices include 'electricity' and 'primary_energy'
 switchView = (new_action) ->
+  # Close the menu
   $('ul#view_choices').hide()
   return false if action == new_action
+  
+  # This removes the old information from the screen
   execute.teardown()
+
+  # This updates the url, on browsers that support this (i.e., not IE <9)
   action = new_action
   history.pushState(choices, codeForChoices(), url()) if history['pushState']?
   execute = views[action]
+
+  # This sets the help url
+  setHelpUrl()
+
+  # This actually redraws the screen
   execute.updateResults(cache[codeForChoices()])
-  
+
+setHelpUrl = () ->
+  $('#help a').attr('href', "http://2050-calculator-tool-wiki.decc.gov.uk/pages/#{twentyfifty.helpPages[action]}")
+
 switchPathway = (new_code) ->
   old_choices = choices.slice(0)
   choices = choicesForCode(new_code)
