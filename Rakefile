@@ -26,7 +26,7 @@ require_relative 'src/helper'
 manifest = './public/assets/manifest.json'
 file manifest => ['assets']  
 
-desc "Compiles changes to src/index.html.haml into public/index.html"
+desc "Compiles changes to src/index.html.haml into public/index.html and adds links it to the latest versions of application.cs and application.js"
 task 'html' => [manifest] do 
 
   class Context
