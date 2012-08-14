@@ -119,11 +119,11 @@ end
 
 # This has the methods needed to dynamically create the view
 if development?
-  require './src/helper'
-  helpers(Helper)
   set :views, settings.root + '/src'
 
   get '*' do
+    load './src/helper.rb'
+    helpers(Helper)
     haml :'index.html'
   end
 else
