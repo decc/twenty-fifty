@@ -4,12 +4,20 @@ module Helper
     ModelStructure.instance
   end
 
-  def stylesheet_link_tag(*args)
-    "<link href='/assets/application.css' media='screen' rel='stylesheet' type='text/css' />"
+  def stylesheet
+    "<link href='/assets/#{assets['application.css'] || 'application.css'}' media='screen' rel='stylesheet' type='text/css' />"
   end
 
-  def javascript_include_tag(*args)
-    "<script src='/assets/application.js' type='text/javascript'></script>"
+  def javascript
+    "<script src='/assets/#{assets['application.js'] || 'application.js'}' type='text/javascript'></script>"
+  end
+
+  def assets
+    @assets ||= {}
+  end
+
+  def assets=(h)
+    @assets = h
   end
   
   def classic_table_row_for_choice(choice)

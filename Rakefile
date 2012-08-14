@@ -20,17 +20,27 @@ end
 
 require 'haml'
 require 'json'
+require 'decc_2050_model'
+require_relative 'src/helper'
+
+manifest = './public/assets/manifest.json'
+file manifest => ['assets']  
 
 desc "Compiles changes to src/index.html.haml into public/index.html"
-task 'html' do 
+task 'html' => [manifest] do 
+
+  class Context
+    include Helper
+  end
+
+  context = Context.new
 
   # We need to figure out the filename of the latest javascript and css
-  assets = JSON.parse(IO.readlines('./public/assets/manifest.json').join)
-  p assets["assets"]
+  context.assets = JSON.parse(IO.readlines(manifest).join)['assets']
 
   input = IO.readlines('./src/index.html.haml').join
   File.open('./public/index.html','w') do |f|
-    f.puts Haml::Engine.new(input).render
+    f.puts Haml::Engine.new(input).render(context)
   end
 end
 
