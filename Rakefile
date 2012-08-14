@@ -1,6 +1,8 @@
 #!/usr/bin/env rake
+# coding: utf-8
 require 'sprockets'
 require 'rake/sprocketstask'
+require './src/helper'
 
 # This deals with the javascript and css
 Rake::SprocketsTask.new do |t|
@@ -10,6 +12,10 @@ Rake::SprocketsTask.new do |t|
   environment.append_path 'src/images'
   environment.append_path 'one_page_notes'
   environment.append_path 'contrib'
+
+  environment.context_class.class_eval do 
+    include Helper
+  end
 
   t.environment = environment
   t.output      = "./public/assets"

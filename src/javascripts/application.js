@@ -19,6 +19,7 @@
 //= require sankey
 
 // Now the common methods
+//= require model_structure
 //= require pathways
 //= require costs_common_methods
 

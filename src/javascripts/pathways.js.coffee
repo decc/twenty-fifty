@@ -1,5 +1,3 @@
-window.twentyfifty = {};
-
 views = {}
 
 controller = null

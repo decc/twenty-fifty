@@ -14,14 +14,6 @@
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
 
-    :javascript
-      window.twentyfifty.pathway_wiki_pages_hash = #{pathway_wiki_pages.to_json};
-      window.twentyfifty.pathway_descriptions_hash = #{pathway_descriptions.to_json};
-      window.twentyfifty.pathway_names_hash = #{pathway_names.to_json};
-      window.twentyfifty.comparator_pathways = #{cost_comparator_pathways.to_json};
-      window.twentyfifty.default_comparator_code = #{default_cost_comparator_pathway.to_json};
-      window.twentyfifty.longDescriptions = #{ModelStructure.instance.long_descriptions.to_json};
-      window.twentyfifty.helpPages = #{help_pages.to_json};
   %body
     #topbar
       #help
