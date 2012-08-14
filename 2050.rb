@@ -122,12 +122,12 @@ if development?
   require './src/helper'
   helpers(Helper)
   set :views, settings.root + '/src'
-end
 
-get '*' do 
-  if development?
+  get '*' do
     haml :'index.html'
-  else
+  end
+else
+  get '*' do 
     send_file 'public/index.html'
   end
 end
