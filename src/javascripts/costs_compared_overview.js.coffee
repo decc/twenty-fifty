@@ -51,14 +51,14 @@ class CostsComparedOverview
   ]
   
   category_colors =
-    "Fossil fuels": {low: "#8c564b",range: "url(/assets/hatches/hatch-8c564b.png)"}
-    "Bioenergy"   : {low: "#2ca02c",range: "url(/assets/hatches/hatch-2ca02c.png)"}
-    "Electricity" : {low: "#1f77b4",range: "url(/assets/hatches/hatch-1f77b4.png)"}
-    "Buildings"   : {low: "#ff7f0e",range: "url(/assets/hatches/hatch-ff7f0e.png)"}
-    "Transport"   : {low: "#d62728",range: "url(/assets/hatches/hatch-d62728.png)"}
-    "Industry"    : {low: "#7f7f7f",range: "url(/assets/hatches/hatch-7f7f7f.png)"}
-    "Finance"     : {low: "#EA8BCC",range: "url(/assets/hatches/hatch-EA8BCC.png)"}
-    "Other"       : {low: "#a55194",range: "url(/assets/hatches/hatch-a55194.png)"}
+    "Fossil fuels": {low: "#8c564b",range: "url(/assets/images/hatches/hatch-8c564b.png)"}
+    "Bioenergy"   : {low: "#2ca02c",range: "url(/assets/images/hatches/hatch-2ca02c.png)"}
+    "Electricity" : {low: "#1f77b4",range: "url(/assets/images/hatches/hatch-1f77b4.png)"}
+    "Buildings"   : {low: "#ff7f0e",range: "url(/assets/images/hatches/hatch-ff7f0e.png)"}
+    "Transport"   : {low: "#d62728",range: "url(/assets/images/hatches/hatch-d62728.png)"}
+    "Industry"    : {low: "#7f7f7f",range: "url(/assets/images/hatches/hatch-7f7f7f.png)"}
+    "Finance"     : {low: "#EA8BCC",range: "url(/assets/images/hatches/hatch-EA8BCC.png)"}
+    "Other"       : {low: "#a55194",range: "url(/assets/images/hatches/hatch-a55194.png)"}
 
   constructor: () ->
     @ready = false
@@ -68,6 +68,7 @@ class CostsComparedOverview
     @ready = true
 
     $('#results').append(costsComparedOverviewHTML)
+    $("#message").addClass('warning')
     
     twentyfifty.cost_override_in_place_warning()
 
@@ -177,6 +178,8 @@ class CostsComparedOverview
 
   teardown: () ->
     $("#results").empty()
+    $("#message").removeClass('warning')
+
     @ready = false
 
   updateResults: (pathway) ->

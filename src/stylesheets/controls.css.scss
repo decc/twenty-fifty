@@ -15,7 +15,7 @@
     tr:hover {
       td.name {
         font-weight: bold;
-        background-image: url('../assets/oneblackpixel.png');
+        background-image: url('../assets/images/oneblackpixel.png');
       };
     }
     td.choice {
@@ -36,7 +36,7 @@
       }
     }
     td.name {
-      background-image: url('../assets/onegreypixel.png');
+      background-image: url('../assets/images/onegreypixel.png');
       background-position: left center;
       background-repeat: repeat-x;
       a {
@@ -55,7 +55,7 @@
           a.level#{$c}_#{$i} {
             background-position: left center;
             background-repeat: repeat-y;
-            background-image: url('../assets/fractions/level#{$c}_#{$i}.png');
+            background-image: url('../assets/images/fractions/level#{$c}_#{$i}.png');
           }
         }
       }

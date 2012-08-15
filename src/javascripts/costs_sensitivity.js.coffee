@@ -133,10 +133,10 @@ dd
     
   # Define some colors
   p_low_fill_color = '#1f77b4'
-  p_range_fill_color = 'url(/assets/hatches/hatch-1f77b4.png)'
+  p_range_fill_color = 'url(/assets/images/hatches/hatch-1f77b4.png)'
   
   c_low_fill_color = '#f00'
-  c_range_fill_color = 'url(/assets/hatches/hatch-f00.png)'
+  c_range_fill_color = 'url(/assets/images/hatches/hatch-f00.png)'
     
   constructor: () ->
     @ready = false
@@ -146,12 +146,14 @@ dd
     @ready = true
     
     $("#results").append(costsSensitivityHTML)
+    $('#message').addClass('warning')
 
     @drawChart()
     @switchComparator(twentyfifty.getComparator() || twentyfifty.default_comparator_code)
 
   teardown: () ->
     $('#results').empty()
+    $('#message').removeClass('warning')
     @ready = false
     
   updateResults: (@pathway) =>

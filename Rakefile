@@ -9,8 +9,6 @@ Rake::SprocketsTask.new do |t|
   environment = Sprockets::Environment.new
   environment.append_path 'src/javascripts'
   environment.append_path 'src/stylesheets'
-  environment.append_path 'src/images'
-  environment.append_path 'one_page_notes'
   environment.append_path 'contrib'
 
   environment.context_class.class_eval do 

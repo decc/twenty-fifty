@@ -22,7 +22,7 @@
         %li
           %a{ href:'#', onclick:"$('ul#view_choices').toggle()"} 
             See implications
-            %img{ scr:'/assets/dropdown-arrow.png' }
+            %img{src: '/assets/images/dropdown-arrow.png'}
           %ul#view_choices.choices
             - view_names.to_a.slice(0..5).each do |action,title|
               %li
@@ -41,7 +41,7 @@
         %li
           %a{href:'#', onclick:"$('ul#savedpathway_choices').toggle()"}
             Example Pathways
-            %img{src: '/assets/dropdown-arrow.png'}
+            %img{src: '/assets/images/dropdown-arrow.png'}
           %ul#savedpathway_choices.choices
             - saved_pathways.each do |name,code|
               %li

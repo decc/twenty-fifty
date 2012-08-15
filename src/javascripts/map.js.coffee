@@ -29,7 +29,7 @@ class Map
   display_width = 1200
   display_height = 800
 
-  map_image_url = '/assets/uk.png'
+  map_image_url = '/assets/images/uk.png'
   map_width = 492
   map_height = 725
   map_offset_x = 150

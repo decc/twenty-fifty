@@ -49,6 +49,7 @@ class CostsInContext
     @ready = true
     
     $("#results").append(costsInContextHTML)
+    $("#message").addClass('warning')
 
     twentyfifty.cost_override_in_place_warning()
 
@@ -95,7 +96,7 @@ class CostsInContext
       y = @y(code)
       
       low =   @r.rect(x,y,0,h).attr({'fill':'#008000','stroke':'none'})
-      range = @r.rect(x,y,0,h).attr({'fill':'url(/assets/hatches/hatch-green.png)','stroke':'none'})
+      range = @r.rect(x,y,0,h).attr({'fill':'url(/assets/images/hatches/hatch-green.png)','stroke':'none'})
       low_label = @r.text(x+10,y+h/2,"").attr({'fill':'#000','text-anchor':'start'})
       range_label = @r.text(x,y+h/2,"").attr({'text-anchor':'start','fill':'#f00'})
       message = @r.text(x,y+h/2,"").attr({'fill':'#000','text-anchor':'start'})
@@ -145,6 +146,7 @@ class CostsInContext
   
   teardown: () ->
     $("#results").empty()
+    $("#message").removeClass('warning')
     @ready = false
 
   updateResults: (pathway) ->
@@ -161,7 +163,7 @@ class CostsInContext
     
     if _id == 'chosen'
       bar.low.attr(fill:'#1f77b4')
-      bar.range.attr(fill:'url(/assets/hatches/hatch-1f77b4.png)')
+      bar.range.attr(fill:'url(/assets/images/hatches/hatch-1f77b4.png)')
     else if _id == (twentyfifty.getComparator() || twentyfifty.default_comparator_code )# Draw the incremental scale
       @comparator = pathway
       # The top x axis label
@@ -173,7 +175,7 @@ class CostsInContext
         if tick > 0
           @r.path(["M", @x(tick+total_cost), 27, "L", @x(tick+total_cost),@h-30]).attr({stroke:'#fff'})
       bar.low.attr({fill:'#f00'})
-      bar.range.attr({fill:'url(/assets/hatches/hatch-f00.png)'})
+      bar.range.attr({fill:'url(/assets/images/hatches/hatch-f00.png)'})
       @incremental_overlay.attr({width:@x(total_cost)-@x(0)})
       @low.labels.toFront()
       @range.labels.toFront()

@@ -69,55 +69,55 @@ class CostsComparedWithinSector
   ]
   
   cost_component_colors = {
-    "Conventional thermal plant":                     {low: "#a55194",range: "url(/assets/hatches/hatch-a55194.png)"}
-    "Combustion + CCS":                               {low: "#8c564b",range: "url(/assets/hatches/hatch-8c564b.png)"}
-    "Storage of captured CO2":                        {low: "#8c564b",range: "url(/assets/hatches/hatch-8c564b.png)"}
-    "Nuclear power":                                  {low: "#2ca02c",range: "url(/assets/hatches/hatch-2ca02c.png)"}
-    "Onshore wind":                                   {low: "#1f77b4",range: "url(/assets/hatches/hatch-1f77b4.png)"}
-    "Offshore wind":                                  {low: "#ff7f0e",range: "url(/assets/hatches/hatch-ff7f0e.png)"}
-    "Hydroelectric":                                  {low: "#d62728",range: "url(/assets/hatches/hatch-d62728.png)"}
-    "Wave and Tidal":                                 {low: "#7f7f7f",range: "url(/assets/hatches/hatch-7f7f7f.png)"}
-    "Geothermal":                                     {low: "#EA8BCC",range: "url(/assets/hatches/hatch-EA8BCC.png)"}
-    "Distributed solar PV":                           {low: "#a55194",range: "url(/assets/hatches/hatch-a55194.png)"}
-    "Distributed solar thermal":                      {low: "#8c564b",range: "url(/assets/hatches/hatch-8c564b.png)"}
-    "Micro wind":                                     {low: "#2ca02c",range: "url(/assets/hatches/hatch-2ca02c.png)"}
-    "Biomatter to fuel conversion":                   {low: "#1f77b4",range: "url(/assets/hatches/hatch-1f77b4.png)"}
-    "Bioenergy imports":                              {low: "#ff7f0e",range: "url(/assets/hatches/hatch-ff7f0e.png)"}
-    "Agriculture and land use":                       {low: "#d62728",range: "url(/assets/hatches/hatch-d62728.png)"}
-    "Energy from waste":                              {low: "#7f7f7f",range: "url(/assets/hatches/hatch-7f7f7f.png)"}
-    "Waste arising":                                  {low: "#EA8BCC",range: "url(/assets/hatches/hatch-EA8BCC.png)"}
-    "Marine algae":                                   {low: "#a55194",range: "url(/assets/hatches/hatch-a55194.png)"}
-    "Electricity imports":                            {low: "#8c564b",range: "url(/assets/hatches/hatch-8c564b.png)"}
-    "Electricity Exports":                            {low: "#2ca02c",range: "url(/assets/hatches/hatch-2ca02c.png)"}
-    "Electricity grid distribution":                  {low: "#1f77b4",range: "url(/assets/hatches/hatch-1f77b4.png)"}
-    "Storage, demand shifting, backup":               {low: "#ff7f0e",range: "url(/assets/hatches/hatch-ff7f0e.png)"}
-    "H2 Production":                                  {low: "#d62728",range: "url(/assets/hatches/hatch-d62728.png)"}
-    "Domestic heating":                               {low: "#7f7f7f",range: "url(/assets/hatches/hatch-7f7f7f.png)"}
-    "Domestic insulation":                            {low: "#EA8BCC",range: "url(/assets/hatches/hatch-EA8BCC.png)"}
-    "Commercial heating and cooling":                 {low: "#a55194",range: "url(/assets/hatches/hatch-a55194.png)"}
-    "Domestic lighting, appliances, and cooking":     {low: "#8c564b",range: "url(/assets/hatches/hatch-8c564b.png)"}
-    "Commercial lighting, appliances, and catering":  {low: "#2ca02c",range: "url(/assets/hatches/hatch-2ca02c.png)"}
-    "Industrial processes":                           {low: "#1f77b4",range: "url(/assets/hatches/hatch-1f77b4.png)"}
-    "Conventional cars and buses":                    {low: "#ff7f0e",range: "url(/assets/hatches/hatch-ff7f0e.png)"}
-    "Hybrid cars and buses":                          {low: "#d62728",range: "url(/assets/hatches/hatch-d62728.png)"}
-    "Electric cars and buses":                        {low: "#7f7f7f",range: "url(/assets/hatches/hatch-7f7f7f.png)"}
-    "Fuel cell cars and buses":                       {low: "#EA8BCC",range: "url(/assets/hatches/hatch-EA8BCC.png)"}
-    "Bikes":                                          {low: "#a55194",range: "url(/assets/hatches/hatch-a55194.png)"}
-    "Rail":                                           {low: "#8c564b",range: "url(/assets/hatches/hatch-8c564b.png)"}
-    "Domestic aviation":                              {low: "#2ca02c",range: "url(/assets/hatches/hatch-2ca02c.png)"}
-    "Domestic freight":                               {low: "#1f77b4",range: "url(/assets/hatches/hatch-1f77b4.png)"}
-    "International aviation":                         {low: "#ff7f0e",range: "url(/assets/hatches/hatch-ff7f0e.png)"}
-    "International shipping (maritime bunkers)":      {low: "#d62728",range: "url(/assets/hatches/hatch-d62728.png)"}
-    "Geosequestration":                               {low: "#7f7f7f",range: "url(/assets/hatches/hatch-7f7f7f.png)"}
-    "Petroleum refineries":                           {low: "#8c564b",range: "url(/assets/hatches/hatch-8c564b.png)"}
-    "Coal":                                           {low: "#2ca02c",range: "url(/assets/hatches/hatch-2ca02c.png)"}
-    "Oil":                                            {low: "#1f77b4",range: "url(/assets/hatches/hatch-1f77b4.png)"}
-    "Gas":                                            {low: "#ff7f0e",range: "url(/assets/hatches/hatch-ff7f0e.png)"}
-    "Fossil fuel transfers":                          {low: "#d62728",range: "url(/assets/hatches/hatch-d62728.png)"}
-    "District heating effective demand":              {low: "#7f7f7f",range: "url(/assets/hatches/hatch-7f7f7f.png)"}
-    "Power Carbon Capture":                           {low: "#EA8BCC",range: "url(/assets/hatches/hatch-EA8BCC.png)"}
-    "Industry Carbon Capture":                        {low: "#a55194",range: "url(/assets/hatches/hatch-a55194.png)"}
-    "Finance cost":                                   {low: "#8c564b",range: "url(/assets/hatches/hatch-8c564b.png)"}
+    "Conventional thermal plant":                     {low: "#a55194",range: "url(/assets/images/hatches/hatch-a55194.png)"}
+    "Combustion + CCS":                               {low: "#8c564b",range: "url(/assets/images/hatches/hatch-8c564b.png)"}
+    "Storage of captured CO2":                        {low: "#8c564b",range: "url(/assets/images/hatches/hatch-8c564b.png)"}
+    "Nuclear power":                                  {low: "#2ca02c",range: "url(/assets/images/hatches/hatch-2ca02c.png)"}
+    "Onshore wind":                                   {low: "#1f77b4",range: "url(/assets/images/hatches/hatch-1f77b4.png)"}
+    "Offshore wind":                                  {low: "#ff7f0e",range: "url(/assets/images/hatches/hatch-ff7f0e.png)"}
+    "Hydroelectric":                                  {low: "#d62728",range: "url(/assets/images/hatches/hatch-d62728.png)"}
+    "Wave and Tidal":                                 {low: "#7f7f7f",range: "url(/assets/images/hatches/hatch-7f7f7f.png)"}
+    "Geothermal":                                     {low: "#EA8BCC",range: "url(/assets/images/hatches/hatch-EA8BCC.png)"}
+    "Distributed solar PV":                           {low: "#a55194",range: "url(/assets/images/hatches/hatch-a55194.png)"}
+    "Distributed solar thermal":                      {low: "#8c564b",range: "url(/assets/images/hatches/hatch-8c564b.png)"}
+    "Micro wind":                                     {low: "#2ca02c",range: "url(/assets/images/hatches/hatch-2ca02c.png)"}
+    "Biomatter to fuel conversion":                   {low: "#1f77b4",range: "url(/assets/images/hatches/hatch-1f77b4.png)"}
+    "Bioenergy imports":                              {low: "#ff7f0e",range: "url(/assets/images/hatches/hatch-ff7f0e.png)"}
+    "Agriculture and land use":                       {low: "#d62728",range: "url(/assets/images/hatches/hatch-d62728.png)"}
+    "Energy from waste":                              {low: "#7f7f7f",range: "url(/assets/images/hatches/hatch-7f7f7f.png)"}
+    "Waste arising":                                  {low: "#EA8BCC",range: "url(/assets/images/hatches/hatch-EA8BCC.png)"}
+    "Marine algae":                                   {low: "#a55194",range: "url(/assets/images/hatches/hatch-a55194.png)"}
+    "Electricity imports":                            {low: "#8c564b",range: "url(/assets/images/hatches/hatch-8c564b.png)"}
+    "Electricity Exports":                            {low: "#2ca02c",range: "url(/assets/images/hatches/hatch-2ca02c.png)"}
+    "Electricity grid distribution":                  {low: "#1f77b4",range: "url(/assets/images/hatches/hatch-1f77b4.png)"}
+    "Storage, demand shifting, backup":               {low: "#ff7f0e",range: "url(/assets/images/hatches/hatch-ff7f0e.png)"}
+    "H2 Production":                                  {low: "#d62728",range: "url(/assets/images/hatches/hatch-d62728.png)"}
+    "Domestic heating":                               {low: "#7f7f7f",range: "url(/assets/images/hatches/hatch-7f7f7f.png)"}
+    "Domestic insulation":                            {low: "#EA8BCC",range: "url(/assets/images/hatches/hatch-EA8BCC.png)"}
+    "Commercial heating and cooling":                 {low: "#a55194",range: "url(/assets/images/hatches/hatch-a55194.png)"}
+    "Domestic lighting, appliances, and cooking":     {low: "#8c564b",range: "url(/assets/images/hatches/hatch-8c564b.png)"}
+    "Commercial lighting, appliances, and catering":  {low: "#2ca02c",range: "url(/assets/images/hatches/hatch-2ca02c.png)"}
+    "Industrial processes":                           {low: "#1f77b4",range: "url(/assets/images/hatches/hatch-1f77b4.png)"}
+    "Conventional cars and buses":                    {low: "#ff7f0e",range: "url(/assets/images/hatches/hatch-ff7f0e.png)"}
+    "Hybrid cars and buses":                          {low: "#d62728",range: "url(/assets/images/hatches/hatch-d62728.png)"}
+    "Electric cars and buses":                        {low: "#7f7f7f",range: "url(/assets/images/hatches/hatch-7f7f7f.png)"}
+    "Fuel cell cars and buses":                       {low: "#EA8BCC",range: "url(/assets/images/hatches/hatch-EA8BCC.png)"}
+    "Bikes":                                          {low: "#a55194",range: "url(/assets/images/hatches/hatch-a55194.png)"}
+    "Rail":                                           {low: "#8c564b",range: "url(/assets/images/hatches/hatch-8c564b.png)"}
+    "Domestic aviation":                              {low: "#2ca02c",range: "url(/assets/images/hatches/hatch-2ca02c.png)"}
+    "Domestic freight":                               {low: "#1f77b4",range: "url(/assets/images/hatches/hatch-1f77b4.png)"}
+    "International aviation":                         {low: "#ff7f0e",range: "url(/assets/images/hatches/hatch-ff7f0e.png)"}
+    "International shipping (maritime bunkers)":      {low: "#d62728",range: "url(/assets/images/hatches/hatch-d62728.png)"}
+    "Geosequestration":                               {low: "#7f7f7f",range: "url(/assets/images/hatches/hatch-7f7f7f.png)"}
+    "Petroleum refineries":                           {low: "#8c564b",range: "url(/assets/images/hatches/hatch-8c564b.png)"}
+    "Coal":                                           {low: "#2ca02c",range: "url(/assets/images/hatches/hatch-2ca02c.png)"}
+    "Oil":                                            {low: "#1f77b4",range: "url(/assets/images/hatches/hatch-1f77b4.png)"}
+    "Gas":                                            {low: "#ff7f0e",range: "url(/assets/images/hatches/hatch-ff7f0e.png)"}
+    "Fossil fuel transfers":                          {low: "#d62728",range: "url(/assets/images/hatches/hatch-d62728.png)"}
+    "District heating effective demand":              {low: "#7f7f7f",range: "url(/assets/images/hatches/hatch-7f7f7f.png)"}
+    "Power Carbon Capture":                           {low: "#EA8BCC",range: "url(/assets/images/hatches/hatch-EA8BCC.png)"}
+    "Industry Carbon Capture":                        {low: "#a55194",range: "url(/assets/images/hatches/hatch-a55194.png)"}
+    "Finance cost":                                   {low: "#8c564b",range: "url(/assets/images/hatches/hatch-8c564b.png)"}
   }
   
   constructor: () ->
@@ -128,6 +128,7 @@ class CostsComparedWithinSector
     @ready = true
 
     $('#results').append(costsComparedWithinSectorHTML)
+    $('#message').addClass('warning')
   
     $('#sectorname').html(categories[twentyfifty.getSector()])
 
@@ -225,6 +226,7 @@ class CostsComparedWithinSector
 
   teardown: () ->
     $('#results').empty()
+    $('#message').removeClass('warning')
     @ready = false
 
   updateResults: (pathway) ->

@@ -28,6 +28,7 @@ class AirQuality
     @ready = true
 
     $("#results").append(airQualityHTML)
+    $("#message").addClass('warning')
 
     e = $('#airquality')
     @h = e.height()
@@ -49,11 +50,11 @@ class AirQuality
 
     @r.text(30,@y('comparator')+27,twentyfifty.pathwayDescriptions(comparator_id,"")).attr({'text-anchor':'start'})
     clow =   @r.rect(x,@y('comparator'),0,h).attr({'fill':'#f00','stroke':'none'})
-    crange = @r.rect(x,@y('comparator'),0,h).attr({'fill':'url(/assets/hatches/hatch-f00.png)','stroke':'none'})
+    crange = @r.rect(x,@y('comparator'),0,h).attr({'fill':'url(/assets/images/hatches/hatch-f00.png)','stroke':'none'})
     @bars['comparator'] = {low: clow, range: crange}
 
     low =   @r.rect(x,@y('chosen'),0,h).attr({'fill':'#1f77b4','stroke':'none'})
-    range = @r.rect(x,@y('chosen'),0,h).attr({'fill':'url(/assets/hatches/hatch-1f77b4.png)','stroke':'none'})
+    range = @r.rect(x,@y('chosen'),0,h).attr({'fill':'url(/assets/images/hatches/hatch-1f77b4.png)','stroke':'none'})
     @bars['chosen'] = {low: low, range: range}
 
     # The bottom x axis labels and indicators
@@ -68,6 +69,7 @@ class AirQuality
 
   teardown: () ->
     $("#results").empty()
+    $("#message").removeClass('warning')
     @ready = false
 
   updateComparator: (pathway) =>
