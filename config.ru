@@ -7,7 +7,7 @@ if ENV['RACK_ENV'] == 'development'
 
     environment.append_path 'src/javascripts'
     environment.append_path 'src/stylesheets'
-    environment.append_path 'src/images'
+    environment.append_path 'public/assets'
     environment.append_path 'contrib'
 
     environment.context_class.class_eval do 
