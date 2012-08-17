@@ -4,7 +4,7 @@ class CostsSensitivity
 <div class='costssensitivity'>
   <ul class='dropdown' id='comparatorchoice'>
     <li>
-      <a href="#" onclick="$('ul#view_comparatorchoice').toggle(); return false;">Choose comparison<img alt="Dropdown-arrow" src="/assets/dropdown-arrow.png" /></a>
+      <a href="#" onclick="$('ul#view_comparatorchoice').toggle(); return false;">Choose comparison<img alt="Dropdown-arrow" src="/assets/images/dropdown-arrow.png" /></a>
       <ul class='choices' id='view_comparatorchoice'>
         <li><a href="#" onclick="twentyfifty.switchCompator('10111111111111110111111001111110111101101101110110111');$('ul#view_comparatorchoice').toggle(); return false;">Doesn't tackle climate change (All level 1)</a></li>
         <li><a href="#" onclick="twentyfifty.switchCompator('10111111111111110111111004444440444404203304440420111');$('ul#view_comparatorchoice').toggle(); return false;">Maximum demand</a></li>
