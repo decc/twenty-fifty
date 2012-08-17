@@ -1,17 +1,5 @@
-.bundle
-db/*.sqlite3
-log/*.log
 tmp/
-.sass-cache/
 ~$*
 *.swo
 *.swp
 *~
-lib/2050
-lib/2050Model
-public/assets
-public/pathways
-*.o
-*.out
-*.dylib
-doc/api
