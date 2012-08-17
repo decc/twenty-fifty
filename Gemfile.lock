@@ -8,6 +8,7 @@ GEM
     ffi (1.1.0)
     haml (3.1.6)
     hike (1.2.1)
+    json (1.7.4)
     multi_json (1.3.6)
     rack (1.4.1)
     rack-protection (1.2.0)
@@ -34,6 +35,7 @@ DEPENDENCIES
   decc_2050_model (>= 0.0.7)
   ffi
   haml
+  json
   sass
   sinatra
   sprockets
