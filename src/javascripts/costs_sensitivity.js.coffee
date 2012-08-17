@@ -21,42 +21,12 @@ class CostsSensitivity
       </ul>
     </li>
   </ul>
-  <h1>
-    The cost of your pathway compared with another, allowing simple variation in cost estimates.
-  </h1>
-  <div id='cost_caveats'>
-  We would like your help to develop this tool. Please
-  <a href="http://2050-calculator-tool-wiki.decc.gov.uk">click here</a>
-  to find out more about our methodology and suggest improvements.
-  Before viewing the cost implications of your choices, please note that:
-  <ol>
-    <li>
-      The Calculator expresses pathway costs as 'average pounds per person per year'. This is not the same as your energy bill. It is the cost of everything the UK buys that makes, converts, saves or uses energy: from kettles and insulation foam to trains and power stations. You can choose to see the results in different units when using the
-      <a href="http://www.decc.gov.uk/2050">excel version of the Calculator.</a>
-    </li>
-    <li>The Calculator does not choose any options automatically, regardless of their cost.</li>
-    <li>
-      The Calculator uses forecasts from credible sources of how technology and fuel costs might rise or fall over time. You vary these forecasts using the
-      <a href="#" onclick="twentyfifty.switchView('costs_sensitivity'); return false;">cost sensitivity</a>
-      implication from the menu on the top left. The full set of data points is available on the
-      <a href="http://2050-calculator-tool-wiki.decc.gov.uk">wiki.</a>
-    </li>
-    <li>The cost of not tackling climate change is not included in the Calculator. The Stern review estimated that failing to tackle climate change could reduce global GDP by up to 20%. This is the equivalent of up to &pound;6,500 per person per year on average, on top of the cost of the energy system.</li>
-    <li>Some other important effects have been excluded from the Calculator. The costs of travelling less or with different modes of transport, having colder homes or fewer goods, and changing the appearance of our houses or landscape are not included. Nor are profits, taxes, subsidies or economies of scale driven by pathway choices. The Calculator includes only the physical costs of constructing, operating and fuelling equipment.</li>
-    <li>Costs are just one feature for comparing 2050 pathways. The Calculator provides information on other impacts, as well as some illustrative pathways to compare your choices with.</li>
-  </ol>
-  <div id='understand'>
-    <a href="#" onclick="$.jStorage.set('CostCaveatShown',true);$('#cost_caveats').hide(); return false;">Click to continue using the calculator</a>
-  </div>
-</div>
+  <h1>The cost of your pathway compared with another, allowing simple variation in cost estimates.</h1>
+  #{window.costCaveatHTML}
   <div id='costssensitivity'></div>
-  <div id='essentialnotes'>
-    Note: The cost of failing to tackle climate change is not included. Some pathways, including the 'All at Level 1' pathway shown here, fail to tackle climate change. The Stern review estimated that failing to tackle climate change could reduce global GDP by up to 20% (equivalent to up to &pound;6500 per person per year on top of the cost of the energy system included in the chart above). Nor are the costs of travelling less, being colder, or consuming less included.
-    <a href="#" onclick="$.jStorage.deleteKey('CostCaveatShown');$('#cost_caveats').show(); return false;">Show the caveats again</a>
-  </div>
+  #{window.costEssentialNotesHTML}
 </div>
-dd
-  """
+"""
 
   bottom_area_start = 219
     
