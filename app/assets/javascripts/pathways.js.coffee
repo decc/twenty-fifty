@@ -100,10 +100,12 @@ demoOriginalLevel = null
 startDemo = (choice) ->
   demoLevel = 1
   demoOriginalLevel = choices[choice]
+  demoMaximum = window.twentyfifty.choice_sizes[choice]
   demoTimer = setInterval( (() ->
     go(choice,demoLevel)
     demoLevel = demoLevel + 1
-    demoLevel = 1 if demoLevel > 4
+    demoLevel = 1 if demoLevel > demoMaximum
+    false
   ),1000)
 
 stopDemo = (choice) ->
@@ -117,12 +119,12 @@ switchView = (new_action) ->
 switchPathway = (new_code) ->
   old_choices = choices.slice(0)
   choices = choicesForCode(new_code)
-  loadMainPathway() 
+  loadMainPathway()
 
 setChoices = (new_choices) ->
   old_choices = choices.slice(0)
   choices = new_choices
-  loadMainPathway() 
+  loadMainPathway()
 
 preLoadPathway = (preload_code) ->
   return false if cache[preload_code]? # Already loaded

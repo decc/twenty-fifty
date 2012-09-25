@@ -147,4 +147,12 @@ module ApplicationHelper
     Hash[*example_pathways.map { |e| [e[:name],e[:code]] }.flatten]
   end
 
+  def choice_sizes
+    sizes = {}
+    ModelStructure.instance.choices.each do |choice|
+      sizes[choice.number] = choice.levels.to_a.size
+    end
+    sizes
+  end
+
 end

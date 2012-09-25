@@ -12,6 +12,7 @@
       window.twentyfifty.pathway_names_hash = #{pathway_names.to_json};
       window.twentyfifty.comparator_pathways = #{cost_comparator_pathways.to_json};
       window.twentyfifty.default_comparator_code = #{default_cost_comparator_pathway.to_json};
+      window.twentyfifty.choice_sizes = #{choice_sizes.to_json};
   %body
     #topbar
       #help= link_to "Help", "http://2050-calculator-tool-wiki.decc.gov.uk/pages/#{help_page}"
