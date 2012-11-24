@@ -11,7 +11,20 @@ ENV['RACK_ENV'] = ENV['RAILS_ENV'] if ENV['RAILS_ENV']
 
 map '/' do
   map '/assets' do
-    require './src/serve_assets'
+    require 'sprockets'
+    require './src/helper'
+    environment = Sprockets::Environment.new
+
+    environment.append_path 'src/javascripts'
+    environment.append_path 'src/stylesheets'
+    environment.append_path 'public/assets'
+    environment.append_path 'contrib'
+
+    environment.context_class.class_eval do 
+      include Helper
+    end
+
+    run environment
   end
   use RedirectOldVersions
   use ServeModelData
