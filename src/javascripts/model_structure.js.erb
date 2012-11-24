@@ -2,6 +2,7 @@
 // FIXME: In the end, this should only contain information drawn from the Excel Model.
 // that is constant across pathways. The methods called are in helper.rb
 window.twentyfifty = {};
+window.twentyfifty.default_pathway = <%= ("1" * ModelStructure.instance.types.size).to_json %>;
 window.twentyfifty.pathway_wiki_pages_hash = <%= pathway_wiki_pages.to_json %>;
 window.twentyfifty.pathway_descriptions_hash = <%= pathway_descriptions.to_json %>;
 window.twentyfifty.pathway_names_hash = <%= pathway_names.to_json %>;

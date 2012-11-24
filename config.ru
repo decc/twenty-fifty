@@ -1,5 +1,12 @@
 # encoding: utf-8
-if ENV['RACK_ENV'] == 'development'
+require 'rubygems'
+require 'bundler'
+Bundler.setup
+
+ENV['RACK_ENV'] = ENV['RAILS_ENV'] if ENV['RAILS_ENV']
+
+
+if ENV['RACK_ENV'] != 'production'
   map '/assets' do
     require 'sprockets'
     require './src/helper'
@@ -17,7 +24,6 @@ if ENV['RACK_ENV'] == 'development'
     run environment
   end
 end
-
 
 require './2050'
 map '/' do

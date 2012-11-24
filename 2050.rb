@@ -5,9 +5,9 @@ require 'json'
 # Overall Sinatra configuration, see http://www.sinatrarb.com/ for detail
 enable :lock # The C 2050 model is not thread safe
 
-get '/' do 
-  redirect to("/pathways/1111111111111111111111111111111111111111111111111111/primary_energy_chart")
-end
+# get '/' do 
+#  redirect to("/pathways/1111111111111111111111111111111111111111111111111111/primary_energy_chart")
+# end
 
 # Next we deal with urls that relate to previous versions of the 2050 calculator.
 # If you are developing your own calculator, delete from here to the line marked STOP DELETING HERE
@@ -126,10 +126,10 @@ if development?
   get '*' do
     load './src/helper.rb'
     helpers(Helper)
-    haml :'index.html'
+    haml :'default.html'
   end
 else
   get '*' do 
-    send_file 'public/index.html'
+    send_file 'public/default.html'
   end
 end

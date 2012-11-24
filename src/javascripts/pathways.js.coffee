@@ -30,9 +30,9 @@ $(document).ready(documentReady)
 
 setVariablesFromURL = () ->
   url_elements = window.location.pathname.split( '/' )
-  controller = url_elements[1]
-  choices = choicesForCode(url_elements[2])
-  action = url_elements[3]
+  controller = url_elements[1] || "pathways"
+  choices = choicesForCode(url_elements[2] || twentyfifty.default_pathway )
+  action = url_elements[3] || "primary_energy_chart"
   if action == 'costs_compared_within_sector'
     sector = url_elements[4]
   if url_elements[4] == 'comparator'
