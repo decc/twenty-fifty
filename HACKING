@@ -8,17 +8,40 @@ UPDATING THE UNDERLYING EXCEL MODEL
 The calculating engine of this tool is contained in the decc_2050_model gem. Find out more about that at:
 http://github.com/decc/decc_2050_model
 
+Once done. The next step will be to change into this directory and in 
+
+    Gemfile
+
+update the version number of the decc_2050_model gem. Then:
+
+    bundle update
+    rake
+
+
+UPDATING THE VIEWS
+
+Most of the meaningful code is in the src/javascripts folder. Most of it is written in coffescript, a variant of javascript.
+
+1. pathways.js.coffee - contains the code that loads the model data and ensures the correct view is displayed.
+2. model_structure.js.erb - contains some javascript variables that are set based on the structure of the model, as detailed in the decc_2050_model gem
+3. primary_energy.js.coffee describes the main view. Other views are also in the folder, one file per view. The relationship between view and url is set in window.twentyfifty.views at the bottom of each file.
+
+Each view in a class with the same rough format:
+1. setup() - is called when the webpage is ready for the chart to be drawn
+2. teardown() - is called when the user has selected a different view. It should remove all html that has been added in setup.
+3. updateResults(pathway) - is called when the data for a pathway has been received. It should update the results on the web page.
+
 UPDATING THE EXAMPLE PATHWAYS
 
 The example pathways are listed in:
 
-    app/helpers/application_helper.rb
+    src/helper.rb
 
 UPDATING THE ONE PAGE NOTES
 
 The one page notes are separate pdf files in:
 
-    app/assets/images/onepage
+    public/assets/onepage
 
 If the order of the controls is changed, or a new control is added, then the mapping in the underlying decc_2050_model code also needs to be changed:
 
