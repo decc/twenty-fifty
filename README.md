@@ -20,19 +20,15 @@ Otherwise:
 
 # RUNNING
 
-It can run in two modes, 'production' and 'development'.
-
-Production is what you usually want:
-
-1. cd twenty_fifty
-2. ruby 2050.rb -e production
-3. Navigate to http://0.0.0.0:4567 in your web browser
-
-Development takes more effort to set up, but then reloads various files on each page request, making development easier:
-
 1. gem install thin
-2. thin -R config.ru start -p 4567
+2. thin -R config.ru start -p 4567 -e development
 3. Navigate to http://0.0.0.0:4567 in your web browser
+
+To run in 'production' mode:
+
+1. rake html
+2. thin -R config.ru start -p 4567 -e production
+3. Navigate to http://0.0.0.0:4567 in your browser
 
 # HACKING
 
