@@ -102,10 +102,12 @@ demoOriginalLevel = null
 startDemo = (choice) ->
   demoLevel = 1
   demoOriginalLevel = choices[choice]
+  demoMaximum = window.twentyfifty.choice_sizes[choice]
   demoTimer = setInterval( (() ->
     go(choice,demoLevel)
     demoLevel = demoLevel + 1
-    demoLevel = 1 if demoLevel > 4
+    demoLevel = 1 if demoLevel > demoMaximum
+    false
   ),1000)
 
 stopDemo = (choice) ->
