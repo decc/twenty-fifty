@@ -209,7 +209,7 @@ class Map
      values.sort((a,b) -> b.value - a.value)
      for value in values
        box = @sea_boxes[value.name]
-       side = Math.sqrt(value.value*km2)    
+       side = Math.sqrt(value.value*km2)
        box.square.attr({x:x-side,y:y,width:side,height:side})
        box.label.attr({x:x+4,y:y+(side/2)})
        if value.value > 10
@@ -237,7 +237,7 @@ class Map
       
      # All the points
      # Remove anything previously drawn
-     @points.remove()
+     @points.remove() if @points?
      # Start capturing anything subsequently drawn
      @r.setStart()
      y = 35
