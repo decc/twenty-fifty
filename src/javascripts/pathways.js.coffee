@@ -6,20 +6,15 @@ action = null
 sector = null
 comparator = null
 
-execute = null
+current_view = null
 old_choices = []
 
 cache = {}
 callbacks = {}
-timers = {}
-requested = {}
-
-mainPathwayTimer = null
-preLoadHoverTimer = null
 
 documentReady = () ->
   setVariablesFromURL()
-  execute = views[action]
+  current_view = views[action]
   setHelpUrl()
   unless $.jStorage.get('CostCaveatShown') == true
     $('#cost_caveats').show()
@@ -61,15 +56,16 @@ switchSector = (new_sector) ->
   sector = new_sector
   history.pushState(choices, codeForChoices(), url()) if history['pushState']?
   switchView('costs_compared_within_sector')
-  execute.teardown()
-  execute.updateResults(cache[codeForChoices()])
+  current_view.teardown()
+  current_view.updateResults(cache[codeForChoices()])
 
 getComparator = () ->
   comparator
 
-switchCompator = (new_comparator) ->
+switchComparator = (new_comparator) ->
   comparator = new_comparator
-  execute.switchComparator(comparator)
+  history.pushState(choices, codeForChoices(), url()) if history['pushState']?
+  current_view.switchComparator(comparator) if current_view.switchComparator?
 
 url = (options = {}) ->
   s = jQuery.extend({controller:controller, code: codeForChoices(), action:action, sector:sector, comparator: getComparator()},options)
@@ -87,14 +83,6 @@ go = (index,level) ->
   else
     choices[index] = level
   loadMainPathway()
-
-preLoad = (index,level) ->
-  clearInterval(preLoadHoverTimer) if preLoadHoverTimer?
-  preLoadHoverTimer = setInterval( (() ->
-    preload_choices = choices.slice(0)
-    preload_choices[index] = level
-    preload_code = codeForChoices(preload_choices)
-    preLoadPathway(preload_code)),500)
 
 demoTimer = null
 demoOriginalLevel = null
@@ -122,18 +110,18 @@ switchView = (new_action) ->
   return false if action == new_action
   
   # This removes the old information from the screen
-  execute.teardown()
+  current_view.teardown()
 
   # This updates the url, on browsers that support this (i.e., not IE <9)
   action = new_action
   history.pushState(choices, codeForChoices(), url()) if history['pushState']?
-  execute = views[action]
+  current_view = views[action]
 
   # This sets the help url
   setHelpUrl()
 
   # This actually redraws the screen
-  execute.updateResults(cache[codeForChoices()])
+  current_view.updateResults(cache[codeForChoices()])
 
 setHelpUrl = () ->
   $('#help a').attr('href', "http://2050-calculator-tool-wiki.decc.gov.uk/pages/#{twentyfifty.helpPages[action]}")
@@ -148,18 +136,10 @@ setChoices = (new_choices) ->
   choices = new_choices
   loadMainPathway()
 
-preLoadPathway = (preload_code) ->
-  return false if cache[preload_code]? # Already loaded
-  return false if requested[preload_code]? # Already requested
-  requested[preload_code] = true
-  $.getJSON(url({code:preload_code, action:'data'}), (data) ->
-    if data?
-      cache[data._id] = data
-  )
-    
 loadMainPathway = (pushState = true) ->
   # Check if we haven't really moved
   return false if choices.join('') == old_choices.join('')
+
   # Update the controls, if neccesarry
   updateControls(old_choices,choices)
   
@@ -167,33 +147,25 @@ loadMainPathway = (pushState = true) ->
   main_code = codeForChoices()
   history.pushState(choices,main_code,url()) if pushState && history['pushState']?
   
-  # Stop any previous timers
-  clearInterval(mainPathwayTimer) if mainPathwayTimer?
-  
   # Check the cache
   if cache[main_code]?
-    execute.updateResults(cache[main_code])
+    current_view.updateResults(cache[main_code])
     $('#calculating').hide()
     $('#message').show()
   else
     $('#calculating').show()
     $('#message').hide()
     
-    requested[main_code] = true
-    
     fetch = () ->
-      $.getJSON(url({code:main_code, action:'data'}), (data) ->
-        data ||= cache[main_code] # In case it arrived while we were waiting
+      $.getJSON(url({code:main_code, action:'data', sector: null, comparator: null}), (data) ->
         if data?
           cache[data._id] = data
           if data._id == codeForChoices()
-            clearInterval(mainPathwayTimer)
-            execute.updateResults(data)
+            current_view.updateResults(data)
             $('#calculating').hide()
             $('#message').show()
       )
     
-    mainPathwayTimer = setInterval(fetch,3000)
     fetch()
 
 loadSecondaryPathway = (secondary_code,callback) ->
@@ -201,14 +173,11 @@ loadSecondaryPathway = (secondary_code,callback) ->
     callback(cache[secondary_code])
   else
     fetch = () =>
-      $.getJSON(url({code:secondary_code, action:'data'}), (data) =>
-        data ||= cache[secondary_code] # In case it arrived while we were waiting
+      $.getJSON(url({code:secondary_code, action:'data', sector: null, comparator: null}), (data) =>
         if data?
-          clearInterval(timer)
           cache[data._id] = data
-          callback(data) 
+          callback(data)
       )
-    timer = setInterval((() -> fetch() ),3000)
     fetch()
   
 window.onpopstate = (event) ->
@@ -266,11 +235,9 @@ window.twentyfifty.setChoices = setChoices
 window.twentyfifty.getSector = getSector
 window.twentyfifty.switchSector = switchSector
 window.twentyfifty.getComparator = getComparator
-window.twentyfifty.switchCompator = switchCompator
+window.twentyfifty.switchComparator = switchComparator
 window.twentyfifty.url = url
 window.twentyfifty.go = go
-window.twentyfifty.preLoad = preLoad
-window.twentyfifty.preLoadPathway = preLoadPathway
 window.twentyfifty.loadMainPathway = loadMainPathway
 window.twentyfifty.loadSecondaryPathway = loadSecondaryPathway
 window.twentyfifty.switchView = switchView
