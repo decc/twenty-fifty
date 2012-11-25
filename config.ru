@@ -9,24 +9,24 @@ require './src/serve_html'
 
 ENV['RACK_ENV'] = ENV['RAILS_ENV'] if ENV['RAILS_ENV']
 
-map '/' do
-  map '/assets' do
-    require 'sprockets'
-    require './src/helper'
-    environment = Sprockets::Environment.new
+use Rack::CommonLogger
 
-    environment.append_path 'src/javascripts'
-    environment.append_path 'src/stylesheets'
-    environment.append_path 'public/assets'
-    environment.append_path 'contrib'
+map '/assets' do
+  require 'sprockets'
+  require './src/helper'
+  environment = Sprockets::Environment.new
 
-    environment.context_class.class_eval do 
-      include Helper
-    end
+  environment.append_path 'src/javascripts'
+  environment.append_path 'src/stylesheets'
+  environment.append_path 'public/assets'
+  environment.append_path 'contrib'
 
-    run environment
+  environment.context_class.class_eval do 
+    include Helper
   end
-  use RedirectOldVersions
-  use ServeModelData
-  run ServeHTML
+
+  run environment
 end
+use RedirectOldVersions
+use ServeModelData
+run ServeHTML
