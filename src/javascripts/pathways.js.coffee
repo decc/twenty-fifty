@@ -16,12 +16,23 @@ documentReady = () ->
   setVariablesFromURL()
   current_view = views[action]
   setHelpUrl()
-  unless $.jStorage.get('CostCaveatShown') == true
-    $('#cost_caveats').show()
+  $('#cost_caveats').show() unless $.jStorage.get('CostCaveatShown') == true
   loadMainPathway()
-  $("a[title]").tooltip({delay: 0, position: 'top left', offset:[3,3],tip:'#tooltip'});
+  setUpControls()
 
 $(document).ready(documentReady)
+
+setUpControls = () ->
+  $("a[title]").tooltip({delay: 0, position: 'top left', offset:[3,3],tip:'#tooltip'})
+  $("a.choiceLink").click( (event) ->
+    event.preventDefault()
+    t = $(event.target)
+    c = t.data().choicenumber
+    l = t.data().choicelevel
+    go(c, l)
+  )
+
+
 
 setVariablesFromURL = () ->
   url_elements = window.location.pathname.split( '/' )

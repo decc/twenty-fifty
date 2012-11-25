@@ -24,7 +24,7 @@ module Helper
   def classic_table_row_for_choice(choice)
     row = ["<td class='name'><a href='/assets/onepage/#{choice.doc}' target='_new' onmouseover='twentyfifty.startDemo(#{choice.number}); return true;' onmouseout='twentyfifty.stopDemo(#{choice.number});return true;'>#{choice.name}</a></td>"]
     choice.levels.each.with_index do |level,i|
-      row << "<td class='choice'><a href='#' onclick='twentyfifty.go(#{choice.number},#{i+1})' id='c#{choice.number}l#{i+1}' title='#{choice.descriptions[i]}' >#{level}</a></td>"
+      row << "<td class='choice'><a href='#' data-choicenumber='#{choice.number}' data-choicelevel='#{i+1}' id='c#{choice.number}l#{i+1}' title='#{choice.descriptions[i]}' class='choiceLink' >#{level}</a></td>"
     end
     "<tr class='#{choice.incremental_or_alternative}' id='r#{choice.number}'>#{row.join('')}</tr>"
   end
