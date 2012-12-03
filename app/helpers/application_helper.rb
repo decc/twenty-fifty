@@ -80,18 +80,25 @@ module ApplicationHelper
         cost_comparator: 3
       },
       {
+        name: "Very low cost pathway",
+        code: "q0111111111111110444131004114240414104103204440410111",
+        description: "Very low cost pathway",
+        wiki: "170",
+        cost_comparator: 4
+      },
+      {
         name: "Friends of the Earth",
         code: "10h4nn4431w23y110243111004424440343304202304430420441",
         description: "Generation from wind, marine renewables and\nhydro. Ambitious demand reduction",
         wiki: "95",
-        cost_comparator: 4
+        cost_comparator: 5
       },
       {
         name: "Campaign to Protect Rural England",
         code: "10h2pdppp12332130233122004414430343304102304430410231",
         description: "Offshore renewables, solar, geothermal and\nelectricity imports. Ambitious demand reduction.",
         wiki: "96",
-        cost_comparator: 5
+        cost_comparator: 6
       },
       {
         name: "Mark Brinkley",

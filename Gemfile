@@ -9,4 +9,4 @@ group :assets do
   gem 'uglifier'#, '>= 1.0.3'
 end
 gem 'haml'
-gem 'decc_2050_model', ">= 0.0.7"
+gem 'decc_2050_model', ">= 3.4.0"
