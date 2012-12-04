@@ -81,7 +81,7 @@ module ApplicationHelper
       },
       {
         name: "Very low cost pathway",
-        code: "q0111111111111110444131004114240414104103204440410111",
+        code: "q011111111111111032413l004314110434104103204440410111",
         description: "Very low cost pathway",
         wiki: "170",
         cost_comparator: 4
