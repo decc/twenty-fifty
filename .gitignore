@@ -14,3 +14,4 @@ public/pathways
 *.out
 *.dylib
 doc/api
+.powenv
