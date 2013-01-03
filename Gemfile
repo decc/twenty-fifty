@@ -12,4 +12,4 @@ gem 'coffee-script'
 
 # Model
 gem 'ffi'
-gem 'decc_2050_model', "3.4.1"
+gem 'decc_2050_model', "3.4.4pre"
