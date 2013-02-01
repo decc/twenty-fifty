@@ -156,7 +156,7 @@ loadMainPathway = (pushState = true) ->
   
   # Change the url if we can
   main_code = codeForChoices()
-  history.pushState(choices,main_code,url()) if pushState && history['pushState']?
+  history.pushState(choices,main_code,url()) if history['pushState']?
   
   # Check the cache
   if cache[main_code]?
