@@ -26,7 +26,7 @@ Otherwise:
 
 To run in 'production' mode:
 
-1. rake html
+1. bundle exec rake html
 2. thin -R config.ru start -p 4567 -e production
 3. Navigate to http://0.0.0.0:4567 in your browser
 
