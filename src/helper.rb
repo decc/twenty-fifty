@@ -40,7 +40,8 @@ module Helper
       "air_quality" => "Air quality",
       "costs_in_context"=>"Costs in context",
       "costs_compared_overview"=>"Costs compared",
-      "costs_sensitivity" => "Cost sensitivity"
+      "costs_sensitivity" => "Cost sensitivity",
+      "water_impacts" => "Water impacts"
     }
   end
 
@@ -55,7 +56,8 @@ module Helper
       "costs_compared_overview"=>"89",
       "costs_sensitivity" => "90",
       "story"=>"91",
-      "air_quality" => "TBD"
+      "air_quality" => "TBD",
+      "water_impacts" => "TBD"
     }
   end
 
