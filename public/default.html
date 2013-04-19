@@ -1,20 +1,18 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html>
   <head>
     <title>2050 Pathways Calculator</title>
-    <link href='/assets/application-a9112234c217f9e7cb20bb34a23756d4.css' media='screen' rel='stylesheet' type='text/css' />
-    <script src='/assets/application-606dc03676f519f26125f09a12de1527.js' type='text/javascript'></script>
-    <script type='text/javascript'>
-      //<![CDATA[
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-17161700-2']);
-        _gaq.push(['_trackPageview']);
-        (function() {
-          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-      //]]>
+    <link href='/assets/application-40240461b34a183b0a5e6a863e59003b.css' media='screen' rel='stylesheet' type='text/css' />
+    <script src='/assets/application-ada6ce0b5c2fd2f7e72625f66732b753.js' type='text/javascript'></script>
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-17161700-2']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
     </script>
   </head>
   <body>
@@ -26,7 +24,7 @@
         <li>
           <a href='#' onclick="$('ul#view_choices').toggle()">
             See implications
-            <img src='/assets/images/dropdown-arrow.png' />
+            <img src='/assets/images/dropdown-arrow.png'>
           </a>
           <ul class='choices' id='view_choices'>
             <li>
@@ -62,6 +60,9 @@
             <li>
               <a class='development' href='#' onclick="twentyfifty.switchView('costs_sensitivity')">Cost sensitivity</a>
             </li>
+            <li>
+              <a class='development' href='#' onclick="twentyfifty.switchView('water_impacts')">Water impacts</a>
+            </li>
           </ul>
         </li>
       </ul>
@@ -75,7 +76,7 @@
         <li>
           <a href='#' onclick="$('ul#savedpathway_choices').toggle()">
             Example Pathways
-            <img src='/assets/images/dropdown-arrow.png' />
+            <img src='/assets/images/dropdown-arrow.png'>
           </a>
           <ul class='choices' id='savedpathway_choices'>
             <li>
@@ -188,7 +189,7 @@
     </div>
     <div id='tooltip'></div>
     <div id='footer'>
-      Based on <a href='http://2050-calculator-tool-wiki.decc.gov.uk/pages/140'>excel version 3.4.6</a>. The source code for this site is available under an open source licence from
+      Based on <a href='http://2050-calculator-tool-wiki.decc.gov.uk/pages/140'>excel version 3.3.3</a>. The source code for this site is available under an open source licence from
       <a href='http://github.com/decc/twenty-fifty'>http://github.com/decc/twenty-fifty</a>
     </div>
   </body>

@@ -37,4 +37,5 @@
 //= require story
 //= require simple_sankey
 //= require share
+//= require water_impacts
 
