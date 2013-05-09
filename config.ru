@@ -9,6 +9,9 @@ require './src/serve_html'
 
 ENV['RACK_ENV'] = ENV['RAILS_ENV'] if ENV['RAILS_ENV']
 
+use Rack::Auth::Basic, "Restricted Area" do |username, password|
+  [username, password] == ['prototype', 'mayhavebugs']
+end
 
 map '/' do
   use Rack::CommonLogger
