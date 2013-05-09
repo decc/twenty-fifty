@@ -47,12 +47,14 @@ puts "Sever ready"
 puts "You can now:"
 puts "ssh ubuntu@#{server.dns_name}"
 
+@server = server
+
 def upload_string(string, as_filename)
   file = Tempfile.new(as_filename)
   file.puts string
   file.close
   puts "Uploading #{as_filename}"
-  server.scp_upload(file.path, as_filename)
+  @server.scp_upload(file.path, as_filename)
 end
 
 passenger_load = <<EOT
