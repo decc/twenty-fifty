@@ -9,12 +9,10 @@
 //= require jquery142
 //= require jquery.jsonplugin.min
 //  we aren't using this: require jquery_ujs
-//= require highcharts
-//= require highcharts.setOptions
 //= require jquery.tools.min
 //= require shims
-//= require d3.min
 //= require raphael.min
+//= require d3.min
 //= require jstorage.min
 //= require sankey
 
