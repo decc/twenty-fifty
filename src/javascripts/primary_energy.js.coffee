@@ -14,7 +14,8 @@ class PrimaryEnergy
     unit = "TWh/yr"
     first_scale_year = 2010
     last_scale_year = 2050
-    max_value = undefined
+    min_value = 0
+    max_value = 4000
 
     xScale = d3.scale.linear()
     yScale = d3.scale.linear()
@@ -34,7 +35,9 @@ class PrimaryEnergy
       "q#{i}-12"
 
     labelFilter = (d) ->
-      d.total > 200
+      Math.abs(d.total) > 200
+
+    bisect = d3.bisector( (d) -> d.total ).left
 
     chart = (selection) ->
       selection.each (data) ->
@@ -49,11 +52,19 @@ class PrimaryEnergy
           total+= p.y for p in series.data
           series.total = total
 
-        # And sort it
-        data = data.sort (a, b) -> d3.descending(a.total, b.total)
+        # Sort it
+        data = data.sort( (a,b) -> d3.ascending(a.total, b.total))
 
-        # Stack the data (creates a y0 for each data point)
-        stacked_data = stack(data)
+        # Divide the series into those taht are positive and those that are negative
+        i = bisect(data, 0)
+
+        positive_series = data.slice(i)
+        negative_series = data.slice(0, i)
+
+        # Stack the data separately for positive and negative values and then combine
+        # (creates a y0 for each data point)
+        stacked_data = stack(positive_series.reverse())
+        stacked_data = stack(negative_series).concat(stacked_data) if negative_series.length > 0
         
         # Update the x-scale.
         xScale
@@ -62,7 +73,7 @@ class PrimaryEnergy
         
         # Update the y-scale.
         yScale
-          .domain([0, max_value || d3.max(data)])
+          .domain([min_value, max_value])
           .range([height - margin.top - margin.bottom, 0])
         
         # Select the svg element, if it exists.
@@ -106,9 +117,14 @@ class PrimaryEnergy
 
         # Update the x-axis.
         g.select(".x.axis")
-          .attr("transform", "translate(0," + yScale.range()[0] + ")")
+          .attr("transform", "translate(0," + yScale(0) + ")")
           .call(xAxis)
-         
+        
+        # Move tick labels lower, if this graph goes negative
+        if min_value < 0
+          g.selectAll(".x.axis text")
+            .attr("dy", yScale(min_value) - yScale(0) + 7 )
+
         # Update the y-axis.
         g.select(".y.axis")
           .attr("transform", "translate(0," + xScale.range()[0] + ")")
@@ -141,8 +157,10 @@ class PrimaryEnergy
           p = d.data[d.data.length-1]
           # Put it at the middle of the area
           y = yScale(p.y0 + (p.y/2)) + 4
+          # But make sure it is at least 10 pixels from the previous label
+          # FIXME: To work with negative numbers
           y = Math.min(previous_y - 10, y)
-          console.log(d.name, y, previous_y)
+          console.log d.name, p.y0, p.y,  previous_y, y
           previous_y = y
           # Turn it into a transformation string
           "translate(#{label_x},#{y})"
@@ -158,6 +176,11 @@ class PrimaryEnergy
     chart.max_value = (_) ->
       return max_value unless _?
       max_value = _
+      chart
+
+    chart.min_value = (_) ->
+      return min_value unless _?
+      min_value = _
       chart
 
     chart
@@ -178,8 +201,9 @@ class PrimaryEnergy
       .max_value(4000)
 
     @emissions_chart = timeSeriesStakedAreaChart()
-      .unit('TWh/yr')
-      .max_value(4000)
+      .unit('MtCO2e/yr')
+      .min_value(-500)
+      .max_value(1000)
 
 
   teardown: () ->
@@ -190,26 +214,6 @@ class PrimaryEnergy
 
   updateResults: (@pathway) ->
     @setup() unless @emissions_chart? && @final_energy_chart? && @primary_energy_chart?
-    # titles = ['Bioenergy credit','Carbon capture','International Aviation and Shipping','Industrial Processes','Solvent and Other Product Use','Agriculture','Land-Use, Land-Use Change and Forestry','Waste','Other','Fuel Combustion']
-    # i = 0
-    # for name in titles
-    #   data = @pathway['ghg'][name]
-    #   if @emissions_chart.series[i]?
-    #     @emissions_chart.series[i].setData(data,false)
-    #   else
-    #     @emissions_chart.addSeries({name:name,data:data},false)
-    #   i++
-    # # Emissions target line
-    # unless @emissions_chart.series[i]?
-    #   @emissions_chart.addSeries({type: 'line', name: '80% reduction on 1990', data: [160,160,160,160,160,160,160,160,160], lineColor:'#fff', color:'#fff',dashStyle:'Dot', lineWidth:2},false)
-    # i++
-    # # Net emissions line
-    # data = @pathway['ghg']["Total"]
-    # if @emissions_chart.series[i]?
-    #   @emissions_chart.series[i].setData(data,false)
-    # else
-    #   @emissions_chart.addSeries({type: 'line', name: 'Total net emissions',data:data, lineColor: '#000', color: '#000',lineWidth:2, shadow: true},false)
-    # i++
 
     data = for name in ['Industry', 'Transport', 'Heating and cooling', 'Lighting & appliances']
       {name: name, data: @pathway['final_energy_demand'][name]}
@@ -224,6 +228,15 @@ class PrimaryEnergy
     d3.select('#supply_chart')
       .datum(data)
       .call(@primary_energy_chart)
+
+    data = for name in ['Bioenergy credit','Carbon capture','International Aviation and Shipping','Industrial Processes','Solvent and Other Product Use','Agriculture','Land Use, Land-Use Change and Forestry','Waste','Other','Fuel Combustion']
+      {name: name, data: @pathway['ghg'][name]}
+
+    d3.select('#emissions_chart')
+      .datum(data)
+      .call(@emissions_chart)
+
+
 
 
 window.twentyfifty.views['primary_energy_chart'] = new PrimaryEnergy
