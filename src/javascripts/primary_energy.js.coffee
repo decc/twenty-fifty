@@ -31,7 +31,7 @@ class PrimaryEnergy
       .y1((d,i) -> yScale(d.y0 + d.y))
 
     labelFilter = (d) ->
-      d.data[d.data.length-1].y > 50
+      d.total > 300
 
     chart = (selection) ->
       selection.each (data) ->
@@ -42,9 +42,12 @@ class PrimaryEnergy
         # Reformat the data to be more useful
         for series in data
           series.data = series.data.map( (p,i) -> {x: first_scale_year + (i*5), y: p }  )
+          total = 0
+          total+= p.y for p in series.data
+          series.total = total
 
         # And sort it
-        data = data.sort (a, b) -> d3.descending(a.data[a.data.length-1].y, b.data[b.data.length-1].y)
+        data = data.sort (a, b) -> d3.descending(a.total, b.total)
 
         # Stack the data (creates a y0 for each data point)
         stacked_data = stack(data)
@@ -67,8 +70,26 @@ class PrimaryEnergy
           .append("svg")
           .append("g")
           .attr('class','drawing')
+        
+        # Update the outer dimensions.
+        svg
+          .attr("width", width)
+          .attr("height", height)
 
-        # And the basic bits
+        # Update the inner dimensions.
+        g = svg.select("g.drawing").attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+
+        # Update the area paths
+        areas = g.selectAll(".area")
+          .data(Object, (d) -> d.name)
+
+        areas.enter()
+          .append("path")
+          .attr("class", (d,i) -> "area area#{i}")
+
+        areas.transition()
+          .attr("d", (d) -> area(d.data))
+        # Add the axes
         gEnter
           .append("g")
           .attr("class", "x axis")
@@ -78,14 +99,6 @@ class PrimaryEnergy
         gEnter
           .append("text")
           .attr("class", "y axislabel")
-        
-        # Update the outer dimensions.
-        svg
-          .attr("width", width)
-          .attr("height", height)
-
-        # Update the inner dimensions.
-        g = svg.select("g.drawing").attr("transform", "translate(" + margin.left + "," + margin.top + ")")
 
         # Update the x-axis.
         g.select(".x.axis")
@@ -102,16 +115,6 @@ class PrimaryEnergy
           .attr("transform", "translate(0," + (xScale.range()[0] - 10) + ")")
           .text(unit)
 
-        # Update the area paths
-        areas = g.selectAll(".area")
-          .data(Object, (d) -> d.name)
-
-        areas.enter()
-          .append("path")
-          .attr("class", (d,i) -> "area area#{i}")
-
-        areas.transition()
-          .attr("d", (d) -> area(d.data))
 
         # Update the area labels, but only for those with material values
         labels = g.selectAll(".linelabel")
