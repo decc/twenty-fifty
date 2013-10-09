@@ -30,8 +30,11 @@ class PrimaryEnergy
       .y0((d,i) -> yScale(d.y0))
       .y1((d,i) -> yScale(d.y0 + d.y))
 
+    colorClass = (d,i) ->
+      "q#{i}-12"
+
     labelFilter = (d) ->
-      d.total > 300
+      d.total > 200
 
     chart = (selection) ->
       selection.each (data) ->
@@ -69,7 +72,7 @@ class PrimaryEnergy
         gEnter = svg.enter()
           .append("svg")
           .append("g")
-          .attr('class','drawing')
+          .attr('class','drawing Paired')
         
         # Update the outer dimensions.
         svg
@@ -85,10 +88,11 @@ class PrimaryEnergy
 
         areas.enter()
           .append("path")
-          .attr("class", (d,i) -> "area area#{i}")
+          .attr("class", (d,i) -> "area #{colorClass(d,i)}")
 
         areas.transition()
           .attr("d", (d) -> area(d.data))
+
         # Add the axes
         gEnter
           .append("g")
@@ -115,22 +119,36 @@ class PrimaryEnergy
           .attr("transform", "translate(0," + (xScale.range()[0] - 10) + ")")
           .text(unit)
 
-
         # Update the area labels, but only for those with material values
+        label_x = xScale.range()[1]+2
+
         labels = g.selectAll(".linelabel")
           .data(((a) -> a.filter(labelFilter)), ((d) -> d.name))
-
+        
         labels.enter()
           .append("text")
-          .attr("class", (d,i) -> "linelabel linelabel#{i}")
-          .attr("transform", "translate(" + (xScale.range()[1]+2) + ","+ (yScale.range()[0])+")")
+          .attr("class", (d,i) -> "linelabel #{colorClass(d,i)}")
+          .attr("transform", "translate("+label_x+","+ (yScale.range()[0])+")")
           .text((d) -> d.name)
 
         labels.exit()
           .remove()
 
+        previous_y = yScale.range()[0]
+
+        label_y = (d) ->
+          # Find the last point
+          p = d.data[d.data.length-1]
+          # Put it at the middle of the area
+          y = yScale(p.y0 + (p.y/2)) + 4
+          y = Math.min(previous_y - 10, y)
+          console.log(d.name, y, previous_y)
+          previous_y = y
+          # Turn it into a transformation string
+          "translate(#{label_x},#{y})"
+
         labels.transition()
-          .attr("transform", (d,i) -> "translate(" + (xScale.range()[1]+2) + ","+(yScale((d.data[d.data.length-1].y0+(d.data[d.data.length-1].y/2)))+4)+")")
+          .attr("transform",label_y)
 
     chart.unit = (_) ->
       return unit unless _?
