@@ -64,7 +64,7 @@ class PrimaryEnergy
         # Stack the data separately for positive and negative values and then combine
         # (creates a y0 for each data point)
         stacked_data = stack(positive_series.reverse())
-        stacked_data = stack(negative_series).concat(stacked_data) if negative_series.length > 0
+        stacked_data = stack(negative_series).reverse().concat(stacked_data) if negative_series.length > 0
         
         # Update the x-scale.
         xScale
@@ -160,7 +160,6 @@ class PrimaryEnergy
           # But make sure it is at least 10 pixels from the previous label
           # FIXME: To work with negative numbers
           y = Math.min(previous_y - 10, y)
-          console.log d.name, p.y0, p.y,  previous_y, y
           previous_y = y
           # Turn it into a transformation string
           "translate(#{label_x},#{y})"
