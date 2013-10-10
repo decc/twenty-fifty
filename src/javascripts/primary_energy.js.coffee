@@ -144,6 +144,11 @@ class PrimaryEnergy
           .text(unit)
 
         # Update the area labels, but only for those with material values
+        # If the label is too wide, shift it
+        label = g.select(".y.axislabel")
+        label_width = label[0][0].getBBox().width
+        if label_width > margin.left
+          label.attr("dx",label_width - margin.left)
         label_x = xScale.range()[1]+2
 
         labels = g.selectAll(".linelabel")
