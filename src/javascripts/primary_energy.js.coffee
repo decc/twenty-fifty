@@ -11,6 +11,7 @@ class PrimaryEnergy
     width = 375
     height = 125
 
+    title = ""
     unit = "TWh/yr"
     first_scale_year = 2010
     last_scale_year = 2050
@@ -112,7 +113,7 @@ class PrimaryEnergy
         areas.transition()
           .attr("d", (d) -> area(d.data))
 
-        # Add the axes
+        # Add the axes & title
         gEnter
           .append("g")
           .attr("class", "x axis")
@@ -122,6 +123,9 @@ class PrimaryEnergy
         gEnter
           .append("text")
           .attr("class", "y axislabel")
+        gEnter
+          .append("text")
+          .attr("class", "charttitle")
 
         # Update the x-axis.
         g.select(".x.axis")
@@ -148,6 +152,11 @@ class PrimaryEnergy
         label_width = label[0][0].getBBox().width
         if label_width > margin.left
           label.attr("dx",label_width - margin.left)
+
+        # Update the title
+        g.select(".charttitle")
+          .attr("transform", "translate("+(width-margin.left-margin.right)/2+"," + (xScale.range()[0] - 10) + ")")
+          .text(title)
 
         # Update the area labels
         # Put them on the far right
@@ -186,6 +195,11 @@ class PrimaryEnergy
           .attr("transform",label_y)
           .attr("fill-opacity", (d,i) -> if showLabelFilter(d) then 1 else 0 )
 
+    chart.title = (_) ->
+      return title unless _?
+      title = _
+      chart
+
     chart.unit = (_) ->
       return unit unless _?
       unit = _
@@ -211,14 +225,17 @@ class PrimaryEnergy
     target.append("<div id='emissions_chart' class='chart'></div>")
 
     @final_energy_chart = timeSeriesStakedAreaChart()
+      .title("UK Final Energy Demand")
       .unit('TWh/yr')
       .max_value(4000)
 
     @primary_energy_chart = timeSeriesStakedAreaChart()
+      .title("UK Primary Energy Supply")
       .unit('TWh/yr')
       .max_value(4000)
 
     @emissions_chart = timeSeriesStakedAreaChart()
+      .title("UK Greenhouse Gas Emissions")
       .unit('MtCO2e/yr')
       .min_value(-500)
       .max_value(1000)
