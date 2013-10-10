@@ -56,6 +56,17 @@ body {
   fill-opacity: 1;
 }
 
+path.hover {
+  stroke: black;
+  stroke-width: 2px;
+}
+
+text.hover {
+  fill: black !important;
+  font-weight: bold;
+  fill-opacity: 1 !important;
+}
+
 .area0, .linelabel0 {
   fill: green;
 }

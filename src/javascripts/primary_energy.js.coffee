@@ -109,6 +109,13 @@ class PrimaryEnergy
         areas.enter()
           .append("path")
           .attr("class", (d,i) -> "area #{colorClass(d,i)}")
+          .on("mouseover", (d,i) ->
+            g.selectAll(".#{colorClass(d,i)}")
+              .classed("hover", true))
+          .on("mouseout", (d,i) ->
+            g.selectAll(".#{colorClass(d,i)}")
+              .classed("hover", false))
+          
 
         areas.transition()
           .attr("d", (d) -> area(d.data))
