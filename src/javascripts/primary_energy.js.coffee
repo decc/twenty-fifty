@@ -42,7 +42,7 @@ class PrimaryEnergy
         color_class_index++
       c
 
-    labelFilter = (d) ->
+    showLabelFilter = (d) ->
       Math.abs(d.total) > 200
 
     bisect = d3.bisector( (d) -> d.total ).left
@@ -143,17 +143,20 @@ class PrimaryEnergy
           .attr("transform", "translate(0," + (xScale.range()[0] - 10) + ")")
           .text(unit)
 
-        # Update the area labels, but only for those with material values
         # If the label is too wide, shift it
         label = g.select(".y.axislabel")
         label_width = label[0][0].getBBox().width
         if label_width > margin.left
           label.attr("dx",label_width - margin.left)
+
+        # Update the area labels
+        # Put them on the far right
         label_x = xScale.range()[1]+2
 
         labels = g.selectAll(".linelabel")
-          .data(((a) -> a.filter(labelFilter)), ((d) -> d.name))
+          .data(Object,((d) -> d.name))
         
+        # Make sure they are the right colour
         labels.enter()
           .append("text")
           .attr("class", (d,i) -> "linelabel #{colorClass(d,i)}")
@@ -163,6 +166,7 @@ class PrimaryEnergy
         labels.exit()
           .remove()
 
+        # Make sure they are positioned at the right vertical point
         previous_y = yScale.range()[0] + 1000
 
         label_y = (d) ->
@@ -171,14 +175,16 @@ class PrimaryEnergy
           # Put it at the middle of the area
           y = yScale(p.y0 + (p.y/2)) + 4
           # But make sure it is at least 10 pixels from the previous label
-          # FIXME: To work with negative numbers
-          y = Math.min(previous_y - 10, y)
-          previous_y = y
+          if showLabelFilter(d)
+            y = Math.min(previous_y - 10, y)
+            previous_y = y
           # Turn it into a transformation string
           "translate(#{label_x},#{y})"
 
+        # If they are too small, don't show them
         labels.transition()
           .attr("transform",label_y)
+          .attr("fill-opacity", (d,i) -> if showLabelFilter(d) then 1 else 0 )
 
     chart.unit = (_) ->
       return unit unless _?
