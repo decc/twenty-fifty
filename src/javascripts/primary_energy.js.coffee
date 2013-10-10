@@ -31,8 +31,16 @@ class PrimaryEnergy
       .y0((d,i) -> yScale(d.y0))
       .y1((d,i) -> yScale(d.y0 + d.y))
 
+    color_classes = {}
+    color_class_index = 0
+
     colorClass = (d,i) ->
-      "q#{i}-12"
+      c = color_classes[d.name]
+      unless c?
+        c = "q#{color_class_index}-12"
+        color_classes[d.name] = c
+        color_class_index++
+      c
 
     labelFilter = (d) ->
       Math.abs(d.total) > 200
