@@ -158,7 +158,7 @@ class PrimaryEnergy
         labels.exit()
           .remove()
 
-        previous_y = yScale.range()[0]
+        previous_y = yScale.range()[0] + 1000
 
         label_y = (d) ->
           # Find the last point
