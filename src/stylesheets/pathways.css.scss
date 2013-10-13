@@ -65,6 +65,12 @@ path.total {
 text.total {
 }
 
+text.seriesValue {
+  font-size: 0.72em;
+  font-family: Ties;
+  text-anchor: middle;
+}
+
 path.total.hover {
   stroke-width: 3px;
 }
@@ -74,43 +80,8 @@ path.hover {
   stroke-width: 2px;
 }
 
-text.hover {
+.linelabel.hover {
   fill: black !important;
   font-weight: bold;
   fill-opacity: 1 !important;
 }
-
-.area0, .linelabel0 {
-  fill: green;
-}
-
-.area1, .linelabel1 {
-  fill: red;
-}
-
-.area2, .linelabel2 {
-  fill: grey;
-}
-
-.area3, .linelabel3 {
-  fill: black;
-}
-
-.area4, .linelabel4 {
-  fill: yellow;
-}
-
-.line0 {
-  stroke: green;
-}
-
-
-.line1 {
-  stroke: red;
-}
-
-.line3 {
-  stroke: green;
-  stroke-dasharray: 5, 5;
-}
-

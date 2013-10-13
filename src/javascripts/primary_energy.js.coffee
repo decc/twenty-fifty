@@ -5,7 +5,7 @@ class PrimaryEnergy
     margin =
       top: 21
       right: 115
-      bottom: 20
+      bottom: 40
       left: 40
 
     width = 375
@@ -53,9 +53,10 @@ class PrimaryEnergy
       c
 
     showLabelFilter = (d) ->
+      # FIXME: Relate this to the scale on screen
       Math.abs(d.total) > 200
 
-    bisect = d3.bisector( (d) -> d.total ).left
+    dataTableFormat = d3.format(".0f")
 
     chart = (selection) ->
       selection.each (data) ->
@@ -108,7 +109,7 @@ class PrimaryEnergy
         xScale
           .domain([first_scale_year, last_scale_year])
           .range([0, width - margin.left - margin.right])
-        
+      
         # Update the y-scale.
         yScale
           .domain([min_value, max_value])
@@ -143,12 +144,13 @@ class PrimaryEnergy
           .append("path")
           .attr("class", (d,i) -> seriesClass(d,i))
           .on("mouseover", (d,i) ->
+            dataTable(d, seriesClass(d,i))
             g.selectAll(".#{seriesClass(d,i)}")
               .classed("hover", true))
           .on("mouseout", (d,i) ->
+            removeDataTable()
             g.selectAll(".#{seriesClass(d,i)}")
               .classed("hover", false))
-          
 
         areas.transition()
           .attr("d", (d) -> d.path(d.value))
@@ -212,9 +214,11 @@ class PrimaryEnergy
           .attr("transform", "translate("+label_x+","+ (yScale.range()[0])+")")
           .text((d) -> d.key)
           .on("mouseover", (d,i) ->
+            dataTable(d, seriesClass(d,i))
             g.selectAll(".#{seriesClass(d,i)}")
               .classed("hover", true))
           .on("mouseout", (d,i) ->
+            removeDataTable()
             g.selectAll(".#{seriesClass(d,i)}")
               .classed("hover", false))
 
@@ -249,6 +253,26 @@ class PrimaryEnergy
           .transition()
             .attr("transform",label_y)
             .attr("fill-opacity", (d,i) -> if showLabelFilter(d) then 1 else 0 )
+
+        dataTable = (series, seriesclass) ->
+            # Add the numbers at the bottom
+            labels = series.value
+
+            grid = g.selectAll(".seriesValue")
+              .data(labels)
+
+            grid.enter()
+              .append("text")
+              .attr("class", "seriesValue")
+            
+            grid
+              .text((d,i) -> if (i % 2) == 0 then dataTableFormat(d.y) else "")
+              .attr("transform",(d,i) -> "translate("+xScale(first_scale_year+(i*5))+","+(yScale.range()[0]+30)+")")
+              .classed(seriesclass, true)
+
+        removeDataTable = () ->
+          g.selectAll(".seriesValue").remove()
+
 
     chart.title = (_) ->
       return title unless _?
