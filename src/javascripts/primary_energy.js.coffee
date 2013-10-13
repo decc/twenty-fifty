@@ -1,6 +1,6 @@
 class PrimaryEnergy
 
-  timeSeriesStakedAreaChart = () ->
+  timeSeriesStackedAreaChart = () ->
     
     margin =
       top: 21
@@ -17,6 +17,7 @@ class PrimaryEnergy
     last_scale_year = 2050
     min_value = 0
     max_value = 4000
+    total_label = "Total"
 
     xScale = d3.scale.linear()
     yScale = d3.scale.linear()
@@ -25,21 +26,29 @@ class PrimaryEnergy
     yAxis = d3.svg.axis().scale(yScale).orient("left").ticks(5)
 
     stack = d3.layout.stack()
-              .values( (d) -> d.data)
+              .values( (d) -> d.value)
 
     area = d3.svg.area()
       .x((d,i) -> xScale(d.x))
       .y0((d,i) -> yScale(d.y0))
       .y1((d,i) -> yScale(d.y0 + d.y))
 
-    color_classes = {}
+    line = d3.svg.line()
+      .x((d,i) -> xScale(d.x))
+      .y((d,i) -> yScale(d.y))
+
+    color_classes = {
+      'Total': 'total'
+      'Total Use': 'total'
+      'Total Primary Supply': 'total'
+    }
     color_class_index = 0
 
-    colorClass = (d,i) ->
-      c = color_classes[d.name]
+    seriesClass = (d,i) ->
+      c = color_classes[d.key]
       unless c?
         c = "q#{color_class_index}-12"
-        color_classes[d.name] = c
+        color_classes[d.key] = c
         color_class_index++
       c
 
@@ -54,27 +63,47 @@ class PrimaryEnergy
         width = $(this).width()
         height = $(this).height()
 
+        # We need to divide the data into three sets
+        positive_series = []
+        negative_series = []
+        total_series = []
+
         # Reformat the data to be more useful
         for series in data
-          series.data = series.data.map( (p,i) -> {x: first_scale_year + (i*5), y: p }  )
+          series.value = series.value.map( (p,i) -> {x: first_scale_year + (i*5), y: p }  )
           total = 0
-          total+= p.y for p in series.data
+          total+= p.y for p in series.value
           series.total = total
 
-        # Sort it
-        data = data.sort( (a,b) -> d3.ascending(a.total, b.total))
-
-        # Divide the series into those taht are positive and those that are negative
-        i = bisect(data, 0)
-
-        positive_series = data.slice(i)
-        negative_series = data.slice(0, i)
+          # Put the series into different groups based on whether positive or negative
+          if series.key == total_label
+            series.path = line
+            total_series.push(series)
+          else
+            series.path = area
+            if total >= 0
+              positive_series.push(series)
+            else
+              negative_series.push(series)
 
         # Stack the data separately for positive and negative values and then combine
         # (creates a y0 for each data point)
-        stacked_data = stack(positive_series.reverse())
-        stacked_data = stack(negative_series).reverse().concat(stacked_data) if negative_series.length > 0
-        
+        stacked_data = stack(positive_series.sort( (a,b) -> d3.descending(a.total, b.total)))
+        stacked_data = stack(negative_series.sort( (a,b) -> d3.ascending(a.total, b.total))).reverse().concat(stacked_data) if negative_series.length > 0
+        stacked_data = stacked_data.concat(total_series.sort( (a,b) -> d3.descending(a.total, b.total))) if total_series.length > 0
+
+        stacked_data = for d in stacked_data
+          # Find the last point
+          p = d.value[d.value.length-1]
+          # Put it at the middle of the area
+          if p.y0?
+            d.label_y = p.y0 + (p.y/2)
+          else
+            d.label_y = p.y
+          d
+
+        window.sd = stacked_data
+
         # Update the x-scale.
         xScale
           .domain([first_scale_year, last_scale_year])
@@ -93,6 +122,8 @@ class PrimaryEnergy
           .append("svg")
           .append("g")
           .attr('class','drawing Paired')
+          .append("g")
+          .attr('class','series')
         
         # Update the outer dimensions.
         svg
@@ -102,23 +133,25 @@ class PrimaryEnergy
         # Update the inner dimensions.
         g = svg.select("g.drawing").attr("transform", "translate(" + margin.left + "," + margin.top + ")")
 
+        s = g.select('g.series')
+
         # Update the area paths
-        areas = g.selectAll(".area")
-          .data(Object, (d) -> d.name)
+        areas = s.selectAll("path")
+          .data(Object, (d) -> d.key)
 
         areas.enter()
           .append("path")
-          .attr("class", (d,i) -> "area #{colorClass(d,i)}")
+          .attr("class", (d,i) -> seriesClass(d,i))
           .on("mouseover", (d,i) ->
-            g.selectAll(".#{colorClass(d,i)}")
+            g.selectAll(".#{seriesClass(d,i)}")
               .classed("hover", true))
           .on("mouseout", (d,i) ->
-            g.selectAll(".#{colorClass(d,i)}")
+            g.selectAll(".#{seriesClass(d,i)}")
               .classed("hover", false))
           
 
         areas.transition()
-          .attr("d", (d) -> area(d.data))
+          .attr("d", (d) -> d.path(d.value))
 
         # Add the axes & title
         gEnter
@@ -170,14 +203,20 @@ class PrimaryEnergy
         label_x = xScale.range()[1]+2
 
         labels = g.selectAll(".linelabel")
-          .data(Object,((d) -> d.name))
+          .data(Object,((d) -> d.key))
         
         # Make sure they are the right colour
         labels.enter()
           .append("text")
-          .attr("class", (d,i) -> "linelabel #{colorClass(d,i)}")
+          .attr("class", (d,i) -> "linelabel #{seriesClass(d,i)}")
           .attr("transform", "translate("+label_x+","+ (yScale.range()[0])+")")
-          .text((d) -> d.name)
+          .text((d) -> d.key)
+          .on("mouseover", (d,i) ->
+            g.selectAll(".#{seriesClass(d,i)}")
+              .classed("hover", true))
+          .on("mouseout", (d,i) ->
+            g.selectAll(".#{seriesClass(d,i)}")
+              .classed("hover", false))
 
         labels.exit()
           .remove()
@@ -186,10 +225,7 @@ class PrimaryEnergy
         previous_y = yScale.range()[0] + 1000
 
         label_y = (d) ->
-          # Find the last point
-          p = d.data[d.data.length-1]
-          # Put it at the middle of the area
-          y = yScale(p.y0 + (p.y/2)) + 4
+          y = yScale(d.label_y) + 4
           # But make sure it is at least 10 pixels from the previous label
           if showLabelFilter(d)
             y = Math.min(previous_y - 10, y)
@@ -198,13 +234,30 @@ class PrimaryEnergy
           "translate(#{label_x},#{y})"
 
         # If they are too small, don't show them
-        labels.transition()
-          .attr("transform",label_y)
-          .attr("fill-opacity", (d,i) -> if showLabelFilter(d) then 1 else 0 )
+        labels
+          .sort (a,b) ->
+            a_y = a.label_y
+            b_y = b.label_y
+            if a_y < 0 and b_y > 0
+              -1
+            else if a_y > 0 and b_y < 0
+              1
+            else if a_y > 0 and b_y > 0
+              a_y - b_y
+            else
+              a_y - b_y
+          .transition()
+            .attr("transform",label_y)
+            .attr("fill-opacity", (d,i) -> if showLabelFilter(d) then 1 else 0 )
 
     chart.title = (_) ->
       return title unless _?
       title = _
+      chart
+
+    chart.total_label = (_) ->
+      return total_label unless _?
+      total_label = _
       chart
 
     chart.unit = (_) ->
@@ -231,19 +284,22 @@ class PrimaryEnergy
     target.append("<div id='supply_chart' class='chart'></div>")
     target.append("<div id='emissions_chart' class='chart'></div>")
 
-    @final_energy_chart = timeSeriesStakedAreaChart()
+    @final_energy_chart = timeSeriesStackedAreaChart()
       .title("UK Final Energy Demand")
       .unit('TWh/yr')
+      .total_label('Total Use')
       .max_value(4000)
 
-    @primary_energy_chart = timeSeriesStakedAreaChart()
+    @primary_energy_chart = timeSeriesStackedAreaChart()
       .title("UK Primary Energy Supply")
       .unit('TWh/yr')
+      .total_label('Total Primary Supply')
       .max_value(4000)
 
-    @emissions_chart = timeSeriesStakedAreaChart()
+    @emissions_chart = timeSeriesStackedAreaChart()
       .title("UK Greenhouse Gas Emissions")
       .unit('MtCO2e/yr')
+      .total_label('Total')
       .min_value(-500)
       .max_value(1000)
 
@@ -257,25 +313,23 @@ class PrimaryEnergy
   updateResults: (@pathway) ->
     @setup() unless @emissions_chart? && @final_energy_chart? && @primary_energy_chart?
 
-    data = for name in ['Industry', 'Transport', 'Heating and cooling', 'Lighting & appliances']
-      {name: name, data: @pathway['final_energy_demand'][name]}
+    series = d3.map(@pathway['final_energy_demand'])
 
     d3.select('#demand_chart')
-      .datum(data)
+      .datum(series.entries())
       .call(@final_energy_chart)
 
-    data = for name in ["Nuclear fission", "Solar", "Wind", "Tidal", "Wave", "Geothermal", "Hydro", "Electricity oversupply (imports)", "Environmental heat", "Bioenergy", "Coal", "Oil", "Natural gas"]
-      {name: name, data: @pathway['primary_energy_supply'][name]}
+    series = d3.map(@pathway['primary_energy_supply'])
 
     d3.select('#supply_chart')
-      .datum(data)
+      .datum(series.entries())
       .call(@primary_energy_chart)
 
-    data = for name in ['Bioenergy credit','Carbon capture','International Aviation and Shipping','Industrial Processes','Solvent and Other Product Use','Agriculture','Land Use, Land-Use Change and Forestry','Waste','Other','Fuel Combustion']
-      {name: name, data: @pathway['ghg'][name]}
+    series = d3.map(@pathway['ghg'])
+    series.remove("percent_reduction_from_1990")
 
     d3.select('#emissions_chart')
-      .datum(data)
+      .datum(series.entries())
       .call(@emissions_chart)
 
 

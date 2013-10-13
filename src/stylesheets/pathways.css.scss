@@ -56,6 +56,19 @@ body {
   fill-opacity: 1;
 }
 
+path.total {
+  stroke: black;
+  stroke-width: 2px;
+  fill: none;
+}
+
+text.total {
+}
+
+path.total.hover {
+  stroke-width: 3px;
+}
+
 path.hover {
   stroke: black;
   stroke-width: 2px;
