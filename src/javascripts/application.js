@@ -20,6 +20,7 @@
 //= require model_structure
 //= require pathways
 //= require costs_common_methods
+//= require stacked_area_chart
 
 // Now the individual views
 //= require primary_energy
