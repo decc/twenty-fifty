@@ -11,6 +11,8 @@ class PrimaryEnergy
     width = 375
     height = 125
 
+    x_center = (width-margin.left-margin.right)/2
+
     title = ""
     unit = "TWh/yr"
     first_scale_year = 2010
@@ -59,10 +61,12 @@ class PrimaryEnergy
     dataTableFormat = d3.format(".0f")
 
     chart = (selection) ->
+      # Expects a d3.map() of data
       selection.each (data) ->
 
         width = $(this).width()
         height = $(this).height()
+        x_center = (width-margin.left-margin.right)/2
 
         # We need to divide the data into three sets
         positive_series = []
@@ -70,7 +74,7 @@ class PrimaryEnergy
         total_series = []
 
         # Reformat the data to be more useful
-        for series in data
+        for series in data.entries()
           series.value = series.value.map( (p,i) -> {x: first_scale_year + (i*5), y: p }  )
           total = 0
           total+= p.y for p in series.value
@@ -197,7 +201,7 @@ class PrimaryEnergy
 
         # Update the title
         g.select(".charttitle")
-          .attr("transform", "translate("+(width-margin.left-margin.right)/2+"," + (xScale.range()[0] - 10) + ")")
+          .attr("transform", "translate("+x_center+"," + (xScale.range()[0] - 10) + ")")
           .text(title)
 
         # Update the area labels
@@ -299,14 +303,19 @@ class PrimaryEnergy
       min_value = _
       chart
 
+    chart.x_center = () ->
+      x_center
+
     chart
 
-
   setup: () ->
-    target = $('#results')
-    target.append("<div id='demand_chart' class='chart'></div>")
-    target.append("<div id='supply_chart' class='chart'></div>")
-    target.append("<div id='emissions_chart' class='chart'></div>")
+    charts = d3.select("#results").selectAll(".chart")
+      .data(['demand_chart', 'supply_chart', 'emissions_chart'])
+
+    charts.enter()
+      .append('div')
+        .attr('id', Object)
+        .attr('class', 'chart')
 
     @final_energy_chart = timeSeriesStackedAreaChart()
       .title("UK Final Energy Demand")
@@ -327,7 +336,6 @@ class PrimaryEnergy
       .min_value(-500)
       .max_value(1000)
 
-
   teardown: () ->
     $('#results').empty()
     @final_energy_chart = null
@@ -337,24 +345,39 @@ class PrimaryEnergy
   updateResults: (@pathway) ->
     @setup() unless @emissions_chart? && @final_energy_chart? && @primary_energy_chart?
 
-    series = d3.map(@pathway['final_energy_demand'])
-
     d3.select('#demand_chart')
-      .datum(series.entries())
+      .datum(d3.map(@pathway.final_energy_demand))
       .call(@final_energy_chart)
 
-    series = d3.map(@pathway['primary_energy_supply'])
-
     d3.select('#supply_chart')
-      .datum(series.entries())
+      .datum(d3.map(@pathway.primary_energy_supply))
       .call(@primary_energy_chart)
 
-    series = d3.map(@pathway['ghg'])
+    series = d3.map(@pathway.ghg)
     series.remove("percent_reduction_from_1990")
+    percent = @pathway.ghg.percent_reduction_from_1990
 
     d3.select('#emissions_chart')
-      .datum(series.entries())
+      .datum(series)
       .call(@emissions_chart)
+
+    t = d3.select('#emissions_chart g.drawing')
+          .selectAll('text.target')
+            .data([percent])
+
+    t.enter()
+      .append('text')
+        .attr('class','target')
+
+    t.attr('transform', 'translate('+@emissions_chart.x_center()+',2)')
+
+    t.transition()
+      .tween('text', (d) ->
+        current = parseInt(@textContent) || +d
+        i = d3.interpolateRound(current, +d)
+        (t) ->
+          @textContent = "#{i(t)}% reduction 1990-2050; Target is 80%"
+      )
 
 
 

@@ -24,6 +24,12 @@ body {
   font-size: 1em;
 }
 
+text.target {
+  text-anchor: middle;
+  font-family: Times;
+  font-size: 0.72em;
+}
+
 .axis path, .axis line {
   fill: none;
   stroke: #000;
