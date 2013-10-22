@@ -41,6 +41,7 @@ window.timeSeriesStackedAreaChart = () ->
     'Total': 'total'
     'Total Use': 'total'
     'Total Primary Supply': 'total'
+    'Total generation supplied to grid': 'total'
   }
   color_class_index = 0
 
