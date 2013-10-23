@@ -33,9 +33,25 @@ class Electricity
     @primary_energy_chart = null
     @emissions_chart = null
     
+    showContext = ( data, chart_id, chart_object) ->
+      d = for p, i in data
+        { x: 2010 + (i*5), y: p, y0: 0}
+      
+      console.log(d3.select(chart_id))
+
+      total = d3.select(chart_id).select('g.context').selectAll('path')
+                .data([d])
+
+      total.enter()
+        .append("path")
+
+      total.transition()
+        .attr("d", (d) -> chart_object.area()(d))
+
   updateResults: (@pathway) ->
     @setup() unless @emissions_chart? && @demand_chart? && @supply_chart?
 
+    # Create the basic charts of electricity
     d3.select('#demand_chart')
       .datum(d3.map(@pathway.electricity.demand))
       .call(@demand_chart)
@@ -52,74 +68,9 @@ class Electricity
       .datum(d3.map(@pathway.electricity.emissions))
       .call(@emissions_chart)
 
+    # Now add shaded background of total energy demand to provide context
+    showContext( @pathway['final_energy_demand']['Total Use'], '#demand_chart', @demand_chart)
+    showContext( @pathway['final_energy_demand']['Total Use'], '#supply_chart', @supply_chart)
+    showContext( @pathway.ghg.Total, '#emissions_chart', @emissions_chart)
 
-    # Emissions from electricity
-    # titles = ["Fuel Combustion", "Bioenergy credit", "Carbon capture"]
-    # i = 0
-    # for name in titles
-    #   data = @pathway['electricity']['emissions'][name]
-    #   if @emissions_chart.series[i]?
-    #     @emissions_chart.series[i].setData(data,false)
-    #   else
-    #     @emissions_chart.addSeries({name:name,data:data},false)
-    #   i++
-
-    # # Set this in the context of UK total
-    # data = @pathway['ghg']["Total"]
-    # if @emissions_chart.series[i]?
-    #   @emissions_chart.series[i].setData(data,false)
-    # else
-    #   @emissions_chart.addSeries({type: 'line', name: 'Total emissions from all sources',data:data, lineColor: '#000', color: '#000',lineWidth:2,dashStyle:'Dot', shadow: false},false)
-    # i++
-
-    # # Add a total for electricity emissions
-    # data = @pathway['electricity']['emissions']['Total']
-    # if @emissions_chart.series[i]?
-    #   @emissions_chart.series[i].setData(data,false)
-    # else
-    #   @emissions_chart.addSeries({type: 'line', name: 'Total net emissions from electricity',data:data, lineColor: '#000', color: '#000',lineWidth:2, shadow: true},false)
-    # i++
-    #   
-    # # Demand for electricity
-    # titles = ['Industry','Transport','Heating and cooling','Lighting & appliances']
-    # i = 0
-    # for name in titles
-    #   data = @pathway['electricity']['demand'][name]
-    #   if @demand_chart.series[i]?
-    #     @demand_chart.series[i].setData(data,false)
-    #   else
-    #     @demand_chart.addSeries({name:name,data:data},false)
-    #   i++
-    # 
-    # # Set this in the context of UK total
-    # data = @pathway['final_energy_demand']['Total Use']
-    # if @demand_chart.series[i]?
-    #   @demand_chart.series[i].setData(data,false)
-    # else
-    #   @demand_chart.addSeries({type: 'line', name: 'Total demand for all forms of energy',data:data, lineColor: '#000', color: '#000',lineWidth:2,dashStyle:'Dot', shadow: false},false)
-    # i++
-    # 
-    # # Supply of electricity
-    # titles = ["Unabated thermal generation", "Carbon Capture Storage (CCS)", "Nuclear power", "Onshore wind", "Offshore wind", "Hydroelectric power stations", "Tidal and Wave", "Geothermal electricity", "Solar PV", "Electricity imports"]
-    # i = 0
-    # for name in titles
-    #   data = @pathway['electricity']['supply'][name]
-    #   if @supply_chart.series[i]?
-    #     @supply_chart.series[i].setData(data,false)
-    #   else
-    #     @supply_chart.addSeries({name:name,data:data},false)
-    #   i++
-
-    # # Set this in the context of UK total
-    # data = @pathway['final_energy_demand']['Total Use']
-    # if @supply_chart.series[i]?
-    #   @supply_chart.series[i].setData(data,false)
-    # else
-    #   @supply_chart.addSeries({type: 'line', name: 'Total demand for all forms of energy',data:data, lineColor: '#000', color: '#000',lineWidth:2,dashStyle:'Dot', shadow: false},false)
-    # i++
-    # 
-    # @emissions_chart.redraw()
-    # @demand_chart.redraw()
-    # @supply_chart.redraw()
-    
 window.twentyfifty.views['electricity'] = new Electricity

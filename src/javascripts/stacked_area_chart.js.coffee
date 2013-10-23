@@ -106,8 +106,6 @@ window.timeSeriesStackedAreaChart = () ->
           d.label_y = p.y
         d
 
-      window.sd = stacked_data
-
       # Update the x-scale.
       xScale
         .domain([first_scale_year, last_scale_year])
@@ -125,7 +123,13 @@ window.timeSeriesStackedAreaChart = () ->
       gEnter = svg.enter()
         .append("svg")
         .append("g")
-        .attr('class','drawing Paired')
+        .attr('class','drawing Paired') # Paired indicates the standard colour palette 
+
+      gEnter
+        .append("g")
+        .attr('class', 'context')
+
+      gEnter
         .append("g")
         .attr('class','series')
       
@@ -137,9 +141,9 @@ window.timeSeriesStackedAreaChart = () ->
       # Update the inner dimensions.
       g = svg.select("g.drawing").attr("transform", "translate(" + margin.left + "," + margin.top + ")")
 
+      # Update the area paths
       s = g.select('g.series')
 
-      # Update the area paths
       areas = s.selectAll("path")
         .data(Object, (d) -> d.key)
 
@@ -158,7 +162,7 @@ window.timeSeriesStackedAreaChart = () ->
       areas.transition()
         .attr("d", (d) -> d.path(d.value))
 
-      # Add the axes & title
+      # Add the axes & title (after the areas, so that the axis are drawn on top)
       gEnter
         .append("g")
         .attr("class", "x axis")
@@ -304,5 +308,10 @@ window.timeSeriesStackedAreaChart = () ->
 
   chart.x_center = () ->
     x_center
+
+  chart.area = (_) ->
+    return area unless _?
+    area = _
+    chart
 
   chart

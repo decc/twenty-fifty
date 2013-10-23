@@ -33,12 +33,13 @@ text.target {
 .axis path, .axis line {
   fill: none;
   stroke: #000;
-  shape-rendering: crispEdges;
+  stroke-width: 1px;
 }
 
 .axis text {
   font-family: Times;
   font-size: 0.72em;
+  fill: #000;
 }
 
 .axislabel {
@@ -90,4 +91,11 @@ path.hover {
   fill: black !important;
   font-weight: bold;
   fill-opacity: 1 !important;
+}
+
+g.context {
+  path {
+    fill: grey;
+    fill-opacity: 0.02;
+  }
 }
