@@ -156,9 +156,7 @@ window.timeSeriesStackedAreaChart = () ->
           g.selectAll(".#{seriesClass(d,i)}")
             .classed("hover", true)
 
-          # This makes sure the area label is highlighted and visible
-          g.select(".#{seriesClass(d,i)}.linelabel")
-            .attr("display", "inline")
+          g.selectAll(".#{seriesClass(d,i)}.linelabel").attr("display","inline") unless showLabelFilter(d)
         )
         .on("mouseout", (d,i) ->
           removeDataTable()
@@ -167,7 +165,7 @@ window.timeSeriesStackedAreaChart = () ->
             .classed("hover", false)
 
           # This is slightly trickier, because need to make sure has the right level of visibility
-          g.select(".#{seriesClass(d,i)}.linelabel").attr("display","none") unless showLabelFilter(d)
+          g.selectAll(".#{seriesClass(d,i)}.linelabel").attr("display","none") unless showLabelFilter(d)
         )
 
       areas.transition()
