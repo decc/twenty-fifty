@@ -149,23 +149,39 @@ window.timeSeriesStackedAreaChart = () ->
         .append("path")
         .attr("class", (d,i) -> seriesClass(d,i))
         .on("mouseover", (d,i) ->
+          c = seriesClass(d,i)
           # Add the data table for this series, using the colour of this series
-          dataTable(d, seriesClass(d,i))
+          dataTable(d,c)
 
           # This makes sure the area path is highlighted
-          g.selectAll(".#{seriesClass(d,i)}")
+          g.selectAll(".#{c}")
             .classed("hover", true)
 
-          g.selectAll(".#{seriesClass(d,i)}.linelabel").attr("display","inline") unless showLabelFilter(d)
+          unless showLabelFilter(d)
+            # Need to make sure hidden labels are visible
+            l = g.selectAll(".#{c}.linelabel").attr("display","inline")
+            # Hidden labels may need a white background to be visible
+            s = l[0][0].getBBox()
+            g.insert("rect", ".#{c}.linelabel")
+              .attr("class", "labelbackground")
+              .attr("x",s.x)
+              .attr("y",s.y)
+              .attr("width",s.width+6)
+              .attr("height",s.height)
+
         )
         .on("mouseout", (d,i) ->
           removeDataTable()
+          c = seriesClass(d,i)
 
-          g.selectAll(".#{seriesClass(d,i)}")
+          g.selectAll(".#{c}")
             .classed("hover", false)
 
-          # This is slightly trickier, because need to make sure has the right level of visibility
-          g.selectAll(".#{seriesClass(d,i)}.linelabel").attr("display","none") unless showLabelFilter(d)
+          unless showLabelFilter(d)
+            # Need to hide the label again
+            g.selectAll(".#{c}.linelabel").attr("display","none")
+            # And remove the white background
+            g.selectAll(".labelbackground").remove()
         )
 
       areas.transition()
