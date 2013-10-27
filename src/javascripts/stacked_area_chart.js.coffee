@@ -25,8 +25,7 @@ window.timeSeriesStackedAreaChart = () ->
   xAxis = d3.svg.axis().scale(xScale).orient("bottom").ticks(5).tickFormat(d3.format(".0f"))
   yAxis = d3.svg.axis().scale(yScale).orient("left").ticks(5)
 
-  stack = d3.layout.stack()
-            .values( (d) -> d.value)
+  stack = d3.layout.stack().values( (d) -> d.value)
 
   area = d3.svg.area()
     .x((d,i) -> xScale(d.x))
@@ -53,9 +52,10 @@ window.timeSeriesStackedAreaChart = () ->
       color_class_index++
     c
 
+  # Sets whether data value is big enough to need a label
+  label_threshold = 200 # Defined later based on scales
   showLabelFilter = (d) ->
-    # FIXME: Relate this to the scale on screen
-    Math.abs(d.total) > 200
+    Math.abs(d.total) > label_threshold
 
   dataTableFormat = d3.format(".0f")
 
@@ -64,8 +64,8 @@ window.timeSeriesStackedAreaChart = () ->
     selection.each (data) ->
 
       width = $(this).width()
-      height = $(this).height()
-      x_center = (width-margin.left-margin.right)/2
+      height = width / 1.4 
+      x_center = (width-(margin.left*2))/2
 
       # We need to divide the data into three sets
       positive_series = []
@@ -142,22 +142,33 @@ window.timeSeriesStackedAreaChart = () ->
       g = svg.select("g.drawing").attr("transform", "translate(" + margin.left + "," + margin.top + ")")
 
       # Update the area paths
-      s = g.select('g.series')
-
-      areas = s.selectAll("path")
+      areas = g.select('g.series').selectAll("path")
         .data(Object, (d) -> d.key)
 
       areas.enter()
         .append("path")
         .attr("class", (d,i) -> seriesClass(d,i))
         .on("mouseover", (d,i) ->
+          # Add the data table for this series, using the colour of this series
           dataTable(d, seriesClass(d,i))
+
+          # This makes sure the area path is highlighted
           g.selectAll(".#{seriesClass(d,i)}")
-            .classed("hover", true))
+            .classed("hover", true)
+
+          # This makes sure the area label is highlighted and visible
+          g.select(".#{seriesClass(d,i)}.linelabel")
+            .attr("display", "inline")
+        )
         .on("mouseout", (d,i) ->
           removeDataTable()
+
           g.selectAll(".#{seriesClass(d,i)}")
-            .classed("hover", false))
+            .classed("hover", false)
+
+          # This is slightly trickier, because need to make sure has the right level of visibility
+          g.select(".#{seriesClass(d,i)}.linelabel").attr("display","none") unless showLabelFilter(d)
+        )
 
       areas.transition()
         .attr("d", (d) -> d.path(d.value))
@@ -211,6 +222,9 @@ window.timeSeriesStackedAreaChart = () ->
       # Put them on the far right
       label_x = xScale.range()[1]+2
 
+      # Only show them for paths that average more than 5 pixels
+      label_threshold = Math.abs(yScale.invert(5) - yScale.invert(0)) * 9
+
       labels = g.selectAll(".linelabel")
         .data(Object,((d) -> d.key))
       
@@ -218,7 +232,8 @@ window.timeSeriesStackedAreaChart = () ->
       labels.enter()
         .append("text")
         .attr("class", (d,i) -> "linelabel #{seriesClass(d,i)}")
-        .attr("transform", "translate("+label_x+","+ (yScale.range()[0])+")")
+        .attr("x", label_x)
+        .attr("y", yScale.range()[0])
         .text((d) -> d.key)
         .on("mouseover", (d,i) ->
           dataTable(d, seriesClass(d,i))
@@ -242,7 +257,7 @@ window.timeSeriesStackedAreaChart = () ->
           y = Math.min(previous_y - 10, y)
           previous_y = y
         # Turn it into a transformation string
-        "translate(#{label_x},#{y})"
+        y
 
       # If they are too small, don't show them
       labels
@@ -258,8 +273,9 @@ window.timeSeriesStackedAreaChart = () ->
           else
             a_y - b_y
         .transition()
-          .attr("transform",label_y)
-          .attr("fill-opacity", (d,i) -> if showLabelFilter(d) then 1 else 0 )
+          .attr("y",label_y)
+          .attr("x",label_x)
+          .attr("display", (d,i) -> if showLabelFilter(d) then "inline" else "none" )
 
       dataTable = (series, seriesclass) ->
           # Add the numbers at the bottom

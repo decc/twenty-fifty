@@ -10,19 +10,19 @@ class PrimaryEnergy
         .attr('class', 'chart')
 
     @final_energy_chart = timeSeriesStackedAreaChart()
-      .title("UK Final Energy Demand")
+      .title("Final Energy Demand")
       .unit('TWh/yr')
       .total_label('Total Use')
       .max_value(4000)
 
     @primary_energy_chart = timeSeriesStackedAreaChart()
-      .title("UK Primary Energy Supply")
+      .title("Primary Energy Supply")
       .unit('TWh/yr')
       .total_label('Total Primary Supply')
       .max_value(4000)
 
     @emissions_chart = timeSeriesStackedAreaChart()
-      .title("UK Greenhouse Gas Emissions")
+      .title("Greenhouse Gas Emissions")
       .unit('MtCO2e/yr')
       .total_label('Total')
       .min_value(-500)

@@ -10,12 +10,12 @@ class Electricity
         .attr('class', 'chart')
 
     @demand_chart = timeSeriesStackedAreaChart()
-      .title("UK Electricity Demand")
+      .title("Electricity Demand")
       .unit('TWh/yr')
       .max_value(4000)
 
     @supply_chart = timeSeriesStackedAreaChart()
-      .title("UK Electricity Supply")
+      .title("Electricity Supply")
       .unit('TWh/yr')
       .total_label('Total generation supplied to grid')
       .max_value(4000)
@@ -33,20 +33,18 @@ class Electricity
     @primary_energy_chart = null
     @emissions_chart = null
     
-    showContext = ( data, chart_id, chart_object) ->
-      d = for p, i in data
-        { x: 2010 + (i*5), y: p, y0: 0}
-      
-      console.log(d3.select(chart_id))
+  showContext = ( data, chart_id, chart_object) ->
+    d = for p, i in data
+      { x: 2010 + (i*5), y: p, y0: 0}
 
-      total = d3.select(chart_id).select('g.context').selectAll('path')
-                .data([d])
+    total = d3.select(chart_id).select('g.context').selectAll('path')
+              .data([d])
 
-      total.enter()
-        .append("path")
+    total.enter()
+      .append("path")
 
-      total.transition()
-        .attr("d", (d) -> chart_object.area()(d))
+    total.transition()
+      .attr("d", (d) -> chart_object.area()(d))
 
   updateResults: (@pathway) ->
     @setup() unless @emissions_chart? && @demand_chart? && @supply_chart?
