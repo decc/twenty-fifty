@@ -292,12 +292,13 @@ window.timeSeriesStackedAreaChart = () ->
       labels.exit()
         .remove()
 
-      # If they are too small, don't show them
       labels
+        # Make sure the labels for the biggest values are drawn first, so can always see the small labels
         .sort( (a,b) -> d3.descending(a.total, b.total) )
         .transition()
           .attr("x",label_x)
           .attr("y", (d) -> yScale(d.label_y)+4)
+          # If they are too small, don't show them
           .attr("display", (d,i) -> if showLabelFilter(d) then "inline" else "none" )
 
       dataTable = (series, seriesclass) ->
