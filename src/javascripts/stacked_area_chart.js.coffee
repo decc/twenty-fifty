@@ -65,7 +65,7 @@ window.timeSeriesStackedAreaChart = () ->
     selection.each (data) ->
 
       width = $(this).width()
-      height = width / 1.4 
+      height = width / 1.4
       x_center = (width-(margin.left*2))/2
 
       # We need to divide the data into three sets
@@ -80,7 +80,7 @@ window.timeSeriesStackedAreaChart = () ->
         total+= p.y for p in series.value
         series.total = total
 
-        # Put the series into different groups based on whether positive or negative
+        # Put the series into different groups based on whether positive or negative, or a total line
         if series.key == total_label
           series.path = line
           total_series.push(series)
@@ -96,16 +96,6 @@ window.timeSeriesStackedAreaChart = () ->
       stacked_data = stack(positive_series.sort( (a,b) -> d3.descending(a.total, b.total)))
       stacked_data = stack(negative_series.sort( (a,b) -> d3.ascending(a.total, b.total))).reverse().concat(stacked_data) if negative_series.length > 0
       stacked_data = stacked_data.concat(total_series.sort( (a,b) -> d3.descending(a.total, b.total))) if total_series.length > 0
-
-      stacked_data = for d in stacked_data
-        # Find the last point
-        p = d.value[d.value.length-1]
-        # Put it at the middle of the area
-        if p.y0?
-          d.label_y = p.y0 + (p.y/2)
-        else
-          d.label_y = p.y
-        d
 
       # Update the x-scale.
       xScale
@@ -234,11 +224,51 @@ window.timeSeriesStackedAreaChart = () ->
         .text(title)
 
       # Update the area labels
+
       # Put them on the far right
       label_x = xScale.range()[1]+2
 
-      # Only show them for paths that average more than 5 pixels
+      # Make sure the labels are at least 10 pixels apart
+      minimum_y_space = Math.abs(yScale.invert(10) - yScale.invert(0))
+
+      # Only show labels for paths that average more than 5 pixels
       label_threshold = Math.abs(yScale.invert(5) - yScale.invert(0)) * 9
+
+      # We need to work out roughly where the labels should go
+      # Our first approximation is to put them in the middle of their final y position
+      for d in stacked_data
+        # Find the last point
+        p = d.value[d.value.length-1]
+        # Put it at the middle of the area
+        if p.y0?
+          d.label_y = p.y0 + (p.y/2)
+        else
+          d.label_y = p.y
+        d
+
+      # Then we sort them into ascending order
+      stacked_data.sort (a,b) ->
+          a_y = a.label_y
+          b_y = b.label_y
+          if a_y < 0 and b_y > 0
+            -1
+          else if a_y > 0 and b_y < 0
+            1
+          else if a_y > 0 and b_y > 0
+            a_y - b_y
+          else
+            a_y - b_y
+      
+      # Start at the bottom of the screen
+      previous_y = min_value - 1000
+
+      # Then we nudge any labels that are too close together
+      for d in stacked_data
+        y = d.label_y
+        if showLabelFilter(d)
+          y = Math.max(previous_y + minimum_y_space, y)
+          previous_y = y
+          d.label_y = y
 
       labels = g.selectAll(".linelabel")
         .data(Object,((d) -> d.key))
@@ -248,7 +278,7 @@ window.timeSeriesStackedAreaChart = () ->
         .append("text")
         .attr("class", (d,i) -> "linelabel #{seriesClass(d,i)}")
         .attr("x", label_x)
-        .attr("y", yScale.range()[0])
+        .attr("y", (d) -> yScale(d.label_y) + 4)
         .text((d) -> d.key)
         .on("mouseover", (d,i) ->
           dataTable(d, seriesClass(d,i))
@@ -262,34 +292,12 @@ window.timeSeriesStackedAreaChart = () ->
       labels.exit()
         .remove()
 
-      # Make sure they are positioned at the right vertical point
-      previous_y = yScale.range()[0] + 1000
-
-      label_y = (d) ->
-        y = yScale(d.label_y) + 4
-        # But make sure it is at least 10 pixels from the previous label
-        if showLabelFilter(d)
-          y = Math.min(previous_y - 10, y)
-          previous_y = y
-        # Turn it into a transformation string
-        y
-
       # If they are too small, don't show them
       labels
-        .sort (a,b) ->
-          a_y = a.label_y
-          b_y = b.label_y
-          if a_y < 0 and b_y > 0
-            -1
-          else if a_y > 0 and b_y < 0
-            1
-          else if a_y > 0 and b_y > 0
-            a_y - b_y
-          else
-            a_y - b_y
+        .sort( (a,b) -> d3.descending(a.total, b.total) )
         .transition()
-          .attr("y",label_y)
           .attr("x",label_x)
+          .attr("y", (d) -> yScale(d.label_y)+4)
           .attr("display", (d,i) -> if showLabelFilter(d) then "inline" else "none" )
 
       dataTable = (series, seriesclass) ->
