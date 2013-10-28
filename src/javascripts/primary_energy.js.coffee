@@ -61,7 +61,7 @@ class PrimaryEnergy
       .append('text')
         .attr('class','target')
 
-    t.attr('transform', 'translate('+@emissions_chart.x_center()+',2)')
+    t.attr('transform', 'translate('+@emissions_chart.x_center()+',-18)')
 
     t.transition()
       .tween('text', (d) ->

@@ -1,7 +1,7 @@
 window.timeSeriesStackedAreaChart = () ->
   
   margin =
-    top: 21
+    top: 41
     right: 115
     bottom: 40
     left: 40
@@ -41,6 +41,7 @@ window.timeSeriesStackedAreaChart = () ->
     'Total Use': 'total'
     'Total Primary Supply': 'total'
     'Total generation supplied to grid': 'total'
+    'Environmental heat': 'environmentalheat'
   }
   color_class_index = 0
 
@@ -229,7 +230,7 @@ window.timeSeriesStackedAreaChart = () ->
 
       # Update the title
       g.select(".charttitle")
-        .attr("transform", "translate("+x_center+"," + (xScale.range()[0] - 10) + ")")
+        .attr("transform", "translate("+x_center+"," + (xScale.range()[0] - 30) + ")")
         .text(title)
 
       # Update the area labels
