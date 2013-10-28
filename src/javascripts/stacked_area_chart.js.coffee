@@ -294,7 +294,7 @@ window.timeSeriesStackedAreaChart = () ->
 
       labels
         # Make sure the labels for the biggest values are drawn first, so can always see the small labels
-        .sort( (a,b) -> d3.descending(a.total, b.total) )
+        .sort( (a,b) -> d3.descending(Math.abs(a.total), Math.abs(b.total)) )
         .transition()
           .attr("x",label_x)
           .attr("y", (d) -> yScale(d.label_y)+4)
