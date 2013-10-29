@@ -32,8 +32,6 @@ setUpControls = () ->
     go(c, l)
   )
 
-
-
 setVariablesFromURL = () ->
   url_elements = window.location.pathname.split( '/' )
   controller = url_elements[1] || "pathways"
