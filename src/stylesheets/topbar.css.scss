@@ -25,20 +25,21 @@
   }
 
   #name {
-    left: 0px;
+    left: 2.4%;
     top: 0px;
   }
 
   #examples {
-    right: 0px;
+    right: 2.4%;
     top: 0px;
   }
 
   #views {
     left: 160px;
+    left: calc(160px + 2.4%);
     top: 0px;
     width: 80%;
-    width: calc(100% - 320px);
+    width: calc(100% - 2.4% - 160px - 2.4% - 160px);
     text-align: center;
 
     a {
