@@ -17,39 +17,37 @@
 
   %body
     #topbar
-      #help
-        %a#helpLink{ :href => 'http://2050-calculator-tool-wiki.decc.gsi.gov.uk'} Help
-      %ul#viewdropdown.dropdown
-        %li
-          %a{ href:'#', onclick:"$('ul#view_choices').toggle()"} 
-            See implications
-            %img{src: '/assets/images/dropdown-arrow.png'}
-          %ul#view_choices.choices
-            - view_names.to_a.slice(0..5).each do |action,title|
-              %li
-                %a{href:'#', onclick:"twentyfifty.switchView('#{action}')"}= title 
-            %li
-              %a{ href:"http://2050-calculator-tool-wiki.decc.gov.uk", :class => 'divider'} Under development:
-            - view_names.to_a.slice(6..-1).each do |action,title|
-              %li
-                %a{href:'#', onclick:"twentyfifty.switchView('#{action}')", :class => 'development'}= title 
+      #name
+        %a{href:'http://www.decc.gov.uk/2050'} The UK 2050 Calculator
 
-      #messages
-        #calculating Calculating
-        #message
-          %a{href:"http://www.decc.gov.uk/2050"} This is the DECC 2050 Pathways calculator. Click to find out more.
-      %ul#savedpathwaydropdown.dropdown
-        %li
-          %a{href:'#', onclick:"$('ul#savedpathway_choices').toggle()"}
-            Example Pathways
-            %img{src: '/assets/images/dropdown-arrow.png'}
-          %ul#savedpathway_choices.choices
-            - saved_pathways.each do |name,code|
-              %li
-                %a{href:"#", onclick:"twentyfifty.switchPathway('#{code}');$('ul#savedpathway_choices').toggle()"}= name
-      #share
-        %a{href:'#', onclick:"twentyfifty.switchView('share')"} Share
+      #views
+        %a.view{href:'#', data: {view: 'primary_energy_chart'}} Energy
+        %a.view{href:'#', data: {view: 'electricity'}} Electricity
+        %a.view{href:'#', data: {view: 'energy_security'}} Security
+        %a.view{href:'#', data: {view: 'sankey'}} Flows
+        %a.view{href:'#', data: {view: 'map'}} Map
+        %a.view{href:'#', data: {view: 'story'}} Story
+        %a#cost_choice.newdropdown{href:'#', data: {dropdown: '#cost_choices'}} Costs
+        %a.view{href:'#', data: {view: 'air_quality'}} Air
+        %a.view{href:'#', data: {view: 'share'}} Share
+
+      #cost_choices.dropdown
+        %a.view{href:'#', data: {view: 'costs_in_context'}} In context
+        %a.view{href:'#', data: {view: 'costs_compared_overview'}} Compared
+        %a.view{href:'#', data: {view: 'costs_sensitivity'}} Sensitivity
+
+      #examples
+        %a.newdropdown{href:'#', data: {dropdown: '#savedpathway_choices'}} Examples
+
+      #savedpathway_choices.dropdown
+        - saved_pathways.each do |name,code|
+          %a{href:"#", onclick:"twentyfifty.switchPathway('#{code}');$('ul#savedpathway_choices').toggle()"}= name
+  
+
+    // The charts will be drawn in this block
     #results
+
+    // These are the controls
     #classic_controls
       #demand
         %table

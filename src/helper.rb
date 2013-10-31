@@ -29,21 +29,6 @@ module Helper
     "<tr class='#{choice.incremental_or_alternative}' id='r#{choice.number}'>#{row.join('')}</tr>"
   end
 
-  def view_names
-    { 
-      "primary_energy_chart"=>"All energy", 
-      "electricity"=>"Electricity",
-      "energy_security" => "Energy security",
-      "sankey"=>"Energy flows", 
-      "map"=>"Area", 
-      "story"=>"Story",
-      "air_quality" => "Air quality",
-      "costs_in_context"=>"Costs in context",
-      "costs_compared_overview"=>"Costs compared",
-      "costs_sensitivity" => "Cost sensitivity"
-    }
-  end
-
   def help_pages
     { 
       "primary_energy_chart"=>"83", 

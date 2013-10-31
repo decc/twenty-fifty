@@ -2,28 +2,31 @@ views = {}
 
 controller = null
 choices = null
-action = null
+view = null
 sector = null
 comparator = null
 
-current_view = null
+view_manager = null
 old_choices = []
 
 cache = {}
 callbacks = {}
 
+# This is the first thing that is called when the page is loaded
 documentReady = () ->
-  setVariablesFromURL()
-  current_view = views[action]
-  setHelpUrl()
   $('#cost_caveats').show() unless $.jStorage.get('CostCaveatShown') == true
-  loadMainPathway()
   setUpControls()
+  setVariablesFromURL()
+  switchView(view)
+  loadMainPathway()
 
 $(document).ready(documentReady)
 
 setUpControls = () ->
+  # This ensures that any link with a 'title' attribute gets a tooltip
   $("a[title]").tooltip({delay: 0, position: 'top left', offset:[3,3],tip:'#tooltip'})
+  
+  # This allows the user to change a specific level
   $("a.choiceLink").click( (event) ->
     event.preventDefault()
     t = $(event.target)
@@ -32,12 +35,48 @@ setUpControls = () ->
     go(c, l)
   )
 
+  # This allows the view to be changed
+  $("a.view").click( (event) ->
+    # Prevent the browser from trying to follow the link
+    event.preventDefault()
+    # Find the link that was clicked
+    t = $(event.target)
+    # Find the new view name from the link's data-view attribute
+    v = t.data().view
+    # Swithc the view
+    switchView(v)
+  )
+
+  # This sets up the dropdown view and examples menus
+  $(".newdropdown").click( (event) ->
+    event.preventDefault()
+    t = $(event.target)
+    d = $(t.data().dropdown)
+    if d.hasClass("showdropdown")
+      d.removeClass("showdropdown")
+    else
+      d.addClass("showdropdown")
+      o = t.offset()
+      o.top = o.top + t.height()
+      space = $(document).width() - o.left - d.width()
+      o.left = o.left + space if space < 0
+      d.offset(o)
+  )
+
+
+
+# This looks at the current URL which should be of the format
+# /pathways/code or
+# /pathways/code/view or
+# /pathways/code/costs_compared_within_sector/sector_name or
+# /pathways/code/view/comparator/comparator_code
+# 
 setVariablesFromURL = () ->
   url_elements = window.location.pathname.split( '/' )
   controller = url_elements[1] || "pathways"
   choices = choicesForCode(url_elements[2] || twentyfifty.default_pathway )
-  action = url_elements[3] || "primary_energy_chart"
-  if action == 'costs_compared_within_sector'
+  view = url_elements[3] || "primary_energy_chart"
+  if view == 'costs_compared_within_sector'
     sector = url_elements[4]
   if url_elements[4] == 'comparator'
     comparator = url_elements[5]
@@ -65,8 +104,8 @@ switchSector = (new_sector) ->
   sector = new_sector
   history.pushState(choices, codeForChoices(), url()) if history['pushState']?
   switchView('costs_compared_within_sector')
-  current_view.teardown()
-  current_view.updateResults(cache[codeForChoices()])
+  view_manager.teardown()
+  view_manager.updateResults(cache[codeForChoices()])
 
 getComparator = () ->
   comparator
@@ -74,16 +113,16 @@ getComparator = () ->
 switchComparator = (new_comparator) ->
   comparator = new_comparator
   history.pushState(choices, codeForChoices(), url()) if history['pushState']?
-  current_view.switchComparator(comparator) if current_view.switchComparator?
+  view_manager.switchComparator(comparator) if view_manager.switchComparator?
 
 url = (options = {}) ->
-  s = jQuery.extend({controller:controller, code: codeForChoices(), action:action, sector:sector, comparator: getComparator()},options)
-  if s.action == 'costs_compared_within_sector' && s.sector?
-    "/#{s.controller}/#{s.code}/#{s.action}/#{s.sector}"
+  s = jQuery.extend({controller:controller, code: codeForChoices(), view:view, sector:sector, comparator: getComparator()},options)
+  if s.view == 'costs_compared_within_sector' && s.sector?
+    "/#{s.controller}/#{s.code}/#{s.view}/#{s.sector}"
   else if s.comparator?
-    "/#{s.controller}/#{s.code}/#{s.action}/comparator/#{s.comparator}"
+    "/#{s.controller}/#{s.code}/#{s.view}/comparator/#{s.comparator}"
   else
-    "/#{s.controller}/#{s.code}/#{s.action}"
+    "/#{s.controller}/#{s.code}/#{s.view}"
 
 go = (index,level) ->
   old_choices = choices.slice(0)
@@ -112,30 +151,55 @@ stopDemo = (choice) ->
   go(choice,demoOriginalLevel) if demoOriginalLevel? && demoOriginalLevel != choices[choice]
 
 # If you want to programatically change the view, use this method
-#   new_action: the name of the new action. Choices include 'electricity' and 'primary_energy'
-switchView = (new_action) ->
+#   new_view: the name of the new view. Choices include 'electricity' and 'primary_energy'
+switchView = (new_view) ->
   # Close the menu
-  $('ul#view_choices').hide()
-  return false if action == new_action
+  $('.showdropdown').removeClass("showdropdown")
+
+  # Don't switch if we are already on that view
+  return false if view == new_view and view_manager?
   
   # This removes the old information from the screen
-  current_view.teardown()
+  view_manager.teardown() if view_manager?
 
-  # This updates the url, on browsers that support this (i.e., not IE <9)
-  action = new_action
-  history.pushState(choices, codeForChoices(), url()) if history['pushState']?
-  current_view = views[action]
+  # Load the new view manager
+  view = new_view
+  view_manager = views[view]
 
   # This sets the help url
   setHelpUrl()
 
-  # This actually redraws the screen
-  current_view.updateResults(cache[codeForChoices()])
+  # Remove the 'selected' class from old links and add to new
+  $("a.selected").removeClass("selected")
+  $("a.view[data-view='#{view}']").addClass("selected")
+
+  # Special case for cost views from dropdown method
+  if view == "costs_in_context"
+    $("#cost_choice").addClass("selected").text("Costs: context")
+  else if view == "costs_compared_overview"
+    $("#cost_choice").addClass("selected").text("Costs: compared")
+  else if view == "costs_sensitivity"
+    $("#cost_choice").addClass("selected").text("Costs: sensitivity")
+  else
+    $("#cost_choice").text("Costs")
+
+  # Get the id for this pathway
+  c = codeForChoices()
+  # Check if the data is loaded
+  data = cache[c]
+  
+  # If the data is loaded, get the view_manager to draw the view
+  view_manager.updateResults(data) if data?
+  
+  # This updates the url, on browsers that support this (i.e., not IE <9)
+  history.pushState(choices, c, url()) if history['pushState']?
+
 
 setHelpUrl = () ->
-  $('#help a').attr('href', "http://2050-calculator-tool-wiki.decc.gov.uk/pages/#{twentyfifty.helpPages[action]}")
+  $('#help a').attr('href', "http://2050-calculator-tool-wiki.decc.gov.uk/pages/#{twentyfifty.helpPages[view]}")
 
 switchPathway = (new_code) ->
+  $('.showdropdown').removeClass("showdropdown")
   old_choices = choices.slice(0)
   choices = choicesForCode(new_code)
   loadMainPathway()
@@ -158,7 +222,7 @@ loadMainPathway = (pushState = true) ->
   
   # Check the cache
   if cache[main_code]?
-    current_view.updateResults(cache[main_code])
+    view_manager.updateResults(cache[main_code])
     $('#calculating').hide()
     $('#message').show()
   else
@@ -166,11 +230,11 @@ loadMainPathway = (pushState = true) ->
     $('#message').hide()
     
     fetch = () ->
-      $.getJSON(url({code:main_code, action:'data', sector: null, comparator: null}), (data) ->
+      $.getJSON(url({code:main_code, view:'data', sector: null, comparator: null}), (data) ->
         if data?
           cache[data._id] = data
           if data._id == codeForChoices()
-            current_view.updateResults(data)
+            view_manager.updateResults(data)
             $('#calculating').hide()
             $('#message').show()
       )
@@ -182,7 +246,7 @@ loadSecondaryPathway = (secondary_code,callback) ->
     callback(cache[secondary_code])
   else
     fetch = () =>
-      $.getJSON(url({code:secondary_code, action:'data', sector: null, comparator: null}), (data) =>
+      $.getJSON(url({code:secondary_code, view:'data', sector: null, comparator: null}), (data) =>
         if data?
           cache[data._id] = data
           callback(data)
@@ -194,7 +258,7 @@ window.onpopstate = (event) ->
   url_elements = window.location.pathname.split( '/' )
   setChoices(choicesForCode(url_elements[2]))
   switchView(url_elements[3])
-  if action == 'costs_compared_within_sector'
+  if view == 'costs_compared_within_sector'
     switchSector(url_elements[4])
   if url_elements[4] == 'comparator'
     switchComparator(url_elements[5])
@@ -206,16 +270,16 @@ updateControls = (old_choices,@choices) ->
     unless choice == old_choices[i]
 
       old_choice_whole = Math.ceil(old_choice)
-      old_choice_fraction = parseInt((old_choice % 1)*10)
+      old_choice_frview = parseInt((old_choice % 1)*10)
       
       choice_whole = Math.ceil(choice)
-      choice_fraction = parseInt((choice % 1)*10)
+      choice_frview = parseInt((choice % 1)*10)
             
       row = controls.find("tr#r#{i}")
       
       # Revert the old
-      row.find(".selected, .level#{old_choice_whole}, .level#{old_choice_whole}_#{old_choice_fraction}").removeClass("selected level#{old_choice_whole} level#{old_choice_whole}_#{old_choice_fraction}")
-      unless old_choice_fraction == 0
+      row.find(".selected, .level#{old_choice_whole}, .level#{old_choice_whole}_#{old_choice_frview}").removeClass("selected level#{old_choice_whole} level#{old_choice_whole}_#{old_choice_frview}")
+      unless old_choice_frview == 0
         controls.find("#c#{i}l#{old_choice_whole}").text(old_choice_whole)
       
       # Setup the new
@@ -223,9 +287,9 @@ updateControls = (old_choices,@choices) ->
       
       for c in [1..(choice_whole-1)]
         controls.find("#c#{i}l#{c}").addClass("level#{choice_whole}")
-      unless choice_fraction == 0
+      unless choice_frview == 0
         controls.find("#c#{i}l#{choice_whole}").text(choice)
-        controls.find("#c#{i}l#{choice_whole}").addClass("level#{choice_whole}_#{choice_fraction}")
+        controls.find("#c#{i}l#{choice_whole}").addClass("level#{choice_whole}_#{choice_frview}")
       else
         controls.find("#c#{i}l#{choice_whole}").addClass("level#{choice_whole}")
 

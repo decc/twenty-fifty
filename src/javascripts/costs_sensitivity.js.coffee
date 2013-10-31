@@ -2,7 +2,7 @@ class CostsSensitivity
 
   costsSensitivityHTML = """
 <div class='costssensitivity'>
-  <ul class='dropdown' id='comparatorchoice'>
+  <ul id='comparatorchoice'>
     <li>
       <a href="#" onclick="$('ul#view_comparatorchoice').toggle(); return false;">Choose comparison<img alt="Dropdown-arrow" src="/assets/images/dropdown-arrow.png" /></a>
       <ul class='choices' id='view_comparatorchoice'>
