@@ -64,7 +64,6 @@ setUpControls = () ->
   )
 
 
-
 # This looks at the current URL which should be of the format
 # /pathways/code or
 # /pathways/code/view or
@@ -199,12 +198,10 @@ setHelpUrl = () ->
   $('#help a').attr('href', "http://2050-calculator-tool-wiki.decc.gov.uk/pages/#{twentyfifty.helpPages[view]}")
 
 switchPathway = (new_code) ->
-  $('.showdropdown').removeClass("showdropdown")
-  old_choices = choices.slice(0)
-  choices = choicesForCode(new_code)
-  loadMainPathway()
+  setChoices choicesForCode(new_code)
 
 setChoices = (new_choices) ->
+  $('.showdropdown').removeClass("showdropdown")
   old_choices = choices.slice(0)
   choices = new_choices
   loadMainPathway()
