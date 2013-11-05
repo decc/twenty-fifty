@@ -20,6 +20,7 @@
       #name
         %a{href:'http://www.decc.gov.uk/2050'} The UK 2050 Calculator
 
+      // To add or remove views from the web tool, alter the following section
       #views
         %a.view{href:'#', data: {view: 'primary_energy_chart'}} Energy
         %a.view{href:'#', data: {view: 'electricity'}} Electricity
@@ -43,6 +44,8 @@
         - saved_pathways.each do |name,code|
           %a{href:"#", onclick:"twentyfifty.switchPathway('#{code}');$('ul#savedpathway_choices').toggle()"}= name
   
+    #calculating
+      %span Calculating
 
     // The charts will be drawn in this block
     #results

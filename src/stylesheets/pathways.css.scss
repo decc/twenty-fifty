@@ -7,6 +7,21 @@ body {
   padding: 0;
 }
 
+#calculating {
+  font-size: 0.72em;
+  position: absolute;
+  width: 100%;
+  top: 20px;
+  left: 0px;
+  text-align: center;
+  z-index: 10;
+  span {
+    padding: 3px;
+    background-color: yellow;
+  }
+}
+
+
 .chart {
   padding: 0;
   border: 0;
