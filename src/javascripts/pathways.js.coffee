@@ -65,11 +65,10 @@ setUpControls = () ->
       d.addClass("showdropdown")
       o = t.offset()
       o.top = o.top + t.height()
-      space = $(document).width() - o.left - d.width()
-      o.left = o.left + space if space < 0
+      space = $(document).width() - o.left - d.width() # How much space between the right of the menu and the edge of the screen?
+      o.left = o.left + space if space < 0 # Don't let the menu go off of the right of the screen
       d.offset(o)
   )
-
 
 # This looks at the current URL which should be of the format
 # /pathways/code or
@@ -172,17 +171,17 @@ switchView = (new_view) ->
   view = new_view
   view_manager = views[view]
 
-  # Remove the 'selected' class from old links and add to new
-  $("a.selected").removeClass("selected")
-  $("a.view[data-view='#{view}']").addClass("selected")
+  # Remove the 'selectedView' class from old links and add to new
+  $("a.selectedView").removeClass("selectedView")
+  $("a.view[data-view='#{view}']").addClass("selectedView")
 
   # Special case for cost views from dropdown method
   if view == "costs_in_context"
-    $("#cost_choice").addClass("selected").text("Costs: context")
+    $("#cost_choice").addClass("selectedView").text("Costs: context")
   else if view == "costs_compared_overview"
-    $("#cost_choice").addClass("selected").text("Costs: compared")
+    $("#cost_choice").addClass("selectedView").text("Costs: compared")
   else if view == "costs_sensitivity"
-    $("#cost_choice").addClass("selected").text("Costs: sensitivity")
+    $("#cost_choice").addClass("selectedView").text("Costs: sensitivity")
   else
     $("#cost_choice").text("Costs")
 
