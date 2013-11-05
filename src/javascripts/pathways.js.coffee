@@ -1,5 +1,12 @@
+# This is the main controller of the view that the user sees.
+
+# Each possible view the user sees (e.g., Electricity, Flows, Costs in Context) is
+# defined in a separate javascript file in this folder. Each possible view then registers
+# itself in this object, so by the time all the javascript is loaded it should have:
+# views = {'electricity': new Electricity, 'sankey': new SankeyDisplay .... }
 views = {}
 
+# This keeps the settings for the current view
 controller = null
 choices = null
 view = null
@@ -9,8 +16,8 @@ comparator = null
 view_manager = null
 old_choices = []
 
+# This keeps a copy of previously requested pathways: so is a memory leak. 
 cache = {}
-callbacks = {}
 
 # This is the first thing that is called when the page is loaded
 documentReady = () ->
@@ -221,10 +228,8 @@ loadMainPathway = (pushState = true) ->
   if cache[main_code]?
     view_manager.updateResults(cache[main_code])
     $('#calculating').hide()
-    $('#message').show()
   else
     $('#calculating').show()
-    $('#message').hide()
     
     fetch = () ->
       $.getJSON(url({code:main_code, view:'data', sector: null, comparator: null}), (data) ->
@@ -233,7 +238,6 @@ loadMainPathway = (pushState = true) ->
           if data._id == codeForChoices()
             view_manager.updateResults(data)
             $('#calculating').hide()
-            $('#message').show()
       )
     
     fetch()
