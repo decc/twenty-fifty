@@ -172,9 +172,6 @@ switchView = (new_view) ->
   view = new_view
   view_manager = views[view]
 
-  # This sets the help url
-  setHelpUrl()
-
   # Remove the 'selected' class from old links and add to new
   $("a.selected").removeClass("selected")
   $("a.view[data-view='#{view}']").addClass("selected")
@@ -199,10 +196,6 @@ switchView = (new_view) ->
   
   # This updates the url, on browsers that support this (i.e., not IE <9)
   history.pushState(choices, c, url()) if history['pushState']?
-
-
-setHelpUrl = () ->
-  $('#help a').attr('href', "http://2050-calculator-tool-wiki.decc.gov.uk/pages/#{twentyfifty.helpPages[view]}")
 
 switchPathway = (new_code) ->
   setChoices choicesForCode(new_code)

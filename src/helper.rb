@@ -29,21 +29,6 @@ module Helper
     "<tr class='#{choice.incremental_or_alternative}' id='r#{choice.number}'>#{row.join('')}</tr>"
   end
 
-  def help_pages
-    { 
-      "primary_energy_chart"=>"83", 
-      "electricity"=>"84",
-      "energy_security" => "85",
-      "sankey"=>"86", 
-      "map"=>"87", 
-      "costs_in_context"=>"88",
-      "costs_compared_overview"=>"89",
-      "costs_sensitivity" => "90",
-      "story"=>"91",
-      "air_quality" => "TBD"
-    }
-  end
-
   def example_pathways
     @example_pathways ||= ModelStructure.instance.example_pathways
   end 
