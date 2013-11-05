@@ -25,15 +25,15 @@ bundle exec rake assets:precompile
 
 sudo gem install --no-ri --no-rdoc passenger
 sudo passenger-install-apache2-module --auto
-sudo sh -c 'echo "LoadModule passenger_module /var/lib/gems/1.9.1/gems/passenger-3.0.12/ext/apache2/mod_passenger.so" > /etc/apache2/mods-available/passenger.load'
-sudo sh -c 'echo "PassengerRoot /var/lib/gems/1.9.1/gems/passenger-3.0.12" > /etc/apache2/mods-available/passenger.conf'
+sudo sh -c 'echo "LoadModule passenger_module /var/lib/gems/1.9.1/gems/passenger-4.0.23/buildout/apache2/mod_passenger.so" > /etc/apache2/mods-available/passenger.load'
+sudo sh -c 'echo "PassengerRoot /var/lib/gems/1.9.1/gems/passenger-4.0.23" > /etc/apache2/mods-available/passenger.conf'
 sudo sh -c 'echo "PassengerRuby /usr/bin/ruby1.9.1" >> /etc/apache2/mods-available/passenger.conf'
 sudo a2enmod passenger
 
 sudo sh -c 'echo "<VirtualHost *:80>" > /etc/apache2/sites-available/twenty-fifty'
 sudo sh -c 'echo "ServerName 2050-calculator-tool.decc.gov.uk" >> /etc/apache2/sites-available/twenty-fifty'
-sudo sh -c 'echo "DocumentRoot /home/ubuntu/twenty-fifty/public" >> /etc/apache2/sites-available/twenty-fifty'
-sudo sh -c 'echo "<Directory /home/ubuntu/twenty-fifty/public>" >> /etc/apache2/sites-available/twenty-fifty'
+sudo sh -c 'echo "DocumentRoot /home/iept/twenty-fifty/public" >> /etc/apache2/sites-available/twenty-fifty'
+sudo sh -c 'echo "<Directory /home/iept/twenty-fifty/public>" >> /etc/apache2/sites-available/twenty-fifty'
 sudo sh -c 'echo "  AllowOverride all" >> /etc/apache2/sites-available/twenty-fifty'
 sudo sh -c 'echo "  Options -MultiViews" >> /etc/apache2/sites-available/twenty-fifty'
 sudo sh -c 'echo "</Directory>" >> /etc/apache2/sites-available/twenty-fifty'
