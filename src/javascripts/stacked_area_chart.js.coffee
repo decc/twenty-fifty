@@ -2,9 +2,9 @@ window.timeSeriesStackedAreaChart = () ->
   
   margin =
     top: 41
-    right: 115
+    right: 108
     bottom: 40
-    left: 40
+    left:33
 
   width = 375
   height = 125
@@ -22,8 +22,17 @@ window.timeSeriesStackedAreaChart = () ->
   xScale = d3.scale.linear()
   yScale = d3.scale.linear()
 
-  xAxis = d3.svg.axis().scale(xScale).orient("bottom").ticks(5).tickFormat(d3.format(".0f"))
-  yAxis = d3.svg.axis().scale(yScale).orient("left").ticks(5)
+  xAxis = d3.svg.axis()
+    .scale(xScale)
+    .orient("bottom")
+    .ticks(5)
+    .tickFormat(d3.format(".0f"))
+
+  yAxis = d3.svg.axis()
+    .scale(yScale)
+    .orient("left")
+    .ticks(5)
+    .tickFormat(d3.format(".0f"))
 
   stack = d3.layout.stack().values( (d) -> d.value)
 
@@ -65,7 +74,7 @@ window.timeSeriesStackedAreaChart = () ->
     selection.each (data) ->
 
       width = $(this).width()
-      height = width / 1.4
+      height = width / 1.2
       x_center = (width-(margin.left*2))/2
 
       # We need to divide the data into three sets

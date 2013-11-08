@@ -13,6 +13,9 @@
 
   table {
     width: 100%;
+    border-collapse: separate; 
+    border-spacing: 2px 0px;
+
     tr:hover {
       td.name {
         font-weight: bold;
