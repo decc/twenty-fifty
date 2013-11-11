@@ -4,12 +4,21 @@
 # To use sh setup-2020-server-script.sh
 # You will be prompted for information at a couple of points
 
-# The first thing we need to do is check we are running the right version of Ubuntu
+# Then first need to check we are running on a 64bit x86 machine
+# Ruby 2.0 only seems to be built for 64bit 
+# and I've only tested on x86
+if [ "$(uname -m)" !=  'x86_64' ]; then
+  echo "This script is only tested on 64 bit x86 machines. (your system is reported as $(uname -m))"
+  exit 1
+fi
+
+# The next thing we need to do is check we are running the right version of Ubuntu
 . /etc/lsb-release # This loads variables which contain the Ubuntu version
 if [ "$DISTRIB_ID" != 'Ubuntu' ] || [ "$DISTRIB_RELEASE" != '12.04' ]; then
   echo "This script is only tested with Ubuntu 12.04. (your system is reported as $DISTRIB_ID $DISTRIB_RELEASE)"
   exit 1
 fi
+
 
 # First step is to get the system working in development mode
 
