@@ -10,7 +10,7 @@ http://github.com/decc/twenty-fifty
 
 # INSTALATION
 
-See script/setup-2050-server-script.sh for an example of how to setup a server from a clean bare Ubuntu linux installation.
+See script/setup-2050-server-script.sh for an example of how to setup a server from a clean bare Ubuntu linux 12.04 installation.
 
 Otherwise:
 1. Install ruby 1.9.2 or greater (including development headers)
@@ -20,15 +20,9 @@ Otherwise:
 
 # RUNNING
 
-1. gem install thin
-2. thin -R config.ru start -p 4567 -e development
-3. Navigate to http://0.0.0.0:4567 in your web browser
-
-To run in 'production' mode:
-
-1. rake html
-2. thin -R config.ru start -p 4567 -e production
-3. Navigate to http://0.0.0.0:4567 in your browser
+1. cd twenty_fifty
+2. rackup
+3. Navigate to http://0.0.0.0:9292 in your web browser
 
 # HACKING
 
