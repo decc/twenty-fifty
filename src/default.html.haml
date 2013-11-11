@@ -16,6 +16,16 @@
       })();
 
   %body
+    #svgWarn
+      This interface requires
+      %a{href:'http://caniuse.com/#cats=SVG'} a browser that supports SVG.
+      it seems like your browser doesn't support SVG. We have an 
+      %a{href:'http://uk-old.2050.org.uk'} old version of this calculator
+      that may work for you. Alternatively you can download
+      %a{href:'http://2050-calculator-tool-wiki.decc.gov.uk/pages/140'} an excel version.
+      %p
+        %a{href: '#', onclick:"$('#svgWarn').hide()"}Hide this message.
+
     #topbar
       #name
         %a{href:'http://www.decc.gov.uk/2050'} The UK 2050 Calculator

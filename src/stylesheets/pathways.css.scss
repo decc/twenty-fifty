@@ -8,6 +8,13 @@ body {
   padding: 0;
 }
 
+#svgWarn {
+  display: none;
+  padding: 10px;
+  text-align: center;
+  background-color: #faa;
+}
+
 #calculating {
   font-size: 0.72em;
   position: absolute;

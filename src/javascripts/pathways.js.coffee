@@ -21,6 +21,7 @@ cache = {}
 
 # This is the first thing that is called when the page is loaded
 documentReady = () ->
+  checkSVGWorks()
   $('#cost_caveats').show() unless $.jStorage.get('CostCaveatShown') == true
   setUpControls()
   setVariablesFromURL()
@@ -28,6 +29,13 @@ documentReady = () ->
   loadMainPathway()
 
 $(document).ready(documentReady)
+
+# This interface requires SVG to work. SVG is not supported in IE8 and earlier
+# so we need to check for that and warn the user if it isn't going to work for
+# them.
+checkSVGWorks = () ->
+  return true if !!document.createElementNS && !!document.createElementNS('http://www.w3.org/2000/svg', "svg").createSVGRect
+  $("#svgWarn").show()
 
 setUpControls = () ->
   # This ensures that any link with a 'title' attribute gets a tooltip
