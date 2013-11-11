@@ -15,7 +15,7 @@ end
 
 concurrency = 10 # i.e., will make 20 requests at the same time
 total_requests = 1000 # i.e. will make 1000 requests in total
-domain = "http://2050-calculator-tool.decc.gov.uk/pathway/"
+domain = ARGV[0] || "http://2050-calculator-tool.decc.gov.uk/pathway/"
 view = "/data"
 
 def id
