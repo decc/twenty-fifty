@@ -27,7 +27,7 @@ echo "You may be prompted for a password, this is required to install packages"
 # Basics
 sudo apt-get update
 sudo apt-get install -y git build-essential libxml2-dev libxslt-dev zip unzip software-proprieties-common
-sudo apt-get install -y libcurl4-openssl-dev libssl-dev nodejs
+sudo apt-get install -y libcurl4-openssl-dev libssl-dev nodejs python-software-properties
 
 # Ruby 2
 sudo apt-add-repository -y ppa:brightbox/ruby-ng-experimental
