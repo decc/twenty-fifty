@@ -19,6 +19,9 @@ old_choices = []
 # This keeps a copy of previously requested pathways: so is a memory leak. 
 cache = {}
 
+# This timer is to debounce the resize
+windowResizeDebounceTimer = null
+
 # This is the first thing that is called when the page is loaded
 documentReady = () ->
   checkSVGWorks()
@@ -76,6 +79,13 @@ setUpControls = () ->
       space = $(document).width() - o.left - d.width() # How much space between the right of the menu and the edge of the screen?
       o.left = o.left + space if space < 0 # Don't let the menu go off of the right of the screen
       d.offset(o)
+  )
+
+  $(window).resize( (event) ->
+    clearTimeout(windowResizeDebounceTimer)
+    windowResizeDebounceTimer = setTimeout( () ->
+      view_manager.updateResults(cache[codeForChoices()])
+    , 500)
   )
 
 # This looks at the current URL which should be of the format
