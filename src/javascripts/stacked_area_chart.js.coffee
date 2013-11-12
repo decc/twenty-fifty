@@ -48,8 +48,7 @@ window.timeSeriesStackedAreaChart = () ->
   color_classes = {
     'Total': 'total'
     'Total Use': 'total'
-    'Total Primary Supply': 'total'
-    'Total generation supplied to grid': 'total'
+    'Total used in UK': 'total'
     'Environmental heat': 'environmentalheat'
   }
   color_class_index = 0

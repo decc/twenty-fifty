@@ -17,7 +17,7 @@ class Electricity
     @supply_chart = timeSeriesStackedAreaChart()
       .title("Electricity Supply")
       .unit('TWh/yr')
-      .total_label('Total generation supplied to grid')
+      .total_label('Total')
       .max_value(4000)
 
     @emissions_chart = timeSeriesStackedAreaChart()
