@@ -104,6 +104,8 @@ setVariablesFromURL = () ->
   if url_elements[4] == 'comparator'
     comparator = url_elements[5]
 
+# When the user makes their choices, they are assembled into an array [1, 1.3, 2, 0, 1 ... ]
+# This is turned into a URL 1d201 ... by turning non-integers into letters.
 float_to_letter_map = { "":"0", 1.0:"1", 1.1:"b", 1.2:"c", 1.3:"d", 1.4:"e", 1.5:"f", 1.6:"g", 1.7:"h", 1.8:"i", 1.9:"j", 2.0:"2", 2.1:"l", 2.2:"m", 2.3:"n", 2.4:"o", 2.5:"p", 2.6:"q", 2.7:"r", 2.8:"s", 2.9:"t", 3.0:"3", 3.1:"v", 3.2:"w", 3.3:"x", 3.4:"y", 3.5:"z", 3.6:"A", 3.7:"B", 3.8:"C", 3.9:"D", 0.0:"0", 4.0:"4"}
 
 codeForChoices = (c = choices) ->
@@ -111,32 +113,14 @@ codeForChoices = (c = choices) ->
     float_to_letter_map[choice]
   cd.join('')
 
+# This carries out the inverse of codeForChoices. It turns 1d201 into [1, 1.3, 2, 0, 1 ...]
 letter_to_float_map = {"1":1.0, "b":1.1, "c":1.2, "d":1.3, "e":1.4, "f":1.5, "g":1.6, "h":1.7, "i":1.8, "j":1.9, "2":2.0, "l":2.1, "m":2.2, "n":2.3, "o":2.4, "p":2.5, "q":2.6, "r":2.7, "s":2.8, "t":2.9, "3":3.0, "v":3.1, "w":3.2, "x":3.3, "y":3.4, "z":3.5, "A":3.6, "B":3.7, "C":3.8, "D":3.9, "0":0.0, "4":4.0}
 
 choicesForCode = (newCode) ->
   for choice in newCode.split('')
     letter_to_float_map[choice]
 
-getChoices = () ->
-  choices
 
-getSector = () ->
-  parseInt(sector)
-    
-switchSector = (new_sector) ->
-  sector = new_sector
-  history.pushState(choices, codeForChoices(), url()) if history['pushState']?
-  switchView('costs_compared_within_sector')
-  view_manager.teardown()
-  view_manager.updateResults(cache[codeForChoices()])
-
-getComparator = () ->
-  comparator
-
-switchComparator = (new_comparator) ->
-  comparator = new_comparator
-  history.pushState(choices, codeForChoices(), url()) if history['pushState']?
-  view_manager.switchComparator(comparator) if view_manager.switchComparator?
 
 url = (options = {}) ->
   s = jQuery.extend({controller:controller, code: codeForChoices(), view:view, sector:sector, comparator: getComparator()},options)
@@ -304,14 +288,44 @@ updateControls = (old_choices,@choices) ->
       else
         controls.find("#c#{i}l#{choice_whole}").addClass("level#{choice_whole}")
 
+
+# This is only relevant for the costs by sector view
+getSector = () -> parseInt(sector)
+    
+# This is only relevant for the costs by sector view
+switchSector = (new_sector) ->
+  sector = new_sector
+  history.pushState(choices, codeForChoices(), url()) if history['pushState']?
+  switchView('costs_compared_within_sector')
+  view_manager.teardown()
+  view_manager.updateResults(cache[codeForChoices()])
+
+# This is only relevant for the costs sensitivity view
+getComparator = () ->
+  comparator
+
+# This is only relevant for the costs sensitivity view
+switchComparator = (new_comparator) ->
+  comparator = new_comparator
+  history.pushState(choices, codeForChoices(), url()) if history['pushState']?
+  view_manager.switchComparator(comparator) if view_manager.switchComparator?
+
+# Given a pathway id (e..g, 103a2...) sees if we have an example pathway that matches
+# and, if so, returns the name of that example pathway
 pathwayName = (pathway_code,default_name = null) ->
   window.twentyfifty.pathway_names_hash[pathway_code] || default_name
 
+# Given a pathway id (e..g, 103a2...) sees if we have an example pathway that matches
+# and, if so, returns the description of that example pathway
 pathwayDescriptions = (pathway_code,default_description = null) ->
   window.twentyfifty.pathway_descriptions_hash[pathway_code] || default_description
 
+# Given a pathway id (e..g, 103a2...) sees if we have an example pathway that matches
+# and, if so, returns the id of the page on the wiki that describes it
 pathwayWikiPages = (pathway_code,default_page = null) ->
   "http://2050-calculator-tool-wiki.decc.gov.uk/pages/#{window.twentyfifty.pathway_wiki_pages_hash[pathway_code] || default_page}"
+
+getChoices = () -> choices
 
 window.twentyfifty.code = codeForChoices
 window.twentyfifty.getChoices = getChoices
