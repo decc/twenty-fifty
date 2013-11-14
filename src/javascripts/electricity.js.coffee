@@ -67,8 +67,8 @@ class Electricity
       .call(@emissions_chart)
 
     # Now add shaded background of total energy demand to provide context
-    showContext( @pathway['final_energy_demand']['Total Use'], '#demand_chart', @demand_chart)
-    showContext( @pathway['final_energy_demand']['Total Use'], '#supply_chart', @supply_chart)
+    showContext( @pathway.final_energy_demand.Total, '#demand_chart', @demand_chart)
+    showContext( @pathway.final_energy_demand.Total, '#supply_chart', @supply_chart)
     showContext( @pathway.ghg.Total, '#emissions_chart', @emissions_chart)
 
 window.twentyfifty.views['electricity'] = new Electricity
