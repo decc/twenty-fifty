@@ -28,6 +28,22 @@ class PrimaryEnergy
       .min_value(-500)
       .max_value(1000)
 
+    # This implements the chart zoom function
+    controller = this
+
+    d3.selectAll(".chart")
+      .on("click", (event) ->
+        chart = d3.select(@)
+        if chart.attr("style") == "width:60%; float: left;"
+          d3.selectAll(".chart").attr("style", null)
+        else
+          d3.selectAll(".chart").attr("style", "float: right")
+          chart.attr("style", "width:60%; float: left;")
+
+        controller.updateResults(controller.pathway)
+      )
+
+
   teardown: () ->
     $('#results').empty()
     @final_energy_chart = null
@@ -70,6 +86,19 @@ class PrimaryEnergy
         (t) ->
           @textContent = "#{i(t)}% reduction 1990-2050; Target is 80%"
       )
+
+  zoom: () ->
+    d3.select("#demand_chart")
+      .attr("style", "width: 60%")
+
+    @updateResults(@pathway)
+
+  unzoom: () ->
+    d3.select("#demand_chart")
+      .attr("style", null)
+
+    @updateResults(@pathway)
+
 
 
 
