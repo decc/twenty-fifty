@@ -41,6 +41,7 @@
         %a#cost_choice.newdropdown{href:'#', data: {dropdown: '#cost_choices'}} Costs
         %a.view{href:'#', data: {view: 'air_quality'}} Air
         %a.view{href:'#', data: {view: 'share'}} Share
+        %a{href: 'http://2050-calculator-tool-wiki.decc.gov.uk'} Docs
 
       #cost_choices.dropdown
         %a.view{href:'#', data: {view: 'costs_in_context'}} In context
@@ -53,6 +54,7 @@
       #savedpathway_choices.dropdown
         - saved_pathways.each do |name,code|
           %a{href:"#", onclick:"twentyfifty.switchPathway('#{code}');$('ul#savedpathway_choices').toggle()"}= name
+        %a{href:"http://2050-calculator-tool-wiki.decc.gov.uk/pages/122"} More examples
   
     #calculating
       %span Calculating
