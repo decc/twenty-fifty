@@ -5,7 +5,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
-    decc_2050_model (3.5.0)
+    decc_2050_model (3.5.1)
       ffi (>= 1.0.11)
     execjs (2.0.2)
     ffi (1.9.3)
@@ -37,7 +37,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-script
-  decc_2050_model (= 3.5.0)
+  decc_2050_model (= 3.5.1)
   ffi
   haml
   json
