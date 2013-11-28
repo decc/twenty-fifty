@@ -87,6 +87,17 @@ class PrimaryEnergy
           @textContent = "#{i(t)}% reduction 1990-2050; Target is 80%"
       )
 
+    # CCC intended pathway 2011 to 2050 sum
+    target_acc = 9486
+    
+    acc = sum_time_series(@pathway.ghg)
+    acc_percent = ( acc / target_acc ) * 100
+    acc_success = ( if acc_percent <= 100 then '<p>Meets CCC intended carbon budget</p>' else '<p>Exceeds CCC intended carbon budget!</p>' )
+    
+    acc_text = '<p>Cumulative emissions: ' + acc.toString() + ' MtCO2e</p>' + '<p>Percentage of CCC pathway\'s cumulative emissions: ' + acc_percent.toFixed().toString() + '%</p>' + acc_success
+      
+    jQuery('#cumulative_emissions').html( acc_text );
+
   zoom: () ->
     d3.select("#demand_chart")
       .attr("style", "width: 60%")
@@ -99,7 +110,27 @@ class PrimaryEnergy
 
     @updateResults(@pathway)
 
+    
+  sum_time_series = (matrix) ->
+  
+    row = matrix["Total"]
 
+    # The final value does not contribute to accumulation
+    # i.e. it is a snapshot at the upper time limit.
+    num_periods = row.length - 1
+    
+    sum = 0
+    i = 0
+  
+    while i < num_periods
+      start = row[i]
+      end = row[i+1]
+      avg = (start+end)/2
+      period_total = avg * 5 # Assumption: 5 year periods
+      sum += period_total
+      i++
+      
+    sum.toFixed()
 
 
 
