@@ -126,3 +126,50 @@ g.context {
 .environmentalheat {
   fill: rgb(199, 199, 40); 
 }
+
+// Energy supply
+.gas { fill: #660066; }
+.coal { fill: #000000; }
+.oil { fill: #00782A; }
+.bioenergy { fill: #84B817; }
+.environmentalheat { fill: #ff0000; }
+.geothermal { fill: #B36305; }
+.h2 { fill: #ff0000; }
+.hydro { fill: #0099CC; }
+.nuclear { fill: #EE7C0E; }
+.offshorewind { fill: #006992; }
+.onshorewind { fill: #00a2e1; }
+.solar { fill: #FFD300; }
+text.solar { fill: #be9d00; }
+.tidal { fill: #ff0000; }
+.wave { fill: #003688; }
+.wind { fill: #0098D4; }
+.ccs { fill: #00A4A7; }
+
+// Specific to the electricity supply chart
+.conventional { fill: #660066; }
+.tidalandwave { fill: #003688; }
+.electricity { fill: #0064F5; }
+
+// Specific to the energy demand chart
+.transport { fill: #F3A9BB; }
+.heatingcooling { fill: #E32017; }
+.industry { fill: #A0A5A9; }
+.lightingappliances { fill: #FFD300; }
+text.lightingappliances { fill: #be9d00; }
+
+// The emissions chart
+.carboncapture { fill: #00A4A7; }
+.lulucf { fill: #ff0000; }
+.fuelcombustion { fill: #95CDBA; }
+.aviationandshipping { fill: #CC9999; }
+.waste { fill: #ff0000; }
+
+// Not yet used?
+.commercialheat { fill: #ff0000; }
+.commerciallight { fill: #ff0000; }
+.districtheating { fill: #ff0000; }
+.domesticfreight { fill: #ff0000; }
+.domesticlight { fill: #ff0000; }
+.domesticpassengertransport { fill: #ff0000; }
+.domesticheat { fill: #ff0000; }
