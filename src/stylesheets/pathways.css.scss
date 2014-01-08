@@ -33,6 +33,10 @@ body {
   overflow: hidden;
 }
 
+svg {
+  overflow: visible;
+}
+
 .chart {
   padding: 0;
   border: 0;
