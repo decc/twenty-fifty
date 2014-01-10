@@ -1378,16 +1378,15 @@ for(var e in n)t.push({key:e,value:n[e]});return t},mo.merge=function(n){return 
 // that is constant across pathways. The methods called are in helper.rb
 window.twentyfifty = {};
 window.twentyfifty.default_pathway = "11111111111111111111111111111111111111111111111111111";
-window.twentyfifty.pathway_wiki_pages_hash = {"10111111111111110111111001111110111101101101110110111":75.0,"10111111111111110111111004424440444404204304440420111":"No","40444444444444440443424001121110111101102101110110111":"No","i0g2dd2pp1121f1i032211p004314110433304202304320420121":112.0,"e0d3jrg221ci12110222112004423220444404202304440420141":109.0,"r013ce1111111111042233B002322220233302202102330220121":110.0,"f023df111111111f0322123003223220333203102303430310221":111.0,"q011111111111111032413l004314110434104103204440410111":170.0,"10h4nn4431w23y110244111004424440343304202304430420441":95.0,"10h2pdppp12332130233122004414430343304102304430410231":96.0,"20222144411341110343321003422440423404203203340420141":94.0,"h0h2gg1211cj1j110322222003313230234102102203440320121":97.0,"g0f2oj11t1rgqj1j0343111003324240244104201304430420231":92.0,"00000000000000000000000000000000000000000000000000000":null};
-window.twentyfifty.pathway_descriptions_hash = {"10111111111111110111111001111110111101101101110110111":"Imported natural gas for electricity and\nheat. Imported oil for vehicles.","10111111111111110111111004424440444404204304440420111":"","40444444444444440443424001121110111101102101110110111":"","i0g2dd2pp1121f1i032211p004314110433304202304320420121":"Cost-optimising model based. Mix of supply\nsources. Ambitious demand reduction.","e0d3jrg221ci12110222112004423220444404202304440420141":"Renewables largest supply component. Very\nambitious demand reduction. Lots of storage.","r013ce1111111111042233B002322220233302202102330220121":"Lots of nuclear. Moderate energy demand\nreduction. Minimal renewables.","f023df111111111f0322123003223220333203102303430310221":"Lots of CCS and biomass co-firing. Ambitious\ndemand reduction.","q011111111111111032413l004314110434104103204440410111":"TBD\n","10h4nn4431w23y110244111004424440343304202304430420441":"Generation from wind, marine renewables and\nhydro. Ambitious demand reduction.","10h2pdppp12332130233122004414430343304102304430410231":"Offshore renewables, solar, geothermal and\nelectricity imports. Ambitious demand reduction.","20222144411341110343321003422440423404203203340420141":"Marine renewables, geothermal and algae\nsupply. Some nuclear and CCS.","h0h2gg1211cj1j110322222003313230234102102203440320121":"Wide range of generation sources. Moderate\ndemand reduction. Considerable bioenergy.","g0f2oj11t1rgqj1j0343111003324240244104201304430420231":"Energy from a range of sources. Emphasis on\nUK self-reliance.","00000000000000000000000000000000000000000000000000000":""};
-window.twentyfifty.pathway_names_hash = {"10111111111111110111111001111110111101101101110110111":"Doesn't tackle climate change (All at level 1)","10111111111111110111111004424440444404204304440420111":"Maximium demand, no supply","40444444444444440443424001121110111101102101110110111":"Maximum supply, no demand","i0g2dd2pp1121f1i032211p004314110433304202304320420121":"Analogous to MARKAL 3.26","e0d3jrg221ci12110222112004423220444404202304440420141":"Higher renewables, more energy efficiency","r013ce1111111111042233B002322220233302202102330220121":"Higher nuclear, less energy efficiency","f023df111111111f0322123003223220333203102303430310221":"Higher CCS, more bioenergy","q011111111111111032413l004314110434104103204440410111":"Low cost pathway","10h4nn4431w23y110244111004424440343304202304430420441":"Friends of the Earth","10h2pdppp12332130233122004414430343304102304430410231":"Campaign to Protect Rural England","20222144411341110343321003422440423404203203340420141":"Mark Brinkley","h0h2gg1211cj1j110322222003313230234102102203440320121":"National Grid","g0f2oj11t1rgqj1j0343111003324240244104201304430420231":"Atkins","00000000000000000000000000000000000000000000000000000":null};
+window.twentyfifty.pathway_wiki_pages_hash = {"10111111111111110111111001111110111101101101110110111":75.0,"10111111111111110111111004424440444404203304440420111":"No","40444444444444440443424001121110111101102101110110111":"No","i0g2dd2pp1121f1i032211p004314110433304202304320420121":112.0,"e0d3jrg221ci12110222112004423220444404202304440420141":109.0,"r013ce1111111111042233B002322220233302202102330220121":110.0,"f023df111111111f0322123003223220333203102303430310221":111.0,"q011111111111111032413l004314110434104103204440410111":170.0,"10h4nn4431w23y110244111004424440343304202304430420441":95.0,"10h2pdppp12332130233122004414430343304102304430410231":96.0,"20222144411341110343321003422440423404203203340420141":94.0,"h0h2gg1211cj1j110322222003313230234102102203440320121":97.0,"g0f2oj11t1rgqj1j0343111003324240244104201304430420231":92.0,"00000000000000000000000000000000000000000000000000000":null};
+window.twentyfifty.pathway_descriptions_hash = {"10111111111111110111111001111110111101101101110110111":"Imported natural gas for electricity and\nheat. Imported oil for vehicles.","10111111111111110111111004424440444404203304440420111":"","40444444444444440443424001121110111101102101110110111":"","i0g2dd2pp1121f1i032211p004314110433304202304320420121":"Cost-optimising model based. Mix of supply\nsources. Ambitious demand reduction.","e0d3jrg221ci12110222112004423220444404202304440420141":"Renewables largest supply component. Very\nambitious demand reduction. Lots of storage.","r013ce1111111111042233B002322220233302202102330220121":"Lots of nuclear. Moderate energy demand\nreduction. Minimal renewables.","f023df111111111f0322123003223220333203102303430310221":"Lots of CCS and biomass co-firing. Ambitious\ndemand reduction.","q011111111111111032413l004314110434104103204440410111":"TBD\n","10h4nn4431w23y110244111004424440343304202304430420441":"Generation from wind, marine renewables and\nhydro. Ambitious demand reduction.","10h2pdppp12332130233122004414430343304102304430410231":"Offshore renewables, solar, geothermal and\nelectricity imports. Ambitious demand reduction.","20222144411341110343321003422440423404203203340420141":"Marine renewables, geothermal and algae\nsupply. Some nuclear and CCS.","h0h2gg1211cj1j110322222003313230234102102203440320121":"Wide range of generation sources. Moderate\ndemand reduction. Considerable bioenergy.","g0f2oj11t1rgqj1j0343111003324240244104201304430420231":"Energy from a range of sources. Emphasis on\nUK self-reliance.","00000000000000000000000000000000000000000000000000000":""};
+window.twentyfifty.pathway_names_hash = {"10111111111111110111111001111110111101101101110110111":"Doesn't tackle climate change (All at level 1)","10111111111111110111111004424440444404203304440420111":"Maximium demand, no supply","40444444444444440443424001121110111101102101110110111":"Maximum supply, no demand","i0g2dd2pp1121f1i032211p004314110433304202304320420121":"Analogous to MARKAL 3.26","e0d3jrg221ci12110222112004423220444404202304440420141":"Higher renewables, more energy efficiency","r013ce1111111111042233B002322220233302202102330220121":"Higher nuclear, less energy efficiency","f023df111111111f0322123003223220333203102303430310221":"Higher CCS, more bioenergy","q011111111111111032413l004314110434104103204440410111":"Low cost pathway","10h4nn4431w23y110244111004424440343304202304430420441":"Friends of the Earth","10h2pdppp12332130233122004414430343304102304430410231":"Campaign to Protect Rural England","20222144411341110343321003422440423404203203340420141":"Mark Brinkley","h0h2gg1211cj1j110322222003313230234102102203440320121":"National Grid","g0f2oj11t1rgqj1j0343111003324240244104201304430420231":"Atkins","00000000000000000000000000000000000000000000000000000":null};
 window.twentyfifty.comparator_pathways = ["i0g2dd2pp1121f1i032211p004314110433304202304320420121","e0d3jrg221ci12110222112004423220444404202304440420141","r013ce1111111111042233B002322220233302202102330220121","f023df111111111f0322123003223220333203102303430310221","q011111111111111032413l004314110434104103204440410111","10h4nn4431w23y110244111004424440343304202304430420441","10h2pdppp12332130233122004414430343304102304430410231","20222144411341110343321003422440423404203203340420141","h0h2gg1211cj1j110322222003313230234102102203440320121","g0f2oj11t1rgqj1j0343111003324240244104201304430420231","10111111111111110111111001111110111101101101110110111"];
 window.twentyfifty.default_comparator_code = "10111111111111110111111001111110111101101101110110111";
-window.twentyfifty.longDescriptions = [["No new nuclear power installed. Final nuclear power station estimated to close in 2035","~13 3GW nuclear power stations delivering ~280 TWh/yr","~30 3GW nuclear power stations delivering ~630 TWh/yr","~50 3GW nuclear power stations delivering ~1030 TWh/yr"],[null,null,null,null],["CCS demonstration plants only","~240 TWh/yr from 25-40 CCS power stations - comparable to current gas & coal generation","~340 TWh/yr from 35-60 CCS power stations - comparable to total current demand","~510 TWh/yr  from 50-90 CCS power stations - this requires a similar build rate to that of gas plants in the 1990s"],["After demonstration plants, all CCS electricity is from solid fuel (coal or biomass)","After demonstration plants, two thirds of CCS electricity is from solid fuel (coal or biomass), one third from gas (natural gas or biogas)","After demonstration plants, one third of CCS electricity is from solid fuel (coal or biomass), two thirds from gas (natural gas or biogas)","After demonstration plants, all CCS electricity is from gas (natural gas or biogas)"],["~1,400 offshore wind turbines in 2025, reducing to zero as decommissioned sites are not replanted","~10,000 offshore wind turbines in 2050, delivering ~180 TWh/yr","~17,000 offshore wind turbines in 2050, delivering ~310 TWh/yr","~40,000 offshore wind turbines in 2050, delivering ~430 TWh/yr"],["~4,400 onshore wind turbines in 2025, reducing to zero as decommissioned sites are not replanted","~8,000 onshore wind turbines in 2050, delivering ~50 TWh/yr. ","~13,000 onshore wind turbines in 2050, delivering ~80 TWh/yr","~20,000 onshore wind turbines in 2050, delivering ~130 TWh/yr"],["None in 2050","~300km of wave farms","~600km of wave farms","~900km of wave farms"],["None in 2050","1,000 tidal stream turbines","4,700 tidal stream turbines","10,600 tidal stream turbines"],["None in  2050","3 small tidal range schemes","4 tidal range schemes","8 tidal range schemes"],["Only existing biomass plants and those already under construction (0.6GW)","8GW of biomass power stations by 2050 delivering 62TWh/yr","12GW of biomass power stations by 2050 delivering 100TWh/yr","Over 20GW of biomass power stations by 2050 delivering 180TWh/yr"],["No significant solar PV capacity is installed","4m2 of photovoltaic panels per person in 2050, supplying ~60 TWh/yr of electricity"," 5.4m2 of photovoltaic panels per person in 2050, supplying ~80 TWh/yr","9.5m2 of photovoltaic panels per person – all suitable roof and facade space used"],["As today, a negligible proportion of buildings have solar thermal in 2050","~30% of suitable buildings get ~30% of their hot water from solar thermal","All suitable buildings get ~30% of their hot water from solar thermal","All suitable buildings get ~60% of their hot water from solar thermal"],["No deployment of geothermal electricity generation","Supply of geothermal electricity grows slowly to 7 TWh/yr in 2035 and is sustained","Supply of geothermal electricity grows quickly reaching 21 TWh/yr by 2030 and is sustained","Supply of geothermal electricity grows rapidly reaching 35 TWh/yr by 2030 and is sustained"],["Supply of hydroelectricity is maintained at current levels of 5 TWh/yr","Supply of hydroelectricity grows slowly, reaching 7 TWh/yr by 2050","Supply of hydroelectricity grows more quickly, reaching 8 TWh/yr by 2030 and is sustained","Supply of hydroelectricity grows rapidly reaching 13 TWh/yr by 2035 and is sustained"],["As today, no discernable supply of electricity from micro-wind turbines","Supply of electricity from micro wind turbines increases to 1.3 TWh/yr by 2020 and is sustained","Micro wind turbines installed in all ~450,000 suitable domestic properties, supplying 3.5 TWh/year from 2020","Micro wind turbines installed in all suitable domestic and non-domestic sties, supplying 8.9 TWh/year from 2020"],["No electricity imports, other than for balancing","30 TWh/yr of electricity imported from Southern Europe","70 TWh/yr of electricity imported from a 10% share of an internationally coordinated desert solar project ","140 TWh/yr of electricity imported from a 20% share of an internationally coordinated desert solar project"],[null,null,null,null],["Energy crops and food production similar to today","5% of UK land used for energy crops","10% of UK land used for energy crops","17% of UK land used for energy crops"],["Livestock numbers increase by 10%","Livestock numbers same as today","Livestock numbers decrease by 10%","Livestock numbers decrease by 20%"],["Overall quantity of waste increases 50% to 2050; 21% increase in recycling rate and 44% increase in rate of energy from waste. 24% of waste is sent to landfill","Overall quantity of waste increases almost 20% by 2050; recycling and energy from waste rates increase by 36% and 89% respectively. 11% of waste is sent to landfill.","Overall quantity of waste increases 33%; waste is handled through high-tech and industry-led approaches; by 2050, recycling and energy from waste rates increase by 36% and 89% respectively. Only 2% is sent to landfill.","Quantity of waste decreases 20% by 2050; recycling and energy from waste increase by 70% and 7% respectively; by 2050, 3% of waste sent to landfill."],["No development of macro-algae cultivation","Macro algae covering the same area as half of natural reserve used, delivering ~4 TWh/yr","Macro algae covering the same area as all of natural reserve used, delivering ~9 TWh/yr","Macro algae covering the same area as four times natural reserve used, delivering ~46 TWh/yr"],["Biomass converted to a mixture of solid, liquid and gas biofuels","Biomass mainly converted to solid biofuel","Biomass mainly converted to liquid biofuel","Biomass mainly converted to biogas fuel"],["Imported biofuel declines from ~ 4 TWh/yr currently to zero","Up to 70 TWh/yr of imported bioenergy in 2050","Up to 140 TWh/yr of imported bioenergy in 2050","Up to 280 TWh/yr of imported bioenergy in 2050"],[null,null,null,null],[null,null,null,null],["In 2050, individuals travel 9% further than today. No noticeable modal shift.","Individuals travel 7% further than today, cars and vans are 80% of 2050 passenger mileage","Individuals travel 7% further than today; cars and vans 74% of 2050 passenger mileage","In 2050, individuals travel the same distance as today. Signficant shift to public transport."],["By 2050, 20% plug in hybrid electric cars; 2.5% zero emission cars.","By 2050, 35% conventional petrol or diesel engine cars; 54% plug-in hybrid vehicles; 11%  zero emission vehicles; all buses hybrids; 73% of passenger railway is electrifi","By 2050, 20% conventional combustion engine cars, with 32% in plug-in hybrid vehicles and 48% in zero emission vehicles: 22% of bus travel fully electric or fuel cell electric ","By 2050 100%  electric motor or hydrogen fuel cell; all passenger trains electrified; 50% bus  electrified "],["By 2050, 100% electric","by 2050, 80% electric,  20% hydrogen fuel cell","By 2050, 20% electric, 80% hydrogen fuel cell","By 2050, 100% hydrogen fuel cells"],["Road haulage makes up 73% of distance, using conventional engines. Rail all diesel","Some shift from road to rail and water, and more efficient engines","Greater modal shift to rail and water; more efficient HGVs; more efficient logistics","Road modal share falls to half; greater hybridisation. Rail freight is all electric "],["By 2050, international aviation has 130% more passengers but uses only 50% more fuel","By 2050, international aviation has 130% more passengers but uses only 45% more fuel","By 2050, international aviation has 130% more passengers but uses only 31% more fuel","By 2050, international aviation has 85% more passengers but uses only 5% more fuel"],["no improvements from energy efficiency; between 2007 and 2050 emissions increase by 139%","1/3 of technical feasible reductions realised; between 2007 and 2050 emissions increase by 78%","2/3 of technical feasible reductions realised; between 2007 and 2050 emissions increase by 16%","maximum technical feasible reductions realised; between 2007 and 2050 emissions decrease by 46%"],[null,null,null,null],["Average room temperature increases to 20°C (a 2.5°C increase on 2007)","Average room temperature increases to 18°C (a 0.5°C increase on 2007)","Average room temperature decreases to 17°C (a 0.5°C decrease on 2007)","Average room temperature decreases to 16°C (a 1.5°C decrease on 2007)"],["Over 7m homes insulated, average thermal leakiness falls by 25%","Over 8m homes insulated, average thermal leakiness falls by 33%","Over 18m homes insulated, average thermal leakiness falls by 42%","Over 24m homes insulated, average thermal leakiness decreases by 50% "],["The proportion of domestic heat supplied using electricity is 0-10%, as today","The proportion of new domestic heating systems using electricity is 20%","The proportion of new domestic heating systems supplied using electricity is 30-60%","The proportion of new domestic heating systems supplied using electricity is 80-100%"],["The dominant non-electric heat source is gas (biogas if available)","The dominant non-electric heat source is coal (biomass if available)","The dominant non-electric heat source is waste heat from power stations","A mixture of gas/biogas; coal/biomass; and heat from power stations"],[null,null,null,null],["Energy demand for domestic lights and appliances increases by 20% (relative to 2007)","Energy demand for domestic lights and appliances is stable","Energy demand for domestic lights and appliances decreases by 40%","Energy demand for domestic lights and appliances decreases by 60%"],["Energy used for domestic cooking remains at 63% electricity and 37% gas","Energy used for domestic cooking is entirely electric","Energy used for domestic cooking is entirely electric","Energy used for domestic cooking is entirely electric"],[null,null,null,null],["UK industry output more than doubles by 2050","UK industry grows in line with current trends","UK industry output falls 30-40% by 2050","UK industry output falls 30-40% by 2050"],["No electrification of industrial processes and little improvement in industrial energy intensity","Some industrial processes electrified and moderate improvements in process emissions and energy demand","Many industrial processes electrified, CCS captures 48% of emissions and  substantial improvements in process emissions and energy demand","Many industrial processes electrified, CCS captures 48% of emissions and  substantial improvements in process emissions and energy demand"],[null,null,null,null],["Commercial space heating demand increases by 50%, hot water demand by 60%, cooling demand by 250%","Commercial space heating demand increases by 30%, hot water demand by 50%, cooling demand by 60%","Commercial space heating demand stable, hot water demand increases by 25%, cooling demand stable","Commercial space heating demand drops by 25%, hot water demand by 10%, cooling demand by 60%"],["The proportion of non-domestic heat supplied using electricity is 0-10%, as today","The proportion of non-domestic heat supplied using electricity is 20%","The proportion of non-domestic heat supplied using electricity is 30-60%","The proportion of non-domestic heat supplied using electricity is 80-100%"],["The dominant non-electric heat source is gas (biogas if available)","The dominant non-electric heating fuel is coal (biomass if available)","The dominant non-electric heat source is heat from power stations","A mixture of gas/biogas, coal/biomass, and heat from power stations"],[null,null,null,null],["Energy demand for commercial lights & appliances increases by 33%. Energy for cooking is stable","Energy demand for commercial lights & appliances increases by 15%; decreases by 5% for cooking","Energy demand for commercial lights & appliances decreases by 5%; decreases by 20% for cooking","Energy demand for commercial lights & appliances decreases by 30%; decreases by 25% for cooking"],["Energy used for commercial cooking is 60% electricity and 40% gas (no change from 2007)","Energy used for commercial cooking is 100% electric","Energy used for commercial cooking is 100% electric","Energy used for commercial cooking is 100% electric"],[null,null,null,null],["No geosequestration","Carbon dioxide sequestred at a rate of 1 million tonnes per annum by 2050","Carbon dioxide  sequestred at a rate of ~30 million tonnes per annum by 2050","Carbon dioxide sequestred at a rate of ~110 million tonnes per annum by 2050"],["Today’s 3.5 GW of pumped storage and 4 GW interconnection with Europe available for balancing electricity supply and demand","4 GW of pumped storage and 10 GW interconnection with Europe available for balancing electricity supply and demand","7 GW of pumped storage (includign 2 more sites), 15 GW of interconnection with Europe and some demand shifting available for balancing electricity supply and demand","20 GW of pumped storage with large lagoons, 30 GW of interconnection with Europe and substantial demand shifting available for balancing electricity supply and demand"],[null,null,null,null]];
-window.twentyfifty.helpPages = {"primary_energy_chart":"83","electricity":"84","energy_security":"85","sankey":"86","map":"87","costs_in_context":"88","costs_compared_overview":"89","costs_sensitivity":"90","story":"91","air_quality":"TBD"};
+window.twentyfifty.longDescriptions = [["No new nuclear power installed. Final nuclear power station estimated to close in 2035","~13 3GW nuclear power stations delivering ~280 TWh/yr","~30 3GW nuclear power stations delivering ~630 TWh/yr","~50 3GW nuclear power stations delivering ~1030 TWh/yr"],[null,null,null,null],["CCS demonstration plants only","~240 TWh/yr from 25-40 CCS power stations - comparable to current gas & coal generation","~340 TWh/yr from 35-60 CCS power stations - comparable to total current demand","~510 TWh/yr  from 50-90 CCS power stations - this requires a similar build rate to that of gas plants in the 1990s"],["After demonstration plants, all CCS electricity is from solid fuel (coal or biomass)","After demonstration plants, two thirds of CCS electricity is from solid fuel (coal or biomass), one third from gas (natural gas or biogas)","After demonstration plants, one third of CCS electricity is from solid fuel (coal or biomass), two thirds from gas (natural gas or biogas)","After demonstration plants, all CCS electricity is from gas (natural gas or biogas)"],["~1,400 offshore wind turbines in 2025, reducing to zero as decommissioned sites are not replanted","~10,000 offshore wind turbines in 2050, delivering ~180 TWh/yr","~17,000 offshore wind turbines in 2050, delivering ~310 TWh/yr","~40,000 offshore wind turbines in 2050, delivering ~430 TWh/yr"],["~4,400 onshore wind turbines in 2025, reducing to zero as decommissioned sites are not replanted","~8,000 onshore wind turbines in 2050, delivering ~50 TWh/yr. ","~13,000 onshore wind turbines in 2050, delivering ~80 TWh/yr","~20,000 onshore wind turbines in 2050, delivering ~130 TWh/yr"],["None in 2050","~300km of wave farms","~600km of wave farms","~900km of wave farms"],["None in 2050","1,000 tidal stream turbines","4,700 tidal stream turbines","10,600 tidal stream turbines"],["None in  2050","3 small tidal range schemes","4 tidal range schemes","8 tidal range schemes"],["Only existing biomass plants and those already under construction (0.6GW)","8GW of biomass power stations by 2050 delivering 62TWh/yr","12GW of biomass power stations by 2050 delivering 100TWh/yr","Over 20GW of biomass power stations by 2050 delivering 180TWh/yr"],["No significant solar PV capacity is installed","4m2 of photovoltaic panels per person in 2050, supplying ~60 TWh/yr of electricity"," 5.4m2 of photovoltaic panels per person in 2050, supplying ~80 TWh/yr","9.5m2 of photovoltaic panels per person – all suitable roof and facade space used"],["As today, a negligible proportion of buildings have solar thermal in 2050","~30% of suitable buildings get ~30% of their hot water from solar thermal","All suitable buildings get ~30% of their hot water from solar thermal","All suitable buildings get ~60% of their hot water from solar thermal"],["No deployment of geothermal electricity generation","Supply of geothermal electricity grows slowly to 7 TWh/yr in 2035 and is sustained","Supply of geothermal electricity grows quickly reaching 21 TWh/yr by 2030 and is sustained","Supply of geothermal electricity grows rapidly reaching 35 TWh/yr by 2030 and is sustained"],["Supply of hydroelectricity is maintained at current levels of 5 TWh/yr","Supply of hydroelectricity grows slowly, reaching 7 TWh/yr by 2050","Supply of hydroelectricity grows more quickly, reaching 8 TWh/yr by 2030 and is sustained","Supply of hydroelectricity grows rapidly reaching 13 TWh/yr by 2035 and is sustained"],["As today, no discernable supply of electricity from micro-wind turbines","Supply of electricity from micro wind turbines increases to 1.3 TWh/yr by 2020 and is sustained","Micro wind turbines installed in all ~450,000 suitable domestic properties, supplying 3.5 TWh/year from 2020","Micro wind turbines installed in all suitable domestic and non-domestic sties, supplying 8.9 TWh/year from 2020"],["No electricity imports, other than for balancing","30 TWh/yr of electricity imported from Southern Europe","70 TWh/yr of electricity imported from a 10% share of an internationally coordinated desert solar project ","140 TWh/yr of electricity imported from a 20% share of an internationally coordinated desert solar project"],[null,null,null,null],["Energy crops and food production similar to today","5% of UK land used for energy crops","10% of UK land used for energy crops","17% of UK land used for energy crops"],["Livestock numbers increase by 10%","Livestock numbers same as today","Livestock numbers decrease by 10%","Livestock numbers decrease by 20%"],["Overall quantity of waste increases 50% to 2050; 21% increase in recycling rate and 44% increase in rate of energy from waste. 24% of waste is sent to landfill","Overall quantity of waste increases almost 20% by 2050; recycling and energy from waste rates increase by 36% and 89% respectively. 11% of waste is sent to landfill.","Overall quantity of waste increases 33%; waste is handled through high-tech and industry-led approaches; by 2050, recycling and energy from waste rates increase by 36% and 89% respectively. Only 2% is sent to landfill.","Quantity of waste decreases 20% by 2050; recycling and energy from waste increase by 70% and 7% respectively; by 2050, 3% of waste sent to landfill."],["No development of macro-algae cultivation","Macro algae covering the same area as half of natural reserve used, delivering ~4 TWh/yr","Macro algae covering the same area as all of natural reserve used, delivering ~9 TWh/yr","Macro algae covering the same area as four times natural reserve used, delivering ~46 TWh/yr"],["Biomass converted to a mixture of solid, liquid and gas biofuels","Biomass mainly converted to solid biofuel","Biomass mainly converted to liquid biofuel","Biomass mainly converted to biogas fuel"],["Imported biofuel declines from ~ 4 TWh/yr currently to zero","Up to 70 TWh/yr of imported bioenergy in 2050","Up to 140 TWh/yr of imported bioenergy in 2050","Up to 280 TWh/yr of imported bioenergy in 2050"],[null,null,null,null],[null,null,null,null],["In 2050, individuals travel 9% further than today. No noticeable modal shift.","Individuals travel 7% further than today, cars and vans are 80% of 2050 passenger mileage","Individuals travel 7% further than today; cars and vans 74% of 2050 passenger mileage","In 2050, individuals travel the same distance as today. Signficant shift to public transport."],["By 2050, 20% plug in hybrid electric cars; 2.5% zero emission cars.","By 2050, 35% conventional petrol or diesel engine cars; 54% plug-in hybrid vehicles; 11%  zero emission vehicles; all buses hybrids; 73% of passenger railway is electrifi","By 2050, 20% conventional combustion engine cars, with 32% in plug-in hybrid vehicles and 48% in zero emission vehicles: 22% of bus travel fully electric or fuel cell electric ","By 2050 100%  electric motor or hydrogen fuel cell; all passenger trains electrified; 50% bus  electrified "],["By 2050, 100% electric","by 2050, 80% electric,  20% hydrogen fuel cell","By 2050, 20% electric, 80% hydrogen fuel cell","By 2050, 100% hydrogen fuel cells"],["Road haulage makes up 73% of distance, using conventional engines. Rail all diesel","Some shift from road to rail and water, and more efficient engines","Greater modal shift to rail and water; more efficient HGVs; more efficient logistics","Road modal share falls to half; greater hybridisation. Rail freight is all electric "],["By 2050, international aviation has 130% more passengers but uses only 50% more fuel","By 2050, international aviation has 130% more passengers but uses only 45% more fuel","By 2050, international aviation has 130% more passengers but uses only 31% more fuel","By 2050, international aviation has 85% more passengers but uses only 5% more fuel"],["no improvements from energy efficiency; between 2007 and 2050 emissions increase by 139%","1/3 of technical feasible reductions realised; between 2007 and 2050 emissions increase by 78%","2/3 of technical feasible reductions realised; between 2007 and 2050 emissions increase by 16%","maximum technical feasible reductions realised; between 2007 and 2050 emissions decrease by 46%"],[null,null,null,null],["Average room temperature increases to 20°C (a 2.5°C increase on 2007)","Average room temperature increases to 18°C (a 0.5°C increase on 2007)","Average room temperature decreases to 17°C (a 0.5°C decrease on 2007)","Average room temperature decreases to 16°C (a 1.5°C decrease on 2007)"],["Over 7M homes insulated, average thermal leakiness falls by 25%","Over 8M homes insulated, average thermal leakiness falls by 33%","Over 18M homes insulated, average thermal leakiness falls by 42%","Over 24M homes insulated, average thermal leakiness decreases by 50% "],["The proportion of domestic heat supplied using electricity is 0-10%, as today","The proportion of new domestic heating systems using electricity is 20%","The proportion of new domestic heating systems supplied using electricity is 30-60%","The proportion of new domestic heating systems supplied using electricity is 80-100%"],["The dominant non-electric heat source is gas (biogas if available)","The dominant non-electric heat source is coal (biomass if available)","The dominant non-electric heat source is waste heat from power stations","A mixture of gas/biogas; coal/biomass; and heat from power stations"],[null,null,null,null],["Energy demand for domestic lights and appliances increases by 20% (relative to 2007)","Energy demand for domestic lights and appliances is stable","Energy demand for domestic lights and appliances decreases by 40%","Energy demand for domestic lights and appliances decreases by 60%"],["Energy used for domestic cooking remains at 63% electricity and 37% gas","Energy used for domestic cooking is entirely electric","Energy used for domestic cooking is entirely electric","Energy used for domestic cooking is entirely electric"],[null,null,null,null],["UK industry output more than doubles by 2050","UK industry grows in line with current trends","UK industry output falls 30-40% by 2050","UK industry output falls 30-40% by 2050"],["No electrification of industrial processes and little improvement in industrial energy intensity","Some industrial processes electrified and moderate improvements in process emissions and energy demand","Many industrial processes electrified, CCS captures 48% of emissions and  substantial improvements in process emissions and energy demand","Many industrial processes electrified, CCS captures 48% of emissions and  substantial improvements in process emissions and energy demand"],[null,null,null,null],["Commercial space heating demand increases by 50%, hot water demand by 60%, cooling demand by 250%","Commercial space heating demand increases by 30%, hot water demand by 50%, cooling demand by 60%","Commercial space heating demand stable, hot water demand increases by 25%, cooling demand stable","Commercial space heating demand drops by 25%, hot water demand by 10%, cooling demand by 60%"],["The proportion of non-domestic heat supplied using electricity is 0-10%, as today","The proportion of non-domestic heat supplied using electricity is 20%","The proportion of non-domestic heat supplied using electricity is 30-60%","The proportion of non-domestic heat supplied using electricity is 80-100%"],["The dominant non-electric heat source is gas (biogas if available)","The dominant non-electric heating fuel is coal (biomass if available)","The dominant non-electric heat source is heat from power stations","A mixture of gas/biogas, coal/biomass, and heat from power stations"],[null,null,null,null],["Energy demand for commercial lights & appliances increases by 33%. Energy for cooking is stable","Energy demand for commercial lights & appliances increases by 15%; decreases by 5% for cooking","Energy demand for commercial lights & appliances decreases by 5%; decreases by 20% for cooking","Energy demand for commercial lights & appliances decreases by 30%; decreases by 25% for cooking"],["Energy used for commercial cooking is 60% electricity and 40% gas (no change from 2007)","Energy used for commercial cooking is 100% electric","Energy used for commercial cooking is 100% electric","Energy used for commercial cooking is 100% electric"],[null,null,null,null],["No geosequestration","Carbon dioxide sequestred at a rate of 1 million tonnes per annum by 2050","Carbon dioxide  sequestred at a rate of ~30 million tonnes per annum by 2050","Carbon dioxide sequestred at a rate of ~110 million tonnes per annum by 2050"],["Today’s 3.5 GW of pumped storage and 4 GW interconnection with Europe available for balancing electricity supply and demand","4 GW of pumped storage and 10 GW interconnection with Europe available for balancing electricity supply and demand","7 GW of pumped storage (includign 2 more sites), 15 GW of interconnection with Europe and some demand shifting available for balancing electricity supply and demand","20 GW of pumped storage with large lagoons, 30 GW of interconnection with Europe and substantial demand shifting available for balancing electricity supply and demand"],[null,null,null,null]];
 window.twentyfifty.choice_sizes = {"0":4,"2":4,"3":4,"4":4,"5":4,"6":4,"7":4,"8":4,"9":4,"10":4,"11":4,"12":4,"13":4,"14":4,"15":4,"17":4,"18":4,"19":4,"20":4,"21":4,"22":4,"25":4,"26":4,"27":4,"28":4,"29":4,"30":4,"32":4,"33":4,"34":4,"35":4,"37":4,"38":2,"40":3,"41":3,"43":4,"44":4,"45":4,"47":4,"48":2,"50":4,"51":4,"52":3};
 (function() {
-  var action, cache, callbacks, choices, choicesForCode, codeForChoices, comparator, controller, current_view, demoOriginalLevel, demoTimer, documentReady, float_to_letter_map, getChoices, getComparator, getSector, go, letter_to_float_map, loadMainPathway, loadSecondaryPathway, old_choices, pathwayDescriptions, pathwayName, pathwayWikiPages, sector, setChoices, setHelpUrl, setUpControls, setVariablesFromURL, startDemo, stopDemo, switchComparator, switchPathway, switchSector, switchView, updateControls, url, views;
+  var cache, checkSVGWorks, choices, choicesForCode, codeForChoices, comparator, controller, demoOriginalLevel, demoTimer, documentReady, float_to_letter_map, getChoices, getComparator, getSector, go, letter_to_float_map, loadMainPathway, loadSecondaryPathway, old_choices, pathwayDescriptions, pathwayName, pathwayWikiPages, sector, setChoices, setUpControls, setVariablesFromURL, startDemo, stopDemo, switchComparator, switchPathway, switchSector, switchView, updateControls, url, view, view_manager, views, windowResizeDebounceTimer;
 
   views = {};
 
@@ -1395,32 +1394,39 @@ window.twentyfifty.choice_sizes = {"0":4,"2":4,"3":4,"4":4,"5":4,"6":4,"7":4,"8"
 
   choices = null;
 
-  action = null;
+  view = null;
 
   sector = null;
 
   comparator = null;
 
-  current_view = null;
+  view_manager = null;
 
   old_choices = [];
 
   cache = {};
 
-  callbacks = {};
+  windowResizeDebounceTimer = null;
 
   documentReady = function() {
-    setVariablesFromURL();
-    current_view = views[action];
-    setHelpUrl();
+    checkSVGWorks();
     if ($.jStorage.get('CostCaveatShown') !== true) {
       $('#cost_caveats').show();
     }
-    loadMainPathway();
-    return setUpControls();
+    setUpControls();
+    setVariablesFromURL();
+    switchView(view);
+    return loadMainPathway();
   };
 
   $(document).ready(documentReady);
+
+  checkSVGWorks = function() {
+    if (!!document.createElementNS && !!document.createElementNS('http://www.w3.org/2000/svg', "svg").createSVGRect) {
+      return true;
+    }
+    return $("#svgWarn").show();
+  };
 
   setUpControls = function() {
     $("a[title]").tooltip({
@@ -1429,13 +1435,44 @@ window.twentyfifty.choice_sizes = {"0":4,"2":4,"3":4,"4":4,"5":4,"6":4,"7":4,"8"
       offset: [3, 3],
       tip: '#tooltip'
     });
-    return $("a.choiceLink").click(function(event) {
+    $("a.choiceLink").click(function(event) {
       var c, l, t;
       event.preventDefault();
       t = $(event.target);
       c = t.data().choicenumber;
       l = t.data().choicelevel;
       return go(c, l);
+    });
+    $("a.view").click(function(event) {
+      var t, v;
+      event.preventDefault();
+      t = $(event.target);
+      v = t.data().view;
+      return switchView(v);
+    });
+    $(".newdropdown").click(function(event) {
+      var d, o, space, t;
+      event.preventDefault();
+      t = $(event.target);
+      d = $(t.data().dropdown);
+      if (d.hasClass("showdropdown")) {
+        return d.removeClass("showdropdown");
+      } else {
+        d.addClass("showdropdown");
+        o = t.offset();
+        o.top = o.top + t.height();
+        space = $(document).width() - o.left - d.width();
+        if (space < 0) {
+          o.left = o.left + space;
+        }
+        return d.offset(o);
+      }
+    });
+    return $(window).resize(function(event) {
+      clearTimeout(windowResizeDebounceTimer);
+      return windowResizeDebounceTimer = setTimeout(function() {
+        return view_manager.updateResults(cache[codeForChoices()]);
+      }, 500);
     });
   };
 
@@ -1444,8 +1481,8 @@ window.twentyfifty.choice_sizes = {"0":4,"2":4,"3":4,"4":4,"5":4,"6":4,"7":4,"8"
     url_elements = window.location.pathname.split('/');
     controller = url_elements[1] || "pathways";
     choices = choicesForCode(url_elements[2] || twentyfifty.default_pathway);
-    action = url_elements[3] || "primary_energy_chart";
-    if (action === 'costs_compared_within_sector') {
+    view = url_elements[3] || "primary_energy_chart";
+    if (view === 'costs_compared_within_sector') {
       sector = url_elements[4];
     }
     if (url_elements[4] === 'comparator') {
@@ -1552,38 +1589,6 @@ window.twentyfifty.choice_sizes = {"0":4,"2":4,"3":4,"4":4,"5":4,"6":4,"7":4,"8"
     return _results;
   };
 
-  getChoices = function() {
-    return choices;
-  };
-
-  getSector = function() {
-    return parseInt(sector);
-  };
-
-  switchSector = function(new_sector) {
-    sector = new_sector;
-    if (history['pushState'] != null) {
-      history.pushState(choices, codeForChoices(), url());
-    }
-    switchView('costs_compared_within_sector');
-    current_view.teardown();
-    return current_view.updateResults(cache[codeForChoices()]);
-  };
-
-  getComparator = function() {
-    return comparator;
-  };
-
-  switchComparator = function(new_comparator) {
-    comparator = new_comparator;
-    if (history['pushState'] != null) {
-      history.pushState(choices, codeForChoices(), url());
-    }
-    if (current_view.switchComparator != null) {
-      return current_view.switchComparator(comparator);
-    }
-  };
-
   url = function(options) {
     var s;
     if (options == null) {
@@ -1592,16 +1597,16 @@ window.twentyfifty.choice_sizes = {"0":4,"2":4,"3":4,"4":4,"5":4,"6":4,"7":4,"8"
     s = jQuery.extend({
       controller: controller,
       code: codeForChoices(),
-      action: action,
+      view: view,
       sector: sector,
       comparator: getComparator()
     }, options);
-    if (s.action === 'costs_compared_within_sector' && (s.sector != null)) {
-      return "/" + s.controller + "/" + s.code + "/" + s.action + "/" + s.sector;
+    if (s.view === 'costs_compared_within_sector' && (s.sector != null)) {
+      return "/" + s.controller + "/" + s.code + "/" + s.view + "/" + s.sector;
     } else if (s.comparator != null) {
-      return "/" + s.controller + "/" + s.code + "/" + s.action + "/comparator/" + s.comparator;
+      return "/" + s.controller + "/" + s.code + "/" + s.view + "/comparator/" + s.comparator;
     } else {
-      return "/" + s.controller + "/" + s.code + "/" + s.action;
+      return "/" + s.controller + "/" + s.code + "/" + s.view;
     }
   };
 
@@ -1643,32 +1648,44 @@ window.twentyfifty.choice_sizes = {"0":4,"2":4,"3":4,"4":4,"5":4,"6":4,"7":4,"8"
     }
   };
 
-  switchView = function(new_action) {
-    $('ul#view_choices').hide();
-    if (action === new_action) {
+  switchView = function(new_view) {
+    var c, data;
+    $('.showdropdown').removeClass("showdropdown");
+    if (view === new_view && (view_manager != null)) {
       return false;
     }
-    current_view.teardown();
-    action = new_action;
-    if (history['pushState'] != null) {
-      history.pushState(choices, codeForChoices(), url());
+    if (view_manager != null) {
+      view_manager.teardown();
     }
-    current_view = views[action];
-    setHelpUrl();
-    return current_view.updateResults(cache[codeForChoices()]);
-  };
-
-  setHelpUrl = function() {
-    return $('#help a').attr('href', "http://2050-calculator-tool-wiki.decc.gov.uk/pages/" + twentyfifty.helpPages[action]);
+    view = new_view;
+    view_manager = views[view];
+    $("a.selectedView").removeClass("selectedView");
+    $("a.view[data-view='" + view + "']").addClass("selectedView");
+    if (view === "costs_in_context") {
+      $("#cost_choice").addClass("selectedView").text("Costs: context");
+    } else if (view === "costs_compared_overview") {
+      $("#cost_choice").addClass("selectedView").text("Costs: compared");
+    } else if (view === "costs_sensitivity") {
+      $("#cost_choice").addClass("selectedView").text("Costs: sensitivity");
+    } else {
+      $("#cost_choice").text("Costs");
+    }
+    c = codeForChoices();
+    data = cache[c];
+    if (data != null) {
+      view_manager.updateResults(data);
+    }
+    if (history['pushState'] != null) {
+      return history.pushState(choices, c, url());
+    }
   };
 
   switchPathway = function(new_code) {
-    old_choices = choices.slice(0);
-    choices = choicesForCode(new_code);
-    return loadMainPathway();
+    return setChoices(choicesForCode(new_code));
   };
 
   setChoices = function(new_choices) {
+    $('.showdropdown').removeClass("showdropdown");
     old_choices = choices.slice(0);
     choices = new_choices;
     return loadMainPathway();
@@ -1688,25 +1705,22 @@ window.twentyfifty.choice_sizes = {"0":4,"2":4,"3":4,"4":4,"5":4,"6":4,"7":4,"8"
       history.pushState(choices, main_code, url());
     }
     if (cache[main_code] != null) {
-      current_view.updateResults(cache[main_code]);
-      $('#calculating').hide();
-      return $('#message').show();
+      view_manager.updateResults(cache[main_code]);
+      return $('#calculating').hide();
     } else {
       $('#calculating').show();
-      $('#message').hide();
       fetch = function() {
         return $.getJSON(url({
           code: main_code,
-          action: 'data',
+          view: 'data',
           sector: null,
           comparator: null
         }), function(data) {
           if (data != null) {
             cache[data._id] = data;
             if (data._id === codeForChoices()) {
-              current_view.updateResults(data);
-              $('#calculating').hide();
-              return $('#message').show();
+              view_manager.updateResults(data);
+              return $('#calculating').hide();
             }
           }
         });
@@ -1724,7 +1738,7 @@ window.twentyfifty.choice_sizes = {"0":4,"2":4,"3":4,"4":4,"5":4,"6":4,"7":4,"8"
       fetch = function() {
         return $.getJSON(url({
           code: secondary_code,
-          action: 'data',
+          view: 'data',
           sector: null,
           comparator: null
         }), function(data) {
@@ -1746,7 +1760,7 @@ window.twentyfifty.choice_sizes = {"0":4,"2":4,"3":4,"4":4,"5":4,"6":4,"7":4,"8"
     url_elements = window.location.pathname.split('/');
     setChoices(choicesForCode(url_elements[2]));
     switchView(url_elements[3]);
-    if (action === 'costs_compared_within_sector') {
+    if (view === 'costs_compared_within_sector') {
       switchSector(url_elements[4]);
     }
     if (url_elements[4] === 'comparator') {
@@ -1755,7 +1769,7 @@ window.twentyfifty.choice_sizes = {"0":4,"2":4,"3":4,"4":4,"5":4,"6":4,"7":4,"8"
   };
 
   updateControls = function(old_choices, choices) {
-    var c, choice, choice_fraction, choice_whole, controls, i, old_choice, old_choice_fraction, old_choice_whole, row, _i, _j, _len, _ref, _ref1, _results;
+    var c, choice, choice_frview, choice_whole, controls, i, old_choice, old_choice_frview, old_choice_whole, row, _i, _j, _len, _ref, _ref1, _results;
     this.choices = choices;
     controls = $('#classic_controls');
     _ref = this.choices;
@@ -1765,21 +1779,21 @@ window.twentyfifty.choice_sizes = {"0":4,"2":4,"3":4,"4":4,"5":4,"6":4,"7":4,"8"
       old_choice = old_choices[i];
       if (choice !== old_choices[i]) {
         old_choice_whole = Math.ceil(old_choice);
-        old_choice_fraction = parseInt((old_choice % 1) * 10);
+        old_choice_frview = parseInt((old_choice % 1) * 10);
         choice_whole = Math.ceil(choice);
-        choice_fraction = parseInt((choice % 1) * 10);
+        choice_frview = parseInt((choice % 1) * 10);
         row = controls.find("tr#r" + i);
-        row.find(".selected, .level" + old_choice_whole + ", .level" + old_choice_whole + "_" + old_choice_fraction).removeClass("selected level" + old_choice_whole + " level" + old_choice_whole + "_" + old_choice_fraction);
-        if (old_choice_fraction !== 0) {
+        row.find(".selected, .level" + old_choice_whole + ", .level" + old_choice_whole + "_" + old_choice_frview).removeClass("selected level" + old_choice_whole + " level" + old_choice_whole + "_" + old_choice_frview);
+        if (old_choice_frview !== 0) {
           controls.find("#c" + i + "l" + old_choice_whole).text(old_choice_whole);
         }
         row.find("#c" + i + "l" + choice_whole).addClass('selected');
         for (c = _j = 1, _ref1 = choice_whole - 1; 1 <= _ref1 ? _j <= _ref1 : _j >= _ref1; c = 1 <= _ref1 ? ++_j : --_j) {
           controls.find("#c" + i + "l" + c).addClass("level" + choice_whole);
         }
-        if (choice_fraction !== 0) {
+        if (choice_frview !== 0) {
           controls.find("#c" + i + "l" + choice_whole).text(choice);
-          _results.push(controls.find("#c" + i + "l" + choice_whole).addClass("level" + choice_whole + "_" + choice_fraction));
+          _results.push(controls.find("#c" + i + "l" + choice_whole).addClass("level" + choice_whole + "_" + choice_frview));
         } else {
           _results.push(controls.find("#c" + i + "l" + choice_whole).addClass("level" + choice_whole));
         }
@@ -1788,6 +1802,34 @@ window.twentyfifty.choice_sizes = {"0":4,"2":4,"3":4,"4":4,"5":4,"6":4,"7":4,"8"
       }
     }
     return _results;
+  };
+
+  getSector = function() {
+    return parseInt(sector);
+  };
+
+  switchSector = function(new_sector) {
+    sector = new_sector;
+    if (history['pushState'] != null) {
+      history.pushState(choices, codeForChoices(), url());
+    }
+    switchView('costs_compared_within_sector');
+    view_manager.teardown();
+    return view_manager.updateResults(cache[codeForChoices()]);
+  };
+
+  getComparator = function() {
+    return comparator;
+  };
+
+  switchComparator = function(new_comparator) {
+    comparator = new_comparator;
+    if (history['pushState'] != null) {
+      history.pushState(choices, codeForChoices(), url());
+    }
+    if (view_manager.switchComparator != null) {
+      return view_manager.switchComparator(comparator);
+    }
   };
 
   pathwayName = function(pathway_code, default_name) {
@@ -1809,6 +1851,10 @@ window.twentyfifty.choice_sizes = {"0":4,"2":4,"3":4,"4":4,"5":4,"6":4,"7":4,"8"
       default_page = null;
     }
     return "http://2050-calculator-tool-wiki.decc.gov.uk/pages/" + (window.twentyfifty.pathway_wiki_pages_hash[pathway_code] || default_page);
+  };
+
+  getChoices = function() {
+    return choices;
   };
 
   window.twentyfifty.code = codeForChoices;
@@ -2100,9 +2146,9 @@ window.twentyfifty.choice_sizes = {"0":4,"2":4,"3":4,"4":4,"5":4,"6":4,"7":4,"8"
     var area, chart, color_class_index, color_classes, dataTableFormat, first_scale_year, height, label_threshold, last_scale_year, line, margin, max_value, min_value, seriesClass, showLabelFilter, stack, title, total_label, unit, width, xAxis, xScale, x_center, yAxis, yScale;
     margin = {
       top: 41,
-      right: 115,
+      right: 108,
       bottom: 40,
-      left: 40
+      left: 33
     };
     width = 375;
     height = 125;
@@ -2117,7 +2163,7 @@ window.twentyfifty.choice_sizes = {"0":4,"2":4,"3":4,"4":4,"5":4,"6":4,"7":4,"8"
     xScale = d3.scale.linear();
     yScale = d3.scale.linear();
     xAxis = d3.svg.axis().scale(xScale).orient("bottom").ticks(5).tickFormat(d3.format(".0f"));
-    yAxis = d3.svg.axis().scale(yScale).orient("left").ticks(5);
+    yAxis = d3.svg.axis().scale(yScale).orient("left").ticks(5).tickFormat(d3.format(".0f"));
     stack = d3.layout.stack().values(function(d) {
       return d.value;
     });
@@ -2136,8 +2182,7 @@ window.twentyfifty.choice_sizes = {"0":4,"2":4,"3":4,"4":4,"5":4,"6":4,"7":4,"8"
     color_classes = {
       'Total': 'total',
       'Total Use': 'total',
-      'Total Primary Supply': 'total',
-      'Total generation supplied to grid': 'total',
+      'Total used in UK': 'total',
       'Environmental heat': 'environmentalheat'
     };
     color_class_index = 0;
@@ -2160,7 +2205,7 @@ window.twentyfifty.choice_sizes = {"0":4,"2":4,"3":4,"4":4,"5":4,"6":4,"7":4,"8"
       return selection.each(function(data) {
         var areas, d, dataTable, g, gEnter, label, label_width, label_x, labels, minimum_y_space, negative_series, p, positive_series, previous_y, removeDataTable, series, stacked_data, svg, total, total_series, y, _i, _j, _k, _l, _len, _len1, _len2, _len3, _ref, _ref1;
         width = $(this).width();
-        height = width / 1.4;
+        height = width / 1.2;
         x_center = (width - (margin.left * 2)) / 2;
         positive_series = [];
         negative_series = [];
@@ -2396,15 +2441,29 @@ window.twentyfifty.choice_sizes = {"0":4,"2":4,"3":4,"4":4,"5":4,"6":4,"7":4,"8"
   var PrimaryEnergy;
 
   PrimaryEnergy = (function() {
+    var accumulation;
+
     function PrimaryEnergy() {}
 
     PrimaryEnergy.prototype.setup = function() {
-      var charts;
+      var charts, controller;
       charts = d3.select("#results").selectAll(".chart").data(['demand_chart', 'supply_chart', 'emissions_chart']);
       charts.enter().append('div').attr('id', Object).attr('class', 'chart');
-      this.final_energy_chart = timeSeriesStackedAreaChart().title("Final Energy Demand").unit('TWh/yr').total_label('Total Use').max_value(4000);
-      this.primary_energy_chart = timeSeriesStackedAreaChart().title("Primary Energy Supply").unit('TWh/yr').total_label('Total Primary Supply').max_value(4000);
-      return this.emissions_chart = timeSeriesStackedAreaChart().title("Greenhouse Gas Emissions").unit('MtCO2e/yr').total_label('Total').min_value(-500).max_value(1000);
+      this.final_energy_chart = timeSeriesStackedAreaChart().title("Final Energy Demand").unit('TWh/yr').total_label('Total').max_value(4000);
+      this.primary_energy_chart = timeSeriesStackedAreaChart().title("Primary Energy Supply").unit('TWh/yr').total_label('Total used in UK').max_value(4000);
+      this.emissions_chart = timeSeriesStackedAreaChart().title("Greenhouse Gas Emissions").unit('MtCO2e/yr').total_label('Total').min_value(-500).max_value(1000);
+      controller = this;
+      return d3.selectAll(".chart").on("click", function(event) {
+        var chart;
+        chart = d3.select(this);
+        if (chart.attr("style") === "width:60%; float: left;") {
+          d3.selectAll(".chart").attr("style", null);
+        } else {
+          d3.selectAll(".chart").attr("style", "float: right");
+          chart.attr("style", "width:60%; float: left;");
+        }
+        return controller.updateResults(controller.pathway);
+      });
     };
 
     PrimaryEnergy.prototype.teardown = function() {
@@ -2415,7 +2474,7 @@ window.twentyfifty.choice_sizes = {"0":4,"2":4,"3":4,"4":4,"5":4,"6":4,"7":4,"8"
     };
 
     PrimaryEnergy.prototype.updateResults = function(pathway) {
-      var percent, series, t;
+      var acc, acc_percent, acc_success, ghg_result_text_height, ghg_result_text_top, ghg_result_text_x, percent, series, t, t2, target_acc, texts;
       this.pathway = pathway;
       if (!((this.emissions_chart != null) && (this.final_energy_chart != null) && (this.primary_energy_chart != null))) {
         this.setup();
@@ -2427,9 +2486,11 @@ window.twentyfifty.choice_sizes = {"0":4,"2":4,"3":4,"4":4,"5":4,"6":4,"7":4,"8"
       percent = this.pathway.ghg.percent_reduction_from_1990;
       d3.select('#emissions_chart').datum(series).call(this.emissions_chart);
       t = d3.select('#emissions_chart g.drawing').selectAll('text.target').data([percent]);
-      t.enter().append('text').attr('class', 'target');
-      t.attr('transform', 'translate(' + this.emissions_chart.x_center() + ',-18)');
-      return t.transition().tween('text', function(d) {
+      t.enter().append('text').attr('class', 'target result');
+      ghg_result_text_top = -18;
+      ghg_result_text_x = this.emissions_chart.x_center();
+      t.attr('transform', 'translate(' + ghg_result_text_x + ',' + ghg_result_text_top + ')');
+      t.transition().tween('text', function(d) {
         var current, i;
         current = parseInt(this.textContent) || +d;
         i = d3.interpolateRound(current, +d);
@@ -2437,6 +2498,59 @@ window.twentyfifty.choice_sizes = {"0":4,"2":4,"3":4,"4":4,"5":4,"6":4,"7":4,"8"
           return this.textContent = "" + (i(t)) + "% reduction 1990-2050; Target is 80%";
         };
       });
+      acc = accumulation(this.pathway.ghg['Total'], 5);
+      target_acc = 9486;
+      acc_percent = (acc / target_acc) * 100;
+      acc_success = acc_percent <= 100;
+      texts = [
+        {
+          "class": 'cumulative-emissions',
+          text: 'Cumulative emissions: ' + acc.toString() + ' MtCO2e'
+        }, {
+          "class": 'percent-cumulative-emissions-target',
+          text: 'Percentage of CCC pathway\'s cumulative emissions: ' + acc_percent.toFixed().toString() + '%'
+        }, {
+          "class": 'cumulative-emissions-result-message',
+          text: acc_success ? 'Meets CCC intended carbon budget' : 'Exceeds CCC intended carbon budget!'
+        }
+      ];
+      t2 = d3.select('#emissions_chart g.drawing').selectAll('text.target_acc').data(texts);
+      t2.enter().append('text').attr('class', function(d) {
+        return d["class"] + ' result';
+      }).text(function(d) {
+        return d.text;
+      });
+      ghg_result_text_height = 12;
+      t2.attr('transform', function(d, i) {
+        return 'translate(' + ghg_result_text_x + ',' + (ghg_reslut_text_top + (i + 1) * ghg_result_text_height) + ')';
+      });
+      return jQuery('#cumulative_emissions').html(acc_text);
+    };
+
+    PrimaryEnergy.prototype.zoom = function() {
+      d3.select("#demand_chart").attr("style", "width: 60%");
+      return this.updateResults(this.pathway);
+    };
+
+    PrimaryEnergy.prototype.unzoom = function() {
+      d3.select("#demand_chart").attr("style", null);
+      return this.updateResults(this.pathway);
+    };
+
+    accumulation = function(series, step_period) {
+      var avg, end, i, num_steps, start, step_total, sum;
+      num_steps = series.length - 1;
+      sum = 0;
+      i = 0;
+      while (i < num_steps) {
+        start = series[i];
+        end = series[i + 1];
+        avg = (start + end) / 2;
+        step_total = avg * step_period;
+        sum += step_total;
+        i++;
+      }
+      return sum.toFixed();
     };
 
     return PrimaryEnergy;
@@ -2455,12 +2569,24 @@ window.twentyfifty.choice_sizes = {"0":4,"2":4,"3":4,"4":4,"5":4,"6":4,"7":4,"8"
     function Electricity() {}
 
     Electricity.prototype.setup = function() {
-      var charts;
+      var charts, controller;
       charts = d3.select("#results").selectAll(".chart").data(['demand_chart', 'supply_chart', 'emissions_chart']);
       charts.enter().append('div').attr('id', Object).attr('class', 'chart');
       this.demand_chart = timeSeriesStackedAreaChart().title("Electricity Demand").unit('TWh/yr').max_value(4000);
-      this.supply_chart = timeSeriesStackedAreaChart().title("Electricity Supply").unit('TWh/yr').total_label('Total generation supplied to grid').max_value(4000);
-      return this.emissions_chart = timeSeriesStackedAreaChart().title("Emissions from Electricity").unit('MtCO2e/yr').total_label('Total').min_value(-500).max_value(1000);
+      this.supply_chart = timeSeriesStackedAreaChart().title("Electricity Supply").unit('TWh/yr').total_label('Total').max_value(4000);
+      this.emissions_chart = timeSeriesStackedAreaChart().title("Emissions from Electricity").unit('MtCO2e/yr').total_label('Total').min_value(-500).max_value(1000);
+      controller = this;
+      return d3.selectAll(".chart").on("click", function(event) {
+        var chart;
+        chart = d3.select(this);
+        if (chart.attr("style") === "width:60%; float: left;") {
+          d3.selectAll(".chart").attr("style", null);
+        } else {
+          d3.selectAll(".chart").attr("style", "float: right");
+          chart.attr("style", "width:60%; float: left;");
+        }
+        return controller.updateResults(controller.pathway);
+      });
     };
 
     Electricity.prototype.teardown = function() {
@@ -2504,8 +2630,8 @@ window.twentyfifty.choice_sizes = {"0":4,"2":4,"3":4,"4":4,"5":4,"6":4,"7":4,"8"
       series.remove('Non-thermal renewable generation');
       d3.select('#supply_chart').datum(series).call(this.supply_chart);
       d3.select('#emissions_chart').datum(d3.map(this.pathway.electricity.emissions)).call(this.emissions_chart);
-      showContext(this.pathway['final_energy_demand']['Total Use'], '#demand_chart', this.demand_chart);
-      showContext(this.pathway['final_energy_demand']['Total Use'], '#supply_chart', this.supply_chart);
+      showContext(this.pathway.final_energy_demand.Total, '#demand_chart', this.demand_chart);
+      showContext(this.pathway.final_energy_demand.Total, '#supply_chart', this.supply_chart);
       return showContext(this.pathway.ghg.Total, '#emissions_chart', this.emissions_chart);
     };
 
@@ -4528,7 +4654,7 @@ window.twentyfifty.choice_sizes = {"0":4,"2":4,"3":4,"4":4,"5":4,"6":4,"7":4,"8"
   CostsSensitivity = (function() {
     var bottom_area_start, c_low_fill_color, c_range_fill_color, color, cost_component_names, cost_component_value, cost_component_values, cost_wiki_links, costsSensitivityHTML, direction, label_components, optional_arrow, p_low_fill_color, p_range_fill_color;
 
-    costsSensitivityHTML = "<div class='costssensitivity'>\n  <ul class='dropdown' id='comparatorchoice'>\n    <li>\n      <a href=\"#\" onclick=\"$('ul#view_comparatorchoice').toggle(); return false;\">Choose comparison<img alt=\"Dropdown-arrow\" src=\"/assets/images/dropdown-arrow.png\" /></a>\n      <ul class='choices' id='view_comparatorchoice'>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('10111111111111110111111001111110111101101101110110111');$('ul#view_comparatorchoice').toggle(); return false;\">Doesn't tackle climate change (All level 1)</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('10111111111111110111111004444440444404203304440420111');$('ul#view_comparatorchoice').toggle(); return false;\">Maximum demand</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('40444444444444440443444001111110111101101101110110111');$('ul#view_comparatorchoice').toggle(); return false;\">Maximum supply</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('i0g2dd2pp1121f1i032211p004314110433304202304320420121');$('ul#view_comparatorchoice').toggle(); return false;\">Analogous to Markal 3.26</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('e0d3jrg221ci12110222112004423220444404202304440420141');$('ul#view_comparatorchoice').toggle(); return false;\">Higher renewables, more energy efficiency</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('r013ce1111111111042233B002322220233302202102330220121');$('ul#view_comparatorchoice').toggle(); return false;\">Higher nuclear, less energy efficiency</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('f023df111111111f0322123003223220333203102303430310221');$('ul#view_comparatorchoice').toggle(); return false;\">Higher CCS, more bioenergy</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('10h4nn4431w23y110243111004424440343304202304430420441');$('ul#view_comparatorchoice').toggle(); return false;\">Friends of the Earth</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('10h2pdppp12332130233122004414430343304102304430410231');$('ul#view_comparatorchoice').toggle(); return false;\">Campaign to Protect Rural England</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('20222144411341110343321003422440423404203203340420141');$('ul#view_comparatorchoice').toggle(); return false;\">Mark Brinkley</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('h0h2gg1211cj1j110322222003313230234102102203440320121');$('ul#view_comparatorchoice').toggle(); return false;\">National Grid</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('g0f2oj11t1rgqj1j0343111003324240244104201304430420231');$('ul#view_comparatorchoice').toggle(); return false;\">Atkins</a></li>\n      </ul>\n    </li>\n  </ul>\n  <h1>The cost of your pathway compared with another, allowing simple variation in cost estimates.</h1>\n  " + window.costCaveatHTML + "\n  <div id='costssensitivity'></div>\n  " + window.costEssentialNotesHTML + "\n</div>";
+    costsSensitivityHTML = "<div class='costssensitivity'>\n  <ul id='comparatorchoice'>\n    <li>\n      <a href=\"#\" onclick=\"$('ul#view_comparatorchoice').toggle(); return false;\">Choose comparison<img alt=\"Dropdown-arrow\" src=\"/assets/images/dropdown-arrow.png\" /></a>\n      <ul class='choices' id='view_comparatorchoice'>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('10111111111111110111111001111110111101101101110110111');$('ul#view_comparatorchoice').toggle(); return false;\">Doesn't tackle climate change (All level 1)</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('10111111111111110111111004444440444404203304440420111');$('ul#view_comparatorchoice').toggle(); return false;\">Maximum demand</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('40444444444444440443444001111110111101101101110110111');$('ul#view_comparatorchoice').toggle(); return false;\">Maximum supply</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('i0g2dd2pp1121f1i032211p004314110433304202304320420121');$('ul#view_comparatorchoice').toggle(); return false;\">Analogous to Markal 3.26</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('e0d3jrg221ci12110222112004423220444404202304440420141');$('ul#view_comparatorchoice').toggle(); return false;\">Higher renewables, more energy efficiency</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('r013ce1111111111042233B002322220233302202102330220121');$('ul#view_comparatorchoice').toggle(); return false;\">Higher nuclear, less energy efficiency</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('f023df111111111f0322123003223220333203102303430310221');$('ul#view_comparatorchoice').toggle(); return false;\">Higher CCS, more bioenergy</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('10h4nn4431w23y110243111004424440343304202304430420441');$('ul#view_comparatorchoice').toggle(); return false;\">Friends of the Earth</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('10h2pdppp12332130233122004414430343304102304430410231');$('ul#view_comparatorchoice').toggle(); return false;\">Campaign to Protect Rural England</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('20222144411341110343321003422440423404203203340420141');$('ul#view_comparatorchoice').toggle(); return false;\">Mark Brinkley</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('h0h2gg1211cj1j110322222003313230234102102203440320121');$('ul#view_comparatorchoice').toggle(); return false;\">National Grid</a></li>\n        <li><a href=\"#\" onclick=\"twentyfifty.switchComparator('g0f2oj11t1rgqj1j0343111003324240244104201304430420231');$('ul#view_comparatorchoice').toggle(); return false;\">Atkins</a></li>\n      </ul>\n    </li>\n  </ul>\n  <h1>The cost of your pathway compared with another, allowing simple variation in cost estimates.</h1>\n  " + window.costCaveatHTML + "\n  <div id='costssensitivity'></div>\n  " + window.costEssentialNotesHTML + "\n</div>";
 
     bottom_area_start = 219;
 

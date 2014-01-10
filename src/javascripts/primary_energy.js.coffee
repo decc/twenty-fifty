@@ -75,9 +75,11 @@ class PrimaryEnergy
 
     t.enter()
       .append('text')
-        .attr('class','target')
+        .attr('class','target result')
 
-    t.attr('transform', 'translate('+@emissions_chart.x_center()+',-18)')
+    ghg_result_text_top = -18
+    ghg_result_text_x = @emissions_chart.x_center()
+    t.attr('transform', 'translate('+ghg_result_text_x+','+ghg_result_text_top+')')
 
     t.transition()
       .tween('text', (d) ->
@@ -87,16 +89,37 @@ class PrimaryEnergy
           @textContent = "#{i(t)}% reduction 1990-2050; Target is 80%"
       )
 
-    # CCC intended pathway 2011 to 2050 sum
-    target_acc = 9486
-    
-    acc = sum_time_series(@pathway.ghg)
+    ##  Accumulated emissions 
+
+    acc = accumulation( @pathway.ghg['Total'], 5 )
+    target_acc = 9486   # CCC intended pathway 2011 to 2050 sum
     acc_percent = ( acc / target_acc ) * 100
-    acc_success = ( if acc_percent <= 100 then '<p>Meets CCC intended carbon budget</p>' else '<p>Exceeds CCC intended carbon budget!</p>' )
+    acc_success = acc_percent <= 100
+    texts = [ {
+                    class: 'cumulative-emissions'
+                    text:  'Cumulative emissions: ' + acc.toString() + ' MtCO2e'
+            }, {
+                    class: 'percent-cumulative-emissions-target'
+                    text:  'Percentage of CCC pathway\'s cumulative emissions: ' + acc_percent.toFixed().toString() + '%'
+            }, {
+                    class: 'cumulative-emissions-result-message'
+                    text:  if acc_success then 'Meets CCC intended carbon budget' else 'Exceeds CCC intended carbon budget!'
+            } ]
+
+    t2 = d3.select('#emissions_chart g.drawing')
+          .selectAll('text.target_acc')
+            .data(texts)
+
+    t2.enter()
+      .append( 'text' )
+        .attr( 'class', (d) -> d.class + ' result' )
+        .text( (d) -> d.text )
+
+    ghg_result_text_height = 15
+    t2.attr( 'transform', (d,i) -> 'translate(' + ghg_result_text_x + ',' + (ghg_result_text_top + (i+1)*ghg_result_text_height) + ')' )
     
-    acc_text = '<p>Cumulative emissions: ' + acc.toString() + ' MtCO2e</p>' + '<p>Percentage of CCC pathway\'s cumulative emissions: ' + acc_percent.toFixed().toString() + '%</p>' + acc_success
-      
-    jQuery('#cumulative_emissions').html( acc_text );
+    ## /Accumulated emissions
+
 
   zoom: () ->
     d3.select("#demand_chart")
@@ -111,23 +134,18 @@ class PrimaryEnergy
     @updateResults(@pathway)
 
     
-  sum_time_series = (matrix) ->
+  accumulation = (series, step_period) ->
   
-    row = matrix["Total"]
-
-    # The final value does not contribute to accumulation
-    # i.e. it is a snapshot at the upper time limit.
-    num_periods = row.length - 1
-    
+    num_steps = series.length - 1
     sum = 0
     i = 0
   
-    while i < num_periods
-      start = row[i]
-      end = row[i+1]
+    while i < num_steps
+      start = series[i]
+      end = series[i+1]
       avg = (start+end)/2
-      period_total = avg * 5 # Assumption: 5 year periods
-      sum += period_total
+      step_total = avg * step_period
+      sum += step_total
       i++
       
     sum.toFixed()

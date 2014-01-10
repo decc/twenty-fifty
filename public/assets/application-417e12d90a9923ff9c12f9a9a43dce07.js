@@ -2441,7 +2441,7 @@ window.twentyfifty.choice_sizes = {"0":4,"2":4,"3":4,"4":4,"5":4,"6":4,"7":4,"8"
   var PrimaryEnergy;
 
   PrimaryEnergy = (function() {
-    var sum_time_series;
+    var accumulation;
 
     function PrimaryEnergy() {}
 
@@ -2474,7 +2474,7 @@ window.twentyfifty.choice_sizes = {"0":4,"2":4,"3":4,"4":4,"5":4,"6":4,"7":4,"8"
     };
 
     PrimaryEnergy.prototype.updateResults = function(pathway) {
-      var acc, acc_percent, acc_success, acc_text, percent, series, t, target_acc;
+      var acc, acc_percent, acc_success, ghg_result_text_height, ghg_result_text_top, ghg_result_text_x, percent, series, t, t2, target_acc, texts;
       this.pathway = pathway;
       if (!((this.emissions_chart != null) && (this.final_energy_chart != null) && (this.primary_energy_chart != null))) {
         this.setup();
@@ -2486,8 +2486,10 @@ window.twentyfifty.choice_sizes = {"0":4,"2":4,"3":4,"4":4,"5":4,"6":4,"7":4,"8"
       percent = this.pathway.ghg.percent_reduction_from_1990;
       d3.select('#emissions_chart').datum(series).call(this.emissions_chart);
       t = d3.select('#emissions_chart g.drawing').selectAll('text.target').data([percent]);
-      t.enter().append('text').attr('class', 'target');
-      t.attr('transform', 'translate(' + this.emissions_chart.x_center() + ',-18)');
+      t.enter().append('text').attr('class', 'target result');
+      ghg_result_text_top = -18;
+      ghg_result_text_x = this.emissions_chart.x_center();
+      t.attr('transform', 'translate(' + ghg_result_text_x + ',' + ghg_result_text_top + ')');
       t.transition().tween('text', function(d) {
         var current, i;
         current = parseInt(this.textContent) || +d;
@@ -2496,11 +2498,32 @@ window.twentyfifty.choice_sizes = {"0":4,"2":4,"3":4,"4":4,"5":4,"6":4,"7":4,"8"
           return this.textContent = "" + (i(t)) + "% reduction 1990-2050; Target is 80%";
         };
       });
+      acc = accumulation(this.pathway.ghg['Total'], 5);
       target_acc = 9486;
-      acc = sum_time_series(this.pathway.ghg);
       acc_percent = (acc / target_acc) * 100;
-      acc_success = (acc_percent <= 100 ? '<p>Meets CCC intended carbon budget</p>' : '<p>Exceeds CCC intended carbon budget!</p>');
-      acc_text = '<p>Cumulative emissions: ' + acc.toString() + ' MtCO2e</p>' + '<p>Percentage of CCC pathway\'s cumulative emissions: ' + acc_percent.toFixed().toString() + '%</p>' + acc_success;
+      acc_success = acc_percent <= 100;
+      texts = [
+        {
+          "class": 'cumulative-emissions',
+          text: 'Cumulative emissions: ' + acc.toString() + ' MtCO2e'
+        }, {
+          "class": 'percent-cumulative-emissions-target',
+          text: 'Percentage of CCC pathway\'s cumulative emissions: ' + acc_percent.toFixed().toString() + '%'
+        }, {
+          "class": 'cumulative-emissions-result-message',
+          text: acc_success ? 'Meets CCC intended carbon budget' : 'Exceeds CCC intended carbon budget!'
+        }
+      ];
+      t2 = d3.select('#emissions_chart g.drawing').selectAll('text.target_acc').data(texts);
+      t2.enter().append('text').attr('class', function(d) {
+        return d["class"] + ' result';
+      }).text(function(d) {
+        return d.text;
+      });
+      ghg_result_text_height = 12;
+      t2.attr('transform', function(d, i) {
+        return 'translate(' + ghg_result_text_x + ',' + (ghg_result_text_top + (i + 1) * ghg_result_text_height) + ')';
+      });
       return jQuery('#cumulative_emissions').html(acc_text);
     };
 
@@ -2514,18 +2537,17 @@ window.twentyfifty.choice_sizes = {"0":4,"2":4,"3":4,"4":4,"5":4,"6":4,"7":4,"8"
       return this.updateResults(this.pathway);
     };
 
-    sum_time_series = function(matrix) {
-      var avg, end, i, num_periods, period_total, row, start, sum;
-      row = matrix["Total"];
-      num_periods = row.length - 1;
+    accumulation = function(series, step_period) {
+      var avg, end, i, num_steps, start, step_total, sum;
+      num_steps = series.length - 1;
       sum = 0;
       i = 0;
-      while (i < num_periods) {
-        start = row[i];
-        end = row[i + 1];
+      while (i < num_steps) {
+        start = series[i];
+        end = series[i + 1];
         avg = (start + end) / 2;
-        period_total = avg * 5;
-        sum += period_total;
+        step_total = avg * step_period;
+        sum += step_total;
         i++;
       }
       return sum.toFixed();
