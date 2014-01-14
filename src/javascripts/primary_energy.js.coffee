@@ -75,7 +75,7 @@ class PrimaryEnergy
 
     t.enter()
       .append('text')
-        .attr('class','target result')
+        .attr('class','target')
 
     ghg_result_text_top = -18
     ghg_result_text_x = @emissions_chart.x_center()
@@ -112,8 +112,10 @@ class PrimaryEnergy
 
     t2.enter()
       .append( 'text' )
-        .attr( 'class', (d) -> d.class + ' result' )
-        .text( (d) -> d.text )
+        .attr( 'class', (d) -> d.class + ' target_acc' )
+
+    t2.transition()
+       .text( (d) -> d.text )
 
     ghg_result_text_height = 15
     t2.attr( 'transform', (d,i) -> 'translate(' + ghg_result_text_x + ',' + (ghg_result_text_top + (i+1)*ghg_result_text_height) + ')' )
