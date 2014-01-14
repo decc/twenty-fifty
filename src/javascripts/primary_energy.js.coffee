@@ -77,7 +77,9 @@ class PrimaryEnergy
       .append('text')
         .attr('class','target')
 
-    t.attr('transform', 'translate('+@emissions_chart.x_center()+',-18)')
+    ghg_result_text_top = -18
+    ghg_result_text_x = @emissions_chart.x_center()
+    t.attr('transform', 'translate('+ghg_result_text_x+','+ghg_result_text_top+')')
 
     t.transition()
       .tween('text', (d) ->
@@ -86,6 +88,40 @@ class PrimaryEnergy
         (t) ->
           @textContent = "#{i(t)}% reduction 1990-2050; Target is 80%"
       )
+
+    ##  Accumulated emissions 
+
+    acc = accumulation( @pathway.ghg['Total'], 5 )
+    target_acc = 9486   # CCC intended pathway 2011 to 2050 sum
+    acc_percent = ( acc / target_acc ) * 100
+    acc_success = acc_percent <= 100
+    texts = [ {
+                    class: 'cumulative-emissions'
+                    text:  'Cumulative emissions: ' + acc.toString() + ' MtCO2e'
+            }, {
+                    class: 'percent-cumulative-emissions-target'
+                    text:  'Percentage of CCC pathway\'s cumulative emissions: ' + acc_percent.toFixed().toString() + '%'
+            }, {
+                    class: 'cumulative-emissions-result-message'
+                    text:  if acc_success then 'Meets CCC intended carbon budget' else 'Exceeds CCC intended carbon budget!'
+            } ]
+
+    t2 = d3.select('#emissions_chart g.drawing')
+          .selectAll('text.target_acc')
+            .data(texts)
+
+    t2.enter()
+      .append( 'text' )
+        .attr( 'class', (d) -> d.class + ' target target_acc' )
+
+    t2.transition()
+       .text( (d) -> d.text )
+
+    ghg_result_text_height = 15
+    t2.attr( 'transform', (d,i) -> 'translate(' + ghg_result_text_x + ',' + (ghg_result_text_top + (i+1)*ghg_result_text_height) + ')' )
+    
+    ## /Accumulated emissions
+
 
   zoom: () ->
     d3.select("#demand_chart")
@@ -99,7 +135,22 @@ class PrimaryEnergy
 
     @updateResults(@pathway)
 
-
+    
+  accumulation = (series, step_period) ->
+  
+    num_steps = series.length - 1
+    sum = 0
+    i = 0
+  
+    while i < num_steps
+      start = series[i]
+      end = series[i+1]
+      avg = (start+end)/2
+      step_total = avg * step_period
+      sum += step_total
+      i++
+      
+    sum.toFixed()
 
 
 

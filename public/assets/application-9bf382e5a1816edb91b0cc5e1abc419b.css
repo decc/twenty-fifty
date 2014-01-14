@@ -1716,7 +1716,8 @@
 .Set3 .q10-12{fill:rgb(204,235,197)}
 .Set3 .q11-12{fill:rgb(255,237,111)}
 #classic_controls {
-  font-size: 0.72em; }
+  font-size: 0.72em;
+  overflow: auto; }
   #classic_controls #demand, #classic_controls #supply, #classic_controls #other {
     padding: 0;
     border: 0;
@@ -1725,7 +1726,9 @@
     width: 30%;
     float: left; }
   #classic_controls table {
-    width: 100%; }
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 2px 0px; }
     #classic_controls table tr:hover td.name {
       font-weight: bold;
       background-image: url("/assets/images/oneblackpixel.png"); }
@@ -1762,9 +1765,7 @@
         border: solid #7c88fa 1px;
         color: white;
         width: 100%;
-        text-decoration: none;
-        font-weight: bold;
-        font-style: italic; }
+        text-decoration: none; }
     #classic_controls table tr.incremental a.level1_1 {
       background-position: left center;
       background-repeat: repeat-y;
@@ -2008,9 +2009,32 @@
 
 #comparatorchoice {
   z-index: 5;
+  border: 1px solid black;
   position: absolute;
   top: 45px;
-  left: 25px; }
+  left: 25px;
+  list-style: none;
+  margin-left: 0;
+  padding: 5px; }
+  #comparatorchoice a {
+    color: #000;
+    text-decoration: none; }
+  #comparatorchoice a:hover {
+    text-decoration: underline; }
+  #comparatorchoice li {
+    margin-left: 0;
+    padding-left: 0; }
+  #comparatorchoice #view_comparatorchoice {
+    box-shadow: 0 0 5px #888;
+    list-style: none;
+    display: none;
+    background: #fff;
+    margin-left: 0;
+    padding: 5px; }
+    #comparatorchoice #view_comparatorchoice li {
+      margin-left: 0;
+      padding-left: 0;
+      margin-bottom: 5px; }
 #energysecurity .column {
   text-align: left;
   padding: 0;
@@ -2046,9 +2070,39 @@
   padding: 0;
   height: 800px; }
 body {
-  font-family: Times;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
   margin: 0;
   padding: 0; }
+
+#cumulative_emissions {
+  float: right;
+  margin-right: 20px;
+  margin-bottom: 20px; }
+
+.clearfix {
+  clear: both; }
+
+#svgWarn {
+  display: none;
+  padding: 10px;
+  text-align: center;
+  background-color: #faa; }
+
+#calculating {
+  font-size: 0.72em;
+  position: absolute;
+  width: 100%;
+  top: 20px;
+  left: 0px;
+  text-align: center;
+  z-index: 10; }
+  #calculating span {
+    padding: 3px;
+    background-color: yellow; }
+
+#results {
+  overflow: hidden; }
 
 .chart {
   padding: 0;
@@ -2061,12 +2115,10 @@ body {
 
 .charttitle {
   text-anchor: middle;
-  font-family: Times;
   font-size: 1em; }
 
 text.target {
   text-anchor: middle;
-  font-family: Times;
   font-size: 0.72em; }
 
 .axis path, .axis line {
@@ -2075,13 +2127,11 @@ text.target {
   stroke-width: 1px; }
 
 .axis text {
-  font-family: Times;
   font-size: 0.72em;
   fill: #000; }
 
 .axislabel {
   text-anchor: end;
-  font-family: Times;
   font-size: 0.72em; }
 
 .line {
@@ -2090,8 +2140,8 @@ text.target {
   stroke-width: 3px; }
 
 .linelabel {
-  font-family: Times;
-  font-size: 0.72em; }
+  font-size: 0.72em;
+  cursor: default; }
 
 .area {
   fill-opacity: 1; }
@@ -2103,7 +2153,6 @@ path.total {
 
 text.seriesValue {
   font-size: 0.72em;
-  font-family: Ties;
   text-anchor: middle; }
 
 path.total.hover {
@@ -2111,7 +2160,7 @@ path.total.hover {
 
 path.hover {
   stroke: black;
-  stroke-width: 2px; }
+  stroke-width: 1px; }
 
 .linelabel.hover {
   fill: black !important;
@@ -2176,112 +2225,56 @@ g.context path {
   color: #000;
   border: 2px solid #000;
   border-radius: 15px 15px 0px 15px;
-  -box-shadow: 0 0 5px #888;
+  box-shadow: 0 0 5px #888;
   font-size: 12px;
   width: 14em;
   padding: 10px;
   z-index: 10000; }
 #topbar {
+  position: relative;
+  overflow: hidden;
   width: 100%;
-  height: 30px;
-  margin: 0 0 15px 0;
-  padding: 0; }
-  #topbar #help, #topbar #share {
-    position: absolute;
-    top: 5px;
-    width: 50px;
-    height: 22px;
-    padding-top: 3px;
-    border: solid #ccc 1px;
+  margin: 0 0 10px 0;
+  background-color: black;
+  color: white;
+  border-bottom: solid #009ddb 3px; }
+  #topbar a {
+    color: white;
+    text-decoration: none; }
+  #topbar .selectedView {
+    color: #009ddb; }
+  #topbar a:hover {
+    text-decoration: underline; }
+  #topbar #name {
+    float: left;
+    width: 180px; }
+  #topbar #examples {
+    text-align: right;
+    float: right;
+    width: 180px; }
+  #topbar #views {
+    margin: 0 180px;
     text-align: center; }
-    #topbar #help a, #topbar #share a {
-      color: #000;
-      display: block;
-      width: 100%;
-      text-decoration: none; }
-    #topbar #help a:hover, #topbar #share a:hover {
-      text-decoration: underline; }
-  #topbar #help {
-    left: 5px; }
-  #topbar #share {
-    right: 5px; }
-  #topbar #viewdropdown {
-    position: absolute;
-    z-index: 10;
-    top: 5px;
-    left: 58px; }
-  #topbar #savedpathwaydropdown {
-    position: absolute;
-    z-index: 10;
-    top: 5px;
-    right: 58px; }
-  #topbar #messages {
-    margin: 5px 213px 0 211px;
-    width: auto; }
-  #topbar #message.warning {
-    background-image: url("../assets/images/hatches/hatch-fff928.png");
-    text-align: center; }
-    #topbar #message.warning a {
-      display: inline;
-      background: white; }
-  #topbar #calculating, #topbar #message {
-    width: 100%;
-    height: 22px;
-    padding-top: 3px;
-    border: solid #ccc 1px;
-    text-align: center; }
-    #topbar #calculating a, #topbar #message a {
-      color: #000;
-      display: block;
-      width: 100%;
-      text-decoration: none; }
-    #topbar #calculating a:hover, #topbar #message a:hover {
-      text-decoration: underline; }
-  #topbar #calculating {
-    position: relative;
-    top: 0;
-    z-index: 1;
-    display: none;
-    background-color: yellow; }
+    #topbar #views a {
+      padding-right: 10px; }
 
 .dropdown {
-  width: 150px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  border: 1px solid #ccc;
-  background: #fff;
-  height: 25px; }
-  .dropdown .dropdown > li {
-    margin: 0;
-    padding: 0;
-    height: 20px; }
-  .dropdown li img {
-    border: none;
-    position: absolute;
-    top: 7px;
-    right: 8px; }
-  .dropdown .divider {
-    padding-left: 5px;
-    padding-top: 10px;
-    border-top: solid 1px #ccc; }
-  .dropdown a.development {
-    padding-left: 10px;
-    color: #999; }
+  z-index: 10000;
+  position: absolute;
+  display: none;
+  background: black;
+  border: solid 1px black;
+  box-shadow: 0 0 5px #888; }
   .dropdown a {
+    padding: 5px;
+    color: white;
     display: block;
-    color: #000;
-    padding: 3px;
-    padding-left: 5px;
-    background: #fff;
     text-decoration: none; }
   .dropdown a:hover {
     text-decoration: underline; }
-  .dropdown ul.choices {
-    -moz-box-shadow: 0 0 5px #888;
-    -webkit-box-shadow: 0 0 5px #888888;
-    box-shadow: 0 0 5px #888;
-    display: none;
-    list-style: none;
-    margin: 0;
-    padding: 0; }
+
+#savedpathway_choices {
+  width: 200px; }
+
+.showdropdown {
+  display: block; }

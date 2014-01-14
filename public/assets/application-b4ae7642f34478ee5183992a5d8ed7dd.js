@@ -1589,38 +1589,6 @@ window.twentyfifty.choice_sizes = {"0":4,"2":4,"3":4,"4":4,"5":4,"6":4,"7":4,"8"
     return _results;
   };
 
-  getChoices = function() {
-    return choices;
-  };
-
-  getSector = function() {
-    return parseInt(sector);
-  };
-
-  switchSector = function(new_sector) {
-    sector = new_sector;
-    if (history['pushState'] != null) {
-      history.pushState(choices, codeForChoices(), url());
-    }
-    switchView('costs_compared_within_sector');
-    view_manager.teardown();
-    return view_manager.updateResults(cache[codeForChoices()]);
-  };
-
-  getComparator = function() {
-    return comparator;
-  };
-
-  switchComparator = function(new_comparator) {
-    comparator = new_comparator;
-    if (history['pushState'] != null) {
-      history.pushState(choices, codeForChoices(), url());
-    }
-    if (view_manager.switchComparator != null) {
-      return view_manager.switchComparator(comparator);
-    }
-  };
-
   url = function(options) {
     var s;
     if (options == null) {
@@ -1836,6 +1804,34 @@ window.twentyfifty.choice_sizes = {"0":4,"2":4,"3":4,"4":4,"5":4,"6":4,"7":4,"8"
     return _results;
   };
 
+  getSector = function() {
+    return parseInt(sector);
+  };
+
+  switchSector = function(new_sector) {
+    sector = new_sector;
+    if (history['pushState'] != null) {
+      history.pushState(choices, codeForChoices(), url());
+    }
+    switchView('costs_compared_within_sector');
+    view_manager.teardown();
+    return view_manager.updateResults(cache[codeForChoices()]);
+  };
+
+  getComparator = function() {
+    return comparator;
+  };
+
+  switchComparator = function(new_comparator) {
+    comparator = new_comparator;
+    if (history['pushState'] != null) {
+      history.pushState(choices, codeForChoices(), url());
+    }
+    if (view_manager.switchComparator != null) {
+      return view_manager.switchComparator(comparator);
+    }
+  };
+
   pathwayName = function(pathway_code, default_name) {
     if (default_name == null) {
       default_name = null;
@@ -1855,6 +1851,10 @@ window.twentyfifty.choice_sizes = {"0":4,"2":4,"3":4,"4":4,"5":4,"6":4,"7":4,"8"
       default_page = null;
     }
     return "http://2050-calculator-tool-wiki.decc.gov.uk/pages/" + (window.twentyfifty.pathway_wiki_pages_hash[pathway_code] || default_page);
+  };
+
+  getChoices = function() {
+    return choices;
   };
 
   window.twentyfifty.code = codeForChoices;
@@ -2441,15 +2441,29 @@ window.twentyfifty.choice_sizes = {"0":4,"2":4,"3":4,"4":4,"5":4,"6":4,"7":4,"8"
   var PrimaryEnergy;
 
   PrimaryEnergy = (function() {
+    var accumulation;
+
     function PrimaryEnergy() {}
 
     PrimaryEnergy.prototype.setup = function() {
-      var charts;
+      var charts, controller;
       charts = d3.select("#results").selectAll(".chart").data(['demand_chart', 'supply_chart', 'emissions_chart']);
       charts.enter().append('div').attr('id', Object).attr('class', 'chart');
       this.final_energy_chart = timeSeriesStackedAreaChart().title("Final Energy Demand").unit('TWh/yr').total_label('Total').max_value(4000);
       this.primary_energy_chart = timeSeriesStackedAreaChart().title("Primary Energy Supply").unit('TWh/yr').total_label('Total used in UK').max_value(4000);
-      return this.emissions_chart = timeSeriesStackedAreaChart().title("Greenhouse Gas Emissions").unit('MtCO2e/yr').total_label('Total').min_value(-500).max_value(1000);
+      this.emissions_chart = timeSeriesStackedAreaChart().title("Greenhouse Gas Emissions").unit('MtCO2e/yr').total_label('Total').min_value(-500).max_value(1000);
+      controller = this;
+      return d3.selectAll(".chart").on("click", function(event) {
+        var chart;
+        chart = d3.select(this);
+        if (chart.attr("style") === "width:60%; float: left;") {
+          d3.selectAll(".chart").attr("style", null);
+        } else {
+          d3.selectAll(".chart").attr("style", "float: right");
+          chart.attr("style", "width:60%; float: left;");
+        }
+        return controller.updateResults(controller.pathway);
+      });
     };
 
     PrimaryEnergy.prototype.teardown = function() {
@@ -2460,7 +2474,7 @@ window.twentyfifty.choice_sizes = {"0":4,"2":4,"3":4,"4":4,"5":4,"6":4,"7":4,"8"
     };
 
     PrimaryEnergy.prototype.updateResults = function(pathway) {
-      var percent, series, t;
+      var acc, acc_percent, acc_success, ghg_result_text_height, ghg_result_text_top, ghg_result_text_x, percent, series, t, t2, target_acc, texts;
       this.pathway = pathway;
       if (!((this.emissions_chart != null) && (this.final_energy_chart != null) && (this.primary_energy_chart != null))) {
         this.setup();
@@ -2473,8 +2487,10 @@ window.twentyfifty.choice_sizes = {"0":4,"2":4,"3":4,"4":4,"5":4,"6":4,"7":4,"8"
       d3.select('#emissions_chart').datum(series).call(this.emissions_chart);
       t = d3.select('#emissions_chart g.drawing').selectAll('text.target').data([percent]);
       t.enter().append('text').attr('class', 'target');
-      t.attr('transform', 'translate(' + this.emissions_chart.x_center() + ',-18)');
-      return t.transition().tween('text', function(d) {
+      ghg_result_text_top = -18;
+      ghg_result_text_x = this.emissions_chart.x_center();
+      t.attr('transform', 'translate(' + ghg_result_text_x + ',' + ghg_result_text_top + ')');
+      t.transition().tween('text', function(d) {
         var current, i;
         current = parseInt(this.textContent) || +d;
         i = d3.interpolateRound(current, +d);
@@ -2482,6 +2498,59 @@ window.twentyfifty.choice_sizes = {"0":4,"2":4,"3":4,"4":4,"5":4,"6":4,"7":4,"8"
           return this.textContent = "" + (i(t)) + "% reduction 1990-2050; Target is 80%";
         };
       });
+      acc = accumulation(this.pathway.ghg['Total'], 5);
+      target_acc = 9486;
+      acc_percent = (acc / target_acc) * 100;
+      acc_success = acc_percent <= 100;
+      texts = [
+        {
+          "class": 'cumulative-emissions',
+          text: 'Cumulative emissions: ' + acc.toString() + ' MtCO2e'
+        }, {
+          "class": 'percent-cumulative-emissions-target',
+          text: 'Percentage of CCC pathway\'s cumulative emissions: ' + acc_percent.toFixed().toString() + '%'
+        }, {
+          "class": 'cumulative-emissions-result-message',
+          text: acc_success ? 'Meets CCC intended carbon budget' : 'Exceeds CCC intended carbon budget!'
+        }
+      ];
+      t2 = d3.select('#emissions_chart g.drawing').selectAll('text.target_acc').data(texts);
+      t2.enter().append('text').attr('class', function(d) {
+        return d["class"] + ' target_acc';
+      });
+      t2.transition().text(function(d) {
+        return d.text;
+      });
+      ghg_result_text_height = 15;
+      return t2.attr('transform', function(d, i) {
+        return 'translate(' + ghg_result_text_x + ',' + (ghg_result_text_top + (i + 1) * ghg_result_text_height) + ')';
+      });
+    };
+
+    PrimaryEnergy.prototype.zoom = function() {
+      d3.select("#demand_chart").attr("style", "width: 60%");
+      return this.updateResults(this.pathway);
+    };
+
+    PrimaryEnergy.prototype.unzoom = function() {
+      d3.select("#demand_chart").attr("style", null);
+      return this.updateResults(this.pathway);
+    };
+
+    accumulation = function(series, step_period) {
+      var avg, end, i, num_steps, start, step_total, sum;
+      num_steps = series.length - 1;
+      sum = 0;
+      i = 0;
+      while (i < num_steps) {
+        start = series[i];
+        end = series[i + 1];
+        avg = (start + end) / 2;
+        step_total = avg * step_period;
+        sum += step_total;
+        i++;
+      }
+      return sum.toFixed();
     };
 
     return PrimaryEnergy;
@@ -2500,12 +2569,24 @@ window.twentyfifty.choice_sizes = {"0":4,"2":4,"3":4,"4":4,"5":4,"6":4,"7":4,"8"
     function Electricity() {}
 
     Electricity.prototype.setup = function() {
-      var charts;
+      var charts, controller;
       charts = d3.select("#results").selectAll(".chart").data(['demand_chart', 'supply_chart', 'emissions_chart']);
       charts.enter().append('div').attr('id', Object).attr('class', 'chart');
       this.demand_chart = timeSeriesStackedAreaChart().title("Electricity Demand").unit('TWh/yr').max_value(4000);
       this.supply_chart = timeSeriesStackedAreaChart().title("Electricity Supply").unit('TWh/yr').total_label('Total').max_value(4000);
-      return this.emissions_chart = timeSeriesStackedAreaChart().title("Emissions from Electricity").unit('MtCO2e/yr').total_label('Total').min_value(-500).max_value(1000);
+      this.emissions_chart = timeSeriesStackedAreaChart().title("Emissions from Electricity").unit('MtCO2e/yr').total_label('Total').min_value(-500).max_value(1000);
+      controller = this;
+      return d3.selectAll(".chart").on("click", function(event) {
+        var chart;
+        chart = d3.select(this);
+        if (chart.attr("style") === "width:60%; float: left;") {
+          d3.selectAll(".chart").attr("style", null);
+        } else {
+          d3.selectAll(".chart").attr("style", "float: right");
+          chart.attr("style", "width:60%; float: left;");
+        }
+        return controller.updateResults(controller.pathway);
+      });
     };
 
     Electricity.prototype.teardown = function() {
@@ -2549,8 +2630,8 @@ window.twentyfifty.choice_sizes = {"0":4,"2":4,"3":4,"4":4,"5":4,"6":4,"7":4,"8"
       series.remove('Non-thermal renewable generation');
       d3.select('#supply_chart').datum(series).call(this.supply_chart);
       d3.select('#emissions_chart').datum(d3.map(this.pathway.electricity.emissions)).call(this.emissions_chart);
-      showContext(this.pathway['final_energy_demand']['Total Use'], '#demand_chart', this.demand_chart);
-      showContext(this.pathway['final_energy_demand']['Total Use'], '#supply_chart', this.supply_chart);
+      showContext(this.pathway.final_energy_demand.Total, '#demand_chart', this.demand_chart);
+      showContext(this.pathway.final_energy_demand.Total, '#supply_chart', this.supply_chart);
       return showContext(this.pathway.ghg.Total, '#emissions_chart', this.emissions_chart);
     };
 

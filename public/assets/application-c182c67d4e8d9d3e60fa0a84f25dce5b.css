@@ -1726,7 +1726,9 @@
     width: 30%;
     float: left; }
   #classic_controls table {
-    width: 100%; }
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 2px 0px; }
     #classic_controls table tr:hover td.name {
       font-weight: bold;
       background-image: url("/assets/images/oneblackpixel.png"); }
@@ -1763,9 +1765,7 @@
         border: solid #7c88fa 1px;
         color: white;
         width: 100%;
-        text-decoration: none;
-        font-weight: bold;
-        font-style: italic; }
+        text-decoration: none; }
     #classic_controls table tr.incremental a.level1_1 {
       background-position: left center;
       background-repeat: repeat-y;
@@ -2070,9 +2070,24 @@
   padding: 0;
   height: 800px; }
 body {
-  font-family: Times;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
   margin: 0;
   padding: 0; }
+
+#cumulative_emissions {
+  float: right;
+  margin-right: 20px;
+  margin-bottom: 20px; }
+
+.clearfix {
+  clear: both; }
+
+#svgWarn {
+  display: none;
+  padding: 10px;
+  text-align: center;
+  background-color: #faa; }
 
 #calculating {
   font-size: 0.72em;
@@ -2100,12 +2115,10 @@ body {
 
 .charttitle {
   text-anchor: middle;
-  font-family: Times;
   font-size: 1em; }
 
-text.target {
+text.result {
   text-anchor: middle;
-  font-family: Times;
   font-size: 0.72em; }
 
 .axis path, .axis line {
@@ -2114,13 +2127,11 @@ text.target {
   stroke-width: 1px; }
 
 .axis text {
-  font-family: Times;
   font-size: 0.72em;
   fill: #000; }
 
 .axislabel {
   text-anchor: end;
-  font-family: Times;
   font-size: 0.72em; }
 
 .line {
@@ -2129,7 +2140,6 @@ text.target {
   stroke-width: 3px; }
 
 .linelabel {
-  font-family: Times;
   font-size: 0.72em;
   cursor: default; }
 
@@ -2143,7 +2153,6 @@ path.total {
 
 text.seriesValue {
   font-size: 0.72em;
-  font-family: Ties;
   text-anchor: middle; }
 
 path.total.hover {
@@ -2169,7 +2178,8 @@ g.context path {
 #sankey {
   width: 100%;
   margin: 0 0 30px 0;
-  padding: 0; }
+  padding: 0;
+  height: 580px; }
 #share div {
   margin: 0 10% 0 10%;
   width: 80%; }
@@ -2221,51 +2231,50 @@ g.context path {
   padding: 10px;
   z-index: 10000; }
 #topbar {
+  position: relative;
+  overflow: hidden;
   width: 100%;
-  height: 20px;
   margin: 0 0 10px 0;
   background-color: black;
   color: white;
-  border-bottom: solid #57DA95 7px; }
+  border-bottom: solid #009ddb 3px; }
   #topbar a {
     color: white;
     text-decoration: none; }
-  #topbar .selected {
-    color: #57da95; }
+  #topbar .selectedView {
+    color: #009ddb; }
   #topbar a:hover {
     text-decoration: underline; }
-  #topbar div {
-    position: absolute;
-    display: inline; }
   #topbar #name {
-    left: 2.4%;
-    top: 0px; }
+    float: left;
+    width: 180px; }
   #topbar #examples {
-    right: 2.4%;
-    top: 0px; }
+    text-align: right;
+    float: right;
+    width: 180px; }
   #topbar #views {
-    left: 160px;
-    left: calc(160px + 2.4%);
-    top: 0px;
-    width: 80%;
-    width: calc(100% - 2.4% - 160px - 2.4% - 160px);
+    margin: 0 180px;
     text-align: center; }
     #topbar #views a {
       padding-right: 10px; }
-    #topbar #views div {
-      position: static;
-      padding-right: 10px; }
-  #topbar .dropdown {
-    z-index: 10000;
-    position: absolute;
-    display: none;
-    background: black;
+
+.dropdown {
+  z-index: 10000;
+  position: absolute;
+  display: none;
+  background: black;
+  border: solid 1px black;
+  box-shadow: 0 0 5px #888; }
+  .dropdown a {
     padding: 5px;
-    border: solid 1px black;
-    box-shadow: 0 0 5px #888; }
-    #topbar .dropdown a {
-      color: white;
-      display: block;
-      margin-bottom: 5px; }
-  #topbar .showdropdown {
-    display: block; }
+    color: white;
+    display: block;
+    text-decoration: none; }
+  .dropdown a:hover {
+    text-decoration: underline; }
+
+#savedpathway_choices {
+  width: 200px; }
+
+.showdropdown {
+  display: block; }
