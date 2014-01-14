@@ -2173,12 +2173,12 @@ window.twentyfifty.choice_sizes = {"0":4,"2":4,"3":4,"4":4,"5":4,"6":4,"7":4,"8"
       return yScale(d.y0);
     }).y1(function(d, i) {
       return yScale(d.y0 + d.y);
-    });
+    }).interpolate("cardinal");
     line = d3.svg.line().x(function(d, i) {
       return xScale(d.x);
     }).y(function(d, i) {
       return yScale(d.y);
-    });
+    }).interpolate("cardinal");
     color_classes = {
       'Total': 'total',
       'Total Use': 'total',
@@ -2517,14 +2517,15 @@ window.twentyfifty.choice_sizes = {"0":4,"2":4,"3":4,"4":4,"5":4,"6":4,"7":4,"8"
       t2 = d3.select('#emissions_chart g.drawing').selectAll('text.target_acc').data(texts);
       t2.enter().append('text').attr('class', function(d) {
         return d["class"] + ' result';
-      }).text(function(d) {
-        return d.text;
+      }).tween('text', function(d) {
+        return function(t) {
+          return d;
+        };
       });
-      ghg_result_text_height = 12;
-      t2.attr('transform', function(d, i) {
-        return 'translate(' + ghg_result_text_x + ',' + (ghg_reslut_text_top + (i + 1) * ghg_result_text_height) + ')';
+      ghg_result_text_height = 15;
+      return t2.attr('transform', function(d, i) {
+        return 'translate(' + ghg_result_text_x + ',' + (ghg_result_text_top + (i + 1) * ghg_result_text_height) + ')';
       });
-      return jQuery('#cumulative_emissions').html(acc_text);
     };
 
     PrimaryEnergy.prototype.zoom = function() {
