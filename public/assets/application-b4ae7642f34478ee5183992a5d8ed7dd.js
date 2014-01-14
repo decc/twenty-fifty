@@ -2173,12 +2173,12 @@ window.twentyfifty.choice_sizes = {"0":4,"2":4,"3":4,"4":4,"5":4,"6":4,"7":4,"8"
       return yScale(d.y0);
     }).y1(function(d, i) {
       return yScale(d.y0 + d.y);
-    }).interpolate("cardinal");
+    });
     line = d3.svg.line().x(function(d, i) {
       return xScale(d.x);
     }).y(function(d, i) {
       return yScale(d.y);
-    }).interpolate("cardinal");
+    });
     color_classes = {
       'Total': 'total',
       'Total Use': 'total',
@@ -2486,7 +2486,7 @@ window.twentyfifty.choice_sizes = {"0":4,"2":4,"3":4,"4":4,"5":4,"6":4,"7":4,"8"
       percent = this.pathway.ghg.percent_reduction_from_1990;
       d3.select('#emissions_chart').datum(series).call(this.emissions_chart);
       t = d3.select('#emissions_chart g.drawing').selectAll('text.target').data([percent]);
-      t.enter().append('text').attr('class', 'target result');
+      t.enter().append('text').attr('class', 'target');
       ghg_result_text_top = -18;
       ghg_result_text_x = this.emissions_chart.x_center();
       t.attr('transform', 'translate(' + ghg_result_text_x + ',' + ghg_result_text_top + ')');
@@ -2516,8 +2516,9 @@ window.twentyfifty.choice_sizes = {"0":4,"2":4,"3":4,"4":4,"5":4,"6":4,"7":4,"8"
       ];
       t2 = d3.select('#emissions_chart g.drawing').selectAll('text.target_acc').data(texts);
       t2.enter().append('text').attr('class', function(d) {
-        return d["class"] + ' result';
-      }).text(function(d) {
+        return d["class"] + ' target_acc';
+      });
+      t2.transition().text(function(d) {
         return d.text;
       });
       ghg_result_text_height = 15;
