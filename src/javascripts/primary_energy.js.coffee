@@ -112,7 +112,7 @@ class PrimaryEnergy
 
     t2.enter()
       .append( 'text' )
-        .attr( 'class', (d) -> d.class + ' target_acc' )
+        .attr( 'class', (d) -> d.class + ' target target_acc' )
 
     t2.transition()
        .text( (d) -> d.text )
