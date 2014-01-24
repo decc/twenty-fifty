@@ -13,10 +13,13 @@ window.timeSeriesStackedAreaChart = () ->
 
   title = ""
   unit = "TWh/yr"
-  first_scale_year = 2010
-  last_scale_year = 2050
+  data_first_year = 2010
+  data_last_year = 2050
+  data_year_interval = 5
   min_value = 0
   max_value = 4000
+  min_year = 2010
+  max_year = 2050
   total_label = "Total"
 
   xScale = d3.scale.linear()
@@ -142,7 +145,7 @@ window.timeSeriesStackedAreaChart = () ->
 
         # Reformat the data to be more useful
         for series in data.entries()
-          series.value = series.value.map( (p,i) -> {x: first_scale_year + (i*5), y: p }  )
+          series.value = series.value.map( (p,i) -> {x: data_first_year + (i*data_year_interval), y: p }  )
           total = 0
           total+= p.y for p in series.value
           series.total = total
@@ -166,7 +169,7 @@ window.timeSeriesStackedAreaChart = () ->
 
         # Update the x-scale.
         xScale
-          .domain([first_scale_year, last_scale_year])
+          .domain([min_year, max_year])
           .range([0, width - margin.left - margin.right])
       
         # Update the y-scale.
@@ -396,8 +399,19 @@ window.timeSeriesStackedAreaChart = () ->
             
             grid
               .text((d,i) -> if (i % 2) == 0 then dataTableFormat(d.y) else "")
-              .attr("transform",(d,i) -> "translate("+xScale(first_scale_year+(i*5))+","+(yScale.range()[0]+30)+")")
+              .attr("transform",(d,i) -> "translate("+xScale(data_first_year+(i*data_year_interval))+","+(yScale.range()[0]+30)+")")
               .classed(seriesclass, true)
+              .attr("display", (d,i) ->
+                # This makes sure that, when the axis is zoomed
+                # only the data points that are within the visible
+                # range are displayed
+                year = data_first_year + (i*data_year_interval)
+                display_range = xScale.domain()
+                if(year >= display_range[0] && year <= display_range[1])
+                  "inherit"
+                else
+                  "none"
+              )
 
         removeDataTable = () ->
           g.selectAll(".seriesValue").remove()
@@ -428,6 +442,16 @@ window.timeSeriesStackedAreaChart = () ->
   chart.min_value = (_) ->
     return min_value unless _?
     min_value = _
+    chart
+
+  chart.max_year = (_) ->
+    return max_year unless _?
+    max_year = _
+    chart
+
+  chart.min_year = (_) ->
+    return min_year unless _?
+    min_year = _
     chart
 
   chart.x_center = () ->
