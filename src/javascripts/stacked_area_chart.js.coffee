@@ -128,263 +128,281 @@ window.timeSeriesStackedAreaChart = () ->
 
   chart = (selection) ->
     # Expects a d3.map() of data
-    selection.each (data) ->
+    chart.draw = () =>
+      selection.each (data) ->
 
-      width = $(this).width()
-      height = width / 1.2
-      x_center = (width-(margin.left*2))/2
+        width = $(this).width()
+        height = width / 1.2
+        x_center = (width-(margin.left*2))/2
 
-      # We need to divide the data into three sets
-      positive_series = []
-      negative_series = []
-      total_series = []
+        # We need to divide the data into three sets
+        positive_series = []
+        negative_series = []
+        total_series = []
 
-      # Reformat the data to be more useful
-      for series in data.entries()
-        series.value = series.value.map( (p,i) -> {x: first_scale_year + (i*5), y: p }  )
-        total = 0
-        total+= p.y for p in series.value
-        series.total = total
+        # Reformat the data to be more useful
+        for series in data.entries()
+          series.value = series.value.map( (p,i) -> {x: first_scale_year + (i*5), y: p }  )
+          total = 0
+          total+= p.y for p in series.value
+          series.total = total
 
-        # Put the series into different groups based on whether positive or negative, or a total line
-        if series.key == total_label
-          series.path = line
-          total_series.push(series)
-        else
-          series.path = area
-          if total >= 0
-            positive_series.push(series)
+          # Put the series into different groups based on whether positive or negative, or a total line
+          if series.key == total_label
+            series.path = line
+            total_series.push(series)
           else
-            negative_series.push(series)
+            series.path = area
+            if total >= 0
+              positive_series.push(series)
+            else
+              negative_series.push(series)
 
-      # Stack the data separately for positive and negative values and then combine
-      # (creates a y0 for each data point)
-      stacked_data = stack(positive_series.sort( (a,b) -> d3.descending(a.total, b.total)))
-      stacked_data = stack(negative_series.sort( (a,b) -> d3.ascending(a.total, b.total))).reverse().concat(stacked_data) if negative_series.length > 0
-      stacked_data = stacked_data.concat(total_series.sort( (a,b) -> d3.descending(a.total, b.total))) if total_series.length > 0
+        # Stack the data separately for positive and negative values and then combine
+        # (creates a y0 for each data point)
+        stacked_data = stack(positive_series.sort( (a,b) -> d3.descending(a.total, b.total)))
+        stacked_data = stack(negative_series.sort( (a,b) -> d3.ascending(a.total, b.total))).reverse().concat(stacked_data) if negative_series.length > 0
+        stacked_data = stacked_data.concat(total_series.sort( (a,b) -> d3.descending(a.total, b.total))) if total_series.length > 0
 
-      # Update the x-scale.
-      xScale
-        .domain([first_scale_year, last_scale_year])
-        .range([0, width - margin.left - margin.right])
-    
-      # Update the y-scale.
-      yScale
-        .domain([min_value, max_value])
-        .range([height - margin.top - margin.bottom, 0])
+        # Update the x-scale.
+        xScale
+          .domain([first_scale_year, last_scale_year])
+          .range([0, width - margin.left - margin.right])
       
-      # Select the svg element, if it exists.
-      svg = d3.select(this).selectAll("svg").data([stacked_data])
-      
-      # Otherwise, create the skeletal chart.
-      gEnter = svg.enter()
-        .append("svg")
-        .append("g")
-        .attr('class','drawing Paired') # Paired indicates the standard colour palette 
+        # Update the y-scale.
+        yScale
+          .domain([min_value, max_value])
+          .range([height - margin.top - margin.bottom, 0])
+        
+        # Select the svg element, if it exists.
+        svg = d3.select(this).selectAll("svg").data([stacked_data])
+        
+        # Otherwise, create the skeletal chart.
+        gEnter = svg.enter()
+          .append("svg")
+          .append("g")
+          .attr('class','drawing Paired') # Paired indicates the standard colour palette 
 
-      gEnter
-        .append("g")
-        .attr('class', 'context')
+        gEnter
+          .append("g")
+          .attr('class', 'context')
 
-      gEnter
-        .append("g")
-        .attr('class','series')
-      
-      # Update the outer dimensions.
-      svg
-        .attr("width", width)
-        .attr("height", height)
+        gEnter
+          .append("clipPath")
+            .attr("id", "seriesclip")
+          .append("rect")
+            .attr("x", xScale.range()[0])
+            .attr("y", yScale.range()[1])
+            .attr("width", xScale.range()[1] - xScale.range()[0])
+            .attr("height", yScale.range()[0] - yScale.range()[1])
 
-      # Update the inner dimensions.
-      g = svg.select("g.drawing").attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+        gEnter
+          .append("g")
+          .attr('class','series')
+          .attr("clip-path", "url(#seriesclip)")
+        
+        # Update the outer dimensions.
+        svg
+          .attr("width", width)
+          .attr("height", height)
 
-      # Update the area paths
-      areas = g.select('g.series').selectAll("path")
-        .data(Object, (d) -> d.key)
+        # Update the inner dimensions.
+        g = svg.select("g.drawing").attr("transform", "translate(" + margin.left + "," + margin.top + ")")
 
-      areas.enter()
-        .append("path")
-        .attr("class", (d,i) -> seriesClass(d,i))
-        .on("mouseover", (d,i) ->
-          c = seriesClass(d,i)
-          # Add the data table for this series, using the colour of this series
-          dataTable(d,c)
+        # Update the area paths
+        areas = g.select('g.series').selectAll("path")
+          .data(Object, (d) -> d.key)
 
-          # This makes sure the area path is highlighted
-          g.selectAll(".#{c}")
-            .classed("hover", true)
+        areas.enter()
+          .append("path")
+          .attr("class", (d,i) -> seriesClass(d,i))
+          .on("mouseover", (d,i) ->
+            c = seriesClass(d,i)
+            # Add the data table for this series, using the colour of this series
+            dataTable(d,c)
 
-          unless showLabelFilter(d)
-            # Need to make sure hidden labels are visible
-            l = g.selectAll(".#{c}.linelabel").attr("display","inline")
-            # Hidden labels may need a white background to be visible
-            s = l[0][0].getBBox()
-            g.insert("rect", ".#{c}.linelabel")
-              .attr("class", "labelbackground")
-              .attr("x",s.x)
-              .attr("y",s.y)
-              .attr("width",s.width+6)
-              .attr("height",s.height)
+            # This makes sure the area path is highlighted
+            g.selectAll(".#{c}")
+              .classed("hover", true)
 
-        )
-        .on("mouseout", (d,i) ->
-          removeDataTable()
-          c = seriesClass(d,i)
+            unless showLabelFilter(d)
+              # Need to make sure hidden labels are visible
+              l = g.selectAll(".#{c}.linelabel").attr("display","inline")
+              # Hidden labels may need a white background to be visible
+              s = l[0][0].getBBox()
+              g.insert("rect", ".#{c}.linelabel")
+                .attr("class", "labelbackground")
+                .attr("x",s.x)
+                .attr("y",s.y)
+                .attr("width",s.width+6)
+                .attr("height",s.height)
 
-          g.selectAll(".#{c}")
-            .classed("hover", false)
+          )
+          .on("mouseout", (d,i) ->
+            removeDataTable()
+            c = seriesClass(d,i)
 
-          unless showLabelFilter(d)
-            # Need to hide the label again
-            g.selectAll(".#{c}.linelabel").attr("display","none")
-            # And remove the white background
-            g.selectAll(".labelbackground").remove()
-        )
+            g.selectAll(".#{c}")
+              .classed("hover", false)
 
-      areas.transition()
-        .attr("d", (d) -> d.path(d.value))
+            unless showLabelFilter(d)
+              # Need to hide the label again
+              g.selectAll(".#{c}.linelabel").attr("display","none")
+              # And remove the white background
+              g.selectAll(".labelbackground").remove()
+          )
 
-      # Add the axes & title (after the areas, so that the axis are drawn on top)
-      gEnter
-        .append("g")
-        .attr("class", "x axis")
-      gEnter
-        .append("g")
-        .attr("class", "y axis")
-      gEnter
-        .append("text")
-        .attr("class", "y axislabel")
-      gEnter
-        .append("text")
-        .attr("class", "charttitle")
+        areas.transition()
+          .attr("d", (d) -> d.path(d.value))
 
-      # Update the x-axis.
-      g.select(".x.axis")
-        .attr("transform", "translate(0," + yScale(0) + ")")
-        .call(xAxis)
-      
-      # Move tick labels lower, if this graph goes negative
-      if min_value < 0
-        g.selectAll(".x.axis text")
-          .attr("dy", yScale(min_value) - yScale(0) + 7 )
+        # Add the axes & title (after the areas, so that the axis are drawn on top)
+        gEnter
+          .append("g")
+          .attr("class", "x axis")
+        gEnter
+          .append("g")
+          .attr("class", "y axis")
+        gEnter
+          .append("text")
+          .attr("class", "y axislabel")
+        gEnter
+          .append("text")
+          .attr("class", "charttitle")
 
-      # Update the y-axis.
-      g.select(".y.axis")
-        .attr("transform", "translate(0," + xScale.range()[0] + ")")
-        .call(yAxis)
+        # Update the x-axis, which is either positioned on y(0) or
+        # on the bottom of the chart
+        if yScale.domain()[0] < 0 && yScale.domain()[1] > 0 # Then y(0) appears on this chart
+          g.select(".x.axis")
+            .attr("transform", "translate(0," + yScale(0) + ")")
+            .call(xAxis)
 
-      # Update the y-axis label.
-      g.select(".y.axislabel")
-        .attr("transform", "translate(0," + (xScale.range()[0] - 10) + ")")
-        .text(unit)
+          g.selectAll(".x.axis text")
+            .attr("dy", yScale.range()[0] - yScale(0) + 7 )
 
-      # If the label is too wide, shift it
-      label = g.select(".y.axislabel")
-      label_width = label[0][0].getBBox().width
-      if label_width > margin.left
-        label.attr("dx",label_width - margin.left)
+        else # Position the scale at the bottom of the chart
+          g.select(".x.axis")
+            .attr("transform", "translate(0," + yScale.range()[0] + ")")
+            .call(xAxis)
+        
+        # Update the y-axis.
+        g.select(".y.axis")
+          .attr("transform", "translate(0," + xScale.range()[0] + ")")
+          .call(yAxis)
 
-      # Update the title
-      g.select(".charttitle")
-        .attr("transform", "translate("+x_center+"," + (xScale.range()[0] - 30) + ")")
-        .text(title)
+        # Update the y-axis label.
+        g.select(".y.axislabel")
+          .attr("transform", "translate(0," + (xScale.range()[0] - 10) + ")")
+          .text(unit)
 
-      # Update the area labels
+        # If the label is too wide, shift it
+        label = g.select(".y.axislabel")
+        label_width = label[0][0].getBBox().width
+        if label_width > margin.left
+          label.attr("dx",label_width - margin.left)
 
-      # Put them on the far right
-      label_x = xScale.range()[1]+2
+        # Update the title
+        g.select(".charttitle")
+          .attr("transform", "translate("+x_center+"," + (xScale.range()[0] - 30) + ")")
+          .text(title)
 
-      # Make sure the labels are at least 10 pixels apart
-      minimum_y_space = Math.abs(yScale.invert(10) - yScale.invert(0))
+        # Update the area labels
 
-      # Only show labels for paths that average more than 5 pixels
-      label_threshold = Math.abs(yScale.invert(5) - yScale.invert(0)) * 9
+        # Put them on the far right
+        label_x = xScale.range()[1]+2
 
-      # We need to work out roughly where the labels should go
-      # Our first approximation is to put them in the middle of their final y position
-      for d in stacked_data
-        # Find the last point
-        p = d.value[d.value.length-1]
-        # Put it at the middle of the area
-        if p.y0?
-          d.label_y = p.y0 + (p.y/2)
-        else
-          d.label_y = p.y
-        d
+        # Make sure the labels are at least 10 pixels apart
+        minimum_y_space = Math.abs(yScale.invert(10) - yScale.invert(0))
 
-      # Then we sort them into ascending order
-      stacked_data.sort (a,b) ->
-          a_y = a.label_y
-          b_y = b.label_y
-          if a_y < 0 and b_y > 0
-            -1
-          else if a_y > 0 and b_y < 0
-            1
-          else if a_y > 0 and b_y > 0
-            a_y - b_y
+        # Only show labels for paths that average more than 5 pixels
+        label_threshold = Math.abs(yScale.invert(5) - yScale.invert(0)) * 9
+
+        # We need to work out roughly where the labels should go
+        # Our first approximation is to put them in the middle of their final y position
+        for d in stacked_data
+          # Find the last point
+          p = d.value[d.value.length-1]
+          # Put it at the middle of the area
+          if p.y0?
+            d.label_y = p.y0 + (p.y/2)
           else
-            a_y - b_y
+            d.label_y = p.y
+          d
+
+        # Then we sort them into ascending order
+        stacked_data.sort (a,b) ->
+            a_y = a.label_y
+            b_y = b.label_y
+            if a_y < 0 and b_y > 0
+              -1
+            else if a_y > 0 and b_y < 0
+              1
+            else if a_y > 0 and b_y > 0
+              a_y - b_y
+            else
+              a_y - b_y
+        
+        # Start at the bottom of the screen
+        previous_y = yScale.domain()[0] - 1000
+
+        # Then we nudge any labels that are too close together
+        for d in stacked_data
+          y = d.label_y
+          if showLabelFilter(d)
+            y = Math.max(previous_y + minimum_y_space, y)
+            previous_y = y
+            d.label_y = y
+
+        labels = g.selectAll(".linelabel")
+          .data(Object,((d) -> d.key))
+        
+        # Make sure they are the right colour
+        labels.enter()
+          .append("text")
+          .attr("class", (d,i) -> "linelabel #{seriesClass(d,i)}")
+          .attr("x", label_x)
+          .attr("y", (d) -> yScale(d.label_y) + 4)
+          .text((d) -> d.key)
+          .on("mouseover", (d,i) ->
+            dataTable(d, seriesClass(d,i))
+            g.selectAll(".#{seriesClass(d,i)}")
+              .classed("hover", true))
+          .on("mouseout", (d,i) ->
+            removeDataTable()
+            g.selectAll(".#{seriesClass(d,i)}")
+              .classed("hover", false))
+
+        labels.exit()
+          .remove()
+
+        labels
+          # Make sure the labels for the biggest values are drawn first, so can always see the small labels
+          .sort( (a,b) -> d3.descending(Math.abs(a.total), Math.abs(b.total)) )
+          .transition()
+            .attr("x",label_x)
+            .attr("y", (d) -> yScale(d.label_y)+4)
+            # If they are too small, don't show them
+            .attr("display", (d,i) -> if showLabelFilter(d) then "inline" else "none" )
+
+        dataTable = (series, seriesclass) ->
+            # Add the numbers at the bottom
+            labels = series.value
+
+            grid = g.selectAll(".seriesValue")
+              .data(labels)
+
+            grid.enter()
+              .append("text")
+              .attr("class", "seriesValue")
+            
+            grid
+              .text((d,i) -> if (i % 2) == 0 then dataTableFormat(d.y) else "")
+              .attr("transform",(d,i) -> "translate("+xScale(first_scale_year+(i*5))+","+(yScale.range()[0]+30)+")")
+              .classed(seriesclass, true)
+
+        removeDataTable = () ->
+          g.selectAll(".seriesValue").remove()
       
-      # Start at the bottom of the screen
-      previous_y = min_value - 1000
-
-      # Then we nudge any labels that are too close together
-      for d in stacked_data
-        y = d.label_y
-        if showLabelFilter(d)
-          y = Math.max(previous_y + minimum_y_space, y)
-          previous_y = y
-          d.label_y = y
-
-      labels = g.selectAll(".linelabel")
-        .data(Object,((d) -> d.key))
-      
-      # Make sure they are the right colour
-      labels.enter()
-        .append("text")
-        .attr("class", (d,i) -> "linelabel #{seriesClass(d,i)}")
-        .attr("x", label_x)
-        .attr("y", (d) -> yScale(d.label_y) + 4)
-        .text((d) -> d.key)
-        .on("mouseover", (d,i) ->
-          dataTable(d, seriesClass(d,i))
-          g.selectAll(".#{seriesClass(d,i)}")
-            .classed("hover", true))
-        .on("mouseout", (d,i) ->
-          removeDataTable()
-          g.selectAll(".#{seriesClass(d,i)}")
-            .classed("hover", false))
-
-      labels.exit()
-        .remove()
-
-      labels
-        # Make sure the labels for the biggest values are drawn first, so can always see the small labels
-        .sort( (a,b) -> d3.descending(Math.abs(a.total), Math.abs(b.total)) )
-        .transition()
-          .attr("x",label_x)
-          .attr("y", (d) -> yScale(d.label_y)+4)
-          # If they are too small, don't show them
-          .attr("display", (d,i) -> if showLabelFilter(d) then "inline" else "none" )
-
-      dataTable = (series, seriesclass) ->
-          # Add the numbers at the bottom
-          labels = series.value
-
-          grid = g.selectAll(".seriesValue")
-            .data(labels)
-
-          grid.enter()
-            .append("text")
-            .attr("class", "seriesValue")
-          
-          grid
-            .text((d,i) -> if (i % 2) == 0 then dataTableFormat(d.y) else "")
-            .attr("transform",(d,i) -> "translate("+xScale(first_scale_year+(i*5))+","+(yScale.range()[0]+30)+")")
-            .classed(seriesclass, true)
-
-      removeDataTable = () ->
-        g.selectAll(".seriesValue").remove()
+    chart.draw()
 
 
   chart.title = (_) ->
