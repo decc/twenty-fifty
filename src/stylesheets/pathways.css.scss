@@ -47,14 +47,36 @@ svg {
   float: left;    
 }
 
+.chart rect.backgroundrect {
+  fill: #fff;
+}
+
+.brush .extent {
+  stroke: #fff;
+  fill-opacity: .125;
+  shape-rendering: crispEdges;
+}
+
 .charttitle {
   text-anchor: middle;
   font-size: 1em;
 }
 
+#unzoom {
+  text-anchor: middle;
+  font-size: 1em;
+  text-decoration: underline;
+  fill: #00f;
+  cursor: pointer;
+}
+
 text.target {
   text-anchor: middle;
   font-size: 0.72em;
+}
+
+g.drawing {
+  pointer-events: all;
 }
 
 .axis path, .axis line {
@@ -168,6 +190,7 @@ text.lightingappliances { fill: #be9d00; }
 .fuelcombustion { fill: #95CDBA; }
 .aviationandshipping { fill: #CC9999; }
 .waste { fill: #ff0000; }
+.agriculture { fill: #84B817; }
 
 // Not yet used?
 .commercialheat { fill: #ff0000; }

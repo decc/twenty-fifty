@@ -22,35 +22,9 @@ window.timeSeriesStackedAreaChart = () ->
   max_year = 2050
   total_label = "Total"
 
-  xScale = d3.scale.linear()
-  yScale = d3.scale.linear()
-
-  xAxis = d3.svg.axis()
-    .scale(xScale)
-    .orient("bottom")
-    .ticks(5)
-    .tickFormat(d3.format(".0f"))
-
-  yAxis = d3.svg.axis()
-    .scale(yScale)
-    .orient("left")
-    .ticks(5)
-    .tickFormat(d3.format(".0f"))
-
-  stack = d3.layout.stack().values( (d) -> d.value)
-
-  area = d3.svg.area()
-    .x((d,i) -> xScale(d.x))
-    .y0((d,i) -> yScale(d.y0))
-    .y1((d,i) -> yScale(d.y0 + d.y))
-
-  line = d3.svg.line()
-    .x((d,i) -> xScale(d.x))
-    .y((d,i) -> yScale(d.y))
-
   color_classes = {
-    'Agriculture': 'bioenergy'
-    'Agriculture and land use': 'bioenergy'
+    'Agriculture': 'agriculture'
+    'Agriculture and land use': 'agriculture'
     'Agriculture, waste, and biomatter imports': 'bioenergy'
     'Biomass oversupply (imports)': 'bioenergy'
     'Bioenergy': 'bioenergy'
@@ -112,6 +86,41 @@ window.timeSeriesStackedAreaChart = () ->
     'Wave': 'wave'
     'Wind': 'wind'
   }
+
+  # This is used to set what appears on the chart
+  # will change as the user zooms in and out
+  extent =
+    xmin: min_year
+    xmax: max_year
+    ymin: min_value
+    ymax: max_value
+
+  xScale = d3.scale.linear()
+  yScale = d3.scale.linear()
+
+  xAxis = d3.svg.axis()
+    .scale(xScale)
+    .orient("bottom")
+    .ticks(5)
+    .tickFormat(d3.format(".0f"))
+
+  yAxis = d3.svg.axis()
+    .scale(yScale)
+    .orient("left")
+    .ticks(5)
+    .tickFormat(d3.format(".0f"))
+
+  stack = d3.layout.stack().values( (d) -> d.value)
+
+  area = d3.svg.area()
+    .x((d,i) -> xScale(d.x))
+    .y0((d,i) -> yScale(d.y0))
+    .y1((d,i) -> yScale(d.y0 + d.y))
+
+  line = d3.svg.line()
+    .x((d,i) -> xScale(d.x))
+    .y((d,i) -> yScale(d.y))
+
   color_class_index = 0
 
   seriesClass = (d,i) ->
@@ -125,9 +134,54 @@ window.timeSeriesStackedAreaChart = () ->
   # Sets whether data value is big enough to need a label
   label_threshold = 200 # Defined later based on scales
   showLabelFilter = (d) ->
-    Math.abs(d.total) > label_threshold
+    (Math.abs(d.total) > label_threshold) and
+    d.label_y < extent.ymax and
+    d.label_y > extent.ymin
 
   dataTableFormat = d3.format(".0f")
+
+  zoomed = false
+
+  # When the user clicks on the chart, then the chart zooms
+  # in around roughly that point
+  zoom = () ->
+    zoomed = true
+    [x, y] = d3.mouse(@)
+    x = xScale.invert(x)
+    y = yScale.invert(y)
+    #xZoom = (extent.xmax - extent.xmin) * 0.75 # Zoom factor
+    #new_xmin = x - (xZoom/2)
+    #new_xmax = x + (xZoom/2)
+    #if new_xmin < extent.xmin
+    #  new_xmax = new_xmax + (extent.xmin - new_xmin)
+    #  new_xmin = extent.xmin
+    #if new_xmax > extent.xmax
+    #  new_xmin = new_xmin - (new_xmax - extent.xmax)
+    #  new_xmax = extent.xmax
+    #extent.xmin = new_xmin
+    #extent.xmax = new_xmax
+    yZoom = (extent.ymax - extent.ymin) * 0.75 # Zoom factor
+    new_ymin = y - (yZoom/2)
+    new_ymax = y + (yZoom/2)
+    if new_ymin < extent.ymin
+      new_ymax = new_ymax + (extent.ymin - new_ymin)
+      new_ymin = extent.ymin
+    if new_ymax > extent.ymax
+      new_ymin = new_ymin - (new_ymax - extent.ymax)
+      new_ymax = extent.ymax
+    extent.ymin = new_ymin
+    extent.ymax = new_ymax
+    chart.draw()
+
+  unzoom = () ->
+    zoomed = false
+    extent =
+      xmin: min_year
+      xmax: max_year
+      ymin: min_value
+      ymax: max_value
+    d3.event.stopPropagation()
+    chart.draw()
 
   chart = (selection) ->
     # Expects a d3.map() of data
@@ -169,14 +223,14 @@ window.timeSeriesStackedAreaChart = () ->
 
         # Update the x-scale.
         xScale
-          .domain([min_year, max_year])
+          .domain([extent.xmin, extent.xmax])
           .range([0, width - margin.left - margin.right])
       
         # Update the y-scale.
         yScale
-          .domain([min_value, max_value])
+          .domain([extent.ymin, extent.ymax])
           .range([height - margin.top - margin.bottom, 0])
-        
+
         # Select the svg element, if it exists.
         svg = d3.select(this).selectAll("svg").data([stacked_data])
         
@@ -185,11 +239,21 @@ window.timeSeriesStackedAreaChart = () ->
           .append("svg")
           .append("g")
           .attr('class','drawing Paired') # Paired indicates the standard colour palette 
+          .on('click.zoom', zoom)
 
+        gEnter.append("rect")
+          .attr("class", "backgroundrect")
+          .attr("x", -margin.left)
+          .attr("y", -margin.top)
+          .attr("width", width)
+          .attr("height", height)
+        
+        # This is for drawing things like the all energy line on the electricity chart
         gEnter
           .append("g")
           .attr('class', 'context')
 
+        # This prevents series from going over the edges of the chart
         gEnter
           .append("clipPath")
             .attr("id", "seriesclip")
@@ -199,6 +263,7 @@ window.timeSeriesStackedAreaChart = () ->
             .attr("width", xScale.range()[1] - xScale.range()[0])
             .attr("height", yScale.range()[0] - yScale.range()[1])
 
+        # This group contains the chart series
         gEnter
           .append("g")
           .attr('class','series')
@@ -211,6 +276,8 @@ window.timeSeriesStackedAreaChart = () ->
 
         # Update the inner dimensions.
         g = svg.select("g.drawing").attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+
+        svg.select("rec.backgroundrect").attr("width", width).attr("height", height)
 
         # Update the area paths
         areas = g.select('g.series').selectAll("path")
@@ -262,20 +329,30 @@ window.timeSeriesStackedAreaChart = () ->
         gEnter
           .append("g")
           .attr("class", "x axis")
+
         gEnter
           .append("g")
           .attr("class", "y axis")
+
         gEnter
           .append("text")
           .attr("class", "y axislabel")
+
         gEnter
           .append("text")
           .attr("class", "charttitle")
+
+        gEnter
+          .append("text")
+          .attr("id","unzoom")
+          .text("Unzoom")
+          .on('click', unzoom)
 
         # Update the x-axis, which is either positioned on y(0) or
         # on the bottom of the chart
         if yScale.domain()[0] < 0 && yScale.domain()[1] > 0 # Then y(0) appears on this chart
           g.select(".x.axis")
+            .transition()
             .attr("transform", "translate(0," + yScale(0) + ")")
             .call(xAxis)
 
@@ -284,11 +361,13 @@ window.timeSeriesStackedAreaChart = () ->
 
         else # Position the scale at the bottom of the chart
           g.select(".x.axis")
+            .transition()
             .attr("transform", "translate(0," + yScale.range()[0] + ")")
             .call(xAxis)
         
         # Update the y-axis.
         g.select(".y.axis")
+          .transition()
           .attr("transform", "translate(0," + xScale.range()[0] + ")")
           .call(yAxis)
 
@@ -307,6 +386,11 @@ window.timeSeriesStackedAreaChart = () ->
         g.select(".charttitle")
           .attr("transform", "translate("+x_center+"," + (xScale.range()[0] - 30) + ")")
           .text(title)
+        
+        # Update the zoom text
+        g.select("#unzoom")
+          .attr("transform", "translate("+x_center+"," + (xScale.range()[0] ) + ")")
+          .attr("visibility", if zoomed then "visible" else "hidden")
 
         # Update the area labels
 
@@ -345,7 +429,7 @@ window.timeSeriesStackedAreaChart = () ->
               a_y - b_y
         
         # Start at the bottom of the screen
-        previous_y = yScale.domain()[0] - 1000
+        previous_y = yScale.domain()[0]
 
         # Then we nudge any labels that are too close together
         for d in stacked_data
@@ -354,6 +438,10 @@ window.timeSeriesStackedAreaChart = () ->
             y = Math.max(previous_y + minimum_y_space, y)
             previous_y = y
             d.label_y = y
+          if d.label_y > extent.ymax
+            d.label_y = extent.ymax
+          if d.label_y < extent.ymin
+            d.label_y = extent.ymin
 
         labels = g.selectAll(".linelabel")
           .data(Object,((d) -> d.key))
@@ -436,22 +524,22 @@ window.timeSeriesStackedAreaChart = () ->
 
   chart.max_value = (_) ->
     return max_value unless _?
-    max_value = _
+    extent.ymax = max_value = _
     chart
 
   chart.min_value = (_) ->
     return min_value unless _?
-    min_value = _
+    extent.ymin = min_value = _
     chart
 
   chart.max_year = (_) ->
     return max_year unless _?
-    max_year = _
+    extent.xmax = max_year = _
     chart
 
   chart.min_year = (_) ->
     return min_year unless _?
-    min_year = _
+    extent.xmin = min_year = _
     chart
 
   chart.x_center = () ->
