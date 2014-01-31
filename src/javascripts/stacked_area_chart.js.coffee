@@ -183,6 +183,8 @@ window.timeSeriesStackedAreaChart = () ->
     d3.event.stopPropagation()
     chart.draw()
 
+  context = undefined
+
   chart = (selection) ->
     # Expects a d3.map() of data
     chart.draw = () =>
@@ -324,6 +326,21 @@ window.timeSeriesStackedAreaChart = () ->
 
         areas.transition()
           .attr("d", (d) -> d.path(d.value))
+
+        # Optionally add the context, if supplied
+        if context?
+          d = for p, i in context
+            { x: 2010 + (i*5), y: p, y0: 0}
+
+          total = svg.select('g.context').selectAll('path')
+                    .data([d])
+
+          total.enter()
+            .append("path")
+
+          total.transition()
+            .attr("d", (d) -> area(d))
+
 
         # Add the axes & title (after the areas, so that the axis are drawn on top)
         gEnter
@@ -548,6 +565,11 @@ window.timeSeriesStackedAreaChart = () ->
   chart.area = (_) ->
     return area unless _?
     area = _
+    chart
+
+  chart.context = (_) ->
+    return context unless _?
+    context = _
     chart
 
   chart
