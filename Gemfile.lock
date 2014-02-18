@@ -5,7 +5,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
-    decc_2050_model (3.5.1)
+    decc_2050_model (3.3.3pre)
       ffi (>= 1.0.11)
     execjs (2.0.2)
     ffi (1.9.3)
@@ -17,6 +17,7 @@ GEM
     rack (1.5.2)
     rack-protection (1.5.1)
       rack
+    rake (10.1.0)
     sass (3.2.12)
     sinatra (1.4.4)
       rack (~> 1.4)
@@ -37,10 +38,11 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-script
-  decc_2050_model (= 3.5.1)
+  decc_2050_model (= 3.3.3pre)
   ffi
   haml
   json
+  rake
   sass
   sinatra
   sprockets
