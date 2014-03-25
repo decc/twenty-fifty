@@ -1,0 +1,7 @@
+require_relative "model"
+require_relative "model_utilities"
+require_relative "model_result"
+require_relative "model_structure"
+require_relative "model_choice"
+require_relative "model_alternative"
+require_relative "model_version"

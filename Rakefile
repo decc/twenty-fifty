@@ -2,7 +2,10 @@
 # coding: utf-8
 require 'sprockets'
 require 'rake/sprocketstask'
-require './src/helper'
+require 'haml'
+require 'json'
+require_relative 'model/load_model'
+require_relative 'src/helper'
 
 # This deals with the javascript and css
 Rake::SprocketsTask.new do |t|
@@ -19,13 +22,6 @@ Rake::SprocketsTask.new do |t|
   t.output      = "./public/assets"
   t.assets      = %w( application.js application.css )
 end
-
-
-
-require 'haml'
-require 'json'
-require 'decc_2050_model'
-require_relative 'src/helper'
 
 manifest = './public/assets/manifest.json'
 file manifest => ['assets']  

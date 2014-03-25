@@ -3,6 +3,7 @@ require 'rubygems'
 require 'bundler'
 Bundler.setup
 
+require './model/load_model'
 require './src/redirect_old_versions'
 require './src/serve_model_data'
 require './src/serve_html'
