@@ -48,7 +48,7 @@ class Map
   colours = {
      'III.a.2': '#ff0000'
      'III.a.1': '#ff0000'
-     'IV.c': '#aa0000'  
+     'IV.c': '#aa0000'
      'VI.a.Biocrop': '#00ff00'
      'VI.a.Forestry': '#408000'
      'VI.c': '#00ff00'
@@ -67,12 +67,12 @@ class Map
      'VI.b': '#F00'
    }
 
-   labels = {
+  labels = {
      'III.a.2': 'Offshore wind'
      'III.a.1': 'Onshore wind'
-     'IV.c': 'Micro wind'  
+     'IV.c': 'Micro wind'
      'VI.a.Biocrop': 'Energy crops'
-     'VI.a.Forestry': 'Forest'  
+     'VI.a.Forestry': 'Forest'
      'VI.c': 'Marine algae'
      'V.b': 'Biocrops'
      'IV.a': 'Solar PV'
@@ -89,7 +89,7 @@ class Map
      'VI.b': '215 kt/y waste to energy conversion facilities'
    }
    
-   pointSizes = {
+  pointSizes = {
      'I.a': 2,
      'I.b': 1.2,
      'II.a': 3,
@@ -98,76 +98,76 @@ class Map
      'VI.b': 0.01,
    }
   
-   constructor: () ->
+  constructor: () ->
      @ready = false
     
-   setup: () ->
-     @ready = true
+  setup: () ->
+    @ready = true
       
-     # The drawing area
-     $('#results').append("<div id='map'></div>")
+    # The drawing area
+    $('#results').append("<div id='map'></div>")
 
-     r = Raphael(display_in_element,display_width,display_height) # Define the drawing area
-     
-     @r = r
-     
-     r.image(map_image_url, map_offset_x, map_offset_y, map_width, map_height) # Add the map graphic
-     
-     r.text(20,10,"Illustration of scale of land and sea use in 2050 (positions are arbitrary)").attr({'font-weight':'bold','text-anchor':'start'})
-     
-     @wave = {line: r.path([]).attr({stroke: 'blue', 'stroke-width': 2}), label: r.text(98,34,"Wave").attr({'text-anchor':'end'})}
-     @wave.label.hide()
-     
-     x = (map_width/2) + map_offset_x
-     y = map_height + map_offset_y - 100
-     
-     @land_boxes = {}
-     
-     for name in ['III.a.1','III.b','IV.a','IV.b','IV.c','VI.a.Biocrop','VI.a.Forestry']
-       @land_boxes[name] = r.up_labeled_square(x,y,labels[name],0,colours[name])
-     
-     x = (map_width/2) + map_offset_x + 250
-     y = 30
-     
-     @sea_boxes = {}
-     
-     for name in ['III.a.2','III.c.TidalStream','III.c.TidalRange','VI.c']
-       @sea_boxes[name] = r.down_labeled_square(x,y,labels[name],0,colours[name])
-       
-     r.path("M244,695 q0,-200 -200,-200").attr({'stroke':'#ccc'})
-     r.text(44,510,"Imports").attr({'fill':'#ccc','font-weight':'bold','text-anchor':'start'})
-     
-     
-     x = map_offset_x - 105
-     y = map_height + map_offset_y - 30
-     
-     @overseas_land_boxes = {}
-     
-     for name in ['V.b','VII.a']
-       @overseas_land_boxes[name] = r.up_labeled_square(x,y,labels[name],0,colours[name])
-       
-     @points = r.set()
-     r.text(700,10,"Illustration of the number of thermal power stations in 2050 (scales and positions are arbitrary)").attr({'font-weight':'bold','text-anchor':'start'})
+    r = Raphael(display_in_element,display_width,display_height) # Define the drawing area
+    
+    @r = r
+    
+    r.image(map_image_url, map_offset_x, map_offset_y, map_width, map_height) # Add the map graphic
+    
+    r.text(20,10,"Illustration of scale of land and sea use in 2050 (positions are arbitrary)").attr({'font-weight':'bold','text-anchor':'start'})
+    
+    @wave = {line: r.path([]).attr({stroke: 'blue', 'stroke-width': 2}), label: r.text(98,34,"Wave").attr({'text-anchor':'end'})}
+    @wave.label.hide()
+    
+    x = (map_width/2) + map_offset_x
+    y = map_height + map_offset_y - 100
+    
+    @land_boxes = {}
+    
+    for name in ['III.a.1','III.b','IV.a','IV.b','IV.c','VI.a.Biocrop','VI.a.Forestry']
+      @land_boxes[name] = r.up_labeled_square(x,y,labels[name],0,colours[name])
+    
+    x = (map_width/2) + map_offset_x + 250
+    y = 30
+    
+    @sea_boxes = {}
+    
+    for name in ['III.a.2','III.c.TidalStream','III.c.TidalRange','VI.c']
+      @sea_boxes[name] = r.down_labeled_square(x,y,labels[name],0,colours[name])
+      
+    r.path("M244,695 q0,-200 -200,-200").attr({'stroke':'#ccc'})
+    r.text(44,510,"Imports").attr({'fill':'#ccc','font-weight':'bold','text-anchor':'start'})
+    
+    
+    x = map_offset_x - 105
+    y = map_height + map_offset_y - 30
+    
+    @overseas_land_boxes = {}
+    
+    for name in ['V.b','VII.a']
+      @overseas_land_boxes[name] = r.up_labeled_square(x,y,labels[name],0,colours[name])
+      
+    @points = r.set()
+    r.text(700,10,"Illustration of the number of thermal power stations in 2050 (scales and positions are arbitrary)").attr({'font-weight':'bold','text-anchor':'start'})
 
   
-   point_stack: (x,y,number,colour,label,size) ->
-     x_count = 0
-     if size < 10
-       x_step = 5 
-       y_step = 5
-     else
-       x_step = 1.5*size
-       y_step = 1.5*size
-     width = 100
-     @r.text(x-20,y,label).attr({'text-anchor':'end'}) if number > 0
-     for i in [1..number]
-       @r.circle(x+(x_count*x_step),y,size*km).attr({'stroke-width':0,'fill':colour})
-       @r.circle(x+(x_count*x_step),y,1).attr({'stroke-width':0,'fill':'black'})  
-       x_count = x_count + 1
-       if (x_count*x_step) > width
-         x_count = 0
-         y = y + y_step
-     y = y + 30
+  point_stack: (x,y,number,colour,label,size) ->
+    x_count = 0
+    if size < 10
+      x_step = 5 
+      y_step = 5
+    else
+      x_step = 1.5*size
+      y_step = 1.5*size
+    width = 100
+    @r.text(x-20,y,label).attr({'text-anchor':'end'}) if number > 0
+    for i in [1..number]
+      @r.circle(x+(x_count*x_step),y,size*km).attr({'stroke-width':0,'fill':colour})
+      @r.circle(x+(x_count*x_step),y,1).attr({'stroke-width':0,'fill':'black'})  
+      x_count = x_count + 1
+      if (x_count*x_step) > width
+        x_count = 0
+        y = y + y_step
+    y = y + 30
   
   teardown: () ->
     $('#results').empty()
