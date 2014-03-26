@@ -20,7 +20,7 @@ The server is setup in config.ru. This:
   2. serve_model_data.rb - looks for urls that end in /data and then returns the relevant model data which is contained in the decc_2050_model gem
   3. serve_html.rb - if in 'production' mode this always returns public/default.html. In 'development' mode it compiles the haml template in src/default.html.haml
 
-All of the underlying model calculations are in the decc_2050_model gem and not in this code.
+All of the underlying model calculations are in the model folder
 
 The javascripts in src/javascripts contain almost all of the important code. Once a change has been made to this code, then please run:
     
@@ -31,17 +31,7 @@ to make sure all those changes will appear in the production version of this cod
 
 UPDATING THE UNDERLYING EXCEL MODEL
 
-The calculating engine of this tool is contained in the decc_2050_model gem. Find out more about that at:
-http://github.com/decc/decc_2050_model
-
-Once done. The next step will be to change into this directory and in 
-
-    Gemfile
-
-update the version number of the decc_2050_model gem. Then:
-
-    bundle update
-    rake
+The calculating engine of this tool is contained in the model folder. See the README there for how to update the code if the Excel model is updated.
 
 UPDATING THE VIEWS
 
