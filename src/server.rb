@@ -1,8 +1,86 @@
+# encoding: utf-8
 require 'sinatra'
+require 'haml'
+require 'json'
+
+# This provides useful scripts for the default.html.haml file
+module Helper
+
+  def structure
+    ModelStructure.instance
+  end
+
+  def stylesheet
+    "<link href='/assets/#{assets['application.css'] || 'application.css'}' media='screen' rel='stylesheet' type='text/css' />"
+  end
+
+  def javascript
+    "<script src='/assets/#{assets['application.js'] || 'application.js'}' type='text/javascript'></script>"
+  end
+
+  def assets
+    @assets ||= {}
+  end
+
+  def assets=(h)
+    @assets = h
+  end
+  
+  def classic_table_row_for_choice(choice)
+    row = ["<td class='name'><a href='/assets/onepage/#{choice.doc}' target='_new' onmouseover='twentyfifty.startDemo(#{choice.number}); return true;' onmouseout='twentyfifty.stopDemo(#{choice.number});return true;'>#{choice.name}</a></td>", "<td class='help'><a title='Click for more detail on what choices #{choice.levels.to_a.join(' ')} mean.' href='/assets/onepage/#{choice.doc}' target='_new'>?</a></td>"]
+    choice.levels.each.with_index do |level,i|
+      row << "<td class='choice'><a href='#' data-choicenumber='#{choice.number}' data-choicelevel='#{i+1}' id='c#{choice.number}l#{i+1}' title='#{choice.descriptions[i]}' class='choiceLink' >#{level}</a></td>"
+    end
+    "<tr class='#{choice.incremental_or_alternative}' id='r#{choice.number}'>#{row.join('')}</tr>"
+  end
+
+  def example_pathways
+    @example_pathways ||= ModelStructure.instance.example_pathways
+  end 
+
+  def pathway_names
+    Hash[*example_pathways.map { |e| [e[:code],e[:name]] }.flatten]
+  end
+
+  def pathway_wiki_pages
+    Hash[*example_pathways.map { |e| [e[:code],e[:wiki]] }.flatten]
+  end
+
+  def cost_comparator_pathways
+    example_pathways.find_all do |e|
+      e[:cost_comparator]
+    end.sort_by do |e|
+      e[:cost_comparator]
+    end.map do |e|
+      e[:code]
+    end
+  end
+
+  def default_cost_comparator_pathway
+    example_pathways.first[:code]
+  end
+
+  def pathway_descriptions
+    Hash[*example_pathways.map { |e| [e[:code],e[:description]] }.flatten]
+  end
+
+  def saved_pathways 
+    Hash[*example_pathways.map { |e| [e[:name],e[:code]] }.flatten]
+  end
+
+  def choice_sizes
+    sizes = {}
+    ModelStructure.instance.choices.each do |choice|
+      sizes[choice.number] = choice.levels.to_a.size
+    end
+    sizes
+  end
+
+end
 
 # This deals with urls that relate to previous versions of the 2050 calculator.
 # If you are developing your own calculator, delete from here to the line marked STOP DELETING HERE
-class RedirectOldVersions < Sinatra::Base
+class TwentyFiftyServer < Sinatra::Base
 
   # This is for older versions of the calculator that used 'show' as their main view
   get '/pathways/:id/show' do |id|
@@ -95,6 +173,31 @@ class RedirectOldVersions < Sinatra::Base
       'f' => '222322222222332330001143014301201230141111',
       '1' => '111111111111111110001111111111111111111111'
     }[name.downcase]
+  end
+
+  enable :lock # The C 2050 model is not thread safe
+
+  # This is the main method for getting data, change Decc2050Model to your model
+  get '/pathways/:id/data' do |id|
+    last_modified Model.last_modified_date # Don't bother recalculating unless the model has changed
+    expires (24*60*60), :public # cache for 1 day
+    content_type :json # We return json
+    ModelResult.calculate_pathway(id).to_json
+  end
+
+  # This has the methods needed to dynamically create the view
+  if development?
+
+    helpers Helper
+    set :views, settings.root 
+
+    get '*' do
+      haml :'default.html'
+    end
+  else
+    get '*' do 
+      send_file 'public/default.html'
+    end
   end
 
 end

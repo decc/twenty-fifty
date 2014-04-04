@@ -4,9 +4,7 @@ require 'bundler'
 Bundler.setup
 
 require './model/load_model'
-require './src/redirect_old_versions'
-require './src/serve_model_data'
-require './src/serve_html'
+require './src/server'
 
 ENV['RACK_ENV'] = ENV['RAILS_ENV'] if ENV['RAILS_ENV']
 
@@ -15,7 +13,6 @@ map '/' do
   use Rack::CommonLogger
   map '/assets' do
     require 'sprockets'
-    require './src/helper'
     environment = Sprockets::Environment.new
 
     environment.append_path 'src/javascripts'
@@ -29,7 +26,5 @@ map '/' do
 
     run environment
   end
-  use RedirectOldVersions
-  use ServeModelData
-  run ServeHTML
+  run TwentyFiftyServer
 end

@@ -5,7 +5,7 @@ require 'rake/sprocketstask'
 require 'haml'
 require 'json'
 require_relative 'model/load_model'
-require_relative 'src/helper'
+require_relative 'src/server'
 
 # This deals with the javascript and css
 Rake::SprocketsTask.new do |t|
