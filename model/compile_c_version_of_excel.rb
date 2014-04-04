@@ -6,15 +6,14 @@ COMPILER = "gcc"
 COMPILE_FLAGS = "-fPIC"
 SHARED_LIBRARY_FLAGS = "-shared -fPIC"
 
-OUTPUT = FFI.map_library_name "model"
-OUTPUT_DIR = "."
-SOURCE = "model.c"
-OBJECT = "model.o"
+SOURCE = File.join(this_directory, "model.c")
+OBJECT = File.join(this_directory, "model.o")
+OUTPUT = File.join(this_directory, FFI.map_library_name("model"))
 
-puts "Building #{SOURCE}"
+puts "Compiling #{SOURCE} into #{OBJECT}"
 puts "Note that this is a really large c file, it may take tens of minutes to compile."
 `#{COMPILER} #{COMPILE_FLAGS} -o #{OBJECT} -c #{SOURCE}`
 
-puts "Turning #{OBJECT} and putting it in #{OUTPUT_DIR} as #{OUTPUT}"
+puts "Turning #{OBJECT} into dynamic library #{OUTPUT}"
 puts "Note that this is a really large c file, it may take tens of minutes to compile."
-`#{COMPILER} #{SHARED_LIBRARY_FLAGS} -o #{File.join(OUTPUT_DIR,OUTPUT)} #{OBJECT}`
+`#{COMPILER} #{SHARED_LIBRARY_FLAGS} -o #{OUTPUT} #{OBJECT}`
