@@ -1,6 +1,6 @@
 # encoding: utf-8
 require 'sinatra'
-require 'haml'
+require 'erb'
 require 'json'
 
 # This provides useful scripts for the default.html.haml file
@@ -192,7 +192,7 @@ class TwentyFiftyServer < Sinatra::Base
     set :views, settings.root 
 
     get '*' do
-      haml :'default.html'
+      erb :'default.html'
     end
   else
     get '*' do 

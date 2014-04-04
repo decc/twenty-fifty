@@ -5,3 +5,4 @@ tmp/
 *.log
 *~
 .powenv
+public/assets/application-*

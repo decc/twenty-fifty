@@ -29,18 +29,14 @@ file manifest => ['assets']
 desc "Compiles changes to src/default.html.haml into public/default.html and adds links it to the latest versions of application.cs and application.js"
 task 'html' => [manifest] do 
 
-  class Context
-    include Helper
-  end
-
-  context = Context.new
+  include Helper
 
   # We need to figure out the filename of the latest javascript and css
-  context.assets = JSON.parse(IO.readlines(manifest).join)['assets']
+  assets = JSON.parse(IO.readlines(manifest).join)['assets']
 
-  input = IO.readlines('./src/default.html.haml').join
+  input = IO.readlines('./src/default.html.erb').join
   File.open('./public/default.html','w') do |f|
-    f.puts Haml::Engine.new(input).render(context)
+    f.puts ERB.new(input).result(binding)
   end
 end
 

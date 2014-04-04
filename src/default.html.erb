@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='IE=edge' http-equiv='X-UA-Compatible'>
+    <title>2050 Pathways Calculator</title>
+    <%= stylesheet %>
+    <%= javascript %>
+    <!-- Change the Google Analytics code to one for your own country-->
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-17161700-2']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </head>
+  <body>
+    <!-- Other countries will probably want to delete this -->
+    <div id='svgWarn'>
+      This interface requires <a href='http://caniuse.com/#cats=SVG'>a browser that supports SVG.</a> it seems like your browser doesn't support SVG. We have an <a href='http://uk-old.2050.org.uk'>old version of this calculator</a> that may work for you. Alternatively you can download <a href='http://2050-calculator-tool-wiki.decc.gov.uk/pages/140'>an excel version.</a>
+      <p>
+        <a href='#' onclick="$('#svgWarn').hide()">Hide this message.</a>
+      </p>
+    </div>
+    <div id='topbar'>
+
+      <div id='name'>
+        <!-- Change this to link to your country website -->
+        <a href='http://www.decc.gov.uk/2050'>The UK 2050 Calculator</a>
+      </div>
+
+      <div id='examples'>
+        <a class='newdropdown' data-dropdown='#savedpathway_choices' href='#'>Examples</a>
+      </div>
+
+      <!-- / To add or remove views from the web tool, alter the following section -->
+      <div id='views'>
+        <a class='view' data-view='primary_energy_chart' href='#'>Energy</a>
+        <a class='view' data-view='electricity' href='#'>Electricity</a>
+        <a class='view' data-view='energy_security' href='#'>Security</a>
+        <a class='view' data-view='sankey' href='#'>Flows</a>
+        <a class='view' data-view='map' href='#'>Map</a>
+        <a class='view' data-view='story' href='#'>Story</a>
+        <a class='newdropdown' data-dropdown='#cost_choices' href='#' id='cost_choice'>Costs</a>
+        <a class='view' data-view='air_quality' href='#'>Air</a>
+        <a class='view' data-view='share' href='#'>Share</a>
+        <!-- Change this to link to your own country website documentation -->
+        <a href='http://2050-calculator-tool-wiki.decc.gov.uk'>Docs</a>
+      </div>
+    </div>
+    <div class='dropdown' id='cost_choices'>
+      <a class='view' data-view='costs_in_context' href='#'>In context</a>
+      <a class='view' data-view='costs_compared_overview' href='#'>Compared</a>
+      <a class='view' data-view='costs_sensitivity' href='#'>Sensitivity</a>
+    </div>
+    <div class='dropdown' id='savedpathway_choices'>
+      <!-- These are taken from the underlying spreadsheet -->
+      <% saved_pathways.each do |name, code| %>
+        <a href='#' onclick="twentyfifty.switchPathway('<%= code %>');$('ul#savedpathway_choices').toggle()"><%= name %></a>
+      <% end %>
+    </div>
+    <div id='calculating'>
+      <span>Calculating</span>
+    </div>
+    <!-- / The charts will be drawn in this block -->
+    <div id='results'></div>
+    <!-- / These are the controls -->
+    <div id='classic_controls'>
+      <!-- The left column -->
+      <div id='demand'>
+        <table>
+          <% structure.demand_choices.each do |choice| %>
+            <%= classic_table_row_for_choice choice %>
+          <% end %>
+        </table>
+      </div>
+      <!-- The middle column -->
+      <div id='supply'>
+        <table>
+          <% structure.supply_choices.each do |choice| %>
+            <%= classic_table_row_for_choice choice %>
+          <% end %>
+        </table>
+      </div>
+      <!-- The right column -->
+      <div id='other'>
+        <table>
+          <%= classic_table_row_for_choice structure.geosequestration_choice %>
+        </table>
+        <table>
+          <%= classic_table_row_for_choice structure.balancing_choice %>
+        </table>
+      </div>
+    </div>
+    <!-- This is needed to show the tooltips, don't remove -->
+    <div id='tooltip'></div>
+    <div id='footer'>
+      <!-- Change this to link to your country's website -->
+      Based on <a href='http://2050-calculator-tool-wiki.decc.gov.uk/pages/140'>excel version 3.5.1</a>. The source code for this site is available under an open source licence from
+      <a href='http://github.com/decc/twenty-fifty'>http://github.com/decc/twenty-fifty</a>
+    </div>
+  </body>
+</html>
