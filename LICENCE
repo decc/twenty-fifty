@@ -1,15 +1,7 @@
 Please note that the following files have separate licences:
-1. All files in the vendor directory
-2. public/flowplayer-3.2.2.swf
-3. public/flowplayer-3.2.1.swf
-4. public/javascripts/01jquery.js
-5. public/javascripts/02excanvas.compiled.js
-6. public/javascripts/03flowplayer-3.2.2.min.js
-7. public/javascripts/03jquery.tools.min.js
-8. public/javascripts/05highcharts.js
-9. public/javascripts/06cookie.js
+1. All files in the contrib directory
 
-Where not otherwise covered by separate copyright, this source code is Crown Copyright (c) 2010, 2011.
+Where not otherwise covered by separate copyright, this source code is Crown Copyright (c) 2010, 2011, 2012, 2013, 2014
 
 Where not otherwise covered by a separate licence, this source code is distributed under the MIT licence: http://www.opensource.org/licenses/mit-license.php
 
