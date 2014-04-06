@@ -85,4 +85,22 @@ class ModelStructure < ModelUtilities
     end.reverse.map { |a| a.join(" ") }.join("\n")
   end
 
+  def cost_comparator_pathways
+    example_pathways.find_all do |e|
+      e[:cost_comparator]
+    end.sort_by do |e|
+      e[:cost_comparator]
+    end.map do |e|
+      e[:code]
+    end
+  end
+
+  def choice_sizes
+    sizes = {}
+    ModelStructure.instance.choices.each do |choice|
+      sizes[choice.number] = choice.levels.to_a.size
+    end
+    sizes
+  end
+
 end

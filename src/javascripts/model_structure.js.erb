@@ -1,12 +1,14 @@
 // éclair - FIXME: Need this so file is recognised as utf-8. Need a better solution than this bodge
 // FIXME: In the end, this should only contain information drawn from the Excel Model.
-// that is constant across pathways. The methods called are in helper.rb
+// that is constant across pathways. 
 window.twentyfifty = {};
-window.twentyfifty.default_pathway = <%= ("1" * structure.types.size).to_json %>;
-window.twentyfifty.pathway_wiki_pages_hash = <%= pathway_wiki_pages.to_json %>;
-window.twentyfifty.pathway_descriptions_hash = <%= pathway_descriptions.to_json %>;
-window.twentyfifty.pathway_names_hash = <%= pathway_names.to_json %>;
-window.twentyfifty.comparator_pathways = <%= cost_comparator_pathways.to_json %>;
-window.twentyfifty.default_comparator_code = <%= default_cost_comparator_pathway.to_json %>;
-window.twentyfifty.longDescriptions = <%= structure.long_descriptions.to_json %>;
-window.twentyfifty.choice_sizes = <%= choice_sizes.to_json %>;
+// FIXME just pass the example pathways as a whole
+<% example_pathways = ModelStructure.instance.example_pathways %>
+window.twentyfifty.default_pathway = <%= ("1" * ModelStructure.instance.types.size).to_json %>;
+window.twentyfifty.pathway_wiki_pages_hash = <%=  Hash[*example_pathways.map { |e| [e[:code],e[:wiki]] }.flatten].to_json %>;
+window.twentyfifty.pathway_descriptions_hash = <%= Hash[*example_pathways.map { |e| [e[:code],e[:description]] }.flatten].to_json %>;
+window.twentyfifty.pathway_names_hash = <%= Hash[*example_pathways.map { |e| [e[:code],e[:name]] }.flatten].to_json %>;
+window.twentyfifty.comparator_pathways = <%= ModelStructure.instance.cost_comparator_pathways.to_json %>;
+window.twentyfifty.default_comparator_code = <%= example_pathways.first[:code].to_json %>;
+window.twentyfifty.longDescriptions = <%= ModelStructure.instance.long_descriptions.to_json %>;
+window.twentyfifty.choice_sizes = <%= ModelStructure.instance.choice_sizes.to_json %>;
