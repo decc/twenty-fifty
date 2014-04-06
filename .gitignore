@@ -6,3 +6,4 @@ tmp/
 *~
 .powenv
 public/assets/application-*
+public/default.html
