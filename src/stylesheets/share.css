@@ -1,0 +1,10 @@
+#share div {
+  margin: 0 10% 0 10%;
+  width: 80%; }
+#share #excel {
+  margin-top: 50px; }
+  #share #excel textarea {
+    text-align: right;
+    margin-left: 10%;
+    width: 32px;
+    height: 700px; }

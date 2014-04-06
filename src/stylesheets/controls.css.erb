@@ -1,0 +1,89 @@
+#classic_controls {
+  font-size: 0.72em;
+  overflow: auto;
+}
+#classic_controls #demand, #classic_controls #supply, #classic_controls #other {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  margin-left: 2.5%;
+  width: 30%;
+  float: left;
+}
+#classic_controls table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 2px 0px;
+}
+#classic_controls table tr:hover td.name {
+  font-weight: bold;
+  background-image: url("/assets/images/oneblackpixel.png");
+}
+#classic_controls table td.choice {
+  width: 20px;
+}
+#classic_controls table td.choice a {
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: #888;
+  text-decoration: none;
+  border: solid #ccc 1px;
+}
+#classic_controls table td.choice a:hover {
+  border: solid #000 1px;
+}
+#classic_controls table td.choice a.selected {
+  color: #000;
+}
+#classic_controls table td.name {
+  background-image: url("/assets/images/onegreypixel.png");
+  background-position: left center;
+  background-repeat: repeat-x;
+}
+#classic_controls table td.name a {
+  background-color: #fff;
+  text-decoration: none;
+  color: #000;
+  cursor: help;
+}
+#classic_controls table td.name a:hover {
+  text-decoration: underline;
+}
+#classic_controls table td.help {
+  width: 14px;
+}
+#classic_controls table td.help a {
+  text-align: center;
+  display: block;
+  background-color: #7c88fa;
+  border: solid #7c88fa 1px;
+  color: white;
+  width: 100%;
+  text-decoration: none;
+}
+#classic_controls table tr.incremental a {
+  background-position: left center;
+  background-repeat: repeat-y;
+}
+<% 1.upto(4) do |c| %>
+  <% 1.upto(9) do |i| %>
+    #classic_controls table tr.incremental a.level<%= c %>_<%= i %> { background-image: url('/assets/images/fractions/level<%= c %>_<%= i %>.png'); }
+  <% end %>
+<% end %>
+
+#classic_controls table tr.incremental a.level1 {
+  background-color: #92C979;
+}
+#classic_controls table tr.incremental a.level2 {
+  background-color: #EFDD60;
+}
+#classic_controls table tr.incremental a.level3 {
+  background-color: #FFAE55;
+}
+#classic_controls table tr.incremental a.level4 {
+  background-color: #F44545;
+}
+#classic_controls table tr.alternative a.selected {
+  background-color: #aaa;
+}

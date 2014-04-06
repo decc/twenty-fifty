@@ -1,0 +1,48 @@
+#topbar {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 0 10px 0;
+  background-color: black;
+  color: white;
+  border-bottom: solid #009ddb 3px; }
+  #topbar a {
+    color: white;
+    text-decoration: none; }
+  #topbar .selectedView {
+    color: #009ddb; }
+  #topbar a:hover {
+    text-decoration: underline; }
+  #topbar #name {
+    float: left;
+    width: 180px; }
+  #topbar #examples {
+    text-align: right;
+    float: right;
+    width: 180px; }
+  #topbar #views {
+    margin: 0 180px;
+    text-align: center; }
+    #topbar #views a {
+      padding-right: 10px; }
+
+.dropdown {
+  z-index: 10000;
+  position: absolute;
+  display: none;
+  background: black;
+  border: solid 1px black;
+  box-shadow: 0 0 5px #888; }
+  .dropdown a {
+    padding: 5px;
+    color: white;
+    display: block;
+    text-decoration: none; }
+  .dropdown a:hover {
+    text-decoration: underline; }
+
+#savedpathway_choices {
+  width: 200px; }
+
+.showdropdown {
+  display: block; }

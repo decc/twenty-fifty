@@ -1,0 +1,40 @@
+#costssensitivity {
+  margin-left: 0%;
+  margin-right: 0%;
+  width: 100%;
+  margin: 0 0 0 0;
+  padding: 0;
+  height: 1400px; }
+
+.costssensitivity h1 {
+  font-size: 16px;
+  margin-left: 250px; }
+
+#comparatorchoice {
+  z-index: 5;
+  border: 1px solid black;
+  position: absolute;
+  top: 45px;
+  left: 25px;
+  list-style: none;
+  margin-left: 0;
+  padding: 5px; }
+  #comparatorchoice a {
+    color: #000;
+    text-decoration: none; }
+  #comparatorchoice a:hover {
+    text-decoration: underline; }
+  #comparatorchoice li {
+    margin-left: 0;
+    padding-left: 0; }
+  #comparatorchoice #view_comparatorchoice {
+    box-shadow: 0 0 5px #888;
+    list-style: none;
+    display: none;
+    background: #fff;
+    margin-left: 0;
+    padding: 5px; }
+    #comparatorchoice #view_comparatorchoice li {
+      margin-left: 0;
+      padding-left: 0;
+      margin-bottom: 5px; }

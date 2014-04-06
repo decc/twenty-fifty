@@ -1,0 +1,22 @@
+.story {
+  text-align: left;
+  padding: 0;
+  border: 0;
+  margin: 0;
+  margin-left: 2.5%;
+  font-size: 12px;
+  width: 30%;
+  margin-bottom: 30px;
+  float: left; }
+  .story h4 {
+    margin-top: 1em;
+    margin-bottom: 0em; }
+  .story h4 + p {
+    margin-top: 0em; }
+  .story th {
+    text-align: left; }
+  .story td.target, .story th.target {
+    text-align: right; }
+
+#stories .clear {
+  clear: both; }
