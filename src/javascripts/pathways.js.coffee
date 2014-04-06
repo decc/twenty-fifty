@@ -187,6 +187,9 @@ switchView = (new_view) ->
   else
     $("#cost_choice").text("Costs")
 
+  # Setup the new view
+  view_manager.setup()
+
   # Get the id for this pathway
   c = codeForChoices()
   # Check if the data is loaded
