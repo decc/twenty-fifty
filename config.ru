@@ -18,11 +18,11 @@ class CompileTemplate
   end
 
   def erb_file
-    File.join(File.dirname(__FILE__), 'src/default.html.erb')
+    File.join(File.dirname(__FILE__), 'src/index.html.erb')
   end
 
   def html_file
-    File.join(File.dirname(__FILE__), 'public/default.html')
+    File.join(File.dirname(__FILE__), 'public/index.html')
   end
 
   def compile!
@@ -35,6 +35,7 @@ class CompileTemplate
   end
 
   def remove!
+    return unless File.exists?(html_file)
     File.delete(html_file)
   end
 

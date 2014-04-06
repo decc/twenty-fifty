@@ -192,11 +192,11 @@ class TwentyFiftyServer < Sinatra::Base
     set :views, settings.root 
 
     get '*' do
-      erb :'default.html'
+      erb :'index.html'
     end
   else
     get '*' do 
-      send_file 'public/default.html'
+      send_file 'public/index.html'
     end
   end
 
