@@ -3,7 +3,7 @@ require 'sinatra'
 require 'erb'
 require 'json'
 
-# This provides useful scripts for the default.html.haml file
+# This provides useful scripts for the index.html.erb file
 module Helper
 
   def structure
@@ -175,9 +175,11 @@ class TwentyFiftyServer < Sinatra::Base
     }[name.downcase]
   end
 
+  # STOP DELETING HERE
+
   enable :lock # The C 2050 model is not thread safe
 
-  # This is the main method for getting data, change Decc2050Model to your model
+  # This is the main method for getting data
   get '/pathways/:id/data' do |id|
     last_modified Model.last_modified_date # Don't bother recalculating unless the model has changed
     expires (24*60*60), :public # cache for 1 day
