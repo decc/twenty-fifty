@@ -9,13 +9,15 @@
   margin-bottom: 30px;
   float: left; }
 
-.energysecurity td.value {
-  width: 17%; }
-.energysecurity td.value, .energysecurity th.value {
+#energysecurity td.value, #energysecurity th.value {
   text-align: right; }
-.energysecurity th.year {
+#energysecurity th.year {
   text-align: center;
   border-bottom: solid 1px #000; }
+
+#energysecurity table {
+  width: 100%;
+}
 
 #energysecurity .clear {
   clear: both; }
