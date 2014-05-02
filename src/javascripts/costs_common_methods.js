@@ -73,7 +73,7 @@
   window.twentyfifty.group_costs_of_pathway = function(pathway) {
     var categorised_costs, category, category_name, high, low, name, range, values, _ref;
     if (pathway.total_cost_low_adjusted == null) {
-      adjust_costs_of_pathway(pathway);
+      twentyfifty.adjust_costs_of_pathway(pathway);
     }
     categorised_costs = {};
     _ref = pathway.cost_components;
@@ -190,10 +190,10 @@
   window.twentyfifty.calculateIncrementalCost = function(pt, pc) {
     var cc, ct, cvalues, name, tc, tt, tvalues, _ref;
     if (pt.total_cost_low_adjusted == null) {
-      adjust_costs_of_pathway(pt);
+      twentyfifty.adjust_costs_of_pathway(pt);
     }
     if (pc.total_cost_low_adjusted == null) {
-      adjust_costs_of_pathway(pc);
+      twentyfifty.adjust_costs_of_pathway(pc);
     }
     tt = 0;
     tc = 0;
