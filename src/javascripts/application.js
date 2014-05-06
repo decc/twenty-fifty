@@ -16,23 +16,25 @@
 //= require jstorage.min
 //= require sankey
 
-// Now the common methods
-//= require model_structure
-//= require pathways
-//= require costs_common_methods
-//= require stacked_area_chart
+// Now the utility methods
+//= require util/model_structure
+//= require util/costs_common_methods
+//= require util/stacked_area_chart
+
+// Now the controller
+//= require controller
 
 // Now the individual views
-//= require primary_energy
-//= require electricity
-//= require energy_security
-//= require map
-//= require sankey_display
-//= require air_quality
-//= require costs_in_context
-//= require costs_compared_overview
-//= require costs_compared_within_sector
-//= require costs_sensitivity
-//= require story
-//= require share
+//= require views/primary_energy
+//= require views/electricity
+//= require views/energy_security
+//= require views/map
+//= require views/sankey_display
+//= require views/air_quality
+//= require views/costs_in_context
+//= require views/costs_compared_overview
+//= require views/costs_compared_within_sector
+//= require views/costs_sensitivity
+//= require views/story
+//= require views/share
 
