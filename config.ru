@@ -25,7 +25,41 @@ class CompileTemplate
     File.join(File.dirname(__FILE__), 'public/index.html')
   end
 
+  def javascript_dir
+    File.join(File.dirname(__FILE__), 'src/javascripts')
+  end
+
+  def stylesheet_dir
+    File.join(File.dirname(__FILE__), 'src/stylesheets')
+  end
+
+  def contrib_dir
+    File.join(File.dirname(__FILE__), 'contrib')
+  end
+
+  def manifest_dir
+    File.join(File.dirname(__FILE__), 'public/assets/manifest.json')
+  end
+
   def compile!
+    compile_assets
+    compile_html
+  end
+
+  # This compiles the javascripts and stylesheets into single files
+  # and then puts them in public/assets
+  def compile_assets
+    require 'sprockets'
+    environment = Sprockets::Environment.new
+    environment.append_path javascript_dir
+    environment.append_path stylesheet_dir
+    environment.append_path contrib_dir
+    environment.context_class.class_eval { include Helper }
+    manifest = Sprockets::Manifest.new(environment, manifest_dir)
+    manifest.compile %w( application.js application.css )
+  end
+
+  def compile_html
     assets = JSON.parse(IO.readlines(manifest_file).join)['assets']
 
     input = IO.readlines(erb_file).join
@@ -35,6 +69,12 @@ class CompileTemplate
   end
 
   def remove!
+    # Need to remove the compiled html in public/ because otherwise it will 
+    # be loaded in preference to the erb file in src/
+    #
+    # Can leave the compiled stylesheets and javascripts because the ones in
+    # src/javascripts and src/stylesheets will be loaded in preference to the
+    # ones in public/assets
     return unless File.exists?(html_file)
     File.delete(html_file)
   end
