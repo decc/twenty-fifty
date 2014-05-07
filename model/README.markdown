@@ -28,5 +28,5 @@ Then:
 
 This may take up to 4 hours.
 
-The next step is to check whether model_result.rb and model_structure.rb need to be altered so that they
+The next step is to check whether model_result.rb needs to be altered to 
 pick up the correct places in the underlying excel.
