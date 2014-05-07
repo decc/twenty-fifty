@@ -13,32 +13,30 @@ class ModelChoice
 end
 
 class ModelResult
-  attr_accessor :excel, :pathway
+  attr_accessor :pathway
   
-  def initialize
-    @excel = ModelShim.new
+  CONTROL = (5..57).to_a.map { |r| "control_e#{r}"  }
+
+  # This connects to model.rb which
+  # connects to model.c which is a 
+  # translation of model.xlsx
+  def excel
+    @excel ||= ModelShim.new
   end
   
   # Data that changes as the user makes choices
-
-  def self.calculate_pathway(code)
-    new.calculate_pathway(code)
-  end
-  
   def calculate_pathway(code)
-    Thread.exclusive do 
-      reset
-      @pathway = { _id: code, choices: set_choices(code) }
-      sankey_table
-      primary_energy_tables
-      electricity_tables
-      heating_choice_table
-      cost_components_table
-      map_table
-      energy_imports 
-      energy_diversity
-      air_quality
-    end
+    excel.reset
+    @pathway = { _id: code, choices: set_choices(code) }
+    sankey_table
+    primary_energy_tables
+    electricity_tables
+    heating_choice_table
+    cost_components_table
+    map_table
+    energy_imports 
+    energy_diversity
+    air_quality
     pathway
   end
       
@@ -314,17 +312,6 @@ class ModelResult
     end
   end
 
-  # FIXME: Only wraps one line into two
-  def wrap(string, wrap_at_length = 45)
-    return "" unless string
-    string = string.to_s
-    length_so_far = 0
-    string.split.partition do |word| 
-      length_so_far = length_so_far + word.length + 1 # +1 for the trailing space 
-      length_so_far > wrap_at_length
-    end.reverse.map { |a| a.join(" ") }.join("\n")
-  end
-
   def cost_comparator_pathways
     example_pathways.find_all do |e|
       e[:cost_comparator]
@@ -346,6 +333,17 @@ class ModelResult
   
   # Helper methods
   
+  # FIXME: Only wraps one line into two
+  def wrap(string, wrap_at_length = 45)
+    return "" unless string
+    string = string.to_s
+    length_so_far = 0
+    string.split.partition do |word| 
+      length_so_far = length_so_far + word.length + 1 # +1 for the trailing space 
+      length_so_far > wrap_at_length
+    end.reverse.map { |a| a.join(" ") }.join("\n")
+  end
+
   def table(start_row,end_row)
     t = {}
     (start_row..end_row).each do |row|
@@ -397,7 +395,6 @@ class ModelResult
     end
   end
   
-  CONTROL = (5..57).to_a.map { |r| "control_e#{r}"  }
   
   def set_choices(code)
     choices = code.split('')
@@ -422,11 +419,6 @@ class ModelResult
       excel.send(ref,v)
     end
   end
-  
-  def reset
-    excel.reset
-  end
-  
 end
 
 if __FILE__ == $0
