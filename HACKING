@@ -7,26 +7,18 @@ WHAT IS THIS WRITTEN IN
 
 The code is written in:
 
-1. Ruby, using the 'bundler' gem to sort out dependencies and the 'sinatra' framework for the server and the 'haml' framework for templates
-2. Coffeescript, to create the javascript that the user sees
-3. SCSS, to create the stylesheets that the user sees
+1. Ruby, using the 'bundler' gem to sort out dependencies and the 'sinatra' framework for the server 
+2. Javascript, html and css for the user interface
 
 OVERVIEW
 
 The server is setup in config.ru. This:
 1. Maps /assets to a set of code that will compile the javascripts in src/javascripts and the stylesheets in src/stylesheets. It is only used in 'development' mode.
-2. Loads three sinatra modules, all of which are in the src/ directory:
-  1. redirect_old_versions.rb - looks for urls that relate to previous versions of this code, and redirects them to new urls
-  2. serve_model_data.rb - looks for urls that end in /data and then returns the relevant model data which is contained in the decc_2050_model gem
-  3. serve_html.rb - if in 'production' mode this always returns public/default.html. In 'development' mode it compiles the haml template in src/default.html.haml
+2. Loads src/server.rb
 
 All of the underlying model calculations are in the model folder
 
-The javascripts in src/javascripts contain almost all of the important code. Once a change has been made to this code, then please run:
-    
-    rake html
-
-to make sure all those changes will appear in the production version of this code.
+The javascripts in src/javascripts contain almost all of the important code. 
 
 
 UPDATING THE UNDERLYING EXCEL MODEL
@@ -37,18 +29,19 @@ UPDATING THE VIEWS
 
 Most of the meaningful code is in the src/javascripts folder. Most of it is written in coffescript, a variant of javascript.
 
-1. pathways.js.coffee - contains the code that loads the model data and ensures the correct view is displayed.
-2. model_structure.js.erb - contains some javascript variables that are set based on the structure of the model, as detailed in the decc_2050_model gem
-3. primary_energy.js.coffee describes the main view. Other views are also in the folder, one file per view. The relationship between view and url is set in window.twentyfifty.views at the bottom of each file.
+1. src/javascripts/application.js - loads all the javascript code
+2. src/javascripts/controller.js - contains the code that loads the model data and ensures the correct view is displayed.
+3. src/javascripts/views/ - contains the code that displays the different views, with one file per view
 
 Each view in a class with the same rough format:
+
 1. setup() - is called when the webpage is ready for the chart to be drawn
 2. teardown() - is called when the user has selected a different view. It should remove all html that has been added in setup.
 3. updateResults(pathway) - is called when the data for a pathway has been received. It should update the results on the web page.
 
 UPDATING THE EXAMPLE PATHWAYS
 
-The example pathways are listed in:
+The example pathways are taken from the excel spreadsheet. If they aren't appearing correctly, check model/data_from_model.rb is pointint to the right bit.
 
     src/helper.rb
 
@@ -58,17 +51,7 @@ The one page notes are separate pdf files in:
 
     public/assets/onepage
 
-If the order of the controls is changed, or a new control is added, then the mapping in the underlying decc_2050_model code also needs to be changed:
-
-  In this code:  
-
-    http://github.com/decc/decc_2050_model
-
-  Look in this file:
-
-    lib/decc_2050_model/model_choice.rb
-
-  And change the NUMBER_TO_DOC_MAP. The left hand number is a counter, based on the row number in the Excel Control worksheet. 0 is the first row of the controls (Nuclear power). The right hand number or text is the filename of the relevant one page note pdf in app/assets/images/onepage
+If the order of the controls is changed, or a new control is added, then the mapping in the model/data_from_model.rb also needs to be chaned.
 
 REPORTING A BUG
 

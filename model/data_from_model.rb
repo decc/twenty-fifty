@@ -12,7 +12,7 @@ class ModelChoice
   attr_accessor :doc
 end
 
-class ModelResult
+class DataFromModel
   attr_accessor :pathway
   
   CONTROL = (5..57).to_a.map { |r| "control_e#{r}"  }
@@ -395,7 +395,6 @@ class ModelResult
     end
   end
   
-  
   def set_choices(code)
     choices = code.split('')
     choices = convert_letters_to_float(choices)
@@ -422,13 +421,13 @@ class ModelResult
 end
 
 if __FILE__ == $0
-  g = ModelResult.new
+  g = DataFromModel.new
 
   tests = 100
   t = Time.now
   a = []
   tests.times do
-    a << g.calculate_pathway(ModelResult::CONTROL.map { rand(4)+1 }.join)
+    a << g.calculate_pathway(ModelResult::DataFromModel.map { rand(4)+1 }.join)
   end
   te = Time.now - t
   puts "#{te/tests} seconds per run"
