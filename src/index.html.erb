@@ -76,7 +76,7 @@
           <% structure.demand_choices.each do |choice| %>
             <tr class='<%= choice.incremental_or_alternative %>' id='r<%= choice.number %>'>
               <td class='name'>
-                <a href='/assets/onepage/<%= choice.doc %>' target='_new' onmouseover='twentyfifty.startDemo(<%= choice.number %>); return true;' onmouseout='twentyfifty.stopDemo(<%= choice.number %>);return true;'>
+                <a href='/assets/onepage/<%= choice.doc %>' target='_new' data-choicenumber='<%= choice.number %>'>
                   <%= choice.name %>
                 </a>
               </td>
@@ -101,7 +101,7 @@
           <% structure.supply_choices.each do |choice| %>
             <tr class='<%= choice.incremental_or_alternative %>' id='r<%= choice.number %>'>
               <td class='name'>
-                <a href='/assets/onepage/<%= choice.doc %>' target='_new' onmouseover='twentyfifty.startDemo(<%= choice.number %>); return true;' onmouseout='twentyfifty.stopDemo(<%= choice.number %>);return true;'>
+                <a href='/assets/onepage/<%= choice.doc %>' target='_new' data-choicenumber='<%= choice.number %>'>
                   <%= choice.name %>
                 </a>
               </td>
@@ -126,7 +126,7 @@
           <% structure.other_choices.each do |choice| %>
             <tr class='<%= choice.incremental_or_alternative %>' id='r<%= choice.number %>'>
               <td class='name'>
-                <a href='/assets/onepage/<%= choice.doc %>' target='_new' onmouseover='twentyfifty.startDemo(<%= choice.number %>); return true;' onmouseout='twentyfifty.stopDemo(<%= choice.number %>);return true;'>
+                <a href='/assets/onepage/<%= choice.doc %>' target='_new' data-choicenumber='<%= choice.number %>'>
                   <%= choice.name %>
                 </a>
               </td>

@@ -73,7 +73,15 @@
         return d.offset(o);
       }
     });
-    return $(window).resize(function(event) {
+
+    // This triggers the interface to loop through levels 1 to 4
+    // when the user hovers their mouse over a choice.
+    d3.selectAll('td.name a')
+      .datum(function() { return this.dataset })
+      .on('mouseover', function(d,i) { startDemo(d.choicenumber); })
+      .on('mouseout', function(d,i) { stopDemo(d.choicenumber); })
+
+    $(window).resize(function(event) {
       clearTimeout(windowResizeDebounceTimer);
       return windowResizeDebounceTimer = setTimeout(function() {
         return view_manager.updateResults(cache[codeForChoices()]);
