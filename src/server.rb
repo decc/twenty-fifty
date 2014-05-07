@@ -16,7 +16,7 @@ module Helper
   end
 
   def structure
-    @structure ||= ModelStructure.new
+    @structure ||= ModelResult.new
   end
 
 end
