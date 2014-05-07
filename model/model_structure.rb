@@ -1,12 +1,10 @@
 require_relative 'model'
-require 'singleton'
 
 class ModelChoice
   attr_accessor :number, :name, :type, :descriptions, :long_descriptions, :incremental_or_alternative, :levels, :doc
 end
 
 class ModelStructure
-  include Singleton
   
   attr_accessor :excel, :choices
     
