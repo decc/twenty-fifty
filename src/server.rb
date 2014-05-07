@@ -23,6 +23,10 @@ module Helper
     "<tr class='#{choice.incremental_or_alternative}' id='r#{choice.number}'>#{row.join('')}</tr>"
   end
 
+  def structure
+    ModelStructure.instance
+  end
+
 end
 
 # This deals with urls that relate to previous versions of the 2050 calculator.
