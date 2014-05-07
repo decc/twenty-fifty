@@ -124,24 +124,31 @@ class TwentyFiftyServer < Sinatra::Base
 
   enable :lock # The C 2050 model is not thread safe
 
-  # This is the main method for getting data
-  get '/pathways/:id/data' do |id|
-    last_modified Model.last_modified_date # Don't bother recalculating unless the model has changed
-    expires (24*60*60), :public # cache for 1 day
-    content_type :json # We return json
-    DataFromModel.new.calculate_pathway(id).to_json
-  end
 
   # This has the methods needed to dynamically create the view
   if development?
 
     helpers Helper
     set :views, settings.root 
+    
+    # This is the main method for getting data
+    get '/pathways/:id/data' do |id|
+      DataFromModel.new.calculate_pathway(id).to_json
+    end
 
     get '*' do
       erb :'index.html'
     end
   else
+
+    # This is the main method for getting data
+    get '/pathways/:id/data' do |id|
+      last_modified Model.last_modified_date # Don't bother recalculating unless the model has changed
+      expires (24*60*60), :public # cache for 1 day
+      content_type :json # We return json
+      DataFromModel.new.calculate_pathway(id).to_json
+    end
+
     get '*' do 
       send_file 'public/index.html'
     end
