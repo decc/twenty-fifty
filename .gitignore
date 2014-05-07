@@ -8,3 +8,5 @@ tmp/
 public/assets/application-*
 public/default.html
 public/index.html
+
+public/assets/manifest.json
