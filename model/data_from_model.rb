@@ -27,46 +27,55 @@ class DataFromModel
   # Data that changes as the user makes choices
   def calculate_pathway(code)
     excel.reset
-    @pathway = { _id: code, choices: set_choices(code) }
-    sankey_table
-    primary_energy_tables
-    electricity_tables
-    heating_choice_table
-    cost_components_table
-    map_table
-    energy_imports 
-    energy_diversity
-    air_quality
-    pathway
+    { 
+      '_id' => code, 
+      'choices' => set_choices(code),
+      'sankey' => sankey,
+      'ghg' => ghg,
+      'final_energy_demand' => final_energy_demand,
+      'primary_energy_supply' => primary_energy_supply,
+      'electricity' => electricity,
+      'heating' => heating,
+      'cost_components' => costs,
+      'map' => map,
+      'imports' => imports,
+      'diversity' => diversity,
+      'air_quality' => air_quality
+    }
   end
       
-  def sankey_table
-    s = [] 
-    (6..94).each do |row|
-      s << [r("flows_c#{row}"),r("flows_n#{row}"),r("flows_d#{row}")]
+  def sankey
+    (6..94).map do |row|
+      [r("flows_c#{row}"),r("flows_n#{row}"),r("flows_d#{row}")]
     end
-    pathway[:sankey] = s
+  end
+
+  def ghg
+    h = table 182, 192
+    h['percent_reduction_from_1990'] =  (r("intermediate_output_bh155") * 100).round
+    h
+  end
+
+  def final_energy_demand
+    table 13, 18
+  end
+
+  def primary_energy_supply
+    table 283, 296
   end
   
-  def primary_energy_tables
-    pathway[:ghg] = table 182, 192
-    pathway[:final_energy_demand, ] = table 13, 18
-    pathway[:primary_energy_supply] = table 283, 296
-    pathway[:ghg][:percent_reduction_from_1990] = (r("intermediate_output_bh155") * 100).round
+  def electricity
+    {
+      'demand' => table(322, 326),
+      'supply' => table(96, 111),
+      'emissions' => table(270, 273),
+      'capacity' => table(118, 132),
+      'automatically_built' => r("intermediate_output_bh120"),
+      'peaking' => r("intermediate_output_bh131")
+    }
   end
   
-  def electricity_tables
-    e = {}
-    e[:demand] = table 322, 326
-    e[:supply] = table 96, 111
-    e[:emissions] = table 270, 273
-    e[:capacity] = table 118, 132
-    e['automatically_built'] = r("intermediate_output_bh120")
-    e['peaking'] = r("intermediate_output_bh131")
-    pathway['electricity'] = e
-  end
-  
-  def heating_choice_table
+  def heating
     h = {'residential' => {}, 'commercial' => {}}
 
     (332..344).each do |row|
@@ -74,10 +83,10 @@ class DataFromModel
       h['commercial'][r("intermediate_output_d#{row}")] = r("intermediate_output_f#{row}")
     end
 
-    pathway[:heating] = h
+    h
   end
   
-  def cost_components_table
+  def costs
     t = {}
     low_start_row = 3
     point_start_row = 57
@@ -133,10 +142,10 @@ class DataFromModel
     
     t[name] = {low:low,point:point,high:high,range:range,finance_low:finance_low,finance_point:finance_point,finance_high:finance_high,finance_range:finance_range}
   
-    pathway['cost_components'] = t
+    t
   end
   
-  def map_table
+  def map
     m = {}
     m['wave'] = r("land_use_q28")
     [6..12,16..19,23..24,32..37].each do |range|
@@ -144,10 +153,10 @@ class DataFromModel
         m[r("land_use_c#{row}")] = r("land_use_q#{row}")
       end
     end
-    pathway['map'] = m
+    m
   end
   
-  def energy_imports
+  def imports
     i = {}
     [
       ["Coal",37,39],
@@ -169,11 +178,11 @@ class DataFromModel
       proportion = total > 0 ? "#{((imported/total) * 100).round}%" : "0%"
       i[vector[0]]['2007'] = { quantity: imported, proportion: proportion }
     end
-    pathway['imports'] = i
+    i
   end
 
 
-  def energy_diversity
+  def diversity
     d = {}
     total_2007 = r("intermediate_output_f296").to_f
     total_2050 = r("intermediate_output_bh296").to_f
@@ -183,13 +192,14 @@ class DataFromModel
         '2050' => "#{((r("intermediate_output_bh#{row}").to_f / total_2050)*100).round}%"
       }
     end
-    pathway['diversity'] = d
+    d
   end
 
   def air_quality
-    pathway['air_quality'] = {}
-    pathway['air_quality']['low'] = r("aq_outputs_f6")
-    pathway['air_quality']['high'] = r("aq_outputs_f5")
+    {
+      'low' => r("aq_outputs_f6"),
+      'high' => r("aq_outputs_f5")
+    }
   end
 
   # Data that doesn't change with user choices (more structural)
