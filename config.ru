@@ -3,8 +3,7 @@ require 'rubygems'
 require 'bundler'
 Bundler.setup
 
-require './model/load_model'
-require './src/server'
+require_relative 'src/server'
 
 ENV['RACK_ENV'] = ENV['RAILS_ENV'] if ENV['RAILS_ENV']
 

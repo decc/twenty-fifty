@@ -3,6 +3,8 @@ require 'sinatra'
 require 'erb'
 require 'json'
 
+require_relative '../model/model_result'
+
 # This provides useful scripts for the index.html.erb file
 module Helper
 
