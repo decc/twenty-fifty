@@ -102,16 +102,8 @@ class ModelStructure
     choices[0..20]
   end
   
-  def geosequestration_choice
-    choices[40]
-  end
-  
-  def balancing_choice
-    choices[41]
-  end
-
-  def indigenous_fossil_fuel_production
-    choices[42]
+  def other_choices
+    choices[40..42]
   end
   
   def example_pathways

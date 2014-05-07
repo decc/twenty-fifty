@@ -123,7 +123,7 @@
       <!-- The right column -->
       <div id='other'>
         <table>
-          <% choice = structure.geosequestration_choice %>
+          <% structure.other_choices.each do |choice| %>
             <tr class='<%= choice.incremental_or_alternative %>' id='r<%= choice.number %>'>
               <td class='name'>
                 <a href='/assets/onepage/<%= choice.doc %>' target='_new' onmouseover='twentyfifty.startDemo(<%= choice.number %>); return true;' onmouseout='twentyfifty.stopDemo(<%= choice.number %>);return true;'>
@@ -142,28 +142,7 @@
               </td>
             <% end %>
             </tr>
-        </table>
-
-        <table>
-          <% choice = structure.balancing_choice %>
-            <tr class='<%= choice.incremental_or_alternative %>' id='r<%= choice.number %>'>
-              <td class='name'>
-                <a href='/assets/onepage/<%= choice.doc %>' target='_new' onmouseover='twentyfifty.startDemo(<%= choice.number %>); return true;' onmouseout='twentyfifty.stopDemo(<%= choice.number %>);return true;'>
-                  <%= choice.name %>
-                </a>
-              </td>
-              <td class='help'>
-                <a title='Click for more detail on what choices <%= choice.levels.to_a.join(' ')%> mean.' href='/assets/onepage/<%= choice.doc %>' target='_new'>?</a>
-              </td>
-              <!-- One cell per level for that choice -->
-              <% choice.levels.each.with_index do |level,i| %>
-                <td class='choice'>
-                  <a href='#' data-choicenumber='<%= choice.number %>' data-choicelevel='<%= i+1 %>' id='c<%= choice.number %>l<%= i+1%>' title='<%= choice.descriptions[i] %>' class='choiceLink' >
-                    <%= level %>
-                </a>
-              </td>
-            <% end %>
-            </tr>
+          <% end %>
         </table>
       </div>
     </div>
