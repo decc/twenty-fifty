@@ -24,3 +24,7 @@ body {
 
 #results {
   overflow: hidden; }
+
+#snipets {
+  display: none;
+}

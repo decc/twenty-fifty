@@ -2,11 +2,12 @@ window.twentyfifty.views.costs_in_context = function() {
   
   __hasProp = {}.hasOwnProperty;
 
-  costsInContextHTML = "<div class='costsincontext'>\n  <div id='cost_override_warning'>NB Some costs not on default values</div>\n  <h1>\n    The cost to society of your pathway. This is not your energy bill.<br>\n    For comparison, UK average GDP 2010-2050 is forecast to be roughly &pound;35000 per person.\n  </h1>\n  " + window.costCaveatHTML + "\n  <div id='costsincontext'></div>\n  " + window.costEssentialNotesHTML + "\n</div>";
+  costsInContextHTML = "<div class='costsincontext'>\n  <div id='cost_override_warning'>NB Some costs not on default values</div>\n  <h1>\n    The cost to society of your pathway. This is not your energy bill.<br>\n    For comparison, UK average GDP 2010-2050 is forecast to be roughly &pound;35000 per person.\n  </h1>\n  <div id='costsincontext'></div>\n  " + window.costEssentialNotesHTML + "\n</div>";
 
   this.pathways = {};
 
   this.setup = function() {
+    if ($.jStorage.get('CostCaveatShown') !== true) { $('#cost_caveats').show(); }
     var all_pathways, code, comparator_pathways, e, format, h, labels_hide, labels_show, low, low_label, message, overlay, overlays, range, range_label, tick, x, y, _i, _j, _k, _l, _len, _len1, _len2, _len3, _len4, _m, _ref, _results;
     $("#results").append(costsInContextHTML);
     $("#message").addClass('warning');
@@ -165,6 +166,7 @@ window.twentyfifty.views.costs_in_context = function() {
   this.teardown = function() {
     $("#results").empty();
     $("#message").removeClass('warning');
+    $('#cost_caveats').hide();
   };
 
   this.updateResults = function(pathway) {

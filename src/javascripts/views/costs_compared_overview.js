@@ -1,7 +1,7 @@
 window.twentyfifty.views.costs_compared_overview = function() {
   __hasProp = {}.hasOwnProperty;
 
-  costsComparedOverviewHTML = "<div class='costscomparedoverview'>\n  <div id='cost_override_warning'>NB Some costs not on default values</div>\n  <h1>\n    The cost of your pathway, compared with other pathways.\n    This is not your energy bill.\n  </h1>\n  " + window.costCaveatHTML + "\n  <div id='costscomparedoverview'></div>\n  " + window.costEssentialNotesHTML + "\n</div>";
+  costsComparedOverviewHTML = "<div class='costscomparedoverview'>\n  <div id='cost_override_warning'>NB Some costs not on default values</div>\n  <h1>\n    The cost of your pathway, compared with other pathways.\n    This is not your energy bill.\n  </h1>\n  <div id='costscomparedoverview'></div>\n  " + window.costEssentialNotesHTML + "\n</div>";
 
   categories = ["Fossil fuels", "Bioenergy", "Electricity", "Buildings", "Transport", "Industry", "Finance", "Other"];
 
@@ -43,6 +43,7 @@ window.twentyfifty.views.costs_compared_overview = function() {
   this.boxes = {};
 
   this.setup = function() {
+    if ($.jStorage.get('CostCaveatShown') !== true) { $('#cost_caveats').show(); }
     var all_pathways, b, c, category, clickFunction, code, color, colors, e, format, h, lb, tick, x, y, _i, _j, _k, _l, _len, _len1, _len2, _len3, _len4, _len5, _m, _n, _ref, _ref1, _ref2, _ref3, _ref4, _results;
     $('#results').append(costsComparedOverviewHTML);
     $("#message").addClass('warning');
@@ -260,6 +261,7 @@ window.twentyfifty.views.costs_compared_overview = function() {
   this.teardown = function() {
     $("#results").empty();
     $("#message").removeClass('warning');
+    $('#cost_caveats').hide();
   };
 
   this.updateResults = function(pathway) {

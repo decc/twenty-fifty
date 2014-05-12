@@ -112,6 +112,8 @@ window.twentyfifty.views.costs_sensitivity = function() {
     c_range_fill_color = 'url(/assets/images/hatches/hatch-f00.png)';
 
     this.setup = function() {
+      if ($.jStorage.get('CostCaveatShown') !== true) { $('#cost_caveats').show(); }
+      
       $("#results").append(costsSensitivityHTML);
       $('#message').addClass('warning');
       this.drawChart();
@@ -121,6 +123,7 @@ window.twentyfifty.views.costs_sensitivity = function() {
     this.teardown = function() {
       $('#results').empty();
       $('#message').removeClass('warning');
+      $('#cost_caveats').hide();
     };
 
     this.updateResults = function(pathway) {
