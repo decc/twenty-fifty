@@ -15,10 +15,12 @@
     text-decoration: underline; }
   #topbar #name {
     float: left;
+    margin-left: 2.4%;
     width: 180px; }
   #topbar #examples {
     text-align: right;
     float: right;
+    margin-right: 2.4%;
     width: 180px; }
   #topbar #views {
     margin: 0 180px;
