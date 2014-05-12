@@ -8,3 +8,6 @@ gem 'sprockets'
 
 # Model
 gem 'ffi'
+
+# Compiling an updated excel spreadsheet
+gem 'excel_to_code'
