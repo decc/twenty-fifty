@@ -36,7 +36,8 @@ sudo apt-get install -y python-software-properties # For the apt-add-repository 
 # Install ruby 2.1 and make it the default
 sudo apt-add-repository -y ppa:brightbox/ruby-ng # See 
 sudo apt-get update
-sudo apt-get install -y ruby2.1 ruby2.1-dev  # Install ruby 2.1. Also need development headers for some gems
+sudo apt-get install -y ruby2.1 # Install ruby 2.1. 
+sudo apt-get install -y ruby2.1-dev  # Also need development headers for some gems
 sudo apt-get install ruby-switch # Allows us to change the default ruby on the system
 sudo ruby-switch --set ruby2.1 # Make version 2.1 the default ruby
 
