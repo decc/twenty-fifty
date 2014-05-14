@@ -1,12 +1,19 @@
 (function() {
-
+  
+  // This object contains a series of properties, where the name of the property
+  // matches the name of the view as used in the URl and the value of the property
+  // is a function that manages that view and is defined in the views/ folder.
+  // e.g.: views.primary_energy = { setup: ..., teardown: ..., updateResults: ... } // defined in views/primary_energy.js
   views = {};
+  // This property contains the currently active view. That object is defined in the views/ folder
+  // and will respond to setup(), teardown() and updateResults(new_pathway)
+  active_view = null;
+
   controller = null;
   choices = null;
   view = null;
   sector = null;
   comparator = null;
-  view_manager = null;
   old_choices = [];
   cache = {};
   windowResizeDebounceTimer = null;
@@ -79,7 +86,7 @@
     $(window).resize(function(event) {
       clearTimeout(windowResizeDebounceTimer);
       return windowResizeDebounceTimer = setTimeout(function() {
-        return view_manager.updateResults(cache[codeForChoices()]);
+        return active_view.updateResults(cache[codeForChoices()]);
       }, 500);
     });
   };
@@ -259,14 +266,14 @@
   switchView = function(new_view) {
     var c, data;
     $('.showdropdown').removeClass("showdropdown");
-    if (view === new_view && (view_manager != null)) {
+    if (view === new_view && (active_view != null)) {
       return false;
     }
-    if (view_manager != null) {
-      view_manager.teardown();
+    if (active_view != null) {
+      active_view.teardown();
     }
     view = new_view;
-    view_manager = views[view];
+    active_view = views[view];
     $("a.selectedView").removeClass("selectedView");
     $("a.view[data-view='" + view + "']").addClass("selectedView");
     if (view === "costs_in_context") {
@@ -278,11 +285,11 @@
     } else {
       $("#cost_choice").text("Costs");
     }
-    view_manager.setup();
+    active_view.setup();
     c = codeForChoices();
     data = cache[c];
     if (data != null) {
-      view_manager.updateResults(data);
+      active_view.updateResults(data);
     }
     if (history['pushState'] != null) {
       return history.pushState(choices, c, url());
@@ -314,7 +321,7 @@
       history.pushState(choices, main_code, url());
     }
     if (cache[main_code] != null) {
-      view_manager.updateResults(cache[main_code]);
+      active_view.updateResults(cache[main_code]);
       return $('#calculating').hide();
     } else {
       $('#calculating').show();
@@ -328,7 +335,7 @@
           if (data != null) {
             cache[data._id] = data;
             if (data._id === codeForChoices()) {
-              view_manager.updateResults(data);
+              active_view.updateResults(data);
               return $('#calculating').hide();
             }
           }
@@ -424,8 +431,8 @@
       history.pushState(choices, codeForChoices(), url());
     }
     switchView('costs_compared_within_sector');
-    view_manager.teardown();
-    return view_manager.updateResults(cache[codeForChoices()]);
+    active_view.teardown();
+    return active_view.updateResults(cache[codeForChoices()]);
   };
 
   getComparator = function() {
@@ -437,8 +444,8 @@
     if (history['pushState'] != null) {
       history.pushState(choices, codeForChoices(), url());
     }
-    if (view_manager.switchComparator != null) {
-      return view_manager.switchComparator(comparator);
+    if (active_view.switchComparator != null) {
+      return active_view.switchComparator(comparator);
     }
   };
 
