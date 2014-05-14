@@ -16,7 +16,6 @@
   comparator = null;
   old_choices = [];
   cache = {};
-  windowResizeDebounceTimer = null;
 
   documentReady = function() {
     checkSVGWorks();
@@ -81,12 +80,19 @@
     d3.selectAll('td.name a')
       .datum(function() { return this.dataset })
       .on('mouseover', function(d,i) { startDemo(d.choicenumber); })
-      .on('mouseout', function(d,i) { stopDemo(d.choicenumber); })
+      .on('mouseout', function(d,i) { stopDemo(d.choicenumber); });
 
+  
+    // This forces the view to be redrawn if the user resizes their 
+    // browser window. It uses a timer to only trigger the redraw
+    // half a second after the user has stopped resizing.
+    // FIXME: The redrawing sometimes appears buggy.
+    windowResizeDebounceTimer = null;
     $(window).resize(function(event) {
       clearTimeout(windowResizeDebounceTimer);
-      return windowResizeDebounceTimer = setTimeout(function() {
-        return active_view.updateResults(cache[codeForChoices()]);
+      windowResizeDebounceTimer = setTimeout(function() {
+        // FIXME: Refactor out the cache[codeForChoices()] call
+        active_view.updateResults(cache[codeForChoices()]);
       }, 500);
     });
   };
