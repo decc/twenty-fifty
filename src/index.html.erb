@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- This prevents Internet Explorer from entering 'quirks' mode -->
     <meta content='IE=edge' http-equiv='X-UA-Compatible'>
+    <!-- Change the title to one for your own country -->
     <title>2050 Pathways Calculator</title>
+    <!-- assets is a function definied in the Helper module in src/server.rb --> 
     <link href='/assets/<%= assets['application.css']%>' media='screen' rel='stylesheet' type='text/css' />
     <script src='/assets/<%= assets['application.js']%>' type='text/javascript'></script>
     <!-- Change the Google Analytics code to one for your own country-->
@@ -18,13 +21,17 @@
     </script>
   </head>
   <body>
-    <!-- Other countries will probably want to delete this -->
+
+    <!-- Other countries may want to delete this warning. It is hidden initially by css in src/stylesheets/body.css
+      Code in the checkSVGWorks function in src/javascripts/controller.js checks if the user's web browser 
+      supports SVG and, if it doesn't, shows this div.  -->
     <div id='svgWarn'>
       This interface requires <a href='http://caniuse.com/#cats=SVG'>a browser that supports SVG.</a> it seems like your browser doesn't support SVG. We have an <a href='http://uk-old.2050.org.uk'>old version of this calculator</a> that may work for you. Alternatively you can download <a href='http://2050-calculator-tool-wiki.decc.gov.uk/pages/140'>an excel version.</a>
       <p>
         <a href='#' onclick="$('#svgWarn').hide()">Hide this message.</a>
       </p>
     </div>
+
     <div id='topbar'>
 
       <div id='name'>
@@ -34,9 +41,10 @@
 
       <div id='examples'>
         <a class='newdropdown' data-dropdown='#savedpathway_choices' href='#'>Examples</a>
+        <!-- the contents of this dropdown is defined in the #savedpathway_choices div below -->
       </div>
 
-      <!-- / To add or remove views from the web tool, alter the following section -->
+      <!-- To add or remove views from the web tool, alter the following section -->
       <div id='views'>
         <a class='view' data-view='primary_energy_chart' href='#'>Energy</a>
         <a class='view' data-view='electricity' href='#'>Electricity</a>
@@ -51,11 +59,13 @@
         <a href='http://2050-calculator-tool-wiki.decc.gov.uk'>Docs</a>
       </div>
     </div>
+
     <div class='dropdown' id='cost_choices'>
       <a class='view' data-view='costs_in_context' href='#'>In context</a>
       <a class='view' data-view='costs_compared_overview' href='#'>Compared</a>
       <a class='view' data-view='costs_sensitivity' href='#'>Sensitivity</a>
     </div>
+
     <div class='dropdown' id='savedpathway_choices'>
       <!-- These are taken from the underlying spreadsheet -->
       <% structure.example_pathways.each do |pathway| %>

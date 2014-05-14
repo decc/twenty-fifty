@@ -31,11 +31,12 @@
     loadMainPathway();
   });
 
+  // Some of the graphs require SVG, which is only supported in modern browsers (Internet Explorer >8)
+  // This function checks that SVG is supported, and if not reveals a warning block that is 
+  // in src/index.html.erb
   checkSVGWorks = function() {
-    if (!!document.createElementNS && !!document.createElementNS('http://www.w3.org/2000/svg', "svg").createSVGRect) {
-      return true;
-    }
-    return $("#svgWarn").show();
+    if (!!document.createElementNS && !!document.createElementNS('http://www.w3.org/2000/svg', "svg").createSVGRect) { return; }
+    $("#svgWarn").show();
   };
 
   setUpControls = function() {
