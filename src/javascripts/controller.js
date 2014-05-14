@@ -9,23 +9,27 @@
   // and will respond to setup(), teardown() and updateResults(new_pathway)
   active_view = null;
 
+  // FIXME: Wrap this in a state object
   controller = null;
   choices = null;
   view = null;
   sector = null;
   comparator = null;
   old_choices = [];
+
+  // FIXME: Where is the right spot for this?
   cache = {};
 
-  documentReady = function() {
+  // This is the first thing that gets called when everything has been loaded.
+  // It wires up the controls, sets up the initial view and loads the first
+  // pathway.
+  $(document).ready( function() {
     checkSVGWorks();
     setUpControls();
     setVariablesFromURL();
     switchView(view);
     loadMainPathway();
-  };
-
-  $(document).ready(documentReady);
+  });
 
   checkSVGWorks = function() {
     if (!!document.createElementNS && !!document.createElementNS('http://www.w3.org/2000/svg', "svg").createSVGRect) {
