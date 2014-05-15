@@ -13,7 +13,7 @@
   controller = null;
   choices = null;
   view = null;
-  sector = null;
+  sector = null; // FIXME: Rename to sub_view.
   comparator = null;
   old_choices = [];
 
@@ -39,21 +39,26 @@
     $("#svgWarn").show();
   };
 
+  // The controls are a series of tables in src/index.html.erb in the #classic_controls block
+  // This method attaches javascript function to those tables to trigger other jascript 
+  // methods in this file when they are clicked.
   setUpControls = function() {
-    $("a[title]").tooltip({
-      delay: 0,
-      position: 'top left',
-      offset: [3, 3],
-      tip: '#tooltip'
-    });
+    // All links with titles have the title turned into a tooltip. The tooltip is styled
+    // in src/stylesheets/tooltip.css 
+    $("a[title]").tooltip({ delay: 0, position: 'top left', offset: [3, 3], tip: '#tooltip' });
+
+    // This turns the cells that are labeled '1' '2' '3' '4' into controls that select 
+    // a new pathway. The cell is expected to have a data-choicenumber attribute that 
+    // indicates whether it is nuclear, CCS, home heating etc and a data-choicelevel 
+    // attribute that indicates whether it
     $("a.choiceLink").click(function(event) {
-      var c, l, t;
       event.preventDefault();
       t = $(event.target);
       c = t.data().choicenumber;
       l = t.data().choicelevel;
-      return go(c, l);
+      go(c, l);
     });
+
     $("a.view").click(function(event) {
       var t, v;
       event.preventDefault();
@@ -61,6 +66,7 @@
       v = t.data().view;
       return switchView(v);
     });
+
     $(".newdropdown").click(function(event) {
       var d, o, space, t;
       event.preventDefault();
@@ -500,8 +506,6 @@
   window.twentyfifty.switchComparator = switchComparator;
 
   window.twentyfifty.url = url;
-
-  window.twentyfifty.go = go;
 
   window.twentyfifty.loadMainPathway = loadMainPathway;
 
