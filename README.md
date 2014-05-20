@@ -12,6 +12,7 @@ http://github.com/decc/twenty-fifty
 
 If you have a Ubuntu Linux 12.04 server, try:
 
+    cd util
     bash setup-ubuntu-12.04.sh
 
 Otherwise, take a look at that file for the depdencies, or read on.
@@ -34,6 +35,12 @@ This code requires Ruby 2.0 or greater, and ideally Ruby 2.1. Stock images of Ub
 Please do this before following the steps below.
 
 If you need to have multipe versions of ruby, and they are given names like ruby21 etc then below, where it says 'bundle' or 'gem install' please use ruby21 -S bundle or ruby21 -S gem install 
+
+A common problem is a miss-match between versions of ruby, and versions of bundler, and versions of gems. This command:
+
+    bundle exec ruby -v
+
+Should return something starting 'ruby 2.1'. If it does not, try going through the steps in the util/setup_ubuntu-12.04.sh 
 
 ## Steps
 

@@ -40,6 +40,7 @@ sudo apt-get install -y ruby2.1 # Install ruby 2.1.
 sudo apt-get install -y ruby2.1-dev  # Also need development headers for some gems
 sudo apt-get install ruby-switch # Allows us to change the default ruby on the system
 sudo ruby-switch --set ruby2.1 # Make version 2.1 the default ruby
+sudo gem pristine --all --only-executables # Attempt to ensure that old commands point to the new ruby
 
 # Install the ruby package manager
 sudo gem install bundler --no-ri --no-rdoc
