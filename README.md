@@ -44,7 +44,6 @@ Should return something starting 'ruby 2.1'. If it does not, try going through t
 
 ## Steps
 
-Otherwise:
 1. Install ruby 2.0 or greater (including development headers) - 2.1 is preferred for its lower memory usage
 2. 'gem install bundler' or 'sudo gem install bundler' 
 3. cd twenty_fifty
