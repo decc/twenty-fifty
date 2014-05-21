@@ -294,18 +294,6 @@ class DataFromModel
     @long_descriptions ||=  (5..57).to_a.map  { |row| [r("control_bo#{row}"), r("control_bp#{row}"),r("control_bq#{row}"),r("control_br#{row}")] }
   end
     
-  def demand_choices
-    choices[21..39]
-  end
-  
-  def supply_choices
-    choices[0..20]
-  end
-  
-  def other_choices
-    choices[40..42]
-  end
-  
   def example_pathways
     @example_pathways ||= generate_example_pathways
   end

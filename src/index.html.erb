@@ -83,7 +83,7 @@
       <div id='demand'>
         <table>
           <!-- One row per choice -->
-          <% structure.demand_choices.each do |choice| %>
+          <% structure.choices[21..39].each do |choice| %>
             <tr class='<%= choice.incremental_or_alternative %>' id='r<%= choice.number %>'>
               <td class='name'>
                 <a href='/assets/onepage/<%= choice.doc %>' target='_new' data-choicenumber='<%= choice.number %>'>
@@ -108,7 +108,7 @@
       <!-- The middle column -->
       <div id='supply'>
         <table>
-          <% structure.supply_choices.each do |choice| %>
+          <% structure.choices[0..20].each do |choice| %>
             <tr class='<%= choice.incremental_or_alternative %>' id='r<%= choice.number %>'>
               <td class='name'>
                 <a href='/assets/onepage/<%= choice.doc %>' target='_new' data-choicenumber='<%= choice.number %>'>
@@ -133,7 +133,7 @@
       <!-- The right column -->
       <div id='other'>
         <table>
-          <% structure.other_choices.each do |choice| %>
+          <% structure.choices[40..42].each do |choice| %>
             <tr class='<%= choice.incremental_or_alternative %>' id='r<%= choice.number %>'>
               <td class='name'>
                 <a href='/assets/onepage/<%= choice.doc %>' target='_new' data-choicenumber='<%= choice.number %>'>
