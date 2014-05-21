@@ -11,10 +11,13 @@ def setup(command)
   command.output_directory = '.'
   command.output_name = 'model'
 
-  command.cells_that_can_be_set_at_runtime = { "Control" => (5.upto(57).to_a.map { |r| "e#{r}" }) }
+  command.named_references_that_can_be_set_at_runtime = ['input.choices']
+
+  command.named_references_to_keep = lambda do |named_reference|
+    named_reference =~ /^(input|output)\./i
+  end
 
   command.cells_to_keep = {
-    "Control" => :all,
     "Intermediate output" => :all, 
     "CostPerCapita" => :all, 
     "Land Use" => :all, 

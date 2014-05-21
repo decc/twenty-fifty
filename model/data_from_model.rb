@@ -15,8 +15,6 @@ end
 class DataFromModel
   attr_accessor :pathway
   
-  CONTROL = (5..57).to_a.map { |r| "control_e#{r}"  }
-
   # This connects to model.rb which
   # connects to model.c which is a 
   # translation of model.xlsx
@@ -25,11 +23,20 @@ class DataFromModel
   end
   
   # Data that changes as the user makes choices
+  # The code should be in the form i0g2dd2pp1121f1i032211p004314110433304202304320420121
+  # Where each letter or digit corresponds to a choice to be set in the Excel
   def calculate_pathway(code)
+    # Need to make sure the Excel is ready for a new calculation
     excel.reset
+    # Turn the i0g2dd2pp1121f1i032211p004314110433304202304320420121 into something like
+    # [1.8,0.0,1.6,2.0,1.3,1.3,..]
+    choices = convert_letters_to_float(code.split(''))
+    # Set the spreadsheet controls (input.choices is a named reference in the Excel)
+    excel.input_choices = choices
+    # Read out the results
     { 
       '_id' => code, 
-      'choices' => set_choices(code),
+      'choices' => choices,
       'sankey' => sankey,
       'ghg' => ghg,
       'final_energy_demand' => final_energy_demand,
@@ -275,23 +282,31 @@ class DataFromModel
   }
 
   def reported_calculator_version
-    excel.control_m1
+    excel.output_version
   end
   
   def types
-    @types ||= (5..57).to_a.map { |row| excel.send("control_f#{row}") }
+    @types ||= excel.input_types.flatten
   end
   
+  def choice_sizes
+    sizes = {}
+    choices.each do |choice|
+      sizes[choice.number] = choice.levels.to_a.size
+    end
+    sizes
+  end
+
   def names
-    @names ||= (5..57).to_a.map { |row| excel.send("control_d#{row}") }
+    @names ||= excel.input_names.flatten
   end
 
   def descriptions
-    @descriptions ||= (5..57).to_a.map { |row| [r("control_h#{row}"),r("control_i#{row}"),r("control_j#{row}"),r("control_k#{row}")] }
+    @descriptions ||= excel.input_descriptions
   end
 
   def long_descriptions
-    @long_descriptions ||=  (5..57).to_a.map  { |row| [r("control_bo#{row}"), r("control_bp#{row}"),r("control_bq#{row}"),r("control_br#{row}")] }
+    @long_descriptions ||= excel.input_long_descriptions
   end
     
   def example_pathways
@@ -299,13 +314,15 @@ class DataFromModel
   end
   
   def generate_example_pathways
-    ('m'..'z').to_a.push('aa','ab').map do |column|
+    # Transpose the data so that every row is an example pathway
+    data = excel.input_example_pathways.transpose
+    data = data.map do |pathway_data|
       {
-        name: r("control_#{column}4"),
-        code: convert_float_to_letters((5..57).map { |row| r("control_#{column}#{row}") }).join,
-        description: wrap(r("control_#{column}58")),
-        wiki: r("control_#{column}59"),
-        cost_comparator: (c = r("control_#{column}60"); c.is_a?(Numeric) ? c : nil )
+        name: pathway_data[0],
+        code: convert_float_to_letters(pathway_data[1..53]).join,
+        description: wrap(pathway_data[54]),
+        wiki: pathway_data[55],
+        cost_comparator: (c = pathway_data[56]; c.is_a?(Numeric) ? c : nil )
       }
     end
   end
@@ -319,15 +336,6 @@ class DataFromModel
       e[:code]
     end
   end
-
-  def choice_sizes
-    sizes = {}
-    choices.each do |choice|
-      sizes[choice.number] = choice.levels.to_a.size
-    end
-    sizes
-  end
-
   
   # Helper methods
   
@@ -393,39 +401,21 @@ class DataFromModel
     end
   end
   
-  def set_choices(code)
-    choices = code.split('')
-    choices = convert_letters_to_float(choices)
-    set_array(CONTROL,choices)
-    choices
-  end
-  
-  def get_array(references)
-    references.map do |reference|
-      r(reference)
-    end
-  end
-  
   def r(reference)
     excel.send(reference)
   end
   
-  def set_array(references, values)
-    values.each_with_index do |v,i|
-      ref = "#{references[i]}="
-      excel.send(ref,v)
-    end
-  end
 end
 
 if __FILE__ == $0
   g = DataFromModel.new
+  initial_choices = g.excel.input_choices.flatten
 
   tests = 100
   t = Time.now
   a = []
   tests.times do
-    a << g.calculate_pathway(ModelResult::DataFromModel.map { rand(4)+1 }.join)
+    a << g.calculate_pathway(initial_choices.map { rand(4)+1 }.join)
   end
   te = Time.now - t
   puts "#{te/tests} seconds per run"
