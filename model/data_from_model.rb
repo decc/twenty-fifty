@@ -165,26 +165,18 @@ class DataFromModel
   
   def imports
     i = {}
-    [
-      ["Coal",37,39],
-      ["Oil",41,43],
-      ["Gas",44,46],
-      ["Bioenergy",35,36],
-      ["Uranium",23,23],
-      ["Electricity",110,111],
-      ["Primary energy",297,296]
-    ].each do |vector|
-      imported = r("intermediate_output_bh#{vector[1]}").to_f
-      imported = imported > 0 ? imported.round : 0
-      total = r("intermediate_output_bh#{vector[2]}").to_f
-      proportion = total > 0 ? "#{((imported/total) * 100).round}%" : "0%"
-      i[vector[0]] = { '2050' => {quantity: imported, proportion: proportion} }
-      imported = r("intermediate_output_f#{vector[1]}").to_f
-      imported = imported > 0 ? imported.round : 0
-      total = r("intermediate_output_f#{vector[2]}").to_f
-      proportion = total > 0 ? "#{((imported/total) * 100).round}%" : "0%"
-      i[vector[0]]['2007'] = { quantity: imported, proportion: proportion }
+    excel.output_imports_quantity.each do |vector|
+      i[vector[0]] = { 
+        '2007' => { 'quantity' => vector[1].to_f.round}, 
+        '2050' => { 'quantity' => vector[-1].to_f.round }
+      }
     end
+
+    excel.output_imports_proportion.each do |vector|
+      i[vector[0]]['2007']['proportion'] = percent(vector[1])
+      i[vector[0]]['2050']['proportion'] = percent(vector[-1])
+    end
+
     i
   end
 

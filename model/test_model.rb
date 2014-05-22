@@ -1341,6 +1341,160 @@ class TestModel < Minitest::Unit::TestCase
   def test_energy_security_l53; assert_in_delta(0.04180310537990672, worksheet.energy_security_l53, 0.002); end
   def test_energy_security_m53; assert_in_delta(0.008411407951024564, worksheet.energy_security_m53, 0.002); end
   def test_energy_security_n53; assert_in_delta(0.0, (worksheet.energy_security_n53||0), 0.002); end
+  def test_energy_security_d131; assert_equal("Uranium", worksheet.energy_security_d131); end
+  def test_energy_security_e131; assert_in_delta(1.0, worksheet.energy_security_e131, 0.002); end
+  def test_energy_security_f131; assert_in_delta(1.0, worksheet.energy_security_f131, 0.002); end
+  def test_energy_security_g131; assert_in_delta(1.0, worksheet.energy_security_g131, 0.002); end
+  def test_energy_security_h131; assert_in_delta(1.0, worksheet.energy_security_h131, 0.002); end
+  def test_energy_security_i131; assert_in_delta(1.0, worksheet.energy_security_i131, 0.002); end
+  def test_energy_security_j131; assert_in_delta(1.0, worksheet.energy_security_j131, 0.002); end
+  def test_energy_security_k131; assert_in_delta(1.0, worksheet.energy_security_k131, 0.002); end
+  def test_energy_security_l131; assert_in_delta(1.0, worksheet.energy_security_l131, 0.002); end
+  def test_energy_security_m131; assert_in_delta(1.0, worksheet.energy_security_m131, 0.002); end
+  def test_energy_security_n131; assert_in_delta(1.0, worksheet.energy_security_n131, 0.002); end
+  def test_energy_security_d132; assert_equal("Electricity", worksheet.energy_security_d132); end
+  def test_energy_security_e132; assert_in_delta(3.2666686061216747e-16, worksheet.energy_security_e132, 0.002); end
+  def test_energy_security_f132; assert_in_delta(0.0, (worksheet.energy_security_f132||0), 0.002); end
+  def test_energy_security_g132; assert_in_delta(0.0, (worksheet.energy_security_g132||0), 0.002); end
+  def test_energy_security_h132; assert_in_delta(0.010079163996090079, worksheet.energy_security_h132, 0.002); end
+  def test_energy_security_i132; assert_in_delta(0.017163576328863193, worksheet.energy_security_i132, 0.002); end
+  def test_energy_security_j132; assert_in_delta(0.018993090735325045, worksheet.energy_security_j132, 0.002); end
+  def test_energy_security_k132; assert_in_delta(0.023744126517853275, worksheet.energy_security_k132, 0.002); end
+  def test_energy_security_l132; assert_in_delta(0.02567546629729071, worksheet.energy_security_l132, 0.002); end
+  def test_energy_security_m132; assert_in_delta(0.0, (worksheet.energy_security_m132||0), 0.002); end
+  def test_energy_security_n132; assert_in_delta(0.0, (worksheet.energy_security_n132||0), 0.002); end
+  def test_energy_security_d133; assert_equal("Bioenergy", worksheet.energy_security_d133); end
+  def test_energy_security_e133; assert_in_delta(0.07333967888316922, worksheet.energy_security_e133, 0.002); end
+  def test_energy_security_f133; assert_in_delta(0.17744830868764652, worksheet.energy_security_f133, 0.002); end
+  def test_energy_security_g133; assert_in_delta(0.19407680328846114, worksheet.energy_security_g133, 0.002); end
+  def test_energy_security_h133; assert_in_delta(0.17451548641588768, worksheet.energy_security_h133, 0.002); end
+  def test_energy_security_i133; assert_in_delta(0.17761980402422392, worksheet.energy_security_i133, 0.002); end
+  def test_energy_security_j133; assert_in_delta(0.1925872552672706, worksheet.energy_security_j133, 0.002); end
+  def test_energy_security_k133; assert_in_delta(0.20476844513971187, worksheet.energy_security_k133, 0.002); end
+  def test_energy_security_l133; assert_in_delta(0.21244534008054064, worksheet.energy_security_l133, 0.002); end
+  def test_energy_security_m133; assert_in_delta(0.21711228558440263, worksheet.energy_security_m133, 0.002); end
+  def test_energy_security_n133; assert_in_delta(0.2207839705499726, worksheet.energy_security_n133, 0.002); end
+  def test_energy_security_d134; assert_equal("Coal", worksheet.energy_security_d134); end
+  def test_energy_security_e134; assert_in_delta(0.7358830998525948, worksheet.energy_security_e134, 0.002); end
+  def test_energy_security_f134; assert_in_delta(0.7057187140193113, worksheet.energy_security_f134, 0.002); end
+  def test_energy_security_g134; assert_in_delta(0.6720094396128676, worksheet.energy_security_g134, 0.002); end
+  def test_energy_security_h134; assert_in_delta(0.5382645928047789, worksheet.energy_security_h134, 0.002); end
+  def test_energy_security_i134; assert_in_delta(0.0, (worksheet.energy_security_i134||0), 0.002); end
+  def test_energy_security_j134; assert_in_delta(0.0, (worksheet.energy_security_j134||0), 0.002); end
+  def test_energy_security_k134; assert_in_delta(0.0, (worksheet.energy_security_k134||0), 0.002); end
+  def test_energy_security_l134; assert_in_delta(0.37491070432908863, worksheet.energy_security_l134, 0.002); end
+  def test_energy_security_m134; assert_in_delta(0.48392750894075465, worksheet.energy_security_m134, 0.002); end
+  def test_energy_security_n134; assert_in_delta(0.6005462554395876, worksheet.energy_security_n134, 0.002); end
+  def test_energy_security_d135; assert_equal("Oil", worksheet.energy_security_d135); end
+  def test_energy_security_e135; assert_in_delta(0.0, (worksheet.energy_security_e135||0), 0.002); end
+  def test_energy_security_f135; assert_in_delta(0.0421766686945932, worksheet.energy_security_f135, 0.002); end
+  def test_energy_security_g135; assert_in_delta(0.17509624449959393, worksheet.energy_security_g135, 0.002); end
+  def test_energy_security_h135; assert_in_delta(0.31575184139193146, worksheet.energy_security_h135, 0.002); end
+  def test_energy_security_i135; assert_in_delta(0.37675679472469226, worksheet.energy_security_i135, 0.002); end
+  def test_energy_security_j135; assert_in_delta(0.43159278085031455, worksheet.energy_security_j135, 0.002); end
+  def test_energy_security_k135; assert_in_delta(0.5422808489830578, worksheet.energy_security_k135, 0.002); end
+  def test_energy_security_l135; assert_in_delta(0.6256858997980781, worksheet.energy_security_l135, 0.002); end
+  def test_energy_security_m135; assert_in_delta(0.6875015451088162, worksheet.energy_security_m135, 0.002); end
+  def test_energy_security_n135; assert_in_delta(0.7335279162942804, worksheet.energy_security_n135, 0.002); end
+  def test_energy_security_d136; assert_equal("Gas", worksheet.energy_security_d136); end
+  def test_energy_security_e136; assert_in_delta(0.25279632480004327, worksheet.energy_security_e136, 0.002); end
+  def test_energy_security_f136; assert_in_delta(0.3044242111812693, worksheet.energy_security_f136, 0.002); end
+  def test_energy_security_g136; assert_in_delta(0.4102845950834332, worksheet.energy_security_g136, 0.002); end
+  def test_energy_security_h136; assert_in_delta(0.4850467774827331, worksheet.energy_security_h136, 0.002); end
+  def test_energy_security_i136; assert_in_delta(0.5612107737809549, worksheet.energy_security_i136, 0.002); end
+  def test_energy_security_j136; assert_in_delta(0.5950761599658179, worksheet.energy_security_j136, 0.002); end
+  def test_energy_security_k136; assert_in_delta(0.5640609478373994, worksheet.energy_security_k136, 0.002); end
+  def test_energy_security_l136; assert_in_delta(0.3683132305618565, worksheet.energy_security_l136, 0.002); end
+  def test_energy_security_m136; assert_in_delta(0.13447623469353345, worksheet.energy_security_m136, 0.002); end
+  def test_energy_security_n136; assert_in_delta(0.0, (worksheet.energy_security_n136||0), 0.002); end
+  def test_energy_security_d137; assert_equal("Total", worksheet.energy_security_d137); end
+  def test_energy_security_e137; assert_in_delta(0.2954093658165616, worksheet.energy_security_e137, 0.002); end
+  def test_energy_security_f137; assert_in_delta(0.3257676743736291, worksheet.energy_security_f137, 0.002); end
+  def test_energy_security_g137; assert_in_delta(0.390532652401325, worksheet.energy_security_g137, 0.002); end
+  def test_energy_security_h137; assert_in_delta(0.4170333715254789, worksheet.energy_security_h137, 0.002); end
+  def test_energy_security_i137; assert_in_delta(0.4196168526112834, worksheet.energy_security_i137, 0.002); end
+  def test_energy_security_j137; assert_in_delta(0.47756454887421684, worksheet.energy_security_j137, 0.002); end
+  def test_energy_security_k137; assert_in_delta(0.49732542356282317, worksheet.energy_security_k137, 0.002); end
+  def test_energy_security_l137; assert_in_delta(0.5131590394546023, worksheet.energy_security_l137, 0.002); end
+  def test_energy_security_m137; assert_in_delta(0.5350024766692494, worksheet.energy_security_m137, 0.002); end
+  def test_energy_security_n137; assert_in_delta(0.5791436583050016, worksheet.energy_security_n137, 0.002); end
+  def test_energy_security_d109; assert_equal("Uranium", worksheet.energy_security_d109); end
+  def test_energy_security_e109; assert_in_epsilon(163.91620313701554, worksheet.energy_security_e109, 0.002); end
+  def test_energy_security_f109; assert_in_epsilon(160.70999999999998, worksheet.energy_security_f109, 0.002); end
+  def test_energy_security_g109; assert_in_epsilon(134.9964, worksheet.energy_security_g109, 0.002); end
+  def test_energy_security_h109; assert_in_epsilon(131.99648000000002, worksheet.energy_security_h109, 0.002); end
+  def test_energy_security_i109; assert_in_epsilon(183.42368000000005, worksheet.energy_security_i109, 0.002); end
+  def test_energy_security_j109; assert_in_epsilon(286.27808000000005, worksheet.energy_security_j109, 0.002); end
+  def test_energy_security_k109; assert_in_epsilon(363.4188800000001, worksheet.energy_security_k109, 0.002); end
+  def test_energy_security_l109; assert_in_epsilon(466.27328000000006, worksheet.energy_security_l109, 0.002); end
+  def test_energy_security_m109; assert_in_epsilon(569.1276800000002, worksheet.energy_security_m109, 0.002); end
+  def test_energy_security_n109; assert_in_epsilon(671.9820800000002, worksheet.energy_security_n109, 0.002); end
+  def test_energy_security_d110; assert_equal("Electricity", worksheet.energy_security_d110); end
+  def test_energy_security_e110; assert_in_delta(5.684341886080802e-14, worksheet.energy_security_e110, 0.002); end
+  def test_energy_security_f110; assert_in_delta(0.0, (worksheet.energy_security_f110||0), 0.002); end
+  def test_energy_security_g110; assert_in_delta(0.0, (worksheet.energy_security_g110||0), 0.002); end
+  def test_energy_security_h110; assert_in_epsilon(2.057142857142914, worksheet.energy_security_h110, 0.002); end
+  def test_energy_security_i110; assert_in_epsilon(4.971428571428515, worksheet.energy_security_i110, 0.002); end
+  def test_energy_security_j110; assert_in_epsilon(7.885714285714285, worksheet.energy_security_j110, 0.002); end
+  def test_energy_security_k110; assert_in_epsilon(12.0, worksheet.energy_security_k110, 0.002); end
+  def test_energy_security_l110; assert_in_epsilon(16.11428571428577, worksheet.energy_security_l110, 0.002); end
+  def test_energy_security_m110; assert_in_delta(0.0, (worksheet.energy_security_m110||0), 0.002); end
+  def test_energy_security_n110; assert_in_delta(0.0, (worksheet.energy_security_n110||0), 0.002); end
+  def test_energy_security_d111; assert_equal("Bioenergy", worksheet.energy_security_d111); end
+  def test_energy_security_e111; assert_in_epsilon(4.00072, worksheet.energy_security_e111, 0.002); end
+  def test_energy_security_f111; assert_in_epsilon(11.047181395348838, worksheet.energy_security_f111, 0.002); end
+  def test_energy_security_g111; assert_in_epsilon(22.79128372093023, worksheet.energy_security_g111, 0.002); end
+  def test_energy_security_h111; assert_in_epsilon(34.535386046511626, worksheet.energy_security_h111, 0.002); end
+  def test_energy_security_i111; assert_in_epsilon(46.27948837209303, worksheet.energy_security_i111, 0.002); end
+  def test_energy_security_j111; assert_in_epsilon(58.02359069767442, worksheet.energy_security_j111, 0.002); end
+  def test_energy_security_k111; assert_in_epsilon(69.76769302325582, worksheet.energy_security_k111, 0.002); end
+  def test_energy_security_l111; assert_in_epsilon(81.51179534883721, worksheet.energy_security_l111, 0.002); end
+  def test_energy_security_m111; assert_in_epsilon(93.2558976744186, worksheet.energy_security_m111, 0.002); end
+  def test_energy_security_n111; assert_in_epsilon(105.0, worksheet.energy_security_n111, 0.002); end
+  def test_energy_security_d112; assert_equal("Coal", worksheet.energy_security_d112); end
+  def test_energy_security_e112; assert_in_epsilon(346.59158236078605, worksheet.energy_security_e112, 0.002); end
+  def test_energy_security_f112; assert_in_epsilon(306.7901337444034, worksheet.energy_security_f112, 0.002); end
+  def test_energy_security_g112; assert_in_epsilon(262.1117129352815, worksheet.energy_security_g112, 0.002); end
+  def test_energy_security_h112; assert_in_epsilon(149.13343937776338, worksheet.energy_security_h112, 0.002); end
+  def test_energy_security_i112; assert_in_delta(0.0, (worksheet.energy_security_i112||0), 0.002); end
+  def test_energy_security_j112; assert_in_delta(0.0, (worksheet.energy_security_j112||0), 0.002); end
+  def test_energy_security_k112; assert_in_delta(0.0, (worksheet.energy_security_k112||0), 0.002); end
+  def test_energy_security_l112; assert_in_epsilon(38.36437988699048, worksheet.energy_security_l112, 0.002); end
+  def test_energy_security_m112; assert_in_epsilon(59.980765581713186, worksheet.energy_security_m112, 0.002); end
+  def test_energy_security_n112; assert_in_epsilon(96.16618132211198, worksheet.energy_security_n112, 0.002); end
+  def test_energy_security_d113; assert_equal("Oil", worksheet.energy_security_d113); end
+  def test_energy_security_e113; assert_in_delta(0.0, (worksheet.energy_security_e113||0), 0.002); end
+  def test_energy_security_f113; assert_in_epsilon(35.339292761021966, worksheet.energy_security_f113, 0.002); end
+  def test_energy_security_g113; assert_in_epsilon(137.29759451512564, worksheet.energy_security_g113, 0.002); end
+  def test_energy_security_h113; assert_in_epsilon(231.5545653756709, worksheet.energy_security_h113, 0.002); end
+  def test_energy_security_i113; assert_in_epsilon(234.71598138486644, worksheet.energy_security_i113, 0.002); end
+  def test_energy_security_j113; assert_in_epsilon(228.12439653957722, worksheet.energy_security_j113, 0.002); end
+  def test_energy_security_k113; assert_in_epsilon(275.4230963300123, worksheet.energy_security_k113, 0.002); end
+  def test_energy_security_l113; assert_in_epsilon(300.6861193986598, worksheet.energy_security_l113, 0.002); end
+  def test_energy_security_m113; assert_in_epsilon(306.2224521267701, worksheet.energy_security_m113, 0.002); end
+  def test_energy_security_n113; assert_in_epsilon(296.47916638336034, worksheet.energy_security_n113, 0.002); end
+  def test_energy_security_d114; assert_equal("Gas", worksheet.energy_security_d114); end
+  def test_energy_security_e114; assert_in_epsilon(247.31424585054333, worksheet.energy_security_e114, 0.002); end
+  def test_energy_security_f114; assert_in_epsilon(282.62758363919613, worksheet.energy_security_f114, 0.002); end
+  def test_energy_security_g114; assert_in_epsilon(345.0054628934967, worksheet.energy_security_g114, 0.002); end
+  def test_energy_security_h114; assert_in_epsilon(360.8705151726098, worksheet.energy_security_h114, 0.002); end
+  def test_energy_security_i114; assert_in_epsilon(379.1609710431612, worksheet.energy_security_i114, 0.002); end
+  def test_energy_security_j114; assert_in_epsilon(337.10936243695403, worksheet.energy_security_j114, 0.002); end
+  def test_energy_security_k114; assert_in_epsilon(229.66239676914682, worksheet.energy_security_k114, 0.002); end
+  def test_energy_security_l114; assert_in_epsilon(80.07984080868752, worksheet.energy_security_l114, 0.002); end
+  def test_energy_security_m114; assert_in_epsilon(16.511716822151456, worksheet.energy_security_m114, 0.002); end
+  def test_energy_security_n114; assert_in_delta(0.0, (worksheet.energy_security_n114||0), 0.002); end
+  def test_energy_security_d115; assert_equal("Total", worksheet.energy_security_d115); end
+  def test_energy_security_e115; assert_in_epsilon(761.822751348345, worksheet.energy_security_e115, 0.002); end
+  def test_energy_security_f115; assert_in_epsilon(796.5141915399703, worksheet.energy_security_f115, 0.002); end
+  def test_energy_security_g115; assert_in_epsilon(902.202454064834, worksheet.energy_security_g115, 0.002); end
+  def test_energy_security_h115; assert_in_epsilon(910.1475288296988, worksheet.energy_security_h115, 0.002); end
+  def test_energy_security_i115; assert_in_epsilon(848.5515493715493, worksheet.energy_security_i115, 0.002); end
+  def test_energy_security_j115; assert_in_epsilon(917.42114395992, worksheet.energy_security_j115, 0.002); end
+  def test_energy_security_k115; assert_in_epsilon(950.272066122415, worksheet.energy_security_k115, 0.002); end
+  def test_energy_security_l115; assert_in_epsilon(983.0297011574609, worksheet.energy_security_l115, 0.002); end
+  def test_energy_security_m115; assert_in_epsilon(1045.0985122050533, worksheet.energy_security_m115, 0.002); end
+  def test_energy_security_n115; assert_in_epsilon(1169.6274277054724, worksheet.energy_security_n115, 0.002); end
   def test_energy_security_d78; assert_equal("Shannon-Weiner Index", worksheet.energy_security_d78); end
   def test_energy_security_e78; assert_in_epsilon(1.6405783523693247, worksheet.energy_security_e78, 0.002); end
   def test_energy_security_f78; assert_in_epsilon(1.782075367040162, worksheet.energy_security_f78, 0.002); end
