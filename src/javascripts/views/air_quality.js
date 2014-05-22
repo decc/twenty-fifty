@@ -1,11 +1,12 @@
 window.twentyfifty.views.air_quality = function() {
   __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
-  airQualityHTML = "<div class='airquality'>\n  <h1>The impact of your pathway on air quality</h1>\n  <div class='airqualitymessage' id='airqualitymessage'></div>\n  <div id='airquality'></div>\n  <div class='airqualitymessage'>\n    <h2>How to interpret these results:</h2>\n    <ul>\n      <li>Air pollution health impact index &mdash; this index measures the effect on human health from fine particulate matter and other air pollutants such as nitrogen oxides.  For example, these pollutants have been linked to premature death caused by heart and lung disease. 2010 is the baseline year (100). A number lower than 100 indicates a reduction in average air pollution and associated health impacts, whilst a higher number indicates an increase. This index reflects changes in the average concentration of air pollutants across the UK.  It does not provide information on the number or severity of pollution hotspots.</li>\n      <li>Low end of hatched range &mdash; worst case scenario for air pollution whereby there is no further deployment or innovation in pollution abatement technology between now and 2050 beyond planned measures.</li>\n      <li>High end of hatched range &mdash; best case scenario whereby innovation radically improves pollution abatement technology between now and 2050 and it is fully deployed.</li>\n    </ul>\n    <p>\n      We would welcome your feedback on the\n      <a href=\"http://2050-calculator-tool-wiki.decc.gov.uk/pages/80\">methodology used to calculate the impact of your pathway on air quality.</a>\n      You can also download the excel version of the 2050 pathways calcualtor to see the different types of air pollution and the relative importance of different sources.\n    </p>\n  </div>\n</div>";
-
     this.setup = function() {
       var clow, comparator_id, crange, e, format, h, low, range, tick, x, _2010, _i, _len, _ref;
-      $("#results").append(airQualityHTML);
+      // The html template for the page is in the #air_quality_results div at the bottom
+      // of src/index.html.erb. This moves the template into the results part of the screen
+      d3.select("#results").append(function() { return d3.select("#air_quality_results").node().cloneNode(true) });
+      // This indicates to the user that this section is under development
       $("#message").addClass('warning');
       e = $('#airquality');
       this.h = e.height();
@@ -93,41 +94,41 @@ window.twentyfifty.views.air_quality = function() {
 
     this.updateComparator = function(pathway) {
       this.bars['comparator']['low'].attr({
-        width: this.x(pathway.air_quality.low) - this.x(0)
+        width: this.x(pathway.air_quality.Low) - this.x(0)
       });
       this.bars['comparator']['range'].attr({
-        width: this.x(pathway.air_quality.high - pathway.air_quality.low) - this.x(0),
-        x: this.x(pathway.air_quality.low)
+        width: this.x(pathway.air_quality.High - pathway.air_quality.Low) - this.x(0),
+        x: this.x(pathway.air_quality.Low)
       });
     };
 
     this.updateResults = function(pathway) {
       var text;
       this.bars['chosen']['low'].attr({
-        width: this.x(pathway.air_quality.low) - this.x(0)
+        width: this.x(pathway.air_quality.Low) - this.x(0)
       });
       this.bars['chosen']['range'].attr({
-        width: this.x(pathway.air_quality.high - pathway.air_quality.low) - this.x(0),
-        x: this.x(pathway.air_quality.low)
+        width: this.x(pathway.air_quality.High - pathway.air_quality.Low) - this.x(0),
+        x: this.x(pathway.air_quality.Low)
       });
       text = ["The damage to human health arising from air pollution from this pathway, principally particulate matter, could be around "];
-      text.push("" + (Math.abs(Math.round(100 - pathway.air_quality.high))) + "%");
-      if (pathway.air_quality.high > 100 && pathway.air_quality.low <= 100) {
+      text.push("" + (Math.abs(Math.round(100 - pathway.air_quality.High))) + "%");
+      if (pathway.air_quality.High > 100 && pathway.air_quality.Low <= 100) {
         text.push(" higher ");
       }
-      if (pathway.air_quality.high <= 100 && pathway.air_quality.low > 100) {
+      if (pathway.air_quality.High <= 100 && pathway.air_quality.Low > 100) {
         text.push(" lower ");
       }
       text.push(" to ");
-      text.push("" + (Math.abs(Math.round(100 - pathway.air_quality.low))) + "%");
-      if (pathway.air_quality.low > 100) {
+      text.push("" + (Math.abs(Math.round(100 - pathway.air_quality.Low))) + "%");
+      if (pathway.air_quality.Low > 100) {
         text.push(" higher");
       }
-      if (pathway.air_quality.low <= 100) {
+      if (pathway.air_quality.Low <= 100) {
         text.push(" lower");
       }
       text.push(" in 2050 compared to 2010.");
-      if (pathway.air_quality.high > 100) {
+      if (pathway.air_quality.High > 100) {
         text.push(" Given the scope for adverse implications for air quality, if the UK were to adopt this pathway the Government  would develop a policy framweork that supported the innovation required to be at the bottom end of the range");
       }
       $('#airqualitymessage').html(text.join(''));

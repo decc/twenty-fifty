@@ -53,298 +53,297 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_e55; assert_in_delta(1.0, worksheet.control_e55, 0.002); end
   def test_control_e56; assert_in_epsilon(2.0, worksheet.control_e56, 0.002); end
   def test_control_e57; assert_in_delta(1.0, worksheet.control_e57, 0.002); end
-  def test_control_h5; assert_equal("No new nuclear power installed; estimated closure of final plant in 2035", worksheet.control_h5); end
-  def test_control_i5; assert_equal("~13 3GW power stations delivering ~280 TWh/yr", worksheet.control_i5); end
-  def test_control_j5; assert_equal("~30 3GW power stations delivering ~630 TWh/yr", worksheet.control_j5); end
-  def test_control_k5; assert_equal("~50 3GW power stations delivering ~1030 TWh/yr", worksheet.control_k5); end
-  def test_control_h7; assert_equal("Demonstration plants only; no roll-out of CCS", worksheet.control_h7); end
-  def test_control_i7; assert_equal("~260 TWh/yr from 25-40 CCS power stations; comparable to current gas & coal generation", worksheet.control_i7); end
-  def test_control_j7; assert_equal("~370 TWh/yr from 35-60 CCS power stations; comparable to total current demand", worksheet.control_j7); end
-  def test_control_k7; assert_equal("~550 TWh/yr  from 50-90 CCS power stations; build rate of gas plants in the 1990s", worksheet.control_k7); end
-  def test_control_h8; assert_equal("100% coal/biomass, 0% gas/biogas CCS after demonstration plants", worksheet.control_h8); end
-  def test_control_i8; assert_equal("66% coal/biomass, 33% gas/biogas CCS after demonstration plants", worksheet.control_i8); end
-  def test_control_j8; assert_equal("33% coal/biomass, 66% gas/biogas CCS after demonstration plants", worksheet.control_j8); end
-  def test_control_k8; assert_equal("0% coal/biomas, 100% gas/biogas CCS after demonstration plants", worksheet.control_k8); end
-  def test_control_h9; assert_equal("~1,400 turbines in 2025, reducing to zero as decommissioned sites are not replanted", worksheet.control_h9); end
-  def test_control_i9; assert_equal("~10,000 turbines in 2050, delivering ~237 TWh/yr", worksheet.control_i9); end
-  def test_control_j9; assert_equal("~17,000 turbines in 2050, delivering ~395 TWh/yr", worksheet.control_j9); end
-  def test_control_k9; assert_equal("~40,000 turbines in 2050, delivering ~929 TWh/yr", worksheet.control_k9); end
-  def test_control_h10; assert_equal("~4,400 turbines in 2025, reducing to zero as decommissioned sites are not replanted", worksheet.control_h10); end
-  def test_control_i10; assert_equal("~8,000 turbines in 2050, delivering ~50 TWh/yr. ", worksheet.control_i10); end
-  def test_control_j10; assert_equal("~13,000 turbines in 2050, delivering ~80 TWh/yr", worksheet.control_j10); end
-  def test_control_k10; assert_equal("~20,000 turbines in 2050, delivering ~130 TWh/yr", worksheet.control_k10); end
-  def test_control_h11; assert_equal("None in 2050", worksheet.control_h11); end
-  def test_control_i11; assert_equal("~300km of wave farms", worksheet.control_i11); end
-  def test_control_j11; assert_equal("~600km of wave farms", worksheet.control_j11); end
-  def test_control_k11; assert_equal("~900km of wave farms", worksheet.control_k11); end
-  def test_control_h12; assert_equal("None in 2050", worksheet.control_h12); end
-  def test_control_i12; assert_equal("1,000 tidal stream turbines", worksheet.control_i12); end
-  def test_control_j12; assert_equal("4,700 tidal stream turbines", worksheet.control_j12); end
-  def test_control_k12; assert_equal("10,600 tidal stream turbines", worksheet.control_k12); end
-  def test_control_h13; assert_equal("None in  2050", worksheet.control_h13); end
-  def test_control_i13; assert_equal("3 small tidal range schemes", worksheet.control_i13); end
-  def test_control_j13; assert_equal("4 tidal range schemes", worksheet.control_j13); end
-  def test_control_k13; assert_equal("8 tidal range schemes", worksheet.control_k13); end
-  def test_control_h14; assert_equal("Only plants built and under construction (0.6GW)", worksheet.control_h14); end
-  def test_control_i14; assert_equal("8GW power stations by 2050 delivering 62TWh/yr", worksheet.control_i14); end
-  def test_control_j14; assert_equal("12GW power stations by 2050 delivering 100TWh/yr", worksheet.control_j14); end
-  def test_control_k14; assert_equal("Over 20GW installed capacity by 2050 delivering 180TWh/yr", worksheet.control_k14); end
-  def test_control_h15; assert_equal("No significant solar PV capacity is installed", worksheet.control_h15); end
-  def test_control_i15; assert_equal("4m2 of photovoltaic panels per person in 2050, supplying ~60 TWh/yr of electricity", worksheet.control_i15); end
-  def test_control_j15; assert_equal(" 5.4m2 of photovoltaic panels per person in 2050, supplying ~80 TWh/yr", worksheet.control_j15); end
-  def test_control_k15; assert_equal("9.5m2 of photovoltaic panels per person – all suitable roof and facade space used", worksheet.control_k15); end
-  def test_control_h16; assert_equal("As today, a negligible proportion of buildings have solar thermal in 2050", worksheet.control_h16); end
-  def test_control_i16; assert_equal("~30% of suitable buildings get ~30% of their hot water from solar thermal", worksheet.control_i16); end
-  def test_control_j16; assert_equal("All suitable buildings get ~30% of their hot water from solar thermal", worksheet.control_j16); end
-  def test_control_k16; assert_equal("All suitable buildings get ~60% of their hot water from solar thermal", worksheet.control_k16); end
-  def test_control_h17; assert_equal("No deployment of geothermal electricity generation", worksheet.control_h17); end
-  def test_control_i17; assert_equal("Supply of geothermal electricity grows slowly to 7 TWh/yr in 2035 and is sustained", worksheet.control_i17); end
-  def test_control_j17; assert_equal("Supply grows quickly reaching 21 TWh/yr by 2030 and is sustained", worksheet.control_j17); end
-  def test_control_k17; assert_equal("Supply grows rapidly reaching 35 TWh/yr by 2030 and is sustained", worksheet.control_k17); end
-  def test_control_h18; assert_equal("Supply of electricity is maintained at current levels of 5 TWh/yr", worksheet.control_h18); end
-  def test_control_i18; assert_equal("Supply grows slowly, reaching 7 TWh/yr by 2050", worksheet.control_i18); end
-  def test_control_j18; assert_equal("Supply grows more quickly, reaching 8 TWh/yr by 2030 and is sustained", worksheet.control_j18); end
-  def test_control_k18; assert_equal("Supply grows rapidly reaching 13 TWh/yr by 2035 and is sustained", worksheet.control_k18); end
-  def test_control_h19; assert_equal("As today, no discernable supply of electricity from micro-wind turbines", worksheet.control_h19); end
-  def test_control_i19; assert_equal("Supply increases to 1.3 TWh/yr by 2020 and is sustained", worksheet.control_i19); end
-  def test_control_j19; assert_equal("Installed in all ~450,000 suitable domestic properties; supplies 3.5 TWh/year from 2020", worksheet.control_j19); end
-  def test_control_k19; assert_equal("Installed in all suitable domestic and non-domestic sties; 8.9 TWh/year from 2020", worksheet.control_k19); end
-  def test_control_h20; assert_equal("No electricity imports, other than for balancing", worksheet.control_h20); end
-  def test_control_i20; assert_equal("30 TWh/yr of electricity imported from Southern Europe", worksheet.control_i20); end
-  def test_control_j20; assert_equal("70 TWh/yr imported from UK 10% share of international desert solar project ", worksheet.control_j20); end
-  def test_control_k20; assert_equal("140 TWh/yr imported from UK 20% share of international desert solar project", worksheet.control_k20); end
-  def test_control_h22; assert_equal("Energy crops and food production similar to today", worksheet.control_h22); end
-  def test_control_i22; assert_equal("5% of land used for energy crops", worksheet.control_i22); end
-  def test_control_j22; assert_equal("10% of land used for energy crops", worksheet.control_j22); end
-  def test_control_k22; assert_equal("17% of land used for energy crops", worksheet.control_k22); end
-  def test_control_h23; assert_equal("Livestock numbers increase by 10%", worksheet.control_h23); end
-  def test_control_i23; assert_equal("Livestock numbers same as today", worksheet.control_i23); end
-  def test_control_j23; assert_equal("Livestock numbers decrease by 10%", worksheet.control_j23); end
-  def test_control_k23; assert_equal("Livestock numbers decrease by 20%", worksheet.control_k23); end
-  def test_control_h24; assert_equal("Quantity of waste increases 50%; Small increase in rates of recycling and EFW.", worksheet.control_h24); end
-  def test_control_i24; assert_equal("Quantity of waste increases 20%; Increase in rates of recycling and EFW.", worksheet.control_i24); end
-  def test_control_j24; assert_equal("Quantity of waste increases 33%; Significant increase in rates of recycling and EFW through innovation.", worksheet.control_j24); end
-  def test_control_k24; assert_equal("Quantity of waste decreases 20%; Significant increase in rate of recycling.", worksheet.control_k24); end
-  def test_control_h25; assert_equal("No development of macro-algae cultivation", worksheet.control_h25); end
-  def test_control_i25; assert_equal("Area same as half of natural reserve used, delivering ~4 TWh/yr", worksheet.control_i25); end
-  def test_control_j25; assert_equal("Area same as all of natural reserve used, delivering ~9 TWh/yr", worksheet.control_j25); end
-  def test_control_k25; assert_equal("Area same as four times natural reserve used, delivering ~46 TWh/yr", worksheet.control_k25); end
-  def test_control_h26; assert_equal("Biomass converted to a mixture of solid, liquid and gas biofuels", worksheet.control_h26); end
-  def test_control_i26; assert_equal("Biomass mainly converted to solid biofuel", worksheet.control_i26); end
-  def test_control_j26; assert_equal("Biomass mainly converted to liquid biofuel", worksheet.control_j26); end
-  def test_control_k26; assert_equal("Biomass mainly converted to biogas fuel", worksheet.control_k26); end
-  def test_control_h27; assert_equal("Imported biofuel declines from ~ 4 TWh/yr currently to zero", worksheet.control_h27); end
-  def test_control_i27; assert_equal("Up to 70 TWh/yr of imported bioenergy in 2050", worksheet.control_i27); end
-  def test_control_j27; assert_equal("Up to 140 TWh/yr of imported bioenergy in 2050", worksheet.control_j27); end
-  def test_control_k27; assert_equal("Up to 280 TWh/yr of imported bioenergy in 2050", worksheet.control_k27); end
-  def test_control_h30; assert_equal("In 2050, individuals travel 9% further than today. No noticeable modal shift.", worksheet.control_h30); end
-  def test_control_i30; assert_equal("Individuals travel 7% further than today, cars and vans are 80% of 2050 passenger mileage", worksheet.control_i30); end
-  def test_control_j30; assert_equal("Individuals travel 7% further than today; cars and vans 74% of 2050 passenger mileage", worksheet.control_j30); end
-  def test_control_k30; assert_equal("In 2050, individuals travel the same distance as today. Signficant shift to public transport.", worksheet.control_k30); end
-  def test_control_h31; assert_equal("By 2050, 20% plug in hybrid electric cars; 2.5% zero emission cars.", worksheet.control_h31); end
-  def test_control_i31; assert_equal("By 2050, 54% plug-in hybrid vehicles; 11%  zero emission vehicles, all buses hybrids.", worksheet.control_i31); end
-  def test_control_j31; assert_equal("By 2050, 32% plug-in hybrid vehicles; 48% zero emission vehicles; 22% buses electric.", worksheet.control_j31); end
-  def test_control_k31; assert_equal("By 2050 100%  zero emission vehicles; all passenger trains electrified; 50% buses electric", worksheet.control_k31); end
-  def test_control_h32; assert_equal("100% of zero emission cars use batteries by 2050", worksheet.control_h32); end
-  def test_control_i32; assert_equal("Among zero emission cars, 80% use batteries and 20% use fuel cells by 2050", worksheet.control_i32); end
-  def test_control_j32; assert_equal("Among zero emission cars, 20% use batteries and 80% use fuel cells by 2050", worksheet.control_j32); end
-  def test_control_k32; assert_equal("100% of zero emission cars use fuel cells by 2050", worksheet.control_k32); end
-  def test_control_h33; assert_equal("Road haulage makes up 73% of distance, using conventional engines. Rail all diesel", worksheet.control_h33); end
-  def test_control_i33; assert_equal("Some shift from road to rail and water, and more efficient engines", worksheet.control_i33); end
-  def test_control_j33; assert_equal("Greater modal shift to rail and water; more efficient HGVs; more efficient logistics", worksheet.control_j33); end
-  def test_control_k33; assert_equal("Road modal share falls to half; greater hybridisation. Rail freight is all electric ", worksheet.control_k33); end
-  def test_control_h34; assert_equal("By 2050, 130% passengers increase; 50% more fuel use", worksheet.control_h34); end
-  def test_control_i34; assert_equal("By 2050, 130% passengers increase; 45% more fuel use", worksheet.control_i34); end
-  def test_control_j34; assert_equal("By 2050, 130% passengers increase; 31% more fuel use", worksheet.control_j34); end
-  def test_control_k34; assert_equal("By 2050, 85% passengers increase; 5% more fuel use", worksheet.control_k34); end
-  def test_control_h35; assert_equal("no improvements from energy efficiency; between 2007 and 2050 emissions increase by 139%", worksheet.control_h35); end
-  def test_control_i35; assert_equal("1/3 of technical feasible reductions realised; between 2007 and 2050 emissions increase by 78%", worksheet.control_i35); end
-  def test_control_j35; assert_equal("2/3 of technical feasible reductions realised; between 2007 and 2050 emissions increase by 16%", worksheet.control_j35); end
-  def test_control_k35; assert_equal("maximum technical feasible reductions realised; between 2007 and 2050 emissions decrease by 46%", worksheet.control_k35); end
-  def test_control_h37; assert_equal("Average room temperature increases to 20°C (a 2.5°C increase on 2007)", worksheet.control_h37); end
-  def test_control_i37; assert_equal("Average room temperature increases to 18°C (a 0.5°C increase on 2007)", worksheet.control_i37); end
-  def test_control_j37; assert_equal("Average room temperature decreases to 17°C (a 0.5°C decrease on 2007)", worksheet.control_j37); end
-  def test_control_k37; assert_equal("Average room temperature decreases to 16°C (a 1.5°C decrease on 2007)", worksheet.control_k37); end
-  def test_control_h38; assert_equal("Over 7M homes insulated, average thermal leakiness falls by 25%", worksheet.control_h38); end
-  def test_control_i38; assert_equal("Over 8M homes insulated, average thermal leakiness falls by 33%", worksheet.control_i38); end
-  def test_control_j38; assert_equal("Over 18M homes insulated, average thermal leakiness falls by 42%", worksheet.control_j38); end
-  def test_control_k38; assert_equal("Over 24M homes insulated, average thermal leakiness decreases by 50% ", worksheet.control_k38); end
-  def test_control_h39; assert_equal("The proportion of domestic heat supplied using electricity is 0-10%, as today", worksheet.control_h39); end
-  def test_control_i39; assert_equal("The proportion of new domestic heating systems using electricity is 20%", worksheet.control_i39); end
-  def test_control_j39; assert_equal("The proportion of new domestic heating systems supplied using electricity is 30-60%", worksheet.control_j39); end
-  def test_control_k39; assert_equal("The proportion of new domestic heating systems supplied using electricity is 80-100%", worksheet.control_k39); end
-  def test_control_h40; assert_equal("The dominant non-electric heat source is gas or gas CHP (biogas if available)", worksheet.control_h40); end
-  def test_control_i40; assert_equal("The dominant non-electric heat source is coal or coal CHP (biomass if available)", worksheet.control_i40); end
-  def test_control_j40; assert_equal("The dominant non-electric heat source is waste heat from power stations", worksheet.control_j40); end
-  def test_control_k40; assert_equal("A mixture of gas/biogas; coal/biomass; and heat from power stations", worksheet.control_k40); end
-  def test_control_h42; assert_equal("Energy demand for domestic lights and appliances increases by 20% (relative to 2007)", worksheet.control_h42); end
-  def test_control_i42; assert_equal("Energy demand for domestic lights and appliances is stable", worksheet.control_i42); end
-  def test_control_j42; assert_equal("Energy demand for domestic lights and appliances decreases by 40%", worksheet.control_j42); end
-  def test_control_k42; assert_equal("Energy demand for domestic lights and appliances decreases by 60%", worksheet.control_k42); end
-  def test_control_h43; assert_equal("Energy used for domestic cooking remains at 63% electricity and 37% gas", worksheet.control_h43); end
-  def test_control_i43; assert_equal("Energy used for domestic cooking is entirely electric", worksheet.control_i43); end
-  def test_control_j43; assert_equal("Same as B", worksheet.control_j43); end
+  def test_control_i5; assert_equal("No new nuclear power installed; estimated closure of final plant in 2035", worksheet.control_i5); end
+  def test_control_j5; assert_equal("~13 3GW power stations delivering ~280 TWh/yr", worksheet.control_j5); end
+  def test_control_k5; assert_equal("~30 3GW power stations delivering ~630 TWh/yr", worksheet.control_k5); end
+  def test_control_l5; assert_equal("~50 3GW power stations delivering ~1030 TWh/yr", worksheet.control_l5); end
+  def test_control_i7; assert_equal("Demonstration plants only; no roll-out of CCS", worksheet.control_i7); end
+  def test_control_j7; assert_equal("~260 TWh/yr from 25-40 CCS power stations; comparable to current gas & coal generation", worksheet.control_j7); end
+  def test_control_k7; assert_equal("~370 TWh/yr from 35-60 CCS power stations; comparable to total current demand", worksheet.control_k7); end
+  def test_control_l7; assert_equal("~550 TWh/yr  from 50-90 CCS power stations; build rate of gas plants in the 1990s", worksheet.control_l7); end
+  def test_control_i8; assert_equal("100% coal/biomass, 0% gas/biogas CCS after demonstration plants", worksheet.control_i8); end
+  def test_control_j8; assert_equal("66% coal/biomass, 33% gas/biogas CCS after demonstration plants", worksheet.control_j8); end
+  def test_control_k8; assert_equal("33% coal/biomass, 66% gas/biogas CCS after demonstration plants", worksheet.control_k8); end
+  def test_control_l8; assert_equal("0% coal/biomas, 100% gas/biogas CCS after demonstration plants", worksheet.control_l8); end
+  def test_control_i9; assert_equal("~1,400 turbines in 2025, reducing to zero as decommissioned sites are not replanted", worksheet.control_i9); end
+  def test_control_j9; assert_equal("~10,000 turbines in 2050, delivering ~237 TWh/yr", worksheet.control_j9); end
+  def test_control_k9; assert_equal("~17,000 turbines in 2050, delivering ~395 TWh/yr", worksheet.control_k9); end
+  def test_control_l9; assert_equal("~40,000 turbines in 2050, delivering ~929 TWh/yr", worksheet.control_l9); end
+  def test_control_i10; assert_equal("~4,400 turbines in 2025, reducing to zero as decommissioned sites are not replanted", worksheet.control_i10); end
+  def test_control_j10; assert_equal("~8,000 turbines in 2050, delivering ~50 TWh/yr. ", worksheet.control_j10); end
+  def test_control_k10; assert_equal("~13,000 turbines in 2050, delivering ~80 TWh/yr", worksheet.control_k10); end
+  def test_control_l10; assert_equal("~20,000 turbines in 2050, delivering ~130 TWh/yr", worksheet.control_l10); end
+  def test_control_i11; assert_equal("None in 2050", worksheet.control_i11); end
+  def test_control_j11; assert_equal("~300km of wave farms", worksheet.control_j11); end
+  def test_control_k11; assert_equal("~600km of wave farms", worksheet.control_k11); end
+  def test_control_l11; assert_equal("~900km of wave farms", worksheet.control_l11); end
+  def test_control_i12; assert_equal("None in 2050", worksheet.control_i12); end
+  def test_control_j12; assert_equal("1,000 tidal stream turbines", worksheet.control_j12); end
+  def test_control_k12; assert_equal("4,700 tidal stream turbines", worksheet.control_k12); end
+  def test_control_l12; assert_equal("10,600 tidal stream turbines", worksheet.control_l12); end
+  def test_control_i13; assert_equal("None in  2050", worksheet.control_i13); end
+  def test_control_j13; assert_equal("3 small tidal range schemes", worksheet.control_j13); end
+  def test_control_k13; assert_equal("4 tidal range schemes", worksheet.control_k13); end
+  def test_control_l13; assert_equal("8 tidal range schemes", worksheet.control_l13); end
+  def test_control_i14; assert_equal("Only plants built and under construction (0.6GW)", worksheet.control_i14); end
+  def test_control_j14; assert_equal("8GW power stations by 2050 delivering 62TWh/yr", worksheet.control_j14); end
+  def test_control_k14; assert_equal("12GW power stations by 2050 delivering 100TWh/yr", worksheet.control_k14); end
+  def test_control_l14; assert_equal("Over 20GW installed capacity by 2050 delivering 180TWh/yr", worksheet.control_l14); end
+  def test_control_i15; assert_equal("No significant solar PV capacity is installed", worksheet.control_i15); end
+  def test_control_j15; assert_equal("4m2 of photovoltaic panels per person in 2050, supplying ~60 TWh/yr of electricity", worksheet.control_j15); end
+  def test_control_k15; assert_equal(" 5.4m2 of photovoltaic panels per person in 2050, supplying ~80 TWh/yr", worksheet.control_k15); end
+  def test_control_l15; assert_equal("9.5m2 of photovoltaic panels per person – all suitable roof and facade space used", worksheet.control_l15); end
+  def test_control_i16; assert_equal("As today, a negligible proportion of buildings have solar thermal in 2050", worksheet.control_i16); end
+  def test_control_j16; assert_equal("~30% of suitable buildings get ~30% of their hot water from solar thermal", worksheet.control_j16); end
+  def test_control_k16; assert_equal("All suitable buildings get ~30% of their hot water from solar thermal", worksheet.control_k16); end
+  def test_control_l16; assert_equal("All suitable buildings get ~60% of their hot water from solar thermal", worksheet.control_l16); end
+  def test_control_i17; assert_equal("No deployment of geothermal electricity generation", worksheet.control_i17); end
+  def test_control_j17; assert_equal("Supply of geothermal electricity grows slowly to 7 TWh/yr in 2035 and is sustained", worksheet.control_j17); end
+  def test_control_k17; assert_equal("Supply grows quickly reaching 21 TWh/yr by 2030 and is sustained", worksheet.control_k17); end
+  def test_control_l17; assert_equal("Supply grows rapidly reaching 35 TWh/yr by 2030 and is sustained", worksheet.control_l17); end
+  def test_control_i18; assert_equal("Supply of electricity is maintained at current levels of 5 TWh/yr", worksheet.control_i18); end
+  def test_control_j18; assert_equal("Supply grows slowly, reaching 7 TWh/yr by 2050", worksheet.control_j18); end
+  def test_control_k18; assert_equal("Supply grows more quickly, reaching 8 TWh/yr by 2030 and is sustained", worksheet.control_k18); end
+  def test_control_l18; assert_equal("Supply grows rapidly reaching 13 TWh/yr by 2035 and is sustained", worksheet.control_l18); end
+  def test_control_i19; assert_equal("As today, no discernable supply of electricity from micro-wind turbines", worksheet.control_i19); end
+  def test_control_j19; assert_equal("Supply increases to 1.3 TWh/yr by 2020 and is sustained", worksheet.control_j19); end
+  def test_control_k19; assert_equal("Installed in all ~450,000 suitable domestic properties; supplies 3.5 TWh/year from 2020", worksheet.control_k19); end
+  def test_control_l19; assert_equal("Installed in all suitable domestic and non-domestic sties; 8.9 TWh/year from 2020", worksheet.control_l19); end
+  def test_control_i20; assert_equal("No electricity imports, other than for balancing", worksheet.control_i20); end
+  def test_control_j20; assert_equal("30 TWh/yr of electricity imported from Southern Europe", worksheet.control_j20); end
+  def test_control_k20; assert_equal("70 TWh/yr imported from UK 10% share of international desert solar project ", worksheet.control_k20); end
+  def test_control_l20; assert_equal("140 TWh/yr imported from UK 20% share of international desert solar project", worksheet.control_l20); end
+  def test_control_i22; assert_equal("Energy crops and food production similar to today", worksheet.control_i22); end
+  def test_control_j22; assert_equal("5% of land used for energy crops", worksheet.control_j22); end
+  def test_control_k22; assert_equal("10% of land used for energy crops", worksheet.control_k22); end
+  def test_control_l22; assert_equal("17% of land used for energy crops", worksheet.control_l22); end
+  def test_control_i23; assert_equal("Livestock numbers increase by 10%", worksheet.control_i23); end
+  def test_control_j23; assert_equal("Livestock numbers same as today", worksheet.control_j23); end
+  def test_control_k23; assert_equal("Livestock numbers decrease by 10%", worksheet.control_k23); end
+  def test_control_l23; assert_equal("Livestock numbers decrease by 20%", worksheet.control_l23); end
+  def test_control_i24; assert_equal("Quantity of waste increases 50%; Small increase in rates of recycling and EFW.", worksheet.control_i24); end
+  def test_control_j24; assert_equal("Quantity of waste increases 20%; Increase in rates of recycling and EFW.", worksheet.control_j24); end
+  def test_control_k24; assert_equal("Quantity of waste increases 33%; Significant increase in rates of recycling and EFW through innovation.", worksheet.control_k24); end
+  def test_control_l24; assert_equal("Quantity of waste decreases 20%; Significant increase in rate of recycling.", worksheet.control_l24); end
+  def test_control_i25; assert_equal("No development of macro-algae cultivation", worksheet.control_i25); end
+  def test_control_j25; assert_equal("Area same as half of natural reserve used, delivering ~4 TWh/yr", worksheet.control_j25); end
+  def test_control_k25; assert_equal("Area same as all of natural reserve used, delivering ~9 TWh/yr", worksheet.control_k25); end
+  def test_control_l25; assert_equal("Area same as four times natural reserve used, delivering ~46 TWh/yr", worksheet.control_l25); end
+  def test_control_i26; assert_equal("Biomass converted to a mixture of solid, liquid and gas biofuels", worksheet.control_i26); end
+  def test_control_j26; assert_equal("Biomass mainly converted to solid biofuel", worksheet.control_j26); end
+  def test_control_k26; assert_equal("Biomass mainly converted to liquid biofuel", worksheet.control_k26); end
+  def test_control_l26; assert_equal("Biomass mainly converted to biogas fuel", worksheet.control_l26); end
+  def test_control_i27; assert_equal("Imported biofuel declines from ~ 4 TWh/yr currently to zero", worksheet.control_i27); end
+  def test_control_j27; assert_equal("Up to 70 TWh/yr of imported bioenergy in 2050", worksheet.control_j27); end
+  def test_control_k27; assert_equal("Up to 140 TWh/yr of imported bioenergy in 2050", worksheet.control_k27); end
+  def test_control_l27; assert_equal("Up to 280 TWh/yr of imported bioenergy in 2050", worksheet.control_l27); end
+  def test_control_i30; assert_equal("In 2050, individuals travel 9% further than today. No noticeable modal shift.", worksheet.control_i30); end
+  def test_control_j30; assert_equal("Individuals travel 7% further than today, cars and vans are 80% of 2050 passenger mileage", worksheet.control_j30); end
+  def test_control_k30; assert_equal("Individuals travel 7% further than today; cars and vans 74% of 2050 passenger mileage", worksheet.control_k30); end
+  def test_control_l30; assert_equal("In 2050, individuals travel the same distance as today. Signficant shift to public transport.", worksheet.control_l30); end
+  def test_control_i31; assert_equal("By 2050, 20% plug in hybrid electric cars; 2.5% zero emission cars.", worksheet.control_i31); end
+  def test_control_j31; assert_equal("By 2050, 54% plug-in hybrid vehicles; 11%  zero emission vehicles, all buses hybrids.", worksheet.control_j31); end
+  def test_control_k31; assert_equal("By 2050, 32% plug-in hybrid vehicles; 48% zero emission vehicles; 22% buses electric.", worksheet.control_k31); end
+  def test_control_l31; assert_equal("By 2050 100%  zero emission vehicles; all passenger trains electrified; 50% buses electric", worksheet.control_l31); end
+  def test_control_i32; assert_equal("100% of zero emission cars use batteries by 2050", worksheet.control_i32); end
+  def test_control_j32; assert_equal("Among zero emission cars, 80% use batteries and 20% use fuel cells by 2050", worksheet.control_j32); end
+  def test_control_k32; assert_equal("Among zero emission cars, 20% use batteries and 80% use fuel cells by 2050", worksheet.control_k32); end
+  def test_control_l32; assert_equal("100% of zero emission cars use fuel cells by 2050", worksheet.control_l32); end
+  def test_control_i33; assert_equal("Road haulage makes up 73% of distance, using conventional engines. Rail all diesel", worksheet.control_i33); end
+  def test_control_j33; assert_equal("Some shift from road to rail and water, and more efficient engines", worksheet.control_j33); end
+  def test_control_k33; assert_equal("Greater modal shift to rail and water; more efficient HGVs; more efficient logistics", worksheet.control_k33); end
+  def test_control_l33; assert_equal("Road modal share falls to half; greater hybridisation. Rail freight is all electric ", worksheet.control_l33); end
+  def test_control_i34; assert_equal("By 2050, 130% passengers increase; 50% more fuel use", worksheet.control_i34); end
+  def test_control_j34; assert_equal("By 2050, 130% passengers increase; 45% more fuel use", worksheet.control_j34); end
+  def test_control_k34; assert_equal("By 2050, 130% passengers increase; 31% more fuel use", worksheet.control_k34); end
+  def test_control_l34; assert_equal("By 2050, 85% passengers increase; 5% more fuel use", worksheet.control_l34); end
+  def test_control_i35; assert_equal("no improvements from energy efficiency; between 2007 and 2050 emissions increase by 139%", worksheet.control_i35); end
+  def test_control_j35; assert_equal("1/3 of technical feasible reductions realised; between 2007 and 2050 emissions increase by 78%", worksheet.control_j35); end
+  def test_control_k35; assert_equal("2/3 of technical feasible reductions realised; between 2007 and 2050 emissions increase by 16%", worksheet.control_k35); end
+  def test_control_l35; assert_equal("maximum technical feasible reductions realised; between 2007 and 2050 emissions decrease by 46%", worksheet.control_l35); end
+  def test_control_i37; assert_equal("Average room temperature increases to 20°C (a 2.5°C increase on 2007)", worksheet.control_i37); end
+  def test_control_j37; assert_equal("Average room temperature increases to 18°C (a 0.5°C increase on 2007)", worksheet.control_j37); end
+  def test_control_k37; assert_equal("Average room temperature decreases to 17°C (a 0.5°C decrease on 2007)", worksheet.control_k37); end
+  def test_control_l37; assert_equal("Average room temperature decreases to 16°C (a 1.5°C decrease on 2007)", worksheet.control_l37); end
+  def test_control_i38; assert_equal("Over 7M homes insulated, average thermal leakiness falls by 25%", worksheet.control_i38); end
+  def test_control_j38; assert_equal("Over 8M homes insulated, average thermal leakiness falls by 33%", worksheet.control_j38); end
+  def test_control_k38; assert_equal("Over 18M homes insulated, average thermal leakiness falls by 42%", worksheet.control_k38); end
+  def test_control_l38; assert_equal("Over 24M homes insulated, average thermal leakiness decreases by 50% ", worksheet.control_l38); end
+  def test_control_i39; assert_equal("The proportion of domestic heat supplied using electricity is 0-10%, as today", worksheet.control_i39); end
+  def test_control_j39; assert_equal("The proportion of new domestic heating systems using electricity is 20%", worksheet.control_j39); end
+  def test_control_k39; assert_equal("The proportion of new domestic heating systems supplied using electricity is 30-60%", worksheet.control_k39); end
+  def test_control_l39; assert_equal("The proportion of new domestic heating systems supplied using electricity is 80-100%", worksheet.control_l39); end
+  def test_control_i40; assert_equal("The dominant non-electric heat source is gas or gas CHP (biogas if available)", worksheet.control_i40); end
+  def test_control_j40; assert_equal("The dominant non-electric heat source is coal or coal CHP (biomass if available)", worksheet.control_j40); end
+  def test_control_k40; assert_equal("The dominant non-electric heat source is waste heat from power stations", worksheet.control_k40); end
+  def test_control_l40; assert_equal("A mixture of gas/biogas; coal/biomass; and heat from power stations", worksheet.control_l40); end
+  def test_control_i42; assert_equal("Energy demand for domestic lights and appliances increases by 20% (relative to 2007)", worksheet.control_i42); end
+  def test_control_j42; assert_equal("Energy demand for domestic lights and appliances is stable", worksheet.control_j42); end
+  def test_control_k42; assert_equal("Energy demand for domestic lights and appliances decreases by 40%", worksheet.control_k42); end
+  def test_control_l42; assert_equal("Energy demand for domestic lights and appliances decreases by 60%", worksheet.control_l42); end
+  def test_control_i43; assert_equal("Energy used for domestic cooking remains at 63% electricity and 37% gas", worksheet.control_i43); end
+  def test_control_j43; assert_equal("Energy used for domestic cooking is entirely electric", worksheet.control_j43); end
   def test_control_k43; assert_equal("Same as B", worksheet.control_k43); end
-  def test_control_h45; assert_equal("UK industry output more than doubles by 2050", worksheet.control_h45); end
-  def test_control_i45; assert_equal("UK industry grows in line with current trends", worksheet.control_i45); end
-  def test_control_j45; assert_equal("UK industry output falls 30-40% by 2050", worksheet.control_j45); end
-  def test_control_k45; assert_equal("Same as C", worksheet.control_k45); end
-  def test_control_h46; assert_equal("No electrification of processes, little improvement in energy intensity", worksheet.control_h46); end
-  def test_control_i46; assert_equal("Some processes electrified; moderate improvements in process emissions and energy demand", worksheet.control_i46); end
-  def test_control_j46; assert_equal("High electrification; CCS captures 48% of emissions; process emissions reduced", worksheet.control_j46); end
-  def test_control_k46; assert_equal("Same as 3", worksheet.control_k46); end
-  def test_control_h48; assert_equal("Space heating demand increases by 50%, hot water demand by 60%, cooling demand by 250%", worksheet.control_h48); end
-  def test_control_i48; assert_equal("Space heating demand increases by 30%, hot water demand by 50%, cooling demand by 60%", worksheet.control_i48); end
-  def test_control_j48; assert_equal("Space heating demand stable, hot water demand increases by 25%, cooling demand stable", worksheet.control_j48); end
-  def test_control_k48; assert_equal("Space heating demand drops by 25%, hot water demand by 10%, cooling demand by 60%", worksheet.control_k48); end
-  def test_control_h49; assert_equal("The proportion of non-domestic heat supplied using electricity is 0-10%, as today", worksheet.control_h49); end
-  def test_control_i49; assert_equal("The proportion of non-domestic heat supplied using electricity is 20%", worksheet.control_i49); end
-  def test_control_j49; assert_equal("The proportion of non-domestic heat supplied using electricity is 30-60%", worksheet.control_j49); end
-  def test_control_k49; assert_equal("The proportion of non-domestic heat supplied using electricity is 80-100%", worksheet.control_k49); end
-  def test_control_h50; assert_equal("The dominant non-electric heat source is gas or gas CHP (biogas if available)", worksheet.control_h50); end
-  def test_control_i50; assert_equal("The dominant non-electric heat source is coal or coal CHP (biomass if available)", worksheet.control_i50); end
-  def test_control_j50; assert_equal("The dominant non-electric heat source is heat from power stations", worksheet.control_j50); end
-  def test_control_k50; assert_equal("A mixture of gas/biogas, coal/biomass, and heat from power stations", worksheet.control_k50); end
-  def test_control_h52; assert_equal("Energy demand for lights & appliances increases by 33%. Energy for cooking is stable", worksheet.control_h52); end
-  def test_control_i52; assert_equal("Energy demand for lights & appliances increases by 15%; decreases by 5% for cooking", worksheet.control_i52); end
-  def test_control_j52; assert_equal("Energy demand for lights & appliances decreases by 5%; decreases by 20% for cooking", worksheet.control_j52); end
-  def test_control_k52; assert_equal("Energy demand for lights & appliances decreases by 30%; decreases by 25% for cooking", worksheet.control_k52); end
-  def test_control_h53; assert_equal("60% electricity and 40% gas (no change from 2007)", worksheet.control_h53); end
-  def test_control_i53; assert_equal("100% electric", worksheet.control_i53); end
-  def test_control_j53; assert_equal("Same as B", worksheet.control_j53); end
+  def test_control_l43; assert_equal("Same as B", worksheet.control_l43); end
+  def test_control_i45; assert_equal("UK industry output more than doubles by 2050", worksheet.control_i45); end
+  def test_control_j45; assert_equal("UK industry grows in line with current trends", worksheet.control_j45); end
+  def test_control_k45; assert_equal("UK industry output falls 30-40% by 2050", worksheet.control_k45); end
+  def test_control_l45; assert_equal("Same as C", worksheet.control_l45); end
+  def test_control_i46; assert_equal("No electrification of processes, little improvement in energy intensity", worksheet.control_i46); end
+  def test_control_j46; assert_equal("Some processes electrified; moderate improvements in process emissions and energy demand", worksheet.control_j46); end
+  def test_control_k46; assert_equal("High electrification; CCS captures 48% of emissions; process emissions reduced", worksheet.control_k46); end
+  def test_control_l46; assert_equal("Same as 3", worksheet.control_l46); end
+  def test_control_i48; assert_equal("Space heating demand increases by 50%, hot water demand by 60%, cooling demand by 250%", worksheet.control_i48); end
+  def test_control_j48; assert_equal("Space heating demand increases by 30%, hot water demand by 50%, cooling demand by 60%", worksheet.control_j48); end
+  def test_control_k48; assert_equal("Space heating demand stable, hot water demand increases by 25%, cooling demand stable", worksheet.control_k48); end
+  def test_control_l48; assert_equal("Space heating demand drops by 25%, hot water demand by 10%, cooling demand by 60%", worksheet.control_l48); end
+  def test_control_i49; assert_equal("The proportion of non-domestic heat supplied using electricity is 0-10%, as today", worksheet.control_i49); end
+  def test_control_j49; assert_equal("The proportion of non-domestic heat supplied using electricity is 20%", worksheet.control_j49); end
+  def test_control_k49; assert_equal("The proportion of non-domestic heat supplied using electricity is 30-60%", worksheet.control_k49); end
+  def test_control_l49; assert_equal("The proportion of non-domestic heat supplied using electricity is 80-100%", worksheet.control_l49); end
+  def test_control_i50; assert_equal("The dominant non-electric heat source is gas or gas CHP (biogas if available)", worksheet.control_i50); end
+  def test_control_j50; assert_equal("The dominant non-electric heat source is coal or coal CHP (biomass if available)", worksheet.control_j50); end
+  def test_control_k50; assert_equal("The dominant non-electric heat source is heat from power stations", worksheet.control_k50); end
+  def test_control_l50; assert_equal("A mixture of gas/biogas, coal/biomass, and heat from power stations", worksheet.control_l50); end
+  def test_control_i52; assert_equal("Energy demand for lights & appliances increases by 33%. Energy for cooking is stable", worksheet.control_i52); end
+  def test_control_j52; assert_equal("Energy demand for lights & appliances increases by 15%; decreases by 5% for cooking", worksheet.control_j52); end
+  def test_control_k52; assert_equal("Energy demand for lights & appliances decreases by 5%; decreases by 20% for cooking", worksheet.control_k52); end
+  def test_control_l52; assert_equal("Energy demand for lights & appliances decreases by 30%; decreases by 25% for cooking", worksheet.control_l52); end
+  def test_control_i53; assert_equal("60% electricity and 40% gas (no change from 2007)", worksheet.control_i53); end
+  def test_control_j53; assert_equal("100% electric", worksheet.control_j53); end
   def test_control_k53; assert_equal("Same as B", worksheet.control_k53); end
-  def test_control_h55; assert_equal("No geosequestration", worksheet.control_h55); end
-  def test_control_i55; assert_equal("Carbon dioxide sequestration rate of 1 million tonnes per annum by 2050", worksheet.control_i55); end
-  def test_control_j55; assert_equal("Carbon dioxide sequestration rate of ~30 million tonnes per annum by 2050", worksheet.control_j55); end
-  def test_control_k55; assert_equal("Carbon dioxide sequestration rate of ~110 million tonnes per annum by 2050", worksheet.control_k55); end
-  def test_control_h56; assert_equal("Today’s 3.5 GW storage & 4 GW interconnection with Europe for balancing", worksheet.control_h56); end
-  def test_control_i56; assert_equal("4 GW storage & 10 GW interconnection with Europe for balancing", worksheet.control_i56); end
-  def test_control_j56; assert_equal("7 GW storage with 2 more pumped storage, 15 GW interconnection & some demand shifting", worksheet.control_j56); end
-  def test_control_k56; assert_equal("20 GW storage with large lagoons, 30 GW interconnection & substantial demand shifting", worksheet.control_k56); end
-  def test_control_h57; assert_equal("Central case", worksheet.control_h57); end
-  def test_control_i57; assert_equal("Low production case", worksheet.control_i57); end
-  def test_control_j57; assert_equal("Very low production case", worksheet.control_j57); end
-  def test_control_m4; assert_equal("Doesn't tackle climate change (All at level 1)", worksheet.control_m4); end
-  def test_control_n4; assert_equal("Maximium demand, no supply", worksheet.control_n4); end
-  def test_control_o4; assert_equal("Maximum supply, no demand", worksheet.control_o4); end
-  def test_control_p4; assert_equal("Analogous to MARKAL 3.26", worksheet.control_p4); end
-  def test_control_q4; assert_equal("Higher renewables, more energy efficiency", worksheet.control_q4); end
-  def test_control_r4; assert_equal("Higher nuclear, less energy efficiency", worksheet.control_r4); end
-  def test_control_s4; assert_equal("Higher CCS, more bioenergy", worksheet.control_s4); end
-  def test_control_t4; assert_equal("Low cost pathway", worksheet.control_t4); end
-  def test_control_u4; assert_equal("Friends of the Earth", worksheet.control_u4); end
-  def test_control_v4; assert_equal("Campaign to Protect Rural England", worksheet.control_v4); end
-  def test_control_w4; assert_equal("Mark Brinkley", worksheet.control_w4); end
-  def test_control_x4; assert_equal("National Grid", worksheet.control_x4); end
-  def test_control_y4; assert_equal("Atkins", worksheet.control_y4); end
-  def test_control_m5; assert_in_delta(1.0, worksheet.control_m5, 0.002); end
+  def test_control_l53; assert_equal("Same as B", worksheet.control_l53); end
+  def test_control_i55; assert_equal("No geosequestration", worksheet.control_i55); end
+  def test_control_j55; assert_equal("Carbon dioxide sequestration rate of 1 million tonnes per annum by 2050", worksheet.control_j55); end
+  def test_control_k55; assert_equal("Carbon dioxide sequestration rate of ~30 million tonnes per annum by 2050", worksheet.control_k55); end
+  def test_control_l55; assert_equal("Carbon dioxide sequestration rate of ~110 million tonnes per annum by 2050", worksheet.control_l55); end
+  def test_control_i56; assert_equal("Today’s 3.5 GW storage & 4 GW interconnection with Europe for balancing", worksheet.control_i56); end
+  def test_control_j56; assert_equal("4 GW storage & 10 GW interconnection with Europe for balancing", worksheet.control_j56); end
+  def test_control_k56; assert_equal("7 GW storage with 2 more pumped storage, 15 GW interconnection & some demand shifting", worksheet.control_k56); end
+  def test_control_l56; assert_equal("20 GW storage with large lagoons, 30 GW interconnection & substantial demand shifting", worksheet.control_l56); end
+  def test_control_i57; assert_equal("Central case", worksheet.control_i57); end
+  def test_control_j57; assert_equal("Low production case", worksheet.control_j57); end
+  def test_control_k57; assert_equal("Very low production case", worksheet.control_k57); end
+  def test_control_n4; assert_equal("Doesn't tackle climate change (All at level 1)", worksheet.control_n4); end
+  def test_control_o4; assert_equal("Maximium demand, no supply", worksheet.control_o4); end
+  def test_control_p4; assert_equal("Maximum supply, no demand", worksheet.control_p4); end
+  def test_control_q4; assert_equal("Analogous to MARKAL 3.26", worksheet.control_q4); end
+  def test_control_r4; assert_equal("Higher renewables, more energy efficiency", worksheet.control_r4); end
+  def test_control_s4; assert_equal("Higher nuclear, less energy efficiency", worksheet.control_s4); end
+  def test_control_t4; assert_equal("Higher CCS, more bioenergy", worksheet.control_t4); end
+  def test_control_u4; assert_equal("Low cost pathway", worksheet.control_u4); end
+  def test_control_v4; assert_equal("Friends of the Earth", worksheet.control_v4); end
+  def test_control_w4; assert_equal("Campaign to Protect Rural England", worksheet.control_w4); end
+  def test_control_x4; assert_equal("Mark Brinkley", worksheet.control_x4); end
+  def test_control_y4; assert_equal("National Grid", worksheet.control_y4); end
+  def test_control_z4; assert_equal("Atkins", worksheet.control_z4); end
   def test_control_n5; assert_in_delta(1.0, worksheet.control_n5, 0.002); end
-  def test_control_o5; assert_in_epsilon(4.0, worksheet.control_o5, 0.002); end
-  def test_control_p5; assert_in_epsilon(1.8, worksheet.control_p5, 0.002); end
-  def test_control_q5; assert_in_epsilon(1.4, worksheet.control_q5, 0.002); end
-  def test_control_r5; assert_in_epsilon(2.7, worksheet.control_r5, 0.002); end
-  def test_control_s5; assert_in_epsilon(1.5, worksheet.control_s5, 0.002); end
-  def test_control_t5; assert_in_epsilon(2.6, worksheet.control_t5, 0.002); end
-  def test_control_u5; assert_in_delta(1.0, worksheet.control_u5, 0.002); end
+  def test_control_o5; assert_in_delta(1.0, worksheet.control_o5, 0.002); end
+  def test_control_p5; assert_in_epsilon(4.0, worksheet.control_p5, 0.002); end
+  def test_control_q5; assert_in_epsilon(1.8, worksheet.control_q5, 0.002); end
+  def test_control_r5; assert_in_epsilon(1.4, worksheet.control_r5, 0.002); end
+  def test_control_s5; assert_in_epsilon(2.7, worksheet.control_s5, 0.002); end
+  def test_control_t5; assert_in_epsilon(1.5, worksheet.control_t5, 0.002); end
+  def test_control_u5; assert_in_epsilon(2.6, worksheet.control_u5, 0.002); end
   def test_control_v5; assert_in_delta(1.0, worksheet.control_v5, 0.002); end
-  def test_control_w5; assert_in_epsilon(2.0, worksheet.control_w5, 0.002); end
-  def test_control_x5; assert_in_epsilon(1.7, worksheet.control_x5, 0.002); end
-  def test_control_y5; assert_in_epsilon(1.6, worksheet.control_y5, 0.002); end
-  def test_control_m7; assert_in_delta(1.0, worksheet.control_m7, 0.002); end
+  def test_control_w5; assert_in_delta(1.0, worksheet.control_w5, 0.002); end
+  def test_control_x5; assert_in_epsilon(2.0, worksheet.control_x5, 0.002); end
+  def test_control_y5; assert_in_epsilon(1.7, worksheet.control_y5, 0.002); end
+  def test_control_z5; assert_in_epsilon(1.6, worksheet.control_z5, 0.002); end
   def test_control_n7; assert_in_delta(1.0, worksheet.control_n7, 0.002); end
-  def test_control_o7; assert_in_epsilon(4.0, worksheet.control_o7, 0.002); end
-  def test_control_p7; assert_in_epsilon(1.6, worksheet.control_p7, 0.002); end
-  def test_control_q7; assert_in_epsilon(1.3, worksheet.control_q7, 0.002); end
-  def test_control_r7; assert_in_delta(1.0, worksheet.control_r7, 0.002); end
-  def test_control_s7; assert_in_epsilon(2.0, worksheet.control_s7, 0.002); end
-  def test_control_t7; assert_in_delta(1.0, worksheet.control_t7, 0.002); end
-  def test_control_u7; assert_in_epsilon(1.7, worksheet.control_u7, 0.002); end
+  def test_control_o7; assert_in_delta(1.0, worksheet.control_o7, 0.002); end
+  def test_control_p7; assert_in_epsilon(4.0, worksheet.control_p7, 0.002); end
+  def test_control_q7; assert_in_epsilon(1.6, worksheet.control_q7, 0.002); end
+  def test_control_r7; assert_in_epsilon(1.3, worksheet.control_r7, 0.002); end
+  def test_control_s7; assert_in_delta(1.0, worksheet.control_s7, 0.002); end
+  def test_control_t7; assert_in_epsilon(2.0, worksheet.control_t7, 0.002); end
+  def test_control_u7; assert_in_delta(1.0, worksheet.control_u7, 0.002); end
   def test_control_v7; assert_in_epsilon(1.7, worksheet.control_v7, 0.002); end
-  def test_control_w7; assert_in_epsilon(2.0, worksheet.control_w7, 0.002); end
-  def test_control_x7; assert_in_epsilon(1.7, worksheet.control_x7, 0.002); end
-  def test_control_y7; assert_in_epsilon(1.5, worksheet.control_y7, 0.002); end
-  def test_control_m8; assert_in_delta(1.0, worksheet.control_m8, 0.002); end
+  def test_control_w7; assert_in_epsilon(1.7, worksheet.control_w7, 0.002); end
+  def test_control_x7; assert_in_epsilon(2.0, worksheet.control_x7, 0.002); end
+  def test_control_y7; assert_in_epsilon(1.7, worksheet.control_y7, 0.002); end
+  def test_control_z7; assert_in_epsilon(1.5, worksheet.control_z7, 0.002); end
   def test_control_n8; assert_in_delta(1.0, worksheet.control_n8, 0.002); end
-  def test_control_o8; assert_in_epsilon(4.0, worksheet.control_o8, 0.002); end
-  def test_control_p8; assert_in_epsilon(2.0, worksheet.control_p8, 0.002); end
-  def test_control_q8; assert_in_epsilon(3.0, worksheet.control_q8, 0.002); end
+  def test_control_o8; assert_in_delta(1.0, worksheet.control_o8, 0.002); end
+  def test_control_p8; assert_in_epsilon(4.0, worksheet.control_p8, 0.002); end
+  def test_control_q8; assert_in_epsilon(2.0, worksheet.control_q8, 0.002); end
   def test_control_r8; assert_in_epsilon(3.0, worksheet.control_r8, 0.002); end
   def test_control_s8; assert_in_epsilon(3.0, worksheet.control_s8, 0.002); end
-  def test_control_t8; assert_in_delta(1.0, worksheet.control_t8, 0.002); end
-  def test_control_u8; assert_in_epsilon(4.0, worksheet.control_u8, 0.002); end
-  def test_control_v8; assert_in_epsilon(2.0, worksheet.control_v8, 0.002); end
+  def test_control_t8; assert_in_epsilon(3.0, worksheet.control_t8, 0.002); end
+  def test_control_u8; assert_in_delta(1.0, worksheet.control_u8, 0.002); end
+  def test_control_v8; assert_in_epsilon(4.0, worksheet.control_v8, 0.002); end
   def test_control_w8; assert_in_epsilon(2.0, worksheet.control_w8, 0.002); end
   def test_control_x8; assert_in_epsilon(2.0, worksheet.control_x8, 0.002); end
   def test_control_y8; assert_in_epsilon(2.0, worksheet.control_y8, 0.002); end
-  def test_control_m9; assert_in_delta(1.0, worksheet.control_m9, 0.002); end
+  def test_control_z8; assert_in_epsilon(2.0, worksheet.control_z8, 0.002); end
   def test_control_n9; assert_in_delta(1.0, worksheet.control_n9, 0.002); end
-  def test_control_o9; assert_in_epsilon(4.0, worksheet.control_o9, 0.002); end
-  def test_control_p9; assert_in_epsilon(1.3, worksheet.control_p9, 0.002); end
-  def test_control_q9; assert_in_epsilon(1.9, worksheet.control_q9, 0.002); end
-  def test_control_r9; assert_in_epsilon(1.2, worksheet.control_r9, 0.002); end
-  def test_control_s9; assert_in_epsilon(1.3, worksheet.control_s9, 0.002); end
-  def test_control_t9; assert_in_delta(1.0, worksheet.control_t9, 0.002); end
-  def test_control_u9; assert_in_epsilon(2.3, worksheet.control_u9, 0.002); end
-  def test_control_v9; assert_in_epsilon(2.5, worksheet.control_v9, 0.002); end
-  def test_control_w9; assert_in_epsilon(2.0, worksheet.control_w9, 0.002); end
-  def test_control_x9; assert_in_epsilon(1.6, worksheet.control_x9, 0.002); end
-  def test_control_y9; assert_in_epsilon(2.4, worksheet.control_y9, 0.002); end
-  def test_control_m10; assert_in_delta(1.0, worksheet.control_m10, 0.002); end
+  def test_control_o9; assert_in_delta(1.0, worksheet.control_o9, 0.002); end
+  def test_control_p9; assert_in_epsilon(4.0, worksheet.control_p9, 0.002); end
+  def test_control_q9; assert_in_epsilon(1.3, worksheet.control_q9, 0.002); end
+  def test_control_r9; assert_in_epsilon(1.9, worksheet.control_r9, 0.002); end
+  def test_control_s9; assert_in_epsilon(1.2, worksheet.control_s9, 0.002); end
+  def test_control_t9; assert_in_epsilon(1.3, worksheet.control_t9, 0.002); end
+  def test_control_u9; assert_in_delta(1.0, worksheet.control_u9, 0.002); end
+  def test_control_v9; assert_in_epsilon(2.3, worksheet.control_v9, 0.002); end
+  def test_control_w9; assert_in_epsilon(2.5, worksheet.control_w9, 0.002); end
+  def test_control_x9; assert_in_epsilon(2.0, worksheet.control_x9, 0.002); end
+  def test_control_y9; assert_in_epsilon(1.6, worksheet.control_y9, 0.002); end
+  def test_control_z9; assert_in_epsilon(2.4, worksheet.control_z9, 0.002); end
   def test_control_n10; assert_in_delta(1.0, worksheet.control_n10, 0.002); end
-  def test_control_o10; assert_in_epsilon(4.0, worksheet.control_o10, 0.002); end
-  def test_control_p10; assert_in_epsilon(1.3, worksheet.control_p10, 0.002); end
-  def test_control_q10; assert_in_epsilon(2.7, worksheet.control_q10, 0.002); end
-  def test_control_r10; assert_in_epsilon(1.4, worksheet.control_r10, 0.002); end
-  def test_control_s10; assert_in_epsilon(1.5, worksheet.control_s10, 0.002); end
-  def test_control_t10; assert_in_delta(1.0, worksheet.control_t10, 0.002); end
-  def test_control_u10; assert_in_epsilon(2.3, worksheet.control_u10, 0.002); end
-  def test_control_v10; assert_in_epsilon(1.3, worksheet.control_v10, 0.002); end
-  def test_control_w10; assert_in_delta(1.0, worksheet.control_w10, 0.002); end
-  def test_control_x10; assert_in_epsilon(1.6, worksheet.control_x10, 0.002); end
-  def test_control_y10; assert_in_epsilon(1.9, worksheet.control_y10, 0.002); end
-  def test_control_m11; assert_in_delta(1.0, worksheet.control_m11, 0.002); end
+  def test_control_o10; assert_in_delta(1.0, worksheet.control_o10, 0.002); end
+  def test_control_p10; assert_in_epsilon(4.0, worksheet.control_p10, 0.002); end
+  def test_control_q10; assert_in_epsilon(1.3, worksheet.control_q10, 0.002); end
+  def test_control_r10; assert_in_epsilon(2.7, worksheet.control_r10, 0.002); end
+  def test_control_s10; assert_in_epsilon(1.4, worksheet.control_s10, 0.002); end
+  def test_control_t10; assert_in_epsilon(1.5, worksheet.control_t10, 0.002); end
+  def test_control_u10; assert_in_delta(1.0, worksheet.control_u10, 0.002); end
+  def test_control_v10; assert_in_epsilon(2.3, worksheet.control_v10, 0.002); end
+  def test_control_w10; assert_in_epsilon(1.3, worksheet.control_w10, 0.002); end
+  def test_control_x10; assert_in_delta(1.0, worksheet.control_x10, 0.002); end
+  def test_control_y10; assert_in_epsilon(1.6, worksheet.control_y10, 0.002); end
+  def test_control_z10; assert_in_epsilon(1.9, worksheet.control_z10, 0.002); end
   def test_control_n11; assert_in_delta(1.0, worksheet.control_n11, 0.002); end
-  def test_control_o11; assert_in_epsilon(4.0, worksheet.control_o11, 0.002); end
-  def test_control_p11; assert_in_epsilon(2.0, worksheet.control_p11, 0.002); end
-  def test_control_q11; assert_in_epsilon(1.6, worksheet.control_q11, 0.002); end
-  def test_control_r11; assert_in_delta(1.0, worksheet.control_r11, 0.002); end
+  def test_control_o11; assert_in_delta(1.0, worksheet.control_o11, 0.002); end
+  def test_control_p11; assert_in_epsilon(4.0, worksheet.control_p11, 0.002); end
+  def test_control_q11; assert_in_epsilon(2.0, worksheet.control_q11, 0.002); end
+  def test_control_r11; assert_in_epsilon(1.6, worksheet.control_r11, 0.002); end
   def test_control_s11; assert_in_delta(1.0, worksheet.control_s11, 0.002); end
   def test_control_t11; assert_in_delta(1.0, worksheet.control_t11, 0.002); end
-  def test_control_u11; assert_in_epsilon(4.0, worksheet.control_u11, 0.002); end
-  def test_control_v11; assert_in_epsilon(2.5, worksheet.control_v11, 0.002); end
-  def test_control_w11; assert_in_epsilon(4.0, worksheet.control_w11, 0.002); end
-  def test_control_x11; assert_in_delta(1.0, worksheet.control_x11, 0.002); end
+  def test_control_u11; assert_in_delta(1.0, worksheet.control_u11, 0.002); end
+  def test_control_v11; assert_in_epsilon(4.0, worksheet.control_v11, 0.002); end
+  def test_control_w11; assert_in_epsilon(2.5, worksheet.control_w11, 0.002); end
+  def test_control_x11; assert_in_epsilon(4.0, worksheet.control_x11, 0.002); end
   def test_control_y11; assert_in_delta(1.0, worksheet.control_y11, 0.002); end
-  def test_control_m12; assert_in_delta(1.0, worksheet.control_m12, 0.002); end
+  def test_control_z11; assert_in_delta(1.0, worksheet.control_z11, 0.002); end
   def test_control_n12; assert_in_delta(1.0, worksheet.control_n12, 0.002); end
-  def test_control_o12; assert_in_epsilon(4.0, worksheet.control_o12, 0.002); end
-  def test_control_p12; assert_in_epsilon(2.5, worksheet.control_p12, 0.002); end
-  def test_control_q12; assert_in_epsilon(2.0, worksheet.control_q12, 0.002); end
-  def test_control_r12; assert_in_delta(1.0, worksheet.control_r12, 0.002); end
+  def test_control_o12; assert_in_delta(1.0, worksheet.control_o12, 0.002); end
+  def test_control_p12; assert_in_epsilon(4.0, worksheet.control_p12, 0.002); end
+  def test_control_q12; assert_in_epsilon(2.5, worksheet.control_q12, 0.002); end
+  def test_control_r12; assert_in_epsilon(2.0, worksheet.control_r12, 0.002); end
   def test_control_s12; assert_in_delta(1.0, worksheet.control_s12, 0.002); end
   def test_control_t12; assert_in_delta(1.0, worksheet.control_t12, 0.002); end
-  def test_control_u12; assert_in_epsilon(4.0, worksheet.control_u12, 0.002); end
-  def test_control_v12; assert_in_epsilon(2.5, worksheet.control_v12, 0.002); end
-  def test_control_w12; assert_in_epsilon(4.0, worksheet.control_w12, 0.002); end
-  def test_control_x12; assert_in_epsilon(2.0, worksheet.control_x12, 0.002); end
-  def test_control_y12; assert_in_delta(1.0, worksheet.control_y12, 0.002); end
-  def test_control_m13; assert_in_delta(1.0, worksheet.control_m13, 0.002); end
+  def test_control_u12; assert_in_delta(1.0, worksheet.control_u12, 0.002); end
+  def test_control_v12; assert_in_epsilon(4.0, worksheet.control_v12, 0.002); end
+  def test_control_w12; assert_in_epsilon(2.5, worksheet.control_w12, 0.002); end
+  def test_control_x12; assert_in_epsilon(4.0, worksheet.control_x12, 0.002); end
+  def test_control_y12; assert_in_epsilon(2.0, worksheet.control_y12, 0.002); end
+  def test_control_z12; assert_in_delta(1.0, worksheet.control_z12, 0.002); end
   def test_control_n13; assert_in_delta(1.0, worksheet.control_n13, 0.002); end
-  def test_control_o13; assert_in_epsilon(4.0, worksheet.control_o13, 0.002); end
-  def test_control_p13; assert_in_epsilon(2.5, worksheet.control_p13, 0.002); end
-  def test_control_q13; assert_in_epsilon(2.0, worksheet.control_q13, 0.002); end
-  def test_control_r13; assert_in_delta(1.0, worksheet.control_r13, 0.002); end
+  def test_control_o13; assert_in_delta(1.0, worksheet.control_o13, 0.002); end
+  def test_control_p13; assert_in_epsilon(4.0, worksheet.control_p13, 0.002); end
+  def test_control_q13; assert_in_epsilon(2.5, worksheet.control_q13, 0.002); end
+  def test_control_r13; assert_in_epsilon(2.0, worksheet.control_r13, 0.002); end
   def test_control_s13; assert_in_delta(1.0, worksheet.control_s13, 0.002); end
   def test_control_t13; assert_in_delta(1.0, worksheet.control_t13, 0.002); end
-  def test_control_u13; assert_in_epsilon(3.0, worksheet.control_u13, 0.002); end
-  def test_control_v13; assert_in_epsilon(2.5, worksheet.control_v13, 0.002); end
-  def test_control_w13; assert_in_epsilon(4.0, worksheet.control_w13, 0.002); end
-  def test_control_x13; assert_in_delta(1.0, worksheet.control_x13, 0.002); end
-  def test_control_y13; assert_in_epsilon(2.9, worksheet.control_y13, 0.002); end
-  def test_control_m14; assert_in_delta(1.0, worksheet.control_m14, 0.002); end
+  def test_control_u13; assert_in_delta(1.0, worksheet.control_u13, 0.002); end
+  def test_control_v13; assert_in_epsilon(3.0, worksheet.control_v13, 0.002); end
+  def test_control_w13; assert_in_epsilon(2.5, worksheet.control_w13, 0.002); end
+  def test_control_x13; assert_in_epsilon(4.0, worksheet.control_x13, 0.002); end
+  def test_control_y13; assert_in_delta(1.0, worksheet.control_y13, 0.002); end
+  def test_control_z13; assert_in_epsilon(2.9, worksheet.control_z13, 0.002); end
   def test_control_n14; assert_in_delta(1.0, worksheet.control_n14, 0.002); end
-  def test_control_o14; assert_in_epsilon(4.0, worksheet.control_o14, 0.002); end
-  def test_control_p14; assert_in_delta(1.0, worksheet.control_p14, 0.002); end
+  def test_control_o14; assert_in_delta(1.0, worksheet.control_o14, 0.002); end
+  def test_control_p14; assert_in_epsilon(4.0, worksheet.control_p14, 0.002); end
   def test_control_q14; assert_in_delta(1.0, worksheet.control_q14, 0.002); end
   def test_control_r14; assert_in_delta(1.0, worksheet.control_r14, 0.002); end
   def test_control_s14; assert_in_delta(1.0, worksheet.control_s14, 0.002); end
@@ -354,62 +353,62 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_w14; assert_in_delta(1.0, worksheet.control_w14, 0.002); end
   def test_control_x14; assert_in_delta(1.0, worksheet.control_x14, 0.002); end
   def test_control_y14; assert_in_delta(1.0, worksheet.control_y14, 0.002); end
-  def test_control_m15; assert_in_delta(1.0, worksheet.control_m15, 0.002); end
+  def test_control_z14; assert_in_delta(1.0, worksheet.control_z14, 0.002); end
   def test_control_n15; assert_in_delta(1.0, worksheet.control_n15, 0.002); end
-  def test_control_o15; assert_in_epsilon(4.0, worksheet.control_o15, 0.002); end
-  def test_control_p15; assert_in_delta(1.0, worksheet.control_p15, 0.002); end
-  def test_control_q15; assert_in_epsilon(1.2, worksheet.control_q15, 0.002); end
-  def test_control_r15; assert_in_delta(1.0, worksheet.control_r15, 0.002); end
+  def test_control_o15; assert_in_delta(1.0, worksheet.control_o15, 0.002); end
+  def test_control_p15; assert_in_epsilon(4.0, worksheet.control_p15, 0.002); end
+  def test_control_q15; assert_in_delta(1.0, worksheet.control_q15, 0.002); end
+  def test_control_r15; assert_in_epsilon(1.2, worksheet.control_r15, 0.002); end
   def test_control_s15; assert_in_delta(1.0, worksheet.control_s15, 0.002); end
   def test_control_t15; assert_in_delta(1.0, worksheet.control_t15, 0.002); end
-  def test_control_u15; assert_in_epsilon(3.2, worksheet.control_u15, 0.002); end
-  def test_control_v15; assert_in_epsilon(2.0, worksheet.control_v15, 0.002); end
-  def test_control_w15; assert_in_delta(1.0, worksheet.control_w15, 0.002); end
-  def test_control_x15; assert_in_epsilon(1.2, worksheet.control_x15, 0.002); end
-  def test_control_y15; assert_in_epsilon(2.7, worksheet.control_y15, 0.002); end
-  def test_control_m16; assert_in_delta(1.0, worksheet.control_m16, 0.002); end
+  def test_control_u15; assert_in_delta(1.0, worksheet.control_u15, 0.002); end
+  def test_control_v15; assert_in_epsilon(3.2, worksheet.control_v15, 0.002); end
+  def test_control_w15; assert_in_epsilon(2.0, worksheet.control_w15, 0.002); end
+  def test_control_x15; assert_in_delta(1.0, worksheet.control_x15, 0.002); end
+  def test_control_y15; assert_in_epsilon(1.2, worksheet.control_y15, 0.002); end
+  def test_control_z15; assert_in_epsilon(2.7, worksheet.control_z15, 0.002); end
   def test_control_n16; assert_in_delta(1.0, worksheet.control_n16, 0.002); end
-  def test_control_o16; assert_in_epsilon(4.0, worksheet.control_o16, 0.002); end
-  def test_control_p16; assert_in_epsilon(2.0, worksheet.control_p16, 0.002); end
-  def test_control_q16; assert_in_epsilon(1.8, worksheet.control_q16, 0.002); end
-  def test_control_r16; assert_in_delta(1.0, worksheet.control_r16, 0.002); end
+  def test_control_o16; assert_in_delta(1.0, worksheet.control_o16, 0.002); end
+  def test_control_p16; assert_in_epsilon(4.0, worksheet.control_p16, 0.002); end
+  def test_control_q16; assert_in_epsilon(2.0, worksheet.control_q16, 0.002); end
+  def test_control_r16; assert_in_epsilon(1.8, worksheet.control_r16, 0.002); end
   def test_control_s16; assert_in_delta(1.0, worksheet.control_s16, 0.002); end
   def test_control_t16; assert_in_delta(1.0, worksheet.control_t16, 0.002); end
-  def test_control_u16; assert_in_epsilon(2.0, worksheet.control_u16, 0.002); end
-  def test_control_v16; assert_in_epsilon(3.0, worksheet.control_v16, 0.002); end
+  def test_control_u16; assert_in_delta(1.0, worksheet.control_u16, 0.002); end
+  def test_control_v16; assert_in_epsilon(2.0, worksheet.control_v16, 0.002); end
   def test_control_w16; assert_in_epsilon(3.0, worksheet.control_w16, 0.002); end
-  def test_control_x16; assert_in_epsilon(1.9, worksheet.control_x16, 0.002); end
-  def test_control_y16; assert_in_epsilon(1.6, worksheet.control_y16, 0.002); end
-  def test_control_m17; assert_in_delta(1.0, worksheet.control_m17, 0.002); end
+  def test_control_x16; assert_in_epsilon(3.0, worksheet.control_x16, 0.002); end
+  def test_control_y16; assert_in_epsilon(1.9, worksheet.control_y16, 0.002); end
+  def test_control_z16; assert_in_epsilon(1.6, worksheet.control_z16, 0.002); end
   def test_control_n17; assert_in_delta(1.0, worksheet.control_n17, 0.002); end
-  def test_control_o17; assert_in_epsilon(4.0, worksheet.control_o17, 0.002); end
-  def test_control_p17; assert_in_delta(1.0, worksheet.control_p17, 0.002); end
+  def test_control_o17; assert_in_delta(1.0, worksheet.control_o17, 0.002); end
+  def test_control_p17; assert_in_epsilon(4.0, worksheet.control_p17, 0.002); end
   def test_control_q17; assert_in_delta(1.0, worksheet.control_q17, 0.002); end
   def test_control_r17; assert_in_delta(1.0, worksheet.control_r17, 0.002); end
   def test_control_s17; assert_in_delta(1.0, worksheet.control_s17, 0.002); end
   def test_control_t17; assert_in_delta(1.0, worksheet.control_t17, 0.002); end
-  def test_control_u17; assert_in_epsilon(3.0, worksheet.control_u17, 0.002); end
+  def test_control_u17; assert_in_delta(1.0, worksheet.control_u17, 0.002); end
   def test_control_v17; assert_in_epsilon(3.0, worksheet.control_v17, 0.002); end
-  def test_control_w17; assert_in_epsilon(4.0, worksheet.control_w17, 0.002); end
-  def test_control_x17; assert_in_delta(1.0, worksheet.control_x17, 0.002); end
-  def test_control_y17; assert_in_epsilon(2.6, worksheet.control_y17, 0.002); end
-  def test_control_m18; assert_in_delta(1.0, worksheet.control_m18, 0.002); end
+  def test_control_w17; assert_in_epsilon(3.0, worksheet.control_w17, 0.002); end
+  def test_control_x17; assert_in_epsilon(4.0, worksheet.control_x17, 0.002); end
+  def test_control_y17; assert_in_delta(1.0, worksheet.control_y17, 0.002); end
+  def test_control_z17; assert_in_epsilon(2.6, worksheet.control_z17, 0.002); end
   def test_control_n18; assert_in_delta(1.0, worksheet.control_n18, 0.002); end
-  def test_control_o18; assert_in_epsilon(4.0, worksheet.control_o18, 0.002); end
-  def test_control_p18; assert_in_epsilon(1.5, worksheet.control_p18, 0.002); end
-  def test_control_q18; assert_in_epsilon(2.0, worksheet.control_q18, 0.002); end
-  def test_control_r18; assert_in_delta(1.0, worksheet.control_r18, 0.002); end
+  def test_control_o18; assert_in_delta(1.0, worksheet.control_o18, 0.002); end
+  def test_control_p18; assert_in_epsilon(4.0, worksheet.control_p18, 0.002); end
+  def test_control_q18; assert_in_epsilon(1.5, worksheet.control_q18, 0.002); end
+  def test_control_r18; assert_in_epsilon(2.0, worksheet.control_r18, 0.002); end
   def test_control_s18; assert_in_delta(1.0, worksheet.control_s18, 0.002); end
   def test_control_t18; assert_in_delta(1.0, worksheet.control_t18, 0.002); end
-  def test_control_u18; assert_in_epsilon(3.4, worksheet.control_u18, 0.002); end
-  def test_control_v18; assert_in_epsilon(2.0, worksheet.control_v18, 0.002); end
-  def test_control_w18; assert_in_delta(1.0, worksheet.control_w18, 0.002); end
-  def test_control_x18; assert_in_epsilon(1.9, worksheet.control_x18, 0.002); end
+  def test_control_u18; assert_in_delta(1.0, worksheet.control_u18, 0.002); end
+  def test_control_v18; assert_in_epsilon(3.4, worksheet.control_v18, 0.002); end
+  def test_control_w18; assert_in_epsilon(2.0, worksheet.control_w18, 0.002); end
+  def test_control_x18; assert_in_delta(1.0, worksheet.control_x18, 0.002); end
   def test_control_y18; assert_in_epsilon(1.9, worksheet.control_y18, 0.002); end
-  def test_control_m19; assert_in_delta(1.0, worksheet.control_m19, 0.002); end
+  def test_control_z18; assert_in_epsilon(1.9, worksheet.control_z18, 0.002); end
   def test_control_n19; assert_in_delta(1.0, worksheet.control_n19, 0.002); end
-  def test_control_o19; assert_in_epsilon(4.0, worksheet.control_o19, 0.002); end
-  def test_control_p19; assert_in_delta(1.0, worksheet.control_p19, 0.002); end
+  def test_control_o19; assert_in_delta(1.0, worksheet.control_o19, 0.002); end
+  def test_control_p19; assert_in_epsilon(4.0, worksheet.control_p19, 0.002); end
   def test_control_q19; assert_in_delta(1.0, worksheet.control_q19, 0.002); end
   def test_control_r19; assert_in_delta(1.0, worksheet.control_r19, 0.002); end
   def test_control_s19; assert_in_delta(1.0, worksheet.control_s19, 0.002); end
@@ -419,371 +418,371 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_w19; assert_in_delta(1.0, worksheet.control_w19, 0.002); end
   def test_control_x19; assert_in_delta(1.0, worksheet.control_x19, 0.002); end
   def test_control_y19; assert_in_delta(1.0, worksheet.control_y19, 0.002); end
-  def test_control_m20; assert_in_delta(1.0, worksheet.control_m20, 0.002); end
+  def test_control_z19; assert_in_delta(1.0, worksheet.control_z19, 0.002); end
   def test_control_n20; assert_in_delta(1.0, worksheet.control_n20, 0.002); end
-  def test_control_o20; assert_in_epsilon(4.0, worksheet.control_o20, 0.002); end
-  def test_control_p20; assert_in_epsilon(1.8, worksheet.control_p20, 0.002); end
-  def test_control_q20; assert_in_delta(1.0, worksheet.control_q20, 0.002); end
+  def test_control_o20; assert_in_delta(1.0, worksheet.control_o20, 0.002); end
+  def test_control_p20; assert_in_epsilon(4.0, worksheet.control_p20, 0.002); end
+  def test_control_q20; assert_in_epsilon(1.8, worksheet.control_q20, 0.002); end
   def test_control_r20; assert_in_delta(1.0, worksheet.control_r20, 0.002); end
-  def test_control_s20; assert_in_epsilon(1.5, worksheet.control_s20, 0.002); end
-  def test_control_t20; assert_in_delta(1.0, worksheet.control_t20, 0.002); end
+  def test_control_s20; assert_in_delta(1.0, worksheet.control_s20, 0.002); end
+  def test_control_t20; assert_in_epsilon(1.5, worksheet.control_t20, 0.002); end
   def test_control_u20; assert_in_delta(1.0, worksheet.control_u20, 0.002); end
-  def test_control_v20; assert_in_epsilon(3.0, worksheet.control_v20, 0.002); end
-  def test_control_w20; assert_in_delta(1.0, worksheet.control_w20, 0.002); end
+  def test_control_v20; assert_in_delta(1.0, worksheet.control_v20, 0.002); end
+  def test_control_w20; assert_in_epsilon(3.0, worksheet.control_w20, 0.002); end
   def test_control_x20; assert_in_delta(1.0, worksheet.control_x20, 0.002); end
-  def test_control_y20; assert_in_epsilon(1.9, worksheet.control_y20, 0.002); end
-  def test_control_m22; assert_in_delta(1.0, worksheet.control_m22, 0.002); end
+  def test_control_y20; assert_in_delta(1.0, worksheet.control_y20, 0.002); end
+  def test_control_z20; assert_in_epsilon(1.9, worksheet.control_z20, 0.002); end
   def test_control_n22; assert_in_delta(1.0, worksheet.control_n22, 0.002); end
-  def test_control_o22; assert_in_epsilon(4.0, worksheet.control_o22, 0.002); end
-  def test_control_p22; assert_in_epsilon(3.0, worksheet.control_p22, 0.002); end
-  def test_control_q22; assert_in_epsilon(2.0, worksheet.control_q22, 0.002); end
-  def test_control_r22; assert_in_epsilon(4.0, worksheet.control_r22, 0.002); end
-  def test_control_s22; assert_in_epsilon(3.0, worksheet.control_s22, 0.002); end
+  def test_control_o22; assert_in_delta(1.0, worksheet.control_o22, 0.002); end
+  def test_control_p22; assert_in_epsilon(4.0, worksheet.control_p22, 0.002); end
+  def test_control_q22; assert_in_epsilon(3.0, worksheet.control_q22, 0.002); end
+  def test_control_r22; assert_in_epsilon(2.0, worksheet.control_r22, 0.002); end
+  def test_control_s22; assert_in_epsilon(4.0, worksheet.control_s22, 0.002); end
   def test_control_t22; assert_in_epsilon(3.0, worksheet.control_t22, 0.002); end
-  def test_control_u22; assert_in_epsilon(2.0, worksheet.control_u22, 0.002); end
+  def test_control_u22; assert_in_epsilon(3.0, worksheet.control_u22, 0.002); end
   def test_control_v22; assert_in_epsilon(2.0, worksheet.control_v22, 0.002); end
-  def test_control_w22; assert_in_epsilon(3.0, worksheet.control_w22, 0.002); end
+  def test_control_w22; assert_in_epsilon(2.0, worksheet.control_w22, 0.002); end
   def test_control_x22; assert_in_epsilon(3.0, worksheet.control_x22, 0.002); end
   def test_control_y22; assert_in_epsilon(3.0, worksheet.control_y22, 0.002); end
-  def test_control_m23; assert_in_delta(1.0, worksheet.control_m23, 0.002); end
+  def test_control_z22; assert_in_epsilon(3.0, worksheet.control_z22, 0.002); end
   def test_control_n23; assert_in_delta(1.0, worksheet.control_n23, 0.002); end
-  def test_control_o23; assert_in_epsilon(4.0, worksheet.control_o23, 0.002); end
-  def test_control_p23; assert_in_epsilon(2.0, worksheet.control_p23, 0.002); end
+  def test_control_o23; assert_in_delta(1.0, worksheet.control_o23, 0.002); end
+  def test_control_p23; assert_in_epsilon(4.0, worksheet.control_p23, 0.002); end
   def test_control_q23; assert_in_epsilon(2.0, worksheet.control_q23, 0.002); end
   def test_control_r23; assert_in_epsilon(2.0, worksheet.control_r23, 0.002); end
   def test_control_s23; assert_in_epsilon(2.0, worksheet.control_s23, 0.002); end
   def test_control_t23; assert_in_epsilon(2.0, worksheet.control_t23, 0.002); end
-  def test_control_u23; assert_in_epsilon(4.0, worksheet.control_u23, 0.002); end
-  def test_control_v23; assert_in_epsilon(3.0, worksheet.control_v23, 0.002); end
-  def test_control_w23; assert_in_epsilon(4.0, worksheet.control_w23, 0.002); end
-  def test_control_x23; assert_in_epsilon(2.0, worksheet.control_x23, 0.002); end
-  def test_control_y23; assert_in_epsilon(4.0, worksheet.control_y23, 0.002); end
-  def test_control_m24; assert_in_delta(1.0, worksheet.control_m24, 0.002); end
+  def test_control_u23; assert_in_epsilon(2.0, worksheet.control_u23, 0.002); end
+  def test_control_v23; assert_in_epsilon(4.0, worksheet.control_v23, 0.002); end
+  def test_control_w23; assert_in_epsilon(3.0, worksheet.control_w23, 0.002); end
+  def test_control_x23; assert_in_epsilon(4.0, worksheet.control_x23, 0.002); end
+  def test_control_y23; assert_in_epsilon(2.0, worksheet.control_y23, 0.002); end
+  def test_control_z23; assert_in_epsilon(4.0, worksheet.control_z23, 0.002); end
   def test_control_n24; assert_in_delta(1.0, worksheet.control_n24, 0.002); end
-  def test_control_o24; assert_in_epsilon(3.0, worksheet.control_o24, 0.002); end
-  def test_control_p24; assert_in_epsilon(2.0, worksheet.control_p24, 0.002); end
+  def test_control_o24; assert_in_delta(1.0, worksheet.control_o24, 0.002); end
+  def test_control_p24; assert_in_epsilon(3.0, worksheet.control_p24, 0.002); end
   def test_control_q24; assert_in_epsilon(2.0, worksheet.control_q24, 0.002); end
   def test_control_r24; assert_in_epsilon(2.0, worksheet.control_r24, 0.002); end
   def test_control_s24; assert_in_epsilon(2.0, worksheet.control_s24, 0.002); end
-  def test_control_t24; assert_in_epsilon(4.0, worksheet.control_t24, 0.002); end
+  def test_control_t24; assert_in_epsilon(2.0, worksheet.control_t24, 0.002); end
   def test_control_u24; assert_in_epsilon(4.0, worksheet.control_u24, 0.002); end
-  def test_control_v24; assert_in_epsilon(3.0, worksheet.control_v24, 0.002); end
+  def test_control_v24; assert_in_epsilon(4.0, worksheet.control_v24, 0.002); end
   def test_control_w24; assert_in_epsilon(3.0, worksheet.control_w24, 0.002); end
-  def test_control_x24; assert_in_epsilon(2.0, worksheet.control_x24, 0.002); end
-  def test_control_y24; assert_in_epsilon(3.0, worksheet.control_y24, 0.002); end
-  def test_control_m25; assert_in_delta(1.0, worksheet.control_m25, 0.002); end
+  def test_control_x24; assert_in_epsilon(3.0, worksheet.control_x24, 0.002); end
+  def test_control_y24; assert_in_epsilon(2.0, worksheet.control_y24, 0.002); end
+  def test_control_z24; assert_in_epsilon(3.0, worksheet.control_z24, 0.002); end
   def test_control_n25; assert_in_delta(1.0, worksheet.control_n25, 0.002); end
-  def test_control_o25; assert_in_epsilon(4.0, worksheet.control_o25, 0.002); end
-  def test_control_p25; assert_in_delta(1.0, worksheet.control_p25, 0.002); end
+  def test_control_o25; assert_in_delta(1.0, worksheet.control_o25, 0.002); end
+  def test_control_p25; assert_in_epsilon(4.0, worksheet.control_p25, 0.002); end
   def test_control_q25; assert_in_delta(1.0, worksheet.control_q25, 0.002); end
-  def test_control_r25; assert_in_epsilon(3.0, worksheet.control_r25, 0.002); end
-  def test_control_s25; assert_in_delta(1.0, worksheet.control_s25, 0.002); end
+  def test_control_r25; assert_in_delta(1.0, worksheet.control_r25, 0.002); end
+  def test_control_s25; assert_in_epsilon(3.0, worksheet.control_s25, 0.002); end
   def test_control_t25; assert_in_delta(1.0, worksheet.control_t25, 0.002); end
   def test_control_u25; assert_in_delta(1.0, worksheet.control_u25, 0.002); end
   def test_control_v25; assert_in_delta(1.0, worksheet.control_v25, 0.002); end
-  def test_control_w25; assert_in_epsilon(3.0, worksheet.control_w25, 0.002); end
-  def test_control_x25; assert_in_epsilon(2.0, worksheet.control_x25, 0.002); end
-  def test_control_y25; assert_in_delta(1.0, worksheet.control_y25, 0.002); end
-  def test_control_m26; assert_in_delta(1.0, worksheet.control_m26, 0.002); end
+  def test_control_w25; assert_in_delta(1.0, worksheet.control_w25, 0.002); end
+  def test_control_x25; assert_in_epsilon(3.0, worksheet.control_x25, 0.002); end
+  def test_control_y25; assert_in_epsilon(2.0, worksheet.control_y25, 0.002); end
+  def test_control_z25; assert_in_delta(1.0, worksheet.control_z25, 0.002); end
   def test_control_n26; assert_in_delta(1.0, worksheet.control_n26, 0.002); end
-  def test_control_o26; assert_in_epsilon(2.0, worksheet.control_o26, 0.002); end
-  def test_control_p26; assert_in_delta(1.0, worksheet.control_p26, 0.002); end
+  def test_control_o26; assert_in_delta(1.0, worksheet.control_o26, 0.002); end
+  def test_control_p26; assert_in_epsilon(2.0, worksheet.control_p26, 0.002); end
   def test_control_q26; assert_in_delta(1.0, worksheet.control_q26, 0.002); end
-  def test_control_r26; assert_in_epsilon(3.0, worksheet.control_r26, 0.002); end
-  def test_control_s26; assert_in_epsilon(2.0, worksheet.control_s26, 0.002); end
-  def test_control_t26; assert_in_epsilon(3.0, worksheet.control_t26, 0.002); end
-  def test_control_u26; assert_in_delta(1.0, worksheet.control_u26, 0.002); end
-  def test_control_v26; assert_in_epsilon(2.0, worksheet.control_v26, 0.002); end
+  def test_control_r26; assert_in_delta(1.0, worksheet.control_r26, 0.002); end
+  def test_control_s26; assert_in_epsilon(3.0, worksheet.control_s26, 0.002); end
+  def test_control_t26; assert_in_epsilon(2.0, worksheet.control_t26, 0.002); end
+  def test_control_u26; assert_in_epsilon(3.0, worksheet.control_u26, 0.002); end
+  def test_control_v26; assert_in_delta(1.0, worksheet.control_v26, 0.002); end
   def test_control_w26; assert_in_epsilon(2.0, worksheet.control_w26, 0.002); end
   def test_control_x26; assert_in_epsilon(2.0, worksheet.control_x26, 0.002); end
-  def test_control_y26; assert_in_delta(1.0, worksheet.control_y26, 0.002); end
-  def test_control_m27; assert_in_delta(1.0, worksheet.control_m27, 0.002); end
+  def test_control_y26; assert_in_epsilon(2.0, worksheet.control_y26, 0.002); end
+  def test_control_z26; assert_in_delta(1.0, worksheet.control_z26, 0.002); end
   def test_control_n27; assert_in_delta(1.0, worksheet.control_n27, 0.002); end
-  def test_control_o27; assert_in_epsilon(4.0, worksheet.control_o27, 0.002); end
-  def test_control_p27; assert_in_epsilon(2.5, worksheet.control_p27, 0.002); end
-  def test_control_q27; assert_in_epsilon(2.0, worksheet.control_q27, 0.002); end
-  def test_control_r27; assert_in_epsilon(3.7, worksheet.control_r27, 0.002); end
-  def test_control_s27; assert_in_epsilon(3.0, worksheet.control_s27, 0.002); end
-  def test_control_t27; assert_in_epsilon(2.1, worksheet.control_t27, 0.002); end
-  def test_control_u27; assert_in_delta(1.0, worksheet.control_u27, 0.002); end
-  def test_control_v27; assert_in_epsilon(2.0, worksheet.control_v27, 0.002); end
-  def test_control_w27; assert_in_delta(1.0, worksheet.control_w27, 0.002); end
-  def test_control_x27; assert_in_epsilon(2.0, worksheet.control_x27, 0.002); end
-  def test_control_y27; assert_in_delta(1.0, worksheet.control_y27, 0.002); end
-  def test_control_m30; assert_in_delta(1.0, worksheet.control_m30, 0.002); end
-  def test_control_n30; assert_in_epsilon(4.0, worksheet.control_n30, 0.002); end
-  def test_control_o30; assert_in_delta(1.0, worksheet.control_o30, 0.002); end
-  def test_control_p30; assert_in_epsilon(4.0, worksheet.control_p30, 0.002); end
+  def test_control_o27; assert_in_delta(1.0, worksheet.control_o27, 0.002); end
+  def test_control_p27; assert_in_epsilon(4.0, worksheet.control_p27, 0.002); end
+  def test_control_q27; assert_in_epsilon(2.5, worksheet.control_q27, 0.002); end
+  def test_control_r27; assert_in_epsilon(2.0, worksheet.control_r27, 0.002); end
+  def test_control_s27; assert_in_epsilon(3.7, worksheet.control_s27, 0.002); end
+  def test_control_t27; assert_in_epsilon(3.0, worksheet.control_t27, 0.002); end
+  def test_control_u27; assert_in_epsilon(2.1, worksheet.control_u27, 0.002); end
+  def test_control_v27; assert_in_delta(1.0, worksheet.control_v27, 0.002); end
+  def test_control_w27; assert_in_epsilon(2.0, worksheet.control_w27, 0.002); end
+  def test_control_x27; assert_in_delta(1.0, worksheet.control_x27, 0.002); end
+  def test_control_y27; assert_in_epsilon(2.0, worksheet.control_y27, 0.002); end
+  def test_control_z27; assert_in_delta(1.0, worksheet.control_z27, 0.002); end
+  def test_control_n30; assert_in_delta(1.0, worksheet.control_n30, 0.002); end
+  def test_control_o30; assert_in_epsilon(4.0, worksheet.control_o30, 0.002); end
+  def test_control_p30; assert_in_delta(1.0, worksheet.control_p30, 0.002); end
   def test_control_q30; assert_in_epsilon(4.0, worksheet.control_q30, 0.002); end
-  def test_control_r30; assert_in_epsilon(2.0, worksheet.control_r30, 0.002); end
-  def test_control_s30; assert_in_epsilon(3.0, worksheet.control_s30, 0.002); end
-  def test_control_t30; assert_in_epsilon(4.0, worksheet.control_t30, 0.002); end
+  def test_control_r30; assert_in_epsilon(4.0, worksheet.control_r30, 0.002); end
+  def test_control_s30; assert_in_epsilon(2.0, worksheet.control_s30, 0.002); end
+  def test_control_t30; assert_in_epsilon(3.0, worksheet.control_t30, 0.002); end
   def test_control_u30; assert_in_epsilon(4.0, worksheet.control_u30, 0.002); end
   def test_control_v30; assert_in_epsilon(4.0, worksheet.control_v30, 0.002); end
-  def test_control_w30; assert_in_epsilon(3.0, worksheet.control_w30, 0.002); end
+  def test_control_w30; assert_in_epsilon(4.0, worksheet.control_w30, 0.002); end
   def test_control_x30; assert_in_epsilon(3.0, worksheet.control_x30, 0.002); end
   def test_control_y30; assert_in_epsilon(3.0, worksheet.control_y30, 0.002); end
-  def test_control_m31; assert_in_delta(1.0, worksheet.control_m31, 0.002); end
-  def test_control_n31; assert_in_epsilon(4.0, worksheet.control_n31, 0.002); end
-  def test_control_o31; assert_in_delta(1.0, worksheet.control_o31, 0.002); end
-  def test_control_p31; assert_in_epsilon(3.0, worksheet.control_p31, 0.002); end
-  def test_control_q31; assert_in_epsilon(4.0, worksheet.control_q31, 0.002); end
-  def test_control_r31; assert_in_epsilon(3.0, worksheet.control_r31, 0.002); end
-  def test_control_s31; assert_in_epsilon(2.0, worksheet.control_s31, 0.002); end
-  def test_control_t31; assert_in_epsilon(3.0, worksheet.control_t31, 0.002); end
-  def test_control_u31; assert_in_epsilon(4.0, worksheet.control_u31, 0.002); end
+  def test_control_z30; assert_in_epsilon(3.0, worksheet.control_z30, 0.002); end
+  def test_control_n31; assert_in_delta(1.0, worksheet.control_n31, 0.002); end
+  def test_control_o31; assert_in_epsilon(4.0, worksheet.control_o31, 0.002); end
+  def test_control_p31; assert_in_delta(1.0, worksheet.control_p31, 0.002); end
+  def test_control_q31; assert_in_epsilon(3.0, worksheet.control_q31, 0.002); end
+  def test_control_r31; assert_in_epsilon(4.0, worksheet.control_r31, 0.002); end
+  def test_control_s31; assert_in_epsilon(3.0, worksheet.control_s31, 0.002); end
+  def test_control_t31; assert_in_epsilon(2.0, worksheet.control_t31, 0.002); end
+  def test_control_u31; assert_in_epsilon(3.0, worksheet.control_u31, 0.002); end
   def test_control_v31; assert_in_epsilon(4.0, worksheet.control_v31, 0.002); end
   def test_control_w31; assert_in_epsilon(4.0, worksheet.control_w31, 0.002); end
-  def test_control_x31; assert_in_epsilon(3.0, worksheet.control_x31, 0.002); end
+  def test_control_x31; assert_in_epsilon(4.0, worksheet.control_x31, 0.002); end
   def test_control_y31; assert_in_epsilon(3.0, worksheet.control_y31, 0.002); end
-  def test_control_m32; assert_in_delta(1.0, worksheet.control_m32, 0.002); end
-  def test_control_n32; assert_in_epsilon(2.0, worksheet.control_n32, 0.002); end
+  def test_control_z31; assert_in_epsilon(3.0, worksheet.control_z31, 0.002); end
+  def test_control_n32; assert_in_delta(1.0, worksheet.control_n32, 0.002); end
   def test_control_o32; assert_in_epsilon(2.0, worksheet.control_o32, 0.002); end
-  def test_control_p32; assert_in_delta(1.0, worksheet.control_p32, 0.002); end
-  def test_control_q32; assert_in_epsilon(2.0, worksheet.control_q32, 0.002); end
+  def test_control_p32; assert_in_epsilon(2.0, worksheet.control_p32, 0.002); end
+  def test_control_q32; assert_in_delta(1.0, worksheet.control_q32, 0.002); end
   def test_control_r32; assert_in_epsilon(2.0, worksheet.control_r32, 0.002); end
   def test_control_s32; assert_in_epsilon(2.0, worksheet.control_s32, 0.002); end
-  def test_control_t32; assert_in_delta(1.0, worksheet.control_t32, 0.002); end
-  def test_control_u32; assert_in_epsilon(2.0, worksheet.control_u32, 0.002); end
-  def test_control_v32; assert_in_delta(1.0, worksheet.control_v32, 0.002); end
-  def test_control_w32; assert_in_epsilon(2.0, worksheet.control_w32, 0.002); end
-  def test_control_x32; assert_in_delta(1.0, worksheet.control_x32, 0.002); end
-  def test_control_y32; assert_in_epsilon(2.0, worksheet.control_y32, 0.002); end
-  def test_control_m33; assert_in_delta(1.0, worksheet.control_m33, 0.002); end
-  def test_control_n33; assert_in_epsilon(4.0, worksheet.control_n33, 0.002); end
-  def test_control_o33; assert_in_delta(1.0, worksheet.control_o33, 0.002); end
-  def test_control_p33; assert_in_epsilon(4.0, worksheet.control_p33, 0.002); end
-  def test_control_q33; assert_in_epsilon(3.0, worksheet.control_q33, 0.002); end
-  def test_control_r33; assert_in_epsilon(2.0, worksheet.control_r33, 0.002); end
-  def test_control_s33; assert_in_epsilon(3.0, worksheet.control_s33, 0.002); end
-  def test_control_t33; assert_in_epsilon(4.0, worksheet.control_t33, 0.002); end
+  def test_control_t32; assert_in_epsilon(2.0, worksheet.control_t32, 0.002); end
+  def test_control_u32; assert_in_delta(1.0, worksheet.control_u32, 0.002); end
+  def test_control_v32; assert_in_epsilon(2.0, worksheet.control_v32, 0.002); end
+  def test_control_w32; assert_in_delta(1.0, worksheet.control_w32, 0.002); end
+  def test_control_x32; assert_in_epsilon(2.0, worksheet.control_x32, 0.002); end
+  def test_control_y32; assert_in_delta(1.0, worksheet.control_y32, 0.002); end
+  def test_control_z32; assert_in_epsilon(2.0, worksheet.control_z32, 0.002); end
+  def test_control_n33; assert_in_delta(1.0, worksheet.control_n33, 0.002); end
+  def test_control_o33; assert_in_epsilon(4.0, worksheet.control_o33, 0.002); end
+  def test_control_p33; assert_in_delta(1.0, worksheet.control_p33, 0.002); end
+  def test_control_q33; assert_in_epsilon(4.0, worksheet.control_q33, 0.002); end
+  def test_control_r33; assert_in_epsilon(3.0, worksheet.control_r33, 0.002); end
+  def test_control_s33; assert_in_epsilon(2.0, worksheet.control_s33, 0.002); end
+  def test_control_t33; assert_in_epsilon(3.0, worksheet.control_t33, 0.002); end
   def test_control_u33; assert_in_epsilon(4.0, worksheet.control_u33, 0.002); end
   def test_control_v33; assert_in_epsilon(4.0, worksheet.control_v33, 0.002); end
-  def test_control_w33; assert_in_epsilon(2.0, worksheet.control_w33, 0.002); end
-  def test_control_x33; assert_in_epsilon(3.0, worksheet.control_x33, 0.002); end
-  def test_control_y33; assert_in_epsilon(4.0, worksheet.control_y33, 0.002); end
-  def test_control_m34; assert_in_delta(1.0, worksheet.control_m34, 0.002); end
-  def test_control_n34; assert_in_epsilon(4.0, worksheet.control_n34, 0.002); end
-  def test_control_o34; assert_in_delta(1.0, worksheet.control_o34, 0.002); end
+  def test_control_w33; assert_in_epsilon(4.0, worksheet.control_w33, 0.002); end
+  def test_control_x33; assert_in_epsilon(2.0, worksheet.control_x33, 0.002); end
+  def test_control_y33; assert_in_epsilon(3.0, worksheet.control_y33, 0.002); end
+  def test_control_z33; assert_in_epsilon(4.0, worksheet.control_z33, 0.002); end
+  def test_control_n34; assert_in_delta(1.0, worksheet.control_n34, 0.002); end
+  def test_control_o34; assert_in_epsilon(4.0, worksheet.control_o34, 0.002); end
   def test_control_p34; assert_in_delta(1.0, worksheet.control_p34, 0.002); end
-  def test_control_q34; assert_in_epsilon(2.0, worksheet.control_q34, 0.002); end
+  def test_control_q34; assert_in_delta(1.0, worksheet.control_q34, 0.002); end
   def test_control_r34; assert_in_epsilon(2.0, worksheet.control_r34, 0.002); end
   def test_control_s34; assert_in_epsilon(2.0, worksheet.control_s34, 0.002); end
-  def test_control_t34; assert_in_delta(1.0, worksheet.control_t34, 0.002); end
-  def test_control_u34; assert_in_epsilon(4.0, worksheet.control_u34, 0.002); end
+  def test_control_t34; assert_in_epsilon(2.0, worksheet.control_t34, 0.002); end
+  def test_control_u34; assert_in_delta(1.0, worksheet.control_u34, 0.002); end
   def test_control_v34; assert_in_epsilon(4.0, worksheet.control_v34, 0.002); end
   def test_control_w34; assert_in_epsilon(4.0, worksheet.control_w34, 0.002); end
-  def test_control_x34; assert_in_epsilon(2.0, worksheet.control_x34, 0.002); end
+  def test_control_x34; assert_in_epsilon(4.0, worksheet.control_x34, 0.002); end
   def test_control_y34; assert_in_epsilon(2.0, worksheet.control_y34, 0.002); end
-  def test_control_m35; assert_in_delta(1.0, worksheet.control_m35, 0.002); end
-  def test_control_n35; assert_in_epsilon(4.0, worksheet.control_n35, 0.002); end
-  def test_control_o35; assert_in_delta(1.0, worksheet.control_o35, 0.002); end
+  def test_control_z34; assert_in_epsilon(2.0, worksheet.control_z34, 0.002); end
+  def test_control_n35; assert_in_delta(1.0, worksheet.control_n35, 0.002); end
+  def test_control_o35; assert_in_epsilon(4.0, worksheet.control_o35, 0.002); end
   def test_control_p35; assert_in_delta(1.0, worksheet.control_p35, 0.002); end
-  def test_control_q35; assert_in_epsilon(2.0, worksheet.control_q35, 0.002); end
+  def test_control_q35; assert_in_delta(1.0, worksheet.control_q35, 0.002); end
   def test_control_r35; assert_in_epsilon(2.0, worksheet.control_r35, 0.002); end
   def test_control_s35; assert_in_epsilon(2.0, worksheet.control_s35, 0.002); end
-  def test_control_t35; assert_in_delta(1.0, worksheet.control_t35, 0.002); end
-  def test_control_u35; assert_in_epsilon(4.0, worksheet.control_u35, 0.002); end
-  def test_control_v35; assert_in_epsilon(3.0, worksheet.control_v35, 0.002); end
-  def test_control_w35; assert_in_epsilon(4.0, worksheet.control_w35, 0.002); end
-  def test_control_x35; assert_in_epsilon(3.0, worksheet.control_x35, 0.002); end
-  def test_control_y35; assert_in_epsilon(4.0, worksheet.control_y35, 0.002); end
-  def test_control_m37; assert_in_delta(1.0, worksheet.control_m37, 0.002); end
-  def test_control_n37; assert_in_epsilon(4.0, worksheet.control_n37, 0.002); end
-  def test_control_o37; assert_in_delta(1.0, worksheet.control_o37, 0.002); end
-  def test_control_p37; assert_in_epsilon(4.0, worksheet.control_p37, 0.002); end
+  def test_control_t35; assert_in_epsilon(2.0, worksheet.control_t35, 0.002); end
+  def test_control_u35; assert_in_delta(1.0, worksheet.control_u35, 0.002); end
+  def test_control_v35; assert_in_epsilon(4.0, worksheet.control_v35, 0.002); end
+  def test_control_w35; assert_in_epsilon(3.0, worksheet.control_w35, 0.002); end
+  def test_control_x35; assert_in_epsilon(4.0, worksheet.control_x35, 0.002); end
+  def test_control_y35; assert_in_epsilon(3.0, worksheet.control_y35, 0.002); end
+  def test_control_z35; assert_in_epsilon(4.0, worksheet.control_z35, 0.002); end
+  def test_control_n37; assert_in_delta(1.0, worksheet.control_n37, 0.002); end
+  def test_control_o37; assert_in_epsilon(4.0, worksheet.control_o37, 0.002); end
+  def test_control_p37; assert_in_delta(1.0, worksheet.control_p37, 0.002); end
   def test_control_q37; assert_in_epsilon(4.0, worksheet.control_q37, 0.002); end
-  def test_control_r37; assert_in_epsilon(2.0, worksheet.control_r37, 0.002); end
-  def test_control_s37; assert_in_epsilon(3.0, worksheet.control_s37, 0.002); end
-  def test_control_t37; assert_in_epsilon(4.0, worksheet.control_t37, 0.002); end
-  def test_control_u37; assert_in_epsilon(3.0, worksheet.control_u37, 0.002); end
+  def test_control_r37; assert_in_epsilon(4.0, worksheet.control_r37, 0.002); end
+  def test_control_s37; assert_in_epsilon(2.0, worksheet.control_s37, 0.002); end
+  def test_control_t37; assert_in_epsilon(3.0, worksheet.control_t37, 0.002); end
+  def test_control_u37; assert_in_epsilon(4.0, worksheet.control_u37, 0.002); end
   def test_control_v37; assert_in_epsilon(3.0, worksheet.control_v37, 0.002); end
-  def test_control_w37; assert_in_epsilon(4.0, worksheet.control_w37, 0.002); end
-  def test_control_x37; assert_in_epsilon(2.0, worksheet.control_x37, 0.002); end
+  def test_control_w37; assert_in_epsilon(3.0, worksheet.control_w37, 0.002); end
+  def test_control_x37; assert_in_epsilon(4.0, worksheet.control_x37, 0.002); end
   def test_control_y37; assert_in_epsilon(2.0, worksheet.control_y37, 0.002); end
-  def test_control_m38; assert_in_delta(1.0, worksheet.control_m38, 0.002); end
-  def test_control_n38; assert_in_epsilon(4.0, worksheet.control_n38, 0.002); end
-  def test_control_o38; assert_in_delta(1.0, worksheet.control_o38, 0.002); end
-  def test_control_p38; assert_in_epsilon(3.0, worksheet.control_p38, 0.002); end
-  def test_control_q38; assert_in_epsilon(4.0, worksheet.control_q38, 0.002); end
-  def test_control_r38; assert_in_epsilon(3.0, worksheet.control_r38, 0.002); end
+  def test_control_z37; assert_in_epsilon(2.0, worksheet.control_z37, 0.002); end
+  def test_control_n38; assert_in_delta(1.0, worksheet.control_n38, 0.002); end
+  def test_control_o38; assert_in_epsilon(4.0, worksheet.control_o38, 0.002); end
+  def test_control_p38; assert_in_delta(1.0, worksheet.control_p38, 0.002); end
+  def test_control_q38; assert_in_epsilon(3.0, worksheet.control_q38, 0.002); end
+  def test_control_r38; assert_in_epsilon(4.0, worksheet.control_r38, 0.002); end
   def test_control_s38; assert_in_epsilon(3.0, worksheet.control_s38, 0.002); end
   def test_control_t38; assert_in_epsilon(3.0, worksheet.control_t38, 0.002); end
-  def test_control_u38; assert_in_epsilon(4.0, worksheet.control_u38, 0.002); end
+  def test_control_u38; assert_in_epsilon(3.0, worksheet.control_u38, 0.002); end
   def test_control_v38; assert_in_epsilon(4.0, worksheet.control_v38, 0.002); end
-  def test_control_w38; assert_in_epsilon(2.0, worksheet.control_w38, 0.002); end
-  def test_control_x38; assert_in_epsilon(3.0, worksheet.control_x38, 0.002); end
-  def test_control_y38; assert_in_epsilon(4.0, worksheet.control_y38, 0.002); end
-  def test_control_m39; assert_in_delta(1.0, worksheet.control_m39, 0.002); end
-  def test_control_n39; assert_in_epsilon(4.0, worksheet.control_n39, 0.002); end
-  def test_control_o39; assert_in_delta(1.0, worksheet.control_o39, 0.002); end
-  def test_control_p39; assert_in_epsilon(3.0, worksheet.control_p39, 0.002); end
-  def test_control_q39; assert_in_epsilon(4.0, worksheet.control_q39, 0.002); end
-  def test_control_r39; assert_in_epsilon(3.0, worksheet.control_r39, 0.002); end
+  def test_control_w38; assert_in_epsilon(4.0, worksheet.control_w38, 0.002); end
+  def test_control_x38; assert_in_epsilon(2.0, worksheet.control_x38, 0.002); end
+  def test_control_y38; assert_in_epsilon(3.0, worksheet.control_y38, 0.002); end
+  def test_control_z38; assert_in_epsilon(4.0, worksheet.control_z38, 0.002); end
+  def test_control_n39; assert_in_delta(1.0, worksheet.control_n39, 0.002); end
+  def test_control_o39; assert_in_epsilon(4.0, worksheet.control_o39, 0.002); end
+  def test_control_p39; assert_in_delta(1.0, worksheet.control_p39, 0.002); end
+  def test_control_q39; assert_in_epsilon(3.0, worksheet.control_q39, 0.002); end
+  def test_control_r39; assert_in_epsilon(4.0, worksheet.control_r39, 0.002); end
   def test_control_s39; assert_in_epsilon(3.0, worksheet.control_s39, 0.002); end
-  def test_control_t39; assert_in_epsilon(4.0, worksheet.control_t39, 0.002); end
-  def test_control_u39; assert_in_epsilon(3.0, worksheet.control_u39, 0.002); end
+  def test_control_t39; assert_in_epsilon(3.0, worksheet.control_t39, 0.002); end
+  def test_control_u39; assert_in_epsilon(4.0, worksheet.control_u39, 0.002); end
   def test_control_v39; assert_in_epsilon(3.0, worksheet.control_v39, 0.002); end
   def test_control_w39; assert_in_epsilon(3.0, worksheet.control_w39, 0.002); end
-  def test_control_x39; assert_in_epsilon(4.0, worksheet.control_x39, 0.002); end
+  def test_control_x39; assert_in_epsilon(3.0, worksheet.control_x39, 0.002); end
   def test_control_y39; assert_in_epsilon(4.0, worksheet.control_y39, 0.002); end
-  def test_control_m40; assert_in_delta(1.0, worksheet.control_m40, 0.002); end
-  def test_control_n40; assert_in_epsilon(4.0, worksheet.control_n40, 0.002); end
-  def test_control_o40; assert_in_delta(1.0, worksheet.control_o40, 0.002); end
-  def test_control_p40; assert_in_epsilon(3.0, worksheet.control_p40, 0.002); end
-  def test_control_q40; assert_in_epsilon(4.0, worksheet.control_q40, 0.002); end
-  def test_control_r40; assert_in_epsilon(3.0, worksheet.control_r40, 0.002); end
-  def test_control_s40; assert_in_epsilon(2.0, worksheet.control_s40, 0.002); end
-  def test_control_t40; assert_in_delta(1.0, worksheet.control_t40, 0.002); end
-  def test_control_u40; assert_in_epsilon(3.0, worksheet.control_u40, 0.002); end
+  def test_control_z39; assert_in_epsilon(4.0, worksheet.control_z39, 0.002); end
+  def test_control_n40; assert_in_delta(1.0, worksheet.control_n40, 0.002); end
+  def test_control_o40; assert_in_epsilon(4.0, worksheet.control_o40, 0.002); end
+  def test_control_p40; assert_in_delta(1.0, worksheet.control_p40, 0.002); end
+  def test_control_q40; assert_in_epsilon(3.0, worksheet.control_q40, 0.002); end
+  def test_control_r40; assert_in_epsilon(4.0, worksheet.control_r40, 0.002); end
+  def test_control_s40; assert_in_epsilon(3.0, worksheet.control_s40, 0.002); end
+  def test_control_t40; assert_in_epsilon(2.0, worksheet.control_t40, 0.002); end
+  def test_control_u40; assert_in_delta(1.0, worksheet.control_u40, 0.002); end
   def test_control_v40; assert_in_epsilon(3.0, worksheet.control_v40, 0.002); end
-  def test_control_w40; assert_in_epsilon(4.0, worksheet.control_w40, 0.002); end
-  def test_control_x40; assert_in_delta(1.0, worksheet.control_x40, 0.002); end
+  def test_control_w40; assert_in_epsilon(3.0, worksheet.control_w40, 0.002); end
+  def test_control_x40; assert_in_epsilon(4.0, worksheet.control_x40, 0.002); end
   def test_control_y40; assert_in_delta(1.0, worksheet.control_y40, 0.002); end
-  def test_control_m42; assert_in_delta(1.0, worksheet.control_m42, 0.002); end
-  def test_control_n42; assert_in_epsilon(4.0, worksheet.control_n42, 0.002); end
-  def test_control_o42; assert_in_delta(1.0, worksheet.control_o42, 0.002); end
-  def test_control_p42; assert_in_epsilon(4.0, worksheet.control_p42, 0.002); end
+  def test_control_z40; assert_in_delta(1.0, worksheet.control_z40, 0.002); end
+  def test_control_n42; assert_in_delta(1.0, worksheet.control_n42, 0.002); end
+  def test_control_o42; assert_in_epsilon(4.0, worksheet.control_o42, 0.002); end
+  def test_control_p42; assert_in_delta(1.0, worksheet.control_p42, 0.002); end
   def test_control_q42; assert_in_epsilon(4.0, worksheet.control_q42, 0.002); end
-  def test_control_r42; assert_in_epsilon(2.0, worksheet.control_r42, 0.002); end
-  def test_control_s42; assert_in_epsilon(3.0, worksheet.control_s42, 0.002); end
-  def test_control_t42; assert_in_epsilon(4.0, worksheet.control_t42, 0.002); end
+  def test_control_r42; assert_in_epsilon(4.0, worksheet.control_r42, 0.002); end
+  def test_control_s42; assert_in_epsilon(2.0, worksheet.control_s42, 0.002); end
+  def test_control_t42; assert_in_epsilon(3.0, worksheet.control_t42, 0.002); end
   def test_control_u42; assert_in_epsilon(4.0, worksheet.control_u42, 0.002); end
   def test_control_v42; assert_in_epsilon(4.0, worksheet.control_v42, 0.002); end
   def test_control_w42; assert_in_epsilon(4.0, worksheet.control_w42, 0.002); end
-  def test_control_x42; assert_in_epsilon(2.0, worksheet.control_x42, 0.002); end
-  def test_control_y42; assert_in_epsilon(4.0, worksheet.control_y42, 0.002); end
-  def test_control_m43; assert_in_delta(1.0, worksheet.control_m43, 0.002); end
-  def test_control_n43; assert_in_epsilon(2.0, worksheet.control_n43, 0.002); end
-  def test_control_o43; assert_in_delta(1.0, worksheet.control_o43, 0.002); end
-  def test_control_p43; assert_in_epsilon(2.0, worksheet.control_p43, 0.002); end
+  def test_control_x42; assert_in_epsilon(4.0, worksheet.control_x42, 0.002); end
+  def test_control_y42; assert_in_epsilon(2.0, worksheet.control_y42, 0.002); end
+  def test_control_z42; assert_in_epsilon(4.0, worksheet.control_z42, 0.002); end
+  def test_control_n43; assert_in_delta(1.0, worksheet.control_n43, 0.002); end
+  def test_control_o43; assert_in_epsilon(2.0, worksheet.control_o43, 0.002); end
+  def test_control_p43; assert_in_delta(1.0, worksheet.control_p43, 0.002); end
   def test_control_q43; assert_in_epsilon(2.0, worksheet.control_q43, 0.002); end
   def test_control_r43; assert_in_epsilon(2.0, worksheet.control_r43, 0.002); end
-  def test_control_s43; assert_in_delta(1.0, worksheet.control_s43, 0.002); end
+  def test_control_s43; assert_in_epsilon(2.0, worksheet.control_s43, 0.002); end
   def test_control_t43; assert_in_delta(1.0, worksheet.control_t43, 0.002); end
-  def test_control_u43; assert_in_epsilon(2.0, worksheet.control_u43, 0.002); end
-  def test_control_v43; assert_in_delta(1.0, worksheet.control_v43, 0.002); end
-  def test_control_w43; assert_in_epsilon(2.0, worksheet.control_w43, 0.002); end
-  def test_control_x43; assert_in_delta(1.0, worksheet.control_x43, 0.002); end
-  def test_control_y43; assert_in_epsilon(2.0, worksheet.control_y43, 0.002); end
-  def test_control_m45; assert_in_delta(1.0, worksheet.control_m45, 0.002); end
-  def test_control_n45; assert_in_epsilon(3.0, worksheet.control_n45, 0.002); end
-  def test_control_o45; assert_in_epsilon(2.0, worksheet.control_o45, 0.002); end
+  def test_control_u43; assert_in_delta(1.0, worksheet.control_u43, 0.002); end
+  def test_control_v43; assert_in_epsilon(2.0, worksheet.control_v43, 0.002); end
+  def test_control_w43; assert_in_delta(1.0, worksheet.control_w43, 0.002); end
+  def test_control_x43; assert_in_epsilon(2.0, worksheet.control_x43, 0.002); end
+  def test_control_y43; assert_in_delta(1.0, worksheet.control_y43, 0.002); end
+  def test_control_z43; assert_in_epsilon(2.0, worksheet.control_z43, 0.002); end
+  def test_control_n45; assert_in_delta(1.0, worksheet.control_n45, 0.002); end
+  def test_control_o45; assert_in_epsilon(3.0, worksheet.control_o45, 0.002); end
   def test_control_p45; assert_in_epsilon(2.0, worksheet.control_p45, 0.002); end
   def test_control_q45; assert_in_epsilon(2.0, worksheet.control_q45, 0.002); end
   def test_control_r45; assert_in_epsilon(2.0, worksheet.control_r45, 0.002); end
   def test_control_s45; assert_in_epsilon(2.0, worksheet.control_s45, 0.002); end
-  def test_control_t45; assert_in_epsilon(3.0, worksheet.control_t45, 0.002); end
-  def test_control_u45; assert_in_epsilon(2.0, worksheet.control_u45, 0.002); end
+  def test_control_t45; assert_in_epsilon(2.0, worksheet.control_t45, 0.002); end
+  def test_control_u45; assert_in_epsilon(3.0, worksheet.control_u45, 0.002); end
   def test_control_v45; assert_in_epsilon(2.0, worksheet.control_v45, 0.002); end
-  def test_control_w45; assert_in_epsilon(3.0, worksheet.control_w45, 0.002); end
-  def test_control_x45; assert_in_epsilon(2.0, worksheet.control_x45, 0.002); end
-  def test_control_y45; assert_in_delta(1.0, worksheet.control_y45, 0.002); end
-  def test_control_m46; assert_in_delta(1.0, worksheet.control_m46, 0.002); end
-  def test_control_n46; assert_in_epsilon(3.0, worksheet.control_n46, 0.002); end
-  def test_control_o46; assert_in_delta(1.0, worksheet.control_o46, 0.002); end
-  def test_control_p46; assert_in_epsilon(3.0, worksheet.control_p46, 0.002); end
+  def test_control_w45; assert_in_epsilon(2.0, worksheet.control_w45, 0.002); end
+  def test_control_x45; assert_in_epsilon(3.0, worksheet.control_x45, 0.002); end
+  def test_control_y45; assert_in_epsilon(2.0, worksheet.control_y45, 0.002); end
+  def test_control_z45; assert_in_delta(1.0, worksheet.control_z45, 0.002); end
+  def test_control_n46; assert_in_delta(1.0, worksheet.control_n46, 0.002); end
+  def test_control_o46; assert_in_epsilon(3.0, worksheet.control_o46, 0.002); end
+  def test_control_p46; assert_in_delta(1.0, worksheet.control_p46, 0.002); end
   def test_control_q46; assert_in_epsilon(3.0, worksheet.control_q46, 0.002); end
-  def test_control_r46; assert_in_delta(1.0, worksheet.control_r46, 0.002); end
-  def test_control_s46; assert_in_epsilon(3.0, worksheet.control_s46, 0.002); end
-  def test_control_t46; assert_in_epsilon(2.0, worksheet.control_t46, 0.002); end
-  def test_control_u46; assert_in_epsilon(3.0, worksheet.control_u46, 0.002); end
+  def test_control_r46; assert_in_epsilon(3.0, worksheet.control_r46, 0.002); end
+  def test_control_s46; assert_in_delta(1.0, worksheet.control_s46, 0.002); end
+  def test_control_t46; assert_in_epsilon(3.0, worksheet.control_t46, 0.002); end
+  def test_control_u46; assert_in_epsilon(2.0, worksheet.control_u46, 0.002); end
   def test_control_v46; assert_in_epsilon(3.0, worksheet.control_v46, 0.002); end
-  def test_control_w46; assert_in_epsilon(2.0, worksheet.control_w46, 0.002); end
+  def test_control_w46; assert_in_epsilon(3.0, worksheet.control_w46, 0.002); end
   def test_control_x46; assert_in_epsilon(2.0, worksheet.control_x46, 0.002); end
-  def test_control_y46; assert_in_epsilon(3.0, worksheet.control_y46, 0.002); end
-  def test_control_m48; assert_in_delta(1.0, worksheet.control_m48, 0.002); end
-  def test_control_n48; assert_in_epsilon(4.0, worksheet.control_n48, 0.002); end
-  def test_control_o48; assert_in_delta(1.0, worksheet.control_o48, 0.002); end
-  def test_control_p48; assert_in_epsilon(4.0, worksheet.control_p48, 0.002); end
+  def test_control_y46; assert_in_epsilon(2.0, worksheet.control_y46, 0.002); end
+  def test_control_z46; assert_in_epsilon(3.0, worksheet.control_z46, 0.002); end
+  def test_control_n48; assert_in_delta(1.0, worksheet.control_n48, 0.002); end
+  def test_control_o48; assert_in_epsilon(4.0, worksheet.control_o48, 0.002); end
+  def test_control_p48; assert_in_delta(1.0, worksheet.control_p48, 0.002); end
   def test_control_q48; assert_in_epsilon(4.0, worksheet.control_q48, 0.002); end
-  def test_control_r48; assert_in_epsilon(2.0, worksheet.control_r48, 0.002); end
-  def test_control_s48; assert_in_epsilon(3.0, worksheet.control_s48, 0.002); end
-  def test_control_t48; assert_in_epsilon(4.0, worksheet.control_t48, 0.002); end
+  def test_control_r48; assert_in_epsilon(4.0, worksheet.control_r48, 0.002); end
+  def test_control_s48; assert_in_epsilon(2.0, worksheet.control_s48, 0.002); end
+  def test_control_t48; assert_in_epsilon(3.0, worksheet.control_t48, 0.002); end
   def test_control_u48; assert_in_epsilon(4.0, worksheet.control_u48, 0.002); end
   def test_control_v48; assert_in_epsilon(4.0, worksheet.control_v48, 0.002); end
-  def test_control_w48; assert_in_epsilon(3.0, worksheet.control_w48, 0.002); end
+  def test_control_w48; assert_in_epsilon(4.0, worksheet.control_w48, 0.002); end
   def test_control_x48; assert_in_epsilon(3.0, worksheet.control_x48, 0.002); end
-  def test_control_y48; assert_in_epsilon(4.0, worksheet.control_y48, 0.002); end
-  def test_control_m49; assert_in_delta(1.0, worksheet.control_m49, 0.002); end
-  def test_control_n49; assert_in_epsilon(4.0, worksheet.control_n49, 0.002); end
-  def test_control_o49; assert_in_delta(1.0, worksheet.control_o49, 0.002); end
-  def test_control_p49; assert_in_epsilon(3.0, worksheet.control_p49, 0.002); end
-  def test_control_q49; assert_in_epsilon(4.0, worksheet.control_q49, 0.002); end
-  def test_control_r49; assert_in_epsilon(3.0, worksheet.control_r49, 0.002); end
-  def test_control_s49; assert_in_epsilon(4.0, worksheet.control_s49, 0.002); end
+  def test_control_y48; assert_in_epsilon(3.0, worksheet.control_y48, 0.002); end
+  def test_control_z48; assert_in_epsilon(4.0, worksheet.control_z48, 0.002); end
+  def test_control_n49; assert_in_delta(1.0, worksheet.control_n49, 0.002); end
+  def test_control_o49; assert_in_epsilon(4.0, worksheet.control_o49, 0.002); end
+  def test_control_p49; assert_in_delta(1.0, worksheet.control_p49, 0.002); end
+  def test_control_q49; assert_in_epsilon(3.0, worksheet.control_q49, 0.002); end
+  def test_control_r49; assert_in_epsilon(4.0, worksheet.control_r49, 0.002); end
+  def test_control_s49; assert_in_epsilon(3.0, worksheet.control_s49, 0.002); end
   def test_control_t49; assert_in_epsilon(4.0, worksheet.control_t49, 0.002); end
   def test_control_u49; assert_in_epsilon(4.0, worksheet.control_u49, 0.002); end
   def test_control_v49; assert_in_epsilon(4.0, worksheet.control_v49, 0.002); end
-  def test_control_w49; assert_in_epsilon(3.0, worksheet.control_w49, 0.002); end
-  def test_control_x49; assert_in_epsilon(4.0, worksheet.control_x49, 0.002); end
+  def test_control_w49; assert_in_epsilon(4.0, worksheet.control_w49, 0.002); end
+  def test_control_x49; assert_in_epsilon(3.0, worksheet.control_x49, 0.002); end
   def test_control_y49; assert_in_epsilon(4.0, worksheet.control_y49, 0.002); end
-  def test_control_m50; assert_in_delta(1.0, worksheet.control_m50, 0.002); end
-  def test_control_n50; assert_in_epsilon(4.0, worksheet.control_n50, 0.002); end
-  def test_control_o50; assert_in_delta(1.0, worksheet.control_o50, 0.002); end
-  def test_control_p50; assert_in_epsilon(2.0, worksheet.control_p50, 0.002); end
-  def test_control_q50; assert_in_epsilon(4.0, worksheet.control_q50, 0.002); end
-  def test_control_r50; assert_in_epsilon(3.0, worksheet.control_r50, 0.002); end
+  def test_control_z49; assert_in_epsilon(4.0, worksheet.control_z49, 0.002); end
+  def test_control_n50; assert_in_delta(1.0, worksheet.control_n50, 0.002); end
+  def test_control_o50; assert_in_epsilon(4.0, worksheet.control_o50, 0.002); end
+  def test_control_p50; assert_in_delta(1.0, worksheet.control_p50, 0.002); end
+  def test_control_q50; assert_in_epsilon(2.0, worksheet.control_q50, 0.002); end
+  def test_control_r50; assert_in_epsilon(4.0, worksheet.control_r50, 0.002); end
   def test_control_s50; assert_in_epsilon(3.0, worksheet.control_s50, 0.002); end
-  def test_control_t50; assert_in_epsilon(4.0, worksheet.control_t50, 0.002); end
-  def test_control_u50; assert_in_epsilon(3.0, worksheet.control_u50, 0.002); end
+  def test_control_t50; assert_in_epsilon(3.0, worksheet.control_t50, 0.002); end
+  def test_control_u50; assert_in_epsilon(4.0, worksheet.control_u50, 0.002); end
   def test_control_v50; assert_in_epsilon(3.0, worksheet.control_v50, 0.002); end
-  def test_control_w50; assert_in_epsilon(4.0, worksheet.control_w50, 0.002); end
+  def test_control_w50; assert_in_epsilon(3.0, worksheet.control_w50, 0.002); end
   def test_control_x50; assert_in_epsilon(4.0, worksheet.control_x50, 0.002); end
-  def test_control_y50; assert_in_epsilon(3.0, worksheet.control_y50, 0.002); end
-  def test_control_m52; assert_in_delta(1.0, worksheet.control_m52, 0.002); end
-  def test_control_n52; assert_in_epsilon(4.0, worksheet.control_n52, 0.002); end
-  def test_control_o52; assert_in_delta(1.0, worksheet.control_o52, 0.002); end
-  def test_control_p52; assert_in_epsilon(4.0, worksheet.control_p52, 0.002); end
+  def test_control_y50; assert_in_epsilon(4.0, worksheet.control_y50, 0.002); end
+  def test_control_z50; assert_in_epsilon(3.0, worksheet.control_z50, 0.002); end
+  def test_control_n52; assert_in_delta(1.0, worksheet.control_n52, 0.002); end
+  def test_control_o52; assert_in_epsilon(4.0, worksheet.control_o52, 0.002); end
+  def test_control_p52; assert_in_delta(1.0, worksheet.control_p52, 0.002); end
   def test_control_q52; assert_in_epsilon(4.0, worksheet.control_q52, 0.002); end
-  def test_control_r52; assert_in_epsilon(2.0, worksheet.control_r52, 0.002); end
-  def test_control_s52; assert_in_epsilon(3.0, worksheet.control_s52, 0.002); end
-  def test_control_t52; assert_in_epsilon(4.0, worksheet.control_t52, 0.002); end
+  def test_control_r52; assert_in_epsilon(4.0, worksheet.control_r52, 0.002); end
+  def test_control_s52; assert_in_epsilon(2.0, worksheet.control_s52, 0.002); end
+  def test_control_t52; assert_in_epsilon(3.0, worksheet.control_t52, 0.002); end
   def test_control_u52; assert_in_epsilon(4.0, worksheet.control_u52, 0.002); end
   def test_control_v52; assert_in_epsilon(4.0, worksheet.control_v52, 0.002); end
   def test_control_w52; assert_in_epsilon(4.0, worksheet.control_w52, 0.002); end
-  def test_control_x52; assert_in_epsilon(3.0, worksheet.control_x52, 0.002); end
-  def test_control_y52; assert_in_epsilon(4.0, worksheet.control_y52, 0.002); end
-  def test_control_m53; assert_in_delta(1.0, worksheet.control_m53, 0.002); end
-  def test_control_n53; assert_in_epsilon(2.0, worksheet.control_n53, 0.002); end
-  def test_control_o53; assert_in_delta(1.0, worksheet.control_o53, 0.002); end
-  def test_control_p53; assert_in_epsilon(2.0, worksheet.control_p53, 0.002); end
+  def test_control_x52; assert_in_epsilon(4.0, worksheet.control_x52, 0.002); end
+  def test_control_y52; assert_in_epsilon(3.0, worksheet.control_y52, 0.002); end
+  def test_control_z52; assert_in_epsilon(4.0, worksheet.control_z52, 0.002); end
+  def test_control_n53; assert_in_delta(1.0, worksheet.control_n53, 0.002); end
+  def test_control_o53; assert_in_epsilon(2.0, worksheet.control_o53, 0.002); end
+  def test_control_p53; assert_in_delta(1.0, worksheet.control_p53, 0.002); end
   def test_control_q53; assert_in_epsilon(2.0, worksheet.control_q53, 0.002); end
   def test_control_r53; assert_in_epsilon(2.0, worksheet.control_r53, 0.002); end
-  def test_control_s53; assert_in_delta(1.0, worksheet.control_s53, 0.002); end
+  def test_control_s53; assert_in_epsilon(2.0, worksheet.control_s53, 0.002); end
   def test_control_t53; assert_in_delta(1.0, worksheet.control_t53, 0.002); end
-  def test_control_u53; assert_in_epsilon(2.0, worksheet.control_u53, 0.002); end
-  def test_control_v53; assert_in_delta(1.0, worksheet.control_v53, 0.002); end
-  def test_control_w53; assert_in_epsilon(2.0, worksheet.control_w53, 0.002); end
+  def test_control_u53; assert_in_delta(1.0, worksheet.control_u53, 0.002); end
+  def test_control_v53; assert_in_epsilon(2.0, worksheet.control_v53, 0.002); end
+  def test_control_w53; assert_in_delta(1.0, worksheet.control_w53, 0.002); end
   def test_control_x53; assert_in_epsilon(2.0, worksheet.control_x53, 0.002); end
   def test_control_y53; assert_in_epsilon(2.0, worksheet.control_y53, 0.002); end
-  def test_control_m55; assert_in_delta(1.0, worksheet.control_m55, 0.002); end
+  def test_control_z53; assert_in_epsilon(2.0, worksheet.control_z53, 0.002); end
   def test_control_n55; assert_in_delta(1.0, worksheet.control_n55, 0.002); end
   def test_control_o55; assert_in_delta(1.0, worksheet.control_o55, 0.002); end
   def test_control_p55; assert_in_delta(1.0, worksheet.control_p55, 0.002); end
   def test_control_q55; assert_in_delta(1.0, worksheet.control_q55, 0.002); end
   def test_control_r55; assert_in_delta(1.0, worksheet.control_r55, 0.002); end
-  def test_control_s55; assert_in_epsilon(2.0, worksheet.control_s55, 0.002); end
-  def test_control_t55; assert_in_delta(1.0, worksheet.control_t55, 0.002); end
-  def test_control_u55; assert_in_epsilon(4.0, worksheet.control_u55, 0.002); end
-  def test_control_v55; assert_in_epsilon(2.0, worksheet.control_v55, 0.002); end
-  def test_control_w55; assert_in_delta(1.0, worksheet.control_w55, 0.002); end
+  def test_control_s55; assert_in_delta(1.0, worksheet.control_s55, 0.002); end
+  def test_control_t55; assert_in_epsilon(2.0, worksheet.control_t55, 0.002); end
+  def test_control_u55; assert_in_delta(1.0, worksheet.control_u55, 0.002); end
+  def test_control_v55; assert_in_epsilon(4.0, worksheet.control_v55, 0.002); end
+  def test_control_w55; assert_in_epsilon(2.0, worksheet.control_w55, 0.002); end
   def test_control_x55; assert_in_delta(1.0, worksheet.control_x55, 0.002); end
-  def test_control_y55; assert_in_epsilon(2.0, worksheet.control_y55, 0.002); end
-  def test_control_m56; assert_in_delta(1.0, worksheet.control_m56, 0.002); end
+  def test_control_y55; assert_in_delta(1.0, worksheet.control_y55, 0.002); end
+  def test_control_z55; assert_in_epsilon(2.0, worksheet.control_z55, 0.002); end
   def test_control_n56; assert_in_delta(1.0, worksheet.control_n56, 0.002); end
   def test_control_o56; assert_in_delta(1.0, worksheet.control_o56, 0.002); end
-  def test_control_p56; assert_in_epsilon(2.0, worksheet.control_p56, 0.002); end
-  def test_control_q56; assert_in_epsilon(4.0, worksheet.control_q56, 0.002); end
-  def test_control_r56; assert_in_epsilon(2.0, worksheet.control_r56, 0.002); end
+  def test_control_p56; assert_in_delta(1.0, worksheet.control_p56, 0.002); end
+  def test_control_q56; assert_in_epsilon(2.0, worksheet.control_q56, 0.002); end
+  def test_control_r56; assert_in_epsilon(4.0, worksheet.control_r56, 0.002); end
   def test_control_s56; assert_in_epsilon(2.0, worksheet.control_s56, 0.002); end
-  def test_control_t56; assert_in_delta(1.0, worksheet.control_t56, 0.002); end
-  def test_control_u56; assert_in_epsilon(4.0, worksheet.control_u56, 0.002); end
-  def test_control_v56; assert_in_epsilon(3.0, worksheet.control_v56, 0.002); end
-  def test_control_w56; assert_in_epsilon(4.0, worksheet.control_w56, 0.002); end
-  def test_control_x56; assert_in_epsilon(2.0, worksheet.control_x56, 0.002); end
-  def test_control_y56; assert_in_epsilon(3.0, worksheet.control_y56, 0.002); end
-  def test_control_m57; assert_in_delta(1.0, worksheet.control_m57, 0.002); end
+  def test_control_t56; assert_in_epsilon(2.0, worksheet.control_t56, 0.002); end
+  def test_control_u56; assert_in_delta(1.0, worksheet.control_u56, 0.002); end
+  def test_control_v56; assert_in_epsilon(4.0, worksheet.control_v56, 0.002); end
+  def test_control_w56; assert_in_epsilon(3.0, worksheet.control_w56, 0.002); end
+  def test_control_x56; assert_in_epsilon(4.0, worksheet.control_x56, 0.002); end
+  def test_control_y56; assert_in_epsilon(2.0, worksheet.control_y56, 0.002); end
+  def test_control_z56; assert_in_epsilon(3.0, worksheet.control_z56, 0.002); end
   def test_control_n57; assert_in_delta(1.0, worksheet.control_n57, 0.002); end
   def test_control_o57; assert_in_delta(1.0, worksheet.control_o57, 0.002); end
   def test_control_p57; assert_in_delta(1.0, worksheet.control_p57, 0.002); end
@@ -796,211 +795,212 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_w57; assert_in_delta(1.0, worksheet.control_w57, 0.002); end
   def test_control_x57; assert_in_delta(1.0, worksheet.control_x57, 0.002); end
   def test_control_y57; assert_in_delta(1.0, worksheet.control_y57, 0.002); end
-  def test_control_m58; assert_equal("Imported natural gas for electricity and heat. Imported oil for vehicles.", worksheet.control_m58); end
-  def test_control_p58; assert_equal("Cost-optimising model based. Mix of supply sources. Ambitious demand reduction.", worksheet.control_p58); end
-  def test_control_q58; assert_equal("Renewables largest supply component. Very ambitious demand reduction. Lots of storage.", worksheet.control_q58); end
-  def test_control_r58; assert_equal("Lots of nuclear. Moderate energy demand reduction. Minimal renewables.", worksheet.control_r58); end
-  def test_control_s58; assert_equal("Lots of CCS and biomass co-firing. Ambitious demand reduction. ", worksheet.control_s58); end
-  def test_control_t58; assert_equal("TBD", worksheet.control_t58); end
-  def test_control_u58; assert_equal("Generation from wind, marine renewables and hydro. Ambitious demand reduction. ", worksheet.control_u58); end
-  def test_control_v58; assert_equal("Offshore renewables, solar, geothermal and electricity imports. Ambitious demand reduction.", worksheet.control_v58); end
-  def test_control_w58; assert_equal("Marine renewables, geothermal and algae supply. Some nuclear and CCS.", worksheet.control_w58); end
-  def test_control_x58; assert_equal("Wide range of generation sources. Moderate demand reduction. Considerable bioenergy.", worksheet.control_x58); end
-  def test_control_y58; assert_equal("Energy from a range of sources. Emphasis on UK self-reliance.", worksheet.control_y58); end
-  def test_control_m59; assert_in_epsilon(75.0, worksheet.control_m59, 0.002); end
-  def test_control_n59; assert_equal("No", worksheet.control_n59); end
+  def test_control_z57; assert_in_delta(1.0, worksheet.control_z57, 0.002); end
+  def test_control_n58; assert_equal("Imported natural gas for electricity and heat. Imported oil for vehicles.", worksheet.control_n58); end
+  def test_control_q58; assert_equal("Cost-optimising model based. Mix of supply sources. Ambitious demand reduction.", worksheet.control_q58); end
+  def test_control_r58; assert_equal("Renewables largest supply component. Very ambitious demand reduction. Lots of storage.", worksheet.control_r58); end
+  def test_control_s58; assert_equal("Lots of nuclear. Moderate energy demand reduction. Minimal renewables.", worksheet.control_s58); end
+  def test_control_t58; assert_equal("Lots of CCS and biomass co-firing. Ambitious demand reduction. ", worksheet.control_t58); end
+  def test_control_u58; assert_equal("TBD", worksheet.control_u58); end
+  def test_control_v58; assert_equal("Generation from wind, marine renewables and hydro. Ambitious demand reduction. ", worksheet.control_v58); end
+  def test_control_w58; assert_equal("Offshore renewables, solar, geothermal and electricity imports. Ambitious demand reduction.", worksheet.control_w58); end
+  def test_control_x58; assert_equal("Marine renewables, geothermal and algae supply. Some nuclear and CCS.", worksheet.control_x58); end
+  def test_control_y58; assert_equal("Wide range of generation sources. Moderate demand reduction. Considerable bioenergy.", worksheet.control_y58); end
+  def test_control_z58; assert_equal("Energy from a range of sources. Emphasis on UK self-reliance.", worksheet.control_z58); end
+  def test_control_n59; assert_in_epsilon(75.0, worksheet.control_n59, 0.002); end
   def test_control_o59; assert_equal("No", worksheet.control_o59); end
-  def test_control_p59; assert_in_epsilon(112.0, worksheet.control_p59, 0.002); end
-  def test_control_q59; assert_in_epsilon(109.0, worksheet.control_q59, 0.002); end
-  def test_control_r59; assert_in_epsilon(110.0, worksheet.control_r59, 0.002); end
-  def test_control_s59; assert_in_epsilon(111.0, worksheet.control_s59, 0.002); end
-  def test_control_t59; assert_in_epsilon(170.0, worksheet.control_t59, 0.002); end
-  def test_control_u59; assert_in_epsilon(95.0, worksheet.control_u59, 0.002); end
-  def test_control_v59; assert_in_epsilon(96.0, worksheet.control_v59, 0.002); end
-  def test_control_w59; assert_in_epsilon(94.0, worksheet.control_w59, 0.002); end
-  def test_control_x59; assert_in_epsilon(97.0, worksheet.control_x59, 0.002); end
-  def test_control_y59; assert_in_epsilon(92.0, worksheet.control_y59, 0.002); end
-  def test_control_m60; assert_in_epsilon(10.0, worksheet.control_m60, 0.002); end
-  def test_control_n60; assert_equal("No", worksheet.control_n60); end
+  def test_control_p59; assert_equal("No", worksheet.control_p59); end
+  def test_control_q59; assert_in_epsilon(112.0, worksheet.control_q59, 0.002); end
+  def test_control_r59; assert_in_epsilon(109.0, worksheet.control_r59, 0.002); end
+  def test_control_s59; assert_in_epsilon(110.0, worksheet.control_s59, 0.002); end
+  def test_control_t59; assert_in_epsilon(111.0, worksheet.control_t59, 0.002); end
+  def test_control_u59; assert_in_epsilon(170.0, worksheet.control_u59, 0.002); end
+  def test_control_v59; assert_in_epsilon(95.0, worksheet.control_v59, 0.002); end
+  def test_control_w59; assert_in_epsilon(96.0, worksheet.control_w59, 0.002); end
+  def test_control_x59; assert_in_epsilon(94.0, worksheet.control_x59, 0.002); end
+  def test_control_y59; assert_in_epsilon(97.0, worksheet.control_y59, 0.002); end
+  def test_control_z59; assert_in_epsilon(92.0, worksheet.control_z59, 0.002); end
+  def test_control_n60; assert_in_epsilon(10.0, worksheet.control_n60, 0.002); end
   def test_control_o60; assert_equal("No", worksheet.control_o60); end
-  def test_control_p60; assert_in_delta(0.0, (worksheet.control_p60||0), 0.002); end
-  def test_control_q60; assert_in_delta(1.0, worksheet.control_q60, 0.002); end
-  def test_control_r60; assert_in_epsilon(2.0, worksheet.control_r60, 0.002); end
-  def test_control_s60; assert_in_epsilon(3.0, worksheet.control_s60, 0.002); end
-  def test_control_t60; assert_in_epsilon(4.0, worksheet.control_t60, 0.002); end
-  def test_control_u60; assert_in_epsilon(5.0, worksheet.control_u60, 0.002); end
-  def test_control_v60; assert_in_epsilon(6.0, worksheet.control_v60, 0.002); end
-  def test_control_w60; assert_in_epsilon(7.0, worksheet.control_w60, 0.002); end
-  def test_control_x60; assert_in_epsilon(8.0, worksheet.control_x60, 0.002); end
-  def test_control_y60; assert_in_epsilon(9.0, worksheet.control_y60, 0.002); end
-  def test_control_bo5; assert_equal("No new nuclear power installed. Final nuclear power station estimated to close in 2035", worksheet.control_bo5); end
-  def test_control_bp5; assert_equal("~13 3GW nuclear power stations delivering ~280 TWh/yr", worksheet.control_bp5); end
-  def test_control_bq5; assert_equal("~30 3GW nuclear power stations delivering ~630 TWh/yr", worksheet.control_bq5); end
-  def test_control_br5; assert_equal("~50 3GW nuclear power stations delivering ~1030 TWh/yr", worksheet.control_br5); end
-  def test_control_bo7; assert_equal("Demonstration plants only; no roll-out of CCS", worksheet.control_bo7); end
-  def test_control_bp7; assert_equal("~260 TWh/yr from 25-40 CCS power stations; comparable to current gas & coal generation", worksheet.control_bp7); end
-  def test_control_bq7; assert_equal("~370 TWh/yr from 35-60 CCS power stations; comparable to total current demand", worksheet.control_bq7); end
-  def test_control_br7; assert_equal("~550 TWh/yr  from 50-90 CCS power stations; build rate of gas plants in the 1990s", worksheet.control_br7); end
-  def test_control_bo8; assert_equal("100% coal/biomass, 0% gas/biogas CCS after demonstration plants", worksheet.control_bo8); end
-  def test_control_bp8; assert_equal("66% coal/biomass, 33% gas/biogas CCS after demonstration plants", worksheet.control_bp8); end
-  def test_control_bq8; assert_equal("33% coal/biomass, 66% gas/biogas CCS after demonstration plants", worksheet.control_bq8); end
-  def test_control_br8; assert_equal("0% coal/biomas, 100% gas/biogas CCS after demonstration plants", worksheet.control_br8); end
-  def test_control_bo9; assert_equal("~1,400 turbines in 2025, reducing to zero as decommissioned sites are not replanted", worksheet.control_bo9); end
-  def test_control_bp9; assert_equal("~10,000 turbines in 2050, delivering ~237 TWh/yr", worksheet.control_bp9); end
-  def test_control_bq9; assert_equal("~17,000 turbines in 2050, delivering ~395 TWh/yr", worksheet.control_bq9); end
-  def test_control_br9; assert_equal("~40,000 turbines in 2050, delivering ~929 TWh/yr", worksheet.control_br9); end
-  def test_control_bo10; assert_equal("~4,400 onshore wind turbines in 2025, reducing to zero as decommissioned sites are not replanted", worksheet.control_bo10); end
-  def test_control_bp10; assert_equal("~8,000 onshore wind turbines in 2050, delivering ~50 TWh/yr. ", worksheet.control_bp10); end
-  def test_control_bq10; assert_equal("~13,000 onshore wind turbines in 2050, delivering ~80 TWh/yr", worksheet.control_bq10); end
-  def test_control_br10; assert_equal("~20,000 onshore wind turbines in 2050, delivering ~130 TWh/yr", worksheet.control_br10); end
-  def test_control_bo11; assert_equal("None in 2050", worksheet.control_bo11); end
-  def test_control_bp11; assert_equal("~300km of wave farms", worksheet.control_bp11); end
-  def test_control_bq11; assert_equal("~600km of wave farms", worksheet.control_bq11); end
-  def test_control_br11; assert_equal("~900km of wave farms", worksheet.control_br11); end
-  def test_control_bo12; assert_equal("None in 2050", worksheet.control_bo12); end
-  def test_control_bp12; assert_equal("1,000 tidal stream turbines", worksheet.control_bp12); end
-  def test_control_bq12; assert_equal("4,700 tidal stream turbines", worksheet.control_bq12); end
-  def test_control_br12; assert_equal("10,600 tidal stream turbines", worksheet.control_br12); end
-  def test_control_bo13; assert_equal("None in  2050", worksheet.control_bo13); end
-  def test_control_bp13; assert_equal("3 small tidal range schemes", worksheet.control_bp13); end
-  def test_control_bq13; assert_equal("4 tidal range schemes", worksheet.control_bq13); end
-  def test_control_br13; assert_equal("8 tidal range schemes", worksheet.control_br13); end
-  def test_control_bo14; assert_equal("Only existing biomass plants and those already under construction (0.6GW)", worksheet.control_bo14); end
-  def test_control_bp14; assert_equal("8GW of biomass power stations by 2050 delivering 62TWh/yr", worksheet.control_bp14); end
-  def test_control_bq14; assert_equal("12GW of biomass power stations by 2050 delivering 100TWh/yr", worksheet.control_bq14); end
-  def test_control_br14; assert_equal("Over 20GW of biomass power stations by 2050 delivering 180TWh/yr", worksheet.control_br14); end
-  def test_control_bo15; assert_equal("No significant solar PV capacity is installed", worksheet.control_bo15); end
-  def test_control_bp15; assert_equal("4m2 of photovoltaic panels per person in 2050, supplying ~60 TWh/yr of electricity", worksheet.control_bp15); end
-  def test_control_bq15; assert_equal(" 5.4m2 of photovoltaic panels per person in 2050, supplying ~80 TWh/yr", worksheet.control_bq15); end
-  def test_control_br15; assert_equal("9.5m2 of photovoltaic panels per person – all suitable roof and facade space used", worksheet.control_br15); end
-  def test_control_bo16; assert_equal("As today, a negligible proportion of buildings have solar thermal in 2050", worksheet.control_bo16); end
-  def test_control_bp16; assert_equal("~30% of suitable buildings get ~30% of their hot water from solar thermal", worksheet.control_bp16); end
-  def test_control_bq16; assert_equal("All suitable buildings get ~30% of their hot water from solar thermal", worksheet.control_bq16); end
-  def test_control_br16; assert_equal("All suitable buildings get ~60% of their hot water from solar thermal", worksheet.control_br16); end
-  def test_control_bo17; assert_equal("No deployment of geothermal electricity generation", worksheet.control_bo17); end
-  def test_control_bp17; assert_equal("Supply of geothermal electricity grows slowly to 7 TWh/yr in 2035 and is sustained", worksheet.control_bp17); end
-  def test_control_bq17; assert_equal("Supply of geothermal electricity grows quickly reaching 21 TWh/yr by 2030 and is sustained", worksheet.control_bq17); end
-  def test_control_br17; assert_equal("Supply of geothermal electricity grows rapidly reaching 35 TWh/yr by 2030 and is sustained", worksheet.control_br17); end
-  def test_control_bo18; assert_equal("Supply of hydroelectricity is maintained at current levels of 5 TWh/yr", worksheet.control_bo18); end
-  def test_control_bp18; assert_equal("Supply of hydroelectricity grows slowly, reaching 7 TWh/yr by 2050", worksheet.control_bp18); end
-  def test_control_bq18; assert_equal("Supply of hydroelectricity grows more quickly, reaching 8 TWh/yr by 2030 and is sustained", worksheet.control_bq18); end
-  def test_control_br18; assert_equal("Supply of hydroelectricity grows rapidly reaching 13 TWh/yr by 2035 and is sustained", worksheet.control_br18); end
-  def test_control_bo19; assert_equal("As today, no discernable supply of electricity from micro-wind turbines", worksheet.control_bo19); end
-  def test_control_bp19; assert_equal("Supply of electricity from micro wind turbines increases to 1.3 TWh/yr by 2020 and is sustained", worksheet.control_bp19); end
-  def test_control_bq19; assert_equal("Micro wind turbines installed in all ~450,000 suitable domestic properties, supplying 3.5 TWh/year from 2020", worksheet.control_bq19); end
-  def test_control_br19; assert_equal("Micro wind turbines installed in all suitable domestic and non-domestic sties, supplying 8.9 TWh/year from 2020", worksheet.control_br19); end
-  def test_control_bo20; assert_equal("No electricity imports, other than for balancing", worksheet.control_bo20); end
-  def test_control_bp20; assert_equal("30 TWh/yr of electricity imported from Southern Europe", worksheet.control_bp20); end
-  def test_control_bq20; assert_equal("70 TWh/yr of electricity imported from a 10% share of an internationally coordinated desert solar project ", worksheet.control_bq20); end
-  def test_control_br20; assert_equal("140 TWh/yr of electricity imported from a 20% share of an internationally coordinated desert solar project", worksheet.control_br20); end
-  def test_control_bo22; assert_equal("Energy crops and food production similar to today", worksheet.control_bo22); end
-  def test_control_bp22; assert_equal("5% of UK land used for energy crops", worksheet.control_bp22); end
-  def test_control_bq22; assert_equal("10% of UK land used for energy crops", worksheet.control_bq22); end
-  def test_control_br22; assert_equal("17% of UK land used for energy crops", worksheet.control_br22); end
-  def test_control_bo23; assert_equal("Livestock numbers increase by 10%", worksheet.control_bo23); end
-  def test_control_bp23; assert_equal("Livestock numbers same as today", worksheet.control_bp23); end
-  def test_control_bq23; assert_equal("Livestock numbers decrease by 10%", worksheet.control_bq23); end
-  def test_control_br23; assert_equal("Livestock numbers decrease by 20%", worksheet.control_br23); end
-  def test_control_bo24; assert_equal("Overall quantity of waste increases 50% to 2050; 21% increase in recycling rate and 44% increase in rate of energy from waste. 24% of waste is sent to landfill", worksheet.control_bo24); end
-  def test_control_bp24; assert_equal("Overall quantity of waste increases almost 20% by 2050; recycling and energy from waste rates increase by 36% and 89% respectively. 11% of waste is sent to landfill.", worksheet.control_bp24); end
-  def test_control_bq24; assert_equal("Overall quantity of waste increases 33%; waste is handled through high-tech and industry-led approaches; by 2050, recycling and energy from waste rates increase by 36% and 89% respectively. Only 2% is sent to landfill.", worksheet.control_bq24); end
-  def test_control_br24; assert_equal("Quantity of waste decreases 20% by 2050; recycling and energy from waste increase by 70% and 7% respectively; by 2050, 3% of waste sent to landfill.", worksheet.control_br24); end
-  def test_control_bo25; assert_equal("No development of macro-algae cultivation", worksheet.control_bo25); end
-  def test_control_bp25; assert_equal("Macro algae covering the same area as half of natural reserve used, delivering ~4 TWh/yr", worksheet.control_bp25); end
-  def test_control_bq25; assert_equal("Macro algae covering the same area as all of natural reserve used, delivering ~9 TWh/yr", worksheet.control_bq25); end
-  def test_control_br25; assert_equal("Macro algae covering the same area as four times natural reserve used, delivering ~46 TWh/yr", worksheet.control_br25); end
-  def test_control_bo26; assert_equal("Biomass converted to a mixture of solid, liquid and gas biofuels", worksheet.control_bo26); end
-  def test_control_bp26; assert_equal("Biomass mainly converted to solid biofuel", worksheet.control_bp26); end
-  def test_control_bq26; assert_equal("Biomass mainly converted to liquid biofuel", worksheet.control_bq26); end
-  def test_control_br26; assert_equal("Biomass mainly converted to biogas fuel", worksheet.control_br26); end
-  def test_control_bo27; assert_equal("Imported biofuel declines from ~ 4 TWh/yr currently to zero", worksheet.control_bo27); end
-  def test_control_bp27; assert_equal("Up to 70 TWh/yr of imported bioenergy in 2050", worksheet.control_bp27); end
-  def test_control_bq27; assert_equal("Up to 140 TWh/yr of imported bioenergy in 2050", worksheet.control_bq27); end
-  def test_control_br27; assert_equal("Up to 280 TWh/yr of imported bioenergy in 2050", worksheet.control_br27); end
-  def test_control_bo30; assert_equal("In 2050, individuals travel 9% further than today. No noticeable modal shift.", worksheet.control_bo30); end
-  def test_control_bp30; assert_equal("Individuals travel 7% further than today, cars and vans are 80% of 2050 passenger mileage", worksheet.control_bp30); end
-  def test_control_bq30; assert_equal("Individuals travel 7% further than today; cars and vans 74% of 2050 passenger mileage", worksheet.control_bq30); end
-  def test_control_br30; assert_equal("In 2050, individuals travel the same distance as today. Signficant shift to public transport.", worksheet.control_br30); end
-  def test_control_bo31; assert_equal("By 2050, 20% plug in hybrid electric cars; 2.5% zero emission cars.", worksheet.control_bo31); end
-  def test_control_bp31; assert_equal("By 2050, 35% conventional petrol or diesel engine cars; 54% plug-in hybrid vehicles; 11%  zero emission vehicles; all buses hybrids; 73% of passenger railway is electrifi", worksheet.control_bp31); end
-  def test_control_bq31; assert_equal("By 2050, 20% conventional combustion engine cars, with 32% in plug-in hybrid vehicles and 48% in zero emission vehicles: 22% of bus travel fully electric or fuel cell electric ", worksheet.control_bq31); end
-  def test_control_br31; assert_equal("By 2050 100%  electric motor or hydrogen fuel cell; all passenger trains electrified; 50% bus  electrified ", worksheet.control_br31); end
-  def test_control_bo32; assert_equal("By 2050, 100% electric", worksheet.control_bo32); end
-  def test_control_bp32; assert_equal("by 2050, 80% electric,  20% hydrogen fuel cell", worksheet.control_bp32); end
-  def test_control_bq32; assert_equal("By 2050, 20% electric, 80% hydrogen fuel cell", worksheet.control_bq32); end
-  def test_control_br32; assert_equal("By 2050, 100% hydrogen fuel cells", worksheet.control_br32); end
-  def test_control_bo33; assert_equal("Road haulage makes up 73% of distance, using conventional engines. Rail all diesel", worksheet.control_bo33); end
-  def test_control_bp33; assert_equal("Some shift from road to rail and water, and more efficient engines", worksheet.control_bp33); end
-  def test_control_bq33; assert_equal("Greater modal shift to rail and water; more efficient HGVs; more efficient logistics", worksheet.control_bq33); end
-  def test_control_br33; assert_equal("Road modal share falls to half; greater hybridisation. Rail freight is all electric ", worksheet.control_br33); end
-  def test_control_bo34; assert_equal("By 2050, international aviation has 130% more passengers but uses only 50% more fuel", worksheet.control_bo34); end
-  def test_control_bp34; assert_equal("By 2050, international aviation has 130% more passengers but uses only 45% more fuel", worksheet.control_bp34); end
-  def test_control_bq34; assert_equal("By 2050, international aviation has 130% more passengers but uses only 31% more fuel", worksheet.control_bq34); end
-  def test_control_br34; assert_equal("By 2050, international aviation has 85% more passengers but uses only 5% more fuel", worksheet.control_br34); end
-  def test_control_bo35; assert_equal("no improvements from energy efficiency; between 2007 and 2050 emissions increase by 139%", worksheet.control_bo35); end
-  def test_control_bp35; assert_equal("1/3 of technical feasible reductions realised; between 2007 and 2050 emissions increase by 78%", worksheet.control_bp35); end
-  def test_control_bq35; assert_equal("2/3 of technical feasible reductions realised; between 2007 and 2050 emissions increase by 16%", worksheet.control_bq35); end
-  def test_control_br35; assert_equal("maximum technical feasible reductions realised; between 2007 and 2050 emissions decrease by 46%", worksheet.control_br35); end
-  def test_control_bo37; assert_equal("Average room temperature increases to 20°C (a 2.5°C increase on 2007)", worksheet.control_bo37); end
-  def test_control_bp37; assert_equal("Average room temperature increases to 18°C (a 0.5°C increase on 2007)", worksheet.control_bp37); end
-  def test_control_bq37; assert_equal("Average room temperature decreases to 17°C (a 0.5°C decrease on 2007)", worksheet.control_bq37); end
-  def test_control_br37; assert_equal("Average room temperature decreases to 16°C (a 1.5°C decrease on 2007)", worksheet.control_br37); end
-  def test_control_bo38; assert_equal("Over 7M homes insulated, average thermal leakiness falls by 25%", worksheet.control_bo38); end
-  def test_control_bp38; assert_equal("Over 8M homes insulated, average thermal leakiness falls by 33%", worksheet.control_bp38); end
-  def test_control_bq38; assert_equal("Over 18M homes insulated, average thermal leakiness falls by 42%", worksheet.control_bq38); end
-  def test_control_br38; assert_equal("Over 24M homes insulated, average thermal leakiness decreases by 50% ", worksheet.control_br38); end
-  def test_control_bo39; assert_equal("The proportion of domestic heat supplied using electricity is 0-10%, as today", worksheet.control_bo39); end
-  def test_control_bp39; assert_equal("The proportion of new domestic heating systems using electricity is 20%", worksheet.control_bp39); end
-  def test_control_bq39; assert_equal("The proportion of new domestic heating systems supplied using electricity is 30-60%", worksheet.control_bq39); end
-  def test_control_br39; assert_equal("The proportion of new domestic heating systems supplied using electricity is 80-100%", worksheet.control_br39); end
-  def test_control_bo40; assert_equal("The dominant non-electric heat source is gas (biogas if available)", worksheet.control_bo40); end
-  def test_control_bp40; assert_equal("The dominant non-electric heat source is coal (biomass if available)", worksheet.control_bp40); end
-  def test_control_bq40; assert_equal("The dominant non-electric heat source is waste heat from power stations", worksheet.control_bq40); end
-  def test_control_br40; assert_equal("A mixture of gas/biogas; coal/biomass; and heat from power stations", worksheet.control_br40); end
-  def test_control_bo42; assert_equal("Energy demand for domestic lights and appliances increases by 20% (relative to 2007)", worksheet.control_bo42); end
-  def test_control_bp42; assert_equal("Energy demand for domestic lights and appliances is stable", worksheet.control_bp42); end
-  def test_control_bq42; assert_equal("Energy demand for domestic lights and appliances decreases by 40%", worksheet.control_bq42); end
-  def test_control_br42; assert_equal("Energy demand for domestic lights and appliances decreases by 60%", worksheet.control_br42); end
-  def test_control_bo43; assert_equal("Energy used for domestic cooking remains at 63% electricity and 37% gas", worksheet.control_bo43); end
-  def test_control_bp43; assert_equal("Energy used for domestic cooking is entirely electric", worksheet.control_bp43); end
+  def test_control_p60; assert_equal("No", worksheet.control_p60); end
+  def test_control_q60; assert_in_delta(0.0, (worksheet.control_q60||0), 0.002); end
+  def test_control_r60; assert_in_delta(1.0, worksheet.control_r60, 0.002); end
+  def test_control_s60; assert_in_epsilon(2.0, worksheet.control_s60, 0.002); end
+  def test_control_t60; assert_in_epsilon(3.0, worksheet.control_t60, 0.002); end
+  def test_control_u60; assert_in_epsilon(4.0, worksheet.control_u60, 0.002); end
+  def test_control_v60; assert_in_epsilon(5.0, worksheet.control_v60, 0.002); end
+  def test_control_w60; assert_in_epsilon(6.0, worksheet.control_w60, 0.002); end
+  def test_control_x60; assert_in_epsilon(7.0, worksheet.control_x60, 0.002); end
+  def test_control_y60; assert_in_epsilon(8.0, worksheet.control_y60, 0.002); end
+  def test_control_z60; assert_in_epsilon(9.0, worksheet.control_z60, 0.002); end
+  def test_control_bp5; assert_equal("No new nuclear power installed. Final nuclear power station estimated to close in 2035", worksheet.control_bp5); end
+  def test_control_bq5; assert_equal("~13 3GW nuclear power stations delivering ~280 TWh/yr", worksheet.control_bq5); end
+  def test_control_br5; assert_equal("~30 3GW nuclear power stations delivering ~630 TWh/yr", worksheet.control_br5); end
+  def test_control_bs5; assert_equal("~50 3GW nuclear power stations delivering ~1030 TWh/yr", worksheet.control_bs5); end
+  def test_control_bp7; assert_equal("Demonstration plants only; no roll-out of CCS", worksheet.control_bp7); end
+  def test_control_bq7; assert_equal("~260 TWh/yr from 25-40 CCS power stations; comparable to current gas & coal generation", worksheet.control_bq7); end
+  def test_control_br7; assert_equal("~370 TWh/yr from 35-60 CCS power stations; comparable to total current demand", worksheet.control_br7); end
+  def test_control_bs7; assert_equal("~550 TWh/yr  from 50-90 CCS power stations; build rate of gas plants in the 1990s", worksheet.control_bs7); end
+  def test_control_bp8; assert_equal("100% coal/biomass, 0% gas/biogas CCS after demonstration plants", worksheet.control_bp8); end
+  def test_control_bq8; assert_equal("66% coal/biomass, 33% gas/biogas CCS after demonstration plants", worksheet.control_bq8); end
+  def test_control_br8; assert_equal("33% coal/biomass, 66% gas/biogas CCS after demonstration plants", worksheet.control_br8); end
+  def test_control_bs8; assert_equal("0% coal/biomas, 100% gas/biogas CCS after demonstration plants", worksheet.control_bs8); end
+  def test_control_bp9; assert_equal("~1,400 turbines in 2025, reducing to zero as decommissioned sites are not replanted", worksheet.control_bp9); end
+  def test_control_bq9; assert_equal("~10,000 turbines in 2050, delivering ~237 TWh/yr", worksheet.control_bq9); end
+  def test_control_br9; assert_equal("~17,000 turbines in 2050, delivering ~395 TWh/yr", worksheet.control_br9); end
+  def test_control_bs9; assert_equal("~40,000 turbines in 2050, delivering ~929 TWh/yr", worksheet.control_bs9); end
+  def test_control_bp10; assert_equal("~4,400 onshore wind turbines in 2025, reducing to zero as decommissioned sites are not replanted", worksheet.control_bp10); end
+  def test_control_bq10; assert_equal("~8,000 onshore wind turbines in 2050, delivering ~50 TWh/yr. ", worksheet.control_bq10); end
+  def test_control_br10; assert_equal("~13,000 onshore wind turbines in 2050, delivering ~80 TWh/yr", worksheet.control_br10); end
+  def test_control_bs10; assert_equal("~20,000 onshore wind turbines in 2050, delivering ~130 TWh/yr", worksheet.control_bs10); end
+  def test_control_bp11; assert_equal("None in 2050", worksheet.control_bp11); end
+  def test_control_bq11; assert_equal("~300km of wave farms", worksheet.control_bq11); end
+  def test_control_br11; assert_equal("~600km of wave farms", worksheet.control_br11); end
+  def test_control_bs11; assert_equal("~900km of wave farms", worksheet.control_bs11); end
+  def test_control_bp12; assert_equal("None in 2050", worksheet.control_bp12); end
+  def test_control_bq12; assert_equal("1,000 tidal stream turbines", worksheet.control_bq12); end
+  def test_control_br12; assert_equal("4,700 tidal stream turbines", worksheet.control_br12); end
+  def test_control_bs12; assert_equal("10,600 tidal stream turbines", worksheet.control_bs12); end
+  def test_control_bp13; assert_equal("None in  2050", worksheet.control_bp13); end
+  def test_control_bq13; assert_equal("3 small tidal range schemes", worksheet.control_bq13); end
+  def test_control_br13; assert_equal("4 tidal range schemes", worksheet.control_br13); end
+  def test_control_bs13; assert_equal("8 tidal range schemes", worksheet.control_bs13); end
+  def test_control_bp14; assert_equal("Only existing biomass plants and those already under construction (0.6GW)", worksheet.control_bp14); end
+  def test_control_bq14; assert_equal("8GW of biomass power stations by 2050 delivering 62TWh/yr", worksheet.control_bq14); end
+  def test_control_br14; assert_equal("12GW of biomass power stations by 2050 delivering 100TWh/yr", worksheet.control_br14); end
+  def test_control_bs14; assert_equal("Over 20GW of biomass power stations by 2050 delivering 180TWh/yr", worksheet.control_bs14); end
+  def test_control_bp15; assert_equal("No significant solar PV capacity is installed", worksheet.control_bp15); end
+  def test_control_bq15; assert_equal("4m2 of photovoltaic panels per person in 2050, supplying ~60 TWh/yr of electricity", worksheet.control_bq15); end
+  def test_control_br15; assert_equal(" 5.4m2 of photovoltaic panels per person in 2050, supplying ~80 TWh/yr", worksheet.control_br15); end
+  def test_control_bs15; assert_equal("9.5m2 of photovoltaic panels per person – all suitable roof and facade space used", worksheet.control_bs15); end
+  def test_control_bp16; assert_equal("As today, a negligible proportion of buildings have solar thermal in 2050", worksheet.control_bp16); end
+  def test_control_bq16; assert_equal("~30% of suitable buildings get ~30% of their hot water from solar thermal", worksheet.control_bq16); end
+  def test_control_br16; assert_equal("All suitable buildings get ~30% of their hot water from solar thermal", worksheet.control_br16); end
+  def test_control_bs16; assert_equal("All suitable buildings get ~60% of their hot water from solar thermal", worksheet.control_bs16); end
+  def test_control_bp17; assert_equal("No deployment of geothermal electricity generation", worksheet.control_bp17); end
+  def test_control_bq17; assert_equal("Supply of geothermal electricity grows slowly to 7 TWh/yr in 2035 and is sustained", worksheet.control_bq17); end
+  def test_control_br17; assert_equal("Supply of geothermal electricity grows quickly reaching 21 TWh/yr by 2030 and is sustained", worksheet.control_br17); end
+  def test_control_bs17; assert_equal("Supply of geothermal electricity grows rapidly reaching 35 TWh/yr by 2030 and is sustained", worksheet.control_bs17); end
+  def test_control_bp18; assert_equal("Supply of hydroelectricity is maintained at current levels of 5 TWh/yr", worksheet.control_bp18); end
+  def test_control_bq18; assert_equal("Supply of hydroelectricity grows slowly, reaching 7 TWh/yr by 2050", worksheet.control_bq18); end
+  def test_control_br18; assert_equal("Supply of hydroelectricity grows more quickly, reaching 8 TWh/yr by 2030 and is sustained", worksheet.control_br18); end
+  def test_control_bs18; assert_equal("Supply of hydroelectricity grows rapidly reaching 13 TWh/yr by 2035 and is sustained", worksheet.control_bs18); end
+  def test_control_bp19; assert_equal("As today, no discernable supply of electricity from micro-wind turbines", worksheet.control_bp19); end
+  def test_control_bq19; assert_equal("Supply of electricity from micro wind turbines increases to 1.3 TWh/yr by 2020 and is sustained", worksheet.control_bq19); end
+  def test_control_br19; assert_equal("Micro wind turbines installed in all ~450,000 suitable domestic properties, supplying 3.5 TWh/year from 2020", worksheet.control_br19); end
+  def test_control_bs19; assert_equal("Micro wind turbines installed in all suitable domestic and non-domestic sties, supplying 8.9 TWh/year from 2020", worksheet.control_bs19); end
+  def test_control_bp20; assert_equal("No electricity imports, other than for balancing", worksheet.control_bp20); end
+  def test_control_bq20; assert_equal("30 TWh/yr of electricity imported from Southern Europe", worksheet.control_bq20); end
+  def test_control_br20; assert_equal("70 TWh/yr of electricity imported from a 10% share of an internationally coordinated desert solar project ", worksheet.control_br20); end
+  def test_control_bs20; assert_equal("140 TWh/yr of electricity imported from a 20% share of an internationally coordinated desert solar project", worksheet.control_bs20); end
+  def test_control_bp22; assert_equal("Energy crops and food production similar to today", worksheet.control_bp22); end
+  def test_control_bq22; assert_equal("5% of UK land used for energy crops", worksheet.control_bq22); end
+  def test_control_br22; assert_equal("10% of UK land used for energy crops", worksheet.control_br22); end
+  def test_control_bs22; assert_equal("17% of UK land used for energy crops", worksheet.control_bs22); end
+  def test_control_bp23; assert_equal("Livestock numbers increase by 10%", worksheet.control_bp23); end
+  def test_control_bq23; assert_equal("Livestock numbers same as today", worksheet.control_bq23); end
+  def test_control_br23; assert_equal("Livestock numbers decrease by 10%", worksheet.control_br23); end
+  def test_control_bs23; assert_equal("Livestock numbers decrease by 20%", worksheet.control_bs23); end
+  def test_control_bp24; assert_equal("Overall quantity of waste increases 50% to 2050; 21% increase in recycling rate and 44% increase in rate of energy from waste. 24% of waste is sent to landfill", worksheet.control_bp24); end
+  def test_control_bq24; assert_equal("Overall quantity of waste increases almost 20% by 2050; recycling and energy from waste rates increase by 36% and 89% respectively. 11% of waste is sent to landfill.", worksheet.control_bq24); end
+  def test_control_br24; assert_equal("Overall quantity of waste increases 33%; waste is handled through high-tech and industry-led approaches; by 2050, recycling and energy from waste rates increase by 36% and 89% respectively. Only 2% is sent to landfill.", worksheet.control_br24); end
+  def test_control_bs24; assert_equal("Quantity of waste decreases 20% by 2050; recycling and energy from waste increase by 70% and 7% respectively; by 2050, 3% of waste sent to landfill.", worksheet.control_bs24); end
+  def test_control_bp25; assert_equal("No development of macro-algae cultivation", worksheet.control_bp25); end
+  def test_control_bq25; assert_equal("Macro algae covering the same area as half of natural reserve used, delivering ~4 TWh/yr", worksheet.control_bq25); end
+  def test_control_br25; assert_equal("Macro algae covering the same area as all of natural reserve used, delivering ~9 TWh/yr", worksheet.control_br25); end
+  def test_control_bs25; assert_equal("Macro algae covering the same area as four times natural reserve used, delivering ~46 TWh/yr", worksheet.control_bs25); end
+  def test_control_bp26; assert_equal("Biomass converted to a mixture of solid, liquid and gas biofuels", worksheet.control_bp26); end
+  def test_control_bq26; assert_equal("Biomass mainly converted to solid biofuel", worksheet.control_bq26); end
+  def test_control_br26; assert_equal("Biomass mainly converted to liquid biofuel", worksheet.control_br26); end
+  def test_control_bs26; assert_equal("Biomass mainly converted to biogas fuel", worksheet.control_bs26); end
+  def test_control_bp27; assert_equal("Imported biofuel declines from ~ 4 TWh/yr currently to zero", worksheet.control_bp27); end
+  def test_control_bq27; assert_equal("Up to 70 TWh/yr of imported bioenergy in 2050", worksheet.control_bq27); end
+  def test_control_br27; assert_equal("Up to 140 TWh/yr of imported bioenergy in 2050", worksheet.control_br27); end
+  def test_control_bs27; assert_equal("Up to 280 TWh/yr of imported bioenergy in 2050", worksheet.control_bs27); end
+  def test_control_bp30; assert_equal("In 2050, individuals travel 9% further than today. No noticeable modal shift.", worksheet.control_bp30); end
+  def test_control_bq30; assert_equal("Individuals travel 7% further than today, cars and vans are 80% of 2050 passenger mileage", worksheet.control_bq30); end
+  def test_control_br30; assert_equal("Individuals travel 7% further than today; cars and vans 74% of 2050 passenger mileage", worksheet.control_br30); end
+  def test_control_bs30; assert_equal("In 2050, individuals travel the same distance as today. Signficant shift to public transport.", worksheet.control_bs30); end
+  def test_control_bp31; assert_equal("By 2050, 20% plug in hybrid electric cars; 2.5% zero emission cars.", worksheet.control_bp31); end
+  def test_control_bq31; assert_equal("By 2050, 35% conventional petrol or diesel engine cars; 54% plug-in hybrid vehicles; 11%  zero emission vehicles; all buses hybrids; 73% of passenger railway is electrifi", worksheet.control_bq31); end
+  def test_control_br31; assert_equal("By 2050, 20% conventional combustion engine cars, with 32% in plug-in hybrid vehicles and 48% in zero emission vehicles: 22% of bus travel fully electric or fuel cell electric ", worksheet.control_br31); end
+  def test_control_bs31; assert_equal("By 2050 100%  electric motor or hydrogen fuel cell; all passenger trains electrified; 50% bus  electrified ", worksheet.control_bs31); end
+  def test_control_bp32; assert_equal("By 2050, 100% electric", worksheet.control_bp32); end
+  def test_control_bq32; assert_equal("by 2050, 80% electric,  20% hydrogen fuel cell", worksheet.control_bq32); end
+  def test_control_br32; assert_equal("By 2050, 20% electric, 80% hydrogen fuel cell", worksheet.control_br32); end
+  def test_control_bs32; assert_equal("By 2050, 100% hydrogen fuel cells", worksheet.control_bs32); end
+  def test_control_bp33; assert_equal("Road haulage makes up 73% of distance, using conventional engines. Rail all diesel", worksheet.control_bp33); end
+  def test_control_bq33; assert_equal("Some shift from road to rail and water, and more efficient engines", worksheet.control_bq33); end
+  def test_control_br33; assert_equal("Greater modal shift to rail and water; more efficient HGVs; more efficient logistics", worksheet.control_br33); end
+  def test_control_bs33; assert_equal("Road modal share falls to half; greater hybridisation. Rail freight is all electric ", worksheet.control_bs33); end
+  def test_control_bp34; assert_equal("By 2050, international aviation has 130% more passengers but uses only 50% more fuel", worksheet.control_bp34); end
+  def test_control_bq34; assert_equal("By 2050, international aviation has 130% more passengers but uses only 45% more fuel", worksheet.control_bq34); end
+  def test_control_br34; assert_equal("By 2050, international aviation has 130% more passengers but uses only 31% more fuel", worksheet.control_br34); end
+  def test_control_bs34; assert_equal("By 2050, international aviation has 85% more passengers but uses only 5% more fuel", worksheet.control_bs34); end
+  def test_control_bp35; assert_equal("no improvements from energy efficiency; between 2007 and 2050 emissions increase by 139%", worksheet.control_bp35); end
+  def test_control_bq35; assert_equal("1/3 of technical feasible reductions realised; between 2007 and 2050 emissions increase by 78%", worksheet.control_bq35); end
+  def test_control_br35; assert_equal("2/3 of technical feasible reductions realised; between 2007 and 2050 emissions increase by 16%", worksheet.control_br35); end
+  def test_control_bs35; assert_equal("maximum technical feasible reductions realised; between 2007 and 2050 emissions decrease by 46%", worksheet.control_bs35); end
+  def test_control_bp37; assert_equal("Average room temperature increases to 20°C (a 2.5°C increase on 2007)", worksheet.control_bp37); end
+  def test_control_bq37; assert_equal("Average room temperature increases to 18°C (a 0.5°C increase on 2007)", worksheet.control_bq37); end
+  def test_control_br37; assert_equal("Average room temperature decreases to 17°C (a 0.5°C decrease on 2007)", worksheet.control_br37); end
+  def test_control_bs37; assert_equal("Average room temperature decreases to 16°C (a 1.5°C decrease on 2007)", worksheet.control_bs37); end
+  def test_control_bp38; assert_equal("Over 7M homes insulated, average thermal leakiness falls by 25%", worksheet.control_bp38); end
+  def test_control_bq38; assert_equal("Over 8M homes insulated, average thermal leakiness falls by 33%", worksheet.control_bq38); end
+  def test_control_br38; assert_equal("Over 18M homes insulated, average thermal leakiness falls by 42%", worksheet.control_br38); end
+  def test_control_bs38; assert_equal("Over 24M homes insulated, average thermal leakiness decreases by 50% ", worksheet.control_bs38); end
+  def test_control_bp39; assert_equal("The proportion of domestic heat supplied using electricity is 0-10%, as today", worksheet.control_bp39); end
+  def test_control_bq39; assert_equal("The proportion of new domestic heating systems using electricity is 20%", worksheet.control_bq39); end
+  def test_control_br39; assert_equal("The proportion of new domestic heating systems supplied using electricity is 30-60%", worksheet.control_br39); end
+  def test_control_bs39; assert_equal("The proportion of new domestic heating systems supplied using electricity is 80-100%", worksheet.control_bs39); end
+  def test_control_bp40; assert_equal("The dominant non-electric heat source is gas (biogas if available)", worksheet.control_bp40); end
+  def test_control_bq40; assert_equal("The dominant non-electric heat source is coal (biomass if available)", worksheet.control_bq40); end
+  def test_control_br40; assert_equal("The dominant non-electric heat source is waste heat from power stations", worksheet.control_br40); end
+  def test_control_bs40; assert_equal("A mixture of gas/biogas; coal/biomass; and heat from power stations", worksheet.control_bs40); end
+  def test_control_bp42; assert_equal("Energy demand for domestic lights and appliances increases by 20% (relative to 2007)", worksheet.control_bp42); end
+  def test_control_bq42; assert_equal("Energy demand for domestic lights and appliances is stable", worksheet.control_bq42); end
+  def test_control_br42; assert_equal("Energy demand for domestic lights and appliances decreases by 40%", worksheet.control_br42); end
+  def test_control_bs42; assert_equal("Energy demand for domestic lights and appliances decreases by 60%", worksheet.control_bs42); end
+  def test_control_bp43; assert_equal("Energy used for domestic cooking remains at 63% electricity and 37% gas", worksheet.control_bp43); end
   def test_control_bq43; assert_equal("Energy used for domestic cooking is entirely electric", worksheet.control_bq43); end
   def test_control_br43; assert_equal("Energy used for domestic cooking is entirely electric", worksheet.control_br43); end
-  def test_control_bo45; assert_equal("UK industry output more than doubles by 2050", worksheet.control_bo45); end
-  def test_control_bp45; assert_equal("UK industry grows in line with current trends", worksheet.control_bp45); end
-  def test_control_bq45; assert_equal("UK industry output falls 30-40% by 2050", worksheet.control_bq45); end
+  def test_control_bs43; assert_equal("Energy used for domestic cooking is entirely electric", worksheet.control_bs43); end
+  def test_control_bp45; assert_equal("UK industry output more than doubles by 2050", worksheet.control_bp45); end
+  def test_control_bq45; assert_equal("UK industry grows in line with current trends", worksheet.control_bq45); end
   def test_control_br45; assert_equal("UK industry output falls 30-40% by 2050", worksheet.control_br45); end
-  def test_control_bo46; assert_equal("No electrification of industrial processes and little improvement in industrial energy intensity", worksheet.control_bo46); end
-  def test_control_bp46; assert_equal("Some industrial processes electrified and moderate improvements in process emissions and energy demand", worksheet.control_bp46); end
-  def test_control_bq46; assert_equal("Many industrial processes electrified, CCS captures 48% of emissions and  substantial improvements in process emissions and energy demand", worksheet.control_bq46); end
+  def test_control_bs45; assert_equal("UK industry output falls 30-40% by 2050", worksheet.control_bs45); end
+  def test_control_bp46; assert_equal("No electrification of industrial processes and little improvement in industrial energy intensity", worksheet.control_bp46); end
+  def test_control_bq46; assert_equal("Some industrial processes electrified and moderate improvements in process emissions and energy demand", worksheet.control_bq46); end
   def test_control_br46; assert_equal("Many industrial processes electrified, CCS captures 48% of emissions and  substantial improvements in process emissions and energy demand", worksheet.control_br46); end
-  def test_control_bo48; assert_equal("Commercial space heating demand increases by 50%, hot water demand by 60%, cooling demand by 250%", worksheet.control_bo48); end
-  def test_control_bp48; assert_equal("Commercial space heating demand increases by 30%, hot water demand by 50%, cooling demand by 60%", worksheet.control_bp48); end
-  def test_control_bq48; assert_equal("Commercial space heating demand stable, hot water demand increases by 25%, cooling demand stable", worksheet.control_bq48); end
-  def test_control_br48; assert_equal("Commercial space heating demand drops by 25%, hot water demand by 10%, cooling demand by 60%", worksheet.control_br48); end
-  def test_control_bo49; assert_equal("The proportion of non-domestic heat supplied using electricity is 0-10%, as today", worksheet.control_bo49); end
-  def test_control_bp49; assert_equal("The proportion of non-domestic heat supplied using electricity is 20%", worksheet.control_bp49); end
-  def test_control_bq49; assert_equal("The proportion of non-domestic heat supplied using electricity is 30-60%", worksheet.control_bq49); end
-  def test_control_br49; assert_equal("The proportion of non-domestic heat supplied using electricity is 80-100%", worksheet.control_br49); end
-  def test_control_bo50; assert_equal("The dominant non-electric heat source is gas (biogas if available)", worksheet.control_bo50); end
-  def test_control_bp50; assert_equal("The dominant non-electric heating fuel is coal (biomass if available)", worksheet.control_bp50); end
-  def test_control_bq50; assert_equal("The dominant non-electric heat source is heat from power stations", worksheet.control_bq50); end
-  def test_control_br50; assert_equal("A mixture of gas/biogas, coal/biomass, and heat from power stations", worksheet.control_br50); end
-  def test_control_bo52; assert_equal("Energy demand for commercial lights & appliances increases by 33%. Energy for cooking is stable", worksheet.control_bo52); end
-  def test_control_bp52; assert_equal("Energy demand for commercial lights & appliances increases by 15%; decreases by 5% for cooking", worksheet.control_bp52); end
-  def test_control_bq52; assert_equal("Energy demand for commercial lights & appliances decreases by 5%; decreases by 20% for cooking", worksheet.control_bq52); end
-  def test_control_br52; assert_equal("Energy demand for commercial lights & appliances decreases by 30%; decreases by 25% for cooking", worksheet.control_br52); end
-  def test_control_bo53; assert_equal("Energy used for commercial cooking is 60% electricity and 40% gas (no change from 2007)", worksheet.control_bo53); end
-  def test_control_bp53; assert_equal("Energy used for commercial cooking is 100% electric", worksheet.control_bp53); end
+  def test_control_bs46; assert_equal("Many industrial processes electrified, CCS captures 48% of emissions and  substantial improvements in process emissions and energy demand", worksheet.control_bs46); end
+  def test_control_bp48; assert_equal("Commercial space heating demand increases by 50%, hot water demand by 60%, cooling demand by 250%", worksheet.control_bp48); end
+  def test_control_bq48; assert_equal("Commercial space heating demand increases by 30%, hot water demand by 50%, cooling demand by 60%", worksheet.control_bq48); end
+  def test_control_br48; assert_equal("Commercial space heating demand stable, hot water demand increases by 25%, cooling demand stable", worksheet.control_br48); end
+  def test_control_bs48; assert_equal("Commercial space heating demand drops by 25%, hot water demand by 10%, cooling demand by 60%", worksheet.control_bs48); end
+  def test_control_bp49; assert_equal("The proportion of non-domestic heat supplied using electricity is 0-10%, as today", worksheet.control_bp49); end
+  def test_control_bq49; assert_equal("The proportion of non-domestic heat supplied using electricity is 20%", worksheet.control_bq49); end
+  def test_control_br49; assert_equal("The proportion of non-domestic heat supplied using electricity is 30-60%", worksheet.control_br49); end
+  def test_control_bs49; assert_equal("The proportion of non-domestic heat supplied using electricity is 80-100%", worksheet.control_bs49); end
+  def test_control_bp50; assert_equal("The dominant non-electric heat source is gas (biogas if available)", worksheet.control_bp50); end
+  def test_control_bq50; assert_equal("The dominant non-electric heating fuel is coal (biomass if available)", worksheet.control_bq50); end
+  def test_control_br50; assert_equal("The dominant non-electric heat source is heat from power stations", worksheet.control_br50); end
+  def test_control_bs50; assert_equal("A mixture of gas/biogas, coal/biomass, and heat from power stations", worksheet.control_bs50); end
+  def test_control_bp52; assert_equal("Energy demand for commercial lights & appliances increases by 33%. Energy for cooking is stable", worksheet.control_bp52); end
+  def test_control_bq52; assert_equal("Energy demand for commercial lights & appliances increases by 15%; decreases by 5% for cooking", worksheet.control_bq52); end
+  def test_control_br52; assert_equal("Energy demand for commercial lights & appliances decreases by 5%; decreases by 20% for cooking", worksheet.control_br52); end
+  def test_control_bs52; assert_equal("Energy demand for commercial lights & appliances decreases by 30%; decreases by 25% for cooking", worksheet.control_bs52); end
+  def test_control_bp53; assert_equal("Energy used for commercial cooking is 60% electricity and 40% gas (no change from 2007)", worksheet.control_bp53); end
   def test_control_bq53; assert_equal("Energy used for commercial cooking is 100% electric", worksheet.control_bq53); end
   def test_control_br53; assert_equal("Energy used for commercial cooking is 100% electric", worksheet.control_br53); end
-  def test_control_bo55; assert_equal("No geosequestration", worksheet.control_bo55); end
-  def test_control_bp55; assert_equal("Carbon dioxide sequestred at a rate of 1 million tonnes per annum by 2050", worksheet.control_bp55); end
-  def test_control_bq55; assert_equal("Carbon dioxide  sequestred at a rate of ~30 million tonnes per annum by 2050", worksheet.control_bq55); end
-  def test_control_br55; assert_equal("Carbon dioxide sequestred at a rate of ~110 million tonnes per annum by 2050", worksheet.control_br55); end
-  def test_control_bo56; assert_equal("Today’s 3.5 GW of pumped storage and 4 GW interconnection with Europe available for balancing electricity supply and demand", worksheet.control_bo56); end
-  def test_control_bp56; assert_equal("4 GW of pumped storage and 10 GW interconnection with Europe available for balancing electricity supply and demand", worksheet.control_bp56); end
-  def test_control_bq56; assert_equal("7 GW of pumped storage (includign 2 more sites), 15 GW of interconnection with Europe and some demand shifting available for balancing electricity supply and demand", worksheet.control_bq56); end
-  def test_control_br56; assert_equal("20 GW of pumped storage with large lagoons, 30 GW of interconnection with Europe and substantial demand shifting available for balancing electricity supply and demand", worksheet.control_br56); end
+  def test_control_bs53; assert_equal("Energy used for commercial cooking is 100% electric", worksheet.control_bs53); end
+  def test_control_bp55; assert_equal("No geosequestration", worksheet.control_bp55); end
+  def test_control_bq55; assert_equal("Carbon dioxide sequestred at a rate of 1 million tonnes per annum by 2050", worksheet.control_bq55); end
+  def test_control_br55; assert_equal("Carbon dioxide  sequestred at a rate of ~30 million tonnes per annum by 2050", worksheet.control_br55); end
+  def test_control_bs55; assert_equal("Carbon dioxide sequestred at a rate of ~110 million tonnes per annum by 2050", worksheet.control_bs55); end
+  def test_control_bp56; assert_equal("Today’s 3.5 GW of pumped storage and 4 GW interconnection with Europe available for balancing electricity supply and demand", worksheet.control_bp56); end
+  def test_control_bq56; assert_equal("4 GW of pumped storage and 10 GW interconnection with Europe available for balancing electricity supply and demand", worksheet.control_bq56); end
+  def test_control_br56; assert_equal("7 GW of pumped storage (includign 2 more sites), 15 GW of interconnection with Europe and some demand shifting available for balancing electricity supply and demand", worksheet.control_br56); end
+  def test_control_bs56; assert_equal("20 GW of pumped storage with large lagoons, 30 GW of interconnection with Europe and substantial demand shifting available for balancing electricity supply and demand", worksheet.control_bs56); end
   def test_control_d5; assert_equal("Nuclear power stations", worksheet.control_d5); end
   def test_control_d6; assert_equal("Carbon Capture Storage (CCS)", worksheet.control_d6); end
   def test_control_d7; assert_equal("CCS power stations", worksheet.control_d7); end
@@ -1052,6 +1052,49 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_d55; assert_equal("Geosequestration", worksheet.control_d55); end
   def test_control_d56; assert_equal("Storage, demand shifting & interconnection", worksheet.control_d56); end
   def test_control_d57; assert_equal("Indigenous fossil-fuel production", worksheet.control_d57); end
+  def test_control_g5; assert_equal("0.pdf", worksheet.control_g5); end
+  def test_control_g6; assert_equal("2.pdf", worksheet.control_g6); end
+  def test_control_g7; assert_equal("2.pdf", worksheet.control_g7); end
+  def test_control_g8; assert_equal("3.pdf", worksheet.control_g8); end
+  def test_control_g9; assert_equal("4.pdf", worksheet.control_g9); end
+  def test_control_g10; assert_equal("5.pdf", worksheet.control_g10); end
+  def test_control_g11; assert_equal("6.pdf", worksheet.control_g11); end
+  def test_control_g12; assert_equal("TidalStream.pdf", worksheet.control_g12); end
+  def test_control_g13; assert_equal("TidalRange.pdf", worksheet.control_g13); end
+  def test_control_g14; assert_equal("7.pdf", worksheet.control_g14); end
+  def test_control_g15; assert_equal("8.pdf", worksheet.control_g15); end
+  def test_control_g16; assert_equal("9.pdf", worksheet.control_g16); end
+  def test_control_g17; assert_equal("10.pdf", worksheet.control_g17); end
+  def test_control_g18; assert_equal("11.pdf", worksheet.control_g18); end
+  def test_control_g19; assert_equal("12.pdf", worksheet.control_g19); end
+  def test_control_g20; assert_equal("13.pdf", worksheet.control_g20); end
+  def test_control_g22; assert_equal("15.pdf", worksheet.control_g22); end
+  def test_control_g23; assert_equal("16.pdf", worksheet.control_g23); end
+  def test_control_g24; assert_equal("17.pdf", worksheet.control_g24); end
+  def test_control_g25; assert_equal("18.pdf", worksheet.control_g25); end
+  def test_control_g26; assert_equal("19.pdf", worksheet.control_g26); end
+  def test_control_g27; assert_equal("20.pdf", worksheet.control_g27); end
+  def test_control_g30; assert_equal("23.pdf", worksheet.control_g30); end
+  def test_control_g31; assert_equal("24.pdf", worksheet.control_g31); end
+  def test_control_g32; assert_equal("FuelCellsOrBatteries.pdf", worksheet.control_g32); end
+  def test_control_g33; assert_equal("25.pdf", worksheet.control_g33); end
+  def test_control_g34; assert_equal("InternationalAviation.pdf", worksheet.control_g34); end
+  def test_control_g35; assert_equal("InternationalShipping.pdf", worksheet.control_g35); end
+  def test_control_g37; assert_equal("29.pdf", worksheet.control_g37); end
+  def test_control_g38; assert_equal("30.pdf", worksheet.control_g38); end
+  def test_control_g39; assert_equal("31.pdf", worksheet.control_g39); end
+  def test_control_g40; assert_equal("31.pdf", worksheet.control_g40); end
+  def test_control_g42; assert_equal("34.pdf", worksheet.control_g42); end
+  def test_control_g43; assert_equal("35.pdf", worksheet.control_g43); end
+  def test_control_g45; assert_equal("37.pdf", worksheet.control_g45); end
+  def test_control_g46; assert_equal("38.pdf", worksheet.control_g46); end
+  def test_control_g48; assert_equal("40.pdf", worksheet.control_g48); end
+  def test_control_g49; assert_equal("31.pdf", worksheet.control_g49); end
+  def test_control_g50; assert_equal("31.pdf", worksheet.control_g50); end
+  def test_control_g52; assert_equal("44.pdf", worksheet.control_g52); end
+  def test_control_g53; assert_equal("35.pdf", worksheet.control_g53); end
+  def test_control_g55; assert_equal("47.pdf", worksheet.control_g55); end
+  def test_control_g56; assert_equal("48.pdf", worksheet.control_g56); end
   def test_control_f5; assert_in_epsilon(4.0, worksheet.control_f5, 0.002); end
   def test_control_f7; assert_in_epsilon(4.0, worksheet.control_f7, 0.002); end
   def test_control_f8; assert_equal("D", worksheet.control_f8); end
@@ -1095,7 +1138,11 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_f55; assert_in_epsilon(4.0, worksheet.control_f55, 0.002); end
   def test_control_f56; assert_in_epsilon(4.0, worksheet.control_f56, 0.002); end
   def test_control_f57; assert_in_epsilon(3.0, worksheet.control_f57, 0.002); end
-  def test_control_m1; assert_equal("Version 3.5.2", worksheet.control_m1); end
+  def test_control_n1; assert_equal("Version 3.5.2", worksheet.control_n1); end
+  def test_aq_outputs_c4; assert_equal("High", worksheet.aq_outputs_c4); end
+  def test_aq_outputs_d4; assert_in_epsilon(56.58277091568791, worksheet.aq_outputs_d4, 0.002); end
+  def test_aq_outputs_c5; assert_equal("Low", worksheet.aq_outputs_c5); end
+  def test_aq_outputs_d5; assert_in_epsilon(21.08923381108315, worksheet.aq_outputs_d5, 0.002); end
   def test_intermediate_output_b2; assert_equal("Energy source / use charts", worksheet.intermediate_output_b2); end
   def test_intermediate_output_h3; assert_equal("Historic data:", worksheet.intermediate_output_h3); end
   def test_intermediate_output_ay3; assert_equal("2050 Calculator calculations", worksheet.intermediate_output_ay3); end
@@ -24359,16 +24406,14 @@ class TestModel < Minitest::Unit::TestCase
   def test_costpercapita_cn198; assert_equal("ok", worksheet.costpercapita_cn198); end
   def test_costpercapita_cp198; assert_equal("ok", worksheet.costpercapita_cp198); end
   def test_costpercapita_cq198; assert_equal("ok", worksheet.costpercapita_cq198); end
-  def test_aq_outputs_b2; assert_equal("YOUR CHOICE", worksheet.aq_outputs_b2); end
-  def test_aq_outputs_d3; assert_in_epsilon(2010.0, worksheet.aq_outputs_d3, 0.002); end
-  def test_aq_outputs_e3; assert_equal("2050 - All Level 1", worksheet.aq_outputs_e3); end
-  def test_aq_outputs_f3; assert_equal("2050 - YOUR CHOICE", worksheet.aq_outputs_f3); end
-  def test_aq_outputs_c4; assert_equal("Emissions in 2010", worksheet.aq_outputs_c4); end
-  def test_aq_outputs_d4; assert_in_epsilon(100.0, worksheet.aq_outputs_d4, 0.002); end
-  def test_aq_outputs_c5; assert_equal("Low innovation", worksheet.aq_outputs_c5); end
-  def test_aq_outputs_e5; assert_in_epsilon(61.81008485722407, worksheet.aq_outputs_e5, 0.002); end
-  def test_aq_outputs_f5; assert_in_epsilon(56.58277091568791, worksheet.aq_outputs_f5, 0.002); end
-  def test_aq_outputs_c6; assert_equal("High innovation", worksheet.aq_outputs_c6); end
-  def test_aq_outputs_e6; assert_in_epsilon(23.50676666505111, worksheet.aq_outputs_e6, 0.002); end
-  def test_aq_outputs_f6; assert_in_epsilon(21.08923381108315, worksheet.aq_outputs_f6, 0.002); end
+  def test_aq_outputs_c3; assert_equal("100 = 2010 emissions", worksheet.aq_outputs_c3); end
+  def test_aq_outputs_d3; assert_equal("2050 - Your pathway", worksheet.aq_outputs_d3); end
+  def test_aq_outputs_c7; assert_equal("Chart", worksheet.aq_outputs_c7); end
+  def test_aq_outputs_d7; assert_equal("Low", worksheet.aq_outputs_d7); end
+  def test_aq_outputs_e7; assert_equal("High", worksheet.aq_outputs_e7); end
+  def test_aq_outputs_c8; assert_equal("2010", worksheet.aq_outputs_c8); end
+  def test_aq_outputs_d8; assert_in_epsilon(100.0, worksheet.aq_outputs_d8, 0.002); end
+  def test_aq_outputs_c9; assert_equal("2050 - Your pathway", worksheet.aq_outputs_c9); end
+  def test_aq_outputs_d9; assert_in_epsilon(21.08923381108315, worksheet.aq_outputs_d9, 0.002); end
+  def test_aq_outputs_e9; assert_in_epsilon(35.493537104604755, worksheet.aq_outputs_e9, 0.002); end
 end

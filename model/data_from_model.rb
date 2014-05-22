@@ -203,10 +203,7 @@ class DataFromModel
   end
 
   def air_quality
-    {
-      'low' => r("aq_outputs_f6"),
-      'high' => r("aq_outputs_f5")
-    }
+    Hash[excel.output_airquality]
   end
 
   # Data that doesn't change with user choices (more structural)
@@ -229,57 +226,11 @@ class DataFromModel
       choice.descriptions = descriptions[i]
       choice.long_descriptions = long_descriptions[i]
       choice.levels = incremental ? 'A'.upto(choice_type.upcase) : 1.upto(choice_type.to_i)
-      choice.doc = FILE_NAMES_OF_ONE_PAGE_NOTES[i] || "#{i}.pdf"
+      choice.doc = one_page_note_filenames[i]
       choices << choice
     end
     choices
   end
-  
-  FILE_NAMES_OF_ONE_PAGE_NOTES = {
-    0 => '0.pdf',
-    2 => '2.pdf',
-    3 => '3.pdf',
-    4 => '4.pdf',
-    5 => '5.pdf',
-    6 => '6.pdf',
-    7 => 'TidalStream.pdf',
-    8 => 'TidalRange.pdf',
-    9 =>  '7.pdf',
-    10 => '8.pdf',
-    11 => '9.pdf',
-    12 => '10.pdf',
-    13 => '11.pdf',
-    14 => '12.pdf',
-    15 => '13.pdf',
-    16 => '14.pdf',
-    17 => '15.pdf',
-    18 => '16.pdf',
-    19 => '17.pdf',
-    20 => '18.pdf',
-    21 => '19.pdf',
-    22 => '20.pdf',
-    25 => '23.pdf',
-    26 => '24.pdf',
-    27 => 'FuelCellsOrBatteries.pdf',
-    28 => '25.pdf',
-    29 => 'InternationalAviation.pdf',
-    30 => 'InternationalShipping.pdf',
-    32 => '29.pdf',
-    33 => '30.pdf',
-    34 => '31.pdf',
-    35 => '31.pdf',
-    37 => '34.pdf',
-    38 => '35.pdf',
-    40 => '37.pdf',
-    41 => '38.pdf',
-    43 => '40.pdf', 
-    44 => '31.pdf',
-    45 => '31.pdf',
-    47 => '44.pdf',
-    48 => '35.pdf',
-    50 => '47.pdf',
-    51 => '48.pdf' 
-  }
 
   def reported_calculator_version
     excel.output_version
@@ -311,6 +262,10 @@ class DataFromModel
     
   def example_pathways
     @example_pathways ||= generate_example_pathways
+  end
+
+  def one_page_note_filenames
+    @one_page_note_filenames ||= excel.input_onepagenotes.flatten
   end
   
   def generate_example_pathways
