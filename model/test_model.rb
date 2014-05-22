@@ -1143,6 +1143,28 @@ class TestModel < Minitest::Unit::TestCase
   def test_air_quality_d3; assert_in_epsilon(48.07137660549572, worksheet.air_quality_d3, 0.002); end
   def test_air_quality_c4; assert_equal("Low", worksheet.air_quality_c4); end
   def test_air_quality_d4; assert_in_epsilon(14.095882402221452, worksheet.air_quality_d4, 0.002); end
+  def test_energy_security_d145; assert_equal("Automatically built CCGT gas", worksheet.energy_security_d145); end
+  def test_energy_security_e145; assert_in_epsilon(30.343667698868483, worksheet.energy_security_e145, 0.002); end
+  def test_energy_security_f145; assert_in_epsilon(25.272948851401555, worksheet.energy_security_f145, 0.002); end
+  def test_energy_security_g145; assert_in_epsilon(23.355702262897875, worksheet.energy_security_g145, 0.002); end
+  def test_energy_security_h145; assert_in_epsilon(24.803018599209768, worksheet.energy_security_h145, 0.002); end
+  def test_energy_security_i145; assert_in_epsilon(26.10883932758972, worksheet.energy_security_i145, 0.002); end
+  def test_energy_security_j145; assert_in_epsilon(22.633862826810958, worksheet.energy_security_j145, 0.002); end
+  def test_energy_security_k145; assert_in_epsilon(14.1991249473786, worksheet.energy_security_k145, 0.002); end
+  def test_energy_security_l145; assert_in_epsilon(3.539656549164459, worksheet.energy_security_l145, 0.002); end
+  def test_energy_security_m145; assert_in_delta(0.0, (worksheet.energy_security_m145||0), 0.002); end
+  def test_energy_security_n145; assert_in_delta(0.0, (worksheet.energy_security_n145||0), 0.002); end
+  def test_energy_security_d146; assert_equal("Automatically built peaking gas", worksheet.energy_security_d146); end
+  def test_energy_security_e146; assert_in_delta(0.0, (worksheet.energy_security_e146||0), 0.002); end
+  def test_energy_security_f146; assert_in_delta(0.0, (worksheet.energy_security_f146||0), 0.002); end
+  def test_energy_security_g146; assert_in_delta(0.0, (worksheet.energy_security_g146||0), 0.002); end
+  def test_energy_security_h146; assert_in_delta(0.0, (worksheet.energy_security_h146||0), 0.002); end
+  def test_energy_security_i146; assert_in_epsilon(2.734850509810312, worksheet.energy_security_i146, 0.002); end
+  def test_energy_security_j146; assert_in_epsilon(6.2979450656351945, worksheet.energy_security_j146, 0.002); end
+  def test_energy_security_k146; assert_in_epsilon(10.33202835990761, worksheet.energy_security_k146, 0.002); end
+  def test_energy_security_l146; assert_in_epsilon(13.797980365022386, worksheet.energy_security_l146, 0.002); end
+  def test_energy_security_m146; assert_in_epsilon(12.217990189086812, worksheet.energy_security_m146, 0.002); end
+  def test_energy_security_n146; assert_in_epsilon(7.465371722718331, worksheet.energy_security_n146, 0.002); end
   def test_energy_security_d36; assert_equal("Nuclear fission", worksheet.energy_security_d36); end
   def test_energy_security_e36; assert_in_delta(0.06176767875636605, worksheet.energy_security_e36, 0.002); end
   def test_energy_security_f36; assert_in_delta(0.06572905229392728, worksheet.energy_security_f36, 0.002); end

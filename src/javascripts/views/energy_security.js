@@ -21,18 +21,18 @@ twentyfifty.views.energy_security = function() {
 
     e.append("<h2>Balancing electricity supply and demand</h2>");
 
-    if (pathway.electricity.automatically_built > 0) {
-      e.append("<p>" + (Math.round(pathway.electricity.automatically_built)) + " GW of conventional gas electricity generation plant"+
+    if (pathway.balancing.ccgt > 0) {
+      e.append("<p>" + pathway.balancing.ccgt + " GW of conventional gas electricity generation plant "+
         "has been assumed to have been built by 2050, to cover the gap between average electricity demand "+
         "and the amount of low carbon generation selected in this pathway.</p>"
       );
     }
 
-    e.append("<p>This tool does not model the hourly, daily or even seasonal operation of the electricity grid. It presents annual averages."+ 
+    e.append("<p>This tool does not model the hourly, daily or even seasonal operation of the electricity grid. It presents annual averages. "+ 
         "Therefore it does not correctly represent the peaks and troughs of electricity demand.<p>" +
-        "<p>To go some way to addressing this flaw, the tool applies a simulated stress test to your pathway of five cold, almost windless, days."+ 
-        "This is described in more detail <a href='/assets/onepage/49.pdf' target='_new'>here</a>." +
-        "In this case, the stress test implies that " + Math.round(pathway.electricity.peaking) + " GW" + 
+        "<p>To go some way to addressing this flaw, the tool applies a simulated stress test to your pathway of five cold, almost windless, days. "+ 
+        "This is described in more detail <a href='/assets/onepage/49.pdf' target='_new'>here</a>. " +
+        "In this case, the stress test implies that " +pathway.balancing.peaking+ " GW " + 
         "of additional peaking plant may be required for supply to meet demand over that period.</p>" +
         "<p>You can influence the amount of peaking plant by changing your choice level of 'storage, demand shifting & interconnection' below right,"+
         "or by reducing the amount of intermittent renewable generation, or by reducing the demand for electricity</p>"

@@ -47,6 +47,7 @@ class DataFromModel
       'map' => map,
       'imports' => imports,
       'diversity' => diversity,
+      'balancing' => balancing,
       'air_quality' => air_quality
     }
   end
@@ -77,8 +78,6 @@ class DataFromModel
       'supply' => table(96, 111),
       'emissions' => table(270, 273),
       'capacity' => table(118, 132),
-      'automatically_built' => r("intermediate_output_bh120"),
-      'peaking' => r("intermediate_output_bh131")
     }
   end
   
@@ -162,6 +161,12 @@ class DataFromModel
     end
     m
   end
+
+
+  def balancing
+    { 'ccgt' => excel.output_capacity_automaticallybuilt[0][-1].to_f.round,
+      'peaking' => excel.output_capacity_automaticallybuilt[1][-1].to_f.round }
+  end
   
   def imports
     i = {}
@@ -178,10 +183,6 @@ class DataFromModel
     end
 
     i
-  end
-
-  def percent(proportion)
-    "#{(proportion * 100).round}%"
   end
 
   def diversity
@@ -284,6 +285,10 @@ class DataFromModel
   
   # Helper methods
   
+  def percent(proportion)
+    "#{(proportion * 100).round}%"
+  end
+
   # FIXME: Only wraps one line into two
   def wrap(string, wrap_at_length = 45)
     return "" unless string

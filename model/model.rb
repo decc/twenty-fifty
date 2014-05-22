@@ -6754,6 +6754,28 @@ module Model
   attach_function 'intermediate_output_ax52', [], ExcelValue.by_value
   attach_function 'intermediate_output_ax53', [], ExcelValue.by_value
   # end of Intermediate output
+  attach_function 'energy_security_d145', [], ExcelValue.by_value
+  attach_function 'energy_security_e145', [], ExcelValue.by_value
+  attach_function 'energy_security_f145', [], ExcelValue.by_value
+  attach_function 'energy_security_g145', [], ExcelValue.by_value
+  attach_function 'energy_security_h145', [], ExcelValue.by_value
+  attach_function 'energy_security_i145', [], ExcelValue.by_value
+  attach_function 'energy_security_j145', [], ExcelValue.by_value
+  attach_function 'energy_security_k145', [], ExcelValue.by_value
+  attach_function 'energy_security_l145', [], ExcelValue.by_value
+  attach_function 'energy_security_m145', [], ExcelValue.by_value
+  attach_function 'energy_security_n145', [], ExcelValue.by_value
+  attach_function 'energy_security_d146', [], ExcelValue.by_value
+  attach_function 'energy_security_e146', [], ExcelValue.by_value
+  attach_function 'energy_security_f146', [], ExcelValue.by_value
+  attach_function 'energy_security_g146', [], ExcelValue.by_value
+  attach_function 'energy_security_h146', [], ExcelValue.by_value
+  attach_function 'energy_security_i146', [], ExcelValue.by_value
+  attach_function 'energy_security_j146', [], ExcelValue.by_value
+  attach_function 'energy_security_k146', [], ExcelValue.by_value
+  attach_function 'energy_security_l146', [], ExcelValue.by_value
+  attach_function 'energy_security_m146', [], ExcelValue.by_value
+  attach_function 'energy_security_n146', [], ExcelValue.by_value
   attach_function 'energy_security_d36', [], ExcelValue.by_value
   attach_function 'energy_security_e36', [], ExcelValue.by_value
   attach_function 'energy_security_f36', [], ExcelValue.by_value
@@ -25454,6 +25476,7 @@ module Model
   attach_function 'input_onepagenotes', [], ExcelValue.by_value
   attach_function 'input_types', [], ExcelValue.by_value
   attach_function 'output_airquality', [], ExcelValue.by_value
+  attach_function 'output_capacity_automaticallybuilt', [], ExcelValue.by_value
   attach_function 'output_diversity', [], ExcelValue.by_value
   attach_function 'output_imports_proportion', [], ExcelValue.by_value
   attach_function 'output_imports_quantity', [], ExcelValue.by_value
@@ -25467,6 +25490,7 @@ module Model
   attach_function 'input_onepagenotes', [], ExcelValue.by_value
   attach_function 'input_types', [], ExcelValue.by_value
   attach_function 'output_airquality', [], ExcelValue.by_value
+  attach_function 'output_capacity_automaticallybuilt', [], ExcelValue.by_value
   attach_function 'output_diversity', [], ExcelValue.by_value
   attach_function 'output_imports_proportion', [], ExcelValue.by_value
   attach_function 'output_imports_quantity', [], ExcelValue.by_value
