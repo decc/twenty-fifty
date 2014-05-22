@@ -22,7 +22,6 @@ def setup(command)
     "CostPerCapita" => :all, 
     "Land Use" => :all, 
     "Flows" => :all, 
-    "AQ Outputs" => :all, 
   }
 
   command.actually_compile_code = true

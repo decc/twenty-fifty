@@ -188,16 +188,14 @@ class DataFromModel
     i
   end
 
+  def percent(proportion)
+    "#{(proportion * 100).round}%"
+  end
 
   def diversity
     d = {}
-    total_2007 = r("intermediate_output_f296").to_f
-    total_2050 = r("intermediate_output_bh296").to_f
-    (283..295).each do |row|
-      d[r("intermediate_output_d#{row}")] = { 
-        '2007' => "#{((r("intermediate_output_f#{row}").to_f / total_2007)*100).round}%",
-        '2050' => "#{((r("intermediate_output_bh#{row}").to_f / total_2050)*100).round}%"
-      }
+    excel.output_diversity.each do |vector|
+      d[vector[0]] = { '2007' => percent(vector[1]), '2050' => percent(vector[-1]) }
     end
     d
   end

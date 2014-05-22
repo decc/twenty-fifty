@@ -6754,6 +6754,216 @@ module Model
   attach_function 'intermediate_output_ax52', [], ExcelValue.by_value
   attach_function 'intermediate_output_ax53', [], ExcelValue.by_value
   # end of Intermediate output
+  attach_function 'energy_security_d36', [], ExcelValue.by_value
+  attach_function 'energy_security_e36', [], ExcelValue.by_value
+  attach_function 'energy_security_f36', [], ExcelValue.by_value
+  attach_function 'energy_security_g36', [], ExcelValue.by_value
+  attach_function 'energy_security_h36', [], ExcelValue.by_value
+  attach_function 'energy_security_i36', [], ExcelValue.by_value
+  attach_function 'energy_security_j36', [], ExcelValue.by_value
+  attach_function 'energy_security_k36', [], ExcelValue.by_value
+  attach_function 'energy_security_l36', [], ExcelValue.by_value
+  attach_function 'energy_security_m36', [], ExcelValue.by_value
+  attach_function 'energy_security_n36', [], ExcelValue.by_value
+  attach_function 'energy_security_d37', [], ExcelValue.by_value
+  attach_function 'energy_security_e37', [], ExcelValue.by_value
+  attach_function 'energy_security_f37', [], ExcelValue.by_value
+  attach_function 'energy_security_g37', [], ExcelValue.by_value
+  attach_function 'energy_security_h37', [], ExcelValue.by_value
+  attach_function 'energy_security_i37', [], ExcelValue.by_value
+  attach_function 'energy_security_j37', [], ExcelValue.by_value
+  attach_function 'energy_security_k37', [], ExcelValue.by_value
+  attach_function 'energy_security_l37', [], ExcelValue.by_value
+  attach_function 'energy_security_m37', [], ExcelValue.by_value
+  attach_function 'energy_security_n37', [], ExcelValue.by_value
+  attach_function 'energy_security_d38', [], ExcelValue.by_value
+  attach_function 'energy_security_e38', [], ExcelValue.by_value
+  attach_function 'energy_security_f38', [], ExcelValue.by_value
+  attach_function 'energy_security_g38', [], ExcelValue.by_value
+  attach_function 'energy_security_h38', [], ExcelValue.by_value
+  attach_function 'energy_security_i38', [], ExcelValue.by_value
+  attach_function 'energy_security_j38', [], ExcelValue.by_value
+  attach_function 'energy_security_k38', [], ExcelValue.by_value
+  attach_function 'energy_security_l38', [], ExcelValue.by_value
+  attach_function 'energy_security_m38', [], ExcelValue.by_value
+  attach_function 'energy_security_n38', [], ExcelValue.by_value
+  attach_function 'energy_security_d39', [], ExcelValue.by_value
+  attach_function 'energy_security_e39', [], ExcelValue.by_value
+  attach_function 'energy_security_f39', [], ExcelValue.by_value
+  attach_function 'energy_security_g39', [], ExcelValue.by_value
+  attach_function 'energy_security_h39', [], ExcelValue.by_value
+  attach_function 'energy_security_i39', [], ExcelValue.by_value
+  attach_function 'energy_security_j39', [], ExcelValue.by_value
+  attach_function 'energy_security_k39', [], ExcelValue.by_value
+  attach_function 'energy_security_l39', [], ExcelValue.by_value
+  attach_function 'energy_security_m39', [], ExcelValue.by_value
+  attach_function 'energy_security_n39', [], ExcelValue.by_value
+  attach_function 'energy_security_d40', [], ExcelValue.by_value
+  attach_function 'energy_security_e40', [], ExcelValue.by_value
+  attach_function 'energy_security_f40', [], ExcelValue.by_value
+  attach_function 'energy_security_g40', [], ExcelValue.by_value
+  attach_function 'energy_security_h40', [], ExcelValue.by_value
+  attach_function 'energy_security_i40', [], ExcelValue.by_value
+  attach_function 'energy_security_j40', [], ExcelValue.by_value
+  attach_function 'energy_security_k40', [], ExcelValue.by_value
+  attach_function 'energy_security_l40', [], ExcelValue.by_value
+  attach_function 'energy_security_m40', [], ExcelValue.by_value
+  attach_function 'energy_security_n40', [], ExcelValue.by_value
+  attach_function 'energy_security_d41', [], ExcelValue.by_value
+  attach_function 'energy_security_e41', [], ExcelValue.by_value
+  attach_function 'energy_security_f41', [], ExcelValue.by_value
+  attach_function 'energy_security_g41', [], ExcelValue.by_value
+  attach_function 'energy_security_h41', [], ExcelValue.by_value
+  attach_function 'energy_security_i41', [], ExcelValue.by_value
+  attach_function 'energy_security_j41', [], ExcelValue.by_value
+  attach_function 'energy_security_k41', [], ExcelValue.by_value
+  attach_function 'energy_security_l41', [], ExcelValue.by_value
+  attach_function 'energy_security_m41', [], ExcelValue.by_value
+  attach_function 'energy_security_n41', [], ExcelValue.by_value
+  attach_function 'energy_security_d42', [], ExcelValue.by_value
+  attach_function 'energy_security_e42', [], ExcelValue.by_value
+  attach_function 'energy_security_f42', [], ExcelValue.by_value
+  attach_function 'energy_security_g42', [], ExcelValue.by_value
+  attach_function 'energy_security_h42', [], ExcelValue.by_value
+  attach_function 'energy_security_i42', [], ExcelValue.by_value
+  attach_function 'energy_security_j42', [], ExcelValue.by_value
+  attach_function 'energy_security_k42', [], ExcelValue.by_value
+  attach_function 'energy_security_l42', [], ExcelValue.by_value
+  attach_function 'energy_security_m42', [], ExcelValue.by_value
+  attach_function 'energy_security_n42', [], ExcelValue.by_value
+  attach_function 'energy_security_d43', [], ExcelValue.by_value
+  attach_function 'energy_security_e43', [], ExcelValue.by_value
+  attach_function 'energy_security_f43', [], ExcelValue.by_value
+  attach_function 'energy_security_g43', [], ExcelValue.by_value
+  attach_function 'energy_security_h43', [], ExcelValue.by_value
+  attach_function 'energy_security_i43', [], ExcelValue.by_value
+  attach_function 'energy_security_j43', [], ExcelValue.by_value
+  attach_function 'energy_security_k43', [], ExcelValue.by_value
+  attach_function 'energy_security_l43', [], ExcelValue.by_value
+  attach_function 'energy_security_m43', [], ExcelValue.by_value
+  attach_function 'energy_security_n43', [], ExcelValue.by_value
+  attach_function 'energy_security_d44', [], ExcelValue.by_value
+  attach_function 'energy_security_e44', [], ExcelValue.by_value
+  attach_function 'energy_security_f44', [], ExcelValue.by_value
+  attach_function 'energy_security_g44', [], ExcelValue.by_value
+  attach_function 'energy_security_h44', [], ExcelValue.by_value
+  attach_function 'energy_security_i44', [], ExcelValue.by_value
+  attach_function 'energy_security_j44', [], ExcelValue.by_value
+  attach_function 'energy_security_k44', [], ExcelValue.by_value
+  attach_function 'energy_security_l44', [], ExcelValue.by_value
+  attach_function 'energy_security_m44', [], ExcelValue.by_value
+  attach_function 'energy_security_n44', [], ExcelValue.by_value
+  attach_function 'energy_security_d45', [], ExcelValue.by_value
+  attach_function 'energy_security_e45', [], ExcelValue.by_value
+  attach_function 'energy_security_f45', [], ExcelValue.by_value
+  attach_function 'energy_security_g45', [], ExcelValue.by_value
+  attach_function 'energy_security_h45', [], ExcelValue.by_value
+  attach_function 'energy_security_i45', [], ExcelValue.by_value
+  attach_function 'energy_security_j45', [], ExcelValue.by_value
+  attach_function 'energy_security_k45', [], ExcelValue.by_value
+  attach_function 'energy_security_l45', [], ExcelValue.by_value
+  attach_function 'energy_security_m45', [], ExcelValue.by_value
+  attach_function 'energy_security_n45', [], ExcelValue.by_value
+  attach_function 'energy_security_d46', [], ExcelValue.by_value
+  attach_function 'energy_security_e46', [], ExcelValue.by_value
+  attach_function 'energy_security_f46', [], ExcelValue.by_value
+  attach_function 'energy_security_g46', [], ExcelValue.by_value
+  attach_function 'energy_security_h46', [], ExcelValue.by_value
+  attach_function 'energy_security_i46', [], ExcelValue.by_value
+  attach_function 'energy_security_j46', [], ExcelValue.by_value
+  attach_function 'energy_security_k46', [], ExcelValue.by_value
+  attach_function 'energy_security_l46', [], ExcelValue.by_value
+  attach_function 'energy_security_m46', [], ExcelValue.by_value
+  attach_function 'energy_security_n46', [], ExcelValue.by_value
+  attach_function 'energy_security_d47', [], ExcelValue.by_value
+  attach_function 'energy_security_e47', [], ExcelValue.by_value
+  attach_function 'energy_security_f47', [], ExcelValue.by_value
+  attach_function 'energy_security_g47', [], ExcelValue.by_value
+  attach_function 'energy_security_h47', [], ExcelValue.by_value
+  attach_function 'energy_security_i47', [], ExcelValue.by_value
+  attach_function 'energy_security_j47', [], ExcelValue.by_value
+  attach_function 'energy_security_k47', [], ExcelValue.by_value
+  attach_function 'energy_security_l47', [], ExcelValue.by_value
+  attach_function 'energy_security_m47', [], ExcelValue.by_value
+  attach_function 'energy_security_n47', [], ExcelValue.by_value
+  attach_function 'energy_security_d48', [], ExcelValue.by_value
+  attach_function 'energy_security_e48', [], ExcelValue.by_value
+  attach_function 'energy_security_f48', [], ExcelValue.by_value
+  attach_function 'energy_security_g48', [], ExcelValue.by_value
+  attach_function 'energy_security_h48', [], ExcelValue.by_value
+  attach_function 'energy_security_i48', [], ExcelValue.by_value
+  attach_function 'energy_security_j48', [], ExcelValue.by_value
+  attach_function 'energy_security_k48', [], ExcelValue.by_value
+  attach_function 'energy_security_l48', [], ExcelValue.by_value
+  attach_function 'energy_security_m48', [], ExcelValue.by_value
+  attach_function 'energy_security_n48', [], ExcelValue.by_value
+  attach_function 'energy_security_d49', [], ExcelValue.by_value
+  attach_function 'energy_security_e49', [], ExcelValue.by_value
+  attach_function 'energy_security_f49', [], ExcelValue.by_value
+  attach_function 'energy_security_g49', [], ExcelValue.by_value
+  attach_function 'energy_security_h49', [], ExcelValue.by_value
+  attach_function 'energy_security_i49', [], ExcelValue.by_value
+  attach_function 'energy_security_j49', [], ExcelValue.by_value
+  attach_function 'energy_security_k49', [], ExcelValue.by_value
+  attach_function 'energy_security_l49', [], ExcelValue.by_value
+  attach_function 'energy_security_m49', [], ExcelValue.by_value
+  attach_function 'energy_security_n49', [], ExcelValue.by_value
+  attach_function 'energy_security_d50', [], ExcelValue.by_value
+  attach_function 'energy_security_e50', [], ExcelValue.by_value
+  attach_function 'energy_security_f50', [], ExcelValue.by_value
+  attach_function 'energy_security_g50', [], ExcelValue.by_value
+  attach_function 'energy_security_h50', [], ExcelValue.by_value
+  attach_function 'energy_security_i50', [], ExcelValue.by_value
+  attach_function 'energy_security_j50', [], ExcelValue.by_value
+  attach_function 'energy_security_k50', [], ExcelValue.by_value
+  attach_function 'energy_security_l50', [], ExcelValue.by_value
+  attach_function 'energy_security_m50', [], ExcelValue.by_value
+  attach_function 'energy_security_n50', [], ExcelValue.by_value
+  attach_function 'energy_security_d51', [], ExcelValue.by_value
+  attach_function 'energy_security_e51', [], ExcelValue.by_value
+  attach_function 'energy_security_f51', [], ExcelValue.by_value
+  attach_function 'energy_security_g51', [], ExcelValue.by_value
+  attach_function 'energy_security_h51', [], ExcelValue.by_value
+  attach_function 'energy_security_i51', [], ExcelValue.by_value
+  attach_function 'energy_security_j51', [], ExcelValue.by_value
+  attach_function 'energy_security_k51', [], ExcelValue.by_value
+  attach_function 'energy_security_l51', [], ExcelValue.by_value
+  attach_function 'energy_security_m51', [], ExcelValue.by_value
+  attach_function 'energy_security_n51', [], ExcelValue.by_value
+  attach_function 'energy_security_d52', [], ExcelValue.by_value
+  attach_function 'energy_security_e52', [], ExcelValue.by_value
+  attach_function 'energy_security_f52', [], ExcelValue.by_value
+  attach_function 'energy_security_g52', [], ExcelValue.by_value
+  attach_function 'energy_security_h52', [], ExcelValue.by_value
+  attach_function 'energy_security_i52', [], ExcelValue.by_value
+  attach_function 'energy_security_j52', [], ExcelValue.by_value
+  attach_function 'energy_security_k52', [], ExcelValue.by_value
+  attach_function 'energy_security_l52', [], ExcelValue.by_value
+  attach_function 'energy_security_m52', [], ExcelValue.by_value
+  attach_function 'energy_security_n52', [], ExcelValue.by_value
+  attach_function 'energy_security_d53', [], ExcelValue.by_value
+  attach_function 'energy_security_e53', [], ExcelValue.by_value
+  attach_function 'energy_security_f53', [], ExcelValue.by_value
+  attach_function 'energy_security_g53', [], ExcelValue.by_value
+  attach_function 'energy_security_h53', [], ExcelValue.by_value
+  attach_function 'energy_security_i53', [], ExcelValue.by_value
+  attach_function 'energy_security_j53', [], ExcelValue.by_value
+  attach_function 'energy_security_k53', [], ExcelValue.by_value
+  attach_function 'energy_security_l53', [], ExcelValue.by_value
+  attach_function 'energy_security_m53', [], ExcelValue.by_value
+  attach_function 'energy_security_n53', [], ExcelValue.by_value
+  attach_function 'energy_security_d78', [], ExcelValue.by_value
+  attach_function 'energy_security_e78', [], ExcelValue.by_value
+  attach_function 'energy_security_f78', [], ExcelValue.by_value
+  attach_function 'energy_security_g78', [], ExcelValue.by_value
+  attach_function 'energy_security_h78', [], ExcelValue.by_value
+  attach_function 'energy_security_i78', [], ExcelValue.by_value
+  attach_function 'energy_security_j78', [], ExcelValue.by_value
+  attach_function 'energy_security_k78', [], ExcelValue.by_value
+  attach_function 'energy_security_l78', [], ExcelValue.by_value
+  attach_function 'energy_security_m78', [], ExcelValue.by_value
+  attach_function 'energy_security_n78', [], ExcelValue.by_value
+  # end of Energy Security
   attach_function 'land_use_b2', [], ExcelValue.by_value
   attach_function 'land_use_c4', [], ExcelValue.by_value
   attach_function 'land_use_d4', [], ExcelValue.by_value
@@ -9412,6 +9622,11 @@ module Model
   attach_function 'flows_n95', [], ExcelValue.by_value
   attach_function 'flows_d95', [], ExcelValue.by_value
   # end of Flows
+  attach_function 'air_quality_c3', [], ExcelValue.by_value
+  attach_function 'air_quality_d3', [], ExcelValue.by_value
+  attach_function 'air_quality_c4', [], ExcelValue.by_value
+  attach_function 'air_quality_d4', [], ExcelValue.by_value
+  # end of Air Quality
   attach_function 'costpercapita_b1', [], ExcelValue.by_value
   attach_function 'costpercapita_e1', [], ExcelValue.by_value
   attach_function 'costpercapita_f1', [], ExcelValue.by_value
@@ -25014,24 +25229,6 @@ module Model
   attach_function 'costpercapita_cq198', [], ExcelValue.by_value
   # end of CostPerCapita
   # end of CostAbsolute
-  attach_function 'aq_outputs_c4', [], ExcelValue.by_value
-  attach_function 'aq_outputs_d4', [], ExcelValue.by_value
-  attach_function 'aq_outputs_c5', [], ExcelValue.by_value
-  attach_function 'aq_outputs_d5', [], ExcelValue.by_value
-  attach_function 'aq_outputs_c3', [], ExcelValue.by_value
-  attach_function 'aq_outputs_d3', [], ExcelValue.by_value
-  attach_function 'aq_outputs_c7', [], ExcelValue.by_value
-  attach_function 'aq_outputs_d7', [], ExcelValue.by_value
-  attach_function 'aq_outputs_e7', [], ExcelValue.by_value
-  attach_function 'aq_outputs_c8', [], ExcelValue.by_value
-  attach_function 'aq_outputs_d8', [], ExcelValue.by_value
-  attach_function 'aq_outputs_c9', [], ExcelValue.by_value
-  attach_function 'aq_outputs_d9', [], ExcelValue.by_value
-  attach_function 'aq_outputs_e9', [], ExcelValue.by_value
-  # end of AQ Outputs
-  # end of AQImpactHInv
-  # end of AQImpactLInv
-  # end of Other AQ Sources
   # end of Conversions
   # end of Global assumptions
   # end of Constants
@@ -25103,6 +25300,8 @@ module Model
   attach_function 'input_onepagenotes', [], ExcelValue.by_value
   attach_function 'input_types', [], ExcelValue.by_value
   attach_function 'output_airquality', [], ExcelValue.by_value
+  attach_function 'output_diversity', [], ExcelValue.by_value
+  attach_function 'output_shannonweinerindex', [], ExcelValue.by_value
   attach_function 'output_version', [], ExcelValue.by_value
   attach_function 'input_choices', [], ExcelValue.by_value
   attach_function 'input_descriptions', [], ExcelValue.by_value
@@ -25112,6 +25311,8 @@ module Model
   attach_function 'input_onepagenotes', [], ExcelValue.by_value
   attach_function 'input_types', [], ExcelValue.by_value
   attach_function 'output_airquality', [], ExcelValue.by_value
+  attach_function 'output_diversity', [], ExcelValue.by_value
+  attach_function 'output_shannonweinerindex', [], ExcelValue.by_value
   attach_function 'output_version', [], ExcelValue.by_value
   attach_function 'set_input_choices', [ExcelValue.by_value], :void
   attach_function 'set_input_choices', [ExcelValue.by_value], :void
