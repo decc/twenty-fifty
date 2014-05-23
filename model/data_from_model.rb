@@ -53,8 +53,9 @@ class DataFromModel
   end
       
   def sankey
-    (6..94).map do |row|
-      [r("flows_c#{row}"),r("flows_n#{row}"),r("flows_d#{row}")]
+    # Currently only do the Sankey for the last year (2050)
+    excel.output_flows.map do |row|
+      [row[0], row[-1], row[1]]
     end
   end
 
