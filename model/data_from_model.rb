@@ -94,6 +94,8 @@ class DataFromModel
   end
   
   def costs
+    return convert_table_into_hash(excel.output_costpercapita_detail)
+
     t = {}
     low_start_row = 3
     point_start_row = 57
@@ -151,6 +153,23 @@ class DataFromModel
   
     t
   end
+
+  # Takes something like
+  # [["name", "thing1", "thing2"], ["A", 1, 2], ["B", 2, 3]]
+  # and turns it into:
+  # { "A" => { "name" => "A", "thing1" => 1, "thing2" => 2 }, "B" => { "name" => "B", "thing1" => 2, "thing2" => 3}}
+  def convert_table_into_hash(table)
+    headers = table.shift
+    hash = {}
+    table.each do |row|
+      row_hash = {}
+      row.each.with_index do |cell, i|
+        row_hash[headers[i]] = cell
+      end
+      hash[row[0]] = row_hash
+    end
+    hash
+  end
   
   def map
     m = {}
@@ -160,7 +179,6 @@ class DataFromModel
     end
     m
   end
-
 
   def balancing
     { 'ccgt' => excel.output_capacity_automaticallybuilt[0][-1].to_f.round,
