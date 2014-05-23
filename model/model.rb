@@ -6693,52 +6693,6 @@ module Model
   attach_function 'intermediate_output_bf326', [], ExcelValue.by_value
   attach_function 'intermediate_output_bg326', [], ExcelValue.by_value
   attach_function 'intermediate_output_bh326', [], ExcelValue.by_value
-  attach_function 'intermediate_output_b329', [], ExcelValue.by_value
-  attach_function 'intermediate_output_d331', [], ExcelValue.by_value
-  attach_function 'intermediate_output_e331', [], ExcelValue.by_value
-  attach_function 'intermediate_output_f331', [], ExcelValue.by_value
-  attach_function 'intermediate_output_d332', [], ExcelValue.by_value
-  attach_function 'intermediate_output_e332', [], ExcelValue.by_value
-  attach_function 'intermediate_output_f332', [], ExcelValue.by_value
-  attach_function 'intermediate_output_d333', [], ExcelValue.by_value
-  attach_function 'intermediate_output_e333', [], ExcelValue.by_value
-  attach_function 'intermediate_output_f333', [], ExcelValue.by_value
-  attach_function 'intermediate_output_d334', [], ExcelValue.by_value
-  attach_function 'intermediate_output_e334', [], ExcelValue.by_value
-  attach_function 'intermediate_output_f334', [], ExcelValue.by_value
-  attach_function 'intermediate_output_d335', [], ExcelValue.by_value
-  attach_function 'intermediate_output_e335', [], ExcelValue.by_value
-  attach_function 'intermediate_output_f335', [], ExcelValue.by_value
-  attach_function 'intermediate_output_d336', [], ExcelValue.by_value
-  attach_function 'intermediate_output_e336', [], ExcelValue.by_value
-  attach_function 'intermediate_output_f336', [], ExcelValue.by_value
-  attach_function 'intermediate_output_d337', [], ExcelValue.by_value
-  attach_function 'intermediate_output_e337', [], ExcelValue.by_value
-  attach_function 'intermediate_output_f337', [], ExcelValue.by_value
-  attach_function 'intermediate_output_d338', [], ExcelValue.by_value
-  attach_function 'intermediate_output_e338', [], ExcelValue.by_value
-  attach_function 'intermediate_output_f338', [], ExcelValue.by_value
-  attach_function 'intermediate_output_d339', [], ExcelValue.by_value
-  attach_function 'intermediate_output_e339', [], ExcelValue.by_value
-  attach_function 'intermediate_output_f339', [], ExcelValue.by_value
-  attach_function 'intermediate_output_d340', [], ExcelValue.by_value
-  attach_function 'intermediate_output_e340', [], ExcelValue.by_value
-  attach_function 'intermediate_output_f340', [], ExcelValue.by_value
-  attach_function 'intermediate_output_d341', [], ExcelValue.by_value
-  attach_function 'intermediate_output_e341', [], ExcelValue.by_value
-  attach_function 'intermediate_output_f341', [], ExcelValue.by_value
-  attach_function 'intermediate_output_d342', [], ExcelValue.by_value
-  attach_function 'intermediate_output_e342', [], ExcelValue.by_value
-  attach_function 'intermediate_output_f342', [], ExcelValue.by_value
-  attach_function 'intermediate_output_d343', [], ExcelValue.by_value
-  attach_function 'intermediate_output_e343', [], ExcelValue.by_value
-  attach_function 'intermediate_output_f343', [], ExcelValue.by_value
-  attach_function 'intermediate_output_d344', [], ExcelValue.by_value
-  attach_function 'intermediate_output_e344', [], ExcelValue.by_value
-  attach_function 'intermediate_output_f344', [], ExcelValue.by_value
-  attach_function 'intermediate_output_d345', [], ExcelValue.by_value
-  attach_function 'intermediate_output_e345', [], ExcelValue.by_value
-  attach_function 'intermediate_output_f345', [], ExcelValue.by_value
   attach_function 'intermediate_output_ax96', [], ExcelValue.by_value
   attach_function 'intermediate_output_ax97', [], ExcelValue.by_value
   attach_function 'intermediate_output_ax98', [], ExcelValue.by_value
@@ -7360,6 +7314,45 @@ module Model
   attach_function 'land_use_k24', [], ExcelValue.by_value
   attach_function 'land_use_l24', [], ExcelValue.by_value
   attach_function 'land_use_m24', [], ExcelValue.by_value
+  attach_function 'land_use_d30', [], ExcelValue.by_value
+  attach_function 'land_use_e30', [], ExcelValue.by_value
+  attach_function 'land_use_f30', [], ExcelValue.by_value
+  attach_function 'land_use_d31', [], ExcelValue.by_value
+  attach_function 'land_use_e31', [], ExcelValue.by_value
+  attach_function 'land_use_f31', [], ExcelValue.by_value
+  attach_function 'land_use_d32', [], ExcelValue.by_value
+  attach_function 'land_use_e32', [], ExcelValue.by_value
+  attach_function 'land_use_f32', [], ExcelValue.by_value
+  attach_function 'land_use_d33', [], ExcelValue.by_value
+  attach_function 'land_use_e33', [], ExcelValue.by_value
+  attach_function 'land_use_f33', [], ExcelValue.by_value
+  attach_function 'land_use_d34', [], ExcelValue.by_value
+  attach_function 'land_use_e34', [], ExcelValue.by_value
+  attach_function 'land_use_f34', [], ExcelValue.by_value
+  attach_function 'land_use_d35', [], ExcelValue.by_value
+  attach_function 'land_use_e35', [], ExcelValue.by_value
+  attach_function 'land_use_f35', [], ExcelValue.by_value
+  attach_function 'land_use_d36', [], ExcelValue.by_value
+  attach_function 'land_use_e36', [], ExcelValue.by_value
+  attach_function 'land_use_f36', [], ExcelValue.by_value
+  attach_function 'land_use_d37', [], ExcelValue.by_value
+  attach_function 'land_use_e37', [], ExcelValue.by_value
+  attach_function 'land_use_f37', [], ExcelValue.by_value
+  attach_function 'land_use_d38', [], ExcelValue.by_value
+  attach_function 'land_use_e38', [], ExcelValue.by_value
+  attach_function 'land_use_f38', [], ExcelValue.by_value
+  attach_function 'land_use_d39', [], ExcelValue.by_value
+  attach_function 'land_use_e39', [], ExcelValue.by_value
+  attach_function 'land_use_f39', [], ExcelValue.by_value
+  attach_function 'land_use_d40', [], ExcelValue.by_value
+  attach_function 'land_use_e40', [], ExcelValue.by_value
+  attach_function 'land_use_f40', [], ExcelValue.by_value
+  attach_function 'land_use_d41', [], ExcelValue.by_value
+  attach_function 'land_use_e41', [], ExcelValue.by_value
+  attach_function 'land_use_f41', [], ExcelValue.by_value
+  attach_function 'land_use_d42', [], ExcelValue.by_value
+  attach_function 'land_use_e42', [], ExcelValue.by_value
+  attach_function 'land_use_f42', [], ExcelValue.by_value
   attach_function 'land_use_b2', [], ExcelValue.by_value
   attach_function 'land_use_c4', [], ExcelValue.by_value
   attach_function 'land_use_d4', [], ExcelValue.by_value
@@ -7456,6 +7449,13 @@ module Model
   attach_function 'land_use_o24', [], ExcelValue.by_value
   attach_function 'land_use_p24', [], ExcelValue.by_value
   attach_function 'land_use_q24', [], ExcelValue.by_value
+  attach_function 'land_use_b27', [], ExcelValue.by_value
+  attach_function 'land_use_d29', [], ExcelValue.by_value
+  attach_function 'land_use_e29', [], ExcelValue.by_value
+  attach_function 'land_use_f29', [], ExcelValue.by_value
+  attach_function 'land_use_d43', [], ExcelValue.by_value
+  attach_function 'land_use_e43', [], ExcelValue.by_value
+  attach_function 'land_use_f43', [], ExcelValue.by_value
   # end of Land Use
   attach_function 'flows_c6', [], ExcelValue.by_value
   attach_function 'flows_d6', [], ExcelValue.by_value
@@ -25982,6 +25982,7 @@ module Model
   attach_function 'output_costpercapita_detail', [], ExcelValue.by_value
   attach_function 'output_diversity', [], ExcelValue.by_value
   attach_function 'output_flows', [], ExcelValue.by_value
+  attach_function 'output_heating_mix', [], ExcelValue.by_value
   attach_function 'output_imports_proportion', [], ExcelValue.by_value
   attach_function 'output_imports_quantity', [], ExcelValue.by_value
   attach_function 'output_shannonweinerindex', [], ExcelValue.by_value
@@ -25999,6 +26000,7 @@ module Model
   attach_function 'output_costpercapita_detail', [], ExcelValue.by_value
   attach_function 'output_diversity', [], ExcelValue.by_value
   attach_function 'output_flows', [], ExcelValue.by_value
+  attach_function 'output_heating_mix', [], ExcelValue.by_value
   attach_function 'output_imports_proportion', [], ExcelValue.by_value
   attach_function 'output_imports_quantity', [], ExcelValue.by_value
   attach_function 'output_shannonweinerindex', [], ExcelValue.by_value

@@ -3248,6 +3248,45 @@ class TestModel < Minitest::Unit::TestCase
   def test_flows_l94; assert_in_epsilon(2.4773285985249154, worksheet.flows_l94, 0.002); end
   def test_flows_m94; assert_in_epsilon(1.3990216211082986, worksheet.flows_m94, 0.002); end
   def test_flows_n94; assert_in_delta(0.8796886721714566, worksheet.flows_n94, 0.002); end
+  def test_land_use_d30; assert_equal("Gas boiler (old)", worksheet.land_use_d30); end
+  def test_land_use_e30; assert_in_delta(0.0, (worksheet.land_use_e30||0), 0.002); end
+  def test_land_use_f30; assert_in_delta(0.0, (worksheet.land_use_f30||0), 0.002); end
+  def test_land_use_d31; assert_equal("Gas boiler (new)", worksheet.land_use_d31); end
+  def test_land_use_e31; assert_in_delta(0.0, (worksheet.land_use_e31||0), 0.002); end
+  def test_land_use_f31; assert_in_delta(0.001, worksheet.land_use_f31, 0.002); end
+  def test_land_use_d32; assert_equal("Resistive heating", worksheet.land_use_d32); end
+  def test_land_use_e32; assert_in_delta(0.0, (worksheet.land_use_e32||0), 0.002); end
+  def test_land_use_f32; assert_in_delta(0.0, (worksheet.land_use_f32||0), 0.002); end
+  def test_land_use_d33; assert_equal("Oil-fired boiler", worksheet.land_use_d33); end
+  def test_land_use_e33; assert_in_delta(0.0, (worksheet.land_use_e33||0), 0.002); end
+  def test_land_use_f33; assert_in_delta(0.0, (worksheet.land_use_f33||0), 0.002); end
+  def test_land_use_d34; assert_equal("Solid-fuel boiler", worksheet.land_use_d34); end
+  def test_land_use_e34; assert_in_delta(0.0, (worksheet.land_use_e34||0), 0.002); end
+  def test_land_use_f34; assert_in_delta(0.0, (worksheet.land_use_f34||0), 0.002); end
+  def test_land_use_d35; assert_equal("Stirling engine micro-CHP", worksheet.land_use_d35); end
+  def test_land_use_e35; assert_in_delta(0.0, (worksheet.land_use_e35||0), 0.002); end
+  def test_land_use_f35; assert_in_delta(0.0, (worksheet.land_use_f35||0), 0.002); end
+  def test_land_use_d36; assert_equal("Fuel-cell micro-CHP", worksheet.land_use_d36); end
+  def test_land_use_e36; assert_in_delta(0.0, (worksheet.land_use_e36||0), 0.002); end
+  def test_land_use_f36; assert_in_delta(0.0, (worksheet.land_use_f36||0), 0.002); end
+  def test_land_use_d37; assert_equal("Air-source heat pump", worksheet.land_use_d37); end
+  def test_land_use_e37; assert_in_delta(0.58, worksheet.land_use_e37, 0.002); end
+  def test_land_use_f37; assert_in_delta(0.18, worksheet.land_use_f37, 0.002); end
+  def test_land_use_d38; assert_equal("Ground-source heat pump", worksheet.land_use_d38); end
+  def test_land_use_e38; assert_in_delta(0.3, worksheet.land_use_e38, 0.002); end
+  def test_land_use_f38; assert_in_delta(0.3, worksheet.land_use_f38, 0.002); end
+  def test_land_use_d39; assert_equal("Geothermal electricity", worksheet.land_use_d39); end
+  def test_land_use_e39; assert_in_delta(0.01, worksheet.land_use_e39, 0.002); end
+  def test_land_use_f39; assert_in_delta(0.0, (worksheet.land_use_f39||0), 0.002); end
+  def test_land_use_d40; assert_equal("Community scale gas CHP with local district heating", worksheet.land_use_d40); end
+  def test_land_use_e40; assert_in_delta(0.0, (worksheet.land_use_e40||0), 0.002); end
+  def test_land_use_f40; assert_in_delta(0.0, (worksheet.land_use_f40||0), 0.002); end
+  def test_land_use_d41; assert_equal("Community scale solid-fuel CHP with local district heating", worksheet.land_use_d41); end
+  def test_land_use_e41; assert_in_delta(0.0, (worksheet.land_use_e41||0), 0.002); end
+  def test_land_use_f41; assert_in_delta(0.45, worksheet.land_use_f41, 0.002); end
+  def test_land_use_d42; assert_equal("Long distance district heating from large power stations", worksheet.land_use_d42); end
+  def test_land_use_e42; assert_in_delta(0.11, worksheet.land_use_e42, 0.002); end
+  def test_land_use_f42; assert_in_delta(0.07, worksheet.land_use_f42, 0.002); end
   def test_intermediate_output_b2; assert_equal("Energy source / use charts", worksheet.intermediate_output_b2); end
   def test_intermediate_output_h3; assert_equal("Historic data:", worksheet.intermediate_output_h3); end
   def test_intermediate_output_ay3; assert_equal("2050 Calculator calculations", worksheet.intermediate_output_ay3); end
@@ -8221,52 +8260,6 @@ class TestModel < Minitest::Unit::TestCase
   def test_intermediate_output_bf326; assert_in_epsilon(406.17887527048237, worksheet.intermediate_output_bf326, 0.002); end
   def test_intermediate_output_bg326; assert_in_epsilon(422.891890592793, worksheet.intermediate_output_bg326, 0.002); end
   def test_intermediate_output_bh326; assert_in_epsilon(438.4143424811816, worksheet.intermediate_output_bh326, 0.002); end
-  def test_intermediate_output_b329; assert_equal("Heating, format for web-based interface", worksheet.intermediate_output_b329); end
-  def test_intermediate_output_d331; assert_equal("2050 Split of heating technology", worksheet.intermediate_output_d331); end
-  def test_intermediate_output_e331; assert_equal("Residential ", worksheet.intermediate_output_e331); end
-  def test_intermediate_output_f331; assert_equal("Commercial", worksheet.intermediate_output_f331); end
-  def test_intermediate_output_d332; assert_equal("Gas boiler (old)", worksheet.intermediate_output_d332); end
-  def test_intermediate_output_e332; assert_in_delta(0.0, (worksheet.intermediate_output_e332||0), 0.002); end
-  def test_intermediate_output_f332; assert_in_delta(0.0, (worksheet.intermediate_output_f332||0), 0.002); end
-  def test_intermediate_output_d333; assert_equal("Gas boiler (new)", worksheet.intermediate_output_d333); end
-  def test_intermediate_output_e333; assert_in_delta(0.0, (worksheet.intermediate_output_e333||0), 0.002); end
-  def test_intermediate_output_f333; assert_in_delta(0.001, worksheet.intermediate_output_f333, 0.002); end
-  def test_intermediate_output_d334; assert_equal("Resistive heating", worksheet.intermediate_output_d334); end
-  def test_intermediate_output_e334; assert_in_delta(0.0, (worksheet.intermediate_output_e334||0), 0.002); end
-  def test_intermediate_output_f334; assert_in_delta(0.0, (worksheet.intermediate_output_f334||0), 0.002); end
-  def test_intermediate_output_d335; assert_equal("Oil-fired boiler", worksheet.intermediate_output_d335); end
-  def test_intermediate_output_e335; assert_in_delta(0.0, (worksheet.intermediate_output_e335||0), 0.002); end
-  def test_intermediate_output_f335; assert_in_delta(0.0, (worksheet.intermediate_output_f335||0), 0.002); end
-  def test_intermediate_output_d336; assert_equal("Solid-fuel boiler", worksheet.intermediate_output_d336); end
-  def test_intermediate_output_e336; assert_in_delta(0.0, (worksheet.intermediate_output_e336||0), 0.002); end
-  def test_intermediate_output_f336; assert_in_delta(0.0, (worksheet.intermediate_output_f336||0), 0.002); end
-  def test_intermediate_output_d337; assert_equal("Stirling engine micro-CHP", worksheet.intermediate_output_d337); end
-  def test_intermediate_output_e337; assert_in_delta(0.0, (worksheet.intermediate_output_e337||0), 0.002); end
-  def test_intermediate_output_f337; assert_in_delta(0.0, (worksheet.intermediate_output_f337||0), 0.002); end
-  def test_intermediate_output_d338; assert_equal("Fuel-cell micro-CHP", worksheet.intermediate_output_d338); end
-  def test_intermediate_output_e338; assert_in_delta(0.0, (worksheet.intermediate_output_e338||0), 0.002); end
-  def test_intermediate_output_f338; assert_in_delta(0.0, (worksheet.intermediate_output_f338||0), 0.002); end
-  def test_intermediate_output_d339; assert_equal("Air-source heat pump", worksheet.intermediate_output_d339); end
-  def test_intermediate_output_e339; assert_in_delta(0.58, worksheet.intermediate_output_e339, 0.002); end
-  def test_intermediate_output_f339; assert_in_delta(0.18, worksheet.intermediate_output_f339, 0.002); end
-  def test_intermediate_output_d340; assert_equal("Ground-source heat pump", worksheet.intermediate_output_d340); end
-  def test_intermediate_output_e340; assert_in_delta(0.3, worksheet.intermediate_output_e340, 0.002); end
-  def test_intermediate_output_f340; assert_in_delta(0.3, worksheet.intermediate_output_f340, 0.002); end
-  def test_intermediate_output_d341; assert_equal("Geothermal electricity", worksheet.intermediate_output_d341); end
-  def test_intermediate_output_e341; assert_in_delta(0.01, worksheet.intermediate_output_e341, 0.002); end
-  def test_intermediate_output_f341; assert_in_delta(0.0, (worksheet.intermediate_output_f341||0), 0.002); end
-  def test_intermediate_output_d342; assert_equal("Community scale gas CHP with local district heating", worksheet.intermediate_output_d342); end
-  def test_intermediate_output_e342; assert_in_delta(0.0, (worksheet.intermediate_output_e342||0), 0.002); end
-  def test_intermediate_output_f342; assert_in_delta(0.0, (worksheet.intermediate_output_f342||0), 0.002); end
-  def test_intermediate_output_d343; assert_equal("Community scale solid-fuel CHP with local district heating", worksheet.intermediate_output_d343); end
-  def test_intermediate_output_e343; assert_in_delta(0.0, (worksheet.intermediate_output_e343||0), 0.002); end
-  def test_intermediate_output_f343; assert_in_delta(0.45, worksheet.intermediate_output_f343, 0.002); end
-  def test_intermediate_output_d344; assert_equal("Long distance district heating from large power stations", worksheet.intermediate_output_d344); end
-  def test_intermediate_output_e344; assert_in_delta(0.11, worksheet.intermediate_output_e344, 0.002); end
-  def test_intermediate_output_f344; assert_in_delta(0.07, worksheet.intermediate_output_f344, 0.002); end
-  def test_intermediate_output_d345; assert_equal("Total", worksheet.intermediate_output_d345); end
-  def test_intermediate_output_e345; assert_in_delta(1.0, worksheet.intermediate_output_e345, 0.002); end
-  def test_intermediate_output_f345; assert_in_delta(1.0, worksheet.intermediate_output_f345, 0.002); end
   def test_land_use_b2; assert_equal("Land use implications", worksheet.land_use_b2); end
   def test_land_use_c4; assert_equal("Vector", worksheet.land_use_c4); end
   def test_land_use_d4; assert_in_epsilon(2007.0, worksheet.land_use_d4, 0.002); end
@@ -8363,6 +8356,13 @@ class TestModel < Minitest::Unit::TestCase
   def test_land_use_o24; assert_equal("B.03", worksheet.land_use_o24); end
   def test_land_use_p24; assert_equal("Number of units", worksheet.land_use_p24); end
   def test_land_use_q24; assert_equal("#", worksheet.land_use_q24); end
+  def test_land_use_b27; assert_equal("Heating, format for web-based interface", worksheet.land_use_b27); end
+  def test_land_use_d29; assert_equal("2050 Split of heating technology", worksheet.land_use_d29); end
+  def test_land_use_e29; assert_equal("Residential ", worksheet.land_use_e29); end
+  def test_land_use_f29; assert_equal("Commercial", worksheet.land_use_f29); end
+  def test_land_use_d43; assert_equal("Total", worksheet.land_use_d43); end
+  def test_land_use_e43; assert_in_delta(1.0, worksheet.land_use_e43, 0.002); end
+  def test_land_use_f43; assert_in_delta(1.0, worksheet.land_use_f43, 0.002); end
   def test_flows_b2; assert_equal("Flows through the energy system (for producing an energy flow diagram)", worksheet.flows_b2); end
   def test_flows_q2; assert_equal("Cross check of flows through the energy system (based on the idea that energy is transformed, but not destroyed)", worksheet.flows_q2); end
   def test_flows_n4; assert_equal("TWh", worksheet.flows_n4); end

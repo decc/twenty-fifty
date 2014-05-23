@@ -83,14 +83,14 @@ class DataFromModel
   end
   
   def heating
-    h = {'residential' => {}, 'commercial' => {}}
-
-    (332..344).each do |row|
-      h['residential'][r("intermediate_output_d#{row}")] = r("intermediate_output_e#{row}")
-      h['commercial'][r("intermediate_output_d#{row}")] = r("intermediate_output_f#{row}")
+    r = {} # For residential heating technologies
+    c = {} # For commercial heating technologies
+    excel.output_heating_mix.each do |technology|
+      name = technology[0]
+      r[name] = technology[1]
+      c[name] = technology[2]
     end
-
-    h
+    {'residential' => r, 'commercial' => c}
   end
   
   def costs
