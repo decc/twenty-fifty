@@ -189,6 +189,8 @@ window.twentyfifty.views.map = function() {
 
   // This is a helper method for drawing the blocks of circles representating power stations of a particular type
   this.point_stack = function(x, y, number, colour, label, size) {
+    var i, x_count, width, x_step, y_step;
+
     x_count = 0;
     if (size < 10) {
       x_step = 5;
@@ -220,15 +222,17 @@ window.twentyfifty.views.map = function() {
 
   // Called when new data arrives
   this.updateResults = function(data) {
+    var i, len, map, values, value, x, y, box, side;
+
     map = data.map;
 
     // Draw the line for wave machines
-    if (map.wave > 0) {
+    if (map['III.c.Wave'] > 0) {
       this.wave.label.show();
     } else {
       this.wave.label.hide();
     };
-    this.wave.line.attr({ path: ["M", 100, 30, "l", 0, map.wave * km] });
+    this.wave.line.attr({ path: ["M", 100, 30, "l", 0, map['III.c.Wave'] * km] });
 
     // Now draw the land boxes in the right spot
     y = map_height + map_offset_y - 100;
@@ -316,11 +320,13 @@ window.twentyfifty.views.map = function() {
     values.sort(function(a, b) { return b.value - a.value; });
 
     for (i = 0, len = values.length; i < len; i++) {
+      console.log(i, len, values[i]);
       value = values[i];
       if (value.value >= 1) {
         size = Math.round(Math.sqrt(pointSizes[value.name]) * 10);
         y = this.point_stack(x, y, value.value, colours[value.name], "" + (Math.round(value.value)) + " x " + labels[value.name], size);
       }
+      console.log(i);
     }
     this.points = this.r.setFinish();
   }

@@ -153,11 +153,9 @@ class DataFromModel
   
   def map
     m = {}
-    m['wave'] = r("land_use_q28")
-    [6..12,16..19,23..24,32..37].each do |range|
-      range.to_a.each do |row|
-        m[r("land_use_c#{row}")] = r("land_use_q#{row}")
-      end
+    excel.output_areas.each do |sector|
+      # Ignoring all the land use for intermediate years
+      m[sector[0]] = sector[-1]
     end
     m
   end
