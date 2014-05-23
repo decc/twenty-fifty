@@ -2,12 +2,12 @@ GEM
   remote: http://rubygems.org/
   specs:
     diff-lcs (1.2.5)
-    excel_to_code (0.2.22)
-      ffi (>= 1.0.11)
-      nokogiri (>= 1.5.0)
-      ox (>= 2.0.12)
-      rspec (>= 2.7.0)
-      rubypeg
+    excel_to_code (0.2.25)
+      ffi (~> 1.0, >= 1.0.11)
+      nokogiri (~> 1.5, >= 1.5.0)
+      ox (~> 2.0, >= 2.0.12)
+      rspec (~> 2.7, >= 2.7.0)
+      rubypeg (~> 0)
     ffi (1.9.3)
     hike (1.2.3)
     json (1.8.1)
