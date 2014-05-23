@@ -94,83 +94,9 @@ class DataFromModel
   end
   
   def costs
-    return convert_table_into_hash(excel.output_costpercapita_detail)
-
-    t = {}
-    low_start_row = 3
-    point_start_row = 57
-    high_start_row = 112
-    number_of_components = 49
-    
-    # Normal cost components
-    (0..number_of_components).to_a.each do |i|
-            
-      name          = r("costpercapita_b#{low_start_row+i}")
-      
-      low           = r("costpercapita_as#{low_start_row+i}")
-      point         = r("costpercapita_as#{point_start_row+i}")
-      high          = r("costpercapita_as#{high_start_row+i}")
-      range         = high - low
-      
-      finance_low   = 0 # r("costpercapita_cp{low_start_row+i}") # Bodge for the zero interest rate at low
-      finance_point = r("costpercapita_cp#{point_start_row+i}")
-      finance_high  = r("costpercapita_cp#{high_start_row+i}")
-      finance_range = finance_high - finance_low
-      
-      costs = {low:low,point:point,high:high,range:range,finance_low:finance_low,finance_point:finance_point,finance_high:finance_high,finance_range:finance_range}
-      if t.has_key?(name)
-        t[name] = sum(t[name],costs)
-      else
-        t[name] = costs
-      end
-    end
-    
-    # Merge some of the points
-    t['Coal'] = sum(t['Indigenous fossil-fuel production - Coal'],t['Balancing imports - Coal'])
-    t.delete 'Indigenous fossil-fuel production - Coal'
-    t.delete 'Balancing imports - Coal'
-    t['Oil'] = sum(t['Indigenous fossil-fuel production - Oil'],t['Balancing imports - Oil'])
-    t.delete 'Indigenous fossil-fuel production - Oil'
-    t.delete 'Balancing imports - Oil'
-    t['Gas'] = sum(t['Indigenous fossil-fuel production - Gas'],t['Balancing imports - Gas'])
-    t.delete 'Indigenous fossil-fuel production - Gas'
-    t.delete 'Balancing imports - Gas'
-    
-    # Finance cost
-    name          = "Finance cost"
-    
-    low           = 0 # r("costpercapita_cp#{low_start_row+number_of_components+1}") # Bodge for the zero interest rate at low
-    point         = r("costpercapita_cp#{point_start_row+number_of_components+1}")
-    high          = r("costpercapita_cp#{high_start_row+number_of_components+1}")
-    range         = high - low
-    
-    finance_low   = 0 # r("costpercapita_cp{low_start_row+i}") # Bodge for the zero interest rate at low
-    finance_point = 0
-    finance_high  = 0
-    finance_range = finance_high - finance_low
-    
-    t[name] = {low:low,point:point,high:high,range:range,finance_low:finance_low,finance_point:finance_point,finance_high:finance_high,finance_range:finance_range}
-  
-    t
+    convert_table_into_hash(excel.output_costpercapita_detail)
   end
 
-  # Takes something like
-  # [["name", "thing1", "thing2"], ["A", 1, 2], ["B", 2, 3]]
-  # and turns it into:
-  # { "A" => { "name" => "A", "thing1" => 1, "thing2" => 2 }, "B" => { "name" => "B", "thing1" => 2, "thing2" => 3}}
-  def convert_table_into_hash(table)
-    headers = table.shift
-    hash = {}
-    table.each do |row|
-      row_hash = {}
-      row.each.with_index do |cell, i|
-        row_hash[headers[i]] = cell
-      end
-      hash[row[0]] = row_hash
-    end
-    hash
-  end
-  
   def map
     m = {}
     excel.output_areas.each do |sector|
@@ -305,7 +231,24 @@ class DataFromModel
   def percent(proportion)
     "#{(proportion * 100).round}%"
   end
-
+  
+  # Takes something like
+  # [["name", "thing1", "thing2"], ["A", 1, 2], ["B", 2, 3]]
+  # and turns it into:
+  # { "A" => { "name" => "A", "thing1" => 1, "thing2" => 2 }, "B" => { "name" => "B", "thing1" => 2, "thing2" => 3}}
+  def convert_table_into_hash(table)
+    headers = table.shift
+    hash = {}
+    table.each do |row|
+      row_hash = {}
+      row.each.with_index do |cell, i|
+        row_hash[headers[i]] = cell
+      end
+      hash[row[0]] = row_hash
+    end
+    hash
+  end
+  
   # FIXME: Only wraps one line into two
   def wrap(string, wrap_at_length = 45)
     return "" unless string
