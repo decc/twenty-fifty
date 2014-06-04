@@ -60,6 +60,7 @@ window.timeSeriesStackedAreaChart = function() {
     'Lighting & appliances': 'lightingappliances',
     'LULUCF': 'lulucf',
     'Natural gas': 'gas',
+    'Gas': 'gas',
     'Nuclear fission': 'nuclear',
     'Nuclear power': 'nuclear',
     'Oil and petroleum products': 'oil',
