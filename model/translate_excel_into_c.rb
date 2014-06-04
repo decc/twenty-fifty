@@ -19,9 +19,6 @@ def setup(command)
 
   command.cells_to_keep = {
     "Intermediate output" => :all, 
-    "CostPerCapita" => :all, 
-    "Land Use" => :all, 
-    "Flows" => :all, 
   }
 
   command.actually_compile_code = true

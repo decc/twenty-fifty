@@ -66,11 +66,11 @@ class DataFromModel
   end
 
   def final_energy_demand
-    table 13, 18
+    convert_table_into_chart_grid(excel.output_finalenergydemand)
   end
 
   def primary_energy_supply
-    table 283, 296
+    convert_table_into_chart_grid(excel.output_primaryenergysupply)
   end
   
   def electricity
@@ -245,6 +245,20 @@ class DataFromModel
         row_hash[headers[i]] = cell
       end
       hash[row[0]] = row_hash
+    end
+    hash
+  end
+
+  # Takes something like
+  # [["name", "thing1", "thing2"], ["A", 1, 2], ["B", 2, 3]]
+  # and turns it into:
+  # { "A" => [1,2], "B" => [2,3] }
+  def convert_table_into_chart_grid(table)
+    table.shift # ignore the headers
+    hash = {}
+    table.each do |row|
+      name = row.shift
+      hash[name] = row
     end
     hash
   end
