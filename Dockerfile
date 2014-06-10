@@ -39,7 +39,7 @@ RUN ruby compile_c_version_if_needed.rb
 
 # Precompile templates (can't do later becase filesystem may be readonly)
 WORKDIR /home/app/2050/src
-RUN ruby complile_template.rb
+RUN ruby compile_template.rb
 
 # Now need to build this image
 # e.g., docker build .
