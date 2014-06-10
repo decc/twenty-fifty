@@ -1,11 +1,4 @@
-# encoding: utf-8
-require 'rubygems'
-require 'bundler'
-Bundler.setup
-
-require_relative 'src/server'
-
-ENV['RACK_ENV'] = ENV['RAILS_ENV'] if ENV['RAILS_ENV']
+require_relative 'server'
 
 # When in production mode, we precompile the templates and javascripts
 class CompileTemplate
@@ -13,31 +6,31 @@ class CompileTemplate
 
   def manifest_file
     # We need to figure out the filename of the latest javascript and css
-    File.join(File.dirname(__FILE__), '/public/assets/manifest.json')
+    File.join(File.dirname(__FILE__), '../public/assets/manifest.json')
   end
 
   def erb_file
-    File.join(File.dirname(__FILE__), 'src/index.html.erb')
+    File.join(File.dirname(__FILE__), 'index.html.erb')
   end
 
   def html_file
-    File.join(File.dirname(__FILE__), 'public/index.html')
+    File.join(File.dirname(__FILE__), '../public/index.html')
   end
 
   def javascript_dir
-    File.join(File.dirname(__FILE__), 'src/javascripts')
+    File.join(File.dirname(__FILE__), 'javascripts')
   end
 
   def stylesheet_dir
-    File.join(File.dirname(__FILE__), 'src/stylesheets')
+    File.join(File.dirname(__FILE__), 'stylesheets')
   end
 
   def contrib_dir
-    File.join(File.dirname(__FILE__), 'contrib')
+    File.join(File.dirname(__FILE__), '../contrib')
   end
 
   def manifest_dir
-    File.join(File.dirname(__FILE__), 'public/assets/manifest.json')
+    File.join(File.dirname(__FILE__), '../public/assets/manifest.json')
   end
 
   def compile!
@@ -80,29 +73,6 @@ class CompileTemplate
 
 end
 
-if ENV['RACK_ENV'] == 'production'
+if __FILE__ == $0
   CompileTemplate.new.compile!
-else
-  CompileTemplate.new.remove!
-end
-
-
-map '/' do
-  use Rack::CommonLogger
-  map '/assets' do
-    require 'sprockets'
-    environment = Sprockets::Environment.new
-
-    environment.append_path 'src/javascripts'
-    environment.append_path 'src/stylesheets'
-    environment.append_path 'public/assets'
-    environment.append_path 'contrib'
-
-    environment.context_class.class_eval do 
-      include Helper
-    end
-
-    run environment
-  end
-  run TwentyFiftyServer
 end
