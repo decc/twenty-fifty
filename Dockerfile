@@ -23,6 +23,9 @@ RUN ruby-switch --set ruby2.1
 # Add the nginx configuration for the server which will be on port 8080
 ADD util/nginx.conf /etc/nginx/sites-enabled/2050.conf
 
+# Remove the default configuration
+RUN rm -f /etc/nginx/sites-enabled/default
+
 # Enable Nginx server
 RUN rm -f /etc/service/nginx/down
 
