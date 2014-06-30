@@ -54,31 +54,34 @@ class DataFromModel
       
   def sankey
     # Currently only do the Sankey for the last year (2050)
+    # output_flows is the named reference output.flows in the Excel
     excel.output_flows.map do |row|
       [row[0], row[-1], row[1]]
     end
   end
 
   def ghg
-    h = table 182, 192
-    h['percent_reduction_from_1990'] =  (r("intermediate_output_bh155") * 100).round
+    h = convert_table_into_chart_grid(excel.output_ghg_by_ipcc_sector)
+    h['percent_reduction_from_1990'] =  (excel.output_ghg_percentage_reduction * 100).round
     h
   end
 
   def final_energy_demand
+    # This is the output.finalenergydemand named reference in the Excel
     convert_table_into_chart_grid(excel.output_finalenergydemand)
   end
 
   def primary_energy_supply
+    # This is the output.primaryenergysupply named reference in the Excel
     convert_table_into_chart_grid(excel.output_primaryenergysupply)
   end
   
   def electricity
     {
-      'demand' => table(322, 326),
-      'supply' => table(96, 111),
-      'emissions' => table(270, 273),
-      'capacity' => table(118, 132),
+      'demand' => convert_table_into_chart_grid(excel.output_electricity_demand),
+      'supply' => convert_table_into_chart_grid(excel.output_electricity_supply),
+      'emissions' => convert_table_into_chart_grid(excel.output_electricity_ghg),
+      'capacity' => convert_table_into_chart_grid(excel.output_electricity_capacity)
     }
   end
   
