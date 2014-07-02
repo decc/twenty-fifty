@@ -124,6 +124,10 @@ class TwentyFiftyServer < Sinatra::Base
 
   enable :lock # The C 2050 model is not thread safe
 
+  # This allows users to download the excel spreadsheet version of the model
+  get '/model.xlsx' do
+    send_file 'model/model.xlsx'
+  end
 
   # This has the methods needed to dynamically create the view
   if development?
