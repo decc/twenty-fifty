@@ -71,7 +71,10 @@
       <% structure.example_pathways.each do |pathway| %>
         <a href='#' onclick="twentyfifty.switchPathway('<%= pathway[:code] %>');$('ul#savedpathway_choices').toggle()"><%= pathway[:name] %></a>
       <% end %>
+      <!-- Change this to point to your local website -->
+      <a href='http://2050-calculator-tool-wiki.decc.gov.uk/pages/122'>More&hellip;<a/>
     </div>
+    <!-- This appears while the tool is waiting for data from the server -->
     <div id='calculating'>
       <span>Calculating</span>
     </div>
