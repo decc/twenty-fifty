@@ -3,9 +3,14 @@ require 'rubygems'
 require 'bundler'
 Bundler.setup
 
+# The actual server code is in src/server.rb
 require_relative 'src/server'
+
+# src/compile_template.rb deals with turning the src/index.html.erb into the main page
 require_relative 'src/compile_template'
 
+# The server can run in two modes, 'production' and 'development'
+# the mode is set in the RACK_ENV or RAILS_ENV environment variables
 ENV['RACK_ENV'] = ENV['RAILS_ENV'] if ENV['RAILS_ENV']
 
 # When in production mode, we precompile the templates and javascripts
@@ -16,9 +21,16 @@ else
   CompileTemplate.new.remove!
 end
 
+# This sets up the bits of the server
 map '/' do
+  # This logs access and errors
   use Rack::CommonLogger
+
+  # This is used in development mode to assemble all the javascripts in src/javascripts
+  # into /assets/application.js and all the stylesheets in src/stylesheets into
+  # /assets/application.css
   map '/assets' do
+    # https://github.com/sstephenson/sprockets
     require 'sprockets'
     environment = Sprockets::Environment.new
 
@@ -27,11 +39,13 @@ map '/' do
     environment.append_path 'public/assets'
     environment.append_path 'contrib'
 
+    # The Helper module is defined in src/server.rb
     environment.context_class.class_eval do 
       include Helper
     end
 
     run environment
   end
+  # This is defined in src/server.rb
   run TwentyFiftyServer
 end
