@@ -237,6 +237,8 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_x4; assert_equal("Mark Brinkley", worksheet.control_x4); end
   def test_control_y4; assert_equal("National Grid", worksheet.control_y4); end
   def test_control_z4; assert_equal("Atkins", worksheet.control_z4); end
+  def test_control_aa4; assert_equal("Association for Conservation of Energy", worksheet.control_aa4); end
+  def test_control_ab4; assert_equal("Sustainable Energy Association", worksheet.control_ab4); end
   def test_control_n5; assert_in_delta(1.0, worksheet.control_n5, 0.002); end
   def test_control_o5; assert_in_delta(1.0, worksheet.control_o5, 0.002); end
   def test_control_p5; assert_in_epsilon(4.0, worksheet.control_p5, 0.002); end
@@ -250,6 +252,8 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_x5; assert_in_epsilon(2.0, worksheet.control_x5, 0.002); end
   def test_control_y5; assert_in_epsilon(1.7, worksheet.control_y5, 0.002); end
   def test_control_z5; assert_in_epsilon(1.6, worksheet.control_z5, 0.002); end
+  def test_control_aa5; assert_in_delta(1.0, worksheet.control_aa5, 0.002); end
+  def test_control_ab5; assert_in_epsilon(1.4, worksheet.control_ab5, 0.002); end
   def test_control_n7; assert_in_delta(1.0, worksheet.control_n7, 0.002); end
   def test_control_o7; assert_in_delta(1.0, worksheet.control_o7, 0.002); end
   def test_control_p7; assert_in_epsilon(4.0, worksheet.control_p7, 0.002); end
@@ -263,6 +267,8 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_x7; assert_in_epsilon(2.0, worksheet.control_x7, 0.002); end
   def test_control_y7; assert_in_epsilon(1.7, worksheet.control_y7, 0.002); end
   def test_control_z7; assert_in_epsilon(1.5, worksheet.control_z7, 0.002); end
+  def test_control_aa7; assert_in_epsilon(1.5, worksheet.control_aa7, 0.002); end
+  def test_control_ab7; assert_in_epsilon(1.2, worksheet.control_ab7, 0.002); end
   def test_control_n8; assert_in_delta(1.0, worksheet.control_n8, 0.002); end
   def test_control_o8; assert_in_delta(1.0, worksheet.control_o8, 0.002); end
   def test_control_p8; assert_in_epsilon(4.0, worksheet.control_p8, 0.002); end
@@ -276,6 +282,8 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_x8; assert_in_epsilon(2.0, worksheet.control_x8, 0.002); end
   def test_control_y8; assert_in_epsilon(2.0, worksheet.control_y8, 0.002); end
   def test_control_z8; assert_in_epsilon(2.0, worksheet.control_z8, 0.002); end
+  def test_control_aa8; assert_in_epsilon(2.0, worksheet.control_aa8, 0.002); end
+  def test_control_ab8; assert_in_delta(1.0, worksheet.control_ab8, 0.002); end
   def test_control_n9; assert_in_delta(1.0, worksheet.control_n9, 0.002); end
   def test_control_o9; assert_in_delta(1.0, worksheet.control_o9, 0.002); end
   def test_control_p9; assert_in_epsilon(4.0, worksheet.control_p9, 0.002); end
@@ -289,6 +297,8 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_x9; assert_in_epsilon(2.0, worksheet.control_x9, 0.002); end
   def test_control_y9; assert_in_epsilon(1.6, worksheet.control_y9, 0.002); end
   def test_control_z9; assert_in_epsilon(2.4, worksheet.control_z9, 0.002); end
+  def test_control_aa9; assert_in_epsilon(2.7, worksheet.control_aa9, 0.002); end
+  def test_control_ab9; assert_in_epsilon(1.6, worksheet.control_ab9, 0.002); end
   def test_control_n10; assert_in_delta(1.0, worksheet.control_n10, 0.002); end
   def test_control_o10; assert_in_delta(1.0, worksheet.control_o10, 0.002); end
   def test_control_p10; assert_in_epsilon(4.0, worksheet.control_p10, 0.002); end
@@ -302,6 +312,8 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_x10; assert_in_delta(1.0, worksheet.control_x10, 0.002); end
   def test_control_y10; assert_in_epsilon(1.6, worksheet.control_y10, 0.002); end
   def test_control_z10; assert_in_epsilon(1.9, worksheet.control_z10, 0.002); end
+  def test_control_aa10; assert_in_delta(1.0, worksheet.control_aa10, 0.002); end
+  def test_control_ab10; assert_in_epsilon(1.2, worksheet.control_ab10, 0.002); end
   def test_control_n11; assert_in_delta(1.0, worksheet.control_n11, 0.002); end
   def test_control_o11; assert_in_delta(1.0, worksheet.control_o11, 0.002); end
   def test_control_p11; assert_in_epsilon(4.0, worksheet.control_p11, 0.002); end
@@ -315,6 +327,8 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_x11; assert_in_epsilon(4.0, worksheet.control_x11, 0.002); end
   def test_control_y11; assert_in_delta(1.0, worksheet.control_y11, 0.002); end
   def test_control_z11; assert_in_delta(1.0, worksheet.control_z11, 0.002); end
+  def test_control_aa11; assert_in_epsilon(1.9, worksheet.control_aa11, 0.002); end
+  def test_control_ab11; assert_in_delta(1.0, worksheet.control_ab11, 0.002); end
   def test_control_n12; assert_in_delta(1.0, worksheet.control_n12, 0.002); end
   def test_control_o12; assert_in_delta(1.0, worksheet.control_o12, 0.002); end
   def test_control_p12; assert_in_epsilon(4.0, worksheet.control_p12, 0.002); end
@@ -328,6 +342,8 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_x12; assert_in_epsilon(4.0, worksheet.control_x12, 0.002); end
   def test_control_y12; assert_in_epsilon(2.0, worksheet.control_y12, 0.002); end
   def test_control_z12; assert_in_delta(1.0, worksheet.control_z12, 0.002); end
+  def test_control_aa12; assert_in_epsilon(2.4, worksheet.control_aa12, 0.002); end
+  def test_control_ab12; assert_in_delta(1.0, worksheet.control_ab12, 0.002); end
   def test_control_n13; assert_in_delta(1.0, worksheet.control_n13, 0.002); end
   def test_control_o13; assert_in_delta(1.0, worksheet.control_o13, 0.002); end
   def test_control_p13; assert_in_epsilon(4.0, worksheet.control_p13, 0.002); end
@@ -341,6 +357,8 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_x13; assert_in_epsilon(4.0, worksheet.control_x13, 0.002); end
   def test_control_y13; assert_in_delta(1.0, worksheet.control_y13, 0.002); end
   def test_control_z13; assert_in_epsilon(2.9, worksheet.control_z13, 0.002); end
+  def test_control_aa13; assert_in_epsilon(2.5, worksheet.control_aa13, 0.002); end
+  def test_control_ab13; assert_in_delta(1.0, worksheet.control_ab13, 0.002); end
   def test_control_n14; assert_in_delta(1.0, worksheet.control_n14, 0.002); end
   def test_control_o14; assert_in_delta(1.0, worksheet.control_o14, 0.002); end
   def test_control_p14; assert_in_epsilon(4.0, worksheet.control_p14, 0.002); end
@@ -354,6 +372,8 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_x14; assert_in_delta(1.0, worksheet.control_x14, 0.002); end
   def test_control_y14; assert_in_delta(1.0, worksheet.control_y14, 0.002); end
   def test_control_z14; assert_in_delta(1.0, worksheet.control_z14, 0.002); end
+  def test_control_aa14; assert_in_delta(1.0, worksheet.control_aa14, 0.002); end
+  def test_control_ab14; assert_in_delta(1.0, worksheet.control_ab14, 0.002); end
   def test_control_n15; assert_in_delta(1.0, worksheet.control_n15, 0.002); end
   def test_control_o15; assert_in_delta(1.0, worksheet.control_o15, 0.002); end
   def test_control_p15; assert_in_epsilon(4.0, worksheet.control_p15, 0.002); end
@@ -367,6 +387,8 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_x15; assert_in_delta(1.0, worksheet.control_x15, 0.002); end
   def test_control_y15; assert_in_epsilon(1.2, worksheet.control_y15, 0.002); end
   def test_control_z15; assert_in_epsilon(2.7, worksheet.control_z15, 0.002); end
+  def test_control_aa15; assert_in_epsilon(1.5, worksheet.control_aa15, 0.002); end
+  def test_control_ab15; assert_in_epsilon(2.0, worksheet.control_ab15, 0.002); end
   def test_control_n16; assert_in_delta(1.0, worksheet.control_n16, 0.002); end
   def test_control_o16; assert_in_delta(1.0, worksheet.control_o16, 0.002); end
   def test_control_p16; assert_in_epsilon(4.0, worksheet.control_p16, 0.002); end
@@ -380,6 +402,8 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_x16; assert_in_epsilon(3.0, worksheet.control_x16, 0.002); end
   def test_control_y16; assert_in_epsilon(1.9, worksheet.control_y16, 0.002); end
   def test_control_z16; assert_in_epsilon(1.6, worksheet.control_z16, 0.002); end
+  def test_control_aa16; assert_in_epsilon(2.0, worksheet.control_aa16, 0.002); end
+  def test_control_ab16; assert_in_epsilon(2.0, worksheet.control_ab16, 0.002); end
   def test_control_n17; assert_in_delta(1.0, worksheet.control_n17, 0.002); end
   def test_control_o17; assert_in_delta(1.0, worksheet.control_o17, 0.002); end
   def test_control_p17; assert_in_epsilon(4.0, worksheet.control_p17, 0.002); end
@@ -393,6 +417,8 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_x17; assert_in_epsilon(4.0, worksheet.control_x17, 0.002); end
   def test_control_y17; assert_in_delta(1.0, worksheet.control_y17, 0.002); end
   def test_control_z17; assert_in_epsilon(2.6, worksheet.control_z17, 0.002); end
+  def test_control_aa17; assert_in_delta(1.0, worksheet.control_aa17, 0.002); end
+  def test_control_ab17; assert_in_delta(1.0, worksheet.control_ab17, 0.002); end
   def test_control_n18; assert_in_delta(1.0, worksheet.control_n18, 0.002); end
   def test_control_o18; assert_in_delta(1.0, worksheet.control_o18, 0.002); end
   def test_control_p18; assert_in_epsilon(4.0, worksheet.control_p18, 0.002); end
@@ -406,6 +432,8 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_x18; assert_in_delta(1.0, worksheet.control_x18, 0.002); end
   def test_control_y18; assert_in_epsilon(1.9, worksheet.control_y18, 0.002); end
   def test_control_z18; assert_in_epsilon(1.9, worksheet.control_z18, 0.002); end
+  def test_control_aa18; assert_in_delta(1.0, worksheet.control_aa18, 0.002); end
+  def test_control_ab18; assert_in_delta(1.0, worksheet.control_ab18, 0.002); end
   def test_control_n19; assert_in_delta(1.0, worksheet.control_n19, 0.002); end
   def test_control_o19; assert_in_delta(1.0, worksheet.control_o19, 0.002); end
   def test_control_p19; assert_in_epsilon(4.0, worksheet.control_p19, 0.002); end
@@ -419,6 +447,8 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_x19; assert_in_delta(1.0, worksheet.control_x19, 0.002); end
   def test_control_y19; assert_in_delta(1.0, worksheet.control_y19, 0.002); end
   def test_control_z19; assert_in_delta(1.0, worksheet.control_z19, 0.002); end
+  def test_control_aa19; assert_in_delta(1.0, worksheet.control_aa19, 0.002); end
+  def test_control_ab19; assert_in_epsilon(1.1, worksheet.control_ab19, 0.002); end
   def test_control_n20; assert_in_delta(1.0, worksheet.control_n20, 0.002); end
   def test_control_o20; assert_in_delta(1.0, worksheet.control_o20, 0.002); end
   def test_control_p20; assert_in_epsilon(4.0, worksheet.control_p20, 0.002); end
@@ -432,6 +462,8 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_x20; assert_in_delta(1.0, worksheet.control_x20, 0.002); end
   def test_control_y20; assert_in_delta(1.0, worksheet.control_y20, 0.002); end
   def test_control_z20; assert_in_epsilon(1.9, worksheet.control_z20, 0.002); end
+  def test_control_aa20; assert_in_delta(1.0, worksheet.control_aa20, 0.002); end
+  def test_control_ab20; assert_in_delta(1.0, worksheet.control_ab20, 0.002); end
   def test_control_n22; assert_in_delta(1.0, worksheet.control_n22, 0.002); end
   def test_control_o22; assert_in_delta(1.0, worksheet.control_o22, 0.002); end
   def test_control_p22; assert_in_epsilon(4.0, worksheet.control_p22, 0.002); end
@@ -445,6 +477,8 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_x22; assert_in_epsilon(3.0, worksheet.control_x22, 0.002); end
   def test_control_y22; assert_in_epsilon(3.0, worksheet.control_y22, 0.002); end
   def test_control_z22; assert_in_epsilon(3.0, worksheet.control_z22, 0.002); end
+  def test_control_aa22; assert_in_epsilon(3.0, worksheet.control_aa22, 0.002); end
+  def test_control_ab22; assert_in_epsilon(3.0, worksheet.control_ab22, 0.002); end
   def test_control_n23; assert_in_delta(1.0, worksheet.control_n23, 0.002); end
   def test_control_o23; assert_in_delta(1.0, worksheet.control_o23, 0.002); end
   def test_control_p23; assert_in_epsilon(4.0, worksheet.control_p23, 0.002); end
@@ -458,6 +492,8 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_x23; assert_in_epsilon(4.0, worksheet.control_x23, 0.002); end
   def test_control_y23; assert_in_epsilon(2.0, worksheet.control_y23, 0.002); end
   def test_control_z23; assert_in_epsilon(4.0, worksheet.control_z23, 0.002); end
+  def test_control_aa23; assert_in_epsilon(4.0, worksheet.control_aa23, 0.002); end
+  def test_control_ab23; assert_in_epsilon(4.0, worksheet.control_ab23, 0.002); end
   def test_control_n24; assert_in_delta(1.0, worksheet.control_n24, 0.002); end
   def test_control_o24; assert_in_delta(1.0, worksheet.control_o24, 0.002); end
   def test_control_p24; assert_in_epsilon(3.0, worksheet.control_p24, 0.002); end
@@ -471,6 +507,8 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_x24; assert_in_epsilon(3.0, worksheet.control_x24, 0.002); end
   def test_control_y24; assert_in_epsilon(2.0, worksheet.control_y24, 0.002); end
   def test_control_z24; assert_in_epsilon(3.0, worksheet.control_z24, 0.002); end
+  def test_control_aa24; assert_in_epsilon(4.0, worksheet.control_aa24, 0.002); end
+  def test_control_ab24; assert_in_epsilon(4.0, worksheet.control_ab24, 0.002); end
   def test_control_n25; assert_in_delta(1.0, worksheet.control_n25, 0.002); end
   def test_control_o25; assert_in_delta(1.0, worksheet.control_o25, 0.002); end
   def test_control_p25; assert_in_epsilon(4.0, worksheet.control_p25, 0.002); end
@@ -484,6 +522,8 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_x25; assert_in_epsilon(3.0, worksheet.control_x25, 0.002); end
   def test_control_y25; assert_in_epsilon(2.0, worksheet.control_y25, 0.002); end
   def test_control_z25; assert_in_delta(1.0, worksheet.control_z25, 0.002); end
+  def test_control_aa25; assert_in_delta(1.0, worksheet.control_aa25, 0.002); end
+  def test_control_ab25; assert_in_delta(1.0, worksheet.control_ab25, 0.002); end
   def test_control_n26; assert_in_delta(1.0, worksheet.control_n26, 0.002); end
   def test_control_o26; assert_in_delta(1.0, worksheet.control_o26, 0.002); end
   def test_control_p26; assert_in_epsilon(2.0, worksheet.control_p26, 0.002); end
@@ -497,6 +537,8 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_x26; assert_in_epsilon(2.0, worksheet.control_x26, 0.002); end
   def test_control_y26; assert_in_epsilon(2.0, worksheet.control_y26, 0.002); end
   def test_control_z26; assert_in_delta(1.0, worksheet.control_z26, 0.002); end
+  def test_control_aa26; assert_in_delta(1.0, worksheet.control_aa26, 0.002); end
+  def test_control_ab26; assert_in_delta(1.0, worksheet.control_ab26, 0.002); end
   def test_control_n27; assert_in_delta(1.0, worksheet.control_n27, 0.002); end
   def test_control_o27; assert_in_delta(1.0, worksheet.control_o27, 0.002); end
   def test_control_p27; assert_in_epsilon(4.0, worksheet.control_p27, 0.002); end
@@ -510,6 +552,8 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_x27; assert_in_delta(1.0, worksheet.control_x27, 0.002); end
   def test_control_y27; assert_in_epsilon(2.0, worksheet.control_y27, 0.002); end
   def test_control_z27; assert_in_delta(1.0, worksheet.control_z27, 0.002); end
+  def test_control_aa27; assert_in_delta(1.0, worksheet.control_aa27, 0.002); end
+  def test_control_ab27; assert_in_epsilon(2.0, worksheet.control_ab27, 0.002); end
   def test_control_n30; assert_in_delta(1.0, worksheet.control_n30, 0.002); end
   def test_control_o30; assert_in_epsilon(4.0, worksheet.control_o30, 0.002); end
   def test_control_p30; assert_in_delta(1.0, worksheet.control_p30, 0.002); end
@@ -523,6 +567,8 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_x30; assert_in_epsilon(3.0, worksheet.control_x30, 0.002); end
   def test_control_y30; assert_in_epsilon(3.0, worksheet.control_y30, 0.002); end
   def test_control_z30; assert_in_epsilon(3.0, worksheet.control_z30, 0.002); end
+  def test_control_aa30; assert_in_epsilon(4.0, worksheet.control_aa30, 0.002); end
+  def test_control_ab30; assert_in_epsilon(4.0, worksheet.control_ab30, 0.002); end
   def test_control_n31; assert_in_delta(1.0, worksheet.control_n31, 0.002); end
   def test_control_o31; assert_in_epsilon(4.0, worksheet.control_o31, 0.002); end
   def test_control_p31; assert_in_delta(1.0, worksheet.control_p31, 0.002); end
@@ -536,6 +582,8 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_x31; assert_in_epsilon(4.0, worksheet.control_x31, 0.002); end
   def test_control_y31; assert_in_epsilon(3.0, worksheet.control_y31, 0.002); end
   def test_control_z31; assert_in_epsilon(3.0, worksheet.control_z31, 0.002); end
+  def test_control_aa31; assert_in_delta(1.0, worksheet.control_aa31, 0.002); end
+  def test_control_ab31; assert_in_delta(1.0, worksheet.control_ab31, 0.002); end
   def test_control_n32; assert_in_delta(1.0, worksheet.control_n32, 0.002); end
   def test_control_o32; assert_in_epsilon(2.0, worksheet.control_o32, 0.002); end
   def test_control_p32; assert_in_epsilon(2.0, worksheet.control_p32, 0.002); end
@@ -549,6 +597,8 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_x32; assert_in_epsilon(2.0, worksheet.control_x32, 0.002); end
   def test_control_y32; assert_in_delta(1.0, worksheet.control_y32, 0.002); end
   def test_control_z32; assert_in_epsilon(2.0, worksheet.control_z32, 0.002); end
+  def test_control_aa32; assert_in_delta(1.0, worksheet.control_aa32, 0.002); end
+  def test_control_ab32; assert_in_delta(1.0, worksheet.control_ab32, 0.002); end
   def test_control_n33; assert_in_delta(1.0, worksheet.control_n33, 0.002); end
   def test_control_o33; assert_in_epsilon(4.0, worksheet.control_o33, 0.002); end
   def test_control_p33; assert_in_delta(1.0, worksheet.control_p33, 0.002); end
@@ -562,6 +612,8 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_x33; assert_in_epsilon(2.0, worksheet.control_x33, 0.002); end
   def test_control_y33; assert_in_epsilon(3.0, worksheet.control_y33, 0.002); end
   def test_control_z33; assert_in_epsilon(4.0, worksheet.control_z33, 0.002); end
+  def test_control_aa33; assert_in_epsilon(3.0, worksheet.control_aa33, 0.002); end
+  def test_control_ab33; assert_in_epsilon(4.0, worksheet.control_ab33, 0.002); end
   def test_control_n34; assert_in_delta(1.0, worksheet.control_n34, 0.002); end
   def test_control_o34; assert_in_epsilon(4.0, worksheet.control_o34, 0.002); end
   def test_control_p34; assert_in_delta(1.0, worksheet.control_p34, 0.002); end
@@ -575,6 +627,8 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_x34; assert_in_epsilon(4.0, worksheet.control_x34, 0.002); end
   def test_control_y34; assert_in_epsilon(2.0, worksheet.control_y34, 0.002); end
   def test_control_z34; assert_in_epsilon(2.0, worksheet.control_z34, 0.002); end
+  def test_control_aa34; assert_in_epsilon(3.0, worksheet.control_aa34, 0.002); end
+  def test_control_ab34; assert_in_epsilon(3.0, worksheet.control_ab34, 0.002); end
   def test_control_n35; assert_in_delta(1.0, worksheet.control_n35, 0.002); end
   def test_control_o35; assert_in_epsilon(4.0, worksheet.control_o35, 0.002); end
   def test_control_p35; assert_in_delta(1.0, worksheet.control_p35, 0.002); end
@@ -588,6 +642,8 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_x35; assert_in_epsilon(4.0, worksheet.control_x35, 0.002); end
   def test_control_y35; assert_in_epsilon(3.0, worksheet.control_y35, 0.002); end
   def test_control_z35; assert_in_epsilon(4.0, worksheet.control_z35, 0.002); end
+  def test_control_aa35; assert_in_epsilon(3.0, worksheet.control_aa35, 0.002); end
+  def test_control_ab35; assert_in_epsilon(3.0, worksheet.control_ab35, 0.002); end
   def test_control_n37; assert_in_delta(1.0, worksheet.control_n37, 0.002); end
   def test_control_o37; assert_in_epsilon(4.0, worksheet.control_o37, 0.002); end
   def test_control_p37; assert_in_delta(1.0, worksheet.control_p37, 0.002); end
@@ -601,6 +657,8 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_x37; assert_in_epsilon(4.0, worksheet.control_x37, 0.002); end
   def test_control_y37; assert_in_epsilon(2.0, worksheet.control_y37, 0.002); end
   def test_control_z37; assert_in_epsilon(2.0, worksheet.control_z37, 0.002); end
+  def test_control_aa37; assert_in_epsilon(2.0, worksheet.control_aa37, 0.002); end
+  def test_control_ab37; assert_in_epsilon(4.0, worksheet.control_ab37, 0.002); end
   def test_control_n38; assert_in_delta(1.0, worksheet.control_n38, 0.002); end
   def test_control_o38; assert_in_epsilon(4.0, worksheet.control_o38, 0.002); end
   def test_control_p38; assert_in_delta(1.0, worksheet.control_p38, 0.002); end
@@ -614,6 +672,8 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_x38; assert_in_epsilon(2.0, worksheet.control_x38, 0.002); end
   def test_control_y38; assert_in_epsilon(3.0, worksheet.control_y38, 0.002); end
   def test_control_z38; assert_in_epsilon(4.0, worksheet.control_z38, 0.002); end
+  def test_control_aa38; assert_in_epsilon(4.0, worksheet.control_aa38, 0.002); end
+  def test_control_ab38; assert_in_epsilon(4.0, worksheet.control_ab38, 0.002); end
   def test_control_n39; assert_in_delta(1.0, worksheet.control_n39, 0.002); end
   def test_control_o39; assert_in_epsilon(4.0, worksheet.control_o39, 0.002); end
   def test_control_p39; assert_in_delta(1.0, worksheet.control_p39, 0.002); end
@@ -627,6 +687,8 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_x39; assert_in_epsilon(3.0, worksheet.control_x39, 0.002); end
   def test_control_y39; assert_in_epsilon(4.0, worksheet.control_y39, 0.002); end
   def test_control_z39; assert_in_epsilon(4.0, worksheet.control_z39, 0.002); end
+  def test_control_aa39; assert_in_epsilon(3.0, worksheet.control_aa39, 0.002); end
+  def test_control_ab39; assert_in_epsilon(4.0, worksheet.control_ab39, 0.002); end
   def test_control_n40; assert_in_delta(1.0, worksheet.control_n40, 0.002); end
   def test_control_o40; assert_in_epsilon(4.0, worksheet.control_o40, 0.002); end
   def test_control_p40; assert_in_delta(1.0, worksheet.control_p40, 0.002); end
@@ -640,6 +702,8 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_x40; assert_in_epsilon(4.0, worksheet.control_x40, 0.002); end
   def test_control_y40; assert_in_delta(1.0, worksheet.control_y40, 0.002); end
   def test_control_z40; assert_in_delta(1.0, worksheet.control_z40, 0.002); end
+  def test_control_aa40; assert_in_epsilon(3.0, worksheet.control_aa40, 0.002); end
+  def test_control_ab40; assert_in_delta(1.0, worksheet.control_ab40, 0.002); end
   def test_control_n42; assert_in_delta(1.0, worksheet.control_n42, 0.002); end
   def test_control_o42; assert_in_epsilon(4.0, worksheet.control_o42, 0.002); end
   def test_control_p42; assert_in_delta(1.0, worksheet.control_p42, 0.002); end
@@ -653,6 +717,8 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_x42; assert_in_epsilon(4.0, worksheet.control_x42, 0.002); end
   def test_control_y42; assert_in_epsilon(2.0, worksheet.control_y42, 0.002); end
   def test_control_z42; assert_in_epsilon(4.0, worksheet.control_z42, 0.002); end
+  def test_control_aa42; assert_in_epsilon(4.0, worksheet.control_aa42, 0.002); end
+  def test_control_ab42; assert_in_epsilon(4.0, worksheet.control_ab42, 0.002); end
   def test_control_n43; assert_in_delta(1.0, worksheet.control_n43, 0.002); end
   def test_control_o43; assert_in_epsilon(2.0, worksheet.control_o43, 0.002); end
   def test_control_p43; assert_in_delta(1.0, worksheet.control_p43, 0.002); end
@@ -666,6 +732,8 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_x43; assert_in_epsilon(2.0, worksheet.control_x43, 0.002); end
   def test_control_y43; assert_in_delta(1.0, worksheet.control_y43, 0.002); end
   def test_control_z43; assert_in_epsilon(2.0, worksheet.control_z43, 0.002); end
+  def test_control_aa43; assert_in_epsilon(2.0, worksheet.control_aa43, 0.002); end
+  def test_control_ab43; assert_in_epsilon(2.0, worksheet.control_ab43, 0.002); end
   def test_control_n45; assert_in_delta(1.0, worksheet.control_n45, 0.002); end
   def test_control_o45; assert_in_epsilon(3.0, worksheet.control_o45, 0.002); end
   def test_control_p45; assert_in_epsilon(2.0, worksheet.control_p45, 0.002); end
@@ -679,6 +747,8 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_x45; assert_in_epsilon(3.0, worksheet.control_x45, 0.002); end
   def test_control_y45; assert_in_epsilon(2.0, worksheet.control_y45, 0.002); end
   def test_control_z45; assert_in_delta(1.0, worksheet.control_z45, 0.002); end
+  def test_control_aa45; assert_in_epsilon(2.0, worksheet.control_aa45, 0.002); end
+  def test_control_ab45; assert_in_epsilon(2.0, worksheet.control_ab45, 0.002); end
   def test_control_n46; assert_in_delta(1.0, worksheet.control_n46, 0.002); end
   def test_control_o46; assert_in_epsilon(3.0, worksheet.control_o46, 0.002); end
   def test_control_p46; assert_in_delta(1.0, worksheet.control_p46, 0.002); end
@@ -692,6 +762,8 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_x46; assert_in_epsilon(2.0, worksheet.control_x46, 0.002); end
   def test_control_y46; assert_in_epsilon(2.0, worksheet.control_y46, 0.002); end
   def test_control_z46; assert_in_epsilon(3.0, worksheet.control_z46, 0.002); end
+  def test_control_aa46; assert_in_epsilon(3.0, worksheet.control_aa46, 0.002); end
+  def test_control_ab46; assert_in_epsilon(3.0, worksheet.control_ab46, 0.002); end
   def test_control_n48; assert_in_delta(1.0, worksheet.control_n48, 0.002); end
   def test_control_o48; assert_in_epsilon(4.0, worksheet.control_o48, 0.002); end
   def test_control_p48; assert_in_delta(1.0, worksheet.control_p48, 0.002); end
@@ -705,6 +777,8 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_x48; assert_in_epsilon(3.0, worksheet.control_x48, 0.002); end
   def test_control_y48; assert_in_epsilon(3.0, worksheet.control_y48, 0.002); end
   def test_control_z48; assert_in_epsilon(4.0, worksheet.control_z48, 0.002); end
+  def test_control_aa48; assert_in_epsilon(4.0, worksheet.control_aa48, 0.002); end
+  def test_control_ab48; assert_in_epsilon(4.0, worksheet.control_ab48, 0.002); end
   def test_control_n49; assert_in_delta(1.0, worksheet.control_n49, 0.002); end
   def test_control_o49; assert_in_epsilon(4.0, worksheet.control_o49, 0.002); end
   def test_control_p49; assert_in_delta(1.0, worksheet.control_p49, 0.002); end
@@ -718,6 +792,8 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_x49; assert_in_epsilon(3.0, worksheet.control_x49, 0.002); end
   def test_control_y49; assert_in_epsilon(4.0, worksheet.control_y49, 0.002); end
   def test_control_z49; assert_in_epsilon(4.0, worksheet.control_z49, 0.002); end
+  def test_control_aa49; assert_in_epsilon(3.0, worksheet.control_aa49, 0.002); end
+  def test_control_ab49; assert_in_epsilon(3.0, worksheet.control_ab49, 0.002); end
   def test_control_n50; assert_in_delta(1.0, worksheet.control_n50, 0.002); end
   def test_control_o50; assert_in_epsilon(4.0, worksheet.control_o50, 0.002); end
   def test_control_p50; assert_in_delta(1.0, worksheet.control_p50, 0.002); end
@@ -731,6 +807,8 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_x50; assert_in_epsilon(4.0, worksheet.control_x50, 0.002); end
   def test_control_y50; assert_in_epsilon(4.0, worksheet.control_y50, 0.002); end
   def test_control_z50; assert_in_epsilon(3.0, worksheet.control_z50, 0.002); end
+  def test_control_aa50; assert_in_epsilon(3.0, worksheet.control_aa50, 0.002); end
+  def test_control_ab50; assert_in_delta(1.0, worksheet.control_ab50, 0.002); end
   def test_control_n52; assert_in_delta(1.0, worksheet.control_n52, 0.002); end
   def test_control_o52; assert_in_epsilon(4.0, worksheet.control_o52, 0.002); end
   def test_control_p52; assert_in_delta(1.0, worksheet.control_p52, 0.002); end
@@ -744,6 +822,8 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_x52; assert_in_epsilon(4.0, worksheet.control_x52, 0.002); end
   def test_control_y52; assert_in_epsilon(3.0, worksheet.control_y52, 0.002); end
   def test_control_z52; assert_in_epsilon(4.0, worksheet.control_z52, 0.002); end
+  def test_control_aa52; assert_in_epsilon(4.0, worksheet.control_aa52, 0.002); end
+  def test_control_ab52; assert_in_epsilon(4.0, worksheet.control_ab52, 0.002); end
   def test_control_n53; assert_in_delta(1.0, worksheet.control_n53, 0.002); end
   def test_control_o53; assert_in_epsilon(2.0, worksheet.control_o53, 0.002); end
   def test_control_p53; assert_in_delta(1.0, worksheet.control_p53, 0.002); end
@@ -757,6 +837,8 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_x53; assert_in_epsilon(2.0, worksheet.control_x53, 0.002); end
   def test_control_y53; assert_in_epsilon(2.0, worksheet.control_y53, 0.002); end
   def test_control_z53; assert_in_epsilon(2.0, worksheet.control_z53, 0.002); end
+  def test_control_aa53; assert_in_epsilon(2.0, worksheet.control_aa53, 0.002); end
+  def test_control_ab53; assert_in_epsilon(2.0, worksheet.control_ab53, 0.002); end
   def test_control_n55; assert_in_delta(1.0, worksheet.control_n55, 0.002); end
   def test_control_o55; assert_in_delta(1.0, worksheet.control_o55, 0.002); end
   def test_control_p55; assert_in_delta(1.0, worksheet.control_p55, 0.002); end
@@ -770,6 +852,8 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_x55; assert_in_delta(1.0, worksheet.control_x55, 0.002); end
   def test_control_y55; assert_in_delta(1.0, worksheet.control_y55, 0.002); end
   def test_control_z55; assert_in_epsilon(2.0, worksheet.control_z55, 0.002); end
+  def test_control_aa55; assert_in_delta(1.0, worksheet.control_aa55, 0.002); end
+  def test_control_ab55; assert_in_delta(1.0, worksheet.control_ab55, 0.002); end
   def test_control_n56; assert_in_delta(1.0, worksheet.control_n56, 0.002); end
   def test_control_o56; assert_in_delta(1.0, worksheet.control_o56, 0.002); end
   def test_control_p56; assert_in_delta(1.0, worksheet.control_p56, 0.002); end
@@ -783,6 +867,8 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_x56; assert_in_epsilon(4.0, worksheet.control_x56, 0.002); end
   def test_control_y56; assert_in_epsilon(2.0, worksheet.control_y56, 0.002); end
   def test_control_z56; assert_in_epsilon(3.0, worksheet.control_z56, 0.002); end
+  def test_control_aa56; assert_in_epsilon(4.0, worksheet.control_aa56, 0.002); end
+  def test_control_ab56; assert_in_epsilon(2.0, worksheet.control_ab56, 0.002); end
   def test_control_n57; assert_in_delta(1.0, worksheet.control_n57, 0.002); end
   def test_control_o57; assert_in_delta(1.0, worksheet.control_o57, 0.002); end
   def test_control_p57; assert_in_delta(1.0, worksheet.control_p57, 0.002); end
@@ -796,6 +882,8 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_x57; assert_in_delta(1.0, worksheet.control_x57, 0.002); end
   def test_control_y57; assert_in_delta(1.0, worksheet.control_y57, 0.002); end
   def test_control_z57; assert_in_delta(1.0, worksheet.control_z57, 0.002); end
+  def test_control_aa57; assert_in_delta(1.0, worksheet.control_aa57, 0.002); end
+  def test_control_ab57; assert_in_delta(1.0, worksheet.control_ab57, 0.002); end
   def test_control_n58; assert_equal("Imported natural gas for electricity and heat. Imported oil for vehicles.", worksheet.control_n58); end
   def test_control_q58; assert_equal("Cost-optimising model based. Mix of supply sources. Ambitious demand reduction.", worksheet.control_q58); end
   def test_control_r58; assert_equal("Renewables largest supply component. Very ambitious demand reduction. Lots of storage.", worksheet.control_r58); end
@@ -807,6 +895,8 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_x58; assert_equal("Marine renewables, geothermal and algae supply. Some nuclear and CCS.", worksheet.control_x58); end
   def test_control_y58; assert_equal("Wide range of generation sources. Moderate demand reduction. Considerable bioenergy.", worksheet.control_y58); end
   def test_control_z58; assert_equal("Energy from a range of sources. Emphasis on UK self-reliance.", worksheet.control_z58); end
+  def test_control_aa58; assert_equal("Ambitious demand side activity, low imports and cost, less large power stations", worksheet.control_aa58); end
+  def test_control_ab58; assert_equal("energy efficiency and building-level energy production measures; low imports; low cost", worksheet.control_ab58); end
   def test_control_n59; assert_in_epsilon(75.0, worksheet.control_n59, 0.002); end
   def test_control_o59; assert_equal("No", worksheet.control_o59); end
   def test_control_p59; assert_equal("No", worksheet.control_p59); end
@@ -820,7 +910,9 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_x59; assert_in_epsilon(94.0, worksheet.control_x59, 0.002); end
   def test_control_y59; assert_in_epsilon(97.0, worksheet.control_y59, 0.002); end
   def test_control_z59; assert_in_epsilon(92.0, worksheet.control_z59, 0.002); end
-  def test_control_n60; assert_in_epsilon(10.0, worksheet.control_n60, 0.002); end
+  def test_control_aa59; assert_in_epsilon(233.0, worksheet.control_aa59, 0.002); end
+  def test_control_ab59; assert_in_epsilon(234.0, worksheet.control_ab59, 0.002); end
+  def test_control_n60; assert_in_epsilon(12.0, worksheet.control_n60, 0.002); end
   def test_control_o60; assert_equal("No", worksheet.control_o60); end
   def test_control_p60; assert_equal("No", worksheet.control_p60); end
   def test_control_q60; assert_in_delta(0.0, (worksheet.control_q60||0), 0.002); end
@@ -833,6 +925,8 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_x60; assert_in_epsilon(7.0, worksheet.control_x60, 0.002); end
   def test_control_y60; assert_in_epsilon(8.0, worksheet.control_y60, 0.002); end
   def test_control_z60; assert_in_epsilon(9.0, worksheet.control_z60, 0.002); end
+  def test_control_aa60; assert_in_epsilon(10.0, worksheet.control_aa60, 0.002); end
+  def test_control_ab60; assert_in_epsilon(11.0, worksheet.control_ab60, 0.002); end
   def test_control_bp5; assert_equal("No new nuclear power installed. Final nuclear power station estimated to close in 2035", worksheet.control_bp5); end
   def test_control_bq5; assert_equal("~13 3GW nuclear power stations delivering ~280 TWh/yr", worksheet.control_bq5); end
   def test_control_br5; assert_equal("~30 3GW nuclear power stations delivering ~630 TWh/yr", worksheet.control_br5); end
