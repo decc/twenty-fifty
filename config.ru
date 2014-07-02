@@ -4,10 +4,10 @@ require 'bundler'
 Bundler.setup
 
 # The actual server code is in src/server.rb
-require_relative 'src/server'
+require './src/server'
 
 # src/compile_template.rb deals with turning the src/index.html.erb into the main page
-require_relative 'src/compile_template'
+require './src/compile_template'
 
 # The server can run in two modes, 'production' and 'development'
 # the mode is set in the RACK_ENV or RAILS_ENV environment variables
