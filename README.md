@@ -10,6 +10,14 @@ http://github.com/decc/twenty-fifty
 
 # INSTALATION
 
+## System requirements
+
+The code is designed to run on Linux or OS X. It has not been tested on Windows.
+
+It doesn't need much disk space, but it does need memory. To translate the Excel into the backend model requires at least 4 GB and ideally 8 GB (this is only needed if you modify the Excel model). To compile the model requires at least 2 GB and ideally 4 GB. Once compiled, less than 1 GB of memory is required to actually run the server.
+
+## The easy steps
+
 If you have a Ubuntu Linux 12.04 server, try:
 
     cd util

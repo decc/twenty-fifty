@@ -1,16 +1,22 @@
-GETTING THE LATEST SOURCE CODE
+# Hacking the 2050 calculator
+
+## GETTING THE LATEST SOURCE CODE
 
 The source code for this project is at:
 http://github.com/decc/twenty-fifty
 
-WHAT IS THIS WRITTEN IN
+## SETUP AND INSTALLATION
+
+See the [README](./README.md).
+
+## WHAT IS THIS WRITTEN IN
 
 The code is written in:
 
 1. Ruby, using the 'bundler' gem to sort out dependencies and the 'sinatra' framework for the server 
 2. Javascript, html and css for the user interface
 
-OVERVIEW
+## OVERVIEW
 
 The server is setup in config.ru. This:
 1. Maps /assets to a set of code that will compile the javascripts in src/javascripts and the stylesheets in src/stylesheets. It is only used in 'development' mode.
@@ -20,8 +26,7 @@ All of the underlying model calculations are in the model folder
 
 The javascripts in src/javascripts contain almost all of the important code. 
 
-
-UPDATING THE UNDERLYING EXCEL MODEL
+## UPDATING THE UNDERLYING EXCEL MODEL
 
 The calculating engine of this tool is contained in the model folder. See the README there for how to update the code if the Excel model is updated.
 
@@ -39,13 +44,12 @@ Each view in a class with the same rough format:
 2. teardown() - is called when the user has selected a different view. It should remove all html that has been added in setup.
 3. updateResults(pathway) - is called when the data for a pathway has been received. It should update the results on the web page.
 
-UPDATING THE EXAMPLE PATHWAYS
+## UPDATING THE EXAMPLE PATHWAYS
 
 The example pathways are taken from the excel spreadsheet. If they aren't appearing correctly, check model/data_from_model.rb is pointint to the right bit.
 
-    src/helper.rb
 
-UPDATING THE ONE PAGE NOTES
+## UPDATING THE ONE PAGE NOTES
 
 The one page notes are separate pdf files in:
 
@@ -53,12 +57,12 @@ The one page notes are separate pdf files in:
 
 If the order of the controls is changed, or a new control is added, then the mapping in the model/data_from_model.rb also needs to be chaned.
 
-REPORTING A BUG
+## REPORTING A BUG
 
 Please report bugs using the tool at:
 http://github.com/tamc/twenty-fifty/issues
 
-SENDING A PATCH
+## SENDING A PATCH
 
 Please fork the project and then push changes using the methodology described here:
 http://help.github.com/forking/
