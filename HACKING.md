@@ -19,6 +19,7 @@ The code is written in:
 ## OVERVIEW
 
 The server is setup in config.ru. This:
+
 1. Maps /assets to a set of code that will compile the javascripts in src/javascripts and the stylesheets in src/stylesheets. It is only used in 'development' mode.
 2. Loads src/server.rb
 
@@ -30,7 +31,7 @@ The javascripts in src/javascripts contain almost all of the important code.
 
 The calculating engine of this tool is contained in the model folder. See the README there for how to update the code if the Excel model is updated.
 
-UPDATING THE VIEWS
+## UPDATING THE VIEWS
 
 Most of the meaningful code is in the src/javascripts folder. Most of it is written in coffescript, a variant of javascript.
 
@@ -47,7 +48,6 @@ Each view in a class with the same rough format:
 ## UPDATING THE EXAMPLE PATHWAYS
 
 The example pathways are taken from the excel spreadsheet. If they aren't appearing correctly, check model/data_from_model.rb is pointint to the right bit.
-
 
 ## UPDATING THE ONE PAGE NOTES
 
