@@ -44,7 +44,7 @@ class DataFromModel
       'electricity' => electricity,
       'heating' => heating,
       'cost_components' => costs,
-      'map' => map,
+      'map' => excel.output_areas,
       'imports' => {
         'proportion' => excel.output_imports_proportion,
         'quantity' => excel.output_imports_quantity
@@ -101,15 +101,6 @@ class DataFromModel
   
   def costs
     convert_table_into_hash(excel.output_costpercapita_detail)
-  end
-
-  def map
-    m = {}
-    excel.output_areas.each do |sector|
-      # Ignoring all the land use for intermediate years
-      m[sector[0]] = sector[-1]
-    end
-    m
   end
 
   # Data that doesn't change with user choices (more structural)

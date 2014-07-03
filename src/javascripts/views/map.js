@@ -224,7 +224,13 @@ window.twentyfifty.views.map = function() {
   this.updateResults = function(data) {
     var i, len, map, values, value, x, y, box, side;
 
-    map = data.map;
+    map = {};
+    console.log(data.map);
+    // The data is supplied as a table, with values for every year
+    // we just extract the 2050 values into an object
+    data.map.forEach(function(row) {
+      map[row[0]] = row[row.length-1];
+    });
 
     // Draw the line for wave machines
     if (map['III.c.Wave'] > 0) {
