@@ -51,7 +51,7 @@ class DataFromModel
       },
       'diversity' => excel.output_diversity,
       'balancing' => excel.output_capacity_automaticallybuilt,
-      'air_quality' => air_quality
+      'air_quality' => excel.output_airquality
     }
   end
       
@@ -110,11 +110,6 @@ class DataFromModel
       m[sector[0]] = sector[-1]
     end
     m
-  end
-
-
-  def air_quality
-    Hash[excel.output_airquality]
   end
 
   # Data that doesn't change with user choices (more structural)
