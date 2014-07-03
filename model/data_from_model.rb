@@ -45,9 +45,12 @@ class DataFromModel
       'heating' => heating,
       'cost_components' => costs,
       'map' => map,
-      'imports' => imports,
-      'diversity' => diversity,
-      'balancing' => balancing,
+      'imports' => {
+        'proportion' => excel.output_imports_proportion,
+        'quantity' => excel.output_imports_quantity
+      },
+      'diversity' => excel.output_diversity,
+      'balancing' => excel.output_capacity_automaticallybuilt,
       'air_quality' => air_quality
     }
   end
@@ -109,35 +112,6 @@ class DataFromModel
     m
   end
 
-  def balancing
-    { 'ccgt' => excel.output_capacity_automaticallybuilt[0][-1].to_f.round,
-      'peaking' => excel.output_capacity_automaticallybuilt[1][-1].to_f.round }
-  end
-  
-  def imports
-    i = {}
-    excel.output_imports_quantity.each do |vector|
-      i[vector[0]] = { 
-        '2007' => { 'quantity' => vector[1].to_f.round}, 
-        '2050' => { 'quantity' => vector[-1].to_f.round }
-      }
-    end
-
-    excel.output_imports_proportion.each do |vector|
-      i[vector[0]]['2007']['proportion'] = percent(vector[1])
-      i[vector[0]]['2050']['proportion'] = percent(vector[-1])
-    end
-
-    i
-  end
-
-  def diversity
-    d = {}
-    excel.output_diversity.each do |vector|
-      d[vector[0]] = { '2007' => percent(vector[1]), '2050' => percent(vector[-1]) }
-    end
-    d
-  end
 
   def air_quality
     Hash[excel.output_airquality]

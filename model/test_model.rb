@@ -1518,6 +1518,17 @@ class TestModel < Minitest::Unit::TestCase
   def test_security_l146; assert_in_delta(0.0, (worksheet.security_l146||0), 0.002); end
   def test_security_m146; assert_in_delta(0.0, (worksheet.security_m146||0), 0.002); end
   def test_security_n146; assert_in_delta(0.0, (worksheet.security_n146||0), 0.002); end
+  def test_security_d35; assert_equal("Vector", worksheet.security_d35); end
+  def test_security_e35; assert_in_epsilon(2007.0, worksheet.security_e35, 0.002); end
+  def test_security_f35; assert_in_epsilon(2010.0, worksheet.security_f35, 0.002); end
+  def test_security_g35; assert_in_epsilon(2015.0, worksheet.security_g35, 0.002); end
+  def test_security_h35; assert_in_epsilon(2020.0, worksheet.security_h35, 0.002); end
+  def test_security_i35; assert_in_epsilon(2025.0, worksheet.security_i35, 0.002); end
+  def test_security_j35; assert_in_epsilon(2030.0, worksheet.security_j35, 0.002); end
+  def test_security_k35; assert_in_epsilon(2035.0, worksheet.security_k35, 0.002); end
+  def test_security_l35; assert_in_epsilon(2040.0, worksheet.security_l35, 0.002); end
+  def test_security_m35; assert_in_epsilon(2045.0, worksheet.security_m35, 0.002); end
+  def test_security_n35; assert_in_epsilon(2050.0, worksheet.security_n35, 0.002); end
   def test_security_d36; assert_equal("Nuclear fission", worksheet.security_d36); end
   def test_security_e36; assert_in_delta(0.06176719011919616, worksheet.security_e36, 0.002); end
   def test_security_f36; assert_in_delta(0.06229742438068547, worksheet.security_f36, 0.002); end
@@ -1716,6 +1727,17 @@ class TestModel < Minitest::Unit::TestCase
   def test_security_l53; assert_in_delta(0.4717167758554552, worksheet.security_l53, 0.002); end
   def test_security_m53; assert_in_delta(0.47564438359366046, worksheet.security_m53, 0.002); end
   def test_security_n53; assert_in_delta(0.4690047032784879, worksheet.security_n53, 0.002); end
+  def test_security_d130; assert_equal("Vector", worksheet.security_d130); end
+  def test_security_e130; assert_in_epsilon(2007.0, worksheet.security_e130, 0.002); end
+  def test_security_f130; assert_in_epsilon(2010.0, worksheet.security_f130, 0.002); end
+  def test_security_g130; assert_in_epsilon(2015.0, worksheet.security_g130, 0.002); end
+  def test_security_h130; assert_in_epsilon(2020.0, worksheet.security_h130, 0.002); end
+  def test_security_i130; assert_in_epsilon(2025.0, worksheet.security_i130, 0.002); end
+  def test_security_j130; assert_in_epsilon(2030.0, worksheet.security_j130, 0.002); end
+  def test_security_k130; assert_in_epsilon(2035.0, worksheet.security_k130, 0.002); end
+  def test_security_l130; assert_in_epsilon(2040.0, worksheet.security_l130, 0.002); end
+  def test_security_m130; assert_in_epsilon(2045.0, worksheet.security_m130, 0.002); end
+  def test_security_n130; assert_in_epsilon(2050.0, worksheet.security_n130, 0.002); end
   def test_security_d131; assert_equal("Uranium", worksheet.security_d131); end
   def test_security_e131; assert_in_delta(1.0, worksheet.security_e131, 0.002); end
   def test_security_f131; assert_in_delta(1.0, worksheet.security_f131, 0.002); end
@@ -1793,6 +1815,17 @@ class TestModel < Minitest::Unit::TestCase
   def test_security_l137; assert_in_delta(0.7891640739774909, worksheet.security_l137, 0.002); end
   def test_security_m137; assert_in_delta(0.8177192507668962, worksheet.security_m137, 0.002); end
   def test_security_n137; assert_in_delta(0.8320343513268033, worksheet.security_n137, 0.002); end
+  def test_security_d108; assert_equal("Vector", worksheet.security_d108); end
+  def test_security_e108; assert_in_epsilon(2007.0, worksheet.security_e108, 0.002); end
+  def test_security_f108; assert_in_epsilon(2010.0, worksheet.security_f108, 0.002); end
+  def test_security_g108; assert_in_epsilon(2015.0, worksheet.security_g108, 0.002); end
+  def test_security_h108; assert_in_epsilon(2020.0, worksheet.security_h108, 0.002); end
+  def test_security_i108; assert_in_epsilon(2025.0, worksheet.security_i108, 0.002); end
+  def test_security_j108; assert_in_epsilon(2030.0, worksheet.security_j108, 0.002); end
+  def test_security_k108; assert_in_epsilon(2035.0, worksheet.security_k108, 0.002); end
+  def test_security_l108; assert_in_epsilon(2040.0, worksheet.security_l108, 0.002); end
+  def test_security_m108; assert_in_epsilon(2045.0, worksheet.security_m108, 0.002); end
+  def test_security_n108; assert_in_epsilon(2050.0, worksheet.security_n108, 0.002); end
   def test_security_d109; assert_equal("Uranium", worksheet.security_d109); end
   def test_security_e109; assert_in_epsilon(163.91620313701554, worksheet.security_e109, 0.002); end
   def test_security_f109; assert_in_epsilon(160.70999999999998, worksheet.security_f109, 0.002); end
