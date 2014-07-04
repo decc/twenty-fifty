@@ -23,6 +23,8 @@ end
 
 # This sets up the bits of the server
 map '/' do
+  # To compress the data going back and forth
+  use Rack::Deflater
   # This logs access and errors
   use Rack::CommonLogger
 
