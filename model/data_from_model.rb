@@ -45,7 +45,7 @@ class DataFromModel
       'primary_energy_supply' => excel.output_primaryenergysupply, # output.primaryenergysupply
       'electricity' => {
         'demand' => excel.output_electricity_demand,
-        'supply' => excel.output_electriciemissionsty_supply,
+        'supply' => excel.output_electricity_supply,
         'ghg' => excel.output_electricity_ghg,
         'capacity' => excel.output_electricity_capacity
       },
@@ -148,29 +148,6 @@ class DataFromModel
     end
   end
   
-  # Helper methods
-  
-  def percent(proportion)
-    "#{(proportion * 100).round}%"
-  end
-  
-  # Takes something like
-  # [["name", "thing1", "thing2"], ["A", 1, 2], ["B", 2, 3]]
-  # and turns it into:
-  # { "A" => { "name" => "A", "thing1" => 1, "thing2" => 2 }, "B" => { "name" => "B", "thing1" => 2, "thing2" => 3}}
-  def convert_table_into_hash(table)
-    headers = table.shift
-    hash = {}
-    table.each do |row|
-      row_hash = {}
-      row.each.with_index do |cell, i|
-        row_hash[headers[i]] = cell
-      end
-      hash[row[0]] = row_hash
-    end
-    hash
-  end
-  
   # FIXME: Only wraps one line into two
   def wrap(string, wrap_at_length = 45)
     return "" unless string
@@ -182,31 +159,6 @@ class DataFromModel
     end.reverse.map { |a| a.join(" ") }.join("\n")
   end
 
-  def table(start_row,end_row)
-    t = {}
-    (start_row..end_row).each do |row|
-      t[label("intermediate_output",row)] = annual_data("intermediate_output",row)
-    end
-    t
-  end
-  
-  def label(sheet,row)
-    r("#{sheet}_d#{row}").to_s
-  end
-  
-  def annual_data(sheet,row)
-    ['az','ba','bb','bc','bd','be','bf','bg','bh'].map { |c| r("#{sheet}_#{c}#{row}") }
-  end
-  
-  def sum(hash_a,hash_b)
-    return nil unless hash_a && hash_b
-    summed_hash = {}
-    hash_a.each do |key,value|
-      summed_hash[key] = value + hash_b[key]
-    end
-    return summed_hash
-  end
-  
   # Set the 9 decimal points between 1.1 and 3.9
   FLOAT_TO_LETTER_MAP = Hash["abcdefghijklmnopqrstuvwxyzABCD".split('').map.with_index { |l,i| [(i/10.0)+1,l] }]
   FLOAT_TO_LETTER_MAP[0.0] = '0'
@@ -231,10 +183,6 @@ class DataFromModel
     array.map do |entry|
       LETTER_TO_FLOAT_MAP[entry].to_f || entry.to_f
     end
-  end
-  
-  def r(reference)
-    excel.send(reference)
   end
   
 end
