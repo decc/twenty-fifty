@@ -88,18 +88,6 @@ class DataFromModel
     }
   end
   
-  def heating
-
-    r = {} # For residential heating technologies
-    c = {} # For commercial heating technologies
-    excel.output_heating_mix.each do |technology|
-      name = technology[0]
-      r[name] = technology[1]
-      c[name] = technology[2]
-    end
-    {'residential' => r, 'commercial' => c}
-  end
-  
   def costs
     convert_table_into_hash(excel.output_costpercapita_detail)
   end
