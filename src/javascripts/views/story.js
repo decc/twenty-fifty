@@ -15,10 +15,10 @@ window.twentyfifty.views.story = function() {
     element = $('#demand_story');
     element.empty();
     this.stories_for_choices(element, "Homes in 2050", 32, 33, 37, 38);
-    this.heating_choice_table(element, this.pathway.heating.residential);
+    this.heating_choice_table(element, this.pathway.heating, "Residential");
     this.stories_for_choices(element, "Personal transport in 2050", 25, 26, 27, 29);
     this.stories_for_choices(element, "Businesses in 2050", 43, 47, 48);
-    this.heating_choice_table(element, this.pathway.heating.commercial);
+    this.heating_choice_table(element, this.pathway.heating, "Commercial");
     this.stories_for_choices(element, "Industry in 2050", 40, 41);
     this.stories_for_choices(element, "Commercial transport in 2050", 28, 29, 30);
 
@@ -62,23 +62,32 @@ window.twentyfifty.views.story = function() {
     element.append("<p>" + (text.join(". ")) + ".</p>");
   };
 
-  this.heating_choice_table = function(element, heat) {
+  this.heating_choice_table = function(element, heat, column_name) {
     var html, name, value, values, _i, _len;
     html = [];
     html.push("<table class='heating_choice'>");
     html.push("<tr><th>Type of heater</th><th class='target'>2050 proportion of heating</th></tr>");
+
+    // The first row of the table has the column names
+    column_index = heat[0].indexOf(column_name);
+
     values = [];
-    for (name in heat) {
-      if (!heat.hasOwnProperty(name)) continue;
-      value = heat[name];
+    // Go through the table and pick out the data from the relevant column
+    heat.slice(1).forEach(function(row) {
       values.push({
-        name: name,
-        value: value
+        name: row[0],
+        value: row[column_index]
       });
-    }
-    values.sort(function(a, b) {
-      return a.value - b.value;
     });
+
+    // Biggest first
+    values.sort(function(a, b) {
+      return b.value - a.value;
+    });
+
+    // Move the total to the end
+    values.push(values.shift());
+
     for (_i = 0, _len = values.length; _i < _len; _i++) {
       value = values[_i];
       if (value.value > 0.01) {

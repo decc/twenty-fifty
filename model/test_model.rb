@@ -1237,6 +1237,17 @@ class TestModel < Minitest::Unit::TestCase
   def test_air_quality_d3; assert_in_epsilon(85.98467536326972, worksheet.air_quality_d3, 0.002); end
   def test_air_quality_c4; assert_equal("Low", worksheet.air_quality_c4); end
   def test_air_quality_d4; assert_in_epsilon(27.748501052774046, worksheet.air_quality_d4, 0.002); end
+  def test_land_c4; assert_equal("Vector", worksheet.land_c4); end
+  def test_land_d4; assert_in_epsilon(2007.0, worksheet.land_d4, 0.002); end
+  def test_land_e4; assert_in_epsilon(2010.0, worksheet.land_e4, 0.002); end
+  def test_land_f4; assert_in_epsilon(2015.0, worksheet.land_f4, 0.002); end
+  def test_land_g4; assert_in_epsilon(2020.0, worksheet.land_g4, 0.002); end
+  def test_land_h4; assert_in_epsilon(2025.0, worksheet.land_h4, 0.002); end
+  def test_land_i4; assert_in_epsilon(2030.0, worksheet.land_i4, 0.002); end
+  def test_land_j4; assert_in_epsilon(2035.0, worksheet.land_j4, 0.002); end
+  def test_land_k4; assert_in_epsilon(2040.0, worksheet.land_k4, 0.002); end
+  def test_land_l4; assert_in_epsilon(2045.0, worksheet.land_l4, 0.002); end
+  def test_land_m4; assert_in_epsilon(2050.0, worksheet.land_m4, 0.002); end
   def test_land_c5; assert_equal("III.a.1", worksheet.land_c5); end
   def test_land_d5; assert_in_epsilon(227.50727999999998, worksheet.land_d5, 0.002); end
   def test_land_e5; assert_in_epsilon(470.80799999999977, worksheet.land_e5, 0.002); end
@@ -1457,6 +1468,9 @@ class TestModel < Minitest::Unit::TestCase
   def test_land_k24; assert_in_epsilon(85.00559665116278, worksheet.land_k24, 0.002); end
   def test_land_l24; assert_in_epsilon(91.05158176744186, worksheet.land_l24, 0.002); end
   def test_land_m24; assert_in_epsilon(97.28908055813953, worksheet.land_m24, 0.002); end
+  def test_land_d29; assert_equal("2050 Split of heating technology", worksheet.land_d29); end
+  def test_land_e29; assert_equal("Residential", worksheet.land_e29); end
+  def test_land_f29; assert_equal("Commercial", worksheet.land_f29); end
   def test_land_d30; assert_equal("Gas boiler (old)", worksheet.land_d30); end
   def test_land_e30; assert_in_delta(0.0, (worksheet.land_e30||0), 0.002); end
   def test_land_f30; assert_in_delta(0.0, (worksheet.land_f30||0), 0.002); end
@@ -1496,6 +1510,20 @@ class TestModel < Minitest::Unit::TestCase
   def test_land_d42; assert_equal("Long distance district heating from large power stations", worksheet.land_d42); end
   def test_land_e42; assert_in_delta(0.07, worksheet.land_e42, 0.002); end
   def test_land_f42; assert_in_delta(0.07, worksheet.land_f42, 0.002); end
+  def test_land_d43; assert_equal("Total", worksheet.land_d43); end
+  def test_land_e43; assert_in_delta(1.0, worksheet.land_e43, 0.002); end
+  def test_land_f43; assert_in_delta(1.0, worksheet.land_f43, 0.002); end
+  def test_security_d144; assert_equal("GW installed capacity", worksheet.security_d144); end
+  def test_security_e144; assert_in_epsilon(2007.0, worksheet.security_e144, 0.002); end
+  def test_security_f144; assert_in_epsilon(2010.0, worksheet.security_f144, 0.002); end
+  def test_security_g144; assert_in_epsilon(2015.0, worksheet.security_g144, 0.002); end
+  def test_security_h144; assert_in_epsilon(2020.0, worksheet.security_h144, 0.002); end
+  def test_security_i144; assert_in_epsilon(2025.0, worksheet.security_i144, 0.002); end
+  def test_security_j144; assert_in_epsilon(2030.0, worksheet.security_j144, 0.002); end
+  def test_security_k144; assert_in_epsilon(2035.0, worksheet.security_k144, 0.002); end
+  def test_security_l144; assert_in_epsilon(2040.0, worksheet.security_l144, 0.002); end
+  def test_security_m144; assert_in_epsilon(2045.0, worksheet.security_m144, 0.002); end
+  def test_security_n144; assert_in_epsilon(2050.0, worksheet.security_n144, 0.002); end
   def test_security_d145; assert_equal("Automatically built CCGT gas", worksheet.security_d145); end
   def test_security_e145; assert_in_epsilon(30.343667698868483, worksheet.security_e145, 0.002); end
   def test_security_f145; assert_in_epsilon(27.425372184910167, worksheet.security_f145, 0.002); end

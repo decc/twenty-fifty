@@ -7424,6 +7424,17 @@ module Model
   attach_function 'electricity_l56', [], ExcelValue.by_value
   attach_function 'electricity_m56', [], ExcelValue.by_value
   # end of Electricity
+  attach_function 'security_d144', [], ExcelValue.by_value
+  attach_function 'security_e144', [], ExcelValue.by_value
+  attach_function 'security_f144', [], ExcelValue.by_value
+  attach_function 'security_g144', [], ExcelValue.by_value
+  attach_function 'security_h144', [], ExcelValue.by_value
+  attach_function 'security_i144', [], ExcelValue.by_value
+  attach_function 'security_j144', [], ExcelValue.by_value
+  attach_function 'security_k144', [], ExcelValue.by_value
+  attach_function 'security_l144', [], ExcelValue.by_value
+  attach_function 'security_m144', [], ExcelValue.by_value
+  attach_function 'security_n144', [], ExcelValue.by_value
   attach_function 'security_d145', [], ExcelValue.by_value
   attach_function 'security_e145', [], ExcelValue.by_value
   attach_function 'security_f145', [], ExcelValue.by_value
@@ -7843,6 +7854,17 @@ module Model
   attach_function 'security_m78', [], ExcelValue.by_value
   attach_function 'security_n78', [], ExcelValue.by_value
   # end of Security
+  attach_function 'land_c4', [], ExcelValue.by_value
+  attach_function 'land_d4', [], ExcelValue.by_value
+  attach_function 'land_e4', [], ExcelValue.by_value
+  attach_function 'land_f4', [], ExcelValue.by_value
+  attach_function 'land_g4', [], ExcelValue.by_value
+  attach_function 'land_h4', [], ExcelValue.by_value
+  attach_function 'land_i4', [], ExcelValue.by_value
+  attach_function 'land_j4', [], ExcelValue.by_value
+  attach_function 'land_k4', [], ExcelValue.by_value
+  attach_function 'land_l4', [], ExcelValue.by_value
+  attach_function 'land_m4', [], ExcelValue.by_value
   attach_function 'land_c5', [], ExcelValue.by_value
   attach_function 'land_d5', [], ExcelValue.by_value
   attach_function 'land_e5', [], ExcelValue.by_value
@@ -8063,6 +8085,9 @@ module Model
   attach_function 'land_k24', [], ExcelValue.by_value
   attach_function 'land_l24', [], ExcelValue.by_value
   attach_function 'land_m24', [], ExcelValue.by_value
+  attach_function 'land_d29', [], ExcelValue.by_value
+  attach_function 'land_e29', [], ExcelValue.by_value
+  attach_function 'land_f29', [], ExcelValue.by_value
   attach_function 'land_d30', [], ExcelValue.by_value
   attach_function 'land_e30', [], ExcelValue.by_value
   attach_function 'land_f30', [], ExcelValue.by_value
@@ -8102,6 +8127,9 @@ module Model
   attach_function 'land_d42', [], ExcelValue.by_value
   attach_function 'land_e42', [], ExcelValue.by_value
   attach_function 'land_f42', [], ExcelValue.by_value
+  attach_function 'land_d43', [], ExcelValue.by_value
+  attach_function 'land_e43', [], ExcelValue.by_value
+  attach_function 'land_f43', [], ExcelValue.by_value
   # end of Land
   attach_function 'flows_c6', [], ExcelValue.by_value
   attach_function 'flows_d6', [], ExcelValue.by_value

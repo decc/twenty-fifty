@@ -225,11 +225,14 @@ window.twentyfifty.views.map = function() {
     var i, len, map, values, value, x, y, box, side;
 
     map = {};
-    console.log(data.map);
     // The data is supplied as a table, with values for every year
-    // we just extract the 2050 values into an object
-    data.map.forEach(function(row) {
-      map[row[0]] = row[row.length-1];
+    
+    // The first row is the header, look for the 2050 column
+    column_index = data.map[0].indexOf(2050);
+    // Then skip the header and loop through the rows
+    data.map.slice(1).forEach(function(row) {
+      // Extract the labels and 2050 values into an object
+      map[row[0]] = row[column_index];
     });
 
     // Draw the line for wave machines

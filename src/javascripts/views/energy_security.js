@@ -48,18 +48,18 @@ twentyfifty.views.energy_security = function() {
   updateBalancingSection = function(pathway) {
 
     // We only present the data for 2050 (the last column in the table)
-    if(pathway.balancing[0][0] == "Automatically built CCGT gas") {
-      ccgt = pathway.balancing[0][pathway.balancing[0].length - 1];
+    if(pathway.balancing[1][0] == "Automatically built CCGT gas") {
+      ccgt = pathway.balancing[1][pathway.balancing[1].length - 1];
     } else {
       console.log("Automatically built CCGT gas is not the first row in the balancing table");
       ccgt = "UNDEFINED";
     }
 
     // We only present the data for 2050 (the last column in the table)
-    if(pathway.balancing[1][0] == "Automatically built peaking gas") {
-      peaking = pathway.balancing[1][pathway.balancing[1].length - 1];
+    if(pathway.balancing[2][0] == "Automatically built peaking gas") {
+      peaking = pathway.balancing[2][pathway.balancing[2].length - 1];
     } else {
-      console.log("Automatically built peaking gas is not the first row in the balancing table");
+      console.log("Automatically built peaking gas is not the second row in the balancing table");
       peaking = "UNDEFINED";
     }
 

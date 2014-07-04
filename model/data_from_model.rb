@@ -42,7 +42,7 @@ class DataFromModel
       'final_energy_demand' => final_energy_demand,
       'primary_energy_supply' => primary_energy_supply,
       'electricity' => electricity,
-      'heating' => heating,
+      'heating' => excel.output_heating_mix,
       'cost_components' => costs,
       'map' => excel.output_areas,
       'imports' => {
@@ -89,6 +89,7 @@ class DataFromModel
   end
   
   def heating
+
     r = {} # For residential heating technologies
     c = {} # For commercial heating technologies
     excel.output_heating_mix.each do |technology|
