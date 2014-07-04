@@ -329,13 +329,11 @@ window.twentyfifty.views.map = function() {
     values.sort(function(a, b) { return b.value - a.value; });
 
     for (i = 0, len = values.length; i < len; i++) {
-      console.log(i, len, values[i]);
       value = values[i];
       if (value.value >= 1) {
         size = Math.round(Math.sqrt(pointSizes[value.name]) * 10);
         y = this.point_stack(x, y, value.value, colours[value.name], "" + (Math.round(value.value)) + " x " + labels[value.name], size);
       }
-      console.log(i);
     }
     this.points = this.r.setFinish();
   }
