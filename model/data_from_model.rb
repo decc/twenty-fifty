@@ -50,7 +50,7 @@ class DataFromModel
         'capacity' => excel.output_electricity_capacity
       },
       'heating' => excel.output_heating_mix, # output.heating.mix
-      'cost_components' => costs,
+      'costs' => excel.output_costpercapita_detail,
       'map' => excel.output_areas, # output.areas
       'imports' => {
         'proportion' => excel.output_imports_proportion, # output.imports.proportion
@@ -60,10 +60,6 @@ class DataFromModel
       'balancing' => excel.output_capacity_automaticallybuilt, # output.capacity.automaticallybuilt
       'air_quality' => excel.output_airquality # output.airquality
     }
-  end
-  
-  def costs
-    convert_table_into_hash(excel.output_costpercapita_detail)
   end
 
   # Data that doesn't change with user choices (more structural)
@@ -171,20 +167,6 @@ class DataFromModel
         row_hash[headers[i]] = cell
       end
       hash[row[0]] = row_hash
-    end
-    hash
-  end
-
-  # Takes something like
-  # [["name", "thing1", "thing2"], ["A", 1, 2], ["B", 2, 3]]
-  # and turns it into:
-  # { "A" => [1,2], "B" => [2,3] }
-  def convert_table_into_chart_grid(table)
-    table.shift # ignore the headers
-    hash = {}
-    table.each do |row|
-      name = row.shift
-      hash[name] = row
     end
     hash
   end

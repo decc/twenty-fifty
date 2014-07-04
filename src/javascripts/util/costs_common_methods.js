@@ -70,13 +70,31 @@
     return costs;
   };
 
+  cost_components = function(pathway) {
+    if(pathway.cost_components != undefined) {
+      return pathway.cost_components;
+    }
+    column_names = pathway.costs[0];
+    c = {};
+    pathway.costs.slice(1).forEach(function(row) {
+      key = row[0];
+      value = {};
+      column_names.forEach(function(column,i) {
+        value[column] = row[i];
+      });
+      c[key] = value;
+    });
+    pathway.cost_components = c;
+    return c;
+  };
+
   window.twentyfifty.group_costs_of_pathway = function(pathway) {
     var categorised_costs, category, category_name, high, low, name, range, values, _ref;
     if (pathway.total_cost_low_adjusted == null) {
       twentyfifty.adjust_costs_of_pathway(pathway);
     }
     categorised_costs = {};
-    _ref = pathway.cost_components;
+    _ref = cost_components(pathway);
     for (name in _ref) {
       if (!__hasProp.call(_ref, name)) continue;
       values = _ref[name];
@@ -129,7 +147,7 @@
       high: 0,
       finance_max: 0
     };
-    _ref = pathway.cost_components;
+    _ref = cost_components(pathway);
     for (name in _ref) {
       if (!__hasProp.call(_ref, name)) continue;
       values = _ref[name];
@@ -176,7 +194,7 @@
     if (jQuery.jStorage.get('defaultCostsSet') === true) {
       return false;
     }
-    _ref = pathway.cost_components;
+    _ref = cost_components(pathway);
     for (name in _ref) {
       if (!__hasProp.call(_ref, name)) continue;
       values = _ref[name];

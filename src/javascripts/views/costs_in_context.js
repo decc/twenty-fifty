@@ -253,7 +253,7 @@ window.twentyfifty.views.costs_in_context = function() {
     bar.overlay.attr({
       width: this.x(total_cost + total_range) - this.x(0)
     });
-    if (pathway.ghg['Total'][8] > 166) {
+    if (pathway.ghg_reduction_from_1990 < 0.8) {
       bar.message.attr({
         x: this.x(total_cost + total_range) + 100,
         text: "This pathway does not reduce emissions by at least 80% on 1990 levels"
