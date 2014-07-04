@@ -21,8 +21,8 @@ twentyfifty.views.energy_security = function() {
   };
   
   // Used for formatting strings
-  percent = d3.format("0%");
-  round = d3.format(".0f");
+  format_percent = d3.format("0%");
+  format_round = d3.format(".0f");
 
   // This is called when the user chooses this view
   this.setup = function() {
@@ -64,9 +64,9 @@ twentyfifty.views.energy_security = function() {
     }
 
     // This is the amount of CCGT that is automatically built to cover annual shortfall
-    results.select("span#pathway_balancing_ccgt").text(round(ccgt));
+    results.select("span#pathway_balancing_ccgt").text(format_round(ccgt));
     // This is the amount of OGT that is automatically built to cover the worst part of the year
-    results.select("span#pathway_balancing_peaking").text(round(peaking));
+    results.select("span#pathway_balancing_peaking").text(format_round(peaking));
     
     // This hides the paragraph about automatically building CCGT unless it is needed
     if( ccgt == "UNDEFINED" || ccgt > 0) {
@@ -104,7 +104,14 @@ twentyfifty.views.energy_security = function() {
     rows.order();
 
     // We only care about the name, and the values in 2007 and 2050
-    cells = rows.selectAll("td").data(function(d) { return [d["Vector"], percent(d['2007']),"" , percent(d['2050'])]; });
+    cells = rows.selectAll("td").data(function(d) { 
+      return [
+        d["Vector"], 
+        format_percent(d['2007']),
+        "",
+        format_percent(d['2050'])
+      ]; 
+    });
 
     // We set the first column to have class description, otherwise we set it to be a value
     cells.enter().append("td").attr("class", function(d,i) { return i == 0 ? "description" : "value" });
@@ -159,11 +166,11 @@ twentyfifty.views.energy_security = function() {
     cells = rows.selectAll("td").data(function(d) { 
       return [
         d.name, 
-        round(d.quantity_2007),
-        percent(d.proportion_2007),
+        format_round(d.quantity_2007),
+        format_percent(d.proportion_2007),
         "&nbsp;",
-        round(d.quantity_2050),
-        percent(d.proportion_2050)
+        format_round(d.quantity_2050),
+        format_percent(d.proportion_2050)
       ]});
 
     // We set the first column to have class description, otherwise we set it to be a value
