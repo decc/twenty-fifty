@@ -103,20 +103,33 @@ window.twentyfifty.views.story = function() {
     html = [];
     html.push("<table class='heating_choice'>");
     html.push("<tr><th>GW Capacity</th><th class='target'>2010</th><th class='target'>2050</th></tr>");
+
+    capacity = this.pathway.electricity.capacity;
+
     values = [];
-    _ref = this.pathway.electricity.capacity;
-    for (name in _ref) {
-      if (!_ref.hasOwnProperty(name)) continue;
-      data = _ref[name];
+    
+    // The first row of the table has the column names
+    name_index = capacity[0].indexOf("Sector");
+    index_2010 = capacity[0].indexOf(2010);
+    index_2050 = capacity[0].indexOf(2050);
+
+    // Go through the table and pick out the data from the relevant column
+    capacity.slice(1).forEach(function(row) {
       values.push({
-        name: name,
-        d2010: data[0],
-        d2050: data[8]
+        name: row[name_index],
+        d2010: row[index_2010],
+        d2050: row[index_2050] 
       });
-    }
-    values.sort(function(a, b) {
-      return a.d2050 - b.d2050;
     });
+
+    // Biggest first
+    values.sort(function(a, b) {
+      return b.d2050 - a.d2050;
+    });
+     
+    // Move the total to the end
+    values.push(values.shift());
+    
     for (_i = 0, _len = values.length; _i < _len; _i++) {
       value = values[_i];
       if ((value.d2010 + value.d2050) !== 0.0) {

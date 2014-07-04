@@ -43,7 +43,12 @@ class DataFromModel
       'ghg_reduction_from_1990' => excel.output_ghg_percentage_reduction, # output.ghg.percentage.reduction in Excel
       'final_energy_demand' => excel.output_finalenergydemand, # output.finalenergydemand
       'primary_energy_supply' => excel.output_primaryenergysupply, # output.primaryenergysupply
-      'electricity' => electricity,
+      'electricity' => {
+        'demand' => excel.output_electricity_demand,
+        'supply' => excel.output_electriciemissionsty_supply,
+        'ghg' => excel.output_electricity_ghg,
+        'capacity' => excel.output_electricity_capacity
+      },
       'heating' => excel.output_heating_mix, # output.heating.mix
       'cost_components' => costs,
       'map' => excel.output_areas, # output.areas
@@ -54,15 +59,6 @@ class DataFromModel
       'diversity' => excel.output_diversity, # output.diversity
       'balancing' => excel.output_capacity_automaticallybuilt, # output.capacity.automaticallybuilt
       'air_quality' => excel.output_airquality # output.airquality
-    }
-  end
-  
-  def electricity
-    {
-      'demand' => convert_table_into_chart_grid(excel.output_electricity_demand),
-      'supply' => convert_table_into_chart_grid(excel.output_electricity_supply),
-      'emissions' => convert_table_into_chart_grid(excel.output_electricity_ghg),
-      'capacity' => convert_table_into_chart_grid(excel.output_electricity_capacity)
     }
   end
   
