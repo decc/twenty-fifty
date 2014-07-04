@@ -34,7 +34,7 @@ window.twentyfifty.views.story = function() {
     element.empty();
     this.electricity_generation_capacity_table(element);
     element.append("<h4>Greenhouse gases</h4>");
-    element.append("<p>2050 emissions will be " + this.pathway.ghg.percent_reduction_from_1990 + "% below 1990 levels.</p>");
+    element.append("<p>2050 emissions will be " + Math.round(this.pathway.ghg_reduction_from_1990*100) + "% below 1990 levels.</p>");
     element.append("<p>International aviation and shipping emissions are not included in the UK's 2050 target but are included here to enable emissions from all sectors to be considered.</p>");
     this.stories_for_choices(element, null, 50);
     element.append("<h4>Energy security</h4>");

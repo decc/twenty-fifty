@@ -39,9 +39,10 @@ class DataFromModel
       '_id' => code, 
       'choices' => choices,
       'sankey' => excel.output_flows, # output.flows in the Excel
-      'ghg' => ghg,
-      'final_energy_demand' => final_energy_demand,
-      'primary_energy_supply' => primary_energy_supply,
+      'ghg' => excel.output_ghg_by_ipcc_sector, # output.ghg.by.ipcc.sector in Excel
+      'ghg_reduction_from_1990' => excel.output_ghg_percentage_reduction, # output.ghg.percentage.reduction in Excel
+      'final_energy_demand' => excel.output_finalenergydemand, # output.finalenergydemand
+      'primary_energy_supply' => excel.output_primaryenergysupply, # output.primaryenergysupply
       'electricity' => electricity,
       'heating' => excel.output_heating_mix, # output.heating.mix
       'cost_components' => costs,
@@ -54,22 +55,6 @@ class DataFromModel
       'balancing' => excel.output_capacity_automaticallybuilt, # output.capacity.automaticallybuilt
       'air_quality' => excel.output_airquality # output.airquality
     }
-  end
-      
-  def ghg
-    h = convert_table_into_chart_grid(excel.output_ghg_by_ipcc_sector)
-    h['percent_reduction_from_1990'] =  (excel.output_ghg_percentage_reduction * 100).round
-    h
-  end
-
-  def final_energy_demand
-    # This is the output.finalenergydemand named reference in the Excel
-    convert_table_into_chart_grid(excel.output_finalenergydemand)
-  end
-
-  def primary_energy_supply
-    # This is the output.primaryenergysupply named reference in the Excel
-    convert_table_into_chart_grid(excel.output_primaryenergysupply)
   end
   
   def electricity

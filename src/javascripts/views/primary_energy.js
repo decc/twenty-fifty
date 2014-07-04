@@ -40,31 +40,48 @@ window.twentyfifty.views.primary_energy_chart = function() {
     this.emissions_chart = null;
   };
 
+
+  convert_table_to_hash = function(table) {
+    hash = d3.map();
+    
+    // Skip the header row, and put the rest of the table into
+    // a Hash table with the key being the first column and the
+    // value being the rest
+    table.slice(1).forEach(function(row) {
+      hash.set(row[0], row.slice(1));
+    });
+    return hash;
+  }
+
   // This is called when pathway data is loaded
   // or the user chooses a different pathway
   // it updates the charts
   this.updateResults = function(pathway) {
 
+    // Get the data in the right format
+    demand = convert_table_to_hash(pathway.final_energy_demand);
+    supply = convert_table_to_hash(pathway.primary_energy_supply);
+    ghg = convert_table_to_hash(pathway.ghg);
+    percent = pathway.ghg_reduction_from_1990;
+
+    // Draw the charts
     d3.select('#demand_chart')
-      .datum(d3.map(pathway.final_energy_demand))
+      .datum(demand)
       .call(this.final_energy_chart);
 
     d3.select('#supply_chart')
-      .datum(d3.map(pathway.primary_energy_supply))
+      .datum(supply)
       .call(this.primary_energy_chart);
 
     // FIXME: At some point we need to alter the Excel so we don't need to do this
-    series = d3.map(pathway.ghg);
-    series.remove("percent_reduction_from_1990");
-    percent = pathway.ghg.percent_reduction_from_1990;
 
     d3.select('#emissions_chart')
-      .datum(series)
+      .datum(ghg)
       .call(this.emissions_chart);
 
     // This is to add the target text to the chart
     t = d3.select('#emissions_chart g.drawing').selectAll('text.target')
-      .data([percent]);
+      .data([percent*100]);
 
     t.enter().append('text')
       .attr('class', 'target');
