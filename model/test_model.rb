@@ -2965,6 +2965,18 @@ class TestModel < Minitest::Unit::TestCase
   def test_energy_k65; assert_in_epsilon(2761.4934327145047, worksheet.energy_k65, 0.002); end
   def test_energy_l65; assert_in_epsilon(2865.942716809718, worksheet.energy_l65, 0.002); end
   def test_energy_m65; assert_in_epsilon(2955.126710004465, worksheet.energy_m65, 0.002); end
+  def test_flows_c5; assert_equal("From", worksheet.flows_c5); end
+  def test_flows_d5; assert_equal("To", worksheet.flows_d5); end
+  def test_flows_e5; assert_equal("2007", worksheet.flows_e5); end
+  def test_flows_f5; assert_equal("2010", worksheet.flows_f5); end
+  def test_flows_g5; assert_equal("2015", worksheet.flows_g5); end
+  def test_flows_h5; assert_equal("2020", worksheet.flows_h5); end
+  def test_flows_i5; assert_equal("2025", worksheet.flows_i5); end
+  def test_flows_j5; assert_equal("2030", worksheet.flows_j5); end
+  def test_flows_k5; assert_equal("2035", worksheet.flows_k5); end
+  def test_flows_l5; assert_equal("2040", worksheet.flows_l5); end
+  def test_flows_m5; assert_equal("2045", worksheet.flows_m5); end
+  def test_flows_n5; assert_equal("2050", worksheet.flows_n5); end
   def test_flows_c6; assert_equal("Coal reserves", worksheet.flows_c6); end
   def test_flows_d6; assert_equal("Coal", worksheet.flows_d6); end
   def test_flows_e6; assert_in_epsilon(124.395701394218, worksheet.flows_e6, 0.002); end

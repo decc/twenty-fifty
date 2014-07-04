@@ -17,7 +17,31 @@ window.twentyfifty.views.sankey = function() {
     };
 
     this.updateResults = function(pathway) {
-      data = pathway.sankey;
+
+      // Expects the flow table to be in the form of
+      // [
+      // ["From", "To", 2007, 2010, ..., 2050],
+      // ["Coal Reserves", "Coal", 124, 128, ..., 64],
+      // ...
+      // ]
+
+      // Look for the indices of the columns we want:
+      header = pathway.sankey[0];
+      from_column = header.indexOf("From");
+      to_column = header.indexOf("To");
+      flow_column = header.indexOf("2050"); // We only care about 2050 data at the moment
+
+      // Check the table is ok
+      if(from_column == -1 || to_column == -1 || flow_column == -1) {
+        console.log("Energy flow table in unexpected format");
+      }
+
+      // Turn it into the form that the sankey library requires:
+      // [[from, flow, to]]
+      data = pathway.sankey.slice(1).map(function(row) { // slice(1) to skip header row
+        return [row[from_column], row[flow_column], row[to_column]]
+      });
+
       this.s.updateData(data);
       this.s.redraw();
       max_y = s.boxes['Losses'].b();

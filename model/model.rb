@@ -8131,6 +8131,18 @@ module Model
   attach_function 'land_e43', [], ExcelValue.by_value
   attach_function 'land_f43', [], ExcelValue.by_value
   # end of Land
+  attach_function 'flows_c5', [], ExcelValue.by_value
+  attach_function 'flows_d5', [], ExcelValue.by_value
+  attach_function 'flows_e5', [], ExcelValue.by_value
+  attach_function 'flows_f5', [], ExcelValue.by_value
+  attach_function 'flows_g5', [], ExcelValue.by_value
+  attach_function 'flows_h5', [], ExcelValue.by_value
+  attach_function 'flows_i5', [], ExcelValue.by_value
+  attach_function 'flows_j5', [], ExcelValue.by_value
+  attach_function 'flows_k5', [], ExcelValue.by_value
+  attach_function 'flows_l5', [], ExcelValue.by_value
+  attach_function 'flows_m5', [], ExcelValue.by_value
+  attach_function 'flows_n5', [], ExcelValue.by_value
   attach_function 'flows_c6', [], ExcelValue.by_value
   attach_function 'flows_d6', [], ExcelValue.by_value
   attach_function 'flows_e6', [], ExcelValue.by_value

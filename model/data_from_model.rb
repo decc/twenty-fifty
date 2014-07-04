@@ -33,36 +33,29 @@ class DataFromModel
     choices = convert_letters_to_float(code.split(''))
     # Set the spreadsheet controls (input.choices is a named reference in the Excel)
     excel.input_choices = choices
-    # Read out the results
+    # Read out the results, where each of these refers to a named reference in the Excel
+    # (e.g. excel.output_impots_quantity refers to the output.imports.quantity named reference)
     { 
       '_id' => code, 
       'choices' => choices,
-      'sankey' => sankey,
+      'sankey' => excel.output_flows, # output.flows in the Excel
       'ghg' => ghg,
       'final_energy_demand' => final_energy_demand,
       'primary_energy_supply' => primary_energy_supply,
       'electricity' => electricity,
-      'heating' => excel.output_heating_mix,
+      'heating' => excel.output_heating_mix, # output.heating.mix
       'cost_components' => costs,
-      'map' => excel.output_areas,
+      'map' => excel.output_areas, # output.areas
       'imports' => {
-        'proportion' => excel.output_imports_proportion,
-        'quantity' => excel.output_imports_quantity
+        'proportion' => excel.output_imports_proportion, # output.imports.proportion
+        'quantity' => excel.output_imports_quantity # output.imports.quantity
       },
-      'diversity' => excel.output_diversity,
-      'balancing' => excel.output_capacity_automaticallybuilt,
-      'air_quality' => excel.output_airquality
+      'diversity' => excel.output_diversity, # output.diversity
+      'balancing' => excel.output_capacity_automaticallybuilt, # output.capacity.automaticallybuilt
+      'air_quality' => excel.output_airquality # output.airquality
     }
   end
       
-  def sankey
-    # Currently only do the Sankey for the last year (2050)
-    # output_flows is the named reference output.flows in the Excel
-    excel.output_flows.map do |row|
-      [row[0], row[-1], row[1]]
-    end
-  end
-
   def ghg
     h = convert_table_into_chart_grid(excel.output_ghg_by_ipcc_sector)
     h['percent_reduction_from_1990'] =  (excel.output_ghg_percentage_reduction * 100).round
