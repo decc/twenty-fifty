@@ -41,6 +41,8 @@ window.twentyfifty.views.primary_energy_chart = function() {
   };
 
 
+  // This is used to convert the table from how it looks in Excel
+  // into the format needed to plot a chart
   convert_table_to_hash = function(table) {
     hash = d3.map();
     
@@ -72,8 +74,6 @@ window.twentyfifty.views.primary_energy_chart = function() {
     d3.select('#supply_chart')
       .datum(supply)
       .call(this.primary_energy_chart);
-
-    // FIXME: At some point we need to alter the Excel so we don't need to do this
 
     d3.select('#emissions_chart')
       .datum(ghg)
