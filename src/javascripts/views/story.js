@@ -39,7 +39,7 @@ window.twentyfifty.views.story = function() {
     this.stories_for_choices(element, null, 50);
     element.append("<h4>Energy security</h4>");
     this.stories_for_choices(element, null, 51);
-    element.append("<p>If there are five cold, almost windless, winter days, then up to " + (Math.round(this.pathway.balancing.peaking)) + " GW of backup generation capacity will be required to ensure that electricity is always available.</p>");
+    element.append("<p>If there are five cold, almost windless, winter days, then up to " + (Math.round(this.pathway.balancing[2][this.pathway.balancing[2].length - 1])) + " GW of backup generation capacity will be required to ensure that electricity is always available.</p>");
     this.stories_for_choices(element, null, 22, 15);
   };
 
