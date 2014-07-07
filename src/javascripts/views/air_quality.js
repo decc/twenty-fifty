@@ -79,12 +79,6 @@ window.twentyfifty.views.air_quality = function() {
           .attr("y0", 0)
           .attr("x1", 0)
           .attr("y1", height);
-
-      // This is the callback to ensure that the right comparison is made
-      comparator_id = twentyfifty.getComparator() || twentyfifty.default_comparator_code;
-      that = this;
-      comparatorCallback = function(pathway) { that.updateComparator(pathway) }
-      twentyfifty.loadSecondaryPathway(comparator_id, comparatorCallback);
     }
 
     redraw = function() {

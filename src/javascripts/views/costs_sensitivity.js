@@ -117,7 +117,6 @@ window.twentyfifty.views.costs_sensitivity = function() {
       $("#results").append(costsSensitivityHTML);
       $('#message').addClass('warning');
       this.drawChart();
-      this.switchComparator(twentyfifty.getComparator() || twentyfifty.default_comparator_code);
     };
 
     this.teardown = function() {
@@ -136,12 +135,6 @@ window.twentyfifty.views.costs_sensitivity = function() {
       this.updateIncrement();
     };
 
-
-    this.switchComparator = function(code) {
-      that = this;
-      switchCallback = function(comparator) { that.updateComparator(comparator) }
-      twentyfifty.loadSecondaryPathway(code, switchCallback);
-    };
 
     this.updateComparator = function(comparator) {
       this.comparator = comparator;

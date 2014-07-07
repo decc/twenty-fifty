@@ -308,6 +308,11 @@
     if (data != null) {
       active_view.updateResults(data);
     }
+
+    if(active_view.updateComparator != undefined) {
+      updateComparator();
+    }
+
     if (history['pushState'] != null) {
       return history.pushState(choices, c, url());
     }
@@ -453,17 +458,21 @@
   };
 
   getComparator = function() {
-    return comparator;
+    return comparator || twentyfifty.default_comparator_code;
   };
+
+  updateComparator = function() {
+    loadSecondaryPathway(getComparator(), function(comparator) {
+      active_view.updateComparator(comparator);
+    });
+  }
 
   switchComparator = function(new_comparator) {
     comparator = new_comparator;
     if (history['pushState'] != null) {
       history.pushState(choices, codeForChoices(), url());
     }
-    if (active_view.switchComparator != null) {
-      return active_view.switchComparator(comparator);
-    }
+    updateComparator();
   };
 
   pathwayName = function(pathway_code, default_name) {
