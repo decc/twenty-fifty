@@ -1,153 +1,189 @@
 window.twentyfifty.views.air_quality = function() {
-  __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
+    var margin = {top: 40, right: 30, bottom: 30, left: 300},
+        domain = ["chosen", "comparator", "2010"],
+        x,
+        y,
+        xAxis,
+        yAxis,
+        svg,
+        bars,
+        data = [{name: '2010', caption: '2010', css: 'today',  low: 100, high: 100}];
+        
+    
     this.setup = function() {
-      var clow, comparator_id, crange, e, format, h, low, range, tick, x, _2010, _i, _len, _ref;
       // The html template for the page is in the #air_quality_results div at the bottom
       // of src/index.html.erb. This moves the template into the results part of the screen
       d3.select("#results").append(function() { return d3.select("#air_quality_results").node().cloneNode(true) });
       // This indicates to the user that this section is under development
-      $("#message").addClass('warning');
-      e = $('#airquality');
-      this.h = e.height();
-      this.w = e.width();
-      this.r = new Raphael('airquality', this.w, this.h);
-      this.x = d3.scale.linear().domain([0, 250]).range([300, this.w - 30]).nice();
-      this.y = d3.scale.ordinal().domain(['2010', 'comparator', 'chosen']).rangeRoundBands([25, this.h - 20], 0.25);
+      d3.select("#message").classed('warning', true);
+      
+      target = d3.select("#airquality");
+
+      width = parseInt(target.style('width')) - margin.left - margin.right;
+      height = parseInt(target.style('height')) - margin.top - margin.bottom;
+
+      y = d3.scale.ordinal()
+        .rangeRoundBands([height, 0], .1)
+        .domain(domain);
+
+      x = d3.scale.linear()
+        .rangeRound([0, width])
+        .domain([0,150]);
+
+      xAxis = d3.svg.axis()
+        .scale(x)
+        .orient("top")
+        .ticks(12);
+
+      svg = target.append("svg")
+          .attr("width", width + margin.left + margin.right) 
+          .attr("height", height + margin.top + margin.bottom)
+
+      // This defines the cross hatch patterns, one per bar
+      patterns = svg.append("defs").selectAll("pattern")
+        .data(domain);
+
+      patterns.enter().append("pattern")
+          .attr("id", function(d) { return "pattern"+d; })
+          .attr("patternUnits", "userSpaceOnUse")
+          .attr("width", 4)
+          .attr("height", 4)
+        .append("path")
+          .attr("d", "M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2");
+
+      svg = svg.append("g")
+          .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+      bars = svg.append("g")
+        .attr("class", "bars");
+
+      svg.append("g")
+        .attr("class", "x axis")
+        .call(xAxis);
+
+      // This is the x axis label
+      svg.append("text")
+        .attr("x", 0)
+        .attr("y", -30)
+        .attr("text-anchor", "start")
+        .attr("class", "caption")
+        .text("Air pollution health impact index (2010=100)");
+      
+      // We don't want a fully fledged y-axis, so just
+      // draw one line instead
+      svg.append("g")
+          .attr("class", "y axis")
+        .append("line")
+          .attr("x0", 0)
+          .attr("y0", 0)
+          .attr("x1", 0)
+          .attr("y1", height);
+
+      // This is the callback to ensure that the right comparison is made
       comparator_id = twentyfifty.getComparator() || twentyfifty.default_comparator_code;
-      this.r.text(30, this.y("2010") + 9, "2010").attr({
-        'text-anchor': 'start',
-        'font-weight': 'bold'
-      });
-      this.r.text(30, this.y("comparator") + 9, "2050 - " + (twentyfifty.pathwayName(comparator_id))).attr({
-        'text-anchor': 'start',
-        'font-weight': 'bold'
-      });
-      this.r.text(30, this.y("chosen") + 9, "2050 - Your pathway").attr({
-        'text-anchor': 'start',
-        'font-weight': 'bold'
-      });
-      this.bars = {};
-      h = this.y.rangeBand();
-      x = this.x(0);
-      _2010 = this.r.rect(x, this.y('2010'), this.x(100) - this.x(0), h).attr({
-        'fill': '#008000',
-        'stroke': 'none'
-      });
-      this.r.text(30, this.y('comparator') + 27, twentyfifty.pathwayDescriptions(comparator_id, "")).attr({
-        'text-anchor': 'start'
-      });
-      clow = this.r.rect(x, this.y('comparator'), 0, h).attr({
-        'fill': '#f00',
-        'stroke': 'none'
-      });
-      crange = this.r.rect(x, this.y('comparator'), 0, h).attr({
-        'fill': 'url(/assets/images/hatches/hatch-f00.png)',
-        'stroke': 'none'
-      });
-      this.bars['comparator'] = {
-        low: clow,
-        range: crange
-      };
-      low = this.r.rect(x, this.y('chosen'), 0, h).attr({
-        'fill': '#1f77b4',
-        'stroke': 'none'
-      });
-      range = this.r.rect(x, this.y('chosen'), 0, h).attr({
-        'fill': 'url(/assets/images/hatches/hatch-1f77b4.png)',
-        'stroke': 'none'
-      });
-      this.bars['chosen'] = {
-        low: low,
-        range: range
-      };
-      this.r.text(this.x(0), 10, "Air pollution health impact index (2010=100)").attr({
-        'text-anchor': 'start',
-        'font-weight': 'bold',
-        'fill': '#000'
-      });
-      this.r.path(["M", this.x(0), this.h - 35, "L", this.x(0), 30, "L", this.w - 30, 30]).attr({
-        'stroke': '#000',
-        'stroke-width': 2
-      });
-      format = this.x.tickFormat(10);
-      _ref = this.x.ticks(10);
-      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-        tick = _ref[_i];
-        this.r.text(this.x(tick), 23, format(tick)).attr({
-          'text-anchor': 'middle',
-          fill: '#000000'
-        });
-        this.r.path(["M", this.x(tick), 29, "L", this.x(tick), this.h - 26]).attr({
-          stroke: '#fff'
-        });
-      }
       that = this;
       comparatorCallback = function(pathway) { that.updateComparator(pathway) }
       twentyfifty.loadSecondaryPathway(comparator_id, comparatorCallback);
-    };
-
-    this.teardown = function() {
-      $("#results").empty();
-      $("#message").removeClass('warning');
-    };
-
-    // The data is returned from the Excel as a table, where 100 is the
-    // air quality in 2010
-    // [["High", 86], ["Low", 28]]
-    // we turn it into an object:
-    // {"High": 86, "Low": 28}
-    table_to_object = function(table) {
-      o = {};
-      table.forEach(function(row) {
-        o[row[0]] = row[1];
-      });
-      return o;
     }
 
+    redraw = function() {
+      lowbars = bars.selectAll(".lowbar")
+        .data(data, function(d) { return d.name; });
+
+      lowbars.enter().append("rect")
+        .attr("class", function(d) { return d.css + " lowbar" });
+
+      lowbars.transition()
+        .attr("x",x(0))
+        .attr("y", function(d) { return y(d.name) })
+        .attr("width", function(d) { return x(d.low)  })
+        .attr("height", y.rangeBand());
+
+      rangebars = bars.selectAll(".rangebar")
+        .data(data, function(d) { return d.name; });
+
+      rangebars.enter().append("rect")
+        .attr("class", function(d) { return d.css + " rangebar" })
+        .attr("fill", function(d) { return "url('#pattern"+d.name+"')"; });
+
+      rangebars.transition()
+        .attr("x", function(d) { return x(d.low) })
+        .attr("y", function(d) { return y(d.name) })
+        .attr("width", function(d) { return x(d.high) - x(d.low)  })
+        .attr("height", y.rangeBand());
+
+      captions = bars.selectAll(".caption")
+        .data(data, function(d) { return d.name; });
+
+      captions.enter().append("text")
+        .attr("class", "caption")
+        .attr("text-anchor" , "end");
+        
+      captions
+        .attr("x", function(d) { return x(0)-10 })
+        .attr("y", function(d) { return y(d.name) + (y.rangeBand()/2) })
+        .attr("dy", "0.32em")
+        .text(function(d) { return d.caption });
+
+    }
+
+    this.teardown = function() {
+      d3.select("#message").classed('warning', false);
+      d3.selectAll("#results *").remove();
+    };
+
     this.updateComparator = function(pathway) {
-      air_quality = table_to_object(pathway.air_quality);
-      this.bars['comparator']['low'].attr({
-        width: this.x(air_quality.Low) - this.x(0)
-      });
-      this.bars['comparator']['range'].attr({
-        width: this.x(air_quality.High - air_quality.Low) - this.x(0),
-        x: this.x(air_quality.Low)
-      });
+      data[1] = { 
+        name: "comparator", 
+        css: "comparator",
+        caption: "2050 - "+twentyfifty.pathwayName(pathway['_id'], "Comparison"),
+        low: pathway.air_quality[1][1], 
+        high: pathway.air_quality[0][1]
+      }
+      redraw();
     };
 
     this.updateResults = function(pathway) {
-      air_quality = table_to_object(pathway.air_quality);
+      data[1] = { 
+        name: "chosen", 
+        css: "chosen",
+        caption: "2050 - "+twentyfifty.pathwayName(pathway['_id'], "Your pathway"),
+        low: pathway.air_quality[1][1], 
+        high: pathway.air_quality[0][1]
+      }
+      updateMessage();
+      redraw();
+    }
 
-      var text;
-      this.bars['chosen']['low'].attr({
-        width: this.x(air_quality.Low) - this.x(0)
-      });
-      this.bars['chosen']['range'].attr({
-        width: this.x(air_quality.High - air_quality.Low) - this.x(0),
-        x: this.x(air_quality.Low)
-      });
-      text = ["The damage to human health arising from air pollution from this pathway, principally particulate matter, could be around "];
-      text.push("" + (Math.abs(Math.round(100 - air_quality.High))) + "%");
-      if (air_quality.High > 100 && air_quality.Low <= 100) {
-        text.push(" higher ");
-      }
-      if (air_quality.High <= 100 && air_quality.Low > 100) {
-        text.push(" lower ");
-      }
-      text.push(" to ");
-      text.push("" + (Math.abs(Math.round(100 - air_quality.Low))) + "%");
-      if (air_quality.Low > 100) {
-        text.push(" higher");
-      }
-      if (air_quality.Low <= 100) {
-        text.push(" lower");
-      }
-      text.push(" in 2050 compared to 2010.");
-      if (air_quality.High > 100) {
-        text.push(" Given the scope for adverse implications for air quality, if the UK were to adopt this pathway the Government  would develop a policy framweork that supported the innovation required to be at the bottom end of the range");
-      }
-      $('#airqualitymessage').html(text.join(''));
+    percent_format = d3.format("%");
+
+    updateMessage = function() {
+      low = data[1].low;
+      high = data[1].high;
+
+      amount = percent_format(Math.abs(1-(high/100)));
+
+      if (high > 100) {
+        d3.select("#airquality_range_start").text( amount + " higher to ");
+      } else if (high < 100) {
+        d3.select("#airquality_range_start").text( amount + " lower to ");
+      } else {
+        d3.select('#airquality_range_start').text("");
+      };
+
+      amount = percent_format(Math.abs(1-(low/100)));
+
+      if (low > 100) {
+        d3.select("#airquality_range_end").text( amount + " higher");
+      } else if (low < 100) {
+        d3.select("#airquality_range_end").text( amount + " lower");
+      } else {
+        d3.select("#airquality_range_end").text("");
+      };
+
+
+      d3.select("#air_quality_worse").attr("style", high > 100 ? "display: inline" : "display: none")
     };
 
     return this;

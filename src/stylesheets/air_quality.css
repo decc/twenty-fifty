@@ -17,3 +17,40 @@
     font-size: 16px;
     margin-left: 0px;
     text-align: left; }
+
+#airquality .today.lowbar {
+  fill: #008000;
+  stroke: none;
+}
+
+#airquality .comparator.lowbar {
+  fill: #ff0000;
+  stroke: #ff0000;
+}
+
+#airquality .comparator.rangebar {
+  stroke: #ff0000;
+}
+
+#airquality #patterncomparator {
+  stroke: #ff0000;
+}
+
+#airquality .chosen.lowbar {
+  fill: #1f77b4;
+  stroke: #1f77b4;
+}
+
+#airquality .chosen.rangebar {
+  /** fill is set inline, so it works with firefox **/
+  stroke: #1f77b4;
+}
+
+#airquality #patternchosen {
+  stroke: #1f77b4;
+}
+
+#airquality .caption {
+  font-size: 0.72em;
+}
+
