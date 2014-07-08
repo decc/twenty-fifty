@@ -8,6 +8,13 @@ http://www.decc.gov.uk/2050
 Canonical source:
 http://github.com/decc/twenty-fifty
 
+## FOR AN OLDER VERSION
+
+There is an older version of this code, that makes use of Highcharts and coffeescript, and has the model stored in a separate gem. If you would like that version, please get it at:
+
+    https://github.com/decc/twenty-fifty/tree/oldHighcharts
+
+
 # INSTALATION
 
 ## System requirements
