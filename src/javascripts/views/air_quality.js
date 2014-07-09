@@ -1,14 +1,27 @@
 window.twentyfifty.views.air_quality = function() {
 
     var margin = {top: 40, right: 30, bottom: 30, left: 300},
+        // These are the names we use for the three bars, they must match
+        // the 'name' attribute in the data array defined below
         domain = ["chosen", "comparator", "2010"],
         x,
         y,
         xAxis,
-        yAxis,
         svg,
         bars,
-        data = [{name: '2010', caption: '2010', css: 'today',  low: 100, high: 100}];
+        // This contains the data that will be shown as an array of objects
+        // Initially, it just contains the 2010 data, the comparator and chosen
+        // data is added by the updateComparator and updateResults methods below
+        data = [
+          { 
+            name: '2010', // Must match the name in the domain array above
+            caption: '2010', // Used for the label on the left of the bar
+            css: 'today',  // Used to add a css name to the drawn objects 
+                           // i.e., todaylowbar and todayrangebar
+            low: 100,  // The low value to plot
+            high: 100 // The high value to plot
+          }
+        ];
         
     
     this.setup = function() {
