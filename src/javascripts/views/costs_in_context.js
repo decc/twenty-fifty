@@ -230,9 +230,8 @@ window.twentyfifty.views.costs_in_context = function() {
 
   this.updateAllComparators = function(pathway) {
     // This adjusts the costs for any high/low overrides the user has selected
-    if(pathway.total_cost_range_adjusted == undefined ) {
-      twentyfifty.adjust_costs_of_pathway(pathway);
-    }
+    twentyfifty.adjust_costs_of_pathway(pathway);
+
     data.set(pathway['_id'], { 
       name: pathway['_id'], 
       css: (pathway.ghg_reduction_from_1990 <= 0.79) ? "misstarget" : "hittarget",
@@ -245,9 +244,8 @@ window.twentyfifty.views.costs_in_context = function() {
 
   this.updateResults = function(pathway) {
     // This adjusts the costs for any high/low overrides the user has selected
-    if(pathway.total_cost_range_adjusted == undefined ) {
-      twentyfifty.adjust_costs_of_pathway(pathway);
-    }
+    twentyfifty.adjust_costs_of_pathway(pathway);
+
     data.set("chosen", { 
       name: "chosen", 
       css: "chosen",
