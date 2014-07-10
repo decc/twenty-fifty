@@ -6,7 +6,7 @@
   padding: 0;
   height: 600px; }
 
-.costsincontext h1 {
+#costsincontexttemplate h1 {
   font-size: 16px;
   margin-left: 250px; }
 
@@ -45,3 +45,34 @@
   margin-left: 250px;
   margin-right: 100px;
   margin-bottom: 30px; }
+
+#costsincontext .caption {
+  font-size: 0.72em;
+}
+
+#costsincontext .hittarget {
+  fill: #008000;
+  stroke: none;
+}
+
+#costsincontext .misstarget {
+  fill: #ff0000;
+  stroke: none;
+}
+
+#costsincontext .chosen {
+  fill: #1f77b4;
+  stroke: none;
+}
+
+#costsincontext #chosenpattern {
+  stroke: #1f77b4;
+}
+
+#costsincontext #hittargetpattern {
+  stroke: #008000;
+}
+
+#costsincontext #misstargetpattern {
+  stroke: #ff0000;
+}
