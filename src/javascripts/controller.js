@@ -313,6 +313,10 @@
       updateComparator();
     }
 
+    if(active_view.updateAllComparators != undefined) {
+      updateAllComparators();
+    }
+
     if (history['pushState'] != null) {
       return history.pushState(choices, c, url());
     }
@@ -474,6 +478,16 @@
     }
     updateComparator();
   };
+
+
+  // This is used when you want to compare a whole set of pathways
+  updateAllComparators = function() {
+    twentyfifty.comparator_pathways.forEach(function(id) {
+      loadSecondaryPathway(id, function(comparator) {
+        active_view.updateAllComparators(comparator);
+      });
+    });
+  }
 
   pathwayName = function(pathway_code, default_name) {
     if (default_name == null) {

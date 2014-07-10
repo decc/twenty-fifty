@@ -183,6 +183,9 @@
             <a href="#" onclick="$.jStorage.set('CostCaveatShown',true);$('#cost_caveats').hide(); return false;">Click to continue using the calculator</a>
           </div>
         </div>
+
+        <!-- AIR QUALITY VIEW -->
+
         <div id='air_quality_results'>
           <div class='airquality'>
             <h1>The impact of your pathway on air quality</h1>
@@ -205,6 +208,9 @@
             </div>
           </div>
         </div>
+
+        <!-- ENERGY SECURITY VIEW -->
+
         <div id="energysecurity">
           <div id="balancing" class="column">
             <h2>Balancing electricity supply and demand</h2>
@@ -231,6 +237,19 @@
             </table>
           </div>
           <div class="clear"></div>
+        </div>
+
+        <!-- COSTS IN CONTEXT VIEW -->
+        <div id='costsincontexttemplate'>
+          <div id='cost_override_warning'>NB Some costs not on default values</div>
+          <h1>The cost to society of your pathway. This is not your energy bill.<br>
+            For comparison, UK average GDP 2010-2050 is forecast to be roughly &pound;35000 per person.</h1>
+          <div id='costsincontext'>
+          </div>
+          <div id='essentialnotes'>
+            Note: The cost of failing to tackle climate change is not included. Some pathways, including the 'All at Level 1' pathway shown here, fail to tackle climate change. The Stern review estimated that failing to tackle climate change could reduce global GDP by up to 20% (equivalent to up to &pound;6500 per person per year on top of the cost of the energy system included in the chart above). Nor are the costs of travelling less, being colder, or consuming less included.  
+            <a href="#" onclick="$.jStorage.deleteKey('CostCaveatShown');$('#cost_caveats').show(); return false;">Show the caveats again</a>
+          </div>
         </div>
       </div>
 
