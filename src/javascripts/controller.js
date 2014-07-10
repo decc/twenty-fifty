@@ -235,7 +235,7 @@
     }, options);
     if (s.view === 'costs_compared_within_sector' && (s.sector != null)) {
       return "/" + s.controller + "/" + s.code + "/" + s.view + "/" + s.sector;
-    } else if (s.comparator != null) {
+    } else if (s.comparator != null && s.comparator != twentyfifty.default_comparator_code ) {
       return "/" + s.controller + "/" + s.code + "/" + s.view + "/comparator/" + s.comparator;
     } else {
       return "/" + s.controller + "/" + s.code + "/" + s.view;
