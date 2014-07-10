@@ -27,7 +27,10 @@ window.twentyfifty.views.air_quality = function() {
     this.setup = function() {
       // The html template for the page is in the #air_quality_results div at the bottom
       // of src/index.html.erb. This moves the template into the results part of the screen
-      d3.select("#results").append(function() { return d3.select("#air_quality_results").node().cloneNode(true) });
+      d3.select("#results").append(function() { 
+        return d3.select("#air_quality_results").node().cloneNode(true) 
+      });
+
       // This indicates to the user that this section is under development
       d3.select("#message").classed('warning', true);
       
@@ -94,45 +97,53 @@ window.twentyfifty.views.air_quality = function() {
           .attr("y1", height);
     }
 
-    redraw = function() {
-      lowbars = bars.selectAll(".lowbar")
+    var redraw = function() {
+      groups = bars.selectAll("g.bar")
         .data(data, function(d) { return d.name; });
 
-      lowbars.enter().append("rect")
-        .attr("class", function(d) { return d.css + " lowbar" });
+      // We want to end up with one group per data point:
+      // g.bar
+      //  rect.lowbar
+      //  rect.rangebar
+      //  text.caption
+      new_groups = groups.enter().append("g")
+        .attr("class", function(d, i) { return "bar "+d.css });
 
-      lowbars.transition()
+      new_groups.append("rect")
+        .classed("lowbar", true);
+
+      new_groups.append("rect")
+        .classed("rangebar", true)
+        .attr("fill", function(d) { return "url('#pattern"+d.name+"')"; });
+
+      new_groups.append("text")
+        .classed("caption", true)
+        .attr("text-anchor" , "end")
+        .attr("dy", "0.32em");
+
+      // Remove any groups we don't need
+      groups.exit().remove();
+
+      // Put the low bar in the right position 
+      groups.select(".lowbar").transition()
         .attr("x",x(0))
         .attr("y", function(d) { return y(d.name) })
         .attr("width", function(d) { return x(d.low)  })
         .attr("height", y.rangeBand());
 
-      rangebars = bars.selectAll(".rangebar")
-        .data(data, function(d) { return d.name; });
-
-      rangebars.enter().append("rect")
-        .attr("class", function(d) { return d.css + " rangebar" })
-        .attr("fill", function(d) { return "url('#pattern"+d.name+"')"; });
-
-      rangebars.transition()
+      // Put the range bar in the right position
+      groups.select(".rangebar").transition()
         .attr("x", function(d) { return x(d.low) })
         .attr("y", function(d) { return y(d.name) })
         .attr("width", function(d) { return x(d.high) - x(d.low)  })
         .attr("height", y.rangeBand());
-
-      captions = bars.selectAll(".caption")
-        .data(data, function(d) { return d.name; });
-
-      captions.enter().append("text")
-        .attr("class", "caption")
-        .attr("text-anchor" , "end");
         
-      captions
+      // Put the caption in the right position
+      groups.select(".caption")
         .attr("x", function(d) { return x(0)-10 })
         .attr("y", function(d) { return y(d.name) + (y.rangeBand()/2) })
         .attr("dy", "0.32em")
         .text(function(d) { return d.caption });
-
     }
 
     this.teardown = function() {
@@ -152,7 +163,7 @@ window.twentyfifty.views.air_quality = function() {
     };
 
     this.updateResults = function(pathway) {
-      data[1] = { 
+      data[2] = { 
         name: "chosen", 
         css: "chosen",
         caption: "2050 - "+twentyfifty.pathwayName(pathway['_id'], "Your pathway"),
