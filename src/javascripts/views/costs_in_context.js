@@ -151,7 +151,7 @@ window.twentyfifty.views.costs_in_context = function() {
     });
   };
 
-  redraw = function() {
+  var redraw = function() {
     data_values = data.values().sort(function(a,b) { return a.low - b.low; });
 
     groups = bars.selectAll("g.bar")
