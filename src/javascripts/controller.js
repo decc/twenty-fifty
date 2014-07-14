@@ -62,29 +62,29 @@
     $("a.view").on('click touchend', function(event) {
       var t, v;
       event.preventDefault();
-      t = $(event.target);
-      v = t.data().view;
-      return switchView(v);
+      var v = $(event.target).data().view;
+      switchView(v);
     });
 
+    // This turns the example pathwway menu links in src/index.html.erb into controls that
+    // change the user's selected pathway
     $(".newdropdown").on('click touchend', function(event) {
       var d, o, space, t;
       event.preventDefault();
-      t = $(event.target);
-      d = $(t.data().dropdown);
-      if (d.hasClass("showdropdown")) {
-        return d.removeClass("showdropdown");
-      } else {
-        d.addClass("showdropdown");
-        o = t.offset();
-        o.top = o.top + t.height();
-        space = $(document).width() - o.left - d.width();
-        if (space < 0) {
-          o.left = o.left + space;
-        }
-        return d.offset(o);
-      }
+      var p = $(event.target).data().pathway;
+      switchPathway(p);
     });
+    
+    // This turns the comparator pathwway menu links in src/index.html.erb into controls that
+    // change the user's counterfactual pathway
+    $("a.comparator").click(function(event) {
+      event.preventDefault();
+      var p = $(event.target).data().pathway;
+      switchComparator(p);
+    });
+
+    // This sorts out the examples menu
+    setupDropdowns($("#topbar .newdropdown"));
 
     // This triggers the interface to loop through levels 1 to 4
     // when the user hovers their mouse over a choice.
@@ -105,6 +105,28 @@
         // FIXME: Refactor out the cache[codeForChoices()] call
         active_view.updateResults(cache[codeForChoices()]);
       }, 500);
+    });
+  };
+
+  // This turns dropdown menu links into controls that open and shut a dropdown
+  var setupDropdowns = function(targets) {
+    targets.click(function(event) {
+      var d, o, space, t;
+      event.preventDefault();
+      t = $(event.target);
+      d = $(t.data().dropdown);
+      if (d.hasClass("showdropdown")) {
+        d.removeClass("showdropdown");
+      } else {
+        d.addClass("showdropdown");
+        o = t.offset();
+        o.top = o.top + t.height();
+        space = $(document).width() - o.left - d.width();
+        if (space < 0) {
+          o.left = o.left + space;
+        }
+        d.offset(o);
+      }
     });
   };
 
@@ -287,6 +309,7 @@
       return false;
     }
     if (active_view != null) {
+      // The old view is expected to remove anything it has put on screen
       active_view.teardown();
     }
     view = new_view;
@@ -302,7 +325,13 @@
     } else {
       $("#cost_choice").text("Costs");
     }
+
+    // This is called on the new view to se it up
     active_view.setup();
+    
+    // Just in case the new view has added any dropdown menus
+    setupDropdowns($("#results .newdropdown"));
+
     c = codeForChoices();
     data = cache[c];
     if (data != null) {
@@ -323,14 +352,14 @@
   };
 
   switchPathway = function(new_code) {
-    return setChoices(choicesForCode(new_code));
+    setChoices(choicesForCode(new_code));
   };
 
   setChoices = function(new_choices) {
     $('.showdropdown').removeClass("showdropdown");
     old_choices = choices.slice(0);
     choices = new_choices;
-    return loadMainPathway();
+    loadMainPathway();
   };
 
   loadMainPathway = function(pushState) {
@@ -472,6 +501,7 @@
   }
 
   switchComparator = function(new_comparator) {
+    $('.showdropdown').removeClass("showdropdown");
     comparator = new_comparator;
     if (history['pushState'] != null) {
       history.pushState(choices, codeForChoices(), url());
