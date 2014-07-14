@@ -60,20 +60,32 @@
       </div>
     </div>
 
+    <!-- This is a little dropdown menu for the different sorts of cost -->
     <div class='dropdown' id='cost_choices'>
       <a class='view' data-view='costs_in_context' href='#'>In context</a>
       <a class='view' data-view='costs_compared_overview' href='#'>Compared</a>
       <a class='view' data-view='costs_sensitivity' href='#'>Sensitivity</a>
     </div>
 
+    <!-- this will be hidden until the Examples link is clicked above -->
     <div class='dropdown' id='savedpathway_choices'>
       <!-- These are taken from the underlying spreadsheet -->
       <% structure.example_pathways.each do |pathway| %>
-        <a href='#' onclick="twentyfifty.switchPathway('<%= pathway[:code] %>');$('ul#savedpathway_choices').toggle()"><%= pathway[:name] %></a>
+        <a class='pathway' data-pathway='<%= pathway[:code] %>' href='#'><%= pathway[:name] %></a>
       <% end %>
       <!-- Change this to point to your local website -->
       <a href='http://2050-calculator-tool-wiki.decc.gov.uk/pages/122'>More&hellip;</a>
     </div>
+
+    <!-- this will be hidden until a Choose comparison link is clicked -->
+    <div class='dropdown' id='comparatorpathway_choices'>
+      <!-- These are taken from the underlying spreadsheet -->
+      <% structure.example_pathways.each do |pathway| %>
+        <a class='comparator' data-pathway='<%= pathway[:code] %>' href='#'><%= pathway[:name] %></a>
+      <% end %>
+    </div>
+
+
     <!-- This appears while the tool is waiting for data from the server -->
     <div id='calculating'>
       <span>Calculating</span>
@@ -166,8 +178,10 @@
       <!-- Change this to link to your country's website -->
       All the assumptions and calculations are available in a spreadsheet. Download <a href='/model.xlsx'>Excel <%= structure.reported_calculator_version %> <%= %></a> (<a href='http://2050-calculator-tool-wiki.decc.gov.uk/pages/140'>Version history</a>). The source code for this site is available under an open source licence from <a href='http://github.com/decc/twenty-fifty'>http://github.com/decc/twenty-fifty</a>
     </div>
+
     <!-- The following html is only displayed on screen when a user selects a particular view -->
     <div id='snippets'>
+
       <!-- This is shown the first time a user visits a costs page -->
       <div id='cost_caveats'>
         We would like your help to develop this tool. Please <a href="http://2050-calculator-tool-wiki.decc.gov.uk">click here</a> to find out more about our methodology and suggest improvements.  Before viewing the cost implications of your choices, please note that: 
@@ -251,7 +265,21 @@
             <a href="#" onclick="$.jStorage.deleteKey('CostCaveatShown');$('#cost_caveats').show(); return false;">Show the caveats again</a>
           </div>
         </div>
+
+        <!-- COSTS SENSITIVITY VIEW -->
+        <div id='costssensitivitytemplate'>
+          <a id='comparatorchoice' class='newdropdown' data-dropdown='#comparatorpathway_choices' href='#'>Choose comparison</a>
+          <h1>The cost of your pathway compared with another, allowing simple variation in cost estimates.</h1>
+          <div id='costssensitivity'>
+            Note: The cost of failing to tackle climate change is not included. Some pathways, including the 'All at Level 1' pathway shown here, fail to tackle climate change. The Stern review estimated that failing to tackle climate change could reduce global GDP by up to 20% (equivalent to up to &pound;6500 per person per year on top of the cost of the energy system included in the chart above). Nor are the costs of travelling less, being colder, or consuming less included.  
+            <a href="#" onclick="$.jStorage.deleteKey('CostCaveatShown');$('#cost_caveats').show(); return false;">Show the caveats again</a>
+
+          </div>
+
+
+      <!-- END OF SNIPPETS -->
       </div>
+
 
     </div>
   </body>
