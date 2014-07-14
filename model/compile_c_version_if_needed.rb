@@ -10,8 +10,6 @@ end
 unless File.exists?(File.join(this_directory, FFI.map_library_name("model")))
   puts "No compiled C found. Compiling"
   require_relative 'compile_c_version_of_excel'
-  exit 0
 end
 
 puts "Compiled C found"
-exit 0
