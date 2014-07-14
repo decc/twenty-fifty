@@ -1,3 +1,6 @@
+require 'ffi'
+
+require_relative 'compile_c_version_if_needed'
 require_relative 'model'
 require_relative 'model_version'
 
