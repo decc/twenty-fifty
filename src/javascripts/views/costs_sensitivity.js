@@ -1,5 +1,4 @@
 window.twentyfifty.views.costs_sensitivity = function() {
-  __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
     bottom_area_start = 219;
 
