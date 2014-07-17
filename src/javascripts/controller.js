@@ -69,12 +69,12 @@
 
     // This turns the example pathwway menu links in src/index.html.erb into controls that
     // change the user's selected pathway
-    $(".newdropdown").on('click touchend', function(event) {
-      var d, o, space, t;
+    $("a.pathway").on('click touchend', function(event) {
       event.preventDefault();
       var p = $(event.target).data().pathway;
       switchPathway(p);
     });
+    
     
     // This turns the comparator pathwway menu links in src/index.html.erb into controls that
     // change the user's counterfactual pathway
