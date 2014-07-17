@@ -3,6 +3,8 @@ window.twentyfifty.views.primary_energy_chart = function() {
   // This is called before the view is first selected
   // and produces the three empty charts
   this.setup = function() {
+    $('.primary_energy_notes').show();
+
     charts = d3.select("#results").selectAll(".chart")
       .data(['demand_chart', 'supply_chart', 'emissions_chart']);
 
@@ -14,19 +16,16 @@ window.twentyfifty.views.primary_energy_chart = function() {
     this.final_energy_chart = timeSeriesStackedAreaChart()
       .title("Final Energy Demand")
       .unit('TWh/yr')
-      .total_label('Total')
       .max_value(4000);
 
     this.primary_energy_chart = timeSeriesStackedAreaChart()
       .title("Primary Energy Supply")
       .unit('TWh/yr')
-      .total_label('Total used in UK')
       .max_value(4000);
 
     this.emissions_chart = timeSeriesStackedAreaChart()
       .title("Greenhouse Gas Emissions")
       .unit('MtCO2e/yr')
-      .total_label('Total')
       .min_value(-500)
       .max_value(1000);
   };
@@ -38,6 +37,7 @@ window.twentyfifty.views.primary_energy_chart = function() {
     this.final_energy_chart = null;
     this.primary_energy_chart = null;
     this.emissions_chart = null;
+    $('.primary_energy_notes').hide();
   };
 
 
@@ -60,10 +60,20 @@ window.twentyfifty.views.primary_energy_chart = function() {
   // it updates the charts
   this.updateResults = function(pathway) {
 
+    // Add some footnote references
+    if(pathway.primary_energy_supply[pathway.primary_energy_supply.length-1][0] == "Total used in UK") {
+      pathway.primary_energy_supply[pathway.primary_energy_supply.length-1][0] =  pathway.primary_energy_supply[pathway.primary_energy_supply.length-1][0] + "¹";
+    }
+
+    if(pathway.ghg[pathway.ghg.length-2][0] == "Total") {
+      pathway.ghg[pathway.ghg.length-2][0] =  pathway.ghg[pathway.ghg.length-2][0] + "³";
+    }
+
+
     // Get the data in the right format
     demand = convert_table_to_hash(pathway.final_energy_demand);
     supply = convert_table_to_hash(pathway.primary_energy_supply);
-    ghg = convert_table_to_hash(pathway.ghg);
+    ghg = convert_table_to_hash(pathway.ghg.slice(0,-1));
     percent = pathway.ghg_reduction_from_1990;
 
     // Draw the charts
@@ -95,6 +105,43 @@ window.twentyfifty.views.primary_energy_chart = function() {
         return this.textContent = "" + (i(t)) + "% reduction 1990-2050; Target is 80%";
       };
     });
+
+    x = this.emissions_chart.xScale;
+    y = this.emissions_chart.yScale;
+
+    targets = pathway.ghg[pathway.ghg.length -1].slice(1);
+
+    t = d3.select('#emissions_chart g.drawing').selectAll('circle.target')
+      .data(targets);
+
+    t.enter().append('circle')
+      .attr('class', 'target')
+      .attr('r', function(d) { return d == undefined ? 0 : 3 });
+
+    t.attr('cx', function(d,i) { return x(2010 + (i*5)) });
+    t.attr('cy', function(d,i) { return y(d) });
+
+    t = d3.select('#emissions_chart g.drawing').selectAll("g.targetlabel")
+      .data([targets[0]]);
+
+    new_label = t.enter().append('g')
+      .attr('class', 'targetlabel');
+
+    new_label.append('text')
+      .text("Targets²");
+
+    t.select('text')
+      .attr('x', function(d,i) { return x(2017) })
+      .attr('y', function(d,i) { return y(800) });
+
+    new_label.append('line');
+
+    t.select('line')
+      .attr('x1', function(d,i) { return x(2010)+4 })
+      .attr('y1', function(d,i) { return y(d)-4 })
+      .attr('x2', function(d,i) { return x(2017) })
+      .attr('y2', function(d,i) { return y(800) });
+
   };
 
   return this;

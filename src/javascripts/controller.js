@@ -51,7 +51,7 @@
     // a new pathway. The cell is expected to have a data-choicenumber attribute that 
     // indicates whether it is nuclear, CCS, home heating etc and a data-choicelevel 
     // attribute that indicates whether it
-    $("a.choiceLink").click(function(event) {
+    $("a.choiceLink").on('click touchend', function(event) {
       event.preventDefault();
       t = $(event.target);
       c = t.data().choicenumber;
@@ -59,7 +59,7 @@
       go(c, l);
     });
 
-    $("a.view").click(function(event) {
+    $("a.view").on('click touchend', function(event) {
       var t, v;
       event.preventDefault();
       t = $(event.target);
@@ -67,7 +67,7 @@
       return switchView(v);
     });
 
-    $(".newdropdown").click(function(event) {
+    $(".newdropdown").on('click touchend', function(event) {
       var d, o, space, t;
       event.preventDefault();
       t = $(event.target);

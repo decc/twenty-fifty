@@ -18,13 +18,11 @@ window.twentyfifty.views.electricity = function() {
     this.supply_chart = timeSeriesStackedAreaChart()
       .title("Electricity Supply")
       .unit('TWh/yr')
-      .total_label('Total')
       .max_value(4000);
 
     this.emissions_chart = timeSeriesStackedAreaChart()
       .title("Emissions from Electricity")
       .unit('MtCO2e/yr')
-      .total_label('Total')
       .min_value(-500)
       .max_value(1000);
   };

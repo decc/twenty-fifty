@@ -204,3 +204,21 @@ text.lightingappliances {
 
 .domesticheat {
   fill: #ff0000; }
+
+circle.target {
+  fill: #000;
+  stroke: #fff;
+}
+
+g.targetlabel text {
+  font-size: 0.72em;
+}
+
+g.targetlabel line {
+  stroke: #ccc;
+  stroke-thickness: 1;
+}
+
+tr.primary_energy_notes {
+  display: none;
+}

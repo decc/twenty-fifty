@@ -7041,7 +7041,17 @@ module Model
   attach_function 'ghg_k24', [], ExcelValue.by_value
   attach_function 'ghg_l24', [], ExcelValue.by_value
   attach_function 'ghg_m24', [], ExcelValue.by_value
-  attach_function 'ghg_e39', [], ExcelValue.by_value
+  attach_function 'ghg_d25', [], ExcelValue.by_value
+  attach_function 'ghg_e25', [], ExcelValue.by_value
+  attach_function 'ghg_f25', [], ExcelValue.by_value
+  attach_function 'ghg_g25', [], ExcelValue.by_value
+  attach_function 'ghg_h25', [], ExcelValue.by_value
+  attach_function 'ghg_i25', [], ExcelValue.by_value
+  attach_function 'ghg_j25', [], ExcelValue.by_value
+  attach_function 'ghg_k25', [], ExcelValue.by_value
+  attach_function 'ghg_l25', [], ExcelValue.by_value
+  attach_function 'ghg_m25', [], ExcelValue.by_value
+  attach_function 'ghg_e43', [], ExcelValue.by_value
   # end of GHG
   attach_function 'electricity_d63', [], ExcelValue.by_value
   attach_function 'electricity_e63', [], ExcelValue.by_value

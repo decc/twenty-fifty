@@ -50,10 +50,7 @@
 #classic_controls table td.name a:hover {
   text-decoration: underline;
 }
-#classic_controls table td.help {
-  width: 14px;
-}
-#classic_controls table td.help a {
+#classic_controls table td.help a, #classic_controls div.help {
   text-align: center;
   display: block;
   background-color: #7c88fa;
@@ -62,6 +59,10 @@
   width: 100%;
   text-decoration: none;
 }
+#classic_controls table td.help, #classic_controls div.help {
+  width: 14px;
+}
+
 #classic_controls table tr.incremental a {
   background-position: left center;
   background-repeat: repeat-y;
@@ -72,18 +73,39 @@
   <% end %>
 <% end %>
 
-#classic_controls table tr.incremental a.level1 {
+#classic_controls div.level1, 
+#classic_controls div.level2, 
+#classic_controls div.level3,
+#classic_controls div.level4, 
+#classic_controls div.alternate  {
+  width: 14px;
+  text-align: center;
+  color: #000;
+  border: solid #ccc 1px;
+  display: inline-block;
+}
+
+#classic_controls table#notes {
+  border-spacing: 0px 5px;
+}
+
+#notes td#firstcell {
+  width: 60px;
+}
+
+#classic_controls table tr.incremental a.level1, #classic_controls div.level1 {
   background-color: #92C979;
 }
-#classic_controls table tr.incremental a.level2 {
+#classic_controls table tr.incremental a.level2, #classic_controls div.level2 {
   background-color: #EFDD60;
 }
-#classic_controls table tr.incremental a.level3 {
+#classic_controls table tr.incremental a.level3, #classic_controls div.level3 {
   background-color: #FFAE55;
 }
-#classic_controls table tr.incremental a.level4 {
+#classic_controls table tr.incremental a.level4, #classic_controls div.level4 {
   background-color: #F44545;
 }
 #classic_controls table tr.alternative a.selected {
   background-color: #aaa;
 }
+
