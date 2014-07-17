@@ -122,7 +122,7 @@ window.twentyfifty.views.primary_energy_chart = function() {
     t.attr('cy', function(d,i) { return y(d) });
 
     t = d3.select('#emissions_chart g.drawing').selectAll("g.targetlabel")
-      .data([targets[0]]);
+      .data([targets[1]]);
 
     new_label = t.enter().append('g')
       .attr('class', 'targetlabel');
@@ -131,15 +131,15 @@ window.twentyfifty.views.primary_energy_chart = function() {
       .text("Targets²");
 
     t.select('text')
-      .attr('x', function(d,i) { return x(2017) })
+      .attr('x', function(d,i) { return x(2022) })
       .attr('y', function(d,i) { return y(800) });
 
     new_label.append('line');
 
     t.select('line')
-      .attr('x1', function(d,i) { return x(2010)+4 })
+      .attr('x1', function(d,i) { return x(2015)+4 })
       .attr('y1', function(d,i) { return y(d)-4 })
-      .attr('x2', function(d,i) { return x(2017) })
+      .attr('x2', function(d,i) { return x(2022) })
       .attr('y2', function(d,i) { return y(800) });
 
   };
