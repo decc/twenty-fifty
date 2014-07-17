@@ -4165,7 +4165,13 @@ class TestModel < Minitest::Unit::TestCase
   def test_ghg_k24; assert_in_epsilon(669.0813571870773, worksheet.ghg_k24, 0.002); end
   def test_ghg_l24; assert_in_epsilon(694.1918652457354, worksheet.ghg_l24, 0.002); end
   def test_ghg_m24; assert_in_epsilon(714.1995340989517, worksheet.ghg_m24, 0.002); end
-  def test_ghg_e39; assert_in_delta(0.08202947747650835, worksheet.ghg_e39, 0.002); end
+  def test_ghg_d25; assert_equal("Targets", worksheet.ghg_d25); end
+  def test_ghg_e25; assert_in_epsilon(603.6, worksheet.ghg_e25, 0.002); end
+  def test_ghg_f25; assert_in_epsilon(556.4, worksheet.ghg_f25, 0.002); end
+  def test_ghg_g25; assert_in_epsilon(508.8, worksheet.ghg_g25, 0.002); end
+  def test_ghg_h25; assert_in_epsilon(390.0, worksheet.ghg_h25, 0.002); end
+  def test_ghg_m25; assert_in_epsilon(159.917234, worksheet.ghg_m25, 0.002); end
+  def test_ghg_e43; assert_in_delta(0.08202947747650835, worksheet.ghg_e43, 0.002); end
   def test_intermediate_output_b2; assert_equal("Energy source / use charts", worksheet.intermediate_output_b2); end
   def test_intermediate_output_h3; assert_equal("Historic data:", worksheet.intermediate_output_h3); end
   def test_intermediate_output_ay3; assert_equal("2050 Calculator calculations", worksheet.intermediate_output_ay3); end

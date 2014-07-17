@@ -51,7 +51,7 @@
     // a new pathway. The cell is expected to have a data-choicenumber attribute that 
     // indicates whether it is nuclear, CCS, home heating etc and a data-choicelevel 
     // attribute that indicates whether it
-    $("a.choiceLink").click(function(event) {
+    $("a.choiceLink").on('click touchend', function(event) {
       event.preventDefault();
       t = $(event.target);
       c = t.data().choicenumber;
@@ -60,7 +60,8 @@
     });
 
     // This turns the view links in src/index.html.erb into controls that switch the view
-    $("a.view").click(function(event) {
+    $("a.view").on('click touchend', function(event) {
+      var t, v;
       event.preventDefault();
       var v = $(event.target).data().view;
       switchView(v);
@@ -68,7 +69,8 @@
 
     // This turns the example pathwway menu links in src/index.html.erb into controls that
     // change the user's selected pathway
-    $("a.pathway").click(function(event) {
+    $(".newdropdown").on('click touchend', function(event) {
+      var d, o, space, t;
       event.preventDefault();
       var p = $(event.target).data().pathway;
       switchPathway(p);

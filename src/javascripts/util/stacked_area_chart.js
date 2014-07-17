@@ -18,7 +18,7 @@ window.timeSeriesStackedAreaChart = function() {
   max_value = 4000;
   min_year = 2010;
   max_year = 2050;
-  total_label = "Total";
+  total_label = /^total*/i;
   color_classes = {
     'Agriculture': 'agriculture',
     'Agriculture and land use': 'agriculture',
@@ -78,7 +78,9 @@ window.timeSeriesStackedAreaChart = function() {
     'Tidal': 'tidal',
     'Tidal & Wave': 'tidalandwave',
     'Total': 'total',
+    'Total³': 'total',
     'Total used in UK': 'total',
+    'Total used in UK¹': 'total',
     'Transport': 'transport',
     'Waste': 'waste',
     'Wave': 'wave',
@@ -127,6 +129,8 @@ window.timeSeriesStackedAreaChart = function() {
   dataTableFormat = d3.format(".0f");
   zoomed = false;
   zoom = function() {
+    // DISABLE
+    return false;
     var new_ymax, new_ymin, x, y, yZoom, _ref;
     zoomed = true;
     _ref = d3.mouse(this), x = _ref[0], y = _ref[1];
@@ -186,7 +190,7 @@ window.timeSeriesStackedAreaChart = function() {
               total += p.y;
             }
             series.total = total;
-            if (series.key === total_label) {
+            if (total_label.test(series.key)) {
               series.path = line;
               total_series.push(series);
             } else {
@@ -451,6 +455,9 @@ window.timeSeriesStackedAreaChart = function() {
     context = _;
     return chart;
   };
+
+  chart.xScale = xScale;
+  chart.yScale = yScale;
 
   return chart;
 };
