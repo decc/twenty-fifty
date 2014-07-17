@@ -1,10 +1,10 @@
 window.twentyfifty.views.costs_sensitivity = function() {
 
-    bottom_area_start = 219;
+    var bottom_area_start = 219;
 
-    cost_component_names = ["Conventional thermal plant", "Combustion + CCS", "Nuclear power", "Onshore wind", "Offshore wind", "Hydroelectric", "Wave and Tidal", "Geothermal", "Distributed solar PV", "Distributed solar thermal", "Micro wind", "Biomatter to fuel conversion", "Bioenergy imports", "Agriculture and land use", "Energy from waste", "Waste arising", "Marine algae", "Electricity imports", "Electricity Exports", "Electricity grid distribution", "Storage, demand shifting, backup", "H2 Production", "Domestic heating", "Domestic insulation", "Commercial heating and cooling", "Domestic lighting, appliances, and cooking", "Commercial lighting, appliances, and catering", "Industrial processes", "Conventional cars and buses", "Hybrid cars and buses", "Electric cars and buses", "Fuel cell cars and buses", "Bikes", "Rail", "Domestic aviation", "Domestic freight", "International aviation", "International shipping (maritime bunkers)", "Geosequestration", "Petroleum refineries", "Fossil fuel transfers", "District heating effective demand", "Storage of captured CO2", "Coal", "Oil", "Gas", "Finance cost"];
+    var cost_component_names = ["Conventional thermal plant", "Combustion + CCS", "Nuclear power", "Onshore wind", "Offshore wind", "Hydroelectric", "Wave and Tidal", "Geothermal", "Distributed solar PV", "Distributed solar thermal", "Micro wind", "Biomatter to fuel conversion", "Bioenergy imports", "Agriculture and land use", "Energy from waste", "Waste arising", "Marine algae", "Electricity imports", "Electricity Exports", "Electricity grid distribution", "Storage, demand shifting, backup", "H2 Production", "Domestic heating", "Domestic insulation", "Commercial heating and cooling", "Domestic lighting, appliances, and cooking", "Commercial lighting, appliances, and catering", "Industrial processes", "Conventional cars and buses", "Hybrid cars and buses", "Electric cars and buses", "Fuel cell cars and buses", "Bikes", "Rail", "Domestic aviation", "Domestic freight", "International aviation", "International shipping (maritime bunkers)", "Geosequestration", "Petroleum refineries", "Fossil fuel transfers", "District heating effective demand", "Storage of captured CO2", "Coal", "Oil", "Gas", "Finance cost"];
 
-    cost_wiki_links = {
+    var cost_wiki_links = {
       "Fuel cell cars and buses": '/pages/63',
       "Conventional cars and buses": '/pages/63',
       "Hybrid cars and buses": '/pages/63',
@@ -78,7 +78,7 @@ window.twentyfifty.views.costs_sensitivity = function() {
       }
     };
 
-    cost_component_value = function(name) {
+    var cost_component_value = function(name) {
       return cost_component_values[name] || {
         cheap: "Cheap",
         "default": "Default",
@@ -86,27 +86,27 @@ window.twentyfifty.views.costs_sensitivity = function() {
       };
     };
 
-    direction = function(value) {
+    var direction = function(value) {
       if (value > 0) {
         return "more expensive";
       }
       return "cheaper";
     };
 
-    color = function(value) {
+    var color = function(value) {
       if (value > 0) {
         return "#f00";
       }
       return "#0f0";
     };
 
-    p_low_fill_color = '#1f77b4';
+    var p_low_fill_color = '#1f77b4';
 
-    p_range_fill_color = 'url(/assets/images/hatches/hatch-1f77b4.png)';
+    var p_range_fill_color = 'url(/assets/images/hatches/hatch-1f77b4.png)';
+  
+    var c_low_fill_color = '#f00';
 
-    c_low_fill_color = '#f00';
-
-    c_range_fill_color = 'url(/assets/images/hatches/hatch-f00.png)';
+    var c_range_fill_color = 'url(/assets/images/hatches/hatch-f00.png)';
 
     this.setup = function() {
       if ($.jStorage.get('CostCaveatShown') !== true) { $('#cost_caveats').show(); }
