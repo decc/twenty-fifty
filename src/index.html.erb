@@ -140,8 +140,7 @@
       <!-- The right column -->
       <div id='other'>
         <table>
-          <!-- this should actually go up to choice 42, but that isn't ready for prime time yet -->
-          <% structure.choices[40..41].each do |choice| %>
+          <% structure.choices[40..43].each do |choice| %>
             <tr class='<%= choice.incremental_or_alternative %>' id='r<%= choice.number %>'>
               <td class='name'>
                 <a href='/assets/onepage/<%= choice.doc %>' target='_new' data-choicenumber='<%= choice.number %>'>

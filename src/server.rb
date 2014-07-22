@@ -47,6 +47,22 @@ class TwentyFiftyServer < Sinatra::Base
     redirect to("/pathways/#{map_version_2_pathway_code_to_version_3(id)}/#{action}")
   end
 
+  # This adds in the shale and UK fossil fuel choices
+  get %r{/pathways/([0-9a-zA-Z]{52,53})/(.*)} do |id, action|
+    redirect to("/pathways/#{add_shale_gas(id)}/#{action}")
+  end
+
+  def add_shale_gas(old_code)
+    if old_code.length == 52
+      old_code + "011"
+    elsif old_code.length == 52
+      n = old_code + "11" # Add the default choices for 
+      n[-1] = n[-3] 
+      n[-3] = 0
+      n
+    end
+  end
+
   def map_version_2_pathway_code_to_version_3(old_code)
     o = old_code.split('')
     n = Array.new(52,0)
