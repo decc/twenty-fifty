@@ -20,18 +20,18 @@ The code is designed to run on Linux or OS X. It has not been tested on Windows.
 
 It doesn't need much disk space, but it does need memory. To translate the Excel into the backend model requires at least 4 GB and ideally 8 GB (this is only needed if you modify the Excel model). To compile the model requires at least 2 GB and ideally 4 GB. Once compiled, less than 1 GB of memory is required to actually run the server.
 
-### A note on Ruby and Ubuntu
+## Installing on Ubuntu
 
-This code requires Ruby 2.0 or greater, and ideally Ruby 2.1. Stock images of Ubuntu, and probably other operating systems, often have older versions of Ruby. A lot of problems are caused by having several versions of ruby installed. So, please be careful. Steps that work for me are:
+This code requires Ruby 2.0 or greater, and ideally Ruby 2.1. Stock images of Ubuntu often have older versions of Ruby. A lot of problems are caused by having several versions of ruby installed. So, please be careful. Steps that work for me are:
 
-#### Get Ruby 2.1 from Brightbox
+### Get Ruby 2.1 from Brightbox
 
     sudo apt-get install python-software-properties
     sudo apt-add-repository ppa:brightbox/ruby-ng
     sudo apt-get update
     sudo apt-get install ruby ruby-dev rubygems ruby-switch
 
-#### Set the default system ruby to 2.1
+### Set the default system ruby to 2.1
 
     sudo ruby-switch --set ruby2.1
 
@@ -45,31 +45,105 @@ A common problem is a miss-match between versions of ruby, and versions of bundl
 
 Should return something starting 'ruby 2.1'. If it does not, try going through the steps in the util/setup_ubuntu-12.04.sh 
 
-## The easy steps
+### Use the build script
 
 If you have a Ubuntu Linux 12.04 server, try:
 
-    cd util
+    wget https://raw.githubusercontent.com/decc/twenty-fifty/master/util/setup-ubuntu-12.04.sh 
     bash setup-ubuntu-12.04.sh
 
-Otherwise, take a look at that file for the depdencies, or read on.
+Otherwise, take a look at that file for the depdencies, and steps.
 
-## Steps
+## Installing on OS X
 
-In theory, if you follow these steps, then everything that the code depends on should be installed automatically. In practice, life is never so simple.
+You need to be comfortable with the Terminal app and the command line.
 
-1. Install ruby 2.0 or greater (including development headers) - 2.1 is preferred for its lower memory usage
-2. 'gem install bundler' or 'sudo gem install bundler' 
-3. cd twenty_fifty
-4. bundle
-5. cd model
-6. ruby compile_c_version_of_excel.rb
+### Prerequisites
 
-# RUNNING
+You need the Apple XCode command line tools. How to get them varies by Apple OS and XCode version. You may need to google a bit.
 
-1. cd twenty_fifty
-2. rackup
-3. Navigate to http://0.0.0.0:9292 in your web browser
+One approach:
+
+1. Download and install [XCode](https://developer.apple.com/xcode/downloads/)
+2. Check it has installed the command line tools: gcc --version which  return something starting with i686-apple-. 
+
+If that doesn't work, google a bit for your operating system and xcode version. Or, you may be able to find the right "Command Line Tools" on [Apple's developer website](https://developer.apple.com/downloads/index.action)
+
+Download and install the [homebrew package management system](http://brew.sh)
+
+Check everything is ok with:
+
+    brew doctor
+
+Use homebrew to install Ruby 2.1
+
+    brew install ruby --with-libffi
+
+Make sure that version of Ruby is available in your path. If you are using bashrc then add this to your ~/.bashrc file:
+
+    # Find homebrew ruby version
+    export PATH=$(brew --prefix ruby)/bin:$PATH
+
+Once you have adjusted your profile, you need to close the terminal app and reopen it to make sure the new settings are picked up.
+    
+Check that the command 
+
+    ruby -v 
+
+returns ruby 2.1 not ruby 2.0
+
+Install the bundler gem
+
+    gem install bundler
+
+If this returns with some sort of permissions error, follow 
+
+
+
+Install the git version control system
+    
+    brew install git
+    brew link git
+
+### Installation steps
+
+Get the code:
+
+    git clone http://github.com/decc/twenty-fifty
+
+Install its dependencies
+
+    cd twenty-fifty
+    bundle 
+
+If any dependencies fail, you may need to install them individually, then run bundle again.
+
+At this point, you _should_ be able to run
+
+    bundle exec rackup
+
+There will be a long delay on the first run, while a C file is compiled. Future runs will start quickly.
+
+You can then see the calculator
+
+    open http://0.0.0.0:9292
+
+### Optional steps to make your life easier
+
+The [pow.cx](http://pow.cx) system can make working with local websites easier.
+
+    gem install powder
+    powder install
+    cd twenty-fifty
+    powder link
+    powder dev
+    powder open
+
+If you modify the server files, then you will need to execute
+
+    powder restart
+
+To see the changes.
 
 # HACKING
 
