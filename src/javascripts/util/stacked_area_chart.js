@@ -25,7 +25,10 @@ window.timeSeriesStackedAreaChart = function() {
     'Agriculture, waste, and biomatter imports': 'bioenergy',
     'Biomass oversupply (imports)': 'bioenergy',
     'Bioenergy': 'bioenergy',
+    'UK Bioenergy': 'bioenergy',
+    'Imported Bioenergy': 'bioenergy',
     'Bioenergy credit': 'bioenergy',
+    'Imported Coal': 'coal',
     'Coal': 'coal',
     'Carbon capture': 'carboncapture',
     'Coal oversupply (imports)': 'coal',
@@ -61,12 +64,16 @@ window.timeSeriesStackedAreaChart = function() {
     'LULUCF': 'lulucf',
     'Natural gas': 'gas',
     'Gas': 'gas',
+    'UK Gas': 'gas',
+    'Imported Gas': 'gas',
     'Nuclear fission': 'nuclear',
     'Nuclear power': 'nuclear',
     'Oil and petroleum products': 'oil',
     'Oil and petroleum products oversupply (imports)': 'oil',
     'Oil reserves': 'oil',
     'Oil': 'oil',
+    'UK Oil': 'oil',
+    'Imported Oil': 'oil',
     'Offshore wind': 'offshorewind',
     'Onshore wind': 'onshorewind',
     'Petroleum products oversupply': 'oil',
@@ -202,18 +209,21 @@ window.timeSeriesStackedAreaChart = function() {
               }
             }
           }
-          stacked_data = stack(positive_series.sort(function(a, b) {
-            return d3.descending(a.total, b.total);
-          }));
+          stacked_data = stack(positive_series);
+          //stacked_data = stack(positive_series.sort(function(a, b) {
+          //  return d3.descending(a.total, b.total);
+          //}));
           if (negative_series.length > 0) {
-            stacked_data = stack(negative_series.sort(function(a, b) {
-              return d3.ascending(a.total, b.total);
-            })).reverse().concat(stacked_data);
+            stacked_data = stack(negative_series).concat(stacked_data);
+            //stacked_data = stack(negative_series.sort(function(a, b) {
+            //  return d3.ascending(a.total, b.total);
+            //})).reverse().concat(stacked_data);
           }
           if (total_series.length > 0) {
-            stacked_data = stacked_data.concat(total_series.sort(function(a, b) {
-              return d3.descending(a.total, b.total);
-            }));
+            stacked_data = stacked_data.concat(total_series);
+            //stacked_data = stacked_data.concat(total_series.sort(function(a, b) {
+            //  return d3.descending(a.total, b.total);
+            //}));
           }
           xScale.domain([extent.xmin, extent.xmax]).range([0, width - margin.left - margin.right]);
           yScale.domain([extent.ymin, extent.ymax]).range([height - margin.top - margin.bottom, 0]);
@@ -274,16 +284,16 @@ window.timeSeriesStackedAreaChart = function() {
               return area(d);
             });
           }
-          gEnter.append("g").attr("class", "x axis");
+          gEnter.append("g").attr("class", "x axis").attr("transform", "translate(0," + yScale.range()[0] + ")").call(xAxis);
           gEnter.append("g").attr("class", "y axis");
           gEnter.append("text").attr("class", "y axislabel");
           gEnter.append("text").attr("class", "charttitle");
           gEnter.append("text").attr("id", "unzoom").text("Unzoom").on('click', unzoom);
           if (yScale.domain()[0] < 0 && yScale.domain()[1] > 0) {
-            g.select(".x.axis").transition().attr("transform", "translate(0," + yScale(0) + ")").call(xAxis);
+            g.select(".x.axis").attr("transform", "translate(0," + yScale(0) + ")").call(xAxis);
             g.selectAll(".x.axis text").attr("dy", yScale.range()[0] - yScale(0) + 7);
           } else {
-            g.select(".x.axis").transition().attr("transform", "translate(0," + yScale.range()[0] + ")").call(xAxis);
+            g.select(".x.axis").attr("transform", "translate(0," + yScale.range()[0] + ")").call(xAxis);
           }
           g.select(".y.axis").transition().attr("transform", "translate(0," + xScale.range()[0] + ")").call(yAxis);
           g.select(".y.axislabel").attr("transform", "translate(0," + (xScale.range()[0] - 10) + ")").text(unit);
