@@ -26,9 +26,10 @@ window.timeSeriesStackedAreaChart = function() {
     'Biomass oversupply (imports)': 'bioenergy',
     'Bioenergy': 'bioenergy',
     'UK Bioenergy': 'bioenergy',
-    'Imported Bioenergy': 'bioenergy',
+    'Imported Bioenergy': 'importedbioenergy',
     'Bioenergy credit': 'bioenergy',
-    'Imported Coal': 'coal',
+    'Imported Coal': 'importedcoal',
+    'UK Coal': 'coal',
     'Coal': 'coal',
     'Carbon capture': 'carboncapture',
     'Coal oversupply (imports)': 'coal',
@@ -65,7 +66,7 @@ window.timeSeriesStackedAreaChart = function() {
     'Natural gas': 'gas',
     'Gas': 'gas',
     'UK Gas': 'gas',
-    'Imported Gas': 'gas',
+    'Imported Gas': 'importedgas',
     'Nuclear fission': 'nuclear',
     'Nuclear power': 'nuclear',
     'Oil and petroleum products': 'oil',
@@ -73,7 +74,7 @@ window.timeSeriesStackedAreaChart = function() {
     'Oil reserves': 'oil',
     'Oil': 'oil',
     'UK Oil': 'oil',
-    'Imported Oil': 'oil',
+    'Imported Oil': 'importedoil',
     'Offshore wind': 'offshorewind',
     'Onshore wind': 'onshorewind',
     'Petroleum products oversupply': 'oil',
@@ -129,7 +130,7 @@ window.timeSeriesStackedAreaChart = function() {
     }
     return c;
   };
-  label_threshold = 200;
+  label_threshold = undefined;
   showLabelFilter = function(d) {
     return (Math.abs(d.total) > label_threshold) && d.label_y < extent.ymax && d.label_y > extent.ymin;
   };
@@ -315,7 +316,6 @@ window.timeSeriesStackedAreaChart = function() {
             } else {
               d.label_y = p.y;
             }
-            d;
           }
           stacked_data.sort(function(a, b) {
             var a_y, b_y;
@@ -331,7 +331,7 @@ window.timeSeriesStackedAreaChart = function() {
               return a_y - b_y;
             }
           });
-          previous_y = yScale.domain()[0];
+          previous_y = yScale.domain()[0] - minimum_y_space;
           for (_l = 0, _len3 = stacked_data.length; _l < _len3; _l++) {
             d = stacked_data[_l];
             y = d.label_y;

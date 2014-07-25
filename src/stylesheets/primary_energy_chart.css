@@ -94,14 +94,27 @@ g.context path {
 .gas {
   fill: #660066; }
 
+.importedgas {
+  fill: #79187f; 
+}
+
 .coal {
   fill: #000000; }
+
+.importedcoal {
+  fill: #393939; }
 
 .oil {
   fill: #00782A; }
 
+.importedoil {
+  fill: #009636; }
+
 .bioenergy {
-  fill: #84B817; }
+  fill: #81b51a; }
+
+.importedbioenergy {
+  fill: #90c91d; }
 
 .environmentalheat {
   fill: #ff0000; }

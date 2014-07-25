@@ -6916,6 +6916,46 @@ class Model
     attach_function 'energy_k65', [], ExcelValue.by_value
     attach_function 'energy_l65', [], ExcelValue.by_value
     attach_function 'energy_m65', [], ExcelValue.by_value
+    attach_function 'energy_d66', [], ExcelValue.by_value
+    attach_function 'energy_e66', [], ExcelValue.by_value
+    attach_function 'energy_f66', [], ExcelValue.by_value
+    attach_function 'energy_g66', [], ExcelValue.by_value
+    attach_function 'energy_h66', [], ExcelValue.by_value
+    attach_function 'energy_i66', [], ExcelValue.by_value
+    attach_function 'energy_j66', [], ExcelValue.by_value
+    attach_function 'energy_k66', [], ExcelValue.by_value
+    attach_function 'energy_l66', [], ExcelValue.by_value
+    attach_function 'energy_m66', [], ExcelValue.by_value
+    attach_function 'energy_d67', [], ExcelValue.by_value
+    attach_function 'energy_e67', [], ExcelValue.by_value
+    attach_function 'energy_f67', [], ExcelValue.by_value
+    attach_function 'energy_g67', [], ExcelValue.by_value
+    attach_function 'energy_h67', [], ExcelValue.by_value
+    attach_function 'energy_i67', [], ExcelValue.by_value
+    attach_function 'energy_j67', [], ExcelValue.by_value
+    attach_function 'energy_k67', [], ExcelValue.by_value
+    attach_function 'energy_l67', [], ExcelValue.by_value
+    attach_function 'energy_m67', [], ExcelValue.by_value
+    attach_function 'energy_d68', [], ExcelValue.by_value
+    attach_function 'energy_e68', [], ExcelValue.by_value
+    attach_function 'energy_f68', [], ExcelValue.by_value
+    attach_function 'energy_g68', [], ExcelValue.by_value
+    attach_function 'energy_h68', [], ExcelValue.by_value
+    attach_function 'energy_i68', [], ExcelValue.by_value
+    attach_function 'energy_j68', [], ExcelValue.by_value
+    attach_function 'energy_k68', [], ExcelValue.by_value
+    attach_function 'energy_l68', [], ExcelValue.by_value
+    attach_function 'energy_m68', [], ExcelValue.by_value
+    attach_function 'energy_d69', [], ExcelValue.by_value
+    attach_function 'energy_e69', [], ExcelValue.by_value
+    attach_function 'energy_f69', [], ExcelValue.by_value
+    attach_function 'energy_g69', [], ExcelValue.by_value
+    attach_function 'energy_h69', [], ExcelValue.by_value
+    attach_function 'energy_i69', [], ExcelValue.by_value
+    attach_function 'energy_j69', [], ExcelValue.by_value
+    attach_function 'energy_k69', [], ExcelValue.by_value
+    attach_function 'energy_l69', [], ExcelValue.by_value
+    attach_function 'energy_m69', [], ExcelValue.by_value
     # end of Energy
     attach_function 'output_emissions_f31', [], ExcelValue.by_value
     # end of Output - Emissions
