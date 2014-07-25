@@ -21,6 +21,9 @@ def setup(command)
     "Intermediate output" => :all, 
   }
 
+  command.create_makefile = false
+  command.create_rakefile = false
+
   command.actually_compile_code = true
   command.actually_run_tests = true
 end

@@ -19,7 +19,7 @@ class DataFromModel
   # connects to model.c which is a 
   # translation of model.xlsx
   def excel
-    @excel ||= ModelShim.new
+    @excel ||= Model.new
   end
   
   # Data that changes as the user makes choices

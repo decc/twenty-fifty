@@ -9,7 +9,7 @@ class TestModel < Minitest::Unit::TestCase
     methods = methods_matching(/^test_/)
   end
   def worksheet; @worksheet ||= init_spreadsheet; end
-  def init_spreadsheet; ModelShim.new end
+  def init_spreadsheet; Model.new end
   def test_control_e5; assert_in_delta(1.0, worksheet.control_e5, 0.002); end
   def test_control_e7; assert_in_delta(1.0, worksheet.control_e7, 0.002); end
   def test_control_e8; assert_in_delta(1.0, worksheet.control_e8, 0.002); end
