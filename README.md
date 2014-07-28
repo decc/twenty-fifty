@@ -96,8 +96,15 @@ Install the bundler gem
 
     gem install bundler
 
-If this returns with some sort of permissions error, follow 
+If this returns with some sort of permissions error, try again as
 
+    sudo gem install bundler
+
+This will then ask for your password before continuing.
+
+If the process complains about a specific gem not workig, it will give you instructions
+to try installing the gem individually and print the command you need to use. Do that
+and then repeat the gem install bunlder command. 
 
 
 Install the git version control system
