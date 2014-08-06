@@ -8,7 +8,7 @@
 
 #costssensitivitytemplate h1 {
   font-size: 16px;
-  margin-left: 250px; }
+  margin-left: 296px; }
 
 #comparatorchoice {
   border: 1px solid black;
@@ -23,4 +23,51 @@
 }
 a#comparatorchoice:hover {
   text-decoration: underline; 
+}
+#costssensitivitytemplate #chosenpattern {
+  stroke: #1f77b4;
+}
+
+#costssensitivitytemplate .caption {
+  font-size: 0.72em;
+}
+
+
+#costssensitivitytemplate #comparatorpattern {
+  stroke: #008000;
+}
+
+#costssensitivitytemplate .comparator {
+  fill: #008000;
+  stroke: none;
+}
+
+#costssensitivitytemplate .chosen {
+  fill: #1f77b4;
+  stroke: none;
+}
+
+#costssensitivitytemplate .control {
+  font-size: 0.72em;
+  text-anchor: middle;
+  cursor: pointer;
+  fill: #aaa;
+}
+
+#costssensitivitytemplate .control:hover {
+  fill: #555;
+}
+
+#costssensitivitytemplate .component .background {
+  stroke: #eee;
+  stroke-width: 1px;
+  fill: none;
+}
+
+#costssensitivitytemplate .component.uncertain .control.uncertain,
+#costssensitivitytemplate .component.low .control.low,
+#costssensitivitytemplate .component.point .control.point,
+#costssensitivitytemplate .component.high .control.high
+{
+  fill: #000;
 }
