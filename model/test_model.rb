@@ -74,7 +74,7 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_i8; assert_equal("100% coal/biomass, 0% gas/biogas CCS after demonstration plants", worksheet.control_i8); end
   def test_control_j8; assert_equal("66% coal/biomass, 33% gas/biogas CCS after demonstration plants", worksheet.control_j8); end
   def test_control_k8; assert_equal("33% coal/biomass, 66% gas/biogas CCS after demonstration plants", worksheet.control_k8); end
-  def test_control_l8; assert_equal("0% coal/biomas, 100% gas/biogas CCS after demonstration plants", worksheet.control_l8); end
+  def test_control_l8; assert_equal("0% coal/biomass, 100% gas/biogas CCS after demonstration plants", worksheet.control_l8); end
   def test_control_i9; assert_equal("~1,400 turbines in 2025, reducing to zero as decommissioned sites are not replanted", worksheet.control_i9); end
   def test_control_j9; assert_equal("~10,000 turbines in 2050, delivering ~237 TWh/yr", worksheet.control_j9); end
   def test_control_k9; assert_equal("~17,000 turbines in 2050, delivering ~395 TWh/yr", worksheet.control_k9); end
@@ -115,7 +115,7 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_j18; assert_equal("Supply grows slowly, reaching 7 TWh/yr by 2050", worksheet.control_j18); end
   def test_control_k18; assert_equal("Supply grows more quickly, reaching 8 TWh/yr by 2030 and is sustained", worksheet.control_k18); end
   def test_control_l18; assert_equal("Supply grows rapidly reaching 13 TWh/yr by 2035 and is sustained", worksheet.control_l18); end
-  def test_control_i19; assert_equal("As today, no discernable supply of electricity from micro-wind turbines", worksheet.control_i19); end
+  def test_control_i19; assert_equal("As today, no discernible supply of electricity from micro-wind turbines", worksheet.control_i19); end
   def test_control_j19; assert_equal("Supply increases to 1.3 TWh/yr by 2020 and is sustained", worksheet.control_j19); end
   def test_control_k19; assert_equal("Installed in all ~450,000 suitable domestic properties; supplies 3.5 TWh/year from 2020", worksheet.control_k19); end
   def test_control_l19; assert_equal("Installed in all suitable domestic and non-domestic sties; 8.9 TWh/year from 2020", worksheet.control_l19); end
@@ -150,7 +150,7 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_i30; assert_equal("In 2050, individuals travel 9% further than today. No noticeable modal shift.", worksheet.control_i30); end
   def test_control_j30; assert_equal("Individuals travel 7% further than today, cars and vans are 80% of 2050 passenger mileage", worksheet.control_j30); end
   def test_control_k30; assert_equal("Individuals travel 7% further than today; cars and vans 74% of 2050 passenger mileage", worksheet.control_k30); end
-  def test_control_l30; assert_equal("In 2050, individuals travel the same distance as today. Signficant shift to public transport.", worksheet.control_l30); end
+  def test_control_l30; assert_equal("In 2050, individuals travel the same distance as today. Significant shift to public transport.", worksheet.control_l30); end
   def test_control_i31; assert_equal("By 2050, 20% plug in hybrid electric cars; 2.5% zero emission cars.", worksheet.control_i31); end
   def test_control_j31; assert_equal("By 2050, 54% plug-in hybrid vehicles; 11%  zero emission vehicles, all buses hybrids.", worksheet.control_j31); end
   def test_control_k31; assert_equal("By 2050, 32% plug-in hybrid vehicles; 48% zero emission vehicles; 22% buses electric.", worksheet.control_k31); end
@@ -167,7 +167,7 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_j34; assert_equal("By 2050, 130% passengers increase; 45% more fuel use", worksheet.control_j34); end
   def test_control_k34; assert_equal("By 2050, 130% passengers increase; 31% more fuel use", worksheet.control_k34); end
   def test_control_l34; assert_equal("By 2050, 85% passengers increase; 5% more fuel use", worksheet.control_l34); end
-  def test_control_i35; assert_equal("no improvements from energy efficiency; between 2007 and 2050 emissions increase by 139%", worksheet.control_i35); end
+  def test_control_i35; assert_equal("No improvements from energy efficiency; between 2007 and 2050 emissions increase by 139%", worksheet.control_i35); end
   def test_control_j35; assert_equal("1/3 of technical feasible reductions realised; between 2007 and 2050 emissions increase by 78%", worksheet.control_j35); end
   def test_control_k35; assert_equal("2/3 of technical feasible reductions realised; between 2007 and 2050 emissions increase by 16%", worksheet.control_k35); end
   def test_control_l35; assert_equal("maximum technical feasible reductions realised; between 2007 and 2050 emissions decrease by 46%", worksheet.control_l35); end
@@ -235,7 +235,7 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_j57; assert_equal("Low production case", worksheet.control_j57); end
   def test_control_k57; assert_equal("Very low production case", worksheet.control_k57); end
   def test_control_n4; assert_equal("Doesn't tackle climate change (All at level 1)", worksheet.control_n4); end
-  def test_control_o4; assert_equal("Maximium demand, no supply", worksheet.control_o4); end
+  def test_control_o4; assert_equal("Maximum demand, no supply", worksheet.control_o4); end
   def test_control_p4; assert_equal("Maximum supply, no demand", worksheet.control_p4); end
   def test_control_q4; assert_equal("Analogous to MARKAL 3.26", worksheet.control_q4); end
   def test_control_r4; assert_equal("Higher renewables, more energy efficiency", worksheet.control_r4); end
@@ -948,7 +948,7 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_bp8; assert_equal("100% coal/biomass, 0% gas/biogas CCS after demonstration plants", worksheet.control_bp8); end
   def test_control_bq8; assert_equal("66% coal/biomass, 33% gas/biogas CCS after demonstration plants", worksheet.control_bq8); end
   def test_control_br8; assert_equal("33% coal/biomass, 66% gas/biogas CCS after demonstration plants", worksheet.control_br8); end
-  def test_control_bs8; assert_equal("0% coal/biomas, 100% gas/biogas CCS after demonstration plants", worksheet.control_bs8); end
+  def test_control_bs8; assert_equal("0% coal/biomass, 100% gas/biogas CCS after demonstration plants", worksheet.control_bs8); end
   def test_control_bp9; assert_equal("~1,400 turbines in 2025, reducing to zero as decommissioned sites are not replanted", worksheet.control_bp9); end
   def test_control_bq9; assert_equal("~10,000 turbines in 2050, delivering ~237 TWh/yr", worksheet.control_bq9); end
   def test_control_br9; assert_equal("~17,000 turbines in 2050, delivering ~395 TWh/yr", worksheet.control_br9); end
@@ -989,7 +989,7 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_bq18; assert_equal("Supply of hydroelectricity grows slowly, reaching 7 TWh/yr by 2050", worksheet.control_bq18); end
   def test_control_br18; assert_equal("Supply of hydroelectricity grows more quickly, reaching 8 TWh/yr by 2030 and is sustained", worksheet.control_br18); end
   def test_control_bs18; assert_equal("Supply of hydroelectricity grows rapidly reaching 13 TWh/yr by 2035 and is sustained", worksheet.control_bs18); end
-  def test_control_bp19; assert_equal("As today, no discernable supply of electricity from micro-wind turbines", worksheet.control_bp19); end
+  def test_control_bp19; assert_equal("As today, no discernible supply of electricity from micro-wind turbines", worksheet.control_bp19); end
   def test_control_bq19; assert_equal("Supply of electricity from micro wind turbines increases to 1.3 TWh/yr by 2020 and is sustained", worksheet.control_bq19); end
   def test_control_br19; assert_equal("Micro wind turbines installed in all ~450,000 suitable domestic properties, supplying 3.5 TWh/year from 2020", worksheet.control_br19); end
   def test_control_bs19; assert_equal("Micro wind turbines installed in all suitable domestic and non-domestic sties, supplying 8.9 TWh/year from 2020", worksheet.control_bs19); end
@@ -1024,9 +1024,9 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_bp30; assert_equal("In 2050, individuals travel 9% further than today. No noticeable modal shift.", worksheet.control_bp30); end
   def test_control_bq30; assert_equal("Individuals travel 7% further than today, cars and vans are 80% of 2050 passenger mileage", worksheet.control_bq30); end
   def test_control_br30; assert_equal("Individuals travel 7% further than today; cars and vans 74% of 2050 passenger mileage", worksheet.control_br30); end
-  def test_control_bs30; assert_equal("In 2050, individuals travel the same distance as today. Signficant shift to public transport.", worksheet.control_bs30); end
+  def test_control_bs30; assert_equal("In 2050, individuals travel the same distance as today. Significant shift to public transport.", worksheet.control_bs30); end
   def test_control_bp31; assert_equal("By 2050, 20% plug in hybrid electric cars; 2.5% zero emission cars.", worksheet.control_bp31); end
-  def test_control_bq31; assert_equal("By 2050, 35% conventional petrol or diesel engine cars; 54% plug-in hybrid vehicles; 11%  zero emission vehicles; all buses hybrids; 73% of passenger railway is electrifi", worksheet.control_bq31); end
+  def test_control_bq31; assert_equal("By 2050, 35% conventional petrol or diesel engine cars; 54% plug-in hybrid vehicles; 11%  zero emission vehicles; all buses hybrids; 73% of passenger railway is electrified", worksheet.control_bq31); end
   def test_control_br31; assert_equal("By 2050, 20% conventional combustion engine cars, with 32% in plug-in hybrid vehicles and 48% in zero emission vehicles: 22% of bus travel fully electric or fuel cell electric ", worksheet.control_br31); end
   def test_control_bs31; assert_equal("By 2050 100%  electric motor or hydrogen fuel cell; all passenger trains electrified; 50% bus  electrified ", worksheet.control_bs31); end
   def test_control_bp32; assert_equal("By 2050, 100% electric", worksheet.control_bp32); end
@@ -1098,12 +1098,12 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_br53; assert_equal("Energy used for commercial cooking is 100% electric", worksheet.control_br53); end
   def test_control_bs53; assert_equal("Energy used for commercial cooking is 100% electric", worksheet.control_bs53); end
   def test_control_bp55; assert_equal("No geosequestration", worksheet.control_bp55); end
-  def test_control_bq55; assert_equal("Carbon dioxide sequestred at a rate of 1 million tonnes per annum by 2050", worksheet.control_bq55); end
-  def test_control_br55; assert_equal("Carbon dioxide  sequestred at a rate of ~30 million tonnes per annum by 2050", worksheet.control_br55); end
-  def test_control_bs55; assert_equal("Carbon dioxide sequestred at a rate of ~110 million tonnes per annum by 2050", worksheet.control_bs55); end
+  def test_control_bq55; assert_equal("Carbon dioxide sequestered at a rate of 1 million tonnes per annum by 2050", worksheet.control_bq55); end
+  def test_control_br55; assert_equal("Carbon dioxide  sequestered at a rate of ~30 million tonnes per annum by 2050", worksheet.control_br55); end
+  def test_control_bs55; assert_equal("Carbon dioxide sequestered at a rate of ~110 million tonnes per annum by 2050", worksheet.control_bs55); end
   def test_control_bp56; assert_equal("Today’s 3.5 GW of pumped storage and 4 GW interconnection with Europe available for balancing electricity supply and demand", worksheet.control_bp56); end
   def test_control_bq56; assert_equal("4 GW of pumped storage and 10 GW interconnection with Europe available for balancing electricity supply and demand", worksheet.control_bq56); end
-  def test_control_br56; assert_equal("7 GW of pumped storage (includign 2 more sites), 15 GW of interconnection with Europe and some demand shifting available for balancing electricity supply and demand", worksheet.control_br56); end
+  def test_control_br56; assert_equal("7 GW of pumped storage (including 2 more sites), 15 GW of interconnection with Europe and some demand shifting available for balancing electricity supply and demand", worksheet.control_br56); end
   def test_control_bs56; assert_equal("20 GW of pumped storage with large lagoons, 30 GW of interconnection with Europe and substantial demand shifting available for balancing electricity supply and demand", worksheet.control_bs56); end
   def test_control_d5; assert_equal("Nuclear power stations", worksheet.control_d5); end
   def test_control_d6; assert_equal("Carbon Capture Storage (CCS)", worksheet.control_d6); end
@@ -1242,7 +1242,7 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_f55; assert_in_epsilon(4.0, worksheet.control_f55, 0.002); end
   def test_control_f56; assert_in_epsilon(4.0, worksheet.control_f56, 0.002); end
   def test_control_f57; assert_in_epsilon(3.0, worksheet.control_f57, 0.002); end
-  def test_control_n1; assert_equal("Version 3.6.0", worksheet.control_n1); end
+  def test_control_n1; assert_equal("Version 3.6.1", worksheet.control_n1); end
   def test_air_quality_c3; assert_equal("High", worksheet.air_quality_c3); end
   def test_air_quality_d3; assert_in_epsilon(21.53196553841394, worksheet.air_quality_d3, 0.002); end
   def test_air_quality_c4; assert_equal("Low", worksheet.air_quality_c4); end
@@ -5024,7 +5024,7 @@ class TestModel < Minitest::Unit::TestCase
   def test_intermediate_output_at29; assert_in_epsilon(5.2, worksheet.intermediate_output_at29, 0.002); end
   def test_intermediate_output_au29; assert_in_epsilon(5.3, worksheet.intermediate_output_au29, 0.002); end
   def test_intermediate_output_av29; assert_in_epsilon(3.6, worksheet.intermediate_output_av29, 0.002); end
-  def test_intermediate_output_aw29; assert_equal("Dukes 5.6 Hydro-natural flow, Fuel used + Dules 7.1 Hydro, Autogenerators", worksheet.intermediate_output_aw29); end
+  def test_intermediate_output_aw29; assert_equal("Dukes 5.6 Hydro-natural flow, Fuel used + Dukes 7.1 Hydro, Autogenerators", worksheet.intermediate_output_aw29); end
   def test_intermediate_output_ay29; assert_in_epsilon(4.114400994, worksheet.intermediate_output_ay29, 0.002); end
   def test_intermediate_output_az29; assert_in_epsilon(5.329728000000001, worksheet.intermediate_output_az29, 0.002); end
   def test_intermediate_output_ba29; assert_in_epsilon(5.329728000000001, worksheet.intermediate_output_ba29, 0.002); end
@@ -5913,7 +5913,7 @@ class TestModel < Minitest::Unit::TestCase
   def test_intermediate_output_bf71; assert_in_delta(0.0, (worksheet.intermediate_output_bf71||0), 0.002); end
   def test_intermediate_output_bg71; assert_in_delta(0.0, (worksheet.intermediate_output_bg71||0), 0.002); end
   def test_intermediate_output_bh71; assert_in_delta(0.0, (worksheet.intermediate_output_bh71||0), 0.002); end
-  def test_intermediate_output_d72; assert_equal("Total unnaccounted supply / demand", worksheet.intermediate_output_d72); end
+  def test_intermediate_output_d72; assert_equal("Total unaccounted supply / demand", worksheet.intermediate_output_d72); end
   def test_intermediate_output_f72; assert_in_delta(-0.15310354723947603, worksheet.intermediate_output_f72, 0.002); end
   def test_intermediate_output_ay72; assert_in_delta(0.0, (worksheet.intermediate_output_ay72||0), 0.002); end
   def test_intermediate_output_az72; assert_in_delta(0.0, (worksheet.intermediate_output_az72||0), 0.002); end
@@ -7785,7 +7785,7 @@ class TestModel < Minitest::Unit::TestCase
   def test_intermediate_output_bg194; assert_in_epsilon(81.62611176849592, worksheet.intermediate_output_bg194, 0.002); end
   def test_intermediate_output_bh194; assert_in_epsilon(42.660415657949486, worksheet.intermediate_output_bh194, 0.002); end
   def test_intermediate_output_bi194; assert_equal("REFERENCED - All costs", worksheet.intermediate_output_bi194); end
-  def test_intermediate_output_c197; assert_equal("Please note: emissions by sector need to account for bio-energy, which is accounted for seperately (in V). ", worksheet.intermediate_output_c197); end
+  def test_intermediate_output_c197; assert_equal("Please note: emissions by sector need to account for bio-energy, which is accounted for separately (in V). ", worksheet.intermediate_output_c197); end
   def test_intermediate_output_c198; assert_equal("Cumulative emissions are estimates based on a linear trajectory between the 5 year time periods", worksheet.intermediate_output_c198); end
   def test_intermediate_output_c201; assert_equal("Targets", worksheet.intermediate_output_c201); end
   def test_intermediate_output_ay201; assert_equal("2050 target", worksheet.intermediate_output_ay201); end
@@ -8310,7 +8310,7 @@ class TestModel < Minitest::Unit::TestCase
   def test_intermediate_output_at242; assert_in_epsilon(58.57160534, worksheet.intermediate_output_at242, 0.002); end
   def test_intermediate_output_au242; assert_in_epsilon(53.80431206, worksheet.intermediate_output_au242, 0.002); end
   def test_intermediate_output_av242; assert_in_epsilon(54.98917277, worksheet.intermediate_output_av242, 0.002); end
-  def test_intermediate_output_aw242; assert_equal("DUKES aggregate energy balances, petroleum refinaries petroleum products use", worksheet.intermediate_output_aw242); end
+  def test_intermediate_output_aw242; assert_equal("DUKES aggregate energy balances, petroleum refineries petroleum products use", worksheet.intermediate_output_aw242); end
   def test_intermediate_output_ay242; assert_in_epsilon(56.26668514219076, worksheet.intermediate_output_ay242, 0.002); end
   def test_intermediate_output_az242; assert_in_epsilon(52.999433672866644, worksheet.intermediate_output_az242, 0.002); end
   def test_intermediate_output_ba242; assert_in_epsilon(50.22299177401591, worksheet.intermediate_output_ba242, 0.002); end
@@ -8544,7 +8544,7 @@ class TestModel < Minitest::Unit::TestCase
   def test_intermediate_output_bg255; assert_in_delta(0.21121464377810062, worksheet.intermediate_output_bg255, 0.002); end
   def test_intermediate_output_bh255; assert_in_delta(0.3680142423924541, worksheet.intermediate_output_bh255, 0.002); end
   def test_intermediate_output_b257; assert_equal("Electricity Generation Emissions", worksheet.intermediate_output_b257); end
-  def test_intermediate_output_c260; assert_equal("Emissions from Electricity Generation, exlcuding CHP", worksheet.intermediate_output_c260); end
+  def test_intermediate_output_c260; assert_equal("Emissions from Electricity Generation, excluding CHP", worksheet.intermediate_output_c260); end
   def test_intermediate_output_ay260; assert_equal("2007", worksheet.intermediate_output_ay260); end
   def test_intermediate_output_az260; assert_equal("2010", worksheet.intermediate_output_az260); end
   def test_intermediate_output_ba260; assert_equal("2015", worksheet.intermediate_output_ba260); end
