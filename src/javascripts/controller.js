@@ -59,6 +59,7 @@
       go(c, l);
     });
 
+    // This turns the view links in src/index.html.erb into controls that switch the view
     $("a.view").on('click touchend', function(event) {
       var t, v;
       event.preventDefault();
