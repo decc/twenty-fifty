@@ -10,8 +10,6 @@ window.twentyfifty.views.air_quality = function() {
         svg,
         bars,
         // This contains the data that will be shown as an array of objects
-        // Initially, it just contains the 2010 data, the comparator and chosen
-        // data is added by the updateComparator and updateResults methods below
         data = [
           { 
             name: '2010', // Must match the name in the domain array above
@@ -20,6 +18,18 @@ window.twentyfifty.views.air_quality = function() {
                            // i.e., todaylowbar and todayrangebar
             low: 100,  // The low value to plot
             high: 100 // The high value to plot
+          }, { 
+            name: "comparator", 
+            css: "comparator",
+            caption: "", // Will be set in updateComparator
+            low: 0, // Will be set in updateComparator
+            high: 0 // Will be set in updateComparator
+          }, { 
+            name: "chosen", 
+            css: "chosen",
+            caption: "", // Will be set in updateResults
+            low: 0, // Will be set in updateResults
+            high: 0 // Will be set in updateResults
           }
         ];
         
@@ -152,24 +162,16 @@ window.twentyfifty.views.air_quality = function() {
     };
 
     this.updateComparator = function(pathway) {
-      data[1] = { 
-        name: "comparator", 
-        css: "comparator",
-        caption: "2050 - "+twentyfifty.pathwayName(pathway['_id'], "Comparison"),
-        low: pathway.air_quality[1][1], 
-        high: pathway.air_quality[0][1]
-      }
+      data[1].caption  = "2050 - "+twentyfifty.pathwayName(pathway['_id'], "Comparison");
+      data[1].low = pathway.air_quality[1][1];
+      data[1].high = pathway.air_quality[0][1];
       redraw();
     };
 
     this.updateResults = function(pathway) {
-      data[2] = { 
-        name: "chosen", 
-        css: "chosen",
-        caption: "2050 - "+twentyfifty.pathwayName(pathway['_id'], "Your pathway"),
-        low: pathway.air_quality[1][1], 
-        high: pathway.air_quality[0][1]
-      }
+      data[2].caption  = "2050 - "+twentyfifty.pathwayName(pathway['_id'], "Your pathway");
+      data[2].low = pathway.air_quality[1][1];
+      data[2].high = pathway.air_quality[0][1];
       updateMessage();
       redraw();
     }
@@ -177,8 +179,8 @@ window.twentyfifty.views.air_quality = function() {
     percent_format = d3.format("%");
 
     updateMessage = function() {
-      low = data[1].low;
-      high = data[1].high;
+      low = data[2].low;
+      high = data[2].high;
 
       amount = percent_format(Math.abs(1-(high/100)));
 
