@@ -28,7 +28,7 @@ a#comparatorchoice:hover {
   stroke: #1f77b4;
 }
 
-#costssensitivitytemplate .caption {
+#costssensitivitytemplate .caption, #costssensitivitytemplate .label {
   font-size: 0.72em;
 }
 
@@ -58,11 +58,22 @@ a#comparatorchoice:hover {
   fill: #555;
 }
 
-#costssensitivitytemplate .component .background {
-  stroke: #eee;
-  stroke-width: 1px;
-  fill: none;
+#costssensitivitytemplate g.component {
+  pointer-events: all;
 }
+
+
+#costssensitivitytemplate .component .background {
+  stroke: none;
+  fill: white;
+  transition: fill 3s;
+}
+
+#costssensitivitytemplate .component:hover .background {
+  stroke: 1px;
+  fill: #fdd;
+}
+
 
 #costssensitivitytemplate .component.uncertain .control.uncertain,
 #costssensitivitytemplate .component.low .control.low,
