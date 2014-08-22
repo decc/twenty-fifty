@@ -6,7 +6,7 @@ window.twentyfifty.views.costs_sensitivity2 = function() {
 
     var cost_component_names = ["Conventional thermal plant", "Combustion + CCS", "Nuclear power", "Onshore wind", "Offshore wind", "Hydroelectric", "Wave and Tidal", "Geothermal", "Distributed solar PV", "Distributed solar thermal", "Micro wind", "Biomatter to fuel conversion", "Bioenergy imports", "Agriculture and land use", "Energy from waste", "Waste arising", "Marine algae", "Electricity imports", "Electricity Exports", "Electricity grid distribution", "Storage, demand shifting, backup", "H2 Production", "Domestic heating", "Domestic insulation", "Commercial heating and cooling", "Domestic lighting, appliances, and cooking", "Commercial lighting, appliances, and catering", "Industrial processes", "Conventional cars and buses", "Hybrid cars and buses", "Electric cars and buses", "Fuel cell cars and buses", "Bikes", "Rail", "Domestic aviation", "Domestic freight", "International aviation", "International shipping (maritime bunkers)", "Geosequestration", "Petroleum refineries", "Fossil fuel transfers", "District heating effective demand", "Storage of captured CO2", "Coal", "Oil", "Gas", "Finance cost"];
 
-    // Need to move these to the spreadsheet
+    // FIXME: Need to move these to the spreadsheet
     var cost_wiki_links = {
       "Fuel cell cars and buses": '/pages/63',
       "Conventional cars and buses": '/pages/63',
@@ -58,6 +58,7 @@ window.twentyfifty.views.costs_sensitivity2 = function() {
       "Electricity imports": '/pages/32'
     };
 
+    // FIXME: Add these descriptions to the Excel
     cost_component_values = {
       "Oil": {
         cheap: "$75/bbl",
@@ -99,11 +100,14 @@ window.twentyfifty.views.costs_sensitivity2 = function() {
     var margin = {top: 40, right: 30, bottom: 40, left: 300},
         x, // the x scale
         top_y, // the y scale for the top bars
+        top_y_arrows_scale, // the y scale for the arrow bars
         bottom_y, // the y scale for the bottom bars
+        bottom_y_bars, // the y scale within the bottom bars
         xAxis, // the main x axis
         svg, // the chart area
         top_data = d3.map(),
         bottom_data,
+        increment = { label: "", arrows: [] },
         pathway,
         comparator;
 
@@ -153,7 +157,7 @@ window.twentyfifty.views.costs_sensitivity2 = function() {
       $('#message').addClass('warning');
 
       // This makes sure the caveats are shown, unless the user has already seen them
-      if ($.jStorage.get('CostCaveatShown') !== true) { $('#cost_caveats').show(); }
+      if (jQuery.jStorage.get('CostCaveatShown') !== true) { $('#cost_caveats').show(); }
 
       // This is the area where the chart will be
       target = d3.select("#costssensitivity");
@@ -201,8 +205,12 @@ window.twentyfifty.views.costs_sensitivity2 = function() {
 
       // The top y-axis leaves space for two bars and arrows inbetween
       top_y = d3.scale.ordinal()
-            .domain(['chosen', 'i', 'comparator'])
+            .domain(['comparator', 'difference', 'chosen'])
             .rangeRoundBands([0, 120], 0.1);
+
+      // then we need space for the difference arrows
+      top_y_arrows_scale = d3.scale.ordinal()
+        .rangePoints([0, top_y.rangeBand()],1);
 
       // the bottom y-axis needs to leave space for all the cost components
       bottom_y = d3.scale.ordinal()
@@ -212,7 +220,7 @@ window.twentyfifty.views.costs_sensitivity2 = function() {
       // then we need space for the comparator bars for each component
       bottom_y_bars = d3.scale.ordinal()
         .rangeRoundBands([0, bottom_y.rangeBand()], 0.2)
-        .domain([0,1]);
+        .domain([1,0]);
       
       // SETUP THE AUTOMATIC AXES
 
@@ -246,14 +254,14 @@ window.twentyfifty.views.costs_sensitivity2 = function() {
       // We also need to define an arrowhead
       defs.append("svg:marker")
           .attr("id", "arrowHead")
-          .attr("viewBox", "0 -5 10 10")
-          .attr("refX", 15)
-          .attr("refY", -1.5)
-          .attr("markerWidth", 6)
-          .attr("markerHeight", 6)
+          .attr("viewBox", "0 0 10 10")
+          .attr("refX", 8)
+          .attr("refY", 5)
+          .attr("markerWidth", 4)
+          .attr("markerHeight", 3)
           .attr("orient", "auto")
         .append("svg:path")
-          .attr("d", "M0,-5L10,0L0,5");
+          .attr("d", "M 0 0 L 10 5 L 0 10 Z");
     
       // Now we add a group that ensures we take into account margins
       svg = svg.append("g")
@@ -262,6 +270,16 @@ window.twentyfifty.views.costs_sensitivity2 = function() {
       // Now we add the basic structure
       top_group = svg.append("g")
         .attr("class", "top");
+
+      // Add the arrows and labels for the difference
+      difference = top_group.append("g")
+        .attr("class", "difference")
+        .attr("transform", function(d,i) { return "translate(0, "+top_y("difference")+")" });
+
+      difference.append("text")
+        .attr("class", "label")
+        .attr("dy", "0.32em")
+        .attr("y", top_y.rangeBand()/2);
 
       bottom_group = svg.append("g")
         .attr("class", "bottom");
@@ -303,6 +321,9 @@ window.twentyfifty.views.costs_sensitivity2 = function() {
 
       // The data for drawing the bottom bars
       addCostsToBottomData(p, 0);
+      
+      // The data for drawing the arrows showing the difference in cost
+      updateIncrement();
 
       redraw();
     };
@@ -329,6 +350,9 @@ window.twentyfifty.views.costs_sensitivity2 = function() {
       // The data for drawing the bottom bars
       addCostsToBottomData(p, 1);
       
+      // The data for drawing the arrows showing the difference in cost
+      updateIncrement();
+
       redraw();
     };
 
@@ -354,21 +378,42 @@ window.twentyfifty.views.costs_sensitivity2 = function() {
 
       bottom_data = d3.map();
       cost_component_names.forEach(function(name) {
-        bottom_data.set(name, [{}, {}]);
+        bottom_data.set(name, [{low: 0, high: 0}, {low: 0, high: 0}]);
       });
+    }
+
+    var updateIncrement = function() {
+      // No point until we have both the pathway and the comparator loaded
+      if(pathway == undefined || comparator == undefined) { return; }
+      
+      var i = twentyfifty.calculateIncrementalCost(pathway, comparator),
+          i1 = i.tc - i.cc,
+          i2 = i.tt - i.ct,
+          tmp;
+
+      if(i1 > i2) {
+        tmp = i1;
+        i1 = i2;
+        i2 = tmp;
+      }
+
+      if(i1 == 0 && i2 == 0) {
+        increment.label = "";
+        increment.arrows = [];
+      } else if(i1 == i2) {
+        increment.label = "Your pathway is £"+Math.abs(Math.round(i1))+"/person/year "+direction(i1);
+        increment.arrows = [{b: i.tc, a: i.cc}];
+      } else {
+        increment.label = "Your pathway is from £"+Math.abs(Math.round(i1))+"/person/year "+direction(i1)+
+                          " to £"+Math.abs(Math.round(i2))+"/person/year "+direction(i2);
+        increment.arrows = [{b: i.tt, a: i.ct}, {b: i.tc, a: i.cc}];
+      }
+
     }
 
     // Value = 0 for min, 1 for max
     var adjustCost = function(control, value) {
       component = d3.select(control.parentNode.parentNode);
-
-      // Animate the background so the user
-      // can see where it ends up
-      component.select(".background")
-          .style("fill", "#F8E71C")
-        .transition()
-          .duration(3000)
-          .style("fill", "#fff");
 
       name = component.datum().key;
       jQuery.jStorage.set(name, value);
@@ -385,16 +430,18 @@ window.twentyfifty.views.costs_sensitivity2 = function() {
 
       var data = top_data.values();
 
+      // g.top
+      //  g.bar x 2
+      //    rect.lowbar
+      //    rect.rangebar
+      //    text.caption
+
       var groups = svg.select("g.top").selectAll("g.bar")
         .data(data, function(d) { return d.name; });
 
-      // We want to end up with one group per data point:
-      // g.bar
-      //  rect.lowbar
-      //  rect.rangebar
-      //  text.caption
       var new_groups = groups.enter().append("g")
         .attr("class", function(d, i) { return "bar "+d.css });
+
       var thickness = top_y.rangeBand();
 
       new_groups.append("rect")
@@ -420,6 +467,7 @@ window.twentyfifty.views.costs_sensitivity2 = function() {
       groups.transition()
         .attr("transform", function(d,i) { return "translate(0, "+top_y(d.name)+")" });
 
+      // And then make sure the bars are the right width
       groups.select(".lowbar").transition()
         .attr("width", function(d) { return x(d.low) });
 
@@ -430,6 +478,32 @@ window.twentyfifty.views.costs_sensitivity2 = function() {
 
       groups.select(".caption").transition()
         .text(function(d) { return d.caption });
+
+      // Finally, lets draw the difference
+      var difference = svg.select("g.top").selectAll("g.difference");
+
+      difference.select("text.label").text(increment.label);
+
+      top_y_arrows_scale.domain(d3.range(increment.arrows.length));
+
+      var arrows = difference.selectAll("line")
+        .data(increment.arrows);
+
+      arrows.enter().append("line")
+        .attr("y1", function(d,i) { return top_y_arrows_scale(i); })
+        .attr("y2", function(d,i) { return top_y_arrows_scale(i); })
+        .attr('x1', function(d) { return x(d.a); })
+        .attr('x2', function(d) { return x(d.b); });
+
+      arrows.exit().remove();
+
+      arrows.transition()
+        .attr("y1", function(d,i) { return top_y_arrows_scale(i); })
+        .attr("y2", function(d,i) { return top_y_arrows_scale(i); })
+        .attr('x1', function(d) { return x(d.a); })
+        .attr('x2', function(d) { return x(d.b); });
+
+
     };
 
     var redrawBottom = function() {

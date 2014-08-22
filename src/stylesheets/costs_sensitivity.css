@@ -70,7 +70,6 @@ a#comparatorchoice:hover {
 }
 
 #costssensitivitytemplate .component:hover .background {
-  stroke: 1px;
   fill: #fdd;
 }
 
@@ -81,4 +80,20 @@ a#comparatorchoice:hover {
 #costssensitivitytemplate .component.high .control.high
 {
   fill: #000;
+}
+
+.difference line {
+  stroke: #008000;
+  stroke-width: 2px;
+  marker-end: url(#arrowHead);
+  shape-rendering: crispedges;
+}
+
+marker#arrowHead {
+  fill: #1f77b4;
+}
+
+#costssensitivitytemplate a#comparatorchoice {
+  color: #008000;
+  border-color: #008000;
 }
