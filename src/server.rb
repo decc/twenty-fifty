@@ -23,10 +23,11 @@ module Helper
 
 end
 
-# This deals with urls that relate to previous versions of the 2050 calculator.
-# If you are developing your own calculator, delete from here to the line marked STOP DELETING HERE
 class TwentyFiftyServer < Sinatra::Base
 
+  # The following section deals with urls that relate to previous versions of the 2050 calculator.
+  # If you are developing your own calculator, delete from here to the line marked STOP DELETING HERE
+  
   # This is for older versions of the calculator that used 'show' as their main view
   get '/pathways/:id/show' do |id|
     redirect to("/pathways/#{id}/electricity")
