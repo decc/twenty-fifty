@@ -33,7 +33,7 @@ class DataFromModel
     excel.reset
     # Turn the i0g2dd2pp1121f1i032211p004314110433304202304320420121 into something like
     # [1.8,0.0,1.6,2.0,1.3,1.3,..]
-    choices = convert_letters_to_float(code.split(''))
+    choices = convert_code_to_inputs_for_excel(code.split(''))
     # Set the spreadsheet controls (input.choices is a named reference in the Excel)
     excel.input_choices = choices
     # Read out the results, where each of these refers to a named reference in the Excel
@@ -133,7 +133,7 @@ class DataFromModel
     data = data.map do |pathway_data|
       {
         name: pathway_data[0],
-        code: convert_float_to_letters(pathway_data[1..53]).join,
+        code: convert_inputs_for_excel_to_code(pathway_data[1..53]).join,
         description: wrap(pathway_data[54]),
         wiki: pathway_data[55],
         cost_comparator: (c = pathway_data[56]; c.is_a?(Numeric) ? c : nil )
@@ -172,7 +172,7 @@ class DataFromModel
   
   LETTER_TO_FLOAT_MAP = FLOAT_TO_LETTER_MAP.invert
   
-  def convert_float_to_letters(array)
+  def convert_inputs_for_excel_to_code(array)
     array.map do |entry|
       case entry
       when Float; FLOAT_TO_LETTER_MAP[entry] || entry
@@ -182,7 +182,7 @@ class DataFromModel
     end
   end
   
-  def convert_letters_to_float(array)
+  def convert_code_to_inputs_for_excel(array)
     array.map do |entry|
       LETTER_TO_FLOAT_MAP[entry].to_f || entry.to_f
     end
