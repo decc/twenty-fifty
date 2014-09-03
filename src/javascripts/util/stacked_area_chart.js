@@ -232,7 +232,8 @@ window.timeSeriesStackedAreaChart = function() {
           gEnter = svg.enter().append("svg").append("g").attr('class', 'drawing Paired').on('click.zoom', zoom);
           gEnter.append("rect").attr("class", "backgroundrect").attr("x", -margin.left).attr("y", -margin.top).attr("width", width).attr("height", height);
           gEnter.append("g").attr('class', 'context');
-          gEnter.append("clipPath").attr("id", "seriesclip").append("rect").attr("x", xScale.range()[0]).attr("y", yScale.range()[1]).attr("width", xScale.range()[1] - xScale.range()[0]).attr("height", yScale.range()[0] - yScale.range()[1]);
+          gEnter.append("clipPath").attr("id", "seriesclip").append("rect");
+          svg.select("#seriesclip rect").attr("x", xScale.range()[0]).attr("y", yScale.range()[1]).attr("width", xScale.range()[1] - xScale.range()[0]).attr("height", yScale.range()[0] - yScale.range()[1]);
           gEnter.append("g").attr('class', 'series').attr("clip-path", "url(#seriesclip)");
           svg.attr("width", width).attr("height", height);
           g = svg.select("g.drawing").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
