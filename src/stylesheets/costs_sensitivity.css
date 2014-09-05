@@ -39,15 +39,24 @@ a#comparatorchoice:hover {
 
 #costssensitivitytemplate .comparator {
   fill: #008000;
-  stroke: none;
+  stroke:  #008000;
 }
 
 #costssensitivitytemplate .chosen {
   fill: #1f77b4;
+  stroke: #1f77b4;
+}
+
+#costssensitivitytemplate .chosen text, #costssensitivitytemplate .comparator text {
   stroke: none;
 }
 
-#costssensitivitytemplate .control {
+#costssensitivitytemplate tspan.chosen, #costssensitivitytemplate tspan.comparator {
+  stroke: none;
+}
+
+
+#costssensitivitytemplate .control, #costssensitivitytemplate .reset {
   font-size: 0.72em;
   text-anchor: middle;
   cursor: pointer;
@@ -88,6 +97,19 @@ a#comparatorchoice:hover {
   marker-end: url(#arrowHead);
   shape-rendering: crispedges;
 }
+
+.arrow {
+  stroke: #1f77b4;
+  stroke-width: 1px;
+  marker-end: url(#arrowHead);
+  shape-rendering: crispedges;
+}
+
+#costssensitivitytemplate .sensitivitylabel {
+  text-anchor: middle;
+}
+  
+
 
 marker#arrowHead {
   fill: #1f77b4;

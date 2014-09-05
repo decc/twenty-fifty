@@ -4,6 +4,7 @@ window.twentyfifty.views.costs_sensitivity2 = function() {
     // from events
     that = this;
 
+    // FIXME: Need to get these from the spreadsheet
     var cost_component_names = ["Conventional thermal plant", "Combustion + CCS", "Nuclear power", "Onshore wind", "Offshore wind", "Hydroelectric", "Wave and Tidal", "Geothermal", "Distributed solar PV", "Distributed solar thermal", "Micro wind", "Biomatter to fuel conversion", "Bioenergy imports", "Agriculture and land use", "Energy from waste", "Waste arising", "Marine algae", "Electricity imports", "Electricity Exports", "Electricity grid distribution", "Storage, demand shifting, backup", "H2 Production", "Domestic heating", "Domestic insulation", "Commercial heating and cooling", "Domestic lighting, appliances, and cooking", "Commercial lighting, appliances, and catering", "Industrial processes", "Conventional cars and buses", "Hybrid cars and buses", "Electric cars and buses", "Fuel cell cars and buses", "Bikes", "Rail", "Domestic aviation", "Domestic freight", "International aviation", "International shipping (maritime bunkers)", "Geosequestration", "Petroleum refineries", "Fossil fuel transfers", "District heating effective demand", "Storage of captured CO2", "Coal", "Oil", "Gas", "Finance cost"];
 
     // FIXME: Need to move these to the spreadsheet
@@ -180,7 +181,9 @@ window.twentyfifty.views.costs_sensitivity2 = function() {
       //        path.a // The two possible arrows
       //        path.b
       //    g.bottom
-      //      g.bars
+      //      g.labels
+      //        text.left
+      //      g.components
       //        40x g.bar
       //          text.label
       //          g.chosen
@@ -205,7 +208,7 @@ window.twentyfifty.views.costs_sensitivity2 = function() {
 
       // The top y-axis leaves space for two bars and arrows inbetween
       top_y = d3.scale.ordinal()
-            .domain(['comparator', 'difference', 'chosen'])
+            .domain(['chosen', 'difference', 'comparator'])
             .rangeRoundBands([0, 120], 0.1);
 
       // then we need space for the difference arrows
@@ -220,7 +223,7 @@ window.twentyfifty.views.costs_sensitivity2 = function() {
       // then we need space for the comparator bars for each component
       bottom_y_bars = d3.scale.ordinal()
         .rangeRoundBands([0, bottom_y.rangeBand()], 0.2)
-        .domain([1,0]);
+        .domain([0,1]);
       
       // SETUP THE AUTOMATIC AXES
 
@@ -284,10 +287,71 @@ window.twentyfifty.views.costs_sensitivity2 = function() {
       bottom_group = svg.append("g")
         .attr("class", "bottom");
 
+      // Put a components g now, so that the little bars get drawn behind the labels
+      bottom_group.append("g").attr("class","components");
+
+      // The labels explaining how to use the bottom half
+      var text = bottom_group.append("text")
+        .attr("class", "label")
+        .attr("x", -margin.left + 30)
+        .attr("y", 150);
+
+      text.append("tspan").text("These are the most expensive items in ");
+      text.append("tspan").attr("class", "chosen").text("your pathway");
+      text.append("tspan").text(" and, for comparison, in the ");
+      text.append("tspan").attr("class", "comparator").text("Doesn't tackle climate change");
+      text.append("tspan").text(" pathway.");
+
+      bottom_group.append("line")
+        .attr("class", "arrow")
+        .attr("x1", -margin.left + 25)
+        .attr("x2", -margin.left + 25)
+        .attr("y1", 140)
+        .attr("y2", 240);
+
+      bottom_group.append("text")
+        .attr("class", "sensitivitylabel label")
+        .attr("x", x(7500))
+        .attr("y", 150)
+        .text("Try different cost scenarios");
+
+      bottom_group.append("text")
+        .attr("class", "sensitivitylabel label")
+        .attr("x", x(6500))
+        .attr("y", 165)
+        .text("Cheap");
+
+      bottom_group.append("line")
+        .attr("class", "arrow")
+        .attr("x1", x(6900))
+        .attr("x2", x(8100))
+        .attr("y1", 163)
+        .attr("y2", 163);
+
+      bottom_group.append("text")
+        .attr("class", "sensitivitylabel label")
+        .attr("x", x(8500))
+        .attr("y", 165)
+        .text("Expensive");
+
+      bottom_group.append("text")
+        .attr("class", "sensitivitylabel label reset")
+        .attr("x", x(9500))
+        .attr("y", 165)
+        .text("(reset)")
+        .on("click", resetCosts);
+
       // Let d3 automatically draw the x axis
       svg.append("g")
         .attr("class", "x axis")
         .call(xAxis);
+
+      // Put a label on the x axis
+      svg.append("text")
+        .attr("class", "label")
+        .attr("x", -2)
+        .attr("y", -30)
+        .text("The mean cost to society of the whole energy system in undiscounted real pounds per person 2010-2050")
     };
 
     // This is called just before we move from
@@ -346,6 +410,9 @@ window.twentyfifty.views.costs_sensitivity2 = function() {
         low: p.total_cost_low_adjusted,
         high: p.total_cost_high_adjusted
       });
+
+      // Update the label
+      d3.select("tspan.comparator").text(top_data.get("comparator").caption);
 
       // The data for drawing the bottom bars
       addCostsToBottomData(p, 1);
@@ -410,6 +477,16 @@ window.twentyfifty.views.costs_sensitivity2 = function() {
       }
 
     }
+
+    var resetCosts = function() {
+      var l;
+      for (l = 0 ; l < cost_component_names.length; l++) {
+        name = cost_component_names[l];
+        jQuery.jStorage.set(name, 'point');
+      }
+      that.updateResults(pathway);
+      that.updateComparator(comparator);
+    };
 
     // Value = 0 for min, 1 for max
     var adjustCost = function(control, value) {
@@ -514,7 +591,7 @@ window.twentyfifty.views.costs_sensitivity2 = function() {
         return (b.value[0].high - a.value[0].high + b.value[0].low - a.value[0].low )
       });
 
-      var groups = svg.select("g.bottom").selectAll("g.component")
+      var groups = svg.select("g.components").selectAll("g.component")
         .data(data, function(d) { return d.key; });
 
       // We want to end up with one group per component of costs:
