@@ -1,9 +1,13 @@
 window.twentyfifty.views.costs_sensitivity = function() {
+ 
+    // So we can call functions in this object
+    // from events
+    that = this;
 
-    var bottom_area_start = 219;
-
+    // FIXME: Need to get these from the spreadsheet
     var cost_component_names = ["Conventional thermal plant", "Combustion + CCS", "Nuclear power", "Onshore wind", "Offshore wind", "Hydroelectric", "Wave and Tidal", "Geothermal", "Distributed solar PV", "Distributed solar thermal", "Micro wind", "Biomatter to fuel conversion", "Bioenergy imports", "Agriculture and land use", "Energy from waste", "Waste arising", "Marine algae", "Electricity imports", "Electricity Exports", "Electricity grid distribution", "Storage, demand shifting, backup", "H2 Production", "Domestic heating", "Domestic insulation", "Commercial heating and cooling", "Domestic lighting, appliances, and cooking", "Commercial lighting, appliances, and catering", "Industrial processes", "Conventional cars and buses", "Hybrid cars and buses", "Electric cars and buses", "Fuel cell cars and buses", "Bikes", "Rail", "Domestic aviation", "Domestic freight", "International aviation", "International shipping (maritime bunkers)", "Geosequestration", "Petroleum refineries", "Fossil fuel transfers", "District heating effective demand", "Storage of captured CO2", "Coal", "Oil", "Gas", "Finance cost"];
 
+    // FIXME: Need to move these to the spreadsheet
     var cost_wiki_links = {
       "Fuel cell cars and buses": '/pages/63',
       "Conventional cars and buses": '/pages/63',
@@ -55,6 +59,7 @@ window.twentyfifty.views.costs_sensitivity = function() {
       "Electricity imports": '/pages/32'
     };
 
+    // FIXME: Add these descriptions to the Excel
     cost_component_values = {
       "Oil": {
         cheap: "$75/bbl",
@@ -93,23 +98,55 @@ window.twentyfifty.views.costs_sensitivity = function() {
       return "cheaper";
     };
 
-    var color = function(value) {
-      if (value > 0) {
-        return "#f00";
+    var margin = {top: 40, right: 30, bottom: 40, left: 300},
+        x, // the x scale
+        top_y, // the y scale for the top bars
+        top_y_arrows_scale, // the y scale for the arrow bars
+        bottom_y, // the y scale for the bottom bars
+        bottom_y_bars, // the y scale within the bottom bars
+        xAxis, // the main x axis
+        svg, // the chart area
+        top_data = d3.map(),
+        bottom_data,
+        increment = { label: "", arrows: [] },
+        pathway,
+        comparator;
+
+    // These are the controls
+    var controls = [
+      { name: "See assumptions",
+        css: "control",
+        action: function() {
+          name = d3.select(this.parentNode).datum().key;
+          window.location = "http://2050-calculator-tool-wiki.decc.gov.uk" + cost_wiki_links[name];
+        } 
+      },
+      { name: "Cheap",
+        css: "control low",
+        action: function() { adjustCost(this, 0); } 
+      },
+      { name: "Default",
+        css: "control point",
+        action: function() { adjustCost(this, "point"); } 
+      },
+      { name: "Today's cost",
+        css: "control high",
+        action: function() { adjustCost(this, 1.0); } 
+      },
+      { name: "Uncertian",
+        css: "control uncertain",
+        action: function() { adjustCost(this, "uncertain"); } 
       }
-      return "#0f0";
-    };
-
-    var p_low_fill_color = '#1f77b4';
-
-    var p_range_fill_color = 'url(/assets/images/hatches/hatch-1f77b4.png)';
-  
-    var c_low_fill_color = '#f00';
-
-    var c_range_fill_color = 'url(/assets/images/hatches/hatch-f00.png)';
+    ];
 
     this.setup = function() {
-      if ($.jStorage.get('CostCaveatShown') !== true) { $('#cost_caveats').show(); }
+
+      var target, 
+          width, 
+          height,
+          defs,
+          top_group,
+          bottom_group;
       
       // The html template for this page is in the #costssensitivitytemplate div at the bottom
       // of src/index.html.erb. This moves the template into the results part of the screen
@@ -117,546 +154,544 @@ window.twentyfifty.views.costs_sensitivity = function() {
         return d3.select("#costssensitivitytemplate").node().cloneNode(true) 
       });
       
+      // This shows the user this work is provisional
       $('#message').addClass('warning');
-      this.drawChart();
+
+      // This makes sure the caveats are shown, unless the user has already seen them
+      if (jQuery.jStorage.get('CostCaveatShown') !== true) { $('#cost_caveats').show(); }
+
+      // This is the area where the chart will be
+      target = d3.select("#costssensitivity");
+
+      // This works out the right width and height to fill the screen
+      width = parseInt(target.style('width')) - margin.left - margin.right;
+      height = parseInt(target.style('height')) - margin.top - margin.bottom;
+
+      // The structure we are aiming for
+      // svg
+      //  g // Sorts out margins
+      //    g.top
+      //      g.bars
+      //        2x g.bar
+      //            text.label
+      //            rect.low
+      //            rect.range
+      //      g.difference
+      //        text.label
+      //        path.a // The two possible arrows
+      //        path.b
+      //    g.bottom
+      //      g.labels
+      //        text.left
+      //      g.components
+      //        40x g.bar
+      //          text.label
+      //          g.chosen
+      //            rect.low
+      //            rect.range
+      //            path.uncertainty
+      //          g.counterfactual
+      //            rect.low
+      //            rect.range
+      //            path.uncertainty
+      //          g.controls
+      //      g.key
+      //    g.xAxis
+
+      // SETUP THE SCALES
+
+      // The x-axis covers the full width, with a maximum cost
+      // that can be displayed of 10 000.
+      x = d3.scale.linear()
+            .domain([0, 10000])
+            .range([0, width]);
+
+      // The top y-axis leaves space for two bars and arrows inbetween
+      top_y = d3.scale.ordinal()
+            .domain(['chosen', 'difference', 'comparator'])
+            .rangeRoundBands([0, 120], 0.1);
+
+      // then we need space for the difference arrows
+      top_y_arrows_scale = d3.scale.ordinal()
+        .rangePoints([0, top_y.rangeBand()],1);
+
+      // the bottom y-axis needs to leave space for all the cost components
+      bottom_y = d3.scale.ordinal()
+        .rangeRoundBands([150, height], .2)
+        .domain(d3.range(cost_component_names.length));
+
+      // then we need space for the comparator bars for each component
+      bottom_y_bars = d3.scale.ordinal()
+        .rangeRoundBands([0, bottom_y.rangeBand()], 0.2)
+        .domain([0,1]);
+      
+      // SETUP THE AUTOMATIC AXES
+
+      // We can use d3's automatic axis drawing for the x-axis
+      xAxis = d3.svg.axis()
+        .scale(x)
+        .orient("top");
+
+      // SETUP THE SVG
+      svg = target.append("svg")
+        .attr("width", width + margin.left + margin.right) 
+        .attr("height", height + margin.top + margin.bottom)
+
+      defs = svg.append("defs");
+
+      // Now we need to define some patterns so that we can do diagonal 
+      // hatching in the SVG to represent cost ranges. We need three, 
+      // one for your chosen pathway, one for pathways that tackle climate
+      // change and one for pathways that don't
+      defs.selectAll("pattern")
+          .data(['chosen', 'comparator'])
+        .enter()
+          .append("pattern")
+              .attr("id", function(d) { return d+"pattern"; })
+              .attr("patternUnits", "userSpaceOnUse")
+              .attr("width", 4)
+              .attr("height", 4)
+            .append("path")
+              .attr("d", "M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2");
+
+      // We also need to define an arrowhead
+      defs.append("svg:marker")
+          .attr("id", "arrowHead")
+          .attr("viewBox", "0 0 10 10")
+          .attr("refX", 8)
+          .attr("refY", 5)
+          .attr("markerWidth", 4)
+          .attr("markerHeight", 3)
+          .attr("orient", "auto")
+        .append("svg:path")
+          .attr("d", "M 0 0 L 10 5 L 0 10 Z");
+    
+      // Now we add a group that ensures we take into account margins
+      svg = svg.append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+      // Now we add the basic structure
+      top_group = svg.append("g")
+        .attr("class", "top");
+
+      // Add the arrows and labels for the difference
+      difference = top_group.append("g")
+        .attr("class", "difference")
+        .attr("transform", function(d,i) { return "translate(0, "+top_y("difference")+")" });
+
+      difference.append("text")
+        .attr("class", "label")
+        .attr("dy", "0.32em")
+        .attr("y", top_y.rangeBand()/2);
+
+      bottom_group = svg.append("g")
+        .attr("class", "bottom");
+
+      // Put a components g now, so that the little bars get drawn behind the labels
+      bottom_group.append("g").attr("class","components");
+
+      // The labels explaining how to use the bottom half
+      var text = bottom_group.append("text")
+        .attr("class", "label")
+        .attr("x", -margin.left + 30)
+        .attr("y", 150);
+
+      text.append("tspan").text("These are the most expensive items in ");
+      text.append("tspan").attr("class", "chosen").text("your pathway");
+      text.append("tspan").text(" and, for comparison, in the ");
+      text.append("tspan").attr("class", "comparator").text("Doesn't tackle climate change");
+      text.append("tspan").text(" pathway.");
+
+      bottom_group.append("line")
+        .attr("class", "arrow")
+        .attr("x1", -margin.left + 25)
+        .attr("x2", -margin.left + 25)
+        .attr("y1", 140)
+        .attr("y2", 240);
+
+      bottom_group.append("text")
+        .attr("class", "sensitivitylabel label")
+        .attr("x", x(7500))
+        .attr("y", 150)
+        .text("Try different cost scenarios");
+
+      bottom_group.append("text")
+        .attr("class", "sensitivitylabel label")
+        .attr("x", x(6500))
+        .attr("y", 165)
+        .text("Cheap");
+
+      bottom_group.append("line")
+        .attr("class", "arrow")
+        .attr("x1", x(6900))
+        .attr("x2", x(8100))
+        .attr("y1", 163)
+        .attr("y2", 163);
+
+      bottom_group.append("text")
+        .attr("class", "sensitivitylabel label")
+        .attr("x", x(8500))
+        .attr("y", 165)
+        .text("Expensive");
+
+      bottom_group.append("text")
+        .attr("class", "sensitivitylabel label reset")
+        .attr("x", x(9500))
+        .attr("y", 165)
+        .text("(reset)")
+        .on("click", resetCosts);
+
+      // Let d3 automatically draw the x axis
+      svg.append("g")
+        .attr("class", "x axis")
+        .call(xAxis);
+
+      // Put a label on the x axis
+      svg.append("text")
+        .attr("class", "label")
+        .attr("x", -2)
+        .attr("y", -30)
+        .text("The mean cost to society of the whole energy system in undiscounted real pounds per person 2010-2050")
     };
 
+    // This is called just before we move from
+    // this view to another view. It removes
+    // everything we have added to the screen
     this.teardown = function() {
       $('#results').empty();
       $('#message').removeClass('warning');
       $('#cost_caveats').hide();
     };
 
-    this.updateResults = function(pathway) {
-      this.pathway = pathway;
-      if (this.pathway.total_cost_low_adjusted == null) {
-        twentyfifty.adjust_costs_of_pathway(this.pathway);
-      }
-      this.sortComponents();
-      this.updateBar(this.top_pathway_chart, this.pathway.total_cost_low_adjusted, this.pathway.total_cost_range_adjusted);
-      this.updateIncrement();
+    // This is called after setup() and again 
+    // every time the user changes
+    // their pathway, either by clicking on a control
+    // or by choosing a different example
+    this.updateResults = function(p) {
+      // Keep track in case we update the costs
+      pathway = p;
+
+      // This adjusts the costs for any high/low overrides the user has selected
+      twentyfifty.adjust_costs_of_pathway(p);
+  
+      // The data for drawing the top bars
+      top_data.set("chosen", { 
+        name: "chosen", 
+        css: "chosen",
+        caption: "Your pathway",
+        low: p.total_cost_low_adjusted,
+        high: p.total_cost_high_adjusted
+      });
+
+      // The data for drawing the bottom bars
+      addCostsToBottomData(p, 0);
+      
+      // The data for drawing the arrows showing the difference in cost
+      updateIncrement();
+
+      redraw();
     };
 
+    // This is called after setup() and updateResults() and
+    // again every time the user chooses a different comparator
+    // pathway
+    this.updateComparator = function(p) {
+      // Keep track in case we update the costs
+      comparator = p;
 
-    this.updateComparator = function(comparator) {
-      this.comparator = comparator;
-      if (this.comparator.total_cost_low_adjusted == null) {
-        twentyfifty.adjust_costs_of_pathway(this.comparator);
-      }
-      this.updateBar(this.top_comparator_chart, this.comparator.total_cost_low_adjusted, this.comparator.total_cost_range_adjusted);
-      this.top_comparator_chart.name.attr({
-        text: twentyfifty.pathwayName(this.comparator._id, this.comparator._id),
-        href: twentyfifty.pathwayWikiPages(this.comparator._id)
+      // This adjusts the costs for any high/low overrides the user has selected
+      twentyfifty.adjust_costs_of_pathway(p);
+
+      // The data for drawing the top bars
+      top_data.set("comparator", { 
+        name: "comparator", 
+        css: "comparator",
+        caption: twentyfifty.pathwayName(p['_id'], "Comparison"),
+        low: p.total_cost_low_adjusted,
+        high: p.total_cost_high_adjusted
       });
-      this.top_comparator_chart.description.attr({
-        text: twentyfifty.pathwayDescriptions(this.comparator._id, ""),
-        href: twentyfifty.pathwayWikiPages(this.comparator._id)
-      });
-      this.key_label.attr({
-        text: "The cost in '" + (twentyfifty.pathwayName(this.comparator._id, this.comparator._id)) + "'"
-      });
-      if (this.pathway != null) {
-        this.updateIncrement();
-        return this.updateComponents(false, true);
-      }
+
+      // Update the label
+      d3.select("tspan.comparator").text(top_data.get("comparator").caption);
+
+      // The data for drawing the bottom bars
+      addCostsToBottomData(p, 1);
+      
+      // The data for drawing the arrows showing the difference in cost
+      updateIncrement();
+
+      redraw();
     };
 
-    this.updateToBarForNewCost = function() {
-      this.updateBar(this.top_pathway_chart, this.pathway.total_cost_low_adjusted, this.pathway.total_cost_range_adjusted);
-      this.updateBar(this.top_comparator_chart, this.comparator.total_cost_low_adjusted, this.comparator.total_cost_range_adjusted);
-      return this.updateIncrement();
-    };
+    // We need to have these, slightly convoluted, method
+    // because one of the pathways (either the user's choice
+    // or the comparator) may not have loaded by the time we 
+    // start to draw the screen.
+    var addCostsToBottomData = function(pathway, position) {
+      costs = d3.map(pathway.cost_components);
+      setupBottomData(costs.keys());
 
-    this.updateIncrement = function() {
-      var average, c, i, i1, i2, max, min, p;
-      if (!((this.pathway != null) && (this.comparator != null))) {
-        return;
-      }
-      p = this.pathway;
-      c = this.comparator;
-      i = twentyfifty.calculateIncrementalCost(p, c);
-      min = Math.min(p.total_cost_low_adjusted, c.total_cost_low_adjusted);
-      max = Math.max(p.total_cost_high_adjusted, c.total_cost_high_adjusted);
-      average = (min + max) / 2;
-      i1 = i.tc - i.cc;
-      i2 = i.tt - i.ct;
-      if (i1 === i2) {
-        this.increment_arrows.low.hide();
-        this.increment_arrows.high.hide();
-        this.increment_arrows.range_message.hide();
-        this.increment_arrows.low_value.hide();
-        this.increment_arrows.high_value.hide();
-        this.increment_arrows.single.attr({
-          path: ["M", this.x(p.total_cost_low_adjusted - i1), this.top_y('i') + this.top_bar_height * 0.5, "L", this.x(p.total_cost_low_adjusted), this.top_y('i') + this.top_bar_height * 0.5],
-          stroke: color(i2),
-          fill: color(i2)
-        });
-        this.increment_arrows.single_value.attr({
-          x: this.x(max) + 3,
-          text: "£" + (Math.round(Math.abs(i1))) + "/person/year " + (direction(i1))
-        });
-        optional_arrow(this.increment_arrows.single, i1);
-        this.increment_arrows.single.show();
-        return this.increment_arrows.single_value.show();
-      } else {
-        this.increment_arrows.single.hide();
-        this.increment_arrows.single_value.hide();
-        this.increment_arrows.low.attr({
-          path: ["M", this.x(average - i2 / 2), this.top_y('i') + this.top_bar_height * 0.25, "L", this.x(average + i2 / 2), this.top_y('i') + this.top_bar_height * 0.25],
-          stroke: color(i2),
-          fill: color(i2)
-        });
-        this.increment_arrows.high.attr({
-          path: ["M", this.x(average - i1 / 2), this.top_y('i') + this.top_bar_height * 0.75, "L", this.x(average + i1 / 2), this.top_y('i') + this.top_bar_height * 0.75],
-          stroke: color(i1),
-          fill: color(i1)
-        });
-        this.increment_arrows.range_message.attr({
-          x: this.x(min) - 3
-        });
-        this.increment_arrows.low_value.attr({
-          x: this.x(max) + 3,
-          text: "£" + (Math.round(Math.abs(i2))) + "/person/year " + (direction(i2)) + " and"
-        });
-        this.increment_arrows.high_value.attr({
-          x: this.x(max) + 3,
-          text: "£" + (Math.round(Math.abs(i1))) + "/person/year " + (direction(i1))
-        });
-        optional_arrow(this.increment_arrows.low, i2);
-        optional_arrow(this.increment_arrows.high, i1);
-        this.increment_arrows.low.show();
-        this.increment_arrows.high.show();
-        this.increment_arrows.range_message.show();
-        this.increment_arrows.low_value.show();
-        return this.increment_arrows.high_value.show();
-      }
-    };
-
-    optional_arrow = function(arrow, value) {
-      if (Math.abs(value) > 200) {
-        return arrow.attr({
-          'arrow-end': 'classic-narrow-short'
-        });
-      } else {
-        return arrow.attr({
-          'arrow-end': 'none'
-        });
-      }
-    };
-
-    label_components = {
-      labels: ['name', 'details', 'cheap', 'default', 'expensive', 'uncertain'],
-      boxes: ['details_box', 'cheap_box', 'default_box', 'expensive_box', 'uncertain_box']
-    };
-
-    this.sortComponents = function() {
-      var a, bar_offset, component, cy, ly, name, p, py, y, _i, _j, _k, _len, _len1, _len2, _ref, _ref1;
-      p = this.pathway.cost_components;
-      bar_offset = this.bar_offset;
-      cost_component_names.sort(function(a, b) {
-        return p[b].high_adjusted - p[a].high_adjusted;
-      });
-      this.bottom_y = y = d3.scale.ordinal().domain(cost_component_names).rangeRoundBands([bottom_area_start, this.h], 0.25);
-      for (_i = 0, _len = cost_component_names.length; _i < _len; _i++) {
-        name = cost_component_names[_i];
-        component = this.components[name];
-        py = y(name);
-        cy = py + bar_offset;
-        ly = py + (y.rangeBand() / 2);
-        _ref = label_components.labels;
-        for (_j = 0, _len1 = _ref.length; _j < _len1; _j++) {
-          a = _ref[_j];
-          component[a].attr({
-            y: ly
-          });
-        }
-        _ref1 = label_components.boxes;
-        for (_k = 0, _len2 = _ref1.length; _k < _len2; _k++) {
-          a = _ref1[_k];
-          component[a].attr({
-            y: py
-          });
-        }
-        component.pathway.low.attr({
-          y: py
-        });
-        component.pathway.range.attr({
-          y: py
-        });
-        component.comparator.low.attr({
-          y: cy
-        });
-        component.comparator.range.attr({
-          y: cy
-        });
-      }
-      return this.updateComponents();
-    };
-
-    this.updateComponents = function(update_pathway, update_comparator) {
-      var name, _i, _len, _results;
-      if (update_pathway == null) {
-        update_pathway = true;
-      }
-      if (update_comparator == null) {
-        update_comparator = true;
-      }
-      if (!(this.pathway || this.comparator)) {
-        return;
-      }
-      _results = [];
-      for (_i = 0, _len = cost_component_names.length; _i < _len; _i++) {
-        name = cost_component_names[_i];
-        _results.push(this.updateComponentNamed(name, update_pathway, update_comparator));
-      }
-      return _results;
-    };
-
-    this.updateComponentNamed = function(name, update_pathway, update_comparator) {
-      var a, c, chosen, component, cy, p, py, setting, _i, _len, _ref;
-      if (update_pathway == null) {
-        update_pathway = true;
-      }
-      if (update_comparator == null) {
-        update_comparator = true;
-      }
-      component = this.components[name];
-      if (update_pathway && (this.pathway != null)) {
-        p = this.pathway.cost_components[name];
-        py = this.bottom_y(name);
-        this.updateBar(component.pathway, p.low_adjusted, p.range_adjusted);
-        component.pathway.uncertainty.attr({
-          path: ["M", this.x(p.low), py, "L", this.x(p.high), py]
-        });
-      }
-      if (update_comparator && (this.comparator != null)) {
-        c = this.comparator.cost_components[name];
-        cy = this.bottom_y(name) + this.bar_offset;
-        this.updateBar(component.comparator, c.low_adjusted, c.range_adjusted);
-        component.comparator.uncertainty.attr({
-          path: ["M", this.x(c.low), cy, "L", this.x(c.high), cy]
-        });
-      }
-      setting = $.jStorage.get(name);
-      _ref = ['details', 'cheap', 'default', 'expensive', 'uncertain', 'details_box', 'cheap_box', 'default_box', 'expensive_box', 'uncertain_box'];
-      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-        a = _ref[_i];
-        component[a].attr({
-          'font-weight': 'normal'
-        });
-      }
-      if ((setting == null) || setting === 'point') {
-        chosen = component["default"];
-      } else if (setting === 'uncertain') {
-        chosen = component.uncertain;
-      } else if (setting === 0) {
-        chosen = component.cheap;
-      } else if (setting === 1) {
-        chosen = component.expensive;
-      }
-      return chosen.attr({
-        'font-weight': 'bold'
-      });
-    };
-
-    this.updateBar = function(bar, low, range) {
-      if (low < 0) {
-        bar.low.attr({
-          x: this.x(low + range),
-          width: this.w(Math.abs(range))
-        });
-      } else {
-        bar.low.attr({
-          width: this.w(low)
-        });
-      }
-      if (range < 0) {
-        return bar.range.attr({
-          x: this.x(low + range),
-          width: this.w(Math.abs(range))
-        });
-      } else {
-        return bar.range.attr({
-          x: this.x(low),
-          width: this.w(range)
-        });
-      }
-    };
-
-    this.w = function(value) {
-      return this.x(value) - this.x(0);
-    };
-
-    this.drawChart = function() {
-      var bar_height, bar_offset, box_attr, boxy, component, components, cy, e, format, h, increment, labels, ly, name, py, r, sensitivity_label_height, sensitivity_label_width, tick, url, w, x, y, _i, _j, _k, _len, _len1, _len2, _ref;
-      e = $('#costssensitivity');
-      this.h = h = e.height();
-      w = e.width();
-      r = new Raphael('costssensitivity', w, h);
-      this.x = x = d3.scale.linear().domain([0, 10000]).range([250, w - 30]).nice();
-      this.top_y = y = d3.scale.ordinal().domain(['p', 'i', 'c']).rangeRoundBands([30, 180], 0.15);
-      r.text(x(5000), 17, "The mean cost to society of the whole energy system in undiscounted real pounds per person 2010-2050").attr({
-        'text-anchor': 'center',
-        'font-weight': 'bold'
-      });
-      this.top_bar_height = bar_height = y.rangeBand();
-      r.rect(25, y('p'), x(10000) - 25, bar_height).attr({
-        'fill': '#FCFF9B',
-        'stroke': 'none'
-      });
-      r.text(30, y("p") + 9, "Your pathway").attr({
-        'text-anchor': 'start',
-        'font-weight': 'bold'
-      });
-      r.text(30, y("p") + 27, "You can use the chart below to see how\nsensitive it is to different cost assumptions").attr({
-        'text-anchor': 'start'
-      });
-      this.top_pathway_chart = {
-        low: r.rect(x(0), y('p'), 0, bar_height).attr({
-          'fill': p_low_fill_color,
-          'stroke': 'none'
-        }),
-        range: r.rect(x(0), y('p'), 0, bar_height).attr({
-          'fill': p_range_fill_color,
-          'stroke': 'none'
-        })
-      };
-      r.rect(x(0), y('c'), x(10000) - x(0), bar_height).attr({
-        'fill': '#ddd',
-        'stroke': 'none'
-      });
-      this.top_comparator_chart = {
-        name: r.text(30, y('c') + 9, "").attr({
-          'text-anchor': 'start',
-          'font-weight': 'bold'
-        }),
-        description: r.text(30, y('c') + 27, "").attr({
-          'text-anchor': 'start'
-        }),
-        low: r.rect(x(0), y('c'), 0, bar_height).attr({
-          'fill': c_low_fill_color,
-          'stroke': 'none'
-        }),
-        range: r.rect(x(0), y('c'), 0, bar_height).attr({
-          'fill': c_range_fill_color,
-          'stroke': 'none'
-        })
-      };
-      r.setStart();
-      this.increment_arrows = {
-        single: r.path(["M", 0, 0, "L", 0, 0]).attr({
-          'stroke-width': '15'
-        }),
-        single_value: r.text(0, y('i') + bar_height / 2, "").attr({
-          'text-anchor': 'start'
-        }),
-        range_message: r.text(0, y('i') + bar_height / 2, "Some costs are uncertain, therefore your pathway could be between").attr({
-          'text-anchor': 'end'
-        }),
-        low: r.path(["M", 0, 0, "L", 0, 0]).attr({
-          'stroke-width': '10'
-        }),
-        high: r.path(["M", 0, 0, "L", 0, 0]).attr({
-          'stroke-width': '10'
-        }),
-        low_value: r.text(0, y('i') + bar_height * 0.25, "").attr({
-          'text-anchor': 'start'
-        }),
-        high_value: r.text(0, y('i') + bar_height * 0.75, "").attr({
-          'text-anchor': 'start'
-        })
-      };
-      increment = r.setFinish();
-      increment.hide();
-      this.bottom_y = y = d3.scale.ordinal().domain(cost_component_names).rangeRoundBands([bottom_area_start, h], 0.25);
-      bar_height = (y.rangeBand() - 2) / 2;
-      this.bar_offset = bar_offset = ((y.rangeBand() - 2) / 2) + 2;
-      components = {};
-      for (_i = 0, _len = cost_component_names.length; _i < _len; _i++) {
-        name = cost_component_names[_i];
-        py = y(name);
-        r.rect(x(0), py, x(10000) - x(0), y.rangeBand()).attr({
-          'fill': '#ddd',
-          'stroke': 'none'
-        });
-      }
-      sensitivity_label_height = y.rangeBand();
-      sensitivity_label_width = this.w(1000) - 2;
-      box_attr = {
-        fill: '#fff',
-        stroke: '#000',
-        'fill-opacity': 0,
-        'stroke-opacity': 0
-      };
-      for (_j = 0, _len1 = cost_component_names.length; _j < _len1; _j++) {
-        name = cost_component_names[_j];
-        py = y(name);
-        cy = py + bar_offset;
-        ly = py + (y.rangeBand() / 2);
-        boxy = py;
-        component = {};
-        url = "http://2050-calculator-tool-wiki.decc.gov.uk" + (cost_wiki_links[name] || "/");
-        component.name = r.text(245, ly, name).attr({
-          'text-anchor': 'end',
-          href: url
-        });
-        component.pathway = {};
-        component.pathway.low = r.rect(x(0), py, 0, bar_height).attr({
-          'fill': p_low_fill_color,
-          'stroke': 'none'
-        });
-        component.pathway.range = r.rect(x(0), py, 0, bar_height).attr({
-          'fill': p_range_fill_color,
-          'stroke': 'none'
-        });
-        component.pathway.uncertainty = r.path(["M", 0, 0, "L", 0, 0]).attr({
-          stroke: '#000',
-          'arrow-end': "classic-narrow-long",
-          'arrow-start': "classic-narrow-long"
-        });
-        component.comparator = {};
-        component.comparator.low = r.rect(x(0), cy, 0, bar_height).attr({
-          'fill': c_low_fill_color,
-          'stroke': 'none'
-        });
-        component.comparator.range = r.rect(x(0), cy, 0, bar_height).attr({
-          'fill': c_range_fill_color,
-          'stroke': 'none'
-        });
-        component.comparator.uncertainty = r.path(["M", 0, 0, "L", 0, 0]).attr({
-          stroke: '#000',
-          'arrow-end': "classic-narrow-long",
-          'arrow-start': "classic-narrow-long"
-        });
-        labels = cost_component_value(name);
-        component.details = r.text(x(5500), ly, "See assumptions").attr({
-          'text-anchor': 'middle',
-          href: url
-        });
-        component.details_box = r.rect(x(5000), py, sensitivity_label_width, sensitivity_label_height).attr({
-          fill: '#ccc',
-          opacity: 0,
-          cursor: 'pointer',
-          href: url
-        });
-        component.cheap = r.text(x(6500), ly, labels.cheap).attr({
-          'text-anchor': 'middle'
-        });
-        component.cheap_box = r.rect(x(6000) + 1, boxy, sensitivity_label_width, sensitivity_label_height).attr(box_attr);
-        component["default"] = r.text(x(7500), ly, labels["default"]).attr({
-          'text-anchor': 'middle'
-        });
-        component.default_box = r.rect(x(7000) + 1, boxy, sensitivity_label_width, sensitivity_label_height).attr(box_attr);
-        component.expensive = r.text(x(8500), ly, labels.expensive).attr({
-          'text-anchor': 'middle'
-        });
-        component.expensive_box = r.rect(x(8000) + 1, boxy, sensitivity_label_width, sensitivity_label_height).attr(box_attr);
-        component.uncertain = r.text(x(9500), ly, "Uncertain").attr({
-          'text-anchor': 'middle'
-        });
-        component.uncertain_box = r.rect(x(9000) + 1, boxy, sensitivity_label_width, sensitivity_label_height).attr(box_attr);
-        this.clickToChangeCost(component.cheap_box, name, 0);
-        this.clickToChangeCost(component.default_box, name, "point");
-        this.clickToChangeCost(component.expensive_box, name, 1);
-        this.clickToChangeCost(component.uncertain_box, name, "uncertain");
-        components[name] = component;
-      }
-      this.components = components;
-      format = x.tickFormat(10);
-      _ref = x.ticks(10);
-      for (_k = 0, _len2 = _ref.length; _k < _len2; _k++) {
-        tick = _ref[_k];
-        r.text(x(tick), 30, format(tick)).attr({
-          'text-anchor': 'middle'
-        });
-        r.path(["M", x(tick), 40, "L", x(tick), h]).attr({
-          stroke: '#fff'
-        });
-      }
-      r.text(30, 205, "The biggest costs in your pathway").attr({
-        'text-anchor': 'start',
-        'font-weight': 'bold'
-      });
-      r.path(["M", 32, 212, "L", 32, 300]).attr({
-        stroke: '#000',
-        'arrow-end': "classic-wide-long"
-      });
-      r.rect(250, 205, 30, bar_height).attr({
-        'fill': p_low_fill_color,
-        'stroke': 'none'
-      });
-      r.text(285, 208, "The cost in your pathway").attr({
-        'text-anchor': 'start',
-        'font-weight': 'normal'
-      });
-      r.rect(250, 215, 30, bar_height).attr({
-        'fill': c_low_fill_color,
-        'stroke': 'none'
-      });
-      this.key_label = r.text(285, 218, "The cost in your comparator").attr({
-        'text-anchor': 'start',
-        'font-weight': 'normal'
-      });
-      r.path(["M", 250, 228, "L", 280, 228]).attr({
-        stroke: '#000',
-        'arrow-end': "classic-wide-long",
-        'arrow-start': 'classic-wide-short'
-      });
-      r.text(285, 228, "The range of cost estimates").attr({
-        'text-anchor': 'start',
-        'font-weight': 'normal'
-      });
-      r.text(x(7500), 220, "Try different cost scenarios").attr({
-        'text-anchor': 'middle',
-        'font-weight': 'bold'
-      });
-      r.text(x(6500), 233, "Cheap");
-      r.path(["M", x(7000), 233, "L", x(8000) - 2, 233]).attr({
-        stroke: '#000',
-        'arrow-end': "classic-wide-long"
-      });
-      r.text(x(8500), 233, "Expensive");
-      r.text(w - 30, 233, "(reset)").attr({
-        'text-anchor': 'end',
-        cursor: 'pointer'
-      }).click((function(_this) {
-        return function() {
-          var _l, _len3;
-          for (_l = 0, _len3 = cost_component_names.length; _l < _len3; _l++) {
-            name = cost_component_names[_l];
-            jQuery.jStorage.set(name, 'point');
-          }
-          twentyfifty.adjust_costs_of_pathway(_this.pathway);
-          twentyfifty.adjust_costs_of_pathway(_this.comparator);
-          _this.updateComponents();
-          return _this.updateToBarForNewCost();
+      costs.forEach(function(name, value) {
+        a = bottom_data.get(name);
+        a[position] = {
+            low: value.low_adjusted,
+            high: value.high_adjusted
         };
-      })(this));
-      return increment.toFront();
+      });
+    }
+
+    var setupBottomData = function(cost_component_names) {
+      if(bottom_data != undefined) { return; }
+
+      bottom_data = d3.map();
+      cost_component_names.forEach(function(name) {
+        bottom_data.set(name, [{low: 0, high: 0}, {low: 0, high: 0}]);
+      });
+    }
+
+    var updateIncrement = function() {
+      // No point until we have both the pathway and the comparator loaded
+      if(pathway == undefined || comparator == undefined) { return; }
+      
+      var i = twentyfifty.calculateIncrementalCost(pathway, comparator),
+          i1 = i.tc - i.cc,
+          i2 = i.tt - i.ct,
+          tmp;
+
+      if(i1 > i2) {
+        tmp = i1;
+        i1 = i2;
+        i2 = tmp;
+      }
+
+      if(i1 == 0 && i2 == 0) {
+        increment.label = "";
+        increment.arrows = [];
+      } else if(i1 == i2) {
+        increment.label = "Your pathway is £"+Math.abs(Math.round(i1))+"/person/year "+direction(i1);
+        increment.arrows = [{b: i.tc, a: i.cc}];
+      } else {
+        increment.label = "Your pathway is from £"+Math.abs(Math.round(i1))+"/person/year "+direction(i1)+
+                          " to £"+Math.abs(Math.round(i2))+"/person/year "+direction(i2);
+        increment.arrows = [{b: i.tt, a: i.ct}, {b: i.tc, a: i.cc}];
+      }
+
+    }
+
+    var resetCosts = function() {
+      var l;
+      for (l = 0 ; l < cost_component_names.length; l++) {
+        name = cost_component_names[l];
+        jQuery.jStorage.set(name, 'point');
+      }
+      that.updateResults(pathway);
+      that.updateComparator(comparator);
     };
 
-    this.clickToChangeCost = function(element, name, level) {
-      element.click((function(_this) {
-        return function() {
-          jQuery.jStorage.set(name, level);
-          twentyfifty.adjust_costs_of_pathway(_this.pathway);
-          twentyfifty.adjust_costs_of_pathway(_this.comparator);
-          _this.updateComponentNamed(name);
-          return _this.updateToBarForNewCost();
-        };
-      })(this));
-      element.hover((function() {
-        return this.attr({
-          'stroke-opacity': 1.0
-        });
-      }), (function() {
-        return this.attr({
-          'stroke-opacity': 0.0
-        });
-      }));
-      return element.attr({
-        cursor: 'pointer'
+    // Value = 0 for min, 1 for max
+    var adjustCost = function(control, value) {
+      component = d3.select(control.parentNode.parentNode);
+
+      name = component.datum().key;
+      jQuery.jStorage.set(name, value);
+      that.updateResults(pathway);
+      that.updateComparator(comparator);
+    };
+
+    var redraw = function() {
+      redrawTop();
+      redrawBottom();
+    }
+
+    var redrawTop = function() {
+
+      var data = top_data.values();
+
+      // g.top
+      //  g.bar x 2
+      //    rect.lowbar
+      //    rect.rangebar
+      //    text.caption
+
+      var groups = svg.select("g.top").selectAll("g.bar")
+        .data(data, function(d) { return d.name; });
+
+      var new_groups = groups.enter().append("g")
+        .attr("class", function(d, i) { return "bar "+d.css });
+
+      var thickness = top_y.rangeBand();
+
+      new_groups.append("rect")
+        .classed("lowbar", true)
+        .attr("x",x(0))
+        .attr("height", thickness);
+
+      new_groups.append("rect")
+        .classed("rangebar", true)
+        .attr("height", thickness);
+
+      new_groups.append("text")
+        .classed("caption", true)
+        .attr("text-anchor" , "end")
+        .attr("x", function(d) { return x(0)-10 })
+        .attr("y", thickness/2)
+        .attr("dy", "0.32em");
+
+      // Remove any groups we don't need
+      groups.exit().remove();
+
+      // Get the group in the right y spot
+      groups.transition()
+        .attr("transform", function(d,i) { return "translate(0, "+top_y(d.name)+")" });
+
+      // And then make sure the bars are the right width
+      groups.select(".lowbar").transition()
+        .attr("width", function(d) { return x(d.low) });
+
+      groups.select(".rangebar").transition()
+        .attr("fill", function(d) { return "url('#"+d.css+"pattern')"; })
+        .attr("x", function(d) { return x(d.low) })
+        .attr("width", function(d) { return x(d.high) - x(d.low)  });
+
+      groups.select(".caption").transition()
+        .text(function(d) { return d.caption });
+
+      // Finally, lets draw the difference
+      var difference = svg.select("g.top").selectAll("g.difference");
+
+      difference.select("text.label").text(increment.label);
+
+      top_y_arrows_scale.domain(d3.range(increment.arrows.length));
+
+      var arrows = difference.selectAll("line")
+        .data(increment.arrows);
+
+      arrows.enter().append("line")
+        .attr("y1", function(d,i) { return top_y_arrows_scale(i); })
+        .attr("y2", function(d,i) { return top_y_arrows_scale(i); })
+        .attr('x1', function(d) { return x(d.a); })
+        .attr('x2', function(d) { return x(d.b); });
+
+      arrows.exit().remove();
+
+      arrows.transition()
+        .attr("y1", function(d,i) { return top_y_arrows_scale(i); })
+        .attr("y2", function(d,i) { return top_y_arrows_scale(i); })
+        .attr('x1', function(d) { return x(d.a); })
+        .attr('x2', function(d) { return x(d.b); });
+
+
+    };
+
+    var redrawBottom = function() {
+
+      var data = bottom_data.entries();
+
+      data.sort(function(a,b) { 
+        return (b.value[0].high - a.value[0].high + b.value[0].low - a.value[0].low )
       });
+
+      var groups = svg.select("g.components").selectAll("g.component")
+        .data(data, function(d) { return d.key; });
+
+      // We want to end up with one group per component of costs:
+      // g.component
+      //  rect.background
+      //  text.caption
+      //  2x g.bar
+      //    rect.lowbar
+      //    rect.rangebar
+      var new_groups = groups.enter().append("g")
+        .attr("class", "component");
+
+      // Remove any groups we don't need
+      groups.exit().remove();
+
+      // This background rect is used to draw horizontal
+      // boxes across the screen to highlight where the
+      // user is
+      new_groups.append("rect")
+        .attr("class", "background")
+        .attr("x", -margin.left)
+        .attr("y", 0)
+        .attr("width", "100%")
+        .attr("height", bottom_y.rangeBand());
+
+      // Now we need the pair of bars
+      var component_bars = groups.selectAll("g.bar")
+        .data(function(d) { return d.value; });
+
+      var new_components = component_bars.enter().append("g")
+          .attr("class", function(d,i) { return i == 0 ? " chosen bar" : "comparator bar"; } );
+
+      new_components.append("rect")
+        .classed("lowbar", true)
+        .attr("y", function(d,i) { return bottom_y_bars(i); }  )
+        .attr("height", bottom_y_bars.rangeBand() );
+
+      new_components.append("rect")
+        .classed("rangebar", true)
+        .attr("fill", function(d,i) { return i == 0 ? "url('#chosenpattern')" : "url('#comparatorpattern')"; })
+        .attr("y", function(d,i) { return bottom_y_bars(i); }  )
+        .attr("height", bottom_y_bars.rangeBand() );
+
+      // Put the caption and controls on next
+      // so that they appear in front of the bars
+      new_groups.append("text")
+        .classed("caption", true)
+        .attr("text-anchor" , "end")
+        .attr("x", function(d) { return x(0)-10 })
+        .attr("y", bottom_y.rangeBand()/2)
+        .attr("dy", "0.30em");
+
+      // The controls are based on the control
+      // object defined above
+      new_groups.append("g")
+        .classed("controls", true)
+      .selectAll("text.control")
+        .data(controls)
+      .enter().append("text")
+        .attr("class", function(d) { return d.css; })
+        .attr("x", function(d, i) { return x(5500 + (1000*i)) })
+        .attr("y", bottom_y.rangeBand()/2)
+        .attr("dy", "0.30em")
+        .text(function(d) { return d.name; })
+        .on("click", function(d) { d.action.apply(this) } );
+
+      // Sort into descending order
+      groups.sort();
+
+      // Make sure the group's css reflects
+      // the users's choice about whether the 
+      // cost should be high low or uncertain
+      groups.attr("class", function(d,i) { 
+          var css = {
+            0: 'low', 
+            1: 'high',
+            'point':'point',
+            'uncertain':'uncertain',
+            undefined: 'point'
+          }[jQuery.jStorage.get(d.key)];
+
+          return "component "+css;
+        });
+      
+      // Get the group in the right y spot
+      groups.transition()
+        .attr("transform", function(d,i) { return "translate(0, "+bottom_y(i)+")" });
+
+      // Set its caption
+      groups.select(".caption").transition()
+        .text(function(d) { return d.key; });
+
+      component_bars.select(".lowbar").transition()
+        .attr("x", function(d) { return d.low >= 0 ? x(0) : x(d.low) } ) // Fanciness is for negative numbers because rects can't have a negative width
+        .attr("width", function(d) { return x(Math.abs(d.low)) }); // Math.abs is for negative numbers
+
+      component_bars.select(".rangebar").transition()
+        .attr("x", function(d) { return d.high >= 0 ? x(d.low) : x(d.high) } ) // Fanciness is for negative numbers because rects can't have a negative width
+        .attr("width", function(d) { return x(Math.abs(d.high - d.low)) }); // Math.abs is for negative numbers
+
     };
 
     return this;

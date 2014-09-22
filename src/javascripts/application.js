@@ -35,7 +35,6 @@
 //= require views/costs_compared_overview
 //= require views/costs_compared_within_sector
 //= require views/costs_sensitivity
-//= require views/costs_sensitivity2
 //= require views/story
 //= require views/share
 
