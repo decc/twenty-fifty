@@ -60,7 +60,7 @@ window.twentyfifty.views.costs_sensitivity = function() {
     };
 
     // FIXME: Add these descriptions to the Excel
-    cost_component_values = {
+    var cost_component_values = {
       "Oil": {
         cheap: "$75/bbl",
         "default": "$130/bbl",
@@ -83,12 +83,14 @@ window.twentyfifty.views.costs_sensitivity = function() {
       }
     };
 
-    var cost_component_value = function(name) {
-      return cost_component_values[name] || {
-        cheap: "Cheap",
+    var default_cost_component_values = {
+        "cheap": "Cheap",
         "default": "Default",
-        expensive: "Today's cost"
-      };
+        "expensive": "Today's cost"
+    };
+
+    var cost_component_value = function(name, level) {
+      return (cost_component_values[name] || default_cost_component_values)[level];
     };
 
     var direction = function(value) {
@@ -113,31 +115,32 @@ window.twentyfifty.views.costs_sensitivity = function() {
         comparator;
 
     // These are the controls
-    var controls = [
+    var controls_for = function(d) {
+      return [
       { name: "See assumptions",
         css: "control",
         action: function() {
-          name = d3.select(this.parentNode).datum().key;
-          window.location = "http://2050-calculator-tool-wiki.decc.gov.uk" + cost_wiki_links[name];
+          window.location = "http://2050-calculator-tool-wiki.decc.gov.uk" + cost_wiki_links[d.key];
         } 
       },
-      { name: "Cheap",
+      { name: cost_component_value(d.key, "cheap"),
         css: "control low",
-        action: function() { adjustCost(this, 0); } 
+        action: function() { adjustCost(d.key, 0); } 
       },
-      { name: "Default",
+      { name: cost_component_value(d.key, "default"),
         css: "control point",
-        action: function() { adjustCost(this, "point"); } 
+        action: function() { adjustCost(d.key, "point"); } 
       },
-      { name: "Today's cost",
+      { name: cost_component_value(d.key, "expensive"),
         css: "control high",
-        action: function() { adjustCost(this, 1.0); } 
+        action: function() { adjustCost(d.key, 1.0); } 
       },
       { name: "Uncertian",
         css: "control uncertain",
-        action: function() { adjustCost(this, "uncertain"); } 
+        action: function() { adjustCost(d.key, "uncertain"); } 
       }
-    ];
+      ];
+    };
 
     this.setup = function() {
 
@@ -489,10 +492,7 @@ window.twentyfifty.views.costs_sensitivity = function() {
     };
 
     // Value = 0 for min, 1 for max
-    var adjustCost = function(control, value) {
-      component = d3.select(control.parentNode.parentNode);
-
-      name = component.datum().key;
+    var adjustCost = function(name, value) {
       jQuery.jStorage.set(name, value);
       that.updateResults(pathway);
       that.updateComparator(comparator);
@@ -649,7 +649,7 @@ window.twentyfifty.views.costs_sensitivity = function() {
       new_groups.append("g")
         .classed("controls", true)
       .selectAll("text.control")
-        .data(controls)
+        .data(function(d) { return controls_for(d); } )
       .enter().append("text")
         .attr("class", function(d) { return d.css; })
         .attr("x", function(d, i) { return x(5500 + (1000*i)) })
