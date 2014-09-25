@@ -79,10 +79,14 @@ Use homebrew to install Ruby 2.1
 
     brew install ruby --with-libffi
 
-Make sure that version of Ruby is available in your path. If you are using bashrc then add this to your ~/.bashrc file:
+Make sure that version of Ruby is available in your path. Add this to your ~/.profile file:
 
     # Find homebrew ruby version
     export PATH=$(brew --prefix ruby)/bin:$PATH
+
+If you can't find a ~/.profile file then you can make one:
+
+    echo "export PATH=$(brew --prefix ruby)/bin:$PATH" >> ~/.profile
 
 Once you have adjusted your profile, you need to close the terminal app and reopen it to make sure the new settings are picked up.
     
