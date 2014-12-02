@@ -34,8 +34,12 @@ class CompileTemplate
   end
 
   def compile!
-    compile_assets
-    compile_html
+    if File.stat(manifest_file).writable?
+      compile_assets
+      compile_html
+    else
+      $stderr.puts "Failed to pre-compile assets, #{manifest_file} not writeable"
+    end
   end
 
   # This compiles the javascripts and stylesheets into single files
@@ -68,7 +72,11 @@ class CompileTemplate
     # src/javascripts and src/stylesheets will be loaded in preference to the
     # ones in public/assets
     return unless File.exists?(html_file)
-    File.delete(html_file)
+    if File.stat(html_file).writable?
+      File.delete(html_file)
+    else
+      $stderr.puts "Failed to remove template, #{html_file} not writeable"
+    end
   end
 
 end

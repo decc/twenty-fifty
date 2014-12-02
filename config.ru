@@ -14,6 +14,7 @@ require './src/compile_template'
 ENV['RACK_ENV'] = ENV['RAILS_ENV'] if ENV['RAILS_ENV']
 
 # When in production mode, we precompile the templates and javascripts
+# but only if we can actually write to the folder
 if ENV['RACK_ENV'] == 'production'
   CompileTemplate.new.compile!
 else
