@@ -23,32 +23,32 @@ else
 end
 
 # This sets up the bits of the server
-map '/' do
-  # To compress the data going back and forth
-  use Rack::Deflater
-  # This logs access and errors
-  use Rack::CommonLogger
 
-  # This is used in development mode to assemble all the javascripts in src/javascripts
-  # into /assets/application.js and all the stylesheets in src/stylesheets into
-  # /assets/application.css
-  map '/assets' do
-    # https://github.com/sstephenson/sprockets
-    require 'sprockets'
-    environment = Sprockets::Environment.new
+# To compress the data going back and forth
+use Rack::Deflater
+# This logs access and errors
+use Rack::CommonLogger
 
-    environment.append_path 'src/javascripts'
-    environment.append_path 'src/stylesheets'
-    environment.append_path 'public/assets'
-    environment.append_path 'contrib'
+# This is used in development mode to assemble all the javascripts in src/javascripts
+# into /assets/application.js and all the stylesheets in src/stylesheets into
+# /assets/application.css
+map '/assets' do
+  # https://github.com/sstephenson/sprockets
+  require 'sprockets'
+  environment = Sprockets::Environment.new
 
-    # The Helper module is defined in src/server.rb
-    environment.context_class.class_eval do 
-      include Helper
-    end
+  environment.append_path 'src/javascripts'
+  environment.append_path 'src/stylesheets'
+  environment.append_path 'public/assets'
+  environment.append_path 'contrib'
 
-    run environment
+  # The Helper module is defined in src/server.rb
+  environment.context_class.class_eval do 
+    include Helper
   end
-  # This is defined in src/server.rb
-  run TwentyFiftyServer
+
+  run environment
 end
+
+# This is defined in src/server.rb
+run TwentyFiftyServer
