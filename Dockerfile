@@ -5,7 +5,7 @@
 #
 # Use phusion/passenger-full as base image.
 # See https://github.com/phusion/passenger-docker for more information
-FROM phusion/passenger-full:0.9.9
+FROM phusion/passenger-ruby21:
 MAINTAINER tom@counsell.org
 
 # Set correct environment variables.
@@ -20,14 +20,14 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 # Make sure we are using Ruby 2.1
 RUN ruby-switch --set ruby2.1
 
-# Add the nginx configuration for the server which will be on port 8080
-ADD util/nginx.conf /etc/nginx/sites-enabled/2050.conf
-
-# Remove the default configuration
+# Remove the default Nginx configuration
 RUN rm -f /etc/nginx/sites-enabled/default
 
 # Enable Nginx server
 RUN rm -f /etc/service/nginx/down
+
+# Add the nginx configuration for the server which will be on port 8080
+ADD util/nginx.conf /etc/nginx/sites-enabled/2050.conf
 
 # Add the source code in this directory to the docker image
 ADD . /home/app/2050
@@ -53,5 +53,5 @@ RUN ruby compile_template.rb
 # Then server in the contianer will be available on 8080
 #
 # If testing on osx then will also need to do:
-# boot2docker ssh -L 8080:localhost:8080 password is tcuser
-# and modify hosts to point to the virtual host
+# boot2docker ip
+# to find out what ip address the server will be on
