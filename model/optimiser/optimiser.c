@@ -14,7 +14,7 @@
 #include <stdbool.h>
 #include <math.h>
 #include <time.h>
-#include "model.c" // This references the actual model. Need to be careful names don't clash.
+#include "../model.c" // This references the actual model. Need to be careful names don't clash.
 
 // This is the number of generations to evolve through to find a solution. 10 to 20 seems about right.
 #define NUMBER_OF_GENERATIONS 30
