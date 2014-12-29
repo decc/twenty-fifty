@@ -9697,6 +9697,7 @@ class Model
     attach_function 'costs_per_capita_k249', [], ExcelValue.by_value
     attach_function 'costs_per_capita_l249', [], ExcelValue.by_value
     attach_function 'costs_per_capita_m249', [], ExcelValue.by_value
+    attach_function 'costs_per_capita_cd185', [], ExcelValue.by_value
     # end of Costs per capita
     # end of Costs
     # end of Conversions
@@ -9773,6 +9774,7 @@ class Model
     attach_function 'output_areas', [], ExcelValue.by_value
     attach_function 'output_capacity_automaticallybuilt', [], ExcelValue.by_value
     attach_function 'output_costpercapita_detail', [], ExcelValue.by_value
+    attach_function 'output_costpercapita_npv_point', [], ExcelValue.by_value
     attach_function 'output_diversity', [], ExcelValue.by_value
     attach_function 'output_electricity_capacity', [], ExcelValue.by_value
     attach_function 'output_electricity_demand', [], ExcelValue.by_value
@@ -9801,6 +9803,7 @@ class Model
     attach_function 'output_areas', [], ExcelValue.by_value
     attach_function 'output_capacity_automaticallybuilt', [], ExcelValue.by_value
     attach_function 'output_costpercapita_detail', [], ExcelValue.by_value
+    attach_function 'output_costpercapita_npv_point', [], ExcelValue.by_value
     attach_function 'output_diversity', [], ExcelValue.by_value
     attach_function 'output_electricity_capacity', [], ExcelValue.by_value
     attach_function 'output_electricity_demand', [], ExcelValue.by_value
