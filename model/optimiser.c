@@ -240,6 +240,8 @@ static void show_all_top_results() {
   required_fitness = generation[0].fitness * (1.0-TOLERANCE);
 
   qsort(generation, GENERATION_SIZE, sizeof(Candidate), compare_choices_of_candidate);
+
+  printf("Candidates within %f%% of the fittest candidate:\n", TOLERANCE*100);
   for(i = 0; i<GENERATION_SIZE; i++) {
     current = generation[i];
     if(current.fitness >= required_fitness) {
@@ -282,14 +284,11 @@ int main() {
       procreate(index_of_unfit, random_index(CUT_OFF), random_index(CUT_OFF));
     }
     sort_by_fitness();
-    //putchar('.');
-    //putchar('\n');
     printf("Top candidate in generation %d:\t",generation_number+1);
     inspect_top_candidates(1);
     fflush(stdout);
   }
   putchar('\n');
-  printf("Final top candidates:\n");
   show_all_top_results();
   return 0;
 }
