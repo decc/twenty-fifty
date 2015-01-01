@@ -2,13 +2,12 @@
  * Genetic Algorithm based optimiser for the 2050 model
  * (c) 2014 Tom Counsell - Released under the MIT license
  *
- * To use, run: clang optimiser.c; ./a.out or gcc optimiser.c; ./a.out
+ * To use, run one of the other c files in this folder, such as
+ * clang lowest_emissions.c; ./a.out or gcc lowest_emissoins.c; ./a.out
  *
- * To modify what is optimised, change the 'calculate_fitness_of' function below.
- *
- * To constrain the range of choices, change the 'number_of_choices' array. 
- * E.g., if you change the first 4 to 1 then no nuclear power can be chosen.
  **/
+// FIXME: Uses global variables
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -16,6 +15,7 @@
 #include <time.h>
 #include "../model.c" // This references the actual model. Need to be careful names don't clash.
 
+// FIXME: Replace these with global variables
 // This is the number of generations to evolve through to find a solution. 10 to 20 seems about right.
 #define NUMBER_OF_GENERATIONS 30
 // This is the size of each generation. 500 is probably the minimum for enough diversity
@@ -41,63 +41,23 @@ typedef struct candidate Candidate;
 // This stores the candidates in each generation
 Candidate generation[GENERATION_SIZE];
 
-//// This is called at the start of the run. Can be used to print out what this run is doing.
-//static void describe_run() {
-//  printf("Optimising for minimum emissions, with all choices possible\n\n");
-//}
-//
-//// This limits what can be entered in each control on the candidate.
-//// If you wanted to exclude nuclear power, then you would change the first 4 to 1.
-//const int number_of_choices[] = { 4, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0, 4, 4, 4, 4, 4, 4, 0, 0, 4, 4, 4, 4, 4, 4, 0, 4, 4, 4, 4, 0, 4, 2, 0, 3, 3, 0, 4, 4, 4, 0, 4, 2, 0, 4, 4, 3 };
-//
-//// This is the key optimisation method, which defined what GOOD is.
-//// Must return an int, with a higher number meaning more fit.
-//static int calculate_fitness_of(Candidate candidate) {
-//  int fitness;
-//  reset();
-//  set_input_choices(candidate.choices);
-//  fitness = (int) (output_emissions_percentage_reduction().number * 100);
-//  return fitness;
-//}
-//
-//// The fitness often won't be very meaningful, so when presenting results can be
-//// usefull to show more data about the candidate
-//static void describe(Candidate candidate) {
-//  reset();
-//  set_input_choices(candidate.choices);
-//  printf("Percentage reduction in emissions 1990-2050: %f%%", output_emissions_percentage_reduction().number * 100.0);
-//}
-
-
-static void describe_run() {
-  printf("Optimising for minimum cost, that also meets 80%% emissions reduction target\n\n");
-}
+// This is called at the start of the run. Can be used to print out what this run is doing.
+// and/or to set the number_of_choices array to particular values 
+static void setup_run();
 
 // This limits what can be entered in each control on the candidate.
 // If you wanted to exclude nuclear power, then you would change the first 4 to 1.
-const int number_of_choices[] = { 4, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0, 4, 4, 4, 4, 4, 4, 0, 0, 4, 4, 4, 4, 4, 4, 0, 4, 4, 4, 4, 0, 4, 2, 0, 3, 3, 0, 4, 4, 4, 0, 4, 2, 0, 4, 4, 3 };
+// FIXME: How do you set it so nuclear power is always level 2?
+int number_of_choices[] = { 4, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0, 4, 4, 4, 4, 4, 4, 0, 0, 4, 4, 4, 4, 4, 4, 0, 4, 4, 4, 4, 0, 4, 2, 0, 3, 3, 0, 4, 4, 4, 0, 4, 2, 0, 4, 4, 3 };
 
 // This is the key optimisation method, which defined what GOOD is.
 // Must return an int, with a higher number meaning more fit.
-static int calculate_fitness_of(Candidate candidate) {
-  int emissions_reduction, cost;
-  reset();
-  set_input_choices(candidate.choices);
-  emissions_reduction = (int) (output_emissions_percentage_reduction().number * 100);
-  cost = (int) (output_costpercapita_npv_point().number);
-  // If emissions reduction is less than 80, count that as fitness
-  if(emissions_reduction < 80) { return emissions_reduction; }
-  // Subtract cost per capita from 1 million so that positive numbers are fitter
-  return 1e6-cost;
-}
+static int calculate_fitness_of(Candidate candidate);
 
 // The fitness often won't be very meaningful, so when presenting results can be
 // usefull to show more data about the candidate
-static void describe(Candidate candidate) {
-  reset();
-  set_input_choices(candidate.choices);
-  printf("Reduction in emissions 1990-2050: %f%% NPV of cost per capita: £%f 2010-2050", output_emissions_percentage_reduction().number * 100.0, output_costpercapita_npv_point().number);
-}
+static void describe(Candidate candidate);
+
 /**
  * WONT NORMALLY NEED TO EDIT BELOW THIS
  **/
@@ -267,7 +227,7 @@ int main() {
   // Random seed for the random number generator
   srand(time(NULL));
 
-  describe_run();
+  setup_run();
   
   printf("Will run for %d generations with %d candidates per generation\n", NUMBER_OF_GENERATIONS, GENERATION_SIZE);
   printf("In each generation the least fit %d candidates will be replaced, with a 1 in %d rate of mutation\n\n", GENERATION_SIZE-CUT_OFF, MUTATION_RATE);
