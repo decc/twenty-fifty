@@ -3,11 +3,13 @@
 // or
 // gcc simplest_for_target.c; ./a.out
 //
+#define TOLERANCE 0.03
+
 #include "optimiser.c"
 
 // This is called at the start of the run. Can be used to print out what this run is doing.
 static void setup_run() {
-  printf("Optimising for hitting the 2050 target, but leaving as many choices on level 1 as possible\n\n");
+  printf("\nOptimising for hitting the 2050 target, but leaving as many choices on level 1 as possible\n\n");
 }
 
 // We define 'simplest' as being the candidate where the most
@@ -41,6 +43,6 @@ static int calculate_fitness_of(Candidate candidate) {
 static void describe(Candidate candidate) {
   reset();
   set_input_choices(candidate.choices);
-  printf("Percentage reduction in emissions 1990-2050: %f%% Number of controls at level 1: %d", output_emissions_percentage_reduction().number * 100.0, number_of_controls_at_level_1(candidate));
+  printf("Percentage reduction in emissions 1990-2050: %2.0f%% Number of controls not at level 1: %d", output_emissions_percentage_reduction().number * 100.0, CONTROL_SIZE - number_of_controls_at_level_1(candidate));
 }
 

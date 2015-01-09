@@ -17,7 +17,7 @@
 
 // FIXME: Replace these with global variables
 // This is the number of generations to evolve through to find a solution. 10 to 20 seems about right.
-#define NUMBER_OF_GENERATIONS 30
+#define NUMBER_OF_GENERATIONS 40
 // This is the size of each generation. 500 is probably the minimum for enough diversity
 #define GENERATION_SIZE 2000
 // This is the typical number of choices that should pass between each mutation
@@ -29,7 +29,9 @@
 // The system shows all the Candidates that are close in fitness to the best candidate
 // This defines how close. Use 0.0 to only get Candidates as fit as the fittest.
 // Use 0.01 for Candidates that are within 1% of the fittest.
-#define TOLERANCE 0.01
+#ifndef TOLERANCE
+  #define TOLERANCE 0.01
+#endif
 
 // This is used to store the results of each candidate
 struct candidate {
@@ -76,6 +78,7 @@ static int random_choice(int max) {
 }
 
 // Returns a random float in the range 1.0, 1.1, 1.2 ... max (inclusive)
+// NOTE: Not currently used
 static float random_decimal_choice(int max) {
   if(max < 1) return 0.0;
   return (((int) ((max*10.0)*(rand() / (RAND_MAX+1.0)))/10.0)+1);
@@ -191,25 +194,59 @@ static int compare_choices_of_candidate(const void* a, const void* b) {
 }
 
 // This displays all the unique candidates that have the same fitness as the best
-// candidate
+// candidate, and then works out which choices are favoured in this set
 static void show_all_top_results() {
+  int i, j, count, c;
   int required_fitness;
+  ExcelValue *choices, *names;
   Candidate current, previous;
-  int i;
+  // CHECK: {{0}} should initialize ALL elements in 2D array to zero. Does it?
+  int frequency_of_choice[CONTROL_SIZE][5] = {{0}}; // 5 because sometimes zero used
+
   // We need to keep track of the fitesst candidate
   required_fitness = generation[0].fitness * (1.0-TOLERANCE);
 
+  // Sort by choices so that can check for duplicates (because they will be next to each other
+  // once the array is sorted).
   qsort(generation, GENERATION_SIZE, sizeof(Candidate), compare_choices_of_candidate);
 
   printf("Candidates within %f%% of the fittest candidate:\n", TOLERANCE*100);
+  count = 0;
+
   for(i = 0; i<GENERATION_SIZE; i++) {
     current = generation[i];
+    // Checks good enough
     if(current.fitness >= required_fitness) {
+      // First result is always unique, after that check whether we have seen it before,
+      // relies on the array being sorted by the choices, so that duplicates are next to 
+      // each other.
       if(i==0 || compare_choices_of_candidate( &current, &previous) != 0) {
+        count++;
+        choices = current.choices.array;
+        for(j=0; j < CONTROL_SIZE; j++) {
+          frequency_of_choice[j][(int) choices[j].number]++;
+        }
         inspect_candidate(current);
       }
     }
     previous = current;
+  }
+
+  printf("%d candidates found within %f%% of the fittest candidate\n\n", count, TOLERANCE*100);
+
+  if(count < 2) { return; } // No point analysing the choices when only one result
+
+  names = input_names().array;
+
+  // Show how often each choice is favoured
+  printf("   Choice                              \t1\t2\t3\t4\n");
+  for(i=0; i < CONTROL_SIZE; i++) {
+    printf("%2d %-45s", i, names[i].string);
+    c = number_of_choices[i];
+    for(j=1; j <= c; j++) {
+      printf("\t%2.0f%%", (frequency_of_choice[i][j]*100.0)/count);
+    }
+    printf("\n");
   }
 }
 
