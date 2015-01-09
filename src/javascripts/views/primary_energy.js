@@ -65,15 +65,15 @@ window.twentyfifty.views.primary_energy_chart = function() {
       pathway.primary_energy_supply[pathway.primary_energy_supply.length-1][0] =  pathway.primary_energy_supply[pathway.primary_energy_supply.length-1][0] + "¹";
     }
 
-    if(pathway.ghg[pathway.ghg.length-2][0] == "Total") {
-      pathway.ghg[pathway.ghg.length-2][0] =  pathway.ghg[pathway.ghg.length-2][0] + "³";
-    }
+    //if(pathway.ghg[pathway.ghg.length-2][0] == "Total") {
+    //  pathway.ghg[pathway.ghg.length-2][0] =  pathway.ghg[pathway.ghg.length-2][0] + "³";
+    //}
 
 
     // Get the data in the right format
     demand = convert_table_to_hash(pathway.final_energy_demand);
     supply = convert_table_to_hash(pathway.primary_energy_supply);
-    ghg = convert_table_to_hash(pathway.ghg.slice(0,-1));
+    //ghg = convert_table_to_hash(pathway.ghg.slice(0,-1));
     percent = pathway.ghg_reduction_from_1990;
 
     // Draw the charts
@@ -85,62 +85,62 @@ window.twentyfifty.views.primary_energy_chart = function() {
       .datum(supply)
       .call(this.primary_energy_chart);
 
-    d3.select('#emissions_chart')
-      .datum(ghg)
-      .call(this.emissions_chart);
+    //d3.select('#emissions_chart')
+    //  .datum(ghg)
+    //  .call(this.emissions_chart);
 
-    // This is to add the target text to the chart
-    t = d3.select('#emissions_chart g.drawing').selectAll('text.target')
-      .data([percent*100]);
+    //// This is to add the target text to the chart
+    //t = d3.select('#emissions_chart g.drawing').selectAll('text.target')
+    //  .data([percent*100]);
 
-    t.enter().append('text')
-      .attr('class', 'target');
+    //t.enter().append('text')
+    //  .attr('class', 'target');
 
-    t.attr('transform', 'translate(' + this.emissions_chart.x_center() + ',-18)');
+    //t.attr('transform', 'translate(' + this.emissions_chart.x_center() + ',-18)');
 
-    t.transition().tween('text', function(d) {
-      current = parseInt(this.textContent) || +d;
-      i = d3.interpolateRound(current, +d);
-      return function(t) {
-        return this.textContent = "" + (i(t)) + "% reduction 1990-2050; Target is 80%";
-      };
-    });
+    //t.transition().tween('text', function(d) {
+    //  current = parseInt(this.textContent) || +d;
+    //  i = d3.interpolateRound(current, +d);
+    //  return function(t) {
+    //    return this.textContent = "" + (i(t)) + "% reduction 1990-2050; Target is 80%";
+    //  };
+    //});
 
-    x = this.emissions_chart.xScale;
-    y = this.emissions_chart.yScale;
+    //x = this.emissions_chart.xScale;
+    //y = this.emissions_chart.yScale;
 
-    targets = pathway.ghg[pathway.ghg.length -1].slice(1);
+    //targets = pathway.ghg[pathway.ghg.length -1].slice(1);
 
-    t = d3.select('#emissions_chart g.drawing').selectAll('circle.target')
-      .data(targets);
+    //t = d3.select('#emissions_chart g.drawing').selectAll('circle.target')
+    //  .data(targets);
 
-    t.enter().append('circle')
-      .attr('class', 'target')
-      .attr('r', function(d) { return d == undefined ? 0 : 3 });
+    //t.enter().append('circle')
+    //  .attr('class', 'target')
+    //  .attr('r', function(d) { return d == undefined ? 0 : 3 });
 
-    t.attr('cx', function(d,i) { return x(2010 + (i*5)) });
-    t.attr('cy', function(d,i) { return y(d) });
+    //t.attr('cx', function(d,i) { return x(2010 + (i*5)) });
+    //t.attr('cy', function(d,i) { return y(d) });
 
-    t = d3.select('#emissions_chart g.drawing').selectAll("g.targetlabel")
-      .data([targets[1]]);
+    //t = d3.select('#emissions_chart g.drawing').selectAll("g.targetlabel")
+    //  .data([targets[1]]);
 
-    new_label = t.enter().append('g')
-      .attr('class', 'targetlabel');
+    //new_label = t.enter().append('g')
+    //  .attr('class', 'targetlabel');
 
-    new_label.append('text')
-      .text("Targets²");
+    //new_label.append('text')
+    //  .text("Targets²");
 
-    t.select('text')
-      .attr('x', function(d,i) { return x(2022) })
-      .attr('y', function(d,i) { return y(800) });
+    //t.select('text')
+    //  .attr('x', function(d,i) { return x(2022) })
+    //  .attr('y', function(d,i) { return y(800) });
 
-    new_label.append('line');
+    //new_label.append('line');
 
-    t.select('line')
-      .attr('x1', function(d,i) { return x(2015)+4 })
-      .attr('y1', function(d,i) { return y(d)-4 })
-      .attr('x2', function(d,i) { return x(2022) })
-      .attr('y2', function(d,i) { return y(800) });
+    //t.select('line')
+    //  .attr('x1', function(d,i) { return x(2015)+4 })
+    //  .attr('y1', function(d,i) { return y(d)-4 })
+    //  .attr('x2', function(d,i) { return x(2022) })
+    //  .attr('y2', function(d,i) { return y(800) });
 
   };
 
