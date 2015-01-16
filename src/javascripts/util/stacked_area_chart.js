@@ -23,15 +23,12 @@ window.timeSeriesStackedAreaChart = function() {
       title, 
       total_label, 
       unit, 
-      unzoom, 
       width, 
       xAxis, 
       xScale, 
       x_center, 
       yAxis, 
-      yScale, 
-      zoom, 
-      zoomed;
+      yScale;
   
   width = 375; // Of svg in pixels
   height = 125; // of svg in pixels
@@ -193,46 +190,6 @@ window.timeSeriesStackedAreaChart = function() {
 
   dataTableFormat = d3.format(".0f"); // We don't show any decimal places in the data table
 
-  // FIXME: The zoom functionality is not working and is disabled
-  zoomed = false;
-  zoom = function() {
-    return false; // DISABLES ZOOMING
-
-    var new_ymax, new_ymin, x, y, yZoom, _ref;
-    zoomed = true;
-    _ref = d3.mouse(this), x = _ref[0], y = _ref[1];
-    x = xScale.invert(x);
-    y = yScale.invert(y);
-    yZoom = (extent.ymax - extent.ymin) * 0.75;
-    new_ymin = y - (yZoom / 2);
-    new_ymax = y + (yZoom / 2);
-    if (new_ymin < extent.ymin) {
-      new_ymax = new_ymax + (extent.ymin - new_ymin);
-      new_ymin = extent.ymin;
-    }
-    if (new_ymax > extent.ymax) {
-      new_ymin = new_ymin - (new_ymax - extent.ymax);
-      new_ymax = extent.ymax;
-    }
-    extent.ymin = new_ymin;
-    extent.ymax = new_ymax;
-    return chart.draw();
-  };
-
-  // FIXME: The zoom functionality is not working and is disabled
-  unzoom = function() {
-    zoomed = false;
-    extent = {
-      xmin: min_year,
-      xmax: max_year,
-      ymin: min_value,
-      ymax: max_value
-    };
-    d3.event.stopPropagation();
-    return chart.draw();
-  };
-
-
   // This is the main function of timeSeriesStackedAreaChart()
   chart = function(selection) {
 
@@ -353,8 +310,7 @@ window.timeSeriesStackedAreaChart = function() {
           gEnter = svg.enter() // gEnter will only exist the first time we pass through, so use it to set up
             .append("svg")
               .append("g")
-                .attr('class', 'drawing Paired')
-                .on('click.zoom', zoom); // FIXME: Zoom currently disabled
+                .attr('class', 'drawing Paired');
 
           gEnter.append("rect") // A background. Where is this used?
             .attr("class", "backgroundrect")
@@ -454,10 +410,6 @@ window.timeSeriesStackedAreaChart = function() {
             .attr("class", "y axislabel");
           gEnter.append("text")
             .attr("class", "charttitle");
-          //gEnter.append("text") // FIXME: Zoom not implemented
-          //  .attr("id", "unzoom")
-          //  .text("Unzoom")
-          //  .on('click', unzoom);
 
           // If the y-axis goes negative we need to move the the x-axis labels to the bottom of the chart
           if (yScale.domain()[0] < 0 && yScale.domain()[1] > 0) {
@@ -491,8 +443,6 @@ window.timeSeriesStackedAreaChart = function() {
           g.select(".charttitle")
             .attr("transform", "translate(" + x_center + "," + (xScale.range()[0] - 30) + ")")
             .text(title);
-
-          // g.select("#unzoom").attr("transform", "translate(" + x_center + "," + (xScale.range()[0]) + ")").attr("visibility", zoomed ? "visible" : "hidden"); // FIXME: Zoom not implemented
 
           // Now we work through the labels. Only display ones that relate to the larger areas
           // Make sure we do them in the right order so that they overlap neatly
