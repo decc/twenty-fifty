@@ -34,7 +34,7 @@ class CompileTemplate
   end
 
   def compile!
-    if File.stat(manifest_file).writable?
+    if !File.exists?(manifest_file) || File.stat(manifest_file).writable?
       compile_assets
       compile_html
     else
