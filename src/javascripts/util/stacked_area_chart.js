@@ -1,5 +1,5 @@
 window.timeSeriesStackedAreaChart = function() {
-  var area, chart, color_class_index, css_for_label, context, dataTableFormat, data_first_year, data_last_year, data_year_interval, extent, height, label_threshold, line, margin, max_value, max_year, min_value, min_year, seriesClass, showLabelFilter, stack, title, total_label, unit, width, xAxis, xScale, x_center, yAxis, yScale;
+  var area, chart, color_class_index, css_for_label, context, dataTableFormat, data_first_year, data_last_year, data_year_interval, extent, height, label_threshold, line, margin, max_value, max_year, min_value, min_year, seriesClass, showLabelFilter, stack, title, total_label, unit, width, xAxis, xScale, x_center, yAxis, yScale, year_for_data, year_for_ticks, _i, _j;
   
   width = 375; // Of svg in pixels
   height = 125; // of svg in pixels
@@ -9,15 +9,17 @@ window.timeSeriesStackedAreaChart = function() {
   title = ""; // Default, Can be accessed or set with chart.title("New title")
   unit = "TWh/yr"; // Default, Can be accessed or set with chart.unit("PJ")
 
-  data_first_year = 2010; // Expects data as an array of values [100, 99, 88 ...] this specifies the year of the first value // FIXME: Allow arbitrary years to be specified
-  data_last_year = 2050; // this specifies the year of the last value
-  data_year_interval = 5; // this specifies the interval between data points
+  // Series are expected to be an array of numbers, this defines which year each number maps onto
+  year_for_data = [2010, 2015, 2020, 2025, 2030, 2035, 2040, 2045, 2050];
+
+  // These years will be marked on the axis, and data on those values will be displayed. 
+  year_for_ticks = [2010, 2020, 2030, 2040, 2050];
 
   min_value = 0; // This is the minimum for the y-axis
   max_value = 4000; // This is the maximum for the y-axis
 
-  min_year = 2010; // This is the minimum for the x-axis
-  max_year = 2050; // This is the maximum for the x-axis
+  min_year = year_for_data[0]; // This is the minimum for the x-axis. Defaults to first year of data, but doesn't have to be.
+  max_year = year_for_data[year_for_data.length-1]; // This is the maximum for the x-axis
 
   extent = { // The collection of the data above, will change if the chart is zoomed
     xmin: min_year,
@@ -33,7 +35,7 @@ window.timeSeriesStackedAreaChart = function() {
   yScale = d3.scale.linear();
 
   // These are the axes, both are formatted to not show any decimal places. See https://github.com/mbostock/d3/wiki/SVG-Axes
-  xAxis = d3.svg.axis().scale(xScale).orient("bottom").ticks(5).tickFormat(d3.format(".0f"));
+  xAxis = d3.svg.axis().scale(xScale).orient("bottom").tickValues(year_for_ticks).tickFormat(d3.format(".0f"));
   yAxis = d3.svg.axis().scale(yScale).orient("left").ticks(5).tickFormat(d3.format(".0f"));
 
   // This is used to 'stack' the values to create area charts. See https://github.com/mbostock/d3/wiki/Stack-Layout
@@ -133,7 +135,7 @@ window.timeSeriesStackedAreaChart = function() {
             series.value = series.value.map(function(p, i) {
               total += p;
               return {
-                x: data_first_year + (i * data_year_interval),
+                x: year_for_data[i],
                 y: p
               };
             });
@@ -255,7 +257,7 @@ window.timeSeriesStackedAreaChart = function() {
               for (i = _k = 0, _len2 = context.length; _k < _len2; i = ++_k) {
                 p = context[i];
                 _results.push({
-                  x: 2010 + (i * 5), // Horribly hard-wired
+                  x: year_for_data[i],
                   y: p,
                   y0: 0
                 });
@@ -271,6 +273,7 @@ window.timeSeriesStackedAreaChart = function() {
           gEnter.append("g").attr("class", "x axis")
             .attr("transform", "translate(0," + yScale.range()[0] + ")")
             .call(xAxis); // Hmm. Shouldn't this be called every time, not just on first go?
+
           gEnter.append("g")
             .attr("class", "y axis");
           gEnter.append("text")
@@ -318,7 +321,7 @@ window.timeSeriesStackedAreaChart = function() {
 
           minimum_y_space = Math.abs(yScale.invert(10) - yScale.invert(0)); // Make sure there is at least 10 pixels between each label
 
-          label_threshold = Math.abs(yScale.invert(5) - yScale.invert(0)) * 9; // Make sure the area averages at least 5 pixels wide to bother drawing a label // FIXME: Hardwired 9 is number of years of data
+          label_threshold = Math.abs(yScale.invert(5) - yScale.invert(0)) * year_for_data.length; // Make sure the area averages at least 5 pixels wide to bother drawing a label 
 
           // For each element in the series
           for (_k = 0, _len2 = stacked_data.length; _k < _len2; _k++) {
@@ -414,25 +417,18 @@ window.timeSeriesStackedAreaChart = function() {
               .append("text")
               .attr("class", "seriesValue"); // Add text for any labels that are missing
 
-            grid.text(function(d, i) { // Update text
-              if ((i % 2) === 0) { // But only for missing labels
-                return dataTableFormat(d.y);
-              } else {
-                return "";
-              }
-            }).attr("transform", function(d, i) { // Put it in the right x-position
-              return "translate(" + xScale(data_first_year + (i * data_year_interval)) + "," + (yScale.range()[0] + 30) + ")";
-            }).classed(seriesclass, true) // With the right colour
-            .attr("display", function(d, i) { // But only show it if it is wihtin the axis area
-              var display_range, year;
-              year = data_first_year + (i * data_year_interval);
-              display_range = xScale.domain();
-              if (year >= display_range[0] && year <= display_range[1]) {
+            grid
+              .text(function(d, i) { return dataTableFormat(d.y); })
+              .attr("transform", function(d, i) { return "translate(" + xScale(d.x) + "," + (yScale.range()[0] + 30) + ")"; })// Put it in the right x-position
+              .classed(seriesclass, true) // With the right colour
+              .attr("display", function(d, i) { // But only show it if it is within the axis area and matches a tick on the axis
+                var display_range;
+                display_range = xScale.domain();
+                if (d.x < display_range[0]) { return "none" } // Too far to the left
+                if (d.x > display_range[1]) { return "none" } // Too far to the right
+                if (year_for_ticks.indexOf(d.x) == -1) { return "none" } // Not under a tick mark on the axis
                 return "inherit";
-              } else {
-                return "none";
-              }
-            });
+              });
           };
 
           // This removes the data table
@@ -520,6 +516,27 @@ window.timeSeriesStackedAreaChart = function() {
     css_for_label = _;
     return chart;
   };
+
+  // Used to specify what years get marked on the axis
+  chart.year_for_ticks = function(_) {
+    if (_ == null) { return year_for_ticks; }
+    year_for_ticks = _;
+    xAxis.tickValues(year_for_ticks);
+    return chart;
+  };
+
+  // Used to specify what years appear in the data
+  // This will also set min_year, max_year and 
+  // year_for_ticks as well
+  chart.year_for_data = function(_) {
+    if (_ == null) { return year_for_data; }
+    year_for_data = _;
+    chart.year_for_ticks(year_for_data);
+    chart.min_year(year_for_data[0]);
+    chart.max_year(year_for_data[year_for_data.length-1]);
+    return chart;
+  };
+
 
   // FIXME: Should be behind accessors
   chart.xScale = xScale;
