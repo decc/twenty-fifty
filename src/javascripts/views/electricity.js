@@ -125,7 +125,8 @@ window.twentyfifty.views.electricity = function() {
     total_final_energy = pathway.final_energy_demand[pathway.final_energy_demand.length-1].slice(1);
     // The last row of the emissions table is assumed to be the Total
     // FIXME: Make this more robust
-    total_emissions = pathway.ghg[pathway.ghg.length-1].slice(1);
+    total_emissions = pathway.ghg[pathway.ghg.length-2].slice(1);
+    console.log(pathway.ghg, total_emissions);
 
     // Demand chart
     this.demand_chart.context(total_final_energy);
