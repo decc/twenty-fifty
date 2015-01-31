@@ -5,6 +5,82 @@ window.twentyfifty.views.electricity = function() {
     charts = d3.select("#results").selectAll(".chart")
       .data(['demand_chart', 'supply_chart', 'emissions_chart']);
 
+    css_for_labels = {
+      'Agriculture': 'agriculture',
+      'Agriculture and land use': 'agriculture',
+      'Agriculture, waste, and biomatter imports': 'bioenergy',
+      'Biomass oversupply (imports)': 'bioenergy',
+      'Bioenergy': 'bioenergy',
+      'UK Bioenergy': 'bioenergy',
+      'Imported Bioenergy': 'importedbioenergy',
+      'Bioenergy credit': 'bioenergy',
+      'Imported Coal': 'importedcoal',
+      'UK Coal': 'coal',
+      'Coal': 'coal',
+      'Carbon capture': 'carboncapture',
+      'Coal oversupply (imports)': 'coal',
+      'Coal reserves': 'coal',
+      'Commercial heating and cooling': 'commercialheat',
+      'Commercial lighting, appliances, and catering': 'commerciallight',
+      'CCS Power': 'ccs',
+      'Conventional': 'conventional',
+      'District heating effective demand': 'districtheating',
+      'Domestic freight': 'domesticfreight',
+      'Domestic lighting, appliances, and cooking': 'domesticlight',
+      'Domestic passenger transport': 'domesticpassengertransport',
+      'Domestic space heating and hot water': 'domesticheat',
+      'Electricity oversupply (imports)': 'electricity',
+      'Electricity imports': 'electricity',
+      'Environmental heat': 'environmentalheat',
+      'Fuel Combustion': 'fuelcombustion',
+      'Gas oversupply (imports)': 'gas',
+      'Gas reserves': 'gas',
+      'Geosequestration': 'geosequestration',
+      'Geothermal': 'geothermal',
+      'Geothermal electricity': 'geothermal',
+      'H2 Production for Transport': 'h2',
+      'Heating & cooling': 'heatingcooling',
+      'Heating and cooling': 'heatingcooling',
+      'Hydro': 'hydro',
+      'Indigenous fossil-fuel production': 'industry',
+      'Industrial processes': 'industry',
+      'Industry': 'industry',
+      'Industrial Processes': 'industry',
+      "Int'l Aviation & Shipping": 'aviationandshipping',
+      'Lighting & appliances': 'lightingappliances',
+      'LULUCF': 'lulucf',
+      'Natural gas': 'gas',
+      'Gas': 'gas',
+      'UK Gas': 'gas',
+      'Imported Gas': 'importedgas',
+      'Nuclear fission': 'nuclear',
+      'Nuclear power': 'nuclear',
+      'Oil and petroleum products': 'oil',
+      'Oil and petroleum products oversupply (imports)': 'oil',
+      'Oil reserves': 'oil',
+      'Oil': 'oil',
+      'UK Oil': 'oil',
+      'Imported Oil': 'importedoil',
+      'Offshore wind': 'offshorewind',
+      'Onshore wind': 'onshorewind',
+      'Petroleum products oversupply': 'oil',
+      'Petroleum refineries': 'industry',
+      'Primary electricity, solar, marine, and net imports': 'electricity',
+      'Solar': 'solar',
+      'Solar PV': 'solar',
+      'Solar thermal': 'solar',
+      'Tidal': 'tidal',
+      'Tidal & Wave': 'tidalandwave',
+      'Total': 'total',
+      'Total³': 'total',
+      'Total used in UK': 'total',
+      'Total used in UK¹': 'total',
+      'Transport': 'transport',
+      'Waste': 'waste',
+      'Wave': 'wave',
+      'Wind': 'wind'
+    };
+
     charts.enter()
       .append('div')
       .attr('id', Object)
@@ -13,16 +89,19 @@ window.twentyfifty.views.electricity = function() {
     this.demand_chart = timeSeriesStackedAreaChart()
       .title("Electricity Demand")
       .unit('TWh/yr')
+      .css_for_label(css_for_labels)
       .max_value(4000);
 
     this.supply_chart = timeSeriesStackedAreaChart()
       .title("Electricity Supply")
       .unit('TWh/yr')
+      .css_for_label(css_for_labels)
       .max_value(4000);
 
     this.emissions_chart = timeSeriesStackedAreaChart()
       .title("Emissions from Electricity")
       .unit('MtCO2e/yr')
+      .css_for_label(css_for_labels)
       .min_value(-500)
       .max_value(1000);
   };

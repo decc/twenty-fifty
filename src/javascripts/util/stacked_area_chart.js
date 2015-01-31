@@ -1,34 +1,5 @@
 window.timeSeriesStackedAreaChart = function() {
-  var area, 
-      chart, 
-      color_class_index, 
-      color_classes, 
-      context, 
-      dataTableFormat, 
-      data_first_year, 
-      data_last_year, 
-      data_year_interval, 
-      extent, 
-      height, 
-      label_threshold, 
-      line, 
-      margin, 
-      max_value, 
-      max_year, 
-      min_value, 
-      min_year, 
-      seriesClass, 
-      showLabelFilter, 
-      stack, 
-      title, 
-      total_label, 
-      unit, 
-      width, 
-      xAxis, 
-      xScale, 
-      x_center, 
-      yAxis, 
-      yScale;
+  var area, chart, color_class_index, css_for_label, context, dataTableFormat, data_first_year, data_last_year, data_year_interval, extent, height, label_threshold, line, margin, max_value, max_year, min_value, min_year, seriesClass, showLabelFilter, stack, title, total_label, unit, width, xAxis, xScale, x_center, yAxis, yScale;
   
   width = 375; // Of svg in pixels
   height = 125; // of svg in pixels
@@ -84,102 +55,28 @@ window.timeSeriesStackedAreaChart = function() {
 
   total_label = /^total*/i; // Any data whose label matches this regular expression will be treated as a total line, rather than an area to stack
 
-  // This converts the label into a class name
-  // NOTE: If you add new labels, you will need to add a colour class below
-  // FIXME: Shouldn't be defined here
-  color_classes = {
-    'Agriculture': 'agriculture',
-    'Agriculture and land use': 'agriculture',
-    'Agriculture, waste, and biomatter imports': 'bioenergy',
-    'Biomass oversupply (imports)': 'bioenergy',
-    'Bioenergy': 'bioenergy',
-    'UK Bioenergy': 'bioenergy',
-    'Imported Bioenergy': 'importedbioenergy',
-    'Bioenergy credit': 'bioenergy',
-    'Imported Coal': 'importedcoal',
-    'UK Coal': 'coal',
-    'Coal': 'coal',
-    'Carbon capture': 'carboncapture',
-    'Coal oversupply (imports)': 'coal',
-    'Coal reserves': 'coal',
-    'Commercial heating and cooling': 'commercialheat',
-    'Commercial lighting, appliances, and catering': 'commerciallight',
-    'CCS Power': 'ccs',
-    'Conventional': 'conventional',
-    'District heating effective demand': 'districtheating',
-    'Domestic freight': 'domesticfreight',
-    'Domestic lighting, appliances, and cooking': 'domesticlight',
-    'Domestic passenger transport': 'domesticpassengertransport',
-    'Domestic space heating and hot water': 'domesticheat',
-    'Electricity oversupply (imports)': 'electricity',
-    'Electricity imports': 'electricity',
-    'Environmental heat': 'environmentalheat',
-    'Fuel Combustion': 'fuelcombustion',
-    'Gas oversupply (imports)': 'gas',
-    'Gas reserves': 'gas',
-    'Geosequestration': 'geosequestration',
-    'Geothermal': 'geothermal',
-    'Geothermal electricity': 'geothermal',
-    'H2 Production for Transport': 'h2',
-    'Heating & cooling': 'heatingcooling',
-    'Heating and cooling': 'heatingcooling',
-    'Hydro': 'hydro',
-    'Indigenous fossil-fuel production': 'industry',
-    'Industrial processes': 'industry',
-    'Industry': 'industry',
-    'Industrial Processes': 'industry',
-    "Int'l Aviation & Shipping": 'aviationandshipping',
-    'Lighting & appliances': 'lightingappliances',
-    'LULUCF': 'lulucf',
-    'Natural gas': 'gas',
-    'Gas': 'gas',
-    'UK Gas': 'gas',
-    'Imported Gas': 'importedgas',
-    'Nuclear fission': 'nuclear',
-    'Nuclear power': 'nuclear',
-    'Oil and petroleum products': 'oil',
-    'Oil and petroleum products oversupply (imports)': 'oil',
-    'Oil reserves': 'oil',
-    'Oil': 'oil',
-    'UK Oil': 'oil',
-    'Imported Oil': 'importedoil',
-    'Offshore wind': 'offshorewind',
-    'Onshore wind': 'onshorewind',
-    'Petroleum products oversupply': 'oil',
-    'Petroleum refineries': 'industry',
-    'Primary electricity, solar, marine, and net imports': 'electricity',
-    'Solar': 'solar',
-    'Solar PV': 'solar',
-    'Solar thermal': 'solar',
-    'Tidal': 'tidal',
-    'Tidal & Wave': 'tidalandwave',
-    'Total': 'total',
-    'Total³': 'total',
-    'Total used in UK': 'total',
-    'Total used in UK¹': 'total',
-    'Transport': 'transport',
-    'Waste': 'waste',
-    'Wave': 'wave',
-    'Wind': 'wind'
-  };
-
   // This is used to turn a series label into a css class. If first looks for the label in the
-  // color_classes object above, but if it doesn't find it, then it gives the first series label
+  // css_for_label object above, but if it doesn't find it, then it gives the first series label
   // it can't find a class of q0-12, the second series label it can't find a class of q1-12 and
   // so forth up to q11-12, at which point it starts at the begining again. These default
   // colours are defined in src/stylesheets/colorbrewer.css
-  color_class_index = 0;
-  seriesClass = function(d, i) {
-    var c;
-    c = color_classes[d.key];
-    if (c == null) {
-      c = "q" + color_class_index + "-12";
-      color_classes[d.key] = c;
-      color_class_index++;
-      if(color_class_index==11) { color_class_index = 0 };
-    }
-    return c;
+  // This converts the label into a class name
+  // NOTE: If you add new labels, and you care how they are coloured
+  // you  should set the value of this hash css_for_label()["<series name>"] = "desired css"
+  css_for_label = {};
+
+  seriesClass = function(d, css_generator) {
+    return css_for_label[d.key] || css_generator(d);
   };
+
+  color_class_index = 0;
+  automaticallyAsignCSS = function(d) {
+    c = "q" + color_class_index + "-12";
+    css_for_label[d.key] = c;
+    color_class_index++;
+    if(color_class_index==11) { color_class_index = 0 };
+    return c;
+  }
 
   // We only show the chart labels when the total area of the chart is above a threshold
   // and the label is within the cahrt area.
@@ -200,38 +97,7 @@ window.timeSeriesStackedAreaChart = function() {
         // Selection will normally only include one piece of data
         // (i.e., it will be called with datum() not data()
         return selection.each(function(data) {
-          var areas,
-               d,
-               dataTable,
-               g,
-               gEnter,
-               i,
-               label,
-               label_width,
-               label_x,
-               labels,
-               minimum_y_space,
-               negative_series,
-               p,
-               positive_series,
-               previous_y,
-               removeDataTable,
-               series,
-               stacked_data,
-               svg,
-               total,
-               total_series,
-               y,
-               _i,
-               _j,
-               _k,
-               _l,
-               _len,
-               _len1,
-               _len2,
-               _len3,
-               _ref,
-               _ref1;
+          var areas, d, dataTable, g, gEnter, i, label, label_width, label_x, labels, minimum_y_space, negative_series, p, positive_series, previous_y, removeDataTable, series, stacked_data, svg, total, total_series, y, _i, _j, _k, _l, _len, _len1, _len2, _len3, _ref, _ref1;
 
           // First, we rescale the graph
           // FIXME: JQuery dependency
@@ -278,11 +144,13 @@ window.timeSeriesStackedAreaChart = function() {
             // label starts with 'total'
             if (total_label.test(series.key)) {
               series.path = line;
+              series.css = seriesClass(series, function() { return "total" });
               total_series.push(series);
             // If not a total, then put it into either the positive_series
             // or negative_series arrays
             } else {
               series.path = area;
+              series.css = seriesClass(series, automaticallyAsignCSS);
               if (total >= 0) {
                 positive_series.push(series);
               } else {
@@ -349,10 +217,10 @@ window.timeSeriesStackedAreaChart = function() {
 
           areas.enter() // When we have new series, add a new path
             .append("path")
-              .attr("class", function(d, i) { return seriesClass(d, i); }) // Make sure the area has the right class // FIXME: change the default based on whether area or total
+              .attr("class", function(d, i) { return d.css; }) // Make sure the area has the right class 
               .on("mouseover", function(d, i) { // On hover we want to highlight this are, its label and show the data table
                 var c, l, s;
-                c = seriesClass(d, i);
+                c = d.css;
                 dataTable(d, c); // Show the data table
                 g.selectAll("." + c).classed("hover", true); // Highlight the area and the label
                 if (!showLabelFilter(d)) { // If the label was hidden 
@@ -366,7 +234,7 @@ window.timeSeriesStackedAreaChart = function() {
               }).on("mouseout", function(d, i) { // When the mouse has left the area
                 var c;
                 removeDataTable(); // Hide the data table
-                c = seriesClass(d, i);
+                c = d.css
                 g.selectAll("." + c).classed("hover", false); // Unhighlight the label and area
                 if (!showLabelFilter(d)) { // And, if the area is too small for a label, hide it again
                   g.selectAll("." + c + ".linelabel").attr("display", "none"); // That means hiding the label
@@ -398,7 +266,6 @@ window.timeSeriesStackedAreaChart = function() {
             total.enter().append("path");
             total.transition().attr("d", function(d) { return area(d); });
           }
-
 
           // Axis time!
           gEnter.append("g").attr("class", "x axis")
@@ -509,15 +376,15 @@ window.timeSeriesStackedAreaChart = function() {
 
           // And adding any new labels that are required
           labels.enter().append("text")
-            .attr("class", function(d, i) { return "linelabel " + (seriesClass(d, i)); }) // Coloured to match area
+            .attr("class", function(d, i) { return "linelabel " + d.css; }) // Coloured to match area
             .attr("x", label_x).attr("y", function(d) { return yScale(d.label_y) + 4; }) // To the right of the axis
             .text(function(d) { return d.key; }) 
             .on("mouseover", function(d, i) { // When mouse goes over, highlight area and the data table
-              dataTable(d, seriesClass(d, i));
-              g.selectAll("." + (seriesClass(d, i))).classed("hover", true);
+              dataTable(d, d.css);
+              g.selectAll("." + d.css ).classed("hover", true);
             }).on("mouseout", function(d, i) { // When mouse leaves, un-highlight the area and hide the data table
               removeDataTable();
-              g.selectAll("." + (seriesClass(d, i))).classed("hover", false);
+              g.selectAll("." + d.css).classed("hover", false);
           });
 
           // Remove any labels that aren't needed any more
@@ -643,6 +510,14 @@ window.timeSeriesStackedAreaChart = function() {
   chart.context = function(_) {
     if (_ == null) { return context; }
     context = _;
+    return chart;
+  };
+
+  // Used to override the css used to colour
+  // the charts
+  chart.css_for_label = function(_) {
+    if (_ == null) { return css_for_label; }
+    css_for_label = _;
     return chart;
   };
 
