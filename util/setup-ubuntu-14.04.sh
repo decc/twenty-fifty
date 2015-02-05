@@ -52,7 +52,7 @@ cd $(basename $GITHUB)
 
 # Installs the ruby dependencies
 echo "Installing ruby dependencies"
-sudo bundle
+bundle
 
 # Check whether need to recompile the model
 echo "Checking if we need to recompile the C version. If we do, it may take hours on a low memory machine"
