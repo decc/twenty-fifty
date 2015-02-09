@@ -194,10 +194,12 @@ if __FILE__ == $0
   tests = 100
   t = Time.now
   a = []
+  c = initial_choices.map { rand(4)+1 }.join
   tests.times do
-    a << g.calculate_pathway(initial_choices.map { rand(4)+1 }.join)
+    a << g.calculate_pathway(c)
   end
   te = Time.now - t
+  puts "Problem" if a.any? { |r| r != a.first }
   puts "#{te/tests} seconds per run"
   puts "#{tests/te} runs per second"
 end
