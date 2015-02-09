@@ -130,10 +130,10 @@ class DataFromModel
     data = data.map do |pathway_data|
       {
         name: pathway_data[0],
-        code: convert_float_to_letters(pathway_data[1..53]).join,
-        description: wrap(pathway_data[54]),
-        wiki: pathway_data[55],
-        cost_comparator: (c = pathway_data[56]; c.is_a?(Numeric) ? c : nil )
+        code: convert_float_to_letters(pathway_data[1..-4]).join,
+        description: wrap(pathway_data[-3]),
+        wiki: pathway_data[-2],
+        cost_comparator: (c = pathway_data[-1]; c.is_a?(Numeric) ? c : nil )
       }
     end
   end
