@@ -137,7 +137,7 @@ There will be a long delay on the first run, while a C file is compiled. Future 
 
 You can then see the calculator
 
-    open http://0.0.0.0:9292
+    open http://127.0.0.1:9292
 
 ### Optional steps to make your life easier
 
