@@ -93,7 +93,7 @@ ruby model/compile_c_version_if_needed.rb
 echo
 echo "***************"
 echo
-echo "You can now run this server in development mode by typing bundle exec rackup and then opening a web browser to http://0.0.0.0:9292"
+echo "You can now run this server in development mode by typing bundle exec rackup and then opening a web browser to http://127.0.0.1:9292"
 echo
 echo "***************"
 echo
