@@ -13,3 +13,6 @@ gem 'coffee-script'
 # Model
 gem 'ffi'
 gem 'decc_2050_model', "3.4.7"
+
+# Support
+gem 'rake'
