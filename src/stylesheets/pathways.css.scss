@@ -7,6 +7,15 @@ body {
   padding: 0;
 }
 
+#message {
+  padding: 5px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background-color: yellow;
+  color: black;
+}
+
 #calculating {
   font-size: 0.72em;
   position: absolute;
