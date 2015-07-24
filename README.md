@@ -2,7 +2,7 @@
 
 The old web interface to the www.decc.gov.uk 2050 energy and climate change calculator.
 
-The code for the new interface is at (https://github.com/decc/twenty-fifty-new-look)[https://github.com/decc/twenty-fifty-new-look]
+The code for the new interface is at [https://github.com/decc/twenty-fifty-new-look](https://github.com/decc/twenty-fifty-new-look)
 
 Further detail on the project:
 http://www.decc.gov.uk/2050
