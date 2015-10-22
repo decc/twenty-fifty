@@ -144,10 +144,14 @@ twentyfifty.views.energy_security = function() {
     
     // This removes fuels that aren't used
     data = data.filter(function(d) { return d.total > 1 });
+    
     // This sorts the table so that the most important fuels are at the top
+    // First we remove the total row from the sorting
+    total = data.pop(); // Assumes the total row is the last one
+    // Then we sort the rest
     data = data.sort(function(a,b) { return b.total - a.total });
-    // This makes sure the total row is at the end
-    data.push(data.shift());
+    // Then we put the total row back on
+    data.push(total);
 
     // In the diversity table, we want to have one row per entry in data
     rows = d3.select("table#imports tbody").selectAll("tr.row")
