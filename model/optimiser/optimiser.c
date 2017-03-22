@@ -160,15 +160,16 @@ static void sort_by_fitness() {
 
 // This displays a candidate on stdout
 static void inspect_candidate(Candidate candidate) {
+  printf("DNA: ");
   const char *char_for_choice =  "0XXXXXXXXX1bcdefghij2lmnopqrst3vwxyzABCD4";
   int i;
   ExcelValue *array = candidate.choices.array;
   for(i=0; i<CONTROL_SIZE; i++) {
     putchar( char_for_choice[(int) (array[i].number*10)] );
   }
-  printf("\tFitness: %d (", candidate.fitness);
+  printf(",");
+  printf("\tFitness: %d, ", candidate.fitness);
   describe(candidate);
-  putchar(')');
   putchar('\n');
 }
 
@@ -281,7 +282,7 @@ int main() {
       procreate(index_of_unfit, random_index(CUT_OFF), random_index(CUT_OFF));
     }
     sort_by_fitness();
-    printf("Top candidate in generation %d:\t",generation_number+1);
+    printf("Top candidate in generation: %d,\t",generation_number+1);
     inspect_top_candidates(1);
     fflush(stdout);
   }

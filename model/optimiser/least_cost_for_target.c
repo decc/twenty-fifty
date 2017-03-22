@@ -28,6 +28,6 @@ static int calculate_fitness_of(Candidate candidate) {
 static void describe(Candidate candidate) {
   reset();
   set_input_choices(candidate.choices);
-  printf("Reduction in emissions 1990-2050: %2.0f%% NPV of cost per capita: £%.0f 2010-2050", output_emissions_percentage_reduction().number * 100.0, output_costpercapita_npv_point().number);
+  printf("Reduction in emissions 1990-2050: %2.0f%%, NPV of cost per capita: £%.0f 2010-2050", output_emissions_percentage_reduction().number * 100.0, output_costpercapita_npv_point().number);
 }
 
