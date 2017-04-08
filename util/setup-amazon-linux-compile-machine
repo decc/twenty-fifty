@@ -1,0 +1,93 @@
+#!/bin/bash
+set -e
+
+# This is designed to set up an Amazon linux instance into a machine
+# that will, every 5 minutes, git pull and, if the excel needs
+# updating, do that update and push the result back.
+ 
+# Security updates
+sudo yum update -y
+
+# Developer tools, so we can compile C code
+sudo yum groupinstall -y "Development Tools"
+
+# Better to use the most modern Ruby we can
+sudo yum install ruby23 -y
+
+# With its development headers, so FFI can run
+sudo yum install ruby23-devel -y
+
+# This is the standard ruby dependency management system
+gem2.3 install bundler
+
+# Git for version control
+sudo yum install git -y
+
+
+# If needed, create a new key for deploying from github
+cd ~/.ssh
+if [ ! -f github-deploy-key ]; then
+	ssh-keygen -t rsa -b 4096 -C "Github deploy key" -f github-deploy-key -N ''
+	echo "Copy and paste the following public key as a deploy key in github. Give it permission to write."
+	echo "URL for the standard 2050 deploy keys is: https://github.com/decc/twenty-fifty/settings/keys"
+	cat github-deploy-key.pub
+  echo "You will need to re-run this script again after you have done that"
+  exit
+fi
+
+cat > config << 'EOF'
+Host github.com
+  User git
+  IdentityFile ~/.ssh/github-deploy-key
+EOF
+chmod go-rwx config
+
+# This ensures that git can connect to github by ssh without prompting us to confirm the host
+ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+
+# Now, if needed, we download the first copy of the code
+cd ~
+if [ ! -d "twenty-fifty" ]; then
+  git clone git@github.com:decc/twenty-fifty.git
+fi
+
+# We then create a script that will be run regularly to do the updating that we want
+cat > maybe-update-translation-of-excel-to-c << 'EOF'
+#!/bin/bash
+
+cd /home/ec2-user/twenty-fifty
+git pull
+cd model
+excelChangeDate=$(git log -1 --format="%at" model.xlsx)
+codeChangeDate=$(git log -1 --format="%at" model.c)
+if [ "$codeChangeDate" -lt "$excelChangeDate" ];then
+  bundle
+  bundle exec ruby2.3 ./translate_excel_into_c.rb > ~/translation.log
+  excelCommit=$(git log -1 --format="%H %s" model.xlsx)
+  git commit -am "Updated translation of Excel to C in response to commit $excelCommit"
+  git push
+else
+  echo "model.c is more recent than model.xlsx so no action required"
+fi
+EOF
+
+# Make the script executable
+chmod u+x maybe-update-translation-of-excel-to-c
+
+# We have two cron things to do. One is to run the update script.
+# This uses a flock to ensure it doesn't overlap.
+# The second thing to do is to shut the server down, each night
+# we don't waste money when no commits are happening
+cat > crontab << 'EOF'
+*/5 * * * *  /usr/bin/flock -n /home/ec2-user/maybe-updating.lock /home/ec2-user/maybe-update-translation-of-excel-to-c | /usr/bin/logger -t maybe-update-translation-of-excel-to-c 
+0 0 * * * sudo /sbin/shutdown -h now
+EOF
+
+# Install the crontab
+crontab crontab
+
+# Set up git author
+cd twenty-fifty
+git config --global user.email "bot@greenonblack.com"
+git config --global user.name "robot"
+git config --global push.default simple
