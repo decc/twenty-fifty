@@ -10,6 +10,7 @@ GEM
     ffi (1.9.6)
     hike (1.2.3)
     json (1.8.2)
+    minitest (5.10.1)
     multi_json (1.11.0)
     ox (2.1.8)
     rack (1.6.0)
@@ -44,5 +45,9 @@ DEPENDENCIES
   excel_to_code (~> 0.3)
   ffi
   json
+  minitest
   sinatra
   sprockets
+
+BUNDLED WITH
+   1.14.6
