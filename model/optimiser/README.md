@@ -3,6 +3,38 @@
 
 This folder contains a [genetic algorithm][1] optimiser for the 2050 model.
 
+What can it do?
+---------------
+
+The optimiser acts like an automated human being, adjusting the controls of the 2050 calculator, evaluating whether the results look good, adjusting again, evaluating whether the results look better than they did before, adjusting again, evaluating again, adjusting again, evaluating again ... and so on. It keeps the best results, throws away the worst. After a while, you can reasonably sure that its best result is the best result that can be found (although you cannot guarantee that is the case, see below).
+
+Because the optimiser acts like an automated human being, it can only adjust the controls that a user can also adjust. For example, because the 2050 calculator doesn't allow you to choose whether nuclear power stations are built sooner or later, it can't work out whether it is better to build nuclear power sooner or later. Similarly, it can only evaluate results that a user can see. For example, because the 2050 calcuator doesn't calculate whether a pathway has hit the 2020 renewable energy target, it can't evaluate pathways based on whether they hit the target or not, and so cannot find the best pathway that meets the target.
+
+You can restrict the optimiser to have less capability than a user would. You can, for instance, prevent it from using geosequestration, or level 4 nuclear.
+
+A key decision, that you have to input into the optimiser, is how to evaluate whether one pathway is better than another. You do this by creating a formula that gives each pathway a numeric score. You have complete freedom in how this score is calculated. It can be based on any combination of results that the calcuator produces. The formula doesn't have to be linear: it could, for instance, say that a lower emissions in 2050 are better, but only until they are below the 2050 target and, after that, emissions are irrelevant, and what matters instead is cost. It could, for instance, penalise energy imports above a certain level, or particular modal shifts. It is up to you.
+
+How does it work
+----------------
+
+The optimiser doesn't (quite) alter the controls randomly in order to find the best result. It uses a [genetic algorithm][1] to try and avoid creating too may obviously bad results. 
+
+The genetic algorithm works by randomly creating a set of inputs for the model. Then it ranks those sets of inputs based on how good the results of those inputs are (based on whatever you have defined as 'good'). It throws away the worst half of the sets of inputs. It takes the remaining better half and creates new sets of inputs by breeding pairs of those remaining sets. The breeding process is a bit like sexual reproduction in that involves taking a random combination of inputs from the 'mother' and 'father' sets to create a new 'child set of inputs. It then throws in a bit of noise, similar to genetic mutations. Once it has bred enough children, it then ranks all the sets of inputs again, throws away (kills) the worst half, and breeds again. It repeats this until the user wants it to stop. Once it has stopped, the best surviving set of inputs is declared 'optimal'.
+
+Because of all the randomness involved, it can't be certain that the best result is the best. It is just likely to be true. Other algorithms that guarantee to find the best result are either slower (e.g., they try every possible set of inputs) or make some requirement that the 2050 model can't fulfil (e.g., that the definition of 'best' is linearly related to the inputs).
+
+How does it differ from the kind of optimisation that UK TIMES does
+-------------------------------------------------------------------
+
+UK TIMES has many more inputs that the 2050 calculator (such as what year a specific nuclear power station is built in), which means the optimiser can figure out whether building nuclear power earlier or later is 'better'.
+
+UK TIMES has only one definition of what makes a pathway 'best': the cheapest based on its definition of cheap (sort of an NPV of costs). The 2050 optimiser allows complete freedom over what is best.
+
+In UK TIMES you apply 'constraints' to exclude particular pathways from contention as being the 'best'. In the 2050 optimiser, all pathways are in contention, but you can give some pathways a very very poor score, to create effectively the same outcome.
+
+Given the number of inputs, UK TIMES runs a lot quicker than the 2050 optimiser: beause it meets the requirement that its definition of best is linearly related to its inputs, and can therefore take advantage of a different, quicker, algorithm that also gives more of a guarantee that its 'best' result is indeed the best.
+
+
 Requirements
 ------------
 
