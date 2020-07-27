@@ -9,7 +9,7 @@ GEM
       rspec (~> 2.7, >= 2.7.0)
       rubypeg (~> 0)
     ffi (1.9.18)
-    json (2.1.0)
+    json (2.3.0)
     minitest (5.10.3)
     mustermann (1.0.1)
     ox (2.8.2)
