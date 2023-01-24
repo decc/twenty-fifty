@@ -49,10 +49,9 @@ sudo sed --in-place "s/# include \/etc\/nginx\/passenger.conf/include \/etc\/ngi
 twentyfiftyserverroot=$(pwd)/public
 cat <<EndConf > ngnix-configuration.conf
 server {
-  listen 80 default_server;
-  listen [::]:80 default_server ipv6only=on;
+  listen 8080 default_server;
+  listen [::]:8080 default_server ipv6only=on;
   root $twentyfiftyserverroot;
-
   passenger_enabled on;
 }
 EndConf
