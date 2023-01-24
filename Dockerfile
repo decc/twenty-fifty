@@ -39,15 +39,6 @@ RUN bundle
 
 # Compile the C code
 WORKDIR /home/app/2050/model
-
-#RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv-keys 561F9B9CAC40B2F7
-#RUN apt-get install -y apt-transport-https ca-certificates
-#RUN sh -c 'echo deb https://oss-binaries.phusionpassenger.com/apt/passenger xenial main > /etc/apt/sources.list.d/passenger.list'
-
-#RUN apt update
-#RUN apt-get install zip
-#RUN apt-get install unzip
-#RUN ruby translate_excel_into_c.rb
 RUN ruby compile_c_version_if_needed.rb
 
 # Precompile templates (can't do later becase filesystem may be readonly)
@@ -55,10 +46,8 @@ WORKDIR /home/app/2050/src
 RUN ruby compile_template.rb
 
 # test
-WORKDIR /home/app/2050/util
-RUN chmod +x docker_setup.bash
-RUN sed -i -e 's/\r$//' docker_setup.bash
-RUN ["/bin/bash", "-c", "/home/app/2050/util/docker_setup.bash"]
+RUN chmod 777 /home/app/2050/util/docker_setup.sh
+RUN /home/app/2050/util/docker_setup.sh
 
 # Now need to build this image
 # e.g., docker build .
