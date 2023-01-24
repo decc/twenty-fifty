@@ -93,13 +93,13 @@ window.twentyfifty.views.primary_energy_chart = function() {
       .title("Final Energy Demand")
       .unit('TWh/yr')
       .css_for_label(css_for_labels)
-      .max_value(4000);
+      .max_value(240000);
 
     this.primary_energy_chart = timeSeriesStackedAreaChart()
       .title("Primary Energy Supply")
       .unit('TWh/yr')
       .css_for_label(css_for_labels)
-      .max_value(4000);
+      .max_value(300000);
 
     this.emissions_chart = timeSeriesStackedAreaChart()
       .title("Greenhouse Gas Emissions")
@@ -197,7 +197,7 @@ window.twentyfifty.views.primary_energy_chart = function() {
       .attr('class', 'target')
       .attr('r', function(d) { return d == undefined ? 0 : 3 });
 
-    t.attr('cx', function(d,i) { return x(2010 + (i*5)) });
+    t.attr('cx', function(d,i) { return x(2020 + (i*5)) });
     t.attr('cy', function(d,i) { return y(d) });
 
     t = d3.select('#emissions_chart g.drawing').selectAll("g.targetlabel")
