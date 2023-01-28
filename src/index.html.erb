@@ -25,16 +25,33 @@
     </script>
   </head>
   <body>
-    <span>Welcome!</span>
-    <!-- Other countries may want to delete this warning. It is hidden initially by css in src/stylesheets/body.css
-      Code in the checkSVGWorks function in src/javascripts/controller.js checks if the user's web browser
-      supports SVG and, if it doesn't, shows this div.  -->
-    <div id='svgWarn'>
-      This interface requires <a href='http://caniuse.com/#cats=SVG'>a browser that supports SVG.</a> it seems like your browser doesn't support SVG. We have an <a href='http://uk-old.2050.org.uk'>old version of this calculator</a> that may work for you. Alternatively you can download <a href='http://2050-calculator-tool-wiki.decc.gov.uk/pages/140'>an excel version.</a>
-      <p>
-        <a href='#' onclick="$('#svgWarn').hide()">Hide this message.</a>
-      </p>
+
+    <div class="header-wrapper">
+        <div class="header-block">
+            <div class="logo-block">
+                <div class="header-logo">
+                    <a href="https://klimatam.lv/" target="_blank" >
+                        <img src="../assets/logos/logo_Klimatam.svg" alt="logo">
+                    </a>
+                </div>
+                <div class="header-title">
+                    Klimata kalkulators 2050
+                </div>
+            </div>
+            <div class="page-links">
+                <div class="burger-menu-icon">
+                    <span class="nav-hamburger" @click="toggleNav"></span>
+                </div>
+                <nav>
+                    <a href="/" class="page-link-item">Kalkulators</a>
+                    <a href="/ka-lietot" class="page-link-item">Kā lietot?</a>
+                      <a href="/par-kalkulatoru" class="page-link-item">Par projektu</a>
+                </nav>
+            </div>
+        </div>
     </div>
+
+
 
     <div id='topbar'>
 
