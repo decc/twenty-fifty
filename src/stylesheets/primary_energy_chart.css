@@ -6,7 +6,7 @@ svg {
   border: 0;
   margin: 0;
   margin-left: 2.4%;
-  width: 30%;
+  width: 100%;
   margin-bottom: 0px;
   float: left; }
 
@@ -95,7 +95,7 @@ g.context path {
   fill: #660066; }
 
 .importedgas {
-  fill: #79187f; 
+  fill: #79187f;
 }
 
 .coal {

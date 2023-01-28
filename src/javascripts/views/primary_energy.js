@@ -6,7 +6,7 @@ window.twentyfifty.views.primary_energy_chart = function() {
     $('.primary_energy_notes').show();
 
     charts = d3.select("#results").selectAll(".chart")
-      .data(['demand_chart', 'supply_chart', 'emissions_chart']);
+      .data(['demand_chart', /*'supply_chart', 'emissions_chart'*/]);
 
     css_for_labels = {
       'Agriculture': 'agriculture',
