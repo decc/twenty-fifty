@@ -124,7 +124,7 @@ window.twentyfifty.views.primary_energy_chart = function() {
   // into the format needed to plot a chart
   convert_table_to_hash = function(table) {
     hash = d3.map();
-    
+
     // Skip the header row, and put the rest of the table into
     // a Hash table with the key being the first column and the
     // value being the rest
@@ -160,13 +160,13 @@ window.twentyfifty.views.primary_energy_chart = function() {
       .datum(demand)
       .call(this.final_energy_chart);
 
-    d3.select('#supply_chart')
-      .datum(supply)
-      .call(this.primary_energy_chart);
+    // d3.select('#supply_chart')
+    //   .datum(supply)
+    //   .call(this.primary_energy_chart);
 
-    d3.select('#emissions_chart')
-      .datum(ghg)
-      .call(this.emissions_chart);
+    // d3.select('#emissions_chart')
+    //   .datum(ghg)
+    //   .call(this.emissions_chart);
 
     // This is to add the target text to the chart
     t = d3.select('#emissions_chart g.drawing').selectAll('text.target')
