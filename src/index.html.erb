@@ -54,7 +54,74 @@
         </div>
     </div>
 
+    <div class="calculator-wrapper">
+        <div class="calculator-blocks">
+          <div class="calculator-inputs">
+        <div class="inputs-navigation">
 
+        </div>
+        <div class="levers-container">
+            <div class="levers-header">
+                <p>Sekcijas</p>
+                <p>Ambīciju līmenis</p>
+            </div>
+            <div class="levers-table">
+                <div class="levers">
+                  <div class="levers-sector-container" v-if="content">
+                      <div class="levers-sector">
+                          <div class="card">
+                            <div class="sector-name">
+                                Transports
+                            </div>
+                            <div class="sector-logo">
+                                <img src="/assets/icons/IconTransport.svg" alt="sector logo">
+                            </div>
+                          </div>
+                          <div class="lever-steps-container">
+                              <div class="lever-step"></div>
+                              <div class="lever-step"></div>
+                              <div class="lever-step"></div>
+                              <div class="lever-step"></div>
+                          </div>
+                      </div>
+                      <div class="levers-subsector-container ">
+                          <div class="levers-subsector">
+                              <div class="lever-step"></div>
+                              <div class="lever-step"></div>
+                              <div class="lever-step"></div>
+                              <div class="lever-step"></div>
+                          </div>
+
+                      </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+              <!-- Calculator charts-->
+              <div class="calculator-outputs">
+                  <div class="output-tabs-container">
+                      <nav>
+                          <a href="#overview">Kopsavilkums</a>
+                          <a href="#transport">Transports</a>
+                          <a href="#buildings">Mājsaimniecība/ēkas</a>
+                          <a href="#industry">Komercdarbība</a>
+                          <a href="#bioenergy">Bioenerģijas apgāde</a>
+                          <a href="#electricity">Enerģijas ražošana</a>
+                      </nav>
+                      <span class="snap-indicator"></span>
+                  </div>
+                  <div class="subtab-menu"></div>
+                  <div class="output-charts-container">
+                      <div id="overview" class="chart-container">
+
+
+                      </div>
+
+                  </div>
+              </div>
+        </div>
+    </div>
 
     <div id='topbar'>
 
@@ -83,13 +150,13 @@
         <a href='http://2050-calculator-tool-wiki.decc.gov.uk'>Docs</a>
       </div>
     </div>
-
+    <% =begin %>
     <div class='dropdown' id='cost_choices'>
       <a class='view' data-view='costs_in_context' href='#'>In context</a>
       <a class='view' data-view='costs_compared_overview' href='#'>Compared</a>
       <a class='view' data-view='costs_sensitivity' href='#'>Sensitivity</a>
     </div>
-
+    <% =end %>
     <div class='dropdown' id='savedpathway_choices'>
       <!-- These are taken from the underlying spreadsheet -->
       <% structure.example_pathways.each do |pathway| %>
@@ -232,12 +299,6 @@
             </div>
         </div>
     </div>
-    <!--
-    <div id='footer'>
-      <!-- Change this to link to your country's website -->
-      All the assumptions and calculations are available in a spreadsheet. Download <a href='/model.xlsx'>Excel <%= structure.reported_calculator_version %> <%= %></a> (<a href='http://2050-calculator-tool-wiki.decc.gov.uk/pages/140'>Version history</a>). The source code for this site is available under an open source licence from <a href='http://github.com/decc/twenty-fifty'>http://github.com/decc/twenty-fifty</a>
-    </div>
-  -->
     <!-- The following html is only displayed on screen when a user selects a particular view -->
     <div id='snippets'>
       <!-- This is shown the first time a user visits a costs page -->
