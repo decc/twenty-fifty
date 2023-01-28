@@ -10,7 +10,8 @@ svg {
   width: 80%;
   max-height: 550px;
   margin-bottom: 0px;
-  /* float: left; } */
+  /* float: left;  */
+}
 
 .chart rect.backgroundrect {
   fill: #fff; }
