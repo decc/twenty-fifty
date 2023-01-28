@@ -28,3 +28,16 @@ body {
 #snippets {
   display: none;
 }
+
+.levers-subsector-container {
+  padding: 3px 8px 0;
+}
+
+.levers-subsector-container a {
+  text-decoration: none;
+}
+
+.levers-subsector-container .choice a {
+  border: 1px solid grey;
+  padding: 2px;
+}

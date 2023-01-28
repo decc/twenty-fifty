@@ -13,6 +13,10 @@ svg {
   /* float: left;  */
 }
 
+.chart-container {
+  margin-top: 1rem;
+}
+
 .chart rect.backgroundrect {
   fill: #fff; }
 
