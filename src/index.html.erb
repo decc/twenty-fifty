@@ -150,13 +150,13 @@
         <a href='http://2050-calculator-tool-wiki.decc.gov.uk'>Docs</a>
       </div>
     </div>
-    <% =begin %>
+    <% if false %>
     <div class='dropdown' id='cost_choices'>
       <a class='view' data-view='costs_in_context' href='#'>In context</a>
       <a class='view' data-view='costs_compared_overview' href='#'>Compared</a>
       <a class='view' data-view='costs_sensitivity' href='#'>Sensitivity</a>
     </div>
-    <% =end %>
+    <% end %>
     <div class='dropdown' id='savedpathway_choices'>
       <!-- These are taken from the underlying spreadsheet -->
       <% structure.example_pathways.each do |pathway| %>
