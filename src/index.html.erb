@@ -2,14 +2,14 @@
 <html>
   <head>
     <!-- Probably always a good idea to be utf-8 -->
-    <meta charset="utf-8"> 
+    <meta charset="utf-8">
     <!-- So iPads can view the app in full screen -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <!-- This prevents Internet Explorer from entering 'quirks' mode -->
     <meta content='IE=edge' http-equiv='X-UA-Compatible'>
     <!-- Change the title to one for your own country -->
     <title>2050 Pathways Calculator</title>
-    <!-- assets is a function definied in the Helper module in src/server.rb --> 
+    <!-- assets is a function definied in the Helper module in src/server.rb -->
     <link href='/assets/<%= assets['application.css']%>' media='screen' rel='stylesheet' type='text/css' />
     <script src='/assets/<%= assets['application.js']%>' type='text/javascript'></script>
     <!-- Change the Google Analytics code to one for your own country-->
@@ -26,15 +26,8 @@
   </head>
   <body>
 
-    <!-- only relevant for the UK -->
-    <div id="deprecation-warning" style="background: #FFD300; padding: 20px 2.4% 19px 2.4%; font-size: 16px; color: #000; border-bottom: solid 2px #28a197">
-      This calculator will be withdrawn on or after 30 June 2022.
-      The current UK 2050 calculator for Net Zero is the <a href='https://www.mackaycarboncalculator.beis.gov.uk'>MacKay Carbon Calculator</a>. It launched in December 2020.
-      For further information or to comment, go to <a href='https://www.gov.uk/guidance/carbon-calculator'>https://www.gov.uk/guidance/carbon-calculator</a>.
-    </div>
-
     <!-- Other countries may want to delete this warning. It is hidden initially by css in src/stylesheets/body.css
-      Code in the checkSVGWorks function in src/javascripts/controller.js checks if the user's web browser 
+      Code in the checkSVGWorks function in src/javascripts/controller.js checks if the user's web browser
       supports SVG and, if it doesn't, shows this div.  -->
     <div id='svgWarn'>
       This interface requires <a href='http://caniuse.com/#cats=SVG'>a browser that supports SVG.</a> it seems like your browser doesn't support SVG. We have an <a href='http://uk-old.2050.org.uk'>old version of this calculator</a> that may work for you. Alternatively you can download <a href='http://2050-calculator-tool-wiki.decc.gov.uk/pages/140'>an excel version.</a>
@@ -179,7 +172,7 @@
           <tr><td><div class='alternate'>A</div>&ndash;<div class='alternate'>D</div></td><td>A range of options where one alternative is not neccesiarily harder than another</td></tr>
           <tr class='primary_energy_notes'><td>Total used in the UK<sup>1</sup></td><td>Primary energy supply is normally higher than final energy demand, because of the energy used to generate electricity.</td></tr>
           <tr class='primary_energy_notes'><td>Targets<sup>2</sup></td><td>The targets up to 2027 exclude international aviation and shipping. They are also calculated as five year 'budgets', rather than the single year targets shown here.</td></tr>
-          <tr class='primary_energy_notes'><td>Total<sup>3</sup></td><td>The total includes the reduction in emissions from carbon capture and storage and from growing new biomass to replace that used (the bioenergy credit).</td></tr> 
+          <tr class='primary_energy_notes'><td>Total<sup>3</sup></td><td>The total includes the reduction in emissions from carbon capture and storage and from growing new biomass to replace that used (the bioenergy credit).</td></tr>
       </table>
       </div>
     </div>
@@ -193,7 +186,7 @@
     <div id='snippets'>
       <!-- This is shown the first time a user visits a costs page -->
       <div id='cost_caveats'>
-        We would like your help to develop this tool. Please <a href="http://2050-calculator-tool-wiki.decc.gov.uk">click here</a> to find out more about our methodology and suggest improvements.  Before viewing the cost implications of your choices, please note that: 
+        We would like your help to develop this tool. Please <a href="http://2050-calculator-tool-wiki.decc.gov.uk">click here</a> to find out more about our methodology and suggest improvements.  Before viewing the cost implications of your choices, please note that:
           <ol>
             <li> The Calculator expresses pathway costs as 'average pounds per person per year'. This is not the same as your energy bill. It is the cost of everything the UK buys that makes, converts, saves or uses energy: from kettles and insulation foam to trains and power stations. You can choose to see the results in different units when using the <a href=\"http://www.decc.gov.uk/2050\">excel version of the Calculator.</a> </li>
             <li>The Calculator does not choose any options automatically, regardless of their cost.</li>
