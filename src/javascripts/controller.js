@@ -64,7 +64,7 @@
       t = $(event.target);
       c = t.data().choicenumber;
       l = t.data().choicelevel;
-      cArray = c.slice(',');
+      cArray = c.split(',');
       console.log("cArray", cArray);
       for (let i = 0; i < cArray.length; i++) {
         console.log(cArray[i]);
