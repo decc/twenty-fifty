@@ -17,7 +17,7 @@ body {
   top: 20px;
   left: 0px;
   text-align: center;
-  z-index: 10; }
+  z-index: 99; }
   #calculating span {
     padding: 3px;
     background-color: yellow; }

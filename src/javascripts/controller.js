@@ -67,13 +67,8 @@
       cArray = c.split(',');
       console.log("cArray", cArray);
       for (let i = 0; i < cArray.length; i++) {
-        console.log(cArray[i]);
         go(cArray[i], l);
       }
-
-      console.log("clicked", c, l);
-      //document.getElementById('c25l3').click()
-      // $('#'+c+'l'+l).click();
     });
 
     $("a.view").on('click touchend', function(event) {
@@ -266,6 +261,8 @@
     } else {
       choices[index] = level;
     }
+    console.log("old_choices", old_choices);
+    console.log("choices",choices);
     return loadMainPathway();
   };
 
