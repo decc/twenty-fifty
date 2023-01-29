@@ -289,7 +289,7 @@
                       <div class="levers-subsector-container ">
                         <table>
                           <!-- One row per choice -->
-                          <% #structure.choices[8].each do |choice| %>
+
                             <tr class='<%= structure.choices[8].incremental_or_alternative %>' id='r<%= structure.choices[8].number %>'>
                               <td class='name'>
                                 <a href='/assets/onepage/<%= structure.choices[8].doc %>' target='_new' data-choicenumber='<%= structure.choices[8].number %>'>
@@ -308,7 +308,7 @@
                               </td>
                             <% end %>
                             </tr>
-                          <% #end %>
+
                           <!-- One row per choice -->
                           <% structure.choices[1..2].each do |choice| %>
                             <tr class='<%= choice.incremental_or_alternative %>' id='r<%= choice.number %>'>
@@ -331,28 +331,49 @@
                             </tr>
                           <% end %>
                           <!-- One row per choice -->
-                          <% structure.choices[4..3].each do |choice| %>
-                            <tr class='<%= choice.incremental_or_alternative %>' id='r<%= choice.number %>'>
+
+                            <tr class='<%= structure.choices[4].incremental_or_alternative %>' id='r<%= structure.choices[4].number %>'>
                               <td class='name'>
-                                <a href='/assets/onepage/<%= choice.doc %>' target='_new' data-choicenumber='<%= choice.number %>'>
-                                  <%= choice.name %>
+                                <a href='/assets/onepage/<%= structure.choices[4].doc %>' target='_new' data-choicenumber='<%= structure.choices[4].number %>'>
+                                  <%= structure.choices[4].name %>
                                 </a>
                               </td>
                               <td class='help'>
-                                <a title='Click for more detail on what choices <%= choice.levels.to_a.join(' ')%> mean.' href='/assets/onepage/<%= choice.doc %>' target='_new'>?</a>
+                                <a title='Click for more detail on what choices <%= structure.choices[4].levels.to_a.join(' ')%> mean.' href='/assets/onepage/<%= structure.choices[4].doc %>' target='_new'>?</a>
                               </td>
                               <!-- One cell per level for that choice -->
-                              <% choice.levels.each.with_index do |level,i| %>
+                              <% structure.choices[4].levels.each.with_index do |level,i| %>
                                 <td class='choice'>
-                                  <a href='#' data-choicenumber='<%= choice.number %>' data-choicelevel='<%= i+1 %>' id='c<%= choice.number %>l<%= i+1%>' title='<%= choice.descriptions[i] %>' class='choiceLink' >
+                                  <a href='#' data-choicenumber='<%= structure.choices[4].number %>' data-choicelevel='<%= i+1 %>' id='c<%= structure.choices[4].number %>l<%= i+1%>' title='<%= structure.choices[4].descriptions[i] %>' class='choiceLink' >
                                     <%= level %>
                                 </a>
                               </td>
                             <% end %>
                             </tr>
-                          <% end %>
+
                           <!-- One row per choice -->
-                          <% # structure.choices[9].each do |choice| %>
+
+                            <tr class='<%= structure.choices[3].incremental_or_alternative %>' id='r<%= structure.choices[3].number %>'>
+                              <td class='name'>
+                                <a href='/assets/onepage/<%= structure.choices[3].doc %>' target='_new' data-choicenumber='<%= structure.choices[3].number %>'>
+                                  <%= structure.choices[3].name %>
+                                </a>
+                              </td>
+                              <td class='help'>
+                                <a title='Click for more detail on what choices <%= structure.choices[3].levels.to_a.join(' ')%> mean.' href='/assets/onepage/<%= structure.choices[3].doc %>' target='_new'>?</a>
+                              </td>
+                              <!-- One cell per level for that choice -->
+                              <% structure.choices[3].levels.each.with_index do |level,i| %>
+                                <td class='choice'>
+                                  <a href='#' data-choicenumber='<%= structure.choices[3].number %>' data-choicelevel='<%= i+1 %>' id='c<%= structure.choices[3].number %>l<%= i+1%>' title='<%= structure.choices[3].descriptions[i] %>' class='choiceLink' >
+                                    <%= level %>
+                                </a>
+                              </td>
+                            <% end %>
+                            </tr>
+
+                          <!-- One row per choice -->
+
                             <tr class='<%= structure.choices[9].incremental_or_alternative %>' id='r<%= structure.choices[9].number %>'>
                               <td class='name'>
                                 <a href='/assets/onepage/<%= structure.choices[9].doc %>' target='_new' data-choicenumber='<%= structure.choices[9].number %>'>
@@ -371,7 +392,7 @@
                               </td>
                             <% end %>
                             </tr>
-                          <% # end %>
+
                         </table>
 
                       </div>
