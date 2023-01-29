@@ -64,8 +64,12 @@
       t = $(event.target);
       c = t.data().choicenumber;
       l = t.data().choicelevel;
-      go(c, l);
-      console.log("clicked", c, l, '#'+c+'l'+l);
+      cArray = c.slice(',');
+      cArray.forEach(choice => {
+        go(choice, l);
+      });
+
+      console.log("clicked", c, l);
       //document.getElementById('c25l3').click()
       // $('#'+c+'l'+l).click();
     });
