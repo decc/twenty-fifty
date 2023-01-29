@@ -66,7 +66,7 @@
       l = t.data().choicelevel;
       console.log("clicked", c, l, '#'+c+'l'+l);
       //document.getElementById('c25l3').click()
-      $('#'+c+'l'+l).click();
+      document.getElementById(c+'l'+l).click();
     });
 
     $("a.view").on('click touchend', function(event) {
