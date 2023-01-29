@@ -29,6 +29,11 @@ body {
   display: none;
 }
 
+.levers-container {
+  max-height: 568px;
+  overflow-y: scroll;
+}
+
 .levers-subsector-container {
   padding: 3px 8px 0;
 }

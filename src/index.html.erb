@@ -66,9 +66,9 @@
                 <p>Ambīciju līmenis</p>
             </div>
             <div class="levers-table">
-                <div class="levers">
+                <div class="levers" id='classic_controls'>
                   <!-- Transports -->
-                  <div class="levers-sector-container" id='classic_controls'>
+                  <div class="levers-sector-container">
                       <div class="levers-sector">
                           <div class="card">
                             <div class="sector-name">
@@ -176,12 +176,29 @@
                           </div>
                       </div>
                       <div class="levers-subsector-container ">
-                          <div class="levers-subsector">
-                              <div class="lever-step"></div>
-                              <div class="lever-step"></div>
-                              <div class="lever-step"></div>
-                              <div class="lever-step"></div>
-                          </div>
+                        <table>
+                          <!-- One row per choice -->
+                          <% structure.choices[33..39].each do |choice| %>
+                            <tr class='<%= choice.incremental_or_alternative %>' id='r<%= choice.number %>'>
+                              <td class='name'>
+                                <a href='/assets/onepage/<%= choice.doc %>' target='_new' data-choicenumber='<%= choice.number %>'>
+                                  <%= choice.name %>
+                                </a>
+                              </td>
+                              <td class='help'>
+                                <a title='Click for more detail on what choices <%= choice.levels.to_a.join(' ')%> mean.' href='/assets/onepage/<%= choice.doc %>' target='_new'>?</a>
+                              </td>
+                              <!-- One cell per level for that choice -->
+                              <% choice.levels.each.with_index do |level,i| %>
+                                <td class='choice'>
+                                  <a href='#' data-choicenumber='<%= choice.number %>' data-choicelevel='<%= i+1 %>' id='c<%= choice.number %>l<%= i+1%>' title='<%= choice.descriptions[i] %>' class='choiceLink' >
+                                    <%= level %>
+                                </a>
+                              </td>
+                            <% end %>
+                            </tr>
+                          <% end %>
+                        </table>
 
                       </div>
                   </div>
@@ -204,12 +221,29 @@
                           </div>
                       </div>
                       <div class="levers-subsector-container ">
-                          <div class="levers-subsector">
-                              <div class="lever-step"></div>
-                              <div class="lever-step"></div>
-                              <div class="lever-step"></div>
-                              <div class="lever-step"></div>
-                          </div>
+                        <table>
+                          <!-- One row per choice -->
+                          <% structure.choices[19,20,15..18].each do |choice| %>
+                            <tr class='<%= choice.incremental_or_alternative %>' id='r<%= choice.number %>'>
+                              <td class='name'>
+                                <a href='/assets/onepage/<%= choice.doc %>' target='_new' data-choicenumber='<%= choice.number %>'>
+                                  <%= choice.name %>
+                                </a>
+                              </td>
+                              <td class='help'>
+                                <a title='Click for more detail on what choices <%= choice.levels.to_a.join(' ')%> mean.' href='/assets/onepage/<%= choice.doc %>' target='_new'>?</a>
+                              </td>
+                              <!-- One cell per level for that choice -->
+                              <% choice.levels.each.with_index do |level,i| %>
+                                <td class='choice'>
+                                  <a href='#' data-choicenumber='<%= choice.number %>' data-choicelevel='<%= i+1 %>' id='c<%= choice.number %>l<%= i+1%>' title='<%= choice.descriptions[i] %>' class='choiceLink' >
+                                    <%= level %>
+                                </a>
+                              </td>
+                            <% end %>
+                            </tr>
+                          <% end %>
+                        </table>
 
                       </div>
                   </div>
