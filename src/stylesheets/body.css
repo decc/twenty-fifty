@@ -36,6 +36,7 @@ body {
 
 .levers-subsector-container {
   padding: 3px 8px 0;
+  align-self: normal;
 }
 
 /* .levers-subsector-container a {
