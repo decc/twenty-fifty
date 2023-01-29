@@ -29,6 +29,16 @@
     setVariablesFromURL();
     switchView(view);
     loadMainPathway();
+
+    $(".lever-step").on('click touchend', function(event) {
+      event.preventDefault();
+      t = $(event.target);
+      c = t.data().choicenumber;
+      l = t.data().choicelevel;
+      console.log("clicked", c, l, '#'+c+'l'+l);
+      //document.getElementById('c25l3').click()
+      $('#'+c+'l'+l).click();
+    });
   });
 
   // Some of the graphs require SVG, which is only supported in modern browsers (Internet Explorer >8)
@@ -57,16 +67,6 @@
       c = t.data().choicenumber;
       l = t.data().choicelevel;
       go(c, l);
-    });
-
-    $(".lever-step").on('click touchend', function(event) {
-      event.preventDefault();
-      t = $(event.target);
-      c = t.data().choicenumber;
-      l = t.data().choicelevel;
-      console.log("clicked", c, l, '#'+c+'l'+l);
-      //document.getElementById('c25l3').click()
-      document.getElementById(c+'l'+l).click();
     });
 
     $("a.view").on('click touchend', function(event) {
