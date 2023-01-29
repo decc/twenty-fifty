@@ -372,27 +372,49 @@
                             <% end %>
                             </tr>
 
-                          <!-- One row per choice -->
-
-                            <tr class='<%= structure.choices[9].incremental_or_alternative %>' id='r<%= structure.choices[9].number %>'>
+                            <!-- One row per choice -->
+                          <% structure.choices[9..10].each do |choice| %>
+                            <tr class='<%= choice.incremental_or_alternative %>' id='r<%= choice.number %>'>
                               <td class='name'>
-                                <a href='/assets/onepage/<%= structure.choices[9].doc %>' target='_new' data-choicenumber='<%= structure.choices[9].number %>'>
-                                  <%= structure.choices[9].name %>
+                                <a href='/assets/onepage/<%= choice.doc %>' target='_new' data-choicenumber='<%= choice.number %>'>
+                                  <%= choice.name %>
                                 </a>
                               </td>
                               <td class='help'>
-                                <a title='Click for more detail on what choices <%= structure.choices[9].levels.to_a.join(' ')%> mean.' href='/assets/onepage/<%= structure.choices[9].doc %>' target='_new'>?</a>
+                                <a title='Click for more detail on what choices <%= choice.levels.to_a.join(' ')%> mean.' href='/assets/onepage/<%= choice.doc %>' target='_new'>?</a>
                               </td>
                               <!-- One cell per level for that choice -->
-                              <% structure.choices[9].levels.each.with_index do |level,i| %>
+                              <% choice.levels.each.with_index do |level,i| %>
                                 <td class='choice'>
-                                  <a href='#' data-choicenumber='<%= structure.choices[9].number %>' data-choicelevel='<%= i+1 %>' id='c<%= structure.choices[9].number %>l<%= i+1%>' title='<%= structure.choices[9].descriptions[i] %>' class='choiceLink' >
+                                  <a href='#' data-choicenumber='<%= choice.number %>' data-choicelevel='<%= i+1 %>' id='c<%= choice.number %>l<%= i+1%>' title='<%= choice.descriptions[i] %>' class='choiceLink' >
                                     <%= level %>
                                 </a>
                               </td>
                             <% end %>
                             </tr>
+                          <% end %>
 
+                          <!-- One row per choice -->
+                          <% structure.choices[13..14].each do |choice| %>
+                            <tr class='<%= choice.incremental_or_alternative %>' id='r<%= choice.number %>'>
+                              <td class='name'>
+                                <a href='/assets/onepage/<%= choice.doc %>' target='_new' data-choicenumber='<%= choice.number %>'>
+                                  <%= choice.name %>
+                                </a>
+                              </td>
+                              <td class='help'>
+                                <a title='Click for more detail on what choices <%= choice.levels.to_a.join(' ')%> mean.' href='/assets/onepage/<%= choice.doc %>' target='_new'>?</a>
+                              </td>
+                              <!-- One cell per level for that choice -->
+                              <% choice.levels.each.with_index do |level,i| %>
+                                <td class='choice'>
+                                  <a href='#' data-choicenumber='<%= choice.number %>' data-choicelevel='<%= i+1 %>' id='c<%= choice.number %>l<%= i+1%>' title='<%= choice.descriptions[i] %>' class='choiceLink' >
+                                    <%= level %>
+                                </a>
+                              </td>
+                            <% end %>
+                            </tr>
+                          <% end %>
                         </table>
 
                       </div>
