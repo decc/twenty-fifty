@@ -65,7 +65,6 @@
       c = t.data().choicenumber;
       l = t.data().choicelevel;
       cArray = c.split(',');
-      console.log("cArray", cArray);
       for (let i = 0; i < cArray.length; i++) {
         go(cArray[i], l);
       }
@@ -261,8 +260,6 @@
     } else {
       choices[index] = level;
     }
-    console.log("old_choices", old_choices);
-    console.log("choices",choices);
     return loadMainPathway();
   };
 
