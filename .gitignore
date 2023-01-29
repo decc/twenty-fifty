@@ -11,3 +11,5 @@ public/index.html
 
 public/assets/manifest.json
 a.out
+
+.DS_Store
