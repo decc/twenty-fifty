@@ -1,5 +1,5 @@
 (function() {
-  
+
   // This object contains a series of properties, where the name of the property
   // matches the name of the view as used in the URl and the value of the property
   // is a function that manages that view and is defined in the views/ folder.
@@ -32,7 +32,7 @@
   });
 
   // Some of the graphs require SVG, which is only supported in modern browsers (Internet Explorer >8)
-  // This function checks that SVG is supported, and if not reveals a warning block that is 
+  // This function checks that SVG is supported, and if not reveals a warning block that is
   // in src/index.html.erb
   checkSVGWorks = function() {
     if (!!document.createElementNS && !!document.createElementNS('http://www.w3.org/2000/svg', "svg").createSVGRect) { return; }
@@ -40,16 +40,16 @@
   };
 
   // The controls are a series of tables in src/index.html.erb in the #classic_controls block
-  // This method attaches javascript function to those tables to trigger other jascript 
+  // This method attaches javascript function to those tables to trigger other jascript
   // methods in this file when they are clicked.
   setUpControls = function() {
     // All links with titles have the title turned into a tooltip. The tooltip is styled
-    // in src/stylesheets/tooltip.css 
+    // in src/stylesheets/tooltip.css
     $("a[title]").tooltip({ delay: 0, position: 'top left', offset: [3, 3], tip: '#tooltip' });
 
-    // This turns the cells that are labeled '1' '2' '3' '4' into controls that select 
-    // a new pathway. The cell is expected to have a data-choicenumber attribute that 
-    // indicates whether it is nuclear, CCS, home heating etc and a data-choicelevel 
+    // This turns the cells that are labeled '1' '2' '3' '4' into controls that select
+    // a new pathway. The cell is expected to have a data-choicenumber attribute that
+    // indicates whether it is nuclear, CCS, home heating etc and a data-choicelevel
     // attribute that indicates whether it
     $("a.choiceLink").on('click touchend', function(event) {
       event.preventDefault();
@@ -57,6 +57,16 @@
       c = t.data().choicenumber;
       l = t.data().choicelevel;
       go(c, l);
+    });
+
+    $(".lever-step").on('click touchend', function(event) {
+      event.preventDefault();
+      t = $(event.target);
+      c = t.data().choicenumber;
+      l = t.data().choicelevel;
+      console.log("clicked", c, l, '#'+c+'l'+l);
+      //document.getElementById('c25l3').click()
+      $('#'+c+'l'+l).click();
     });
 
     $("a.view").on('click touchend', function(event) {
@@ -93,8 +103,8 @@
       .on('mouseover', function(d,i) { startDemo(d.choicenumber); })
       .on('mouseout', function(d,i) { stopDemo(d.choicenumber); });
 
-  
-    // This forces the view to be redrawn if the user resizes their 
+
+    // This forces the view to be redrawn if the user resizes their
     // browser window. It uses a timer to only trigger the redraw
     // half a second after the user has stopped resizing.
     // FIXME: The redrawing sometimes appears buggy.
