@@ -65,9 +65,11 @@
       c = t.data().choicenumber;
       l = t.data().choicelevel;
       cArray = c.slice(',');
-      cArray.forEach(choice => {
-        go(choice, l);
-      });
+      console.log("cArray", cArray);
+      for (let i = 0; i < cArray.length; i++) {
+        console.log(cArray[i]);
+        go(cArray[i], l);
+      }
 
       console.log("clicked", c, l);
       //document.getElementById('c25l3').click()
