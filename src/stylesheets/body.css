@@ -47,3 +47,15 @@ body {
 #emissions_chart {
   display: none;
 }
+
+#demand_chart {
+  width: 75%;
+}
+
+#emissions_chart {
+  width: 75%;
+}
+
+#supply_chart {
+  width: 75%;
+}
