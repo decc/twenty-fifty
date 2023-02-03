@@ -104,6 +104,11 @@
       .on('mouseover', function(d,i) { startDemo(d.choicenumber); })
       .on('mouseout', function(d,i) { stopDemo(d.choicenumber); });
 
+    $('#scenarious-dropdown').on('click touchend', function(event){
+      event.preventDefault();
+      console.log("menu clicked");
+      $('.scenarious-sub-menu').toggle();
+    });
 
     // This forces the view to be redrawn if the user resizes their
     // browser window. It uses a timer to only trigger the redraw

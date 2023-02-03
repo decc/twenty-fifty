@@ -39,11 +39,6 @@ body {
   align-self: normal;
 }
 
-/* .levers-subsector-container a {
-  text-decoration: none;
+.scenarious-sub-menu {
+  display: none;
 }
-
-.levers-subsector-container .choice a {
-  border: 1px solid grey;
-  padding: 2px;
-} */
