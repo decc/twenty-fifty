@@ -57,5 +57,24 @@ body {
 }
 
 #supply_chart {
-  width: 75%;
+  width: 500px;
+}
+
+.subtab-menu-charts a {
+  padding: 4.5px 12px;
+  margin: 0 12px;
+}
+
+.subtab-menu-charts a:hover {
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 50px;
+  background: #EBF3FF;
+}
+
+.subtab-menu-charts a:active {
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 50px;
+  background: #FFF3D3;
 }
