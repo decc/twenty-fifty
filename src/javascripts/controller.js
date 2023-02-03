@@ -107,7 +107,7 @@
     $('#scenarious-dropdown').on('click touchend', function(event){
       event.preventDefault();
       console.log("menu clicked");
-      $('.scenarious-sub-menu').toggle();
+      $('.scenarious-sub-menu').toggleClass('sub-menu');
     });
 
     // This forces the view to be redrawn if the user resizes their
