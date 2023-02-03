@@ -42,3 +42,8 @@ body {
 .scenarious-sub-menu {
   display: none;
 }
+
+#supply_chart,
+#emissions_chart {
+  display: none;
+}

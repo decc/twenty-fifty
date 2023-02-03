@@ -6,7 +6,7 @@ window.twentyfifty.views.primary_energy_chart = function() {
     $('.primary_energy_notes').show();
 
     charts = d3.select("#results").selectAll(".chart")
-      .data(['demand_chart', /*'supply_chart', 'emissions_chart'*/]);
+      .data(['demand_chart', 'supply_chart', 'emissions_chart']);
 
     css_for_labels = {
       'Agriculture': 'agriculture',
@@ -160,13 +160,13 @@ window.twentyfifty.views.primary_energy_chart = function() {
       .datum(demand)
       .call(this.final_energy_chart);
 
-    // d3.select('#supply_chart')
-    //   .datum(supply)
-    //   .call(this.primary_energy_chart);
+    d3.select('#supply_chart')
+      .datum(supply)
+      .call(this.primary_energy_chart);
 
-    // d3.select('#emissions_chart')
-    //   .datum(ghg)
-    //   .call(this.emissions_chart);
+    d3.select('#emissions_chart')
+      .datum(ghg)
+      .call(this.emissions_chart);
 
     // This is to add the target text to the chart
     t = d3.select('#emissions_chart g.drawing').selectAll('text.target')
