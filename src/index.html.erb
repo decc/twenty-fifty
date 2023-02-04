@@ -45,10 +45,14 @@
                 <div class="burger-menu-icon">
                     <span class="nav-hamburger" @click="toggleNav"></span>
                 </div>
-                <nav>
-                    <a href="/" class="page-link-item">Kalkulators</a>
-                    <a href="/ka-lietot" class="page-link-item">Kā lietot?</a>
-                      <a href="/par-kalkulatoru" class="page-link-item">Par projektu</a>
+                <nav class="navigation-desktop">
+                    <a href="/" class="page-link-item calculator">Kalkulators</a>
+                    <a href="/ka-lietot" class="page-link-item how-to-use">Kā lietot?</a>
+                    <a href="/par-kalkulatoru" class="page-link-item about-project">Par projektu</a>
+                </nav>
+                <nav class="navigation-modal-windows">
+                    <a href="#" v-on:click="openModalHowToUse()">Kā lietot kalkulatoru?</a>
+                    <a href="#" v-on:click="openModalAbout()">Par projektu</a>
                 </nav>
             </div>
         </div>
@@ -479,6 +483,33 @@
 
                   </div>
               </div>
+        </div>
+    </div>
+    <!-- Modal how to use-->
+    <div class="modal-how-to-use-mask modal-how-to-use">
+        <div class="modal-how-to-use-wrapper">
+            <div class="modal-how-to-use-block">
+                <div class="how-to-use-tab-container">
+                    <button class="modal-close-icon">
+                        <span></span>
+                    </button>
+                    <nav>
+                        <a href="#">Sadaļas</a>
+                        <a href="#">Ambīciju līmeņi</a>
+                        <a href="#">Grafiki</a>
+                        <a href="#">Apzīmējumi</a>
+                    </nav>
+                </div>
+                <div class="how-to-use-content-container">
+                    <div class="how-to-use-img-container">
+                        <img src="" alt="image">
+                    </div>
+                    <div class="how-to-use-text-container">
+                        <h2>This is heading</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad quisquam quasi voluptas dolore soluta, nulla quis eos illum aliquid, dignissimos laudantium consequuntur quaerat provident cupiditate ipsum beatae itaque quibusdam deserunt!</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <!-- This appears while the tool is waiting for data from the server -->

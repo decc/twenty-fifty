@@ -150,6 +150,14 @@
       $(this).parent('.levers-sector').siblings('.levers-subsector-container').toggleClass('open');
     });
 
+    $('.how-to-use').on('click touchend', function(event){
+      event.preventDefault();
+      $('.modal-how-to-use').toggle();
+    });
+    //modal-close-icon
+    $('.modal-close-icon ').on('click touchend', function(){
+      $('.modal-how-to-use').toggle();
+    });
     // This forces the view to be redrawn if the user resizes their
     // browser window. It uses a timer to only trigger the redraw
     // half a second after the user has stopped resizing.
