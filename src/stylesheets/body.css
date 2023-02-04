@@ -104,7 +104,7 @@ body {
   display: none;
 }
 
-.modal-about-mask.modal-how-to-use,
+.modal-how-to-use-mask.modal-how-to-use,
 .modal-about-mask.modal-about-project {
   display: none;
 }

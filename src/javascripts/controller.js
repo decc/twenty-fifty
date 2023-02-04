@@ -150,7 +150,7 @@
       $(this).parent('.levers-sector').siblings('.levers-subsector-container').toggleClass('open');
     });
 
-    $('.calculator').on('click touchend', function(event){
+    $('.calculator-page').on('click touchend', function(event){
       event.preventDefault();
 
       $('.modal-how-to-use').hide();
@@ -161,7 +161,7 @@
       $('.about-project').removeClass('active-tab');
     });
 
-    $('.how-to-use').on('click touchend', function(event){
+    $('.how-to-use-page').on('click touchend', function(event){
       event.preventDefault();
 
       $('.modal-how-to-use').show();
@@ -174,7 +174,7 @@
 
 
 
-    $('.about-project').on('click touchend', function(event){
+    $('.about-project-page').on('click touchend', function(event){
       event.preventDefault();
 
       $('.modal-how-to-use').hide();
