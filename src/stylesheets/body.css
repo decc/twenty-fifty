@@ -23,7 +23,12 @@ body {
     background-color: yellow; }
 
 #results {
-  overflow: hidden; }
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
 
 #snippets {
   display: none;
@@ -49,7 +54,7 @@ body {
 }
 
 #demand_chart {
-  width: 75%;
+  width: 500px;
 }
 
 #emissions_chart {
@@ -91,6 +96,10 @@ body {
   border-radius: 50px;
 }
 
-.levers-subsector-container:not(:first-child) {
+.open {
+  display: block;
+}
+
+.levers-subsector-container {
   display: none;
 }

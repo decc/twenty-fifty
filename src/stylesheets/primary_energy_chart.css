@@ -14,7 +14,8 @@ svg {
 }
 
 .chart-container {
-  margin-top: 1rem;
+  padding-top: 1rem;
+  height: 100%;
 }
 
 .chart rect.backgroundrect {
