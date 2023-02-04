@@ -96,7 +96,7 @@ body {
   border-radius: 50px;
 }
 
-.open {
+.calculator-wrapper .calculator-blocks .calculator-inputs .levers-container .levers-table .levers .levers-sector-container div.levers-subsector-container.open {
   display: flex;
 }
 
