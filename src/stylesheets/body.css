@@ -53,7 +53,7 @@ body {
 }
 
 #emissions_chart {
-  width: 600px;
+  width: 500px;
 }
 
 #supply_chart {
@@ -87,4 +87,6 @@ body {
 
 .subtab-menu-charts a.chart-selected {
   background: #FFF3D3;
+  font-weight: 500;
+  border-radius: 50px;
 }
