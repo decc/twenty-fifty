@@ -149,7 +149,34 @@
       event.preventDefault();
       $(this).parent('.levers-sector').siblings('.levers-subsector-container').toggleClass('open');
     });
+    // PAGE TABS
+    $('.calculator-page').on('click touchend', function(event){
+      event.preventDefault();
 
+      $('.calculator-wrapper').addClass('active-page');
+      $('.how-to-use-wrapper').removeClass('active-page');
+      $('.about-page-wrapper').removeClass('active-page');
+    });
+
+    $('.how-to-use-page').on('click touchend', function(event){
+      event.preventDefault();
+
+      $('.calculator-wrapper').removeClass('active-page');
+      $('.how-to-use-wrapper').addClass('active-page');
+      $('.about-page-wrapper').removeClass('active-page');
+    });
+
+
+
+    $('.about-project-page').on('click touchend', function(event){
+      event.preventDefault();
+
+      $('.calculator-wrapper').removeClass('active-page');
+      $('.how-to-use-wrapper').removeClass('active-page');
+      $('.about-page-wrapper').addClass('active-page');
+    });
+
+    // MODALS
     $('.calculator-page').on('click touchend', function(event){
       event.preventDefault();
 
