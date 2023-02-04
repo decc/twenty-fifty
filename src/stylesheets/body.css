@@ -53,11 +53,11 @@ body {
 }
 
 #emissions_chart {
-  width: 500px;
+  width: 600px;
 }
 
 #supply_chart {
-  width: 600px;
+  width: 500px;
 }
 
 .subtab-menu-charts a {
@@ -89,4 +89,8 @@ body {
   background: #FFF3D3;
   font-weight: 500;
   border-radius: 50px;
+}
+
+.levers-subsector-container:not(:first-child) {
+  display: none;
 }

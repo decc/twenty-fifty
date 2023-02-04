@@ -111,7 +111,7 @@
 
     $('#show_emissions').on('click touchend', function(event){
       event.preventDefault();
-      console.log("emissions");
+
       $('#supply_chart').hide();
       $('#demand_chart').hide();
       $('#emissions_chart').show();
@@ -123,7 +123,7 @@
 
     $('#show_supply').on('click touchend', function(event){
       event.preventDefault();
-      console.log("supply");
+
       $('#supply_chart').show();
       $('#demand_chart').hide();
       $('#emissions_chart').hide();
@@ -135,7 +135,7 @@
 
     $('#show_demand').on('click touchend', function(event){
       event.preventDefault();
-      console.log("demand");
+
       $('#supply_chart').hide();
       $('#demand_chart').show();
       $('#emissions_chart').hide();
