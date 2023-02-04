@@ -188,10 +188,19 @@
 
     $('.modal-close-howto-icon ').on('click touchend', function(){
       $('.modal-how-to-use').toggle();
+
+
+      $('.calculator').addClass('active-tab');
+      $('.how-to-use').removeClass('active-tab');
+      $('.about-project').removeClass('active-tab');
     });
 
     $('.modal-close-about-icon').on('click touchend', function(){
       $('.modal-about-project').toggle();
+
+      $('.calculator').addClass('active-tab');
+      $('.how-to-use').removeClass('active-tab');
+      $('.about-project').removeClass('active-tab');
     });
     // This forces the view to be redrawn if the user resizes their
     // browser window. It uses a timer to only trigger the redraw

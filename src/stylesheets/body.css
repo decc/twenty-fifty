@@ -104,12 +104,12 @@ body {
   display: none;
 }
 
-.modal-how-to-use,
-.modal-about-project {
+.modal-about-mask.modal-how-to-use,
+.modal-about-mask.modal-about-project {
   display: none;
 }
 
-.active-tab {
+.header-wrapper .header-block .page-links nav.navigation-desktop a.page-link-item.active-tab {
   height: 50px;
   font-size: 16px;
   line-height: 19px;
