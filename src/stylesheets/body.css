@@ -97,9 +97,9 @@ body {
 }
 
 .open {
-  display: block;
+  display: flex;
 }
 
-.levers-subsector-container {
+.calculator-wrapper .calculator-blocks .calculator-inputs .levers-container .levers-table .levers .levers-sector-container div.levers-subsector-container {
   display: none;
 }

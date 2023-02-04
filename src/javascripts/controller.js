@@ -147,7 +147,7 @@
 
     $('.card').on('click touchend', function(event){
       event.preventDefault();
-      $(this).parent('.levers-sector').siblings('.levers-subsector-container').toggle();
+      $(this).parent('.levers-sector').siblings('.levers-subsector-container').toggleClass('open');
     });
 
     // This forces the view to be redrawn if the user resizes their
