@@ -150,13 +150,48 @@
       $(this).parent('.levers-sector').siblings('.levers-subsector-container').toggleClass('open');
     });
 
+    $('.calculator').on('click touchend', function(event){
+      event.preventDefault();
+
+      $('.modal-how-to-use').hide();
+      $('.modal-about-project').hide();
+
+      $(this).addClass('active-tab');
+      $('.how-to-use').removeClass('active-tab');
+      $('.about-project').removeClass('active-tab');
+    });
+
     $('.how-to-use').on('click touchend', function(event){
       event.preventDefault();
+
+      $('.modal-how-to-use').show();
+      $('.modal-about-project').hide();
+
+      $(this).addClass('active-tab');
+      $('.calculator').removeClass('active-tab');
+      $('.about-project').removeClass('active-tab');
+    });
+
+
+
+    $('.about-project').on('click touchend', function(event){
+      event.preventDefault();
+
+      $('.modal-how-to-use').hide();
+      $('.modal-about-project').show();
+
+      $(this).addClass('active-tab');
+      $('.calculator').removeClass('active-tab');
+      $('.how-to-use').removeClass('active-tab');
+    });
+
+
+    $('.modal-close-howto-icon ').on('click touchend', function(){
       $('.modal-how-to-use').toggle();
     });
-    //modal-close-icon
-    $('.modal-close-icon ').on('click touchend', function(){
-      $('.modal-how-to-use').toggle();
+
+    $('.modal-close-about-icon').on('click touchend', function(){
+      $('.modal-about-project').toggle();
     });
     // This forces the view to be redrawn if the user resizes their
     // browser window. It uses a timer to only trigger the redraw

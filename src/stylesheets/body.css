@@ -103,3 +103,19 @@ body {
 .calculator-wrapper .calculator-blocks .calculator-inputs .levers-container .levers-table .levers .levers-sector-container div.levers-subsector-container {
   display: none;
 }
+
+.modal-how-to-use,
+.modal-about-project {
+  display: none;
+}
+
+.active-tab {
+  height: 50px;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: -0.02em;
+  color: #49494D;
+  background-color: #F1F1F1;
+  border-radius: 4px 4px 0 0;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+}
