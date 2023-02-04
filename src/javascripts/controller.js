@@ -115,6 +115,10 @@
       $('#supply_chart').hide();
       $('#demand_chart').hide();
       $('#emissions_chart').show();
+
+      $(this).addClass('chart-selected');
+      $('#show_demand').removeClass('chart-selected');
+      $('#show_supply').removeClass('chart-selected');
     });
 
     $('#show_supply').on('click touchend', function(event){
@@ -123,6 +127,10 @@
       $('#supply_chart').show();
       $('#demand_chart').hide();
       $('#emissions_chart').hide();
+
+      $(this).addClass('chart-selected');
+      $('#show_demand').removeClass('chart-selected');
+      $('#show_emissions').removeClass('chart-selected');
     });
 
     $('#show_demand').on('click touchend', function(event){
@@ -131,6 +139,10 @@
       $('#supply_chart').hide();
       $('#demand_chart').show();
       $('#emissions_chart').hide();
+
+      $(this).addClass('chart-selected');
+      $('#show_supply').removeClass('chart-selected');
+      $('#show_emissions').removeClass('chart-selected');
     });
 
     // This forces the view to be redrawn if the user resizes their

@@ -53,16 +53,22 @@ body {
 }
 
 #emissions_chart {
-  width: 75%;
+  max-width: 600px;
 }
 
 #supply_chart {
-  width: 500px;
+  max-width: 600px;
 }
 
 .subtab-menu-charts a {
   padding: 4.5px 12px;
   margin: 0 12px;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  letter-spacing: -0.02em;
+  color: #646569;
+  tex-decoration: none;
 }
 
 .subtab-menu-charts a:hover {
@@ -76,5 +82,9 @@ body {
   cursor: pointer;
   font-weight: 500;
   border-radius: 50px;
+  background: #FFF3D3;
+}
+
+.subtab-menu-charts a .chart-selected {
   background: #FFF3D3;
 }
