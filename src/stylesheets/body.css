@@ -122,7 +122,7 @@ body {
 
 body .calculator-wrapper,
 body .how-to-use-wrapper,
-.about-page-wrapper {
+body .about-page-wrapper {
   display: none;
 }
 
