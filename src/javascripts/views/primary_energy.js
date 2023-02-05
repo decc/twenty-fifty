@@ -90,23 +90,23 @@ window.twentyfifty.views.primary_energy_chart = function() {
       .attr('class', 'chart');
 
     this.final_energy_chart = timeSeriesStackedAreaChart()
-      .title("Final Energy Demand")
+      .title("Gala enerģijas pieprasījums")
       .unit('PJ/yr')
       .css_for_label(css_for_labels)
-      .max_value(100000);
+      .max_value(110000);
 
     this.primary_energy_chart = timeSeriesStackedAreaChart()
-      .title("Primary Energy Supply")
+      .title("Primārās enerģijas ieguve")
       .unit('PJ/yr')
       .css_for_label(css_for_labels)
-      .max_value(101000);
+      .max_value(110000);
 
     this.emissions_chart = timeSeriesStackedAreaChart()
-      .title("Greenhouse Gas Emissions")
+      .title("Siltumnīcefekta gāzes emisijas")
       .unit('MtCO2e/yr')
       .css_for_label(css_for_labels)
       .min_value(-10)
-      .max_value(7500);
+      .max_value(8000);
   };
 
   // This is called when a new view has been selected
@@ -181,7 +181,7 @@ window.twentyfifty.views.primary_energy_chart = function() {
       current = parseInt(this.textContent) || +d;
       i = d3.interpolateRound(current, +d);
       return function(t) {
-        return this.textContent = "" + (i(t)) + "% reduction 1990-2050; Target is 80%";
+        return this.textContent = "" + (i(t)) + "% samzinājums 1990-2050; Mērķis ir 80%";
       };
     });
 
