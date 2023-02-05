@@ -152,10 +152,15 @@
     // PAGE TABS
     $('.calculator-page').on('click touchend', function(event){
       event.preventDefault();
-
+      // show-hide content
       $('.calculator-wrapper').addClass('active-page');
       $('.how-to-use-wrapper').removeClass('active-page');
       $('.about-page-wrapper').removeClass('active-page');
+
+      // change active tab header
+      $(this).addClass('active-tab');
+      $('.how-to-use-page').removeClass('active-tab');
+      $('.about-project-page').removeClass('active-tab');
     });
 
     $('.how-to-use-page').on('click touchend', function(event){
@@ -164,6 +169,10 @@
       $('.calculator-wrapper').removeClass('active-page');
       $('.how-to-use-wrapper').addClass('active-page');
       $('.about-page-wrapper').removeClass('active-page');
+
+      $(this).addClass('active-tab');
+      $('.calculator-page').removeClass('active-tab');
+      $('.about-project-page').removeClass('active-tab');
     });
 
 
@@ -174,6 +183,10 @@
       $('.calculator-wrapper').removeClass('active-page');
       $('.how-to-use-wrapper').removeClass('active-page');
       $('.about-page-wrapper').addClass('active-page');
+
+      $(this).addClass('active-tab');
+      $('.calculator-page').removeClass('active-tab');
+      $('.how-to-use-page').removeClass('active-tab');
     });
 
     // MODALS
