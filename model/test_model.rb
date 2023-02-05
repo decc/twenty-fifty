@@ -2746,7 +2746,7 @@ class TestModel < Minitest::Unit::TestCase
   def test_electricity_k56; assert_in_epsilon(12547.229319807539, worksheet.electricity_k56, 0.002); end
   def test_electricity_l56; assert_in_epsilon(14381.723025885383, worksheet.electricity_l56, 0.002); end
   def test_electricity_m56; assert_in_epsilon(16449.248562149187, worksheet.electricity_m56, 0.002); end
-  def test_energy_d18; assert_equal("Transport", worksheet.energy_d18.to_s.gsub(/[\n\r]+/,'')); end
+  def test_energy_d18; assert_equal("Transports", worksheet.energy_d18.to_s.gsub(/[\n\r]+/,'')); end
   def test_energy_e18; assert_in_epsilon(13021.103688920488, worksheet.energy_e18, 0.002); end
   def test_energy_f18; assert_in_epsilon(13616.434895372957, worksheet.energy_f18, 0.002); end
   def test_energy_g18; assert_in_epsilon(16115.494827317798, worksheet.energy_g18, 0.002); end
@@ -2756,7 +2756,7 @@ class TestModel < Minitest::Unit::TestCase
   def test_energy_k18; assert_in_epsilon(19991.287580103286, worksheet.energy_k18, 0.002); end
   def test_energy_l18; assert_in_epsilon(20616.692927820237, worksheet.energy_l18, 0.002); end
   def test_energy_m18; assert_in_epsilon(21235.19512094064, worksheet.energy_m18, 0.002); end
-  def test_energy_d19; assert_equal("Industry", worksheet.energy_d19.to_s.gsub(/[\n\r]+/,'')); end
+  def test_energy_d19; assert_equal("Industriālie procesi", worksheet.energy_d19.to_s.gsub(/[\n\r]+/,'')); end
   def test_energy_e19; assert_in_epsilon(38080.93956591401, worksheet.energy_e19, 0.002); end
   def test_energy_f19; assert_in_epsilon(42058.21577638382, worksheet.energy_f19, 0.002); end
   def test_energy_g19; assert_in_epsilon(46459.253187852744, worksheet.energy_g19, 0.002); end
@@ -2766,7 +2766,7 @@ class TestModel < Minitest::Unit::TestCase
   def test_energy_k19; assert_in_epsilon(66161.90907382737, worksheet.energy_k19, 0.002); end
   def test_energy_l19; assert_in_epsilon(72289.67158380443, worksheet.energy_l19, 0.002); end
   def test_energy_m19; assert_in_epsilon(78990.40159358487, worksheet.energy_m19, 0.002); end
-  def test_energy_d20; assert_equal("Heating & cooling", worksheet.energy_d20.to_s.gsub(/[\n\r]+/,'')); end
+  def test_energy_d20; assert_equal("Apsilde & Dzesēšana", worksheet.energy_d20.to_s.gsub(/[\n\r]+/,'')); end
   def test_energy_e20; assert_in_epsilon(53.8433201545641, worksheet.energy_e20, 0.002); end
   def test_energy_f20; assert_in_epsilon(62.71625535747263, worksheet.energy_f20, 0.002); end
   def test_energy_g20; assert_in_epsilon(62.521281087384544, worksheet.energy_g20, 0.002); end
@@ -2776,7 +2776,7 @@ class TestModel < Minitest::Unit::TestCase
   def test_energy_k20; assert_in_epsilon(62.371898772604865, worksheet.energy_k20, 0.002); end
   def test_energy_l20; assert_in_epsilon(63.57645423969805, worksheet.energy_l20, 0.002); end
   def test_energy_m20; assert_in_epsilon(64.92303583210597, worksheet.energy_m20, 0.002); end
-  def test_energy_d21; assert_equal("Lighting & appliances", worksheet.energy_d21.to_s.gsub(/[\n\r]+/,'')); end
+  def test_energy_d21; assert_equal("Apgaismojums un iekārtas", worksheet.energy_d21.to_s.gsub(/[\n\r]+/,'')); end
   def test_energy_e21; assert_in_epsilon(16.381025249271037, worksheet.energy_e21, 0.002); end
   def test_energy_f21; assert_in_epsilon(16.147010414451913, worksheet.energy_f21, 0.002); end
   def test_energy_g21; assert_in_epsilon(16.031220409681485, worksheet.energy_g21, 0.002); end
@@ -2816,7 +2816,7 @@ class TestModel < Minitest::Unit::TestCase
   def test_energy_k58; assert_in_epsilon(2050.0, worksheet.energy_k58, 0.002); end
   def test_energy_l58; assert_in_epsilon(2055.0, worksheet.energy_l58, 0.002); end
   def test_energy_m58; assert_in_epsilon(2060.0, worksheet.energy_m58, 0.002); end
-  def test_energy_d59; assert_equal("UK Gas", worksheet.energy_d59.to_s.gsub(/[\n\r]+/,'')); end
+  def test_energy_d59; assert_equal("LV gāze", worksheet.energy_d59.to_s.gsub(/[\n\r]+/,'')); end
   def test_energy_e59; assert_in_delta(0.0, (worksheet.energy_e59||0), 0.002); end
   def test_energy_f59; assert_in_delta(0.0, (worksheet.energy_f59||0), 0.002); end
   def test_energy_g59; assert_in_delta(0.0, (worksheet.energy_g59||0), 0.002); end
@@ -2826,7 +2826,7 @@ class TestModel < Minitest::Unit::TestCase
   def test_energy_k59; assert_in_delta(0.0, (worksheet.energy_k59||0), 0.002); end
   def test_energy_l59; assert_in_delta(0.0, (worksheet.energy_l59||0), 0.002); end
   def test_energy_m59; assert_in_delta(0.0, (worksheet.energy_m59||0), 0.002); end
-  def test_energy_d60; assert_equal("Imported Gas", worksheet.energy_d60.to_s.gsub(/[\n\r]+/,'')); end
+  def test_energy_d60; assert_equal("Importētā gāze", worksheet.energy_d60.to_s.gsub(/[\n\r]+/,'')); end
   def test_energy_e60; assert_in_epsilon(8058.174301212037, worksheet.energy_e60, 0.002); end
   def test_energy_f60; assert_in_epsilon(8904.980067214765, worksheet.energy_f60, 0.002); end
   def test_energy_g60; assert_in_epsilon(9839.670183531283, worksheet.energy_g60, 0.002); end
@@ -2836,7 +2836,7 @@ class TestModel < Minitest::Unit::TestCase
   def test_energy_k60; assert_in_epsilon(14087.002625575884, worksheet.energy_k60, 0.002); end
   def test_energy_l60; assert_in_epsilon(15465.32880731054, worksheet.energy_l60, 0.002); end
   def test_energy_m60; assert_in_epsilon(16978.929021099346, worksheet.energy_m60, 0.002); end
-  def test_energy_d61; assert_equal("UK Oil", worksheet.energy_d61.to_s.gsub(/[\n\r]+/,'')); end
+  def test_energy_d61; assert_equal("LV nafta", worksheet.energy_d61.to_s.gsub(/[\n\r]+/,'')); end
   def test_energy_e61; assert_in_delta(8.223744060511581e-10, worksheet.energy_e61, 0.002); end
   def test_energy_f61; assert_in_delta(6.628083519955914e-10, worksheet.energy_f61, 0.002); end
   def test_energy_g61; assert_in_delta(5.14185337237804e-10, worksheet.energy_g61, 0.002); end
@@ -2846,7 +2846,7 @@ class TestModel < Minitest::Unit::TestCase
   def test_energy_k61; assert_in_delta(1.843282049086412e-10, worksheet.energy_k61, 0.002); end
   def test_energy_l61; assert_in_delta(1.426296512019006e-10, worksheet.energy_l61, 0.002); end
   def test_energy_m61; assert_in_delta(1.1036410522230451e-10, worksheet.energy_m61, 0.002); end
-  def test_energy_d62; assert_equal("Imported Oil", worksheet.energy_d62.to_s.gsub(/[\n\r]+/,'')); end
+  def test_energy_d62; assert_equal("Importētā nafta", worksheet.energy_d62.to_s.gsub(/[\n\r]+/,'')); end
   def test_energy_e62; assert_in_epsilon(15753.865073648807, worksheet.energy_e62, 0.002); end
   def test_energy_f62; assert_in_epsilon(16632.880081401712, worksheet.energy_f62, 0.002); end
   def test_energy_g62; assert_in_epsilon(19445.51108692044, worksheet.energy_g62, 0.002); end
@@ -2856,7 +2856,7 @@ class TestModel < Minitest::Unit::TestCase
   def test_energy_k62; assert_in_epsilon(24724.473078491737, worksheet.energy_k62, 0.002); end
   def test_energy_l62; assert_in_epsilon(25786.872033359203, worksheet.energy_l62, 0.002); end
   def test_energy_m62; assert_in_epsilon(26883.43501358834, worksheet.energy_m62, 0.002); end
-  def test_energy_d63; assert_equal("UK Coal", worksheet.energy_d63.to_s.gsub(/[\n\r]+/,'')); end
+  def test_energy_d63; assert_equal("LV akmeņogles", worksheet.energy_d63.to_s.gsub(/[\n\r]+/,'')); end
   def test_energy_e63; assert_in_epsilon(2075.334895872854, worksheet.energy_e63, 0.002); end
   def test_energy_f63; assert_in_epsilon(2075.334895872854, worksheet.energy_f63, 0.002); end
   def test_energy_g63; assert_in_epsilon(2075.334895872854, worksheet.energy_g63, 0.002); end
@@ -2866,7 +2866,7 @@ class TestModel < Minitest::Unit::TestCase
   def test_energy_k63; assert_in_epsilon(1037.667447936427, worksheet.energy_k63, 0.002); end
   def test_energy_l63; assert_in_epsilon(1037.667447936427, worksheet.energy_l63, 0.002); end
   def test_energy_m63; assert_in_epsilon(1037.667447936427, worksheet.energy_m63, 0.002); end
-  def test_energy_d64; assert_equal("Imported Coal", worksheet.energy_d64.to_s.gsub(/[\n\r]+/,'')); end
+  def test_energy_d64; assert_equal("Importētās akmeņogles", worksheet.energy_d64.to_s.gsub(/[\n\r]+/,'')); end
   def test_energy_e64; assert_in_epsilon(17819.710624989715, worksheet.energy_e64, 0.002); end
   def test_energy_f64; assert_in_epsilon(19904.52710121655, worksheet.energy_f64, 0.002); end
   def test_energy_g64; assert_in_epsilon(22207.413616314218, worksheet.energy_g64, 0.002); end
@@ -2876,7 +2876,7 @@ class TestModel < Minitest::Unit::TestCase
   def test_energy_k64; assert_in_epsilon(33552.20607823338, worksheet.energy_k64, 0.002); end
   def test_energy_l64; assert_in_epsilon(36760.33463200644, worksheet.energy_l64, 0.002); end
   def test_energy_m64; assert_in_epsilon(40268.59300898136, worksheet.energy_m64, 0.002); end
-  def test_energy_d65; assert_equal("UK Bioenergy", worksheet.energy_d65.to_s.gsub(/[\n\r]+/,'')); end
+  def test_energy_d65; assert_equal("LV bioenerģija", worksheet.energy_d65.to_s.gsub(/[\n\r]+/,'')); end
   def test_energy_e65; assert_in_epsilon(114.72501979056264, worksheet.energy_e65, 0.002); end
   def test_energy_f65; assert_in_epsilon(117.23340020272497, worksheet.energy_f65, 0.002); end
   def test_energy_g65; assert_in_epsilon(119.77157832890916, worksheet.energy_g65, 0.002); end
@@ -2886,7 +2886,7 @@ class TestModel < Minitest::Unit::TestCase
   def test_energy_k65; assert_in_epsilon(130.5128013751012, worksheet.energy_k65, 0.002); end
   def test_energy_l65; assert_in_epsilon(133.30026677092258, worksheet.energy_l65, 0.002); end
   def test_energy_m65; assert_in_epsilon(136.13642437554074, worksheet.energy_m65, 0.002); end
-  def test_energy_d66; assert_equal("Imported Bioenergy", worksheet.energy_d66.to_s.gsub(/[\n\r]+/,'')); end
+  def test_energy_d66; assert_equal("Importētā bioenerģija", worksheet.energy_d66.to_s.gsub(/[\n\r]+/,'')); end
   def test_energy_e66; assert_in_delta(0.0, (worksheet.energy_e66||0), 0.002); end
   def test_energy_f66; assert_in_delta(0.0, (worksheet.energy_f66||0), 0.002); end
   def test_energy_g66; assert_in_delta(0.0, (worksheet.energy_g66||0), 0.002); end
@@ -2906,7 +2906,7 @@ class TestModel < Minitest::Unit::TestCase
   def test_energy_k67; assert_in_delta(0.0, (worksheet.energy_k67||0), 0.002); end
   def test_energy_l67; assert_in_delta(0.0, (worksheet.energy_l67||0), 0.002); end
   def test_energy_m67; assert_in_delta(0.0, (worksheet.energy_m67||0), 0.002); end
-  def test_energy_d68; assert_equal("Wind", worksheet.energy_d68.to_s.gsub(/[\n\r]+/,'')); end
+  def test_energy_d68; assert_equal("Vēja enerģija", worksheet.energy_d68.to_s.gsub(/[\n\r]+/,'')); end
   def test_energy_e68; assert_in_delta(0.5158410142243375, worksheet.energy_e68, 0.002); end
   def test_energy_f68; assert_in_epsilon(1.0375450459353708, worksheet.energy_f68, 0.002); end
   def test_energy_g68; assert_in_epsilon(1.5592490776464043, worksheet.energy_g68, 0.002); end
@@ -2916,7 +2916,7 @@ class TestModel < Minitest::Unit::TestCase
   def test_energy_k68; assert_in_delta(0.5217040317110333, worksheet.energy_k68, 0.002); end
   def test_energy_l68; assert_in_delta(0.0, (worksheet.energy_l68||0), 0.002); end
   def test_energy_m68; assert_in_delta(0.0, (worksheet.energy_m68||0), 0.002); end
-  def test_energy_d69; assert_equal("Solar", worksheet.energy_d69.to_s.gsub(/[\n\r]+/,'')); end
+  def test_energy_d69; assert_equal("Saules enerģija", worksheet.energy_d69.to_s.gsub(/[\n\r]+/,'')); end
   def test_energy_e69; assert_in_delta(0.0024430307518453994, worksheet.energy_e69, 0.002); end
   def test_energy_f69; assert_in_delta(0.005255869957856714, worksheet.energy_f69, 0.002); end
   def test_energy_g69; assert_in_delta(0.07883804936785073, worksheet.energy_g69, 0.002); end
@@ -2926,7 +2926,7 @@ class TestModel < Minitest::Unit::TestCase
   def test_energy_k69; assert_in_delta(0.23651414810355212, worksheet.energy_k69, 0.002); end
   def test_energy_l69; assert_in_delta(0.2627934978928357, worksheet.energy_l69, 0.002); end
   def test_energy_m69; assert_in_delta(0.2627934978928357, worksheet.energy_m69, 0.002); end
-  def test_energy_d70; assert_equal("Tidal", worksheet.energy_d70.to_s.gsub(/[\n\r]+/,'')); end
+  def test_energy_d70; assert_equal("Krasta enerģija", worksheet.energy_d70.to_s.gsub(/[\n\r]+/,'')); end
   def test_energy_e70; assert_in_delta(0.0, (worksheet.energy_e70||0), 0.002); end
   def test_energy_f70; assert_in_delta(0.0, (worksheet.energy_f70||0), 0.002); end
   def test_energy_g70; assert_in_delta(0.0, (worksheet.energy_g70||0), 0.002); end
@@ -2936,7 +2936,7 @@ class TestModel < Minitest::Unit::TestCase
   def test_energy_k70; assert_in_delta(0.0, (worksheet.energy_k70||0), 0.002); end
   def test_energy_l70; assert_in_delta(0.0, (worksheet.energy_l70||0), 0.002); end
   def test_energy_m70; assert_in_delta(0.0, (worksheet.energy_m70||0), 0.002); end
-  def test_energy_d71; assert_equal("Wave", worksheet.energy_d71.to_s.gsub(/[\n\r]+/,'')); end
+  def test_energy_d71; assert_equal("Viļņu enerģija", worksheet.energy_d71.to_s.gsub(/[\n\r]+/,'')); end
   def test_energy_e71; assert_in_delta(0.0, (worksheet.energy_e71||0), 0.002); end
   def test_energy_f71; assert_in_delta(0.0, (worksheet.energy_f71||0), 0.002); end
   def test_energy_g71; assert_in_delta(0.0, (worksheet.energy_g71||0), 0.002); end
@@ -2946,7 +2946,7 @@ class TestModel < Minitest::Unit::TestCase
   def test_energy_k71; assert_in_delta(0.0, (worksheet.energy_k71||0), 0.002); end
   def test_energy_l71; assert_in_delta(0.0, (worksheet.energy_l71||0), 0.002); end
   def test_energy_m71; assert_in_delta(0.0, (worksheet.energy_m71||0), 0.002); end
-  def test_energy_d72; assert_equal("Geothermal", worksheet.energy_d72.to_s.gsub(/[\n\r]+/,'')); end
+  def test_energy_d72; assert_equal("Ģeotermālā enerģija", worksheet.energy_d72.to_s.gsub(/[\n\r]+/,'')); end
   def test_energy_e72; assert_in_delta(0.0, (worksheet.energy_e72||0), 0.002); end
   def test_energy_f72; assert_in_delta(0.0, (worksheet.energy_f72||0), 0.002); end
   def test_energy_g72; assert_in_delta(0.0, (worksheet.energy_g72||0), 0.002); end
@@ -2956,7 +2956,7 @@ class TestModel < Minitest::Unit::TestCase
   def test_energy_k72; assert_in_delta(0.0, (worksheet.energy_k72||0), 0.002); end
   def test_energy_l72; assert_in_delta(0.0, (worksheet.energy_l72||0), 0.002); end
   def test_energy_m72; assert_in_delta(0.0, (worksheet.energy_m72||0), 0.002); end
-  def test_energy_d73; assert_equal("Hydro", worksheet.energy_d73.to_s.gsub(/[\n\r]+/,'')); end
+  def test_energy_d73; assert_equal("Hidroenerģija", worksheet.energy_d73.to_s.gsub(/[\n\r]+/,'')); end
   def test_energy_e73; assert_in_epsilon(10.795232694504334, worksheet.energy_e73, 0.002); end
   def test_energy_f73; assert_in_epsilon(10.795232694504334, worksheet.energy_f73, 0.002); end
   def test_energy_g73; assert_in_epsilon(10.795232694504334, worksheet.energy_g73, 0.002); end
@@ -2966,7 +2966,7 @@ class TestModel < Minitest::Unit::TestCase
   def test_energy_k73; assert_in_epsilon(10.795232694504334, worksheet.energy_k73, 0.002); end
   def test_energy_l73; assert_in_epsilon(10.795232694504334, worksheet.energy_l73, 0.002); end
   def test_energy_m73; assert_in_epsilon(10.795232694504334, worksheet.energy_m73, 0.002); end
-  def test_energy_d74; assert_equal("Electricity imports", worksheet.energy_d74.to_s.gsub(/[\n\r]+/,'')); end
+  def test_energy_d74; assert_equal("Elektrības imports", worksheet.energy_d74.to_s.gsub(/[\n\r]+/,'')); end
   def test_energy_e74; assert_in_delta(0.0, (worksheet.energy_e74||0), 0.002); end
   def test_energy_f74; assert_in_delta(0.0, (worksheet.energy_f74||0), 0.002); end
   def test_energy_g74; assert_in_delta(0.0, (worksheet.energy_g74||0), 0.002); end
@@ -2986,7 +2986,7 @@ class TestModel < Minitest::Unit::TestCase
   def test_energy_k75; assert_in_delta(0.0, (worksheet.energy_k75||0), 0.002); end
   def test_energy_l75; assert_in_delta(0.0, (worksheet.energy_l75||0), 0.002); end
   def test_energy_m75; assert_in_delta(0.0, (worksheet.energy_m75||0), 0.002); end
-  def test_energy_d76; assert_equal("Total used in UK", worksheet.energy_d76.to_s.gsub(/[\n\r]+/,'')); end
+  def test_energy_d76; assert_equal("Total in LV", worksheet.energy_d76.to_s.gsub(/[\n\r]+/,'')); end
   def test_energy_e76; assert_in_epsilon(43785.17712252116, worksheet.energy_e76, 0.002); end
   def test_energy_f76; assert_in_epsilon(47604.84055850319, worksheet.energy_f76, 0.002); end
   def test_energy_g76; assert_in_epsilon(53664.174948489905, worksheet.energy_g76, 0.002); end
@@ -4086,7 +4086,7 @@ class TestModel < Minitest::Unit::TestCase
   def test_ghg_k13; assert_in_epsilon(2050.0, worksheet.ghg_k13, 0.002); end
   def test_ghg_l13; assert_in_epsilon(2055.0, worksheet.ghg_l13, 0.002); end
   def test_ghg_m13; assert_in_epsilon(2060.0, worksheet.ghg_m13, 0.002); end
-  def test_ghg_d14; assert_equal("Fuel Combustion", worksheet.ghg_d14.to_s.gsub(/[\n\r]+/,'')); end
+  def test_ghg_d14; assert_equal("Degvielas sadegšana", worksheet.ghg_d14.to_s.gsub(/[\n\r]+/,'')); end
   def test_ghg_e14; assert_in_epsilon(2785.027212040889, worksheet.ghg_e14, 0.002); end
   def test_ghg_f14; assert_in_epsilon(3072.2531622637875, worksheet.ghg_f14, 0.002); end
   def test_ghg_g14; assert_in_epsilon(3389.910023316337, worksheet.ghg_g14, 0.002); end
@@ -4096,7 +4096,7 @@ class TestModel < Minitest::Unit::TestCase
   def test_ghg_k14; assert_in_epsilon(4817.726172212437, worksheet.ghg_k14, 0.002); end
   def test_ghg_l14; assert_in_epsilon(5265.298035410919, worksheet.ghg_l14, 0.002); end
   def test_ghg_m14; assert_in_epsilon(5755.138439328811, worksheet.ghg_m14, 0.002); end
-  def test_ghg_d15; assert_equal("Industrial Processes", worksheet.ghg_d15.to_s.gsub(/[\n\r]+/,'')); end
+  def test_ghg_d15; assert_equal("Rūpniecības procesi", worksheet.ghg_d15.to_s.gsub(/[\n\r]+/,'')); end
   def test_ghg_e15; assert_in_delta(0.7595426786008856, worksheet.ghg_e15, 0.002); end
   def test_ghg_f15; assert_in_delta(0.800634392221691, worksheet.ghg_f15, 0.002); end
   def test_ghg_g15; assert_in_delta(0.8464440828470238, worksheet.ghg_g15, 0.002); end
@@ -4106,7 +4106,7 @@ class TestModel < Minitest::Unit::TestCase
   def test_ghg_k15; assert_in_epsilon(1.0885996746020021, worksheet.ghg_k15, 0.002); end
   def test_ghg_l15; assert_in_epsilon(1.1688249855022557, worksheet.ghg_l15, 0.002); end
   def test_ghg_m15; assert_in_epsilon(1.2585206893284113, worksheet.ghg_m15, 0.002); end
-  def test_ghg_d16; assert_equal("Solvent and Other Product Use", worksheet.ghg_d16.to_s.gsub(/[\n\r]+/,'')); end
+  def test_ghg_d16; assert_equal("Šķīdinātāju un citu produktu lietošana", worksheet.ghg_d16.to_s.gsub(/[\n\r]+/,'')); end
   def test_ghg_e16; assert_in_delta(0.0, (worksheet.ghg_e16||0), 0.002); end
   def test_ghg_f16; assert_in_delta(0.0, (worksheet.ghg_f16||0), 0.002); end
   def test_ghg_g16; assert_in_delta(0.0, (worksheet.ghg_g16||0), 0.002); end
@@ -4116,7 +4116,7 @@ class TestModel < Minitest::Unit::TestCase
   def test_ghg_k16; assert_in_delta(0.0, (worksheet.ghg_k16||0), 0.002); end
   def test_ghg_l16; assert_in_delta(0.0, (worksheet.ghg_l16||0), 0.002); end
   def test_ghg_m16; assert_in_delta(0.0, (worksheet.ghg_m16||0), 0.002); end
-  def test_ghg_d17; assert_equal("Agriculture", worksheet.ghg_d17.to_s.gsub(/[\n\r]+/,'')); end
+  def test_ghg_d17; assert_equal("Zemkopība", worksheet.ghg_d17.to_s.gsub(/[\n\r]+/,'')); end
   def test_ghg_e17; assert_in_epsilon(2.4768002241997515, worksheet.ghg_e17, 0.002); end
   def test_ghg_f17; assert_in_epsilon(2.4244662219529665, worksheet.ghg_f17, 0.002); end
   def test_ghg_g17; assert_in_epsilon(2.373739230307582, worksheet.ghg_g17, 0.002); end
@@ -4126,7 +4126,7 @@ class TestModel < Minitest::Unit::TestCase
   def test_ghg_k17; assert_in_epsilon(2.397395724133465, worksheet.ghg_k17, 0.002); end
   def test_ghg_l17; assert_in_epsilon(2.403414376318513, worksheet.ghg_l17, 0.002); end
   def test_ghg_m17; assert_in_epsilon(2.409475443676037, worksheet.ghg_m17, 0.002); end
-  def test_ghg_d18; assert_equal("LULUCF", worksheet.ghg_d18.to_s.gsub(/[\n\r]+/,'')); end
+  def test_ghg_d18; assert_equal("ZIZIM", worksheet.ghg_d18.to_s.gsub(/[\n\r]+/,'')); end
   def test_ghg_e18; assert_in_delta(-0.07671681834303024, worksheet.ghg_e18, 0.002); end
   def test_ghg_f18; assert_in_epsilon(1.0410084441425347, worksheet.ghg_f18, 0.002); end
   def test_ghg_g18; assert_in_epsilon(2.152268674359548, worksheet.ghg_g18, 0.002); end
@@ -4136,7 +4136,7 @@ class TestModel < Minitest::Unit::TestCase
   def test_ghg_k18; assert_in_epsilon(3.4119495241914297, worksheet.ghg_k18, 0.002); end
   def test_ghg_l18; assert_in_epsilon(2.9473096920853292, worksheet.ghg_l18, 0.002); end
   def test_ghg_m18; assert_in_epsilon(2.74931576737907, worksheet.ghg_m18, 0.002); end
-  def test_ghg_d19; assert_equal("Waste", worksheet.ghg_d19.to_s.gsub(/[\n\r]+/,'')); end
+  def test_ghg_d19; assert_equal("Atkritumi", worksheet.ghg_d19.to_s.gsub(/[\n\r]+/,'')); end
   def test_ghg_e19; assert_in_delta(0.2402532774887724, worksheet.ghg_e19, 0.002); end
   def test_ghg_f19; assert_in_delta(0.22621960804019858, worksheet.ghg_f19, 0.002); end
   def test_ghg_g19; assert_in_delta(0.21228950614778602, worksheet.ghg_g19, 0.002); end
@@ -4146,7 +4146,7 @@ class TestModel < Minitest::Unit::TestCase
   def test_ghg_k19; assert_in_delta(0.21875885961230285, worksheet.ghg_k19, 0.002); end
   def test_ghg_l19; assert_in_delta(0.22015505983781544, worksheet.ghg_l19, 0.002); end
   def test_ghg_m19; assert_in_delta(0.22085029762638644, worksheet.ghg_m19, 0.002); end
-  def test_ghg_d20; assert_equal("Other", worksheet.ghg_d20.to_s.gsub(/[\n\r]+/,'')); end
+  def test_ghg_d20; assert_equal("Citi", worksheet.ghg_d20.to_s.gsub(/[\n\r]+/,'')); end
   def test_ghg_e20; assert_in_delta(0.0, (worksheet.ghg_e20||0), 0.002); end
   def test_ghg_f20; assert_in_delta(0.0, (worksheet.ghg_f20||0), 0.002); end
   def test_ghg_g20; assert_in_delta(0.0, (worksheet.ghg_g20||0), 0.002); end
@@ -4156,7 +4156,7 @@ class TestModel < Minitest::Unit::TestCase
   def test_ghg_k20; assert_in_delta(0.0, (worksheet.ghg_k20||0), 0.002); end
   def test_ghg_l20; assert_in_delta(0.0, (worksheet.ghg_l20||0), 0.002); end
   def test_ghg_m20; assert_in_delta(0.0, (worksheet.ghg_m20||0), 0.002); end
-  def test_ghg_d21; assert_equal("Int'l Aviation & Shipping", worksheet.ghg_d21.to_s.gsub(/[\n\r]+/,'')); end
+  def test_ghg_d21; assert_equal("Starpt. Aviācija un kuģniecība", worksheet.ghg_d21.to_s.gsub(/[\n\r]+/,'')); end
   def test_ghg_e21; assert_in_epsilon(961.5267767620342, worksheet.ghg_e21, 0.002); end
   def test_ghg_f21; assert_in_epsilon(1007.6210442369309, worksheet.ghg_f21, 0.002); end
   def test_ghg_g21; assert_in_epsilon(1197.4516540211193, worksheet.ghg_g21, 0.002); end
@@ -4166,7 +4166,7 @@ class TestModel < Minitest::Unit::TestCase
   def test_ghg_k21; assert_in_epsilon(1492.1518303619855, worksheet.ghg_k21, 0.002); end
   def test_ghg_l21; assert_in_epsilon(1539.6688674908037, worksheet.ghg_l21, 0.002); end
   def test_ghg_m21; assert_in_epsilon(1586.640946141364, worksheet.ghg_m21, 0.002); end
-  def test_ghg_d22; assert_equal("Bioenergy credit", worksheet.ghg_d22.to_s.gsub(/[\n\r]+/,'')); end
+  def test_ghg_d22; assert_equal("Bioenerģijas kredīts", worksheet.ghg_d22.to_s.gsub(/[\n\r]+/,'')); end
   def test_ghg_e22; assert_in_epsilon(-9.926943542491932, worksheet.ghg_e22, 0.002); end
   def test_ghg_f22; assert_in_epsilon(-9.987958622322873, worksheet.ghg_f22, 0.002); end
   def test_ghg_g22; assert_in_epsilon(-10.049788529533984, worksheet.ghg_g22, 0.002); end
@@ -4176,7 +4176,7 @@ class TestModel < Minitest::Unit::TestCase
   def test_ghg_k22; assert_in_epsilon(-10.98936368993276, worksheet.ghg_k22, 0.002); end
   def test_ghg_l22; assert_in_epsilon(-11.075816299008912, worksheet.ghg_l22, 0.002); end
   def test_ghg_m22; assert_in_epsilon(-11.164115192168174, worksheet.ghg_m22, 0.002); end
-  def test_ghg_d23; assert_equal("Carbon capture", worksheet.ghg_d23.to_s.gsub(/[\n\r]+/,'')); end
+  def test_ghg_d23; assert_equal("Oglekļa piesaiste", worksheet.ghg_d23.to_s.gsub(/[\n\r]+/,'')); end
   def test_ghg_e23; assert_in_delta(0.0, (worksheet.ghg_e23||0), 0.002); end
   def test_ghg_f23; assert_in_delta(0.0, (worksheet.ghg_f23||0), 0.002); end
   def test_ghg_g23; assert_in_delta(0.0, (worksheet.ghg_g23||0), 0.002); end
