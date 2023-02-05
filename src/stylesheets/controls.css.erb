@@ -24,14 +24,18 @@
 }
 #classic_controls table td.choice a {
   display: block;
-  width: 100%;
+  # width: 100%;
   text-align: center;
   color: #888;
   text-decoration: none;
-  border: solid #ccc 1px;
+  border: none;
+  background: #D9D9D9;
+  height: 25px;
+  width: 25px;
+  border-radius: 4px;
 }
 #classic_controls table td.choice a:hover {
-  border: solid #000 1px;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
 }
 #classic_controls table td.choice a.selected {
   color: #000;
@@ -73,10 +77,10 @@
   <% end %>
 <% end %>
 
-#classic_controls div.level1, 
-#classic_controls div.level2, 
+#classic_controls div.level1,
+#classic_controls div.level2,
 #classic_controls div.level3,
-#classic_controls div.level4, 
+#classic_controls div.level4,
 #classic_controls div.alternate  {
   width: 14px;
   text-align: center;
@@ -94,18 +98,18 @@
 }
 
 #classic_controls table tr.incremental a.level1, #classic_controls div.level1 {
-  background-color: #92C979;
+  background-color: #949D85;
 }
 #classic_controls table tr.incremental a.level2, #classic_controls div.level2 {
-  background-color: #EFDD60;
+  background-color: #949D85;
 }
 #classic_controls table tr.incremental a.level3, #classic_controls div.level3 {
-  background-color: #FFAE55;
+  background-color: #949D85;
 }
 #classic_controls table tr.incremental a.level4, #classic_controls div.level4 {
-  background-color: #F44545;
+  background-color: #949D85;
 }
 #classic_controls table tr.alternative a.selected {
-  background-color: #aaa;
+  background-color: #949D85;
 }
 

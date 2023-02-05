@@ -1,5 +1,5 @@
 (function() {
-  
+
   // This object contains a series of properties, where the name of the property
   // matches the name of the view as used in the URl and the value of the property
   // is a function that manages that view and is defined in the views/ folder.
@@ -32,7 +32,7 @@
   });
 
   // Some of the graphs require SVG, which is only supported in modern browsers (Internet Explorer >8)
-  // This function checks that SVG is supported, and if not reveals a warning block that is 
+  // This function checks that SVG is supported, and if not reveals a warning block that is
   // in src/index.html.erb
   checkSVGWorks = function() {
     if (!!document.createElementNS && !!document.createElementNS('http://www.w3.org/2000/svg', "svg").createSVGRect) { return; }
@@ -40,16 +40,16 @@
   };
 
   // The controls are a series of tables in src/index.html.erb in the #classic_controls block
-  // This method attaches javascript function to those tables to trigger other jascript 
+  // This method attaches javascript function to those tables to trigger other jascript
   // methods in this file when they are clicked.
   setUpControls = function() {
     // All links with titles have the title turned into a tooltip. The tooltip is styled
-    // in src/stylesheets/tooltip.css 
+    // in src/stylesheets/tooltip.css
     $("a[title]").tooltip({ delay: 0, position: 'top left', offset: [3, 3], tip: '#tooltip' });
 
-    // This turns the cells that are labeled '1' '2' '3' '4' into controls that select 
-    // a new pathway. The cell is expected to have a data-choicenumber attribute that 
-    // indicates whether it is nuclear, CCS, home heating etc and a data-choicelevel 
+    // This turns the cells that are labeled '1' '2' '3' '4' into controls that select
+    // a new pathway. The cell is expected to have a data-choicenumber attribute that
+    // indicates whether it is nuclear, CCS, home heating etc and a data-choicelevel
     // attribute that indicates whether it
     $("a.choiceLink").on('click touchend', function(event) {
       event.preventDefault();
@@ -57,6 +57,17 @@
       c = t.data().choicenumber;
       l = t.data().choicelevel;
       go(c, l);
+    });
+
+    $(".lever-step").on('click touchend', function(event) {
+      event.preventDefault();
+      t = $(event.target);
+      c = t.data().choicenumber;
+      l = t.data().choicelevel;
+      cArray = c.split(',');
+      for (let i = 0; i < cArray.length; i++) {
+        go(cArray[i], l);
+      }
     });
 
     $("a.view").on('click touchend', function(event) {
@@ -93,8 +104,145 @@
       .on('mouseover', function(d,i) { startDemo(d.choicenumber); })
       .on('mouseout', function(d,i) { stopDemo(d.choicenumber); });
 
-  
-    // This forces the view to be redrawn if the user resizes their 
+    $('#scenarious-dropdown').on('click touchend', function(event){
+      event.preventDefault();
+      $('.scenarious-sub-menu').toggleClass('sub-menu');
+    });
+
+    $('#show_emissions').on('click touchend', function(event){
+      event.preventDefault();
+
+      $('#supply_chart').hide();
+      $('#demand_chart').hide();
+      $('#emissions_chart').show();
+
+      $(this).addClass('chart-selected');
+      $('#show_demand').removeClass('chart-selected');
+      $('#show_supply').removeClass('chart-selected');
+    });
+
+    $('#show_supply').on('click touchend', function(event){
+      event.preventDefault();
+
+      $('#supply_chart').show();
+      $('#demand_chart').hide();
+      $('#emissions_chart').hide();
+
+      $(this).addClass('chart-selected');
+      $('#show_demand').removeClass('chart-selected');
+      $('#show_emissions').removeClass('chart-selected');
+    });
+
+    $('#show_demand').on('click touchend', function(event){
+      event.preventDefault();
+
+      $('#supply_chart').hide();
+      $('#demand_chart').show();
+      $('#emissions_chart').hide();
+
+      $(this).addClass('chart-selected');
+      $('#show_supply').removeClass('chart-selected');
+      $('#show_emissions').removeClass('chart-selected');
+    });
+
+    $('.card').on('click touchend', function(event){
+      event.preventDefault();
+      $(this).parent('.levers-sector').siblings('.levers-subsector-container').toggleClass('open');
+    });
+    // PAGE TABS
+    $('.calculator-page').on('click touchend', function(event){
+      event.preventDefault();
+      // show-hide content
+      $('.calculator-wrapper').addClass('active-page');
+      $('.how-to-use-wrapper').removeClass('active-page');
+      $('.about-page-wrapper').removeClass('active-page');
+
+      // change active tab header
+      $(this).addClass('active-tab');
+      $('.how-to-use-page').removeClass('active-tab');
+      $('.about-project-page').removeClass('active-tab');
+    });
+
+    $('.how-to-use-page').on('click touchend', function(event){
+      event.preventDefault();
+
+      $('.calculator-wrapper').removeClass('active-page');
+      $('.how-to-use-wrapper').addClass('active-page');
+      $('.about-page-wrapper').removeClass('active-page');
+
+      $(this).addClass('active-tab');
+      $('.calculator-page').removeClass('active-tab');
+      $('.about-project-page').removeClass('active-tab');
+    });
+
+
+
+    $('.about-project-page').on('click touchend', function(event){
+      event.preventDefault();
+
+      $('.calculator-wrapper').removeClass('active-page');
+      $('.how-to-use-wrapper').removeClass('active-page');
+      $('.about-page-wrapper').addClass('active-page');
+
+      $(this).addClass('active-tab');
+      $('.calculator-page').removeClass('active-tab');
+      $('.how-to-use-page').removeClass('active-tab');
+    });
+
+    // MODALS
+    // $('.calculator-page').on('click touchend', function(event){
+    //   event.preventDefault();
+
+    //   $('.modal-how-to-use').hide();
+    //   $('.modal-about-project').hide();
+
+    //   $(this).addClass('active-tab');
+    //   $('.how-to-use').removeClass('active-tab');
+    //   $('.about-project').removeClass('active-tab');
+    // });
+
+    $('.how-to-use').on('click touchend', function(event){
+      event.preventDefault();
+
+      $('.modal-how-to-use').show();
+      $('.modal-about-project').hide();
+
+      // $(this).addClass('active-tab');
+      // $('.calculator').removeClass('active-tab');
+      // $('.about-project').removeClass('active-tab');
+    });
+
+
+
+    $('.about-project').on('click touchend', function(event){
+      event.preventDefault();
+
+      $('.modal-how-to-use').hide();
+      $('.modal-about-project').show();
+
+      // $(this).addClass('active-tab');
+      // $('.calculator').removeClass('active-tab');
+      // $('.how-to-use').removeClass('active-tab');
+    });
+
+
+    $('.modal-close-howto-icon ').on('click touchend', function(){
+      $('.modal-how-to-use').toggle();
+
+
+      // $('.calculator').addClass('active-tab');
+      // $('.how-to-use').removeClass('active-tab');
+      // $('.about-project').removeClass('active-tab');
+    });
+
+    $('.modal-close-about-icon').on('click touchend', function(){
+      $('.modal-about-project').toggle();
+
+      // $('.calculator').addClass('active-tab');
+      // $('.how-to-use').removeClass('active-tab');
+      // $('.about-project').removeClass('active-tab');
+    });
+    // This forces the view to be redrawn if the user resizes their
     // browser window. It uses a timer to only trigger the redraw
     // half a second after the user has stopped resizing.
     // FIXME: The redrawing sometimes appears buggy.

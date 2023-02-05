@@ -17,14 +17,117 @@ body {
   top: 20px;
   left: 0px;
   text-align: center;
-  z-index: 10; }
+  z-index: 99; }
   #calculating span {
     padding: 3px;
     background-color: yellow; }
 
 #results {
-  overflow: hidden; }
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
 
 #snippets {
   display: none;
+}
+
+.levers-container {
+  max-height: 568px;
+  overflow-y: scroll;
+}
+
+.levers-subsector-container {
+  padding: 3px 8px 0;
+  align-self: normal;
+}
+
+.scenarious-sub-menu {
+  display: none;
+}
+
+#supply_chart,
+#emissions_chart {
+  display: none;
+}
+
+#demand_chart {
+  width: 500px;
+}
+
+#emissions_chart {
+  width: 600px;
+}
+
+#supply_chart {
+  width: 500px;
+}
+
+.subtab-menu-charts a {
+  padding: 4.5px 12px;
+  margin: 0 12px;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  letter-spacing: -0.02em;
+  color: #646569;
+  text-decoration: none;
+}
+
+.subtab-menu-charts a:hover {
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 50px;
+  background: #EBF3FF;
+}
+
+.subtab-menu-charts a:active {
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 50px;
+  background: #FFF3D3;
+}
+
+.subtab-menu-charts a.chart-selected {
+  background: #FFF3D3;
+  font-weight: 500;
+  border-radius: 50px;
+}
+
+.calculator-wrapper .calculator-blocks .calculator-inputs .levers-container .levers-table .levers .levers-sector-container div.levers-subsector-container.open {
+  display: flex;
+}
+
+.calculator-wrapper .calculator-blocks .calculator-inputs .levers-container .levers-table .levers .levers-sector-container div.levers-subsector-container {
+  display: none;
+}
+
+.modal-how-to-use-mask.modal-how-to-use,
+.modal-about-mask.modal-about-project {
+  display: none;
+}
+
+.header-wrapper .header-block .page-links nav.navigation-desktop a.page-link-item.active-tab {
+  height: 50px;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: -0.02em;
+  color: #49494D;
+  background-color: #F1F1F1;
+  border-radius: 4px 4px 0 0;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+}
+
+body .calculator-wrapper,
+body .how-to-use-wrapper,
+body .about-page-wrapper {
+  display: none;
+}
+
+.how-to-use-wrapper.active-page,
+.about-page-wrapper.active-page,
+.calculator-wrapper.active-page {
+  display: flex;
 }

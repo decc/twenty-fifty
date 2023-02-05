@@ -2,14 +2,17 @@
 <html>
   <head>
     <!-- Probably always a good idea to be utf-8 -->
-    <meta charset="utf-8"> 
+    <meta charset="utf-8">
     <!-- So iPads can view the app in full screen -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <!-- This prevents Internet Explorer from entering 'quirks' mode -->
     <meta content='IE=edge' http-equiv='X-UA-Compatible'>
-    <!-- Change the title to one for your own country -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Rubik:ital,wght@0,400;0,500;1,300&display=swap" rel="stylesheet">
+<!-- Change the title to one for your own country -->
     <title>2050 Pathways Calculator</title>
-    <!-- assets is a function definied in the Helper module in src/server.rb --> 
+    <!-- assets is a function definied in the Helper module in src/server.rb -->
     <link href='/assets/<%= assets['application.css']%>' media='screen' rel='stylesheet' type='text/css' />
     <script src='/assets/<%= assets['application.js']%>' type='text/javascript'></script>
     <!-- Change the Google Analytics code to one for your own country-->
@@ -26,23 +29,569 @@
   </head>
   <body>
 
-    <!-- only relevant for the UK -->
-    <div id="deprecation-warning" style="background: #FFD300; padding: 20px 2.4% 19px 2.4%; font-size: 16px; color: #000; border-bottom: solid 2px #28a197">
-      This calculator will be withdrawn on or after 30 June 2022.
-      The current UK 2050 calculator for Net Zero is the <a href='https://www.mackaycarboncalculator.beis.gov.uk'>MacKay Carbon Calculator</a>. It launched in December 2020.
-      For further information or to comment, go to <a href='https://www.gov.uk/guidance/carbon-calculator'>https://www.gov.uk/guidance/carbon-calculator</a>.
+    <div class="header-wrapper">
+        <div class="header-block">
+            <div class="logo-block">
+                <div class="header-logo">
+                    <a href="https://klimatam.lv/" target="_blank" >
+                        <img src="/assets/logos/logo_Klimatam.svg" alt="logo">
+                    </a>
+                </div>
+                <div class="header-title">
+                    Klimata kalkulators 2050
+                </div>
+            </div>
+            <div class="page-links">
+                <div class="burger-menu-icon">
+                    <span class="nav-hamburger"></span>
+                </div>
+                <nav class="navigation-desktop">
+                    <a href="/" class="page-link-item calculator-page active-tab">Kalkulators</a>
+                    <a href="/ka-lietot" class="page-link-item how-to-use-page">Kā lietot?</a>
+                    <a href="/par-kalkulatoru" class="page-link-item about-project-page">Par projektu</a>
+                </nav>
+                <nav class="navigation-modal-windows">
+                    <a href="#" class="how-to-use">Kā lietot kalkulatoru?</a>
+                    <a href="#" class="about-project">Par projektu</a>
+                </nav>
+            </div>
+        </div>
     </div>
 
-    <!-- Other countries may want to delete this warning. It is hidden initially by css in src/stylesheets/body.css
-      Code in the checkSVGWorks function in src/javascripts/controller.js checks if the user's web browser 
-      supports SVG and, if it doesn't, shows this div.  -->
-    <div id='svgWarn'>
-      This interface requires <a href='http://caniuse.com/#cats=SVG'>a browser that supports SVG.</a> it seems like your browser doesn't support SVG. We have an <a href='http://uk-old.2050.org.uk'>old version of this calculator</a> that may work for you. Alternatively you can download <a href='http://2050-calculator-tool-wiki.decc.gov.uk/pages/140'>an excel version.</a>
-      <p>
-        <a href='#' onclick="$('#svgWarn').hide()">Hide this message.</a>
-      </p>
+    <div class="calculator-wrapper active-page">
+        <div class="calculator-blocks">
+          <div class="calculator-inputs">
+        <div class="inputs-navigation">
+            <span class="info-button info-button__scenarious">
+                <span></span>
+            </span>
+            <div class="scenario-dropdown">
+                <div class="menu-item">
+                    <a href="#" id="scenarious-dropdown">
+                      Scenāriju piemēri
+                    </a>
+                    <svg width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.1455 1.3413L7.14551 7.33887L1.14551 1.3413" stroke="#646569" stroke-width="2"/>
+                    </svg>
+                        <div class="scenarious-sub-menu">
+                            <div class="menu-item">
+                                <a href="#">Visi ambīciju līmeņi 2</a>
+                            </div>
+                            <div class="menu-item">
+                            <a href="#">Visi ambīciju līmeņi 3</a>
+                          </div>
+                            <div class="menu-item">
+                                <a href="#">Sasniegts 0% CO2 līmenis</a>
+                              </div>
+                        </div>
+                </div>
+            </div>
+            <div class="button-container">
+                <button class="button button__reset">Atiestatīt</button>
+            </div>
+        </div>
+        <div class="levers-container">
+            <div class="levers-header">
+                <div class="levers-column__sectors">
+                    <span class="info-button info-button__sectors">
+                        <span></span>
+                    </span>
+                    <p>Sadaļas</p>
+                </div>
+                <div class="levers-column__steps">
+                    <span class="info-button info-button__steps">
+                        <span></span>
+                    </span>
+                    <p>Ambīciju līmenis:</p>
+                </div>
+            </div>
+            <div class="levers-table">
+                <div class="levers" id='classic_controls'>
+                  <!-- Transports -->
+                  <div class="levers-sector-container">
+                      <div class="levers-sector">
+                          <a class="card">
+                            <div class="sector-name">
+                                Transports
+                            </div>
+                            <div class="sector-logo">
+                                <img src="/assets/icons/IconTransport.svg" alt="sector logo">
+                            </div>
+                          </a>
+                          <div class="lever-steps-container">
+                              <div class="lever-step" data-choicelevel="1" data-choicenumber="25,26,27,28,29,30"></div>
+                              <div class="lever-step" data-choicelevel="2" data-choicenumber="25,26,27,28,29,30"></div>
+                              <div class="lever-step" data-choicelevel="3" data-choicenumber="25,26,27,28,29,30"></div>
+                              <div class="lever-step" data-choicelevel="4" data-choicenumber="25,26,27,28,29,30"></div>
+                          </div>
+                      </div>
+                      <div class="levers-subsector-container open">
+                        <table>
+                          <!-- One row per choice -->
+                          <% structure.choices[21..26].each do |choice| %>
+                            <tr class='<%= choice.incremental_or_alternative %>' id='r<%= choice.number %>'>
+                              <td class='name'>
+                                <a href='/assets/onepage/<%= choice.doc %>' target='_new' data-choicenumber='<%= choice.number %>'>
+                                  <%= choice.name %>
+                                </a>
+                              </td>
+                              <!-- td class='help'>
+                                <a title='Click for more detail on what choices <%= choice.levels.to_a.join(' ')%> mean.' href='/assets/onepage/<%= choice.doc %>' target='_new'>?</a>
+                              </ !-->
+                              <!-- One cell per level for that choice -->
+                              <% choice.levels.each.with_index do |level,i| %>
+                                <td class='choice'>
+                                  <a href='#' data-choicenumber='<%= choice.number %>' data-choicelevel='<%= i+1 %>' id='c<%= choice.number %>l<%= i+1%>' title='<%= choice.descriptions[i] %>' class='choiceLink' >
+
+                                </a>
+                              </td>
+                            <% end %>
+                            </tr>
+                          <% end %>
+                        </table>
+
+                      </div>
+                  </div>
+                  <!-- Mājsaimniecība -->
+                  <div class="levers-sector-container">
+                      <div class="levers-sector">
+                          <div class="card">
+                            <div class="sector-name">
+                              Mājsaimniecība
+                            </div>
+                            <div class="sector-logo">
+                                <img src="/assets/icons/IconBuildings.svg" alt="sector logo">
+                            </div>
+                          </div>
+                          <div class="lever-steps-container">
+                              <div class="lever-step" data-choicelevel="1" data-choicenumber="32,33,34,35,37,38"></div>
+                              <div class="lever-step" data-choicelevel="2" data-choicenumber="32,33,34,35,37,38"></div>
+                              <div class="lever-step" data-choicelevel="3" data-choicenumber="32,33,34,35,37,38"></div>
+                              <div class="lever-step" data-choicelevel="4" data-choicenumber="32,33,34,35,37,38"></div>
+                          </div>
+                      </div>
+                      <div class="levers-subsector-container ">
+                        <table>
+                          <!-- One row per choice -->
+                          <% structure.choices[27..32].each do |choice| %>
+                            <tr class='<%= choice.incremental_or_alternative %>' id='r<%= choice.number %>'>
+                              <td class='name'>
+                                <a href='/assets/onepage/<%= choice.doc %>' target='_new' data-choicenumber='<%= choice.number %>'>
+                                  <%= choice.name %>
+                                </a>
+                              </td>
+                              <!--td class='help'>
+                                <a title='Click for more detail on what choices <%= choice.levels.to_a.join(' ')%> mean.' href='/assets/onepage/<%= choice.doc %>' target='_new'>?</a>
+                              </!--td>
+                              <!-- One cell per level for that choice -->
+                              <% choice.levels.each.with_index do |level,i| %>
+                                <td class='choice'>
+                                  <a href='#' data-choicenumber='<%= choice.number %>' data-choicelevel='<%= i+1 %>' id='c<%= choice.number %>l<%= i+1%>' title='<%= choice.descriptions[i] %>' class='choiceLink' >
+
+                                </a>
+                              </td>
+                            <% end %>
+                            </tr>
+                          <% end %>
+                        </table>
+
+                      </div>
+                  </div>
+                  <!-- Komercdarbība -->
+                  <div class="levers-sector-container">
+                      <div class="levers-sector">
+                          <div class="card">
+                            <div class="sector-name">
+                              Komercdarbība
+                            </div>
+                            <div class="sector-logo">
+                                <img src="/assets/icons/IconIndustry.svg" alt="sector logo">
+                            </div>
+                          </div>
+                          <div class="lever-steps-container">
+                              <div class="lever-step" data-choicelevel="1" data-choicenumber="40,41,43,44,45,47,48"></div>
+                              <div class="lever-step" data-choicelevel="2" data-choicenumber="40,41,43,44,45,47,48"></div>
+                              <div class="lever-step" data-choicelevel="3" data-choicenumber="40,41,43,44,45,47,48"></div>
+                              <div class="lever-step" data-choicelevel="4" data-choicenumber="40,41,43,44,45,47,48"></div>
+                          </div>
+                      </div>
+                      <div class="levers-subsector-container ">
+                        <table>
+                          <!-- One row per choice -->
+                          <% structure.choices[33..39].each do |choice| %>
+                            <tr class='<%= choice.incremental_or_alternative %>' id='r<%= choice.number %>'>
+                              <td class='name'>
+                                <a href='/assets/onepage/<%= choice.doc %>' target='_new' data-choicenumber='<%= choice.number %>'>
+                                  <%= choice.name %>
+                                </a>
+                              </td>
+                              <!-- td class='help'>
+                                <a title='Click for more detail on what choices <%= choice.levels.to_a.join(' ')%> mean.' href='/assets/onepage/<%= choice.doc %>' target='_new'>?</a>
+                              </!-->
+                              <!-- One cell per level for that choice -->
+                              <% choice.levels.each.with_index do |level,i| %>
+                                <td class='choice'>
+                                  <a href='#' data-choicenumber='<%= choice.number %>' data-choicelevel='<%= i+1 %>' id='c<%= choice.number %>l<%= i+1%>' title='<%= choice.descriptions[i] %>' class='choiceLink' >
+
+                                </a>
+                              </td>
+                            <% end %>
+                            </tr>
+                          <% end %>
+                        </table>
+
+                      </div>
+                  </div>
+                  <!-- Bioenerģijas apgāde -->
+                  <div class="levers-sector-container">
+                      <div class="levers-sector">
+                          <div class="card">
+                            <div class="sector-name">
+                              Bioenerģijas apgāde
+                            </div>
+                            <div class="sector-logo">
+                                <img src="/assets/icons/IconBioenergy.svg" alt="sector logo">
+                            </div>
+                          </div>
+                          <div class="lever-steps-container">
+                              <div class="lever-step" data-choicelevel="1" data-choicenumber="21,22,17,18,19,20"></div>
+                              <div class="lever-step" data-choicelevel="2" data-choicenumber="21,22,17,18,19,20"></div>
+                              <div class="lever-step" data-choicelevel="3" data-choicenumber="21,22,17,18,19,20"></div>
+                              <div class="lever-step" data-choicelevel="4" data-choicenumber="21,22,17,18,19,20"></div>
+                          </div>
+                      </div>
+                      <div class="levers-subsector-container ">
+                        <table>
+                          <!-- One row per choice -->
+                          <% structure.choices[19..20].each do |choice| %>
+                            <tr class='<%= choice.incremental_or_alternative %>' id='r<%= choice.number %>'>
+                              <td class='name'>
+                                <a href='/assets/onepage/<%= choice.doc %>' target='_new' data-choicenumber='<%= choice.number %>'>
+                                  <%= choice.name %>
+                                </a>
+                              </td>
+                              <!-- td class='help'>
+                                <a title='Click for more detail on what choices <%= choice.levels.to_a.join(' ')%> mean.' href='/assets/onepage/<%= choice.doc %>' target='_new'>?</a>
+                              </!-->
+                              <!-- One cell per level for that choice -->
+                              <% choice.levels.each.with_index do |level,i| %>
+                                <td class='choice'>
+                                  <a href='#' data-choicenumber='<%= choice.number %>' data-choicelevel='<%= i+1 %>' id='c<%= choice.number %>l<%= i+1%>' title='<%= choice.descriptions[i] %>' class='choiceLink' >
+
+                                </a>
+                              </td>
+                            <% end %>
+                            </tr>
+                          <% end %>
+                          <!-- One row per choice -->
+                          <% structure.choices[15..18].each do |choice| %>
+                            <tr class='<%= choice.incremental_or_alternative %>' id='r<%= choice.number %>'>
+                              <td class='name'>
+                                <a href='/assets/onepage/<%= choice.doc %>' target='_new' data-choicenumber='<%= choice.number %>'>
+                                  <%= choice.name %>
+                                </a>
+                              </td>
+                              <!-- td class='help'>
+                                <a title='Click for more detail on what choices <%= choice.levels.to_a.join(' ')%> mean.' href='/assets/onepage/<%= choice.doc %>' target='_new'>?</a>
+                              </!-->
+                              <!-- One cell per level for that choice -->
+                              <% choice.levels.each.with_index do |level,i| %>
+                                <td class='choice'>
+                                  <a href='#' data-choicenumber='<%= choice.number %>' data-choicelevel='<%= i+1 %>' id='c<%= choice.number %>l<%= i+1%>' title='<%= choice.descriptions[i] %>' class='choiceLink' >
+
+                                </a>
+                              </td>
+                            <% end %>
+                            </tr>
+                          <% end %>
+                        </table>
+
+                      </div>
+                  </div>
+                  <!-- Enerģijas ražošana -->
+                  <div class="levers-sector-container">
+                      <div class="levers-sector">
+                          <div class="card">
+                            <div class="sector-name">
+                              Enerģijas ražošana
+                            </div>
+                            <div class="sector-logo">
+                                <img src="/assets/icons/IconElectricity.svg" alt="sector logo">
+                            </div>
+                          </div>
+                          <div class="lever-steps-container">
+                              <div class="lever-step" data-choicelevel="1" data-choicenumber="9,2,3,5,4,10,11,14,15"></div>
+                              <div class="lever-step" data-choicelevel="2" data-choicenumber="9,2,3,5,4,10,11,14,15"></div>
+                              <div class="lever-step" data-choicelevel="3" data-choicenumber="9,2,3,5,4,10,11,14,15"></div>
+                              <div class="lever-step" data-choicelevel="4" data-choicenumber="9,2,3,5,4,10,11,14,15"></div>
+                          </div>
+                      </div>
+                      <div class="levers-subsector-container ">
+                        <table>
+                          <!-- One row per choice -->
+
+                            <tr class='<%= structure.choices[8].incremental_or_alternative %>' id='r<%= structure.choices[8].number %>'>
+                              <td class='name'>
+                                <a href='/assets/onepage/<%= structure.choices[8].doc %>' target='_new' data-choicenumber='<%= structure.choices[8].number %>'>
+                                  <%= structure.choices[8].name %>
+                                </a>
+                              </td>
+                              <!-- td class='help'>
+                                <a title='Click for more detail on what choices <%= structure.choices[8].levels.to_a.join(' ')%> mean.' href='/assets/onepage/<%= structure.choices[8].doc %>' target='_new'>?</a>
+                              </!-->
+                              <!-- One cell per level for that choice -->
+                              <% structure.choices[8].levels.each.with_index do |level,i| %>
+                                <td class='choice'>
+                                  <a href='#' data-choicenumber='<%= structure.choices[8].number %>' data-choicelevel='<%= i+1 %>' id='c<%= structure.choices[8].number %>l<%= i+1%>' title='<%= structure.choices[8].descriptions[i] %>' class='choiceLink' >
+
+                                </a>
+                              </td>
+                            <% end %>
+                            </tr>
+
+                          <!-- One row per choice -->
+                          <% structure.choices[1..2].each do |choice| %>
+                            <tr class='<%= choice.incremental_or_alternative %>' id='r<%= choice.number %>'>
+                              <td class='name'>
+                                <a href='/assets/onepage/<%= choice.doc %>' target='_new' data-choicenumber='<%= choice.number %>'>
+                                  <%= choice.name %>
+                                </a>
+                              </td>
+                              <!-- td class='help'>
+                                <a title='Click for more detail on what choices <%= choice.levels.to_a.join(' ')%> mean.' href='/assets/onepage/<%= choice.doc %>' target='_new'>?</a>
+                              </!-->
+                              <!-- One cell per level for that choice -->
+                              <% choice.levels.each.with_index do |level,i| %>
+                                <td class='choice'>
+                                  <a href='#' data-choicenumber='<%= choice.number %>' data-choicelevel='<%= i+1 %>' id='c<%= choice.number %>l<%= i+1%>' title='<%= choice.descriptions[i] %>' class='choiceLink' >
+
+                                </a>
+                              </td>
+                            <% end %>
+                            </tr>
+                          <% end %>
+                          <!-- One row per choice -->
+
+                            <tr class='<%= structure.choices[4].incremental_or_alternative %>' id='r<%= structure.choices[4].number %>'>
+                              <td class='name'>
+                                <a href='/assets/onepage/<%= structure.choices[4].doc %>' target='_new' data-choicenumber='<%= structure.choices[4].number %>'>
+                                  <%= structure.choices[4].name %>
+                                </a>
+                              </td>
+                              <!-- td class='help'>
+                                <a title='Click for more detail on what choices <%= structure.choices[4].levels.to_a.join(' ')%> mean.' href='/assets/onepage/<%= structure.choices[4].doc %>' target='_new'>?</a>
+                              </!-->
+                              <!-- One cell per level for that choice -->
+                              <% structure.choices[4].levels.each.with_index do |level,i| %>
+                                <td class='choice'>
+                                  <a href='#' data-choicenumber='<%= structure.choices[4].number %>' data-choicelevel='<%= i+1 %>' id='c<%= structure.choices[4].number %>l<%= i+1%>' title='<%= structure.choices[4].descriptions[i] %>' class='choiceLink' >
+
+                                </a>
+                              </td>
+                            <% end %>
+                            </tr>
+
+                          <!-- One row per choice -->
+
+                            <tr class='<%= structure.choices[3].incremental_or_alternative %>' id='r<%= structure.choices[3].number %>'>
+                              <td class='name'>
+                                <a href='/assets/onepage/<%= structure.choices[3].doc %>' target='_new' data-choicenumber='<%= structure.choices[3].number %>'>
+                                  <%= structure.choices[3].name %>
+                                </a>
+                              </td>
+                              <!-- td class='help'>
+                                <a title='Click for more detail on what choices <%= structure.choices[3].levels.to_a.join(' ')%> mean.' href='/assets/onepage/<%= structure.choices[3].doc %>' target='_new'>?</a>
+                              </!-->
+                              <!-- One cell per level for that choice -->
+                              <% structure.choices[3].levels.each.with_index do |level,i| %>
+                                <td class='choice'>
+                                  <a href='#' data-choicenumber='<%= structure.choices[3].number %>' data-choicelevel='<%= i+1 %>' id='c<%= structure.choices[3].number %>l<%= i+1%>' title='<%= structure.choices[3].descriptions[i] %>' class='choiceLink' >
+
+                                </a>
+                              </td>
+                            <% end %>
+                            </tr>
+
+                            <!-- One row per choice -->
+                          <% structure.choices[9..10].each do |choice| %>
+                            <tr class='<%= choice.incremental_or_alternative %>' id='r<%= choice.number %>'>
+                              <td class='name'>
+                                <a href='/assets/onepage/<%= choice.doc %>' target='_new' data-choicenumber='<%= choice.number %>'>
+                                  <%= choice.name %>
+                                </a>
+                              </td>
+                              <!-- td class='help'>
+                                <a title='Click for more detail on what choices <%= choice.levels.to_a.join(' ')%> mean.' href='/assets/onepage/<%= choice.doc %>' target='_new'>?</a>
+                              </!-->
+                              <!-- One cell per level for that choice -->
+                              <% choice.levels.each.with_index do |level,i| %>
+                                <td class='choice'>
+                                  <a href='#' data-choicenumber='<%= choice.number %>' data-choicelevel='<%= i+1 %>' id='c<%= choice.number %>l<%= i+1%>' title='<%= choice.descriptions[i] %>' class='choiceLink' >
+
+                                </a>
+                              </td>
+                            <% end %>
+                            </tr>
+                          <% end %>
+
+                          <!-- One row per choice -->
+                          <% structure.choices[13..14].each do |choice| %>
+                            <tr class='<%= choice.incremental_or_alternative %>' id='r<%= choice.number %>'>
+                              <td class='name'>
+                                <a href='/assets/onepage/<%= choice.doc %>' target='_new' data-choicenumber='<%= choice.number %>'>
+                                  <%= choice.name %>
+                                </a>
+                              </td>
+                              <!-- td class='help'>
+                                <a title='Click for more detail on what choices <%= choice.levels.to_a.join(' ')%> mean.' href='/assets/onepage/<%= choice.doc %>' target='_new'>?</a>
+                              </!-->
+                              <!-- One cell per level for that choice -->
+                              <% choice.levels.each.with_index do |level,i| %>
+                                <td class='choice'>
+                                  <a href='#' data-choicenumber='<%= choice.number %>' data-choicelevel='<%= i+1 %>' id='c<%= choice.number %>l<%= i+1%>' title='<%= choice.descriptions[i] %>' class='choiceLink' >
+
+                                </a>
+                              </td>
+                            <% end %>
+                            </tr>
+                          <% end %>
+                        </table>
+
+                      </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+              <!-- Calculator charts-->
+              <div class="calculator-outputs">
+                    <div class="subtab-menu">
+                      <div class="subtab-menu-charts">
+                        <a href="#" id="show_emissions">CO2 emisijas</a>
+                        <a href="#" id="show_supply">Enerģijas ieguve</a>
+                        <a href="#" id="show_demand" class=" chart-selected">Enerģijas patēriņš</a>
+                      </div>
+                      <div class="subtab-menu-share">
+                        <span>Dalīties</span>
+                      </div>
+                    </div>
+                    <div class="output-charts-container">
+                      <div id="overview" class="chart-container">
+                        <div id='results'></div>
+
+                      </div>
+
+                  </div>
+              </div>
+        </div>
+    </div>
+    <!-- How to use page -->
+    <div class="how-to-use-wrapper">
+      <div class="how-to-use-block--margin">
+          <div class="how-to-use-block">
+              <div class="how-to-use-tab-container">
+                  <nav>
+                      <a href="#">Sadaļas</a>
+                      <a href="#">Ambīciju līmeņi</a>
+                      <a href="#">Grafiki</a>
+                      <a href="#">Apzīmējumi</a>
+                  </nav>
+              </div>
+              <div class="how-to-use-content-container">
+                  <div class="how-to-use-img-container">
+                      <img src="" alt="image">
+                  </div>
+                  <div class="how-to-use-text-container">
+                      <h2>This is heading</h2>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad quisquam quasi voluptas dolore soluta, nulla quis eos illum aliquid, dignissimos laudantium consequuntur quaerat provident cupiditate ipsum beatae itaque quibusdam deserunt!</p>
+                  </div>
+              </div>
+
+          </div>
+      </div>
+    </div>
+    <!-- about page -->
+    <div class="about-wrapper about-page-wrapper">
+      <div class="about-block--margin">
+          <div class="about-block">
+              <div class="about-block__text-content">
+                  <h2>This is heading</h2>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad quisquam quasi voluptas dolore soluta, nulla quis eos illum aliquid, dignissimos laudantium consequuntur quaerat provident cupiditate ipsum beatae itaque quibusdam deserunt!</p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad quisquam quasi voluptas dolore soluta, nulla quis eos illum aliquid, dignissimos laudantium consequuntur quaerat provident cupiditate ipsum beatae itaque quibusdam deserunt!</p>
+              </div>
+              <div class="about-block__text-content">
+                  <h2>This is heading</h2>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad quisquam quasi voluptas dolore soluta, nulla quis eos illum aliquid, dignissimos laudantium consequuntur quaerat provident cupiditate ipsum beatae itaque quibusdam deserunt!</p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad quisquam quasi voluptas dolore soluta, nulla quis eos illum aliquid, dignissimos laudantium consequuntur quaerat provident cupiditate ipsum beatae itaque quibusdam deserunt!</p>
+              </div>
+              <div class="about-block__text-content">
+                  <h2>This is heading</h2>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad quisquam quasi voluptas dolore soluta, nulla quis eos illum aliquid, dignissimos laudantium consequuntur quaerat provident cupiditate ipsum beatae itaque quibusdam deserunt!</p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad quisquam quasi voluptas dolore soluta, nulla quis eos illum aliquid, dignissimos laudantium consequuntur quaerat provident cupiditate ipsum beatae itaque quibusdam deserunt!</p>
+              </div>
+
+          </div>
+      </div>
     </div>
 
+    <!-- Modal how to use-->
+    <div class="modal-how-to-use-mask modal-how-to-use">
+        <div class="modal-how-to-use-wrapper">
+            <div class="modal-how-to-use-block">
+                <div class="how-to-use-tab-container">
+                    <button class="modal-close-icon modal-close-howto-icon">
+                        <span></span>
+                    </button>
+                    <nav>
+                        <a href="#">Sadaļas</a>
+                        <a href="#">Ambīciju līmeņi</a>
+                        <a href="#">Grafiki</a>
+                        <a href="#">Apzīmējumi</a>
+                    </nav>
+                </div>
+                <div class="how-to-use-content-container">
+                    <div class="how-to-use-img-container">
+                        <img src="" alt="image">
+                    </div>
+                    <div class="how-to-use-text-container">
+                        <h2>This is heading</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad quisquam quasi voluptas dolore soluta, nulla quis eos illum aliquid, dignissimos laudantium consequuntur quaerat provident cupiditate ipsum beatae itaque quibusdam deserunt!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal about -->
+    <div class="modal-about-mask modal-about-project">
+        <div class="modal-about-wrapper">
+            <div class="modal-about-block">
+                <button class="modal-close-icon modal-close-about-icon" >
+                    <span></span>
+                </button>
+                <div class="modal-about-block__text-content">
+                    <h2>This is heading</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad quisquam quasi voluptas dolore soluta, nulla quis eos illum aliquid, dignissimos laudantium consequuntur quaerat provident cupiditate ipsum beatae itaque quibusdam deserunt!</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad quisquam quasi voluptas dolore soluta, nulla quis eos illum aliquid, dignissimos laudantium consequuntur quaerat provident cupiditate ipsum beatae itaque quibusdam deserunt!</p>
+                </div>
+                <div class="modal-about-block__text-content">
+                    <h2>This is heading</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad quisquam quasi voluptas dolore soluta, nulla quis eos illum aliquid, dignissimos laudantium consequuntur quaerat provident cupiditate ipsum beatae itaque quibusdam deserunt!</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad quisquam quasi voluptas dolore soluta, nulla quis eos illum aliquid, dignissimos laudantium consequuntur quaerat provident cupiditate ipsum beatae itaque quibusdam deserunt!</p>
+                </div>
+                <div class="modal-about-block__text-content">
+                    <h2>This is heading</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad quisquam quasi voluptas dolore soluta, nulla quis eos illum aliquid, dignissimos laudantium consequuntur quaerat provident cupiditate ipsum beatae itaque quibusdam deserunt!</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad quisquam quasi voluptas dolore soluta, nulla quis eos illum aliquid, dignissimos laudantium consequuntur quaerat provident cupiditate ipsum beatae itaque quibusdam deserunt!</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- This appears while the tool is waiting for data from the server -->
+    <div id='calculating'>
+      <span>Calculating</span>
+    </div>
+    <% if false %>
     <div id='topbar'>
 
       <div id='name'>
@@ -85,12 +634,11 @@
       <!-- Change this to point to your local website -->
       <a href='http://2050-calculator-tool-wiki.decc.gov.uk/pages/122'>More&hellip;</a>
     </div>
-    <!-- This appears while the tool is waiting for data from the server -->
-    <div id='calculating'>
-      <span>Calculating</span>
-    </div>
+
     <!-- / The charts will be drawn in this block -->
+
     <div id='results'></div>
+
     <!-- / These are the controls -->
     <div id='classic_controls'>
       <!-- The left column -->
@@ -104,14 +652,14 @@
                   <%= choice.name %>
                 </a>
               </td>
-              <td class='help'>
+              <!-- td class='help'>
                 <a title='Click for more detail on what choices <%= choice.levels.to_a.join(' ')%> mean.' href='/assets/onepage/<%= choice.doc %>' target='_new'>?</a>
-              </td>
+              </!-->
               <!-- One cell per level for that choice -->
               <% choice.levels.each.with_index do |level,i| %>
                 <td class='choice'>
                   <a href='#' data-choicenumber='<%= choice.number %>' data-choicelevel='<%= i+1 %>' id='c<%= choice.number %>l<%= i+1%>' title='<%= choice.descriptions[i] %>' class='choiceLink' >
-                    <%= level %>
+
                 </a>
               </td>
             <% end %>
@@ -129,14 +677,14 @@
                   <%= choice.name %>
                 </a>
               </td>
-              <td class='help'>
+              <!-- td class='help'>
                 <a title='Click for more detail on what choices <%= choice.levels.to_a.join(' ')%> mean.' href='/assets/onepage/<%= choice.doc %>' target='_new'>?</a>
-              </td>
+              </!-->
               <!-- One cell per level for that choice -->
               <% choice.levels.each.with_index do |level,i| %>
                 <td class='choice'>
                   <a href='#' data-choicenumber='<%= choice.number %>' data-choicelevel='<%= i+1 %>' id='c<%= choice.number %>l<%= i+1%>' title='<%= choice.descriptions[i] %>' class='choiceLink' >
-                    <%= level %>
+
                 </a>
               </td>
             <% end %>
@@ -155,14 +703,14 @@
                   <%= choice.name %>
                 </a>
               </td>
-              <td class='help'>
+              <!-- td class='help'>
                 <a title='Click for more detail on what choices <%= choice.levels.to_a.join(' ')%> mean.' href='/assets/onepage/<%= choice.doc %>' target='_new'>?</a>
-              </td>
+              </!-->
               <!-- One cell per level for that choice -->
               <% choice.levels.each.with_index do |level,i| %>
                 <td class='choice'>
                   <a href='#' data-choicenumber='<%= choice.number %>' data-choicelevel='<%= i+1 %>' id='c<%= choice.number %>l<%= i+1%>' title='<%= choice.descriptions[i] %>' class='choiceLink' >
-                    <%= level %>
+
                 </a>
               </td>
             <% end %>
@@ -179,21 +727,97 @@
           <tr><td><div class='alternate'>A</div>&ndash;<div class='alternate'>D</div></td><td>A range of options where one alternative is not neccesiarily harder than another</td></tr>
           <tr class='primary_energy_notes'><td>Total used in the UK<sup>1</sup></td><td>Primary energy supply is normally higher than final energy demand, because of the energy used to generate electricity.</td></tr>
           <tr class='primary_energy_notes'><td>Targets<sup>2</sup></td><td>The targets up to 2027 exclude international aviation and shipping. They are also calculated as five year 'budgets', rather than the single year targets shown here.</td></tr>
-          <tr class='primary_energy_notes'><td>Total<sup>3</sup></td><td>The total includes the reduction in emissions from carbon capture and storage and from growing new biomass to replace that used (the bioenergy credit).</td></tr> 
+          <tr class='primary_energy_notes'><td>Total<sup>3</sup></td><td>The total includes the reduction in emissions from carbon capture and storage and from growing new biomass to replace that used (the bioenergy credit).</td></tr>
       </table>
       </div>
     </div>
+    <% end %>
     <!-- This is needed to show the tooltips, don't remove -->
     <div id='tooltip'></div>
-    <div id='footer'>
-      <!-- Change this to link to your country's website -->
-      All the assumptions and calculations are available in a spreadsheet. Download <a href='/model.xlsx'>Excel <%= structure.reported_calculator_version %> <%= %></a> (<a href='http://2050-calculator-tool-wiki.decc.gov.uk/pages/140'>Version history</a>). The source code for this site is available under an open source licence from <a href='http://github.com/decc/twenty-fifty'>http://github.com/decc/twenty-fifty</a>
+    <div class="partners-wrapper">
+        <div class="partners-block">
+            <a class="brittish-embassy" href="https://www.gov.uk/world/organisations/british-embassy-riga">
+                <img src="/assets/logos/logo_Brittish_embassy.svg" alt="logo">
+            </a>
+            <a class="rtg" href="https://www.rigatechgirls.com/">
+                <img src="/assets/logos/logo_RTG.svg" alt="logo">
+            </a>
+        </div>
+    </div>
+
+    <div class="footer-wrapper">
+        <div class="footer-blocks">
+            <div class="footer-blocks__container">
+                <div class="flex-container-one">
+                    <ul class="footer-list">
+                        <li class="menu-item">
+                            <a href="https://klimatam.lv/klimata-parmainas/">Klimata pārmaiņas</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="https://klimatam.lv/iespejas/">Iespējas</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="https://klimatam.lv/informacijas-kratuve/">Krātuve</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="https://klimatam.lv/merkauditorijas/">Mērķauditorijas</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="https://klimatam.lv/klimats-klimata-parmainas-jaunumi/">Jaunumi</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="https://klimatam.lv/biezak-uzdotie-jautajumi/">BUJ</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="https://klimatam.lv/privatuma-politika/">Privātuma politika</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="https://klimatam.lv/pieklustamiba/">Piekļūstamība</a>
+                        </li>
+                    </ul>
+                    <div class="footer-subscribe-newsletter">
+                        <h6>Pierakstīties jaunumiem epastā</h6>
+                        <div class="mailchimp-main">
+                            <form action="">
+                                <div class="form-fields">
+                                    <input type="email" placeholder="Ievadiet epasta adresi">
+                                    <button class="button-submit-email" type="submit">
+                                        <span></span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-container-two">
+                    <div class="footer-contacts">
+                        <p>
+                            <img src="/assets/icons/IconLock.png" alt="iconLock" width="51" height="61">Informējam, ka pierakstoties jaunumiem Jūs piekrītat, ka Jūsu elektroniskā pasta
+                            adrese tiks izmantota tīmekļvietnes klimatam.lv jaunumu nosūtīšanai. Jūsu
+                            personas dati netiks nodoti trešajām personām, nosūtīti trešajām valstīm vai
+                            izmantoti citiem nolūkiem. Atsaukt piekrišanu jaunumu saņemšanai e-pastā
+                            Jūs varat nosūtot elektroniskā pasta vēstuli uz info@klimatam.lv
+                        </p>
+                        <p>Pretenziju gadījumā Jums ir tiesības iesniegt sūdzību Datu valsts inspekcijai vai griezties
+                            ar jautājumu pie VARAM datu aizsardzības speciālista rakstot das@varam.gov.lv
+                        </p>
+                        <p>
+                            Vides aizsardzības un reģionālas attīstības ministrija<br>
+                            Peldu iela 25, Rīga, LV-1494, Latvija<br>
+                            Tālrunis: +371 67026907<br>
+                            E-pasts: info@klimatam.lv
+                        </p>
+                        <p>Visas tiesības aizsargātas 2021</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- The following html is only displayed on screen when a user selects a particular view -->
     <div id='snippets'>
       <!-- This is shown the first time a user visits a costs page -->
       <div id='cost_caveats'>
-        We would like your help to develop this tool. Please <a href="http://2050-calculator-tool-wiki.decc.gov.uk">click here</a> to find out more about our methodology and suggest improvements.  Before viewing the cost implications of your choices, please note that: 
+        We would like your help to develop this tool. Please <a href="http://2050-calculator-tool-wiki.decc.gov.uk">click here</a> to find out more about our methodology and suggest improvements.  Before viewing the cost implications of your choices, please note that:
           <ol>
             <li> The Calculator expresses pathway costs as 'average pounds per person per year'. This is not the same as your energy bill. It is the cost of everything the UK buys that makes, converts, saves or uses energy: from kettles and insulation foam to trains and power stations. You can choose to see the results in different units when using the <a href=\"http://www.decc.gov.uk/2050\">excel version of the Calculator.</a> </li>
             <li>The Calculator does not choose any options automatically, regardless of their cost.</li>

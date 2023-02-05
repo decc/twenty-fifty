@@ -5,10 +5,18 @@ svg {
   padding: 0;
   border: 0;
   margin: 0;
-  margin-left: 2.4%;
-  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  /* width: 75%; */
+  max-height: 550px;
   margin-bottom: 0px;
-  float: left; }
+  /* float: left;  */
+}
+
+.chart-container {
+  padding-top: 1rem;
+  height: 100%;
+}
 
 .chart rect.backgroundrect {
   fill: #fff; }
@@ -95,7 +103,7 @@ g.context path {
   fill: #660066; }
 
 .importedgas {
-  fill: #79187f; 
+  fill: #79187f;
 }
 
 .coal {
