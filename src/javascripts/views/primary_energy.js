@@ -176,7 +176,9 @@ window.twentyfifty.views.primary_energy_chart = function() {
     $('.column').animate({
       height: Math.round(percent*100)+'%',
     });
-
+    $('.label-percent').animate({
+      top: Math.round(percent*100)+'%',
+    });
     $('.label-percent').text(Math.round(percent*100)+'%')
 
     t.enter().append('text')
