@@ -136,7 +136,7 @@ body .about-page-wrapper {
 /* gauge */
 .outer-wrapper{
   display: inline-block;
-  margin: 5px 15px;
+  margin: 5px 30px 5px 15px;
   padding: 25px 0;
   min-width: 20px;
   position: relative;
