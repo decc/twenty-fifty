@@ -28,6 +28,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100%;
+  flex-direction: row-reverse;
 }
 
 #snippets {
@@ -136,23 +137,25 @@ body .about-page-wrapper {
 .outer-wrapper{
   display: inline-block;
   margin: 5px 15px;
-  padding: 25px 15px;
-  background: #eee;
+  padding: 25px 0;
   min-width: 50px;
 }
 
 .column-wrapper{
-  height: 200px;
-  width: 20px;
+  height: 300px;
+  width: 10px;
   background: #CFD8DC;
   transform: rotate(180deg);
   margin: 0 auto;
+  border-radius: 10px;
 }
 
 .column{
-  width: 20px;
+  width: 10px;
   height: 0%;
   background: #90A4AE;
+  border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .percentage, .value{
