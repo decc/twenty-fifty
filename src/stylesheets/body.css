@@ -145,7 +145,7 @@ body .about-page-wrapper {
   height: 300px;
   width: 24px;
   background: #F1F1F1;
-  transform: rotate(180deg);
+  /* transform: rotate(180deg); */
   margin: 0 auto;
   border-radius: 10px;
   position: relative;
