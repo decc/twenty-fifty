@@ -66,7 +66,7 @@
       $(this).parent().children().removeClass('active');
       $(this).addClass('active');
       $(this).parent().find(':nth-child(-n+'+l+')').addClass('active');
-    }
+    });
 
     $(".lever-step").on('click touchend', function(event) {
       event.preventDefault();
