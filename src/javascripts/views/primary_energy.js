@@ -171,6 +171,13 @@ window.twentyfifty.views.primary_energy_chart = function() {
     // This is to add the target text to the chart
     t = d3.select('#emissions_chart g.drawing').selectAll('text.target')
       .data([percent*100]);
+    console.log("emissions", percent*100);
+
+    $('.column').animate({
+      height: Math.round(percent*100)+'%',
+    });
+
+    $('.label-percent').text(Math.round(percent*100)+'%')
 
     t.enter().append('text')
       .attr('class', 'target');

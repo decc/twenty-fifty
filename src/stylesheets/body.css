@@ -28,6 +28,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100%;
+  flex-direction: row-reverse;
 }
 
 #snippets {
@@ -58,7 +59,7 @@ body {
 }
 
 #emissions_chart {
-  width: 600px;
+  width: 500px;
 }
 
 #supply_chart {
@@ -130,4 +131,46 @@ body .about-page-wrapper {
 .about-page-wrapper.active-page,
 .calculator-wrapper.active-page {
   display: flex;
+}
+
+/* gauge */
+.outer-wrapper{
+  display: inline-block;
+  margin: 5px 15px;
+  padding: 25px 0;
+  min-width: 20px;
+}
+
+.column-wrapper{
+  height: 300px;
+  width: 24px;
+  background: #F1F1F1;
+  transform: rotate(180deg);
+  margin: 0 auto;
+  border-radius: 10px;
+  position: relative;
+}
+
+.column{
+  width: 24px;
+  height: 0%;
+  background: #C7DDFD;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  position: absolute;
+  bottom: 0px;
+}
+
+.percentage, .value{
+  margin-top: 10px;
+  padding: 5px 10px;
+  color: #FFF;
+  background: #263238;
+  position: relative;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.value{
+  background: #7986CB;
 }
