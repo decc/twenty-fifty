@@ -139,23 +139,47 @@ body .about-page-wrapper {
   margin: 5px 15px;
   padding: 25px 0;
   min-width: 20px;
+  position: relative;
+}
+
+.outer-wrapper .label {
+  color: #646569;
+  font-size: 12px;
+}
+
+.label-begin {
+  position: absolute;
+    z-index: 1;
+    left: -14px;
+    top: 35px;
+}
+
+.label-end {
+  position: absolute;
+    bottom: 35px;
+    left: -14px;
+    font-size: 12px;
 }
 
 .column-wrapper{
   height: 300px;
-  width: 10px;
-  background: #CFD8DC;
-  transform: rotate(180deg);
+  width: 24px;
+  background: #F1F1F1;
+  /* transform: rotate(180deg); */
   margin: 0 auto;
   border-radius: 10px;
+  position: relative;
 }
 
 .column{
-  width: 10px;
+  width: 24px;
   height: 0%;
-  background: #90A4AE;
+  background: #C7DDFD;
   border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+  border-top-right-radius: 10px;
+  position: absolute;
+  top: 0px;
+  border-bottom: 2px solid #829A59;
 }
 
 .percentage, .value{
@@ -166,6 +190,16 @@ body .about-page-wrapper {
   position: relative;
   border-radius: 4px;
   text-align: center;
+}
+
+.label-percent {
+  position: absolute;
+  background-color: #829A59;
+  color: #fff;
+  padding: 3px;
+  border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    left: -30px;
 }
 
 .value{
