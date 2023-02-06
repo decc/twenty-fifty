@@ -65,11 +65,7 @@
       l = t.data().choicelevel;
       $(this).parent().children().removeClass('active');
       $(this).addClass('active');
-      $(this).parent().children('div:nth-child(-n+'+l+')').addClass('active');
-
-      // for (let i = 0; i < l; i++) {
-      //   $(this).parent().children(':nth-child(-n+'+l+')');
-      // }
+      $(this).parent().find(':nth-child(-n+'+l+')').addClass('active');
     }
 
     $(".lever-step").on('click touchend', function(event) {
