@@ -173,6 +173,10 @@ window.twentyfifty.views.primary_energy_chart = function() {
       .data([percent*100]);
     console.log("emissions", percent*100);
 
+    $('.column').animate({
+      height: Math.round(percent*100)+'%',
+    });
+
     t.enter().append('text')
       .attr('class', 'target');
 
