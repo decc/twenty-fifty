@@ -189,6 +189,10 @@
       $('.how-to-use-page').removeClass('active-tab');
     });
 
+    $('.column').animate({
+      height: 38+'%'
+    });
+
     // MODALS
     // $('.calculator-page').on('click touchend', function(event){
     //   event.preventDefault();
