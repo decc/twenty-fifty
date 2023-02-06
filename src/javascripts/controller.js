@@ -59,6 +59,19 @@
       go(c, l);
     });
 
+    $('.lever-step').on('click touchend', function(event) {
+      event.preventDefault();
+      t = $(event.target);
+      l = t.data().choicelevel;
+      $(this).parent().children().removeClass('active');
+      $(this).addClass('active');
+      $(this).parent().children('div:nth-child(-n+'+l+')').addClass('active');
+
+      // for (let i = 0; i < l; i++) {
+      //   $(this).parent().children(':nth-child(-n+'+l+')');
+      // }
+    }
+
     $(".lever-step").on('click touchend', function(event) {
       event.preventDefault();
       t = $(event.target);
