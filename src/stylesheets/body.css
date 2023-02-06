@@ -143,19 +143,22 @@ body .about-page-wrapper {
 
 .column-wrapper{
   height: 300px;
-  width: 10px;
-  background: #CFD8DC;
+  width: 24px;
+  background: #F1F1F1;
   transform: rotate(180deg);
   margin: 0 auto;
   border-radius: 10px;
+  position: relative;
 }
 
 .column{
-  width: 10px;
+  width: 24px;
   height: 0%;
-  background: #90A4AE;
-  border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+  background: #C7DDFD;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  position: absolute;
+  bottom: 0px;
 }
 
 .percentage, .value{
