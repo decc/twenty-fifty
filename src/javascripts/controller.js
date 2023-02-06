@@ -59,6 +59,15 @@
       go(c, l);
     });
 
+    $('.lever-step').on('click touchend', function(event) {
+      event.preventDefault();
+      t = $(event.target);
+      l = t.data().choicelevel;
+      $(this).parent().children().removeClass('active');
+      $(this).addClass('active');
+      $(this).parent().find(':nth-child(-n+'+l+')').addClass('active');
+    });
+
     $(".lever-step").on('click touchend', function(event) {
       event.preventDefault();
       t = $(event.target);
