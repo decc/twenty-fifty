@@ -143,6 +143,13 @@
       $(this).addClass('chart-selected');
       $('#show_supply').removeClass('chart-selected');
       $('#show_emissions').removeClass('chart-selected');
+
+      if (pathway && pathway.ghg_reduction_from_1990){
+        console.log("fun path", pathway.ghg_reduction_from_1990);
+      } else {
+        console.log("not defined");
+      }
+
     });
 
     $('.card').on('click touchend', function(event){
