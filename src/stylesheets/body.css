@@ -131,3 +131,40 @@ body .about-page-wrapper {
 .calculator-wrapper.active-page {
   display: flex;
 }
+
+/* gauge */
+.outer-wrapper{
+  display: inline-block;
+  margin: 5px 15px;
+  padding: 25px 15px;
+  background: #eee;
+  min-width: 50px;
+}
+
+.column-wrapper{
+  height: 200px;
+  width: 20px;
+  background: #CFD8DC;
+  transform: rotate(180deg);
+  margin: 0 auto;
+}
+
+.column{
+  width: 20px;
+  height: 0%;
+  background: #90A4AE;
+}
+
+.percentage, .value{
+  margin-top: 10px;
+  padding: 5px 10px;
+  color: #FFF;
+  background: #263238;
+  position: relative;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.value{
+  background: #7986CB;
+}
