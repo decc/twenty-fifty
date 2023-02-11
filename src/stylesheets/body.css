@@ -206,3 +206,17 @@ body .about-page-wrapper {
 .value{
   background: #7986CB;
 }
+
+.share_link {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  letter-spacing: -0.02em;
+  color: #49494D;
+  padding: 4px 20px;
+  background: #F1F1F1;
+  border-radius: 50px;
+}

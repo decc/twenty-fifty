@@ -156,7 +156,7 @@
 
     $('.card').on('click touchend', function(event){
       event.preventDefault();
-      $(this).addClass("active");
+      $(this).toggleClass("active");
       $(this).parent('.levers-sector').siblings('.levers-subsector-container').toggleClass('open');
     });
     // PAGE TABS
