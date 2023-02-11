@@ -220,3 +220,7 @@ body .about-page-wrapper {
   background: #F1F1F1;
   border-radius: 50px;
 }
+
+.button__reset {
+  text-decoration: none;
+}
