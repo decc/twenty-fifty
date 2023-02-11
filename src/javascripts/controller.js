@@ -156,6 +156,7 @@
 
     $('.card').on('click touchend', function(event){
       event.preventDefault();
+      $(this).addClass("active");
       $(this).parent('.levers-sector').siblings('.levers-subsector-container').toggleClass('open');
     });
     // PAGE TABS
@@ -200,6 +201,18 @@
 
     $('.column').animate({
       height: 38+'%'
+    });
+
+    $('.share_link').on('click touchend', function(event){
+        event.preventDefault();
+        var dummy = document.createElement('input'),
+        text = window.location.href;
+
+        document.body.appendChild(dummy);
+        dummy.value = text;
+        dummy.select();
+        document.execCommand('copy');
+        document.body.removeChild(dummy);
     });
 
     // MODALS
