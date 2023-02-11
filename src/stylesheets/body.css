@@ -219,6 +219,11 @@ body .about-page-wrapper {
   padding: 4px 20px;
   background: #F1F1F1;
   border-radius: 50px;
+  border: none;
+}
+
+.share_link:hover {
+  cursor: pointer;
 }
 
 .button__reset {
