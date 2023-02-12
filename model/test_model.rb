@@ -152,10 +152,10 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_j35; assert_equal("20% no pieejamā energoefektivitātes tehniskā potenciāla īstenota. Degvielas patēriņš samazinās par 11%", worksheet.control_j35.to_s.gsub(/[\n\r]+/,'')); end
   def test_control_k35; assert_equal("1/3 no pieejamā tehniskā energoefektivitātes potenciāla īstenota. Degvielas patēriņš samazinās par 28%", worksheet.control_k35.to_s.gsub(/[\n\r]+/,'')); end
   def test_control_l35; assert_equal("50% no pieejamā energoefektivitātes tehniskā potenciāla īstenota. Degvielas patēriņš samazinās par 44%", worksheet.control_l35.to_s.gsub(/[\n\r]+/,'')); end
-  def test_control_i37; assert_equal("Vidējā temperatūra mājokļos palielinās par 20 C", worksheet.control_i37.to_s.gsub(/[\n\r]+/,'')); end
-  def test_control_j37; assert_equal("Vidējā temperatūra mājokļos palielinās par 0.50 C", worksheet.control_j37.to_s.gsub(/[\n\r]+/,'')); end
-  def test_control_k37; assert_equal("Vidējā temperatūra mājokļos samazinās par 0.50 C", worksheet.control_k37.to_s.gsub(/[\n\r]+/,'')); end
-  def test_control_l37; assert_equal("Vidējā temperatūra mājokļos samazinās par 1.50 C", worksheet.control_l37.to_s.gsub(/[\n\r]+/,'')); end
+  def test_control_i37; assert_equal("Vidējā temperatūra mājokļos palielinās par 2 grādiem C", worksheet.control_i37.to_s.gsub(/[\n\r]+/,'')); end
+  def test_control_j37; assert_equal("Vidējā temperatūra mājokļos palielinās par 0.5 grādiem C", worksheet.control_j37.to_s.gsub(/[\n\r]+/,'')); end
+  def test_control_k37; assert_equal("Vidējā temperatūra mājokļos samazinās par 0.5 grādiem C", worksheet.control_k37.to_s.gsub(/[\n\r]+/,'')); end
+  def test_control_l37; assert_equal("Vidējā temperatūra mājokļos samazinās par 1.5 grādiem C", worksheet.control_l37.to_s.gsub(/[\n\r]+/,'')); end
   def test_control_i38; assert_equal("2050.gadā renovētas ir apmēram 35% no esošajām ēkām 2018.gadā", worksheet.control_i38.to_s.gsub(/[\n\r]+/,'')); end
   def test_control_j38; assert_equal("2050.gadā renovētas ir apmēram 40% no esošajām ēkām 2018.gadā. Specifiskais enerģija spatēriņš samazinās par 31,5%", worksheet.control_j38.to_s.gsub(/[\n\r]+/,'')); end
   def test_control_k38; assert_equal("2050.gadā renovētas ir apmēram 50% no esošajām ēkām 2018.gadā. Specifiskais enerģijas patēriņš samazinās par 36,5%", worksheet.control_k38.to_s.gsub(/[\n\r]+/,'')); end
@@ -4126,7 +4126,7 @@ class TestModel < Minitest::Unit::TestCase
   def test_ghg_k17; assert_in_epsilon(2.397395724133465, worksheet.ghg_k17, 0.002); end
   def test_ghg_l17; assert_in_epsilon(2.403414376318513, worksheet.ghg_l17, 0.002); end
   def test_ghg_m17; assert_in_epsilon(2.409475443676037, worksheet.ghg_m17, 0.002); end
-  def test_ghg_d18; assert_equal("ZIZIM", worksheet.ghg_d18.to_s.gsub(/[\n\r]+/,'')); end
+  def test_ghg_d18; assert_equal("ZIZIMM", worksheet.ghg_d18.to_s.gsub(/[\n\r]+/,'')); end
   def test_ghg_e18; assert_in_delta(-0.07671681834303024, worksheet.ghg_e18, 0.002); end
   def test_ghg_f18; assert_in_epsilon(1.0410084441425347, worksheet.ghg_f18, 0.002); end
   def test_ghg_g18; assert_in_epsilon(2.152268674359548, worksheet.ghg_g18, 0.002); end

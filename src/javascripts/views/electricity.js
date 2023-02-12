@@ -88,22 +88,21 @@ window.twentyfifty.views.electricity = function() {
 
     this.demand_chart = timeSeriesStackedAreaChart()
       .title("Electricity Demand")
-      .unit('TWh/yr')
+      .unit('PJ/yr')
       .css_for_label(css_for_labels)
-      .max_value(4000);
+      .max_value(16000);
 
     this.supply_chart = timeSeriesStackedAreaChart()
       .title("Electricity Supply")
-      .unit('TWh/yr')
+      .unit('PJ/yr')
       .css_for_label(css_for_labels)
-      .max_value(4000);
+      .max_value(17000);
 
     this.emissions_chart = timeSeriesStackedAreaChart()
       .title("Emissions from Electricity")
       .unit('MtCO2e/yr')
       .css_for_label(css_for_labels)
-      .min_value(-500)
-      .max_value(1000);
+      .max_value(100);
   };
 
   // This is called when a new view has been selected
@@ -148,12 +147,12 @@ window.twentyfifty.views.electricity = function() {
       .datum(convert_table_to_hash(pathway.electricity.ghg))
       .call(this.emissions_chart);
   };
-  
+
   // This is used to convert the table from how it looks in Excel
   // into the format needed to plot a chart
   convert_table_to_hash = function(table) {
     hash = d3.map();
-    
+
     // Skip the header row, and put the rest of the table into
     // a Hash table with the key being the first column and the
     // value being the rest
