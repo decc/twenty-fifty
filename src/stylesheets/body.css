@@ -345,7 +345,7 @@ display: none;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    margin: 20px;
+    padding: 20px;
     width: 100%;
     box-sizing: border-box;
 }
@@ -354,10 +354,10 @@ display: none;
 
 }
 .hide-on-mobile {
-  display: block;
+  display: block !important;
 }
 .hide-on-desktop {
-  display: none;
+  display: none !important;
 }
 @media screen and (max-width: 768px) {
   .levers-sector .lever-steps-container .lever-step {
@@ -370,11 +370,11 @@ display: none;
   }
 
   .hide-on-mobile {
-    display: none;
+    display: none !important;
   }
 
   .hide-on-desktop {
-    display: block;
+    display: block !important;
   }
 }
 
