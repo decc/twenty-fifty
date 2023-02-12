@@ -64,13 +64,6 @@ body {
 #demand_chart {
   width: 500px;
 }
-
-@media screen and (max-width: 768px) {
-  #demand_chart {
-    width: 100%;
-  }
-}
-
 #emissions_chart {
   width: 500px;
 }
@@ -78,6 +71,22 @@ body {
 #supply_chart {
   width: 500px;
 }
+
+@media screen and (max-width: 768px) {
+  #demand_chart {
+    width: 90%;
+  }
+
+  #emissions_chart {
+    width: 90%;
+  }
+
+  #supply_chart {
+    width: 90%;
+  }
+}
+
+
 
 .subtab-menu-charts a {
   padding: 4.5px 12px;
@@ -315,5 +324,5 @@ body .about-page-wrapper {
 }
 
 .mobile-charts-sub-menu {
-
+display: none;
 }
