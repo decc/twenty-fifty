@@ -137,6 +137,7 @@
       $('#show_supply').removeClass('chart-selected');
 
       $('.current-chart-title').text($(this).text());
+      $('.mobile-charts-sub-menu').removeClass('sub-menu');
     });
 
     $('.show_supply').on('click touchend', function(event){
@@ -151,6 +152,7 @@
       $('#show_emissions').removeClass('chart-selected');
 
       $('.current-chart-title').text($(this).text());
+      $('.mobile-charts-sub-menu').removeClass('sub-menu');
     });
 
     $('.show_demand').on('click touchend', function(event){
@@ -165,6 +167,7 @@
       $('#show_emissions').removeClass('chart-selected');
 
       $('.current-chart-title').text($(this).text());
+      $('.mobile-charts-sub-menu').removeClass('sub-menu');
     });
 
     $('.card').on('click touchend', function(event){

@@ -248,7 +248,7 @@ body .about-page-wrapper {
 }
 
 .gauge-horizontal .column-wrapper{
-  width: 300px;
+  width: 260px;
   height: 24px;
   background: #F1F1F1;
   /* transform: rotate(180deg); */
@@ -325,4 +325,8 @@ body .about-page-wrapper {
 
 .mobile-charts-sub-menu {
 display: none;
+}
+
+.menu-item {
+  background: #fff;
 }
