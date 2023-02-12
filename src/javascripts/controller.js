@@ -188,8 +188,13 @@
 
     $('.card').on('click touchend', function(event){
       event.preventDefault();
-      $(this).toggleClass("active");
+      // $(this).toggleClass("active");
       $(this).parent('.levers-sector').siblings('.levers-subsector-container').toggleClass('open');
+      if ($('.levers').find('.open').length > 0) {
+        $(".card").addClass("active");
+      } else {
+        $(".card").removeClass("active");
+      }
     });
     // PAGE TABS
     $('.calculator-page').on('click touchend', function(event){

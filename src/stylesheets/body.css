@@ -345,5 +345,22 @@ display: none;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    margin: 20px 20px 0 20px;
+    margin: 20px;
+    width: 100%;
 }
+
+.button-container {
+
+}
+
+@media screen and (max-width: 768px) {
+  .lever-steps-container .lever-step {
+    height: 30px;
+    width: 30px;
+  }
+
+  .sector-logo img {
+    height: 24px;
+  }
+}
+
