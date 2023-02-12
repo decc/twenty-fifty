@@ -63,7 +63,7 @@ window.twentyfifty.views.primary_energy_chart = function() {
       'Oil reserves': 'oil',
       'Oil': 'oil',
       'UK Oil': 'oil',
-      'Importētā nafta': 'importedoil',
+      'Imported Oil': 'importedoil',
       'Offshore wind': 'offshorewind',
       'Onshore wind': 'onshorewind',
       'Petroleum products oversupply': 'oil',
