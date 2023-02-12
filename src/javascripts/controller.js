@@ -172,11 +172,11 @@
 
     $(".nav-hamburger").on('click touchend', function(event){
       $(".navigation-modal-windows").toggleClass("open");
-    }
+    });
 
     $(".button-scenarious").on('click touchend', function(event){
       $(".calculator-inputs").toggleClass("open");
-    }
+    });
 
     $('.card').on('click touchend', function(event){
       event.preventDefault();
