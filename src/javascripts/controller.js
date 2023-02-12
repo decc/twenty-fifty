@@ -178,6 +178,10 @@
       $(".calculator-inputs").toggleClass("open");
     });
 
+    $(".button__results").on('click touchend', function(event){
+      $(".calculator-inputs").toggleClass("open");
+    });
+
     $('.card').on('click touchend', function(event){
       event.preventDefault();
       $(this).toggleClass("active");
