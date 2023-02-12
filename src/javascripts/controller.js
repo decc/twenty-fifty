@@ -175,10 +175,14 @@
     });
 
     $(".button-scenarious").on('click touchend', function(event){
+      event.stopPropagation();
+      event.preventDefault();
       $(".calculator-inputs").toggleClass("open");
     });
 
     $(".button__results").on('click touchend', function(event){
+      event.stopPropagation();
+      event.preventDefault();
       $(".calculator-inputs").toggleClass("open");
     });
 
