@@ -126,10 +126,11 @@ body {
 .calculator-wrapper .calculator-blocks .calculator-inputs .levers-container .levers-table .levers .levers-sector-container div.levers-subsector-container {
   display: none;
 }
-
-/* .calculator-wrapper .calculator-blocks {
-  padding: 0;
-} */
+/*  mobile */
+.calculator-wrapper .calculator-blocks .calculator-inputs.open {
+  display: flex;
+  position: absolute;
+}
 
 @media screen and (max-width: 768px) {
  body .calculator-wrapper .calculator-blocks {
