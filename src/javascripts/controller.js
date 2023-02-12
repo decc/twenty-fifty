@@ -199,9 +199,9 @@
       $('.how-to-use-page').removeClass('active-tab');
     });
 
-    $('.column').animate({
-      height: 38+'%'
-    });
+    // $('.column').animate({
+    //   height: 38+'%'
+    // });
 
     $('.share_link').on('click touchend', function(event){
         event.preventDefault();
