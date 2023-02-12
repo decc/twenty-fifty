@@ -172,19 +172,19 @@ window.twentyfifty.views.primary_energy_chart = function() {
     t = d3.select('#emissions_chart g.drawing').selectAll('text.target')
       .data([percent*100]);
 
-    $('.gauge-vertical .column').animate({
+    $('.gauge-vertical > .column').animate({
       height: Math.round(percent*100)+'%',
     });
 
-    $('.gauge-horizontal .column').animate({
+    $('.gauge-horizontal > .column').animate({
       width: Math.round(percent*100)+'%',
     });
 
-    $('.gauge-vertical .label-percent').animate({
+    $('.gauge-vertical > .label-percent').animate({
       top: Math.round(percent*100)+'%',
     });
 
-    $('.gauge-horizontal .label-percent').animate({
+    $('.gauge-horizontal > .label-percent').animate({
       left: Math.round(percent*100)+'%',
     });
 

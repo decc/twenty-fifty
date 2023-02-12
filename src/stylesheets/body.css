@@ -189,17 +189,31 @@ body .about-page-wrapper {
   font-weight: 600;
 }
 
-.label-begin {
+.gauge-vertical .label-begin {
   position: absolute;
     z-index: 1;
     left: -14px;
     top: 35px;
 }
 
-.label-end {
+.gauge-vertical .label-end {
   position: absolute;
     bottom: 35px;
     left: -14px;
+    font-size: 12px;
+}
+
+.gauge-horizontal .label-begin {
+  position: absolute;
+    z-index: 1;
+    top: 28px;
+    left: -15px;
+}
+
+.gauge-horizontal .label-end {
+  position: absolute;
+  bottom: 31px;
+  right: -12px;
     font-size: 12px;
 }
 
