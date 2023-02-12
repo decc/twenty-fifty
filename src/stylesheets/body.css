@@ -253,10 +253,10 @@ body .about-page-wrapper {
   width: 0%;
   background: #C7DDFD;
   border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
   position: absolute;
   left: 0px;
-  border-bottom: 2px solid #829A59;
+  border-right: 2px solid #829A59;
 }
 
 .percentage, .value{
@@ -277,6 +277,13 @@ body .about-page-wrapper {
   border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
     left: -30px;
+}
+
+.gauge-horizontal .label-percent {
+  top: -20px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 5px;
 }
 
 .value{
