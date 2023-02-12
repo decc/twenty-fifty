@@ -156,9 +156,27 @@ body .about-page-wrapper {
   display: flex;
 }
 
+.gauge-horizontal {
+  display: none;
+}
+
+
+.gauge-vertical {
+  display: inline-block;
+}
+
+@media screen and (max-width: 768px) {
+  .gauge-vertical {
+    display: none;
+  }
+
+  .gauge-horizontal {
+    display: inline-block;
+  }
+}
+
 /* gauge */
 .outer-wrapper{
-  display: inline-block;
   margin: 5px 30px 5px 15px;
   padding: 25px 0;
   min-width: 20px;
@@ -185,7 +203,7 @@ body .about-page-wrapper {
     font-size: 12px;
 }
 
-.column-wrapper{
+.gauge-vertical .column-wrapper{
   height: 300px;
   width: 24px;
   background: #F1F1F1;
@@ -195,7 +213,7 @@ body .about-page-wrapper {
   position: relative;
 }
 
-.column{
+.gauge-vertical .column{
   width: 24px;
   height: 0%;
   background: #C7DDFD;
@@ -203,6 +221,27 @@ body .about-page-wrapper {
   border-top-right-radius: 10px;
   position: absolute;
   top: 0px;
+  border-bottom: 2px solid #829A59;
+}
+
+.gauge-horizontal .column-wrapper{
+  width: 300px;
+  height: 24px;
+  background: #F1F1F1;
+  /* transform: rotate(180deg); */
+  margin: 0 auto;
+  border-radius: 10px;
+  position: relative;
+}
+
+.gauge-horizontal .column{
+  height: 24px;
+  width: 0%;
+  background: #C7DDFD;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  position: absolute;
+  left: 0px;
   border-bottom: 2px solid #829A59;
 }
 
