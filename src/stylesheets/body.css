@@ -347,20 +347,34 @@ display: none;
     justify-content: space-between;
     margin: 20px;
     width: 100%;
+    box-sizing: border-box;
 }
 
 .button-container {
 
 }
-
+.hide-on-mobile {
+  display: block;
+}
+.hide-on-desktop {
+  display: none;
+}
 @media screen and (max-width: 768px) {
-  .lever-steps-container .lever-step {
+  .levers-sector .lever-steps-container .lever-step {
     height: 30px;
     width: 30px;
   }
 
   .sector-logo img {
     height: 24px;
+  }
+
+  .hide-on-mobile {
+    display: none;
+  }
+
+  .hide-on-desktop {
+    display: block;
   }
 }
 

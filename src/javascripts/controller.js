@@ -186,6 +186,12 @@
       $(".calculator-inputs").toggleClass("open");
     });
 
+    $(".close-calculator-controls").on('click touchend', function(event){
+      event.stopPropagation();
+      event.preventDefault();
+      $(".calculator-inputs").toggleClass("open");
+    });
+
     $('.card').on('click touchend', function(event){
       event.preventDefault();
       // $(this).toggleClass("active");
