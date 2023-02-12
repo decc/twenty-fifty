@@ -31,6 +31,13 @@ body {
   flex-direction: row-reverse;
 }
 
+@media screen and (max-width: 768px) {
+  #results {
+    flex-direction: column-reverse;
+  }
+}
+
+
 #snippets {
   display: none;
 }
@@ -56,6 +63,12 @@ body {
 
 #demand_chart {
   width: 500px;
+}
+
+@media screen and (max-width: 768px) {
+  #demand_chart {
+    width: 100%;
+  }
 }
 
 #emissions_chart {
@@ -103,6 +116,16 @@ body {
 
 .calculator-wrapper .calculator-blocks .calculator-inputs .levers-container .levers-table .levers .levers-sector-container div.levers-subsector-container {
   display: none;
+}
+
+/* .calculator-wrapper .calculator-blocks {
+  padding: 0;
+} */
+
+@media screen and (max-width: 768px) {
+  .calculator-wrapper .calculator-blocks {
+    padding: 0;
+  }
 }
 
 .modal-how-to-use-mask.modal-how-to-use,
