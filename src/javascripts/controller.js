@@ -118,7 +118,14 @@
       $('.scenarious-sub-menu').toggleClass('sub-menu');
     });
 
-    $('#show_emissions').on('click touchend', function(event){
+    $('.current-chart-title').on('click touchend', function(event){
+      event.preventDefault();
+      $('.mobile-charts-sub-menu').toggleClass('sub-menu');
+    });
+
+
+
+    $('.show_emissions').on('click touchend', function(event){
       event.preventDefault();
 
       $('#supply_chart').hide();
@@ -128,9 +135,11 @@
       $(this).addClass('chart-selected');
       $('#show_demand').removeClass('chart-selected');
       $('#show_supply').removeClass('chart-selected');
+
+      $('.current-chart-title').text($(this).text());
     });
 
-    $('#show_supply').on('click touchend', function(event){
+    $('.show_supply').on('click touchend', function(event){
       event.preventDefault();
 
       $('#supply_chart').show();
@@ -140,9 +149,11 @@
       $(this).addClass('chart-selected');
       $('#show_demand').removeClass('chart-selected');
       $('#show_emissions').removeClass('chart-selected');
+
+      $('.current-chart-title').text($(this).text());
     });
 
-    $('#show_demand').on('click touchend', function(event){
+    $('.show_demand').on('click touchend', function(event){
       event.preventDefault();
 
       $('#supply_chart').hide();
@@ -152,6 +163,8 @@
       $(this).addClass('chart-selected');
       $('#show_supply').removeClass('chart-selected');
       $('#show_emissions').removeClass('chart-selected');
+
+      $('.current-chart-title').text($(this).text());
     });
 
     $('.card').on('click touchend', function(event){

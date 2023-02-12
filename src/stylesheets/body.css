@@ -284,6 +284,7 @@ body .about-page-wrapper {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   padding: 5px;
+  border-bottom-left-radius: 0;
 }
 
 .value{
@@ -311,4 +312,8 @@ body .about-page-wrapper {
 
 .button__reset {
   text-decoration: none;
+}
+
+.mobile-charts-sub-menu {
+
 }
