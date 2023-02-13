@@ -397,12 +397,16 @@ display: none;
 }
 
 .hide-overflow {
-  owerflow: hidden;
+  overflow: hidden;
 }
 
-.button-close-container {
+.visible {
+  display: block;
+}
+
+.inputs-navigation .button-close-container {
   flex: 2;
-    height: 100%;
-    justify-content: right;
-    padding: 20px;
+  height: 100%;
+  justify-content: right;
+  padding: 20px;
 }
