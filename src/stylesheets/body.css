@@ -361,7 +361,7 @@ display: none;
 
 }
 .hide-on-mobile {
-  display: block !important;
+  display: flex !important;
 }
 .hide-on-desktop {
   display: none !important;
@@ -381,7 +381,27 @@ display: none;
   }
 
   .hide-on-desktop {
-    display: block !important;
+    display: flex !important;
   }
 }
 
+#backdrop {
+  background: rgba(0,0,0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+}
+
+.hide-overflow {
+  owerflow: hidden;
+}
+
+.button-close-container {
+  flex: 2;
+    height: 100%;
+    justify-content: right;
+    padding: 20px;
+}

@@ -178,18 +178,24 @@
       event.stopPropagation();
       event.preventDefault();
       $(".calculator-inputs").toggleClass("open");
+      $("#backdrop").toggleClass("visible");
+      $("body").toggleClass("hide-overflow");
     });
 
     $(".button__results").on('click touchend', function(event){
       event.stopPropagation();
       event.preventDefault();
       $(".calculator-inputs").toggleClass("open");
+      $("#backdrop").toggleClass("visible");
+      $("body").toggleClass("hide-overflow");
     });
 
     $(".close-calculator-controls").on('click touchend', function(event){
       event.stopPropagation();
       event.preventDefault();
       $(".calculator-inputs").toggleClass("open");
+      $("#backdrop").toggleClass("visible");
+      $("body").toggleClass("hide-overflow");
     });
 
     $('.card').on('click touchend', function(event){
