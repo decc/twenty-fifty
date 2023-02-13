@@ -171,6 +171,8 @@
     });
 
     $(".nav-hamburger").on('click touchend', function(event){
+      event.stopPropagation();
+      event.preventDefault();
       $(".navigation-modal-windows").toggleClass("open");
     });
 
@@ -178,7 +180,7 @@
       event.stopPropagation();
       event.preventDefault();
       $(".calculator-inputs").toggleClass("open");
-      $("#backdrop").toggleClass("visible");
+      $(".backdrop").toggleClass("visible");
       $("body").toggleClass("hide-overflow");
     });
 
@@ -186,7 +188,7 @@
       event.stopPropagation();
       event.preventDefault();
       $(".calculator-inputs").toggleClass("open");
-      $("#backdrop").toggleClass("visible");
+      $(".backdrop").toggleClass("visible");
       $("body").toggleClass("hide-overflow");
     });
 
@@ -194,7 +196,7 @@
       event.stopPropagation();
       event.preventDefault();
       $(".calculator-inputs").toggleClass("open");
-      $("#backdrop").toggleClass("visible");
+      $(".backdrop").toggleClass("visible");
       $("body").toggleClass("hide-overflow");
     });
 
