@@ -31,7 +31,7 @@ body {
   flex-direction: row-reverse;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1081px) {
   #results {
     flex-direction: column-reverse;
   }
@@ -190,7 +190,7 @@ body .about-page-wrapper {
   display: inline-block;
 }
 
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 1081px) {
   .gauge-vertical {
     display: none;
   }
@@ -370,7 +370,7 @@ display: none;
 .hide-on-desktop {
   display: none !important;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 921px) {
   .levers-sector .lever-steps-container .lever-step {
     height: 30px;
     width: 30px;
