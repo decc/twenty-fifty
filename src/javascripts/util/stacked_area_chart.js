@@ -1,6 +1,6 @@
 window.timeSeriesStackedAreaChart = function() {
   var area, chart, color_class_index, css_for_label, context, dataTableFormat, data_first_year, data_last_year, data_year_interval, extent, height, label_threshold, line, margin, max_value, max_year, min_value, min_year, seriesClass, showLabelFilter, stack, title, total_label, unit, width, xAxis, xScale, x_center, yAxis, yScale, year_for_data, year_for_ticks, _i, _j;
-  
+
   width = 375; // Of svg in pixels
   height = 125; // of svg in pixels
   margin = { top: 41, right: 108, bottom: 40, left: 33 }; // The margins between the edge of the svg and the main chart area. Needs to be big enough for labels.
@@ -10,10 +10,10 @@ window.timeSeriesStackedAreaChart = function() {
   unit = "TWh/yr"; // Default, Can be accessed or set with chart.unit("PJ")
 
   // Series are expected to be an array of numbers, this defines which year each number maps onto
-  year_for_data = [2010, 2015, 2020, 2025, 2030, 2035, 2040, 2045, 2050];
+  year_for_data = [2020, 2025, 2030, 2035, 2040, 2045, 2050, 2055, 2060]; //changed from 2010-2050 to 2020-2060 by RTG
 
-  // These years will be marked on the axis, and data on those values will be displayed. 
-  year_for_ticks = [2010, 2020, 2030, 2040, 2050];
+  // These years will be marked on the axis, and data on those values will be displayed.
+  year_for_ticks = [2020, 2030, 2040, 2050, 2060]; //changed from 2010-2050 to 2020-2060 by RTG
 
   min_value = 0; // This is the minimum for the y-axis
   max_value = 4000; // This is the maximum for the y-axis
@@ -29,7 +29,7 @@ window.timeSeriesStackedAreaChart = function() {
   };
 
   context = void 0; // If set, can be used to draw a background to the chart, see src/javascripts/views/electricity.js for an example
-  
+
   // These are the sales. See https://github.com/mbostock/d3/wiki/Scales
   xScale = d3.scale.linear();
   yScale = d3.scale.linear();
@@ -128,7 +128,7 @@ window.timeSeriesStackedAreaChart = function() {
             // This turns it into the form:
             // [{x: 2010, y: 10}, {x:2015, y:15}, .. {x:2050, y:27}]
             //
-            // We also want to know the total of all the values in the 
+            // We also want to know the total of all the values in the
             // series in order to work out whether to show a label
             // or not and whether, overall, the series should be
             // counted as 'positve' or 'negative'
@@ -142,7 +142,7 @@ window.timeSeriesStackedAreaChart = function() {
             series.total = total;
 
             // First we check if the label matches the total_label regular
-            // expression defined above (default is to test whether the 
+            // expression defined above (default is to test whether the
             // label starts with 'total'
             if (total_label.test(series.key)) {
               series.path = line;
@@ -176,7 +176,7 @@ window.timeSeriesStackedAreaChart = function() {
             .data([stacked_data]); // We have data() so that the first time we go through svg.enter() will be there
 
           // Setting up the chart
-          
+
           gEnter = svg.enter() // gEnter will only exist the first time we pass through, so use it to set up
             .append("svg")
               .append("g")
@@ -211,7 +211,7 @@ window.timeSeriesStackedAreaChart = function() {
           g = svg.select("g.drawing")
                   .attr("transform", "translate(" + margin.left + "," + margin.top + ")"); // FIXME: We never change the margins, so why not do this in setup?
 
-          svg.select("rec.backgroundrect") 
+          svg.select("rec.backgroundrect")
             .attr("width", width).attr("height", height); // Just in case the width or height is changed when the browser resizes
 
           areas = g.select('g.series').selectAll("path")
@@ -219,13 +219,13 @@ window.timeSeriesStackedAreaChart = function() {
 
           areas.enter() // When we have new series, add a new path
             .append("path")
-              .attr("class", function(d, i) { return d.css; }) // Make sure the area has the right class 
+              .attr("class", function(d, i) { return d.css; }) // Make sure the area has the right class
               .on("mouseover", function(d, i) { // On hover we want to highlight this are, its label and show the data table
                 var c, l, s;
                 c = d.css;
                 dataTable(d, c); // Show the data table
                 g.selectAll("." + c).classed("hover", true); // Highlight the area and the label
-                if (!showLabelFilter(d)) { // If the label was hidden 
+                if (!showLabelFilter(d)) { // If the label was hidden
                   l = g.selectAll("." + c + ".linelabel").attr("display", "inline"); // Show the label
                   s = l[0][0].getBBox(); // Find out how big the label is
                   g.insert("rect", "." + c + ".linelabel") // And then put a white rectangle behind the label to make sure it stands out
@@ -321,7 +321,7 @@ window.timeSeriesStackedAreaChart = function() {
 
           minimum_y_space = Math.abs(yScale.invert(10) - yScale.invert(0)); // Make sure there is at least 10 pixels between each label
 
-          label_threshold = Math.abs(yScale.invert(5) - yScale.invert(0)) * year_for_data.length; // Make sure the area averages at least 5 pixels wide to bother drawing a label 
+          label_threshold = Math.abs(yScale.invert(5) - yScale.invert(0)) * year_for_data.length; // Make sure the area averages at least 5 pixels wide to bother drawing a label
 
           // For each element in the series
           for (_k = 0, _len2 = stacked_data.length; _k < _len2; _k++) {
@@ -381,7 +381,7 @@ window.timeSeriesStackedAreaChart = function() {
           labels.enter().append("text")
             .attr("class", function(d, i) { return "linelabel " + d.css; }) // Coloured to match area
             .attr("x", label_x).attr("y", function(d) { return yScale(d.label_y) + 4; }) // To the right of the axis
-            .text(function(d) { return d.key; }) 
+            .text(function(d) { return d.key; })
             .on("mouseover", function(d, i) { // When mouse goes over, highlight area and the data table
               dataTable(d, d.css);
               g.selectAll("." + d.css ).classed("hover", true);
@@ -447,7 +447,7 @@ window.timeSeriesStackedAreaChart = function() {
     return chart;
   };
 
-  // Used to get or set the regular expression that is compared with the series 
+  // Used to get or set the regular expression that is compared with the series
   // name to decide whether it is a total, or an area to be stacked
   chart.total_label = function(_) {
     if (_ == null) { return total_label; }
@@ -526,7 +526,7 @@ window.timeSeriesStackedAreaChart = function() {
   };
 
   // Used to specify what years appear in the data
-  // This will also set min_year, max_year and 
+  // This will also set min_year, max_year and
   // year_for_ticks as well
   chart.year_for_data = function(_) {
     if (_ == null) { return year_for_data; }

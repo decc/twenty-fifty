@@ -90,23 +90,23 @@ window.twentyfifty.views.primary_energy_chart = function() {
       .attr('class', 'chart');
 
     this.final_energy_chart = timeSeriesStackedAreaChart()
-      .title("Final Energy Demand")
-      .unit('TWh/yr')
+      .title("Gala enerģijas pieprasījums")
+      .unit('PJ/yr')
       .css_for_label(css_for_labels)
-      .max_value(240000);
+      .max_value(110000);
 
     this.primary_energy_chart = timeSeriesStackedAreaChart()
-      .title("Primary Energy Supply")
-      .unit('TWh/yr')
+      .title("Primārās enerģijas ieguve")
+      .unit('PJ/yr')
       .css_for_label(css_for_labels)
-      .max_value(300000);
+      .max_value(110000);
 
     this.emissions_chart = timeSeriesStackedAreaChart()
-      .title("Greenhouse Gas Emissions")
-      .unit('MtCO2e/yr')
+      .title("Siltumnīcefekta gāzes emisijas")
+      .unit('ktCO2e/yr')
       .css_for_label(css_for_labels)
-      .min_value(-500)
-      .max_value(1000);
+      .min_value(-200)
+      .max_value(8000);
   };
 
   // This is called when a new view has been selected
@@ -140,13 +140,13 @@ window.twentyfifty.views.primary_energy_chart = function() {
   this.updateResults = function(pathway) {
 
     // Add some footnote references
-    if(pathway.primary_energy_supply[pathway.primary_energy_supply.length-1][0] == "Total used in UK") {
-      pathway.primary_energy_supply[pathway.primary_energy_supply.length-1][0] =  pathway.primary_energy_supply[pathway.primary_energy_supply.length-1][0] + "¹";
-    }
+    //if(pathway.primary_energy_supply[pathway.primary_energy_supply.length-1][0] == "Total used in UK") {
+    //  pathway.primary_energy_supply[pathway.primary_energy_supply.length-1][0] =  pathway.primary_energy_supply[pathway.primary_energy_supply.length-1][0] + "¹";
+    //}
 
-    if(pathway.ghg[pathway.ghg.length-2][0] == "Total") {
-      pathway.ghg[pathway.ghg.length-2][0] =  pathway.ghg[pathway.ghg.length-2][0] + "³";
-    }
+    //if(pathway.ghg[pathway.ghg.length-2][0] == "Total") {
+    //  pathway.ghg[pathway.ghg.length-2][0] =  pathway.ghg[pathway.ghg.length-2][0] + "³";
+    //}
 
 
     // Get the data in the right format
@@ -199,45 +199,45 @@ window.twentyfifty.views.primary_energy_chart = function() {
       current = parseInt(this.textContent) || +d;
       i = d3.interpolateRound(current, +d);
       return function(t) {
-        return this.textContent = "" + (i(t)) + "% reduction 1990-2050; Target is 80%";
+        return this.textContent = "" + (i(t)) + "% samzinājums 1990-2050; Mērķis ir 80%";
       };
     });
 
-    x = this.emissions_chart.xScale;
-    y = this.emissions_chart.yScale;
+   // x = this.emissions_chart.xScale;
+   // y = this.emissions_chart.yScale;
 
-    targets = pathway.ghg[pathway.ghg.length -1].slice(1);
+    //targets = pathway.ghg[pathway.ghg.length -1].slice(1);
 
-    t = d3.select('#emissions_chart g.drawing').selectAll('circle.target')
-      .data(targets);
+    //t = d3.select('#emissions_chart g.drawing').selectAll('circle.target')
+    //  .data(targets);
 
-    t.enter().append('circle')
-      .attr('class', 'target')
-      .attr('r', function(d) { return d == undefined ? 0 : 3 });
+    //t.enter().append('circle')
+    //  .attr('class', 'target')
+    //  .attr('r', function(d) { return d == undefined ? 0 : 3 });
 
-    t.attr('cx', function(d,i) { return x(2020 + (i*5)) });
-    t.attr('cy', function(d,i) { return y(d) });
+    //t.attr('cx', function(d,i) { return x(2020 + (i*5)) });
+    //t.attr('cy', function(d,i) { return y(d) });
 
-    t = d3.select('#emissions_chart g.drawing').selectAll("g.targetlabel")
-      .data([targets[1]]);
+    //t = d3.select('#emissions_chart g.drawing').selectAll("g.targetlabel")
+    //  .data([targets[1]]);
 
-    new_label = t.enter().append('g')
-      .attr('class', 'targetlabel');
+    //new_label = t.enter().append('g')
+    //  .attr('class', 'targetlabel');
 
-    new_label.append('text')
-      .text("Targets²");
+    //new_label.append('text')
+    //  .text("Targets²");
 
-    t.select('text')
-      .attr('x', function(d,i) { return x(2022) })
-      .attr('y', function(d,i) { return y(800) });
+    //t.select('text')
+    //  .attr('x', function(d,i) { return x(2020) }) //changed from 2022 to check for graph
+    //  .attr('y', function(d,i) { return y(800) });
 
-    new_label.append('line');
+    //new_label.append('line');
 
-    t.select('line')
-      .attr('x1', function(d,i) { return x(2015)+4 })
-      .attr('y1', function(d,i) { return y(d)-4 })
-      .attr('x2', function(d,i) { return x(2022) })
-      .attr('y2', function(d,i) { return y(800) });
+    //t.select('line')
+    //  .attr('x1', function(d,i) { return x(2015)+4 })
+    //  .attr('y1', function(d,i) { return y(d)-4 })
+    // .attr('x2', function(d,i) { return x(2022) })
+    //  .attr('y2', function(d,i) { return y(800) });
 
   };
 

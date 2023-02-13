@@ -1,4 +1,4 @@
-# This is a Dockerfile. 
+# This is a Dockerfile.
 #
 # It is a quick way of getting a server running with this code.
 # See http://docker.io for more details.
