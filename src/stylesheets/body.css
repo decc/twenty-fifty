@@ -31,6 +31,13 @@ body {
   flex-direction: row-reverse;
 }
 
+@media screen and (max-width: 1081px) {
+  #results {
+    flex-direction: column-reverse;
+  }
+}
+
+
 #snippets {
   display: none;
 }
@@ -57,7 +64,6 @@ body {
 #demand_chart {
   width: 500px;
 }
-
 #emissions_chart {
   width: 500px;
 }
@@ -65,6 +71,35 @@ body {
 #supply_chart {
   width: 500px;
 }
+
+@media screen and (max-width: 768px) {
+  #demand_chart {
+    width: 90%;
+  }
+
+  #emissions_chart {
+    width: 90%;
+  }
+
+  #supply_chart {
+    width: 90%;
+  }
+}
+
+body .calculator-wrapper .calculator-blocks {
+align-items: flex-start;
+}
+
+body .calculator-wrapper .calculator-blocks .calculator-outputs .subtab-menu {
+  margin-bottom: 78px;
+}
+@media screen and (max-width: 768px) {
+
+  body .calculator-wrapper .calculator-blocks .calculator-outputs .subtab-menu {
+    margin: 26px;
+  }
+}
+
 
 .subtab-menu-charts a {
   padding: 4.5px 12px;
@@ -104,6 +139,32 @@ body {
 .calculator-wrapper .calculator-blocks .calculator-inputs .levers-container .levers-table .levers .levers-sector-container div.levers-subsector-container {
   display: none;
 }
+/*  mobile */
+.calculator-wrapper .calculator-blocks .calculator-inputs.open {
+  display: flex;
+  position: relative;
+  z-index: 999;
+  padding-left: 5px;
+  padding-right: 5px;
+  background: #fff;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+
+@media screen and (max-width: 921px) {
+  .calculator-wrapper .calculator-blocks .calculator-inputs.open {
+    position: absolute;
+    top: 75px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+ body .calculator-wrapper .calculator-blocks {
+    padding: 0;
+  }
+}
 
 .modal-how-to-use-mask.modal-how-to-use,
 .modal-about-mask.modal-about-project {
@@ -133,9 +194,27 @@ body .about-page-wrapper {
   display: flex;
 }
 
+.gauge-horizontal {
+  display: none;
+}
+
+
+.gauge-vertical {
+  display: inline-block;
+}
+
+@media screen and (max-width: 1081px) {
+  .gauge-vertical {
+    display: none;
+  }
+
+  .gauge-horizontal {
+    display: inline-block;
+  }
+}
+
 /* gauge */
 .outer-wrapper{
-  display: inline-block;
   margin: 5px 30px 5px 15px;
   padding: 25px 0;
   min-width: 20px;
@@ -148,21 +227,35 @@ body .about-page-wrapper {
   font-weight: 600;
 }
 
-.label-begin {
+.gauge-vertical .label-begin {
   position: absolute;
     z-index: 1;
     left: -14px;
     top: 35px;
 }
 
-.label-end {
+.gauge-vertical .label-end {
   position: absolute;
     bottom: 35px;
     left: -14px;
     font-size: 12px;
 }
 
-.column-wrapper{
+.gauge-horizontal .label-begin {
+  position: absolute;
+    z-index: 1;
+    top: 28px;
+    left: -15px;
+}
+
+.gauge-horizontal .label-end {
+  position: absolute;
+  bottom: 31px;
+  right: -12px;
+    font-size: 12px;
+}
+
+.gauge-vertical .column-wrapper{
   height: 300px;
   width: 24px;
   background: #F1F1F1;
@@ -172,7 +265,7 @@ body .about-page-wrapper {
   position: relative;
 }
 
-.column{
+.gauge-vertical .column{
   width: 24px;
   height: 0%;
   background: #C7DDFD;
@@ -181,6 +274,27 @@ body .about-page-wrapper {
   position: absolute;
   top: 0px;
   border-bottom: 2px solid #829A59;
+}
+
+.gauge-horizontal .column-wrapper{
+  width: 260px;
+  height: 24px;
+  background: #F1F1F1;
+  /* transform: rotate(180deg); */
+  margin: 0 auto;
+  border-radius: 10px;
+  position: relative;
+}
+
+.gauge-horizontal .column{
+  height: 24px;
+  width: 0%;
+  background: #C7DDFD;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  position: absolute;
+  left: 0px;
+  border-right: 2px solid #829A59;
 }
 
 .percentage, .value{
@@ -203,6 +317,125 @@ body .about-page-wrapper {
     left: -30px;
 }
 
+.gauge-horizontal .label-percent {
+  top: -20px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 5px;
+  border-bottom-left-radius: 0;
+}
+
 .value{
   background: #7986CB;
+}
+
+.share_link {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  letter-spacing: -0.02em;
+  color: #49494D;
+  padding: 4px 20px;
+  background: #F1F1F1;
+  border-radius: 50px;
+  border: none;
+}
+
+.share_link:hover {
+  cursor: pointer;
+}
+
+.button__reset {
+  text-decoration: none;
+}
+
+.mobile-charts-sub-menu {
+display: none;
+}
+
+.charts-dropdown .menu-item {
+  background: #fff;
+}
+
+.mobile-controls-wrapper {
+  display: none;
+}
+
+@media screen and (max-width: 921px) {
+  .mobile-controls-wrapper {
+    display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+      width: 100%;
+      box-sizing: border-box;
+  }
+}
+
+
+.hide-on-mobile {
+  display: flex !important;
+}
+.hide-on-desktop {
+  display: none !important;
+}
+@media screen and (max-width: 921px) {
+  .levers-sector .lever-steps-container .lever-step {
+    height: 30px;
+    width: 30px;
+  }
+
+  .sector-logo img {
+    height: 24px;
+  }
+
+  .hide-on-mobile {
+    display: none !important;
+  }
+
+  .hide-on-desktop {
+    display: flex !important;
+  }
+}
+
+.backdrop {
+  display: none;
+}
+
+/* .hide-overflow {
+  overflow: hidden;
+} */
+
+@media screen and (max-width: 921px) {
+  .hide-overflow {
+    overflow: hidden;
+  }
+
+  .backdrop {
+    background: rgba(0,0,0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    display: none;
+  }
+
+  .visible {
+    display: block !important;
+  }
+}
+
+
+
+.inputs-navigation .button-close-container {
+  flex: 2;
+  height: 100%;
+  justify-content: right;
+  padding: 20px;
 }

@@ -5,6 +5,8 @@ tmp/
 *.log
 *~
 .powenv
+.DS_Store
+.DS_Store?
 public/assets/application-*
 public/default.html
 public/index.html

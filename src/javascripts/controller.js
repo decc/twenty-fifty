@@ -118,7 +118,14 @@
       $('.scenarious-sub-menu').toggleClass('sub-menu');
     });
 
-    $('#show_emissions').on('click touchend', function(event){
+    $('.current-chart-title').on('click touchend', function(event){
+      event.preventDefault();
+      $('.mobile-charts-sub-menu').toggleClass('sub-menu');
+    });
+
+
+
+    $('.show_emissions').on('click touchend', function(event){
       event.preventDefault();
 
       $('#supply_chart').hide();
@@ -128,9 +135,12 @@
       $(this).addClass('chart-selected');
       $('#show_demand').removeClass('chart-selected');
       $('#show_supply').removeClass('chart-selected');
+
+      $('.current-chart-title').text($(this).text());
+      $('.mobile-charts-sub-menu').removeClass('sub-menu');
     });
 
-    $('#show_supply').on('click touchend', function(event){
+    $('.show_supply').on('click touchend', function(event){
       event.preventDefault();
 
       $('#supply_chart').show();
@@ -140,9 +150,12 @@
       $(this).addClass('chart-selected');
       $('#show_demand').removeClass('chart-selected');
       $('#show_emissions').removeClass('chart-selected');
+
+      $('.current-chart-title').text($(this).text());
+      $('.mobile-charts-sub-menu').removeClass('sub-menu');
     });
 
-    $('#show_demand').on('click touchend', function(event){
+    $('.show_demand').on('click touchend', function(event){
       event.preventDefault();
 
       $('#supply_chart').hide();
@@ -152,11 +165,50 @@
       $(this).addClass('chart-selected');
       $('#show_supply').removeClass('chart-selected');
       $('#show_emissions').removeClass('chart-selected');
+
+      $('.current-chart-title').text($(this).text());
+      $('.mobile-charts-sub-menu').removeClass('sub-menu');
+    });
+
+    $(".nav-hamburger").on('click touchend', function(event){
+      event.stopPropagation();
+      event.preventDefault();
+      $(".navigation-modal-windows").toggleClass("open");
+    });
+
+    $(".button-scenarious").on('click touchend', function(event){
+      event.stopPropagation();
+      event.preventDefault();
+      $(".calculator-inputs").toggleClass("open");
+      $(".backdrop").toggleClass("visible");
+      $("body").toggleClass("hide-overflow");
+    });
+
+    $(".button__results").on('click touchend', function(event){
+      event.stopPropagation();
+      event.preventDefault();
+      $(".calculator-inputs").toggleClass("open");
+      $(".backdrop").toggleClass("visible");
+      $("body").toggleClass("hide-overflow");
+    });
+
+    $(".close-calculator-controls").on('click touchend', function(event){
+      event.stopPropagation();
+      event.preventDefault();
+      $(".calculator-inputs").toggleClass("open");
+      $(".backdrop").toggleClass("visible");
+      $("body").toggleClass("hide-overflow");
     });
 
     $('.card').on('click touchend', function(event){
       event.preventDefault();
+      // $(this).toggleClass("active");
       $(this).parent('.levers-sector').siblings('.levers-subsector-container').toggleClass('open');
+      if ($('.levers').find('.open').length > 0) {
+        $(".card").addClass("active");
+      } else {
+        $(".card").removeClass("active");
+      }
     });
     // PAGE TABS
     $('.calculator-page').on('click touchend', function(event){
@@ -198,8 +250,20 @@
       $('.how-to-use-page').removeClass('active-tab');
     });
 
-    $('.column').animate({
-      height: 38+'%'
+    // $('.column').animate({
+    //   height: 38+'%'
+    // });
+
+    $('.share_link').on('click touchend', function(event){
+        event.preventDefault();
+        var dummy = document.createElement('input'),
+        text = window.location.href;
+
+        document.body.appendChild(dummy);
+        dummy.value = text;
+        dummy.select();
+        document.execCommand('copy');
+        document.body.removeChild(dummy);
     });
 
     // MODALS
