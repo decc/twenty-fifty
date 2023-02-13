@@ -86,6 +86,9 @@ body {
   }
 }
 
+.calculator-wrapper .calculator-blocks .calculator-outputs .subtab-menu {
+  margin: 26px;
+}
 
 
 .subtab-menu-charts a {
