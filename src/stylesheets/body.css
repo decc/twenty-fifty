@@ -401,7 +401,7 @@ display: none;
 }
 
 .visible {
-  display: block;
+  display: block !important;
 }
 
 .inputs-navigation .button-close-container {
