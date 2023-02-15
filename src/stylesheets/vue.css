@@ -203,7 +203,7 @@
 .button-scenarious-wrapper .button-scenarious:active {
   background: #FFC627;
 }
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 1254px) {
   .button-scenarious-wrapper .button-scenarious {
     display: block;
     margin-bottom: 15px;
@@ -261,6 +261,119 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
+.levers-sector-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.levers-sector-container:first-child .levers-sector {
+  padding-top: 8px;
+}
+.levers-sector-container .levers-sector {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0 28px 8px 10px;
+}
+.levers-sector-container .levers-sector .card {
+  height: 70px;
+  width: 202px;
+  border: solid 1px #F1F1F1;
+  border-radius: 4px;
+  background: #F1F1F1;
+  box-sizing: border-box;
+  margin-right: 8px;
+  padding: 0 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.levers-sector-container .levers-sector .card:hover {
+  cursor: pointer;
+  border: none;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+}
+.levers-sector-container .levers-sector .card.active {
+  height: 35px;
+  box-shadow: none;
+  background: #F1F1F1;
+  border: 1px solid #F1F1F1;
+}
+.levers-sector-container .levers-sector .card.active .sector-name {
+  white-space: nowrap;
+}
+.levers-sector-container .levers-sector .card.active .sector-logo img {
+  height: 24px;
+}
+.levers-sector-container .levers-sector .card.active:hover {
+  cursor: pointer;
+  border: none;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+}
+.levers-sector-container .levers-sector .card .sector-name {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #49494D;
+  text-transform: uppercase;
+}
+.levers-sector-container .levers-subsector-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 7px 29px 12px 11px;
+  box-sizing: border-box;
+}
+.levers-sector-container .levers-subsector-container .levers-subsectors {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.levers-sector-container .levers-subsector-container .levers-subsectors .subsector-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 4px;
+  align-items: center;
+}
+.levers-sector-container .levers-subsectors {
+  display: flex;
+}
+.levers-sector-container .levers-subsectors .subsector-container {
+  display: flex;
+  flex-direction: row;
+}
+.levers-sector-container .levers-subsectors .subsector-container .subsector-name {
+  display: flex;
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: -0.03em;
+  color: #49494D;
+  border-bottom: solid 1px #F1F1F1;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.levers-sector-container .levers-subsectors .subsector-container .subsector-name:hover {
+  color: #67B2E8;
+}
+.levers-sector-container .levers-subsectors .subsector-container:last-child .subsector-name {
+  border-bottom: none;
+}
 .lever-steps-container {
   display: grid;
   grid-template-columns: auto auto auto auto;
@@ -296,6 +409,76 @@
 .lever-steps-container.subsectors .lever-step.active {
   background-color: #949D85;
 }
+.scenario-dropdown {
+  display: flex;
+  padding-left: 10px;
+}
+.scenario-dropdown .menu-item {
+  width: 202px;
+  box-sizing: border-box;
+  padding-left: 19px;
+}
+.scenario-dropdown .menu-item a {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: -0.02em;
+  color: #646569;
+  text-decoration: none;
+}
+.scenario-dropdown .menu-item svg {
+  margin-left: 10px;
+}
+.scenario-dropdown .menu-item .fade-enter-active,
+.scenario-dropdown .menu-item .fade-leave-active {
+  transition: all 0.5s ease-in-out;
+}
+.scenario-dropdown .menu-item .fade-enter,
+.scenario-dropdown .menu-item .fade-leave-to {
+  opacity: 0;
+}
+.scenario-dropdown .menu-item .sub-menu {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background: #FFFFFF;
+  top: calc(100% - 4px);
+  left: 0;
+  width: 211px;
+  height: max-content;
+  border-radius: 0 0 4px 4px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.2));
+  padding: 6px 11.5px 11.5px 11.5px;
+  box-sizing: border-box;
+}
+.scenario-dropdown .menu-item .sub-menu .menu-item {
+  background: #F1F1F1;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  width: 100%;
+  margin-top: 3px;
+  display: flex;
+  justify-content: center;
+  padding-left: 0;
+}
+.scenario-dropdown .menu-item .sub-menu .menu-item:hover {
+  cursor: pointer;
+}
+.scenario-dropdown .menu-item .sub-menu .menu-item a {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #646569;
+}
+.scenario-dropdown .menu-item .sub-menu .menu-item a:hover {
+  color: #67B2E8;
+}
 .calculator-wrapper {
   display: flex;
   background: #F1F1F1;
@@ -305,8 +488,23 @@
   flex-direction: row;
   flex: 1;
   max-width: 1210px;
-  padding: 15px 34px 15px 34px;
+  padding: 50px 34px 15px 34px;
   margin: auto;
+}
+@media screen and (max-width: 1254px) {
+  .calculator-wrapper .calculator-blocks {
+    max-width: 756px;
+  }
+}
+@media screen and (max-width: 920px) {
+  .calculator-wrapper .calculator-blocks {
+    padding: 28px 39px 15px 39px;
+  }
+}
+@media screen and (max-width: 430px) {
+  .calculator-wrapper .calculator-blocks {
+    padding: 18px 20px 15px 20px;
+  }
 }
 .calculator-wrapper .calculator-blocks .calculator-inputs {
   max-width: 420px;
@@ -328,76 +526,6 @@
   border-radius: 4px;
   margin-bottom: 8px;
   position: relative;
-}
-.calculator-wrapper .calculator-blocks .calculator-inputs .inputs-navigation .scenario-dropdown {
-  display: flex;
-  padding-left: 10px;
-}
-.calculator-wrapper .calculator-blocks .calculator-inputs .inputs-navigation .scenario-dropdown .menu-item {
-  width: 202px;
-  box-sizing: border-box;
-  padding-left: 19px;
-}
-.calculator-wrapper .calculator-blocks .calculator-inputs .inputs-navigation .scenario-dropdown .menu-item a {
-  font-family: "Rubik";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 19px;
-  letter-spacing: -0.02em;
-  color: #646569;
-  text-decoration: none;
-}
-.calculator-wrapper .calculator-blocks .calculator-inputs .inputs-navigation .scenario-dropdown .menu-item svg {
-  margin-left: 10px;
-}
-.calculator-wrapper .calculator-blocks .calculator-inputs .inputs-navigation .scenario-dropdown .menu-item .fade-enter-active,
-.calculator-wrapper .calculator-blocks .calculator-inputs .inputs-navigation .scenario-dropdown .menu-item .fade-leave-active {
-  transition: all 0.5s ease-in-out;
-}
-.calculator-wrapper .calculator-blocks .calculator-inputs .inputs-navigation .scenario-dropdown .menu-item .fade-enter,
-.calculator-wrapper .calculator-blocks .calculator-inputs .inputs-navigation .scenario-dropdown .menu-item .fade-leave-to {
-  opacity: 0;
-}
-.calculator-wrapper .calculator-blocks .calculator-inputs .inputs-navigation .scenario-dropdown .menu-item .sub-menu {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  background: #FFFFFF;
-  top: calc(100% - 4px);
-  left: 0;
-  width: 211px;
-  height: max-content;
-  border-radius: 0 0 4px 4px;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.2));
-  padding: 6px 11.5px 11.5px 11.5px;
-  box-sizing: border-box;
-}
-.calculator-wrapper .calculator-blocks .calculator-inputs .inputs-navigation .scenario-dropdown .menu-item .sub-menu .menu-item {
-  background: #F1F1F1;
-  padding-top: 7px;
-  padding-bottom: 7px;
-  width: 100%;
-  margin-top: 3px;
-  display: flex;
-  justify-content: center;
-  padding-left: 0;
-}
-.calculator-wrapper .calculator-blocks .calculator-inputs .inputs-navigation .scenario-dropdown .menu-item .sub-menu .menu-item:hover {
-  cursor: pointer;
-}
-.calculator-wrapper .calculator-blocks .calculator-inputs .inputs-navigation .scenario-dropdown .menu-item .sub-menu .menu-item a {
-  font-family: "Rubik";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 17px;
-  color: #646569;
-}
-.calculator-wrapper .calculator-blocks .calculator-inputs .inputs-navigation .scenario-dropdown .menu-item .sub-menu .menu-item a:hover {
-  color: #67B2E8;
 }
 .calculator-wrapper .calculator-blocks .calculator-inputs .inputs-navigation .button-container {
   display: flex;
@@ -477,120 +605,7 @@
   justify-content: flex-start;
   align-items: center;
 }
-.calculator-wrapper .calculator-blocks .calculator-inputs .levers-container .levers-table .levers .levers-sector-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-}
-.calculator-wrapper .calculator-blocks .calculator-inputs .levers-container .levers-table .levers .levers-sector-container:first-child .levers-sector {
-  padding-top: 8px;
-}
-.calculator-wrapper .calculator-blocks .calculator-inputs .levers-container .levers-table .levers .levers-sector-container .levers-sector {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 0 28px 8px 10px;
-}
-.calculator-wrapper .calculator-blocks .calculator-inputs .levers-container .levers-table .levers .levers-sector-container .levers-sector .card {
-  height: 70px;
-  width: 202px;
-  border: solid 1px #F1F1F1;
-  border-radius: 4px;
-  background: #F1F1F1;
-  box-sizing: border-box;
-  margin-right: 8px;
-  padding: 0 8px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-.calculator-wrapper .calculator-blocks .calculator-inputs .levers-container .levers-table .levers .levers-sector-container .levers-sector .card:hover {
-  cursor: pointer;
-  border: none;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
-}
-.calculator-wrapper .calculator-blocks .calculator-inputs .levers-container .levers-table .levers .levers-sector-container .levers-sector .card.active {
-  height: 35px;
-  box-shadow: none;
-  background: #F1F1F1;
-  border: 1px solid #F1F1F1;
-}
-.calculator-wrapper .calculator-blocks .calculator-inputs .levers-container .levers-table .levers .levers-sector-container .levers-sector .card.active .sector-name {
-  white-space: nowrap;
-}
-.calculator-wrapper .calculator-blocks .calculator-inputs .levers-container .levers-table .levers .levers-sector-container .levers-sector .card.active .sector-logo img {
-  height: 24px;
-}
-.calculator-wrapper .calculator-blocks .calculator-inputs .levers-container .levers-table .levers .levers-sector-container .levers-sector .card.active:hover {
-  cursor: pointer;
-  border: none;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
-}
-.calculator-wrapper .calculator-blocks .calculator-inputs .levers-container .levers-table .levers .levers-sector-container .levers-sector .card .sector-name {
-  font-family: "Rubik";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 17px;
-  color: #49494D;
-  text-transform: uppercase;
-}
-.calculator-wrapper .calculator-blocks .calculator-inputs .levers-container .levers-table .levers .levers-sector-container .levers-subsector-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  width: 100%;
-  padding: 7px 29px 12px 11px;
-  box-sizing: border-box;
-}
-.calculator-wrapper .calculator-blocks .calculator-inputs .levers-container .levers-table .levers .levers-sector-container .levers-subsector-container .levers-subsectors {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-.calculator-wrapper .calculator-blocks .calculator-inputs .levers-container .levers-table .levers .levers-sector-container .levers-subsector-container .levers-subsectors .subsector-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
-  margin-bottom: 4px;
-  align-items: center;
-}
-.calculator-wrapper .calculator-blocks .calculator-inputs .levers-container .levers-table .levers .levers-sector-container .levers-subsectors {
-  display: flex;
-}
-.calculator-wrapper .calculator-blocks .calculator-inputs .levers-container .levers-table .levers .levers-sector-container .levers-subsectors .subsector-container {
-  display: flex;
-  flex-direction: row;
-}
-.calculator-wrapper .calculator-blocks .calculator-inputs .levers-container .levers-table .levers .levers-sector-container .levers-subsectors .subsector-container .subsector-name {
-  display: flex;
-  font-family: "Rubik";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: -0.03em;
-  color: #49494D;
-  border-bottom: solid 1px #F1F1F1;
-  height: 100%;
-  width: 100%;
-  align-items: center;
-  margin-right: 20px;
-  cursor: pointer;
-}
-.calculator-wrapper .calculator-blocks .calculator-inputs .levers-container .levers-table .levers .levers-sector-container .levers-subsectors .subsector-container .subsector-name:hover {
-  color: #67B2E8;
-}
-.calculator-wrapper .calculator-blocks .calculator-inputs .levers-container .levers-table .levers .levers-sector-container .levers-subsectors .subsector-container:last-child .subsector-name {
-  border-bottom: none;
-}
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 1254px) {
   .calculator-wrapper .calculator-blocks .calculator-inputs {
     display: none;
   }
@@ -648,7 +663,7 @@
   border-radius: 50px;
   background: #FFF3D3;
 }
-@media screen and (max-width: 1089px) {
+@media screen and (max-width: 920px) {
   .calculator-wrapper .calculator-blocks .calculator-outputs .subtab-menu .subtab-menu-charts {
     display: none;
   }
@@ -656,7 +671,7 @@
 .calculator-wrapper .calculator-blocks .calculator-outputs .subtab-menu .charts-dropdown {
   display: none;
 }
-@media screen and (max-width: 1089px) {
+@media screen and (max-width: 920px) {
   .calculator-wrapper .calculator-blocks .calculator-outputs .subtab-menu .charts-dropdown {
     display: flex;
   }
@@ -680,17 +695,31 @@
     border-radius: 50px;
     background: #FFF3D3;
   }
+}
+@media screen and (max-width: 920px) and (max-width: 430px) {
+  .calculator-wrapper .calculator-blocks .calculator-outputs .subtab-menu .charts-dropdown .menu-item a {
+    padding: 0;
+    margin: 0;
+  }
+}
+@media screen and (max-width: 920px) {
   .calculator-wrapper .calculator-blocks .calculator-outputs .subtab-menu .charts-dropdown .menu-item svg {
     margin-left: 10px;
   }
+}
+@media screen and (max-width: 920px) {
   .calculator-wrapper .calculator-blocks .calculator-outputs .subtab-menu .charts-dropdown .menu-item .fade-enter-active,
   .calculator-wrapper .calculator-blocks .calculator-outputs .subtab-menu .charts-dropdown .menu-item .fade-leave-active {
     transition: all 0.5s ease-in-out;
   }
+}
+@media screen and (max-width: 920px) {
   .calculator-wrapper .calculator-blocks .calculator-outputs .subtab-menu .charts-dropdown .menu-item .fade-enter,
   .calculator-wrapper .calculator-blocks .calculator-outputs .subtab-menu .charts-dropdown .menu-item .fade-leave-to {
     opacity: 0;
   }
+}
+@media screen and (max-width: 920px) {
   .calculator-wrapper .calculator-blocks .calculator-outputs .subtab-menu .charts-dropdown .menu-item .sub-menu {
     position: absolute;
     display: flex;
@@ -743,7 +772,7 @@
   position: relative;
   width: 100%;
 }
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 1254px) {
   .calculator-wrapper .calculator-blocks {
     flex-direction: column;
   }
@@ -1380,6 +1409,224 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
+.scenario-dropdown {
+  display: flex;
+  padding-left: 10px;
+}
+.scenario-dropdown .menu-item {
+  width: 202px;
+  box-sizing: border-box;
+  padding-left: 19px;
+}
+.scenario-dropdown .menu-item a {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: -0.02em;
+  color: #646569;
+  text-decoration: none;
+}
+.scenario-dropdown .menu-item svg {
+  margin-left: 10px;
+}
+.scenario-dropdown .menu-item .fade-enter-active,
+.scenario-dropdown .menu-item .fade-leave-active {
+  transition: all 0.5s ease-in-out;
+}
+.scenario-dropdown .menu-item .fade-enter,
+.scenario-dropdown .menu-item .fade-leave-to {
+  opacity: 0;
+}
+.scenario-dropdown .menu-item .sub-menu {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background: #FFFFFF;
+  top: calc(100% - 4px);
+  left: 0;
+  width: 211px;
+  height: max-content;
+  border-radius: 0 0 4px 4px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.2));
+  padding: 6px 11.5px 11.5px 11.5px;
+  box-sizing: border-box;
+}
+.scenario-dropdown .menu-item .sub-menu .menu-item {
+  background: #F1F1F1;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  width: 100%;
+  margin-top: 3px;
+  display: flex;
+  justify-content: center;
+  padding-left: 0;
+}
+.scenario-dropdown .menu-item .sub-menu .menu-item:hover {
+  cursor: pointer;
+}
+.scenario-dropdown .menu-item .sub-menu .menu-item a {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #646569;
+}
+.scenario-dropdown .menu-item .sub-menu .menu-item a:hover {
+  color: #67B2E8;
+}
+.levers-sector-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.levers-sector-container:first-child .levers-sector {
+  padding-top: 8px;
+}
+.levers-sector-container .levers-sector {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0 28px 8px 10px;
+}
+.levers-sector-container .levers-sector .card {
+  height: 70px;
+  width: 202px;
+  border: solid 1px #F1F1F1;
+  border-radius: 4px;
+  background: #F1F1F1;
+  box-sizing: border-box;
+  margin-right: 8px;
+  padding: 0 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.levers-sector-container .levers-sector .card:hover {
+  cursor: pointer;
+  border: none;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+}
+.levers-sector-container .levers-sector .card.active {
+  height: 35px;
+  box-shadow: none;
+  background: #F1F1F1;
+  border: 1px solid #F1F1F1;
+}
+.levers-sector-container .levers-sector .card.active .sector-name {
+  white-space: nowrap;
+}
+.levers-sector-container .levers-sector .card.active .sector-logo img {
+  height: 24px;
+}
+.levers-sector-container .levers-sector .card.active:hover {
+  cursor: pointer;
+  border: none;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+}
+.levers-sector-container .levers-sector .card .sector-name {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #49494D;
+  text-transform: uppercase;
+}
+.levers-sector-container .levers-subsector-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 7px 29px 12px 11px;
+  box-sizing: border-box;
+}
+.levers-sector-container .levers-subsector-container .levers-subsectors {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.levers-sector-container .levers-subsector-container .levers-subsectors .subsector-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 4px;
+  align-items: center;
+}
+.levers-sector-container .levers-subsectors {
+  display: flex;
+}
+.levers-sector-container .levers-subsectors .subsector-container {
+  display: flex;
+  flex-direction: row;
+}
+.levers-sector-container .levers-subsectors .subsector-container .subsector-name {
+  display: flex;
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: -0.03em;
+  color: #49494D;
+  border-bottom: solid 1px #F1F1F1;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.levers-sector-container .levers-subsectors .subsector-container .subsector-name:hover {
+  color: #67B2E8;
+}
+.levers-sector-container .levers-subsectors .subsector-container:last-child .subsector-name {
+  border-bottom: none;
+}
+.lever-steps-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 4px;
+}
+.lever-steps-container .lever-step {
+  height: 35px;
+  width: 35px;
+  background: #D9D9D9;
+  transition: all300ms ease;
+  border-radius: 4px;
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #F1F1F1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.lever-steps-container .lever-step:hover {
+  cursor: pointer;
+  background-color: #8E8F90;
+}
+.lever-steps-container .lever-step.active {
+  background-color: #949D85;
+}
+.lever-steps-container.subsectors .lever-step {
+  height: 25px;
+  width: 25px;
+}
+.lever-steps-container.subsectors .lever-step.active {
+  background-color: #949D85;
+}
 .modal-calculator-inputs-mask {
   position: fixed;
   z-index: 999;
@@ -1401,7 +1648,7 @@
   width: max-content;
   max-width: 1210px;
   margin: 0 auto;
-  padding: 30px;
+  padding: 22.5px 30.5px 27.5px 30.5px;
   background: #F1F1F1;
   border-radius: 4px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
@@ -1417,77 +1664,15 @@
   margin-bottom: 12px;
   position: relative;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
-  padding: 8px 10px;
   box-sizing: border-box;
-}
-.modal-calculator-inputs-mask .modal-calculator-inputs-wrapper .modal-calculator-inputs-block .inputs-navigation .scenario-dropdown {
-  display: flex;
-  flex: 2;
-  height: 100%;
-  align-items: center;
-  border-right: solid 1px #D2D2D2;
-}
-.modal-calculator-inputs-mask .modal-calculator-inputs-wrapper .modal-calculator-inputs-block .inputs-navigation .scenario-dropdown .menu-item a {
-  font-family: "Rubik";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 19px;
-  letter-spacing: -0.02em;
-  color: #646569;
-  text-decoration: none;
-}
-.modal-calculator-inputs-mask .modal-calculator-inputs-wrapper .modal-calculator-inputs-block .inputs-navigation .scenario-dropdown .menu-item svg {
-  margin-left: 10px;
-}
-.modal-calculator-inputs-mask .modal-calculator-inputs-wrapper .modal-calculator-inputs-block .inputs-navigation .scenario-dropdown .menu-item .fade-enter-active,
-.modal-calculator-inputs-mask .modal-calculator-inputs-wrapper .modal-calculator-inputs-block .inputs-navigation .scenario-dropdown .menu-item .fade-leave-active {
-  transition: all 0.5s ease-in-out;
-}
-.modal-calculator-inputs-mask .modal-calculator-inputs-wrapper .modal-calculator-inputs-block .inputs-navigation .scenario-dropdown .menu-item .fade-enter,
-.modal-calculator-inputs-mask .modal-calculator-inputs-wrapper .modal-calculator-inputs-block .inputs-navigation .scenario-dropdown .menu-item .fade-leave-to {
-  opacity: 0;
-}
-.modal-calculator-inputs-mask .modal-calculator-inputs-wrapper .modal-calculator-inputs-block .inputs-navigation .scenario-dropdown .menu-item .sub-menu {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  background: #FFFFFF;
-  top: calc(100% - 4px);
-  left: 0;
-  width: max-content;
-  height: max-content;
-  border-radius: 0 0 4px 4px;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.2));
-  padding: 7px;
-}
-.modal-calculator-inputs-mask .modal-calculator-inputs-wrapper .modal-calculator-inputs-block .inputs-navigation .scenario-dropdown .menu-item .sub-menu .menu-item {
-  background: #F1F1F1;
-  padding-top: 7px;
-  padding-bottom: 7px;
-  width: 100%;
-  margin-top: 3px;
-}
-.modal-calculator-inputs-mask .modal-calculator-inputs-wrapper .modal-calculator-inputs-block .inputs-navigation .scenario-dropdown .menu-item .sub-menu .menu-item:hover {
-  cursor: pointer;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-}
-.modal-calculator-inputs-mask .modal-calculator-inputs-wrapper .modal-calculator-inputs-block .inputs-navigation .scenario-dropdown .menu-item .sub-menu .menu-item a {
-  margin: 7px 21px;
-  font-family: "Rubik";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 17px;
-  color: #646569;
 }
 .modal-calculator-inputs-mask .modal-calculator-inputs-wrapper .modal-calculator-inputs-block .inputs-navigation .button-close-container {
   flex: 2;
   height: 100%;
   justify-content: right;
-  padding: 20px;
+}
+.modal-calculator-inputs-mask .modal-calculator-inputs-wrapper .modal-calculator-inputs-block .inputs-navigation .button-close-container .modal-close-icon {
+  padding: 20.5px;
 }
 .modal-calculator-inputs-mask .modal-calculator-inputs-wrapper .modal-calculator-inputs-block .levers-container {
   display: flex;
@@ -1503,11 +1688,10 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 8px 10px;
+  padding: 0 17px;
   box-sizing: border-box;
 }
 .modal-calculator-inputs-mask .modal-calculator-inputs-wrapper .modal-calculator-inputs-block .levers-container .levers-header .levers-column__sectors, .modal-calculator-inputs-mask .modal-calculator-inputs-wrapper .modal-calculator-inputs-block .levers-container .levers-header .levers-column__steps {
-  border-bottom: 1px solid #D2D2D2;
   display: flex;
   flex-direction: row;
   flex: 2;
@@ -1521,21 +1705,19 @@
   line-height: 17px;
   color: #646569;
   padding-left: 4px;
-}
-@media screen and (max-width: 520px) {
-  .modal-calculator-inputs-mask .modal-calculator-inputs-wrapper .modal-calculator-inputs-block .levers-container .levers-header .levers-column__sectors p, .modal-calculator-inputs-mask .modal-calculator-inputs-wrapper .modal-calculator-inputs-block .levers-container .levers-header .levers-column__steps p {
-    font-size: 12px;
-    line-height: 14px;
-  }
+  margin: 17.5px 0;
 }
 .modal-calculator-inputs-mask .modal-calculator-inputs-wrapper .modal-calculator-inputs-block .levers-container .levers-header .levers-column__steps {
-  padding-left: 10px;
+  padding-left: 18px;
 }
 .modal-calculator-inputs-mask .modal-calculator-inputs-wrapper .modal-calculator-inputs-block .levers-container .levers-table {
   display: flex;
-  padding: 30px;
   width: 100%;
   box-sizing: border-box;
+  min-height: 504px;
+  max-height: 504px;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
 }
 .modal-calculator-inputs-mask .modal-calculator-inputs-wrapper .modal-calculator-inputs-block .levers-container .levers-table .levers {
   display: flex;
@@ -1543,88 +1725,34 @@
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-}
-.modal-calculator-inputs-mask .modal-calculator-inputs-wrapper .modal-calculator-inputs-block .levers-container .levers-table .levers .levers-sector-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  width: 100%;
+  padding: 22px 16px 22px 2px;
+  margin: 0 17px;
+  border-top: 1px solid #D9D9D9;
+  border-bottom: 1px solid #D9D9D9;
 }
 .modal-calculator-inputs-mask .modal-calculator-inputs-wrapper .modal-calculator-inputs-block .levers-container .levers-table .levers .levers-sector-container .levers-sector {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 100%;
-  margin-bottom: 8px;
+  padding: 0 0 8px 0;
 }
 .modal-calculator-inputs-mask .modal-calculator-inputs-wrapper .modal-calculator-inputs-block .levers-container .levers-table .levers .levers-sector-container .levers-sector .card {
   height: 35px;
-  min-width: 200px;
-  max-width: 200px;
-  border: solid 1px #D2D2D2;
-  border-radius: 4px;
-  box-sizing: border-box;
-  padding: 0 8px;
-  margin-right: 8px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 5px 5px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  transition: all300ms ease;
-}
-.modal-calculator-inputs-mask .modal-calculator-inputs-wrapper .modal-calculator-inputs-block .levers-container .levers-table .levers .levers-sector-container .levers-sector .card:hover {
-  cursor: pointer;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-}
-.modal-calculator-inputs-mask .modal-calculator-inputs-wrapper .modal-calculator-inputs-block .levers-container .levers-table .levers .levers-sector-container .levers-sector .card .sector-name {
-  font-family: "Rubik";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 14px;
-  color: #49494D;
-  text-transform: uppercase;
-}
-.modal-calculator-inputs-mask .modal-calculator-inputs-wrapper .modal-calculator-inputs-block .levers-container .levers-table .levers .levers-sector-container .levers-sector .card .sector-logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 .modal-calculator-inputs-mask .modal-calculator-inputs-wrapper .modal-calculator-inputs-block .levers-container .levers-table .levers .levers-sector-container .levers-sector .card .sector-logo img {
   height: 24px;
 }
-@media screen and (max-width: 520px) {
-  .modal-calculator-inputs-mask .modal-calculator-inputs-wrapper .modal-calculator-inputs-block .levers-container .levers-table .levers .levers-sector-container .levers-sector .card {
-    min-width: 151px;
-    max-width: 151px;
-  }
-}
-.modal-calculator-inputs-mask .modal-calculator-inputs-wrapper .modal-calculator-inputs-block .levers-container .levers-table .levers .levers-sector-container .levers-sector .lever-steps-container {
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  grid-gap: 4px;
-}
-.modal-calculator-inputs-mask .modal-calculator-inputs-wrapper .modal-calculator-inputs-block .levers-container .levers-table .levers .levers-sector-container .levers-sector .lever-steps-container .lever-step {
-  height: 35px;
-  width: 35px;
-  background: #F1F1F1;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 5px 5px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  transition: all300ms ease;
-  border-radius: 4px;
-}
-.modal-calculator-inputs-mask .modal-calculator-inputs-wrapper .modal-calculator-inputs-block .levers-container .levers-table .levers .levers-sector-container .levers-sector .lever-steps-container .lever-step:hover {
-  cursor: pointer;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+.modal-calculator-inputs-mask .modal-calculator-inputs-wrapper .modal-calculator-inputs-block .levers-container .levers-table .levers .levers-sector-container .levers-sector .card .sector-name {
+  font-size: 12px;
+  line-height: 14px;
 }
 .modal-calculator-inputs-mask .modal-calculator-inputs-wrapper .modal-calculator-inputs-block .levers-container .levers-table .levers .levers-sector-container .levers-subsector-container {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  padding: 0;
+  width: 355.5px;
 }
-.modal-calculator-inputs-mask .modal-calculator-inputs-wrapper .modal-calculator-inputs-block .levers-container .levers-table .levers .levers-sector-container .subsectors-hidden {
-  display: none;
+.modal-calculator-inputs-mask .modal-calculator-inputs-wrapper .modal-calculator-inputs-block .levers-container .levers-table .levers .levers-sector-container .levers-subsector-container .levers-subsectors .subsector-container .subsector-name {
+  white-space: normal;
 }
 @media screen and (max-width: 520px) {
   .modal-calculator-inputs-mask .modal-calculator-inputs-wrapper .modal-calculator-inputs-block .levers-container .levers-table {
@@ -1633,10 +1761,12 @@
 }
 .modal-calculator-inputs-mask .modal-calculator-inputs-wrapper .modal-calculator-inputs-block .action-buttons-container {
   display: flex;
+  width: 100%;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin: 20px 20px 0 20px;
+  padding: 24px 12.5px 12px 12.5px;
+  box-sizing: border-box;
 }
 @media screen and (max-width: 520px) {
   .modal-calculator-inputs-mask .modal-calculator-inputs-wrapper .modal-calculator-inputs-block {
