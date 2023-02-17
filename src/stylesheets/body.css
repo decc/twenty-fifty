@@ -453,3 +453,15 @@ body .block-wrapper .block-container .project-purpose {
 .page-links .modal-mask.nav-sidebar.open {
   display: table;
 }
+
+@media screen and (max-width: 1280px) {
+  .page-links .modal-mask.nav-sidebar.open {
+    display: none;
+  }
+
+}
+
+.mobile-title {
+  display: flex;
+  justify-content: space-between;
+}

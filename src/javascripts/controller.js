@@ -278,11 +278,14 @@
     //   $('.about-project').removeClass('active-tab');
     // });
 
-    $('.how-to-use').on('click touchend', function(event){
+    $('.mobile-how-to-use').on('click touchend', function(event){
       event.preventDefault();
 
-      // $('.modal-how-to-use').show();
-      // $('.modal-about-project').hide();
+      $('.modal-how-to-use').show();
+    });
+
+    $('.close-howto-sidebar').on('click touchend', function(){
+      $('.modal-how-to-use').hide();
     });
 
 
@@ -295,9 +298,7 @@
     });
 
 
-    $('.modal-close-howto-icon ').on('click touchend', function(){
-      $('.modal-how-to-use').toggle();
-    });
+
 
     $('.modal-close-about-icon').on('click touchend', function(){
       $('.modal-about-project').toggle();
