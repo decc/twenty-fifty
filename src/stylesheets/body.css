@@ -463,22 +463,21 @@ body .block-wrapper .block-container .project-purpose {
 }
 
 .modal-how-to-use-mask.modal-how-to-use,
-.modal-about-mask.modal-about-project {
+.modal-calculator-structure-mask.modal-calculator-structure {
   display: none;
   background: #fff;
-}
-
-.modal-how-to-use-mask.modal-how-to-use .content-blocks {
-  height: 100%;
   overflow-y: scroll;
 }
 
-.modal-how-to-use-mask.modal-how-to-use .content-blocks .content-block__text-container {
-  height: 100%;
+
+.modal-how-to-use-mask.modal-how-to-use .content-blocks .content-block__text-container,
+.modal-calculator-structure-mask.modal-calculator-structure .content-blocks .content-block__text-container {
+  /* height: 100%; */
   padding: 20px;
 }
 
-.modal-how-to-use-mask.modal-how-to-use .content-blocks .content-block__text-container p {
+.modal-how-to-use-mask.modal-how-to-use .content-blocks .content-block__text-container p,
+.modal-calculator-structure-mask.modal-calculator-structure .content-blocks .content-block__text-container p {
   font-family: "Rubik";
     font-style: normal;
     font-weight: 400;
@@ -486,4 +485,18 @@ body .block-wrapper .block-container .project-purpose {
     line-height: 17px;
     letter-spacing: -0.04em;
     color: #49494D;
+}
+
+.modal-how-to-use-mask.modal-how-to-use .content-blocks .content-block__text-container h1,
+.modal-calculator-structure-mask.modal-calculator-structure .content-block__text-container h1 {
+  font-weight: 500;
+  font-size: 18px;
+
+}
+
+.modal-how-to-use-mask.modal-how-to-use .content-blocks .content-block__text-container h2,
+.modal-calculator-structure-mask.modal-calculator-structure .content-block__text-container h2{
+  font-weight: 500;
+  margin-bottom: 0;
+  border-bottom: solid 4px #EBF3FF;
 }

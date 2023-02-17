@@ -289,6 +289,17 @@
       $('.modal-how-to-use').hide();
     });
 
+    $('.mobile-calculator-structure').on('click touchend', function(event){
+      event.preventDefault();
+
+      $('.modal-calculator-structure').show();
+      $('.nav-sidebar').removeClass('open');
+    });
+
+    $('.close-structure-sidebar').on('click touchend', function(){
+      $('.modal-calculator-structure').hide();
+    });
+
 
 
     $('.about-project').on('click touchend', function(event){
