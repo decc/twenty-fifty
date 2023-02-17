@@ -300,6 +300,16 @@
       $('.modal-calculator-structure').hide();
     });
 
+    $('.mobile-calculator-scenarious').on('click touchend', function(event){
+      event.preventDefault();
+
+      $('.modal-calculator-scenarious').show();
+      $('.nav-sidebar').removeClass('open');
+    });
+
+    $('.close-scenarious-sidebar').on('click touchend', function(){
+      $('.modal-calculator-scenarious').hide();
+    });
 
 
     $('.about-project').on('click touchend', function(event){
