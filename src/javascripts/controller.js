@@ -278,10 +278,11 @@
     //   $('.about-project').removeClass('active-tab');
     // });
 
-    $('.mobile-how-to-use').on('click touchend', function(event){
+    $('.mobile-calculator-summary').on('click touchend', function(event){
       event.preventDefault();
 
       $('.modal-how-to-use').show();
+      $('.nav-sidebar').removeClass('open');
     });
 
     $('.close-howto-sidebar').on('click touchend', function(){

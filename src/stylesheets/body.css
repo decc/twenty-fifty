@@ -166,11 +166,6 @@ body .calculator-wrapper .calculator-blocks .calculator-outputs .subtab-menu {
   }
 }
 
-.modal-how-to-use-mask.modal-how-to-use,
-.modal-about-mask.modal-about-project {
-  display: none;
-}
-
 .header-wrapper .header-block .page-links nav.navigation-desktop a.page-link-item.active-tab {
   height: 50px;
   font-size: 16px;
@@ -461,7 +456,34 @@ body .block-wrapper .block-container .project-purpose {
 
 }
 
+/* kopsavilkums */
 .mobile-title {
   display: flex;
   justify-content: space-between;
+}
+
+.modal-how-to-use-mask.modal-how-to-use,
+.modal-about-mask.modal-about-project {
+  display: none;
+  background: #fff;
+}
+
+.modal-how-to-use-mask.modal-how-to-use .content-blocks {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.modal-how-to-use-mask.modal-how-to-use .content-blocks .content-block__text-container {
+  height: 100%;
+  padding: 20px;
+}
+
+.modal-how-to-use-mask.modal-how-to-use .content-blocks .content-block__text-container p {
+  font-family: "Rubik";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: -0.04em;
+    color: #49494D;
 }
