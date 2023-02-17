@@ -454,7 +454,7 @@ body .block-wrapper .block-container .project-purpose {
   display: table;
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (min-width: 1281px) {
   .page-links .modal-mask.nav-sidebar.open {
     display: none;
   }
