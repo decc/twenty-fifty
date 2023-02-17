@@ -492,7 +492,7 @@ body .block-wrapper .block-container .project-purpose {
 .modal-calculator-structure-mask.modal-calculator-structure .content-block__text-container h1 {
   font-weight: 500;
   font-size: 18px;
-
+  color: #646569;
 }
 
 .modal-how-to-use-mask.modal-how-to-use .content-blocks .content-block__text-container h2,
@@ -500,4 +500,6 @@ body .block-wrapper .block-container .project-purpose {
   font-weight: 500;
   margin-bottom: 0;
   border-bottom: solid 4px #EBF3FF;
+  color: #646569;
+  font-size: 13px;
 }
