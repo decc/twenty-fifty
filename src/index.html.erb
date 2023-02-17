@@ -58,22 +58,21 @@
     <div class="calculator-wrapper active-page">
         <div class="calculator-blocks">
 
-          <div class="button-scenarious-wrapper">
-              <button class="button-scenarious">Izveido savu scenāriju</button>
-          </div>
+            <div class="button-scenarious-wrapper">
+                <button class="button-scenarious">Izveido savu scenāriju</button>
+            </div>
 
-          <div class="calculator-inputs">
-            <!-- Calculator input navigation -->
-              <%= ERB.new(File.read('parts/inputnav.html.erb'), nil, nil, '_sub01').result(binding) %>
+            <div class="calculator-inputs">
+              <!-- Calculator input navigation -->
+                <%= ERB.new(File.read('parts/inputnav.html.erb'), nil, nil, '_sub01').result(binding) %>
 
-              <!-- Calculator levers -->
-              <%= ERB.new(File.read('levers.html.erb'), nil, nil, '_sub01').result(binding) %>
+                <!-- Calculator levers -->
+                <%= ERB.new(File.read('levers.html.erb'), nil, nil, '_sub01').result(binding) %>
 
-          </div>
+            </div>
 
-
-              <!-- Calculator charts-->
-              <%= ERB.new(File.read('charts.html.erb'), nil, nil, '_sub01').result(binding) %>
+            <!-- Calculator charts-->
+            <%= ERB.new(File.read('charts.html.erb'), nil, nil, '_sub01').result(binding) %>
         </div>
     </div>
     <!-- How to use page -->
