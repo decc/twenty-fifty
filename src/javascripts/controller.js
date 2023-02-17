@@ -303,7 +303,7 @@
       $('.modal-about-project').toggle();
     });
 
-
+// how to use
     $('.kopsavilkums').on('click touchend', function(event){
       event.preventDefault();
 
@@ -338,6 +338,27 @@
       $('.how-to-use').hide();
       $('.calc-structure').hide();
       $('.scenarious').show();
+    });
+
+// about project
+    $('.project').on('click touchend', function(event){
+      event.preventDefault();
+
+      $(this).addClass('router-link-exact-active router-link-active');
+      $('.goals').removeClass('router-link-exact-active router-link-active');
+
+      $('.about-project').show();
+      $('.project-purpose').hide();
+    });
+
+    $('.goals').on('click touchend', function(event){
+      event.preventDefault();
+
+      $(this).addClass('router-link-exact-active router-link-active');
+      $('.project').removeClass('router-link-exact-active router-link-active');
+
+      $('.about-project').hide();
+      $('.project-purpose').show();
     });
 
 
