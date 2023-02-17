@@ -46,7 +46,7 @@ window.twentyfifty.views.primary_energy_chart = function() {
       'Heating and cooling': 'heatingcooling',
       'Hydro': 'hydro',
       'Indigenous fossil-fuel production': 'industry',
-      'Industrial processes': 'industry',
+      'Industriālie procesi': 'industry',
       'Industry': 'industry',
       'Industrial Processes': 'industry',
       "Int'l Aviation & Shipping": 'aviationandshipping',
