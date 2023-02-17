@@ -31,7 +31,7 @@ body {
   flex-direction: row-reverse;
 }
 
-@media screen and (max-width: 1081px) {
+@media screen and (max-width: 1281px) {
   #results {
     flex-direction: column-reverse;
   }
@@ -153,7 +153,7 @@ body .calculator-wrapper .calculator-blocks .calculator-outputs .subtab-menu {
   right: 0;
 }
 
-@media screen and (max-width: 921px) {
+@media screen and (max-width: 1281px) {
   .calculator-wrapper .calculator-blocks .calculator-inputs.open {
     position: absolute;
     top: 75px;
@@ -198,7 +198,7 @@ body .about-page-wrapper {
   display: inline-block;
 }
 
-@media screen and (max-width: 1081px) {
+@media screen and (max-width: 1281px) {
   .gauge-vertical {
     display: none;
   }
