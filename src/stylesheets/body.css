@@ -453,7 +453,6 @@ body .block-wrapper .block-container .project-purpose {
   .page-links .modal-mask.nav-sidebar.open {
     display: none;
   }
-
 }
 
 /* kopsavilkums */
@@ -482,6 +481,15 @@ body .block-wrapper .block-container .project-purpose {
   display: none;
   background: #fff;
   overflow-y: scroll;
+}
+
+@media screen and (min-width: 1281px) {
+  .modal-about-mask.modal-about-project,
+  .modal-how-to-use-mask.modal-how-to-use,
+  .modal-calculator-structure-mask.modal-calculator-structure,
+  .modal-calculator-scenarious-mask.modal-calculator-scenarious {
+    display: none !important;
+  }
 }
 
 
