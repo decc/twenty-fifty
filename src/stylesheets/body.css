@@ -439,3 +439,8 @@ display: none;
   justify-content: right;
   padding: 20px;
 }
+
+.calc-structure,
+.scenarious {
+  display: none;
+}
