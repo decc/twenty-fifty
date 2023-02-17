@@ -493,63 +493,7 @@
 
 
               <!-- Calculator charts-->
-              <div class="calculator-outputs">
-                    <div class="subtab-menu">
-                      <div class="subtab-menu-charts">
-                        <a href="#" class="show_emissions">CO2 emisijas</a>
-                        <a href="#" class="show_supply">Enerģijas ieguve</a>
-                        <a href="#" class="show_demand" class=" chart-selected">Enerģijas patēriņš</a>
-                      </div>
-                      <div class="charts-dropdown">
-                          <div class="menu-item">
-                              <a href="#" class="current-chart-title">
-                              Enerģijas patēriņš
-                              </a>
-                              <svg width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path d="M13.1455 1.3413L7.14551 7.33887L1.14551 1.3413" stroke="#646569" stroke-width="2"/>
-                              </svg>
-                                  <div class="mobile-charts-sub-menu">
-                                      <div class="menu-item">
-                                          <a href="#" class="show_supply">Enerģijas ieguve</a>
-                                      </div>
-                                      <div class="menu-item">
-                                          <a href="#" class="show_emissions">CO2 emisijas</a>
-                                      </div>
-                                      <div class="menu-item">
-                                          <a href="#" class="show_demand">Enerģijas patēriņš</a>
-                                      </div>
-                                  </div>
-                          </div>
-                      </div>
-                      <div class="subtab-menu-share">
-                        <button class="share_link">Dalīties</button>
-                      </div>
-                    </div>
-                    <div class="output-charts-container">
-                      <div id="overview" class="chart-container">
-                        <div id='results'>
-                              <div class="outer-wrapper gauge-vertical">
-                                  <span class="label label-begin">1990</span>
-                                  <div class="column-wrapper">
-                                      <div class="column column-vertical"></div>
-                                      <span class="label-percent"></span>
-                                  </div>
-                                  <span class="label label-end">2050</span>
-                              </div>
-                              <div class="outer-wrapper gauge-horizontal">
-                              <span class="label label-begin">1990</span>
-                              <div class="column-wrapper">
-                                  <div class="column column-horizontal"></div>
-                                  <span class="label-percent"></span>
-                              </div>
-                              <span class="label label-end">2050</span>
-                          </div>
-                        </div>
-
-                      </div>
-
-                  </div>
-              </div>
+              <%= ERB.new(File.read('charts.html.erb'), nil, nil, '_sub01').result(binding) %>
         </div>
     </div>
     <!-- How to use page -->
