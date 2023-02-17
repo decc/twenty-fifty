@@ -304,6 +304,44 @@
     });
 
 
+    $('.kopsavilkums').on('click touchend', function(event){
+      event.preventDefault();
+
+      $(this).addClass('router-link-exact-active router-link-active');
+      $('.uzbuve').removeClass('router-link-exact-active router-link-active');
+      $('.scenariji').removeClass('router-link-exact-active router-link-active');
+
+      $('.how-to-use').show();
+      $('.calc-structure').hide();
+      $('.scenarious').hide();
+    });
+
+    $('.uzbuve').on('click touchend', function(event){
+      event.preventDefault();
+
+      $(this).addClass('router-link-exact-active router-link-active');
+      $('.kopsavilkums').removeClass('router-link-exact-active router-link-active');
+      $('.scenariji').removeClass('router-link-exact-active router-link-active');
+
+      $('.how-to-use').hide();
+      $('.calc-structure').show();
+      $('.scenarious').hide();
+    });
+
+    $('.scenariji').on('click touchend', function(event){
+      event.preventDefault();
+
+      $(this).addClass('router-link-exact-active router-link-active');
+      $('.uzbuve').removeClass('router-link-exact-active router-link-active');
+      $('.kopsavilkums').removeClass('router-link-exact-active router-link-active');
+
+      $('.how-to-use').hide();
+      $('.calc-structure').hide();
+      $('.scenarious').show();
+    });
+
+
+
     // This forces the view to be redrawn if the user resizes their
     // browser window. It uses a timer to only trigger the redraw
     // half a second after the user has stopped resizing.
