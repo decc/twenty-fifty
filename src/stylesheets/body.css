@@ -462,6 +462,7 @@ body .block-wrapper .block-container .project-purpose {
   justify-content: space-between;
 }
 
+.modal-about-mask.modal-about-project,
 .modal-how-to-use-mask.modal-how-to-use,
 .modal-calculator-structure-mask.modal-calculator-structure {
   display: none;
