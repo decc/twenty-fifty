@@ -361,7 +361,7 @@ display: none;
   display: none;
 }
 
-@media screen and (max-width: 921px) {
+@media screen and (max-width: 1281px) {
   .mobile-controls-wrapper {
     display: flex;
       flex-direction: row;
@@ -380,7 +380,7 @@ display: none;
 .hide-on-desktop {
   display: none !important;
 }
-@media screen and (max-width: 921px) {
+@media screen and (max-width: 1281px) {
   .levers-sector .lever-steps-container .lever-step {
     height: 30px;
     width: 30px;
@@ -407,7 +407,7 @@ display: none;
   overflow: hidden;
 } */
 
-@media screen and (max-width: 921px) {
+@media screen and (max-width: 1281px) {
   .hide-overflow {
     overflow: hidden;
   }
