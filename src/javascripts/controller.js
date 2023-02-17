@@ -118,10 +118,10 @@
       $('.scenarious-sub-menu').toggleClass('sub-menu');
     });
 
-    $('.scenarious-sub-menu .menu-item').on('click touchend', function(event){
-      event.preventDefault();
-      $('.scenarious-sub-menu').toggleClass('sub-menu');
-    });
+    // $('.scenarious-sub-menu .menu-item').on('click touchend', function(event){
+    //   event.preventDefault();
+    //   $('.scenarious-sub-menu').toggleClass('sub-menu');
+    // });
 
 
     $('.current-chart-title').on('click touchend', function(event){
