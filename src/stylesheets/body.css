@@ -361,7 +361,7 @@ display: none;
   display: none;
 }
 
-@media screen and (max-width: 1281px) {
+@media screen and (max-width: 1255px) {
   .mobile-controls-wrapper {
     display: flex;
       flex-direction: row;
@@ -380,7 +380,7 @@ display: none;
 .hide-on-desktop {
   display: none !important;
 }
-@media screen and (max-width: 1281px) {
+@media screen and (max-width: 1255px) {
   .levers-sector .lever-steps-container .lever-step {
     height: 30px;
     width: 30px;
