@@ -173,7 +173,7 @@
     $(".nav-hamburger").on('click touchend', function(event){
       event.stopPropagation();
       event.preventDefault();
-      $(".navigation-modal-windows").toggleClass("open");
+      $(".nav-sidebar").toggleClass("open");
     });
 
     $(".button-scenarious").on('click touchend', function(event){
@@ -359,6 +359,16 @@
 
       $('.about-project').hide();
       $('.project-purpose').show();
+    });
+
+
+    // mobile menu
+
+    $('.close-nav-sidebar').on('click touchend', function(event){
+      event.stopPropagation();
+      event.preventDefault();
+
+      $('.nav-sidebar').removeClass('open');
     });
 
 

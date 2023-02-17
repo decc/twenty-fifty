@@ -47,10 +47,8 @@
                     <span class="nav-hamburger"></span>
                 </div>
                 <%= ERB.new(File.read('nav.html.erb'), nil, nil, '_sub01').result(binding) %>
-                <nav class="navigation-modal-windows">
-                    <a href="#" class="how-to-use">Kā lietot kalkulatoru?</a>
-                    <a href="#" class="about-project">Par projektu</a>
-                </nav>
+
+                <%= ERB.new(File.read('parts/mobile-menu.html.erb'), nil, nil, '_sub01').result(binding) %>
             </div>
         </div>
     </div>
