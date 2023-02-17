@@ -282,29 +282,46 @@
       event.preventDefault();
 
       $('.modal-how-to-use').show();
+
+      $('.modal-calculator-structure').hide();
+      $('.modal-calculator-scenarious').hide();
       $('.nav-sidebar').removeClass('open');
     });
 
-    $('.close-howto-sidebar').on('click touchend', function(){
-      $('.modal-how-to-use').hide();
-    });
+
 
     $('.mobile-calculator-structure').on('click touchend', function(event){
       event.preventDefault();
 
       $('.modal-calculator-structure').show();
+
+      $('.modal-calculator-scenarious').hide();
+      $('.modal-how-to-use').hide();
       $('.nav-sidebar').removeClass('open');
     });
 
-    $('.close-structure-sidebar').on('click touchend', function(){
-      $('.modal-calculator-structure').hide();
-    });
+
+
 
     $('.mobile-calculator-scenarious').on('click touchend', function(event){
       event.preventDefault();
 
       $('.modal-calculator-scenarious').show();
+
+      $('.modal-calculator-structure').hide();
+      $('.modal-how-to-use').hide();
       $('.nav-sidebar').removeClass('open');
+    });
+
+
+
+    $('.close-structure-sidebar').on('click touchend', function(){
+      $('.modal-calculator-structure').hide();
+    });
+
+
+    $('.close-howto-sidebar').on('click touchend', function(){
+      $('.modal-how-to-use').hide();
     });
 
     $('.close-scenarious-sidebar').on('click touchend', function(){

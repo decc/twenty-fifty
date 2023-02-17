@@ -462,6 +462,19 @@ body .block-wrapper .block-container .project-purpose {
   justify-content: space-between;
 }
 
+.modal-calculator-scenarious-mask,
+.modal-calculator-structure-mask {
+  position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: table;
+    transition: opacity 0.3s ease;
+}
+
 .modal-about-mask.modal-about-project,
 .modal-how-to-use-mask.modal-how-to-use,
 .modal-calculator-structure-mask.modal-calculator-structure,
