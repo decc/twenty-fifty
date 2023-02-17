@@ -146,7 +146,6 @@ body .calculator-wrapper .calculator-blocks .calculator-outputs .subtab-menu {
   z-index: 999;
   padding-left: 5px;
   padding-right: 5px;
-  background: #fff;
   margin-left: auto;
   margin-right: auto;
   left: 0;
@@ -157,6 +156,7 @@ body .calculator-wrapper .calculator-blocks .calculator-outputs .subtab-menu {
   .calculator-wrapper .calculator-blocks .calculator-inputs.open {
     position: absolute;
     top: 75px;
+    background: #fff;
   }
 }
 
@@ -530,4 +530,18 @@ body .block-wrapper .block-container .project-purpose {
   border-bottom: solid 4px #EBF3FF;
   color: #646569;
   font-size: 13px;
+}
+
+.info-box {
+  display: none;
+  position: absolute;
+  bottom: 50px;
+  padding: 10px;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  border: 2px solid #49494D;
 }

@@ -270,6 +270,8 @@
         dummy.select();
         document.execCommand('copy');
         document.body.removeChild(dummy);
+
+        $('.info-box').show().delay(5000).fadeOut();
     });
 
     // MODALS
