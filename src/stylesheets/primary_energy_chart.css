@@ -104,23 +104,23 @@ g.context path {
   fill: #660066; }
 
 .importedgas {
-  fill: #79187f;
+  fill: #5F8B4B;
 }
 
 .coal {
-  fill: #000000; }
+  fill: #4BD2D2; }
 
 .importedcoal {
-  fill: #393939; }
+  fill: #3877A5; }
 
 .oil {
   fill: #00782A; }
 
 .importedoil {
-  fill: #009636; }
+  fill: #4CA58F; }
 
 .bioenergy {
-  fill: #81b51a; }
+  fill: #93829B; }
 
 .importedbioenergy {
   fill: #90c91d; }
@@ -171,10 +171,10 @@ text.solar {
   fill: #003688; }
 
 .electricity {
-  fill: #0064F5; }
+  fill: #DE8344; }
 
 .transport {
-  fill: #F3A9BB; }
+  fill: #CC8039; }
 
 .heatingcooling {
   fill: #E32017; }
@@ -189,22 +189,22 @@ text.lightingappliances {
   fill: #be9d00; }
 
 .carboncapture {
-  fill: #00A4A7; }
+  fill: #A1A3E9; }
 
 .lulucf {
-  fill: #ff0000; }
+  fill: #BCF0A7; }
 
 .fuelcombustion {
-  fill: #95CDBA; }
+  fill: #E1CF6F; }
 
 .aviationandshipping {
-  fill: #CC9999; }
+  fill: #DCC1C1; }
 
 .waste {
-  fill: #ff0000; }
+  fill: #B47663; }
 
 .agriculture {
-  fill: #84B817; }
+  fill: #8CE2E7; }
 
 .commercialheat {
   fill: #ff0000; }
