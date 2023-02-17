@@ -271,7 +271,7 @@
         document.execCommand('copy');
         document.body.removeChild(dummy);
 
-        $('.info-box').show().delay(5000).fadeOut();
+        $('.info-box').show().delay(3000).fadeOut();
     });
 
     // MODALS
