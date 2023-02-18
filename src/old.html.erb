@@ -1,0 +1,211 @@
+<% if false %>
+    <div id='topbar'>
+
+      <div id='name'>
+        <!-- Change this to link to your country website -->
+        <a href='http://www.decc.gov.uk/2050'>The UK 2050 Calculator</a>
+      </div>
+
+      <div id='examples'>
+        <a class='newdropdown' data-dropdown='#savedpathway_choices' href='#'>Examples</a>
+        <!-- the contents of this dropdown is defined in the #savedpathway_choices div below -->
+      </div>
+
+      <!-- To add or remove views from the web tool, alter the following section -->
+      <div id='views'>
+        <a class='view' data-view='primary_energy_chart' href='#'>Energy</a>
+        <a class='view' data-view='electricity' href='#'>Electricity</a>
+        <a class='view' data-view='energy_security' href='#'>Security</a>
+        <a class='view' data-view='sankey' href='#'>Flows</a>
+        <a class='view' data-view='map' href='#'>Map</a>
+        <a class='view' data-view='story' href='#'>Story</a>
+        <a class='newdropdown' data-dropdown='#cost_choices' href='#' id='cost_choice'>Costs</a>
+        <a class='view' data-view='air_quality' href='#'>Air</a>
+        <a class='view' data-view='share' href='#'>Share</a>
+        <!-- Change this to link to your own country website documentation -->
+        <a href='http://2050-calculator-tool-wiki.decc.gov.uk'>Docs</a>
+      </div>
+    </div>
+
+    <div class='dropdown' id='cost_choices'>
+      <a class='view' data-view='costs_in_context' href='#'>In context</a>
+      <a class='view' data-view='costs_compared_overview' href='#'>Compared</a>
+      <a class='view' data-view='costs_sensitivity' href='#'>Sensitivity</a>
+    </div>
+
+    <div class='dropdown' id='savedpathway_choices'>
+      <!-- These are taken from the underlying spreadsheet -->
+      <% structure.example_pathways.each do |pathway| %>
+        <a href='#' onclick="twentyfifty.switchPathway('<%= pathway[:code] %>');$('ul#savedpathway_choices').toggle()"><%= pathway[:name] %></a>
+      <% end %>
+      <!-- Change this to point to your local website -->
+      <a href='http://2050-calculator-tool-wiki.decc.gov.uk/pages/122'>More&hellip;</a>
+    </div>
+
+    <!-- / The charts will be drawn in this block -->
+
+    <div id='results'></div>
+
+    <!-- / These are the controls -->
+    <div id='classic_controls'>
+      <!-- The left column -->
+      <div id='demand'>
+        <table>
+          <!-- One row per choice -->
+          <% structure.choices[21..39].each do |choice| %>
+            <tr class='<%= choice.incremental_or_alternative %>' id='r<%= choice.number %>'>
+              <td class='name'>
+                <a href='/assets/onepage/<%= choice.doc %>' target='_new' data-choicenumber='<%= choice.number %>'>
+                  <%= choice.name %>
+                </a>
+              </td>
+              <!-- td class='help'>
+                <a title='Click for more detail on what choices <%= choice.levels.to_a.join(' ')%> mean.' href='/assets/onepage/<%= choice.doc %>' target='_new'>?</a>
+              </!-->
+              <!-- One cell per level for that choice -->
+              <% choice.levels.each.with_index do |level,i| %>
+                <td class='choice'>
+                  <a href='#' data-choicenumber='<%= choice.number %>' data-choicelevel='<%= i+1 %>' id='c<%= choice.number %>l<%= i+1%>' title='<%= choice.descriptions[i] %>' class='choiceLink' >
+                    <%= level %>
+                </a>
+              </td>
+            <% end %>
+            </tr>
+          <% end %>
+        </table>
+      </div>
+      <!-- The middle column -->
+      <div id='supply'>
+        <table>
+          <% structure.choices[0..20].each do |choice| %>
+            <tr class='<%= choice.incremental_or_alternative %>' id='r<%= choice.number %>'>
+              <td class='name'>
+                <a href='/assets/onepage/<%= choice.doc %>' target='_new' data-choicenumber='<%= choice.number %>'>
+                  <%= choice.name %>
+                </a>
+              </td>
+              <!-- td class='help'>
+                <a title='Click for more detail on what choices <%= choice.levels.to_a.join(' ')%> mean.' href='/assets/onepage/<%= choice.doc %>' target='_new'>?</a>
+              </!-->
+              <!-- One cell per level for that choice -->
+              <% choice.levels.each.with_index do |level,i| %>
+                <td class='choice'>
+                  <a href='#' data-choicenumber='<%= choice.number %>' data-choicelevel='<%= i+1 %>' id='c<%= choice.number %>l<%= i+1%>' title='<%= choice.descriptions[i] %>' class='choiceLink' >
+                    <%= level %>
+                </a>
+              </td>
+            <% end %>
+            </tr>
+          <% end %>
+        </table>
+      </div>
+      <!-- The right column -->
+      <div id='other'>
+        <table>
+          <!-- this should actually go up to choice 42, but that isn't ready for prime time yet -->
+          <% structure.choices[40..41].each do |choice| %>
+            <tr class='<%= choice.incremental_or_alternative %>' id='r<%= choice.number %>'>
+              <td class='name'>
+                <a href='/assets/onepage/<%= choice.doc %>' target='_new' data-choicenumber='<%= choice.number %>'>
+                  <%= choice.name %>
+                </a>
+              </td>
+              <!-- td class='help'>
+                <a title='Click for more detail on what choices <%= choice.levels.to_a.join(' ')%> mean.' href='/assets/onepage/<%= choice.doc %>' target='_new'>?</a>
+              </!-->
+              <!-- One cell per level for that choice -->
+              <% choice.levels.each.with_index do |level,i| %>
+                <td class='choice'>
+                  <a href='#' data-choicenumber='<%= choice.number %>' data-choicelevel='<%= i+1 %>' id='c<%= choice.number %>l<%= i+1%>' title='<%= choice.descriptions[i] %>' class='choiceLink' >
+                    <%= level %>
+                </a>
+              </td>
+            <% end %>
+            </tr>
+          <% end %>
+        </table>
+        <h4>Notes</h4>
+        <table id='notes'>
+          <tr><td id='firstcell'><div class='help'>?</div></td><td>Question marks take you to one page descriptions of each choice</td></tr>
+          <tr><td><div class='level1'>1</div></td><td>The least effort possible on this choice.</td></tr>
+          <tr><td><div class='level2'>2</div></td><td>Viewed as ambitious, but reasonable by most experts.</td></tr>
+          <tr><td><div class='level3'>3</div></td><td>Viewed as unlikely without significant change from the current system and/or significant technological breakthroughs</td></tr>
+          <tr><td><div class='level4'>4</div></td><td>The upper end of what is thought to be physically plausible by the most optimistic observer.</td></tr>
+          <tr><td><div class='alternate'>A</div>&ndash;<div class='alternate'>D</div></td><td>A range of options where one alternative is not neccesiarily harder than another</td></tr>
+          <tr class='primary_energy_notes'><td>Total used in the UK<sup>1</sup></td><td>Primary energy supply is normally higher than final energy demand, because of the energy used to generate electricity.</td></tr>
+          <tr class='primary_energy_notes'><td>Targets<sup>2</sup></td><td>The targets up to 2027 exclude international aviation and shipping. They are also calculated as five year 'budgets', rather than the single year targets shown here.</td></tr>
+          <tr class='primary_energy_notes'><td>Total<sup>3</sup></td><td>The total includes the reduction in emissions from carbon capture and storage and from growing new biomass to replace that used (the bioenergy credit).</td></tr>
+      </table>
+      </div>
+    </div>
+    <% end %>
+
+
+
+    <!-- The following html is only displayed on screen when a user selects a particular view -->
+    <div id='snippets'>
+      <!-- This is shown the first time a user visits a costs page -->
+      <div id='cost_caveats'>
+        We would like your help to develop this tool. Please <a href="http://2050-calculator-tool-wiki.decc.gov.uk">click here</a> to find out more about our methodology and suggest improvements.  Before viewing the cost implications of your choices, please note that:
+          <ol>
+            <li> The Calculator expresses pathway costs as 'average pounds per person per year'. This is not the same as your energy bill. It is the cost of everything the UK buys that makes, converts, saves or uses energy: from kettles and insulation foam to trains and power stations. You can choose to see the results in different units when using the <a href=\"http://www.decc.gov.uk/2050\">excel version of the Calculator.</a> </li>
+            <li>The Calculator does not choose any options automatically, regardless of their cost.</li>
+            <li> The Calculator uses forecasts from credible sources of how technology and fuel costs might rise or fall over time. You vary these forecasts using the <a href="#" onclick="twentyfifty.switchView('costs_sensitivity'); return false;">cost sensitivity</a> implication from the menu on the top left. The full set of data points is available on the <a href="http://2050-calculator-tool-wiki.decc.gov.uk">wiki.</a> </li>
+            <li>The cost of not tackling climate change is not included in the Calculator. The Stern review estimated that failing to tackle climate change could reduce global GDP by up to 20%. This is the equivalent of up to &pound;6,500 per person per year on average, on top of the cost of the energy system.</li>
+            <li>Some other important effects have been excluded from the Calculator. The costs of travelling less or with different modes of transport, having colder homes or fewer goods, and changing the appearance of our houses or landscape are not included. Nor are profits, taxes, subsidies or economies of scale driven by pathway choices. The Calculator includes only the physical costs of constructing, operating and fuelling equipment.</li>
+            <li>Costs are just one feature for comparing 2050 pathways. The Calculator provides information on other impacts, as well as some illustrative pathways to compare your choices with.</li>
+          </ol>
+          <div id='understand'>
+            <a href="#" onclick="$.jStorage.set('CostCaveatShown',true);$('#cost_caveats').hide(); return false;">Click to continue using the calculator</a>
+          </div>
+        </div>
+        <div id='air_quality_results'>
+          <div class='airquality'>
+            <h1>The impact of your pathway on air quality</h1>
+            <div class='airqualitymessage' id='airqualitymessage'>
+              The damage to human health arising from air pollution from this pathway, principally particulate matter, could be around <span id='airquality_range_start'></span><span id='airquality_range_end'></span> in 2050 compared to 2010. <span id='air_quality_worse'> Given the scope for adverse implications for air quality, if the UK were to adopt this pathway the Government  would develop a policy framweork that supported the innovation required to be at the bottom end of the range</span>
+          </div>
+            <div id='airquality'></div>
+            <div class='airqualitymessage'>
+              <h2>How to interpret these results:</h2>
+              <ul>
+                <li>Air pollution health impact index &mdash; this index measures the effect on human health from fine particulate matter and other air pollutants such as nitrogen oxides.  For example, these pollutants have been linked to premature death caused by heart and lung disease. 2010 is the baseline year (100). A number lower than 100 indicates a reduction in average air pollution and associated health impacts, whilst a higher number indicates an increase. This index reflects changes in the average concentration of air pollutants across the UK.  It does not provide information on the number or severity of pollution hotspots.</li>
+                <li>High end of hatched range &mdash; worst case scenario for air pollution whereby there is no further deployment or innovation in pollution abatement technology between now and 2050 beyond planned measures.</li>
+                <li>Low end of hatched range &mdash; best case scenario whereby innovation radically improves pollution abatement technology between now and 2050 and it is fully deployed.</li>
+              </ul>
+              <p>
+              We would welcome your feedback on the
+              <a href="http://2050-calculator-tool-wiki.decc.gov.uk/pages/80">methodology</a> used to calculate the impact of your pathway on air quality.
+              You can also download the excel version of the 2050 pathways calcualtor to see the different types of air pollution and the relative importance of different sources.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="energysecurity">
+          <div id="balancing" class="column">
+            <h2>Balancing electricity supply and demand</h2>
+            <p id='autobuild_text'><span id='pathway_balancing_ccgt'></span> GW of conventional gas electricity generation plant has been assumed to have been built by 2050, to cover the gap between average electricity demand and the amount of low carbon generation selected in this pathway.</p>
+            <p>This tool does not model the hourly, daily or even seasonal operation of the electricity grid. It presents annual averages. Therefore it does not correctly represent the peaks and troughs of electricity demand.</p>
+            <p>To go some way to addressing this flaw, the tool applies a simulated stress test to your pathway of five cold, almost windless, days. This is described in more detail <a href="/assets/onepage/49.pdf" target="_new">here</a>. In this case, the stress test implies that <span id='pathway_balancing_peaking'></span> GW of additional peaking plant may be required for supply to meet demand over that period.</p>
+            <p>You can influence the amount of peaking plant by changing your choice level of 'storage, demand shifting &amp; interconnection' below right,or by reducing the amount of intermittent renewable generation, or by reducing the demand for electricity</p>
+          </div>
+          <div id="imports" class="column">
+            <h2>Dependence on imported energy</h2>
+            <p>The calculator assumes that any available biomass is preferred over fossil fuels and that domestically produced fuels are preferred over imports.It assumes that fossil fuels are imported to cover any shortfall.</p>
+            <table id="imports">
+              <tr><th class="description"></th><th colspan="2" class="year">2007</th><th></th><th colspan="2" class="year">2050</th></tr>
+              <tr><th class="description">Imports</th><th class="value">TWh/yr</th><th class="value">%</th><th></th><th class="value">TWh/yr</th><th class="value">%</th></tr>
+            </table>
+          </div>
+          <div id="diversity" class="column">
+            <h2>Diversity of energy sources</h2>
+            <p>There may be a benefit from maintaining a diversity of energy sources:</p>
+            <table id="diversity">
+              <tbody>
+              <tr><th class="description">Proportion of energy supply</th><th class="year">2007</th><th></th><th class="year">2050</th></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="clear"></div>
+        </div>
+      </div>

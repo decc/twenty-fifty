@@ -166,11 +166,6 @@ body .calculator-wrapper .calculator-blocks .calculator-outputs .subtab-menu {
   }
 }
 
-.modal-how-to-use-mask.modal-how-to-use,
-.modal-about-mask.modal-about-project {
-  display: none;
-}
-
 .header-wrapper .header-block .page-links nav.navigation-desktop a.page-link-item.active-tab {
   height: 50px;
   font-size: 16px;
@@ -263,6 +258,7 @@ body .about-page-wrapper {
   margin: 0 auto;
   border-radius: 10px;
   position: relative;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
 }
 
 .gauge-vertical .column{
@@ -284,6 +280,7 @@ body .about-page-wrapper {
   margin: 0 auto;
   border-radius: 10px;
   position: relative;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
 }
 
 .gauge-horizontal .column{
@@ -438,4 +435,99 @@ display: none;
   height: 100%;
   justify-content: right;
   padding: 20px;
+}
+
+body .block-wrapper .block-container .calc-structure,
+body .block-wrapper .block-container .scenarious,
+body .block-wrapper .block-container .project-purpose {
+  display: none;
+}
+
+.page-links .modal-mask.nav-sidebar {
+  display: none;
+}
+
+.page-links .modal-mask.nav-sidebar.open {
+  display: table;
+}
+
+@media screen and (min-width: 1281px) {
+  .page-links .modal-mask.nav-sidebar.open {
+    display: none;
+  }
+}
+
+/* kopsavilkums */
+.mobile-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-calculator-scenarious-mask,
+.modal-calculator-structure-mask {
+  position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: table;
+    transition: opacity 0.3s ease;
+}
+
+.modal-about-mask.modal-about-project,
+.modal-how-to-use-mask.modal-how-to-use,
+.modal-calculator-structure-mask.modal-calculator-structure,
+.modal-calculator-scenarious-mask.modal-calculator-scenarious {
+  display: none;
+  background: #fff;
+  overflow-y: scroll;
+}
+
+@media screen and (min-width: 1281px) {
+  .modal-about-mask.modal-about-project,
+  .modal-how-to-use-mask.modal-how-to-use,
+  .modal-calculator-structure-mask.modal-calculator-structure,
+  .modal-calculator-scenarious-mask.modal-calculator-scenarious {
+    display: none !important;
+  }
+}
+
+
+.modal-how-to-use-mask.modal-how-to-use .content-blocks .content-block__text-container,
+.modal-calculator-structure-mask.modal-calculator-structure .content-blocks .content-block__text-container,
+.modal-calculator-scenarious-mask.modal-calculator-scenarious .content-blocks .content-block__text-container {
+  /* height: 100%; */
+  padding: 20px;
+}
+
+.modal-how-to-use-mask.modal-how-to-use .content-blocks .content-block__text-container p,
+.modal-calculator-structure-mask.modal-calculator-structure .content-blocks .content-block__text-container p,
+.modal-calculator-scenarious-mask.modal-calculator-scenarious .content-blocks .content-block__text-container p {
+  font-family: "Rubik";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: -0.04em;
+    color: #49494D;
+}
+
+.modal-how-to-use-mask.modal-how-to-use .content-blocks .content-block__text-container h1,
+.modal-calculator-structure-mask.modal-calculator-structure .content-block__text-container h1,
+.modal-calculator-scenarious-mask.modal-calculator-scenarious  .content-block__text-container h1 {
+  font-weight: 500;
+  font-size: 18px;
+  color: #646569;
+}
+
+.modal-how-to-use-mask.modal-how-to-use .content-blocks .content-block__text-container h2,
+.modal-calculator-structure-mask.modal-calculator-structure .content-block__text-container h2,
+.modal-calculator-scenarious-mask.modal-calculator-scenarious .content-block__text-container h2 {
+  font-weight: 500;
+  margin-bottom: 0;
+  border-bottom: solid 4px #EBF3FF;
+  color: #646569;
+  font-size: 13px;
 }

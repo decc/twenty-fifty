@@ -1,0 +1,41 @@
+<!--
+<nav class="navigation-modal-windows">
+<a href="#" class="how-to-use">Kā lietot kalkulatoru?</a>
+<a href="#" class="about-project">Par projektu</a>
+</nav>
+-->
+
+<div class="modal-mask nav-sidebar">
+        <div class="modal-wrapper">
+            <div class="modal-block">
+                <div class="container__heading">
+                      <div class="button-close-container">
+                          <span class="modal-close-icon close-nav-sidebar"></span>
+                      </div>
+                </div>
+                <div class="container__tab">
+                    <nav class="tab-links">
+                        <a href="#" class="page-link-item mobile-how-to-use">Kā lietot kalkulatoru?</a>
+                        <router-link to="/par-projektu" class="page-link-item">Par projektu</router-link>
+                    </nav>
+                </div>
+                <div class="container__tab-mobile">
+                    <div class="tab-block">
+                        <h2>Kā lietot kalkulatoru?</h2>
+                        <nav class="tab-links">
+                            <a href="#" class="tab-link-item mobile-calculator-summary">Kopsavilkums</a>
+                            <a href="#" class="tab-link-item mobile-calculator-structure">Kalkulatora uzbūve</a>
+                            <a href="#" class="tab-link-item mobile-calculator-scenarious">Sava scenārija izveide</a>
+                        </nav>
+                    </div>
+                    <div class="tab-block">
+                        <h2>Par projektu</h2>
+                        <nav class="tab-links">
+                            <router-link class="tab-link-item" to="/par-projektu" exact>Projekts</router-link>
+                            <router-link class="tab-link-item" to="/par-projektu/projekta-merki">Projekta mērķi</router-link>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

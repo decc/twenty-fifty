@@ -118,6 +118,12 @@
       $('.scenarious-sub-menu').toggleClass('sub-menu');
     });
 
+    // $('.scenarious-sub-menu .menu-item').on('click touchend', function(event){
+    //   event.preventDefault();
+    //   $('.scenarious-sub-menu').toggleClass('sub-menu');
+    // });
+
+
     $('.current-chart-title').on('click touchend', function(event){
       event.preventDefault();
       $('.mobile-charts-sub-menu').toggleClass('sub-menu');
@@ -133,8 +139,8 @@
       $('#emissions_chart').show();
 
       $(this).addClass('chart-selected');
-      $('#show_demand').removeClass('chart-selected');
-      $('#show_supply').removeClass('chart-selected');
+      $('.show_demand').removeClass('chart-selected');
+      $('.show_supply').removeClass('chart-selected');
 
       $('.current-chart-title').text($(this).text());
       $('.mobile-charts-sub-menu').removeClass('sub-menu');
@@ -148,8 +154,8 @@
       $('#emissions_chart').hide();
 
       $(this).addClass('chart-selected');
-      $('#show_demand').removeClass('chart-selected');
-      $('#show_emissions').removeClass('chart-selected');
+      $('.show_demand').removeClass('chart-selected');
+      $('.show_emissions').removeClass('chart-selected');
 
       $('.current-chart-title').text($(this).text());
       $('.mobile-charts-sub-menu').removeClass('sub-menu');
@@ -163,8 +169,8 @@
       $('#emissions_chart').hide();
 
       $(this).addClass('chart-selected');
-      $('#show_supply').removeClass('chart-selected');
-      $('#show_emissions').removeClass('chart-selected');
+      $('.show_supply').removeClass('chart-selected');
+      $('.show_emissions').removeClass('chart-selected');
 
       $('.current-chart-title').text($(this).text());
       $('.mobile-charts-sub-menu').removeClass('sub-menu');
@@ -173,7 +179,7 @@
     $(".nav-hamburger").on('click touchend', function(event){
       event.stopPropagation();
       event.preventDefault();
-      $(".navigation-modal-windows").toggleClass("open");
+      $(".nav-sidebar").toggleClass("open");
     });
 
     $(".button-scenarious").on('click touchend', function(event){
@@ -278,47 +284,141 @@
     //   $('.about-project').removeClass('active-tab');
     // });
 
-    $('.how-to-use').on('click touchend', function(event){
+    $('.mobile-calculator-summary').on('click touchend', function(event){
       event.preventDefault();
 
       $('.modal-how-to-use').show();
-      $('.modal-about-project').hide();
 
-      // $(this).addClass('active-tab');
-      // $('.calculator').removeClass('active-tab');
-      // $('.about-project').removeClass('active-tab');
+      $('.modal-calculator-structure').hide();
+      $('.modal-calculator-scenarious').hide();
+      $('.nav-sidebar').removeClass('open');
     });
 
+
+
+    $('.mobile-calculator-structure').on('click touchend', function(event){
+      event.preventDefault();
+
+      $('.modal-calculator-structure').show();
+
+      $('.modal-calculator-scenarious').hide();
+      $('.modal-how-to-use').hide();
+      $('.nav-sidebar').removeClass('open');
+    });
+
+
+
+
+    $('.mobile-calculator-scenarious').on('click touchend', function(event){
+      event.preventDefault();
+
+      $('.modal-calculator-scenarious').show();
+
+      $('.modal-calculator-structure').hide();
+      $('.modal-how-to-use').hide();
+      $('.nav-sidebar').removeClass('open');
+    });
+
+
+
+    $('.close-structure-sidebar').on('click touchend', function(){
+      $('.modal-calculator-structure').hide();
+    });
+
+
+    $('.close-howto-sidebar').on('click touchend', function(){
+      $('.modal-how-to-use').hide();
+    });
+
+    $('.close-scenarious-sidebar').on('click touchend', function(){
+      $('.modal-calculator-scenarious').hide();
+    });
 
 
     $('.about-project').on('click touchend', function(event){
       event.preventDefault();
 
-      $('.modal-how-to-use').hide();
-      $('.modal-about-project').show();
-
-      // $(this).addClass('active-tab');
-      // $('.calculator').removeClass('active-tab');
-      // $('.how-to-use').removeClass('active-tab');
+      // $('.modal-how-to-use').hide();
+      // $('.modal-about-project').show();
     });
 
 
-    $('.modal-close-howto-icon ').on('click touchend', function(){
-      $('.modal-how-to-use').toggle();
 
-
-      // $('.calculator').addClass('active-tab');
-      // $('.how-to-use').removeClass('active-tab');
-      // $('.about-project').removeClass('active-tab');
-    });
 
     $('.modal-close-about-icon').on('click touchend', function(){
       $('.modal-about-project').toggle();
-
-      // $('.calculator').addClass('active-tab');
-      // $('.how-to-use').removeClass('active-tab');
-      // $('.about-project').removeClass('active-tab');
     });
+
+// how to use
+    $('.kopsavilkums').on('click touchend', function(event){
+      event.preventDefault();
+
+      $(this).addClass('router-link-exact-active router-link-active');
+      $('.uzbuve').removeClass('router-link-exact-active router-link-active');
+      $('.scenariji').removeClass('router-link-exact-active router-link-active');
+
+      $('.how-to-use').show();
+      $('.calc-structure').hide();
+      $('.scenarious').hide();
+    });
+
+    $('.uzbuve').on('click touchend', function(event){
+      event.preventDefault();
+
+      $(this).addClass('router-link-exact-active router-link-active');
+      $('.kopsavilkums').removeClass('router-link-exact-active router-link-active');
+      $('.scenariji').removeClass('router-link-exact-active router-link-active');
+
+      $('.how-to-use').hide();
+      $('.calc-structure').show();
+      $('.scenarious').hide();
+    });
+
+    $('.scenariji').on('click touchend', function(event){
+      event.preventDefault();
+
+      $(this).addClass('router-link-exact-active router-link-active');
+      $('.uzbuve').removeClass('router-link-exact-active router-link-active');
+      $('.kopsavilkums').removeClass('router-link-exact-active router-link-active');
+
+      $('.how-to-use').hide();
+      $('.calc-structure').hide();
+      $('.scenarious').show();
+    });
+
+// about project
+    $('.project').on('click touchend', function(event){
+      event.preventDefault();
+
+      $(this).addClass('router-link-exact-active router-link-active');
+      $('.goals').removeClass('router-link-exact-active router-link-active');
+
+      $('.about-project').show();
+      $('.project-purpose').hide();
+    });
+
+    $('.goals').on('click touchend', function(event){
+      event.preventDefault();
+
+      $(this).addClass('router-link-exact-active router-link-active');
+      $('.project').removeClass('router-link-exact-active router-link-active');
+
+      $('.about-project').hide();
+      $('.project-purpose').show();
+    });
+
+
+    // mobile menu
+
+    $('.close-nav-sidebar').on('click touchend', function(event){
+      event.stopPropagation();
+      event.preventDefault();
+
+      $('.nav-sidebar').removeClass('open');
+    });
+
+
+
     // This forces the view to be redrawn if the user resizes their
     // browser window. It uses a timer to only trigger the redraw
     // half a second after the user has stopped resizing.
