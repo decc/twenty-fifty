@@ -44,7 +44,7 @@ body {
 
 .levers-container {
   max-height: 568px;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
 }
 
 .levers-subsector-container {
