@@ -464,7 +464,9 @@ body .block-wrapper .block-container .project-purpose {
 }
 
 .modal-calculator-scenarious-mask,
-.modal-calculator-structure-mask {
+.modal-calculator-structure-mask,
+.modal-about-mask,
+.modal-goals-mask {
   position: fixed;
     z-index: 999;
     top: 0;
@@ -479,7 +481,9 @@ body .block-wrapper .block-container .project-purpose {
 .modal-about-mask.modal-about-project,
 .modal-how-to-use-mask.modal-how-to-use,
 .modal-calculator-structure-mask.modal-calculator-structure,
-.modal-calculator-scenarious-mask.modal-calculator-scenarious {
+.modal-calculator-scenarious-mask.modal-calculator-scenarious,
+.modal-about-mask.modal-project-about,
+.modal-goals-mask.modal-project-goals {
   display: none;
   background: #fff;
   overflow-y: scroll;
@@ -489,7 +493,9 @@ body .block-wrapper .block-container .project-purpose {
   .modal-about-mask.modal-about-project,
   .modal-how-to-use-mask.modal-how-to-use,
   .modal-calculator-structure-mask.modal-calculator-structure,
-  .modal-calculator-scenarious-mask.modal-calculator-scenarious {
+  .modal-calculator-scenarious-mask.modal-calculator-scenarious,
+  .modal-about-mask.modal-project-about,
+  .modal-goals-mask.modal-project-goals {
     display: none !important;
   }
 }
@@ -497,14 +503,18 @@ body .block-wrapper .block-container .project-purpose {
 
 .modal-how-to-use-mask.modal-how-to-use .content-blocks .content-block__text-container,
 .modal-calculator-structure-mask.modal-calculator-structure .content-blocks .content-block__text-container,
-.modal-calculator-scenarious-mask.modal-calculator-scenarious .content-blocks .content-block__text-container {
+.modal-calculator-scenarious-mask.modal-calculator-scenarious .content-blocks .content-block__text-container,
+.modal-about-mask.modal-project-about .content-blocks .content-block__text-container,
+.modal-goals-mask.modal-project-goals .content-blocks .content-block__text-container {
   /* height: 100%; */
   padding: 20px;
 }
 
 .modal-how-to-use-mask.modal-how-to-use .content-blocks .content-block__text-container p,
 .modal-calculator-structure-mask.modal-calculator-structure .content-blocks .content-block__text-container p,
-.modal-calculator-scenarious-mask.modal-calculator-scenarious .content-blocks .content-block__text-container p {
+.modal-calculator-scenarious-mask.modal-calculator-scenarious .content-blocks .content-block__text-container p,
+.modal-about-mask.modal-project-about .content-blocks .content-block__text-container p,
+.modal-goals-mask.modal-project-goals  .content-blocks .content-block__text-container p {
   font-family: "Rubik";
     font-style: normal;
     font-weight: 400;
@@ -516,7 +526,9 @@ body .block-wrapper .block-container .project-purpose {
 
 .modal-how-to-use-mask.modal-how-to-use .content-blocks .content-block__text-container h1,
 .modal-calculator-structure-mask.modal-calculator-structure .content-block__text-container h1,
-.modal-calculator-scenarious-mask.modal-calculator-scenarious  .content-block__text-container h1 {
+.modal-calculator-scenarious-mask.modal-calculator-scenarious  .content-block__text-container h1,
+.modal-about-mask.modal-project-about .content-block__text-container h1,
+.modal-goals-mask.modal-project-goals  .content-block__text-container h1 {
   font-weight: 500;
   font-size: 18px;
   color: #646569;
@@ -524,7 +536,9 @@ body .block-wrapper .block-container .project-purpose {
 
 .modal-how-to-use-mask.modal-how-to-use .content-blocks .content-block__text-container h2,
 .modal-calculator-structure-mask.modal-calculator-structure .content-block__text-container h2,
-.modal-calculator-scenarious-mask.modal-calculator-scenarious .content-block__text-container h2 {
+.modal-calculator-scenarious-mask.modal-calculator-scenarious .content-block__text-container h2,
+.modal-about-mask.modal-project-about .content-block__text-container h2,
+.modal-goals-mask.modal-project-goals  .content-block__text-container h2 {
   font-weight: 500;
   margin-bottom: 0;
   border-bottom: solid 4px #EBF3FF;
