@@ -270,6 +270,8 @@
         dummy.select();
         document.execCommand('copy');
         document.body.removeChild(dummy);
+
+        $('.info-box').show().delay(3000).fadeOut();
     });
 
     // MODALS
@@ -317,6 +319,35 @@
       $('.modal-calculator-structure').hide();
       $('.modal-how-to-use').hide();
       $('.nav-sidebar').removeClass('open');
+    });
+
+
+
+
+    $('.mobile-project-about').on('click touchend', function(event){
+      event.preventDefault();
+
+      $('.modal-project-about').show();
+      $('.modal-project-goals').hide();
+
+      $('.nav-sidebar').removeClass('open');
+    });
+
+
+    $('.mobile-project-goals').on('click touchend', function(event){
+      event.preventDefault();
+
+      $('.modal-project-goals').show();
+      $('.modal-project-about').hide();
+      $('.nav-sidebar').removeClass('open');
+    });
+
+    $('.close-about-sidebar').on('click touchend', function(){
+      $('.modal-project-about').hide();
+    });
+
+    $('.close-goals-sidebar').on('click touchend', function(){
+      $('.modal-project-goals').hide();
     });
 
 

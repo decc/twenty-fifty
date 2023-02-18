@@ -88,8 +88,11 @@
     <!-- Modal calculator scenarious -->
     <%= ERB.new(File.read('parts/modal-calculator-scenarious.html.erb'), nil, nil, '_sub01').result(binding) %>
 
-    <!-- Modal about -->
-    <%= ERB.new(File.read('parts/modalabout.html.erb'), nil, nil, '_sub01').result(binding) %>
+    <!-- Modal project about -->
+    <%= ERB.new(File.read('parts/modal-project-about.html.erb'), nil, nil, '_sub01').result(binding) %>
+
+    <!-- Modal project goals -->
+    <%= ERB.new(File.read('parts/modal-project-goals.html.erb'), nil, nil, '_sub01').result(binding) %>
 
     <!-- This appears while the tool is waiting for data from the server -->
     <div id='calculating'>
@@ -98,6 +101,7 @@
 
     <!-- This is needed to show the tooltips, don't remove -->
     <div id='tooltip'></div>
+    <div class='info-box'>Saite nokopēta</div>
     <div class='backdrop'></div>
 
     <%= ERB.new(File.read('footer.html.erb'), nil, nil, '_sub01').result(binding) %>
