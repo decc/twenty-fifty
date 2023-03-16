@@ -13,7 +13,7 @@ GEM
     minitest (5.10.3)
     mustermann (1.0.1)
     ox (2.8.2)
-    rack (2.0.3)
+    rack (2.2.6.4)
     rack-protection (2.0.0)
       rack
     rspec (2.99.0)
