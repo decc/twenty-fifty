@@ -8,7 +8,7 @@ GEM
       ox (~> 2.0, >= 2.0.12)
       rspec (~> 2.7, >= 2.7.0)
       rubypeg (~> 0)
-    ffi (1.9.18)
+    ffi (1.9.24)
     json (2.1.0)
     minitest (5.10.3)
     mustermann (1.0.1)
